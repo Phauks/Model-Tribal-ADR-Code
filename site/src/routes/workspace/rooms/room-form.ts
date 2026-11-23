@@ -3,7 +3,7 @@
  * The start is entered as a date and a clock time in the room's own zone and
  * stored in UTC; the room closes the given number of hours later.
  */
-import { isEventTimeZone, recordingChoices, wallClock, zonedToUtc, type RecordingChoice } from '#lib/event-calendar.ts';
+import { isEventTimeZone, wallClock, zonedToUtc } from '#lib/event-calendar.ts';
 import {
 	longestRoomHours,
 	roomRecordingWatchers,
@@ -19,7 +19,6 @@ export interface RoomFormValues {
 	title: string;
 	visibility: string;
 	style: string;
-	recording: string;
 	watchers: string;
 	startDate: string;
 	startTime: string;
@@ -31,7 +30,6 @@ export const emptyRoomForm: RoomFormValues = {
 	title: '',
 	visibility: 'private',
 	style: 'discussion',
-	recording: 'recorded',
 	watchers: 'hosts',
 	startDate: '',
 	startTime: '',
@@ -47,7 +45,6 @@ export function roomFormValuesOf(room: StandaloneRoom): RoomFormValues {
 		title: room.title,
 		visibility: room.visibility,
 		style: room.style,
-		recording: room.recording,
 		watchers: room.watchers,
 		startDate: start.slice(0, 10),
 		startTime: start.slice(11),
@@ -66,7 +63,6 @@ export function readRoomForm(form: FormData): RoomFormResult {
 		title: text('title'),
 		visibility: text('visibility', 20),
 		style: text('style', 20),
-		recording: text('recording', 20),
 		watchers: text('watchers', 20),
 		startDate: text('start-date', 10),
 		startTime: text('start-time', 5),
@@ -77,7 +73,6 @@ export function readRoomForm(form: FormData): RoomFormResult {
 	if (!values.title) return refuse('title', 'Give the room a name, such as "Interview with a peacemaker".');
 	if (!(roomVisibilities as readonly string[]).includes(values.visibility)) return refuse('visibility', 'Say whether the room is public or private.');
 	if (!(roomStyles as readonly string[]).includes(values.style)) return refuse('style', 'Choose how the room works.');
-	if (!(recordingChoices as readonly string[]).includes(values.recording)) return refuse('recording', 'Say whether the room is recorded.');
 	if (!(roomRecordingWatchers as readonly string[]).includes(values.watchers)) return refuse('watchers', 'Choose who may watch the recordings.');
 	if (!isEventTimeZone(values.timeZone)) return refuse('timeZone', 'Choose a time zone.');
 	const startsAt = zonedToUtc(`${values.startDate}T${values.startTime}`, values.timeZone);
@@ -90,7 +85,6 @@ export function readRoomForm(form: FormData): RoomFormResult {
 			title: values.title,
 			visibility: values.visibility as 'public' | 'private',
 			style: values.style as RoomStyle,
-			recording: values.recording as RecordingChoice,
 			watchers: values.watchers as RecordingWatchers,
 			startsAt,
 			closesAt: new Date(startsAt.getTime() + hours * 3_600_000),

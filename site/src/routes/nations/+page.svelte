@@ -40,6 +40,11 @@
 	</ul>
 </section>
 
+<section aria-labelledby="federal-offices">
+	<h2 id="federal-offices">By federal office</h2>
+	<p><a href="/nations/federal-offices">Indian Health Service Areas and Bureau of Indian Affairs regions</a></p>
+</section>
+
 {#each data.otherGroups as group (group.entityType)}
 	<section aria-labelledby="group-{group.entityType}">
 		<h2 id="group-{group.entityType}">{group.label}</h2>

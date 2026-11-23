@@ -195,7 +195,7 @@ justice_institutions:
     Court System court directory: 2022 Alaska Tribal Court Directory (prepared by Alaska Legal Services
     Corporation); no page of the court''s own was found (2026-11-22; research/reviews/2026-11-22-service-links.json,
     service-397).'
-- kind: other
+- kind: council-hearing
   name: Council
   link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
   location:
@@ -205,7 +205,7 @@ justice_institutions:
   confidence: medium
   verification: read-in-full
   as_of: '2022'
-  note: 'The page names the court: “Type of Justice System Council (Established), including a Wellness Court.”. Directory says Active Court: Yes; the justice system is an established council that includes a Wellness Court. The batch''s ''Tribal Court'' may be this body; existing is null because the directory does not name a tribal court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, village-of-alakanuk#1).'
+  note: 'The page names the court: “Type of Justice System Council (Established), including a Wellness Court.”. Directory says Active Court: Yes; the justice system is an established council that includes a Wellness Court. The batch''s ''Tribal Court'' may be this body; existing is null because the directory does not name a tribal court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, village-of-alakanuk#1). Kind changed from other on 2026-11-23: The directory gives the justice system type as Council: the council hears matters itself.'
 - kind: healing-to-wellness-court
   name: Wellness Court
   link: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf

@@ -17,7 +17,7 @@ import {
 	zoomRange,
 	type TimelineEntry
 } from '../src/lib/timeline.ts';
-import { caseCitation, issuedDate, lawCitation, lawKey } from '../src/lib/server/timeline.ts';
+import { agreementTitle, caseCitation, issuedDate, landTitle, lawCitation, lawKey } from '../src/lib/server/timeline.ts';
 import { SourceUses } from '../src/lib/server/source-uses.ts';
 import type { SourceRecord } from '../src/lib/server/content.ts';
 
@@ -140,6 +140,17 @@ describe('citations of cases and laws', () => {
 	it('finds two records of the same law', () => {
 		expect(lawKey('Menominee Restoration Act')).toBe(lawKey('Menominee Restoration Act, Pub. L. No. 93-197, 87 Stat. 770 (1973)'));
 		expect(lawKey('Indian Civil Rights Act of 1968')).not.toBe(lawKey('Civil Rights Act of 1968, title IV (Jurisdiction over criminal and civil actions)'));
+	});
+
+	it('names land and agreements as the approved mockup does', () => {
+		expect(landTitle('Navajo Reservation (Arizona, New Mexico, Utah)', 'First set aside')).toEqual({ title: 'Navajo Reservation first set aside' });
+		expect(landTitle('Hopi Reservation', 'Later change')).toEqual({ title: 'Hopi Reservation', detail: 'Later change' });
+		expect(agreementTitle('Title IV-E agreement (maintenance costs only)', 'New Mexico Children, Youth and Families Department')).toEqual({
+			title: 'Title IV-E agreement with New Mexico Children, Youth and Families Department',
+			citation: 'Maintenance costs only'
+		});
+		expect(agreementTitle('Agreement for state police commissions', 'New Mexico State Police')).toEqual({ title: 'Agreement with New Mexico State Police', citation: 'State police commissions' });
+		expect(agreementTitle('Title IV-E tribal-state agreement', 'Arizona Department of Economic Security')).toEqual({ title: 'Title IV-E tribal-state agreement with Arizona Department of Economic Security' });
 	});
 
 	it('reads a date from the date parts, to the day the record gives', () => {

@@ -16,8 +16,7 @@
 	downloadable tables on Nov. 23, 2026):
 	- filters: a menu for each column marked filterable, listing its values
 	  with how many rows each leaves.
-	- download: a "Download CSV" button that saves the rows as shown, after
-	  search, filters and sort, as <download>.csv.
+	- download: names the downloaded files <download>.csv and .xlsx.
 	- shareable: the search, sort and filters go into the page address as the
 	  reader changes them, and "Copy link" copies it, so the link opens the
 	  table the same way.
@@ -27,12 +26,16 @@
 	download "should always be available", any table can go full screen, and
 	a reader can leave rows out "to see how things would change without
 	it"): borderless icons at the right of the count for Copy link (when
-	shareable), ".csv" (always; the file is named `download`, or the table's
-	identifier) and full screen (Lucide maximize and minimize, as on the map
-	and the charts). Each row has a button to leave it out; the left-out
-	rows are listed to bring back one by one, beside "Show all", and the
-	count and the .csv file follow the rows shown. `tools={false}` leaves the
-	row off, for a table inside something with its own, such as a chart.
+	shareable), download (always: a list of .csv and .xlsx, TableDownload.svelte;
+	the files are named `download`, or the table's identifier) and full screen (Lucide maximize and minimize, as on the map
+	and the charts). `tools={false}` leaves the row off, for a table inside
+	something with its own, such as a chart.
+
+	Leaving rows out is for charts only (Trevor chose this on Nov. 23, 2026,
+	after it showed on every table): `leaveOut` gives each row a button to
+	leave it out, and a chart's own table turns it on and binds `leftOut`, so
+	the rows left out are the same in every view of the chart. Left-out rows
+	are listed to bring back one by one, then "Bring back all".
 
 	Use:
 	<DataTable identifier="nations" label="Table: nations" {columns} {rows}
@@ -43,20 +46,19 @@
 	import ArrowDown from '@lucide/svelte/icons/arrow-down';
 	import ArrowUp from '@lucide/svelte/icons/arrow-up';
 	import ArrowUpDown from '@lucide/svelte/icons/arrow-up-down';
-	import Download from '@lucide/svelte/icons/download';
 	import EyeOff from '@lucide/svelte/icons/eye-off';
 	import Link from '@lucide/svelte/icons/link';
 	import Maximize from '@lucide/svelte/icons/maximize';
 	import Minimize from '@lucide/svelte/icons/minimize';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
 	import X from '@lucide/svelte/icons/x';
+	import TableDownload from '#lib/components/TableDownload.svelte';
 	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import {
 		applyColumnFilters,
 		filterChoices,
 		filterRows,
 		readTableState,
-		rowsToCsv,
 		sortRows,
 		writeTableState,
 		type ColumnFilters,
@@ -86,7 +88,7 @@
 		empty?: Snippet<[string]>;
 		/** Shows a menu for each filterable column. */
 		filters?: boolean;
-		/** Shows a "Download CSV" button; the file is named this, plus .csv. */
+		/** Names the downloaded files: this, plus .csv or .xlsx. */
 		download?: string;
 		/** Keeps the search, sort and filters in the page address and shows "Copy link". */
 		shareable?: boolean;
@@ -94,6 +96,10 @@
 		count?: boolean;
 		/** False leaves off the control row (.csv, full screen, leaving rows out), for a table inside something that has its own. */
 		tools?: boolean;
+		/** The rows left out, by key; bind it to share one list with something around the table, such as a chart's other views. */
+		leftOut?: string[];
+		/** Gives each row a button to leave it out; only a chart's own table turns it on (Trevor, Nov. 23, 2026: leaving data out stays on charts only). */
+		leaveOut?: boolean;
 	}
 
 	let {
@@ -111,7 +117,9 @@
 		download,
 		shareable = false,
 		count: showCount = true,
-		tools = true
+		tools = true,
+		leftOut = $bindable([]),
+		leaveOut = false
 	}: Props = $props();
 
 	let interactive = $state(false);
@@ -120,8 +128,6 @@
 	let columnFilters = $state<ColumnFilters>({});
 	let copyStatus = $state('');
 
-	/** The rows the reader has left out, by key. */
-	let leftOut = $state<string[]>([]);
 	let frame = $state<HTMLElement | undefined>();
 	let fullScreen = $state(false);
 	let fillingWindow = $state(false);
@@ -181,16 +187,6 @@
 
 	function onKeydown(event: KeyboardEvent) {
 		if (fillingWindow && event.key === 'Escape') fillingWindow = false;
-	}
-
-	function saveCsv() {
-		const text = rowsToCsv(columns, shownRows, location.origin);
-		const address = URL.createObjectURL(new Blob([text], { type: 'text/csv;charset=utf-8' }));
-		const link = document.createElement('a');
-		link.href = address;
-		link.download = `${download ?? identifier}.csv`;
-		link.click();
-		setTimeout(() => URL.revokeObjectURL(address), 0);
 	}
 
 	async function copyLink() {
@@ -278,9 +274,7 @@
 			</button>
 		{/if}
 		{#if tools || download}
-			<button type="button" class="icon-tool csv-tool" title="Download the rows shown as a .csv file" onclick={saveCsv}>
-				<Download aria-hidden="true" size="1.25em" strokeWidth={1.75} /><span>.csv</span>
-			</button>
+			<TableDownload name={download ?? identifier} title={caption ?? download ?? identifier} table={() => ({ columns, rows: shownRows })} />
 		{/if}
 		{#if tools}
 			<button type="button" class="icon-tool" aria-label={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} title={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} onclick={toggleFullScreen}>
@@ -297,6 +291,11 @@
 						</button>
 					</li>
 				{/each}
+				<li>
+					<button type="button" class="button button-quiet small-button" onclick={() => (leftOut = [])}>
+						<RotateCcw aria-hidden="true" size="1.1em" strokeWidth={1.75} />Bring back all
+					</button>
+				</li>
 			</ul>
 		{/if}
 	</div>
@@ -348,7 +347,7 @@
 						{#if column.isRowHeader || (column === columns[0] && !columns.some((other) => other.isRowHeader))}
 							{@const Cell = column.isRowHeader ? 'th' : 'td'}
 							<svelte:element this={Cell} scope={column.isRowHeader ? 'row' : undefined} class:number={column.type === 'number'}>
-								{#if interactive && tools}
+								{#if interactive && leaveOut}
 									<span class="row-head">
 										<span class="row-head-content">{@render content()}</span>
 										<button type="button" class="leave-out no-print" aria-label="Leave out {rowLabel(row)}" title="Leave out this row" onclick={() => (leftOut = [...leftOut, row.key])}>

@@ -53,6 +53,7 @@ Trevor asked on 2026-11-23 that several rooms be able to run at once, that rooms
 - The people who manage events host every room. Co-authors and advisors may start rooms too (a new `host-video-rooms` permission), and host the rooms they started. A recording of a room of its own may be watched by its hosts only (the default, and the right choice for an interview), by the people who joined it while signed in, or by anyone signed in.
 
 RealtimeKit has no Worker binding; the Worker calls its REST API with an API token, which is the only setting the room needs.[^realtimekit-participant] The site finds the account and the RealtimeKit app with that token. The app is made once in the dashboard rather than by the site, because only an app made there comes with the default presets the room uses.[^realtimekit-preset]
+- Nobody decides about recording before a room of its own starts (Trevor, 2026-11-23). Everyone is told the room may be recorded, in one line with who may watch, and agrees before joining; the hosts start and stop recording in the call, where the recording mark, the banner and the tones say so. A room's call has the whole browser window, opened in a new tab.
 
 ## Consequences
 

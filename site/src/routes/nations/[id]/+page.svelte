@@ -123,7 +123,7 @@
 			     a claimed page the Worker hides it and fills the status place with the
 			     claimed badge (src/lib/server/nation-page-overlay.ts). -->
 			<div class="badge-line" id="review-status">
-				{#if page.badges.length > 0}<RecognitionBadges badges={page.badges} />{/if}
+				{#if page.badges.length > 0}<RecognitionBadges badges={page.badges} explanations={page.badgeExplanations} />{/if}
 				<span data-build-status data-print-part="reviewStatus">
 					<ReviewStatus status={unclaimedPage} description="Who keeps this page:">
 						<p><strong>Unclaimed.</strong> No one from the nation keeps this page yet.</p>
@@ -135,8 +135,8 @@
 			</div>
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">
-					Listed as “{page.listedName}”{#if page.listedIn}
-						in <cite>{page.listedIn.title}</cite>{#if page.listedIn.rest}, {page.listedIn.rest}{/if}{/if}.<CitationMarks
+					<!-- The listed name as an alias; its marker leads to the list in References (Trevor, Nov. 23, 2026). -->
+					Alias: {page.listedName}<CitationMarks
 						marks={data.nameCitations}
 					/>
 				</p>
@@ -324,6 +324,7 @@
 					opinionsLink={data.timeline.opinionsLink}
 					opinionCitations={data.timeline.opinionCitations}
 					fullLink="/nations/timeline?nation={page.id}"
+					besideHeading
 				/>
 			</Collapsible>
 		{/if}

@@ -68,6 +68,18 @@ function loadCases(): Promise<CasePreviewList | null> {
 	return caseList;
 }
 
+/**
+ * A link to a whole opinion or source opens in a new tab, so the essay
+ * stays where the reader was (Trevor, Nov. 23, 2026), and says so to screen
+ * readers. A link to a case's box in an essay stays in the same tab.
+ */
+function opensInNewTab(link: HTMLAnchorElement): HTMLAnchorElement {
+	link.target = '_blank';
+	link.rel = 'noopener';
+	link.append(Object.assign(document.createElement('span'), { className: 'visually-hidden', textContent: ' (opens in a new tab)' }));
+	return link;
+}
+
 /** A paragraph with its quoted words marked and the cases it cites linked. */
 function paragraphElement(paragraph: ContextParagraph, cases: CasePreviewList | null, className: string): HTMLParagraphElement {
 	const element = document.createElement('p');
@@ -81,6 +93,7 @@ function paragraphElement(paragraph: ContextParagraph, cases: CasePreviewList | 
 	const points = [...cuts].filter((point) => point >= 0 && point <= text.length).sort((a, b) => a - b);
 	let link: HTMLAnchorElement | undefined;
 	let linkId: string | undefined;
+	const toOpinions: HTMLAnchorElement[] = [];
 	for (let index = 0; index < points.length - 1; index += 1) {
 		const [start, end] = [points[index], points[index + 1]];
 		if (start === end) continue;
@@ -99,6 +112,7 @@ function paragraphElement(paragraph: ContextParagraph, cases: CasePreviewList | 
 				link.href = links.get(mention.id)!;
 				link.dataset.case = mention.id;
 				linkId = `${mention.id}@${mention.start}`;
+				if (!link.href.includes('#case-')) toOpinions.push(link);
 				element.append(link);
 			}
 			link.append(piece);
@@ -108,6 +122,7 @@ function paragraphElement(paragraph: ContextParagraph, cases: CasePreviewList | 
 			element.append(piece);
 		}
 	}
+	toOpinions.forEach(opensInNewTab);
 	return element;
 }
 
@@ -194,10 +209,12 @@ async function fillPanel(panel: HTMLElement, source: string, quote: string, pinp
 	foot.append(Object.assign(document.createElement('span'), { textContent: notes.join(' ') }));
 	if (answer.document?.path) {
 		foot.append(
-			Object.assign(document.createElement('a'), {
-				href: answer.document.path,
-				textContent: `Read the whole ${opinion ? 'opinion' : 'source'}`
-			})
+			opensInNewTab(
+				Object.assign(document.createElement('a'), {
+					href: answer.document.path,
+					textContent: `Read the whole ${opinion ? 'opinion' : 'source'}`
+				})
+			)
 		);
 	}
 	panel.append(foot);

@@ -225,13 +225,19 @@ function csvField(value: string): string {
 	return /[",\r\n]/.test(value) ? `"${value.replaceAll('"', '""')}"` : value;
 }
 
+/** A downloaded table's cell: its text and, for a linked column's own cell, the address it links to. */
+export interface DownloadCell {
+	text: string;
+	link?: string;
+}
+
 /**
- * The rows as comma-separated values (RFC 4180): a header row of column
- * headers, then one line per row with each cell's text, and a link's address
- * in a column of its own after the cell, so a spreadsheet keeps both. Lines
- * end in CR LF, as the RFC asks.
+ * The rows laid out for a download, the same for the .csv and the .xlsx file:
+ * a header row of column headers, then one line per row with each cell's text,
+ * and a link's address in a column of its own after the cell, so a spreadsheet
+ * keeps both. An address on this site is made whole with `origin`.
  */
-export function rowsToCsv(columns: TableColumn[], rows: TableRow[], origin = ''): string {
+export function downloadCells(columns: TableColumn[], rows: TableRow[], origin = ''): { header: string[]; lines: DownloadCell[][] } {
 	const linked = columns.filter((column) => rows.some((row) => row.cells[column.key]?.href));
 	const header: string[] = [];
 	for (const column of columns) {
@@ -239,18 +245,27 @@ export function rowsToCsv(columns: TableColumn[], rows: TableRow[], origin = '')
 		if (linked.includes(column)) header.push(`${column.header} (link)`);
 	}
 	const lines = rows.map((row) => {
-		const fields: string[] = [];
+		const fields: DownloadCell[] = [];
 		for (const column of columns) {
 			const cell = row.cells[column.key];
-			fields.push(cell?.text ?? '');
-			if (linked.includes(column)) {
-				const href = cell?.href ?? '';
-				fields.push(href.startsWith('/') ? `${origin}${href}` : href);
-			}
+			const href = cell?.href ?? '';
+			const link = href.startsWith('/') ? `${origin}${href}` : href;
+			fields.push(link ? { text: cell?.text ?? '', link } : { text: cell?.text ?? '' });
+			if (linked.includes(column)) fields.push({ text: link });
 		}
-		return fields.map(csvField).join(',');
+		return fields;
 	});
-	return `${[header.map(csvField).join(','), ...lines].join('\r\n')}\r\n`;
+	return { header, lines };
+}
+
+/**
+ * The rows as comma-separated values (RFC 4180), laid out as `downloadCells`
+ * lays them out. Lines end in CR LF, as the RFC asks.
+ */
+export function rowsToCsv(columns: TableColumn[], rows: TableRow[], origin = ''): string {
+	const { header, lines } = downloadCells(columns, rows, origin);
+	const text = lines.map((fields) => fields.map((field) => csvField(field.text)).join(','));
+	return `${[header.map(csvField).join(','), ...text].join('\r\n')}\r\n`;
 }
 
 /** The problems in a table, for tests and builds. An empty list means none. */

@@ -9,9 +9,10 @@
 
 	The icon buttons at the chart's top right (Trevor, Nov. 23, 2026) switch
 	it between bars, a pie (only for a chart whose bars are parts of one
-	whole) and a sortable table, and the last one downloads the numbers as a
-	.csv file, whatever the view. Without scripts the bars and the table both
-	show, and the .csv link still works when the chart has a published file.
+	whole) and a sortable table, and a download icon lists the numbers as a
+	.csv file or an Excel workbook (.xlsx), whatever the view. Without scripts
+	the bars and the table both show, and the download list still opens to
+	the chart's published files.
 
 	Every bar with an address leads to the records it counts (Trevor, Nov. 23,
 	2026: "all tables should be clickable into the data to explain itself"):
@@ -19,11 +20,15 @@
 	in the table both the name and the number are links. A pie's slices and
 	its key lead to the same places.
 
-	A reader can leave any bar out, such as the largest, to see how the rest
-	compare without it (Trevor, Nov. 23, 2026): the scale, the pie's shares,
-	the table and the total are worked out again from the bars left, the left
-	out bars are listed to bring back one by one, and "Show all" brings back
-	every one. A chart with `shown` draws only that many bars and offers
+	A reader can leave any item out, such as the largest, to see how the rest
+	compare without it (Trevor, Nov. 23, 2026), from whichever view they are
+	in: a bar's row, a pie key's entry (an "Other" entry leaves out every item
+	it folds) or a table row. All views read one list, `left`, so an item left
+	out in one is left out in all, and a new view drawn from `kept` gets the
+	same for free. The scale, the pie's shares, the table and the total are
+	worked out again from the items left; the left out items are listed to
+	bring back one by one, and "Bring back all" restores every one in one
+	click, whichever view is showing. A chart with `shown` draws only that many bars and offers
 	"Show all"; the table always has every row.
 
 	Use:
@@ -33,7 +38,6 @@
 	import { onMount } from 'svelte';
 	import ChartBar from '@lucide/svelte/icons/chart-bar';
 	import ChartPie from '@lucide/svelte/icons/chart-pie';
-	import Download from '@lucide/svelte/icons/download';
 	import EyeOff from '@lucide/svelte/icons/eye-off';
 	import Maximize from '@lucide/svelte/icons/maximize';
 	import Minimize from '@lucide/svelte/icons/minimize';
@@ -41,7 +45,7 @@
 	import Table from '@lucide/svelte/icons/table';
 	import X from '@lucide/svelte/icons/x';
 	import { chartTable, pieSlices, scaleTop, shareText, slicePath, type BarChartData } from '#lib/bar-chart.ts';
-	import { rowsToCsv } from '#lib/tables/table-definition.ts';
+	import TableDownload from '#lib/components/TableDownload.svelte';
 	import DataTable from './DataTable.svelte';
 
 	let { chart, headingLevel = 2 }: { chart: BarChartData; headingLevel?: 2 | 3 } = $props();
@@ -64,7 +68,10 @@
 	);
 	const limited = $derived(chart.shown !== undefined && kept.length > chart.shown);
 	const bars = $derived(limited && !showAll ? kept.slice(0, chart.shown) : kept);
+	/** The rows shown, for the downloads. */
 	const table = $derived(chartTable({ ...chart, bars: kept }));
+	/** Every row, for the table view, which marks the left out ones itself from the same list. */
+	const fullTable = $derived(chartTable(chart));
 	const slices = $derived(pieSlices(kept));
 	const percent = (value: number) => `${(value / scale.top) * 100}%`;
 	const pieRadius = 100;
@@ -95,24 +102,12 @@
 		if (fillingWindow && event.key === 'Escape') fillingWindow = false;
 	}
 
-	function leaveOut(label: string) {
-		left = [...left, label];
+	function leaveOut(...labels: string[]) {
+		left = [...left, ...labels.filter((label) => !left.includes(label))];
 	}
 
 	function bringBack(label: string) {
 		left = left.filter((item) => item !== label);
-	}
-
-	/** Saves the numbers as a .csv file: the published file when there is one and nothing is left out, otherwise the rows shown. */
-	function saveCsv(event: MouseEvent) {
-		if (chart.csvHref && left.length === 0) return;
-		event.preventDefault();
-		const address = URL.createObjectURL(new Blob([rowsToCsv(table.columns, table.rows, location.origin)], { type: 'text/csv;charset=utf-8' }));
-		const link = document.createElement('a');
-		link.href = address;
-		link.download = `${chart.identifier}.csv`;
-		link.click();
-		setTimeout(() => URL.revokeObjectURL(address), 0);
 	}
 
 	onMount(() => {
@@ -146,11 +141,7 @@
 					</button>
 				</div>
 			{/if}
-			{#if interactive || chart.csvHref}
-				<a class="view-button csv-link" href={chart.csvHref ?? '#'} download="{chart.identifier}.csv" title="Download the numbers as a .csv file" onclick={saveCsv}>
-					<Download aria-hidden="true" size="1.25em" strokeWidth={1.75} /><span>.csv</span>
-				</a>
-			{/if}
+			<TableDownload name={chart.identifier} title={chart.title} table={() => table} csvHref={chart.csvHref} xlsxHref={chart.xlsxHref} published={left.length === 0} {interactive} label="Download the numbers" />
 			{#if interactive}
 				<button type="button" class="view-button" aria-label={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} title={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} onclick={toggleFullScreen}>
 					{#if fullScreen || fillingWindow}<Minimize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{:else}<Maximize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{/if}
@@ -174,7 +165,7 @@
 				{/each}
 			</ul>
 			<button type="button" class="button button-quiet small-button" onclick={() => (left = [])}>
-				<RotateCcw aria-hidden="true" size="1.1em" strokeWidth={1.75} />Show all
+				<RotateCcw aria-hidden="true" size="1.1em" strokeWidth={1.75} />Bring back all
 			</button>
 		</div>
 	{/if}
@@ -234,10 +225,13 @@
 					<li class:lit={lit === slice.label} onpointerenter={() => (lit = slice.label)} onpointerleave={() => (lit = undefined)}>
 						<span class="swatch series-{slice.series}" aria-hidden="true"></span>
 						<span class="key-label">
-							{#if slice.href}<a href={slice.href} onfocus={() => (lit = slice.label)} onblur={() => (lit = undefined)}>{slice.label}</a>{:else}{slice.label}{#if slice.folded > 1}<span class="small muted"> (in the table)</span>{/if}{/if}
+							{#if slice.href}<a href={slice.href} onfocus={() => (lit = slice.label)} onblur={() => (lit = undefined)}>{slice.label}</a>{:else}{slice.label}{#if slice.folded > 1}{" "}<span class="small muted">(in the table)</span>{/if}{/if}
 						</span>
 						<span class="key-value">{slice.value.toLocaleString('en-US')}</span>
 						<span class="key-share">{shareText(slice.share)}</span>
+						<button type="button" class="leave-out no-print" aria-label="Leave out {slice.label}" title="Leave out {slice.label}" onclick={() => leaveOut(...slice.members)}>
+							<EyeOff aria-hidden="true" size="1em" strokeWidth={1.75} />
+						</button>
 					</li>
 				{/each}
 			</ol>
@@ -247,8 +241,10 @@
 		<DataTable
 			identifier="{chart.identifier}-table"
 			label="Table: {chart.title}"
-			columns={table.columns}
-			rows={table.rows}
+			columns={fullTable.columns}
+			rows={fullTable.rows}
+			bind:leftOut={left}
+			leaveOut
 			defaultSort={{ key: 'value', direction: 'descending' }}
 			count={false}
 			tools={false}
@@ -262,15 +258,9 @@
 	{#if chart.partsOfWhole}
 		<p class="small chart-total">Total: {total.toLocaleString('en-US')} {chart.valueHeader.toLocaleLowerCase('en-US')}{leftOut.length > 0 ? ' shown' : ''}</p>
 	{/if}
-	<!-- The source opens from one word (Trevor, Nov. 23, 2026); a bar's own page lists the source of each record it counts. -->
+	<!-- Only the word "Source", which links to where the numbers come from (Trevor, Nov. 23, 2026); a bar's own page lists the source of each record it counts. -->
 	<figcaption class="small">
-		<details class="chart-source">
-			<summary>Source</summary>
-			<p class="muted">{chart.source}</p>
-			{#if chart.bars.some((bar) => bar.href)}
-				<p class="muted">Pick a bar to see the records it counts, each with its own source.</p>
-			{/if}
-		</details>
+		{#if chart.sourceHref}<a class="chart-source" href={chart.sourceHref} title={chart.source}>Source</a>{:else}<span class="chart-source" title={chart.source}>Source</span>{/if}
 	</figcaption>
 </figure>
 
@@ -306,7 +296,7 @@
 		margin-top: 0;
 	}
 
-	/* The view switch and the .csv download, on one line at the top right: borderless icon buttons, the view in use marked. */
+	/* The view switch and the download list (.csv and .xlsx), on one line at the top right: borderless icon buttons, the view in use marked. */
 	.chart-tools {
 		display: flex;
 		flex-shrink: 0;
@@ -317,14 +307,6 @@
 	.view-switch {
 		display: flex;
 		gap: var(--space-1);
-	}
-
-	.csv-link {
-		gap: var(--space-1);
-		padding: 0 var(--space-2);
-		text-decoration: none;
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-semibold);
 	}
 
 	.view-button {
@@ -350,7 +332,7 @@
 		box-shadow: inset 0 -2px 0 var(--color-link);
 	}
 
-	/* A bar with an address: the name's link covers the whole row, so the bar and the number open it too. */
+	/* A bar with an address: the name's link covers the whole row, so the bar and the number open it too (Trevor, Nov. 23, 2026). The cover sits above the bar's track, which is positioned and would otherwise take the click. */
 	.bars li.linked {
 		position: relative;
 	}
@@ -359,6 +341,7 @@
 		content: '';
 		position: absolute;
 		inset: 0;
+		z-index: 1;
 	}
 
 	/* Pointing at any part of a bar's row, its name, bar or number, lights all three up together (Trevor, Nov. 23, 2026). */
@@ -383,7 +366,7 @@
 
 	.leave-out {
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -399,6 +382,7 @@
 	}
 
 	.bars li:hover .leave-out,
+	.pie-key li:hover .leave-out,
 	.leave-out:focus-visible {
 		opacity: 1;
 	}
@@ -494,7 +478,7 @@
 
 	.pie-key li {
 		display: grid;
-		grid-template-columns: 1rem minmax(0, 1fr) auto 3rem;
+		grid-template-columns: 1rem minmax(0, 1fr) auto 3rem 1.75rem;
 		gap: var(--space-2);
 		align-items: center;
 		min-height: 1.9rem;
@@ -548,17 +532,10 @@
 		width: min(100%, 28rem);
 	}
 
-	.chart-source summary {
-		cursor: pointer;
-		color: var(--color-link);
-		text-decoration: underline;
-		width: fit-content;
+	.chart-source {
+		display: inline-flex;
+		align-items: center;
 		min-height: 24px;
-	}
-
-	.chart-source p {
-		margin: var(--space-1) 0 0;
-		max-width: var(--layout-measure);
 	}
 
 	.chart-total {

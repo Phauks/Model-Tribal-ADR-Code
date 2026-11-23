@@ -52,8 +52,14 @@ const builtContents: Record<string, () => SectionContents> = {
 	library: () => ({ pages: libraryOutline() }),
 	events: () => ({
 		pages: [
-			{ label: 'Upcoming events', link: '/events' },
+			{ label: 'Current and upcoming events', link: '/events' },
 			{ label: 'Past events', link: '/events?when=past' }
+		]
+	}),
+	store: () => ({
+		pages: [
+			{ label: 'Books', link: '/store#books' },
+			{ label: 'Special order', link: '/book' }
 		]
 	}),
 	about: () => ({

@@ -39,6 +39,7 @@
 	import ImageViewer from '#lib/components/ImageViewer.svelte';
 	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
+	import { page } from '$app/state';
 	import { crossFadePages, startMotion } from '#lib/motion.ts';
 	import { resizableTables } from '#lib/tables/resizable-columns.ts';
 	import type { LayoutProps } from './$types';
@@ -48,6 +49,11 @@
 	// Pages cross-fade, and printing finishes any movement first (src/lib/motion.ts).
 	onNavigate(crossFadePages);
 	onMount(startMotion);
+
+	// A video call has the whole window: no header, sidebar or footer
+	// (Trevor, Nov. 23, 2026). Links to these pages open them in a new tab.
+	const callPages = new Set(['/rooms/[room]', '/rooms/[room]/invite/[secret]', '/events/[slug]/room']);
+	const call = $derived(callPages.has(page.route.id ?? ''));
 
 </script>
 
@@ -60,21 +66,27 @@
 	<meta name="application-name" content={siteName} />
 </svelte:head>
 
-<SiteHeader contentVersion={data.versions.content} />
-<PrintDetails />
-<OfflineNotice contentVersion={data.versions.content} />
-<UpdateNotice versions={data.versions} />
-<div class="site-body">
-	<SiteSidebar />
-	<main id="main-content" class="page-width" tabindex="-1" {@attach resizableTables}>
+{#if call}
+	<main id="main-content" class="call-page" tabindex="-1">
 		{@render children()}
 	</main>
-</div>
-<SiteFooter versions={data.versions} />
-<InlineNotes />
-<CitationPopup />
-<LinkPreviews />
-<ImageViewer />
+{:else}
+	<SiteHeader contentVersion={data.versions.content} />
+	<PrintDetails />
+	<OfflineNotice contentVersion={data.versions.content} />
+	<UpdateNotice versions={data.versions} />
+	<div class="site-body">
+		<SiteSidebar />
+		<main id="main-content" class="page-width" tabindex="-1" {@attach resizableTables}>
+			{@render children()}
+		</main>
+	</div>
+	<SiteFooter versions={data.versions} />
+	<InlineNotes />
+	<CitationPopup />
+	<LinkPreviews />
+	<ImageViewer />
+{/if}
 
 <style>
 	/*
@@ -86,7 +98,23 @@
 	/* The space before the footer is inside the page, so the sidebar's column
 	   reaches the footer and its Hide sidebar button sits just above it at the
 	   end of a page, not over empty space (Trevor, Nov. 23, 2026). */
-	main {
+	/* A call fills the window; the room's own bar is at the top and the call takes the rest. */
+	main.call-page {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		min-height: 100dvh;
+		padding: var(--space-2) var(--space-3);
+	}
+
+	/* Before joining, the notice and the join form keep a reading width. */
+	main.call-page > :global(.panel),
+	main.call-page > :global(.notice) {
+		max-width: var(--layout-measure);
+	}
+
+	main:not(.call-page) {
 		container: page / inline-size;
 		min-width: 0;
 		padding-top: var(--space-3);
@@ -98,19 +126,16 @@
 		   first screen and the Hide sidebar button keeps its place at the bottom. */
 		.site-body {
 			display: grid;
-			grid-template-columns: 15rem minmax(0, 1fr);
+			/* One width on every page, so the page never moves when the sidebar
+			   changes from the sections to a section's panel (SiteSidebar.svelte). */
+			grid-template-columns: 17rem minmax(0, 1fr);
 			align-items: start;
 			min-height: 100dvh;
 		}
 
-		/* In a section the sidebar has a second column for its pages (SiteSidebar.svelte). */
-		.site-body:has(> :global(.sidebar-wide.two-columns)) {
-			grid-template-columns: 32rem minmax(0, 1fr);
-		}
-
-		.site-body:has(> :global(.sidebar-wide:not([open]))),
+		/* Hidden with the masthead's button, the sidebar is gone and the page takes the whole width. */
 		:global(:root[data-sidebar-hidden='true']) .site-body {
-			grid-template-columns: 3.5rem minmax(0, 1fr);
+			grid-template-columns: minmax(0, 1fr);
 		}
 	}
 

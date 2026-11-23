@@ -353,6 +353,20 @@ export async function saveListing(database: D1Database, sponsor: Sponsor, actor:
 	return (await sponsorByIdentifier(database, sponsor.identifier)) as Sponsor;
 }
 
+/**
+ * Sets where the sponsor's gifts go, as chosen on the Sponsorship page or
+ * beside the gift form (docs/sponsorship.md). Gifts are recorded with the
+ * choice in place when Stripe reports them.
+ */
+export async function setEarmark(database: D1Database, sponsor: Sponsor, actor: Actor, earmark: Earmark): Promise<Sponsor> {
+	if (earmark === sponsor.earmark) return sponsor;
+	await database.batch([
+		database.prepare('UPDATE sponsors SET earmark = ?, updated_at = ? WHERE identifier = ?').bind(earmark, now(), sponsor.identifier),
+		historyStatement(database, sponsor.identifier, actor, 'Changed the listing', 'where the gift goes')
+	]);
+	return (await sponsorByIdentifier(database, sponsor.identifier)) as Sponsor;
+}
+
 /** The largest logo accepted, in bytes. */
 export const largestLogo = 512 * 1024;
 

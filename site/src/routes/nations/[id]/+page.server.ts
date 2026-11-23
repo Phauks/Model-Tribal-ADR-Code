@@ -21,8 +21,7 @@ import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, whereInSource, type CitationMark } from '#lib/server/source-uses.ts';
 import { sourceAnchor } from '#lib/citation-marks.ts';
 import { recognitionBadges } from '#lib/recognition-badges.ts';
-import { recognitionView } from '#lib/server/recognition.ts';
-import { listedIn } from '#lib/listed-in.ts';
+import { recognitionExplanations, recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
@@ -32,6 +31,7 @@ import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/ser
 import { issuedDate, nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
 import { casePreviewList } from '#lib/server/case-previews.ts';
 import { courtAbbreviation } from '#lib/server/case-citations.ts';
+import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -202,11 +202,20 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 				? [
 						cited(sources, regionLabel, administration, {
 							text: `${administration.bureau_of_indian_affairs_region} Region`,
-							link: `/nations/map#${regionAnchor(administration.bureau_of_indian_affairs_region)}`,
-							note: administration.bureau_of_indian_affairs_agency
-								? `Agency: ${administration.bureau_of_indian_affairs_agency}`
-								: undefined
-						})
+							link: bureauRegionPage(administration.bureau_of_indian_affairs_region)
+						}),
+						...(administration.bureau_of_indian_affairs_agency
+							? [
+									cited(sources, regionLabel, administration, {
+										label: 'Agency',
+										text: administration.bureau_of_indian_affairs_agency,
+										link: bureauRegionPage(
+											administration.bureau_of_indian_affairs_region,
+											administration.bureau_of_indian_affairs_agency
+										)
+									})
+								]
+							: [])
 					]
 				: []
 		),
@@ -475,8 +484,8 @@ const reporterShortNames: Record<string, string> = { 'United States Reports': 'U
 /** What the nation was in a case, as the table's Role column says it (schemas/source.schema.json). */
 const caseRoles: Record<string, string> = {
 	party: 'Party',
-	government: 'Its government',
-	subject: 'Subject'
+	government: 'Party through its officials or agency',
+	subject: 'Not a party'
 };
 
 /**
@@ -715,12 +724,15 @@ function healthItems(record: NationRecord, sources: SourceUses, section: string)
 	const facts = record.indian_health_service ?? [];
 	if (facts.length === 0) return [];
 	const areas = [...new Set(facts.map((fact) => fact.area))];
-	const areaCitations: CitationMark[] = [];
-	// The Area's markers are those of the facts that name only the Area; the
-	// service unit and operator lines carry their own.
-	const areaOnly = facts.filter((fact) => !fact.service_unit && !fact.operator);
-	for (const fact of areaOnly.length > 0 ? areaOnly : facts) sources.citeFact(fact, section, `${fact.area} Area`, areaCitations);
-	const items: FactItem[] = [{ text: areas.map((area) => `${area} Area`).join('; '), citations: areaCitations }];
+	// Each Area links to the page about it. Its markers are those of the facts
+	// that name only the Area; the service unit and operator lines carry their own.
+	const items: FactItem[] = areas.map((area) => {
+		const naming = facts.filter((fact) => fact.area === area);
+		const areaOnly = naming.filter((fact) => !fact.service_unit && !fact.operator);
+		const citations: CitationMark[] = [];
+		for (const fact of areaOnly.length > 0 ? areaOnly : naming) sources.citeFact(fact, section, `${area} Area`, citations);
+		return { text: `${area} Area`, link: healthAreaPage(area), citations };
+	});
 	for (const fact of facts) {
 		if (!fact.service_unit) continue;
 		const runBy =
@@ -1059,13 +1071,10 @@ export const load: PageServerLoad = ({ params }) => {
 		example: record.example === true,
 		officialName: displayName(record.names.official),
 		listedName: record.names.official,
-		// The document the listed name comes from, cited by its own name (Trevor, Nov. 23, 2026).
-		listedIn: listedIn(
-			record.names.official_source ? sourceRecords().get(record.names.official_source) : undefined,
-			record.recognition?.find((fact) => fact.source === record.names.official_source)?.locator
-		),
 		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
 		badges: recognitionBadges(record.recognition ?? []),
+		// What each badge opens: how the nation got the status (Trevor, Nov. 23, 2026).
+		badgeExplanations: recognitionExplanations(record),
 		review: status,
 		withdrawn: record.review?.status === 'withdrawn-at-request',
 		// The copies of the nation's documents this site holds, to save offline or download as a ZIP.
@@ -1146,7 +1155,9 @@ export const load: PageServerLoad = ({ params }) => {
 	// line of its own; otherwise its source is in the Sources list alone
 	// (Trevor, Nov. 22, 2026, asked to remove "Name as the recognizing list gives it").
 	if (record.names.official_source) {
-		const nameUse = { section: 'Name as the recognizing list gives it', text: record.names.official };
+		// The page of the nation's entry, from the recognition fact the same source supports.
+		const entry = record.recognition?.find((fact) => fact.source === record.names.official_source);
+		const nameUse = { section: 'Alias', text: record.names.official, where: entry ? whereInSource(entry) : undefined };
 		if (displayName(record.names.official) !== record.names.official) {
 			sources.cite(record.names.official_source, nameUse, nameCitations);
 		} else {

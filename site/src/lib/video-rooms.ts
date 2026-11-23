@@ -77,8 +77,10 @@ export function roomIsOpen(window: RoomWindow, time: Date = new Date()): boolean
 }
 
 /**
- * What a person is told before joining, by the room's recording choice. A
- * person must agree to it to join a room that is, or may be, recorded.
+ * What a person is told before joining, by the room's recording choice: one
+ * short line (Trevor, Nov. 23, 2026). The recording mark and tone in the call
+ * say the rest (src/lib/components/VideoRoom.svelte). A person must agree to
+ * join a room that is, or may be, recorded.
  */
 export function recordingNotice(
 	choice: RecordingChoice,
@@ -86,37 +88,25 @@ export function recordingNotice(
 	kind: 'event' | 'room' = 'event'
 ): { heading: string; text: string; needsAgreement: boolean } {
 	const who = {
-		hosts: kind === 'event' ? 'only the people running the project’s events' : 'only the room’s hosts',
-		registered: 'the people who registered for this event',
-		joined: 'the people who joined this room while signed in',
-		'signed-in': 'anyone signed in to this website'
+		hosts: kind === 'event' ? 'Only the people running events can watch it.' : 'Only the hosts can watch it.',
+		registered: 'People registered for the event can watch it.',
+		joined: 'People who joined while signed in can watch it.',
+		'signed-in': 'Anyone signed in can watch it.'
 	}[watchers];
 	const noun = kind === 'event' ? 'event' : 'room';
 	switch (choice) {
 		case 'recorded':
-			return {
-				heading: `This ${noun} is recorded`,
-				text: `The hosts will record what this room shows and what is said in it: the names shown, and your camera and microphone when they are on. The recording is kept in the project's private storage, and ${who} may watch it. While a recording runs, the room shows a recording mark and you hear a short tone when it starts and stops. You can join with your camera and microphone off.`,
-				needsAgreement: true
-			};
+			return { heading: `This ${noun} is recorded.`, text: who, needsAgreement: true };
 		case 'undecided':
-			return {
-				heading: `This ${noun} may be recorded`,
-				text: `The hosts have not decided whether to record this room. If they do, the recording holds what the room shows and what is said in it: the names shown, and your camera and microphone when they are on, and ${who} may watch it. While a recording runs, the room shows a recording mark and you hear a short tone when it starts and stops. You can join with your camera and microphone off.`,
-				needsAgreement: true
-			};
+			return { heading: `This ${noun} may be recorded.`, text: who, needsAgreement: true };
 		case 'not-recorded':
-			return {
-				heading: `This ${noun} is not recorded`,
-				text: 'The hosts do not plan to record this room. If a recording is ever started, the room shows a recording mark and you hear a short tone, and you can leave.',
-				needsAgreement: false
-			};
+			return { heading: `This ${noun} is not recorded.`, text: 'If a recording starts, you will see and hear it, and can leave.', needsAgreement: false };
 	}
 }
 
 /** The words of the agreement box. */
 export function agreementLabel(choice: RecordingChoice): string {
-	return `I have read this and agree to join ${choice === 'recorded' ? 'a recorded room' : 'a room that may be recorded'}.`;
+	return choice === 'recorded' ? 'I agree to join a recorded room.' : 'I agree to join a room that may be recorded.';
 }
 
 /** The style a new event room starts with, from the kind of event. */
