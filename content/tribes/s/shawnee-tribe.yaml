@@ -5,15 +5,23 @@ names:
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
-  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
-    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  legal_basis: Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 Fed. Reg. 4102, 4105 (Jan. 30, 2026)
   source: bia-recognized-entities-2026
   confidence: high
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 - type: federal
-  legal_basis: Legislative recognition (as stated in the Office of Federal Acknowledgment list)
+  legal_basis: Shawnee Tribe Status Act of 2000, Pub. L. No. 106-568, tit. VII, § 704(a), 114 Stat. 2868, 2914 (2000)
+  since: '2000-12-27'
+  source: public-law-106-568
+  confidence: high
+  verification: read-in-full
+  as_of: '2000-12-27'
+  locator: tit. VII, § 704(a), 114 Stat. 2914
+  note: Section 704(a) reaffirms the Tribe's federal recognition.
+- type: federal
+  legal_basis: Shawnee Tribe Status Act of 2000, Pub. L. No. 106-568, tit. VII, § 704(a), 114 Stat. 2868, 2914 (2000)
   petition_number: '203'
   petition_stage: Letter of Intent to Petition 10/14/98; Legislative recognition 12/27/2000
   since: '2000-12-27'
@@ -22,8 +30,7 @@ recognition:
   verification: inferred
   as_of: '2000-12-27'
   locator: 'Petitioner #203'
-  note: 'Petitioner name: Loyal Shawnee Tribe; matched to the roster Shawnee Tribe by name and date, not
-    stated by the source.'
+  note: 'Petitioner name: Loyal Shawnee Tribe; matched to the roster Shawnee Tribe by name and date, not stated by the source.'
 states:
 - state: OK
   presence: government-office

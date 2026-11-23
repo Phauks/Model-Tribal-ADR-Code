@@ -56,8 +56,11 @@ const rules: CitationRule[] = [
 			Number(match[1]) >= 65 ? `${govinfoLink}/statute/${match[1]}/${match[2]}?link-type=pdf` : undefined
 	},
 	{
-		// 50 FR 39047, 26 Fed. Reg. 3073
-		pattern: /\b(\d+) (?:FR|Fed\. Reg\.) (\d+)/g,
+		// 50 FR 39047, 26 Fed. Reg. 3073, and with a pinpoint page, 91 Fed. Reg.
+		// 4102, 4104. The pinpoint stays in the linked text; the link goes to
+		// the notice's first page, the address the site's own copy is filed
+		// under (src/lib/public-copies.ts).
+		pattern: /\b(\d+) (?:FR|Fed\. Reg\.) (\d+)(?:, \d+\b(?! (?:FR|Fed\. Reg\.|Stat\.|U\.S\.C\.|C\.F\.R\.)))?/g,
 		link: (match) => `${govinfoLink}/fr/${match[1]}/${match[2]}?link-type=pdf`
 	},
 	{
