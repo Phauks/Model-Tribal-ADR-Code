@@ -46,6 +46,7 @@ and says so.
 | [0032](0032-starred-pages-and-shared-collections-on-the-reader-s-device.md) | Starred pages, private notes and shared collections, kept on the reader's device | Accepted |
 | [0033](0033-nation-page-map-has-the-big-maps-views.md) | Give the map on each nation's page the big map's views | Accepted |
 | [0034](0034-show-stories-in-full-where-rights-allow.md) | Show the whole story on its page where the rights allow | Accepted |
+| [0035](0035-follow-pages-with-notices-that-never-quote.md) | Following pages, with notices that never say what changed | Accepted |
 | [0041](0041-nation-teams-keep-their-own-pages.md) | Let each nation choose a team that keeps its own page, with delegation inside that nation only | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

@@ -165,6 +165,8 @@ jobs:
         run: npm test
       - name: Colors come only from design-tokens.json
         run: npm run check:colors
+      - name: Motion timing comes only from design-tokens.json
+        run: npm run check:motion
       - name: Build
         run: npm run build
       - name: Check the built pages, manifest and service worker

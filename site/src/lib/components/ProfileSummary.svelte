@@ -48,9 +48,16 @@
 			<dd>{fullName(answers) || notGiven} <span class="who">{team}</span></dd>
 			<dd class="action">{@render change('about', 'name')}</dd>
 		</div>
+		{#if answers.nativeName}
+			<div>
+				<dt>Native name or other name</dt>
+				<dd>{answers.nativeName} <span class="who">{team}</span></dd>
+				<dd class="action">{@render change('about', 'Native name or other name')}</dd>
+			</div>
+		{/if}
 		<div>
-			<dt>Adult</dt>
-			<dd>{answers.adultConfirmed ? 'Yes, I am an adult where I live' : 'Not confirmed'}</dd>
+			<dt>Age</dt>
+			<dd>{answers.thirteenOrOlder ? '13 or older' : 'Not confirmed'}</dd>
 			<dd class="action">{@render change('about', 'age')}</dd>
 		</div>
 		{#if showContact}

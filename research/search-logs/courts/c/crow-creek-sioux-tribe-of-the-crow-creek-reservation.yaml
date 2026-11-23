@@ -1,7 +1,7 @@
 profile: content/tribes/c/crow-creek-sioux-tribe-of-the-crow-creek-reservation.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -174,6 +174,69 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: Results were the NARF tribal code, state directories and case law, with no official court page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://ujs.sd.gov/tribal-courts/
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    South Dakota Unified Judicial System, Tribal Courts page (status 200): under "South Dakota Tribal
+    Court Contact Information" it lists the nation with its address, telephone and website, and says each
+    of South Dakota''s nine Tribes has its own tribal court system; it gives no court-specific page for
+    this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Crow Creek Sioux Tribal Court Fort Thompson
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were the South Dakota Unified Judicial System''s Tribal Courts page (read above), map listings
+    and state agency pages; no court page of the nation''s own came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://ujs19.sd.gov/media/TribalContactInfo.pdf
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: error
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The South Dakota Unified Judicial System''s tribal contact file from the results did not answer (the
+    connection failed).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): directory, https://ujs.sd.gov/tribal-courts/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-072
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Crow Creek Sioux Tribal Court”: Claude weighed what the second search found
+    against the lead author''s order (own page, then directory entry): directory, https://ujs.sd.gov/tribal-courts/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-073
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-055,
   cannot-tell); Crow Creek Sioux Tribal Court (court-056, cannot-tell). No page or official directory
-  entry was found on 2026-11-22 for “Tribal Court”; “Crow Creek Sioux Tribal Court” (research/reviews/2026-11-22-service-links.json).'
+  entry was found on 2026-11-22 for “Tribal Court”; “Crow Creek Sioux Tribal Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 linked “Tribal Court”; “Crow Creek Sioux Tribal Court” (research/reviews/2026-11-22-service-links.json).'

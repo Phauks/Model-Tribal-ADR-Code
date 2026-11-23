@@ -1,7 +1,7 @@
 profile: content/tribes/c/cow-creek-band-of-umpqua-tribe-of-indians.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -168,4 +168,62 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: Results were peacekeeper application and training notices and the Oregon and NARF pages, with no verified court page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Cow Creek Umpqua tribal court Roseburg
+  outcome: found
+  reason: 'Second search: “Cow Creek Tribal Court”: The results led to the Oregon Judicial Department''s
+    Oregon Tribal Court Contact Information list, read below; no court page of the nation''s own came
+    up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Oregon Judicial Department tribal courts list Oregon tribes
+  outcome: found
+  reason: 'Second search: “Cow Creek Tribal Court”: The results gave the Oregon Judicial Department''s
+    tribal court contact lists, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.oregon.gov/programs/jcip/Documents/Tribal%20contact%20info.pdf
+  query: 'scripts/review/service_links.py second: Cow Creek'
+  outcome: found
+  reason: 'Second search: “Cow Creek Tribal Court”: Oregon Judicial Department, Juvenile Court Improvement
+    Program, "Oregon Tribal Court Contact Information" (status 200): lists the Cow Creek Band of Umpqua
+    Tribe of Indians with its court''s judge, court administrator and address.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.courts.oregon.gov/programs/jcip/SiteAssets/Lists/JuvDepBenchbook/EditForm/Oregon%20Tribal%20Court%20Contact%20Information.pdf
+  query: 'scripts/review/service_links.py second: Cow Creek'
+  outcome: found
+  reason: 'Second search: “Cow Creek Tribal Court”: Status 200; an older copy of the same Oregon Judicial
+    Department list, also naming the Cow Creek court; the other copy is used as the link.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: “Cow Creek Tribal Court”: The association''s site shows programs, membership
+    and regions; it publishes no directory of tribal courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Cow Creek Tribal Court”: Claude weighed what the second search found against
+    the lead author''s order (own page, then directory entry): directory, https://www.courts.oregon.gov/programs/jcip/Documents/Tribal%20contact%20info.pdf.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-070
 next_steps: No page or official directory entry was found on 2026-11-22 for “Cow Creek Tribal Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 linked “Cow Creek Tribal Court” (research/reviews/2026-11-22-service-links.json).

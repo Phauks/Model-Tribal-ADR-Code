@@ -20,6 +20,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'people',
 			'nation-teams',
 			'access',
+			'address-book',
 			'activity'
 		]);
 	});

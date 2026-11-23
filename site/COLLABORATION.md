@@ -44,7 +44,7 @@ the page only hides buttons a person cannot use.
 
 | Role | Can do | Starts at, on every document |
 | --- | --- | --- |
-| Lead author | The administrator. Everything below, and adds, changes and removes people, grants and restricts access, reads the activity log, and welcomes or declines contributor registrations. The project always keeps at least one. | Full, always; cannot be restricted |
+| Lead author | The administrator. Everything below, and adds, changes and removes people, grants and restricts access, reads the activity log, and can remove contributors who signed up. The project always keeps at least one. | Full, always; cannot be restricted |
 | Editor | Reads requests and their uploaded files, changes their status, decides them; reads contributor registrations; signs off on content or asks for changes. | Contribute |
 | Advisor | Signs off on content or asks for changes, as a project advisor; comments. Does not see requests. | Comment |
 | Co-author | Comments. Does not see requests. | Comment |
@@ -136,6 +136,7 @@ Essays are kept in the private `sourceDocuments` bucket and edited at `/workspac
 - **Publishing** makes a saved version the essay's page. Before publishing, the site renders the version and refuses it if a citation key or glossary link points to nothing. A publication can be held back from readers (with a reason, for the log), for example while a nation's request is reviewed; it is never deleted.
 - **Pages.** The Worker renders essay pages on request from the newest listed publication (`/foundations/<id>` for Part I, `/essays/<id>` for the rest) and caches the result for each file and site build. Earlier publications stay readable from the page's version list.
 - **Git copy.** `/published-essays.json` lists every listed publication with its SHA-256, and `/published-essays/<id>/<number>.md` serves each one. The hourly workflow `.github/workflows/copy-published-essays.yml` copies new ones to the `published-essays` branch.
+- **Live editing.** Several people can edit an essay at once in a live editing room: one Durable Object per essay (`EssayRoom`, `src/lib/server/live/essay-room.ts`) in its own Worker, `model-tribal-adr-code-live` (`live/wrangler.jsonc`), so the website's deploys do not close people's connections. The room starts from the newest saved version, keeps every change in its own storage, and saves one version after each pause with the note "Edited live by" and the editors' names, through the same `saveVersion` as the editor's Save. If someone saved a version another way meanwhile, the room combines the two paragraph by paragraph. Comment access can read along; contribute or full access can type. The live Worker has no public address and deploys with its own Workers Builds project: root directory `site/live`, build command `cd .. && npm ci`, deploy command `npx wrangler deploy`, with build watch paths `site/live/*`, `site/src/lib/server/live/*`, `site/src/lib/essays/*`, `site/src/lib/server/essays.ts`, `site/src/lib/server/events.ts`, `site/src/lib/server/identifiers.ts` and `site/package-lock.json`. The website reaches the rooms through its `essayRooms` binding: the browser opens a WebSocket to `/workspace/essays/<id>/live`, which `src/hooks.server.ts` hands to `src/lib/server/live-editing.ts` before SvelteKit routes it. That file checks the Origin header, the session and the person's level on the essay, then passes the connection to the room with the person's name and level. The browser side is `joinEssayRoom` in `src/lib/essays/live.ts`. To try it on a computer, build the site, then run `npx wrangler dev -c .svelte-kit/cloudflare/worker/wrangler.json -c live/wrangler.jsonc`.
 - **Text from git.** Essay text merged in `content/essays/` is saved here by itself after each build, as a new draft version, merged paragraph by paragraph with edits made here since (docs/editing.md, "Text from git comes in by itself"). Only a paragraph changed both here and in git waits for a person, on the Essays page.
 
 ## Reviews and sign-offs
@@ -212,6 +213,17 @@ profile changes, and refused attempts.
 
 OWASP recommends logging access-control failures and protecting logs from
 tampering (OWASP, *Logging Cheat Sheet*; NIST SP 800-92).
+
+## Address book
+
+`/workspace/address-book` (lead author only, permission `manage-address-book`) is the project's private list of contacts: each Native nation's government as an organization, the leader the federal Tribal Leaders Directory names for it, and anyone else the project writes to. The lead author asked for it on Nov. 23, 2026 ("We should have internal contacts, so that csv becomes the basis of our address book"; "Maintain this list in the server with knowledge or source and up to dateness"). Nothing in it is shown on the public site.
+
+- **Tables** (`migrations/0012_address_book.sql`): `contacts` (person or organization, linked to a nation and, for a person, to the organization they act for), `contact_methods` (emails and phones), `contact_tags`, and `contact_changes`, which keeps every change with the row as it was. Leaders' own addresses live only here and in the private outreach list in project files, never in the repository (lead author's decision, Nov. 23, 2026).
+- **Where each address came from.** Every email and phone records the kind of source, such as the nation's website or the federal directory, and the page it was read on. It also records the first day it was recorded and the last day it was seen there.
+- **When an address needs checking** (`src/lib/address-book.ts`): a leader's or state-listed address after 180 days, any other after a year, and any address once the nation's next election, as the federal directory gives it, has passed since the last check. The rule is worked out when the page is read, so it can change without a migration.
+- **Checking against the directories.** "Check now" reads the federal and Alaska directories. An email still listed counts as checked that day; one no longer listed is marked replaced, and the address now listed is added to the same contact with a note naming who holds it. Addresses read on a nation's website are marked checked by hand on the contact's page.
+- **Mailing list.** `mailingList()` in `src/lib/server/address-book.ts` gives one email per contact (the first choice in use, each address once), and the page offers it as a CSV download. Mail code marks a hard bounce with `editContactMethod()`, status `bounced`. Unsubscribes are kept by the mail code, not here: retiring an address is not an unsubscribe.
+- **Seeding.** `scripts/outreach/import_address_book.py` turns the private outreach list and the two directories into SQL that is loaded into D1 directly; the SQL is never committed.
 
 ## Requests from nations
 
@@ -424,6 +436,7 @@ Open `/sign-in` and sign in with the `LEAD_AUTHOR_EMAIL` address. The Workspace 
 | `form_submissions` | Forms sent from the Forms pages: which form and version, how it was signed, the answers and the filing number (`migrations/0007_form_submissions.sql`). |
 | `events` | The activity log: who did what and when, numbered in order. Cannot be changed or deleted. |
 | `event_seals` | The seal of each activity log entry, chained to the one before. |
+| `follows`, `page_updates`, `page_fingerprints`, `following_checks`, `follow_settings` | Pages each account follows, when each followed page changed, the last fingerprint of every page that can be followed, which build was compared last, and each account's email choice (`migrations/0011_following.sql`; see Following pages). |
 
 `migrations/0003_contributor_profiles.sql` adds contributor profiles, their
 nations, interests and confirmed versions; see
@@ -432,6 +445,20 @@ nations, interests and confirmed versions; see
 Status and outcome values are the words docs/requests.md uses
 (`hidden-pending-review`, `declined` and so on), so the documentation and the
 database match.
+
+## Following pages
+
+Anyone signed in can follow a nation's page, the model code or one of its sections, or an essay, and is told when it changes (decision record 0035; Trevor asked for it on 2026-11-23). The rules shared by the browser and the Worker are in `src/lib/following.ts`; the database side is `src/lib/server/following.ts`.
+
+- **Following.** The Follow button (a bell, after Star in the masthead, `src/lib/components/FollowButton.svelte`) asks `/following/state` whether the reader follows the page, and posts there to follow or stop. Pages are built ahead of time, so it asks only when the signed-in hint says someone is signed in. A signed-out reader gets a dialog that offers sign-in and comes back to the page. One account can follow up to 1,000 pages, and following counts against the same per-minute limit as workspace changes.
+- **Finding updates.** When the site is built, `src/lib/server/followable-build.ts` fingerprints each nation page from its published record (as its JSON download gives it; only the name and status for a page withdrawn at the nation's request) and its documents' version histories, and bundles the list into the Worker as `virtual:followable-pages`. An essay's fingerprint is the text of its newest listed publication. `checkForUpdates` compares both with `page_fingerprints` and adds a row to `page_updates` for each changed page that someone follows. The first comparison, and one after `fingerprintVersion` is raised, only records fingerprints. A newer build is claimed with a random token in `following_checks`, and only statements carrying that token write, so two copies of the Worker never record an update twice, and an older build still answering during a deploy is ignored.
+- **When the checks run.** Every hour at 17 minutes past (`triggers` in `wrangler.jsonc`), on the first signed-in request a new build answers, and right after an essay is published or held back in the workspace. The SvelteKit adapter makes only a fetch handler, so `tools/add-scheduled-run.mjs` (the last step of `npm run build`) adds a `scheduled` handler that passes the run to `/following/scheduled` inside the same copy of the Worker, with a token only that copy holds (`src/lib/server/scheduled-run.ts`). The address refuses every other request.
+- **Notices.** The Following page (`/following`, in the account menu, which shows the number of new updates) lists updates newest first, the pages followed, and the email choice. A notice names the page by its title on the live site and says only that it was updated, and when. The database stores no text or title, so a notice can never show words a nation asked to have removed or restricted. Essays and, once built, the model code also link to "What changed"; nation pages have no public version history.
+- **Email.** Each account chooses no email, a daily summary (the default) or a weekly one. The hourly run sends what is due through the `updateEmail` binding from `UPDATE_EMAIL_FROM`, with links built from `SITE_ADDRESS` (`src/lib/server/following-email.ts`). While `UPDATE_EMAIL_FROM` is empty nothing is sent, and the Following page says so. An email lists each changed page's title, kind, day and link, and ends with "Stop these emails", a link to `/following/email-off` with the account's own random token (kept as it is, since it can only turn emails off and must keep working in older emails). The page asks for a button press, so a mail program that opens links to scan them cannot turn emails off. The link is also in the `List-Unsubscribe` header.
+
+### Turning on the emails
+
+Once the domain is onboarded in Email Service (see "Setting up sign-in"), set `UPDATE_EMAIL_FROM` in `site/wrangler.jsonc` to an address on it, such as `updates@` the domain, and `SITE_ADDRESS` to the site's address on the domain, and merge the change. Nothing else changes: summaries go out at the next hourly run to everyone whose choice is daily or weekly. Readers who followed pages before then were told on the Following page that emails would start once the site could send them.
 
 ## Testing
 
@@ -484,4 +511,4 @@ Sending real email is tried by hand once `SIGN_IN_EMAIL_FROM` is set.
   request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) will edit their nation's page from the website in the next stage.
 - Emails to a nation's office when someone joins or leaves its team, and the weekly summary of changes (waits on a domain).
-- Live co-editing of an essay by several people at once, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").
+- Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").
