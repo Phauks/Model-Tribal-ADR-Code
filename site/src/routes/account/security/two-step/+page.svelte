@@ -163,11 +163,11 @@
 
 <style>
 	.panel {
-		max-width: 30rem;
+		max-width: var(--layout-panel);
 	}
 
 	.steps {
-		max-width: 40rem;
+		max-width: var(--layout-measure);
 		padding-left: var(--space-5);
 	}
 
@@ -203,7 +203,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 		gap: var(--space-2) var(--space-5);
-		max-width: 30rem;
+		max-width: var(--layout-panel);
 		list-style: none;
 		padding: 0;
 		font-size: var(--font-size-lead);

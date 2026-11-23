@@ -366,7 +366,7 @@
 
 <style>
 	.wide {
-		max-width: 72rem;
+		max-width: none;
 	}
 	.claim {
 		display: flex;

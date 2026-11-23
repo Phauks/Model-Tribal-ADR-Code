@@ -78,7 +78,7 @@
 
 <style>
 	.wide {
-		max-width: 60rem;
+		max-width: none;
 	}
 	table {
 		width: 100%;

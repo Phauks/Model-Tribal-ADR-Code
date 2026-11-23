@@ -127,7 +127,8 @@
 		.record-glance {
 			float: right;
 			clear: right;
-			width: clamp(17rem, 100% - var(--layout-measure) - var(--space-6), var(--layout-side-column));
+			/* Two fifths of the column, or the room the text width leaves, whichever is wider. */
+			width: max(min(40%, var(--layout-side-column)), 17rem, 100% - var(--layout-measure) - var(--space-6));
 			max-width: var(--layout-side-column);
 			margin: var(--space-4) 0 var(--space-5) var(--space-6);
 			container: glance / inline-size;

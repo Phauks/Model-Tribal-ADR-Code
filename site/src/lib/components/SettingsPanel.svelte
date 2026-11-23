@@ -44,6 +44,7 @@
 		sourceLinkOptions,
 		textAlignmentChoices,
 		lineWidthChoices,
+		lineWidths,
 		motionChoices,
 		otherCursorOptions,
 		sourceGroupOptions,
@@ -137,6 +138,10 @@
 		textSizes.includes(settings.textSize) ? textSizes.indexOf(settings.textSize) : textSizes.indexOf(defaultSettings.textSize)
 	);
 	const textSizeChoice = $derived(textSizeChoices[textSizeIndex]);
+	const lineWidthIndex = $derived(
+		lineWidths.includes(settings.lineWidth) ? lineWidths.indexOf(settings.lineWidth) : lineWidths.indexOf(defaultSettings.lineWidth)
+	);
+	const lineWidthChoice = $derived(lineWidthChoices[lineWidthIndex]);
 
 	function changeTheme(value: Theme) {
 		theme = value;
@@ -201,6 +206,30 @@
 				oninput={(event) => change('textSize', textSizes[Number(event.currentTarget.value)])}
 			/>
 			<span class="slider-end slider-end-large" aria-hidden="true">A</span>
+		</div>
+	</div>
+{/snippet}
+
+<!-- Text width is a slider in percent of the page's column, as Trevor asked on Nov. 23, 2026; 100 percent, the default, fills the column. -->
+{#snippet lineWidthSlider()}
+	<div class="setting line-width">
+		<div class="slider-label">
+			<label for="setting-line-width">Text width</label>
+			<output for="setting-line-width" aria-hidden="true">{lineWidthChoice.label}</output>
+		</div>
+		<div class="slider-row">
+			<span class="slider-end" aria-hidden="true">Narrow</span>
+			<input
+				type="range"
+				id="setting-line-width"
+				min="0"
+				max={lineWidths.length - 1}
+				step="1"
+				value={lineWidthIndex}
+				aria-valuetext="{lineWidthChoice.value} percent of the page width"
+				oninput={(event) => change('lineWidth', lineWidths[Number(event.currentTarget.value)])}
+			/>
+			<span class="slider-end" aria-hidden="true">Full</span>
 		</div>
 	</div>
 {/snippet}
@@ -278,9 +307,7 @@
 				(value) => change('textSpacing', value)
 			)}
 			{@render alignmentGroup()}
-			{@render choiceGroup('Line width', 'line-width', lineWidthChoices, settings.lineWidth, (value) =>
-				change('lineWidth', value)
-			)}
+			{@render lineWidthSlider()}
 		{:else if id === 'colors'}
 			{@render choiceGroup('Theme', 'theme', themeChoices, theme, changeTheme)}
 			{@render choiceGroup('Contrast', 'contrast', contrastChoices, settings.contrast, (value) =>
@@ -471,6 +498,10 @@
 		flex: none;
 		line-height: 1;
 		color: var(--color-ink-muted);
+	}
+
+	.line-width .slider-end {
+		font-size: var(--font-size-small);
 	}
 
 	.slider-end-small {

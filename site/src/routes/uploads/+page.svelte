@@ -147,7 +147,7 @@
 		gap: var(--space-2);
 	}
 	.uploads-page {
-		max-width: 60rem;
+		max-width: var(--layout-measure);
 	}
 	.uploads {
 		list-style: none;

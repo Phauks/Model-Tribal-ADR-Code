@@ -755,7 +755,7 @@
 	}
 	.checked-by {
 		display: block;
-		max-width: 40ch;
+		max-width: var(--layout-measure);
 		margin-top: var(--space-1);
 	}
 	.release {

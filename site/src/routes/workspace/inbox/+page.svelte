@@ -252,7 +252,7 @@
 		display: flex;
 		align-items: center;
 		flex: 1 1 18rem;
-		max-width: 28rem;
+		max-width: var(--layout-field);
 	}
 	.search > :global(svg) {
 		position: absolute;

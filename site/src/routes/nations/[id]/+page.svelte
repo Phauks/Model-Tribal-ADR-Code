@@ -366,7 +366,7 @@
 
 	/* As many columns as fit, so the list spreads out under At a glance. */
 	.neighbors {
-		columns: 14rem;
+		columns: var(--layout-card-min);
 		column-gap: var(--space-5);
 		max-width: none;
 	}

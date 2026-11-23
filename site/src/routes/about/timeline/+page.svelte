@@ -132,7 +132,7 @@
 
 <style>
 	.timeline-page {
-		max-width: 48rem;
+		max-width: var(--layout-measure);
 	}
 
 	/* Where things stand */

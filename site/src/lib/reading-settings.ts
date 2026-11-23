@@ -31,7 +31,11 @@ export const textSizes = ['50', '62.5', '75', '87.5', '100', '112.5', '125', '13
 export const fonts = ['atkinson-hyperlegible-next', 'serif', 'opendyslexic'] as const;
 export const textSpacings = ['standard', 'wide'] as const;
 export const textAlignments = ['left', 'justified'] as const;
-export const lineWidths = ['standard', 'narrow', 'wide'] as const;
+/**
+ * Text width as a percentage of the page's column; the slider in Settings
+ * steps through these. 100 fills the column (Trevor, Nov. 23, 2026).
+ */
+export const lineWidths = ['40', '50', '60', '70', '80', '90', '100'] as const;
 export const contrasts = ['standard', 'more'] as const;
 export const noteDisplays = ['popup', 'end', 'inline'] as const;
 export const sourceLinkChoices = ['both', 'original', 'archived'] as const;
@@ -91,7 +95,7 @@ export const defaultSettings: ReadingSettings = {
 	font: 'atkinson-hyperlegible-next',
 	textSpacing: 'standard',
 	textAlignment: 'left',
-	lineWidth: 'standard',
+	lineWidth: '100',
 	contrast: 'standard',
 	noteDisplay: 'popup',
 	sourceLinks: 'both',
@@ -152,16 +156,12 @@ export const textAlignmentChoices: Choice<TextAlignment>[] = [
 ];
 
 /**
- * How long reading lines may run. Standard keeps lines to about 75
- * characters, inside the 80 that WCAG 2.2, 1.4.8 Visual Presentation asks
- * for; Wide is the longer line the site used before Nov. 22, 2026. The
- * widths themselves are in global.css.
+ * How wide running text may be, as a percentage of the page's column (Trevor,
+ * Nov. 23, 2026: "it should be percentage, on how wide or narrow you want
+ * text to be"). Every paragraph, list, notice and panel held to the reading
+ * width follows this one setting; global.css turns it into --layout-measure.
  */
-export const lineWidthChoices: Choice<LineWidth>[] = [
-	{ value: 'narrow', label: 'Narrow', hint: 'About 65 characters a line' },
-	{ value: 'standard', label: 'Standard', hint: 'About 75 characters a line' },
-	{ value: 'wide', label: 'Wide', hint: 'About 85 characters a line' }
-];
+export const lineWidthChoices: Choice<LineWidth>[] = lineWidths.map((value) => ({ value, label: `${value}%` }));
 
 export const themeChoices: Choice<Theme>[] = [
 	{ value: 'device', label: 'Match this device' },

@@ -560,7 +560,7 @@
 	.report-answer {
 		display: grid;
 		gap: var(--space-2);
-		max-width: 36rem;
+		max-width: var(--layout-measure);
 	}
 
 	.button-danger {

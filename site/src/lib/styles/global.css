@@ -287,7 +287,7 @@ blockquote > footer {
 /* Summary list: label and value pairs (DESIGN.md, section 6). */
 .summary-list {
 	display: grid;
-	grid-template-columns: minmax(8rem, 14rem) 1fr;
+	grid-template-columns: minmax(8rem, var(--layout-label-column)) 1fr;
 	gap: 0;
 	margin: 0 0 var(--space-5);
 	border-top: 1px solid var(--color-line);
@@ -547,8 +547,14 @@ textarea {
 	color: var(--color-ink);
 }
 
+/* A one-line field is as wide as the answer it expects, never wider than the column; a text area and the label, hint and error around it take the text width. */
+.field :is(input[type='text'], input[type='email'], input[type='password'], input[type='search'], select) {
+	max-width: var(--layout-field);
+}
+
+.field input.short,
 input.short {
-	max-width: 16rem;
+	max-width: var(--layout-field-short);
 }
 
 /*
@@ -806,15 +812,34 @@ sup.citation {
 }
 
 /*
- * Line width (Settings, Text). The token's 51ch is Standard, about 75
- * characters of English in Atkinson Hyperlegible Next at any size.
+ * Text width (Settings, Text): how much of the page's column running text
+ * may use, from 40 to 100 percent; 100, the default, fills the column (Trevor,
+ * Nov. 23, 2026). cqi is a percentage of the nearest size container, which for
+ * the page's text is <main>, so the setting is a share of the column whether
+ * the sidebar is open or not.
  */
-:root:root[data-line-width='narrow'] {
-	--layout-measure: 44ch;
+:root:root[data-line-width='40'] {
+	--layout-measure: 40cqi;
 }
 
-:root:root[data-line-width='wide'] {
-	--layout-measure: 58ch;
+:root:root[data-line-width='50'] {
+	--layout-measure: 50cqi;
+}
+
+:root:root[data-line-width='60'] {
+	--layout-measure: 60cqi;
+}
+
+:root:root[data-line-width='70'] {
+	--layout-measure: 70cqi;
+}
+
+:root:root[data-line-width='80'] {
+	--layout-measure: 80cqi;
+}
+
+:root:root[data-line-width='90'] {
+	--layout-measure: 90cqi;
 }
 
 /* Wide spacing uses the values WCAG 2.2, 1.4.12 Text Spacing tests. */
@@ -1707,7 +1732,7 @@ sup.citation {
 
 .nation-picture-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(min(14rem, 100%), 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(min(var(--layout-card-min), 100%), 1fr));
 	gap: var(--space-4);
 }
 

@@ -283,7 +283,7 @@
 	.sign-in-panel {
 		position: fixed;
 		inset: var(--panel-top, 3.5rem) var(--panel-right, var(--space-2)) auto auto;
-		width: min(26rem, calc(100vw - 2 * var(--space-2)));
+		width: min(var(--layout-popover), calc(100vw - 2 * var(--space-2)));
 		max-height: calc(100dvh - var(--panel-top, 3.5rem) - var(--space-3));
 		overflow-y: auto;
 		box-sizing: border-box;

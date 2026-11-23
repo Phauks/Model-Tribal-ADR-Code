@@ -81,7 +81,7 @@
 		display: flex;
 		gap: var(--space-2);
 		align-items: flex-start;
-		max-width: 60rem;
+		max-width: var(--layout-measure);
 		margin: 0 0 var(--space-4);
 	}
 	.about :global(svg) {
@@ -89,6 +89,6 @@
 		margin-top: 0.15em;
 	}
 	.compose {
-		max-width: 60rem;
+		max-width: var(--layout-measure);
 	}
 </style>

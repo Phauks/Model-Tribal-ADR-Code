@@ -49,7 +49,7 @@
 
 <style>
 	.state-list {
-		columns: 14rem auto;
+		columns: var(--layout-card-min) auto;
 		column-gap: var(--space-5);
 		list-style: none;
 		padding: 0;
