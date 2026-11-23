@@ -10,6 +10,7 @@ import { workerEnvironment } from '#lib/server/environment.ts';
 import { eventStatement, refusedAction } from '#lib/server/events.ts';
 import { sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
+import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
@@ -88,6 +89,11 @@ export const handle: Handle = async ({ event, resolve }) => {
 			}
 		}
 	}
+
+	// A live editing connection goes to the essay's room before SvelteKit
+	// routes it: its answer is a WebSocket, which takes no added headers
+	// (src/lib/server/live-editing.ts).
+	if (!building && isLiveEditingRequest(event.request, event.url)) return openLiveEditing(event);
 
 	const response = await resolve(event);
 

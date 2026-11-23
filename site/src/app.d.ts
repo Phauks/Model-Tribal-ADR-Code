@@ -1,5 +1,5 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
-import type { D1Database, R2Bucket, RateLimit } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, DurableObjectNamespace, R2Bucket, RateLimit } from '@cloudflare/workers-types/index.ts';
 import type { ActiveSession } from '#lib/server/accounts.ts';
 import type { SignedInAccount } from '#lib/server/contributor-profiles.ts';
 import type { SignInEmailBinding } from '#lib/server/sign-in-email.ts';
@@ -40,6 +40,8 @@ declare global {
 		signInNetworkLimit?: RateLimit;
 		/** Files one account can start sending in a minute (src/routes/uploads/pieces). */
 		uploadLimit?: RateLimit;
+		/** The live editing rooms, one per essay, in the model-tribal-adr-code-live Worker (src/lib/server/live-editing.ts). */
+		essayRooms?: DurableObjectNamespace;
 		/** Cloudflare Email Service, for sign-in codes (src/lib/server/sign-in-email.ts). */
 		signInEmail?: SignInEmailBinding;
 		/** The address sign-in codes come from, on a domain onboarded in Email Service. */
