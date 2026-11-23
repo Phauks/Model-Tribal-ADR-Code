@@ -12,6 +12,33 @@ import { testDatabase } from './database.ts';
 
 export function memoryBucket(): R2Bucket & { files: Map<string, Uint8Array> } {
 	const files = new Map<string, Uint8Array>();
+	const unfinished = new Map<string, Map<number, Uint8Array>>();
+	const multipart = (key: string, uploadId: string) => ({
+		key,
+		uploadId,
+		async uploadPart(partNumber: number, value: Uint8Array) {
+			const parts = unfinished.get(uploadId);
+			if (!parts) throw new Error('No such multipart upload');
+			parts.set(partNumber, new Uint8Array(value));
+			return { partNumber, etag: `etag-${partNumber}` };
+		},
+		async complete(list: { partNumber: number; etag: string }[]) {
+			const parts = unfinished.get(uploadId);
+			if (!parts) throw new Error('No such multipart upload');
+			const pieces = list.map((part) => parts.get(part.partNumber)!);
+			const joined = new Uint8Array(pieces.reduce((sum, piece) => sum + piece.length, 0));
+			let offset = 0;
+			for (const piece of pieces) {
+				joined.set(piece, offset);
+				offset += piece.length;
+			}
+			files.set(key, joined);
+			unfinished.delete(uploadId);
+		},
+		async abort() {
+			unfinished.delete(uploadId);
+		}
+	});
 	const bytes = (value: unknown): Uint8Array =>
 		typeof value === 'string' ? new TextEncoder().encode(value) : value instanceof Uint8Array ? value : new Uint8Array(value as ArrayBuffer);
 	return {
@@ -31,7 +58,14 @@ export function memoryBucket(): R2Bucket & { files: Map<string, Uint8Array> } {
 		},
 		async delete(keys: string | string[]) {
 			for (const key of Array.isArray(keys) ? keys : [keys]) files.delete(key);
-		}
+		},
+		// Multipart uploads, for big files sent as links: parts are kept until complete joins them.
+		async createMultipartUpload(key: string) {
+			const uploadId = crypto.randomUUID();
+			unfinished.set(uploadId, new Map());
+			return multipart(key, uploadId);
+		},
+		resumeMultipartUpload: (key: string, uploadId: string) => multipart(key, uploadId)
 	} as unknown as R2Bucket & { files: Map<string, Uint8Array> };
 }
 

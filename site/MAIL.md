@@ -61,6 +61,16 @@ Cloudflare reports delivery through a Queues event subscription.[^events] Settin
 
 A message's text is shown as text. Its HTML version opens in a sandboxed frame: scripts, forms and plug-ins never run, and nothing outside the message loads, so pictures from the web stay hidden and no sender learns the message was opened. Attachments always download; they never open in the browser.
 
+### Big files as links
+
+A message's attachments can add up to 18 MB. Cloudflare Email Service takes 25 MiB a message, and attachments grow by about a third when encoded for mail.[^limits] When the chosen files add up to more than that, the composer keeps the ones that fit as attachments, and the biggest go as download links instead, the way webmail services handle big files (`src/lib/server/mail/linked-files.ts`).
+
+- **Sending up.** The browser sends a link file to the mail bucket in 10 MiB pieces, as an R2 multipart upload, with a progress bar. A file can be up to 2 GiB, what the virus scanner takes. If the page is reloaded or the form comes back with a problem, choosing the same file again picks up where it stopped. The form cannot be sent while a file is still going up. This part needs scripts; without them, files over 18 MB are refused with a note to send them another way.
+- **In the message.** Each link goes in the message's text above the signature, with the file's name, its size, and the date the link stops working: 30 days after the message goes. The link is `<SITE_ADDRESS>/mail/files/<token>`, where the token is signed with `MAIL_SIGNING_KEY`, so it cannot be guessed or changed to reach another file.
+- **The virus check.** A link file is checked like any attachment, and the message waits until every file passes, so a link never leads to a file that will be held. If the check finds something, the message is not sent and the conversation says why.
+- **Downloading.** Anyone with the link can download the file until it runs out. It downloads as a file (never shown in the browser), with no cookies and no sign-in needed. Nothing records who downloaded it or when, in keeping with the inbox's rule against tracking whether mail was read.
+- **Clean-up.** The run every five minutes deletes files whose link has run out, uploads left unfinished for a day, and files never sent with a message within a week. Deleting a conversation for good deletes its link files too.
+
 ## Folders, tags and rules
 
 The lead author asked for tags, folders and auto-sort rules on Nov. 23, 2026.
@@ -154,7 +164,7 @@ Start outreach slowly. A new mailbox is trusted gradually, so begin at 20 to 40 
 
 ## Limits
 
-- Cloudflare Email Service takes at most 50 recipients and 25 MiB a message.[^limits] The compose form allows 18 MB of attachments, since encoding adds about a third.
+- Cloudflare Email Service takes at most 50 recipients and 25 MiB a message.[^limits] The compose form allows 18 MB of attachments, since encoding adds about a third; bigger files go as download links (see "Big files as links").
 - On Workers Paid, 3,000 messages a month are included, then US$0.35 per 1,000 (Nov. 2026).[^pricing] Replies and notices are a small part of that; outreach does not count, because it goes through the outreach mailbox.
 - The run every five minutes sends at most two outreach letters a batch, so at most 24 an hour for each running batch.
 - Spam filtering is basic: it trusts the sender's own SPF, DKIM and DMARC results. Unwanted mail that passes those lands in the inbox and can be moved to Spam by hand.
@@ -162,9 +172,9 @@ Start outreach slowly. A new mailbox is trusted gradually, so begin at 20 to 40 
 
 ## Files
 
-- `migrations/0013_mail.sql`: the tables; `migrations/20261123T0510_add_mail_writing.sql` adds those for signatures, saved replies, drafts, undo send and the away message; `migrations/20261123T0509_add_mail_blocked_senders.sql` adds blocked senders and keeps each message's unsubscribe headers; `migrations/20261123T1757_add_mail_inboxes.sql` adds the inboxes and who is on each.
+- `migrations/0013_mail.sql`: the tables; `migrations/20261123T0510_add_mail_writing.sql` adds those for signatures, saved replies, drafts, undo send and the away message; `migrations/20261123T0509_add_mail_blocked_senders.sql` adds blocked senders and keeps each message's unsubscribe headers; `migrations/20261123T1757_add_mail_inboxes.sql` adds the inboxes and who is on each; `migrations/20261123T1822_add_mail_linked_files.sql` adds big files sent as links.
 - `src/lib/mail.ts`: names, labels and small functions the pages share, including how a rule's conditions are matched.
-- `src/lib/server/mail/`: settings, inboxes and who may open them (`inboxes.ts`, `inbox-access.ts`), message building (`mime.ts`), SMTP (`smtp.ts`), carriers, signed tokens, receiving (`inbound.ts`), sending (`outbound.ts`), conversations, folders and tags (`store.ts`), auto-sort rules (`rules.ts`), writing (`writing.ts`), the sender card, blocking and unsubscribing (`senders.ts`), exporting (`export.ts`), outreach (`outreach.ts`) and the do-not-email list (`suppressions.ts`). Only `runtime.ts` and `socket-opener.ts` need the Worker; the rest is tested in Node (`tests/mail.test.ts`, `tests/mail-flow.test.ts`, `tests/mail-organize.test.ts`, `tests/mail-writing.test.ts`, `tests/mail-senders.test.ts`, `tests/mail-inboxes.test.ts`).
+- `src/lib/server/mail/`: settings, inboxes and who may open them (`inboxes.ts`, `inbox-access.ts`), message building (`mime.ts`), SMTP (`smtp.ts`), carriers, signed tokens, receiving (`inbound.ts`), sending (`outbound.ts`), conversations, folders and tags (`store.ts`), auto-sort rules (`rules.ts`), writing (`writing.ts`), the sender card, blocking and unsubscribing (`senders.ts`), big files as links (`linked-files.ts`), exporting (`export.ts`), outreach (`outreach.ts`) and the do-not-email list (`suppressions.ts`). Only `runtime.ts` and `socket-opener.ts` need the Worker; the rest is tested in Node (`tests/mail.test.ts`, `tests/mail-flow.test.ts`, `tests/mail-organize.test.ts`, `tests/mail-writing.test.ts`, `tests/mail-senders.test.ts`, `tests/mail-inboxes.test.ts`, `tests/mail-linked-files.test.ts`).
 - `tools/add-mail-handlers.mjs`: adds the email, queue and scheduled handlers after the build. It wraps whatever entry the build made, so it runs last in `npm run build`.
 - `src/routes/workspace/inbox/`, `src/routes/workspace/outreach/`: the pages. `src/routes/mail/`: the unsubscribe and acknowledgment pages, and the internal routes the handlers call.
 

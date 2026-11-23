@@ -10,19 +10,20 @@
  * carrier (src/lib/server/mail/outreach.ts). A copy of every sent message is
  * kept in the bucket like received mail.
  */
-import { snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/mail.ts';
+import { attachmentLimitBytes, snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/mail.ts';
 import { buildRawMessage, newMessageId, type OutgoingAttachment, type OutgoingMail } from './mime.ts';
 import { actionStatement, bucketKeys, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { noticeHeader } from './inbound.ts';
 import { catchAllInbox, inboxForAddress, mayOpenThread, sendingAddresses } from './inboxes.ts';
 import { openScannedFile, stillScanning, storeSentFile } from '#lib/server/file-scans.ts';
+import { CompositionLinkError, joinStatements, linkedFilesForMessage, linkedFilesState, linkExpiry, withLinks } from './linked-files.ts';
 import { heldForVirusCheck } from '#lib/mail.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
 
 /** Cloudflare Email Service takes at most 50 recipients and 25 MiB a message ("Limits"). */
 export const recipientLimit = 50;
 /** Attachments a person adds, before encoding, which adds about a third. */
-export const attachmentLimitBytes = 18 * 1024 * 1024;
+export { attachmentLimitBytes };
 
 export interface Composition {
 	/** Who wrote it; null for the away message, which the inbox sends by itself. */
@@ -37,6 +38,8 @@ export interface Composition {
 	subject: string;
 	text: string;
 	attachments?: { filename: string; mediaType: string; content: Uint8Array }[];
+	/** Big files sent up beforehand (linked-files.ts), which go as download links in the message's text. */
+	links?: string[];
 	/** Send at this time instead of now. */
 	sendAt?: string | null;
 	/** In a conversation, the message this answers; the latest one when not given. */
@@ -84,7 +87,10 @@ export async function queueMessage(context: MailContext, composition: Compositio
 	const forward = composition.threadIdentifier ? (composition.forward ?? null) : null;
 	const attachments = [...(composition.attachments ?? []), ...(forward ? await forwardedAttachments(context, composition.threadIdentifier!, forward) : [])];
 	const size = attachments.reduce((total, item) => total + item.content.byteLength, 0);
-	if (size > attachmentLimitBytes) throw new CompositionError('The attachments are too large together; the limit is 18 MB.');
+	if (size > attachmentLimitBytes) throw new CompositionError('The attachments are too large together; the limit is 18 MB. Send the biggest as a link instead.');
+	const links = await linkedFilesForMessage(context, composition.personIdentifier, composition.links ?? []).catch((problem) => {
+		throw problem instanceof CompositionLinkError ? new CompositionError(problem.message) : problem;
+	});
 
 	let threadIdentifier = composition.threadIdentifier;
 	let inReplyTo: string | null = null;
@@ -112,6 +118,8 @@ export async function queueMessage(context: MailContext, composition: Compositio
 	const pause = !later && composition.holdForUndo && composition.holdForUndo > 0 ? Math.min(composition.holdForUndo, 30) : 0;
 	const sendAt = later ?? (pause ? new Date(at.getTime() + pause * 1000).toISOString() : null);
 	const messageIdentifier = crypto.randomUUID();
+	const expiresAt = linkExpiry(new Date(sendAt ?? stamp));
+	const text = await withLinks(context, composition.text, links, expiresAt);
 	const statements = [];
 	if (!threadIdentifier) {
 		threadIdentifier = crypto.randomUUID();
@@ -153,8 +161,8 @@ export async function queueMessage(context: MailContext, composition: Compositio
 				JSON.stringify(composition.cc ?? []),
 				JSON.stringify(composition.bcc ?? []),
 				composition.subject,
-				composition.text,
-				snippetOf(composition.text),
+				text,
+				snippetOf(text),
 				composition.personIdentifier,
 				sendAt,
 				pause ? 1 : 0,
@@ -180,6 +188,7 @@ export async function queueMessage(context: MailContext, composition: Compositio
 				.bind(id, messageIdentifier, attachment.filename, attachment.mediaType, attachment.content.byteLength, key)
 		);
 	}
+	statements.push(...joinStatements(context, links, messageIdentifier, expiresAt));
 	if (composition.remindAt) {
 		statements.push(
 			database
@@ -331,6 +340,16 @@ export async function sendMessage(
 			content: new Uint8Array(await object.arrayBuffer()),
 			...(item.content_id ? { contentId: item.content_id } : {})
 		});
+	}
+	// Files sent as links wait for the virus check like attachments, so a link never points at a file that will be held.
+	const linked = await linkedFilesState(context, messageIdentifier);
+	if (linked.state === 'refused') return fail(linked.reason);
+	if (linked.state === 'waiting') {
+		await database
+			.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, held_for_undo = 0, error = ? WHERE identifier = ?`)
+			.bind(new Date(at.getTime() + 60_000).toISOString(), heldForVirusCheck, messageIdentifier)
+			.run();
+		return { sent: false, held: true, error: heldForVirusCheck };
 	}
 	const headers: Record<string, string> = { ...options.headers };
 	if (row.in_reply_to) headers['In-Reply-To'] = `<${row.in_reply_to}>`;

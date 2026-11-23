@@ -11,9 +11,9 @@
  * address's local part may have (RFC 5321, section 4.5.3.1.1).
  */
 
-export type TokenKind = 'unsubscribe' | 'acknowledge';
+export type TokenKind = 'unsubscribe' | 'acknowledge' | 'file';
 
-const kindBytes: Record<TokenKind, number> = { unsubscribe: 0x75, acknowledge: 0x61 };
+const kindBytes: Record<TokenKind, number> = { unsubscribe: 0x75, acknowledge: 0x61, file: 0x66 };
 const alphabet = 'abcdefghijklmnopqrstuvwxyz234567';
 const signatureLength = 10;
 const encoder = new TextEncoder();
