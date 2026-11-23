@@ -13,6 +13,7 @@ import { parseCsv } from '../csv.ts';
 import type { BarChartData } from '../bar-chart.ts';
 import { categoryOf } from '../nation-services.ts';
 import { recourseLink } from '../recourse.ts';
+import { dataChartNamed } from '../data-chart-list.ts';
 import { nations, repositoryRoot } from './content.ts';
 import { recourseRows } from './recourse.ts';
 
@@ -67,8 +68,7 @@ export function dataCharts(): BarChartData[] {
 
 	return [
 		{
-			identifier: 'provisions-by-method',
-			title: 'Provisions by method',
+			...dataChartNamed('provisions-by-method'),
 			description: `${provisions.length.toLocaleString('en-US')} dispute resolution provisions in Native nations’ own laws. Pick a method to read its provisions.`,
 			labelHeader: 'Method',
 			valueHeader: 'Provisions',
@@ -80,8 +80,7 @@ export function dataCharts(): BarChartData[] {
 			}))
 		},
 		{
-			identifier: 'provisions-by-dispute',
-			title: 'Provisions by kind of dispute',
+			...dataChartNamed('provisions-by-dispute'),
 			description: 'The same provisions, by the kind of dispute they cover.',
 			labelHeader: 'Kind of dispute',
 			valueHeader: 'Provisions',
@@ -93,8 +92,7 @@ export function dataCharts(): BarChartData[] {
 			}))
 		},
 		{
-			identifier: 'provisions-by-state',
-			title: 'Provisions by state',
+			...dataChartNamed('provisions-by-state'),
 			description:
 				'The same provisions, by the states of the nations that enacted them. A nation in several states counts in each. The counts show where published law was found, not where dispute resolution is missing.',
 			labelHeader: 'State or territory',
@@ -108,8 +106,7 @@ export function dataCharts(): BarChartData[] {
 			}))
 		},
 		{
-			identifier: 'forums-by-kind',
-			title: 'Courts and forums by kind',
+			...dataChartNamed('forums-by-kind'),
 			description: `How many of the ${records.filter((record) => (record.justice_institutions ?? []).length > 0).length.toLocaleString('en-US')} nations with a court or forum listed on their page have each kind.`,
 			labelHeader: 'Kind',
 			valueHeader: 'Nations',
@@ -117,8 +114,7 @@ export function dataCharts(): BarChartData[] {
 			bars: forums.map(([label, value]) => ({ label, value }))
 		},
 		{
-			identifier: 'constitutions-by-status',
-			title: 'Constitutions found',
+			...dataChartNamed('constitutions-by-status'),
 			description:
 				'What the search for each federally recognized nation’s constitution found. “No constitution found” does not mean a nation has none: many are not online, and some nations keep theirs to citizens.',
 			labelHeader: 'What was found',
@@ -127,8 +123,7 @@ export function dataCharts(): BarChartData[] {
 			bars: constitutions.map(([label, value]) => ({ label, value }))
 		},
 		{
-			identifier: 'compacts-by-arbitration',
-			title: 'Gaming compacts: does a dispute with the state go to binding arbitration?',
+			...dataChartNamed('compacts-by-arbitration'),
 			description: `${compacts.length.toLocaleString('en-US')} full tribal-state gaming compacts approved by the Department of the Interior, by what their dispute clause says. Amendments and extensions are left out.`,
 			labelHeader: 'Dispute clause',
 			valueHeader: 'Compacts',

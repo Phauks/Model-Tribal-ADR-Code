@@ -21,6 +21,7 @@ const output = '.svelte-kit/cloudflare/client';
 const downloadExtensions = new Set(['.csv', '.zip', '.pdf', '.docx', '.odt', '.epub', '.geojson', '.ics']);
 const downloadFolders = ['/help/forms/'];
 const downloadData = new Set(['/nations/recourse/provisions.json', '/glossary/terms.json']);
+const chartTable = /^\/nations\/data\/tables\/[a-z0-9-]+\.json$/;
 const nationFile = /^\/nations\/[a-z0-9-]+\/(record\.json|sources\.(json|ris|bib)|contacts\.vcf)$/;
 const ownFiles = new Set(['/checksums.json', '/checksums.txt', '/checksums/downloads.json']);
 
@@ -32,7 +33,7 @@ export function isDownload(address) {
 	if (ownFiles.has(address) || address.startsWith('/_app/') || address.startsWith('/fonts/')) return false;
 	if (address.endsWith('.html') || address.endsWith('/__data.json')) return false;
 	if (downloadFolders.some((folder) => address.startsWith(folder))) return true;
-	if (downloadData.has(address) || nationFile.test(address)) return true;
+	if (downloadData.has(address) || nationFile.test(address) || chartTable.test(address)) return true;
 	return downloadExtensions.has(path.posix.extname(address).toLowerCase());
 }
 

@@ -19,7 +19,7 @@
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import { mapTableOnScreen } from '#lib/map-table-on-screen.svelte.ts';
-	import { groupedFiles, pageCitation, pageDownloads, pageFormats, type PageFile, type PageFormat } from '#lib/page-downloads.ts';
+	import { fileExtension, groupedFiles, pageCitation, pageDownloads, pageFormats, type PageFile, type PageFormat } from '#lib/page-downloads.ts';
 	import Check from '@lucide/svelte/icons/check';
 	import Download from '@lucide/svelte/icons/download';
 	import FileBraces from '@lucide/svelte/icons/file-braces';
@@ -198,9 +198,9 @@
 					<span class="choice-top">
 					<span class="choice-name">Save this page as</span>
 					<span class="formats">
-						<button type="button" class="format" onclick={savePdf} aria-label="Save this page as PDF" title="Pick what to include, then choose Save as PDF in the print window">PDF</button>
+						<button type="button" class="format" onclick={savePdf} aria-label="Save this page as a PDF file, .pdf" title="PDF: pick what to include, then choose Save as PDF in the print window">.pdf</button>
 						{#each pageFormats as format (format.id)}
-							<button type="button" class="format" onclick={() => savePage(format)} aria-label="Save this page as {format.format}" title={format.description}>{format.format}</button>
+							<button type="button" class="format" onclick={() => savePage(format)} aria-label="Save this page as a {format.format} file, .{format.extension}" title="{format.format}: {format.description}">.{format.extension}</button>
 						{/each}
 					</span>
 					</span>
@@ -231,7 +231,7 @@
 							<span class="choice-name">{file.label}</span>
 							<span class="formats">
 								{#each file.links as link (link.link)}
-									<a class="format" href={link.link} download onclick={() => close()} aria-label="{file.label}, {link.format}">{link.format}</a>
+									<a class="format" href={link.link} download onclick={() => close()} aria-label="{file.label}, {link.format} file, {fileExtension(link.link)}" title={link.format}>{fileExtension(link.link)}</a>
 								{/each}
 							</span>
 							</span>

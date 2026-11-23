@@ -13,6 +13,19 @@
  * (src/lib/page-document.ts).
  */
 
+import { dataChartList, dataChartTableLink } from './data-chart-list.ts';
+
+/**
+ * A file's extension as readers see it on a format button, ".docx" from "/a/b.docx". Trevor asked on
+ * Nov. 23, 2026 that buttons show the extension rather than a format's name, since "Word" could be
+ * the old .doc as well as .docx.
+ */
+export function fileExtension(link: string): string {
+	const name = link.split(/[?#]/)[0].split('/').at(-1) ?? '';
+	const dot = name.lastIndexOf('.');
+	return dot > 0 ? name.slice(dot).toLowerCase() : '';
+}
+
 /** A format the browser makes from the page as shown, offered on every page. */
 export interface PageFormat {
 	id: 'markdown' | 'word' | 'opendocument';
@@ -147,6 +160,21 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 				]
 			: [];
 		return { citable: false, files: [...table, ...mapFiles] };
+	}
+	if (path === '/nations/data') {
+		// Each chart's table on its own (Trevor, Nov. 23, 2026).
+		return {
+			citable: false,
+			files: dataChartList.map((chart) => ({
+				label: chart.title,
+				description: 'This chart’s table: CSV for a spreadsheet, JSON for programs',
+				kind: 'table' as const,
+				links: [
+					{ format: 'CSV', link: dataChartTableLink(chart.identifier, 'csv') },
+					{ format: 'JSON', link: dataChartTableLink(chart.identifier, 'json') }
+				]
+			}))
+		};
 	}
 	if (path === '/nations/recourse') {
 		return {
