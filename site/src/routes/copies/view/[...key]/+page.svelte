@@ -11,13 +11,13 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} · Copies of documents · Model Tribal ADR Code</title>
+	<title>{data.title} · Source documents · Model Tribal ADR Code</title>
 </svelte:head>
 
 <div class="reading">
 	<Breadcrumbs
 		trail={[
-			{ label: 'Copies of documents', href: '/copies' },
+			{ label: 'Source documents', href: '/copies' },
 			...(details ? [{ label: details.list.title, href: `/copies/list/${details.list.slug}` }] : [])
 		]}
 	/>

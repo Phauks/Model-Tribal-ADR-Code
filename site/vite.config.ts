@@ -11,6 +11,7 @@ import { fullCitations } from './src/lib/server/citations.ts';
 import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
 import { caseLinks } from './src/lib/server/case-previews.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
+import { nationIndexRows } from './src/lib/server/nation-index.ts';
 import { followableBuild } from './src/lib/server/followable-build.ts';
 import { historyBuild } from './src/lib/server/page-history-build.ts';
 import {
@@ -207,6 +208,31 @@ function mailNations(): Plugin {
 	};
 }
 
+const sectionListsModule = 'virtual:section-lists';
+const resolvedSectionListsModule = `\0${sectionListsModule}`;
+
+/**
+ * Every nation's name and address, for the sidebar's second column on the
+ * Nations pages (src/lib/section-lists.ts). It is a module rather than part
+ * of each page's data, so the browser fetches it once and keeps it, instead of
+ * receiving the same long list again with every nation's page.
+ */
+function sectionLists(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:section-lists',
+		resolveId(identifier) {
+			return identifier === sectionListsModule ? resolvedSectionListsModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedSectionListsModule) return undefined;
+			const list = [...nationIndexRows()]
+				.sort((first, second) => first.name.localeCompare(second.name, 'en-US'))
+				.map((row) => [row.name, row.id]);
+			return `export const nationNames = ${JSON.stringify(list)};`;
+		}
+	};
+}
+
 const nationImagesModule = 'virtual:nation-images';
 const resolvedNationImagesModule = `\0${nationImagesModule}`;
 
@@ -278,6 +304,7 @@ function sourceCitations(): Plugin {
 			const keys = new Set<string>();
 			for (const entry of glossary()) {
 				for (const key of entry.sources ?? []) keys.add(key);
+				for (const quotation of entry.law_dictionary ?? []) keys.add(quotation.source);
 				const prose = `${entry.definition} ${entry.usage_note ?? ''}`;
 				for (const match of prose.matchAll(/@([a-z0-9-]+)/g)) keys.add(match[1]);
 			}
@@ -468,6 +495,7 @@ export default defineConfig({
 		publicContactsList(),
 		mailNations(),
 		nationImages(),
+		sectionLists(),
 		publicCopiesList(),
 		sourceCitations(),
 		essayLibrary(),

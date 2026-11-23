@@ -8,7 +8,10 @@ export const load: PageServerLoad = async (event) => {
 	requirePermission(event, 'review-uploads');
 	const account = requireAccount(event);
 	const { database, bucket } = storage(event);
-	await advanceCheckedUploads(database, bucket, { accountIdentifier: account.subject });
+	// Each round moves up to 50 checked files on; a large batch takes a few.
+	for (let round = 0; round < 4; round++) {
+		if ((await advanceCheckedUploads(database, bucket, { accountIdentifier: account.subject })) === 0) break;
+	}
 	await settlePulledFiles(database, bucket);
 	return { earlier: await intakeFilesOf(database, account.subject) };
 };

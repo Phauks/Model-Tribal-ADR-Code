@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { DocumentHistoryRecord } from '#lib/server/content.ts';
+import { documentHistories, type DocumentHistoryRecord } from '#lib/server/content.ts';
 import { documentHeading, documentHistoryView } from '#lib/server/document-history.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 
@@ -105,5 +105,37 @@ describe('documentHeading', () => {
 
 	it('leaves other titles as they are', () => {
 		expect(documentHeading('Tribal–State Water Settlement', names)).toBe('Tribal–State Water Settlement');
+	});
+});
+
+describe('a document that ended', () => {
+	it('says how and when it ended and names what took its place (Alturas Indian Rancheria)', () => {
+		const record = documentHistories().find((other) => other.id === 'alturas-indian-rancheria-california-gaming-compact');
+		expect(record).toBeDefined();
+		const names = ['Alturas Indian Rancheria, California', 'Alturas Indian Rancheria'];
+		const view = documentHistoryView(record!, recorder(), names);
+		expect(view.inEffect).toBeUndefined();
+		expect(view.versions.map((version) => version.status)).toEqual(['Expired', 'Expired', 'Expired']);
+		expect(view.ended).toBe('Expired Dec. 31, 2024');
+		expect(view.replacedBy).toEqual([
+			{
+				id: 'alturas-indian-rancheria-california-secretarial-procedures',
+				heading: 'Secretarial Procedures (California)',
+				inEffect: '2025 Secretarial Procedures'
+			}
+		]);
+	});
+
+	it('leaves the ending out while any version is in effect', () => {
+		const view = documentHistoryView(record, recorder());
+		expect(view.ended).toBeUndefined();
+		expect(view.replacedBy).toEqual([]);
+	});
+
+	it('names the compact that Secretarial Procedures took the place of', () => {
+		const procedures = documentHistories().find((other) => other.id === 'alturas-indian-rancheria-california-secretarial-procedures');
+		const view = documentHistoryView(procedures!, recorder(), ['Alturas Indian Rancheria, California']);
+		expect(view.inEffect).toBe('2025 Secretarial Procedures');
+		expect(view.replaces.map((other) => other.heading)).toEqual(['Gaming compact with California']);
 	});
 });

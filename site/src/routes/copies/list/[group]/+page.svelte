@@ -34,11 +34,11 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} · Copies of documents · Model Tribal ADR Code</title>
+	<title>{data.title} · Source documents · Model Tribal ADR Code</title>
 </svelte:head>
 
 <div class="reading">
-	<Breadcrumbs trail={[{ label: 'Copies of documents', href: '/copies' }]} />
+	<Breadcrumbs trail={[{ label: 'Source documents', href: '/copies' }]} />
 	<h1>{data.title}</h1>
 </div>
 

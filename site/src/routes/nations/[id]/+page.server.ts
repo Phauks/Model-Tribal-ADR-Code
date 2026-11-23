@@ -21,8 +21,7 @@ import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, whereInSource, type CitationMark } from '#lib/server/source-uses.ts';
 import { sourceAnchor } from '#lib/citation-marks.ts';
 import { recognitionBadges } from '#lib/recognition-badges.ts';
-import { recognitionView } from '#lib/server/recognition.ts';
-import { listedIn } from '#lib/listed-in.ts';
+import { recognitionExplanations, recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
@@ -30,6 +29,7 @@ import { offlineSets } from '#lib/server/copy-lists.ts';
 import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
+import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -199,11 +199,20 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 				? [
 						cited(sources, regionLabel, administration, {
 							text: `${administration.bureau_of_indian_affairs_region} Region`,
-							link: `/nations/map#${regionAnchor(administration.bureau_of_indian_affairs_region)}`,
-							note: administration.bureau_of_indian_affairs_agency
-								? `Agency: ${administration.bureau_of_indian_affairs_agency}`
-								: undefined
-						})
+							link: bureauRegionPage(administration.bureau_of_indian_affairs_region)
+						}),
+						...(administration.bureau_of_indian_affairs_agency
+							? [
+									cited(sources, regionLabel, administration, {
+										label: 'Agency',
+										text: administration.bureau_of_indian_affairs_agency,
+										link: bureauRegionPage(
+											administration.bureau_of_indian_affairs_region,
+											administration.bureau_of_indian_affairs_agency
+										)
+									})
+								]
+							: [])
 					]
 				: []
 		),
@@ -556,7 +565,8 @@ const establishmentWords: Record<string, string> = {
  * The nation's relationship with the United States: its treaties, each linked
  * to its text in Kappler's Indian Affairs: Laws and Treaties; how its land was
  * set aside; and the Indian Health Service Area and service unit that serve it.
- * The Bureau of Indian Affairs region stays in At a glance.
+ * The Bureau of Indian Affairs region stays in At a glance. The Gaming
+ * Commission's enforcement actions follow as a table (enforcementActions).
  */
 function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const section = 'Treaties and federal ties';
@@ -607,21 +617,44 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 							.join(', ')
 					})
 				)
-		),
-		...group(
-			'gaming-enforcement-actions',
-			'Gaming Commission enforcement actions',
-			[...(record.gaming?.enforcement_actions ?? [])]
-				.sort((first, second) => first.date.localeCompare(second.date))
-				.map((fact) =>
-					cited(sources, section, fact, {
-						text: sentenceCase(fact.kinds.map(humanize).join(' and ')),
-						link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
-						detail: `${fact.tracking_number}, ${readableDate(fact.date)}`
-					})
-				)
 		)
 	];
+}
+
+/** One National Indian Gaming Commission enforcement action, a row of its table on the nation page. */
+interface EnforcementAction {
+	key: string;
+	/** YYYY-MM-DD, which sorts the table. */
+	date: string;
+	kind: string;
+	number: string;
+	link?: string;
+	citations: CitationMark[];
+}
+
+/**
+ * The Gaming Commission's enforcement actions against the nation's gaming,
+ * oldest first, as rows of a table with Date, Type, Number, Document and
+ * Source columns (Trevor, Nov. 23, 2026), after the section's other facts so
+ * their markers keep the page's order.
+ */
+function enforcementActions(record: NationRecord, sources: SourceUses): EnforcementAction[] {
+	const section = 'Treaties and federal ties';
+	return [...(record.gaming?.enforcement_actions ?? [])]
+		.sort((first, second) => first.date.localeCompare(second.date))
+		.map((fact, index) => {
+			const kind = sentenceCase(fact.kinds.map(humanize).join(' and '));
+			const citations: CitationMark[] = [];
+			sources.citeFact(fact, section, `Gaming Commission enforcement action: ${kind}, ${fact.tracking_number}`, citations);
+			return {
+				key: `${fact.tracking_number}-${index}`,
+				date: fact.date,
+				kind,
+				number: fact.tracking_number,
+				link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+				citations
+			};
+		});
 }
 
 /** The first letter in capitals, the rest as given. */
@@ -638,12 +671,15 @@ function healthItems(record: NationRecord, sources: SourceUses, section: string)
 	const facts = record.indian_health_service ?? [];
 	if (facts.length === 0) return [];
 	const areas = [...new Set(facts.map((fact) => fact.area))];
-	const areaCitations: CitationMark[] = [];
-	// The Area's markers are those of the facts that name only the Area; the
-	// service unit and operator lines carry their own.
-	const areaOnly = facts.filter((fact) => !fact.service_unit && !fact.operator);
-	for (const fact of areaOnly.length > 0 ? areaOnly : facts) sources.citeFact(fact, section, `${fact.area} Area`, areaCitations);
-	const items: FactItem[] = [{ text: areas.map((area) => `${area} Area`).join('; '), citations: areaCitations }];
+	// Each Area links to the page about it. Its markers are those of the facts
+	// that name only the Area; the service unit and operator lines carry their own.
+	const items: FactItem[] = areas.map((area) => {
+		const naming = facts.filter((fact) => fact.area === area);
+		const areaOnly = naming.filter((fact) => !fact.service_unit && !fact.operator);
+		const citations: CitationMark[] = [];
+		for (const fact of areaOnly.length > 0 ? areaOnly : naming) sources.citeFact(fact, section, `${area} Area`, citations);
+		return { text: `${area} Area`, link: healthAreaPage(area), citations };
+	});
 	for (const fact of facts) {
 		if (!fact.service_unit) continue;
 		const runBy =
@@ -982,13 +1018,10 @@ export const load: PageServerLoad = ({ params }) => {
 		example: record.example === true,
 		officialName: displayName(record.names.official),
 		listedName: record.names.official,
-		// The document the listed name comes from, cited by its own name (Trevor, Nov. 23, 2026).
-		listedIn: listedIn(
-			record.names.official_source ? sourceRecords().get(record.names.official_source) : undefined,
-			record.recognition?.find((fact) => fact.source === record.names.official_source)?.locator
-		),
 		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
 		badges: recognitionBadges(record.recognition ?? []),
+		// What each badge opens: how the nation got the status (Trevor, Nov. 23, 2026).
+		badgeExplanations: recognitionExplanations(record),
 		review: status,
 		withdrawn: record.review?.status === 'withdrawn-at-request',
 		// The copies of the nation's documents this site holds, to save offline or download as a ZIP.
@@ -1012,6 +1045,7 @@ export const load: PageServerLoad = ({ params }) => {
 			documents: [],
 			jurisdiction: [],
 			ties: [],
+			enforcement: [],
 			stories: [],
 			timeline: undefined,
 			empty: {} as EmptySections,
@@ -1067,7 +1101,9 @@ export const load: PageServerLoad = ({ params }) => {
 	// line of its own; otherwise its source is in the Sources list alone
 	// (Trevor, Nov. 22, 2026, asked to remove "Name as the recognizing list gives it").
 	if (record.names.official_source) {
-		const nameUse = { section: 'Name as the recognizing list gives it', text: record.names.official };
+		// The page of the nation's entry, from the recognition fact the same source supports.
+		const entry = record.recognition?.find((fact) => fact.source === record.names.official_source);
+		const nameUse = { section: 'Alias', text: record.names.official, where: entry ? whereInSource(entry) : undefined };
 		if (displayName(record.names.official) !== record.names.official) {
 			sources.cite(record.names.official_source, nameUse, nameCitations);
 		} else {
@@ -1131,7 +1167,7 @@ export const load: PageServerLoad = ({ params }) => {
 	const documents = histories.map((history) => {
 		const heading = documentHeading(history.title, names);
 		sources.part(lawHeading, heading);
-		return { ...documentHistoryView(history, sources), heading };
+		return { ...documentHistoryView(history, sources, names), heading };
 	});
 	sources.part(lawHeading, documentsLabel);
 	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
@@ -1139,6 +1175,7 @@ export const load: PageServerLoad = ({ params }) => {
 	const jurisdiction = jurisdictionFacts(record, sources);
 	sources.part('Treaties and federal ties');
 	const ties = federalTies(record, sources);
+	const enforcement = enforcementActions(record, sources);
 	// Every dated record on the page on one line, after the sections it
 	// repeats, so its markers reuse their sources' numbers.
 	const timeline = nationTimeline(record, sources, documents);
@@ -1191,6 +1228,7 @@ export const load: PageServerLoad = ({ params }) => {
 		documents,
 		jurisdiction,
 		ties,
+		enforcement,
 		timeline: hasTimeline ? timeline : undefined,
 		stories,
 		empty,
@@ -1212,7 +1250,7 @@ export const load: PageServerLoad = ({ params }) => {
 		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
-	if (ties.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (hasTimeline) items.push({ label: timelineHeading, link: '#timeline-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {

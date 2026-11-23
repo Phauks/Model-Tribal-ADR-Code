@@ -45,7 +45,28 @@ export interface DocumentHistoryView {
 	kind: string;
 	/** The versions in effect, as one phrase, e.g. "2021 compact, as amended by …". */
 	inEffect?: string;
+	/**
+	 * When no version is in effect, how the document ended, from its last
+	 * version: "Expired Dec. 31, 2024" or "Superseded May 10, 2024".
+	 */
+	ended?: string;
+	/**
+	 * The documents that took this one's place under another name, such as
+	 * Secretarial Procedures issued where no compact was reached, so a reader
+	 * of an ended compact sees what governs now (Trevor, Nov. 23, 2026).
+	 */
+	replacedBy: RelatedDocumentView[];
+	/** The documents this one took the place of, such as an expired compact. */
+	replaces: RelatedDocumentView[];
 	versions: VersionView[];
+}
+
+export interface RelatedDocumentView {
+	id: string;
+	/** Its heading on the nation's page, such as "Secretarial Procedures (California)". */
+	heading: string;
+	/** Its versions in effect, as one phrase, if any are. */
+	inEffect?: string;
 }
 
 const DATE_LABELS: [keyof NonNullable<DocumentVersion['dates']>, string][] = [
@@ -112,6 +133,11 @@ export function documentHeading(title: string, names: string[]): string {
 	}
 	const compact = /^State of (.+?) (?:Class III )?Gaming Compact$/i.exec(rest);
 	if (compact) return `Gaming compact with ${compact[1]}`;
+	// "Secretarial Procedures for Alturas Indian Rancheria, California (California)"
+	const procedures = /^Secretarial Procedures for (.+) \(([^()]+)\)$/.exec(rest);
+	if (procedures && names.some((name) => name === procedures[1] || procedures[1].startsWith(name))) {
+		return `Secretarial Procedures (${procedures[2]})`;
+	}
 	const constitution = /^(Constitution|Constitution and Bylaws)(?: of (?:the )?(.+))?$/i.exec(rest);
 	if (constitution && (!constitution[2] || names.some((name) => name.includes(constitution[2]) || constitution[2].includes(name)))) {
 		return sentenceCase(constitution[1].toLocaleLowerCase('en-US'));
@@ -137,7 +163,9 @@ function relationPhrase(version: DocumentVersion, byId: Map<string, DocumentVers
 	const parts: string[] = [];
 	const amended = names(version.amends);
 	const replaced = names(version.supersedes);
-	if (amended.length > 0) parts.push(`amended the ${amended.join(' and the ')}`);
+	// An extension or renewal changes only the term (25 C.F.R. § 293.5), so it says so.
+	const extended = version.event === 'extension' || version.event === 'renewal';
+	if (amended.length > 0) parts.push(`${extended ? 'extended the term of' : 'amended'} the ${amended.join(' and the ')}`);
 	if (replaced.length > 0) parts.push(`replaced the ${replaced.join(' and the ')}`);
 	return parts.length > 0 ? sentenceCase(parts.join('; ')) : undefined;
 }
@@ -148,6 +176,34 @@ function inEffectPhrase(versions: DocumentVersion[]): string | undefined {
 	if (current.length === 0) return undefined;
 	const [first, ...rest] = current.map((version) => labelOf(version, version.id));
 	return rest.length > 0 ? `${first}, as amended by ${rest.join(' and ')}` : first;
+}
+
+/** Versions that never took effect, which say nothing about how a document ended. */
+const NEVER_IN_EFFECT = new Set(['disapproved', 'withdrawn', 'proposed']);
+
+/**
+ * How a document none of whose versions is in effect ended, from its last
+ * version that took effect: "Expired Dec. 31, 2024". Undefined while any
+ * version is in effect, or when the sources do not say.
+ */
+function endedPhrase(versions: DocumentVersion[]): string | undefined {
+	if (versions.some((version) => version.status === 'in-effect')) return undefined;
+	const last = versions.filter((version) => !NEVER_IN_EFFECT.has(version.status)).at(-1);
+	if (!last || last.status === 'unknown') return undefined;
+	const ended = last.dates?.ended;
+	return ended ? `${humanize(last.status)} ${readableDate(ended)}` : humanize(last.status);
+}
+
+/** The documents a record names with one relation, each with its heading and what of it is in effect. */
+function relatedDocuments(record: DocumentHistoryRecord, relation: string, names: string[]): RelatedDocumentView[] {
+	const wanted = (record.related ?? []).filter((link) => link.relation === relation).map((link) => link.document);
+	if (wanted.length === 0) return [];
+	const byId = new Map(documentHistories().map((other) => [other.id, other]));
+	return wanted.flatMap((id) => {
+		const other = byId.get(id);
+		if (!other) return [];
+		return [{ id, heading: documentHeading(other.title, names), inEffect: inEffectPhrase(other.versions) }];
+	});
 }
 
 /**
@@ -174,7 +230,9 @@ type SourceRecorder = Pick<SourceUses, 'cite' | 'citeFact'>;
 
 export function documentHistoryView(
 	record: DocumentHistoryRecord,
-	sources: SourceRecorder
+	sources: SourceRecorder,
+	/** The nation's names, which related documents' headings leave out. */
+	names: string[] = []
 ): DocumentHistoryView {
 	const byId = new Map(record.versions.map((version) => [version.id, version]));
 	const versions = record.versions.map((version): VersionView => {
@@ -210,6 +268,9 @@ export function documentHistoryView(
 		title: record.title,
 		kind: humanize(record.kind),
 		inEffect: inEffectPhrase(record.versions),
+		ended: endedPhrase(record.versions),
+		replacedBy: relatedDocuments(record, 'replaced-by', names),
+		replaces: relatedDocuments(record, 'replaces', names),
 		versions
 	};
 }

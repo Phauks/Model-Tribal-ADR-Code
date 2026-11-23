@@ -1,20 +1,21 @@
 <script lang="ts">
-	// The left sidebar, on every page. It always lists the site's sections. The
-	// section being read lists its pages, with the page being read opened into
-	// its own outline: the headings of an essay, the parts of a nation's page
-	// (src/lib/sidebar-outline.ts). Any other section opens from here too, to
-	// list its pages (Trevor, Nov. 23, 2026).
+	// The left sidebar, on every page, in two columns (Trevor, Nov. 23, 2026).
+	// The first lists only the site's sections. In a section, the second lists
+	// its pages and its long list with a filter, with the page being read opened
+	// into its own outline: the headings of an essay, the parts of a nation's
+	// page (sidebar/SectionColumn.svelte, src/lib/sidebar-outline.ts). On phones
+	// the menu shows the same two lists, one at a time.
 	//
 	// It works without JavaScript: the wide-screen sidebar and the phone menu are
 	// each a <details> element, and the current page is marked when the page is
-	// built. A script, when it runs, adds the carets that fold sections and
-	// entries, remembers what the reader opened and whether they hid the
-	// sidebar, and marks the heading being read as the page scrolls. On paper
-	// the sidebar is not printed.
+	// built. A script, when it runs, adds the filter and the carets that fold
+	// entries, remembers whether the reader hid the sidebar, and marks the
+	// heading being read as the page scrolls. On paper the sidebar is not
+	// printed.
 	//
-	// The pieces: what is open (sidebar/sidebar-state.svelte.ts), one level of
-	// an outline (sidebar/SidebarTree.svelte), the caret
-	// (sidebar/FoldButton.svelte) and the groups under the sections
+	// The pieces: what is open (sidebar/sidebar-state.svelte.ts), the second
+	// column (sidebar/SectionColumn.svelte), one level of an outline
+	// (sidebar/SidebarTree.svelte) and the groups under the sections
 	// (sidebar/SidebarGroups.svelte). For someone signed in with workspace
 	// access, a Workspace group lists the workspace pages their role opens;
 	// for anyone signed in, a Your account group lists the account pages and
@@ -35,8 +36,9 @@
 	import { followedPageAddress } from '#lib/page-history.ts';
 	import type { Permission } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
-	import { composeSectionOutline, currentLinkIn } from '#lib/sidebar-outline.ts';
-	import { sectionOf, siteSections, type OutlineItem, type PageOutline, type SiteSection } from '#lib/site-sections.ts';
+	import { withSharedLists } from '#lib/section-lists.ts';
+	import { composeSectionContents, currentLinkIn, type SectionContents } from '#lib/sidebar-outline.ts';
+	import { sectionOf, siteSections, type OutlineItem, type PageOutline } from '#lib/site-sections.ts';
 	import {
 		isCurrentWorkspacePage,
 		workspacePagesFor,
@@ -44,9 +46,9 @@
 		type WorkspacePage
 	} from '#lib/workspace-menu.ts';
 	import FoldButton from './sidebar/FoldButton.svelte';
+	import SectionColumn from './sidebar/SectionColumn.svelte';
 	import SidebarGroups from './sidebar/SidebarGroups.svelte';
-	import SidebarTree from './sidebar/SidebarTree.svelte';
-	import { SidebarState, sidebarHiddenKey } from './sidebar/sidebar-state.svelte.ts';
+	import { SidebarState, sectionsKey, sidebarHiddenKey } from './sidebar/sidebar-state.svelte.ts';
 
 	const sidebar = new SidebarState();
 
@@ -60,19 +62,18 @@
 	// The page's title, for the phone menu bar on pages outside the sections.
 	let pageTitle = $state<string | undefined>(undefined);
 
-	// The section being read: its pages (from the root layout), with this page's outline in place.
+	// The section being read: its contents (from the root layout), with this page's outline in place.
 	const pageOutline = $derived(page.data.outline as PageOutline | undefined);
-	// Every section's pages: with the page, or read in the browser for the
-	// essays on a page built ahead of time (sidebar/sidebar-state.svelte.ts).
-	const pageLists = $derived((page.data.sidebarLists ?? {}) as Record<string, OutlineItem[]>);
-	const lists = $derived<Record<string, OutlineItem[]>>({ ...sidebar.fetched, ...pageLists });
-	const sectionPages = $derived(currentSection ? lists[currentSection.link] : undefined);
-	const currentItems = $derived(
-		composeSectionOutline(currentSection?.opens ? sectionPages : undefined, pageOutline, path, pageTitle)
+	const sectionContents = $derived(withSharedLists(page.data.sectionContents as SectionContents | undefined));
+	const composed = $derived(
+		composeSectionContents(currentSection?.opens ? sectionContents : undefined, pageOutline, path, pageTitle)
 	);
-	// A page outside any list of pages keeps its outline's title above it.
-	const outlineTitle = $derived(currentSection?.opens && sectionPages?.length ? undefined : pageOutline?.title);
-	const currentLink = $derived(currentLinkIn(currentItems, path, search));
+	const allItems = $derived([...composed.pages, ...(composed.entries?.items ?? [])]);
+	// The second column shows in a published section with something to list.
+	const hasColumn = $derived(Boolean(currentSection?.built && allItems.length > 0));
+	// A section without a list of pages keeps its outline's title above it.
+	const outlineTitle = $derived(currentSection?.opens && sectionContents ? undefined : pageOutline?.title);
+	const currentLink = $derived(currentLinkIn(allItems, path, search));
 
 	// The workspace pages to list: from the page itself in the workspace,
 	// otherwise from the signed-in hint, read in the browser.
@@ -98,7 +99,7 @@
 
 	// Where the phone menu bar says the reader is, beside the word "Menu".
 	const whereLabel = $derived(
-		currentItemLabel(currentItems) ??
+		currentItemLabel(allItems) ??
 			outlineTitle ??
 			currentSection?.label ??
 			(currentWorkspacePage ? `Workspace: ${currentWorkspacePage.label}` : undefined) ??
@@ -129,19 +130,20 @@
 		return isUnfolded(item, sidebar.itemChoices, isActive);
 	}
 
+	// The sections fold like the Workspace and Your account groups, and start
+	// open (Trevor, Nov. 23, 2026). A shut list stays shut from the first
+	// paint: the script in app.html marks the page, and global.css hides it.
+	const sectionsOpen = $derived(sidebar.isOpen(sectionsKey, true));
+
+	function toggleSections(): void {
+		const open = !sectionsOpen;
+		sidebar.setOpen(sectionsKey, open);
+		if (open) delete document.documentElement.dataset.sidebarSectionsShut;
+		else document.documentElement.dataset.sidebarSectionsShut = 'true';
+	}
+
 	function toggleItem(item: OutlineItem): void {
 		sidebar.toggleItem(item.link, isItemOpen(item));
-	}
-
-	/** Whether a section has something to open: its pages, or the page's own outline. */
-	function opens(section: SiteSection): boolean {
-		if (!section.built) return false;
-		return section === currentSection ? currentItems.length > 0 : Boolean(section.opens && lists[section.link]?.length);
-	}
-
-	/** The section being read starts open; the others start shut, until the reader chooses. */
-	function isSectionOpen(section: SiteSection): boolean {
-		return sidebar.isOpen(section.link, section === currentSection);
 	}
 
 	// The reader's choices, read once when the sidebar starts.
@@ -149,32 +151,26 @@
 		untrack(() => sidebar.restore());
 	});
 
-	// A page built ahead of time came without the essays' lists; read them now,
-	// before the reader opens them.
-	$effect(() => {
-		for (const section of siteSections) {
-			if (section.built && section.opens && !pageLists[section.link]) untrack(() => sidebar.fetchList(section.link));
-		}
-	});
-
 	// On a new page: entries open along the way to it again, the phone menu
-	// closes, and the menu bar learns the page's title.
+	// closes and will open on the section's pages, and the menu bar learns the
+	// page's title.
 	afterNavigate(() => {
 		sidebar.resetItems();
+		phoneView = 'section';
 		if (narrowMenu) narrowMenu.open = false;
 		pageTitle = document.title.replace(/\s·\s[^·]*$/, '') || undefined;
 	});
 
 	// Mark the heading being read as the page scrolls (src/lib/active-heading.ts).
 	$effect(() => {
-		const ids = headingIds(currentItems);
+		const ids = headingIds(allItems);
 		return followActiveHeading(ids, (id) => (sidebar.activeHeading = id));
 	});
 
 	// ---- The wide column ----
 	let open = $state(true);
 	let wideSidebar: HTMLDetailsElement | undefined = $state();
-	let wideNav: HTMLElement | undefined = $state();
+	let wideColumn: HTMLElement | undefined = $state();
 
 	// On wide screens the sidebar scrolls on its own, separately from the page
 	// (Trevor, Nov. 22, 2026). It stays in view as the page scrolls, and its
@@ -232,18 +228,26 @@
 		}
 	}
 
-	// Keep the entry being read in sight in the column, scrolling only the
-	// column, never the page.
+	// Keep the entry being read in sight in the second column, scrolling only
+	// the column, never the page. On a new page it is placed a third of the way
+	// down at once, since a long list such as the nations can be far to go;
+	// as the reader scrolls the page, the column follows smoothly.
+	let placedPath: string | undefined;
 	$effect(() => {
 		void sidebar.activeHeading;
-		void path;
-		const nav = wideNav;
+		const here = path;
+		const nav = wideColumn;
 		if (!nav || !open) return;
 		tick().then(() => {
 			const marked = [...nav.querySelectorAll<HTMLElement>('.entry.active, [aria-current="page"]')].at(-1);
 			if (!marked) return;
 			const area = nav.getBoundingClientRect();
 			const box = marked.getBoundingClientRect();
+			if (placedPath !== here) {
+				placedPath = here;
+				if (box.top < area.top || box.bottom > area.bottom) nav.scrollTop += box.top - area.top - area.height / 3;
+				return;
+			}
 			const margin = 48;
 			let shift = 0;
 			if (box.top < area.top + margin) shift = box.top - area.top - margin;
@@ -256,6 +260,9 @@
 
 	// ---- The phone menu ----
 	let narrowMenu: HTMLDetailsElement | undefined = $state();
+	// Inside a section the menu opens on its pages; a switch shows all the sections.
+	let phoneView = $state<'section' | 'sections'>('section');
+	let menuOpened = $state(false);
 
 	// Choosing a link closes the menu, including a heading on this page.
 	function closeOnLink(event: MouseEvent) {
@@ -270,52 +277,34 @@
 </script>
 
 {#snippet sections(idSuffix: string)}
-	<ul class="sections">
-		{#each siteSections as section, index (section.link)}
+	<!-- On phones the menu's "All sections" switch shows them, so they do not fold there. -->
+	{@const folds = idSuffix === 'wide'}
+	{#if folds}
+		<div class="group-heading">
+			<FoldButton
+				controls="sidebar-sections-list-{idSuffix}"
+				expanded={sectionsOpen}
+				name="Sections"
+				onclick={toggleSections}
+			/>
+			<p class="group-title" id="sidebar-sections-{idSuffix}">Sections</p>
+		</div>
+	{/if}
+	<ul
+		class="sections"
+		id="sidebar-sections-list-{idSuffix}"
+		aria-labelledby={folds ? `sidebar-sections-${idSuffix}` : undefined}
+		hidden={folds && !sectionsOpen}
+	>
+		{#each siteSections as section (section.link)}
 			{@const current = section === currentSection}
-			{@const expandable = opens(section)}
-			{@const sectionOpen = expandable && isSectionOpen(section)}
-			{@const listId = `sidebar-${current ? 'outline' : 'pages'}-${idSuffix}-${index}`}
-			<li class:current data-sidebar-section={section.link}>
-				<div class="entry">
-					<FoldButton
-						size="section"
-						controls={expandable ? listId : undefined}
-						expanded={sectionOpen}
-						name={section.opens ? `Pages in ${section.label}` : `Contents of ${section.label}`}
-						onclick={() => sidebar.setOpen(section.link, !sectionOpen)}
-					/>
-					{#if section.built}
-						<a href={section.link} aria-current={current && currentLink === section.link ? 'page' : undefined}>
-							{section.label}
-						</a>
-					{:else}
-						<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
-					{/if}
-				</div>
-				{#if current && expandable}
-					<div id={listId} class="section-contents" data-sidebar-list hidden={!sectionOpen}>
-						{#if outlineTitle}<p class="outline-title">{outlineTitle}</p>{/if}
-						<SidebarTree
-							items={currentItems}
-							listId="{listId}-list"
-							isActive={isActive}
-							isCurrent={isCurrentPage}
-							isOpen={isItemOpen}
-							ontoggle={toggleItem}
-						/>
-					</div>
-				{:else if expandable}
-					<div id={listId} data-sidebar-list hidden={!sectionOpen}>
-						<SidebarTree
-							items={lists[section.link]}
-							listId="{listId}-list"
-							isActive={isActive}
-							isCurrent={isCurrentPage}
-							isOpen={isItemOpen}
-							ontoggle={toggleItem}
-						/>
-					</div>
+			<li class:current>
+				{#if section.built}
+					<a href={section.link} aria-current={current && currentLink === section.link ? 'page' : undefined}>
+						{section.label}
+					</a>
+				{:else}
+					<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
 				{/if}
 			</li>
 		{/each}
@@ -324,7 +313,7 @@
 		{idSuffix}
 		{path}
 		{sidebar}
-		accountPages={signedIn || onAccountPage ? [...accountPages] : []}
+		accountPages={onAccountPage ? [...accountPages] : []}
 		{currentAccount}
 		{workspaceMenu}
 		{currentWorkspacePage}
@@ -332,11 +321,27 @@
 	/>
 {/snippet}
 
+{#snippet column(idSuffix: string)}
+	{#if currentSection}
+		<SectionColumn
+			{idSuffix}
+			section={currentSection}
+			contents={composed}
+			{outlineTitle}
+			sectionIsCurrent={currentLink === currentSection.link}
+			{isActive}
+			isCurrent={isCurrentPage}
+			isOpen={isItemOpen}
+			ontoggle={toggleItem}
+		/>
+	{/if}
+{/snippet}
+
 <!-- Wide screens: a column beside the page that the reader can hide. The
      button that hides it is pinned to the bottom of the column (Trevor, Nov. 23,
      2026); it stays the <summary>, and so the first thing in the column for a
      keyboard or screen reader, because a <summary> must come first. -->
-<details class="sidebar-wide no-print" bind:this={wideSidebar} {open} ontoggle={remember}>
+<details class="sidebar-wide no-print" class:two-columns={hasColumn} bind:this={wideSidebar} {open} ontoggle={remember}>
 	<summary title={open ? undefined : 'Show sidebar'}>
 		<span class="toggle">
 			<span class="when-open"><PanelLeftClose size={20} aria-hidden="true" /> Hide sidebar</span>
@@ -345,15 +350,20 @@
 			>
 		</span>
 	</summary>
-	<nav aria-label="Site" bind:this={wideNav}>
+	<nav aria-label="Site" class="sections-column">
 		{@render sections('wide')}
 	</nav>
+	{#if hasColumn}
+		<nav aria-label="Pages in {currentSection?.label}" class="pages-column" bind:this={wideColumn}>
+			{@render column('wide')}
+		</nav>
+	{/if}
 </details>
 
 <!-- Phones and narrow windows: a menu bar under the masthead that opens the same list.
      Choosing a link or pressing Escape closes it. -->
 <svelte:window onkeydown={closeOnEscape} />
-<details class="sidebar-narrow no-print" bind:this={narrowMenu}>
+<details class="sidebar-narrow no-print" bind:this={narrowMenu} ontoggle={() => (menuOpened ||= Boolean(narrowMenu?.open))}>
 	<summary>
 		<Menu size={20} aria-hidden="true" />
 		<span class="menu-word">Menu</span>
@@ -361,36 +371,68 @@
 	</summary>
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 	<nav aria-label="Site" onclick={closeOnLink}>
-		{@render sections('narrow')}
+		{#if hasColumn}
+			<div class="switch needs-scripts">
+				<button type="button" aria-pressed={phoneView === 'section'} onclick={() => (phoneView = 'section')}>
+					{currentSection?.label}
+				</button>
+				<button type="button" aria-pressed={phoneView === 'sections'} onclick={() => (phoneView = 'sections')}>
+					All sections
+				</button>
+			</div>
+			<div class="phone-part" hidden={menuOpened && phoneView !== 'sections'}>
+				{@render sections('narrow')}
+			</div>
+			<!-- Drawn when the menu first opens, so a long list is not in the page twice. -->
+			{#if menuOpened}
+				<div class="phone-part phone-column" hidden={phoneView !== 'section'}>
+					{@render column('narrow')}
+				</div>
+			{/if}
+		{:else}
+			{@render sections('narrow')}
+		{/if}
 	</nav>
 </details>
 
 <style>
-	.entry {
-		display: flex;
-		align-items: flex-start;
-	}
-
-	.entry > a,
-	.entry > .unbuilt {
-		flex: 1;
-		min-width: 0;
-	}
-
-	/* Without scripts nothing can fold, so the section being read shows its contents. */
-	:global(:root:not([data-scripts='on'])) .section-contents[hidden] {
-		display: block;
-	}
-
-	/* ---- Shared list styles ---- */
 	nav ul {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
 
-	.sections > li > .entry > a,
-	.sections > li > .entry > .unbuilt {
+	/* ---- The sections ---- */
+	/* Their heading matches the Workspace and Your account groups' (sidebar/SidebarGroups.svelte). */
+	.group-heading {
+		display: flex;
+		align-items: center;
+		margin-bottom: var(--space-1);
+	}
+
+	.group-title {
+		margin: 0;
+		padding: 0 var(--space-3) 0 var(--space-1);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-ink-muted);
+	}
+
+	/* Without scripts nothing folds: no caret, and the list shows. */
+	:global(:root:not([data-scripts='on'])) .group-title {
+		padding-left: var(--space-3);
+	}
+
+	:global(:root:not([data-scripts='on'])) .sections[hidden] {
+		display: block;
+	}
+
+	/* Shut by the reader on an earlier page, before the script takes over. */
+	:global(:root[data-sidebar-sections-shut='true']) .sections-column .sections {
+		display: none;
+	}
+	.sections > li > a,
+	.sections > li > .unbuilt {
 		display: flex;
 		align-items: center;
 		min-height: 2.5rem;
@@ -401,43 +443,25 @@
 		text-decoration: none;
 	}
 
-	.sections > li > .entry > a,
-	.sections > li > .entry > .unbuilt {
-		padding-left: var(--space-1);
-	}
-
-	:global(:root:not([data-scripts='on'])) .sections > li > .entry > a,
-	:global(:root:not([data-scripts='on'])) .sections > li > .entry > .unbuilt {
-		padding-left: var(--space-3);
-	}
-
 	/* Sections whose pages are not published yet: named, not linked. */
-	.sections > li > .entry > .unbuilt {
+	.sections > li > .unbuilt {
 		color: var(--color-ink-muted);
 		font-weight: var(--font-weight-regular);
 	}
 
-	.sections > li > .entry > a:hover {
+	.sections > li > a:hover {
 		background: var(--color-surface);
 		text-decoration: underline;
 	}
 
-	.sections > li.current > .entry > a {
+	/* The section being read: an orange bar and the link color, like the entry being read. */
+	.sections > li.current > a {
+		border-left: 3px solid var(--color-action);
+		border-radius: 0;
+		background: var(--color-surface);
 		color: var(--color-link);
 		font-weight: var(--font-weight-bold);
 	}
-
-	.sections > li.current {
-		margin: var(--space-1) 0 var(--space-3);
-	}
-
-	.outline-title {
-		margin: var(--space-2) var(--space-3) var(--space-1);
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-semibold);
-		color: var(--color-ink-muted);
-	}
-
 
 	summary {
 		cursor: pointer;
@@ -464,6 +488,7 @@
 		 */
 		.sidebar-wide {
 			--sidebar-footer-height: calc(var(--layout-target-minimum) + 2 * var(--space-2) + 1px);
+			--sidebar-sections-width: 15rem;
 			display: block;
 			position: sticky;
 			top: 0;
@@ -474,12 +499,24 @@
 			box-sizing: border-box;
 		}
 
+		/* Two columns that scroll on their own: the sections, and the pages of the section being read. */
 		.sidebar-wide > nav {
 			position: absolute;
 			inset: 0 0 var(--sidebar-footer-height);
 			overflow-y: auto;
 			overscroll-behavior: contain;
 			padding: var(--space-4) var(--space-3) var(--space-4);
+			box-sizing: border-box;
+		}
+
+		.sidebar-wide.two-columns > .sections-column {
+			right: auto;
+			width: var(--sidebar-sections-width);
+		}
+
+		.sidebar-wide > .pages-column {
+			left: var(--sidebar-sections-width);
+			border-left: 1px solid var(--color-line);
 		}
 
 		/* A column the reader hid stays hidden from the first paint (app.html). */
@@ -625,10 +662,48 @@
 		border-top: 1px solid var(--color-line);
 	}
 
-	.sidebar-narrow .sections > li > .entry > a,
-	.sidebar-narrow .sections > li > .entry > .unbuilt {
+	.sidebar-narrow .sections > li > a,
+	.sidebar-narrow .sections > li > .unbuilt {
 		min-height: var(--layout-target-minimum);
-		align-items: center;
+	}
+
+	/* In a section the menu shows its pages or all the sections, one at a time. */
+	.sidebar-narrow .switch {
+		display: flex;
+		gap: var(--space-1);
+		margin: var(--space-3) 0;
+		padding: var(--space-1);
+		border-radius: var(--radius-control);
+		background: var(--color-surface);
+	}
+
+	.sidebar-narrow .switch button {
+		flex: 1;
+		min-height: var(--layout-target-minimum);
+		border: 0;
+		border-radius: var(--radius-control);
+		background: transparent;
+		color: var(--color-ink-muted);
+		font: inherit;
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
+	}
+
+	.sidebar-narrow .switch button[aria-pressed='true'] {
+		background: var(--color-paper);
+		color: var(--color-ink);
+		box-shadow: 0 0 0 1px var(--color-line);
+	}
+
+	/* Without scripts there is no switch, so both lists show, the sections first. */
+	:global(:root:not([data-scripts='on'])) .phone-part[hidden] {
+		display: block;
+	}
+
+	:global(:root:not([data-scripts='on'])) .phone-column {
+		margin-top: var(--space-4);
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--color-line);
 	}
 
 	@media (min-width: 64rem) {

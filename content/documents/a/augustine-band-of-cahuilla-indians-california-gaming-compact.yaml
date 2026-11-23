@@ -17,10 +17,11 @@ versions:
 - id: 2000-original
   label: 2000 compact
   event: original
-  status: superseded
+  status: expired
   dates:
     listed: '2000-07-06'
     published: '2000-07-06'
+    ended: '2025-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
@@ -55,12 +56,13 @@ versions:
 - id: 2022-extension
   label: 2022 extension
   event: extension
-  status: superseded
+  status: expired
   amends:
   - 2000-original
   dates:
     listed: '2022-06-30'
     published: '2022-06-30'
+    ended: '2025-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
@@ -85,12 +87,13 @@ versions:
 - id: 2023-extension
   label: 2023 extension
   event: extension
-  status: superseded
+  status: expired
   amends:
   - 2000-original
   dates:
     listed: '2023-12-22'
     published: '2023-12-22'
+    ended: '2025-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
@@ -115,12 +118,13 @@ versions:
 - id: 2025-extension
   label: 2025 extension
   event: extension
-  status: superseded
+  status: expired
   amends:
   - 2000-original
   dates:
     listed: '2025-02-20'
     published: '2025-02-20'
+    ended: '2025-12-31'
   approval:
     authority: secretary-of-the-interior
     action: approved
@@ -142,9 +146,12 @@ versions:
     compared_with: 2000-original
     change: not-compared
     verification: inferred
+  note: The compact's term ran to Dec. 31, 2025, the date this extension set (90 Fed. Reg. 9973 (Feb. 20, 2025));
+    no later extension was found on the Office of Indian Gaming list or in the Federal Register.
 related:
 - document: augustine-band-of-cahuilla-indians-california-secretarial-procedures
   relation: replaced-by
-  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+  note: Secretarial Procedures prescribed under 25 U.S.C. § 2710(d)(7)(B)(vii) on July 8, 2025 authorize the nation's
+    Class III gaming; they do not end the compact, which ran to the end of its extended term.
 found_in:
 - 2026-11-21-gaming-compact-histories

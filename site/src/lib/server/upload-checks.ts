@@ -133,15 +133,16 @@ export function checkFileType(firstPiece: Uint8Array, fileName: string): TypeChe
 	}
 
 	if (['zip', '7z', 'rar', 'gz', 'tar'].includes(extension))
-		return refused('Archives such as ZIP files can’t be sent, because nobody can see what is inside. Send the files themselves.');
+		return refused('Only ZIP archives can be sent, and the page opens them so each file goes on its own. Unpack this archive first.');
 	if (['exe', 'dll', 'msi', 'bat', 'cmd', 'sh', 'js', 'ps1', 'app', 'dmg', 'apk', 'jar'].includes(extension))
 		return refused('Programs and scripts can’t be sent.');
 	return refused('This kind of file can’t be sent. Documents, pictures, sound recordings and videos can.');
 }
 
-/** Word, Excel and OpenDocument files are ZIP files; anything else in a ZIP is refused. */
+/** Word, Excel, OpenDocument and EPUB files are ZIP files; any other ZIP is refused here, because the page opens ZIPs before sending. */
 function checkZipFile(bytes: Uint8Array, extension: string): TypeCheck {
 	const head = latin1(bytes.subarray(0, Math.min(bytes.length, 4 * 1024 * 1024)));
+	if (head.startsWith('mimetypeapplication/epub+zip', 30)) return accepted('document', 'application/epub+zip', 'EPUB book', 'epub');
 	if (head.startsWith('mimetypeapplication/vnd.oasis.opendocument.text', 30))
 		return accepted('document', 'application/vnd.oasis.opendocument.text', 'OpenDocument text', 'odt');
 	if (head.startsWith('mimetypeapplication/vnd.oasis.opendocument.spreadsheet', 30))
@@ -162,7 +163,7 @@ function checkZipFile(bytes: Uint8Array, extension: string): TypeCheck {
 			'Excel spreadsheet',
 			'xlsx'
 		);
-	return refused('Archives such as ZIP files can’t be sent, because nobody can see what is inside. Send the files themselves.');
+	return refused('A ZIP file is opened on the page and each file inside is sent on its own. Add it again from the page.');
 }
 
 /** A finding inside one piece of a file. */

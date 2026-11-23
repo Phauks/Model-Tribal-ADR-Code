@@ -125,6 +125,8 @@ export interface GlossaryRecord {
 	usage: 'preferred' | 'acceptable' | 'context-only' | 'avoid';
 	definition: string;
 	other_senses?: { label?: string; definition: string }[];
+	/** Short quotations from law dictionary entries, each with the entry's source record. */
+	law_dictionary?: { source: string; quote: string }[];
 	/** The id of the model code provision that enacts a definition of the term, such as 01-102. */
 	code_definition?: string;
 	usage_note?: string;
@@ -299,6 +301,8 @@ export interface DocumentHistoryRecord {
 	states?: string[];
 	summary?: string;
 	versions: DocumentVersion[];
+	/** Other document histories this one depends on or that took its place, such as Secretarial Procedures. */
+	related?: { document: string; relation: string; note?: string }[];
 	sensitivity?: { restricted?: boolean; tribal_review_required?: boolean };
 }
 

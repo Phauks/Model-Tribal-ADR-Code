@@ -171,7 +171,7 @@
 
 <svelte:document onclick={closeOnOutside} />
 
-<a class="icon-button download-button without-scripts" href="/downloads" aria-label="Downloads" title="Downloads">
+<a class="icon-button download-button without-scripts" href="/downloads" aria-label="Data sets" title="Data sets">
 	<Download size={24} />
 </a>
 
@@ -279,7 +279,7 @@
 		position: relative;
 	}
 
-	/* Without scripts the list cannot open, so the icon links to the Downloads page. */
+	/* Without scripts the list cannot open, so the icon links to the Data sets page. */
 	:global(:root[data-scripts='on']) .without-scripts {
 		display: none;
 	}

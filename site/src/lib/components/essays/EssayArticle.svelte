@@ -19,6 +19,10 @@
 	import { quoteContext } from '#lib/essays/quote-context-view.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
+	import EssayModePicker from '#lib/components/essays/EssayModePicker.svelte';
+	import EssayStatusPills from '#lib/components/essays/EssayStatusPills.svelte';
+	import History from '@lucide/svelte/icons/history';
+	import Send from '@lucide/svelte/icons/send';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
@@ -141,13 +145,14 @@
 	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} />
 {/if}
 
-{#if access}
+{#if access && mode === 'reading'}
 	<EssayAccessBar state={access} bind:view bind:mode />
 {/if}
 
 <article class="reading essay">
 	<!-- The editor shows the title as the essay's own first heading, to edit there. -->
 	<h1 class:visually-hidden={mode !== 'reading'}>{shownTitle}</h1>
+	{#if access && mode === 'reading'}<EssayStatusPills state={access} />{/if}
 	{#if unpublished && !access}
 		<p>This page is not published yet.</p>
 	{/if}
@@ -164,7 +169,14 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} onsaved={saved} />
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} onsaved={saved}>
+					{#snippet barStart()}<EssayModePicker bind:mode canEdit={access!.canEdit} />{/snippet}
+					{#snippet barEnd()}
+						<a class="bar-link" href="/workspace/essays/{identifier}" title="History: every saved version, and publishing" aria-label="History"><History size={18} aria-hidden="true" /></a>
+						{#if access!.canPublish && mode === 'editing'}<a class="button bar-publish" href="/workspace/essays/{identifier}" title="Choose a saved version to publish"><Send size={16} aria-hidden="true" /> Publish…</a>{/if}
+					{/snippet}
+					{#snippet belowBar()}<EssayStatusPills state={access!} />{/snippet}
+				</EssayEditor>
 			{/key}
 		{:catch}
 			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
@@ -184,6 +196,25 @@
 </article>
 
 <style>
+	.bar-link {
+		display: inline-grid;
+		place-items: center;
+		min-width: var(--layout-target-minimum);
+		min-height: var(--layout-target-minimum);
+		border-radius: var(--radius-control);
+		color: var(--color-ink);
+	}
+
+	.bar-link:hover {
+		background: var(--color-surface);
+	}
+
+	.bar-publish {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+	}
+
 	/* Marks on the draft view, shown only to people with access (src/lib/essays/render.ts). */
 	.essay-text :global(.essay-draft-mark) {
 		position: relative;

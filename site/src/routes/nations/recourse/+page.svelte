@@ -7,6 +7,7 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { onMount } from 'svelte';
 	import Download from '@lucide/svelte/icons/download';
+	import Check from '@lucide/svelte/icons/check';
 	import Link from '@lucide/svelte/icons/link';
 	import ListFilter from '@lucide/svelte/icons/list-filter';
 	import X from '@lucide/svelte/icons/x';
@@ -203,8 +204,19 @@
 					{#if narrowed}
 						<button type="button" class="button button-quiet small-button" onclick={clearAll}>Show all</button>
 					{/if}
-					<button type="button" class="button button-quiet small-button" onclick={copyLink}>
-						<Link aria-hidden="true" size="1.1em" strokeWidth={1.75} />Copy link
+					<!-- Icon only (Trevor, Nov. 23, 2026), as in the data tables. -->
+					<button
+						type="button"
+						class="icon-button"
+						aria-label={copyStatus === 'Link copied.' ? 'Link copied' : 'Copy link'}
+						title="Copy a link to this list as it is now"
+						onclick={copyLink}
+					>
+						{#if copyStatus === 'Link copied.'}<Check aria-hidden="true" size="1.25em" strokeWidth={1.75} />{:else}<Link
+								aria-hidden="true"
+								size="1.25em"
+								strokeWidth={1.75}
+							/>{/if}
 					</button>
 					<button type="button" class="button button-quiet small-button" onclick={saveCsv}>
 						<Download aria-hidden="true" size="1.1em" strokeWidth={1.75} />Download CSV

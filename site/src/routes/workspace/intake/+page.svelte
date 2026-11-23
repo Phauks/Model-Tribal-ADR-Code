@@ -31,6 +31,7 @@
 			void invalidateAll();
 		}}
 		earlier={data.earlier}
+		refresh={invalidateAll}
 		filedColumn
 	/>
 </div>

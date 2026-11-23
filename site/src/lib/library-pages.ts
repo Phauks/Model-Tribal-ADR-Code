@@ -8,13 +8,13 @@ export type LibraryPage = { label: string; link: string; description: string };
 
 export const libraryPages: LibraryPage[] = [
 	{
-		label: 'Copies of documents',
+		label: 'Source documents',
 		link: '/copies',
 		description:
 			'Our own copies of documents the site cites: United States laws and government documents, Native nations’ constitutions and laws, and tribal court opinions. Each gives where it was published, the date it was saved and its SHA-256.'
 	},
 	{
-		label: 'Downloads',
+		label: 'Data sets',
 		link: '/downloads',
 		description:
 			'Files to keep: the list of nations, the dispute resolution provisions, the glossary and the map’s layers, as spreadsheets, JSON and ZIP files, and the United States documents in one ZIP file, with a way to check that a file you downloaded is the one published here.'
