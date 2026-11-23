@@ -176,7 +176,7 @@
 		<h2 class="visually-hidden" tabindex="-1" bind:this={listHeading}>Your starred pages</h2>
 		<p class="muted">
 			{items.length === 1 ? 'One page' : `${items.length} pages`}, newest first. Notes save as you type and only you can see
-			them. To carry them to another device, use Export in Settings, under Data.
+			them. To carry them to another device, use Export in Settings, under This device.
 		</p>
 		<ol class="starred-list">
 			{#each items as item, index (item.address)}

@@ -40,7 +40,7 @@
 	</li>
 	<li>Files you sent that the project filed or kept for reference stay, no longer tied to you.</li>
 	<li>A credit already printed in a book cannot be recalled. The next edition follows your choice below.</li>
-	<li>Pages you starred or saved on this device stay in this browser. You can clear them in Settings, under Data.</li>
+	<li>Pages you starred or saved on this device stay in this browser. You can clear them in Settings, under This device.</li>
 </ul>
 
 {#if form?.problem}

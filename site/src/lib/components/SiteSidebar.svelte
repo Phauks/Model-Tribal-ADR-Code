@@ -20,6 +20,7 @@
 	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
 	import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
 	import Star from '@lucide/svelte/icons/star';
+	import { accountPages, currentAccountPage, isAccountPath } from '#lib/account-menu.ts';
 	import type { Permission } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { sectionOf, siteSections, type OutlineItem, type PageOutline } from '#lib/site-sections.ts';
@@ -49,12 +50,17 @@
 		workspaceMenu.find((item) => isCurrentWorkspacePage(item.link, path))
 	);
 
+	// On the Account pages, a "Your account" section lists them (src/lib/account-menu.ts).
+	const onAccountPage = $derived(isAccountPath(path));
+	const currentAccount = $derived(onAccountPage ? currentAccountPage(path) : undefined);
+
 	// Where the phone menu says the reader is, beside the word "Menu".
 	const whereLabel = $derived(
 		currentItemLabel(outline?.items ?? []) ??
 			outline?.title ??
 			currentSection?.label ??
-			(currentWorkspacePage ? `Workspace: ${currentWorkspacePage.label}` : 'Home')
+			(currentWorkspacePage ? `Workspace: ${currentWorkspacePage.label}` : undefined) ??
+			(currentAccount ? `Your account: ${currentAccount.label}` : 'Home')
 	);
 
 	function currentItemLabel(items: OutlineItem[]): string | undefined {
@@ -213,6 +219,21 @@
 			</li>
 		{/each}
 	</ul>
+	{#if onAccountPage}
+		<!-- The Account pages, on those pages only (site/DESIGN.md, section 6, "Settings and Account"). -->
+		<div class="workspace-links">
+			<p class="group-title" id="sidebar-account-{idSuffix}">Your account</p>
+			<ul class="sections" aria-labelledby="sidebar-account-{idSuffix}">
+				{#each accountPages as item (item.link)}
+					<li>
+						<a href={item.link} aria-current={item === currentAccount ? 'page' : undefined}>
+							{item.label}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
 	{#if workspaceMenu.length > 0}
 		<!-- The workspace, for people signed in with access to it (site/COLLABORATION.md). -->
 		<div class="workspace-links">

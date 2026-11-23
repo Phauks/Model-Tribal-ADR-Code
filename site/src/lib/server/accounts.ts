@@ -266,7 +266,9 @@ export type SessionMethod = 'code' | 'link' | 'password';
 export async function startSession(
 	database: D1Database,
 	accountIdentifier: string,
-	method: SessionMethod
+	method: SessionMethod,
+	/** The browser and system, such as "Firefox on Windows" (src/lib/device-label.ts). */
+	device: string | null = null
 ): Promise<{ token: string; expiresAt: Date }> {
 	const token = randomToken();
 	const started = new Date();
@@ -276,10 +278,10 @@ export async function startSession(
 		database.prepare('DELETE FROM sessions WHERE expires_at < ?').bind(started.toISOString()),
 		database
 			.prepare(
-				`INSERT INTO sessions (token_hash, account_identifier, created_at, last_seen_at, expires_at, method)
-				 VALUES (?, ?, ?, ?, ?, ?)`
+				`INSERT INTO sessions (token_hash, account_identifier, created_at, last_seen_at, expires_at, method, device)
+				 VALUES (?, ?, ?, ?, ?, ?, ?)`
 			)
-			.bind(await sha256(token), accountIdentifier, started.toISOString(), started.toISOString(), expiresAt.toISOString(), method),
+			.bind(await sha256(token), accountIdentifier, started.toISOString(), started.toISOString(), expiresAt.toISOString(), method, device),
 		database
 			.prepare('UPDATE accounts SET last_signed_in_at = ? WHERE identifier = ?')
 			.bind(started.toISOString(), accountIdentifier)

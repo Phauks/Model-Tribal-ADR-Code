@@ -1118,6 +1118,21 @@ sup.citation {
 	scroll-behavior: auto !important;
 }
 
+/* Other people's cursors while editing together (Settings, Editing; src/lib/reading-settings.ts).
+   Only this reader's view changes. */
+:root[data-other-cursors='lines'] .ProseMirror-yjs-cursor > div {
+	display: none;
+}
+
+:root[data-other-cursors='off'] .ProseMirror-yjs-cursor {
+	display: none;
+}
+
+/* A selection wraps the selected words themselves, so only its color is taken away. */
+:root[data-other-cursors='off'] .ProseMirror-yjs-selection {
+	background-color: transparent !important;
+}
+
 @media print {
 	*,
 	*::before,
