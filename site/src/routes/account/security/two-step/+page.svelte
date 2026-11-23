@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CodeInput from '#lib/components/CodeInput.svelte';
 	import ErrorSummary from '#lib/components/ErrorSummary.svelte';
 	import type { PageProps } from './$types';
 
@@ -88,18 +89,11 @@
 					{#if field === 'code' && problem}
 						<p class="field-error" id="code-error"><span class="visually-hidden">Error:</span> {problem}</p>
 					{/if}
-					<input
+					<CodeInput
 						id="code"
 						name="code"
-						type="text"
-						class="code-field"
-						inputmode="numeric"
-						autocomplete="one-time-code"
-						pattern="[0-9 ]*"
-						maxlength="8"
-						aria-describedby={field === 'code' && problem ? 'code-error' : undefined}
-						aria-invalid={field === 'code' && problem ? 'true' : undefined}
-						required
+						describedBy={field === 'code' && problem ? 'code-error' : undefined}
+						invalid={field === 'code' && Boolean(problem)}
 					/>
 				</div>
 				<button class="button" type="submit">Turn on two-step sign-in</button>
@@ -204,11 +198,6 @@
 		overflow-wrap: anywhere;
 	}
 
-	.code-field {
-		max-width: 12ch;
-		font-size: var(--font-size-lead);
-		letter-spacing: 0.2em;
-	}
 
 	.backup-codes {
 		display: grid;
