@@ -69,7 +69,10 @@ const column = `${wide} .pages-column`;
 	const { context, page, errors } = await newPage();
 	const requests = [];
 	page.on('request', (request) => {
-		if (new URL(request.url()).pathname.endsWith('.json')) requests.push(request.url());
+		// Lists the page itself asks for, such as the timeline's published
+		// Foundations essays, are not the sidebar's.
+		const { pathname } = new URL(request.url());
+		if (pathname.endsWith('.json') && pathname !== '/foundations/published.json') requests.push(request.url());
 	});
 	await page.goto(`${base}/nations/navajo-nation`, { waitUntil: 'networkidle' });
 	check((await page.locator(`${wide} .sections-column .outline`).count()) === 0, 'The first column lists pages inside a section');
