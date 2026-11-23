@@ -1,6 +1,6 @@
 # What to learn from the Civil Law Self-Help Center (Clark County, Nevada)
 
-**Status:** research notes, written Nov. 23, 2026, in answer to Trevor's request to research the Civil Law Self-Help Center and "see what we can learn and also do from them." Nothing here has been built or decided. It builds on the [self-help forms note](2026-11-23-self-help-forms.md), which gave the center one row (section 3); this note goes deeper and lists only ideas that note, the [model forms](../../content/forms/README.md) and the [roadmap](../../docs/roadmap.md) do not already cover. Statements marked "project analysis" are my reading of the sources or of the project's own files, not a source's words. All pages were opened on Nov. 23, 2026.
+**Status:** research notes, written Nov. 23, 2026, in answer to Trevor's request to research the Civil Law Self-Help Center and "see what we can learn and also do from them." Nothing here has been built or decided. The readable version is a Claude Doc: https://claude.ai/artifact/GwwodohTr1nphoc8A9EWMK. It builds on the [self-help forms note](2026-11-23-self-help-forms.md), which gave the center one row (section 3); this note goes deeper and lists only ideas that note, the [model forms](../../content/forms/README.md) and the [roadmap](../../docs/roadmap.md) do not already cover. Statements marked "project analysis" are my reading of the sources or of the project's own files, not a source's words. All pages were opened on Nov. 23, 2026.
 
 ## 1. Short answer
 
