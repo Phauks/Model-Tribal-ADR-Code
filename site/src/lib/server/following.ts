@@ -1,6 +1,6 @@
 /**
  * Following pages: the database side (site/COLLABORATION.md, "Following
- * pages"; migrations/0010_following.sql; shared rules in src/lib/following.ts).
+ * pages"; migrations/0011_following.sql; shared rules in src/lib/following.ts).
  *
  * How an update is found. Nation pages and the model code are built ahead of
  * time, so the build lists each followable page with a fingerprint of what it
