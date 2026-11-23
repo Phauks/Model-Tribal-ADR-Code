@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { daysBetween, dueStateLabels, longDay, monthNames, stageLabels } from '#lib/nonprofit.ts';
 	import type { PageProps } from './$types';
+	import DateField from '#lib/components/DateField.svelte';
 
 	let { data, form }: PageProps = $props();
 
@@ -95,7 +96,7 @@
 							<form method="post" action="?/complete" class="inline-form">
 								<input type="hidden" name="obligation" value={item.obligation} />
 								<input type="hidden" name="period" value={item.period} />
-								<label>Done on <input type="date" name="doneOn" value={data.today} required /></label>
+								<span class="date-label"><label for="done-{item.obligation}-{item.period}">Done on</label><DateField id="done-{item.obligation}-{item.period}" name="doneOn" value={data.today} max={data.today} required hint="" /></span>
 								<label>Confirmation number (optional) <input type="text" name="reference" maxlength="200" /></label>
 								<label>Note (optional) <input type="text" name="note" maxlength="2000" /></label>
 								<button class="button" type="submit">Mark done</button>
@@ -139,7 +140,7 @@
 						<form method="post" action="?/complete" class="inline-form">
 							<input type="hidden" name="obligation" value={step.key} />
 							<input type="hidden" name="period" value="once" />
-							<label>Done on <input type="date" name="doneOn" value={data.today} required /></label>
+							<span class="date-label"><label for="done-{step.key}">Done on</label><DateField id="done-{step.key}" name="doneOn" value={data.today} max={data.today} required hint="" /></span>
 							<label>Note (optional) <input type="text" name="note" maxlength="2000" /></label>
 							<button class="button" type="submit">Mark done</button>
 						</form>
@@ -206,7 +207,7 @@
 		</div>
 		<div class="field">
 			<label for="task-due">Due (optional)</label>
-			<input id="task-due" name="dueOn" type="date" />
+			<DateField id="task-due" name="dueOn" />
 		</div>
 		<div class="field">
 			<label><input name="repeatsYearly" type="checkbox" /> Repeats every year, such as a registered agent's renewal</label>
@@ -227,7 +228,7 @@
 				<label for="fact-{field.name}">{field.label}</label>
 				{#if field.hint}<p class="small muted" id="hint-{field.name}">{field.hint}</p>{/if}
 				{#if field.kind === 'date'}
-					<input id="fact-{field.name}" name={field.name} type="date" value={data.facts[field.name] ?? ''} aria-describedby={field.hint ? `hint-${field.name}` : undefined} />
+					<DateField id="fact-{field.name}" name={field.name} value={data.facts[field.name] ?? ''} describedby={field.hint ? `hint-${field.name}` : undefined} />
 				{:else if field.kind === 'month'}
 					<select id="fact-{field.name}" name={field.name} aria-describedby={field.hint ? `hint-${field.name}` : undefined}>
 						{#each monthNames as month, index (month)}
@@ -303,7 +304,8 @@
 		margin-top: var(--space-2);
 	}
 
-	.inline-form label {
+	.inline-form label,
+	.inline-form .date-label {
 		display: grid;
 		gap: var(--space-1);
 	}

@@ -10,6 +10,7 @@
 		teamLevels
 	} from '#lib/nation-teams.ts';
 	import type { PageProps } from './$types';
+	import DateField from '#lib/components/DateField.svelte';
 
 	let { data, form }: PageProps = $props();
 	const application = $derived(data.application);
@@ -125,7 +126,7 @@
 		<div class="field">
 			<label for="expires">Until</label>
 			<p class="hint">Two years at most. The person and the office are asked to renew before it ends.</p>
-			<input type="date" id="expires" name="expires" required value={data.usualEnd} />
+			<DateField id="expires" name="expires" required value={data.usualEnd} hint="" />
 		</div>
 		<div class="field">
 			<label for="basis">How the nation confirmed it</label>
@@ -174,10 +175,5 @@
 
 	.indented {
 		margin-left: var(--space-6);
-	}
-
-	input[type='date'] {
-		font: inherit;
-		min-height: var(--layout-target-minimum);
 	}
 </style>

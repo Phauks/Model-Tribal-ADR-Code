@@ -1,6 +1,8 @@
 <script lang="ts">
 	// The fields of an event in the workspace (src/routes/workspace/events).
 	import { eventKindLabels, eventKinds, eventTimeZones, recordingChoiceLabels, recordingChoices } from '#lib/event-calendar.ts';
+	import DateField from '#lib/components/DateField.svelte';
+	import TimeField from '#lib/components/TimeField.svelte';
 
 	interface Values {
 		title: string;
@@ -85,33 +87,33 @@
 	<div class="pair">
 		<div class="field">
 			<label for="start-date">Starts on</label>
-			<input type="date" id="start-date" name="start-date" required value={values.startDate} aria-invalid={bad('startDate')} />
+			<DateField id="start-date" name="start-date" required value={values.startDate} invalid={invalid === 'startDate'} hint="" />
 		</div>
 		<div class="field">
 			<label for="start-time">at</label>
-			<input type="time" id="start-time" name="start-time" required value={values.startTime} aria-invalid={bad('startDate')} />
+			<TimeField id="start-time" name="start-time" required value={values.startTime} invalid={invalid === 'startDate'} />
 		</div>
 	</div>
 	{@render error('endTime')}
 	<div class="pair">
 		<div class="field">
 			<label for="end-date">Ends on <span class="hint">(empty if the same day)</span></label>
-			<input type="date" id="end-date" name="end-date" value={values.endDate} />
+			<DateField id="end-date" name="end-date" value={values.endDate} hint="" />
 		</div>
 		<div class="field">
 			<label for="end-time">at</label>
-			<input type="time" id="end-time" name="end-time" required value={values.endTime} aria-invalid={bad('endTime')} />
+			<TimeField id="end-time" name="end-time" required value={values.endTime} invalid={invalid === 'endTime'} />
 		</div>
 	</div>
 	{@render error('closesDate')}
 	<div class="pair">
 		<div class="field">
 			<label for="closes-date">Registration closes on <span class="hint">(empty: when it starts)</span></label>
-			<input type="date" id="closes-date" name="closes-date" value={values.closesDate} aria-invalid={bad('closesDate')} />
+			<DateField id="closes-date" name="closes-date" value={values.closesDate} invalid={invalid === 'closesDate'} hint="" />
 		</div>
 		<div class="field">
 			<label for="closes-time">at</label>
-			<input type="time" id="closes-time" name="closes-time" value={values.closesTime} />
+			<TimeField id="closes-time" name="closes-time" value={values.closesTime} />
 		</div>
 	</div>
 </fieldset>
@@ -180,8 +182,6 @@
 		margin-bottom: var(--space-3);
 	}
 
-	input[type='date'],
-	input[type='time'],
 	input[type='url'] {
 		display: block;
 		box-sizing: border-box;

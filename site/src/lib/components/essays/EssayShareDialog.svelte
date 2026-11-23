@@ -7,7 +7,8 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { accessLevelLabels, roleLabels, type AccessLevel, type Role } from '#lib/permissions.ts';
-	import { dueDate, inReviewText, isOpen, type ReviewRequest } from '#lib/essays/review-requests.ts';
+	import { inReviewText, isOpen, type ReviewRequest } from '#lib/essays/review-requests.ts';
+	import DateField from '#lib/components/DateField.svelte';
 
 	interface Person {
 		identifier: string;
@@ -247,8 +248,7 @@
 						</div>
 						<div class="field">
 							<label for="share-due">By (optional)</label>
-							<input id="share-due" type="date" bind:value={dueOn} />
-							{#if dueOn}<span class="small muted">{dueDate(dueOn)}</span>{/if}
+							<DateField id="share-due" bind:value={dueOn} />
 						</div>
 					</div>
 					<div class="field">
