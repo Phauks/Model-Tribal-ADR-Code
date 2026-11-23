@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Info from '@lucide/svelte/icons/info';
 	import Composer from '../Composer.svelte';
 	import type { PageProps } from './$types';
@@ -20,10 +20,13 @@
 	<title>Compose · Inbox · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<div class="head">
-	<a class="icon-button" href="/workspace/inbox" aria-label="Back to the inbox" title="Back to the inbox"><ArrowLeft size={20} aria-hidden="true" /></a>
-	<h1>New message</h1>
-</div>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Inbox', href: '/workspace/inbox' }
+	]}
+/>
+<h1>New message</h1>
 
 <p class="small muted about">
 	<Info size={16} aria-hidden="true" />
@@ -68,15 +71,6 @@
 </div>
 
 <style>
-	.head {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		margin-bottom: var(--space-2);
-	}
-	.head h1 {
-		margin: 0;
-	}
 	.about {
 		display: flex;
 		gap: var(--space-2);

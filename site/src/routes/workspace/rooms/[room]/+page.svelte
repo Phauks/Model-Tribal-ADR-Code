@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Video from '@lucide/svelte/icons/video';
 	import CopyLink from '#lib/components/CopyLink.svelte';
 	import RoomRecords from '#lib/components/RoomRecords.svelte';
@@ -19,7 +20,12 @@
 	<title>{data.room.title} · Video rooms · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/rooms">Video rooms</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Video rooms', href: '/workspace/rooms' }
+	]}
+/>
 <h1>{data.room.title}</h1>
 <p>{data.room.when} · {data.room.visibility === 'public' ? 'Public' : 'Private'}{#if data.room.open}<span class="chip">Open now</span>{:else if data.room.closed}<span class="chip">Closed</span>{/if}</p>
 

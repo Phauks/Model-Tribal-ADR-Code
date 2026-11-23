@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { fileName, verifyLink } from '#lib/checksums.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -37,7 +38,7 @@
 </svelte:head>
 
 <div class="reading">
-	<p class="small"><a href="/copies">Copies of documents</a></p>
+	<Breadcrumbs trail={[{ label: 'Copies of documents', href: '/copies' }]} />
 	<h1>{data.title}</h1>
 </div>
 

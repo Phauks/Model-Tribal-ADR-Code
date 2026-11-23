@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Video from '@lucide/svelte/icons/video';
 	import RoomJoinPanel from '#lib/components/RoomJoinPanel.svelte';
 	import VideoRoom from '#lib/components/VideoRoom.svelte';
@@ -16,7 +17,7 @@
 	<title>{data.room ? `${data.room.title} · ` : ''}Video rooms · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/rooms">Video rooms</a></p>
+<Breadcrumbs trail={[{ label: 'Video rooms', href: '/rooms' }]} />
 {#if !data.room}
 	<h1>Video room</h1>
 	<div class="notice" role="note"><p>{data.refusal.words}</p></div>

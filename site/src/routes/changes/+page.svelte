@@ -2,6 +2,7 @@
 	// Recent changes, like a wiki's (site/COLLABORATION.md, "Recent changes"),
 	// and, with ?page=, one page's history. The filters are a plain form, so
 	// they work without scripts.
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import EyeOff from '@lucide/svelte/icons/eye-off';
 	import Lock from '@lucide/svelte/icons/lock';
@@ -158,9 +159,7 @@
 {/snippet}
 
 {#if history}
-	<nav aria-label="Breadcrumb" class="small">
-		<a href="/changes">Recent changes</a> › History
-	</nav>
+	<Breadcrumbs trail={[{ label: 'Recent changes', href: '/changes' }]} />
 	<h1>History of {historyName}</h1>
 	<!-- Says plainly that the list is one page's, with the way back to every page's (Trevor, Nov. 23, 2026). -->
 	<p class="showing">

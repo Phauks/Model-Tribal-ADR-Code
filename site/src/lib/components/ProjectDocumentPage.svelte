@@ -6,12 +6,8 @@
 	the end that says it goes there.
 -->
 <script lang="ts">
+	import Breadcrumbs, { type Crumb } from './Breadcrumbs.svelte';
 	import GithubMark from './GithubMark.svelte';
-
-	interface Crumb {
-		label: string;
-		href: string;
-	}
 
 	let {
 		title,
@@ -34,11 +30,7 @@
 	<title>{title} · Model Tribal ADR Code</title>
 </svelte:head>
 
-{#if crumbs.length > 0}
-	<nav aria-label="Breadcrumb" class="small">
-		{#each crumbs as crumb (crumb.href)}<a href={crumb.href}>{crumb.label}</a>{' › '}{/each}{title}
-	</nav>
-{/if}
+<Breadcrumbs trail={crumbs} />
 
 <div class="reading project-document">
 	<h1>{title}</h1>

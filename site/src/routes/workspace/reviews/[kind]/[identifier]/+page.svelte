@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { repositoryLink } from '#lib';
 	import { decisionLabels, subjectKindLabels } from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
@@ -24,7 +25,12 @@
 </svelte:head>
 
 {#if data.allowed.capacity !== 'nation'}
-	<p class="small"><a href="/workspace/reviews">All reviews</a></p>
+	<Breadcrumbs
+		trail={[
+			{ label: 'Workspace', href: '/workspace' },
+			{ label: 'Reviews', href: '/workspace/reviews' }
+		]}
+	/>
 {/if}
 <h1>{data.subject.title}</h1>
 <p class="muted">{subjectKindLabels[data.subject.kind]} · <code>{data.subject.identifier}</code></p>

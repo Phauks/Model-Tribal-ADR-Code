@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
@@ -54,9 +55,7 @@
 	/>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/stories">Stories</a> › {story.title}
-</nav>
+<Breadcrumbs trail={[{ label: 'Stories', href: '/stories' }]} />
 
 <!--
 	A record page (site/DESIGN.md, "Record pages"): the story itself leads the

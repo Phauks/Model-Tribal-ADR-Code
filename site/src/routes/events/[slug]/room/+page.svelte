@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import RoomJoinPanel from '#lib/components/RoomJoinPanel.svelte';
 	import VideoRoom from '#lib/components/VideoRoom.svelte';
 	import type { PageProps } from './$types';
@@ -14,7 +15,12 @@
 	<title>Room · {data.event.title} · Events · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/events/{data.event.slug}">{data.event.title}</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Events', href: '/events' },
+		{ label: data.event.title, href: `/events/${data.event.slug}` }
+	]}
+/>
 <h1>Video room</h1>
 <p>{data.event.when}</p>
 

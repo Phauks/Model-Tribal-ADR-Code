@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -12,7 +13,7 @@
 </svelte:head>
 
 <div class="reading">
-	<p class="small"><a href="/people">People</a></p>
+	<Breadcrumbs trail={[{ label: 'People', href: '/people' }]} />
 	<header class="person">
 		{#if data.picture}
 			<img class="picture" src={data.picture} alt="" width="160" height="160" />

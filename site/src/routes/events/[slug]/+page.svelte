@@ -1,5 +1,6 @@
 <script lang="ts">
 	// An event's page (site/COLLABORATION.md, "Events").
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CalendarPlus from '@lucide/svelte/icons/calendar-plus';
 	import Clock from '@lucide/svelte/icons/clock';
 	import MapPin from '@lucide/svelte/icons/map-pin';
@@ -21,7 +22,7 @@
 </svelte:head>
 
 <div class="reading">
-	<p class="breadcrumb"><a href="/events">Events</a></p>
+	<Breadcrumbs trail={[{ label: 'Events', href: '/events' }]} />
 	<h1>{event.title}</h1>
 
 	{#if event.status === 'draft'}
@@ -220,11 +221,6 @@
 </div>
 
 <style>
-	.breadcrumb {
-		margin: 0 0 var(--space-2);
-		font-size: var(--font-size-small);
-	}
-
 	.facts {
 		margin: var(--space-4) 0;
 	}
