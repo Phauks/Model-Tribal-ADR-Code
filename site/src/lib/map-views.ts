@@ -23,7 +23,7 @@ export interface MapViewEntry {
 }
 
 /** Groups in the order they are listed. */
-export const mapViewGroups = ['Where nations are', 'Jurisdiction', 'Federal administration'] as const;
+export const mapViewGroups = ['Where nations are', 'Courts and dispute resolution', 'Jurisdiction', 'Federal administration'] as const;
 
 export const mapViews: MapViewEntry[] = [
 	{
@@ -43,6 +43,14 @@ export const mapViews: MapViewEntry[] = [
 		description: 'Reservations, trust lands and statistical areas from the 2020 census',
 		keywords: ['reservation', 'trust land', 'rancheria', 'pueblo', 'census', 'boundaries', 'aiannh'],
 		nationPage: { key: 'lands', label: 'Land Areas', description: 'The census areas the nation’s entry names' }
+	},
+	{
+		key: 'courts-and-peacemaking',
+		label: 'Courts and Peacemaking',
+		heading: 'courts-and-peacemaking-heading',
+		group: 'Courts and dispute resolution',
+		description: 'Nations with a tribal court, a peacemaking or traditional forum, or a healing to wellness court',
+		keywords: ['court', 'tribal court', 'peacemaking', 'traditional', 'elders', 'circle', 'wellness', 'drug court', 'court of indian offenses', 'cfr court', 'adr', 'dispute resolution']
 	},
 	{
 		key: 'public-law-280',
