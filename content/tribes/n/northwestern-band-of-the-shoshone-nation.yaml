@@ -184,6 +184,22 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "serves the ambulatory health care needs of the Shoshone-Bannock Tribes and the Northwestern Band of Shoshoni".'
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council Chairman
+  source: northwestern-band-of-the-shoshone-nation-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The council page lists officers by title beside their names, so the council size and how members are chosen are not stated in quotable words.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Tribal Council Chairman
+  source: northwestern-band-of-the-shoshone-nation-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The council page lists officers by title beside their names, so the council size and how members are chosen are not stated in quotable words.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -192,6 +208,14 @@ governance:
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice Chairman
+  quote: Tribal Council Vice Chairman
+  source: northwestern-band-of-the-shoshone-nation-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The council page lists officers by title beside their names, so the council size and how members are chosen are not stated in quotable words.'
 governing_documents:
 - kind: constitution
   title: Northwestern Band of the Shoshone Nation - Constitution Table of Contents

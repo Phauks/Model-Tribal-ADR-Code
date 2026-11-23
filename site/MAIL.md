@@ -23,7 +23,7 @@ If a notice address is set, one short "new mail" message goes there at most ever
 
 ### Attachments and the virus check
 
-Every attachment of a message that arrives is put in line for the site's virus scanner as soon as it is stored ([SCANNING.md](SCANNING.md)), and it is held until the scan says clean. While it is held, the conversation shows the file with where the check stands instead of a download link, and a forward cannot include it. A file where something was found is held for good. One the scanner could not finish (locked with a password, too large) can be released by someone who manages the inbox, with a short reason that goes in the conversation's history. Attachments the project sends are the team's own files and are not held. When a deleted conversation is removed for good, its files' scan records go with it. The code is in `src/lib/server/mail/scans.ts`.
+Every attachment, of a message that arrives or one the project sends, is stored with `storeSentFile`, which puts it in line for the site's virus scanner ([SCANNING.md](SCANNING.md)), and it is held until the scan says clean. While it is held, the conversation shows the file with where the check stands instead of a download link, and a forward cannot include it. A file where something was found is held for good. One the scanner could not finish (locked with a password, too large) can be released by someone who manages the inbox, with a short reason that goes in the conversation's history. A message the project sends waits until its attachments pass: it shows "Waiting for the virus check" and the five-minute run sends it once they do, usually within a minute or two (Trevor, Nov. 23, 2026: no file may get around the scanner). If the check finds something in a file the team attached, or cannot check it, the message is not sent and says why; remove the file and send again. When a deleted conversation is removed for good, its files' scan records go with it. The code is in `src/lib/server/mail/scans.ts`.
 
 ## How mail goes out
 
@@ -59,7 +59,7 @@ The lead author asked for tags, folders and auto-sort rules on Nov. 23, 2026.
 
 ## Writing
 
-The lead author asked for these on Nov. 23, 2026, after a comparison with other mail services. The settings are on the Inbox settings page (`/workspace/inbox/settings`), for whoever manages the inbox; they apply to everyone who answers it. The code is `src/lib/server/mail/writing.ts`, and the tables are in `migrations/0024_mail_writing.sql`.
+The lead author asked for these on Nov. 23, 2026, after a comparison with other mail services. The settings are on the Inbox settings page (`/workspace/inbox/settings`), for whoever manages the inbox; they apply to everyone who answers it. The code is `src/lib/server/mail/writing.ts`, and the tables are in `migrations/20261123T0510_add_mail_writing.sql`.
 
 - **Signatures.** Each of the inbox's addresses can have one. It is put below a new message, reply or forward when the box opens, after a line of two dashes and a space, the usual signature mark,[^rfc3676] and above any quoted message. Choosing another From address swaps it for that address's signature. It is plain text in the message, so it can be changed or taken out before sending.
 - **Saved replies.** Answers given often, put in where the cursor is with the speech-bubble button beside Send. They can use the merge fields outreach uses, such as `{{ contact.name }}`, filled in from the address book for whoever the message is to; a field with nothing to fill stays in the message as typed, so the writer sees it and fills it by hand.
@@ -133,7 +133,7 @@ Start outreach slowly. A new mailbox is trusted gradually, so begin at 20 to 40 
 
 ## Files
 
-- `migrations/0013_mail.sql`: the tables; `migrations/0024_mail_writing.sql` adds those for signatures, saved replies, drafts, undo send and the away message.
+- `migrations/0013_mail.sql`: the tables; `migrations/20261123T0510_add_mail_writing.sql` adds those for signatures, saved replies, drafts, undo send and the away message.
 - `src/lib/mail.ts`: names, labels and small functions the pages share, including how a rule's conditions are matched.
 - `src/lib/server/mail/`: settings, message building (`mime.ts`), SMTP (`smtp.ts`), carriers, signed tokens, receiving (`inbound.ts`), sending (`outbound.ts`), conversations, folders and tags (`store.ts`), auto-sort rules (`rules.ts`), writing (`writing.ts`), outreach (`outreach.ts`) and the do-not-email list (`suppressions.ts`). Only `runtime.ts` and `socket-opener.ts` need the Worker; the rest is tested in Node (`tests/mail.test.ts`, `tests/mail-flow.test.ts`, `tests/mail-organize.test.ts`, `tests/mail-writing.test.ts`).
 - `tools/add-mail-handlers.mjs`: adds the email, queue and scheduled handlers after the build. It wraps whatever entry the build made, so it runs last in `npm run build`.

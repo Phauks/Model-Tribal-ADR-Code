@@ -227,16 +227,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
   value: Council
-  quote: The governing body of this Village shall be a Council
-  source: constitution-organized-village-of-kake-1948-text-2
-  confidence: medium
+  quote: COUNCIL & STAFF DIRECTORY
+  source: kake-nsn-council-staff-directory
+  confidence: high
   verification: read-in-full
-  as_of: '1948-01-27'
-  locator: Article III, Section 1
-  document_version:
-    document: organized-village-of-kake-constitution
-    version: 1948-text-2
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages give no constitution text; the officer titles come from a staff and council directory page.'
 - aspect: governing-body-size
   value: President and 6 members (7 in all)
   quote: composed of the president and six members, elected by the membership
@@ -275,16 +271,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
   value: President
-  quote: The president shall be elected annually to serve for a term
-  source: constitution-organized-village-of-kake-1948-text-2
-  confidence: medium
+  quote: President
+  source: kake-nsn-council-staff-directory
+  confidence: high
   verification: read-in-full
-  as_of: '1948-01-27'
-  locator: Article III, Section 4
-  document_version:
-    document: organized-village-of-kake-constitution
-    version: 1948-text-2
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages give no constitution text; the officer titles come from a staff and council directory page.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -365,6 +357,14 @@ governance:
     document: organized-village-of-kake-constitution
     version: 1948-text-2
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: OVK Tribal Court
+  quote: Kake Tribal Court services are provided at no-cost to our enrolled OVK citizens.
+  source: organized-village-of-kake-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages give no constitution text; the officer titles come from a staff and council directory page.'
 - aspect: amendment
   value: Majority vote of members 21 and over at election called by the Secretary, 30% turnout
   quote: This Constitution and By-laws may be amended by a majority vote
@@ -413,6 +413,14 @@ governance:
     document: organized-village-of-kake-constitution
     version: 1948-text-2
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Sovereign tribal government
+  quote: is a sovereign tribal government that has a special relationship with the U.S. government
+  source: kake-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages give no constitution text; the officer titles come from a staff and council directory page.'
 governing_documents:
 - kind: law-code
   title: At tribal court's website . Judicial Peacemaking Code; Keex Kwaan Domestic Relations Code

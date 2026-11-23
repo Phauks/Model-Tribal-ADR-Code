@@ -23,4 +23,12 @@ searches:
   reason: The directory lists the title of the leader's office.
   records:
   - bia-tribal-leaders-directory-2026
-next_steps: 'The nation''s own website: a government, council or constitution page. Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: research/search-logs/contacts/n/native-village-of-atka.yaml
+  query: A website of the nation's own, to read its government pages
+  outcome: no-site
+  reason: The profile lists no website of the nation's own; the contacts search (its log is the address) found none.
+next_steps: Ask the nation's government office for its constitution or a description of its government; a state commission on Indian affairs may also list it.

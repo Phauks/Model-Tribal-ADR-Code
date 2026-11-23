@@ -19,4 +19,12 @@ searches:
   query: jobtitle of the nation's row
   outcome: not-found
   reason: The directory lists federally recognized nations only.
-next_steps: 'The nation''s own website: a government, council or constitution page. Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://kumisionchamoru.guam.gov
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: not-found
+  reason: 'The pages saved are not the nation''s own government site: Pages are the website of Guam''s Kumision i Fino'' CHamoru, a Guam government language and history commission, not a government website of the CHamoru people; no facts given..'
+next_steps: Find the nation's own government website; the address listed leads elsewhere.

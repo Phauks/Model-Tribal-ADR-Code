@@ -156,6 +156,39 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+governance:
+- aspect: governing-body
+  value: Governing Body
+  quote: Governing Body Representatives
+  source: echota-cherokee-tribe-of-alabama-website-government-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Principal Chief
+  quote: Principal Chief
+  source: echota-cherokee-tribe-of-alabama-website-government-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice Chief, Secretary, Treasurer
+  quote: Vice Chief
+  source: echota-cherokee-tribe-of-alabama-website-government-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Clan council representatives
+  quote: 'Bird Clan Council Representative:'
+  source: echota-cherokee-tribe-of-alabama-website-government-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -200,17 +200,13 @@ governance:
     version: 1950-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
 - aspect: governing-body
-  value: Governing body chosen by the membership
-  quote: what kind of governing body they wish to
-  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
-  confidence: medium
+  value: Tribal Council
+  quote: The Tribal Council is the legislative body for the Aleut Community of St. Paul Island Tribal Government.
+  source: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1950-06-12'
-  locator: Article III, Section 1
-  document_version:
-    document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
-    version: 1950-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats are listed by title beside member names with no sentence stating the council''s size, so no size fact is given.'
 - aspect: governing-body-selection
   value: Chosen by the Community
   quote: The Community shall then choose the
@@ -247,6 +243,14 @@ governance:
     document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
     version: 1950-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
+- aspect: judiciary
+  value: Tribal Courts
+  quote: Through Tribal Council leadership, Tribal Courts, and community governance programs, this work helps uphold tribal sovereignty
+  source: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-website-service-areas-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats are listed by title beside member names with no sentence stating the council''s size, so no size fact is given.'
 - aspect: amendment
   value: Majority vote of qualified members in election called by Secretary of the Interior
   quote: majority vote of the qualified members of the Community voting at

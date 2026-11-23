@@ -5,6 +5,7 @@ document is often a page that lists the document, not the document itself.
     python3 scripts/review/governing_documents_review.py gather WORK_DIRECTORY
     python3 scripts/review/governing_documents_review.py merge WORK_DIRECTORY
     python3 scripts/review/governing_documents_review.py apply WORK_DIRECTORY
+    python3 scripts/review/governing_documents_review.py crosscheck WORK_DIRECTORY
 
 `gather` downloads every `governing_documents[].link` in the profiles (files
 already in WORK_DIRECTORY/files are reused) and sorts each link by what the
@@ -37,6 +38,14 @@ research/reviews/2026-11-22-governing-documents-full.json, .csv (with an empty
 `lead_author_decision` column) and -counts.json. Neither command edits a
 profile. `apply` makes the plain corrections the review found (see its
 docstring) and leaves every judgment call to the lead author.
+
+`crosscheck` (Nov. 23, 2026) compares the review with what the project's
+other document searches hold: the constitution catalog
+(research/constitutions/), the tribal law texts (research/tribal-law/), the
+capture index, the search logs and the Nov. 23 retry of failed fetches. It
+fills the CSV's `other_searches` column, writes the facts that have no link at
+all to research/reviews/2026-11-23-governing-documents-without-links.csv, and
+points three links at texts those searches downloaded (see CONFIRMED_ELSEWHERE).
 """
 
 import collections
@@ -473,7 +482,256 @@ def apply(work):
     print(json.dumps(dict(changed=dict(counts), skipped=dict(skipped), profiles=len(changed)), indent=1))
 
 
+# `crosscheck` ---------------------------------------------------------------
+# Nov. 23, 2026: the lead author asked that the review be checked against the
+# documents other threads had found since.
+
+WITHOUT_LINKS = base.REVIEWS / "2026-11-23-governing-documents-without-links.csv"
+CONSTITUTION_TYPES = {
+    "constitution": {"constitution", "constitution-and-bylaws", "bylaws", "amendment", "proposed-constitution"},
+    "corporate-charter": {"corporate-charter"},
+    "articles-of-association": {"articles-of-association", "constitution", "constitution-and-bylaws"},
+}
+# Code Publishing pages captured on Nov. 21, 2026 say each code moved to eCode360
+# (research/captures/tribal-law/documents/7268a810a0c01c6c561f.txt, 428fd8c53abb9007273f.txt,
+# fca87baa71d190b465fb.txt). eCode360 refuses automated requests, so the new addresses are unread.
+MOVED = {"codepublishing.com/wa/chehalistribe": "https://ecode360.com/CH4710",
+         "codepublishing.com/wa/puyalluptribe": "https://ecode360.com/PU4881",
+         "codepublishing.com/wa/tulalip": "https://ecode360.com/TU4849"}
+# Direct links the 2026-11-22 `apply` could not confirm with its own download, but whose text
+# another collection downloaded and read: (profile, index) -> (old link, new link, evidence).
+CONFIRMED_ELSEWHERE = {
+    ("hopi-tribe-of-arizona", 2): (
+        "http://www.hopi-nsn.gov/judicial-branch/hopi-code-of-laws-and-rules-of-civil-procedures/",
+        "https://www.hopi-nsn.gov/wp-content/uploads/2025/03/HOPI-CODE-UPDATED.pdf",
+        "the tribal law texts collection downloaded it on 2026-11-21, and it is the Hopi Code as enacted "
+        "August 28, 2012 and amended through July 2020 (research/tribal-law/documents.json)"),
+    ("cheyenne-and-arapaho-tribes", 1): (
+        "https://www.cheyenneandarapaho-nsn.gov/legislative/tribal-codes-acts-and-ordinances",
+        "https://cdn.prod.website-files.com/625854e97e951a806fc03c22/66f2df79fdd57da455bc6c2c_Constitution.pdf",
+        "the constitution catalog downloaded and read it on 2026-11-21 as the Tribes' amended constitution "
+        "of 2006, amended 2021 (research/constitutions/documents.csv, row cheyenne-and-arapaho-tribes:34748b55b07139a4)"),
+    ("walker-river-paiute-tribe-of-the-walker-river-reservation", 3): (
+        "https://www.wrpt.org/tribal-government/#Constitution",
+        "https://www.wrpt.org/wp-content/uploads/Constitution-and-By-Laws-of-the-Walker-River-Paiute-Tribe-of-Nevada.pdf",
+        "the constitution catalog downloaded and read it on 2026-11-21 as the Tribe's 1937 constitution and "
+        "by-laws with amendments (research/constitutions/documents.csv, "
+        "row walker-river-paiute-tribe-of-the-walker-river-reservation:b2410091679011ad)"),
+}
+CROSSCHECK_NOTE = "research/reviews/2026-11-22-governing-documents-full.md, section on the other document searches"
+ERROR_TITLE = re.compile(r"just a moment|attention required|not found|error|forbidden|access denied|waf block|slot", re.I)
+
+
+def link_key(link):
+    """A link without scheme, www., fragment or trailing slash, for matching across files."""
+    if not link:
+        return ""
+    link = link.strip()
+    archived = re.match(r"https?://web\.archive\.org/web/\d+[a-z_]*/(.*)", link)
+    if archived:
+        link = archived.group(1)
+    link = re.sub(r"#.*$", "", re.sub(r"^https?://", "", link, flags=re.I))
+    host, _, path = link.partition("/")
+    host = host.lower().removeprefix("www.")
+    return (host + "/" + urllib.parse.unquote(path)).rstrip("/").lower()
+
+
+def other_holdings():
+    research = ROOT / "research"
+    catalog = list(csv.DictReader((research / "constitutions/documents.csv").open(encoding="utf-8")))
+    coverage = {r["nation"]: r for r in csv.DictReader((research / "constitutions/coverage.csv").open(encoding="utf-8"))}
+    by_nation = collections.defaultdict(list)
+    catalog_links = collections.defaultdict(list)
+    for row in catalog:
+        by_nation[row["nation"]].append(row)
+        if row["link"]:
+            catalog_links[link_key(row["link"])].append(row)
+    wayback_prints = collections.defaultdict(list)
+    for row in csv.DictReader((research / "capture-index.csv").open(encoding="utf-8")):
+        if row["key"].startswith("constitutions/") and "Wayback" in row["title"] and row["link"]:
+            wayback_prints[link_key(row["link"])].append(row)
+    law_texts = {}
+    for row in json.loads((research / "tribal-law/documents.json").read_text()):
+        if str(row["http_status"]) == "200" and (row["characters"] or 0) > 3000 \
+                and not ERROR_TITLE.search(row["page_title"] or ""):
+            law_texts.setdefault(link_key(row["url"]), row)
+    retried = collections.defaultdict(list)
+    for row in csv.DictReader((base.REVIEWS / "2026-11-23-retry-batch-6.csv").open(encoding="utf-8")):
+        if row["outcome"] == "found":
+            retried[link_key(row["address_tried"])].append(row)
+    # Hand-pulled constitutions added after the catalog was built: version histories (PR #123) and
+    # captures filed under constitutions/<nation>/ that wait for the catalog.
+    histories = {p.stem.removesuffix("-constitution") for p in (ROOT / "content/documents").glob("*/*-constitution.yaml")}
+    later = collections.Counter()
+    for row in csv.DictReader((research / "capture-index.csv").open(encoding="utf-8")):
+        parts = row["key"].split("/")
+        if parts[0] == "constitutions" and len(parts) == 3 and not row["key"].endswith((".txt", ".json", ".raw")):
+            later[parts[1]] += 1
+    return dict(by_nation=by_nation, coverage=coverage, catalog_links=catalog_links, histories=histories, later=later,
+                wayback_prints=wayback_prints, law_texts=law_texts, retried=retried)
+
+
+def held_texts(held, profile, kind, year):
+    """What the constitution catalog holds for this nation and kind of document."""
+    types = CONSTITUTION_TYPES.get(kind)
+    if not types:
+        return None
+    texts = [d for d in held["by_nation"].get(profile, []) if d["document_type"] in types and d["completeness"] == "full-text"]
+    if not texts:
+        if kind == "constitution" and (profile in held["histories"] or held["later"].get(profile)):
+            return dict(status="text held outside the catalog",
+                        note="A hand-pulled constitution for the nation is held (a version history in content/documents/ "
+                             "or a capture under constitutions/ that waits for the catalog); not compared with this fact.")
+        return dict(status="no text held", note="")
+    years = {(d.get(f) or "")[:4] for d in texts for f in ("adopted", "approved", "effective", "latest_amendment")} - {""}
+    newest = held["coverage"].get(profile, {})
+    label = newest.get("newest_version_label") or "undated"
+    if not year:
+        status = "text held, fact has no year"
+    elif str(year)[:4] in years:
+        status = "text held, same year"
+    else:
+        status = "text held, other year"
+    note = (f"The constitution catalog holds {len(texts)} full text(s) of this kind for the nation "
+            f"(newest version: {label}; currency {newest.get('newest_version_status') or 'unknown'})"
+            + (", including one of this year." if status == "text held, same year" else "."))
+    return dict(status=status, note=note)
+
+
+def crosscheck_row(row, held):
+    notes, tags = [], []
+    key = link_key(row["link"])
+    same_text = [d for d in held["catalog_links"].get(key, []) if d["nation"] == row["profile"]]
+    if same_text and row["tier"] == "link problem" and row["final"] == "error-or-empty":
+        d = same_text[0]
+        notes.append(f"The constitution catalog downloaded this link's text through the item's JSON view on 2026-11-22 "
+                     f"({d['printed_title'][:80]}; {d['key']}), so the error was this review's fetch timing out, not the link.")
+        tags.append("link holds the text (catalog)")
+    for d in held["wayback_prints"].get(key, [])[:1]:
+        notes.append(f"A Wayback Machine print of this page, hand-pulled on Nov. 22, holds the text ({d['key']}).")
+        tags.append("Wayback copy held")
+    for d in held["retried"].get(key, [])[:1]:
+        notes.append(f"The Nov. 23 retry read a Wayback Machine copy ({d['address_read']}): {d['reason']}")
+        tags.append("Wayback copy read")
+    for old, new in MOVED.items():
+        if key.startswith(old):
+            notes.append(f"Code Publishing now sends readers to {new} (eCode360), which refuses automated requests; unread.")
+            tags.append("moved to eCode360")
+    for target in (row["reviewer_direct_link"], row["document_link"]):
+        t = link_key(target)
+        if not t or t == key:
+            continue
+        if any(d["nation"] == row["profile"] for d in held["catalog_links"].get(t, [])):
+            notes.append(f"The constitution catalog downloaded and read the direct link {target}.")
+            tags.append("direct link read (catalog)")
+            break
+        if t in held["law_texts"]:
+            notes.append(f"The tribal law texts collection downloaded the direct link {target} on 2026-11-21.")
+            tags.append("direct link downloaded (tribal law)")
+            break
+    catalog = held_texts(held, row["profile"], row["kind"], row["year"])
+    if catalog and row["tier"] != "text at the link":
+        if catalog["note"]:
+            notes.append(catalog["note"])
+        tags.append(catalog["status"])
+    return " ".join(notes), tags
+
+
+def fact_lines(lines, field, index):
+    """The first and past-the-end line numbers of item `index` of a top-level list in a YAML file."""
+    top = next(i for i, line in enumerate(lines) if line.startswith(f"{field}:"))
+    starts, end = [], len(lines)
+    for i in range(top + 1, len(lines)):
+        line = lines[i]
+        if line.startswith("- "):
+            starts.append(i)
+        elif line.strip() and not line.startswith((" ", "-")):
+            end = i
+            break
+    return starts[index], (starts[index + 1] if index + 1 < len(starts) else end)
+
+
+def crosscheck(work):
+    held = other_holdings()
+    csv_path = OUT.with_suffix(".csv")
+    rows = list(csv.DictReader(csv_path.open(encoding="utf-8")))
+    counts = collections.Counter()
+    for row in rows:
+        note, tags = crosscheck_row(row, held)
+        row["other_searches"] = note
+        for tag in tags:
+            counts[f"{row['tier']} / {tag}"] += 1
+    columns = [c for c in rows[0] if c not in ("other_searches", "lead_author_decision")] + ["other_searches", "lead_author_decision"]
+    with csv_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=columns, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+    # Facts with no link at all were outside the link review.
+    tree = base.record_facts.Tree(ROOT)
+    linkless = []
+    for path, profile in sorted(tree.profiles.items()):
+        for index, fact in enumerate(profile.get("governing_documents") or []):
+            if fact.get("link"):
+                continue
+            catalog = held_texts(held, profile["id"], fact.get("kind"), fact.get("year"))
+            status = catalog["status"] if catalog else "not a constitution, charter or articles"
+            counts[f"no link / {status}"] += 1
+            linkless.append(dict(profile=profile["id"], index=index, kind=fact.get("kind"), title=fact.get("title"),
+                                 year=fact.get("year") or "", verification=fact.get("verification"),
+                                 why_no_link=re.sub(r"\s+", " ", str(fact.get("note") or ""))[:300],
+                                 other_searches=catalog["note"] if catalog else "", lead_author_decision=""))
+    with WITHOUT_LINKS.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(linkless[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(linkless)
+
+    # Links the other collections confirm.
+    by_id = {profile["id"]: (path, profile) for path, profile in tree.profiles.items()}
+    changed = collections.defaultdict(dict)
+    # Library of Congress items this review's fetch timed out on, which the catalog read in full.
+    for row in rows:
+        if "through the item's JSON view" not in row["other_searches"]:
+            continue
+        path, profile = by_id[row["profile"]]
+        fact = profile["governing_documents"][int(row["index"])]
+        if fact.get("link") != row["link"] or fact.get("verification") != "title-only":
+            continue
+        fact["verification"] = "read-in-full"
+        add_note(fact, f"Document opened on 2026-11-22 (the copy the constitution catalog work saved, "
+                       f"{row['other_searches'].split('; ')[1].split(')')[0]}); the full link review's error on "
+                       f"this link was its own fetch timing out. See {CROSSCHECK_NOTE}.")
+        counts["catalog copy: marked read in full"] += 1
+        changed[path][int(row["index"])] = fact
+    for (profile_id, index), (old, new, evidence) in CONFIRMED_ELSEWHERE.items():
+        path, profile = by_id[profile_id]
+        fact = profile["governing_documents"][index]
+        if fact.get("link") != old:
+            counts["confirmed elsewhere: profile changed since"] += 1
+            continue
+        fact["link"] = new
+        add_note(fact, f"Link changed on 2026-11-23 from {old}, a page that leads to the text, to the text "
+                       f"itself; {evidence}. See {CROSSCHECK_NOTE}.")
+        counts["confirmed elsewhere: pointed at the text"] += 1
+        changed[path][index] = fact
+    for path, edits in changed.items():
+        lines = (ROOT / path).read_text(encoding="utf-8").splitlines(keepends=True)
+        for index, fact in sorted(edits.items(), reverse=True):
+            first, last = fact_lines(lines, "governing_documents", index)
+            # Rewrite only the changed fact, one line per value (no hard wrapping).
+            lines[first:last] = [yaml.safe_dump([fact], allow_unicode=True, sort_keys=False, width=1_000_000)]
+        (ROOT / path).write_text("".join(lines), encoding="utf-8")
+        check = yaml.safe_load((ROOT / path).read_text(encoding="utf-8"))
+        assert all(check["governing_documents"][i] == f for i, f in edits.items()), path
+    counts_path = pathlib.Path(f"{OUT}-counts.json")
+    summary = json.loads(counts_path.read_text())
+    summary["other_searches"] = dict(sorted(counts.items()))
+    counts_path.write_text(json.dumps(summary, indent=1, ensure_ascii=False) + "\n")
+    print(json.dumps(summary["other_searches"], indent=1, ensure_ascii=False))
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 3 or sys.argv[1] not in ("gather", "merge", "apply"):
+    commands = {"gather": gather, "merge": merge, "apply": apply, "crosscheck": crosscheck}
+    if len(sys.argv) != 3 or sys.argv[1] not in commands:
         sys.exit(__doc__)
-    {"gather": gather, "merge": merge, "apply": apply}[sys.argv[1]](pathlib.Path(sys.argv[2]))
+    commands[sys.argv[1]](pathlib.Path(sys.argv[2]))

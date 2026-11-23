@@ -4,7 +4,7 @@
  * themselves, the pause before a message goes so it can be pulled back
  * (undo send), and the away message.
  *
- * The tables are in migrations/0024_mail_writing.sql. Signatures, saved
+ * The tables are in migrations/20261123T0510_add_mail_writing.sql. Signatures, saved
  * replies, the pause and the away message belong to the whole inbox, so
  * only someone who manages it changes them; drafts belong to the person
  * writing.

@@ -191,6 +191,22 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Native Village of Gakona".'
 governance:
+- aspect: governing-body
+  value: Gakona Village Council
+  quote: The NVG is a federally recognized Tribe, and the Gakona Village Council is the governing body for the village.
+  source: nvgakona-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  quote: President
+  source: native-village-of-gakona-website-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026

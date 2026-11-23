@@ -208,17 +208,13 @@ indian_health_service:
   note: 'The source''s words: "Ninilchik Village".'
 governance:
 - aspect: governing-body
-  value: Ninilchik Traditional Council
-  quote: The governing body of the Ninilchik Tribe shall be called the Ninilchik Traditional
-  source: constitution-ninilchik-village-2010-text
-  confidence: medium
+  value: NTC Council, Board of Directors
+  quote: Our NTC Council, or Board of Directors, serves as the governing body responsible for making strategic decisions and overseeing the affairs of the Ninilchik Village Tribe.
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
   verification: read-in-full
-  as_of: '2010'
-  locator: Article V, Section 1
-  document_version:
-    document: ninilchik-village-constitution
-    version: 2010-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 5 members
   quote: The NTC shall consist of five (5) tribal members elected pursuant to this
@@ -232,29 +228,21 @@ governance:
     version: 2010-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
 - aspect: governing-body-selection
-  value: Elected under election ordinance
-  quote: constitution and an election ordinance enacted by the NTC.
-  source: constitution-ninilchik-village-2010-text
-  confidence: medium
+  value: Elected by tribal members
+  quote: Voted in by our tribal members, these yearly elections ensure diverse voices and perspectives are represented in decision-making
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
   verification: read-in-full
-  as_of: '2010'
-  locator: Article V, Section 2
-  document_version:
-    document: ninilchik-village-constitution
-    version: 2010-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
   value: 3 years, staggered
-  quote: Each NTC member shall serve for a term of three (3) years or until a successor
-  source: constitution-ninilchik-village-2010-text
-  confidence: medium
+  quote: Council seats have three-year terms staggered over three cycles, guaranteeing that at least one seat is up for election annually.
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
   verification: read-in-full
-  as_of: '2010'
-  locator: Article V, Section 3
-  document_version:
-    document: ninilchik-village-constitution
-    version: 2010-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   quote: The President of the NTC shall preside over all meetings of the NTC and all
@@ -300,17 +288,13 @@ governance:
     version: 2010-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
 - aspect: elections
-  value: Every year, second Monday in November
-  quote: terms shall be held on the second Monday in November in each year.
-  source: constitution-ninilchik-village-2010-text
-  confidence: medium
+  value: Annually, one seat up each year
+  quote: Council seats have three-year terms staggered over three cycles, guaranteeing that at least one seat is up for election annually.
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
   verification: read-in-full
-  as_of: '2010'
-  locator: Article VII, Section 4
-  document_version:
-    document: ninilchik-village-constitution
-    version: 2010-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: voting-age
   value: '18'
   quote: who are eighteen years of age or
@@ -335,6 +319,14 @@ governance:
     document: ninilchik-village-constitution
     version: 2010-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: branches
+  value: Governing board; executive branch
+  quote: Our NTC Executive Director leads the executive branch of all NTC departments and services
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: amendment
   value: Majority of registered voters, with 30% turnout
   quote: majority of the registered voters in an election in which at least thirty (30%) percent of the

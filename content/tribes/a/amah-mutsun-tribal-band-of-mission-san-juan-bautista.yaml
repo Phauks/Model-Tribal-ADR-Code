@@ -84,6 +84,118 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: form
+  value: Act of June 18, 1934, as amended by the Act of June 15, 1935
+  quote: as provided in the Act of June 18, 1934, as amended by the Act of June 15, 1935
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance-tribal-constitution
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XVIII
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: shall preside over all meetings of the Amah Tribal Band Ohlone/Costanoan Indians Tribal Council
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance-tribal-constitution
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: governing-body-size
+  value: 10 members
+  quote: our Tribal Council is comprised of 10 members
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: while Council Members are elected to four year terms
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: governing-body-term
+  value: 4 years (Executive Council 6 years)
+  quote: Executive Council members are elected to a six year terms while Council Members are elected to four year terms
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson of the Amah Tribal Band Ohlone/Costanoan Indians Council shall preside over all meetings
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance-tribal-constitution
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: other-officers
+  value: Chairperson, Vice-Chairperson, Secretary, Treasurer
+  quote: the Executive Council which is comprised of the Chairperson, Vice-Chairperson, Secretary and Treasurer
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: elections
+  value: Biennial
+  quote: the subsequent election meeting following the biennial election
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance-tribal-constitution
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XI, Section 1(C)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: voting-age
+  value: '18'
+  quote: All registered members over the age of 18 year of age or older and who are members in good standing are eligible to vote in our elections.
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: election-authority
+  value: Election Board
+  quote: The election shall be conducted under the direction of the Election Board
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance-tribal-constitution
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XI, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: recall-and-removal
+  value: Removal by Tribal Council resolution
+  quote: the remaining members of the Tribal Council may be resolution remove such person from office
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance-tribal-constitution
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XI, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of voters
+  quote: signed by not less than fifty-one percent (51%) of the duly qualified voters
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance-tribal-constitution
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XI, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
+- aspect: other
+  value: Elders Committee advises Chairperson and Council
+  quote: The Amah Mutsun Elders Committee is responsible for advising the Tribal Chairperson, Executive Committee, and Tribal Council.
+  source: amah-mutsun-tribal-band-of-mission-san-juan-bautista-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text in the saved page is incomplete (several articles are missing or cut off), so facts come partly from the nation''s governance page.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

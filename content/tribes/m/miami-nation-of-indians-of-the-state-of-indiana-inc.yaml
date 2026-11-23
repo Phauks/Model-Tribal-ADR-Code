@@ -87,6 +87,55 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Today, the Miami Nation of Indiana is governed by an 18-person tribal council composed of an elected chief, vice-chief, elected at-large representatives, and clan-appointed representatives from the families that remained in Indiana after the removal era.
+  source: miami-nation-of-indians-of-the-state-of-indiana-inc-website-people
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 18 members
+  quote: Today, the Miami Nation of Indiana is governed by an 18-person tribal council composed of an elected chief, vice-chief, elected at-large representatives, and clan-appointed representatives from the families that remained in Indiana after the removal era.
+  source: miami-nation-of-indians-of-the-state-of-indiana-inc-website-people
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected and clan-appointed
+  quote: composed of an elected chief, vice-chief, elected at-large representatives, and clan-appointed representatives
+  source: miami-nation-of-indians-of-the-state-of-indiana-inc-website-people
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  quote: composed of an elected chief, vice-chief
+  source: miami-nation-of-indians-of-the-state-of-indiana-inc-website-people
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: composed of an elected chief, vice-chief
+  source: miami-nation-of-indians-of-the-state-of-indiana-inc-website-people
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Secretary, Treasurer
+  quote: The secretary and treasurer are elected by the tribal council.
+  source: miami-nation-of-indians-of-the-state-of-indiana-inc-website-people
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

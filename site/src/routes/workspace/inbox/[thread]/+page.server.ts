@@ -174,6 +174,7 @@ export const actions: Actions = {
 				return { paused: true };
 			}
 			const sent = await sendMessage(context, mailCarriers(context), queued.messageIdentifier);
+			if (sent.held) return { done: sent.error };
 			return sent.sent ? { done: 'Sent.' } : fail(502, { problem: `Not sent: ${sent.error} The message is kept below; use Send again.` });
 		} catch (problem) {
 			if (problem instanceof CompositionError) return fail(400, { problem: problem.message });
@@ -279,6 +280,7 @@ export const actions: Actions = {
 		const message = formText(form, 'message', 100);
 		if (!message || !(await sendAgain(context, person.identifier, message))) return fail(400, { problem: 'That message can no longer be sent again.' });
 		const sent = await sendMessage(context, mailCarriers(context), message);
+		if (sent.held) return { done: sent.error };
 		return sent.sent ? { done: 'Sent.' } : fail(502, { problem: `Not sent: ${sent.error}` });
 	}
 };

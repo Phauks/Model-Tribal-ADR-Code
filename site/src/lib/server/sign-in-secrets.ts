@@ -46,45 +46,74 @@ export function sameHash(a: string, b: string): boolean {
 }
 
 /**
- * PBKDF2-SHA256 iterations for passwords. Workers allow at most 100,000
- * (Cloudflare, "Web Crypto", developers.cloudflare.com/workers/runtime-apis/web-crypto/),
- * so the site uses that. The count is stored with each hash, so it can be
- * raised later without locking anyone out.
+ * PBKDF2-SHA256 rounds for passwords. OWASP's Password Storage Cheat Sheet
+ * recommends 600,000 rounds of PBKDF2-HMAC-SHA256
+ * (cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html,
+ * "PBKDF2"). Workers refuse more than 100,000 rounds in one call, so the
+ * rounds run in steps of at most 100,000, each step's result being the next
+ * step's input: guessing a password still costs all 600,000 rounds. A hash
+ * made with 100,000 rounds is one step, exactly as the site made them before
+ * Nov. 23, 2026, so older passwords keep working and are upgraded the next
+ * time their owner signs in. The count is stored with each hash.
  */
-export const passwordIterations = 100_000;
+export const passwordIterations = 600_000;
 
-/** A password's PBKDF2-SHA256 hash with this salt, as hex. */
-export async function passwordHash(password: string, salt: string, iterations = passwordIterations): Promise<string> {
-	const key = await crypto.subtle.importKey(
-		'raw',
-		new TextEncoder().encode(password.normalize('NFC')),
-		'PBKDF2',
-		false,
-		['deriveBits']
-	);
+/** The most rounds Workers allow in one PBKDF2 call. */
+const roundsPerStep = 100_000;
+
+const encoder = new TextEncoder();
+
+async function pbkdf2(input: Uint8Array<ArrayBuffer>, salt: string, iterations: number): Promise<Uint8Array<ArrayBuffer>> {
+	const key = await crypto.subtle.importKey('raw', input, 'PBKDF2', false, ['deriveBits']);
 	const bits = await crypto.subtle.deriveBits(
-		{ name: 'PBKDF2', hash: 'SHA-256', salt: new TextEncoder().encode(salt), iterations },
+		{ name: 'PBKDF2', hash: 'SHA-256', salt: encoder.encode(salt), iterations },
 		key,
 		256
 	);
-	return hex(bits);
+	return new Uint8Array(bits);
 }
 
 /**
- * Password rules, following NIST SP 800-63B section 3.1.1.2: a minimum
- * length, a generous maximum, any characters including spaces, and no rules
- * about mixing character types.
+ * A password's hash, as hex: PBKDF2-SHA256 with this salt and number of
+ * rounds, then, when the Worker has a password key, HMAC-SHA256 with that key.
+ * NIST SP 800-63B-4, section 3.1.1.2, asks for this "additional iteration of
+ * a keyed hashing ... operation using a secret key known only to the
+ * verifier", stored apart from the hashes: the key is a Cloudflare secret
+ * (PASSWORD_KEY), so a copy of the database alone is not enough to start
+ * guessing passwords.
  */
-export const passwordMinimumLength = 12;
+export async function passwordHash(
+	password: string,
+	salt: string,
+	iterations = passwordIterations,
+	key?: string
+): Promise<string> {
+	let bits: Uint8Array<ArrayBuffer> = encoder.encode(password.normalize('NFC'));
+	let left = iterations;
+	do {
+		const rounds = Math.min(left, roundsPerStep);
+		bits = await pbkdf2(bits, salt, rounds);
+		left -= rounds;
+	} while (left > 0);
+	if (!key) return hex(bits.buffer);
+	const hmacKey = await crypto.subtle.importKey('raw', encoder.encode(key), { name: 'HMAC', hash: 'SHA-256' }, false, [
+		'sign'
+	]);
+	return hex(await crypto.subtle.sign('HMAC', hmacKey, bits));
+}
+
+/**
+ * Password rules, following NIST SP 800-63B-4, section 3.1.1.2: at least 15
+ * characters when the password is the only thing needed to sign in, a
+ * generous maximum, any characters including spaces, no rules about mixing
+ * character types, and a check against passwords that are common, that have
+ * leaked, or that come from this site or the person's address
+ * (src/lib/server/password-checks.ts).
+ */
+export const passwordMinimumLength = 15;
 export const passwordMaximumLength = 256;
 
-/** Why a new password cannot be used, or nothing if it can. */
-export function passwordProblem(password: string, email: string): string | undefined {
-	const length = [...password.normalize('NFC')].length;
-	if (length < passwordMinimumLength) return `Use at least ${passwordMinimumLength} characters. A few unrelated words make a strong password that is easy to remember.`;
-	if (length > passwordMaximumLength) return `Use at most ${passwordMaximumLength} characters.`;
-	if (password.trim().toLocaleLowerCase('en-US') === email.trim().toLocaleLowerCase('en-US')) {
-		return 'Do not use your email address as your password.';
-	}
-	return undefined;
+/** How many characters a password has, counting each Unicode code point once (NIST SP 800-63B-4, 3.1.1.2). */
+export function passwordLength(password: string): number {
+	return [...password.normalize('NFC')].length;
 }

@@ -18,7 +18,7 @@ import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type
 import { actionStatement, bucketKeys, currentTime, type MailContext } from './context.ts';
 import { isProjectAddress } from './settings.ts';
 import { factsFor, ruleAddressForms, runRules } from './rules.ts';
-import { holdAttachments } from './scans.ts';
+import { storeSentFile } from '#lib/server/file-scans.ts';
 import { suppress } from './suppressions.ts';
 import { readToken, unsubscribeAddressToken } from './tokens.ts';
 
@@ -290,7 +290,13 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 		const id = crypto.randomUUID();
 		const key = bucketKeys.attachment(identifier, id);
 		const content = typeof part.content === 'string' ? new TextEncoder().encode(part.content) : new Uint8Array(part.content);
-		await context.bucket.put(key, content, { httpMetadata: { contentType: part.mimeType || 'application/octet-stream' } });
+		// Held until the virus check passes (site/SCANNING.md, src/lib/server/mail/scans.ts).
+		await storeSentFile(
+			context.database,
+			context.bucket,
+			{ objectKey: key, purpose: 'mail-attachment', subject: id, bytes: content, httpMetadata: { contentType: part.mimeType || 'application/octet-stream' } },
+			at
+		);
 		attachmentRows.push({
 			id,
 			filename: (part.filename ?? '').trim() || 'attachment',
@@ -402,7 +408,6 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	}
 	await database.batch(statements);
 	// Every attachment is held until the virus check says clean (src/lib/server/mail/scans.ts).
-	await holdAttachments(context, attachmentRows.map((row) => ({ identifier: row.id, key: row.key })));
 
 	if (report) await applyDeliveryReport(context, report, identifier);
 

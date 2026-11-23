@@ -14,7 +14,8 @@ import { snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/
 import { buildRawMessage, newMessageId, type OutgoingAttachment, type OutgoingMail } from './mime.ts';
 import { actionStatement, bucketKeys, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { noticeHeader } from './inbound.ts';
-import { mayHandOut } from './scans.ts';
+import { openScannedFile, stillScanning, storeSentFile } from '#lib/server/file-scans.ts';
+import { heldForVirusCheck } from '#lib/mail.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
 
 /** Cloudflare Email Service takes at most 50 recipients and 25 MiB a message ("Limits"). */
@@ -147,7 +148,13 @@ export async function queueMessage(context: MailContext, composition: Compositio
 	for (const attachment of attachments) {
 		const id = crypto.randomUUID();
 		const key = bucketKeys.attachment(messageIdentifier, id);
-		await context.bucket.put(key, attachment.content, { httpMetadata: { contentType: attachment.mediaType } });
+		// Held until the virus check passes; sendMessage waits for it (site/SCANNING.md).
+		await storeSentFile(
+			context.database,
+			context.bucket,
+			{ objectKey: key, purpose: 'mail-outgoing', subject: messageIdentifier, bytes: attachment.content, httpMetadata: { contentType: attachment.mediaType } },
+			at
+		);
 		statements.push(
 			database
 				.prepare(
@@ -200,12 +207,13 @@ async function forwardedAttachments(
 		.all<{ filename: string; media_type: string; bucket_key: string; direction: string }>();
 	const found = [];
 	for (const row of results) {
-		const object = await context.bucket.get(row.bucket_key);
-		if (!object) throw new CompositionError(`The attachment ${row.filename} is no longer stored, so it cannot be forwarded.`);
-		// A received file goes on only once the virus check has passed (src/lib/server/mail/scans.ts).
-		if (!(await mayHandOut(context, { key: row.bucket_key, received: row.direction === 'in' }, object))) {
+		// A file goes on only once the virus check has passed (site/SCANNING.md).
+		const opened = await openScannedFile(context.database, context.bucket, row.bucket_key);
+		if (opened.state === 'missing') throw new CompositionError(`The attachment ${row.filename} is no longer stored, so it cannot be forwarded.`);
+		if (opened.state === 'held') {
 			throw new CompositionError(`The attachment ${row.filename} is held until the virus check passes, so it cannot be forwarded yet. Untick it to forward the message without it.`);
 		}
+		const object = opened.object;
 		found.push({ filename: row.filename, mediaType: row.media_type, content: new Uint8Array(await object.arrayBuffer()) });
 	}
 	return found;
@@ -246,7 +254,7 @@ export async function sendMessage(
 	carriers: MailCarriers,
 	messageIdentifier: string,
 	options: SendOptions = {}
-): Promise<{ sent: boolean; error?: string }> {
+): Promise<{ sent: boolean; held?: boolean; error?: string }> {
 	const database = context.database;
 	const at = currentTime(context);
 	// A message another run started sending is left to it, unless that run stopped partway (ten minutes on).
@@ -277,10 +285,29 @@ export async function sendMessage(
 		.prepare('SELECT filename, media_type, content_id, bucket_key FROM mail_attachments WHERE message_identifier = ?')
 		.bind(messageIdentifier)
 		.all<{ filename: string; media_type: string; content_id: string | null; bucket_key: string }>();
+	// Nothing goes out until every attachment has passed the virus check
+	// (site/SCANNING.md). While a check is still running, the message waits as
+	// scheduled and the five-minute run tries it again.
 	const attachments: OutgoingAttachment[] = [];
 	for (const item of attachmentRows) {
-		const object = await context.bucket.get(item.bucket_key);
-		if (!object) return fail(`The attachment ${item.filename} is missing from storage.`);
+		const opened = await openScannedFile(database, context.bucket, item.bucket_key);
+		if (opened.state === 'missing') return fail(`The attachment ${item.filename} is missing from storage.`);
+		if (opened.state === 'held') {
+			const scan = opened.scan;
+			if (stillScanning(scan)) {
+				await database
+					.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, held_for_undo = 0, error = ? WHERE identifier = ?`)
+					.bind(new Date(at.getTime() + 60_000).toISOString(), heldForVirusCheck, messageIdentifier)
+					.run();
+				return { sent: false, held: true, error: heldForVirusCheck };
+			}
+			return fail(
+				scan?.status === 'flagged'
+					? `The virus check found ${scan.reason ? `“${scan.reason}”` : 'something harmful'} in the attachment ${item.filename}, so the message was not sent. Remove it and send again.`
+					: `The attachment ${item.filename} could not be checked for viruses, so the message was not sent. Remove it and send again.`
+			);
+		}
+		const object = opened.object;
 		attachments.push({
 			filename: item.filename,
 			mediaType: item.media_type,

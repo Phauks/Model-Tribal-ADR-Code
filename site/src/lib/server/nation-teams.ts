@@ -21,6 +21,7 @@ import {
 } from '#lib/nation-teams.ts';
 import { isAdministrator } from '#lib/permissions.ts';
 import { eventStatement, eventsFor, type EventRow } from './events.ts';
+import { forgetScan, storeSentFile } from './file-scans.ts';
 import { newIdentifier, newRequestReference, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 import type { UploadedFile } from './request-form.ts';
@@ -402,7 +403,12 @@ export async function saveApplication(
 	const reference = newRequestReference();
 	const proofKey = application.proof ? `${proofPrefix}/${identifier}/proof` : null;
 	if (application.proof && proofKey) {
-		await bucket.put(proofKey, application.proof.bytes, {
+		// Held until the virus check passes (site/SCANNING.md).
+		await storeSentFile(database, bucket, {
+			objectKey: proofKey,
+			purpose: 'nation-team-proof',
+			subject: reference,
+			bytes: application.proof.bytes,
 			httpMetadata: { contentType: application.proof.type },
 			customMetadata: { reference, fileName: application.proof.name }
 		});
@@ -440,7 +446,10 @@ export async function saveApplication(
 			})
 		]);
 	} catch (problem) {
-		if (proofKey) await bucket.delete(proofKey);
+		if (proofKey) {
+			await bucket.delete(proofKey);
+			await forgetScan(database, proofKey).catch(() => undefined);
+		}
 		throw problem;
 	}
 	return reference;

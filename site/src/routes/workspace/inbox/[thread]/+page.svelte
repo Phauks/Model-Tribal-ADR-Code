@@ -19,7 +19,7 @@
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import Undo2 from '@lucide/svelte/icons/undo-2';
 	import X from '@lucide/svelte/icons/x';
-	import { deliveryLabels, formatAddress, messageStatusLabels, replyAllReach } from '#lib/mail.ts';
+	import { deliveryLabels, formatAddress, heldForVirusCheck, messageStatusLabels, replyAllReach } from '#lib/mail.ts';
 	import Avatar from '../Avatar.svelte';
 	import Composer from '../Composer.svelte';
 	import TagChip from '../TagChip.svelte';
@@ -220,6 +220,7 @@
 						{#if message.attachments.some((item) => !item.inline)}<Paperclip size={14} aria-label="Has attachments" />{/if}
 						{#if message.direction === 'in'}{listDate(message.receivedAt ?? message.createdAt)}
 						{:else if message.status === 'sent'}{listDate(message.sentAt ?? message.createdAt)}
+						{:else if message.status === 'scheduled' && message.error === heldForVirusCheck}<span class="status">Waiting for the virus check</span>
 						{:else if message.undoUntil}<span class="status">Sending</span>
 						{:else if message.status === 'scheduled'}<span class="status">Goes {listDate(message.scheduledFor ?? message.createdAt)}</span>
 						{:else}<span class="status">{messageStatusLabels[message.status] ?? message.status}</span>{/if}
@@ -235,7 +236,8 @@
 					{/if}
 					{#if message.automatic}<p class="small status-line">Automatic reply</p>{/if}
 					{#if message.spamReason}<p class="small warning">In Spam because: {message.spamReason}</p>{/if}
-					{#if message.error}<p class="small warning">Not sent: {message.error}</p>{/if}
+					{#if message.error === heldForVirusCheck}<p class="small status-line">{message.error}</p>
+					{:else if message.error}<p class="small warning">Not sent: {message.error}</p>{/if}
 					<div class="text">{message.text}</div>
 					{#if message.hasHtml}
 						<details class="formatted">
@@ -258,7 +260,7 @@
 										<span class="held" title={attachment.check.explanation}>
 											<ShieldEllipsis size={16} aria-hidden="true" />
 											<span class="file">{attachment.filename}</span>
-											<span class="small muted">{attachment.check.label}</span>
+											<span class="small muted">{attachment.check.label}{attachment.check.checkedBy ? ` ${attachment.check.checkedBy}` : ''}</span>
 										</span>
 										{#if attachment.check.releasable && data.canManage}
 											<form method="post" action="?/release" class="release small">
@@ -274,6 +276,7 @@
 											<span class="file">{attachment.filename}</span>
 											<span class="small muted">{size(attachment.size)}</span>
 										</a>
+										{#if attachment.check?.checkedBy}<span class="small muted checked-by">{attachment.check.checkedBy}</span>{/if}
 									{/if}
 								</li>
 							{/each}
@@ -675,6 +678,11 @@
 		border: 1px dashed var(--color-control-border);
 		border-radius: var(--radius-control);
 		color: var(--color-ink-muted);
+	}
+	.checked-by {
+		display: block;
+		max-width: 40ch;
+		margin-top: var(--space-1);
 	}
 	.release {
 		display: flex;

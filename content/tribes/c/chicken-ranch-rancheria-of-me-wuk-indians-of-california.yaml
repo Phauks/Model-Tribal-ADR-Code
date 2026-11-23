@@ -159,6 +159,22 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Chicken Ranch Rancheria of Me-Wuk Indians of California".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council Members + Staff
+  source: chickenranchrancheria-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council member names are left out and only titles are quoted; the site states no council size, selection method or term.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: chickenranchrancheria-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council member names are left out and only titles are quoted; the site states no council size, selection method or term.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026

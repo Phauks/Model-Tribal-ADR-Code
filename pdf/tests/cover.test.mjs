@@ -17,12 +17,28 @@ test("a paperback cover is both covers plus the spine, with 0.125 in bleed all r
   assert.deepEqual(cover.front, { x: 7.185, y: 0.125, width: 6, height: 9 });
 });
 
-test("a hardcover cover adds the board overhang and a 0.75 in wrap", () => {
+test("a hardcover cover has 6.25 x 9.5 in boards for US Trade and a 0.625 in wrap", () => {
   const cover = coverGeometry(sizes, "us-trade", 300, "hardcover");
   assert.equal(cover.spine.width, 0.938);
-  assert.equal(cover.height, 9 + 0.25 + 1.5);
-  assert.equal(cover.width, Math.round((2 * (0.75 + 6.125) + 0.938) * 10000) / 10000);
-  assert.equal(cover.front.x, Math.round((0.75 + 6.125 + 0.938) * 10000) / 10000);
+  assert.equal(cover.height, 9.5 + 1.25);
+  assert.equal(cover.width, Math.round((2 * (0.625 + 6.25) + 0.938) * 10000) / 10000);
+  assert.deepEqual(cover.front, { x: 7.813, y: 0.625, width: 6.25, height: 9.5 });
+  assert.equal(cover.safe_front.x, 8.438);
+});
+
+test("cover sizes match the templates Lulu's pricing calculator gave (Nov. 23, 2026)", () => {
+  const cases = [
+    ["us-trade", 177, "hardcover", 14.438, 10.75],
+    ["pocket-book", 309, "hardcover", 11.25, 8.625],
+    ["us-letter", 500, "hardcover", 20.125, 12.75],
+    ["us-trade", 177, "paperback", 12.7086, 9.25],
+    ["a4", 148, "paperback", 17.1833, 11.94],
+  ];
+  for (const [trim, pages, binding, width, height] of cases) {
+    const cover = coverGeometry(sizes, trim, pages, binding);
+    assert.ok(Math.abs(cover.width - width) < 0.001, `${trim} ${binding} width ${cover.width}`);
+    assert.ok(Math.abs(cover.height - height) < 0.001, `${trim} ${binding} height ${cover.height}`);
+  }
 });
 
 test("the hardcover spine follows Lulu's table (Book Creation Guide, p. 15)", () => {
@@ -44,9 +60,9 @@ test("text areas keep the safety margin on every size and binding", () => {
         const cover = coverGeometry(sizes, trim, pages, binding);
         for (const [safe, area] of [[cover.safe_back, cover.back], [cover.safe_front, cover.front]]) {
           assert.ok(safe.width > 0 && safe.height > 0, `${trim} ${binding} ${pages}`);
-          assert.ok(safe.x >= area.x + sizes.cover.safety_margin - 1e-9);
-          assert.ok(safe.x + safe.width <= area.x + area.width - sizes.cover.safety_margin + 1e-9);
-          assert.ok(safe.y >= area.y + sizes.cover.safety_margin - 1e-9);
+          assert.ok(safe.x >= area.x + cover.safety_margin - 1e-9);
+          assert.ok(safe.x + safe.width <= area.x + area.width - cover.safety_margin + 1e-9);
+          assert.ok(safe.y >= area.y + cover.safety_margin - 1e-9);
         }
         assert.equal(cover.spine_text_allowed, pages >= sizes.spine.text_minimum_pages);
         assert.ok(Math.abs(cover.front.x + cover.front.width + cover.edge - cover.width) < 1e-6);
