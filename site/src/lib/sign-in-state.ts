@@ -13,6 +13,8 @@ export interface SignInState {
 	/** The code was sent by Create an account. */
 	creating?: boolean;
 	problem?: string;
+	/** The email address and password did not match (the panel words this its own way). */
+	reason?: 'no-match';
 	field?: string;
 	minutes?: number;
 	shownCode?: string;
