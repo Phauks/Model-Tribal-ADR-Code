@@ -71,8 +71,8 @@
 			{/if}
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">
-					Listed as “{page.listedName}”{#if page.listedIn}
-						in <cite>{page.listedIn.title}</cite>{#if page.listedIn.rest}, {page.listedIn.rest}{/if}{/if}.<CitationMarks
+					<!-- The listed name as an alias; its marker leads to the list in References (Trevor, Nov. 23, 2026). -->
+					Alias: {page.listedName}<CitationMarks
 						marks={data.nameCitations}
 					/>
 				</p>
