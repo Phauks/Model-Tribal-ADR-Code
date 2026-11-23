@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import {
+	applyColumnFilters,
+	filterChoices,
 	filterRows,
+	readTableState,
+	rowsToCsv,
+	writeTableState,
 	foldForSearch,
 	problemsIn,
 	sortRows,
@@ -116,5 +121,64 @@ describe('problemsIn', () => {
 			'row "empty" has no "count" cell',
 			'row "empty" has no "checked" cell'
 		]);
+	});
+});
+
+describe('column filters', () => {
+	const stateColumns: TableColumn[] = [
+		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true },
+		{ key: 'states', header: 'States', sortable: true, filterable: true }
+	];
+	const stateRows: TableRow[] = [
+		{ key: 'navajo', cells: { name: { text: 'Navajo Nation', href: '/nations/navajo-nation' }, states: { text: 'Arizona, New Mexico, Utah', values: ['Arizona', 'New Mexico', 'Utah'] } } },
+		{ key: 'hopi', cells: { name: { text: 'Hopi Tribe' }, states: { text: 'Arizona', values: ['Arizona'] } } },
+		{ key: 'zuni', cells: { name: { text: 'Zuni Tribe, "Pueblo"' }, states: { text: 'New Mexico' } } },
+		{ key: 'none', cells: { name: { text: 'No State' }, states: { text: '' } } }
+	];
+
+	it('lists each value once, in reading order, with the rows it leaves', () => {
+		expect(filterChoices(stateColumns[1], stateRows)).toEqual([
+			{ value: 'Arizona', count: 2 },
+			{ value: 'New Mexico', count: 2 },
+			{ value: 'Utah', count: 1 }
+		]);
+	});
+
+	it('keeps rows whose values include the chosen one, and every row without filters', () => {
+		expect(keys(applyColumnFilters(stateRows, { states: 'New Mexico' }))).toEqual(['navajo', 'zuni']);
+		expect(keys(applyColumnFilters(stateRows, { states: '' }))).toEqual(keys(stateRows));
+	});
+
+	it('writes the state into the address and reads it back', () => {
+		const written = writeTableState(
+			'nations-a',
+			{ query: ' paiute ', sort: { key: 'states', direction: 'descending' }, filters: { states: 'Utah' } },
+			new URLSearchParams('other=1&nations-a.q=old'),
+			{ key: 'name', direction: 'ascending' }
+		);
+		expect(written.toString()).toBe('other=1&nations-a.q=paiute&nations-a.sort=-states&nations-a.states=Utah');
+		expect(readTableState('nations-a', stateColumns, written)).toEqual({
+			query: 'paiute',
+			sort: { key: 'states', direction: 'descending' },
+			filters: { states: 'Utah' }
+		});
+	});
+
+	it('leaves the default sort out of the address and ignores unknown columns', () => {
+		const written = writeTableState('t', { query: '', sort: { key: 'name', direction: 'ascending' }, filters: {} }, new URLSearchParams(), {
+			key: 'name',
+			direction: 'ascending'
+		});
+		expect(written.toString()).toBe('');
+		expect(readTableState('t', stateColumns, new URLSearchParams('t.sort=-nope&t.name=x'))).toEqual({ query: '', filters: {} });
+	});
+
+	it('writes CSV with quoted fields, full link addresses and CR LF line ends', () => {
+		expect(rowsToCsv(stateColumns, stateRows.slice(0, 3), 'https://example.org')).toBe(
+			'Name,Name (link),States\r\n' +
+				'Navajo Nation,https://example.org/nations/navajo-nation,"Arizona, New Mexico, Utah"\r\n' +
+				'Hopi Tribe,,Arizona\r\n' +
+				'"Zuni Tribe, ""Pueblo""",,New Mexico\r\n'
+		);
 	});
 });
