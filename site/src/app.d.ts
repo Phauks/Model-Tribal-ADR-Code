@@ -35,6 +35,8 @@ declare global {
 	interface WorkerEnvironment {
 		database: D1Database;
 		sourceDocuments: R2Bucket;
+		/** The source library's own database (src/lib/server/source-library.ts, decision record 0049). */
+		sourceLibrary?: D1Database;
 		requestFormLimit?: RateLimit;
 		workspaceChangeLimit?: RateLimit;
 		signInLimit?: RateLimit;

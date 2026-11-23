@@ -178,6 +178,15 @@ Run by hand, in this order, never in continuous integration. They write the `gov
 | `governance/add_site_constitutions.py` | Adds the constitution texts found on nations' sites that the catalog lacked (`research/governance/site-constitutions.json`) to the document histories, with a source record and a private capture | `pdfinfo` |
 | `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `websites` does the same for the website readers and writes `website-readings.json`; `sources` writes a source record for each website page a fact cites; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |
 
+## Source library
+
+The text of every document in the private bucket, page by page, in one SQLite file with a full-text index, for Claude and other writers to find passages and the page to cite (decision record [0049](../docs/decisions/0049-search-the-source-documents-through-a-private-full-text-library.md)). The library lives in the bucket, never in git.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `library/library.py` | Searches the library: `search` (FTS5 queries with phrases, `NEAR`, `OR`, prefixes; filters by nation, topic, format, citing record or served copies), `titles`, `read` (a page, star page or passage, with `--around`), `document`, `nation`, `record`, `original` (download the file itself), `stats` and read-only `sql`. Downloads the library on first use to `~/.cache/model-tribal-library/` | `boto3`; bucket credentials in the environment |
+| `library/build_library.py` | Builds the library. `update` is the usual command after files land in the bucket: it lists the bucket, downloads and reads only the files the published library has not read (`--ocr` reads their scanned pages with Tesseract), rebuilds and publishes. A nightly scheduled task runs it. The steps can also be run one at a time: `sync` downloads every text-bearing file to a work folder, `extract` reads each file once by SHA-256 (PDF text layer, OCR with `--ocr`, saved web pages with menus left out, opinions split at their star pages; `--seed` reuses the published library's text), `index` writes the SQLite file with the capture index's metadata, keeping each document's number from the last build, and `publish` uploads it with a manifest and writes the website's change files under `_library/d1/` (`--d1-whole` writes the whole library from an empty database, to reload the website's copy). `d1-sql` writes the whole library as one SQL file for D1's import. The website's own files (request proofs, uploads, essay drafts, page versions) are never read | `boto3`, `pymupdf`, `lxml`; `tesseract` for `--ocr` |
+
 ## Printed book
 
 | Script | Does | Needs |

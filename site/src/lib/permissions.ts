@@ -76,7 +76,11 @@ export type Permission =
 	// The nonprofit corporation's record and due dates (migrations/20261123T0440_add_nonprofit_records.sql): the lead author only.
 	| 'manage-nonprofit'
 	// Checking the services the site depends on (src/lib/server/service-checks.ts): the lead author only.
-	| 'check-services';
+	| 'check-services'
+	// Searching and reading the source library, the text of every document in
+	// the private bucket (decision record 0049). It holds private copies, so
+	// only the writing team: the lead author, editors, co-authors and advisors.
+	| 'search-source-library';
 
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
@@ -95,11 +99,21 @@ const grants: Record<Role, readonly Permission[]> = {
 		'manage-mail',
 		'hide-changes',
 		'manage-nonprofit',
-		'check-services'
+		'check-services',
+		'search-source-library'
 	],
-	editor: ['read-contributors', 'read-requests', 'handle-requests', 'review-uploads', 'read-reviews', 'comment', 'sign-off'],
-	'co-author': ['read-reviews', 'comment'],
-	advisor: ['read-reviews', 'comment', 'sign-off'],
+	editor: [
+		'read-contributors',
+		'read-requests',
+		'handle-requests',
+		'review-uploads',
+		'read-reviews',
+		'comment',
+		'sign-off',
+		'search-source-library'
+	],
+	'co-author': ['read-reviews', 'comment', 'search-source-library'],
+	advisor: ['read-reviews', 'comment', 'sign-off', 'search-source-library'],
 	contributor: ['comment'],
 	'nation-reviewer': ['review-for-nation', 'comment-on-nation-uploads']
 };

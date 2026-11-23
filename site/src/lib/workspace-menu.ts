@@ -14,6 +14,7 @@ export type WorkspacePageName =
 	| 'uploads'
 	| 'nation-uploads'
 	| 'reviews'
+	| 'library'
 	| 'contributors'
 	| 'people'
 	| 'nation-teams'
@@ -44,6 +45,7 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'nation-uploads', label: 'Files about your nation', link: '/workspace/nation-uploads', needs: 'comment-on-nation-uploads' },
 	// Everyone sees the documents they can open, by role or by grant.
 	{ name: 'reviews', label: 'Reviews', link: '/workspace/reviews' },
+	{ name: 'library', label: 'Source library', link: '/workspace/library', needs: 'search-source-library' },
 	{ name: 'contributors', label: 'Contributors', link: '/workspace/contributors', needs: 'read-contributors' },
 	{ name: 'people', label: 'People', link: '/workspace/people', needs: 'manage-people' },
 	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', needs: 'manage-people' },

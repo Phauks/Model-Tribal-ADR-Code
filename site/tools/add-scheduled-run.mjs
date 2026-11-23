@@ -27,6 +27,8 @@ export const scheduledTokenHeader = 'x-scheduled-run';
 // Alaska directories and the nation pages (src/lib/server/address-book.ts).
 export const scheduledPaths = {
 	'17 * * * *': '/following/scheduled',
+	// Applies the source library's newest changes (src/lib/server/source-library.ts).
+	'29 * * * *': '/library/scheduled',
 	'41 9 * * 1': '/address-book/scheduled'
 };
 
