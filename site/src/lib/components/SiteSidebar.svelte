@@ -45,9 +45,10 @@
 		workspacePagesNamed,
 		type WorkspacePage
 	} from '#lib/workspace-menu.ts';
+	import FoldButton from './sidebar/FoldButton.svelte';
 	import SectionColumn from './sidebar/SectionColumn.svelte';
 	import SidebarGroups from './sidebar/SidebarGroups.svelte';
-	import { SidebarState, sidebarHiddenKey } from './sidebar/sidebar-state.svelte.ts';
+	import { SidebarState, sectionsKey, sidebarHiddenKey } from './sidebar/sidebar-state.svelte.ts';
 
 	const sidebar = new SidebarState();
 
@@ -127,6 +128,18 @@
 	// Entries inside an outline open along the way to where the reader is (src/lib/outline-folding.ts).
 	function isItemOpen(item: OutlineItem): boolean {
 		return isUnfolded(item, sidebar.itemChoices, isActive);
+	}
+
+	// The sections fold like the Workspace and Your account groups, and start
+	// open (Trevor, Nov. 23, 2026). A shut list stays shut from the first
+	// paint: the script in app.html marks the page, and global.css hides it.
+	const sectionsOpen = $derived(sidebar.isOpen(sectionsKey, true));
+
+	function toggleSections(): void {
+		const open = !sectionsOpen;
+		sidebar.setOpen(sectionsKey, open);
+		if (open) delete document.documentElement.dataset.sidebarSectionsShut;
+		else document.documentElement.dataset.sidebarSectionsShut = 'true';
 	}
 
 	function toggleItem(item: OutlineItem): void {
@@ -264,7 +277,25 @@
 </script>
 
 {#snippet sections(idSuffix: string)}
-	<ul class="sections">
+	<!-- On phones the menu's "All sections" switch shows them, so they do not fold there. -->
+	{@const folds = idSuffix === 'wide'}
+	{#if folds}
+		<div class="group-heading">
+			<FoldButton
+				controls="sidebar-sections-list-{idSuffix}"
+				expanded={sectionsOpen}
+				name="Sections"
+				onclick={toggleSections}
+			/>
+			<p class="group-title" id="sidebar-sections-{idSuffix}">Sections</p>
+		</div>
+	{/if}
+	<ul
+		class="sections"
+		id="sidebar-sections-list-{idSuffix}"
+		aria-labelledby={folds ? `sidebar-sections-${idSuffix}` : undefined}
+		hidden={folds && !sectionsOpen}
+	>
 		{#each siteSections as section (section.link)}
 			{@const current = section === currentSection}
 			<li class:current>
@@ -372,6 +403,34 @@
 	}
 
 	/* ---- The sections ---- */
+	/* Their heading matches the Workspace and Your account groups' (sidebar/SidebarGroups.svelte). */
+	.group-heading {
+		display: flex;
+		align-items: center;
+		margin-bottom: var(--space-1);
+	}
+
+	.group-title {
+		margin: 0;
+		padding: 0 var(--space-3) 0 var(--space-1);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-ink-muted);
+	}
+
+	/* Without scripts nothing folds: no caret, and the list shows. */
+	:global(:root:not([data-scripts='on'])) .group-title {
+		padding-left: var(--space-3);
+	}
+
+	:global(:root:not([data-scripts='on'])) .sections[hidden] {
+		display: block;
+	}
+
+	/* Shut by the reader on an earlier page, before the script takes over. */
+	:global(:root[data-sidebar-sections-shut='true']) .sections-column .sections {
+		display: none;
+	}
 	.sections > li > a,
 	.sections > li > .unbuilt {
 		display: flex;
