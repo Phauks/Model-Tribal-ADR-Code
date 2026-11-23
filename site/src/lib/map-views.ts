@@ -23,7 +23,7 @@ export interface MapViewEntry {
 }
 
 /** Groups in the order they are listed. */
-export const mapViewGroups = ['Where nations are', 'Recognition', 'Courts and dispute resolution', 'Jurisdiction', 'Government', 'Gaming', 'Treaties and land', 'Federal administration'] as const;
+export const mapViewGroups = ['Where nations are', 'Recognition', 'Courts and dispute resolution', 'Jurisdiction', 'Government', 'Gaming', 'Treaties and land', 'People and languages', 'Federal administration'] as const;
 
 export const mapViews: MapViewEntry[] = [
 	{
@@ -123,6 +123,22 @@ export const mapViews: MapViewEntry[] = [
 		group: 'Treaties and land',
 		description: 'Whether a reservation was set aside by treaty, executive order, act of Congress or other means',
 		keywords: ['reservation', 'executive order', 'act of congress', 'statute', 'established', 'land base', 'trust land']
+	},
+	{
+		key: 'census-residents',
+		label: 'Census Residents',
+		heading: 'census-residents-heading',
+		group: 'People and languages',
+		description: 'How many people the 2020 Census counted living in each land area (not a count of citizens)',
+		keywords: ['population', 'census', 'residents', '2020', 'people', 'pop100']
+	},
+	{
+		key: 'heritage-languages',
+		label: 'Heritage Languages',
+		heading: 'heritage-languages-heading',
+		group: 'People and languages',
+		description: 'The heritage languages nations record, named on the map',
+		keywords: ['language', 'heritage language', 'native language', 'yupik', 'inupiaq', 'tlingit', 'navajo', 'diné bizaad', 'revitalization']
 	},
 	{
 		key: 'regions',

@@ -380,6 +380,53 @@ function gamingHistoryKinds(): Map<string, Set<string>> {
 	return gamingHistoryCache;
 }
 
+/** The Census land area a resident-population fact counts, from its locator ("GEOID 2500000US0325"). */
+const censusAreaOf = (fact: { locator?: string }) => /GEOID 2500000US(\w{4})/.exec(fact.locator ?? '')?.[1];
+
+let residentCache: Map<string, { count: number }> | undefined;
+
+/** The 2020 Census count of people living in each land area, from the resident-population facts in the nations' entries. */
+function censusResidents(): Map<string, { count: number }> {
+	if (!residentCache) {
+		residentCache = new Map();
+		for (const record of nations()) {
+			for (const fact of record.population ?? []) {
+				const code = fact.kind === 'resident-population' ? censusAreaOf(fact) : undefined;
+				if (code && typeof fact.count === 'number') residentCache.set(code, { count: fact.count });
+			}
+		}
+	}
+	return residentCache;
+}
+
+let languageCache: Map<string, string> | undefined;
+
+/**
+ * Each spelling of a language name in the entries, and the one name the map uses for it: entries from different sources write some names with different punctuation ("Dena'ina" and "Dena’ina", "Ojibwe (Anishinaabemowin)" and "Ojibwe Anishinaabemowin"), and these are one name. The spelling most entries use wins. Different names are kept apart even when they share a language tag, since each is the name a nation gives its language (Ute and Southern Paiute share one tag).
+ */
+function languageNames(): Map<string, string> {
+	if (!languageCache) {
+		const sameName = (name: string) => name.toLowerCase().replace(/[’‘`]/g, "'").replace(/[^\p{L}\p{N}']+/gu, ' ').trim();
+		const spellings = new Map<string, Map<string, number>>();
+		for (const record of nations()) {
+			for (const fact of record.languages ?? []) {
+				if (!fact.name) continue;
+				const counts = spellings.get(sameName(fact.name)) ?? new Map<string, number>();
+				counts.set(fact.name, (counts.get(fact.name) ?? 0) + 1);
+				spellings.set(sameName(fact.name), counts);
+			}
+		}
+		languageCache = new Map();
+		for (const counts of spellings.values()) {
+			const chosen = [...counts.entries()].sort((first, second) => second[1] - first[1] || first[0].localeCompare(second[0], 'en'))[0][0];
+			for (const spelling of counts.keys()) languageCache.set(spelling, chosen);
+		}
+	}
+	return languageCache;
+}
+
+const languageName = (name: string) => languageNames().get(name) ?? name;
+
 let constitutionCache: Set<string> | undefined;
 
 /** The nations named by a constitution's document history (content/documents/). */
@@ -402,6 +449,10 @@ interface ShadedViewRule {
 	categoriesFrom?: (records: NationRecord[]) => ShadeCategory[];
 	/** The facts the view reads, whose sources the page lists. Left out with the definition's `sources`. */
 	facts?: (record: NationRecord) => { source?: string }[];
+	/** For a view of a fact about each land area rather than its nations, such as how many people live there: the area's category. */
+	areaCategoryOf?: (code: string) => string | undefined;
+	/** For a table of land areas: the number its second column gives for each area. */
+	areaValue?: (code: string) => number | undefined;
 }
 
 const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
@@ -479,6 +530,21 @@ const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
 		},
 		facts: (record) => record.governing_documents ?? []
 	},
+	'census-residents': {
+		areaCategoryOf: (code) => {
+			const count = censusResidents().get(code)?.count;
+			if (count === undefined) return undefined;
+			return count >= 10000 ? 'ten-thousand-or-more' : count >= 1000 ? 'thousand-to-ten-thousand' : count >= 100 ? 'hundred-to-thousand' : 'under-hundred';
+		},
+		areaValue: (code) => censusResidents().get(code)?.count,
+		facts: (record) => (record.population ?? []).filter((fact) => fact.kind === 'resident-population' && censusAreaOf(fact) !== undefined)
+	},
+	'heritage-languages': {
+		has: (record) => Object.fromEntries((record.languages ?? []).flatMap((fact) => (fact.name ? [[languageName(fact.name), true]] : []))),
+		// One category per language, all in one shade; the names on the map tell them apart.
+		categoriesFrom: () => [...new Set(languageNames().values())].sort((first, second) => first.localeCompare(second, 'en')).map((name) => ({ key: name, label: name, shade: 3 })),
+		facts: (record) => record.languages ?? []
+	},
 	'indian-health-service': {
 		categoryOf: healthServiceArea,
 		// One category per Area named in the entries, each with the shade that sets it apart from its neighbors.
@@ -522,6 +588,7 @@ function buildShadedView(view: ShadedMapView) {
 	};
 	/** The row a nation's area goes to: the nation's own, or its category's when the table lists categories. */
 	const rowOf = (record: NationRecord, category: string) => shadedRowAnchor(view, definition.rows === 'categories' ? category : record.id);
+	const areaCategoryOf = rule.areaCategoryOf;
 	const order = categories.map((category) => category.key);
 	const rank = (category: string) => order.indexOf(category);
 
@@ -529,6 +596,12 @@ function buildShadedView(view: ShadedMapView) {
 	const areas: ShadedArea[] = (landAreaPoints.areas as LandAreaPoint[])
 		.filter((area) => !withdrawnLandAreas.has(area.code))
 		.map((area) => {
+			// A fact about the area itself: its own category, and its own row in a table of areas.
+			if (areaCategoryOf) {
+				const key = areaCategoryOf(area.code);
+				const category = key === undefined ? undefined : categories[rank(key)];
+				return category ? { code: area.code, shade: category.shade, anchor: shadedRowAnchor(view, area.code), category: category.key } : { code: area.code, shade: 0 };
+			}
 			const found = (byArea.get(area.code) ?? [])
 				.map((record) => ({ record, category: categoryOf(record) }))
 				.filter((entry): entry is { record: NationRecord; category: string } => entry.category !== undefined && rank(entry.category) >= 0)
@@ -548,7 +621,7 @@ function buildShadedView(view: ShadedMapView) {
 		return [{ nation: office.nation, name: office.name, shade: category?.shade ?? 0, anchor: category && key ? rowOf(record, key) : undefined, category: category?.key }];
 	});
 
-	return { definition, rule, categories, categoryOf, areas, offices, records };
+	return { definition, rule, categories, categoryOf, areas, offices, records, byArea };
 }
 
 /** A nation with no Census land area, marked at its office, as a shaded view draws it. */
@@ -622,7 +695,12 @@ export function shadedView(view: ShadedMapView) {
 		anchor: area.anchor,
 		description: `${names.get(area.code) ?? area.code}: ${area.category ? (labelOf.get(area.category) ?? area.category) : unrecorded}`
 	}));
-	const legend = [...built.categories.map(({ key, label, shade }) => ({ key, label, shade })), { key: 'unrecorded', label: unrecorded, shade: 0 }];
+	// A view with many categories in one shade, such as languages, has one legend entry for them all.
+	const legendLabel = built.definition.legendLabel;
+	const legend = [
+		...(legendLabel ? [{ key: 'recorded', label: legendLabel, shade: built.categories[0]?.shade ?? 2 }] : built.categories.map(({ key, label, shade }) => ({ key, label, shade }))),
+		{ key: 'unrecorded', label: unrecorded, shade: 0 }
+	];
 	const offices = built.offices.map((office) => ({
 		nation: office.nation,
 		shade: office.shade,
@@ -630,19 +708,28 @@ export function shadedView(view: ShadedMapView) {
 		description: `${office.name} (office; no Census land area): ${office.category ? (labelOf.get(office.category) ?? office.category) : unrecorded}`
 	}));
 
-	const labels = built.definition.labels ? built.categories.map((category) => ({ name: category.key, identifiers: built.areas.filter((area) => area.category === category.key).map((area) => area.code) })) : [];
+	const labels = built.definition.labels && built.definition.drawnLabels !== false ? built.categories.map((category) => ({ name: category.key, identifiers: built.areas.filter((area) => area.category === category.key).map((area) => area.code) })) : [];
 	const section = built.definition.section;
 
-	// A table of categories: each opens to the nations in it.
+	const sortedStates = (members: NationRecord[]) => [...new Set(members.flatMap(statesOf))].sort((first, second) => first.localeCompare(second, 'en'));
+
+	// A table of land areas: each with its value, opening to the nations whose entries name it.
+	if (built.definition.rows === 'areas') {
+		const areaRows = built.areas
+			.filter((area) => area.category)
+			.map((area) => {
+				const members = built.byArea.get(area.code) ?? [];
+				return { anchor: shadedRowAnchor(view, area.code), name: names.get(area.code) ?? area.code, value: built.rule.areaValue?.(area.code), nations: members.map(listed).sort(byName), states: sortedStates(members) };
+			});
+		return { view, legend, drawn, offices, labels, nationRows: [], areaRows, kindColumns: [], section };
+	}
+
+	// A table of categories: each opens to the nations in it, or with kinds, the nations that have it.
 	if (built.definition.rows === 'categories') {
+		const has = built.rule.has;
 		const areaRows = built.categories.map((category) => {
-			const members = built.records.filter((record) => built.categoryOf(record) === category.key);
-			return {
-				anchor: shadedRowAnchor(view, category.key),
-				name: category.label,
-				nations: members.map(listed).sort(byName),
-				states: [...new Set(members.flatMap(statesOf))].sort((first, second) => first.localeCompare(second, 'en'))
-			};
+			const members = built.records.filter((record) => (has ? has(record)[category.key] : built.categoryOf(record) === category.key));
+			return { anchor: shadedRowAnchor(view, category.key), name: category.label, value: undefined as number | undefined, nations: members.map(listed).sort(byName), states: sortedStates(members) };
 		});
 		return { view, legend, drawn, offices, labels, nationRows: [], areaRows, kindColumns: [], section };
 	}

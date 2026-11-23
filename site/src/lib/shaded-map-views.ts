@@ -17,6 +17,8 @@ export type ShadedMapView =
 	| 'treaties'
 	| 'land-set-aside'
 	| 'governing-documents'
+	| 'census-residents'
+	| 'heritage-languages'
 	| 'indian-health-service';
 
 export const shadedMapViews: ShadedMapView[] = [
@@ -30,6 +32,8 @@ export const shadedMapViews: ShadedMapView[] = [
 	'treaties',
 	'land-set-aside',
 	'governing-documents',
+	'census-residents',
+	'heritage-languages',
 	'indian-health-service'
 ];
 
@@ -112,6 +116,16 @@ export const governingDocumentCategories: ShadeCategory[] = [
 ];
 
 /**
+ * How many people the 2020 Census counted living in each land area, of any race or tribal affiliation (field POP100 of the redistricting file, as each nation's entry records it under `population`). This is a fact about the place, not a count of any nation's citizens: each nation's own count of its citizens is its own to publish (Trevor chose this on Nov. 23, 2026).
+ */
+export const censusResidentCategories: ShadeCategory[] = [
+	{ key: 'ten-thousand-or-more', label: '10,000 or more residents', shade: 4 },
+	{ key: 'thousand-to-ten-thousand', label: '1,000 to 9,999 residents', shade: 3 },
+	{ key: 'hundred-to-thousand', label: '100 to 999 residents', shade: 2 },
+	{ key: 'under-hundred', label: 'Fewer than 100 residents', shade: 1 }
+];
+
+/**
  * Gaming under the Indian Gaming Regulatory Act (each record's `gaming` facts, and the gaming compacts and Secretarial Procedures in its document histories), in order of precedence. The table shows every one each nation has.
  *
  * 1. compact: a Class III compact with a state that the Secretary of the Interior approved or let take effect (25 U.S.C. § 2710(d)(8)), whether or not it has since expired or been replaced. A disapproved compact does not count.
@@ -177,8 +191,14 @@ export interface ShadedViewDefinition {
 	note: string;
 	/** The table's caption. */
 	caption: string;
-	/** What the table lists: each nation with a fact, or each category, opening to its nations. */
-	rows: 'nations' | 'categories';
+	/** What the table lists: each nation with a fact; each category, opening to its nations; or each land area with a fact about the area itself, opening to the nations whose entries name it. */
+	rows: 'nations' | 'categories' | 'areas';
+	/** For a table of land areas: the header of the column that gives each area's value. */
+	valueHeader?: string;
+	/** For a view with many categories in one shade, such as languages: the one legend entry that stands for them all. */
+	legendLabel?: string;
+	/** Whether the drawn copy also writes the categories' names; left false when there are too many to fit at the drawn map's one scale. */
+	drawnLabels?: boolean;
 	/** For a view where a nation can have several kinds at once: the header of each kind's Yes column, by category key. The map shades a nation by the first kind it has. */
 	kindHeaders?: Record<string, string>;
 	/** For a view with one category per nation: the header of the column that gives it. For a table of categories: the header of their column. */
@@ -290,6 +310,29 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 		kindHeaders: { constitution: 'Constitution or articles', laws: 'Published laws', charter: 'Corporate charter' },
 		section: 'law-heading',
 		sources: { section: 'Governing documents', text: 'each nation’s constitution, published laws and charters on record' }
+	},
+	'census-residents': {
+		categories: censusResidentCategories,
+		unrecorded: 'No count recorded yet',
+		note: 'Each land area is shaded by how many people the 2020 Census counted living there, of any race or tribal affiliation. This is not a count of any nation’s citizens: many citizens live elsewhere, and many residents are not citizens. Select an area to go to its row, which gives the count and the nations whose entries name the area.',
+		caption: 'People counted living in each land area in the 2020 Census',
+		rows: 'areas',
+		categoryHeader: 'Area',
+		valueHeader: 'Residents',
+		section: 'glance-heading',
+		sources: { section: 'Census residents', text: 'the number of people counted living in each land area in the 2020 Census' }
+	},
+	'heritage-languages': {
+		unrecorded: 'No language recorded yet',
+		note: 'Each land area is shaded where a nation whose entry names it records a heritage language, and each language’s name is written on the tiled map near the middle of its nations’ lands. Zoom in to see more names. Each language is listed under the name the nations’ entries give it, so one language can appear under more than one name, such as Anishinaabemowin and Ojibwe. Many nations share a language, and some record more than one. Select an area to go to its language’s row, which lists the nations that record it.',
+		caption: 'Heritage languages each nation’s entry records, and the nations that record them',
+		rows: 'categories',
+		categoryHeader: 'Language',
+		legendLabel: 'A heritage language recorded',
+		section: 'glance-heading',
+		labels: true,
+		drawnLabels: false,
+		sources: { section: 'Heritage languages', text: 'the heritage languages each nation’s entry records' }
 	},
 	'indian-health-service': {
 		unrecorded: 'No Area recorded yet',
