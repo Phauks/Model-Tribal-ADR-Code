@@ -112,6 +112,16 @@ The lead author asked on Nov. 22, 2026 that adding an item be easier: "consider 
 - **Move up and Move down** (Alt+Shift+Up and Alt+Shift+Down) swap the block the cursor is in with its neighbour. On a heading they move the whole section or subsection past the next one of the same level, and a subsection never leaves its section.
 - **Every block is a box.** The lead author asked on Nov. 22, 2026 that no text sit loose: "I don't think we should have any "unboxed text". If the text is just raw, we can put it in a raw text box?" In the editor each top-level block has a dashed frame and a label: Text, Section heading, Subsection heading, List, Numbered list, Table, Quote and Code. Case, law, quotation, analysis and figure boxes keep their own label inside and get the frame only. The block the cursor is in is outlined, and its label carries its number among blocks of its kind, such as "Text · 13", so a writer or reviewer can name it. The frames are drawn by the editor only (`site/src/lib/essays/components.ts`); they change nothing in the essay's Markdown, and readers never see them.
 
+### Attesting to a section
+
+The lead author asked on Nov. 22, 2026 to "allow attestation of authors and editors within sections and sub-sections." Under each section and subsection heading the editor shows who has attested to it, such as "Written by Trevor ✓ Nov. 21, 2026", and an Attest button (`site/src/lib/essays/attestations.ts`, `attestation-lines.ts`).
+
+- **Attesting.** A person chooses "I wrote it", "I edited it" or "I reviewed it", with an optional note. Writing and editing need contribute access to the essay; reviewing needs comment access, so advisors can attest that they reviewed a section. A section's attestation covers its subsections.
+- **What is kept.** Each attestation is a row in D1 (`essay_attestations`) with the section's Markdown as attested and its SHA-256, the person, the role, the note and the time, and an entry in the activity log. Attesting again adds a new row, and the newest per person and role is the one shown. A row is never changed or deleted, except that its person, or someone with full access, can mark it withdrawn.
+- **When the text changes.** The editor hashes each section as it stands. When that no longer matches an attestation, the line keeps the attestation and says "text changed since" with its date, until the person attests again. Undoing the change brings the check mark back.
+- **Which section.** A section is named by its heading's id on the essay page, so renaming a heading starts its attestations afresh; the old ones stay in the record under the old id.
+- Still to come: showing the current attestations to readers under each heading on the published page and in the book.
+
 ### Pictures, videos and recordings
 
 The lead author asked on Nov. 23, 2026 for pictures as their own block, to "allow digitally to add videos" ("we can figure out how to make that work with the physical book"), to "build with r2, we also might just end up with YouTube linking anyways," and for the website to "also accept just audio files." A figure is a picture, a video or a sound recording set between paragraphs:
