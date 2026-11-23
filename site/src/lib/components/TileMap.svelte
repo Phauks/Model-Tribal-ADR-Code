@@ -73,6 +73,13 @@
 		flat: lucide('<path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/>'),
 		globe: lucide('<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>')
 	};
+	/** Lucide's rotate-ccw icon, for the button that puts the map back as it opened. */
+	const resetIcon = lucide('<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>');
+	/** Lucide's maximize and minimize icons, for the full screen button. */
+	const fullScreenIcons = {
+		enter: lucide('<path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/>'),
+		leave: lucide('<path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/>')
+	};
 
 	// Changing the view, or showing it by state, swaps the layers on the same map, so it does not reload (Trevor, 2026-11-23).
 	$effect(() => {
@@ -500,10 +507,46 @@
 				});
 				map.touchZoomRotate.disableRotation();
 				map.keyboard.disableRotation();
-				map.addControl(new maplibre.NavigationControl({ showCompass: false }), 'top-right');
-				// Flat or globe, as two buttons under the zoom buttons, inside the map (Trevor, 2026-11-23).
+				// The credit line, then the buttons, all in the bottom-right corner (Trevor, 2026-11-23). MapLibre stacks each later bottom control above the earlier ones, so the credit line is added first and the zoom buttons last, on top.
+				map.addControl(new maplibre.AttributionControl({ compact: false }), 'bottom-right');
+				// Full screen, where the browser allows it (Trevor, 2026-11-23). On the map page the whole view goes full screen, its picker, key, preview and table with it, from the element marked data-map-full-screen; elsewhere the map alone does.
+				const mapElement = container;
+				const viewGroup = document.createElement('div');
+				viewGroup.className = 'maplibregl-ctrl maplibregl-ctrl-group map-buttons';
+				// Reset puts the map back as it first opened: the 48 contiguous states, or a nation's own lands (Trevor, 2026-11-23).
+				const resetButton = document.createElement('button');
+				resetButton.type = 'button';
+				resetButton.title = 'Reset the map';
+				resetButton.setAttribute('aria-label', 'Reset the map');
+				resetButton.innerHTML = resetIcon;
+				resetButton.addEventListener('click', () => {
+					const bounds = oneNation ? boundsOfAreas(data.areas) : tileMapPlaces[0].bounds;
+					map?.fitBounds(bounds, { padding: oneNation ? 32 : 16, maxZoom: oneNation ? 12 : 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+				});
+				viewGroup.append(resetButton);
+				if (document.fullscreenEnabled) {
+					const fullScreenButton = document.createElement('button');
+					fullScreenButton.type = 'button';
+					const showFullScreenState = () => {
+						const on = document.fullscreenElement !== null && document.fullscreenElement.contains(mapElement);
+						const words = on ? 'Leave full screen' : 'Full screen';
+						fullScreenButton.title = words;
+						fullScreenButton.setAttribute('aria-label', words);
+						fullScreenButton.innerHTML = on ? fullScreenIcons.leave : fullScreenIcons.enter;
+					};
+					fullScreenButton.addEventListener('click', () => {
+						if (document.fullscreenElement) void document.exitFullscreen();
+						else void (mapElement.closest<HTMLElement>('[data-map-full-screen]') ?? mapElement).requestFullscreen().catch(() => {});
+					});
+					showFullScreenState();
+					document.addEventListener('fullscreenchange', showFullScreenState);
+					cleanups.push(() => document.removeEventListener('fullscreenchange', showFullScreenState));
+					viewGroup.append(fullScreenButton);
+				}
+				map.addControl({ onAdd: () => viewGroup, onRemove: () => viewGroup.remove() }, 'bottom-right');
+				// Flat or globe, as two buttons inside the map (Trevor, 2026-11-23).
 				const shapeButtons = document.createElement('div');
-				shapeButtons.className = 'maplibregl-ctrl maplibregl-ctrl-group map-shape';
+				shapeButtons.className = 'maplibregl-ctrl maplibregl-ctrl-group map-buttons map-shape';
 				shapeButtons.setAttribute('role', 'group');
 				shapeButtons.setAttribute('aria-label', 'Map shape');
 				const shapeChoices: { value: 'flat' | 'globe'; label: string; icon: string }[] = [
@@ -527,8 +570,8 @@
 					shapeButtons.append(button);
 				}
 				pressed();
-				map.addControl({ onAdd: () => shapeButtons, onRemove: () => shapeButtons.remove() }, 'top-right');
-				map.addControl(new maplibre.AttributionControl({ compact: false }), 'bottom-right');
+				map.addControl({ onAdd: () => shapeButtons, onRemove: () => shapeButtons.remove() }, 'bottom-right');
+				map.addControl(new maplibre.NavigationControl({ showCompass: false }), 'bottom-right');
 				// The distance scale sits at the bottom of the map (Trevor, 2026-11-23).
 				map.addControl(new maplibre.ScaleControl({ unit: 'imperial' }), 'bottom-left');
 				const sameInWords = oneNation ? 'The list under the map names the same areas.' : 'The table beside the map lists the same places.';
@@ -633,6 +676,13 @@
 		background: var(--color-paper);
 	}
 
+	/* A map that is full screen by itself fills the screen. */
+	.tile-map:fullscreen {
+		aspect-ratio: auto;
+		height: 100%;
+		border: 0;
+	}
+
 	/* MapLibre's controls and credit line, in the site's colors and type. */
 	.tile-map :global(.maplibregl-ctrl-group) {
 		border: 1px solid var(--color-control-border);
@@ -654,7 +704,7 @@
 		bottom: 2.25rem;
 	}
 
-	.tile-map :global(.map-shape button) {
+	.tile-map :global(.map-buttons button) {
 		display: grid;
 		place-items: center;
 		color: var(--color-ink);
