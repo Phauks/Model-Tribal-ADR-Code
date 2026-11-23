@@ -150,13 +150,6 @@
 			'en-US'
 		)} provisions from {data.nationCount.toLocaleString('en-US')} nations. Pick a kind of dispute and a method to see which nations provide it and what their law says.
 	</p>
-	<div class="notice" role="note">
-		<p>
-			Each provision was read from the nation’s published law and summarized in plain words. {data.checkedCount.toLocaleString(
-				'en-US'
-			)} have been checked by a second reader; the rest are marked “Read once.” No nation has reviewed this list. Always read the cited law before relying on it, and tell us about a mistake with Report a problem.
-		</p>
-	</div>
 
 	{#if allRows}
 		<div class="phone-tools no-print">
