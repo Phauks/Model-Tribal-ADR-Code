@@ -242,10 +242,10 @@
 			</Collapsible>
 		{/if}
 
-		<!-- 8. Nearby Nations, the other nations in the same states: plain lists, never a ranking -->
+		<!-- 8. Nearby Nations, the other nations in the same states: plain lists, never a ranking. It starts folded (nation page review, layout A). -->
 		{#if data.neighbors.length > 0}
 			<div class="no-print">
-				<Collapsible heading="Nearby Nations" identifier="neighbors-heading">
+				<Collapsible heading="Nearby Nations" identifier="neighbors-heading" open={false}>
 					{#each data.neighbors as entry (entry.state)}
 						<h3 class="neighbors-state">{entry.stateName}</h3>
 						{#if entry.nations.length > 0}
@@ -340,7 +340,9 @@
 		display: block;
 	}
 
+	/* Its rules keep clear of the floated At a glance column and contacts (RecordPage.svelte). */
 	.empty-section {
+		display: flow-root;
 		margin: 0 0 var(--space-5);
 		padding: var(--space-3) 0;
 		border-top: 1px solid var(--color-line);
