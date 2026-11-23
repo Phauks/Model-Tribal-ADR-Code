@@ -158,7 +158,7 @@
 							<tr>
 								<td>{group.reason}</td>
 								<td class="number">{group.count}</td>
-								<td>{group.why}{#if group.review} <a href={group.review}>Review</a>{/if}</td>
+								<td>{group.why}{#if group.review}{' '}<a href={group.review}>Review</a>{/if}</td>
 							</tr>
 						{/each}
 					</tbody>
@@ -236,8 +236,8 @@
 			<h2 id="preview-heading">Preview</h2>
 			{#if current}
 				<p class="small muted">
-					Showing {showing + 1} of {count}: {current.nationName ?? current.name}{#if count > 1}
-						· <button class="link-button" type="button" onclick={() => (showing = (showing + 1) % count)}>next</button>{/if}
+					Showing {showing + 1} of {count}: {current.nationName ?? current.name}{#if count > 1}{' '}·
+						<button class="link-button" type="button" onclick={() => (showing = (showing + 1) % count)}>next</button>{/if}
 				</p>
 			{:else}
 				<p class="small muted">No one to show yet.</p>
@@ -399,14 +399,16 @@
 		border: 1px dashed var(--color-control-border);
 		border-radius: var(--radius-control);
 		padding: var(--space-3) var(--space-4);
-		max-height: 28rem;
-		overflow: auto;
 	}
 	.letter-subject {
 		font-weight: var(--font-weight-semibold);
 		margin: 0 0 var(--space-2);
 	}
+	/* A long letter scrolls inside the box, so its footer stays in view. */
 	.letter-words {
+		max-height: 22rem;
+		overflow: auto;
+		margin: 0;
 		white-space: pre-wrap;
 		overflow-wrap: anywhere;
 	}
