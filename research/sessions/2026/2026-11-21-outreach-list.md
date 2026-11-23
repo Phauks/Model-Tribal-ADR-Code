@@ -50,54 +50,22 @@ limits: >-
   were researched but are kept in the private plan, not here.
 ---
 
-Result: 193 records in `research/outreach/`. The search is nationwide; the
-lead author's location in Nevada does not raise a body's priority.
+Result: 193 records in `research/outreach/`. The search is nationwide; the lead author's location in Nevada does not raise a body's priority.
 
-- 79 Native nations, each pointing to its Tribe profile: 59 nations across
-  the country whose law or court materials name a peacemaking or other
-  dispute resolution forum, or that held peacemaking training, selected from
-  the `dispute_resolution` and `justice_institutions` facts in the Tribe
-  profiles and citing the same source records; and 20 nations with
-  government offices or lands in Nevada, drafted first because the lead
-  author's school is there.
-- 33 national justice bodies: intertribal courts, tribal judges and bar
-  bodies, tribal-state court forums in eight states, federal tribal justice
-  programs, regional intertribal organizations, tribal colleges and a
-  restorative justice center.
-- 81 other organizations: UNLV and Boyd bodies, national Native legal,
-  governance, data and art organizations, law school Indian law programs and
-  dispute resolution bodies. Named people, suggested asks, priority
-and contact status are in the private plan
-([decision record 0012](../../../docs/decisions/0012-outreach-list-split-public-and-private.md)).
+- 79 Native nations, each pointing to its Tribe profile: 59 nations across the country whose law or court materials name a peacemaking or other dispute resolution forum, or that held peacemaking training, selected from the `dispute_resolution` and `justice_institutions` facts in the Tribe profiles and citing the same source records; and 20 nations with government offices or lands in Nevada, drafted first because the lead author's school is there.
+- 33 national justice bodies: intertribal courts, tribal judges and bar bodies, tribal-state court forums in eight states, federal tribal justice programs, regional intertribal organizations, tribal colleges and a restorative justice center.
+- 81 other organizations: UNLV and Boyd bodies, national Native legal, governance, data and art organizations, law school Indian law programs and dispute resolution bodies. Named people, suggested asks, priority and contact status are in the private plan ([decision record 0012](../../../docs/decisions/0012-outreach-list-split-public-and-private.md)).
 
 Changes found while checking the original list:
 
-- The Nevada Indian Commission became the Nevada Department of Native American
-  Affairs on July 1, 2024.
-- The State Bar of Nevada's section is the Tribal Law Section, not an Indian
-  Law Section.
-- The Native American Journalists Association is now the Indigenous
-  Journalists Association.
-- The Harvard Project on American Indian Economic Development is now the
-  Project on Indigenous Governance and Development.
-- The Udall Foundation's center is now the John S. McCain III National Center
-  for Environmental Conflict Resolution.
-- The University of New Mexico's Indian law program is now the Law and
-  Indigenous Peoples Program; the University of Oklahoma's center is the
-  Center for the Study of American Indian Law and Policy.
-- The Alaska Native Justice Center's victim services moved to Cook Inlet
-  Tribal Council on October 11, 2025.
+- The Nevada Indian Commission became the Nevada Department of Native American Affairs on July 1, 2024.
+- The State Bar of Nevada's section is the Tribal Law Section, not an Indian Law Section.
+- The Native American Journalists Association is now the Indigenous Journalists Association.
+- The Harvard Project on American Indian Economic Development is now the Project on Indigenous Governance and Development.
+- The Udall Foundation's center is now the John S. McCain III National Center for Environmental Conflict Resolution.
+- The University of New Mexico's Indian law program is now the Law and Indigenous Peoples Program; the University of Oklahoma's center is the Center for the Study of American Indian Law and Policy.
+- The Alaska Native Justice Center's victim services moved to Cook Inlet Tribal Council on October 11, 2025.
 
-Not found: an Indian law clinic at Boyd, a Native student services office at
-UNLV, a Nevada tribal-state court forum, a Nevada tribal judges association,
-and an Alaska tribal judges association with its own website. Not listed
-because no current official presence was found: the Northern Plains
-Intertribal Court of Appeals, the Oklahoma Indian Bar Association (social
-media only), the California Tribal Court Judges' Association, the California
-Tribal Chairpersons' Association, the Midwest Alliance of Sovereign Tribes,
-the Great Plains Tribal Chairmen's Association, and tribal judges
-associations in Michigan, Arizona, Minnesota, New Mexico and the Northwest.
+Not found: an Indian law clinic at Boyd, a Native student services office at UNLV, a Nevada tribal-state court forum, a Nevada tribal judges association, and an Alaska tribal judges association with its own website. Not listed because no current official presence was found: the Northern Plains Intertribal Court of Appeals, the Oklahoma Indian Bar Association (social media only), the California Tribal Court Judges' Association, the California Tribal Chairpersons' Association, the Midwest Alliance of Sovereign Tribes, the Great Plains Tribal Chairmen's Association, and tribal judges associations in Michigan, Arizona, Minnesota, New Mexico and the Northwest.
 
-Data issues noticed in the Tribe profile dataset while drafting (dead tribal
-court links, and a Pyramid Lake profile citing another nation's law code)
-were reported to that work and fixed before it merged.
+Data issues noticed in the Tribe profile dataset while drafting (dead tribal court links, and a Pyramid Lake profile citing another nation's law code) were reported to that work and fixed before it merged.

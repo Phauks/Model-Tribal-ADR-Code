@@ -36,21 +36,12 @@ limits: >-
   design thread, which also read text only.
 ---
 
-The research supports [site/DESIGN.md](../../../site/DESIGN.md). It restarted
-an earlier design thread from the same day, whose notes were reused rather
-than repeated. Section 3 of the design document lists each reference with its
-address, what the project borrows and what it avoids.
+The research supports [site/DESIGN.md](../../../site/DESIGN.md). It restarted an earlier design thread from the same day, whose notes were reused rather than repeated. Section 3 of the design document lists each reference with its address, what the project borrows and what it avoids.
 
 Findings that shaped the design most:
 
-- The National Indian Law Library's Tribal Law Gateway frames missing material
-  as a nation's choice not to consent, which matches charter commitment 6 and
-  shaped the nation profile's review panel.
-- legislation.gov.uk's status box and timeline shaped the "Model text, not law
-  in force" notice and the per-section history.
-- The GOV.UK Design System's question pages and start pages shaped the request
-  flow in docs/requests.md into one question per page.
-- Native Land Digital's statement that its maps are not official sources and
-  draw no legal boundaries shaped the notice beside the state-presence map.
-- Wikipedia's Page Previews, which screen readers skip, showed why every
-  glossary card must also be reachable as a link to the full entry.
+- The National Indian Law Library's Tribal Law Gateway frames missing material as a nation's choice not to consent, which matches charter commitment 6 and shaped the nation profile's review panel.
+- legislation.gov.uk's status box and timeline shaped the "Model text, not law in force" notice and the per-section history.
+- The GOV.UK Design System's question pages and start pages shaped the request flow in docs/requests.md into one question per page.
+- Native Land Digital's statement that its maps are not official sources and draw no legal boundaries shaped the notice beside the state-presence map.
+- Wikipedia's Page Previews, which screen readers skip, showed why every glossary card must also be reachable as a link to the full entry.

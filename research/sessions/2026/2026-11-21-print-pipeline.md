@@ -40,24 +40,8 @@ limits: >-
 
 Findings:
 
-- Lulu lists twelve trim sizes as eligible for retail distribution as a
-  perfect-bound paperback with standard black-and-white ink (*Retail
-  Distribution Eligible Products Guide*, pp. 3-9). Comic Book is eligible only
-  with premium color. Small Square is not distributed through Ingram, and
-  Executive, Crown Quarto, A4, US Letter and Square are not distributed through
-  Ingram on 60# cream paper (same guide). All twelve are in
-  `pdf/book-sizes.yaml`.
-- The size-dependent rules are the page size with 0.125 in bleed, the 0.5 in
-  safety margin, the inside margin by page count and the spine width of pages /
-  444 + 0.06 in (*Book Creation Guide*, pp. 8-13, 17, 23).
-- The upstream CSL style `bluebook-law-review.csl` (file dated 2025-05-06)
-  dropped a statute's "§ 4" pinpoint and printed no short form for an act
-  without a section (measured with citeproc-js 2.4.63). The project's copy,
-  `pdf/styles/project-law-review.csl`, prints the forms in Indigo Book R6.2.2,
-  R16.1, R16.2 and R18.4, such as "Unif. Mediation Act § 4 (Unif. L. Comm'n
-  2001)" and "*Id.* § 5".
-- Atkinson Hyperlegible Next has 362 glyphs and lacks ʔ, ʷ, ʼ and ō, which
-  appear in the names of some Native nations, so the build falls back to Noto
-  Sans and its Cherokee and Canadian Aboriginal syllabics fonts (measured).
-- The specimen at every size passes the build's checks of Lulu's rules
-  (measured; `npm run build:every-size`).
+- Lulu lists twelve trim sizes as eligible for retail distribution as a perfect-bound paperback with standard black-and-white ink (*Retail Distribution Eligible Products Guide*, pp. 3-9). Comic Book is eligible only with premium color. Small Square is not distributed through Ingram, and Executive, Crown Quarto, A4, US Letter and Square are not distributed through Ingram on 60# cream paper (same guide). All twelve are in `pdf/book-sizes.yaml`.
+- The size-dependent rules are the page size with 0.125 in bleed, the 0.5 in safety margin, the inside margin by page count and the spine width of pages / 444 + 0.06 in (*Book Creation Guide*, pp. 8-13, 17, 23).
+- The upstream CSL style `bluebook-law-review.csl` (file dated 2025-05-06) dropped a statute's "§ 4" pinpoint and printed no short form for an act without a section (measured with citeproc-js 2.4.63). The project's copy, `pdf/styles/project-law-review.csl`, prints the forms in Indigo Book R6.2.2, R16.1, R16.2 and R18.4, such as "Unif. Mediation Act § 4 (Unif. L. Comm'n 2001)" and "*Id.* § 5".
+- Atkinson Hyperlegible Next has 362 glyphs and lacks ʔ, ʷ, ʼ and ō, which appear in the names of some Native nations, so the build falls back to Noto Sans and its Cherokee and Canadian Aboriginal syllabics fonts (measured).
+- The specimen at every size passes the build's checks of Lulu's rules (measured; `npm run build:every-size`).

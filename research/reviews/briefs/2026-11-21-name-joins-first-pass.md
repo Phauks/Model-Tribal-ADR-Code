@@ -21,6 +21,4 @@ Rules:
 - Watch for "Band" versus "Tribe" versus "Nation" distinctions that are separate governments (for example Sac and Fox Nation of Oklahoma versus Sac and Fox Tribe of the Mississippi in Iowa; Eastern Shawnee versus Absentee-Shawnee versus Shawnee Tribe).
 - `reason`: one short sentence.
 
-Output: write a JSON array to the output path you are given, one object per item, in input order:
-{"pair_id": 12, "verdict": "same|different|unsure", "other_candidate": "name or null", "reason": "..."}
-Write valid JSON only. Every pair_id in the input must appear exactly once. When done, reply with the counts of each verdict and nothing else.
+Output: write a JSON array to the output path you are given, one object per item, in input order: {"pair_id": 12, "verdict": "same|different|unsure", "other_candidate": "name or null", "reason": "..."} Write valid JSON only. Every pair_id in the input must appear exactly once. When done, reply with the counts of each verdict and nothing else.
