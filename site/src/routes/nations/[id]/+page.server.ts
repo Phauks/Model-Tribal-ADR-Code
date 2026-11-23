@@ -24,6 +24,7 @@ import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
+import { offlineSets } from '#lib/server/copy-lists.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -429,8 +430,24 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 	return [
 		...[...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items })),
 		...agreementGroups(record, sources, section),
+		...group('nearby-state-courts', 'State trial courts for the same counties', nearbyStateCourts(record, sources, section)),
 		...group('court-cases', 'Court cases about the nation', courtCases(record, sources, section))
 	];
+}
+
+/**
+ * The state trial court of general jurisdiction for each county the nation's
+ * Census area lies in, largest share first as the record lists them, each
+ * linking the state judiciary's list of those courts.
+ */
+function nearbyStateCourts(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	return (record.nearby_state_courts ?? []).map((fact) =>
+		cited(sources, section, fact, {
+			text: fact.court,
+			link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+			detail: stateName(fact.state)
+		})
+	);
 }
 
 /** Reporter names written out in some records, in their short form. */
@@ -860,6 +877,11 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 	};
 }
 
+function heldCopies(id: string): { count: number; bytes: number } {
+	const files = offlineSets().nations.get(id)?.files ?? [];
+	return { count: files.length, bytes: files.reduce((total, [, bytes]) => total + bytes, 0) };
+}
+
 export const load: PageServerLoad = ({ params }) => {
 	const record = nations().find((candidate) => candidate.id === params.id);
 	if (!record) error(404, 'No nation page has this address.');
@@ -879,7 +901,9 @@ export const load: PageServerLoad = ({ params }) => {
 			...status,
 			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined
 		},
-		withdrawn: record.review?.status === 'withdrawn-at-request'
+		withdrawn: record.review?.status === 'withdrawn-at-request',
+		// The copies of the nation's documents this site holds, to save offline or download as a ZIP.
+		heldCopies: heldCopies(record.id)
 	};
 
 	if (page.withdrawn) {

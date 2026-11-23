@@ -111,24 +111,32 @@ export interface ChangeView {
 }
 
 export const siteReleaseName = 'Site release';
+/** Who made a change a nation's team published on its own page: the name the team gave, else this. */
+export const nationTeamName = 'The nation’s team';
+/** The "Who" filter's key for every change nations' teams published. */
+export const nationTeamsKey = 'nation-teams';
 
 // ---------------------------------------------------------------------------
 // Change identifiers
 
 export type ChangeReference =
 	| { source: 'page'; identifier: number }
-	| { source: 'essay'; essay: string; number: number };
+	| { source: 'essay'; essay: string; number: number }
+	// A change a nation's team published on its own page (decision record 0041).
+	| { source: 'nation'; identifier: string };
 
 export function changeId(reference: ChangeReference): string {
-	return reference.source === 'page'
-		? `page-${reference.identifier}`
-		: `essay-${reference.essay}-${reference.number}`;
+	if (reference.source === 'page') return `page-${reference.identifier}`;
+	if (reference.source === 'nation') return `nation-${reference.identifier}`;
+	return `essay-${reference.essay}-${reference.number}`;
 }
 
 export function parseChangeId(value: string | null | undefined): ChangeReference | undefined {
 	if (!value || value.length > 200) return undefined;
 	const page = /^page-([1-9][0-9]{0,15})$/.exec(value);
 	if (page) return { source: 'page', identifier: Number(page[1]) };
+	const nation = /^nation-([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/.exec(value);
+	if (nation) return { source: 'nation', identifier: nation[1] };
 	const essay = /^essay-([a-z0-9]+(?:-[a-z0-9]+)*)-([1-9][0-9]{0,8})$/.exec(value);
 	if (essay) return { source: 'essay', essay: essay[1], number: Number(essay[2]) };
 	return undefined;

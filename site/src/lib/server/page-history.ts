@@ -26,6 +26,8 @@ import {
 	hideReasons,
 	isHideReason,
 	parseChangeId,
+	nationTeamName,
+	nationTeamsKey,
 	siteReleaseName,
 	wordingIsShown,
 	type ChangeFilters,
@@ -298,8 +300,24 @@ const everyChange = `
 	WITH changes AS (
 		SELECT 'page-' || pc.identifier AS id, pc.address, pc.kind, pc.title, pc.change, pc.summary, pc.bulk,
 			pc.bytes_before, pc.bytes_after, pc.text_before, pc.text_after, pc.parts,
-			NULL AS person_identifier, pc.made_at, 1 AS listed, pc.identifier AS sort_key
+			NULL AS person_identifier, pc.made_at, 1 AS listed, pc.identifier AS sort_key, NULL AS who_name
 		FROM page_changes pc
+		UNION ALL
+		-- What nations' teams published on their own pages, once live and unless the project undid it.
+		-- Like every nation page change, it names the part of the page, never the words.
+		SELECT 'nation-' || npc.identifier, '/nations/' || npc.nation_identifier, 'nation', NULL, 'edit',
+			NULL, 0, NULL, NULL, NULL, NULL,
+			json_array(CASE npc.kind
+				WHEN 'about' THEN 'About'
+				WHEN 'courts' THEN 'Courts and dispute resolution'
+				WHEN 'statements' THEN 'Statements beside government records'
+				WHEN 'contacts' THEN 'Contacts'
+				WHEN 'pictures' THEN 'Pictures'
+				ELSE 'Hidden parts of the page'
+			END),
+			NULL, npc.live_at, 1, npc.rowid, npc.credit
+		FROM nation_page_changes npc
+		WHERE npc.status = 'published' AND npc.live_at <= strftime('%Y-%m-%dT%H:%M:%fZ', 'now')
 		UNION ALL
 		SELECT 'essay-' || p.essay_identifier || '-' || p.number,
 			CASE e.part
@@ -311,7 +329,7 @@ const everyChange = `
 			e.part, v.title,
 			CASE WHEN prior.version_number IS NULL THEN 'new' ELSE 'published' END,
 			v.note, 0, prior_version.bytes, v.bytes, prior_version.object_key, v.object_key, NULL,
-			p.person_identifier, p.published_at, p.listed, p.number
+			p.person_identifier, p.published_at, p.listed, p.number, NULL
 		FROM essay_publications p
 		JOIN essays e ON e.identifier = p.essay_identifier
 		JOIN essay_versions v ON v.essay_identifier = p.essay_identifier AND v.number = p.version_number
@@ -344,6 +362,8 @@ export interface ChangeRow {
 	made_at: string;
 	listed: number;
 	sort_key: number;
+	/** For a change a nation's team published: the name it gave on the page. */
+	who_name: string | null;
 	hide_text: number | null;
 	hide_summary: number | null;
 	hide_person: number | null;
@@ -380,9 +400,13 @@ export function changeView(row: ChangeRow, directory: PageDirectory): ChangeView
 		change: row.change as ChangeKind,
 		summary: summaryHidden ? undefined : (row.summary ?? undefined),
 		summaryHidden,
-		who: whoHidden ? undefined : (row.person_name ?? (row.person_identifier ? 'A former contributor' : siteReleaseName)),
+		who: whoHidden
+			? undefined
+			: row.id.startsWith('nation-')
+				? (row.who_name ?? nationTeamName)
+				: (row.person_name ?? (row.person_identifier ? 'A former contributor' : siteReleaseName)),
 		whoHidden,
-		whoKey: row.person_identifier ?? 'site',
+		whoKey: row.id.startsWith('nation-') ? nationTeamsKey : (row.person_identifier ?? 'site'),
 		sizeChange: hasSize ? (row.bytes_after ?? 0) - (row.bytes_before ?? 0) : undefined,
 		size: hasSize && row.change !== 'removed' ? (row.bytes_after ?? undefined) : undefined,
 		parts: wording || textHidden || !row.parts ? undefined : (JSON.parse(row.parts) as string[]),
@@ -415,7 +439,8 @@ function whereFor(filters: ChangeFilters, at: Date): Where {
 	};
 	if (filters.page) add('c.address = ?', filters.page);
 	if (filters.kinds.length > 0) add('c.kind IN (SELECT value FROM json_each(?))', JSON.stringify(filters.kinds));
-	if (filters.who === 'site') add('c.person_identifier IS NULL');
+	if (filters.who === 'site') add("c.person_identifier IS NULL AND c.id NOT LIKE 'nation-%'");
+	else if (filters.who === nationTeamsKey) add("c.id LIKE 'nation-%' AND COALESCE(h.hide_person, 0) = 0");
 	else if (filters.who) add('c.person_identifier = ? AND COALESCE(h.hide_person, 0) = 0', filters.who);
 	if (filters.days > 0) add('c.made_at >= ?', new Date(at.getTime() - filters.days * 86_400_000).toISOString());
 	if (filters.size > 0) {
@@ -453,7 +478,7 @@ export async function listChanges(
 ): Promise<ChangeList> {
 	const where = whereFor(filters, at);
 	const bulkClause = filters.showBulk ? [] : ['c.bulk = 0'];
-	const [listed, bulk, people] = await Promise.all([
+	const [listed, bulk, people, nationTeams] = await Promise.all([
 		database
 			.prepare(`${everyChange}${whereText(where, bulkClause)} ORDER BY c.made_at DESC, c.sort_key DESC LIMIT ?`)
 			.bind(...where.values, filters.limit + 1)
@@ -473,14 +498,22 @@ export async function listChanges(
 				 WHERE COALESCE(h.hide_person, 0) = 0
 				 ORDER BY people.display_name`
 			)
-			.all<{ key: string; name: string }>()
+			.all<{ key: string; name: string }>(),
+		database
+			.prepare(`SELECT 1 AS yes FROM nation_page_changes WHERE status = 'published' LIMIT 1`)
+			.first<{ yes: number }>()
 	]);
 	const rows = listed.results;
 	return {
 		changes: rows.slice(0, filters.limit).map((row) => changeView(row, directory)),
 		hiddenBulk: bulk?.count ?? 0,
 		more: rows.length > filters.limit,
-		people: [{ key: 'site', name: siteReleaseName }, ...people.results]
+		people: [
+			{ key: 'site', name: siteReleaseName },
+			// Listed only once a nation's team has published something.
+			...(nationTeams ? [{ key: nationTeamsKey, name: 'Nations’ teams' }] : []),
+			...people.results
+		]
 	};
 }
 

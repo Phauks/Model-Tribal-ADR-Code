@@ -41,6 +41,12 @@ export type ArrivalResult =
 			spam: boolean;
 			automatic: boolean;
 			notify: boolean;
+			/**
+			 * Whether a person wrote it to the project, so the away message may
+			 * answer it: not Spam, not an automatic reply or delivery report, not
+			 * from a mailing list, and not from the project's own addresses.
+			 */
+			answerable: boolean;
 			/** The names of the auto-sort rules that matched, in the order they ran. */
 			sortedBy: string[];
 	  }
@@ -432,7 +438,9 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 			.bind(threadIdentifier)
 			.first()) !== null;
 	const notify = !spam && !automatic && !quietened && (await noticeDue(context, at));
-	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify, sortedBy };
+	const fromList = header(email, 'list-id') !== null || header(email, 'list-unsubscribe') !== null;
+	const answerable = !spam && !automatic && !fromList && !isProjectAddress(settings, from.email);
+	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify, answerable, sortedBy };
 }
 
 /** Marks the message a delivery report is about, and puts a permanently failed address on the do-not-email list. */

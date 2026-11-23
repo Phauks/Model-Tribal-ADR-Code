@@ -718,6 +718,16 @@ jurisdiction:
   as_of: '2024'
   locator: Appendix D (PDF p.53)
   note: Listed as "QUILEUTE INDIAN TRIBE OF THE QUILEUTE INDIAN RESERVATION".
+nearby_state_courts:
+- state: WA
+  county: Clallam County
+  court: Superior Court for Clallam County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Clallam County holds 100% of the land of Quileute Reservation (Census GEOID 3030), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Quinaielt, etc., 1855
   signed: '1855-07-01'

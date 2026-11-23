@@ -700,6 +700,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.J, New York
   note: 'The source reads: “The agreement was first effective on April 1, 1994, and amended on April 22, 2005.”. Covers reimbursement of administrative and maintenance costs. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: NY
+  county: Franklin County
+  court: Supreme Court for Franklin County
+  link: https://www.nycourts.gov/court-locator
+  source: state-trial-court-directory-ny
+  confidence: medium
+  verification: title-only
+  locator: Supreme Courts by county or district
+  note: Franklin County holds 100% of the land of St. Regis Mohawk Reservation (Census GEOID 3320), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Six Nations, 1784
   signed: '1784-10-22'

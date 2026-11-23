@@ -143,7 +143,16 @@ function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, Do
 	const federal: DocumentFile[] = [];
 	const byNation = new Map<string, DocumentFile[]>();
 	for (const copy of publicCopies()) {
-		const file: DocumentFile = [copyPath(copy), copy.bytes, copy.sha256.slice(0, 16)];
+		const file: DocumentFile = [
+			copyPath(copy),
+			copy.bytes,
+			copy.sha256,
+			copy.title,
+			copy.links.at(-1) ?? copy.links[0] ?? ''
+		];
+		// Tribal court opinions (decision record 0047) are neither United States documents nor yet
+		// part of a nation's saved set; they are saved as their pages are read.
+		if (copy.topic === 'caselaw-access-project') continue;
 		if (copy.topic !== 'constitutions' && copy.topic !== 'tribal-law') {
 			federal.push(file);
 			continue;
