@@ -606,6 +606,34 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Alabama by the Census Bureau's land areas.
+nearby_state_courts:
+- state: AL
+  county: Escambia County
+  court: Circuit Court for Escambia County
+  link: https://judicial.alabama.gov/
+  source: state-trial-court-directory-al
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Escambia County holds 88% of the land of Poarch Creek Reservation (Census GEOID 2865), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AL
+  county: Elmore County
+  court: Circuit Court for Elmore County
+  link: https://judicial.alabama.gov/
+  source: state-trial-court-directory-al
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Elmore County holds 9% of the land of Poarch Creek Reservation (Census GEOID 2865), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AL
+  county: Montgomery County
+  court: Circuit Court for Montgomery County
+  link: https://judicial.alabama.gov/
+  source: state-trial-court-directory-al
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Montgomery County holds 2% of the land of Poarch Creek Reservation (Census GEOID 2865), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Creeks, 1790
   signed: '1790-08-07'

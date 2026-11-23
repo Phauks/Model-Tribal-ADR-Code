@@ -721,6 +721,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Findings and deputization provisions
   note: 'The source reads: “agrees to deputize qualified Yurok Tribe Department of Public Safety Officers who”. The copy is undated. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: CA
+  county: Humboldt County
+  court: Superior Court for Humboldt County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Humboldt County holds 71% of the land of Yurok Reservation (Census GEOID 4760), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: CA
+  county: Del Norte County
+  court: Superior Court for Del Norte County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Del Norte County holds 29% of the land of Yurok Reservation (Census GEOID 4760), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

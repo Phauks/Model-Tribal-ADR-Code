@@ -825,6 +825,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.E, Michigan
   note: 'The source reads: “Bay Mills Indian Community, executed in July 1999 and amended on October 1, 2008”. Date is the execution date as reported; most were amended 2008-10-01. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: MI
+  county: Chippewa County
+  court: Circuit Court for Chippewa County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Chippewa County holds 100% of the land of Bay Mills Reservation (Census GEOID 0170), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Ottawa, etc., 1836
   signed: '1836-03-28'

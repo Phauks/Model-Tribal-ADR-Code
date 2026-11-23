@@ -1067,6 +1067,34 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.E, Michigan
   note: 'The source reads: “Little Traverse Bay Bands of Odawa Indians, executed on November 19, 2012”. Date is the execution date as reported; most were amended 2008-10-01. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: MI
+  county: Emmet County
+  court: Circuit Court for Emmet County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Emmet County holds 83% of the land of Little Traverse Bay Reservation (Census GEOID 1963), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Charlevoix County
+  court: Circuit Court for Charlevoix County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Charlevoix County holds 12% of the land of Little Traverse Bay Reservation (Census GEOID 1963), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Delta County
+  court: Circuit Court for Delta County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Delta County holds 5% of the land of Little Traverse Bay Reservation (Census GEOID 1963), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Ottawa, etc., 1836
   signed: '1836-03-28'

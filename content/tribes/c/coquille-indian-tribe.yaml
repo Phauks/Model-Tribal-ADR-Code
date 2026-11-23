@@ -835,6 +835,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.M, Oregon
   note: 'The source reads: “The Coquille Indian Tribe executed in June 2010”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: OR
+  county: Coos County
+  court: Circuit Court for Coos County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Coos County holds 100% of the land of Coquille Reservation (Census GEOID 0775), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

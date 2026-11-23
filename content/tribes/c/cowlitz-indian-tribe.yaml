@@ -498,6 +498,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Commissioning and Cross-Commissioning of Patrol and Special Law Enforcement Units
   note: 'The source reads: “The parties agree to cross-commission or specially commission each other’s full”. The day in April 2017 is partly illegible in the scan. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: WA
+  county: Clark County
+  court: Superior Court for Clark County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Clark County holds 100% of the land of Cowlitz Reservation (Census GEOID 0820), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

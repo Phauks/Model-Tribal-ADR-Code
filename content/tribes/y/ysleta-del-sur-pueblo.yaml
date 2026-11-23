@@ -376,6 +376,16 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 100-89 § 105(f), 101 Stat. at 668
   note: 25 U.S.C. § 1300g-4 is "omitted" from the Code. Gaming provisions (§ 107) and Ysleta del Sur Pueblo v. Texas, 596 U.S. 685 (2022), were not analyzed.
+nearby_state_courts:
+- state: TX
+  county: El Paso County
+  court: District Court for El Paso County
+  link: https://www.txcourts.gov/about-texas-courts/trial-courts/
+  source: state-trial-court-directory-tx
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: El Paso County holds 100% of the land of Ysleta del Sur Pueblo (Census GEOID 4755), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

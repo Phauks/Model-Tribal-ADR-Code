@@ -789,6 +789,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.C, California
   note: 'The source reads: “The California Department of Social Services entered into two agreements, one with the Karuk Tribe on May 14, 2007”. The report says neither the Karuk nor the Yurok agreement was "currently effective" because no tribal plan had been developed. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: CA
+  county: Siskiyou County
+  court: Superior Court for Siskiyou County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Siskiyou County holds 96% of the land of Karuk Reservation (Census GEOID 1750), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: CA
+  county: Humboldt County
+  court: Superior Court for Humboldt County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Humboldt County holds 4% of the land of Karuk Reservation (Census GEOID 1750), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

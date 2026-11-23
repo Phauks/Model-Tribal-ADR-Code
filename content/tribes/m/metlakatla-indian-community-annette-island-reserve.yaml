@@ -607,6 +607,16 @@ jurisdiction:
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
   note: Statute is primary; nation placed in Alaska by the Census Bureau's land areas, so confidence is medium. Cited jointly with us-code-title-28-section-1360. Added on 2026-11-23 where the profile had no fact for this state (for example a band split out of a combined record).
+nearby_state_courts:
+- state: AK
+  county: Prince of Wales-Hyder Census Area
+  court: Superior Court for Prince of Wales-Hyder Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Prince of Wales-Hyder Census Area holds 100% of the land of Annette Island Reserve (Census GEOID 0110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corporation
   relation: alaska-native-claims-settlement-act-regional-corporation
