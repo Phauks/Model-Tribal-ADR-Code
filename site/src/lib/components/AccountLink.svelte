@@ -282,9 +282,9 @@
 
 	.sign-in-panel {
 		position: fixed;
-		inset: var(--panel-top, 4.5rem) var(--panel-right, var(--space-2)) auto auto;
+		inset: var(--panel-top, 3.5rem) var(--panel-right, var(--space-2)) auto auto;
 		width: min(26rem, calc(100vw - 2 * var(--space-2)));
-		max-height: calc(100dvh - var(--panel-top, 4.5rem) - var(--space-3));
+		max-height: calc(100dvh - var(--panel-top, 3.5rem) - var(--space-3));
 		overflow-y: auto;
 		box-sizing: border-box;
 		margin: 0;
@@ -332,9 +332,9 @@
 	/* Phones: under the one-row masthead, across the screen, over the More panel. */
 	@media (max-width: 40rem) {
 		.sign-in-panel {
-			inset: 4.5rem var(--space-2) auto;
+			inset: 3.5rem var(--space-2) auto;
 			width: auto;
-			max-height: calc(100dvh - 5rem);
+			max-height: calc(100dvh - 4rem);
 		}
 	}
 

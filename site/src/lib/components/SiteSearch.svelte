@@ -367,7 +367,7 @@
 	@media (max-width: 40rem) {
 		.search-panel {
 			position: fixed;
-			top: var(--search-panel-top, 4.5rem);
+			top: var(--search-panel-top, 3.5rem);
 			left: var(--space-4);
 			right: var(--space-4);
 			width: auto;
