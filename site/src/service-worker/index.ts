@@ -123,6 +123,7 @@ const precached = [
 		'/glossary/terms.json',
 		'/nations/previews.json',
 		'/search/index.json',
+		'/search/records.json',
 		...corePageFiles
 	].filter((path) => builtPaths.has(path))
 ];
