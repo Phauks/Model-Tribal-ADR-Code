@@ -9,8 +9,6 @@
 	import PrivateMark from '#lib/components/profile/PrivateMark.svelte';
 	import ShownToggle from '#lib/components/profile/ShownToggle.svelte';
 	import {
-		ageGroupLabels,
-		ageGroups,
 		availabilities,
 		availabilityLabels,
 		interestLabels,
@@ -40,7 +38,13 @@
 		{ key: 1, name: 'Sample Native Name', kind: 'native', shown: true },
 		{ key: 2, name: 'Sam', kind: 'goes-by', shown: false }
 	]);
-	let ageGroup = $state('18-or-older');
+	let birthYear = $state('1985');
+	let hadBirthday = $state('');
+	const thisYear = new Date().getFullYear();
+	/** Years from 13 to 110 years ago, newest first. Signing up is for people 13 or older. */
+	const birthYears = Array.from({ length: 98 }, (_, index) => String(thisYear - 13 - index));
+	/** In the year someone turns 13 or 18, the year alone cannot say which side of the line they are on, so only then is a birthday asked. */
+	const turning = $derived(birthYear ? thisYear - Number(birthYear) : 0);
 	let pictureShown = $state(true);
 
 	let emails = $state<{ key: number; value: string; mayEmail: boolean }[]>([]);
@@ -85,7 +89,7 @@
 		{ value: 'other', label: 'Other', group: languageGroupLabels.other }
 	];
 
-	const minor = $derived(ageGroup === '13-to-17');
+	const minor = $derived(turning < 18 || (turning === 18 && hadBirthday !== 'yes'));
 
 	/** The credit as it will read, from everything marked Shown. */
 	const creditLine = $derived.by(() => {
@@ -171,11 +175,18 @@
 
 		<div class="field-with-use">
 			<div class="field">
-				<label for="ageGroup">How old are you?</label>
-				<select id="ageGroup" name="ageGroup" bind:value={ageGroup}>
+				<label for="birthYear">Birth year</label>
+				<select id="birthYear" name="birthYear" bind:value={birthYear}>
 					<option value="" disabled>Choose</option>
-					{#each ageGroups as option (option)}<option value={option}>{ageGroupLabels[option]}</option>{/each}
+					{#each birthYears as year (year)}<option value={year}>{year}</option>{/each}
 				</select>
+				{#if turning === 13 || turning === 18}
+					<fieldset class="birthday">
+						<legend>Have you had your {turning}th birthday yet?</legend>
+						<label class="choice"><input type="radio" name="hadBirthday" value="yes" bind:group={hadBirthday} /> Yes</label>
+						<label class="choice"><input type="radio" name="hadBirthday" value="no" bind:group={hadBirthday} /> Not yet</label>
+					</fieldset>
+				{/if}
 			</div>
 			<div class="use"><PrivateMark /></div>
 		</div>
@@ -612,6 +623,19 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0 var(--space-4);
+	}
+
+	.birthday {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 var(--space-4);
+		align-items: center;
+		margin-top: var(--space-3);
+	}
+
+	.birthday legend {
+		width: 100%;
+		font-weight: normal;
 	}
 
 	.where {
