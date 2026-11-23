@@ -633,6 +633,28 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Michigan Department of Human Services
+  agreement: Keweenaw Bay Indian Community Title IV-E Agreement
+  state: MI
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for MI
+  note: 'The source reads: “Keweenaw Bay Indian Community Title IV-E Agreement”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Michigan Department of Human Services
+  agreement: Title IV-E agreement
+  state: MI
+  date: 1999-11
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.E, Michigan
+  note: 'The source reads: “Keweenaw Bay Indian Community, executed in November 1999 and amended on October 1, 2008”. Date is the execution date as reported; most were amended 2008-10-01. Report date is March 2014, so current status needs confirming.'
 treaties:
 - title: Treaty with the Chippewa, 1842
   signed: '1842-10-04'

@@ -579,6 +579,17 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: Minnesota Department of Revenue
+  agreement: Tribal government tax agreement (collection assistance and audits for sales and use, cigarette and tobacco, liquor and motor fuel excise taxes)
+  state: MN
+  status: in-effect
+  source: minnesota-department-of-revenue-tribal-government-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table of tribal governments with tax agreements
+  note: 'The source reads: “Upper Sioux Granite Falls”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Upper Sioux", matched to the roster by name and state.'
 treaties:
 - title: Treaty with the Sauk and Foxes, etc., 1830
   signed: '1830-07-15'

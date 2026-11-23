@@ -683,6 +683,37 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Montana Department of Public Health and Human Services
+  agreement: Title IV-E tribal-state agreement (2011 template, terms no longer than seven years)
+  state: MT
+  date: '2011'
+  status: expired
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.G, Montana
+  note: 'The source reads: “Confederated Salish & Kootenai Tribes of the Flathead Reservation,”. Template agreement negotiated in 2011. The report says this tribe was later approved for direct federal funding, superseding the state agreement. Report date is March 2014, so current status needs confirming.'
+- kind: child-welfare-agreement
+  other_party: United States Department of Health and Human Services, Administration for Children and Families
+  agreement: Federal Title IV-E plan (direct tribal funding)
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: low
+  verification: inferred
+  locator: Section I.G, Montana
+  note: 'The source reads: “The Salish & Kootenai were recently approved for direct federal funding”. federal Title IV-E plan. Approval date is not given. Reported in March 2014 and not checked against the current Administration for Children and Families list, which could not be fetched.'
+- kind: tax-agreement
+  other_party: Montana Department of Revenue
+  agreement: Alcoholic beverages tax agreement
+  state: MT
+  status: in-effect
+  source: montana-department-of-revenue-state-and-tribal-tax-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table "State and Tribal Tax Agreements"
+  note: 'The source reads: “Confederated Salish and Kootenai Tribes Alcoholic Beverages Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
 treaties:
 - title: Treaty with the Flatheads, etc., 1855
   signed: '1855-07-16'

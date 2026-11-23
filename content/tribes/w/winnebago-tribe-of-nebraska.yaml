@@ -774,6 +774,50 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Nebraska Department of Health and Human Services, Division of Children and Family Services
+  agreement: Title IV-E Contract Between the Nebraska Department of Health and Human Services Division of Children and Family Services and the Winnebago Tribe
+  state: NE
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for NE
+  note: 'The source reads: “Title IV-E Contract Between the Nebraska Department of Health and Human Services Division of Children and Family Services and the Winnebago Tribe”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: tax-agreement
+  other_party: Nebraska Department of Revenue
+  agreement: Motor fuel tax collection agreement (amended 2003-09-09)
+  state: NE
+  date: '2002-01-24'
+  status: unknown
+  source: nebraska-department-of-revenue-agreements-with-native-american-tribes
+  confidence: high
+  verification: bulk-import
+  locator: List "Agreements with Native American Tribes"
+  note: 'The source reads: “Agreement for the Collection and Dissemination of Motor Fuel Taxes Between the State of Nebraska and the Winnebago Tribe of Nebraska (January 24, 2002)”. Date is the one printed in the list entry. The page does not say whether the agreement has been renewed or replaced.'
+- kind: child-welfare-agreement
+  other_party: Nebraska Department of Health and Human Services, Division of Children and Family Services
+  agreement: Title IV-E agreement (maintenance funding only)
+  state: NE
+  date: '2010-07-01'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.H, Nebraska
+  note: 'The source reads: “and the Winnebago Tribe”. Effective July 1, 2010 through June 30, 2013 per the report, so the term had ended by the report date unless renewed. Report date is March 2014, so current status needs confirming.'
+- kind: cross-deputization
+  other_party: Nebraska State Patrol; Bureau of Indian Affairs
+  agreement: Cross-deputization agreement
+  state: NE
+  date: '2002'
+  status: unknown
+  source: winnebago-tribe-bureau-of-indian-affairs-nebraska-state-patrol-cross-deputization-agreement
+  confidence: medium
+  verification: read-in-full
+  locator: Title page
+  note: 'The source reads: “AND THE WINNEBAGO TRIBE OF NEBR, SKA”. Year read from a received stamp on the scanned title page ("2002"), which is partly illegible; the quote reproduces a character-recognition error in "NEBRASKA". The posted copy is a sample in a federal resource library; current status is not confirmed.'
 treaties:
 - title: Treaty with the Winnebago, 1816
   signed: '1816-06-03'

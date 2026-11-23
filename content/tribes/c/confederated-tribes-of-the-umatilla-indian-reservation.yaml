@@ -1084,6 +1084,28 @@ jurisdiction:
   verification: read-in-full
   as_of: '2011'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Tribal Agreement [Confederated Tribes of the Umatilla Indian Reservation]
+  state: OR
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for OR
+  note: 'The source reads: “Tribal Agreement [Confederated Tribes of the Umatilla Indian Reservation]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Title IV-E agreement (administration, training and maintenance)
+  state: OR
+  date: 2010-05
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.M, Oregon
+  note: 'The source reads: “Confederated Tribes of the Umatilla Indian Reservation executed in May 2010”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
 treaties:
 - title: Treaty with the Wallawalla, Cayuse, etc., 1855
   signed: '1855-06-09'
