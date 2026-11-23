@@ -40,10 +40,11 @@
 		display: flex;
 		align-items: center;
 		gap: var(--space-1);
-		/* The title sits 0.375rem under the trail, as in the approved mockup:
-		   this takes back all but that much of the title's own top margin
-		   (space 5), whether or not the title is the trail's next sibling. */
-		margin: 0 0 calc(var(--space-5) * -1 + 0.375rem) calc(var(--space-3) * -1);
+		/* The title's letters sit about 0.375rem under the trail's, as in the
+		   approved mockup: this takes back all but 0.25rem of the title's own top
+		   margin (space 5), whether or not the title is the trail's next sibling.
+		   The line box below is 0.125rem taller than the text on each side. */
+		margin: -0.125rem 0 calc(var(--space-5) * -1 + 0.25rem) calc(var(--space-3) * -1);
 	}
 
 	.back {
@@ -65,7 +66,9 @@
 		font-size: 0.8125rem;
 		font-weight: 650;
 		letter-spacing: 0.07em;
-		line-height: 1.5;
+		/* Each link is a full 24 px tall, the smallest target WCAG 2.5.8 allows,
+		   so a trail that wraps onto two lines still passes. */
+		line-height: 1.5rem;
 		text-transform: uppercase;
 	}
 
