@@ -13,6 +13,7 @@
  * list), so the checks run in tests without the network.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
+import { latestScan, readableScanTime, readScannerVersion, scannerName, scannerVersionWords } from './file-scans.ts';
 import { forgetLuluToken, luluAccessToken, luluSettings } from './lulu.ts';
 import { isTestKey, stripeSettings } from './stripe.ts';
 
@@ -420,11 +421,33 @@ const scanner: Check = {
 		const count = (status: string) => rows.find((row) => row.status === status)?.count ?? 0;
 		const waiting = rows.filter((row) => ['waiting', 'scanning', 'retrying'].includes(row.status));
 		const oldest = waiting.map((row) => row.oldest).filter((value): value is string => Boolean(value)).sort()[0];
-		const details = rows.map((row) => `${row.status}: ${row.count}`);
+		// Which scanner last checked a file, and with which signatures (site/SCANNING.md).
+		const last = await latestScan(environment.database);
+		const version = readScannerVersion(last?.engineVersion ?? null);
+		const details = [
+			...(last
+				? [
+						`Last file checked ${readableScanTime(last.finishedAt!)} (${last.purpose}) by ${scannerName(last.provider)}.`,
+						`Versions: ${scannerVersionWords(version) ?? last.engineVersion}.`
+					]
+				: ['No file has been checked yet, so the scanner’s version is not known.']),
+			...rows.map((row) => `${row.status}: ${row.count}`)
+		];
+		const signatureAgeDays = version?.clamavDatabaseDate
+			? Math.floor((now.getTime() - Date.parse(`${version.clamavDatabaseDate}T00:00:00Z`)) / 86_400_000)
+			: null;
 		if (oldest && now.getTime() - Date.parse(oldest) > 30 * 60_000) {
 			return { state: 'problem', summary: `Files have waited for a scan since ${oldest}, so they are held from reviewers.`, details, fix: 'Check that the model-tribal-adr-code-scanner Worker is deployed and its cron runs (site/SCANNING.md).' };
 		}
 		if (count('failed') > 0) return { state: 'warning', summary: `${count('failed')} ${count('failed') === 1 ? 'file' : 'files'} could not be scanned after several tries.`, details, fix: 'Scan again or release by hand from the upload page.' };
+		if (signatureAgeDays !== null && signatureAgeDays > 7) {
+			return {
+				state: 'warning',
+				summary: `The last scan used ClamAV signatures ${signatureAgeDays} days old.`,
+				details,
+				fix: 'Set the SCAN_REBUILD_HOOK_URL secret on the scanner Worker so it rebuilds with fresh signatures every day (site/SCANNING.md, "Setting it up").'
+			};
+		}
 		if (rows.length === 0) return { state: 'working', summary: 'No files have been sent for scanning yet.', details };
 		return { state: 'working', summary: 'Nothing has waited more than 30 minutes.', details };
 	}

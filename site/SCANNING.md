@@ -36,6 +36,10 @@ What each status means:
 | `failed` | Eight tries without an answer. | No, until scanned again or released |
 | `released-by-hand` | A reviewer released a file that could not be checked. | Yes |
 
+## Which scanner checked a file
+
+Each result keeps the provider and the engine's version: its code version, the YARA Forge rules release and the ClamAV signature database number with its date, such as `engine/1+yara-rules/20261120+clamav-db/28191-20261122`. `scannedByWords(scan)` (also returned as `checkedBy` by `scanStatusWords`) turns that into a sentence, which the upload review page and the inbox show beside each file's result. Workspace > Service checks shows when the last file was checked, by which scanner and with which signatures, and warns when those signatures are more than a week old.
+
 ## The scan guard
 
 `tests/scan-guard.test.ts` makes sure no file from outside the project gets around the scanner. It reads the code of every Worker in `site/` (each `wrangler.jsonc` "main", plus the website) with the TypeScript checker and finds, by type rather than by name:
