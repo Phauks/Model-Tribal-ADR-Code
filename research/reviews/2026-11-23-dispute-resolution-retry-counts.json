@@ -1,0 +1,43 @@
+{
+ "retried_nations": 62,
+ "nations_with_searches": 76,
+ "searches": 294,
+ "outcomes": {
+  "blocked": 3,
+  "error": 22,
+  "found": 34,
+  "not-found": 226,
+  "scanned-unreadable": 9
+ },
+ "methods": {
+  "browser": 110,
+  "script": 184
+ },
+ "candidates": 27,
+ "candidates_by_confidence": {
+  "high": 2,
+  "medium": 21,
+  "low": 4
+ },
+ "candidates_by_kind": {
+  "arbitration": 2,
+  "peacemaking": 17,
+  "elders-council": 1,
+  "other": 5,
+  "mediation": 2
+ },
+ "nations_with_candidates": 25,
+ "search_logs_changed": {
+  "found -> found": 6,
+  "no search log (profile already has a dispute resolution record)": 1,
+  "none-found -> found": 7,
+  "partly-searched -> found": 11,
+  "partly-searched -> none-found": 41,
+  "partly-searched -> partly-searched": 10
+ },
+ "search_logs_after": {
+  "found": 24,
+  "none-found": 41,
+  "partly-searched": 10
+ }
+}

@@ -1,7 +1,7 @@
 profile: content/tribes/y/yuhaaviatam-of-san-manuel-nation.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -54,5 +54,95 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://www.sanmanuel-nsn.gov/;
-  https://www.sanmanuel-nsn.gov/Tribal-Government/Tribal-Court.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://www.sanmanuel-nsn.gov/sites/default/files/2026-05/San%20Manuel%20Tribal%20Court%20Rules%20of%20Court%20%28as%20of%205-1-26%29.pdf
+  query: mediation, arbitration, peacemaking, circles, elders, dispute resolution wording
+  outcome: not-found
+  reason: Rules of Court text read had no mediation or ADR rule; several title sections came through blank.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Yuhaaviatam of San Manuel Nation tribal court OR code "dispute resolution" OR mediation
+    OR arbitration'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
+    court lists, with no page showing dispute resolution wording for this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=sanmanuel-nsn.gov/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 2812 archived addresses for sanmanuel-nsn.gov/*; those whose address
+    names a code, law, court or dispute resolution page were fetched in this retry or are listed in next
+    steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261116225036id_/https://www.sanmanuel-nsn.gov/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: error
+  reason: The archived copy could not be fetched in any round (connection refused); worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261017085409id_/https://www.sanmanuel-nsn.gov/Tribal-Government/Tribal-Court
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: error
+  reason: The archived copy could not be fetched in any round (connection refused); worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20210516003056id_/https://sanmanuel-nsn.gov/sites/default/files/2021-03/San%20Manuel%20-%20Arbitration%20Orninance.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: found
+  reason: The same file (same sha256) as the 2019 copy of Chapter 24, San Manuel Arbitration Ordinance
+    (2004).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20191115073523id_/https://www.sanmanuel-nsn.gov/portals/1/TribalGovernment/TribalLaws/03-2019_Updates/APPROVED.Ch%2024%20Arbitration%20(adopted%209-14-04).pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: found
+  reason: 'Scanned PDF read from page images: Chapter 24, San Manuel Arbitration Ordinance (adopted by
+    the General Council Sept. 14, 2004), authorizes arbitration of disputes in contracts and enforcement
+    of awards by the Tribal Court.'
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#yuhaaviatam-of-san-manuel-nation-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20100831111834id_/http://www.sanmanuel-nsn.gov:80/court.php
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2010-08-31) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20210516003131id_/https://sanmanuel-nsn.gov/sites/default/files/2021-02/SMTGC%20Patron%20Dispute%20Regulation%20Nine%20%28GCR009%29%20-%20Documents.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: found
+  reason: 'San Manuel Tribal Gaming Commission Patron Dispute Regulation Nine (GCR009): patron dispute
+    steps for the gaming facility; a gaming procedure, logged here as a lead.'
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#yuhaaviatam-of-san-manuel-nation-retry-2
+next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
+  (Gate 1) before any record goes into the profile.
