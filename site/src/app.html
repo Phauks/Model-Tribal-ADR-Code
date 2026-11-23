@@ -16,25 +16,6 @@
 				try {
 					// A sidebar the reader hid stays hidden from the first paint (SiteSidebar.svelte).
 					if (localStorage.getItem('sidebar-hidden') === 'true') root.dataset.sidebarHidden = 'true';
-					// Sections the reader opened or shut show that way from the first paint;
-					// the sidebar takes this style away once it applies the same choices
-					// (src/lib/components/sidebar/sidebar-state.svelte.ts).
-					var sections = JSON.parse(localStorage.getItem('sidebar-open-sections') || '{}');
-					var rules = '';
-					if (Array.isArray(sections)) sections = sections.reduce(function (all, link) { all[link] = true; return all; }, {});
-					for (var link in sections) {
-						if (!/^\/[a-z-]+$/.test(link) || typeof sections[link] !== 'boolean') continue;
-						var item = 'li[data-sidebar-section="' + link + '"]';
-						rules +=
-							item + ' > [data-sidebar-list]{display:' + (sections[link] ? 'block' : 'none') + '}' +
-							item + ' > .entry .fold svg{transform:' + (sections[link] ? 'rotate(90deg)' : 'none') + '}';
-					}
-					if (rules) {
-						var style = document.createElement('style');
-						style.id = 'sidebar-early-choices';
-						style.textContent = rules;
-						document.head.appendChild(style);
-					}
 					var theme = localStorage.getItem('theme');
 					if (theme === 'light' || theme === 'dark') root.dataset.theme = theme;
 					var settings = JSON.parse(localStorage.getItem('reading-settings') || '{}');

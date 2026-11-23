@@ -13,6 +13,7 @@
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
+	import Clock from '@lucide/svelte/icons/clock';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { unclaimedPage } from '#lib/review-status.ts';
@@ -65,10 +66,22 @@
 		<!-- 1. Name. The nation's seal or logo heads At a glance (docs/official-images.md). -->
 		<h1>{page.officialName}</h1>
 		{#if !page.withdrawn}
-			<!-- Recognition badges (Trevor, Nov. 22, 2026); the full wording and legal basis are in At a glance. -->
-			{#if page.badges.length > 0}
-				<p class="recognition-line"><RecognitionBadges badges={page.badges} explanations={page.badgeExplanations} /></p>
-			{/if}
+			<!-- Recognition badges (Trevor, Nov. 22, 2026; the full wording and legal basis
+			     are in At a glance), then who keeps the page, on the same line since both
+			     are badges (Trevor, Nov. 23, 2026). The build always says "Unclaimed"; for
+			     a claimed page the Worker hides it and fills the status place with the
+			     claimed badge (src/lib/server/nation-page-overlay.ts). -->
+			<div class="badge-line" id="review-status">
+				{#if page.badges.length > 0}<RecognitionBadges badges={page.badges} explanations={page.badgeExplanations} />{/if}
+				<span data-build-status data-print-part="reviewStatus">
+					<ReviewStatus status={unclaimedPage} description="Who keeps this page:">
+						<p><strong>Unclaimed.</strong> No one from the nation keeps this page yet.</p>
+						<p class="no-print"><a href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a></p>
+						<p class="no-print"><a href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a></p>
+					</ReviewStatus>
+				</span>
+				<span class="nation-slot-status" data-nation-slot="status"></span>
+			</div>
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">
 					<!-- The listed name as an alias; its marker leads to the list in References (Trevor, Nov. 23, 2026). -->
@@ -98,24 +111,12 @@
 			{/each}
 		{/if}
 
-		<!-- 2. Who keeps the page, like a map listing: "Unclaimed" until people the
-		     nation chose keep it (Trevor, Nov. 23, 2026). The build always says
-		     "Unclaimed"; for a claimed page the Worker hides this line and puts the
-		     claimed one in the top place below (src/lib/server/nation-page-overlay.ts). -->
-		<ReviewStatus
-			status={page.withdrawn ? { label: page.review.label, verified: false } : unclaimedPage}
-			description="Who keeps this page:"
-			id="review-status"
-			data-print-part="reviewStatus"
-			data-build-status
-		>
-			{#if page.withdrawn}
+		{#if page.withdrawn}
+			<p class="review-status small" id="review-status" data-print-part="reviewStatus">
+				<span class="review-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />{page.review.label}</span>
 				<span class="muted">{page.review.meaning}</span>
-			{:else}
-				<a class="no-print" href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a>
-			{/if}
-			<a class="no-print" href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a>
-		</ReviewStatus>
+			</p>
+		{/if}
 		<!-- The nation's own words and pictures, filled in by the Worker from what its team published (decision record 0041). -->
 		{#if !page.withdrawn}<div class="nation-slot" data-nation-slot="top"></div>{/if}
 	{/snippet}
@@ -338,10 +339,6 @@
 	.story-kind {
 		display: block;
 	}
-	.recognition-line {
-		margin: 0 0 var(--space-3);
-	}
-
 
 	.empty-section {
 		margin: 0 0 var(--space-5);

@@ -98,9 +98,14 @@
 		   first screen and the Hide sidebar button keeps its place at the bottom. */
 		.site-body {
 			display: grid;
-			grid-template-columns: 18rem minmax(0, 1fr);
+			grid-template-columns: 15rem minmax(0, 1fr);
 			align-items: start;
 			min-height: 100dvh;
+		}
+
+		/* In a section the sidebar has a second column for its pages (SiteSidebar.svelte). */
+		.site-body:has(> :global(.sidebar-wide.two-columns)) {
+			grid-template-columns: 32rem minmax(0, 1fr);
 		}
 
 		.site-body:has(> :global(.sidebar-wide:not([open]))),

@@ -26,7 +26,7 @@ import { claimedPage } from '../review-status.ts';
 import type { ChangeRow, LiveChanges } from './nation-page-changes.ts';
 
 /** The empty places on a nation's page that changes can fill. */
-export const pageSlots = ['top', 'courts', 'law', 'jurisdiction', 'glance', 'contacts'] as const;
+export const pageSlots = ['status', 'top', 'courts', 'law', 'jurisdiction', 'glance', 'contacts'] as const;
 export type PageSlot = (typeof pageSlots)[number];
 
 export interface PageOverlay {
@@ -97,19 +97,29 @@ function contactValue(contact: NationContact): string {
 /** Who keeps the page, when people the nation chose keep it. */
 export interface PageClaim {
 	claimedSince: string;
+	/** The offices the team's people hold, never their names. */
+	offices?: string[];
 }
 
 /**
- * The claimed line, in place of the build's "Unclaimed" line (data-build-status).
- * The same markup as src/lib/components/ReviewStatus.svelte: the badge with a
- * check, then the link. The date the project confirmed the team is in the
- * badge's tooltip, not in a sentence under it (Trevor, Nov. 23, 2026).
+ * The claimed badge, in place of the build's "Unclaimed" one (data-build-status),
+ * on the line with the recognition badges. The same markup as
+ * src/lib/components/ReviewStatus.svelte: the badge opens a panel saying who
+ * keeps the page, by office, when the project confirmed them, and how to ask
+ * to join the team (Trevor, Nov. 23, 2026).
  */
-function claimedLine(nationIdentifier: string, claim: PageClaim): string {
+function claimedBadge(nationIdentifier: string, claim: PageClaim): string {
 	const check =
 		'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
-	const confirmed = `Confirmed with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}`;
-	return `<style>[data-build-status]{display:none!important}</style><p class="review-status small" data-print-part="reviewStatus"><span class="visually-hidden">Who keeps this page:</span><span class="review-badge review-badge-verified" title="${confirmed}">${check}${claimedPage.label}</span> <a class="no-print" href="/changes?page=${encodeURIComponent(`/nations/${nationIdentifier}`)}">Changes to this page</a></p>`;
+	const chevron =
+		'<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="status-popover-mark"><path d="m6 9 6 6 6-6"/></svg>';
+	const offices = claim.offices ?? [];
+	const who =
+		offices.length > 0
+			? `<p>Kept by people the nation chose:</p><ul>${offices.map((office) => `<li>${escapeHtml(office)}</li>`).join('')}</ul>`
+			: '<p>Kept by people the nation chose.</p>';
+	const page = encodeURIComponent(nationIdentifier);
+	return `<style>[data-build-status]{display:none!important}</style><span data-print-part="reviewStatus"><details class="status-popover"><summary class="review-badge review-badge-verified"><span class="visually-hidden">Who keeps this page:</span>${check}${claimedPage.label}${chevron}</summary><div class="status-panel">${who}<p>Confirmed with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}.</p><p class="no-print"><a href="/profile/nation-team?nation=${page}">Work for this nation? Ask to join its team</a></p><p class="no-print"><a href="/changes?page=${encodeURIComponent(`/nations/${nationIdentifier}`)}">Changes to this page</a></p></div></details></span>`;
 }
 
 function slotsFor(nationIdentifier: string, live: LiveChanges, claim: PageClaim | undefined): Partial<Record<PageSlot, string>> {
@@ -118,7 +128,7 @@ function slotsFor(nationIdentifier: string, live: LiveChanges, claim: PageClaim 
 		slots[slot] = (slots[slot] ?? '') + html;
 	};
 
-	if (claim) add('top', claimedLine(nationIdentifier, claim));
+	if (claim) add('status', claimedBadge(nationIdentifier, claim));
 
 	const hidden = live.hidden?.content.sections ?? [];
 	if (live.hidden && hidden.length > 0) {
@@ -197,7 +207,7 @@ function slotsFor(nationIdentifier: string, live: LiveChanges, claim: PageClaim 
 function stampOf(live: LiveChanges, claim: PageClaim | undefined): string {
 	const text = [
 		...(Object.values(live) as ChangeRow[]).map((change) => `${change.identifier}@${change.liveAt}`).sort(),
-		claim ? `claimed@${claim.claimedSince}` : ''
+		claim ? `claimed@${claim.claimedSince}:${(claim.offices ?? []).join('|')}` : ''
 	].join('|');
 	let hash = 2166136261;
 	for (let index = 0; index < text.length; index += 1) {

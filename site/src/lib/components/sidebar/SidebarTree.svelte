@@ -12,6 +12,7 @@
 		listId,
 		depth = 1,
 		shut = false,
+		flush = false,
 		isActive,
 		isCurrent,
 		isOpen,
@@ -21,6 +22,8 @@
 		listId: string;
 		depth?: number;
 		shut?: boolean;
+		/** A top-level list in the second column, with no rule or indent of its own. */
+		flush?: boolean;
 		/** The page or heading being read. */
 		isActive: (item: OutlineItem) => boolean;
 		/** The page being read (as opposed to a heading on it). */
@@ -35,7 +38,7 @@
 	}
 </script>
 
-<ul class="outline" data-depth={depth} id={listId} hidden={shut}>
+<ul class="outline" class:flush data-depth={depth} id={listId} hidden={shut}>
 	{#each items as item, index (item.link)}
 		{@const branch = Boolean(item.children?.length)}
 		{@const open = branch && isOpen(item)}
@@ -82,6 +85,11 @@
 		font-size: var(--font-size-small);
 		border-left: 1px solid var(--color-line);
 		margin-left: var(--space-3) !important;
+	}
+
+	.outline.flush {
+		border-left: 0;
+		margin-left: 0 !important;
 	}
 
 	/* Without scripts nothing can be unfolded, so everything shows. */

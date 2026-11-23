@@ -7,6 +7,14 @@
 	email (autocomplete="one-time-code"), password managers and screen readers
 	all work as they do with any field: a screen reader hears one field and
 	its label, not six. Without scripts the plain field shows instead.
+
+	The field is fully opaque, with clear text, under the boxes, and the boxes
+	let clicks through to it. Password managers fill only fields they judge
+	visible: Bitwarden skips a field with an opacity under 0.1 or one covered
+	by another element at its center (bitwarden/clients,
+	apps/browser/src/autofill/services/dom-element-visibility.service.ts), so
+	an almost transparent field laid on top, as this was at first, could not
+	be filled from Bitwarden (Trevor, Nov. 23, 2026).
 -->
 <script lang="ts">
 	import { onMount } from 'svelte';
@@ -103,7 +111,11 @@
 		letter-spacing: 0.2em;
 	}
 
-	/* With scripts: the field stays where it is, over the boxes, but unseen. */
+	/*
+	 * With scripts: the field fills the row under the boxes. It stays opaque
+	 * (only its text, caret and background are clear) so password managers
+	 * treat it as visible, and the boxes on top let clicks through to it.
+	 */
 	.code-boxes.enhanced .code-input {
 		position: absolute;
 		inset: 0;
@@ -114,10 +126,19 @@
 		border: none;
 		background: transparent;
 		color: transparent;
+		-webkit-text-fill-color: transparent;
 		caret-color: transparent;
-		opacity: 0.01;
-		z-index: 1;
 		cursor: text;
+	}
+
+	.code-boxes.enhanced .code-input::selection {
+		background: transparent;
+	}
+
+	/* A browser that fills the code itself tints the field; the page's color covers the tint between the boxes. */
+	.code-boxes.enhanced .code-input:autofill {
+		box-shadow: 0 0 0 100vmax var(--color-paper) inset;
+		-webkit-text-fill-color: transparent;
 	}
 
 	.code-boxes.enhanced .code-input:focus-visible {
@@ -126,8 +147,10 @@
 	}
 
 	.boxes {
+		position: relative;
 		display: flex;
 		gap: var(--space-2);
+		pointer-events: none;
 	}
 
 	.box {

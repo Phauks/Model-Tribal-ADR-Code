@@ -66,6 +66,14 @@
 				"name": "essayRooms",
 				"class_name": "EssayRoom",
 				"script_name": "model-tribal-adr-code-live"
+			},
+			// The virus scanner's desk (site/scanner). A sent file wakes it, so
+			// the check starts at once instead of at its next minute round
+			// (src/lib/server/scanner-wake.ts).
+			{
+				"name": "scanDesks",
+				"class_name": "ScanDesk",
+				"script_name": "model-tribal-adr-code-scanner"
 			}
 		]
 	},
