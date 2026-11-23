@@ -1,13 +1,19 @@
 <script lang="ts">
 	// The box for writing mail, shared by a new message, a reply, a reply to
 	// all and a forward (site/MAIL.md): address rows, the message, and a bar
-	// with Send, attach, and "send later" or "remind me". It works without
-	// scripts; with them, Cc and Bcc fold away and chosen files are listed.
+	// with Send, attach, saved replies, and "send later" or "remind me". The
+	// signature of the From address starts below the message. It works
+	// without scripts; with them, Cc and Bcc fold away, chosen files are
+	// listed, saved replies can be put in, and what is written is saved as a
+	// draft a moment after each change.
 	import { onMount } from 'svelte';
+	import Check from '@lucide/svelte/icons/check';
 	import Clock from '@lucide/svelte/icons/clock';
+	import MessageSquareText from '@lucide/svelte/icons/message-square-text';
 	import Paperclip from '@lucide/svelte/icons/paperclip';
 	import SendIcon from '@lucide/svelte/icons/send';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import { fillTemplate, parseAddressList, signatureBlock, type MergeValues } from '#lib/mail.ts';
 	import { localInputValue } from './dates.ts';
 
 	let {
@@ -16,6 +22,7 @@
 		from,
 		to = '',
 		cc: startingCc = '',
+		bcc: startingBcc = '',
 		subject = '',
 		text = '',
 		quote = '',
@@ -25,13 +32,22 @@
 		mode = null,
 		message: answering = null,
 		forwarded = [],
-		focus = false
+		focus = false,
+		draft = null,
+		thread = null,
+		signed = false,
+		signatures = {},
+		savedReplies = [],
+		mergeValues = {},
+		senderName = '',
+		manageLink = null
 	}: {
 		action: string;
 		addresses: readonly string[];
 		from: string;
 		to?: string;
 		cc?: string;
+		bcc?: string;
 		subject?: string;
 		text?: string;
 		/** The message being answered, quoted, which the writer can leave out. */
@@ -47,22 +63,38 @@
 		forwarded?: { identifier: string; filename: string; size: number; held?: boolean; label?: string | null }[];
 		/** Put the cursor in the box when the page opens, after a Reply, Reply all or Forward button. */
 		focus?: boolean;
+		/** The saved draft this box continues, if any. */
+		draft?: string | null;
+		/** The conversation a reply's draft belongs to; null for a new message. */
+		thread?: string | null;
+		/** Whether the text already has its signature (a draft, or a message sent back after a problem). */
+		signed?: boolean;
+		/** The signature of each of the inbox's addresses. */
+		signatures?: Record<string, string>;
+		savedReplies?: { identifier: string; name: string; body: string }[];
+		/** Merge fields by email address, for saved replies. */
+		mergeValues?: Record<string, MergeValues>;
+		senderName?: string;
+		/** Where saved replies and signatures are set up, for someone who may. */
+		manageLink?: string | null;
 	} = $props();
 
 	let ready = $state(false);
 	let zone = $state('America/Denver');
 	// The page keys the box on what it answers, so these start values are meant to be read once.
 	const startingCopies = () => startingCc;
-	let showCopies = $state(startingCopies() !== '');
+	const startingBlind = () => startingBcc;
+	let showCopies = $state(startingCopies() !== '' || startingBlind() !== '');
 	let quoted = $state(true);
-	// The text starts as what the page passed (a draft kept after a problem, plus the quote) and is the writer's from then on.
-	const startingText = () => `${text}${quote}`;
-	let message = $state(startingText());
 	// Every box keeps what was typed in it as state: a box written as value={…} would be reset whenever another part of the form changes.
 	const startingFields = () => ({ to, subject, from: from || addresses[0] || '' });
 	let fields = $state(startingFields());
+	// The text starts as what the page passed (a draft, or what was written before a problem), the From address's signature, and the quote; it is the writer's from then on.
+	const startingText = () => (signed ? `${text}${quote}` : `${text}${signatureBlock(signatures[fields.from])}${quote}`);
+	let message = $state(startingText());
 	let cc = $state(startingCopies());
-	let bcc = $state('');
+	let bcc = $state(startingBlind());
+	let signedAs = $state(startingFields().from);
 	let files = $state<string[]>([]);
 	let sendAt = $state('');
 	let remindAt = $state('');
@@ -80,6 +112,105 @@
 		}
 	});
 	const forwarding = $derived(mode === 'forward');
+
+	/** When From changes, its signature takes the place of the one before. */
+	function changeSignature(): void {
+		const before = signatureBlock(signatures[signedAs]);
+		const after = signatureBlock(signatures[fields.from]);
+		signedAs = fields.from;
+		if (before === after) return;
+		if (before && message.includes(before)) {
+			message = message.replace(before, after);
+		} else if (after) {
+			const withQuote = quote && message.endsWith(quote);
+			message = withQuote ? `${message.slice(0, -quote.length)}${after}${quote}` : `${message}${after}`;
+		}
+	}
+
+	// ----- Drafts that save themselves --------------------------------------
+	const startingDraft = () => draft;
+	let draftId = $state(startingDraft());
+	let saving = $state<'idle' | 'waiting' | 'saving' | 'saved' | 'failed'>('idle');
+	let savedAt = $state('');
+	let sending = false;
+	let timer: ReturnType<typeof setTimeout> | undefined;
+
+	function draftBody(): string {
+		return JSON.stringify({
+			identifier: draftId,
+			thread,
+			fields: { from: fields.from, to: fields.to, cc, bcc, subject: fields.subject, text: message, mode, message: answering }
+		});
+	}
+
+	async function saveDraft(keepalive = false): Promise<void> {
+		clearTimeout(timer);
+		timer = undefined;
+		if (sending) return;
+		saving = 'saving';
+		try {
+			const response = await fetch('/workspace/inbox/drafts/save', { method: 'POST', headers: { 'content-type': 'application/json' }, body: draftBody(), keepalive });
+			if (!response.ok) throw new Error(String(response.status));
+			const saved = (await response.json()) as { identifier: string; updatedAt: string };
+			draftId = saved.identifier;
+			savedAt = new Date(saved.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+			if (!timer) saving = 'saved';
+		} catch {
+			saving = 'failed';
+		}
+	}
+
+	/** Each change waits a moment, so a draft is saved once someone pauses rather than at every key. */
+	function changed(): void {
+		if (sending) return;
+		clearTimeout(timer);
+		saving = 'waiting';
+		timer = setTimeout(() => void saveDraft(), 2000);
+	}
+
+	onMount(() => {
+		// Leaving the page before the moment is up still saves what was written.
+		const leave = () => {
+			if (timer && !sending) void saveDraft(true);
+		};
+		window.addEventListener('pagehide', leave);
+		return () => {
+			window.removeEventListener('pagehide', leave);
+			clearTimeout(timer);
+		};
+	});
+
+	async function discardDraft(): Promise<void> {
+		sending = true;
+		clearTimeout(timer);
+		if (draftId) await fetch(`/workspace/inbox/drafts/save?identifier=${encodeURIComponent(draftId)}`, { method: 'DELETE' }).catch(() => undefined);
+		window.location.href = discard ?? window.location.pathname;
+	}
+
+	// ----- Saved replies ------------------------------------------------------
+	let repliesMenu: HTMLDetailsElement | undefined = $state();
+
+	/** The merge fields for whoever the message is to: the address book's, else the name typed with the address. */
+	function valuesForRecipient(): MergeValues {
+		const first = parseAddressList(fields.to).addresses[0];
+		const known = first ? mergeValues[first.email.toLowerCase()] : undefined;
+		const name = first?.name ?? '';
+		return { ...(name ? { 'contact.name': name, 'contact.greeting': name } : {}), ...known, 'sender.name': senderName };
+	}
+
+	/** Puts a saved reply where the cursor is, with the recipient's fields filled in; a field with no value stays visible to fill by hand. */
+	function useSavedReply(body: string): void {
+		const filled = fillTemplate(body, valuesForRecipient(), { keepMissing: true });
+		const start = textBox?.selectionStart ?? 0;
+		const end = textBox?.selectionEnd ?? start;
+		message = `${message.slice(0, start)}${filled}${message.slice(end)}`;
+		if (repliesMenu) repliesMenu.open = false;
+		changed();
+		requestAnimationFrame(() => {
+			textBox?.focus();
+			textBox?.setSelectionRange(start + filled.length, start + filled.length);
+		});
+	}
 
 	function chose(event: Event): void {
 		files = [...((event.currentTarget as HTMLInputElement).files ?? [])].map((file) => file.name);
@@ -99,15 +230,26 @@
 	}
 </script>
 
-<form method="post" {action} enctype="multipart/form-data" class="composer">
+<form
+	method="post"
+	{action}
+	enctype="multipart/form-data"
+	class="composer"
+	oninput={changed}
+	onsubmit={() => {
+		sending = true;
+		clearTimeout(timer);
+	}}
+>
 	<input type="hidden" name="zone" value={zone} />
+	{#if draftId}<input type="hidden" name="draft" value={draftId} />{/if}
 	{#if mode}<input type="hidden" name="mode" value={mode} />{/if}
 	{#if answering}<input type="hidden" name="message" value={answering} />{/if}
 	<div class="rows">
 		<div class="row">
 			<label for="{idPrefix}-from">From</label>
 			{#if addresses.length > 1}
-				<select id="{idPrefix}-from" name="from" bind:value={fields.from}>
+				<select id="{idPrefix}-from" name="from" bind:value={fields.from} onchange={changeSignature}>
 					{#each addresses as address (address)}<option value={address}>{address}</option>{/each}
 				</select>
 			{:else}
@@ -187,6 +329,31 @@
 			<span class="visually-hidden">Attach files</span>
 			<input type="file" name="attachments" multiple onchange={chose} />
 		</label>
+		{#if ready}
+			<details class="timing-menu replies-menu" bind:this={repliesMenu}>
+				<summary class="icon-button" title="Put in a saved reply" aria-label="Put in a saved reply">
+					<MessageSquareText size={20} aria-hidden="true" />
+				</summary>
+				<div class="popover">
+					<p class="popover-title">Saved replies</p>
+					{#if savedReplies.length}
+						<ul class="reply-list">
+							{#each savedReplies as reply (reply.identifier)}
+								<li>
+									<button type="button" class="reply-choice" onclick={() => useSavedReply(reply.body)}>
+										<strong>{reply.name}</strong>
+										<span class="small muted">{reply.body.replace(/\s+/g, ' ').slice(0, 90)}</span>
+									</button>
+								</li>
+							{/each}
+						</ul>
+					{:else}
+						<p class="small muted">No saved replies yet.</p>
+					{/if}
+					{#if manageLink}<p class="small"><a href={manageLink}>Make and change saved replies</a></p>{/if}
+				</div>
+			</details>
+		{/if}
 		<details class="timing-menu">
 			<summary class="icon-button" title="Send later, or remind me" aria-label="Send later, or remind me">
 				<Clock size={20} aria-hidden="true" />
@@ -216,7 +383,12 @@
 				</div>
 			</div>
 		</details>
-		{#if discard}
+		<span class="draft-state small muted" role="status">
+			{#if saving === 'saving' || saving === 'waiting'}Saving…{:else if saving === 'saved'}<Check size={14} aria-hidden="true" />Draft saved {savedAt}{:else if saving === 'failed'}Draft not saved{/if}
+		</span>
+		{#if ready && draftId}
+			<button type="button" class="icon-button discard" title="Discard the draft" aria-label="Discard the draft" onclick={discardDraft}><Trash2 size={20} aria-hidden="true" /></button>
+		{:else if discard}
 			<a class="icon-button discard" href={discard} title="Discard" aria-label="Discard"><Trash2 size={20} aria-hidden="true" /></a>
 		{/if}
 	</div>
@@ -409,8 +581,45 @@
 		flex-wrap: wrap;
 		gap: var(--space-1);
 	}
-	.discard {
+	.draft-state {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 		margin-left: auto;
+		min-width: 0;
+		white-space: nowrap;
+	}
+	.discard {
 		color: var(--color-ink-muted);
+	}
+	.popover-title {
+		margin: 0 0 var(--space-2);
+		font-weight: var(--font-weight-bold);
+	}
+	.reply-list {
+		list-style: none;
+		margin: 0 0 var(--space-2);
+		padding: 0;
+		max-height: 18rem;
+		overflow-y: auto;
+	}
+	.reply-choice {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.1em;
+		width: 100%;
+		border: 0;
+		border-radius: var(--radius-control);
+		background: none;
+		color: var(--color-ink);
+		font: inherit;
+		text-align: left;
+		padding: var(--space-2);
+		cursor: pointer;
+	}
+	.reply-choice:hover,
+	.reply-choice:focus-visible {
+		background: var(--color-surface);
 	}
 </style>

@@ -1,0 +1,114 @@
+import { fail } from '@sveltejs/kit';
+import { mergeFields } from '#lib/mail.ts';
+import { mailContext } from '#lib/server/mail/runtime.ts';
+import {
+	awayAnswers,
+	deleteSavedReply,
+	getAway,
+	getUndoSeconds,
+	listSavedReplies,
+	listSignatures,
+	saveAway,
+	saveSavedReply,
+	saveSignature,
+	setUndoSeconds,
+	undoChoices,
+	WritingError
+} from '#lib/server/mail/writing.ts';
+import { currentTime } from '#lib/server/mail/context.ts';
+import { formText, requirePermission } from '#lib/server/workspace.ts';
+import { whenFromForm } from '../compose.ts';
+import type { Actions, PageServerLoad } from './$types';
+
+// Settings for writing mail from the project inbox (site/MAIL.md, "Writing"):
+// the signature of each address, saved replies, the pause before a message
+// goes (undo send), and the away message. They belong to the whole inbox,
+// so only someone who manages it changes them.
+export const prerender = false;
+
+export const load: PageServerLoad = async (event) => {
+	requirePermission(event, 'manage-mail');
+	const context = mailContext();
+	const [signatures, savedReplies, undoSeconds, away] = await Promise.all([
+		listSignatures(context),
+		listSavedReplies(context),
+		getUndoSeconds(context),
+		getAway(context)
+	]);
+	return {
+		addresses: context.settings.addresses,
+		signatures,
+		savedReplies,
+		undoSeconds,
+		undoChoices: [...undoChoices],
+		away,
+		awayAnswering: awayAnswers(away, currentTime(context)),
+		mergeFields: mergeFields.map((field) => ({ key: field.key, label: field.label }))
+	};
+};
+
+/** Runs a change and turns a WritingError into words on the page. */
+async function attempt(section: string, work: () => Promise<string>) {
+	try {
+		return { section, done: await work() };
+	} catch (problem) {
+		if (problem instanceof WritingError) return fail(400, { section, problem: problem.message });
+		throw problem;
+	}
+}
+
+export const actions: Actions = {
+	signature: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const address = formText(form, 'address', 200) ?? '';
+		const body = typeof form.get('body') === 'string' ? String(form.get('body')).slice(0, 4000) : '';
+		return attempt('signatures', async () => {
+			await saveSignature(mailContext(), person.identifier, address, body);
+			return body.trim() ? `Saved the signature for ${address}.` : `Took away the signature for ${address}.`;
+		});
+	},
+	reply: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const identifier = formText(form, 'identifier', 100);
+		const name = formText(form, 'name', 200) ?? '';
+		const body = typeof form.get('body') === 'string' ? String(form.get('body')).slice(0, 40_000) : '';
+		return attempt('saved-replies', async () => {
+			await saveSavedReply(mailContext(), person.identifier, { identifier, name, body });
+			return identifier ? `Saved “${name.trim()}”.` : `Made the saved reply “${name.trim()}”.`;
+		});
+	},
+	deleteReply: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const identifier = formText(form, 'identifier', 100);
+		if (identifier) await deleteSavedReply(mailContext(), person.identifier, identifier);
+		return { section: 'saved-replies', done: 'Deleted the saved reply.' };
+	},
+	undo: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const seconds = Number(formText(form, 'seconds', 5));
+		return attempt('undo', async () => {
+			await setUndoSeconds(mailContext(), person.identifier, seconds);
+			return seconds ? `Mail now waits ${seconds} seconds before it goes, so it can be pulled back.` : 'Mail now goes at once, with no chance to undo.';
+		});
+	},
+	away: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const on = form.get('on') === 'yes';
+		const body = typeof form.get('text') === 'string' ? String(form.get('text')).slice(0, 40_000) : '';
+		return attempt('away', async () => {
+			await saveAway(mailContext(), person.identifier, {
+				on,
+				from: whenFromForm(form, 'from'),
+				until: whenFromForm(form, 'until'),
+				subject: formText(form, 'subject', 200) ?? '',
+				text: body
+			});
+			return on ? 'The away message is on. Each person who writes gets it once.' : 'The away message is off.';
+		});
+	}
+};

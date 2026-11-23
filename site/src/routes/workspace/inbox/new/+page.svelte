@@ -6,7 +6,14 @@
 
 	let { data, form }: PageProps = $props();
 
-	const values = $derived(form && 'values' in form ? form.values : { to: data.to, from: data.defaultAddress, subject: '', text: '' });
+	// What the box starts with: what was written before a problem, else a saved draft, else an empty message (with ?to= from the address book).
+	const values = $derived(
+		form && 'values' in form
+			? { ...form.values, signed: true }
+			: data.draft
+				? { ...data.draft.fields, draft: data.draft.identifier, signed: true }
+				: { to: data.to, cc: '', bcc: '', from: data.defaultAddress, subject: '', text: '', draft: null, signed: false }
+	);
 </script>
 
 <svelte:head>
@@ -29,6 +36,10 @@
 
 {#if form && 'problem' in form}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
+{:else if data.undone}
+	<div class="notice" role="status">
+		<p>Not sent. The message is back here as a draft.{#if data.undone === 'files'} Its attachments were not kept: attach them again.{/if}</p>
+	</div>
 {/if}
 
 <div class="compose">
@@ -39,10 +50,19 @@
 			addresses={data.addresses}
 			from={values.from || data.defaultAddress}
 			to={values.to}
+			cc={values.cc}
+			bcc={values.bcc}
 			subject={values.subject}
 			text={values.text}
 			suggestions={data.suggestions}
 			discard="/workspace/inbox"
+			draft={values.draft}
+			signed={values.signed}
+			signatures={data.writing.signatures}
+			savedReplies={data.writing.savedReplies}
+			mergeValues={data.writing.mergeValues}
+			senderName={data.writing.senderName}
+			manageLink={data.canManage ? '/workspace/inbox/settings#saved-replies' : null}
 		/>
 	{/key}
 </div>
