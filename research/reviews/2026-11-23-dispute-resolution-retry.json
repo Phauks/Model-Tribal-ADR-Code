@@ -3258,7 +3258,8 @@
    "confidence": "high",
    "verification": "title-only",
    "note": "Section titles only; the text of the Act was not read.",
-   "lead_author_decision": ""
+   "flags": "title-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "eastern-shoshone-tribe-of-the-wind-river-reservation-retry-1",
@@ -3277,7 +3278,8 @@
    "confidence": "medium",
    "verification": "title-only",
    "note": "A 1989 draft; the index says the tribe has not given permission for the full text to be online, so the archived text was not fetched. The code is shared with the Northern Arapaho Tribe. Whether the draft was adopted is not known.",
-   "lead_author_decision": ""
+   "flags": "title-only; draft-text-withheld",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "native-village-of-white-mountain-retry-1",
@@ -3296,7 +3298,8 @@
    "confidence": "medium",
    "verification": "title-only",
    "note": "Titles only; it is not known whether the Court of Elders settles disputes. The 2022 Alaska Tribal Court Directory lists no active court for White Mountain.",
-   "lead_author_decision": ""
+   "flags": "title-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "ponca-tribe-of-indians-of-oklahoma-retry-1",
@@ -3315,7 +3318,8 @@
    "confidence": "medium",
    "verification": "title-only",
    "note": "A limit on mediation, not a dispute resolution forum; useful for the model code's domestic violence carve-out.",
-   "lead_author_decision": ""
+   "flags": "title-only; not-a-forum",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "samish-indian-nation-retry-1",
@@ -3334,7 +3338,8 @@
    "confidence": "medium",
    "verification": "title-only",
    "note": "A search worker read the section and reported that a Tribal finance officer decides, not a neutral; the lead session saw the title only.",
-   "lead_author_decision": ""
+   "flags": "title-only; not-a-neutral",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "samish-indian-nation-retry-2",
@@ -3353,7 +3358,8 @@
    "confidence": "low",
    "verification": "inferred",
    "note": "Not re-read by the lead session.",
-   "lead_author_decision": ""
+   "flags": "low-confidence; worker-read-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "confederated-tribes-of-the-chehalis-reservation-retry-1",
@@ -3372,7 +3378,8 @@
    "confidence": "medium",
    "verification": "inferred",
    "note": "A housing authority board policy, not the tribal code. Read by a search worker, not re-read by the lead session.",
-   "lead_author_decision": ""
+   "flags": "worker-read-only; housing-policy-not-code",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "cahto-tribe-of-the-laytonville-rancheria-retry-1",
@@ -3391,7 +3398,8 @@
    "confidence": "low",
    "verification": "inferred",
    "note": "About the intertribal court project, not a Cahto law; a lead only.",
-   "lead_author_decision": ""
+   "flags": "low-confidence; worker-read-only; intertribal-not-nation-law",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "the-seminole-nation-of-oklahoma-retry-1",
@@ -3410,7 +3418,8 @@
    "confidence": "low",
    "verification": "title-only",
    "note": "Title only, reported by a search worker. Section 306, Deferred and Alternative Adjudication (Community Court), is criminal diversion and was not counted.",
-   "lead_author_decision": ""
+   "flags": "low-confidence; title-only; worker-read-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "red-lake-band-of-chippewa-indians-retry-1",
@@ -3429,7 +3438,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "A news report on a grant-funded program; whether it still runs is not known. The article names staff members, who are not recorded here.",
-   "lead_author_decision": ""
+   "flags": "may-be-inactive",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "yuhaaviatam-of-san-manuel-nation-retry-1",
@@ -3448,7 +3458,8 @@
    "confidence": "high",
    "verification": "read-in-full",
    "note": "Read from the page image of the first of 4 pages (scanned, watermarked); adopted by the General Council Sept. 14, 2004. The 2021 copy on the Nation's site is the same file.",
-   "lead_author_decision": ""
+   "flags": "",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "yuhaaviatam-of-san-manuel-nation-retry-2",
@@ -3467,7 +3478,8 @@
    "confidence": "low",
    "verification": "title-only",
    "note": "A gaming procedure; it belongs with the gaming dispute procedures review and is logged here as a lead.",
-   "lead_author_decision": ""
+   "flags": "low-confidence; title-only; gaming-procedure",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "native-village-of-kwigillingok-retry-1",
@@ -3486,7 +3498,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "anvik-village-retry-1",
@@ -3505,7 +3518,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "native-village-of-minto-retry-1",
@@ -3524,7 +3538,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "native-village-of-paimiut-retry-1",
@@ -3543,7 +3558,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "kasigluk-traditional-elders-council-retry-1",
@@ -3562,7 +3578,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "native-village-of-kipnuk-retry-1",
@@ -3581,7 +3598,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "native-village-of-nunapitchuk-retry-1",
@@ -3600,7 +3618,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "curyung-tribal-council-retry-1",
@@ -3619,7 +3638,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "village-of-iliamna-retry-1",
@@ -3638,7 +3658,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "qagan-tayagungin-tribe-of-sand-point-retry-1",
@@ -3657,7 +3678,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-retry-1",
@@ -3676,7 +3698,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "chickaloon-native-village-retry-1",
@@ -3695,7 +3718,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "native-village-of-eyak-retry-1",
@@ -3714,7 +3738,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "native-village-of-port-graham-retry-1",
@@ -3733,7 +3758,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   },
   {
    "candidate_id": "native-village-of-karluk-retry-1",
@@ -3752,7 +3778,8 @@
    "confidence": "medium",
    "verification": "read-in-full",
    "note": "Self-reported to Alaska Legal Services Corporation for the 2022 directory; how the Tribe resolves these disputes is not described.",
-   "lead_author_decision": ""
+   "flags": "directory-listing-only",
+   "lead_author_decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
   }
  ]
 }

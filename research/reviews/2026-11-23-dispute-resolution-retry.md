@@ -1,8 +1,8 @@
 # Dispute resolution search, second try
 
-**Status:** search results and candidates, written Nov. 23, 2026, for the lead author, Trevor Goldsmith, to accept, change or reject (Gate 1 of the [roadmap](../../docs/roadmap.md)). Nothing here changes a profile. A candidate is a lead for review, not a finding about any nation's law or practice, and "none found" means only that the places listed did not show anything on that date.
+**Status:** search results and candidates, written Nov. 23, 2026. Under the lead author's standing grab-now rule ("just grab it and we can deal with the info later", Nov. 23, 2026), all 27 candidates are marked keep, and their weak spots are in the `flags` column; filter by it before use. Nothing here changes a profile. A candidate is a lead for review, not a finding about any nation's law or practice, and "none found" means only that the places listed did not show anything on that date.
 
-Counts come from [`2026-11-23-dispute-resolution-retry-counts.json`](2026-11-23-dispute-resolution-retry-counts.json), written by [`scripts/review/dispute_resolution_retry.py`](../../scripts/review/dispute_resolution_retry.py). The places searched and the candidates are in [`2026-11-23-dispute-resolution-retry.json`](2026-11-23-dispute-resolution-retry.json), and the candidates also in [`2026-11-23-dispute-resolution-retry.csv`](2026-11-23-dispute-resolution-retry.csv), which has an empty `lead_author_decision` column. Interpretation is labeled as project analysis.
+Counts come from [`2026-11-23-dispute-resolution-retry-counts.json`](2026-11-23-dispute-resolution-retry-counts.json), written by [`scripts/review/dispute_resolution_retry.py`](../../scripts/review/dispute_resolution_retry.py). The places searched and the candidates are in [`2026-11-23-dispute-resolution-retry.json`](2026-11-23-dispute-resolution-retry.json), and the candidates also in [`2026-11-23-dispute-resolution-retry.csv`](2026-11-23-dispute-resolution-retry.csv), with `flags` and `lead_author_decision` columns. Interpretation is labeled as project analysis.
 
 ## Why
 
@@ -45,6 +45,26 @@ For each of the 62 nations:
 Candidates marked `inferred` were read by a search worker and not re-read by the lead session; the CSV's `note` column says which.
 
 **Alaska nations outside the retry.** Reading the whole directory also showed 14 other Alaska nations whose entries list "Dispute resolution/Peacemaking" among the cases heard: Anvik, Minto, Paimiut, Kasigluk, Kipnuk, Nunapitchuk, Curyung, Iliamna, Qagan Tayagungin (Sand Point), St. Paul Island (Pribilof Islands Aleut Communities), Chickaloon, Eyak, Port Graham and Karluk. Each is a candidate. Seven of them (Anvik, Kipnuk, Nunapitchuk, Iliamna, St. Paul Island, Port Graham and Karluk) were `none-found` after the first search; their logs now say `found`. The first search did not read this directory, so other `none-found` Alaska logs may be worth checking against it too, but no other entry lists dispute resolution or peacemaking (project analysis of the directory's text).
+
+## Grab-now decision
+
+All 27 candidates are kept. 26 carry at least one flag:
+
+| Flag | Candidates |
+| --- | ---: |
+| `directory-listing-only` (the 2022 Alaska directory names the kind of case only) | 15 |
+| `title-only` | 7 |
+| `low-confidence` | 4 |
+| `worker-read-only` (read by a search worker, not re-read) | 4 |
+| `draft-text-withheld` (Shoshone and Arapaho draft) | 1 |
+| `not-a-forum` (Ponca bar on mediation in domestic abuse cases) | 1 |
+| `not-a-neutral` (Samish procurement disputes decided by a Tribal officer) | 1 |
+| `intertribal-not-nation-law` (Cahto) | 1 |
+| `may-be-inactive` (Red Lake, 2007) | 1 |
+| `gaming-procedure` (San Manuel patron disputes) | 1 |
+| `housing-policy-not-code` (Chehalis) | 1 |
+
+The only candidate with no flag is the San Manuel Arbitration Ordinance.
 
 ## Search logs
 

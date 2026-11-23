@@ -37,6 +37,6 @@ The 62 nations left `partly-searched` by the Nov. 22 coverage search were search
 
 No profile was changed and no source record was added. Still to do:
 
-- the lead author's decisions on the 27 candidates;
+- using the 27 kept candidates (all marked keep under the grab-now rule; weak ones flagged);
 - the archived pages that did not answer and the scanned PDFs not read, listed in the 10 logs' `next_steps`;
 - a call to the offices of nations with nothing found.

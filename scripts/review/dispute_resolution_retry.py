@@ -4,6 +4,7 @@ research/reviews/2026-11-22-dispute-resolution-coverage.md).
 
     python3 scripts/review/dispute_resolution_retry.py build --data FILE
     python3 scripts/review/dispute_resolution_retry.py apply
+    python3 scripts/review/dispute_resolution_retry.py grab
 
 build    Reads the private work file FILE: for each nation, every place
          looked on Nov. 23, 2026 (web searches, archived copies fetched from
@@ -24,6 +25,11 @@ apply    Appends each nation's searches from the review file to its search log
          (error, blocked, scanned and not read); none-found otherwise. It never
          removes an entry and never changes a profile. A nation that already
          holds a dispute resolution record has no search log and is skipped.
+
+grab     Applies the lead author's standing grab-now rule of Nov. 23, 2026:
+         every candidate is marked keep, and its weak spots (low confidence,
+         title only, read only by a search worker, a directory listing only,
+         and named concerns such as a withheld draft) go in the flags column.
 """
 
 import argparse
@@ -42,7 +48,19 @@ REVIEW = ROOT / "research/reviews/2026-11-23-dispute-resolution-retry"
 LOGS = ROOT / "research/search-logs/dispute-resolution"
 FAILED = {"error", "blocked", "scanned-unreadable", "dead-link"}
 COLUMNS = ["candidate_id", "nation", "profile", "region", "origin", "place_kind", "field", "kind", "name", "source", "summary",
-           "evidence_url", "first_reader", "confidence", "verification", "note", "lead_author_decision"]
+           "evidence_url", "first_reader", "confidence", "verification", "note", "flags", "lead_author_decision"]
+GRAB_DECISION = ("keep (lead author, 2026-11-23: grab now, classify later; "
+                 "filter by the flags column before use)")
+# Weak spots named by the lead session's reading of each candidate (project analysis).
+CANDIDATE_FLAGS = {
+    "eastern-shoshone-tribe-of-the-wind-river-reservation-retry-1": ["draft-text-withheld"],
+    "ponca-tribe-of-indians-of-oklahoma-retry-1": ["not-a-forum"],
+    "samish-indian-nation-retry-1": ["not-a-neutral"],
+    "cahto-tribe-of-the-laytonville-rancheria-retry-1": ["intertribal-not-nation-law"],
+    "red-lake-band-of-chippewa-indians-retry-1": ["may-be-inactive"],
+    "yuhaaviatam-of-san-manuel-nation-retry-2": ["gaming-procedure"],
+    "confederated-tribes-of-the-chehalis-reservation-retry-1": ["housing-policy-not-code"],
+}
 
 
 def letter(name):
@@ -74,7 +92,7 @@ def build(args):
                            "field": c["field"], "kind": c["kind"], "name": c["name"], "source": c.get("source", ""),
                            "summary": c["summary"], "evidence_url": c["evidence_url"], "first_reader": c["first_reader"],
                            "confidence": c["confidence"], "verification": c["verification"], "note": c.get("note", ""),
-                           "lead_author_decision": ""})
+                           "flags": "", "lead_author_decision": ""})
         if c["nation"] not in searches:
             searches[c["nation"]] = []
         for e in c.get("log_entries", []):
@@ -150,14 +168,51 @@ def apply(args):
     print(json.dumps({"changes": changes, "after": after}))
 
 
+def flags_for(candidate):
+    flags = []
+    if candidate["confidence"] == "low":
+        flags.append("low-confidence")
+    if candidate["verification"] == "title-only":
+        flags.append("title-only")
+    if "search worker" in candidate["first_reader"]:
+        flags.append("worker-read-only")
+    if candidate["origin"] == "state-court-directory":
+        flags.append("directory-listing-only")
+    return flags + CANDIDATE_FLAGS.get(candidate["candidate_id"], [])
+
+
+def grab(args):
+    """Apply the lead author's standing grab-now rule ("just grab it and we can deal with the info later", Nov. 23,
+    2026): every candidate is kept, and its weak spots go in the flags column."""
+    path = REVIEW.with_suffix(".json")
+    review = json.loads(path.read_text())
+    for candidate in review["candidates"]:
+        candidate["flags"] = "; ".join(flags_for(candidate))
+        candidate["lead_author_decision"] = GRAB_DECISION
+    path.write_text(json.dumps(review, indent=1, ensure_ascii=False) + "\n")
+    with open(REVIEW.with_suffix(".csv"), "w", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=COLUMNS, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(review["candidates"])
+    counts_path = pathlib.Path(str(REVIEW) + "-counts.json")
+    counts = json.loads(counts_path.read_text())
+    flagged = collections.Counter(f for c in review["candidates"] for f in c["flags"].split("; ") if f)
+    counts["grab_2026_11_23"] = {"kept": len(review["candidates"]),
+                                 "with_a_flag": sum(1 for c in review["candidates"] if c["flags"]),
+                                 "flags": dict(sorted(flagged.items()))}
+    counts_path.write_text(json.dumps(counts, indent=1) + "\n")
+    print(json.dumps(counts["grab_2026_11_23"]))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
     command = sub.add_parser("build")
     command.add_argument("--data", required=True)
     sub.add_parser("apply")
+    sub.add_parser("grab")
     args = parser.parse_args()
-    {"build": build, "apply": apply}[args.command](args)
+    {"build": build, "apply": apply, "grab": grab}[args.command](args)
 
 
 if __name__ == "__main__":

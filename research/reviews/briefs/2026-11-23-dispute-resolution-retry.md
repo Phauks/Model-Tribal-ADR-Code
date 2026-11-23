@@ -10,6 +10,8 @@ Rules:
 - Quotes: at most 30 words, copied word for word from the page you read, with the exact URL.
 
 Output: write ONE JSON file (path given in your task), a list with one object per nation, in input order:
+
+```text
 {
  "id": "<profile id>",
  "searches": [   // every search and page read, in order
@@ -22,4 +24,6 @@ Output: write ONE JSON file (path given in your task), a list with one object pe
  "court_only": ["<url of a court page with no dispute resolution wording>"],
  "new_places_not_read": ["<url you saw but could not read, and why>"]
 }
+```
+
 "found" in a search means that place showed dispute resolution wording. Write the file as you go (rewrite it after every few nations) so nothing is lost. Final message: counts (nations with findings, searches used, blocked sites) in under 150 words. Do not edit the repository.
