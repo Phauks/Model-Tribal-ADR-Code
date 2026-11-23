@@ -636,6 +636,17 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.B, Arizona
   note: 'The source reads: “The state of Arizona previously had an agreement with the Hopi Tribe that expired in 2011 and was not renewed.”. The state agency name is inferred. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: court-rules
+  title: Hopi Code of Laws and Rules of Civil Procedures
+  court: Hopi Tribal Courts
+  link: https://www.hopi-nsn.gov/judicial-branch/hopi-code-of-laws-and-rules-of-civil-procedures/
+  detail: Judicial Branch page links a "Hopi Code" page for the Hopi Code of Laws and Rules of Civil Procedures (not opened). The Judicial Branch page itself says more information is coming.
+  source: hopi-tribe-of-arizona-website-judicial-branch
+  confidence: medium
+  verification: read-in-full
+  locator: Judicial Branch page links
+  note: Link title is "Hopi Code"; target URL names the rules of civil procedure.
 nearby_state_courts:
 - state: AZ
   county: Navajo County

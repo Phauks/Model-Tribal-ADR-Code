@@ -1,12 +1,13 @@
 import { fail } from '@sveltejs/kit';
 import { endOtherSession, endOtherSessions, signedInDevices } from '#lib/server/account-pages.ts';
+import { needsTwoStep } from '#lib/permissions.ts';
+import { twoStepState } from '#lib/server/two-step.ts';
 import { requireAccount, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /**
- * Sign-in and security: the password, and where the person is signed in.
- * Two-step sign-in and backup codes go here when they are built (the plan
- * in the "Revise the sign-in screen and password rules" thread).
+ * Sign-in and security: the password, two-step sign-in
+ * (./two-step/+page.server.ts), and where the person is signed in.
  */
 export const load: PageServerLoad = async (event) => {
 	const account = requireAccount(event);
@@ -14,6 +15,8 @@ export const load: PageServerLoad = async (event) => {
 	return {
 		now: new Date().toISOString(),
 		hasPassword: event.locals.session?.account.hasPassword ?? false,
+		twoStep: await twoStepState(database, account.subject),
+		twoStepRequired: event.locals.twoStepNeeded || Boolean(event.locals.person && needsTwoStep(event.locals.person.role)),
 		devices: await signedInDevices(database, account.subject, event.locals.session?.tokenHash)
 	};
 };

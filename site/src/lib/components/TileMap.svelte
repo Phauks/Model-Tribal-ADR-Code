@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { ShadedMapView } from '#lib/shaded-map-views.ts';
+	import { isShadedMapView, type ShadedMapView } from '#lib/shaded-map-views.ts';
 
 	/** The views of the map on /nations/map; each is a set of layers over the same basemap. The shaded views color the land areas by a fact about their nations (src/lib/shaded-map-views.ts). */
 	export type TileMapView = 'states' | 'regions' | 'lands' | ShadedMapView;
@@ -164,9 +164,9 @@
 				layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 13, 'text-max-width': 8 },
 				paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2 }
 			});
-		} else if (view !== 'lands') {
+		} else if (isShadedMapView(view)) {
 			// A shaded view: each area takes its category's shade, and areas with no fact stay the lightest. Only areas with a fact get a dot, so the dots show where the facts are.
-			const shading = data.shading?.[view];
+			const shading = shadingIn(data);
 			const entries = Object.entries(shading?.areas ?? {});
 			const areaShade = (entries.length > 0
 				? ['match', ['to-string', ['get', 'code']], ...entries.flatMap(([code, area]) => [code, colors.classes[area.shade]]), colors.classes[0]]
@@ -324,7 +324,7 @@
 					data: {
 						type: 'FeatureCollection',
 						features: (data.offices ?? []).map((office, index) => {
-							const shaded = view === 'states' || view === 'regions' || view === 'lands' ? undefined : data.shading?.[view]?.offices[office.nation];
+							const shaded = shadingIn(data)?.offices[office.nation];
 							return {
 								type: 'Feature',
 								id: index,
@@ -338,7 +338,7 @@
 					type: 'geojson',
 					data: {
 						type: 'FeatureCollection',
-						features: (view === 'states' || view === 'regions' || view === 'lands' ? [] : (data.shading?.[view]?.labels ?? [])).map((label) => ({ type: 'Feature', properties: { name: label.name }, geometry: { type: 'Point', coordinates: label.point } }))
+						features: (shadingIn(data)?.labels ?? []).map((label) => ({ type: 'Feature', properties: { name: label.name }, geometry: { type: 'Point', coordinates: label.point } }))
 					}
 				},
 				'region-names': {
@@ -364,10 +364,15 @@
 		};
 	}
 
+	/** The current view's shades and rows, if it is a shaded view (src/lib/shaded-map-views.ts). */
+	function shadingIn(data: TileMapData) {
+		return isShadedMapView(view) ? data.shading?.[view] : undefined;
+	}
+
 	/** An area's dot's properties: on a shaded view, its shade and the row it goes to in that view's table. */
 	function propertiesOf(area: TileMapData['areas'][number], data: TileMapData): Record<string, unknown> {
-		if (view === 'states' || view === 'regions' || view === 'lands') return area;
-		const shaded = data.shading?.[view]?.areas[area.code];
+		if (!isShadedMapView(view)) return area;
+		const shaded = shadingIn(data)?.areas[area.code];
 		return { ...area, shade: shaded?.shade ?? 0, anchor: shaded?.anchor ?? '' };
 	}
 
@@ -481,10 +486,7 @@
 						layer: 'land-areas',
 						source: 'places',
 						sourceLayer: 'land-areas',
-						anchor: (properties) =>
-							view === 'states' || view === 'regions' || view === 'lands'
-								? `land-area-${String(properties.code).toLowerCase()}`
-								: data.shading?.[view]?.areas[String(properties.code)]?.anchor
+						anchor: (properties) => (isShadedMapView(view) ? shadingIn(data)?.areas[String(properties.code)]?.anchor : `land-area-${String(properties.code).toLowerCase()}`)
 					}
 				];
 				let hover: { source: string; sourceLayer?: string; id: string | number } | undefined;

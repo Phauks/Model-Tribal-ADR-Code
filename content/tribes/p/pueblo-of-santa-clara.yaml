@@ -662,6 +662,27 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.I, New Mexico
   note: 'The source reads: “Santa Clara Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: bar-admission
+  title: Attorney Admission and Practice Before the Courts
+  court: Santa Clara Pueblo Tribal Court
+  link: https://www.santaclarapueblo.org/tribal-court/attorney-admission-and-practice-before-the-courts/
+  detail: Attorneys must be in good standing of the New Mexico State Bar or eligible elsewhere, abide by Court rules, know Pueblo traditions, pay the admission fee of $100.00, and take an oath; application PDF (2025 upload).
+  source: pueblo-of-santa-clara-attorney-admission-and-practice-before-the-court
+  confidence: high
+  verification: read-in-full
+  locator: Attorney Admission page
+  note: 'The source reads: “Pay the admission fee of $100.00”.'
+- kind: bar-admission
+  title: Attorneys and Lay Counsel Admitted to Practice
+  court: Santa Clara Pueblo Tribal Court
+  link: https://www.santaclarapueblo.org/tribal-court/attorneys-and-lay-counsel-admitted-to-practice/
+  detail: List page of admitted attorneys and lay counsel, linked from the Tribal Court page; not opened.
+  source: santa-clara-pueblo-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page links
+  note: Page not opened.
 nearby_state_courts:
 - state: NM
   county: Rio Arriba County

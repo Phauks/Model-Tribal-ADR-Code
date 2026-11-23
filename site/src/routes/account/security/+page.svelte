@@ -39,10 +39,28 @@
 </p>
 <p><a class="button button-quiet" href="/profile/password">{data.hasPassword ? 'Change your password' : 'Choose a password'}</a></p>
 
+<h2>Two-step sign-in</h2>
+<p>
+	{#if data.twoStep.on}
+		On. Signing in also needs a code from your authenticator app. You have {data.twoStep.backupCodesLeft} unused
+		{data.twoStep.backupCodesLeft === 1 ? 'backup code' : 'backup codes'}.
+	{:else if data.twoStepRequired}
+		Off. Your role needs it, and the workspace opens once you set it up.
+	{:else}
+		Off. It is optional for your account: signing in would also need a code from an app on your phone.
+	{/if}
+</p>
+<p>
+	<a class="button {data.twoStep.on ? 'button-quiet' : ''}" href="/account/security/two-step"
+		>{data.twoStep.on ? 'Manage two-step sign-in' : 'Set up two-step sign-in'}</a
+	>
+</p>
+
 <h2 id="devices-heading">Where you are signed in</h2>
 <p>
-	Each browser you sign in with is listed until it signs out or its session ends, at most 12 hours after
-	signing in. Only the browser’s name and the times are kept, never where you were.
+	Each browser you sign in with is listed until it signs out or its session ends: 12 hours after signing in,
+	or 30 days if you chose "Keep me signed in" on an account without workspace access. Only the browser’s
+	name and the times are kept, never where you were.
 </p>
 <ul class="devices" aria-labelledby="devices-heading">
 	{#each data.devices as device (device.handle)}

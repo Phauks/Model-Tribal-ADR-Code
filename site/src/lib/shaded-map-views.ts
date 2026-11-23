@@ -2,6 +2,8 @@
  * The map views that shade each Census land area by a fact about the nations whose entries name it: Public Law 280, the Violence Against Women Act's special Tribal criminal jurisdiction, and the Indian Health Service Areas (Trevor, 2026-11-23: views such as Public Law 280 added to the map over time). The facts come from each nation's `jurisdiction` and `indian_health_service` entries (docs/data-model.md, "Jurisdiction and federal ties"); src/lib/server/nations-map.ts sorts each nation into one category, and the map and its drawn copy shade the nation's land areas with that category's map-class token.
  *
  * A category is a summary for a national map. The nation's page holds the facts behind it, each with its source and the state it applies in.
+ *
+ * Each view's categories, wording and table are defined once, in `shadedViewDefinitions` below; how a nation is sorted into a category is its rule in src/lib/server/nations-map.ts.
  */
 
 export type ShadedMapView =
@@ -103,14 +105,92 @@ export const healthServiceAreaShades: Record<string, number> = {
 	Tucson: 4
 };
 
-/** What the legend calls land areas the view has no fact for. */
-export const unrecordedLabels: Record<ShadedMapView, string> = {
-	'courts-and-peacemaking': 'No court or forum recorded yet',
-	'other-jurisdiction-laws': 'None of these recorded',
-	'agreements-with-states': 'No agreement recorded yet',
-	'public-law-280': 'No Public Law 280 fact recorded yet',
-	'violence-against-women-act': 'Not recorded as exercising it',
-	'indian-health-service': 'No Area recorded yet'
+/**
+ * Everything the page says about one shaded view, kept in one place so a new view is one entry here and one rule in src/lib/server/nations-map.ts (site/DESIGN.md, section 11, "How to add a map view").
+ */
+export interface ShadedViewDefinition {
+	/** The categories, in order of precedence. Left out when they come from the data, as the Indian Health Service view has one per Area. */
+	categories?: ShadeCategory[];
+	/** What the legend and tooltips call land areas the view has no fact for. */
+	unrecorded: string;
+	/** The note beside the map, before the notes on offices and insets. Plain text. */
+	note: string;
+	/** The table's caption. */
+	caption: string;
+	/** What the table lists: each nation with a fact, or each category, opening to its nations. */
+	rows: 'nations' | 'categories';
+	/** For a view where a nation can have several kinds at once: the header of each kind's Yes column, by category key. The map shades a nation by the first kind it has. */
+	kindHeaders?: Record<string, string>;
+	/** For a view with one category per nation: the header of the column that gives it. For a table of categories: the header of their column. */
+	categoryHeader?: string;
+	/** The part of a nation's page that has the view's facts and their sources, which each nation's name in the table goes to. */
+	section: string;
+	/** Whether each category's name is written on the map, at the middle of its land areas. */
+	labels?: boolean;
+	/** How the page's list of sources says the view uses each source. Left out when the sources are too many to list, and the table goes to each nation's own section instead. */
+	sources?: { section: string; text: string };
+}
+
+export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> = {
+	'courts-and-peacemaking': {
+		categories: courtCategories,
+		unrecorded: 'No court or forum recorded yet',
+		note: 'Each nation’s land areas are shaded by the first of these it has: peacemaking or a traditional forum, a healing to wellness court, a tribal court, or only a Court of Indian Offenses, which the Bureau of Indian Affairs runs. The table shows every kind each nation has. A nation missing here may still have a court: the record is only as complete as its sources. Each nation’s page lists its courts and forums, with their sources. Select an area to go to its nation’s row.',
+		caption: 'Nations with a court or forum recorded, and which kinds',
+		rows: 'nations',
+		kindHeaders: { peacemaking: 'Peacemaking or traditional forum', wellness: 'Wellness court', court: 'Tribal court', federal: 'Court of Indian Offenses' },
+		section: 'courts-heading'
+	},
+	'public-law-280': {
+		categories: publicLaw280Categories,
+		unrecorded: 'No Public Law 280 fact recorded yet',
+		note: 'Each nation’s land areas are shaded by one summary of its Public Law 280 facts. The summary is only a guide: what the state may do differs by subject, by state and over time, and some nations are in more than one state. Each nation’s page has the facts, the state each applies in and their sources. Nations with no land area on the map are still in the table. Select an area to go to its nation’s row.',
+		caption: 'Nations with a Public Law 280 fact recorded, and a summary of what the facts say',
+		rows: 'nations',
+		categoryHeader: 'Summary',
+		section: 'jurisdiction-heading',
+		sources: { section: 'Public Law 280', text: 'each nation’s Public Law 280 facts, summed up in one category' }
+	},
+	'violence-against-women-act': {
+		categories: violenceAgainstWomenActCategories,
+		unrecorded: 'Not recorded as exercising it',
+		note: 'Shaded areas belong to nations that sources record as exercising special Tribal criminal jurisdiction over non-Indians under the Violence Against Women Act (25 U.S.C. § 1304), or as holding a federal grant to prepare for it. A grant can pay for planning, so it is never counted as exercising. A nation missing here may still exercise it: the record is only as complete as its sources. Select an area to go to its nation’s row.',
+		caption: 'Nations recorded as exercising special Tribal criminal jurisdiction, or holding a grant to prepare for it',
+		rows: 'nations',
+		categoryHeader: 'Status',
+		section: 'jurisdiction-heading',
+		sources: { section: 'Violence Against Women Act jurisdiction', text: 'nations exercising special Tribal criminal jurisdiction, and implementation grants' }
+	},
+	'other-jurisdiction-laws': {
+		categories: otherJurisdictionLawCategories,
+		unrecorded: 'None of these recorded',
+		note: 'Each nation’s land areas are shaded by the first of these that applies to it: a federal law other than Public Law 280 that gives a state criminal or civil jurisdiction, such as the Kansas Act or a land claims settlement act; jurisdiction over child custody cases reassumed under the Indian Child Welfare Act (25 U.S.C. § 1918); or longer sentences under the Tribal Law and Order Act (25 U.S.C. § 1302(b)). The table shows every one each nation has. Each nation’s page has the facts and their sources. Select an area to go to its nation’s row.',
+		caption: 'Nations under another federal law on jurisdiction, and which',
+		rows: 'nations',
+		kindHeaders: { 'state-statute': 'State jurisdiction under another law', 'child-welfare-reassumed': 'Child welfare jurisdiction reassumed', 'enhanced-sentencing': 'Enhanced sentencing' },
+		section: 'jurisdiction-heading',
+		sources: { section: 'Other jurisdiction laws', text: 'each nation’s facts on state jurisdiction under other federal laws, on reassumed child welfare jurisdiction and on enhanced sentencing' }
+	},
+	'agreements-with-states': {
+		categories: agreementCategories,
+		unrecorded: 'No agreement recorded yet',
+		note: 'Each nation’s land areas are shaded by the first kind of agreement it has with a state, county, city or federal agency: cross-deputization or law enforcement, child welfare, tax, or another kind. Most sources do not say whether an agreement is still in force; each nation’s page gives the agreement, the other party, its date and its sources. Select an area to go to its nation’s row.',
+		caption: 'Nations with an agreement recorded, and which kinds',
+		rows: 'nations',
+		kindHeaders: { 'cross-deputization': 'Cross-deputization', 'child-welfare-agreement': 'Child welfare', 'tax-agreement': 'Tax', other: 'Other' },
+		section: 'jurisdiction-heading',
+		sources: { section: 'Agreements with states', text: 'each nation’s agreements with a state, county, city or federal agency' }
+	},
+	'indian-health-service': {
+		unrecorded: 'No Area recorded yet',
+		note: 'Each nation’s land areas are shaded by the Indian Health Service Area its entry names, and each Area’s name is written on the map. Neighboring Areas are given different shades. Select an area to go to its Area’s row, which lists its nations.',
+		caption: 'Nations each Indian Health Service Area serves, as each nation’s entry records it',
+		rows: 'categories',
+		categoryHeader: 'Area',
+		section: 'ties-heading',
+		labels: true,
+		sources: { section: 'Indian Health Service Areas', text: 'the Area that serves each nation' }
+	}
 };
 
 /** The id of a row in a shaded view's table: a nation's row, or for the Indian Health Service view an Area's. */

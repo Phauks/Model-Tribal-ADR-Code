@@ -28,6 +28,7 @@ export type ScanPurpose =
 	| 'nation-picture'
 	| 'nation-team-proof'
 	| 'profile-picture'
+	| 'sponsor-logo'
 	| 'event-recording';
 
 export interface FileScan {

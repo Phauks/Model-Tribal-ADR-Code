@@ -732,6 +732,26 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Miami Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: court-rules
+  title: Civil Procedure Code
+  court: Miami Tribe of Oklahoma Court
+  link: http://miamination.com/wp-content/uploads/2026/01/Civil-Procedure-Code-Enacted-Dec.-202561.pdf
+  detail: Civil Procedure Code, enacted December 2025 per file name; criminal procedure code and rules of evidence also linked.
+  source: miami-tribe-of-oklahoma-court-miamination-com
+  confidence: high
+  verification: read-in-full
+  locator: Court page
+- kind: public-defender
+  title: Miami Tribe of Oklahoma Court (Public Defender and Conflicts Public Defender)
+  court: Miami Tribe of Oklahoma Court
+  link: https://www.miamination.com/miami-tribe-of-oklahoma-court/
+  detail: Page lists a Public Defender and a Conflicts Public Defender; details not read.
+  source: miami-tribe-of-oklahoma-court-miamination-com
+  confidence: high
+  verification: read-in-full
+  locator: Court page
+  note: 'The source reads: “Public Defender”. Names omitted.'
 nearby_state_courts:
 - state: OK
   county: Ottawa County

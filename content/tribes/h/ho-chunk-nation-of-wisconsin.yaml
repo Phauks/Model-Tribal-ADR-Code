@@ -869,6 +869,47 @@ jurisdiction:
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Minnesota"
   note: Statute is primary; nation placed in Minnesota by the Census Bureau's land areas, so confidence is medium. Cited jointly with us-code-title-28-section-1360. Added on 2026-11-23 where the profile had no fact for this state (for example a band split out of a combined record).
+court_practice:
+- kind: bar-admission
+  title: Rules for Admission to Practice in the Courts of the Ho-Chunk Nation
+  court: Ho-Chunk Nation Judicial Branch
+  link: https://ho-chunknation.com/wp-content/uploads/2026/04/Rules-for-Admission-to-Practice.pdf
+  detail: Rules for admission to practice (2026-04 upload) linked from the Judicial Branch page.
+  source: ho-chunk-nation-judicial-branch-ho-chunk-nation
+  confidence: high
+  verification: read-in-full
+  locator: Judicial Branch page
+  note: 'The source reads: “RULES FOR ADMISSION TO PRACTICE IN THE COURTS OF THE HO-CHUNK NATION”.'
+- kind: court-rules
+  title: Judicial Rules
+  court: Ho-Chunk Nation Judicial Branch
+  link: https://ho-chunknation.com/government/judicial-branch/judicial-rules/
+  detail: Judicial Rules page linked from the Judicial Branch page; not opened.
+  source: ho-chunk-nation-judicial-branch-ho-chunk-nation
+  confidence: high
+  verification: title-only
+  locator: Judicial Branch page links
+  note: Page not opened.
+- kind: forms
+  title: Judicial Forms & Filing
+  court: Ho-Chunk Nation Judicial Branch
+  link: https://ho-chunknation.com/government/judicial-branch/courts/trial-court-2/judicial-forms-filing/
+  detail: Page headed "JUDICIAL FORMS AND FILING FEES"; not opened.
+  source: ho-chunk-nation-judicial-branch-ho-chunk-nation
+  confidence: high
+  verification: title-only
+  locator: Judicial Branch page links
+  note: 'The source reads: “JUDICIAL FORMS AND FILING FEES”. Page not opened.'
+- kind: filing-fees
+  title: Judicial Forms and Filing Fees
+  court: Ho-Chunk Nation Judicial Branch
+  link: https://ho-chunknation.com/government/judicial-branch/courts/trial-court-2/judicial-forms-filing/
+  detail: Trial Court page headed "JUDICIAL FORMS AND FILING FEES"; amounts not read.
+  source: ho-chunk-nation-judicial-branch-ho-chunk-nation
+  confidence: medium
+  verification: title-only
+  locator: Judicial Branch page links
+  note: 'The source reads: “JUDICIAL FORMS AND FILING FEES”. Page not opened.'
 nearby_state_courts:
 - state: WI
   county: Jackson County
