@@ -264,6 +264,14 @@ searches:
     the lead author''s order (own page, then directory entry): directory, https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/consortium-tribal-state-and-federal-courts.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-342
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261017075002/https://santeesiouxnation.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-10-17 ("Santee Sioux Nation"); it shows no court.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-262,
   not-found-after-search); Santee Sioux Tribal Court (court-263, not-found-after-search). No page or official
   directory entry was found on 2026-11-22 for “Tribal Court”; “Santee Sioux Tribal Court” (research/reviews/2026-11-22-service-links.json).

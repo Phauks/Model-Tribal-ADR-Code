@@ -109,5 +109,14 @@ searches:
   outcome: not-found
   reason: 'Entry (pp. 122-123): the directory''s makers could not reach the Tribe as of October 2021,
     so the entry is blank.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20200923144626/http://www.holycrosstribe.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The domain now hosts an unrelated site (Wayback Machine copy of 2020-09-23); it is no longer
+    the nation's site.
 next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
   dispute resolution program, and check law library holdings of its code.

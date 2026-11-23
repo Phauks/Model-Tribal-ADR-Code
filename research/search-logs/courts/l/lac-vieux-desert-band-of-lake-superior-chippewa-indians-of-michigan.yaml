@@ -1,7 +1,7 @@
 profile: content/tribes/l/lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -207,3 +207,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Returned nation pages (including Tribal Court Rules PDF) and michiganlegalhelp.org; the nation's Tribal Court page is the one confirmed by fetch.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20200707190508/http://www.lvdtribal.com:80/court.html
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2020-07-07 ("Lac Vieux Desert Tribal Court") shows the nation's
+    court.

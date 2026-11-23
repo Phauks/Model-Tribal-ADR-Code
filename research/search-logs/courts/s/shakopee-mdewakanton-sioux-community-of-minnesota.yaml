@@ -1,7 +1,7 @@
 profile: content/tribes/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -169,3 +169,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Returned nation pages and a Minnesota Judicial Branch tribal court list; the court's own page above was confirmed by fetch.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240707202055/https://www.mncourts.gov/mncourtsgov/media/scao_library/CJI/TCSCF-Members-Tribal-Court-Judges-(website-December-2022).pdf
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Minnesota Tribal Court/State Court Forum members list (Wayback Machine copy of 2024-07-07)
+    names judges of the nation's court under "Shakopee Mdewakanton".

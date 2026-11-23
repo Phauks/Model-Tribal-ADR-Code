@@ -254,6 +254,15 @@ searches:
     and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-010
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://alabama-quassarte.org/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The site has no sitemap at this address (404 on 2026-11-23); the sitemap was only a way to find
+    pages, so nothing on the topic is missing because of it.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-010,
   not-found-after-search); Alabama-Quassarte Tribal Court (court-011, not-found-after-search). No page
   or official directory entry was found on 2026-11-22 for “Tribal Court”; “Alabama-Quassarte Tribal Court”

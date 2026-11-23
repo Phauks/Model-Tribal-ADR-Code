@@ -1,6 +1,6 @@
 profile: content/tribes/p/passamaquoddy-tribe.yaml
 topic: dispute-resolution
-status: partly-searched
+status: found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
@@ -124,5 +124,11 @@ searches:
     peacemaking, circles, elders' courts and restorative justice
   outcome: error
   reason: The archived copy could not be fetched in any round (connection refused); worth trying again.
-next_steps: 'Try again later, or open by hand in a browser: https://web.archive.org/web/2026id_/https://wabanaki.com/peaceful_relations/;
-  https://web.archive.org/web/2026id_/https://wabanaki.com/tribal_constitution/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261010222124/https://wabanaki.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-10-10 ("Home - Sipayik Tribal Government") shows a court.
