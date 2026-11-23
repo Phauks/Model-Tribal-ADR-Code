@@ -91,6 +91,8 @@ const nationImage = /^\/nations\/[^/]+\/image$/;
 
 function isNeverCached(path: string): boolean {
 	return (
+		// The spelling checker's WebAssembly is large and for editors only; the browser's own cache keeps it.
+		path.endsWith('.wasm') ||
 		nationImage.test(path) ||
 		neverCached.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))
 	);
@@ -106,9 +108,10 @@ function absolute(path: string): string {
 }
 
 // Only the woff2 files are used by current browsers; the woff copies are a fallback for old ones.
+// The spelling checker's WebAssembly (about 20 MB, src/lib/essays/harper.ts) is for editors only and is not saved for offline.
 const shell = immutable
 	.map((file) => absolute(file.path))
-	.filter((path) => !isFallbackFont(path) && !path.endsWith('.woff'));
+	.filter((path) => !isFallbackFont(path) && !path.endsWith('.woff') && !path.endsWith('.wasm'));
 const staticFiles = assets.map((file) => absolute(file.path));
 const builtPaths = new Set(prerendered.map((page) => absolute(page.path)));
 const corePageFiles = corePages.flatMap((page) => [

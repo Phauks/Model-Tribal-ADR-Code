@@ -1,44 +1,19 @@
 # Dataset gap audit
 
-**Date:** Nov. 21, 2026. **Scope:** everything on `main` at commit `da73a7c`
-and the data in open pull requests #11, #12, #14 and #15, except the 1,327
-dispute resolution provisions (reviewed separately, one by one) and the 12-item review queue in
-`research/analyses/2026-11-21-dispute-resolution-practice.md` §9. Nothing was
-changed while auditing.
+**Date:** Nov. 21, 2026. **Scope:** everything on `main` at commit `da73a7c` and the data in open pull requests #11, #12, #14 and #15, except the 1,327 dispute resolution provisions (reviewed separately, one by one) and the 12-item review queue in `research/analyses/2026-11-21-dispute-resolution-practice.md` §9. Nothing was changed while auditing.
 
-**Basis of the counts.** Every count below is project analysis: a script read
-every `content/tribes/*/*.yaml` profile, collected each cited fact (any object
-with a `source` key, as defined by `cited` in `schemas/common.schema.json`),
-and sorted it by profile section, source and the wording of its own `note`.
-"How verified" is read from those notes (for example "Bulk record from the
-NCORJ…", "Title is the link text in the directory…", "matched to the nation by
-name"), the same method `scripts/analysis/dispute_resolution_practice.py` uses
-for provisions (`evidence_tier`). Source counts come from the 2,130
-`content/sources/*/*.yaml` records. `scripts/coverage_report.py` reproduces
-these counts, and its "note suggests" columns use the same note wording
-(`NOTE_LEVELS` in `scripts/record_facts.py`).
+**Basis of the counts.** Every count below is project analysis: a script read every `content/tribes/*/*.yaml` profile, collected each cited fact (any object with a `source` key, as defined by `cited` in `schemas/common.schema.json`), and sorted it by profile section, source and the wording of its own `note`. "How verified" is read from those notes (for example "Bulk record from the NCORJ…", "Title is the link text in the directory…", "matched to the nation by name"), the same method `scripts/analysis/dispute_resolution_practice.py` uses for provisions (`evidence_tier`). Source counts come from the 2,130 `content/sources/*/*.yaml` records. `scripts/coverage_report.py` reproduces these counts, and its "note suggests" columns use the same note wording (`NOTE_LEVELS` in `scripts/record_facts.py`).
 
 ## Headline
 
-- **19,675 cited facts** sit in the 948 profiles. **15,725 of them (80
-  percent)** come from just 42 sources that are each cited by 20 or more
-  profiles: lists, directories and data tables imported in bulk.
-- **No fact records how it was verified.** The schema has `confidence`
-  (high, medium, low) but no field for "read in full," "title only," "bulk
-  import" or "inferred," so the level has to be guessed from free-text notes.
-- **About 3,400 facts were joined to a nation by name** rather than by an
-  identifier (population, census areas, states, gaming ordinances, compacts,
-  memberships). Name joins are where silent errors hide.
-- **No legal authority has a citator check.** The source schema has a
-  `citator` field, and 0 of 2,130 source records fill it, including the 115
-  cases, statutes, regulations and court rules already on `main`.
+- **19,675 cited facts** sit in the 948 profiles. **15,725 of them (80 percent)** come from just 42 sources that are each cited by 20 or more profiles: lists, directories and data tables imported in bulk.
+- **No fact records how it was verified.** The schema has `confidence` (high, medium, low) but no field for "read in full," "title only," "bulk import" or "inferred," so the level has to be guessed from free-text notes.
+- **About 3,400 facts were joined to a nation by name** rather than by an identifier (population, census areas, states, gaming ordinances, compacts, memberships). Name joins are where silent errors hide.
+- **No legal authority has a citator check.** The source schema has a `citator` field, and 0 of 2,130 source records fill it, including the 115 cases, statutes, regulations and court rules already on `main`.
 
 ## Gap table
 
-Verification levels: **read in full** (the document itself was read),
-**title only** (a title, link text or table-of-contents line), **bulk
-import** (a row copied from a list, directory or data table), **inferred**
-(a value derived by a rule, a name match or another nation's document).
+Verification levels: **read in full** (the document itself was read), **title only** (a title, link text or table-of-contents line), **bulk import** (a row copied from a list, directory or data table), **inferred** (a value derived by a rule, a name match or another nation's document).
 
 | # | Area | Records | How verified | Proposed check | Who |
 | --- | --- | ---: | --- | --- | --- |
@@ -66,32 +41,21 @@ import** (a row copied from a list, directory or data table), **inferred**
 | 22 | Sensitivity flags | 948 profiles | All set `tribal_review_required: false` by default, including 91 with self-designations or own-language forum terms | Decide which profiles touch community-held knowledge | Trevor decision |
 | 23 | Outreach records | 193 | 445 citations; 30 marked "search-result-only" | Open those 30 pages | Haiku |
 
-Small item found on the way: two decision records share number 0012
-(`docs/decisions/0012-open-list-of-dispute-resolution-methods.md` and
-`docs/decisions/0012-outreach-list-split-public-and-private.md`).
+Small item found on the way: two decision records share number 0012 (`docs/decisions/0012-open-list-of-dispute-resolution-methods.md` and `docs/decisions/0012-outreach-list-split-public-and-private.md`).
 
 ## Suggested order
 
 1. Rows 7 and 10 start with scripts, cost nothing, and shrink later work.
 2. Haiku batches with the highest drafting value: rows 1, 17, 11, 2.
-3. Trevor and Westlaw: rows 5 and 18 together (one Westlaw session), then
-   the decisions in rows 13, 14, 15 and 22.
+3. Trevor and Westlaw: rows 5 and 18 together (one Westlaw session), then the decisions in rows 13, 14, 15 and 22.
 
 ## Sources
 
-- Profiles: `content/tribes/*/*.yaml` (948 files); their `note` fields state
-  how each fact was gathered.
-- Sources: `content/sources/*/*.yaml` (2,130 files); fields `archives`,
-  `history`, `citator`, `annotation`, `citation.issued`.
-- Methods and glossary: `content/methods/*.yaml` (`status`),
-  `content/glossary/*.yaml` (`status`).
+- Profiles: `content/tribes/*/*.yaml` (948 files); their `note` fields state how each fact was gathered.
+- Sources: `content/sources/*/*.yaml` (2,130 files); fields `archives`, `history`, `citator`, `annotation`, `citation.issued`.
+- Methods and glossary: `content/methods/*.yaml` (`status`), `content/glossary/*.yaml` (`status`).
 - Outreach: `research/outreach/*.yaml` (`sources[].verification`).
-- Prior analysis and its review queue:
-  `research/analyses/2026-11-21-dispute-resolution-practice.md` and
-  `scripts/analysis/dispute_resolution_practice.py`.
-- PR #12 pull list: `research/pull-lists/2026-11-21-legal-history-westlaw.md`
-  on branch `claude/project-thread-s4x4ng`.
-- PR #15 session: `research/sessions/2026/2026-11-21-profile-data-cleanup.md`
-  on branch `claude/project-thread-0qls2m`.
-- Validator output on `main`: `python3 scripts/validate_records.py` (five
-  forum kinds without a method record).
+- Prior analysis and its review queue: `research/analyses/2026-11-21-dispute-resolution-practice.md` and `scripts/analysis/dispute_resolution_practice.py`.
+- PR #12 pull list: `research/pull-lists/2026-11-21-legal-history-westlaw.md` on branch `claude/project-thread-s4x4ng`.
+- PR #15 session: `research/sessions/2026/2026-11-21-profile-data-cleanup.md` on branch `claude/project-thread-0qls2m`.
+- Validator output on `main`: `python3 scripts/validate_records.py` (five forum kinds without a method record).

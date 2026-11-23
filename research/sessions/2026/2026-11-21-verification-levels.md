@@ -28,25 +28,10 @@ limits: >-
   level follows the lead author's decisions on the provision pre-review.
 ---
 
-Output: the level for each group of facts whose note does not say how it was
-checked, in [`2026-11-21-verification-levels.json`](../../reviews/2026-11-21-verification-levels.json)
-(and as a [spreadsheet](../../reviews/2026-11-21-verification-levels.csv)),
-and `verification` on 18,337 facts in the 948 profiles.
+Output: the level for each group of facts whose note does not say how it was checked, in [`2026-11-21-verification-levels.json`](../../reviews/2026-11-21-verification-levels.json) (and as a [spreadsheet](../../reviews/2026-11-21-verification-levels.csv)), and `verification` on 18,337 facts in the 948 profiles.
 
-Method: the dataset gap audit found that no fact recorded how it was checked.
-Facts whose note uses the wording the coverage report already reads (for
-example "matched to the nation by name", "Title is the link text", "Bulk record
-from") take the level that wording implies, the weaker level winning when a
-note shows two; facts from a source cited by 20 or more profiles take
-bulk-import. The rest were grouped by profile section and source, and a
-reviewer gave each group one level using the definitions in the schema
-([brief](../../reviews/briefs/2026-11-21-verification-levels.md)).
-`read-in-full` needed a quotation, a pinpoint into the document with a value
-it states, or a note saying the page was read.
+Method: the dataset gap audit found that no fact recorded how it was checked. Facts whose note uses the wording the coverage report already reads (for example "matched to the nation by name", "Title is the link text", "Bulk record from") take the level that wording implies, the weaker level winning when a note shows two; facts from a source cited by 20 or more profiles take bulk-import. The rest were grouped by profile section and source, and a reviewer gave each group one level using the definitions in the schema ([brief](../../reviews/briefs/2026-11-21-verification-levels.md)). `read-in-full` needed a quotation, a pinpoint into the document with a value it states, or a note saying the page was read.
 
-Overridden: the reviewer gave `read-in-full` to the 376 courts listed from
-National Indian Law Library contact listings; they are directory entries, so
-they are recorded as bulk-import.
+Overridden: the reviewer gave `read-in-full` to the 376 courts listed from National Indian Law Library contact listings; they are directory entries, so they are recorded as bulk-import.
 
-Ruled out: no value, note or source was changed; only the `verification` key
-was added.
+Ruled out: no value, note or source was changed; only the `verification` key was added.

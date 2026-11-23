@@ -10,7 +10,8 @@ import {
 	type MethodLabel,
 	type SourceKind
 } from '#lib/address-book.ts';
-import { addContact, addContactMethod, listContacts, refreshFromDirectories } from '#lib/server/address-book.ts';
+import { publicNationContacts } from 'virtual:public-contacts';
+import { addContact, addContactMethod, listContacts, weeklyAddressBookRun } from '#lib/server/address-book.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import { nations, nationTitles } from './nations.ts';
 import type { Actions, PageServerLoad } from './$types';
@@ -148,12 +149,19 @@ export const actions: Actions = {
 		const person = requirePermission(event, 'manage-address-book');
 		const { database } = storage(event);
 		try {
-			const summary = await refreshFromDirectories(database, (link) => fetch(link), person.identifier, today());
+			const summary = await weeklyAddressBookRun(
+				database,
+				(link) => fetch(link),
+				publicNationContacts,
+				person.identifier,
+				today()
+			);
 			return {
 				done:
 					`Checked ${summary.checked} emails from the federal and Alaska directories: ${summary.verified} still listed, ` +
 					`${summary.replaced} no longer listed (marked replaced), ${summary.added} new ones added, ` +
-					`${summary.notListed} whose nation the directory no longer names.`
+					`${summary.notListed} whose nation the directory no longer names. ` +
+					`${summary.broughtIn} office emails and phones brought in from the nation pages.`
 			};
 		} catch (problem) {
 			return fail(502, {

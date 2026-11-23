@@ -23,6 +23,10 @@
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
 	import { boxParts, casePartOrder, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
 	import type { RenderedEssay } from '#lib/essays/render.ts';
+	import { checkMarks, issueAt } from '#lib/essays/check-marks.ts';
+	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
+	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
+	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
 
 	let {
 		identifier,
@@ -59,6 +63,8 @@
 	let saving = $state(false);
 	let conflict = $state<{ latest: number; latestText: string; mine: string } | null>(null);
 	let preview = $state<RenderedEssay | null>(null);
+	/** Text this browser kept because the site never confirmed saving it (local-draft.ts). */
+	let recovered = $state<LocalDraft | null>(null);
 
 	let host: HTMLDivElement | undefined = $state();
 	let view: EditorView | undefined;
@@ -96,7 +102,26 @@
 	let linkAddress = $state('');
 	let shownText = $state('');
 	let editingCitationAt = $state<number | null>(null);
-	let library = $state<{ sources: [string, string][]; terms: [string, string][] } | null>(null);
+	let library = $state<{ sources: [string, string][]; terms: [string, string][]; words?: string[] } | null>(null);
+
+	/* Checks and Go to ------------------------------------------------------- */
+
+	const checksKey = 'editor-checks';
+	/** Goes up by one each time the text changes, so the checks run again. */
+	let revision = $state(0);
+	let showChecks = $state(false);
+	let showGoTo = $state(false);
+	let chosenIssue = $state<string | null>(null);
+
+	function toggleChecks(): void {
+		showChecks = !showChecks;
+		if (showChecks) void loadLibrary();
+		try {
+			localStorage.setItem(checksKey, showChecks ? 'on' : 'off');
+		} catch {
+			// Storage can be blocked; the choice is then not remembered.
+		}
+	}
 	let libraryProblem = $state('');
 
 	async function loadLibrary(): Promise<void> {
@@ -362,7 +387,10 @@
 		const tracker = new Plugin({
 			view: () => ({
 				update: (editorView, previous) => {
-					if (!editorView.state.doc.eq(previous.doc)) markChanged();
+					if (!editorView.state.doc.eq(previous.doc)) {
+						markChanged();
+						revision += 1;
+					}
 					describe(editorView.state);
 				}
 			})
@@ -389,10 +417,15 @@
 					'Mod-s': () => {
 						void save();
 						return true;
+					},
+					'Mod-g': () => {
+						showGoTo = true;
+						return true;
 					}
 				}),
 				keymap(baseKeymap),
 				history(),
+				checkMarks(),
 				tracker
 			]
 		});
@@ -405,6 +438,11 @@
 			state: createState(body),
 			editable: () => canEdit,
 			attributes: { class: 'essay-editor-text essay-text', 'aria-label': 'Essay text', role: 'textbox', 'aria-multiline': 'true' },
+			handleClick: (editorView, position) => {
+				const issue = issueAt(editorView, position);
+				if (issue) chosenIssue = issue;
+				return false;
+			},
 			handleDoubleClickOn: (_view, _position, node, nodePosition) =>
 				node.type.name === 'citation' ? editCitation(nodePosition, node) : false,
 			dispatchTransaction(transaction: Transaction) {
@@ -474,9 +512,20 @@
 		autoSaveTimer = setTimeout(() => void autoSaveNow(), Math.max(0, Math.min(autoSaveIdleMilliseconds, untilLongest)));
 	}
 
+	/** After a save that failed, try again in half a minute rather than straight away. */
+	function retryAutoSave(): void {
+		if (!autoSave || closed) return;
+		clearTimeout(autoSaveTimer);
+		autoSaveTimer = setTimeout(() => void autoSaveNow(), autoSaveLongestMilliseconds);
+	}
+
+	function unsaved(): boolean {
+		return dirty || frontMatter !== savedFrontMatter;
+	}
+
 	async function autoSaveNow(): Promise<void> {
 		clearTimeout(autoSaveTimer);
-		if (!autoSave || !canEdit || conflict || !(dirty || frontMatter !== savedFrontMatter)) return;
+		if (!autoSave || !canEdit || conflict || !unsaved()) return;
 		if (saving) {
 			scheduleAutoSave();
 			return;
@@ -484,44 +533,80 @@
 		await save(false, true);
 	}
 
+	/** The tab is being hidden, maybe closed: keep the text here and send it while the page may still go away. */
 	function saveWhenHidden(): void {
-		if (document.visibilityState === 'hidden') void autoSaveNow();
+		if (document.visibilityState !== 'hidden' || !autoSave || !canEdit || conflict || !unsaved()) return;
+		const file = currentFile();
+		keepLocalDraft(identifier, file, basedOn);
+		void (inFlight ?? Promise.resolve()).then(() => save(false, true, { file, last: true }));
 	}
 
-	async function save(saveOver = false, automatic = false): Promise<void> {
+	/** The save on its way, so a last save waits for it rather than being skipped. */
+	let inFlight: Promise<void> | null = null;
+
+	async function save(saveOver = false, automatic = false, { file = currentFile(), last = false } = {}): Promise<void> {
 		if (!canEdit || saving) return;
 		saving = true;
+		const done = new Promise<void>((resolve) => {
+			finishSave = resolve;
+		});
+		inFlight = done;
+		try {
+			await sendSave(saveOver, automatic, file, last);
+		} finally {
+			saving = false;
+			inFlight = null;
+			finishSave();
+		}
+	}
+
+	let finishSave: () => void = () => {};
+
+	async function sendSave(saveOver: boolean, automatic: boolean, file: string, last: boolean): Promise<void> {
 		status = automatic ? 'Saving by itself…' : 'Saving…';
-		const file = currentFile();
 		const editsSent = edits;
+		// Until the site has the text, this browser keeps a copy (local-draft.ts).
+		keepLocalDraft(identifier, file, basedOn);
+		const body = JSON.stringify({
+			text: file,
+			basedOn: saveOver && conflict ? conflict.latest : basedOn,
+			note: automatic ? 'Auto-saved' : note,
+			// On an essay page the button names the text as it stands, saved or not.
+			name: autoSave && !automatic
+		});
 		const response = await fetch(`/workspace/essays/${identifier}/save`, {
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			keepalive: automatic,
-			body: JSON.stringify({
-				text: file,
-				basedOn: saveOver && conflict ? conflict.latest : basedOn,
-				note: automatic ? 'Auto-saved' : note,
-				// On an essay page the button names the text as it stands, saved or not.
-				name: autoSave && !automatic
-			})
+			headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+			// Keepalive lets a save finish after the tab closes, but browsers refuse it over 64 KiB.
+			keepalive: last && body.length < keepaliveLimit,
+			body
 		}).catch(() => null);
-		saving = false;
 		if (!response) {
-			status = 'Not saved: the site could not be reached. Your text is still here; try again.';
-			if (automatic) scheduleAutoSave();
+			status = 'Not saved: the site could not be reached. Your text is kept in this browser; it will try again.';
+			if (automatic) retryAutoSave();
+			return;
+		}
+		if (!isSaveAnswer(response)) {
+			status = 'Not saved: the site did not answer as expected. Your text is kept in this browser; it will try again.';
+			if (automatic) retryAutoSave();
 			return;
 		}
 		const answer = await response.json().catch(() => ({}));
+		if (response.status === 401) {
+			status = `Not saved: ${answer.message ?? 'you are signed out.'} Your text is kept in this browser.`;
+			if (automatic) retryAutoSave();
+			return;
+		}
 		if (response.status === 409) {
 			conflict = { latest: answer.latest, latestText: answer.latestText, mine: file };
 			status = '';
 			return;
 		}
-		if (!response.ok) {
-			status = `Not saved: ${answer.message ?? response.statusText}`;
+		if (!response.ok || typeof answer.number !== 'number') {
+			status = `Not saved: ${answer.message ?? response.statusText}. Your text is kept in this browser.`;
 			return;
 		}
+		dropLocalDraft(identifier, file);
 		const split = splitFrontMatter(file);
 		savedBody = split.body;
 		savedFrontMatter = split.frontMatter;
@@ -552,6 +637,24 @@
 		status = `Showing version ${conflict.latest}. Your text is still in the box below until you leave the page.`;
 	}
 
+	function bringBack(): void {
+		if (!recovered) return;
+		const split = splitFrontMatter(recovered.text);
+		frontMatter = split.frontMatter;
+		// The version it started from, so a newer save by someone else still shows as a conflict.
+		basedOn = recovered.basedOn;
+		if (mode === 'markdown') markdown = split.body;
+		else mountEditor(split.body);
+		recovered = null;
+		markChanged();
+		status = 'Brought back the text kept in this browser.';
+	}
+
+	function discardRecovered(): void {
+		dropLocalDraft(identifier);
+		recovered = null;
+	}
+
 	function warnBeforeLeaving(event: BeforeUnloadEvent): void {
 		if (dirty || frontMatter !== savedFrontMatter) event.preventDefault();
 	}
@@ -559,13 +662,25 @@
 	onMount(() => {
 		mountEditor(initial.body);
 		dirty = false;
+		const kept = canEdit ? localDraft(identifier) : null;
+		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
+		else if (kept) recovered = kept;
+		try {
+			if (canEdit && localStorage.getItem(checksKey) === 'on') toggleChecks();
+		} catch {
+			// As above.
+		}
 	});
 
 	onDestroy(() => {
-		// Closing the editor on an essay page saves what is not saved yet.
-		if (autoSave) void autoSaveNow();
 		closed = true;
 		clearTimeout(autoSaveTimer);
+		// Closing the editor on an essay page saves what is not saved yet, after any save on its way.
+		if (autoSave && canEdit && !conflict && unsaved()) {
+			const file = currentFile();
+			keepLocalDraft(identifier, file, basedOn);
+			void (inFlight ?? Promise.resolve()).then(() => save(false, true, { file, last: true }));
+		}
 		view?.destroy();
 	});
 
@@ -641,12 +756,36 @@
 				<button type="button" class="tool" onclick={() => run(redo)}>Redo</button>
 			</div>
 		{/if}
+		{#if mode === 'rich'}
+			<div role="group" aria-label="Checks and Go to">
+				{#if canEdit}
+					<button type="button" class="tool" aria-pressed={showChecks} onclick={toggleChecks}>Checks</button>
+				{/if}
+				<button type="button" class="tool" aria-pressed={showGoTo} title="Ctrl+G" onclick={() => (showGoTo = !showGoTo)}>Go to</button>
+			</div>
+		{/if}
 	</div>
+
+	{#if showGoTo && mode === 'rich'}
+		<EssayGoTo view={() => view} onclose={() => (showGoTo = false)} />
+	{/if}
+	{#if showChecks && mode === 'rich'}
+		<EssayChecks view={() => view} {revision} {identifier} file={currentFile} {library} {canEdit} bind:selected={chosenIssue} />
+	{/if}
 
 	{#if active.boxSource && mode === 'rich'}
 		<p class="small muted context">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</p>
 	{/if}
 
+	{#if recovered}
+		<div class="notice" role="note">
+			<p>
+				This browser kept text from {new Date(recovered.at).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })} that the site never confirmed saving.
+				<button type="button" class="button" onclick={bringBack}>Bring it back</button>
+				<button type="button" class="button button-quiet" onclick={discardRecovered}>Discard it</button>
+			</p>
+		</div>
+	{/if}
 	<div class="editor-area" hidden={mode !== 'rich'} bind:this={host}></div>
 
 	{#if mode === 'markdown'}
@@ -852,6 +991,30 @@
 	.editor-area :global(.ProseMirror table) {
 		display: block;
 		overflow-x: auto;
+	}
+
+	/* What the checks found (EssayChecks.svelte): wavy for spelling and grammar, dotted for definitions. */
+	.editor-area :global(.check-mark) {
+		text-decoration-line: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 3px;
+		cursor: pointer;
+	}
+
+	.editor-area :global(.check-spelling) {
+		text-decoration-style: wavy;
+		text-decoration-color: var(--color-danger);
+	}
+
+	.editor-area :global(.check-grammar) {
+		text-decoration-style: wavy;
+		text-decoration-color: var(--color-link);
+	}
+
+	.editor-area :global(.check-definition),
+	.editor-area :global(.check-repeated) {
+		text-decoration-style: dotted;
+		text-decoration-color: var(--color-action);
 	}
 
 	.editor-area :global(.ProseMirror) {

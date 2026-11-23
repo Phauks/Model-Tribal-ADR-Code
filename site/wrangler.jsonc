@@ -131,7 +131,9 @@
 		"OUTREACH_SMTP_USERNAME": ""
 	},
 	// Every hour, at 17 minutes past: find updates to followed pages and send
-	// the summary emails that are due. tools/add-scheduled-run.mjs adds the
+	// the summary emails that are due. Mondays at 09:41 UTC: check the private
+	// address book against the federal and Alaska directories and the nation
+	// pages (COLLABORATION.md, "Address book"). tools/add-scheduled-run.mjs adds the
 	// Worker's scheduled handler after the build, since the SvelteKit adapter
 	// makes only a fetch handler.
 	//
@@ -141,7 +143,7 @@
 	// runs last in the build, takes this cron, and passes every other one to
 	// the scheduled handler above.
 	"triggers": {
-		"crons": ["17 * * * *", "*/5 * * * *"]
+		"crons": ["17 * * * *", "41 9 * * 1", "*/5 * * * *"]
 	}
 	// The queue consumer for delivery events from Cloudflare Email Service is
 	// added when email is switched on, because a deploy fails while the

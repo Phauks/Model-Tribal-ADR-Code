@@ -1,8 +1,6 @@
 # Content
 
-Everything a reader reads, as plain files. The website and the print edition
-are both built from this folder. Version: see [version.txt](version.txt);
-history: see [CHANGELOG.md](CHANGELOG.md).
+Everything a reader reads, as plain files. The website and the print edition are both built from this folder. Version: see [version.txt](version.txt); history: see [CHANGELOG.md](CHANGELOG.md).
 
 | Folder | Holds | Format | License |
 | --- | --- | --- | --- |
@@ -17,5 +15,4 @@ history: see [CHANGELOG.md](CHANGELOG.md).
 | `bibliographies/` | Annotated reading lists built on the source records | Markdown | CC BY 4.0 |
 | `variables/` | Placeholder definitions such as `{{nation.name}}` for templates | YAML | CC0 1.0 |
 
-Each record type has a schema in [`../schemas/`](../schemas/) and is described
-in [the data model](../docs/data-model.md).
+Each record type has a schema in [`../schemas/`](../schemas/) and is described in [the data model](../docs/data-model.md).
