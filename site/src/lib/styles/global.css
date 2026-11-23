@@ -1784,6 +1784,50 @@ sup.citation {
 	overflow-wrap: anywhere;
 }
 
+/*
+ * "Edit" on a part of a nation's page, for someone on the nation's team
+ * whose place covers that part (design/nation-editors, screen 2). Every page
+ * has the links, hidden; NationEditorBanner.svelte names the person's parts
+ * on the root, which shows theirs at the top right of the part.
+ */
+.nation-edit-link {
+	display: none;
+}
+
+:root[data-nation-edit~='about'] .nation-edit-link[data-edit-part='about'],
+:root[data-nation-edit~='courts-and-dispute-resolution'] .nation-edit-link[data-edit-part='courts-and-dispute-resolution'],
+:root[data-nation-edit~='statements'] .nation-edit-link[data-edit-part='statements'],
+:root[data-nation-edit~='contacts'] .nation-edit-link[data-edit-part='contacts'] {
+	position: absolute;
+	z-index: 1;
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	color: var(--color-link);
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-semibold);
+	text-decoration: none;
+}
+
+.nation-edit-link:hover {
+	text-decoration: underline;
+}
+
+.nation-words,
+details:has(> .nation-edit-link) {
+	position: relative;
+}
+
+.nation-words > .nation-edit-link {
+	top: var(--space-3);
+	right: var(--space-4);
+}
+
+details > .nation-edit-link {
+	top: var(--space-2);
+	right: 0;
+}
+
 .nation-hidden-note {
 	color: var(--color-ink-muted);
 }
