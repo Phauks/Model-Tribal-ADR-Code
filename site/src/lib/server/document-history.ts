@@ -80,6 +80,11 @@ const DATE_LABELS: [keyof NonNullable<DocumentVersion['dates']>, string][] = [
 	['ended', 'ended']
 ];
 
+/** A version's pill: a text that another took the place of reads "Replaced", as the approved nation page mockup has it (layout A, Nov. 22, 2026). */
+const STATUS_LABELS: Record<string, string> = {
+	superseded: 'Replaced'
+};
+
 const EVENT_LABELS: Record<string, string> = {
 	original: 'Original',
 	amendment: 'Amendment',
@@ -254,7 +259,7 @@ export function documentHistoryView(
 			id: version.id,
 			label,
 			event: EVENT_LABELS[version.event] ?? humanize(version.event),
-			status: humanize(version.status),
+			status: STATUS_LABELS[version.status] ?? humanize(version.status),
 			inEffect: version.status === 'in-effect',
 			link: textLink(version),
 			dates: datesPhrase(version),

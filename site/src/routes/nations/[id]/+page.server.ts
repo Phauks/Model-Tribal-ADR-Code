@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
-import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-card.ts';
+import { contactCards, contactsHeading, defaultOfficeFor, type ContactCards } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
@@ -30,7 +30,7 @@ import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
 import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
-import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
+import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => nations().map((record) => ({ id: record.id }));
@@ -140,11 +140,15 @@ function contactCard(record: NationRecord, sources: SourceUses): ContactCards {
 	const facts = record.contacts ?? [];
 	const describe = (fact: (typeof facts)[number]) => `${humanize(fact.kind)}: ${fact.value}`;
 	for (const fact of facts) sources.use(fact, contactsHeading, describe(fact));
-	return contactCards(facts, (fact) => {
-		const citations: CitationMark[] = [];
-		sources.citeFact(fact, contactsHeading, describe(fact), citations);
-		return citations;
-	});
+	return contactCards(
+		facts,
+		(fact) => {
+			const citations: CitationMark[] = [];
+			sources.citeFact(fact, contactsHeading, describe(fact), citations);
+			return citations;
+		},
+		defaultOfficeFor(record.entity_type)
+	);
 }
 
 /** How the page words each kind of presence a source records in a state. */
@@ -156,8 +160,8 @@ const presenceWords: Record<string, string> = {
 
 /**
  * The states with a presence as one line, "Arizona, New Mexico, Utah", and
- * under it what sources record in each, grouped by kind: "Land: Arizona, New
- * Mexico, Utah. Government office: Arizona." Every state fact keeps its marker.
+ * under it what sources record in each, grouped by kind: "Land in all three;
+ * government office in Arizona" (presenceNote). Every state fact keeps its marker.
  */
 function statesItem(record: NationRecord, sources: SourceUses, label: string): FactItem[] {
 	const facts = record.states ?? [];
@@ -176,10 +180,11 @@ function statesItem(record: NationRecord, sources: SourceUses, label: string): F
 		sources.citeFact(fact, label, `${stateName(fact.state)}${kind ? ` (${kind})` : ''}`, citations);
 	}
 	const names = (list: string[]) => list.map(stateName).sort((first, second) => first.localeCompare(second, 'en'));
-	const detail = [...byKind.entries()]
-		.map(([kind, list]) => `${kind.charAt(0).toLocaleUpperCase('en-US')}${kind.slice(1)}: ${names(list).join(', ')}.`)
-		.join(' ');
-	return [{ text: names(codes).join(', '), note: detail || undefined, citations }];
+	const detail = presenceNote(
+		[...byKind.entries()].map(([kind, list]) => [kind, names(list)]),
+		names(codes)
+	);
+	return [{ text: names(codes).join(', '), note: detail, citations }];
 }
 
 function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {

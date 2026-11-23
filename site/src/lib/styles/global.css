@@ -317,6 +317,15 @@ blockquote > footer {
 	padding-left: var(--space-5);
 }
 
+/* Two label and value lists in a row, such as a nation's courts and then who may practice before them, read as one list with no gap or double rule. */
+.summary-list:has(+ .summary-list) {
+	margin-bottom: 0;
+}
+
+.summary-list + .summary-list {
+	border-top: 0;
+}
+
 @media (max-width: 40rem) {
 	.summary-list {
 		grid-template-columns: 1fr;

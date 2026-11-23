@@ -62,6 +62,18 @@ export const contactsHeading = 'Government contacts';
 /** The office a contact belongs to when its label names no other. */
 export const defaultOfficeName = 'Tribal Government Office';
 
+/**
+ * The card for contacts whose label names no office, on a record that is not
+ * a tribe's, such as the Native Hawaiian community's, whose contacts are
+ * state and federal agencies: it must never be called a tribal office.
+ */
+export const otherContactsName = 'Other Contacts';
+
+/** The name of the card for contacts whose label names no office: a tribal office only on a Native nation's record. */
+export function defaultOfficeFor(entityType: string | undefined): string {
+	return entityType === undefined || entityType === 'native-nation' ? defaultOfficeName : otherContactsName;
+}
+
 const rowOrder: ContactKind[] = [
 	'website',
 	'physical-address',
@@ -101,12 +113,15 @@ function contactKind(kind: string): ContactKind {
 }
 
 /** The office a label names, and what is left of the label to show as a note. */
-export function officeAndNote(label: string | undefined): {
+export function officeAndNote(
+	label: string | undefined,
+	defaultOffice: string = defaultOfficeName
+): {
 	office: string;
 	note?: string;
 } {
 	const text = (label ?? '').trim();
-	if (text.length === 0) return { office: defaultOfficeName };
+	if (text.length === 0) return { office: defaultOffice };
 
 	// "Arctic Village council office: Tribal office main phone"
 	const prefixed = /^([^:]+\boffice):\s*(.*)$/i.exec(text);
@@ -130,11 +145,11 @@ export function officeAndNote(label: string | undefined): {
 	// "Passamaquoddy Tribe at Indian Township (Motahkomikuk)": a name, worth keeping.
 	if (!genericLabelStart.test(text) && !/^u\.s\./i.test(text)) {
 		return {
-			office: defaultOfficeName,
+			office: defaultOffice,
 			note: text.replace(/\s+tribal government$/i, '')
 		};
 	}
-	return { office: defaultOfficeName, note: noteFrom(text) };
+	return { office: defaultOffice, note: noteFrom(text) };
 }
 
 const minorWords = new Set([
@@ -281,20 +296,42 @@ function labelFor(kind: string): string {
 	return words.charAt(0).toLocaleUpperCase('en-US') + words.slice(1);
 }
 
+/** "https://dhhl.hawaii.gov/contact/" is on "dhhl.hawaii.gov". */
+function webHost(value: string): string {
+	return displayWebAddress(value).split('/')[0].toLocaleLowerCase('en-US');
+}
+
 /**
  * Groups contact facts by office, in the order the offices first appear, with
  * rows in a fixed order, and moves every website into a group of its own.
  * cite, when given, returns the markers for a fact's source; it is called
  * only for the rows shown, in the order they are shown: websites first.
+ * defaultOffice names the card for contacts whose label names no office
+ * (defaultOfficeFor).
  */
 export function contactCards<Fact extends ContactFact>(
 	facts: Fact[],
-	cite?: (fact: Fact) => CitationMark[] | undefined
+	cite?: (fact: Fact) => CitationMark[] | undefined,
+	defaultOffice: string = defaultOfficeName
 ): ContactCards {
+	// A contact page whose label names no office belongs to the office whose
+	// website it is on, such as an agency's "Contact us" page.
+	const websiteOffices = new Map<string, string>();
+	for (const fact of facts) {
+		if (fact.kind !== 'website' || typeof fact.value !== 'string') continue;
+		const { office } = officeAndNote(fact.label, defaultOffice);
+		if (office !== defaultOffice && !websiteOffices.has(webHost(fact.value)))
+			websiteOffices.set(webHost(fact.value), office);
+	}
 	const offices = new Map<string, { fact: Fact; row: ContactRow }[]>();
 	for (const fact of facts) {
 		if (typeof fact.value !== 'string' || fact.value.trim().length === 0) continue;
-		const { office, note: labelNote } = officeAndNote(fact.label);
+		const named = officeAndNote(fact.label, defaultOffice);
+		const office =
+			named.office === defaultOffice && fact.kind === 'contact-page'
+				? (websiteOffices.get(webHost(fact.value)) ?? named.office)
+				: named.office;
+		const labelNote = named.note;
 		// A note that only repeats part of the value, such as "Honolulu" under a Honolulu address, is left out.
 		const note =
 			labelNote &&
@@ -332,7 +369,7 @@ export function contactCards<Fact extends ContactFact>(
 		office.entries
 			.filter((entry) => entry.row.kind === 'website')
 			.map((entry) =>
-				office.name === defaultOfficeName
+				office.name === defaultOffice
 					? entry
 					: {
 							...entry,
