@@ -11,7 +11,7 @@ The repository may be public, and its history permanent. A secret committed or s
 
 - No secret is stored in GitHub.
 - Deployment uses Cloudflare Workers Builds, which deploys from the GitHub repository using an API token Cloudflare generates for the build ([build configuration](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/)).
-- Build variables live in Cloudflare's build settings, where they are "accessible only to your build" (same source); runtime secrets are Worker secrets in Cloudflare.
+- Build variables live in Cloudflare's build settings, where they are "accessible only to your build" (same source); runtime secrets are Worker secrets in Cloudflare. The site's own keys are Secrets Store secrets reached through bindings instead (decision record [0053](0053-keep-the-sites-own-keys-in-cloudflare-secrets-store.md)).
 - GitHub Actions use only GitHub's automatic per-run token.
 - Local secret files (`.env`, `.dev.vars`) are listed in `.gitignore`.
 

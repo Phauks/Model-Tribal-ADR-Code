@@ -69,7 +69,7 @@ export function testSettings(overrides: Partial<MailSettings> = {}): MailSetting
 			username: 'outreach@outreach.example.org',
 			password: 'not-a-real-password'
 		},
-		signingKey: 'test-signing-key-0123456789abcdef',
+		signingKey: { get: async () => 'test-signing-key-0123456789abcdef' },
 		...overrides
 	};
 }

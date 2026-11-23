@@ -84,7 +84,7 @@ The Outreach page (`src/routes/workspace/outreach`) has:
 
 - **Templates.** Saved messages with fields such as `{{nation.name}}` and `{{contact.greeting}}` (the list is in `src/lib/mail.ts`, `mergeFields`). Every save keeps the earlier version, and a batch keeps the version it was made from.
 - **Batches.** One message for each recipient, taken from the private address book (the preferred email in use for each contact, an address once), or typed in. A recipient missing a field the template uses, or on the do-not-email list, is left out with the reason shown. A batch sends at most its daily number in any 24 hours, two each run, and only inside its sending hours in each nation's own time zone (from the nation's state), on weekdays unless told otherwise. It can be paused and cancelled.
-- **Unsubscribe.** Every letter ends with how to stop further mail: a link, an address, and replying "stop". The message also carries `List-Unsubscribe` and `List-Unsubscribe-Post` headers, so mail programs can offer their own one-click button (RFC 8058).[^rfc8058] The link only shows a button, because mail scanners open links by themselves. Tokens are signed with `MAIL_SIGNING_KEY`.
+- **Unsubscribe.** Every letter ends with how to stop further mail: a link, an address, and replying "stop". The message also carries `List-Unsubscribe` and `List-Unsubscribe-Post` headers, so mail programs can offer their own one-click button (RFC 8058).[^rfc8058] The link only shows a button, because mail scanners open links by themselves. Tokens are signed with the mail link key (the `mailSigningKey` binding).
 - **The do-not-email list.** Addresses here get no outreach and no new messages from the inbox. Nothing takes an address off by itself; the lead author can.
 
 A reply to an outreach letter lands in the inbox, in the same conversation, tagged "Outreach reply", and the batch marks the recipient as replied.
@@ -104,7 +104,7 @@ Plain settings are in `site/wrangler.jsonc` under `vars`, because plain-text var
 | `MAIL_NOTICE_ADDRESS` | Where the "new mail" notice goes, if anywhere. Not one of the project's own addresses. |
 | `MAIL_SENDER_NAME` | The sender's name on the project's mail. |
 | `SITE_ADDRESS` | The website's address, such as `https://example.org`, for links in mail. |
-| `MAIL_SIGNING_KEY` | Secret. A long random value that signs unsubscribe and acknowledgment links. Changing it breaks links already sent. |
+| `mailSigningKey` | Binding to the Secrets Store secret `MODEL_TRIBAL_CODE_MAIL_SIGNING_KEY`, a random value that signs unsubscribe and acknowledgment links. Nothing to set. Changing it breaks links already sent. |
 | `OUTREACH_CARRIER` | `smtp` to switch outreach on; empty while it is off. |
 | `OUTREACH_FROM` | The address outreach comes from. |
 | `OUTREACH_REPLY_TO` | Where replies to outreach go, such as `replies@<domain>`. |
@@ -119,7 +119,7 @@ These steps wait for the domain (`docs/domain-to-do.md`). The DNS records are ad
 
 1. **Receiving.** In the dashboard, open the domain's Email > Email Routing and enable it; Cloudflare adds its MX records (`route1`, `route2` and `route3.mx.cloudflare.net`), an SPF record with `include:_spf.mx.cloudflare.net`, and a DKIM record.[^routing] Under Routing rules, set the catch-all to "Send to a Worker" and choose `model-tribal-adr-code`. A catch-all is needed for the `unsubscribe+` addresses and lets the inbox see mail to any address on the domain.
 2. **Sending replies.** In Email Service > Email Sending, onboard the domain. Cloudflare adds the sending SPF and DKIM records on the `cf-bounce` subdomain and a DMARC record (`p=reject`) if the domain has none.[^send] The same step serves sign-in codes (`SIGN_IN_EMAIL_FROM`).
-3. **Settings.** In `wrangler.jsonc`, set `MAIL_DOMAIN`, `MAIL_ADDRESSES`, `SITE_ADDRESS` and, if wanted, `MAIL_NOTICE_ADDRESS`, and merge that change. In the dashboard, add `MAIL_SIGNING_KEY` as a Secret (for example the output of `openssl rand -hex 32`).
+3. **Settings.** In `wrangler.jsonc`, set `MAIL_DOMAIN`, `MAIL_ADDRESSES`, `SITE_ADDRESS` and, if wanted, `MAIL_NOTICE_ADDRESS`, and merge that change. The link-signing key needs nothing: it is the `mailSigningKey` Secrets Store binding.
 4. **The database.** Run `npm run database:migrate:remote` from `site/` (or let the next deploy's migration step do it) so migration 0013 is applied.
 5. **The outreach mailbox.** Sign up for Zoho Mail Lite with the subdomain `outreach.<domain>`, add the MX, SPF and DKIM records Zoho gives (under the subdomain, so they do not touch the root domain's Cloudflare records), and add a DMARC record for the subdomain. Turn on two-factor sign-in and make an app-specific password.[^zoho-smtp] In Zoho, forward everything that reaches the mailbox to `OUTREACH_REPLY_TO`, so a reply sent to the wrong address still lands in the inbox. Then set `OUTREACH_CARRIER` to `smtp`, the other `OUTREACH_` settings in `wrangler.jsonc`, and `OUTREACH_SMTP_PASSWORD` as a Secret.
 6. **Delivery reports.** Create a queue named `mail-delivery-events`, subscribe it to Email Sending events for the domain (all six types), and add the consumer to `wrangler.jsonc`:[^events]

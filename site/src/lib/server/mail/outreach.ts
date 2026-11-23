@@ -15,6 +15,7 @@ import { fillTemplate, missingFields, normalizeSubject, snippetOf, unknownFields
 import { actionStatement, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { sendMessage } from './outbound.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
+import { mailSigningKey } from './settings.ts';
 import { makeToken, readToken } from './tokens.ts';
 
 // ---------------------------------------------------------------------------
@@ -347,7 +348,7 @@ export function outreachReadiness(context: MailContext, carriers: MailCarriers):
 	const problems: string[] = [];
 	if (!context.settings.domain) problems.push('Email is not switched on (MAIL_DOMAIN is empty).');
 	if (!context.settings.outreach || !carriers.outreach) problems.push('The outreach mail service is not set up (the OUTREACH_ settings).');
-	if (!context.settings.signingKey) problems.push('MAIL_SIGNING_KEY is not set, so unsubscribe links cannot be made.');
+	if (!context.settings.signingKey) problems.push('The mailSigningKey binding is not set, so unsubscribe links cannot be made.');
 	if (!context.settings.siteAddress) problems.push('SITE_ADDRESS is not set, so links in messages cannot be made.');
 	return problems;
 }
@@ -517,6 +518,8 @@ export async function runOutreach(context: MailContext, carriers: MailCarriers, 
 	if (outreachReadiness(context, carriers).length) return result;
 	const settings = context.settings;
 	const outreach = settings.outreach!;
+	const signingKey = await mailSigningKey(settings);
+	if (!signingKey) return result;
 	const at = currentTime(context);
 	const stamp = at.toISOString();
 	const dayAgo = new Date(at.getTime() - 86_400_000).toISOString();
@@ -553,8 +556,8 @@ export async function runOutreach(context: MailContext, carriers: MailCarriers, 
 			const fields = JSON.parse(recipient.fields) as MergeValues;
 			const messageIdentifier = crypto.randomUUID();
 			const threadIdentifier = crypto.randomUUID();
-			const unsubscribe = await makeToken(settings.signingKey!, 'unsubscribe', recipient.identifier);
-			const acknowledge = batch.ask_acknowledgment ? await makeToken(settings.signingKey!, 'acknowledge', messageIdentifier) : null;
+			const unsubscribe = await makeToken(signingKey, 'unsubscribe', recipient.identifier);
+			const acknowledge = batch.ask_acknowledgment ? await makeToken(signingKey, 'acknowledge', messageIdentifier) : null;
 			const unsubscribeLink = `${settings.siteAddress}/mail/unsubscribe/${unsubscribe}`;
 			const unsubscribeAddress = `unsubscribe+${unsubscribe}@${settings.domain}`;
 			const subject = fillTemplate(batch.subject, fields).trim();
@@ -639,8 +642,9 @@ export async function retryRecipient(context: MailContext, batchIdentifier: stri
  * Returns the address, or null for a token that is not valid.
  */
 export async function unsubscribeWithToken(context: MailContext, token: string, source: string): Promise<string | null> {
-	if (!context.settings.signingKey) return null;
-	const recipient = await readToken(context.settings.signingKey, 'unsubscribe', token);
+	const signingKey = await mailSigningKey(context.settings);
+	if (!signingKey) return null;
+	const recipient = await readToken(signingKey, 'unsubscribe', token);
 	if (!recipient) return null;
 	const row = await context.database.prepare('SELECT email FROM outreach_recipients WHERE identifier = ?').bind(recipient).first<{ email: string }>();
 	if (!row) return null;

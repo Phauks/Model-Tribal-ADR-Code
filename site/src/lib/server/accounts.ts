@@ -9,6 +9,7 @@
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { newIdentifier, now } from './identifiers.ts';
+import { storedSecret } from './stored-secrets.ts';
 import { passwordHash, passwordIterations, randomCode, randomToken, sameHash, sha256 } from './sign-in-secrets.ts';
 
 export interface Account {
@@ -112,13 +113,21 @@ export async function verifiedAccount(database: D1Database, email: string): Prom
 const unusedSalt = 'no-account-has-this-salt';
 
 /**
- * The Worker's secret password key (PASSWORD_KEY, set in the Cloudflare
- * dashboard as a secret; src/lib/server/sign-in-secrets.ts, passwordHash), or
- * nothing while it is not set. A key shorter than 32 characters is ignored.
+ * A password key long enough to use, or nothing. A key shorter than 32
+ * characters is ignored.
  */
 export function usablePasswordKey(key: string | undefined): string | undefined {
 	const trimmed = key?.trim();
 	return trimmed && trimmed.length >= 32 ? trimmed : undefined;
+}
+
+/**
+ * The Worker's secret password key (src/lib/server/sign-in-secrets.ts,
+ * passwordHash), read through the passwordKey binding to Cloudflare Secrets
+ * Store (src/lib/server/stored-secrets.ts), or nothing while it is not set.
+ */
+export async function passwordKeyOf(environment: WorkerEnvironment): Promise<string | undefined> {
+	return usablePasswordKey(await storedSecret(environment.passwordKey));
 }
 
 async function hashFor(row: AccountRow, password: string, key: string | undefined): Promise<string> {
@@ -152,7 +161,7 @@ export async function checkPassword(
 		return undefined;
 	}
 	if (row.passwordKeyed && !key) {
-		console.error('A password was made with the password key, but PASSWORD_KEY is not set.');
+		console.error('A password was made with the password key, but the passwordKey binding cannot be read.');
 		return undefined;
 	}
 	if (!sameHash(await hashFor(row, password, key), row.passwordHash)) return undefined;

@@ -48,6 +48,32 @@
 			"bucket_name": "model-tribal-adr-code-sources"
 		}
 	],
+	// The site's own keys, each a random secret in the account's Cloudflare
+	// Secrets Store, read with get() (src/lib/server/stored-secrets.ts,
+	// decision record 0053). Nobody types or copies them: they were made in
+	// the store once. passwordKey goes into every password hash and encrypts
+	// authenticator secrets, so it must never be changed or deleted once used;
+	// mailSigningKey signs unsubscribe and acknowledgment links;
+	// bookFileLinkKey signs the links Lulu downloads print files from. A store
+	// identifier is not a secret. Deploying needs a build token with the
+	// "Account Secrets Store Edit" permission.
+	"secrets_store_secrets": [
+		{
+			"binding": "passwordKey",
+			"store_id": "9ce4ac3eb1774c8c9e46e40edb0efaef",
+			"secret_name": "MODEL_TRIBAL_CODE_PASSWORD_KEY"
+		},
+		{
+			"binding": "mailSigningKey",
+			"store_id": "9ce4ac3eb1774c8c9e46e40edb0efaef",
+			"secret_name": "MODEL_TRIBAL_CODE_MAIL_SIGNING_KEY"
+		},
+		{
+			"binding": "bookFileLinkKey",
+			"store_id": "9ce4ac3eb1774c8c9e46e40edb0efaef",
+			"secret_name": "MODEL_TRIBAL_CODE_BOOK_FILE_LINK_KEY"
+		}
+	],
 	// Live editing rooms, one per essay. They run in their own Worker,
 	// model-tribal-adr-code-live (live/wrangler.jsonc), so that this site's
 	// deploys do not close people's live connections (COLLABORATION.md,
@@ -133,8 +159,8 @@
 		"SITE_ADDRESS": "https://model-tribal-adr-code.trevordgoldsmith.workers.dev",
 		// The project inbox (site/MAIL.md, "Switching email on"). While
 		// MAIL_DOMAIN is empty, the inbox pages open but no mail is received
-		// or sent. MAIL_SIGNING_KEY and OUTREACH_SMTP_PASSWORD are Secrets set
-		// in the dashboard, never here.
+		// or sent. OUTREACH_SMTP_PASSWORD is a Secret set in the dashboard,
+		// never here; the link-signing key is the mailSigningKey binding above.
 		"MAIL_DOMAIN": "",
 		"MAIL_ADDRESSES": "contact",
 		"MAIL_NOTICE_ADDRESS": "",
@@ -172,7 +198,9 @@
 	// each added as the Secret type so that deploys keep it (plain-text
 	// dashboard variables are replaced by this file on each deploy):
 	// LEAD_AUTHOR_EMAIL, the first lead author's address (COLLABORATION.md,
-	// "Setting up sign-in"); MAIL_SIGNING_KEY, which signs unsubscribe links;
-	// and OUTREACH_SMTP_PASSWORD, the outreach mailbox's app password
-	// (MAIL.md, "Switching email on").
+	// "Setting up sign-in"); OUTREACH_SMTP_PASSWORD, the outreach mailbox's
+	// app password (MAIL.md, "Switching email on"); and the Stripe and Lulu
+	// keys (docs/book-orders.md). Those come from outside services, so no
+	// binding can replace them. The site's own keys are Secrets Store bindings
+	// (secrets_store_secrets above), not dashboard secrets.
 }

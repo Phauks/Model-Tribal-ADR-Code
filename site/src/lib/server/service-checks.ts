@@ -15,6 +15,7 @@
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { latestScan, readableScanTime, readScannerVersion, scannerName, scannerVersionWords } from './file-scans.ts';
 import { forgetLuluToken, luluAccessToken, luluSettings } from './lulu.ts';
+import { storedSecret, type StoredSecret } from './stored-secrets.ts';
 import { isTestKey, stripeSettings } from './stripe.ts';
 
 export type CheckState = 'working' | 'warning' | 'problem' | 'off';
@@ -198,6 +199,38 @@ const leadAuthor: Check = {
 	}
 };
 
+/** The site's own keys, each a binding to a secret in Cloudflare Secrets Store (src/lib/server/stored-secrets.ts). */
+const siteKeyBindings = [
+	['passwordKey', 'Password key', 'MODEL_TRIBAL_CODE_PASSWORD_KEY'],
+	['mailSigningKey', 'Mail link key', 'MODEL_TRIBAL_CODE_MAIL_SIGNING_KEY'],
+	['bookFileLinkKey', 'Book file link key', 'MODEL_TRIBAL_CODE_BOOK_FILE_LINK_KEY']
+] as const;
+
+const siteKeys: Check = {
+	key: 'site-keys',
+	group: 'Cloudflare',
+	name: 'Site keys (Secrets Store)',
+	async run({ environment }) {
+		const details: string[] = [];
+		const unread: string[] = [];
+		for (const [binding, label, secretName] of siteKeyBindings) {
+			const value = await storedSecret(setting(environment, binding) as StoredSecret | undefined);
+			if (value) details.push(`${label}: readable (not shown)`);
+			else {
+				details.push(`${label}: cannot be read (binding ${binding}, secret ${secretName})`);
+				unread.push(label);
+			}
+		}
+		if (!unread.length) return { state: 'working', summary: 'Every site key can be read.', details };
+		return {
+			state: 'problem',
+			summary: `${unread.join(', ')} cannot be read.`,
+			details,
+			fix: 'Check that each secret exists in Cloudflare Secrets Store with the Workers scope (site/wrangler.jsonc, "secrets_store_secrets").'
+		};
+	}
+};
+
 const bookOrders: Check = {
 	key: 'book-orders',
 	group: 'Book orders',
@@ -206,7 +239,7 @@ const bookOrders: Check = {
 		const mode = environment.BOOK_ORDERS;
 		if (mode !== 'test' && mode !== 'live') return { state: 'off', summary: 'Off: BOOK_ORDERS is neither "test" nor "live", so nobody can order a copy.', details: [], fix: 'Set BOOK_ORDERS to "test" with Lulu sandbox and Stripe test keys first (docs/book-orders.md).' };
 		const details: string[] = [];
-		for (const name of missing(environment, ['BOOK_ORDERS_CONTACT_EMAIL', 'BOOK_FILE_LINK_SECRET'])) details.push(`Not set: ${name}`);
+		for (const name of missing(environment, ['BOOK_ORDERS_CONTACT_EMAIL', 'bookFileLinkKey'])) details.push(`Not set: ${name}`);
 		const lulu = luluSettings(environment);
 		const stripe = stripeSettings(environment);
 		if (!lulu) details.push('Lulu settings are incomplete.');
@@ -399,7 +432,7 @@ const inbox: Check = {
 		if (!domain) return { state: 'off', summary: 'Off: MAIL_DOMAIN is empty.', details: [], fix: 'Waits on the project domain and the inbox (site/MAIL.md, "Switching email on").' };
 		const details = [`Domain: ${domain}`];
 		if (!setting(environment, 'projectEmail')) return { state: 'problem', summary: 'MAIL_DOMAIN is set but the projectEmail binding is missing, so replies cannot be sent.', details };
-		if (!text(environment, 'MAIL_SIGNING_KEY')) return { state: 'problem', summary: 'MAIL_SIGNING_KEY is not set.', details, fix: `Add it as a Secret in the ${settingsPlace}.` };
+		if (!(await storedSecret(environment.mailSigningKey))) return { state: 'problem', summary: 'The mail link key cannot be read.', details, fix: 'Check the mailSigningKey binding in site/wrangler.jsonc and its secret in Cloudflare Secrets Store.' };
 		return { state: 'working', summary: `On for ${domain}. This check does not send a message.`, details };
 	}
 };
@@ -461,6 +494,7 @@ export const serviceChecks: readonly Check[] = [
 	scanner,
 	siteAddress,
 	leadAuthor,
+	siteKeys,
 	emailCheck('sign-in-email', 'Sign-in codes', 'signInEmail', 'SIGN_IN_EMAIL_FROM', 'sign-in codes'),
 	emailCheck('update-email', 'Followed-page summaries', 'updateEmail', 'UPDATE_EMAIL_FROM', 'summaries of followed pages'),
 	inbox,

@@ -78,9 +78,9 @@ async function pbkdf2(input: Uint8Array<ArrayBuffer>, salt: string, iterations: 
  * rounds, then, when the Worker has a password key, HMAC-SHA256 with that key.
  * NIST SP 800-63B-4, section 3.1.1.2, asks for this "additional iteration of
  * a keyed hashing ... operation using a secret key known only to the
- * verifier", stored apart from the hashes: the key is a Cloudflare secret
- * (PASSWORD_KEY), so a copy of the database alone is not enough to start
- * guessing passwords.
+ * verifier", stored apart from the hashes: the key is a secret in Cloudflare
+ * Secrets Store, read through the passwordKey binding, so a copy of the
+ * database alone is not enough to start guessing passwords.
  */
 export async function passwordHash(
 	password: string,

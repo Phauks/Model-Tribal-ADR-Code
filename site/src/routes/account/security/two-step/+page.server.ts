@@ -1,6 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import { needsTwoStep } from '#lib/permissions.ts';
-import { signedInRecently, usablePasswordKey } from '#lib/server/accounts.ts';
+import { passwordKeyOf, signedInRecently } from '#lib/server/accounts.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { scanCode } from '#lib/server/scan-code.ts';
 import { safeReturnPath } from '#lib/server/sign-in.ts';
@@ -44,8 +44,8 @@ function isRequired(event: RequestEvent | Parameters<PageServerLoad>[0]): boolea
 
 const signInAgain = 'For your safety, sign in again before changing two-step sign-in. It has been more than 10 minutes.';
 
-function key(): string | undefined {
-	return usablePasswordKey(workerEnvironment().PASSWORD_KEY);
+function key(): Promise<string | undefined> {
+	return passwordKeyOf(workerEnvironment());
 }
 
 async function setUpScreen(email: string, secret: string) {
@@ -58,7 +58,7 @@ export const actions: Actions = {
 	start: async (event) => {
 		const account = requireAccount(event);
 		if (!signedInRecently(event.locals.session)) return fail(403, { problem: signInAgain, stale: true });
-		const secret = await startAuthenticatorSetUp(storage(event).database, account.subject, key());
+		const secret = await startAuthenticatorSetUp(storage(event).database, account.subject, await key());
 		return setUpScreen(account.email, secret);
 	},
 
@@ -68,11 +68,11 @@ export const actions: Actions = {
 		const { database } = storage(event);
 		if (!signedInRecently(event.locals.session)) return fail(403, { problem: signInAgain, stale: true });
 		const typed = String((await event.request.formData()).get('code') ?? '').trim();
-		const secret = await newAuthenticatorSecretFor(database, account.subject, key());
+		const secret = await newAuthenticatorSecretFor(database, account.subject, await key());
 		if (!secret) return fail(400, { problem: 'Setting up has not started, or has already finished. Start again.' });
 		const again = async (problem: string) => fail(400, { problem, field: 'code' as const, ...(await setUpScreen(account.email, secret)) });
 		if (!/^\d{6}$/.test(typed.replace(/\s+/g, ''))) return again('Enter the six-digit code your app shows.');
-		const result = await finishAuthenticatorSetUp(database, account.subject, typed, key(), event.locals.session?.tokenHash);
+		const result = await finishAuthenticatorSetUp(database, account.subject, typed, await key(), event.locals.session?.tokenHash);
 		if (result.outcome !== 'done') {
 			return again('That code is not right. Check that the time on your phone is set automatically, then type the code it shows now.');
 		}

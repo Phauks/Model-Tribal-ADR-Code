@@ -1,5 +1,5 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { endSession, sessionCookie, usablePasswordKey } from '#lib/server/accounts.ts';
+import { endSession, passwordKeyOf, sessionCookie } from '#lib/server/accounts.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { clearSessionCookie, safeReturnPath } from '#lib/server/sign-in.ts';
 import { markSignedIn } from '#lib/server/signed-in-hint.ts';
@@ -43,7 +43,7 @@ export const actions: Actions = {
 			session.account.identifier,
 			session.tokenHash,
 			typed,
-			usablePasswordKey(environment.PASSWORD_KEY)
+			await passwordKeyOf(environment)
 		);
 		if (result.outcome === 'too-many') {
 			clearSessionCookie(cookies);

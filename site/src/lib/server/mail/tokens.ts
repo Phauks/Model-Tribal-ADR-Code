@@ -2,7 +2,7 @@
  * Signed tokens for the links and addresses in outreach messages: the
  * unsubscribe link and address, and the visible "let us know you got this"
  * link. A token names one row (an outreach recipient or a message) and is
- * signed with MAIL_SIGNING_KEY (HMAC with SHA-256, Web Crypto), so nobody can
+ * signed with the mailSigningKey secret (HMAC with SHA-256, Web Crypto), so nobody can
  * make one for another row.
  *
  * Tokens use lower-case base 32, because some mail systems change the case

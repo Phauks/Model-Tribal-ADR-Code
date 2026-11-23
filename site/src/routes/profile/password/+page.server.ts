@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { provedRecently, removePassword, setPassword, tryPassword, usablePasswordKey } from '#lib/server/accounts.ts';
+import { provedRecently, removePassword, setPassword, passwordKeyOf, tryPassword } from '#lib/server/accounts.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { newPasswordProblem } from '#lib/server/password-checks.ts';
 import { requireAccount, storage } from '#lib/server/workspace.ts';
@@ -37,7 +37,7 @@ async function currentPasswordProblem(event: RequestEvent, typed: string): Promi
 		storage(event).database,
 		session.account.email,
 		typed,
-		usablePasswordKey(workerEnvironment().PASSWORD_KEY)
+		await passwordKeyOf(workerEnvironment())
 	);
 	if (result.outcome === 'accepted') return undefined;
 	if (result.outcome === 'wrong') return 'Your current password is not right.';
@@ -68,7 +68,7 @@ export const actions: Actions = {
 			account.subject,
 			password,
 			event.locals.session?.tokenHash,
-			usablePasswordKey(workerEnvironment().PASSWORD_KEY)
+			await passwordKeyOf(workerEnvironment())
 		);
 		return {
 			done: 'Your password is saved. Any other browser signed in to your account has been signed out.',
