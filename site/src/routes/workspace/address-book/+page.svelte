@@ -77,7 +77,7 @@
 <p class="small">
 	{data.totals.contacts} contacts, {data.totals.withEmail} with an email in use, {data.totals.stale} needing a check.
 	<a href="/workspace/address-book/mailing-list.csv" download>Download the mailing list (CSV)</a>: one email per
-	contact, the preferred one in use.
+	contact, the preferred one in use. <a href="/workspace/address-book/differences">Differences with the nation pages</a>.
 </p>
 
 {#if form && 'problem' in form}
@@ -134,8 +134,9 @@
 	<p class="small">
 		Reads the federal Tribal Leaders Directory and the State of Alaska's list of tribes, and checks every email in use
 		that came from one of them. An email still listed counts as checked today; one no longer listed is marked replaced,
-		and the address now listed is added to the same contact. Emails read on a nation's own website are checked by hand on
-		each contact's page.
+		and the address now listed is added to the same contact. Then it brings in any office email or phone a nation page
+		shows that the book lacks. Emails read on a nation's own website are checked by hand on each contact's page. This also
+		runs by itself once a week.
 	</p>
 	<button class="button" type="submit">Check now</button>
 </form>

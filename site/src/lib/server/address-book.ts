@@ -29,6 +29,7 @@ import {
 	type MethodStatus,
 	type SourceKind
 } from '#lib/address-book.ts';
+import { differences, type BookOfficeMethod, type PublicNationContacts } from '#lib/address-book-sync.ts';
 import { newIdentifier, now } from './identifiers.ts';
 
 export const federalDirectoryLink =
@@ -794,4 +795,127 @@ export function mailingList(contacts: ContactEntry[]): MailingRecipient[] {
 		});
 	}
 	return recipients;
+}
+
+// ---------------------------------------------------------------------------
+// Keeping in step with the nation pages (src/lib/address-book-sync.ts)
+// ---------------------------------------------------------------------------
+
+/** Every office email and phone in the book that belongs to a nation, in use or not. */
+export async function bookOfficeMethods(database: D1Database): Promise<BookOfficeMethod[]> {
+	const { results } = await database
+		.prepare(
+			`SELECT methods.method, methods.value, methods.status, methods.note, methods.source_label, methods.source_link,
+			        contacts.nation_identifier
+			 FROM contact_methods AS methods
+			 JOIN contacts ON contacts.identifier = methods.contact_identifier
+			 WHERE methods.label = 'general-office' AND contacts.nation_identifier IS NOT NULL`
+		)
+		.all<{
+			method: ContactMethodKind;
+			value: string;
+			status: MethodStatus;
+			note: string | null;
+			source_label: string;
+			source_link: string | null;
+			nation_identifier: string;
+		}>();
+	return results.map((row) => ({
+		method: row.method,
+		value: row.value,
+		status: row.status,
+		note: row.note,
+		sourceLabel: row.source_label,
+		sourceLink: row.source_link,
+		nationIdentifier: row.nation_identifier
+	}));
+}
+
+/** The nation's government in the address book, added when it is not there yet. */
+async function nationGovernment(
+	database: D1Database,
+	nationIdentifier: string,
+	name: string,
+	personIdentifier: string | null
+): Promise<string> {
+	const found = await database
+		.prepare(
+			`SELECT contacts.identifier FROM contacts
+			 JOIN contact_tags ON contact_tags.contact_identifier = contacts.identifier AND contact_tags.tag = 'nation-government'
+			 WHERE contacts.nation_identifier = ? AND contacts.kind = 'organization'
+			 ORDER BY contacts.created_at LIMIT 1`
+		)
+		.bind(nationIdentifier)
+		.first<{ identifier: string }>();
+	if (found) return found.identifier;
+	const added = await addContact(
+		database,
+		{ kind: 'organization', name, nationIdentifier, role: 'Government', tags: ['nation-government'] },
+		personIdentifier
+	);
+	if (!added.ok) throw new Error(added.problem);
+	return added.identifier;
+}
+
+/**
+ * Adds to the address book every office email and phone a nation page shows
+ * that the book does not hold at all, on the nation's government contact,
+ * with the page's source and the date the profile gives for it. An address
+ * the book holds but marks out of use is left alone: that is a difference for
+ * the lead author to settle, usually by correcting the page.
+ */
+export async function bringInPageContacts(
+	database: D1Database,
+	pages: PublicNationContacts[],
+	personIdentifier: string | null,
+	day: string
+): Promise<number> {
+	const missing = differences(pages, await bookOfficeMethods(database)).filter((found) => found.kind === 'page-only');
+	const byNation = new Map(pages.map((page) => [page.identifier, page]));
+	let added = 0;
+	for (const found of missing) {
+		const page = byNation.get(found.nationIdentifier);
+		const contact = page?.contacts.find((item) => item.method === found.method && item.value === found.value);
+		if (!page || !contact) continue;
+		const government = await nationGovernment(database, page.identifier, page.name, personIdentifier);
+		const result = await addContactMethod(
+			database,
+			government,
+			{
+				method: contact.method,
+				value: contact.value,
+				label: 'general-office',
+				sourceKind: contact.sourceKind,
+				sourceLabel: contact.sourceTitle || 'Nation page',
+				sourceLink: contact.sourceLink,
+				directoryName: contact.directoryName,
+				verifiedOn: contact.asOf && /^\d{4}-\d{2}-\d{2}$/.test(contact.asOf) ? contact.asOf : day,
+				note: 'Brought in from the nation page.'
+			},
+			personIdentifier
+		);
+		// A phone written differently from one the contact already has is refused as a duplicate; that is fine.
+		if (result.ok) added += 1;
+	}
+	return added;
+}
+
+export interface WeeklySummary extends RefreshSummary {
+	broughtIn: number;
+}
+
+/**
+ * The weekly run: check the directories, then bring in what the nation pages
+ * show and the book lacks. Run by the site's scheduled job and by the Address
+ * book page's "Check now".
+ */
+export async function weeklyAddressBookRun(
+	database: D1Database,
+	fetcher: Fetcher,
+	pages: PublicNationContacts[],
+	personIdentifier: string | null,
+	day: string
+): Promise<WeeklySummary> {
+	const summary = await refreshFromDirectories(database, fetcher, personIdentifier, day);
+	return { ...summary, broughtIn: await bringInPageContacts(database, pages, personIdentifier, day) };
 }
