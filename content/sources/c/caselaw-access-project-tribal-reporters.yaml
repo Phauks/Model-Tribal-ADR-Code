@@ -1,0 +1,30 @@
+key: caselaw-access-project-tribal-reporters
+kind: dataset
+citation:
+  type: dataset
+  title: Caselaw Access Project, West's American Tribal Law Reporter (vols. 1-13) and Navajo Reporter (vols. 1-8)
+  author:
+  - literal: Harvard Law School Library, Library Innovation Lab
+  container-title: Caselaw Access Project
+  URL: https://static.case.law/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 23
+original_link: https://static.case.law/
+retrieved: '2026-11-23'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-23'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: >-
+    Court opinions are the work of judges acting in their official role, which the government edicts doctrine keeps out of copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)), and the Library Innovation Lab released this data without restriction in March 2024 with the publisher's headnotes removed. Whether the doctrine reaches tribal courts is unsettled; the site serves the opinions under decision record 0047 and takes a copy down when a nation asks (project analysis, not legal advice).
+  redistribution: true
+found_in:
+- 2026-11-23-free-legal-information-sources
+notes: >-
+  2,368 opinions of tribal courts, 1969 to 2017, indexed in research/tribal-court-opinions/ by scripts/caselaw/tribal_court_opinions.py. Each opinion is served as its own page at /copies/caselaw-access-project/<reporter>/<volume>/<case>.html. Release: Harvard Library Innovation Lab, Transitions for the Caselaw Access Project (Mar. 26, 2024), https://lil.law.harvard.edu/blog/2024/03/26/transitions-for-the-caselaw-access-project.

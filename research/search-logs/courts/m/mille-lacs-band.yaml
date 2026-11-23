@@ -1,7 +1,7 @@
 profile: content/tribes/m/mille-lacs-band.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -237,3 +237,14 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Returned mlbo.dev and court-rule documents; the nation's millelacsband.com pages above were confirmed by fetch.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240707202055/https://www.mncourts.gov/mncourtsgov/media/scao_library/CJI/TCSCF-Members-Tribal-Court-Judges-(website-December-2022).pdf
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Minnesota Tribal Court/State Court Forum members list (Wayback Machine copy of 2024-07-07)
+    names judges of the nation's court under "Mille Lacs Band of Ojibwe Tribal Court and Court of Appeals".
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://mlbo.dev/government/judicial-branch
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

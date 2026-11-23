@@ -1,7 +1,7 @@
 profile: content/tribes/f/fond-du-lac-band.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -91,4 +91,21 @@ searches:
   - research/reviews/2026-11-22-dispute-resolution-coverage.json#fond-du-lac-band-1
   - research/reviews/2026-11-22-dispute-resolution-coverage.json#fond-du-lac-band-2
   - research/reviews/2026-11-22-dispute-resolution-coverage.json#fond-du-lac-band-3
-next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240411030756/http://www.fdlrez.com/GOVERNMENT/COURTMAIN.HTM
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2024-04-11 ("FDL Tribal Government - Tribal Court") shows codes
+    or ordinances, a court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240416020043/https://fdlrez.com/government/fdlordinances.htm
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2024-04-16 ("FDL Tribal Government - Ordinances") shows codes or
+    ordinances, a court.

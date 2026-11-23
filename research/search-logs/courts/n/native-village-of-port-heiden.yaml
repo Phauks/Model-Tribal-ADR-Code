@@ -1,7 +1,7 @@
 profile: content/tribes/n/native-village-of-port-heiden.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -204,3 +204,15 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: SSL handshake failed through the proxy; not retried.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240801082406/https://lakeandpen.com/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: blocked
+  reason: The Wayback Machine copy of 2024-08-01 holds only the site's bot check or loading page, not
+    its content.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://lakeandpen.com/sitemap.xml,
+  https://www.nativevillageofportheiden.com (no readable copy on 2026-11-23, directly or in the Wayback
+  Machine).'

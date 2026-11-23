@@ -26,7 +26,7 @@ at /help/forms/<slug>.docx and .pdf and shows each file's hash beside its
 download link. checksums.json also records the SHA-256 of each form's
 Markdown file and of the variables files, so the site's tests fail when a
 form or a placeholder changes and the copies were not built again
-(decision record 0047).
+(decision record 0049).
 """
 from __future__ import annotations
 

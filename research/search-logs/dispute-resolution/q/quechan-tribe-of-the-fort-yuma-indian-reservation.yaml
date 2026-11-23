@@ -1,7 +1,7 @@
 profile: content/tribes/q/quechan-tribe-of-the-fort-yuma-indian-reservation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -63,4 +63,14 @@ searches:
   reason: 1 candidate(s) kept for the lead author's review (Gate 1); none is in the profile yet.
   records:
   - research/reviews/2026-11-22-dispute-resolution-coverage.json#quechan-tribe-of-the-fort-yuma-indian-reservation-1
-next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: http://quechantribalcourt.info/Quechan_Law_and_Order_Co.html
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: error
+  reason: 'Still not readable on 2026-11-23 (direct request: no answer), and the Wayback Machine had no
+    copy.'
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://quechantribalcourt.info/Quechan_Law_and_Order_Co.html
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

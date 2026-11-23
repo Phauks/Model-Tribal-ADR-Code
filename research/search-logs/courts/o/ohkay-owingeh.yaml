@@ -1,7 +1,7 @@
 profile: content/tribes/o/ohkay-owingeh.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -163,6 +163,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Returned the nation's Tribal Court page as the lead, then fetched it.
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Ohkay Owingeh
-  Tribal Court (court-227, cannot-tell). No website of the nation''s own could be read; the Tribe''s office
-  could be asked whether it runs a court.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261121135837/http://ohkay.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-11-21 ("Ohkay Owingeh &#8211; The place of the Strong People")
+    shows the nation's court and links to its code.

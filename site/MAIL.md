@@ -21,6 +21,10 @@ Auto-sort rules then run on the message (see "Folders, tags and rules" below), e
 
 If a notice address is set, one short "new mail" message goes there at most every 30 minutes. It never quotes the mail, so the message stays in the project's storage. Filing that fails makes Email Routing refuse the message for now, so the sender's server tries again later; nothing is lost silently.
 
+### Attachments and the virus check
+
+Every attachment of a message that arrives is put in line for the site's virus scanner as soon as it is stored ([SCANNING.md](SCANNING.md)), and it is held until the scan says clean. While it is held, the conversation shows the file with where the check stands instead of a download link, and a forward cannot include it. A file where something was found is held for good. One the scanner could not finish (locked with a password, too large) can be released by someone who manages the inbox, with a short reason that goes in the conversation's history. Attachments the project sends are the team's own files and are not held. When a deleted conversation is removed for good, its files' scan records go with it. The code is in `src/lib/server/mail/scans.ts`.
+
 ## How mail goes out
 
 Every message the inbox sends is written to the database first, then handed to a carrier (`src/lib/server/mail/carriers.ts`):

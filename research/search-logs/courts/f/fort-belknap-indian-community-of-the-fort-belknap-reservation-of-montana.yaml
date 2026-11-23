@@ -261,6 +261,14 @@ searches:
     the lead author''s order (own page, then directory entry): own-page, https://ftbelknap.org/courts.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-087
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261114195053/https://ftbelknap.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-11-14 (""); it shows no court.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-068,
   not-found-after-search); Fort Belknap Tribal Court (court-069, not-found-after-search). No page or official
   directory entry was found on 2026-11-22 for “Tribal Court”; “Fort Belknap Tribal Court” (research/reviews/2026-11-22-service-links.json).

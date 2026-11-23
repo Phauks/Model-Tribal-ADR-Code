@@ -695,6 +695,17 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+jurisdiction_agreements:
+- kind: cross-deputization
+  other_party: Snohomish County Sheriff, Washington
+  agreement: Cooperative law enforcement agreement (sheriff commissions of tribal deputies)
+  state: WA
+  status: unknown
+  source: stillaguamish-tribe-snohomish-county-cooperative-law-enforcement-agreement
+  confidence: high
+  verification: read-in-full
+  locator: Section on commissions
+  note: 'The source reads: “suspend or revoke the Tribal Commission of any”. The copy is undated. The posted copy is a sample in a federal resource library; current status is not confirmed.'
 treaties:
 - title: Treaty with the Dwamish, Suquamish, etc., 1855
   signed: '1855-01-22'

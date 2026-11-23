@@ -1,7 +1,7 @@
 profile: content/tribes/n/native-village-of-scammon-bay.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -169,3 +169,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: 'Scammon Bay entry: active court Yes; type ''Tribal Court, working on a wellness court.'' Text read from the directory PDF as extracted in ak-dir/dir.txt (fetch.py does not extract PDFs).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260202052222/http://www.narf.org/nill/tribes/native_scammon%20bay.html
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-02-02 of the National Indian Law Library's page for the
+    village; it lists no code or court of its own, only general links.

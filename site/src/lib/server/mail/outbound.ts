@@ -14,6 +14,7 @@ import { snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/
 import { buildRawMessage, newMessageId, type OutgoingAttachment, type OutgoingMail } from './mime.ts';
 import { actionStatement, bucketKeys, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { noticeHeader } from './inbound.ts';
+import { mayHandOut } from './scans.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
 
 /** Cloudflare Email Service takes at most 50 recipients and 25 MiB a message ("Limits"). */
@@ -171,15 +172,19 @@ async function forwardedAttachments(
 	if (chosen.length === 0) return [];
 	const { results } = await context.database
 		.prepare(
-			`SELECT a.filename, a.media_type, a.bucket_key FROM mail_attachments a JOIN mail_messages m ON m.identifier = a.message_identifier
+			`SELECT a.filename, a.media_type, a.bucket_key, m.direction FROM mail_attachments a JOIN mail_messages m ON m.identifier = a.message_identifier
 			 WHERE m.thread_identifier = ? AND a.message_identifier = ? AND a.identifier IN (${chosen.map(() => '?').join(', ')})`
 		)
 		.bind(threadIdentifier, forward.message, ...chosen)
-		.all<{ filename: string; media_type: string; bucket_key: string }>();
+		.all<{ filename: string; media_type: string; bucket_key: string; direction: string }>();
 	const found = [];
 	for (const row of results) {
 		const object = await context.bucket.get(row.bucket_key);
 		if (!object) throw new CompositionError(`The attachment ${row.filename} is no longer stored, so it cannot be forwarded.`);
+		// A received file goes on only once the virus check has passed (src/lib/server/mail/scans.ts).
+		if (!(await mayHandOut(context, { key: row.bucket_key, received: row.direction === 'in' }, object))) {
+			throw new CompositionError(`The attachment ${row.filename} is held until the virus check passes, so it cannot be forwarded yet. Untick it to forward the message without it.`);
+		}
 		found.push({ filename: row.filename, mediaType: row.media_type, content: new Uint8Array(await object.arrayBuffer()) });
 	}
 	return found;

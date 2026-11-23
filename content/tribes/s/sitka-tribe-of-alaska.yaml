@@ -583,6 +583,18 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Alaska Department of Health and Social Services
+  agreement: Title IV-E tribal provider agreement (administration and training costs, no maintenance funding)
+  state: AK
+  date: '2002-04-01'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.A, Alaska
+  note: 'The source reads: “Sitka Tribe of Alaska is a federally recognized tribe with an agreement executed on April”. Part of the eleven identical Alaska form agreements. The state agency is inferred. Report date is March 2014, so current status needs confirming.'
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

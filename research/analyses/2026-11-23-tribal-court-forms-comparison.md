@@ -40,7 +40,7 @@ A model form keeps an element that most of the courts share, and adds one that o
 
 ## 5. Where the forms appear
 
-The website lists files in `content/forms/` at /forms as "Model forms," which can be filled in on screen and printed, and sends nothing to the project ([forms.ts](../../site/src/lib/forms.ts)). Word and PDF copies are built by [scripts/forms/build_forms.py](../../scripts/forms/build_forms.py) and offered on each form's page with their SHA-256 hashes (decision record [0047](../../docs/decisions/0047-draft-model-court-forms-before-gate-2.md)).
+The website lists files in `content/forms/` at /forms as "Model forms," which can be filled in on screen and printed, and sends nothing to the project ([forms.ts](../../site/src/lib/forms.ts)). Word and PDF copies are built by [scripts/forms/build_forms.py](../../scripts/forms/build_forms.py) and offered on each form's page with their SHA-256 hashes (decision record [0049](../../docs/decisions/0049-draft-model-court-forms-before-gate-2.md)).
 
 ## Sources
 

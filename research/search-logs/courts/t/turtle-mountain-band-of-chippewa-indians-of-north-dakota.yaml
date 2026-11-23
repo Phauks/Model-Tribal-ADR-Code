@@ -262,6 +262,15 @@ searches:
     found against the lead author''s order (own page, then directory entry): directory, https://www.ndcourts.gov/other-courts/tribal.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-387
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260501080538/https://tmchippewa.com/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The Wayback Machine copy of the sitemap (2026-05-01) lists no court, code or dispute resolution
+    page.
 next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court”; “Turtle Mountain
   Chippewa Tribal Court” (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23
   linked “Tribal Court”; “Turtle Mountain Chippewa Tribal Court” (research/reviews/2026-11-22-service-links.json).
