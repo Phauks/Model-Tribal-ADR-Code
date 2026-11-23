@@ -1,6 +1,6 @@
 # 0034. Show the whole story on its page where the rights allow
 
-- **Status:** Accepted (lead author, Nov. 22, 2026)
+- **Status:** Accepted (lead author, Nov. 22, 2026); amended by [0036](0036-show-every-story-in-full.md)
 - **Date:** 2026-11-22
 - **Amends:** [0019](0019-story-records.md) and [0029](0029-show-stories-while-nations-review-them.md), for website display only
 

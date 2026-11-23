@@ -176,6 +176,255 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Yavapai-Apache Tribal Council
+  quote: shall be known as the Yavapai-Apache Tribal
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: consist of nine (9) members
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: governing-body-selection
+  value: Elected by the voters (Chairperson, Vice Chairperson)
+  quote: voters shall select the Chairperson and Vice Chairperson
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VIII, Section 10
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: shall be three (3) years.
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall be in charge of the Executive
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VII, Section 1
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the voters
+  quote: voters shall select the Chairperson and Vice Chairperson
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VIII, Section 10
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: shall be three (3) years.
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: other-officers
+  value: Vice Chairperson, Secretary, Treasurer
+  quote: Vice Chairperson, Secretary and Treasurer
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VII, Section 1
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: elections
+  value: Annual, third Saturday of September
+  quote: third Saturday of September.
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VIII, Section 5
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VIII, Section 8
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: election-authority
+  value: Election Board
+  quote: Election Board. The Tribal
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VIII, Section 2
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: branches
+  value: Legislature, Judiciary and Executive Department
+  quote: the Legislature, the Judiciary and the
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article III, Section 1
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: No person or group of persons
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article III, Section 1
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: judiciary
+  value: Tribal Court and Court of Appeals
+  quote: a Court of Appeals and other lower courts
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VI, Section 1
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: one (1) Chief Judge and as many
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VI, Section 5
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: judicial-term
+  value: 2 years
+  quote: of two (2) years.
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article VI, Section 6
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: amendment
+  value: Majority vote of qualified voters in a Secretarial election
+  quote: may be amended by a majority
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article XVI
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: become effective until approved by
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article XVI
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Tribal Council
+  quote: Council may suspend or remove
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article IV, Section 6
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
+- aspect: recall-and-removal
+  value: Recall by petition of 35% of eligible voters
+  quote: thirty-five (35) percent
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992-04-13'
+  locator: Article IV, Section 7(c)
+  document_version:
+    document: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract opens with the 1992 BIA approval letters and has heavy reading errors in several passages.'
 governing_documents:
 - kind: law-code
   title: Yavapai-Apache Nation - Criminal Code and Code of Criminal Procedure

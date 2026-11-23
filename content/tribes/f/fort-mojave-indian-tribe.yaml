@@ -169,6 +169,158 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+governance:
+- aspect: form
+  value: Adopted under the Indian Reorganization Act of June 18, 1934
+  quote: accordance with Section 16 of Che Indian Reorganization
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Certificate of Results of Election
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Fort Mojave Tribal Council shall have the following
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: governing-body-selection
+  value: Elected by the voters
+  quote: General elections to vote for councilmen shall be held
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: office for a term of four (4) years.
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Sec. 2
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: head-of-government
+  value: Chairman
+  quote: shall be an election for Chairman and Vice-Chairman by the registered
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Sec. 3
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the registered voters
+  quote: shall be an election for Chairman and Vice-Chairman by the registered
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Sec. 3
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: head-of-government-term
+  value: Consistent with tenure as a Councilman
+  quote: shall hold such office for a term consistent with his tenure as a
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Sec. 3
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: The Council shall choose a secretary and a treasurer from
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Sec. 4
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: elections
+  value: Every year on the first Saturday in June
+  quote: every year on the first Saturday in June.
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: voting-age
+  value: '18'
+  quote: members, eighteen (18) years of age or older who are registered to
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Art. VI, Sec. 5(A)
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: judiciary
+  value: Council may set rules for tribal courts
+  quote: The authority to establish and prescribe rules for governing
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1(Q)
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: recall-and-removal
+  value: Removal by 2/3 vote of the Council
+  quote: If the Council decides by a 2/3 vote that a member of the
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 2
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of registered voters
+  quote: Secretary signed by at least thirty percent (30%) of the registered
+  source: constitution-fort-mojave-indian-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Sec. 4(A)
+  document_version:
+    document: fort-mojave-indian-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Pages 2-3 and the start of Article III are missing from the scan, so council size is not stated; the certificate dates adoption to November 13, 1976, though the batch version is undated.'
 governing_documents:
 - kind: law-code
   title: Fort Mojave Indian Tribe

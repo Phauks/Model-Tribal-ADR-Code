@@ -135,6 +135,207 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Act of Congress of June 18, 1934
+  quote: and by authority of, the Act of Congress of June 18, 1934 (48 Stat.
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Preamble
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: governing-body
+  value: Council
+  quote: Council composed of the Chief and six other members elected by the
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: governing-body-size
+  value: 7 members (Chief and six others)
+  quote: Council composed of the Chief and six other members elected by the
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: governing-body-selection
+  value: Elected by the adult members of the Community
+  quote: adult members of the Community.
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: The Chief of the Council shall serve for a term of two years.
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: general-council
+  value: All members of the Community; meets twice a year
+  quote: Regular meetings of the Community shall be held twice
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article V, Section 1
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: head-of-government
+  value: Chief
+  quote: 1. The Chief of the Council
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: King Island Native Community
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the adult members of the Community
+  quote: adult members of the Community.
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The Chief of the Council shall serve for a term of two years.
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: other-officers
+  value: Vice-Chief, Secretary, Treasurer
+  quote: Chief, and from within or without, a Secretary, a Treasurer, and such
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article III, Section 2(b)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: elections
+  value: Annual, on the last Monday in December
+  quote: the last Monday in December the adult members
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: voting-age
+  value: '21'
+  quote: the age of 21 years
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article V, Section 3
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: amendment
+  value: Majority vote of adult members at a Secretarial election
+  quote: by a majority vote of the adult members of the Community
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article VIII
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if approved by the Secretary of the
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article VIII
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of adult members
+  quote: Upon a petition signed by one-third
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article VI, Section 1(c)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
+- aspect: recall-and-removal
+  value: Council may declare seat vacant after absence from 3 regular meetings
+  quote: Any member of the Council who is absent from three regular
+  source: constitution-king-island-native-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-31'
+  locator: Article VI, Section 1(b)
+  document_version:
+    document: king-island-native-community-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1939 text with heavy damage; article headings and some lines are garbled, so some facts rest on partly legible lines.'
 governing_documents:
 - kind: constitution
   title: Constitution

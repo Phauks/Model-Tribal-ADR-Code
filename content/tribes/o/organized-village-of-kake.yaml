@@ -195,6 +195,207 @@ government_structure:
   as_of: '1947'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Acts of Congress of June 18, 1934 and May 1, 1936
+  quote: of Congress of June 18, 1934 (48 Stat. 984), and May 1 , 1936 (49 Stat.
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Preamble
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Council
+  quote: The governing body of this Village shall be a Council
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article III, Section 1
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: President and 6 members (7 in all)
+  quote: composed of the president and six members, elected by the membership
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article III, Section 1
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by village membership over age 18
+  quote: of the village over the age of 18
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article III, Section 1
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years
+  quote: shall serve for a period of two years or until their successors
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article III, Section 3
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: The president shall be elected annually to serve for a term
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article III, Section 4
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Organized Village of Kake
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected annually
+  quote: The president shall be elected annually to serve for a term
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article III, Section 4
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: The president shall be elected annually to serve for a term
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article III, Section 4
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice president, secretary, treasurer
+  quote: annual election date by electing from within its membership a vice
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article III, Section 6
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: First Thursday after the third Monday in April
+  quote: after the third Monday in April.
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article IV, Section 1
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: means a person who is 18 years of age or
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: By-laws, Article V, Section 2
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Council, under its rules and regulations
+  quote: accordance with the rules and regulations of the Council
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article IV, Section 4
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of members 21 and over at election called by the Secretary, 30% turnout
+  quote: This Constitution and By-laws may be amended by a majority vote
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article IX
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: until it shall have been approved by the Secretary of the
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article IX
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of adult members, then vote at special meeting
+  quote: Upon a petition signed by one-third of the adult
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article VII, Section 1(c)
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Seat declared vacant by the Council after 3 months of unexcused absence
+  quote: may have his seat declared vacant by the Council
+  source: constitution-organized-village-of-kake-1948-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-27'
+  locator: Article VII, Section 1(b)
+  document_version:
+    document: organized-village-of-kake-constitution
+    version: 1948-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: At tribal court's website . Judicial Peacemaking Code; Keex Kwaan Domestic Relations Code

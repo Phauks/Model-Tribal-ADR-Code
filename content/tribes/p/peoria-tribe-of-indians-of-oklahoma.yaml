@@ -215,6 +215,255 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted under the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
+  quote: Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936 (49 Stat. 1967).
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Preamble
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: governing-body
+  value: Peoria Council
+  quote: The Peoria Council shall be the supreme governing body of the Tribe.
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article VIII, Section 1
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: governing-body
+  value: Business Committee
+  quote: The Business Committee shall serve as the legislative body of the Tribe and
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article VIII, Section 2
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: 'The officials of the Tribe shall consist of seven (7) members of the Business Committee:'
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article V
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: governing-body-selection
+  value: Elected in staggered annual elections
+  quote: 'This system shall continue with staggered elections of:'
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article IX, Section 2
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: All terms of office shall be for four (4) years and elections shall be held on the first Saturday
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article IX, Section 2
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: general-council
+  value: All tribal members 18 or older
+  quote: The Peoria Council shall consist of all tribal members who are at least eighteen (18)
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article IV
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: head-of-government
+  value: Chief
+  quote: Chief . It shall be the duty of the Chief to preside at all meetings and perform
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article VI, Section 1
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Peoria Tribe of Indians of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected in annual election
+  quote: (a) Chief and two (2) members of the Grievance Committee.
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article IX, Section 2
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: All terms of office shall be for four (4) years and elections shall be held on the first Saturday
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article IX, Section 2
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: other-officers
+  value: Second Chief, Secretary, Treasurer, three Councilmen
+  quote: Chief, Second Chief, Secretary, Treasurer, and three (3) Councilmen; and a five (5) member
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article V
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: elections
+  value: First Saturday of March, when terms expire
+  quote: All terms of office shall be for four (4) years and elections shall be held on the first Saturday
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article IX, Section 2
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: voting-age
+  value: '18'
+  quote: provided the member is eighteen (18) years of age or over on the date of the election.
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article IX, Section 4
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: election-authority
+  value: Election Committee
+  quote: The Business Committee shall appoint five (5) members
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article IX, Section 3
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: judiciary
+  value: Court of Indian Offenses until a separate Tribal Court is established
+  quote: Tribe shall be exercised by the Court of Indian Offenses.
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article XVI, Section 1
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: amendment
+  value: Majority vote of Business Committee or 30% petition, then referendum majority
+  quote: Amendments to this Constitution may be proposed by a majority vote of the Business
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article XIX
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by the Secretary of the Interior, shall be submitted to a referendum vote
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article XIX
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: recall-and-removal
+  value: Recall by petition of 10% of the Peoria Council
+  quote: Upon receipt of a valid petition signed by at least ten percent (10%)
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article XI, Section 2
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: recall-and-removal
+  value: Removal for cause by majority of the total membership of the body
+  quote: power to remove any of its members for cause by affirmative vote of a majority of the total
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article XI, Section 1
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
+- aspect: other
+  value: Grievance Committee of five members elected by the Peoria Council
+  quote: The Grievance Committee shall consist of five (5) members who shall be
+  source: constitution-peoria-tribe-of-indians-of-oklahoma-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-08-13'
+  locator: Article VII, Section 1
+  document_version:
+    document: peoria-tribe-of-indians-of-oklahoma-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the BIA transmittal letter of 13 August 1997 and a certificate of results before the constitution text.'
 governing_documents:
 - kind: law-code
   title: Tribal code

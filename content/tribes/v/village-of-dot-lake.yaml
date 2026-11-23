@@ -178,6 +178,195 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Village of Dot Lake
+governance:
+- aspect: form
+  value: Constitution adopted under inherent sovereign authority
+  quote: We adopt this Constitution as a federally recognized tribe, under our inherent sovereign authority.
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Preamble
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Dot Lake Tribal Council
+  quote: The governing body of the Dot Lake Tribe shall be the
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 4, Section 1
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Dot Lake Tribal Council shall consist of 5 members.
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 4, Section 2
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected at annual membership meeting
+  quote: each year at the annual membership meeting in Dot Lake in June.
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 8, Section 2
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: office for 3 year terms, provided that shorter terms may be used to initiate a staggering
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 4, Section 4
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  quote: The President shall be the first in command to preside over
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 5, Section 4
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Village of Dot Lake
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Decided among the Council each year
+  quote: among the Council each year after the annual election.
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 4, Section 2
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every year, at the annual membership meeting in June
+  quote: each year at the annual membership meeting in Dot Lake in June.
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 8, Section 2
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: Enrolled tribal members, 18 years of age or older who are physically present
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 8, Section 1
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election committee appointed by the Council
+  quote: election committee of at least two adults who are not tribal members to supervise,
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 8, Section 4
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal courts or other judicial bodies (Council may establish)
+  quote: appropriate tribal courts or other judicial bodies.
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 9, Section 3(D)
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Vote of qualified voters in a special election
+  quote: This Constitution may be amended by the qualified voters of the Dot Lake Tribe voting
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 16
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by tribal voters by petition and special election
+  quote: Any member of the Dot Lake Tribal Council may be recalled by the
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 6, Section 2
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by Council, at least 4 votes
+  quote: minimum of 4 Council members must vote in favor of the removal.
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 6, Section 1
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Referendum referred by 4 Council votes
+  quote: The Council, by an affirmative vote of at least 4 of its
+  source: constitution-village-of-dot-lake-2016-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2016-07-09'
+  locator: Article 11, Section 2
+  document_version:
+    document: village-of-dot-lake-constitution
+    version: 2016-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

@@ -174,6 +174,207 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Approved under Act of June 18, 1934
+  quote: ct of june 18, 19.3.1 (48 Stat. 984)
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Approval page
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council shall choose from ~ts own
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article IV, Section 7
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: governing-body-size
+  value: 1 to 4 representatives per village, by population
+  quote: accordingly to its population
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article IV, Section 1
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: governing-body-selection
+  value: Representatives chosen by each village
+  quote: c.ecide for itself
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article IV, Section 4
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: governing-body-term
+  value: 2 years (representatives)
+  quote: shall be two (2:) yeus
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman dnd Vke-Chaiw1an shall be elected
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article IV, Section 7
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Hopi Tribe of Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot of all members of the Tribe
+  quote: shall be elected by secret ballot by all men-
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article IV, Section 7
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: 'shall serye fDr a tenn 0: four (4) years.'
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article IV, Section 9
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: other-officers
+  value: Secretary, treasurer, sergeant-at-arms, interpreters
+  quote: a sec:E:tary, O'E.lsurer, sergerli,t-at-arms md interpreters
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article IV, Section 7
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: voting-age
+  value: '18'
+  quote: (18) yea:s of age or over shall
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article IV, Section 8
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: judiciary
+  value: Council may set up courts for settlement of disputes
+  quote: set up courts for
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article VI, Section 1(g)
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: amendment
+  value: Council majority approval, then referendum called by Secretary of the Interior
+  quote: it shall request the Secretary of the
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article X
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: be adopted SLio;ect to the S£CIEt~ry'S ~Fproval
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article X
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: recall-and-removal
+  value: Automatic removal on certain convictions
+  quote: of a felony, or of dnmkenn;ss, shall
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article V, Section 1
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds Council vote for serious neglect of duty
+  quote: by a vote at not less than
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article V, Section 2
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
+- aspect: other
+  value: Village Kikmongwi recognized as village leader
+  quote: the Kikmongwi of su~h viH3ge shall be recognized as ite le~d('r.
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-12-07'
+  locator: Article II, Section 3
+  document_version:
+    document: hopi-tribe-of-arizona-constitution
+    version: 1993-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is heavily garbled; facts come only from legible passages of the 1936 text and 1969 amendments, the 1980 and 1993 amendments are not legibly reproduced although the cover names 1993, and quotes are copied as read.'
 governing_documents:
 - kind: law-code
   title: Hopi Indian Tribe, Law and Order Code

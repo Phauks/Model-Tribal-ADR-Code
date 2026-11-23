@@ -204,6 +204,231 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and bylaws under Indian Reorganization Act of June 18, 1934
+  quote: in accordance with section 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by the act of June 15, 1935 (49 Stat. 378).
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: Certificate of Adoption
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: governing-body
+  value: Fort Hall Business Council
+  quote: The governing body of the Shoshone-Bannock Tribes of the Fort Hall Reservation shall be a council known as the Fort Hall Business Council.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE II-MEMBERSHIP (second heading), SECTION 1
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The business council shall consist of seven council members to be elected from the reservation-at-large as set forth hereafter.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE II-MEMBERSHIP (second heading), SEC. 2
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: governing-body-selection
+  value: Elected from the reservation at large
+  quote: The business council shall consist of seven council members to be elected from the reservation-at-large as set forth hereafter.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE II-MEMBERSHIP (second heading), SEC. 2
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: The term of office of a councilman shall be for a period of 2 years unless otherwise provided herein.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE IV-NOMINATIONS AND ELECTIONS, SECTION 1
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman of the business council shall preside over all meetings of the tribes and all meetings of the business council.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: BYLAWS, ARTICLE I-THE BUSINESS COUNCIL, SECTION 1
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Shoshone-Bannock Tribes of the Fort Hall Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the business council from its own number
+  quote: The business council so organized shall elect from within its own number (1) a chairman and (2) a vice chairman
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE II-MEMBERSHIP (second heading), SEC. 5
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The term of office of a councilman shall be for a period of 2 years unless otherwise provided herein.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE IV-NOMINATIONS AND ELECTIONS, SECTION 1
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: other-officers
+  value: Vice chairman, secretary, treasurer
+  quote: (2) a vice chairman, and from within or without its own membership (3) a secretary, and (4) a treasurer,
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE II-MEMBERSHIP (second heading), SEC. 5
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: elections
+  value: Every year
+  quote: thereafter elections for the business council shall be held every year and shall be called at least 60 days prior to the expiration of terms of office.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE IV-NOMINATIONS AND ELECTIONS, SECTION 1
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: voting-age
+  value: '21'
+  quote: All members of the tribes over the age of 21 years shall have the right to vote in all tribal reservation elections.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE VII-BILL OF RIGHTS, SECTION 1
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: election-authority
+  value: Business council or an election board appointed by the council
+  quote: The business council or an election board appointed by the council, shall determine rules and regulations governing all elections.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE IV-NOMINATIONS AND ELECTIONS, SEC. 2
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: judiciary
+  value: Reservation court, established by business council ordinance
+  quote: providing for the maintenance of law and order and the administration of justice by establishing a reservation court and defining its duties and powers.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE VI-POWERS AND DUTIES OF THE BUSINESS COUNCIL, SECTION 1(k)
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: amendment
+  value: Majority of qualified voters voting, with 30% turnout
+  quote: If at such election the amendment is adopted by a majority of the qualified voters of the tribes voting thereon and if at least 30 percent of those entitled to vote shall vote in such election
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE X-AMENDMENTS, SECTION 1
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: such amendment shall be submitted to the Secretary of the Interior and if approved by him, shall thereupon take effect.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE X-AMENDMENTS, SECTION 1
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: recall-and-removal
+  value: Expulsion by four council votes for neglect of duty or misconduct
+  quote: The business council may by four affirmative votes expel any member for neglect of duty or gross misconduct.
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE V-VACANCIES AND REMOVAL FROM OFFICE, SEC. 2
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon receipt of a petition signed by one-third of the eligible voters on a reservation-wide basis calling for the recall of any member of the council
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE V-VACANCIES AND REMOVAL FROM OFFICE, SEC. 3
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
+- aspect: other
+  value: Annual general meeting of the tribes; tribal resolutions govern council action
+  quote: the wishes of the people may be expressed by resolutions which shall govern the future action of the business council
+  source: constitution-shoshone-bannock-tribes-of-the-fort-hall-reservation-2013-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2013'
+  locator: ARTICLE VI, SEC. 5
+  document_version:
+    document: shoshone-bannock-tribes-of-the-fort-hall-reservation-constitution
+    version: 2013-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract mixes the 1936 constitution, its 1985 amendments and a 2013 header, and its article headings are garbled: the council provisions sit under a second ''ARTICLE II-MEMBERSHIP'' heading but cite Article III, and the referendum article is repeated in the bylaws.'
 governing_documents:
 - kind: law-code
   title: Law and Order Code of the Shoshone-Bannock Tribes

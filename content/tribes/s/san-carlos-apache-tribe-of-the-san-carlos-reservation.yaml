@@ -220,6 +220,159 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Amended Constitution and Bylaws under the Act of June 18, 1934
+  quote: June 18, 1934 (48 Stat. 984), as amended, do hereby approve
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Approval
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: governing-body
+  value: San Carlos Council
+  quote: Carlos Council.
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article I, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: governing-body-size
+  value: Chairman, vice-chairman and 9 members; number changeable by ordinance
+  quote: Sec. 4. The Council, from time to time, may by ordinance change
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IV, Section 4
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: governing-body-selection
+  value: Elected by popular vote, by district
+  quote: Three members, by popular vote of the Bylas District;
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman, by popular vote of the Tribe;
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by popular vote of the Tribe
+  quote: Chairman, by popular vote of the Tribe;
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: Secretary. The secretary shall conduct all tribal cor-
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Bylaws, Article I, Section 3
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: elections
+  value: Councilmen every 2 years, Chairman every 4 years, first Tuesday in April
+  quote: years on the first Tuesday in April.
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article VIII, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: shall be appointed by the Tribal
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Bylaws, Article V, Section 5
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: amendment
+  value: Majority vote of qualified voters in an election called by the Secretary
+  quote: qualified voters of the Tribe voting at an
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article XIII
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: been approved by the Secretary of the Interior.
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article XIII
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: recall-and-removal
+  value: Council removal by two-thirds vote, then reelection
+  quote: defense, require such member to stand for
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IX, Section 2
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
 governing_documents:
 - kind: constitution
   title: Constitution

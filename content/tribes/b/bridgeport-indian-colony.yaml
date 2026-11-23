@@ -120,6 +120,267 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Bridgeport Indian Colony
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of June 18, 1934
+  quote: establish and adept this document in accordance with the Indian Reorganization
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Preamble
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Colony shall be the Tribal Council, except
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: governing-body
+  value: General Council
+  quote: All powers of the Colony shall be vested in the General Council,
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Council shall consist of five (5) tribal members eighteen (18) years of age
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: governing-body-selection
+  value: Elected at large by the General Council
+  quote: The five (5) Tribal Council members shall be elected
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: to serve staggered terms of two (2)
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: general-council
+  value: All enrolled members 18 or older
+  quote: The General Cbuncil shall consist of all duly enrolled members
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article IV, Section 3(a)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: 'The Chairperson shall have the following duties:'
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article VII, Section 1
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Bridgeport Indian Colony
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Council
+  quote: shall elect three (3) officers and two (2) at-large members
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article VI, Section 8
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: to serve staggered two (2) year terms
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article VI, Section 8
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary/Treasurer
+  quote: Section 3. Secretary/Treasurer.
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article VII, Section 3
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: elections
+  value: Third Saturday of July as terms expire
+  quote: shall be held an the third (3rd) Saturday of the month of July
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article VI, Section 7(c)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: voting-age
+  value: '18'
+  quote: (18) years of age an the date of the election shall be eligible to vote
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article VI, Section 4
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: election-authority
+  value: Election Board
+  quote: An election board, appointed by the Cblany Chairperson and approved by
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article VI, Section 2
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: branches
+  value: General Council, Tribal Council and Tribal Judiciary
+  quote: 'distinct branches: the General Council, the Tribal Council and the Tribal'
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article IV, Section 1
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: properly belonging to one of these branches shall exercise any powers belonging
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article IV, Section 1
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: judiciary
+  value: Supreme Court and inferior courts
+  quote: Vested in a Supreme Court and in such other inferior courts as the
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article V, Section 9(b)(1)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: judicial-selection
+  value: Chief judge appointed by the Tribal Council
+  quote: The Supreme Court shall consist of a chief judge, appointed by the
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article V, Section 9(b)(2)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: secretarial-approval
+  value: Only when Federal law requires
+  quote: when required to do so by Federal law
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article IX, Section 4
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Tribal Council
+  quote: If a majority of the Tribal Council vote to remove the
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article XI, Section 1
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of General Council voters
+  quote: If one-third (1/3) of the eligible voters of
+  source: constitution-bridgeport-indian-colony-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-08-17'
+  locator: Article XI, Section 2(a)
+  document_version:
+    document: bridgeport-indian-colony-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1994 Amended Constitution is followed in the extract by the superseded 1976 constitution and its 1979 amendments, which were not used; Articles XIV-XVI (amendment and adoption) are missing from the 1994 pages.'
 governing_documents:
 - kind: law-code
   title: Bridgeport Paiute Indian Colony

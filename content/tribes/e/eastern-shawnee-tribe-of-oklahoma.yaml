@@ -183,6 +183,315 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
+  quote: Oklahoma Indian Welfare Act of June 26, 1936 (49 Stat. 1967), do adopt
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Preamble
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Eastern Shawnee Business Committee
+  quote: Tribe shall be vested in the Eastern Shawnee Business Committee.
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article VIII, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 6 members
+  quote: Business Committee shall include the Second Chief, Secretary, Treasurer
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article VIII, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: (b) Elect business committee members and officers;
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article IV, Section 2
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Thereafter, all terms of office shall be for four (4) years.
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article VIII, Section 5
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All members 18 years and older
+  quote: The supreme governing body of the Eastern Shawnee Tribe shall
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article IV, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  quote: in the office of the Chief of the Eastern Shawnee Tribe.
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article VII, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Eastern Shawnee Tribe of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority of votes cast by qualified voters
+  quote: elected by a majority of the votes cast by the qualified voters of
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article VII, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: the Tribe for a term of four (4) years.
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article VII, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Second Chief, Secretary, Treasurer
+  quote: Business Committee shall include the Second Chief, Secretary, Treasurer
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article VIII, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Regular elections on the first Saturday following Labor Day
+  quote: the first Saturday following Labor Day for the purpose of electing tribal
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article XI, Section 3
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: the age of eighteen (18) years at the time of the election shall have
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article XI, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election Board
+  quote: An election board, appointed by the Chief
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article XI, Section 5
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: branches
+  value: Executive, Legislative and Judicial
+  quote: of the Eastern Shawnee Tribe shall be composed of three (3) separate
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article VI
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: separation-of-powers
+  value: Stated
+  quote: of the Eastern Shawnee Tribe shall be composed of three (3) separate
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article VI
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court, with Court of Indian Offenses until the Tribal Court is established
+  quote: the judicial authority of the Tribe shall be exercised by the
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article X, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Selected by the Chief, confirmed by the Business Committee
+  quote: Judges of the Eastern Shawnee Tribe shall be selected by the Chief
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article X, Section 3(d)
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: 6 years
+  quote: Judges of the Eastern Shawnee Tribe shall serve six (6) year terms
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article X, Section 3(e)
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Judges not removable for their decisions
+  quote: office because of his/her decision in any case before the court.
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article X, Section 3(f)
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Pay may not be diminished during term
+  quote: by the Business Committee which shall not be diminished during his/her
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article X, Section 3(g)
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of registered voters in a Secretarial election, 30% must vote
+  quote: may be amended by a majority vote of the registered voters of the Eastern
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article XIX
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall become effective until it has been approved by the Secretary of
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article XIX
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of voters who cast ballots in the last general election
+  quote: by at least thirty-percent (30%) of the total number of registered
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article XIII, Section 2(A)
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by unanimous vote of remaining Business Committee members
+  quote: be removed from office by unanimous vote of the remaining members of
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article XIII, Section 1
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Initiative and referendum on petition of 30 eligible voters
+  quote: a petition signed by at least thirty (30) eligible voters of the Tribe.
+  source: national-indian-law-library-constitution-constitutions-eastern-shawnee
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-06-17'
+  locator: Article XIV, Sections 1-2
+  document_version:
+    document: eastern-shawnee-tribe-of-oklahoma-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Eastern Shawnee Tribe of Oklahoma - Tribal Constitution

@@ -80,6 +80,15 @@ federal_administration:
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
   note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
     taken from its entry.
+governance:
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Minnesota Chippewa Tribe - Leech Lake Band
