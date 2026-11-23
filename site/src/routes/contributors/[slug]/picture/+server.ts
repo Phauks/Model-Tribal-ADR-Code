@@ -1,19 +1,22 @@
 import { error } from '@sveltejs/kit';
 import { contributorPictureKey } from '#lib/server/contributor-pages.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
+import { openScannedFile } from '#lib/server/file-scans.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = false;
 
 /**
  * The picture on a contributor's page, served from the private bucket only
- * while the page shows it (docs/contributor-profiles.md, "Profile pictures").
+ * while the page shows it (docs/contributor-profiles.md, "Profile pictures")
+ * and once the virus check passes (site/SCANNING.md).
  */
 export const GET: RequestHandler = async ({ params }) => {
 	const { database, sourceDocuments: bucket } = workerEnvironment();
 	const key = database && bucket ? await contributorPictureKey(database, params.slug) : undefined;
-	const object = key ? await bucket!.get(key) : null;
-	if (!object) error(404, 'There is no picture here.');
+	const opened = key ? await openScannedFile(database!, bucket!, key) : null;
+	if (!opened || opened.state !== 'ready') error(404, 'There is no picture here.');
+	const object = opened.object;
 	return new Response(object.body as unknown as ReadableStream, {
 		headers: {
 			'content-type': 'image/jpeg',

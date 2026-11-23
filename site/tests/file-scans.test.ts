@@ -9,12 +9,17 @@ import {
 	fileScan,
 	fileScans,
 	forgetScan,
+	heldFileAnswer,
+	latestScan,
 	mayServe,
+	openScannedFile,
+	readScannerVersion,
 	releaseByHand,
 	requestScan,
 	scanAgain,
 	scanStatusWords,
 	stillScanning,
+	storeSentFile,
 	type FileScan
 } from '#lib/server/file-scans.ts';
 import { chooseProvider, containerProvider, httpProvider, noScanning, type Fetcher } from '#lib/server/scanning/providers.ts';
@@ -262,6 +267,86 @@ describe('holding and releasing files', () => {
 	});
 });
 
+describe('storing and opening sent files', () => {
+	let database: D1Database;
+	let bucket: ReturnType<typeof memoryBucket>;
+	beforeEach(() => {
+		database = testDatabase();
+		bucket = memoryBucket();
+	});
+
+	async function markClean(objectKey: string): Promise<void> {
+		const etag = bucket.files.get(objectKey)!.etag;
+		await database.prepare(`UPDATE file_scans SET status = 'clean', object_etag = ? WHERE object_key = ?`).bind(etag, objectKey).run();
+	}
+
+	it('stores a sent file and holds it in one step', async () => {
+		await storeSentFile(database, bucket, { objectKey: 'requests/r/1', purpose: 'request-file', subject: 'R-1', bytes: new Uint8Array([1, 2]) });
+		expect(bucket.files.has('requests/r/1')).toBe(true);
+		expect(await fileScan(database, 'requests/r/1')).toMatchObject({ status: 'waiting', purpose: 'request-file', subject: 'R-1' });
+	});
+
+	it('leaves nothing behind if the file cannot be put in line', async () => {
+		const deleted: string[] = [];
+		const failing = {
+			...bucket,
+			put: bucket.put,
+			delete: async (key: string) => void deleted.push(key),
+			files: bucket.files
+		} as unknown as R2Bucket;
+		const broken = { prepare: () => ({ bind: () => ({ run: async () => Promise.reject(new Error('no table')) }) }) } as unknown as D1Database;
+		await expect(storeSentFile(broken, failing, { objectKey: 'requests/r/2', purpose: 'request-file', bytes: new Uint8Array([1]) })).rejects.toThrow('no table');
+		expect(deleted).toEqual(['requests/r/2']);
+	});
+
+	it('opens a file only once it is clean, and only the bytes that were scanned', async () => {
+		let reads = 0;
+		const counting = { ...bucket, get: async (key: string) => ((reads += 1), bucket.get(key)) } as unknown as R2Bucket;
+		await storeSentFile(database, bucket, { objectKey: 'nation-pages/n/pictures/p', purpose: 'nation-picture', bytes: new Uint8Array([1]) });
+
+		const waiting = await openScannedFile(database, counting, 'nation-pages/n/pictures/p');
+		expect(waiting.state).toBe('held');
+		// A held file is not even read from the bucket.
+		expect(reads).toBe(0);
+		if (waiting.state === 'ready') throw new Error('not held');
+		expect(heldFileAnswer(waiting)).toEqual({
+			status: 403,
+			message: 'Waiting for the virus check. The file is in line for the virus check and is held until it passes.'
+		});
+
+		await markClean('nation-pages/n/pictures/p');
+		const ready = await openScannedFile(database, counting, 'nation-pages/n/pictures/p');
+		expect(ready.state).toBe('ready');
+
+		// Replaced behind the scanner's back: held again.
+		await bucket.put('nation-pages/n/pictures/p', 'other bytes');
+		expect((await openScannedFile(database, counting, 'nation-pages/n/pictures/p')).state).toBe('held');
+	});
+
+	it('holds a file that was never put in line, and says when a cleared file is gone', async () => {
+		await bucket.put('profile-pictures/x/1.jpg', 'picture');
+		const never = await openScannedFile(database, bucket, 'profile-pictures/x/1.jpg');
+		expect(never).toEqual({ state: 'held', scan: null });
+
+		await requestScan(database, { objectKey: 'profile-pictures/x/1.jpg', purpose: 'profile-picture' });
+		await markClean('profile-pictures/x/1.jpg');
+		bucket.files.delete('profile-pictures/x/1.jpg');
+		const gone = await openScannedFile(database, bucket, 'profile-pictures/x/1.jpg');
+		expect(gone.state).toBe('missing');
+		if (gone.state === 'ready') throw new Error('not missing');
+		expect(heldFileAnswer(gone).status).toBe(404);
+	});
+
+	it('never opens a flagged file', async () => {
+		await storeSentFile(database, bucket, { objectKey: 'requests/r/3', purpose: 'request-file', bytes: new Uint8Array([1]) });
+		await database.prepare(`UPDATE file_scans SET status = 'flagged', reason = 'Eicar-Test-Signature' WHERE object_key = ?`).bind('requests/r/3').run();
+		const opened = await openScannedFile(database, bucket, 'requests/r/3');
+		expect(opened.state).toBe('held');
+		if (opened.state === 'ready') throw new Error('not held');
+		expect(heldFileAnswer(opened).message).toContain('Virus found');
+	});
+});
+
 describe('the scan desk', () => {
 	let database: D1Database;
 	let bucket: ReturnType<typeof memoryBucket>;
@@ -397,5 +482,41 @@ describe('the scan desk', () => {
 		alarm = null;
 		await desk.alarm();
 		expect(alarm).toBe(Date.parse('2030-01-01T00:01:00.000Z'));
+	});
+});
+
+describe('which scanner checked a file', () => {
+	it('reads the engine’s version string', () => {
+		expect(readScannerVersion('engine/1+yara-rules/20261120+clamav-db/28191-20261122')).toEqual({
+			engine: '1',
+			yaraRules: '2026-11-20',
+			clamavDatabase: '28191',
+			clamavDatabaseDate: '2026-11-22'
+		});
+		expect(readScannerVersion('engine/1+yara-rules/off+clamav-db/28191')).toEqual({
+			engine: '1',
+			yaraRules: 'none',
+			clamavDatabase: '28191',
+			clamavDatabaseDate: null
+		});
+		expect(readScannerVersion(null)).toBeNull();
+	});
+
+	it('says when, by which scanner and with which signatures', async () => {
+		const database = testDatabase();
+		await requestScan(database, { objectKey: 'requests/r/1', purpose: 'request-file' });
+		expect(scanStatusWords(await fileScan(database, 'requests/r/1')).checkedBy).toBeNull();
+		await database
+			.prepare(
+				`UPDATE file_scans SET status = 'clean', provider = 'container', finished_at = '2026-11-23T04:51:09.000Z',
+				 engine_version = 'engine/1+yara-rules/20261120+clamav-db/28191-20261122' WHERE object_key = ?`
+			)
+			.bind('requests/r/1')
+			.run();
+		const scan = await fileScan(database, 'requests/r/1');
+		expect(scanStatusWords(scan).checkedBy).toBe(
+			'Checked Nov. 23, 2026, 04:51 UTC by the project’s scanner (ClamAV and YARA): ClamAV signatures 28191 of Nov. 22, 2026, YARA Forge rules of Nov. 20, 2026, engine 1.'
+		);
+		expect((await latestScan(database))?.objectKey).toBe('requests/r/1');
 	});
 });

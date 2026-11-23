@@ -12,6 +12,7 @@ import {
 	type SignedInAccount
 } from '#lib/server/contributor-profiles.ts';
 import { readProfileForm } from '#lib/server/contributor-form.ts';
+import { fileScan } from '#lib/server/file-scans.ts';
 import { cleanJpeg, removePicture, savePicture } from '#lib/server/profile-pictures.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
 import { testDatabase } from './database.ts';
@@ -201,6 +202,7 @@ describe('profile pictures', () => {
 		await savePicture(database, bucket, profile, cleaned.bytes);
 		const withPicture = (await profileBySubject(database, account.subject))!;
 		expect(bucket.files.has(withPicture.pictureKey!)).toBe(true);
+		expect(await fileScan(database, withPicture.pictureKey!)).toMatchObject({ status: 'waiting', purpose: 'profile-picture' });
 		expect(await contributorPictureKey(database, 'ada-lovelace')).toBe(withPicture.pictureKey);
 		expect((await contributorPage(database, 'ada-lovelace'))?.pictureVersion).toBe(withPicture.pictureUpdatedAt);
 
@@ -210,6 +212,7 @@ describe('profile pictures', () => {
 
 		await removePicture(database, bucket, withPicture);
 		expect(bucket.files.size).toBe(0);
+		expect(await fileScan(database, withPicture.pictureKey!)).toBeNull();
 		await savePicture(database, bucket, (await profileBySubject(database, account.subject))!, cleaned.bytes);
 		await deleteProfile(database, (await profileBySubject(database, account.subject))!, bucket);
 		expect(bucket.files.size).toBe(0);

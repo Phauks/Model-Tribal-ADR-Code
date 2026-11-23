@@ -189,7 +189,7 @@ export const actions: Actions = {
 				? { pictures: [...(current as { pictures: NationPicture[] }).pictures, ...(ownDraft.content as { pictures: NationPicture[] }).pictures] }
 				: current;
 		const errors: Record<string, string> = {};
-		const raw = await rawContent(kind, form, base, (file) => savePicture(bucket, nation.identifier, file), errors);
+		const raw = await rawContent(kind, form, base, (file) => savePicture(database, bucket, nation.identifier, file), errors);
 		const { content, problem: contentProblem } = readContent(kind, raw);
 		const firstError = Object.values(errors)[0];
 		if (firstError || contentProblem) return fail(400, { kind, problem: firstError ?? contentProblem });

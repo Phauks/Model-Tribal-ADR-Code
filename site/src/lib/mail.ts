@@ -156,6 +156,9 @@ export const deliveryLabels: Record<string, string> = {
 	complained: 'Marked as spam by the recipient'
 };
 
+/** The note on a message that waits for its attachments to pass the virus check (outbound.ts, sendMessage). */
+export const heldForVirusCheck = 'Waiting for the virus check. It goes out when its files pass.';
+
 export const messageStatusLabels: Record<string, string> = {
 	received: 'Received',
 	draft: 'Draft',

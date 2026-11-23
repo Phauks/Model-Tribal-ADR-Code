@@ -150,6 +150,24 @@ describe('service checks', () => {
 		expect(result.state).toBe('problem');
 	});
 
+	it('shows which scanner last checked a file, and warns when its signatures are old', async () => {
+		const env = environment();
+		await env.database
+			.prepare(
+				`INSERT INTO file_scans (object_key, purpose, status, provider, engine_version, requested_at, finished_at)
+				 VALUES ('requests/r/1', 'request-file', 'clean', 'container', 'engine/1+yara-rules/20261120+clamav-db/28191-20261122', '2026-11-23T04:50:00Z', '2026-11-23T04:51:09Z')`
+			)
+			.run();
+		const [fresh] = await runServiceChecks({ environment: env, fetcher: noNetwork, migrationFiles, now: new Date('2026-11-23T05:00:00Z') }, 'scanner');
+		expect(fresh.state).toBe('working');
+		expect(fresh.details.slice(0, 2)).toEqual([
+			'Last file checked Nov. 23, 2026, 04:51 UTC (request-file) by the project’s scanner (ClamAV and YARA).',
+			'Versions: ClamAV signatures 28191 of Nov. 22, 2026, YARA Forge rules of Nov. 20, 2026, engine 1.'
+		]);
+		const [stale] = await runServiceChecks({ environment: env, fetcher: noNetwork, migrationFiles, now: new Date('2026-12-05T05:00:00Z') }, 'scanner');
+		expect(stale).toMatchObject({ state: 'warning', summary: 'The last scan used ClamAV signatures 13 days old.' });
+	});
+
 	it('turns a check that throws into a result instead of stopping the page', async () => {
 		const env = environment({ sourceDocuments: { list: async () => { throw new Error('bucket gone'); } } });
 		const result = await check('bucket', env);

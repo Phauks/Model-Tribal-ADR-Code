@@ -1,11 +1,13 @@
 import { error } from '@sveltejs/kit';
+import { heldFileAnswer, openScannedFile } from '#lib/server/file-scans.ts';
 import { requirePermission, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
 
 /**
  * Downloads a file sent with a request, for editors only. The file is always
  * downloaded, never shown as a page of this site, and never cached, so an
- * uploaded file cannot run in the site's name.
+ * uploaded file cannot run in the site's name. It is held until the virus
+ * check passes (site/SCANNING.md).
  */
 export const GET: RequestHandler = async (event) => {
 	requirePermission(event, 'read-requests');
@@ -20,8 +22,12 @@ export const GET: RequestHandler = async (event) => {
 		.bind(event.params.reference, event.params.source)
 		.first<{ fileKey: string | null; fileName: string | null; fileType: string | null }>();
 	if (!source?.fileKey) error(404, 'No such file.');
-	const object = await bucket.get(source.fileKey);
-	if (!object) error(404, 'The file is no longer stored.');
+	const opened = await openScannedFile(database, bucket, source.fileKey);
+	if (opened.state !== 'ready') {
+		const answer = heldFileAnswer(opened);
+		error(answer.status, answer.message);
+	}
+	const object = opened.object;
 
 	const name = source.fileName ?? 'file';
 	// Header values must be plain ASCII; the full name goes in filename*.

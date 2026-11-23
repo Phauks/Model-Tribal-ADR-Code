@@ -18,6 +18,7 @@ import {
 	type NationPicture
 } from '../nation-page-changes.ts';
 import { eventStatement } from './events.ts';
+import { storeSentFile } from './file-scans.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 import type { UploadedFile } from './request-form.ts';
@@ -294,9 +295,20 @@ export async function picturesEverNamed(database: D1Database, nationIdentifier: 
  * deleted there, so an earlier version can always be restored; only the
  * pictures in the live version are served to readers.
  */
-export async function savePicture(bucket: R2Bucket, nationIdentifier: string, file: UploadedFile): Promise<string> {
+export async function savePicture(
+	database: D1Database,
+	bucket: R2Bucket,
+	nationIdentifier: string,
+	file: UploadedFile
+): Promise<string> {
 	const identifier = newIdentifier();
-	await bucket.put(pictureKey(nationIdentifier, identifier), file.bytes, {
+	// Held until the virus check passes (site/SCANNING.md): readers and the
+	// team see it only once it is clean.
+	await storeSentFile(database, bucket, {
+		objectKey: pictureKey(nationIdentifier, identifier),
+		purpose: 'nation-picture',
+		subject: nationIdentifier,
+		bytes: file.bytes,
 		httpMetadata: { contentType: file.type },
 		customMetadata: { fileName: file.name }
 	});
