@@ -1,6 +1,6 @@
 /**
  * Storage for the project's review of what nations publish on their own
- * pages (decision record 0041, "Stage 3"; migration 0022). The rules are in
+ * pages (decision record 0041, "Stage 3"; migration 20261123T0438_add_nation_page_review.sql). The rules are in
  * src/lib/nation-page-review.ts. Every step is also written to the activity
  * log under the nation's page, beside the team's own changes.
  */

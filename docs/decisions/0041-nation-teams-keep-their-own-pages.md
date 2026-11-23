@@ -38,7 +38,7 @@ A proposal with mockups set out how a person proves they speak for a nation, the
 - Places count as grants on the nation's record in `grantsOf` (`site/src/lib/server/access.ts`), so every existing check, including reviews, sees them; anyone on a team approves the record in the nation's capacity.
 - New pages: `/profile/nation-team` (ask to join), `/workspace/nation-teams` (the lead author's list), `/workspace/nation-teams/requests/<reference>` (confirm or decline) and `/workspace/nation-teams/<nation>` (the team).
 - Stage 2: migration 0020 adds `nation_page_changes` and `nation_team_report_answers`; new pages `/workspace/nation-teams/<nation>/edit` and `/workspace/nation-teams/<nation>/changes`; `/nations/<id>/changes.json` and `/nations/<id>/pictures/<picture>` are served by the Worker, and `tools/add-nation-page-changes.mjs` makes the Worker run first for `/nations/*`.
-- Stage 3: migration 0022 adds `nation_page_reviews` and `nation_page_pauses`; new page `/workspace/nation-pages`, permission `review-nation-pages` for the lead author and editors.
+- Stage 3: migration 20261123T0438_add_nation_page_review.sql adds `nation_page_reviews` and `nation_page_pauses`; new page `/workspace/nation-pages`, permission `review-nation-pages` for the lead author and editors.
 - The "Nation reviewer" role stays for people the project adds by hand; a person new to the project who joins a team gets that role for the team's nation.
 
 ## Sources

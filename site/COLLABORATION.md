@@ -113,7 +113,7 @@ A team edits its nation's page at `/workspace/nation-teams/<nation>/edit` (decis
 - **Pause and ask.** Publishing for the nation stops until the project resumes it, and the team sees the question at the top of its edit page and answers there. Drafts, cancelling a waiting change and hiding keep working, so a nation can always take something off its page.
 - **Suspend** the person who published it, with everyone they added (the lead author only, as on the team page). Their changes stay until undone.
 
-Reviews and pauses are in `nation_page_reviews` and `nation_page_pauses` (migration 0022); the rules are in `src/lib/nation-page-review.ts` and the storage in `src/lib/server/nation-page-review.ts`. Every step goes into the sealed activity log under `nation-page/<nation>`.
+Reviews and pauses are in `nation_page_reviews` and `nation_page_pauses` (migration 20261123T0438_add_nation_page_review.sql); the rules are in `src/lib/nation-page-review.ts` and the storage in `src/lib/server/nation-page-review.ts`. Every step goes into the sealed activity log under `nation-page/<nation>`.
 
 Still to build: emails to a nation's office about changes, notices to people following the page, and the nightly copy into `content/tribes` with source records. Teams open to nations once the project domain can send email.
 

@@ -73,7 +73,7 @@ export type Permission =
 	| 'manage-mail'
 	// Hiding parts of a change in Recent changes (migrations/0017_page_changes.sql): the lead author only.
 	| 'hide-changes'
-	// Reading what nations publish on their own pages, undoing it or pausing it (migrations/0022_nation_page_review.sql).
+	// Reading what nations publish on their own pages, undoing it or pausing it (migrations/20261123T0438_add_nation_page_review.sql).
 	| 'review-nation-pages';
 
 const grants: Record<Role, readonly Permission[]> = {
