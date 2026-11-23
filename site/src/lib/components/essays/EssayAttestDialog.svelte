@@ -34,6 +34,7 @@
 	let section = $state<AttestSection | null>(null);
 	let role = $state<AttestationRole>('wrote');
 	let note = $state('');
+	let shownToReaders = $state(true);
 	let problem = $state('');
 	let sending = $state(false);
 
@@ -45,6 +46,7 @@
 	export async function show(chosen: AttestSection): Promise<void> {
 		section = chosen;
 		role = canWriteOrEdit ? 'wrote' : 'reviewed';
+		shownToReaders = role !== 'reviewed';
 		note = '';
 		problem = '';
 		sending = false;
@@ -69,13 +71,26 @@
 		const response = await fetch(`/workspace/essays/${essay}/attestations`, {
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
-			body: JSON.stringify({ role, slug: section.slug, title: section.title, level: section.level, text: section.text, note })
+			body: JSON.stringify({ role, slug: section.slug, title: section.title, level: section.level, text: section.text, note, shownToReaders })
 		}).catch(() => null);
 		const updated = response ? await answer(response) : ((problem = 'The site could not be reached. Try again.'), null);
 		sending = false;
 		if (!updated) return;
 		onchange(updated);
 		dialog?.close();
+	}
+
+	async function setShown(attestation: Attestation, shown: boolean): Promise<void> {
+		sending = true;
+		problem = '';
+		const response = await fetch(`/workspace/essays/${essay}/attestations?attestation=${encodeURIComponent(attestation.identifier)}`, {
+			method: 'PATCH',
+			headers: { 'content-type': 'application/json' },
+			body: JSON.stringify({ shownToReaders: shown })
+		}).catch(() => null);
+		const updated = response ? await answer(response) : ((problem = 'The site could not be reached. Try again.'), null);
+		sending = false;
+		if (updated) onchange(updated);
 	}
 
 	async function withdraw(attestation: Attestation): Promise<void> {
@@ -102,8 +117,9 @@
 				<ul class="attested">
 					{#each shown as attestation (attestation.identifier)}
 						<li>
-							{attestationRoleLabels[attestation.role]} <strong>{attestation.personName}</strong>, {essayDate(attestation.createdAt)}{#if attestation.sectionSha256 !== section.sha256}, text changed since{/if}{#if attestation.note}: “{attestation.note}”{/if}
+							{attestationRoleLabels[attestation.role]} <strong>{attestation.personName}</strong>, {essayDate(attestation.createdAt)}{#if attestation.sectionSha256 !== section.sha256}, text changed since{/if}{#if attestation.note}: “{attestation.note}”{/if}. <span class="muted">{attestation.shownToReaders ? 'Shown to readers' : 'Not shown to readers'}</span>
 							{#if attestation.personIdentifier === you}
+								<button class="button button-quiet" type="button" disabled={sending} onclick={() => setShown(attestation, !attestation.shownToReaders)}>{attestation.shownToReaders ? 'Hide from readers' : 'Show to readers'}</button>
 								<button class="button button-quiet" type="button" disabled={sending} onclick={() => withdraw(attestation)}>Withdraw</button>
 							{/if}
 						</li>
@@ -117,6 +133,8 @@
 				{/each}
 				{#if !canWriteOrEdit}<p class="small muted">You can attest that you reviewed it. Writing and editing are attested by people who can edit this essay.</p>{/if}
 			</fieldset>
+			<label class="field"><input type="checkbox" bind:checked={shownToReaders} disabled={sending} /> Show my name to readers under this {kind} on the published essay</label>
+			<p class="small muted">Readers see it only once the published {kind} is the text you attest to now.</p>
 			<div class="field">
 				<label for="attest-note">Note (optional)</label>
 				<input id="attest-note" type="text" maxlength="500" bind:value={note} disabled={sending} placeholder="Checked every citation" />

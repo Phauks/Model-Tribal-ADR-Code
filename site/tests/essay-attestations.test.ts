@@ -1,8 +1,8 @@
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { parseEssay } from '../src/lib/essays/document.ts';
-import { currentAttestations, essaySections, sectionText, sha256Hex, type Attestation } from '../src/lib/essays/attestations.ts';
-import { attest, essayAttestations, withdrawAttestation } from '#lib/server/essay-attestations.ts';
+import { currentAttestations, essaySectionHashes, essaySections, readerCredits, sectionText, sha256Hex, withReaderCredits, type Attestation } from '../src/lib/essays/attestations.ts';
+import { attest, essayAttestations, showToReaders, withdrawAttestation } from '#lib/server/essay-attestations.ts';
 import { testDatabase } from './database.ts';
 
 const body = ['## The Cherokee Cases', '', 'Opening.', '', '### Worcester', '', 'Marshall wrote.', '', '## Allotment', '', 'Later.', '', '## Allotment', '', 'Again.', ''].join('\n');
@@ -35,7 +35,8 @@ describe('essay sections', () => {
 			personName: person,
 			sectionSha256: '0'.repeat(64),
 			note: null,
-			createdAt
+			createdAt,
+			shownToReaders: true
 		});
 		const shown = currentAttestations(
 			[make('reviewed', 'patrick', '2026-11-20'), make('wrote', 'trevor', '2026-11-19'), make('wrote', 'trevor', '2026-11-21'), make('edited', 'danielle', '2026-11-21')],
@@ -60,7 +61,7 @@ describe('attestations in the database', () => {
 		]);
 	});
 
-	const input = { essay: 'i-timeline', role: 'wrote' as const, sectionSlug: 'worcester', sectionTitle: 'Worcester', sectionLevel: 3 as const, sectionText: '### Worcester\n\nMarshall wrote.\n', note: null };
+	const input = { essay: 'i-timeline', role: 'wrote' as const, sectionSlug: 'worcester', sectionTitle: 'Worcester', sectionLevel: 3 as const, sectionText: '### Worcester\n\nMarshall wrote.\n', note: null, shownToReaders: true };
 
 	it('keeps the text and its SHA-256, and logs the attestation', async () => {
 		const saved = await attest(database, { ...input, personIdentifier: 'lead' });
@@ -81,7 +82,49 @@ describe('attestations in the database', () => {
 		await expect(database.prepare(`UPDATE essay_attestations SET note = 'changed'`).run()).rejects.toThrow(/only be withdrawn/);
 	});
 
+	it('keeps whether readers see the name, which only its person can change', async () => {
+		const saved = await attest(database, { ...input, shownToReaders: false, personIdentifier: 'lead' });
+		expect((await essayAttestations(database, 'i-timeline'))[0].shownToReaders).toBe(false);
+		expect(await showToReaders(database, { essay: 'i-timeline', identifier: saved.identifier, personIdentifier: 'advisor', shown: true })).toBe(false);
+		expect(await showToReaders(database, { essay: 'i-timeline', identifier: saved.identifier, personIdentifier: 'lead', shown: true })).toBe(true);
+		expect((await essayAttestations(database, 'i-timeline'))[0].shownToReaders).toBe(true);
+	});
+
 	it('refuses an empty section', async () => {
 		await expect(attest(database, { ...input, sectionText: '  ', personIdentifier: 'lead' })).rejects.toThrow(/empty/);
+	});
+});
+
+describe('credits for readers', () => {
+	const make = (role: Attestation['role'], name: string, sha: string, shown = true): Attestation => ({
+		identifier: `${name}-${role}`,
+		sectionSlug: 'worcester',
+		sectionTitle: 'Worcester',
+		role,
+		personIdentifier: name.toLowerCase(),
+		personName: name,
+		sectionSha256: sha,
+		note: null,
+		createdAt: '2026-11-21T00:00:00Z',
+		shownToReaders: shown
+	});
+
+	it('shows only people who chose to be shown, for the text as published', async () => {
+		const doc = parseEssay(body);
+		const hashes = await essaySectionHashes(doc);
+		const credits = readerCredits(
+			[
+				make('wrote', 'Trevor', hashes.worcester),
+				make('wrote', 'Ann', hashes.worcester),
+				make('edited', 'Danielle', 'f'.repeat(64)),
+				make('reviewed', 'Patrick', hashes.worcester, false)
+			],
+			hashes
+		);
+		expect(credits).toEqual({ worcester: [{ role: 'wrote', names: ['Trevor', 'Ann'] }] });
+		const html = withReaderCredits('<h2 id="the-cherokee-cases">The Cherokee Cases</h2>\n<h3 id="worcester">Worcester</h3>\n<p>Marshall wrote.</p>', credits);
+		expect(html).toBe(
+			'<h2 id="the-cherokee-cases">The Cherokee Cases</h2>\n<h3 id="worcester">Worcester</h3>\n<p class="essay-section-credit">Written by Trevor and Ann.</p>\n<p>Marshall wrote.</p>'
+		);
 	});
 });
