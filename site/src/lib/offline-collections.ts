@@ -6,7 +6,7 @@
  * own globals.
  */
 
-export type CollectionIdentifier = 'nations' | 'glossary' | 'other';
+export type CollectionIdentifier = 'nations' | 'stories' | 'glossary' | 'other';
 
 export interface Collection {
 	id: CollectionIdentifier;
@@ -18,13 +18,14 @@ export const collections: Collection[] = [
 	{
 		id: 'nations',
 		label: 'Nation profiles',
-		hint: 'A page for each nation, the list of nations and the maps'
+		hint: 'A page for each nation, the list of nations, the drawn maps, the tables, the charts and Find recourse'
 	},
+	{ id: 'stories', label: 'Stories', hint: 'Each story in full, with its credit and source' },
 	{ id: 'glossary', label: 'Glossary', hint: 'Every glossary entry' },
 	{
 		id: 'other',
 		label: 'Other pages',
-		hint: 'The home page, stories, changelog, downloads and help pages'
+		hint: 'The home page, changelog, downloads, help and about pages'
 	}
 ];
 
@@ -42,6 +43,7 @@ function under(path: string, section: string): boolean {
 export function collectionOf(path: string): CollectionIdentifier {
 	const page = pageOf(path);
 	if (under(page, '/nations')) return 'nations';
+	if (under(page, '/stories')) return 'stories';
 	if (under(page, '/glossary')) return 'glossary';
 	return 'other';
 }

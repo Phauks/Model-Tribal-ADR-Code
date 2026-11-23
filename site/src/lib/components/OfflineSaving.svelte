@@ -1,9 +1,9 @@
 <script lang="ts">
-	// Saving for offline, in Settings under "Data" (site/DESIGN.md, section 10): what is saved on this
-	// device, buttons to save or remove whole collections, the space used, and
-	// the edition saved, with a check for updates. Used in the Settings dialog
-	// and on the /offline page. Everything here talks to the service worker
-	// through src/lib/offline-saving.ts.
+	// Saving for offline, in Settings under "Data" (site/DESIGN.md, section 10): the space used,
+	// then what can be saved grouped by kind (pages of this site; pictures, sound and video),
+	// what stays online and why, and the edition saved, with a check for updates. Trevor picked
+	// this grouped layout on Nov. 23, 2026. Used in the Settings dialog and on the /offline page.
+	// Everything here talks to the service worker through src/lib/offline-saving.ts.
 	import { onMount } from 'svelte';
 	import { version } from '$app/env';
 	import { page } from '$app/state';
@@ -41,6 +41,7 @@
 	const built = buildTime(version);
 	const numbers = new Intl.NumberFormat('en-US');
 	const heading = $derived(`h${headingLevel}`);
+	const subheading = $derived(`h${headingLevel + 1}`);
 
 	async function loadSizes(): Promise<void> {
 		try {
@@ -117,8 +118,8 @@
 
 <div class="offline-saving">
 	<p>
-		Every page you open is saved on this device as you read it. You can also save a whole part of
-		the site now, to read later without a connection. Parts you save are saved again, from the new
+		Pages you open are saved on this device as you read them. You can also save a whole part of the
+		site now, to read later without a connection. Parts you save are saved again, from the new
 		version, each time the site is updated.
 	</p>
 
@@ -128,6 +129,29 @@
 		</p>
 	{/if}
 
+	{#if storage.usedBytes !== undefined || storage.persisted !== undefined}
+		<div class="storage">
+			{#if storage.usedBytes !== undefined}
+				<p><strong>This site uses about {formatBytes(storage.usedBytes)} on this device.</strong></p>
+			{/if}
+			{#if storage.persisted === true}
+				<p>Your browser will keep what is saved when the device runs low on space.</p>
+			{:else if storage.persisted === false}
+				<p>
+					<button class="button button-quiet" type="button" onclick={keepStorage}>
+						Keep saved files when space runs low
+					</button>
+				</p>
+				<p class="hint">
+					Without this, the browser may clear saved pages when the device runs low on space. Some
+					browsers decide this on their own.
+				</p>
+			{/if}
+		</div>
+	{/if}
+
+	<svelte:element this={heading} class="group-heading">Pages of this site</svelte:element>
+	<p class="hint">Everything here is written or gathered by the project, so all of it can be saved.</p>
 	{#if !available}
 		<p class="notice" role="note">
 			Saving for offline starts once the site has loaded fully with a connection. Reload the page and
@@ -141,23 +165,26 @@
 				{@const toSave = state ? sizeToSave(collection.id, state.bytes) : undefined}
 				{#if state}
 					<li class="collection">
-						<svelte:element this={heading} class="collection-name">
-							{collection.label}
-						</svelte:element>
-						<p class="hint">{collection.hint}</p>
-						<p>
-							{#if state.saved === 0}
-								Not saved yet. {numbers.format(state.total)} pages{#if toSave}, {toSave}{/if}.
-							{:else}
-								{numbers.format(state.saved)} of {numbers.format(state.total)} pages saved, {formatBytes(
-									state.bytes
-								)}.{#if toSave && state.saved < state.total}
-									Saving the rest takes {toSave}.{/if}
-							{/if}
-							{#if state.kept}Kept: saved again after each update.{/if}
-						</p>
+						<div class="collection-text">
+							<svelte:element this={subheading} class="collection-name">
+								{collection.label}
+							</svelte:element>
+							<p class="hint">{collection.hint}</p>
+							<p>
+								{#if state.saved === 0}
+									Not saved yet. {numbers.format(state.total)} pages{#if toSave}, {toSave}{/if}.
+								{:else if state.saved === state.total}
+									All {numbers.format(state.total)} pages saved, {formatBytes(state.bytes)}.
+								{:else}
+									{numbers.format(state.saved)} of {numbers.format(state.total)} pages saved, {formatBytes(
+										state.bytes
+									)}.{#if toSave}{' '}Saving the rest takes {toSave}.{/if}
+								{/if}
+								{#if state.kept}{' '}<span class="kept">Kept: saved again after each update.</span>{/if}
+							</p>
+						</div>
 						{#if running}
-							<p role="status">
+							<p class="collection-actions" role="status">
 								<label>
 									Saving: {numbers.format(running.done)} of {numbers.format(running.total)} files
 									<progress max={running.total} value={running.done}></progress>
@@ -193,22 +220,32 @@
 		{#if problem}<p class="field-error" role="alert">{problem}</p>{/if}
 	{/if}
 
-	{#if storage.usedBytes !== undefined}
-		<p>This site uses about {formatBytes(storage.usedBytes)} on this device.</p>
-	{/if}
-	{#if storage.persisted === true}
-		<p>Your browser will keep the saved pages when the device runs low on space.</p>
-	{:else if storage.persisted === false}
-		<p>
-			<button class="button button-quiet" type="button" onclick={keepStorage}>
-				Keep saved pages when space runs low
-			</button>
-		</p>
-		<p class="hint">
-			Without this, the browser may clear saved pages when the device runs low on space. Some
-			browsers decide this on their own.
-		</p>
-	{/if}
+	<svelte:element this={heading} class="group-heading">Pictures, sound and video</svelte:element>
+	<ul class="plain-list">
+		<li>
+			<strong>Pictures</strong> on a page are saved with the page, except a nation’s seal or logo.
+		</li>
+		<li>
+			<strong>Video and sound</strong> play only with a connection. Where a page has a transcript,
+			it is saved with the page.
+		</li>
+	</ul>
+
+	<details class="online-only">
+		<summary>Online only, never saved on this device</summary>
+		<ul>
+			<li>A nation’s seal or logo, so that a nation can withdraw it at once</li>
+			<li>Our copies of documents, such as laws and constitutions; the pages that cite them are saved</li>
+			<li>
+				Documents held by the National Indian Law Library or by code publishers, and articles and
+				books: pages link to them
+			</li>
+			<li>Videos on YouTube, and other video and sound</li>
+			<li>The zoomable map; the drawn map works offline</li>
+			<li>Your workspace, messages and anything else that needs you to sign in</li>
+		</ul>
+		<p><a href="/offline#what-stays-online">Why some things stay online</a></p>
+	</details>
 
 	<svelte:element this={heading} class="updates-heading">Updates</svelte:element>
 	<p>
@@ -248,15 +285,49 @@
 </div>
 
 <style>
+	.storage {
+		padding: var(--space-3);
+		margin: 0 0 var(--space-5);
+		border-radius: var(--radius-panel);
+		background: var(--color-surface);
+	}
+
+	.storage p {
+		margin: 0 0 var(--space-2);
+	}
+
+	.storage > :last-child {
+		margin-bottom: 0;
+	}
+
+	.group-heading {
+		font-size: var(--font-size-lead);
+		margin: var(--space-5) 0 var(--space-1);
+	}
+
+	.group-heading + .hint {
+		margin-top: 0;
+	}
+
 	.collections {
 		list-style: none;
 		padding: 0;
 		margin: 0 0 var(--space-4);
+		border-top: 1px solid var(--color-line);
 	}
 
 	.collection {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2) var(--space-4);
 		padding: var(--space-3) 0;
 		border-bottom: 1px solid var(--color-line);
+	}
+
+	.collection-text {
+		flex: 1 1 20rem;
+		min-width: 0;
 	}
 
 	.collection-name {
@@ -268,10 +339,51 @@
 		margin: 0 0 var(--space-2);
 	}
 
+	.collection .collection-text > :last-child,
+	.collection .collection-actions {
+		margin-bottom: 0;
+	}
+
+	.kept {
+		font-weight: 600;
+		color: var(--color-action);
+	}
+
 	.collection-actions {
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-2);
+	}
+
+	.plain-list {
+		padding: 0;
+		margin: 0 0 var(--space-4);
+		list-style: none;
+		border-top: 1px solid var(--color-line);
+	}
+
+	.plain-list li {
+		padding: var(--space-2) 0;
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.online-only {
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		padding: 0 var(--space-3);
+		margin: 0 0 var(--space-4);
+	}
+
+	.online-only summary {
+		min-height: 44px;
+		display: flex;
+		align-items: center;
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	.online-only ul {
+		margin: 0 0 var(--space-2);
 	}
 
 	progress {

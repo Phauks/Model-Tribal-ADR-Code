@@ -6,6 +6,8 @@ describe('offline collections', () => {
 		expect(collectionOf('/nations')).toBe('nations');
 		expect(collectionOf('/nations/map')).toBe('nations');
 		expect(collectionOf('/nations/navajo-nation/__data.json')).toBe('nations');
+		expect(collectionOf('/stories')).toBe('stories');
+		expect(collectionOf('/stories/lummi-salmon-woman/__data.json')).toBe('stories');
 		expect(collectionOf('/glossary')).toBe('glossary');
 		expect(collectionOf('/glossary/adr')).toBe('glossary');
 		expect(collectionOf('/glossary/terms.json')).toBe('glossary');

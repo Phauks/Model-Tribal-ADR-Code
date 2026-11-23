@@ -63,6 +63,7 @@ const corePages = ['/', '/glossary', '/changelog', '/search', '/starred', '/star
 // edition.json, the fingerprints and SvelteKit's version.json say what the server has now, so
 // they always come from the network; a saved version.json would hide a new build from open tabs.
 // Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself.
+// The zoomable map's tiles (/map-tiles/) come to over 2 GB; offline, the drawn map takes its place.
 const neverCached = [
 	'/workspace',
 	'/sign-in',
@@ -72,7 +73,8 @@ const neverCached = [
 	'/edition.json',
 	fingerprintsAddress,
 	'/_app/version.json',
-	'/copies'
+	'/copies',
+	'/map-tiles'
 ];
 /** Not a real address: the list of collections the reader keeps, stored in the cache. */
 const keptCollectionsKey = '/__kept-collections';
@@ -405,7 +407,11 @@ let newerBuildSeen = false;
 
 async function isFromThisBuild(response: Response): Promise<boolean> {
 	if (!response.ok || response.type !== 'basic') return false;
-	if ((response.headers.get('content-type') ?? '').includes('text/html')) {
+	// Video and sound play only online (site/DESIGN.md, section 10): they are large, and a part
+	// of a file (206) cannot be saved anyway.
+	const type = response.headers.get('content-type') ?? '';
+	if (response.status === 206 || type.startsWith('video/') || type.startsWith('audio/')) return false;
+	if (type.includes('text/html')) {
 		const fromThisBuild = (await response.clone().text()).includes(version);
 		if (!fromThisBuild) newerBuildSeen = true;
 		return fromThisBuild;
