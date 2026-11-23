@@ -1,0 +1,25 @@
+profile: content/tribes/a/assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/billings/healthcarefacilities/
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Billings Area; Fort Peck Service Unit.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 5 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation

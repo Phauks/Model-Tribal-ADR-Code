@@ -157,6 +157,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pribilof Islands Aleut Communities of St. Paul & St. George Islands (St. George Island and
     Saint Paul Island)
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'Listed as "Aleut Community of St. Paul Island". Name on Indian Health Service profile differs from roster name (roster: "Pribilof Islands Aleut Communities of St. Paul & St. George Islands"); matched manually. Roster nation combines St. Paul and St. George Island communities; profile lists them separately (St. George: "Aleut Community of St. George Island"). Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).'
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Aleut Community of St. Paul Island".'
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution and Bylaws of the Aleut Community Alaska (approved 1950) states it was adopted

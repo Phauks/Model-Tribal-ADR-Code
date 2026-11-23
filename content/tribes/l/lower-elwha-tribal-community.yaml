@@ -167,6 +167,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lower Elwha Tribal Community
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Lower Elwha Klallam Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Lower Elwha Klallam Tribe (2002)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: head-of-government
   value: Chairperson
@@ -351,6 +359,20 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Lower Elwha Klallam Tribe". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+treaties:
+- title: Treaty with the S'klallam, 1855
+  signed: '1855-01-26'
+  statutes_at_large: 12 Stat. 933
+  kappler:
+    volume: 2
+    page: 674
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sklallam-1855-0674
+  signatory: S'klallam
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 674 (Treaty with the S'klallam, 1855; Kappler header "Jan. 26, 1855. | 12 Stats., 933. | Ratified Mar. 8, 1859. | Proclaimed Apr. 29, 1859.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Point No Point treaty (1855) with the S'Klallam villages; Jamestown, Port Gamble and Lower Elwha are the S'Klallam nations The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

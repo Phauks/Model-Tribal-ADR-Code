@@ -166,6 +166,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Spokane Tribe of the Spokane Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Spokane Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Spokane Tribe of Indians (2025)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: form
   value: Constitution, superseding the 1951 constitution and bylaws
