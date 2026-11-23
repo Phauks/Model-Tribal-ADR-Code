@@ -9,6 +9,13 @@ names:
     verification: read-in-full
     as_of: '2025'
     locator: Section 41-9-708(b)
+  - name: Mobile-Washington County ("MOWA") Band of Choctaw Indians of South Alabama
+    source: federal-register-97-33532
+    confidence: high
+    verification: bulk-import
+    as_of: '1997-12-24'
+    locator: 'Petitioner #86'
+    note: Name of a second record for the same group (id mobile-washington-county-band-of-choctaw-indians-of-south-alabama), merged into this one on Nov. 23, 2026; the match is by name and state, not a source that says the two are the same.
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
 - type: unrecognized
@@ -68,6 +75,20 @@ recognition:
   confidence: high
   verification: bulk-import
   as_of: 2026-10
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 62 FR 67398 (1997-12-24)
+  petition_number: '86'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 05/27/1983; Declined
+    Acknowledgment effective 11/26/1999 62 FR 67398
+  source: federal-register-97-33532
+  confidence: high
+  verification: bulk-import
+  as_of: '1997-12-24'
+  locator: 'Petitioner #86'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 05/27/1983; Declined Acknowledgment effective 11/26/1999 62 FR 67398.
+    Other Federal Register history: Proposed Finding Against Federal Acknowledgment of the MOWA Band of
+    Choctaw, 60 FR 1874 (1995-01-05).'
 states:
 - state: AL
   presence: other
@@ -100,6 +121,14 @@ states:
   verification: bulk-import
   as_of: 2026-10
   note: State-recognized in Alabama; Alabama contact address listed.
+- state: AL
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
 census_areas:
 - geographic_identifier: '9240'
   name: MOWA Choctaw (state) Reservation
