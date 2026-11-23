@@ -7,7 +7,18 @@
  * checkout.session.completed and checkout.session.expired; its signing
  * secret is STRIPE_WEBHOOK_SECRET.
  */
-import { orderingState, fileLink, markPaid, orderByIdentifier, recordPrinterRefusal, recordPrintJob } from '#lib/server/book-orders.ts';
+import {
+	addressFromPayment,
+	fileLink,
+	markPaid,
+	needsAddressFromPayment,
+	orderByIdentifier,
+	orderingState,
+	recordBuyerAddress,
+	recordPrinterRefusal,
+	recordPrintJob,
+	type PaidSession
+} from '#lib/server/book-orders.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { now } from '#lib/server/identifiers.ts';
 import { createPrintJob, LuluError, type ShippingAddress } from '#lib/server/lulu.ts';
@@ -19,7 +30,7 @@ export const prerender = false;
 
 interface CheckoutEvent {
 	type: string;
-	data: { object: { id: string; client_reference_id?: string; payment_status?: string } };
+	data: { object: PaidSession & { id: string; client_reference_id?: string; payment_status?: string } };
 }
 
 const plain = (text: string, status: number) => new Response(text, { status, headers: { 'content-type': 'text/plain; charset=utf-8' } });
@@ -50,8 +61,19 @@ export const POST: RequestHandler = async ({ request, url }) => {
 
 	// Stripe may send the same event twice; only the first one sends the order to Lulu.
 	if (!(await markPaid(environment.database, identifier, session.id, now()))) return plain('Already handled.', 200);
-	const order = await orderByIdentifier(environment.database, identifier);
-	if (!order || !order.shipping_address || !order.email) return plain('Order details are missing.', 200);
+	let order = await orderByIdentifier(environment.database, identifier);
+	if (!order || !order.shipping_address) return plain('Order details are missing.', 200);
+	// An order from the Store's one-step dialog gets its street address from Stripe's page (docs/store.md, "Buying in one step").
+	if (needsAddressFromPayment(order)) {
+		const read = addressFromPayment(session, JSON.parse(order.shipping_address) as ShippingAddress);
+		if (!read.ok) {
+			await recordPrinterRefusal(environment.database, identifier, read.problem, now());
+			return plain('Address problem recorded.', 200);
+		}
+		await recordBuyerAddress(environment.database, identifier, read.address, read.email, now());
+		order = await orderByIdentifier(environment.database, identifier);
+	}
+	if (!order?.shipping_address || !order.email) return plain('Order details are missing.', 200);
 
 	const choice = JSON.parse(order.choice) as PrintChoice;
 	try {

@@ -29,7 +29,7 @@ export type WorkspacePageName =
 	| 'nonprofit'
 	| 'service-checks'
 	| 'sponsors'
-	| 'book-orders'
+	| 'orders'
 	| 'activity';
 
 export interface WorkspacePage {
@@ -71,8 +71,8 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'nonprofit', label: 'Nonprofit', link: '/workspace/nonprofit', needs: 'manage-nonprofit' },
 	{ name: 'service-checks', label: 'Service checks', link: '/workspace/service-checks', needs: 'check-services' },
 	{ name: 'sponsors', label: 'Sponsors', link: '/workspace/sponsors', needs: 'manage-sponsors' },
-	// Printed-copy orders, problems buyers report, and refunds (docs/book-orders.md).
-	{ name: 'book-orders', label: 'Book orders', link: '/workspace/book-orders', needs: 'manage-book-orders' },
+	// Orders from the Store, problems buyers report, and refunds (docs/store.md, docs/book-orders.md).
+	{ name: 'orders', label: 'Orders', link: '/workspace/orders', needs: 'manage-orders' },
 	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', needs: 'manage-people' }
 ];
 

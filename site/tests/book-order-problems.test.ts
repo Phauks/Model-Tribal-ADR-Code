@@ -76,9 +76,9 @@ describe('your orders', () => {
 
 	it('is an Account page, and the workspace page is for the lead author only', () => {
 		expect(accountPages.map((page) => page.link)).toContain('/account/orders');
-		expect(can({ role: 'lead-author' } as never, 'manage-book-orders')).toBe(true);
-		expect(can({ role: 'editor' } as never, 'manage-book-orders')).toBe(false);
-		expect(workspacePagesFor(['manage-book-orders']).map((page) => page.link)).toContain('/workspace/book-orders');
+		expect(can({ role: 'lead-author' } as never, 'manage-orders')).toBe(true);
+		expect(can({ role: 'editor' } as never, 'manage-orders')).toBe(false);
+		expect(workspacePagesFor(['manage-orders']).map((page) => page.link)).toContain('/workspace/orders');
 	});
 });
 

@@ -56,6 +56,12 @@ const builtContents: Record<string, () => SectionContents> = {
 			{ label: 'Past events', link: '/events?when=past' }
 		]
 	}),
+	store: () => ({
+		pages: [
+			{ label: 'Books', link: '/store#books' },
+			{ label: 'Special order', link: '/book' }
+		]
+	}),
 	about: () => ({
 		pages: [
 			{ label: 'About the project', link: '/about' },

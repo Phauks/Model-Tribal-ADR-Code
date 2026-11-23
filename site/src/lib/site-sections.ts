@@ -51,7 +51,9 @@ export const siteSections: SiteSection[] = [
 	{ label: 'Glossary', link: '/glossary', built: true, opens: true },
 	{ label: 'Events', link: '/events', built: true, opens: true },
 	{ label: 'About', link: '/about', built: true, opens: true },
-	{ label: 'Sponsorship', link: '/sponsor', built: true }
+	{ label: 'Sponsorship', link: '/sponsor', built: true },
+	// The Store gathers the special-order page for books, which keeps its address (Trevor, Nov. 23, 2026).
+	{ label: 'Store', link: '/store', built: true, gathers: [{ label: 'Special order', link: '/book' }], opens: true }
 ];
 
 /** The section a path belongs to, if any. */
