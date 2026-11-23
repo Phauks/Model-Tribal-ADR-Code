@@ -25,6 +25,8 @@ export interface StepCheck {
 	done: boolean;
 	/** When it was done, as the roadmap records it. */
 	date?: string;
+	/** What is done and what is left, for a check the roadmap marks only partly done. */
+	note?: string;
 }
 
 export interface TimelineStep {
@@ -71,8 +73,12 @@ export const steps: TimelineStep[] = [
 			{ label: 'Decide where records from bulk databases belong', done: true, date: 'Nov. 21, 2026' },
 			{ label: 'Decide how bands within one nation are counted', done: true, date: 'Nov. 21, 2026' },
 			{ label: 'Sort the bulk records: keep, relabel or drop', done: true, date: 'Nov. 22, 2026' },
-			{ label: 'Remove duplicate provisions', done: true, date: 'Nov. 22, 2026' },
 			{ label: 'Adopt the list of dispute resolution methods', done: true, date: 'Nov. 22, 2026' },
+			{
+				label: 'Resolve duplicate records',
+				done: false,
+				note: 'Duplicate provisions removed Nov. 22, 2026; doubled source records and forums recorded under two kinds still to do'
+			},
 			{ label: 'Confirm that every record a draft relies on was read from the actual text', done: false }
 		]
 	},

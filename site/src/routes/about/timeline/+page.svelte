@@ -97,7 +97,7 @@
 										<span class="check-label">
 											{check.label}
 											<span class="check-state">
-												{#if check.done}Done{#if check.date}, {check.date}{/if}{:else}Still to do{/if}
+												{#if check.done}Done{#if check.date}, {check.date}{/if}{:else if check.note}{check.note}{:else}Still to do{/if}
 											</span>
 										</span>
 									</li>
