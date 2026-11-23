@@ -1,7 +1,7 @@
 profile: content/tribes/c/cher-ae-heights-indian-community-of-the-trinidad-rancheria.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -51,4 +51,13 @@ searches:
   reason: 1 candidate(s) kept for the lead author's review (Gate 1); none is in the profile yet.
   records:
   - research/reviews/2026-11-22-dispute-resolution-coverage.json#cher-ae-heights-indian-community-of-the-trinidad-rancheria-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/california/cher-ae_heights_tribal_state_gaming_compact_compressed.pdf
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/c/cher-ae-heights-indian-community-of-the-trinidad-rancheria.yaml#gaming.compacts
 next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile.

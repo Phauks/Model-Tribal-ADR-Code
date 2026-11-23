@@ -549,27 +549,21 @@ dispute_resolution:
   forums:
   - kind: mediation
     name: Mandatory Civil Mediation Program
-    description: An informal, flexible process in which a neutral mediator helps parties resolve their
-      own disputes outside the adversarial process; the first step for all family-related civil cases
-      filed in the Pascua Yaqui Tribal Court.
-    legal_basis: 5 PYTC Chapter 9 (Mediation), §§ 9-10, 9-30
+    description: An informal, flexible process in which a neutral mediator helps parties resolve their own disputes outside the adversarial process; the first step for all family-related civil cases filed in the Pascua Yaqui Tribal Court.
+    legal_basis: 5 PYTC Chapter 9 (Mediation), §§ 9-10, 9-30, 9-40, 9-70, 9-110 (enacted Dec. 11, 2019)
     case_types:
     - family
     - probate
     - civil
     participation: required
-    relationship_to_court: The court clerk refers all civil cases involving families to mediation, for
-      initial and modification proceedings; the court may decline referral on request for parental unfitness,
-      substance abuse, mental incapacity, domestic violence, other good cause or undue delay, and a judge
-      may refer a case at any time.
-    link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: The court clerk refers all civil cases involving families to mediation, for initial and modification proceedings; on a party's request the court may decline referral for parental unfitness, substance abuse, mental incapacity, domestic violence, other good cause or undue delay, a judge may refer a case at any time, and domestic violence, child abuse and emergency custody or protection-order cases are exempt (the court may also waive on a showing of abuse history, a stipulated settlement or good cause). A mediated agreement binds the parties once written and signed or stated on the record, but is not binding on the court until the court approves it. The court may enforce the chapter through contempt, compliance hearings or sanctions, and may impose sanctions on a party who fails to appear.
+    link: https://www.pascuayaqui-nsn.gov/_static_pages/tribalcodes/docs/5_PYTC/9_mediation.pdf
+    source: pascua-yaqui-title-5-chapter-9-mediation-2019
     confidence: medium
-    verification: bulk-import
-    as_of: '2026'
-    locator: https://ncorj.org/tribal-law/mandatory-mediation/
-    note: 'Mandatory case types listed: marriage, dissolution of marriage, child custody and visitation,
-      adoption, permanent guardianship or conservatorship, paternity, child support, probate.'
+    verification: read-in-full
+    as_of: '2019-12-11'
+    locator: 5 PYTC ch. 9, secs. 9-10 to 9-140
+    note: 'Read in full on 2026-11-23 (Pascua Yaqui Tribe, Title 5 Civil Code, Chapter 9 Mediation, enacted December 11, 2019 (Res. C12-285-19, Ord. 48-19)). Mandatory case types listed: marriage, dissolution of marriage, child custody and visitation, adoption, permanent guardianship or conservatorship, paternity, child support, probate. Mediators are privately retained or court-appointed and must complete 40 hours of approved mediation training (9-80, 9-140). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 378.'
   provisions:
   - kind: mediation
     title: Title 5 – Civil Code, Chapter 9 – Mediation

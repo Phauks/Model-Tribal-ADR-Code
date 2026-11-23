@@ -555,73 +555,56 @@ dispute_resolution:
   forums:
   - kind: mediation
     name: Mediation Services (Tulalip Tribal Court)
-    description: An out-of-court mediation process, conducted by Volunteers of America at the Tulalip
-      Tribal Courthouse, in which a mediator helps disputants air the dispute and agree on a satisfactory
-      solution.
+    description: An out-of-court mediation process, conducted by Volunteers of America at the Tulalip Tribal Courthouse, in which a mediator helps disputants air the dispute and agree on a satisfactory solution.
     case_types:
     - civil
-    participation: court-referred
-    relationship_to_court: Arranged through the Tribal Court main line; the page states a $400 fine for
-      failing to appear without 48 hours' notice of cancellation.
+    participation: other
+    relationship_to_court: The page says mediation is an out-of-court process run by Volunteers of America at the Tribal Courthouse; appointments are set up through the Tribal Court main line, and the page states a $400 fine for failing to appear without 48 hours' notice of cancellation. It does not say who refers cases, who imposes the fine or whether agreements are enforced.
     link: https://www.tulaliptribalcourt-nsn.gov/GeneralCourtInfo/MediationServices
     source: tulalip-tribal-court-mediation-services
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2026-11-21'
-    note: Participation recorded as court-referred because the page describes a no-show fine imposed through
-      the court; the page does not state the legal basis. Case types not enumerated on the page; 'civil'
-      reflects the description of disputants avoiding court.
+    note: Read in full on 2026-11-23 (Mediation Services, Tulalip Tribal Court web page (copyright 2016-2026; no page date)). Participation is recorded as 'other' because the page does not say whether cases are court-referred or self-requested (it only says to contact the Tribal Court main line to set up an appointment). Case types are not stated on the page; 'civil' is inferred from the page's reference to disputants avoiding court. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 578.
   - kind: elders-council
     name: Tribal Court Elders Panel
-    description: A culturally based program in which tribal elders volunteer on a panel that meets at
-      the court every two weeks with young (18 to 25), first-time, non-violent offenders charged with
-      minor offenses, favoring reparative over punitive justice.
+    description: A culturally based program in which tribal elders volunteer on a panel that meets at the court every two weeks with young (18 to 25), first-time, non-violent offenders charged with minor offenses, favoring reparative over punitive justice.
     case_types:
     - criminal-diversion
     participation: voluntary
-    relationship_to_court: Offenders volunteer; on completing one year of panel-imposed requirements their
-      charges are dismissed in court.
-    enforcement: Requirements may include regular appearances, apology letters, community service, treatment,
-      curfews, testing, family history research, spiritual activity, classes and evaluations; completion
-      leads to dismissal.
+    relationship_to_court: Offenders volunteer; the court's Chief Judge has referred young people to the panel (more than 65 in nine years, per the page), and on completing one year of panel-imposed requirements their charges are dismissed in court.
+    enforcement: Requirements may include regular appearances, apology letters, community service, treatment, curfews, testing, family history research, spiritual activity, classes and evaluations; completion leads to dismissal.
     link: https://www.tulaliptribalcourt-nsn.gov/ProgramsAndServices/TribalCourtEldersPanel
     source: tulalip-tribal-court-elders-panel
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2026-11-21'
+    note: Read in full on 2026-11-23 (Tribal Court Elders Panel, Tulalip Tribal Court web page (members list headed 2024; no page date)). Source is the Tribal Court's own web page; it cites no code provision as legal basis. Entry route (judge referral) is stated only in the sentence about Chief Judge Bass referring more than 65 young people. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 579.
   - kind: restorative-justice
     name: Community Accountability Board (Juvenile Diversion Panel)
-    description: A volunteer community panel, operating since July 2010, that meets monthly with tribal
-      member youths under 18 arrested for minor offenses to hold them accountable and increase awareness
-      of their behavior.
+    description: A volunteer community panel, operating since July 2010, that meets monthly with tribal member youths under 18 arrested for minor offenses to hold them accountable and increase awareness of their behavior.
     case_types:
     - juvenile
     - criminal-diversion
-    participation: voluntary
-    relationship_to_court: A juvenile diversion program of the Tribal Court; meets at the Tribal Court.
+    participation: other
+    relationship_to_court: A juvenile diversion program of the Tribal Court; the board meets monthly at the Tribal Court, and a judge (Ron Whitener) is listed among its volunteer members. The page does not say how youths are referred or what follows completion or non-completion.
     link: https://www.tulaliptribalcourt-nsn.gov/ProgramsAndServices/JuvenileDiversion
     source: tulalip-tribal-court-juvenile-diversion
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2026-11-21'
-    note: Participation as 'voluntary' is not stated explicitly; the page says eligible youth participate.
-      Individual volunteer names on the page are not recorded.
+    note: Read in full on 2026-11-23 (Juvenile Diversion, Community Accountability Board (CAB) for Juveniles, Tulalip Tribal Court web page (no page date)). The page says eligible youths participate but does not say participation is voluntary or how cases are referred, so participation is recorded as 'other'. Individual volunteer names on the page are not recorded. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 580.
   provisions:
   - kind: other
-    title: Amendment to Tulalip Tribal Code 2.25, adding 2.25.200 enacting an Alternative Court Code (Resolution
-      2024-473)
+    title: Amendment to Tulalip Tribal Code 2.25, adding 2.25.200 enacting an Alternative Court Code (Resolution 2024-473)
     citation: Tulalip Tribal Code 2.25.200 (Resolution 2024-473)
     link: https://tulaliptribes-nsn.gov/Base/File/Reso-2024-473-Amendment-to-Tulalip-Tribal-Code-2-25-Adding-200-Enacting-Alternative-Court-Code-BIA-APPROVA-20241030
     source: tulalip-resolution-2024-473-alternative-court-code
-    confidence: low
+    confidence: medium
     verification: read-in-full
     as_of: '2024-10-04'
-    summary: Adds TTC 2.25.200 (Alternative Courts), establishing the Tulalip Healing to Wellness Court,
-      the Mental Wellness Alternatives (MAP) Program and an Alternative Courts Steering Committee. Defendants
-      enter through a plea agreement offered by the Prosecutor, the court may defer entry of the plea,
-      and rules of evidence are relaxed.
-    note: Read through a fetch-and-summarize tool only; direct download returned 404 on Nov. 21, 2026.
-      The file's amendment tracker shows '2024-768'. These are problem-solving courts, not peacemaking.
+    summary: Adds TTC 2.25.200 (Alternative Courts), establishing the Tulalip Healing to Wellness Court, the Mental Wellness Alternatives (MAP) Program and an Alternative Courts Steering Committee. Defendants enter through a plea agreement offered by the Prosecutor, the court may defer entry of the plea, and rules of evidence are relaxed.
+    note: Read in full on 2026-11-23 (Tulalip Tribes Resolution 2024-473, Amendment to Tulalip Tribal Code 2.25 Adding 2.25.200 Enacting Alternative Court Code; adopted October 4, 2024; accepted by Puget Sound Agency Superintendent October 15, 2024). The second reader judged this not a dispute resolution provision; kept for the lead author under the grab-now rule. The file's amendment tracker shows '2024-768'. These are problem-solving courts, not peacemaking. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 581.
   database_listings:
   - title: Elders Panel Diversion Program
     citation: 'TTC Title 2: Tribal Justice System - Criminal Procedures (Referenced in external documentation)'

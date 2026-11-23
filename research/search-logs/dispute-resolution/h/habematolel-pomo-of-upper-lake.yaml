@@ -1,6 +1,6 @@
 profile: content/tribes/h/habematolel-pomo-of-upper-lake.yaml
 topic: dispute-resolution
-status: none-found
+status: found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
@@ -106,6 +106,36 @@ searches:
     and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-093
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f177f06c397438f8eb3e.txt
+  query: Associate Judges as Peacemakers
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/h/habematolel-pomo-of-upper-lake.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/habematolel-pomo-of-upper-lake/c09fc5bcd7f90963.txt
+  query: Associate Judges as Peacemakers
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/h/habematolel-pomo-of-upper-lake.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: HPUL Judicial Code Associate Judges peacemakers
+  query: Habematolel Judicial Code Section 5.2
+  outcome: found
+  reason: Tribe's own site hosts the code.
+  records:
+  - content/tribes/h/habematolel-pomo-of-upper-lake.yaml#dispute_resolution.forums
 next_steps: No page or official directory entry was found on 2026-11-22 for “Associate Judges as Peacemakers”
   (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23 (web searches and
   state court lists) found no page or official directory entry for “Associate Judges as Peacemakers”;

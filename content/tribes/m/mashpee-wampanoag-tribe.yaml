@@ -357,11 +357,7 @@ dispute_resolution:
       name: Wunahtyâhe8âôk
       language_tag: wam
       translation: Peacemaking (as glossed in the brochure)
-    description: The brochure lists ideal cases as family disputes (spouses, parents and children, extended
-      families), community disputes (nuisance, trespass, disorderly conduct, disturbing the peace), financial
-      disputes (personal debts, breach of contract) and individual land-use and access disputes. Sessions
-      include one male and one female peacemaker, no lawyers, voluntary participation, and a binding resolution
-      agreed by all parties. Guiding principles are given in English and Wampanoag.
+    description: The brochure lists ideal cases as family disputes (spouses, parents and children, extended families), community disputes (nuisance, trespass, disorderly conduct, disturbing the peace), financial disputes (personal debts, breach of contract) and individual land-use and access disputes. Sessions include one male and one female peacemaker, no lawyers, voluntary participation, and a binding resolution agreed by all parties. Guiding principles are given in English and Wampanoag.
     case_types:
     - family
     - civil
@@ -369,26 +365,23 @@ dispute_resolution:
     - property-or-land
     - other
     participation: voluntary
-    relationship_to_court: Part of the Tribal Judiciary; the Chief Judge of the Supreme Court supervises
-      the Peacemakers Court and the appointed peacemakers.
-    enforcement: The final decision is agreed upon by all parties and described as binding.
+    relationship_to_court: Part of the Tribal Judiciary. A person may ask the Court Clerk for peacemaking before filing a lawsuit, or a party to a pending District Court civil case may ask the judge to send it to peacemaking; the other party may decline, in which case the case stays in court, and criminal matters are excluded. The Chief Judge appoints one male and one female peacemaker from a roll certified by the Judiciary Committee and appointed by the Tribal Council; peacemakers serve under the Chief Judge's direction and supervision and report results to the District Court or Chief Judge (Chapter 3, Secs. 2-4).
+    enforcement: The brochure calls the final decision binding and agreed by all parties; Chapter 3 Sec. 2(f) says an agreement reached is a final decision without appeal, and Sec. 2(b) says the Peacemaker Court cannot compel anyone to take part. The texts read do not describe a separate enforcement mechanism.
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/PM-Brochure-updated1.pdf
     source: mashpee-peacemakers-court-brochure
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '2015'
-    note: The numeral 8 is part of the Wampanoag spelling as printed and is kept exactly. Language tag
-      wam (Wampanoag) assigned because the brochure gives Wampanoag terms beside English; the brochure
-      does not name the language. Supervision detail from the Tribe's About Peacemakers Court page. Peacemaker
-      names printed in the brochure are not recorded.
+    note: 'Read in full on 2026-11-23 (Mashpee Wampanoag Tribe, Chapter 3: Operation of Peacemaker Court (no enactment date printed); Peacemakers Court brochure (no date printed)). The numeral 8 is part of the Wampanoag spelling as printed and is kept exactly. Language tag wam (Wampanoag) assigned because the brochure gives Wampanoag terms beside English; the brochure does not name the language. Supervision and appointment detail from Chapter 3 Operation of Peacemaker Court (read in full). Peacemaker names printed in the brochure are not recorded. Date: undated (no date printed on the brochure). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 273.'
   published_materials:
   - kind: brochure
     title: Peacemakers Court Brochure
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/PM-Brochure-updated1.pdf
     source: mashpee-peacemakers-court-brochure
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: '2015'
+    note: 'Read in full on 2026-11-23 (Mashpee Wampanoag Peacemakers Court brochure (Wunahtyahe8ahok / Peacemaking); no date printed). Brochure read in full (2 pages); no date printed. Printed title ''Mashpee Wampanoag Peacemakers Court''. Says peacemaking is voluntary, with no lawyers, a resolution agreed by both parties, one male and one female peacemaker per session; a session is requested through the Court Clerk or a Peacemaking Intake Form. Date: undated (no date printed on the brochure). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 275.'
   - kind: guide
     title: A Participant's Guide to Peacemaking
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/Participants-Guide-to-Peacemaking-final.pdf
@@ -416,14 +409,13 @@ dispute_resolution:
     title: 'Chapter 3: Operation of Peacemaker Court'
     citation: 'Chapter 3: Operation of Peacemaker Court'
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashpee-Chapter-3-OPERATION-OF-PEACEMAKER-COURT.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: mashpee-chapter-3-peacemaker-court
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Mashpee Wampanoag Tribe of Massachusetts
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      guiding principles, qualifications, and procedures. See also the Peacemaking Court Brochure and
-      A Participant’s Guide to Peacemaking.'
+    locator: Chapter 3, Secs. 1-4 (Guiding Principles; Scope and Jurisdiction; Peacemakers; Peacemaking Procedure)
+    note: 'Read in full on 2026-11-23 (Mashpee Wampanoag Tribe, Chapter 3: Operation of Peacemaker Court (no enactment date printed in the capture)). Read in full from the Chapter 3 text (Mashpee Wampanoag Peacemaker Court ordinance). Provides authorization, guiding principles, qualifications, and procedures. No enactment date is printed in the text read. See also the Peacemakers Court brochure. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 274.'
+    summary: 'Sets up the Mashpee Wampanoag Peacemaker Court: voluntary, non-adversarial peacemaking in civil matters (not criminal), where two peacemakers, one male and one female, appointed by the Chief Judge, help the parties reach a consensus agreement. A case enters on a written request to the Court Clerk before filing, or on a party''s request to the District Court judge after filing; the other party may decline. The Court cannot compel anyone, and an agreement reached is a final decision without appeal.'
 gaming:
   compacts:
   - state: MA

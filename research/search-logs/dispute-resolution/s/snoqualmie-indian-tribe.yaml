@@ -85,6 +85,96 @@ searches:
     stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-351
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/a8a07718b907d122e9b6.pdf
+  query: Peacemaker Court
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/s/snoqualmie-indian-tribe.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/a8a07718b907d122e9b6.pdf
+  query: 'Chapter 3: Arbitration Act'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/snoqualmie-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-courts/snoqualmie-indian-tribe/tribal-codes.html
+  query: 'Chapter 3: Arbitration Act'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/snoqualmie-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-courts/snoqualmie-indian-tribe/tribal-court.html
+  query: 'Chapter 3: Arbitration Act'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/snoqualmie-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/n/national-indian-law-library-snoqualmie.html
+  query: 'Chapter 3: Arbitration Act'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/snoqualmie-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Snoqualmie Arbitration Act Enforceability of Agreements to Arbitrate
+  query: Snoqualmie Arbitration Act
+  outcome: not-found
+  reason: No direct hit.
+  records:
+  - content/tribes/s/snoqualmie-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/snoqualmie/index.html
+  query: Chapter 3 Arbitration Act link
+  outcome: found
+  reason: Gave the tribe's PDF link.
+  records:
+  - content/tribes/s/snoqualmie-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: http://www.snoqualmietribe.us/sites/default/files/arbitration_act.3.3.codified.pdf
+  query: arbitration act pdf
+  outcome: blocked
+  reason: Fetch refused (client error).
+  records:
+  - content/tribes/s/snoqualmie-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/a8a07718b907d122e9b6.pdf
+  query: Judiciary Act 3.1, Section 7.4 – Peacemaker Court
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/s/snoqualmie-indian-tribe.yaml#dispute_resolution.provisions
 next_steps: 'No page or official directory entry was found on 2026-11-22 for “Peacemaker Court” (research/reviews/2026-11-22-service-links.json).
   A person could open in a browser the pages that refused the project''s link checker: http://www.snoqualmietribe.us/TribalCourt,
   https://snoqualmietribe.us/. The second search of 2026-11-23 (web searches and state court lists) found

@@ -479,50 +479,42 @@ dispute_resolution:
   forums:
   - kind: customary-dispute-resolution
     name: Village authority over family disputes
-    description: The Constitution reserves to each village the power to adjust family disputes and regulate
-      family relations of village members, along with appointing guardians, regulating inheritance and
-      assigning farming land; each village decides how it is organized, and a village that has not chosen
-      another form is considered to be under traditional Hopi organization.
+    description: The Constitution reserves to each village the power to adjust family disputes and regulate family relations of village members, along with appointing guardians, regulating inheritance and assigning farming land; each village decides how it is organized, and a village that has not chosen another form is considered to be under traditional Hopi organization.
     legal_basis: Constitution of the Hopi Tribe, Article III, Sections 2-3
     case_types:
     - family
     - probate
     - property-or-land
-    relationship_to_court: A power reserved to the villages, separate from the courts the Tribal Council
-      may set up under Article VI.
+    relationship_to_court: A power reserved to the villages, separate from the courts the Tribal Council may set up under Article VI.
     link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
     source: hopi-constitution-nill
     document_version:
       document: hopi-tribe-of-arizona-constitution
       version: 1993-text-2
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '1993-12-07'
     locator: Article III, Sections 2(a)-(d) and 3
-    note: The Constitution states the reserved powers; it does not describe how individual villages carry
-      them out, so no procedure, participation or enforcement is recorded.
+    note: Read in full on 2026-11-23 (Constitution and By-laws of the Hopi Tribe (NILL copy, OCR text; amended 1993 per record)). The Constitution states the reserved powers; it does not describe how individual villages carry them out, so no procedure, participation or enforcement is recorded. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 156.
   - kind: council-hearing
     name: Tribal Council hearing of disputes between villages
-    description: When villages dispute any matter, the Kikmongwi of a village party may ask the Chairman
-      to call a special Council meeting; the Council hears representatives and witnesses, decides in a
-      closed meeting by majority vote, and keeps a record of the evidence and its reasons.
+    description: When villages dispute any matter, the Kikmongwi of a village party may ask the Chairman to call a special Council meeting; the Council hears representatives and witnesses, decides in a closed meeting by majority vote, and keeps a record of the evidence and its reasons.
     legal_basis: Constitution of the Hopi Tribe, Article VIII
     case_types:
     - intergovernmental
     participation: voluntary
-    enforcement: A village party that considers the decision unjust may, within ten days, seek review
-      by the Secretary of the Interior.
+    enforcement: If a village party considers the decision unjust, its Kikmongwi may notify the Superintendent within ten days, and the Council's decision is then subject to review by the Secretary of the Interior within ninety days. The text does not say how the decision is otherwise carried out.
     link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
     source: hopi-constitution-nill
     document_version:
       document: hopi-tribe-of-arizona-constitution
       version: 1993-text-2
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '1993-12-07'
     locator: Article VIII, Sections 1-3
-    note: Participation recorded as voluntary because the text says a village party 'may' ask for the
-      meeting. Secretarial review is as stated in the constitution text read.
+    note: 'Read in full on 2026-11-23 (Constitution and By-laws of the Hopi Tribe (NILL copy, OCR text; amended 1993 per record)). Participation recorded as voluntary because the text says a village party ''may'' ask for the meeting. Enforcement corrected from Article VIII, Section 3: the ten-day step is notice to the Superintendent, followed by Secretary of the Interior review within ninety days (the OCR of that sentence is garbled but the sequence is clear). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 157.'
+    relationship_to_court: The Tribal Council acts as a court for disputes between villages (Article VI, Section 1(h)), following Article VIII.
   provisions:
   - kind: traditional-dispute-resolution
     title: Powers reserved to the villages

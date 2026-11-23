@@ -1,7 +1,7 @@
 profile: content/tribes/b/blue-lake-rancheria.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -88,5 +88,16 @@ searches:
   address: https://www.bluelakerancheria-nsn.gov/wp-content/uploads/2024/09/04-02.pdf
   outcome: found
   reason: Re-downloaded; scanned image PDF (5 pages) OCR'd with tesseract and all sections 1-9 read.
+  records:
+  - content/tribes/b/blue-lake-rancheria.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/b/blue-lake-blue-lake-housing-authority-dispute-resolution.pdf
+  query: 'BLUE LAKE HOUSING AUTHORITY DISPUTE RESOLUTION ORDINANCE (NILL heading: ''BLHA Dispute Resolution
+    Ordinance'')'
+  outcome: found
+  reason: Read the text in the project's private copy.
   records:
   - content/tribes/b/blue-lake-rancheria.yaml#dispute_resolution.provisions

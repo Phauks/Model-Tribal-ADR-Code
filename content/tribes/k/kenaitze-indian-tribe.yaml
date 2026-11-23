@@ -530,27 +530,22 @@ dispute_resolution:
   forums:
   - kind: customary-dispute-resolution
     name: Traditional Conflict Resolution Program (TCRP)
-    description: A program to which the Tribal Court may refer cases; NCORJ classifies it as peacemaking
-      and circle practice, and the Tribe's codes also refer elder and vulnerable adult protection matters
-      and sentencing options to it.
-    legal_basis: Kenaitze Tribal Court Code, Sections 14(B), 17, 18; Domestic Relations Code, Chapter
-      10
+    description: A program to which the Tribal Court may refer cases; NCORJ classifies it as peacemaking and circle practice, and the Tribe's codes also refer elder and vulnerable adult protection matters and sentencing options to it.
+    legal_basis: Kenaitze Tribal Court Code, Sections 14(B), 17, 18; Domestic Relations Code, Chapter 10
     case_types:
     - civil
     - family
     - criminal-sentencing
     - other
     participation: voluntary-or-court-referred
-    relationship_to_court: At any time during a case the Court may refer it to the program if the judges
-      find it appropriate; parties may request referral, and the presiding judges decide.
+    relationship_to_court: At any time during a case the Court may refer it to the program if the judges find it appropriate; parties may request referral, and the presiding judges decide.
     link: https://www.kenaitze.org/wp-content/uploads/KenaitzeCourtCode.pdf
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
     verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/referral-to-the-traditional-conflict-resolution-program-tcrp-during-a-case/
-    note: Case types reflect the separate NCORJ records for Sections 14(B), 17 and 18 and Domestic Relations
-      Code Chapter 10 (elder protection), which were listed but only Section 14(B) was read.
+    note: 'Case types reflect the separate NCORJ records for Sections 14(B), 17 and 18 and Domestic Relations Code Chapter 10 (elder protection), which were listed but only Section 14(B) was read. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 199.'
   database_listings:
   - title: Procedure for Transferring Cases to the Tribal Traditional Conflict Resolution Program
     citation: Tribal Court Code of the Kenaitze Indian Tribe. Section 17 — Procedure for Transferring

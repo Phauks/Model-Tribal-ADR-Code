@@ -251,52 +251,41 @@ dispute_resolution:
   forums:
   - kind: peacemaking
     name: Peacemaker Court
-    description: Part of the judicial branch alongside the Tribal Court and Court of Appeals, with original
-      jurisdiction over disputes involving minor civil matters between Snoqualmie tribal members and the
-      application of tribal customs and traditions to tribal life.
-    legal_basis: Snoqualmie Judiciary Act (Tribal Council Act 3.1; Snoqualmie Tribal Code Title 3, Chapter
-      1), Sections 4.0, 5.0(c), 7.4; enacted Feb. 2, 2002, as amended through June 27, 2013
+    description: Part of the judicial branch alongside the Tribal Court and Court of Appeals; the Act gives it 'such original and subject matter jurisdiction' over disputes involving minor civil matters between Snoqualmie Tribal members and the application of Tribal customs and traditions to Tribal life. Section 7.4 (Peacemaker Court) is 'Reserved.' and no procedures are stated.
+    legal_basis: Snoqualmie Judiciary Act (Tribal Council Act 3.1; Snoqualmie Tribal Code Title 3, Chapter 1), Sections 4.0, 5.0(c), 7.4; enacted Feb. 2, 2002, as amended through June 27, 2013
     case_types:
     - civil
     - other
-    relationship_to_court: One of three components of the judicial branch; the section on the Peacemaker
-      Court's operation (7.4) is marked Reserved in the copy reviewed.
+    relationship_to_court: One of three components of the judicial branch; the section on the Peacemaker Court's operation (7.4) is marked Reserved in the copy reviewed.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Snoqualmie-act3-1.pdf
     source: snoqualmie-judiciary-act-3-1
     confidence: medium
     verification: read-in-full
     as_of: '2013-08-07'
     locator: Sections 4.0, 5.0(c), 7.4
-    note: Read from OCR. Codified as amended Aug. 7, 2013. Section 7.4 is 'Reserved' in this copy, although
-      NARF's index describes it as providing authorization and appointment requirements. Whether the Peacemaker
-      Court is operating was not verified.
+    note: Read in full on 2026-11-23 from page images (Tribal Council Act 3.1, Act Establishing the Judiciary (Snoqualmie Judiciary Act, Tribal Code Title 3, Ch. 1); enacted Feb. 2, 2002 (Act 2-02); amended Mar. 20, 2008, May 23, 2013 and June 27, 2013 (Res. 129-2013); codified as amended Aug. 7, 2013). Read from OCR. Codified as amended Aug. 7, 2013. Section 7.4 is 'Reserved' in this copy, although NARF's index describes it as providing authorization and appointment requirements. Whether the Peacemaker Court is operating was not verified. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 507.
   provisions:
   - kind: arbitration
     title: 'Chapter 3: Arbitration Act'
-    citation: 'Chapter 3: Arbitration Act; SECTION 5.0 - ENFORCEABILITY OF AGREEMENTS TO ARBITRATE; SECTION
-      7.0 - STAY OF PROCEEDINGS IN TRIBAL COURT AND ORDER TO PROCEED WITH ARBITRATION; SECTION 11.0 -
-      ARBITRATION AWARD NOT APPEALABLE'
+    citation: 'Chapter 3: Arbitration Act; SECTION 5.0 - ENFORCEABILITY OF AGREEMENTS TO ARBITRATE; SECTION 7.0 - STAY OF PROCEEDINGS IN TRIBAL COURT AND ORDER TO PROCEED WITH ARBITRATION; SECTION 11.0 - ARBITRATION AWARD NOT APPEALABLE'
     link: https://narf.org/nill/codes/snoqualmie/index.html
     source: national-indian-law-library-code-codes-snoqualmie
     confidence: medium
     verification: title-only
     as_of: '2017'
     locator: 'Table of Contents, under ''TITLE III: SNOQUALMIE JUDICIAL CODE'''
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: June 2017); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read.
-      Places searched: research/search-logs/dispute-resolution/s/snoqualmie-indian-tribe.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: the only online copy sits on a site that refused automated requests; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 508.'
   - kind: peacemaking
-    title: Judiciary Act 3.1, Section 7.4 – Peacemaker Court
-    citation: Judiciary Act 3.1, Section 7.4 – Peacemaker Court
+    title: Judiciary Act 3.1, Sections 4.0, 5.0(c) and 7.4 - Peacemaker Court
+    citation: Snoqualmie Tribal Council Act 3.1 (Act Establishing the Judiciary), Sections 4.0, 5.0(c), 7.4 (reserved)
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Snoqualmie-act3-1.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: snoqualmie-judiciary-act-3-1
     confidence: medium
     verification: read-in-full
-    as_of: '2025-09-29'
-    locator: Snoqualmie Indian Tribe of Washington
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and appointment requirements.'
+    as_of: '2013-08-07'
+    locator: Sections 4.0, 5.0(c); Section 7.4 (reserved)
+    note: 'Read in full on 2026-11-23 from page images (Tribal Council Act 3.1, Act Establishing the Judiciary (Snoqualmie Judiciary Act, Title 3 Ch. 1); enacted Feb. 2, 2002 (Act 2-02), amended 2008 and 2013, codified as amended Aug. 7, 2013). Read from the page images of Tribal Council Act 3.1 (pp. 1-4 and 11). NARF''s description (authorization and appointment requirements) is not supported: Section 7.4 reads ''Reserved.'' Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 509.'
+    summary: Names the Peacemaker Court as one of three parts of the Tribe's judiciary (with the Tribal Court and Court of Appeals) and gives it original and subject-matter jurisdiction over minor civil matters between Snoqualmie members and the application of Tribal customs and traditions to Tribal life. The section on composition of the Peacemaker Court (7.4) is reserved, so the Act does not say who serves, how a case is brought or whether outcomes are binding.
 gaming:
   compacts:
   - state: WA

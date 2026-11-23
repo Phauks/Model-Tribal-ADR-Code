@@ -1,7 +1,7 @@
 profile: content/tribes/t/the-choctaw-nation-of-oklahoma.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -187,3 +187,33 @@ searches:
   outcome: found
   reason: 'The Adoption Code PDF shows the same article, which reads Reserved; this is the same section
     as record #1.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/eacfc7b0df955bd5eb57.pdf
+  query: Choctaw Nation Peacemaking Act
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/t/the-choctaw-nation-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://peacemaking.narf.org/2017/08/training-choctaw-nation-of-oklahoma-september-2017/
+  query: news page
+  outcome: found
+  reason: Details match.
+  records:
+  - content/tribes/t/the-choctaw-nation-of-oklahoma.yaml#dispute_resolution.training_programs
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://peacemaking.narf.org/2022/10/peacemaking-training-for-the-choctaw-nation/
+  query: news page
+  outcome: found
+  reason: Details match.
+  records:
+  - content/tribes/t/the-choctaw-nation-of-oklahoma.yaml#dispute_resolution.training_programs

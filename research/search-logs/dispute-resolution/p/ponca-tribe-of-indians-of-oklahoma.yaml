@@ -77,5 +77,27 @@ searches:
   reason: The capture index lists 2 archived addresses for narf.org/nill/codes/ponca_oklahoma/*; those
     whose address names a code, law, court or dispute resolution page were fetched in this retry or are
     listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f34a61b392e5b97f80a7.txt
+  query: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic Abuse
+    Cases Prohibited.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/ponca-tribe-of-indians-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Ponca Section 313
+  query: Ponca Tribe of Oklahoma Domestic and Family Violence Code Section 313 mediation marriage counseling
+    prohibited
+  outcome: not-found
+  reason: Only NILL TOC and secondary sources.
+  records:
+  - content/tribes/p/ponca-tribe-of-indians-of-oklahoma.yaml#dispute_resolution.provisions
 next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
   (Gate 1) before any record goes into the profile.

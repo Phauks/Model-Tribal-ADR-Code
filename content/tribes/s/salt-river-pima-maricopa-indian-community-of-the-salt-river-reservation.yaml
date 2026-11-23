@@ -582,23 +582,20 @@ dispute_resolution:
   forums:
   - kind: family-group-conference
     name: Family group conferencing / extended family hearing (juvenile)
-    description: Uses the extended families of the Community to help the juvenile court resolve juvenile
-      offender, incorrigibility and dependency problems by applying the customs and traditions of the
-      Pima and Maricopa peoples; the court may appoint a Community member qualified to act as a tribal
-      elder to conduct the hearing.
-    legal_basis: Salt River Pima-Maricopa Indian Community Code, § 11-31
+    description: Alternative juvenile court procedure that uses the extended families of the Community, and the customs and traditions of the Pima and Maricopa peoples, to resolve juvenile offender, incorrigibility and dependency problems. Before a hearing on the merits the court, on its own motion or on motion of a parent, guardian or the Community, may order the case heard this way after inquiring into whether it is applicable and suitable. The court may appoint a Community member qualified to act as a tribal elder to conduct the informal hearing, and may order extended family members to attend.
+    legal_basis: Salt River Pima-Maricopa Indian Community Code of Ordinances, Chapter 11 (Minors), § 11-31
     case_types:
     - juvenile
     - child-welfare
     participation: court-referred
-    relationship_to_court: The appointed elder makes written disposition recommendations to the court,
-      which seeks to incorporate the extended family in its order.
-    link: https://srpmic-nsn.gov/government/ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: The appointed elder makes written recommendations of disposition to the court. The court enters judgment (stating that this procedure was used), tries to shape its order to include the extended family and may require family members to perform specific acts or services for the juvenile; appeals go under section 11-29.
+    link: https://srpmic-nsn.gov/wp-content/uploads/2023/10/Chapter11.pdf
+    source: srpmic-code-chapter-11-minors
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2026'
-    locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
+    locator: Ch. 11, Sec. 11-31 (a)-(f), pp. CD11:12-13
+    note: Read in full on 2026-11-23 (Salt River Pima-Maricopa Indian Community Code of Ordinances, Chapter 11 Minors, Sec. 11-31 (Ord. SRO-210-96; SRO-402-2012)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 467.
   provisions:
   - kind: other
     title: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT

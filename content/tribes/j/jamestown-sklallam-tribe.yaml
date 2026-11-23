@@ -524,32 +524,22 @@ dispute_resolution:
   forums:
   - kind: family-group-conference
     name: Peacemaker Conference (Youth Code)
-    description: An informal conference in youth proceedings, which the code describes as an element of
-      the Peacemaking Initiative, aimed at a written agreed disposition such as a Family Preservation
-      Plan.
-    legal_basis: Jamestown S’Klallam Tribal Code, Title 33 – Youth Code, Section 33.01.16 and definition
-      O
+    description: An informal conference in youth proceedings, which the code describes as an element of the Peacemaking Initiative, aimed at a written agreed disposition such as a Family Preservation Plan.
+    legal_basis: Jamestown S’Klallam Tribal Code, Title 33 – Youth Code, Section 33.01.16 and definition O
     case_types:
     - child-welfare
     - juvenile
     - family
     participation: voluntary-or-court-referred
-    relationship_to_court: After a preliminary hearing any party may request a conference, or the Court
-      may provisionally transfer a case on its own motion; if no agreement is reached, a fact-finding
-      hearing is scheduled.
-    enforcement: A written agreement for a fixed period is signed by the child, parents or guardian, child
-      advocate and the Tribe; the Indian Child Welfare Department monitors it and may recommend a fact-finding
-      hearing for noncompliance.
+    relationship_to_court: After a preliminary hearing any party may ask the Court Clerk for a conference (held within 20 days), or the Court may provisionally transfer a case on its own motion; if no agreement is reached or the parties fail to appear, a fact-finding hearing is scheduled as soon as practical.
+    enforcement: A written agreement for a fixed period (not past the child's 18th birthday) is signed by the child, parents or guardian, child advocate and the Tribe's presenting officer or ICW representative; the Indian Child Welfare Department monitors it and may recommend a fact-finding hearing for noncompliance. Parties may present a draft order for the Court to enter once stated conditions are met, and such an order is enforced like any other Court order.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Jamestown-SKlallam-Title-33-Youth-Code-1-6-20-2.pdf
     source: jamestown-sklallam-title-33-youth-code
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '2020'
-    locator: Sections 33.01.02(O), 33.01.16(A)-(E)
-    note: Kind recorded as family-or-talking-circle because it is a family-group conference within child
-      welfare proceedings. Substantive information from the conference is inadmissible unless independently
-      substantiated, except agreed Family Preservation Plan terms. The code's definition cites NARF's
-      peacemaking site.
+    locator: Sections 33.01.02(O), 33.01.16(A)-(F)
+    note: Read in full on 2026-11-23 (Jamestown S'Klallam Tribe Tribal Code, Title 33 Youth Code (amended January 6, 2020 per file name and first reading)). Recorded as a family-group-conference kind; the code calls the process a Peacemaker Conference and an element of the Peacemaking Initiative (33.01.02(O)). Substantive information from the conference is inadmissible unless independently substantiated, except terms of an agreed Family Preservation Plan. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 173.
   provisions:
   - kind: peacemaking
     title: Peacemaker Conference
@@ -613,14 +603,13 @@ dispute_resolution:
     title: Title 33 – Youth Code
     citation: Title 33 – Youth Code
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Jamestown-SKlallam-Title-33-Youth-Code-1-6-20-2.pdf
-    source: narf-ipi-youth-family-peacemaking-laws
+    source: jamestown-sklallam-title-33-youth-code
     confidence: medium
     verification: read-in-full
     as_of: '2025-08-25'
-    locator: Jamestown S’Klallam Tribe of Washington
-    note: 'Native American Rights Fund description (provision itself not read): Provides procedures, referral
-      process, inadmissibility of information from peacemaking into evidence (except terms of an agreed
-      Family Preservation Plan are admissible), and formalization of agreement requirements.'
+    locator: Title 33 Youth Code, Sections 33.01.02(O) and 33.01.16 (Peacemaker Conference)
+    note: Read in full on 2026-11-23 (Jamestown S'Klallam Tribe Tribal Code, Title 33 Youth Code (amended January 6, 2020 per file name and first reading)). Peacemaker Conference provisions (Sections 33.01.02(O) and 33.01.16) read in the Title 33 text; NARF's description is consistent with it. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 178.
+    summary: 'The Youth Code provides a Peacemaker Conference, an element of the Peacemaking Initiative, in youth proceedings: after a preliminary hearing any party may request one, or the Court may transfer a case on its own motion. An agreement is written, signed by the child, parents or guardian, child advocate and the Tribe, and runs for a fixed term; the Indian Child Welfare Department monitors it and noncompliance or no agreement leads to a fact-finding hearing. Substantive information from the conference is inadmissible unless independently substantiated, except terms of an agreed Family Preservation Plan. Parties may ask the Court to enter the agreement as a formal order once stated conditions are met, enforced like any other Court order.'
   clauses:
   - context: commercial-code
     kind: arbitration-clause

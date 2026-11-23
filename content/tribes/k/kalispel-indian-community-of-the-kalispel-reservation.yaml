@@ -353,25 +353,20 @@ dispute_resolution:
   forums:
   - kind: other
     name: Traditional Peacemakers Panel
-    description: A panel named in the civil actions chapter that may allow alternative service, decides
-      tolling questions, and in execution of judgments orders the judgment debtor to appear, determines
-      available property and orders seizure.
-    legal_basis: Kalispel Law and Order Code, Chapter 3 – Civil Actions, Sections 3-1, 3-5.01, 3-21 (Execution
-      of Judgments)
+    description: A panel named in the civil actions chapter that may allow alternative service, decides tolling questions, and in execution of judgments orders the judgment debtor to appear, determines available property and orders seizure.
+    legal_basis: Kalispel Law and Order Code, Chapter 3 – Civil Actions, Sections 3-1, 3-5.01, 3-21 (Execution of Judgments)
     case_types:
     - civil
     participation: required
     relationship_to_court: Functions within the Tribal Court's civil process as described in Chapter 3.
-    enforcement: Orders seizure and public sale of a judgment debtor's property; failure to appear may
-      be deemed contempt.
+    enforcement: Orders seizure and public sale of a judgment debtor's property; failure to appear may be deemed contempt.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kalispel-Chapter-3-Civil-Actions-4.9.2025.pdf
     source: kalispel-law-and-order-code-chapter-3-civil-actions
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '2025-04-09'
     locator: Sections 3-1.04, 3-5.01, 3-21.01-3-21.03
-    note: Kind 'other' because the chapter shows the panel acting in an adjudicative and enforcement role
-      rather than as a consensual forum; the chapter reviewed does not define the panel's composition.
+    note: Read in full on 2026-11-23 (Law and Order Code of the Kalispel Indian Community, Chapter 3 - Civil Actions (page footers 11.21.2017; cites Resolutions 2007-51, 2008-39)). Kind 'other' because the chapter shows the panel acting in an adjudicative and enforcement role rather than as a consensual forum; the chapter reviewed does not define the panel's composition. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 184.
   provisions:
   - kind: arbitration
     title: CHAPTER 22 - ARBITRATION CODE

@@ -94,5 +94,35 @@ searches:
     peacemaking, circles, elders' courts and restorative justice
   outcome: not-found
   reason: 'Archived copy (capture of 2011-03-04) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/7268a810a0c01c6c561f.txt
+  query: 15.01.210 Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-the-chehalis-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/c55c97280b7618b3fdae.txt
+  query: 15.01.210 Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-the-chehalis-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Chehalis Tribe 15.01.210 Dispute resolution
+  outcome: found
+  reason: codepublishing.com chapter 15.01
+  records:
+  - content/tribes/c/confederated-tribes-of-the-chehalis-reservation.yaml#dispute_resolution.provisions
 next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
   (Gate 1) before any record goes into the profile.

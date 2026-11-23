@@ -288,6 +288,96 @@ searches:
     service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-114
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/7f791fb5835039a0bf4c.pdf
+  query: Peacemaker Mediation Forum
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/c4cc21f61989baba4242.txt
+  query: Peacemaker Mediation Forum
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/c4cc21f61989baba4242.txt
+  query: 'Section 11: Peacemaker Mediation Forum/Family Unity'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f4d374595eb5f10ed944.txt
+  query: 'Section 11: Peacemaker Mediation Forum/Family Unity'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/7f791fb5835039a0bf4c.txt
+  query: 'Section 11: Peacemaker Mediation Forum/Family Unity'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Karuk Peacemaker Mediation Forum
+  query: Section 11
+  outcome: found
+  reason: 'Leads: tribal.codes and peacemaking.narf.org Karuk Chapter 3.05 KTC PDF.'
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/c4cc21f61989baba4242.txt
+  query: Dispute Resolution-Mediation/Peacemaking
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f4d374595eb5f10ed944.txt
+  query: Dispute Resolution-Mediation/Peacemaking
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: karuk.us Title II PDF
+  query: Sec. 1(D)
+  outcome: found
+  reason: Summary returned fragments only.
+  records:
+  - content/tribes/k/karuk-tribe.yaml#dispute_resolution.provisions
 next_steps: 'No page or official directory entry was found on 2026-11-22 for “Peacemaker Mediation Forum”
   (research/reviews/2026-11-22-service-links.json). A person could open in a browser the pages that refused
   the project''s link checker: https://karuk.tribal.codes/KTC/10.10.270. The second search of 2026-11-23

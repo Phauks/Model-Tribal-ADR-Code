@@ -1,7 +1,7 @@
 profile: content/tribes/p/poarch-band-of-creek-indians.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -42,3 +42,73 @@ searches:
   query: 44-4-7 Dispute Resolution
   outcome: found
   reason: Table of contents heading only; no text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/86077856ba15b37e7118.txt
+  query: 41-1-9 Enforcement and Dispute Resolution
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/poarch-band-of-creek-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/poarch-band-of-creek-indians/4abf747a288c7b55.txt
+  query: 41-1-9 Enforcement and Dispute Resolution
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/poarch-band-of-creek-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Poarch Sec. 41-1-9
+  query: Poarch Band of Creek Indians code Sec. 41-1-9 Enforcement and Dispute Resolution per capita
+  outcome: blocked
+  reason: Text lives on Municode.
+  records:
+  - content/tribes/p/poarch-band-of-creek-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/poarchcode/index.html
+  query: toc
+  outcome: found
+  reason: TOC only, links to Municode.
+  records:
+  - content/tribes/p/poarch-band-of-creek-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/86077856ba15b37e7118.txt
+  query: 44-4-7 Dispute Resolution
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/poarch-band-of-creek-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/poarch-band-of-creek-indians/4abf747a288c7b55.txt
+  query: 44-4-7 Dispute Resolution
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/poarch-band-of-creek-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Poarch Sec. 44-4-7
+  query: Poarch Band of Creek Indians code Sec. 41-1-9 Enforcement and Dispute Resolution per capita
+  outcome: blocked
+  reason: Text lives on Municode.
+  records:
+  - content/tribes/p/poarch-band-of-creek-indians.yaml#dispute_resolution.provisions

@@ -439,10 +439,7 @@ dispute_resolution:
     verification: title-only
     as_of: '2003'
     locator: Table of Contents, under 'Domestic Relations Code'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
-      May 2003); the provision itself was not read. The heading it falls under is taken from the page
-      layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 485.'
 gaming:
   compacts:
   - state: MN
@@ -547,20 +544,17 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: MN
     status: approved
-    dispute_resolution_summary: The video games of chance compact has no general arbitration or mediation
-      clause; when the State designates a machine as non-compliant, the nation may accept the finding,
-      submit the device to an independent gaming test laboratory, or contest the finding in federal district
-      court (or before the National Indian Gaming Commission or another court if jurisdiction is declined).
-    dispute_resolution_locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
-    source: compact-mn-prairie-island-indian-community-in-the-s-1990
+    dispute_resolution_summary: 'The video games of chance compact has no general arbitration or mediation clause. When the State''s Commissioner of Public Safety designates a machine non-complying in writing, the Community has 5 days to accept the finding (remove the machine and have the problem cured) or contest it: either by notifying the Commissioner and having an independent gaming test laboratory inspect the machine within three days (a non-complying finding means permanent removal unless modified), or by filing in federal district court, or before the National Indian Gaming Commission if the court declines jurisdiction, then in a court of competent jurisdiction. Section 4.6 leaves IGRA rights and remedies intact, and Section 2.2 treats a request to renegotiate as a request to negotiate under IGRA.'
+    dispute_resolution_locator: Sections 4.5-4.6 (Non-Complying Video Games of Chance; Demand for Remedies); Section 2.2
+    source: compact-mn-shakopee-mdewakanton-sioux-community-of-minnesota-1990-04-02
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '1990-04-02'
-    locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
-    note: state model compact; nation-specific text not checked. Read from the 1990 Prairie Island Indian
-      Community video games of chance compact; Minnesota nations also hold separate blackjack compacts,
-      which were not summarized. Status copied from this nation's most recent approved or deemed-approved
-      entry for this state in the Office of Indian Gaming list (2024-03-13).
+    locator: Sections 4.5-4.6; Section 2.2
+    note: Read in full on 2026-11-23 (Tribal-State Compact for Control of Class III Video Games of Chance on the Shakopee Mdewakanton Sioux Community Reservation in Minnesota, executed Oct. 20, 1989 / Dec. 1989, Federal Register notice April 2, 1990). Read from the Shakopee Mdewakanton Sioux Community compact text itself (replacing the earlier Prairie Island reading). Minnesota nations also hold separate blackjack compacts, which were not summarized. Status copied from this nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-03-13). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 486.
+    document_version:
+      document: shakopee-mdewakanton-sioux-community-of-minnesota-minnesota-video-games-of-chance-compact
+      version: 1990-original
   ordinances:
   - approved: '1993-11-02'
     link: https://www.nigc.gov?wpdmdl=11109&ind=11132

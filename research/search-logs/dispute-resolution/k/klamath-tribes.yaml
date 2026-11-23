@@ -1,7 +1,7 @@
 profile: content/tribes/k/klamath-tribes.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -159,3 +159,43 @@ searches:
   address: https://www.klamathtribalcourts.com/en/documents/28/Title_2_Chapter_18_-_The_Klamath_Peacemaker_Ordinance.pdf
   outcome: found
   reason: Re-downloaded; image-only PDF (16 pages) OCR'd at 200 dpi; pages 1-16 read in full.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/e1e809efcfb90711c992.pdf
+  query: Klamath Tribes Peacemaker Court
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/k/klamath-tribes.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/k/klamath-klamath-tribal-code-title-5-chapter-36-bond.pdf
+  query: 36.11 Dispute Resolution.
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/k/klamath-tribes.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/k/klamath-klamath-tribal-code-title-7-chapter-45-gaming.pdf
+  query: 45.63 Dispute Resolution Between Management Contractor or Tribes and Customers.
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/k/klamath-tribes.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/9c595aa52c1a917b3d4a.pdf
+  query: 11.13 Klamath Peacemaker Court.
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/k/klamath-tribes.yaml#dispute_resolution.provisions

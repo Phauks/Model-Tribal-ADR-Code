@@ -1,7 +1,7 @@
 profile: content/tribes/n/navajo-nation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -113,3 +113,33 @@ searches:
     the lead author''s order (own page, then directory entry): own-page, https://courts.navajo-nsn.gov/indexpeacemaking.htm.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-247
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/e9d7380e292013b155ca.pdf
+  query: Navajo Nation Peacemaking Program
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/n/navajo-nation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: peacemaking/navajo-peacemaking-program-brochure-2025-10.pdf
+  query: Peacemaking Program brochure (updated October 2025)
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/n/navajo-nation.yaml#dispute_resolution.published_materials
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/w/web-search-navajo-peacemaking-2026-11-21.html
+  query: Peacemaking Program brochure (updated October 2025)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/navajo-nation.yaml#dispute_resolution.published_materials
