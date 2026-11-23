@@ -1,0 +1,30 @@
+profile: content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Sault Ste. Marie Tribe tribal court video youtube
+  outcome: not-found
+  reason: Results were the Tribe's tribal court pages and board of directors meeting videos, which are government meetings and not court media; no court video appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Sault Tribe peacemaking or tribal court podcast
+  outcome: not-found
+  reason: Results were NARF and other nations' peacemaking pages and the Tribe's tribal court page; no podcast appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.saulttribe.com/government/tribal-court
+  query: court page media
+  outcome: blocked
+  reason: Fetched with curl. Returned HTTP 406 'Not Acceptable' from the site's security filter; not bypassed.
+next_steps: A person should open https://www.saulttribe.com/government/tribal-court by hand for embedded video. Board meeting videos do not count.

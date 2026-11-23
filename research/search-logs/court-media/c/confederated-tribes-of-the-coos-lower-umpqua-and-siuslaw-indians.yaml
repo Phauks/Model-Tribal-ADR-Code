@@ -1,0 +1,54 @@
+profile: content/tribes/c/confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Coos Lower Umpqua Siuslaw peacemaking video
+  outcome: found
+  reason: Results were mostly the nation's own pages (peace hike event posts and tribal news) plus an Oregon courts PDF of tribal videos that is not the nation's media.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Coos Lower Umpqua Siuslaw tribal court youtube
+  outcome: not-found
+  reason: No YouTube channel or video for the nation's court appeared; results were court schedules, dockets and the court page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://ctclusi.org/tribal-court-peacegiving/
+  query: video, podcast, photo and rights text on the Peacegiving Court page
+  outcome: found
+  reason: The page has no embedded video or audio; it shows two photos (a smudging image, which is a ceremony and excluded, and a Peacegivers necklace photo) and a site footer copyright line.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://ctclusi.org/tribal-court-luncheon-presentation/
+  query: tribal court luncheon presentation media
+  outcome: blocked
+  reason: 'Not read: the WebFetch budget for this session ran out (proxy HTTP 403), so this page was not opened.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://ctclusi.org/tag/youtube/
+  query: posts linking to YouTube videos
+  outcome: blocked
+  reason: 'Not read: the WebFetch budget for this session ran out (proxy HTTP 403), so this page was not opened.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://ctclusi.org/tribal-court-peacegiving/
+  query: images, video, footer rights
+  outcome: found
+  reason: Fetched with curl. Footer reads '© 2025 Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians | All Rights Reserved'; no video; peacegiver-necklaces.jpg is on the page, and smudge-for-court-page.png (ceremony) is excluded.
+next_steps: 'Ask the nation whether the necklace photo may be shown. Excluded: smudging image and New Year''s Day peace hike posts. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.'
