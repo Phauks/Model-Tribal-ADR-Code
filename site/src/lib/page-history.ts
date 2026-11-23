@@ -274,7 +274,7 @@ export function byPage<Item extends { address: string }>(items: Item[]): PageGro
 
 /** The page a file in the repository is built into, for files named after the page. */
 /** Pages under /nations/ that list nations rather than being one nation's page. */
-const nationListings = new Set(['data', 'map', 'recourse', 'timeline']);
+const nationListings = new Set(['data', 'map', 'recourse', 'timeline', 'federal-offices']);
 
 /**
  * The address whose history "Changes to this page" opens, for a page whose
