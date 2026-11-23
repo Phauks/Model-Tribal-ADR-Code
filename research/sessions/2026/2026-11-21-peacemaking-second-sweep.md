@@ -86,66 +86,27 @@ limits: >-
 
 ## What this session added
 
-The first sweep (session `2026-11-21-peacemaking-programs`) covered the
-Navajo Nation, the Great Lakes and Northeast, Oregon and part of
-Washington, Oklahoma and the South, and four Alaska Tribes. This session
-covered the regions it listed as not reached, and re-checked the Navajo
-figures it had read only through a fetch tool.
+The first sweep (session `2026-11-21-peacemaking-programs`) covered the Navajo Nation, the Great Lakes and Northeast, Oregon and part of Washington, Oklahoma and the South, and four Alaska Tribes. This session covered the regions it listed as not reached, and re-checked the Navajo figures it had read only through a fetch tool.
 
-Findings are written into
-[research/analyses/2026-11-21-peacemaking-programs.md](../../analyses/2026-11-21-peacemaking-programs.md)
-(sections 3 and 7).
+Findings are written into [research/analyses/2026-11-21-peacemaking-programs.md](../../analyses/2026-11-21-peacemaking-programs.md) (sections 3 and 7).
 
 ## Nations checked with no peacemaking process found
 
-On the court pages and codes opened, no peacemaking process was found for
-these nations. This is a statement about the pages, not about the nations
-(project analysis):
+On the court pages and codes opened, no peacemaking process was found for these nations. This is a statement about the pages, not about the nations (project analysis):
 
-- **Northern Plains:** Standing Rock (beyond a juvenile disposition option),
-  Turtle Mountain, Mandan Hidatsa and Arikara, Rosebud, Oglala, Cheyenne
-  River, Yankton, Lower Brule, Crow Creek, Winnebago (its Traditional
-  Wellness Court is a treatment court) and Omaha.
-- **Montana, Wyoming, Kansas, Iowa:** Blackfeet (its alternative court was a
-  substance-abuse pilot), Fort Peck, Northern Cheyenne, Confederated Salish
-  and Kootenai, Little Shell, Kickapoo Tribe in Kansas, Iowa Tribe of
-  Kansas and Nebraska, Sac and Fox Nation of Missouri.
-- **Southwest:** Laguna, Pascua Yaqui, Tohono O'odham, Gila River, Ute
-  Mountain Ute, Ute Indian Tribe of the Uintah and Ouray Reservation.
-- **Nevada:** Pyramid Lake, Reno-Sparks, Washoe, Walker River, Las Vegas
-  Paiute, Moapa, Fallon, Yerington.
-- **California:** Hoopa Valley, Bishop Paiute, Shingle Springs, Tule River
-  (it hosted a 2026 NARF peacemaking training).
-- **Washington and Idaho:** Muckleshoot (its court lists healing circles),
-  Nisqually, Port Gamble S'Klallam, Suquamish, Lummi, Squaxin Island,
-  Puyallup, Nooksack, Makah, Yakama, Spokane, Coeur d'Alene,
-  Shoshone-Bannock, and the Northwest Intertribal Court System.
+- **Northern Plains:** Standing Rock (beyond a juvenile disposition option), Turtle Mountain, Mandan Hidatsa and Arikara, Rosebud, Oglala, Cheyenne River, Yankton, Lower Brule, Crow Creek, Winnebago (its Traditional Wellness Court is a treatment court) and Omaha.
+- **Montana, Wyoming, Kansas, Iowa:** Blackfeet (its alternative court was a substance-abuse pilot), Fort Peck, Northern Cheyenne, Confederated Salish and Kootenai, Little Shell, Kickapoo Tribe in Kansas, Iowa Tribe of Kansas and Nebraska, Sac and Fox Nation of Missouri.
+- **Southwest:** Laguna, Pascua Yaqui, Tohono O'odham, Gila River, Ute Mountain Ute, Ute Indian Tribe of the Uintah and Ouray Reservation.
+- **Nevada:** Pyramid Lake, Reno-Sparks, Washoe, Walker River, Las Vegas Paiute, Moapa, Fallon, Yerington.
+- **California:** Hoopa Valley, Bishop Paiute, Shingle Springs, Tule River (it hosted a 2026 NARF peacemaking training).
+- **Washington and Idaho:** Muckleshoot (its court lists healing circles), Nisqually, Port Gamble S'Klallam, Suquamish, Lummi, Squaxin Island, Puyallup, Nooksack, Makah, Yakama, Spokane, Coeur d'Alene, Shoshone-Bannock, and the Northwest Intertribal Court System.
 
-Already covered by the code-text pass and not repeated here: Northern
-Arapaho, Spirit Lake, Nez Perce, Skokomish, Snoqualmie, Hopland, Pit River,
-Karuk and Kalispel.
+Already covered by the code-text pass and not repeated here: Northern Arapaho, Spirit Lake, Nez Perce, Skokomish, Snoqualmie, Hopland, Pit River, Karuk and Kalispel.
 
 ## Checks and corrections
 
-- **Navajo figures.** The fiscal year 2025 fourth-quarter figures (100 new,
-  61 closed, 97 pending) match the copy posted by the Navajo Nation Council.
-  Two later quarters were added. The spring 2026 report gives two different
-  new-case counts for the same quarter (65 in the narrative, 129 in the
-  statistics), with no explanation.
-- **Chippewa Cree.** A helper reported "about 250 cases a year" for the
-  Traditional Peacemaker Circle. The article gives 250 as the child support
-  office's yearly caseload, not a peacemaking count. Corrected.
-- **Nez Perce.** A helper's quotation that peacemaker agreements "are not
-  enforceable" comes from § 1-8-11, which covers matters brought by people
-  outside the court's jurisdiction. Agreements in referred cases can be
-  entered as judgments under § 1-8-10. Both are in the code-text pass.
-- **NARF model-law PDFs.** Direct requests for the NARF copies of the Isleta,
-  Nez Perce, Skokomish and Snoqualmie codes returned 404 on Nov. 21, 2026,
-  while NARF's list page still links them and refused the request itself
-  (406). This looks like a block on automated requests, not a move (project
-  analysis), so the records were not marked as moved. Each nation also
-  publishes its own copy (Isleta, Nez Perce, Skokomish, Snoqualmie), which
-  the helpers read.
-- **Helper user agent.** One helper sent a custom user agent on its first
-  batch of downloads, against the brief. It reports that no site had
-  refused it; the pages it used were re-checked by the lead session.
+- **Navajo figures.** The fiscal year 2025 fourth-quarter figures (100 new, 61 closed, 97 pending) match the copy posted by the Navajo Nation Council. Two later quarters were added. The spring 2026 report gives two different new-case counts for the same quarter (65 in the narrative, 129 in the statistics), with no explanation.
+- **Chippewa Cree.** A helper reported "about 250 cases a year" for the Traditional Peacemaker Circle. The article gives 250 as the child support office's yearly caseload, not a peacemaking count. Corrected.
+- **Nez Perce.** A helper's quotation that peacemaker agreements "are not enforceable" comes from § 1-8-11, which covers matters brought by people outside the court's jurisdiction. Agreements in referred cases can be entered as judgments under § 1-8-10. Both are in the code-text pass.
+- **NARF model-law PDFs.** Direct requests for the NARF copies of the Isleta, Nez Perce, Skokomish and Snoqualmie codes returned 404 on Nov. 21, 2026, while NARF's list page still links them and refused the request itself (406). This looks like a block on automated requests, not a move (project analysis), so the records were not marked as moved. Each nation also publishes its own copy (Isleta, Nez Perce, Skokomish, Snoqualmie), which the helpers read.
+- **Helper user agent.** One helper sent a custom user agent on its first batch of downloads, against the brief. It reports that no site had refused it; the pages it used were re-checked by the lead session.

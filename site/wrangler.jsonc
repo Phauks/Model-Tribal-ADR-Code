@@ -119,11 +119,13 @@
 		"SITE_ADDRESS": "https://model-tribal-adr-code.trevordgoldsmith.workers.dev"
 	},
 	// Every hour, at 17 minutes past: find updates to followed pages and send
-	// the summary emails that are due. tools/add-scheduled-run.mjs adds the
+	// the summary emails that are due. Mondays at 09:41 UTC: check the private
+	// address book against the federal and Alaska directories and the nation
+	// pages (COLLABORATION.md, "Address book"). tools/add-scheduled-run.mjs adds the
 	// Worker's scheduled handler after the build, since the SvelteKit adapter
 	// makes only a fetch handler.
 	"triggers": {
-		"crons": ["17 * * * *"]
+		"crons": ["17 * * * *", "41 9 * * 1"]
 	}
 	// One setting is made in the Cloudflare dashboard (Worker > Settings >
 	// Variables and Secrets) rather than here, because this file is public:

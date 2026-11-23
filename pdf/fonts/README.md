@@ -1,18 +1,10 @@
 # Fonts
 
-The print build embeds only the fonts in this folder: Typst runs with
-`--ignore-system-fonts --ignore-embedded-fonts`, so the book looks the same on
-every computer. Lulu requires every font to be embedded (Lulu, *Book Creation
-Guide*, p. 23).
+The print build embeds only the fonts in this folder: Typst runs with `--ignore-system-fonts --ignore-embedded-fonts`, so the book looks the same on every computer. Lulu requires every font to be embedded (Lulu, *Book Creation Guide*, p. 23).
 
-Atkinson Hyperlegible Next is the project's typeface (decision record 0005).
-It covers 362 characters, so Noto Sans supplies characters it lacks, such as
-ʻ (ʻokina), ʷ, ʔ and ō, and two Noto fonts supply the Cherokee syllabary and
-Canadian syllabics (measured with fontTools, 2026-11-21).
+Atkinson Hyperlegible Next is the project's typeface (decision record 0005). It covers 362 characters, so Noto Sans supplies characters it lacks, such as ʻ (ʻokina), ʷ, ʔ and ō, and two Noto fonts supply the Cherokee syllabary and Canadian syllabics (measured with fontTools, 2026-11-21).
 
-All fonts are under the SIL Open Font License 1.1 ([OFL-Atkinson-Hyperlegible-Next.txt](OFL-Atkinson-Hyperlegible-Next.txt),
-[OFL-Noto.txt](OFL-Noto.txt), full text also in [`LICENSES/OFL-1.1.txt`](../../LICENSES/OFL-1.1.txt)).
-The license allows the fonts to be bundled and embedded in documents.
+All fonts are under the SIL Open Font License 1.1 ([OFL-Atkinson-Hyperlegible-Next.txt](OFL-Atkinson-Hyperlegible-Next.txt), [OFL-Noto.txt](OFL-Noto.txt), full text also in [`LICENSES/OFL-1.1.txt`](../../LICENSES/OFL-1.1.txt)). The license allows the fonts to be bundled and embedded in documents.
 
 | File | Version | Source | SHA-256 |
 | --- | --- | --- | --- |
@@ -31,7 +23,4 @@ The license allows the fonts to be bundled and embedded in documents.
 | NotoSansCanadianAboriginal-Regular.ttf | 2.004 | same repository, `fonts/NotoSansCanadianAboriginal/unhinted/ttf/` | `dc212a1c1cd2d9c30d954b3fbda0abfbd2e30273032a3d4352e1a8644f50e39a` |
 | NotoSansCanadianAboriginal-Bold.ttf | 2.004 | same | `e786d24b678fcb2bb68236c66e4fff31b676a7e5863a7073eac58edfd7f00f50` |
 
-Downloaded 2026-11-21 from the repositories' `main` branches. The Atkinson
-Hyperlegible Next files are identical to those used in the PDF and ebook test
-builds. "Canadian Aboriginal" is the font's own name, taken from the Unicode
-block name; the book's text uses the nations' own names.
+Downloaded 2026-11-21 from the repositories' `main` branches. The Atkinson Hyperlegible Next files are identical to those used in the PDF and ebook test builds. "Canadian Aboriginal" is the font's own name, taken from the Unicode block name; the book's text uses the nations' own names.

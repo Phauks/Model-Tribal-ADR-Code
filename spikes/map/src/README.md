@@ -1,13 +1,10 @@
 # Map spike source
 
-Findings are in [`../REPORT.md`](../REPORT.md). Every nation named in
-`data/mock-nations.json` is fictional.
+Findings are in [`../REPORT.md`](../REPORT.md). Every nation named in `data/mock-nations.json` is fictional.
 
 ## Rebuild
 
-Needs Node 22, Typst 0.15.1 and Python 3 with `pypdf`. The browser checks use
-the Playwright and Chromium already installed in the build container. Outputs
-go to `../out/`, which git ignores.
+Needs Node 22, Typst 0.15.1 and Python 3 with `pypdf`. The browser checks use the Playwright and Chromium already installed in the build container. Outputs go to `../out/`, which git ignores.
 
 ```sh
 npm ci
