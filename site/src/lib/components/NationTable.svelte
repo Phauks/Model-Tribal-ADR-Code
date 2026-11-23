@@ -4,20 +4,22 @@
 	its legal basis linked to the official text), states and review status.
 	The rows are few enough on each index page (one letter or one state) that
 	the table has no search box; the site search in the masthead finds a
-	nation by name.
+	nation by name. Readers can narrow it by recognition, state or review
+	status, copy a link that keeps those choices, and download the rows as CSV.
 -->
 <script lang="ts">
 	import DataTable from './DataTable.svelte';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { NationGroup } from '#lib/server/nation-index.ts';
+	import { stateName } from '#lib/nation-labels.ts';
 
 	let { group, identifier }: { group: NationGroup; identifier: string } = $props();
 
 	const columns: TableColumn[] = [
 		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true },
-		{ key: 'recognition', header: 'Recognition', sortable: true, custom: true },
-		{ key: 'states', header: 'States', sortable: true },
-		{ key: 'review', header: 'Review status', sortable: true }
+		{ key: 'recognition', header: 'Recognition', sortable: true, custom: true, filterable: true },
+		{ key: 'states', header: 'States', sortable: true, filterable: true },
+		{ key: 'review', header: 'Review status', sortable: true, filterable: true }
 	];
 
 	const rows: TableRow[] = $derived(
@@ -28,9 +30,10 @@
 				recognition: {
 					text: row.recognition
 						.map((view) => (view.short ? `${view.label} (${view.short.text})` : view.label))
-						.join('; ')
+						.join('; '),
+					values: row.recognition.map((view) => view.label)
 				},
-				states: { text: row.statesText },
+				states: { text: row.statesText, values: row.states.map(stateName) },
 				review: { text: row.review }
 			}
 		}))
@@ -46,6 +49,9 @@
 	{rows}
 	defaultSort={{ key: 'name', direction: 'ascending' }}
 	rowName={['page', 'pages']}
+	filters={group.rows.length > 5}
+	download={identifier}
+	shareable
 >
 	{#snippet cell(row)}
 		<ul class="recognition">
