@@ -1,501 +1,406 @@
 <script lang="ts">
+	import ImagePlus from '@lucide/svelte/icons/image-plus';
+	import Plus from '@lucide/svelte/icons/plus';
+	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import UserRound from '@lucide/svelte/icons/user-round';
+	import SearchableDropdown, { type SearchableChoice } from '#lib/components/SearchableDropdown.svelte';
+	import CheckDropdown from '#lib/components/profile/CheckDropdown.svelte';
+	import PhoneField from '#lib/components/profile/PhoneField.svelte';
+	import PrivateMark from '#lib/components/profile/PrivateMark.svelte';
+	import ShownToggle from '#lib/components/profile/ShownToggle.svelte';
 	import {
 		ageGroupLabels,
 		ageGroups,
 		availabilities,
 		availabilityLabels,
-		contactMethodLabels,
-		contactMethods,
-		creditFormLabels,
-		creditForms,
-		emptyAnswers,
 		interestLabels,
 		interestNextSteps,
 		interests,
+		nameKindLabels,
+		nameKinds,
 		nationAnswerLabels,
 		nationAnswers,
+		nationConnectionLabels,
+		nationConnections,
 		specialties,
 		specialtyLabels,
-		type ProfileAnswers
+		type NameKind,
+		type NationConnection
 	} from '#lib/contributors.ts';
+	import { languageGroupLabels, languages } from '#lib/languages.ts';
 	import type { PageProps } from './$types';
 
-	let { data, form }: PageProps = $props();
+	let { data }: PageProps = $props();
 
-	/** The saved answers as form values, so the form opens as the person left it. */
-	function valuesOf(answers: ProfileAnswers): Record<string, string> {
-		const values: Record<string, string> = {};
-		const set = (name: string, value: string | null | boolean) => {
-			if (typeof value === 'boolean') {
-				if (value) values[name] = 'yes';
-			} else if (value) values[name] = value;
-		};
-		set('givenName', answers.givenName);
-		set('familyName', answers.familyName);
-		set('nativeName', answers.nativeName);
-		set('phone', answers.phone);
-		set('preferredContact', answers.preferredContact);
-		set('ageGroup', answers.ageGroup);
-		set('nationAnswer', answers.nationAnswer);
-		answers.nations.forEach((nation, index) => {
-			set(`nation${index + 1}Name`, nation.nationName);
-			set(`nation${index + 1}Connection`, nation.connection);
-			set(`nation${index + 1}Credit`, nation.showInCredit);
-		});
-		set('background', answers.background);
-		set('languages', answers.languages);
-		set('organization', answers.organization);
-		values.interests = answers.interests.join('\n');
-		values.specialties = (answers.specialties ?? []).join('\n');
-		set('specialtyOther', answers.specialtyOther);
-		set('availability', answers.availability);
-		set('creditForm', answers.creditForm);
-		set('creditName', answers.creditName);
-		set('creditRole', answers.creditRole);
-		set('creditPseudonym', answers.creditPseudonym);
-		set('creditInBook', answers.creditInBook);
-		set('creditOnWebsite', answers.creditOnWebsite);
-		set('biography', answers.biography);
-		set('biographyInCredits', answers.biographyInCredits);
-		return values;
-	}
+	// Mockup state: the answers Trevor will see filled in on the screenshots.
+	let givenName = $state('Sample');
+	let familyName = $state('Name');
+	let fullNameShown = $state(true);
+	let otherNames = $state<{ key: number; name: string; kind: NameKind; shown: boolean }[]>([
+		{ key: 1, name: 'Sample Native Name', kind: 'native', shown: true },
+		{ key: 2, name: 'Sam', kind: 'goes-by', shown: false }
+	]);
+	let ageGroup = $state('18-or-older');
+	let pictureShown = $state(true);
 
-	const values: Record<string, string> = $derived(
-		form?.values ?? valuesOf(data.profile?.answers ?? emptyAnswers)
-	);
-	const errors: Record<string, string> = $derived(form?.errors ?? {});
-	const errorCount = $derived(Object.keys(errors).length);
-	const slots = $derived(Array.from({ length: data.nationSlots }, (_, index) => index + 1));
+	let emails = $state<{ key: number; value: string; mayEmail: boolean }[]>([]);
+	let phones = $state<{ key: number; country: string; digits: string; mayCall: boolean; mayText: boolean }[]>([
+		{ key: 1, country: 'US', digits: '7025550134', mayCall: true, mayText: true }
+	]);
+	let signInMayEmail = $state(true);
+	let best = $state('phone-1');
 
-	function value(name: string): string {
-		return values[name] ?? '';
-	}
+	let nationAnswer = $state('listed');
+	let nations = $state<{ key: number; name: string; connections: NationConnection[]; other: string; shown: boolean }[]>([
+		{ key: 1, name: 'Navajo Nation', connections: ['citizen', 'works-for'], other: '', shown: true }
+	]);
 
-	function chosen(name: string, option: string): boolean {
-		return (values[name] ?? '').split('\n').includes(option);
-	}
+	let spoken = $state<{ key: number; code: string; other: string; speaks: boolean; reads: boolean; shown: boolean }[]>([
+		{ key: 1, code: 'nav', other: '', speaks: true, reads: true, shown: true },
+		{ key: 2, code: 'eng', other: '', speaks: true, reads: true, shown: false }
+	]);
+	let organization = $state('Navajo Nation Peacemaking Program');
+	let organizationShown = $state(false);
+	let chosenSpecialties = $state(['peacemaking', 'language']);
+	let specialtiesShown = $state(true);
+	let chosenInterests = $state(['review', 'share-knowledge', 'translate']);
+	let availability = $state('monthly');
+	let description = $state('');
+	let descriptionShown = $state(false);
+	let biography = $state('');
+	let biographyShown = $state(false);
+	let inBook = $state(true);
+	let onWebsite = $state(true);
 
-	/** Moves focus to the error summary when the form comes back with problems (WCAG 3.3.1). */
-	function focusOnArrival(node: HTMLElement) {
-		node.focus();
-	}
+	let nextKey = 100;
+	const key = () => nextKey++;
 
-	function describedBy(name: string, hint = false): string | undefined {
-		const ids = [hint ? `${name}-hint` : '', errors[name] ? `${name}-error` : ''].filter(Boolean);
-		return ids.length > 0 ? ids.join(' ') : undefined;
-	}
+	const languageChoices: SearchableChoice<string>[] = [
+		...languages.map((language) => ({
+			value: language.code,
+			label: language.name,
+			group: languageGroupLabels[language.group],
+			keywords: [language.code, ...(language.keywords ?? [])]
+		})),
+		{ value: 'other', label: 'Other', group: languageGroupLabels.other }
+	];
+
+	const minor = $derived(ageGroup === '13-to-17');
+
+	/** The credit as it will read, from everything marked Shown. */
+	const creditLine = $derived.by(() => {
+		const names: string[] = [];
+		if (fullNameShown && !minor) names.push([givenName, familyName].filter(Boolean).join(' '));
+		const extra = otherNames.filter((name) => name.shown && name.name && (!minor || name.kind === 'pen-name')).map((name) => name.name);
+		let line = names.length > 0 ? [names[0], ...extra.map((name) => `(${name})`)].join(' ') : extra.join(' ');
+		if (!line && descriptionShown) line = description;
+		if (!line) return '';
+		const shownNations = nations.filter((nation) => nation.shown && nation.name).map((nation) => nation.name);
+		if (shownNations.length > 0) line += `, ${shownNations.join('; ')}`;
+		if (organizationShown && organization) line += `, ${organization}`;
+		return line;
+	});
 </script>
 
 <svelte:head>
 	<title>Edit your profile · Model Tribal ADR Code</title>
 </svelte:head>
 
-{#snippet fieldError(name: string)}
-	{#if errors[name]}
-		<p class="field-error" id="{name}-error"><span class="visually-hidden">Error:</span> {errors[name]}</p>
-	{/if}
-{/snippet}
+<h1>Edit your profile</h1>
+<p class="lead">Only the lead author and editors see your answers. Anything marked Shown may appear with your credit.</p>
 
-<h1>{data.profile ? 'Edit your profile' : 'Help write the code'}</h1>
-<p class="lead">
-	Everything except your name is optional until you confirm. Only the lead author and editors see your
-	answers; only the credit you choose is ever published.
-</p>
+<form method="post" enctype="multipart/form-data" novalidate class="profile-form">
+	<section aria-labelledby="about-heading">
+		<h2 id="about-heading">About you</h2>
 
-{#if errorCount > 0}
-	<div class="notice notice-problem" role="alert" tabindex="-1" {@attach focusOnArrival}>
-		<p>
-			<strong>Please check {errorCount === 1 ? 'one answer' : `${errorCount} answers`}.</strong> The messages
-			are next to the questions below.
-		</p>
-	</div>
-{/if}
-
-<form method="post" novalidate>
-	<fieldset id="about">
-		<legend><h2>About you</h2></legend>
-		<p class="hint">
-			If your name does not have a first and last name, put your whole name in the first box. The last
-			name is used only to sort the list of credits.
-		</p>
-		<div class="field-row">
-			<div class="field">
-				<label for="givenName">First name</label>
-				{@render fieldError('givenName')}
-				<input
-					type="text"
-					id="givenName"
-					name="givenName"
-					autocomplete="given-name"
-					value={value('givenName')}
-					aria-invalid={errors.givenName ? 'true' : undefined}
-					aria-describedby={describedBy('givenName')}
-				/>
-			</div>
-			<div class="field">
-				<label for="familyName">Last name (optional)</label>
-				{@render fieldError('familyName')}
-				<input
-					type="text"
-					id="familyName"
-					name="familyName"
-					autocomplete="family-name"
-					value={value('familyName')}
-				/>
-			</div>
-		</div>
-		<div class="field">
-			<label for="nativeName">A Native name, or another name you go by (optional)</label>
-			<p class="hint" id="nativeName-hint">
-				For example, a name in your nation’s language. It is printed only if you write it in your credit
-				below.
-			</p>
-			<input
-				type="text"
-				id="nativeName"
-				name="nativeName"
-				value={value('nativeName')}
-				aria-describedby="nativeName-hint"
-			/>
-		</div>
-		<fieldset aria-describedby="ageGroup-hint">
-			<legend>How old are you?</legend>
-			<p class="hint" id="ageGroup-hint">
-				Signing up is for people 13 or older. Someone younger can still help, with a parent or guardian,
-				through the <a href="/requests?kind=contribute">request form</a>. People under 18 are credited by a
-				description or a name they choose.
-			</p>
-			{@render fieldError('ageGroup')}
-			{#each ageGroups as option (option)}
-				<div class="choice">
-					<input type="radio" id="ageGroup-{option}" name="ageGroup" value={option} checked={value('ageGroup') === option} />
-					<label for="ageGroup-{option}">{ageGroupLabels[option]}</label>
-				</div>
-			{/each}
-		</fieldset>
-	</fieldset>
-
-	<fieldset id="contact">
-		<legend><h2>How to reach you</h2></legend>
-		<p class="hint">
-			Your email address is <strong>{data.email}</strong>, the one you signed in with. Add a phone number
-			only if you would like us to call or text you. Neither is ever printed or published.
-		</p>
-		<div class="field">
-			<label for="phone">Phone number (optional)</label>
-			<p class="hint" id="phone-hint">In any format, with the country or area code.</p>
-			{@render fieldError('phone')}
-			<input
-				type="text"
-				id="phone"
-				name="phone"
-				class="short"
-				inputmode="tel"
-				autocomplete="tel"
-				value={value('phone')}
-				aria-invalid={errors.phone ? 'true' : undefined}
-				aria-describedby={describedBy('phone', true)}
-			/>
-		</div>
-		<fieldset>
-			<legend>Best way to reach you</legend>
-			{#each contactMethods as option (option)}
-				<div class="choice">
-					<input
-						type="radio"
-						id="preferredContact-{option}"
-						name="preferredContact"
-						value={option}
-						checked={value('preferredContact') === option || (option === 'email' && !value('preferredContact'))}
-					/>
-					<label for="preferredContact-{option}">{contactMethodLabels[option]}</label>
-				</div>
-			{/each}
-		</fieldset>
-	</fieldset>
-
-	<fieldset id="nations">
-		<legend><h2>Native nations</h2></legend>
-		<p class="hint" id="nations-hint">
-			This is optional and is never checked: we do not ask for enrollment numbers, cards or other proof.
-			Listing a nation does not mean you speak for it, and we will never say you do. It
-			appears in a credit only if you tick it below and choose “My name and nation”.
-		</p>
-		<fieldset>
-			<legend>Are you a citizen of, or connected to, a Native nation?</legend>
-			{#each nationAnswers as option (option)}
-				<div class="choice">
-					<input
-						type="radio"
-						id="nationAnswer-{option}"
-						name="nationAnswer"
-						value={option}
-						checked={value('nationAnswer') === option}
-					/>
-					<label for="nationAnswer-{option}">{nationAnswerLabels[option]}</label>
-				</div>
-			{/each}
-		</fieldset>
-		<p class="hint">
-			To list nations, start typing to pick from our list, or write any name, including First Nations,
-			state-recognized nations and nations not on our list.
-		</p>
-		{#each slots as slot (slot)}
-			<fieldset class="nation">
-				<legend class="visually-hidden">Nation {slot}</legend>
-				<div class="field-row">
-					<div class="field">
-						<label for="nation{slot}Name">Nation {slot}{slot > 1 ? ' (optional)' : ''}</label>
-						{@render fieldError(`nation${slot}Name`)}
-						<input
-							type="text"
-							id="nation{slot}Name"
-							name="nation{slot}Name"
-							list="nation-titles"
-							value={value(`nation${slot}Name`)}
-						/>
-					</div>
-					<div class="field">
-						<label for="nation{slot}Connection">Your connection, in your own words (optional)</label>
-						<input
-							type="text"
-							id="nation{slot}Connection"
-							name="nation{slot}Connection"
-							placeholder="For example: citizen, descendant, I work for the nation"
-							value={value(`nation${slot}Connection`)}
-						/>
-					</div>
-				</div>
-				<div class="choice">
-					<input
-						type="checkbox"
-						id="nation{slot}Credit"
-						name="nation{slot}Credit"
-						value="yes"
-						checked={value(`nation${slot}Credit`) === 'yes'}
-					/>
-					<label for="nation{slot}Credit">Show this nation with my name in credits</label>
-				</div>
-			</fieldset>
-		{/each}
-		{@render fieldError('nations')}
-		<datalist id="nation-titles">
-			{#each data.nationTitles as title (title)}<option value={title}></option>{/each}
-		</datalist>
-	</fieldset>
-
-	<fieldset id="your-background">
-		<legend><h2>Your background</h2></legend>
-		<div class="field">
-			<label for="background">Tell us about yourself (optional)</label>
-			<p class="hint" id="background-hint">
-				For example: experience with peacemaking, mediation, Tribal courts or law; community roles;
-				writing or research you have done. Share only what you are comfortable with.
-			</p>
-			{@render fieldError('background')}
-			<textarea
-				id="background"
-				name="background"
-				rows="6"
-				aria-invalid={errors.background ? 'true' : undefined}
-				aria-describedby={describedBy('background', true)}>{value('background')}</textarea
-			>
-		</div>
-		<div class="field">
-			<label for="languages">Languages you speak or read (optional)</label>
-			<input type="text" id="languages" name="languages" value={value('languages')} />
-		</div>
-		<div class="field">
-			<label for="organization">Organization, office or school (optional)</label>
-			<input
-				type="text"
-				id="organization"
-				name="organization"
-				autocomplete="organization"
-				value={value('organization')}
-			/>
-		</div>
-		<fieldset aria-describedby="specialties-hint">
-			<legend>Your specialties (optional)</legend>
-			<p class="hint" id="specialties-hint">
-				If you have a page on this website, these are shown with your name there and on the People page.
-			</p>
-			{#each specialties as option (option)}
-				<div class="choice">
-					<input
-						type="checkbox"
-						id="specialties-{option}"
-						name="specialties"
-						value={option}
-						checked={chosen('specialties', option)}
-					/>
-					<label for="specialties-{option}">{specialtyLabels[option]}</label>
-				</div>
-			{/each}
-			<div class="field">
-				<label for="specialtyOther">Other, in your own words</label>
-				{@render fieldError('specialtyOther')}
-				<input
-					type="text"
-					id="specialtyOther"
-					name="specialtyOther"
-					maxlength="100"
-					value={value('specialtyOther')}
-					aria-invalid={errors.specialtyOther ? 'true' : undefined}
-				/>
-			</div>
-		</fieldset>
-	</fieldset>
-
-	<fieldset id="help">
-		<legend><h2>How you would like to help</h2></legend>
-		{@render fieldError('interests')}
-		{#each interests as option (option)}
-			<div class="choice">
-				<input
-					type="checkbox"
-					id="interests-{option}"
-					name="interests"
-					value={option}
-					checked={chosen('interests', option)}
-					aria-describedby="interests-{option}-hint"
-				/>
-				<label for="interests-{option}">
-					{interestLabels[option]}
-					<span class="hint" id="interests-{option}-hint">{interestNextSteps[option]}</span>
+		<div class="picture-row">
+			<div class="avatar" aria-hidden="true"><UserRound size={44} strokeWidth={1.5} /></div>
+			<div class="picture-actions">
+				<label class="button button-quiet file-button">
+					<ImagePlus size={20} strokeWidth={1.75} aria-hidden="true" />
+					Add picture
+					<input type="file" name="picture" accept="image/*" class="visually-hidden" />
 				</label>
+				<p class="hint">Square, from the middle. Checked for viruses; camera details removed.</p>
 			</div>
-		{/each}
-		<fieldset>
-			<legend>How much time you have (optional)</legend>
-			{#each availabilities as option (option)}
-				<div class="choice">
-					<input
-						type="radio"
-						id="availability-{option}"
-						name="availability"
-						value={option}
-						checked={value('availability') === option}
-					/>
-					<label for="availability-{option}">{availabilityLabels[option]}</label>
-				</div>
-			{/each}
-		</fieldset>
-	</fieldset>
+			<div class="use">
+				{#if minor}<PrivateMark />{:else}<ShownToggle name="pictureShown" label="Show your picture on your contributor page" bind:checked={pictureShown} />{/if}
+			</div>
+		</div>
 
-	<fieldset id="credit">
-		<legend><h2>Credit</h2></legend>
-		<p class="hint">
-			People who help may be credited in the book and on the website. The lead author decides where a
-			credit goes (for example the acknowledgments or the list of contributors); you decide how it
-			reads. You will see it exactly as it will be printed before you confirm.
+		<table class="rows">
+			<caption class="visually-hidden">Your names</caption>
+			<thead>
+				<tr><th scope="col">Name</th><th scope="col">Kind</th><th scope="col" class="use">Credit</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-label="Name">
+						<div class="name-pair">
+							<input type="text" name="givenName" aria-label="First name" placeholder="First name" autocomplete="given-name" bind:value={givenName} />
+							<input type="text" name="familyName" aria-label="Last name" placeholder="Last name" autocomplete="family-name" bind:value={familyName} />
+						</div>
+					</td>
+					<td data-label="Kind" class="fixed-kind">First and last name</td>
+					<td data-label="Credit" class="use">
+						{#if minor}<PrivateMark />{:else}<ShownToggle name="fullNameShown" label="Show your first and last name in your credit" bind:checked={fullNameShown} />{/if}
+					</td>
+					<td></td>
+				</tr>
+				{#each otherNames as other, index (other.key)}
+					<tr>
+						<td data-label="Name"><input type="text" name="otherName" aria-label="Name {index + 2}" bind:value={other.name} /></td>
+						<td data-label="Kind">
+							<select name="otherNameKind" aria-label="Kind of name {index + 2}" bind:value={other.kind}>
+								{#each nameKinds as kind (kind)}<option value={kind}>{nameKindLabels[kind]}</option>{/each}
+							</select>
+						</td>
+						<td data-label="Credit" class="use">
+							<ShownToggle name="otherNameShown" value={String(index)} label="Show {other.name || 'this name'} in your credit" bind:checked={other.shown} />
+						</td>
+						<td class="remove">
+							<button type="button" class="icon-button" aria-label="Remove {other.name || 'this name'}" title="Remove" onclick={() => (otherNames = otherNames.filter((item) => item.key !== other.key))}>
+								<Trash2 size={20} strokeWidth={1.75} />
+							</button>
+						</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+		<p class="add"><button type="button" class="button button-quiet" onclick={() => otherNames.push({ key: key(), name: '', kind: 'native', shown: false })}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a name</button></p>
+
+		<div class="field-with-use">
+			<div class="field">
+				<label for="ageGroup">How old are you?</label>
+				<select id="ageGroup" name="ageGroup" bind:value={ageGroup}>
+					<option value="" disabled>Choose</option>
+					{#each ageGroups as option (option)}<option value={option}>{ageGroupLabels[option]}</option>{/each}
+				</select>
+			</div>
+			<div class="use"><PrivateMark /></div>
+		</div>
+	</section>
+
+	<section aria-labelledby="contact-heading">
+		<h2 id="contact-heading">How to reach you</h2>
+		<table class="rows contacts">
+			<caption class="visually-hidden">Ways to reach you, and what each may be used for</caption>
+			<thead>
+				<tr>
+					<th scope="col">Contact</th>
+					<th scope="col" class="mark">Email</th>
+					<th scope="col" class="mark">Call</th>
+					<th scope="col" class="mark">Text</th>
+					<th scope="col" class="mark">Best</th>
+					<th scope="col" class="use">Credit</th>
+					<th scope="col"><span class="visually-hidden">Remove</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-label="Contact"><span class="sign-in-email">{data.email}</span> <span class="small muted">Signed in with</span></td>
+					<td data-label="Email" class="mark"><input type="checkbox" name="signInMayEmail" aria-label="Email {data.email}" bind:checked={signInMayEmail} /></td>
+					<td data-label="Call" class="mark"><span class="not-applicable" aria-label="Not a phone">–</span></td>
+					<td data-label="Text" class="mark"><span class="not-applicable" aria-label="Not a phone">–</span></td>
+					<td data-label="Best" class="mark"><input type="radio" name="best" value="sign-in" aria-label="Best way: {data.email}" bind:group={best} /></td>
+					<td data-label="Credit" class="use"><PrivateMark /></td>
+					<td></td>
+				</tr>
+				{#each emails as email, index (email.key)}
+					<tr>
+						<td data-label="Contact"><input type="email" name="email" aria-label="Email address {index + 2}" autocomplete="email" bind:value={email.value} /></td>
+						<td data-label="Email" class="mark"><input type="checkbox" name="emailMayEmail" value={String(index)} aria-label="Email this address" bind:checked={email.mayEmail} /></td>
+						<td data-label="Call" class="mark"><span class="not-applicable" aria-label="Not a phone">–</span></td>
+						<td data-label="Text" class="mark"><span class="not-applicable" aria-label="Not a phone">–</span></td>
+						<td data-label="Best" class="mark"><input type="radio" name="best" value="email-{index}" aria-label="Best way: this address" bind:group={best} /></td>
+						<td data-label="Credit" class="use"><PrivateMark /></td>
+						<td class="remove"><button type="button" class="icon-button" aria-label="Remove this address" title="Remove" onclick={() => (emails = emails.filter((item) => item.key !== email.key))}><Trash2 size={20} strokeWidth={1.75} /></button></td>
+					</tr>
+				{/each}
+				{#each phones as phone, index (phone.key)}
+					<tr>
+						<td data-label="Contact"><PhoneField name="phone{index}" label="Phone {index + 1}" bind:country={phone.country} bind:digits={phone.digits} /></td>
+						<td data-label="Email" class="mark"><span class="not-applicable" aria-label="Not an email address">–</span></td>
+						<td data-label="Call" class="mark"><input type="checkbox" name="phoneMayCall" value={String(index)} aria-label="Call this number" bind:checked={phone.mayCall} /></td>
+						<td data-label="Text" class="mark"><input type="checkbox" name="phoneMayText" value={String(index)} aria-label="Text this number" bind:checked={phone.mayText} /></td>
+						<td data-label="Best" class="mark"><input type="radio" name="best" value="phone-{phone.key}" aria-label="Best way: this number" bind:group={best} /></td>
+						<td data-label="Credit" class="use"><PrivateMark /></td>
+						<td class="remove"><button type="button" class="icon-button" aria-label="Remove this number" title="Remove" onclick={() => (phones = phones.filter((item) => item.key !== phone.key))}><Trash2 size={20} strokeWidth={1.75} /></button></td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+		<p class="add">
+			<button type="button" class="button button-quiet" onclick={() => emails.push({ key: key(), value: '', mayEmail: true })}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add email</button>
+			<button type="button" class="button button-quiet" onclick={() => phones.push({ key: key(), country: 'US', digits: '', mayCall: true, mayText: false })}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add phone</button>
 		</p>
-		<fieldset>
-			<legend>How would you like to be credited?</legend>
-			{@render fieldError('creditForm')}
-			{#each creditForms as option (option)}
-				<div class="choice">
-					<input
-						type="radio"
-						id="creditForm-{option}"
-						name="creditForm"
-						value={option}
-						checked={value('creditForm') === option}
-					/>
-					<label for="creditForm-{option}">{creditFormLabels[option]}</label>
+	</section>
+
+	<section aria-labelledby="nations-heading">
+		<h2 id="nations-heading">Native nations</h2>
+		<div class="field">
+			<label for="nationAnswer">Are you a citizen of, or connected to, a Native nation?</label>
+			<select id="nationAnswer" name="nationAnswer" bind:value={nationAnswer}>
+				<option value="" disabled>Choose</option>
+				{#each nationAnswers as option (option)}<option value={option}>{nationAnswerLabels[option]}</option>{/each}
+			</select>
+		</div>
+		{#if nationAnswer === 'listed'}
+			<table class="rows">
+				<caption class="visually-hidden">Nations you are connected to</caption>
+				<thead>
+					<tr><th scope="col">Nation</th><th scope="col">Your connection</th><th scope="col" class="use">Credit</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr>
+				</thead>
+				<tbody>
+					{#each nations as nation, index (nation.key)}
+						<tr>
+							<td data-label="Nation"><input type="text" name="nationName" list="nation-titles" aria-label="Nation {index + 1}" bind:value={nation.name} /></td>
+							<td data-label="Your connection">
+								<CheckDropdown
+									name="nationConnection{index}"
+									label="Your connection to {nation.name || `nation ${index + 1}`}"
+									choices={nationConnections}
+									labels={nationConnectionLabels}
+									bind:chosen={nation.connections}
+								/>
+								{#if nation.connections.includes('other')}
+									<input type="text" class="other-text" name="nationConnectionOther{index}" aria-label="Other connection, in your own words" placeholder="In your own words" bind:value={nation.other} />
+								{/if}
+							</td>
+							<td data-label="Credit" class="use"><ShownToggle name="nationShown" value={String(index)} label="Show {nation.name || 'this nation'} in your credit" bind:checked={nation.shown} /></td>
+							<td class="remove"><button type="button" class="icon-button" aria-label="Remove {nation.name || 'this nation'}" title="Remove" onclick={() => (nations = nations.filter((item) => item.key !== nation.key))}><Trash2 size={20} strokeWidth={1.75} /></button></td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+			<p class="add"><button type="button" class="button button-quiet" onclick={() => nations.push({ key: key(), name: '', connections: [], other: '', shown: false })}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a nation</button></p>
+			<datalist id="nation-titles">
+				{#each data.nationTitles as title (title)}<option value={title}></option>{/each}
+			</datalist>
+		{/if}
+	</section>
+
+	<section aria-labelledby="background-heading">
+		<h2 id="background-heading">Your background</h2>
+		<div class="field-with-use">
+			<div class="field">
+				<label for="background">Tell us about yourself</label>
+				<p class="hint" id="background-hint">For example: peacemaking, mediation, Tribal courts or law, community roles, writing or research.</p>
+				<textarea id="background" name="background" rows="4" aria-describedby="background-hint"></textarea>
+			</div>
+			<div class="use"><PrivateMark /></div>
+		</div>
+
+		<h3 id="languages-heading">Languages</h3>
+		<table class="rows languages">
+			<caption class="visually-hidden">Languages you speak or read</caption>
+			<thead>
+				<tr>
+					<th scope="col">Language</th>
+					<th scope="col" class="mark">Speak</th>
+					<th scope="col" class="mark">Read</th>
+					<th scope="col" class="use">Credit</th>
+					<th scope="col"><span class="visually-hidden">Remove</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each spoken as language, index (language.key)}
+					<tr>
+						<td data-label="Language">
+							<SearchableDropdown label="Language {index + 1}" hideLabel name="language{index}" choices={languageChoices} value={language.code} onchange={(value) => (language.code = value)} />
+							{#if language.code === 'other'}
+								<input type="text" class="other-text" name="languageOther{index}" aria-label="Language name" placeholder="Language name" bind:value={language.other} />
+							{/if}
+						</td>
+						<td data-label="Speak" class="mark"><input type="checkbox" name="languageSpeaks" value={String(index)} aria-label="Speak" bind:checked={language.speaks} /></td>
+						<td data-label="Read" class="mark"><input type="checkbox" name="languageReads" value={String(index)} aria-label="Read" bind:checked={language.reads} /></td>
+						<td data-label="Credit" class="use"><ShownToggle name="languageShown" value={String(index)} label="Show this language on your contributor page" bind:checked={language.shown} /></td>
+						<td class="remove"><button type="button" class="icon-button" aria-label="Remove this language" title="Remove" onclick={() => (spoken = spoken.filter((item) => item.key !== language.key))}><Trash2 size={20} strokeWidth={1.75} /></button></td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+		<p class="add"><button type="button" class="button button-quiet" onclick={() => spoken.push({ key: key(), code: '', other: '', speaks: true, reads: false, shown: false })}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a language</button></p>
+
+		<div class="field-with-use">
+			<div class="field">
+				<label for="organization">Organization, office or school</label>
+				<input type="text" id="organization" name="organization" autocomplete="organization" bind:value={organization} />
+			</div>
+			<div class="use"><ShownToggle name="organizationShown" label="Show your organization in your credit" bind:checked={organizationShown} /></div>
+		</div>
+
+		<fieldset class="field-with-use">
+			<div>
+				<legend>Your specialties</legend>
+				<div class="choices-inline">
+					{#each specialties as option (option)}
+						<label class="choice"><input type="checkbox" name="specialties" value={option} bind:group={chosenSpecialties} /> {specialtyLabels[option]}</label>
+					{/each}
 				</div>
-			{/each}
+				<input type="text" class="other-text" name="specialtyOther" aria-label="Other specialty" placeholder="Other, in your own words" maxlength="100" />
+			</div>
+			<div class="use"><ShownToggle name="specialtiesShown" label="Show your specialties on your contributor page" bind:checked={specialtiesShown} /></div>
 		</fieldset>
-		<div class="field">
-			<label for="creditName">Your name as it should be printed, if different (optional)</label>
-			<p class="hint" id="creditName-hint">
-				For example with your Native name, a middle initial, or diacritics. Left empty, we print your
-				first and last names.
-			</p>
-			<input
-				type="text"
-				id="creditName"
-				name="creditName"
-				value={value('creditName')}
-				aria-describedby="creditName-hint"
-			/>
+	</section>
+
+	<section aria-labelledby="help-heading">
+		<h2 id="help-heading">How you would like to help</h2>
+		<fieldset class="field-with-use">
+			<div>
+				<legend class="visually-hidden">How you would like to help</legend>
+				{#each interests as option (option)}
+					<label class="choice">
+						<input type="checkbox" name="interests" value={option} bind:group={chosenInterests} />
+						<span>{interestLabels[option]} <span class="hint">{interestNextSteps[option]}</span></span>
+					</label>
+				{/each}
+			</div>
+			<div class="use"><PrivateMark /></div>
+		</fieldset>
+		<div class="field-with-use">
+			<div class="field">
+				<label for="availability">How much time you have</label>
+				<select id="availability" name="availability" bind:value={availability}>
+					<option value="">Choose</option>
+					{#each availabilities as option (option)}<option value={option}>{availabilityLabels[option]}</option>{/each}
+				</select>
+			</div>
+			<div class="use"><PrivateMark /></div>
 		</div>
-		<div class="field">
-			<label for="creditRole">The description to print, if you chose a description</label>
-			{@render fieldError('creditRole')}
-			<input
-				type="text"
-				id="creditRole"
-				name="creditRole"
-				placeholder="For example: a peacemaker from the nation"
-				value={value('creditRole')}
-				aria-invalid={errors.creditRole ? 'true' : undefined}
-				aria-describedby={describedBy('creditRole')}
-			/>
+	</section>
+
+	<section aria-labelledby="credit-heading">
+		<h2 id="credit-heading">Credit</h2>
+		<div class="field-with-use">
+			<div class="field">
+				<label for="creditRole">A description, to use in place of a name</label>
+				<input type="text" id="creditRole" name="creditRole" placeholder="For example: a peacemaker from the nation" bind:value={description} />
+			</div>
+			<div class="use"><ShownToggle name="creditRoleShown" label="Use this description in your credit" bind:checked={descriptionShown} /></div>
 		</div>
-		<div class="field">
-			<label for="creditPseudonym">The name to print, if you chose a name</label>
-			{@render fieldError('creditPseudonym')}
-			<input
-				type="text"
-				id="creditPseudonym"
-				name="creditPseudonym"
-				value={value('creditPseudonym')}
-				aria-invalid={errors.creditPseudonym ? 'true' : undefined}
-				aria-describedby={describedBy('creditPseudonym')}
-			/>
+		<div class="field-with-use">
+			<div class="field">
+				<label for="biography">A short biography</label>
+				<p class="hint" id="biography-hint">Two or three sentences. Asked of writers.</p>
+				<textarea id="biography" name="biography" rows="3" aria-describedby="biography-hint" bind:value={biography}></textarea>
+			</div>
+			<div class="use">{#if minor}<PrivateMark />{:else}<ShownToggle name="biographyShown" label="Print your biography with your credit" bind:checked={biographyShown} />{/if}</div>
 		</div>
-		<fieldset>
+		<fieldset class="where">
 			<legend>Where</legend>
-			<div class="choice">
-				<input
-					type="checkbox"
-					id="creditInBook"
-					name="creditInBook"
-					value="yes"
-					checked={value('creditInBook') === 'yes'}
-				/>
-				<label for="creditInBook">In the book (print and ebook)</label>
-			</div>
-			<div class="choice">
-				<input
-					type="checkbox"
-					id="creditOnWebsite"
-					name="creditOnWebsite"
-					value="yes"
-					checked={value('creditOnWebsite') === 'yes'}
-				/>
-				<label for="creditOnWebsite">On the website</label>
-			</div>
+			<label class="choice"><input type="checkbox" name="creditInBook" value="yes" bind:checked={inBook} /> In the book</label>
+			<label class="choice"><input type="checkbox" name="creditOnWebsite" value="yes" bind:checked={onWebsite} /> On the website</label>
 		</fieldset>
-		<div class="field">
-			<label for="biography">A short biography (optional; asked of writers)</label>
-			<p class="hint" id="biography-hint">
-				Two or three sentences, written as you would like them printed in the list of contributors.
-			</p>
-			{@render fieldError('biography')}
-			<textarea
-				id="biography"
-				name="biography"
-				rows="4"
-				aria-invalid={errors.biography ? 'true' : undefined}
-				aria-describedby={describedBy('biography', true)}>{value('biography')}</textarea
-			>
+		<div class="credit-preview" aria-live="polite">
+			<p class="small muted">Your credit</p>
+			{#if creditLine && (inBook || onWebsite)}
+				<p class="credit-line">{creditLine}</p>
+			{:else}
+				<p class="credit-line muted">No credit</p>
+			{/if}
 		</div>
-		<div class="choice">
-			<input
-				type="checkbox"
-				id="biographyInCredits"
-				name="biographyInCredits"
-				value="yes"
-				checked={value('biographyInCredits') === 'yes'}
-			/>
-			<label for="biographyInCredits">
-				Print my biography with my credit
-				<span class="hint">Not used with a description-only credit, because it could identify you.</span>
-			</label>
-		</div>
-	</fieldset>
+	</section>
 
 	<div class="actions">
 		<button class="button" type="submit" name="next" value="review">Continue to check your answers</button>
@@ -504,58 +409,238 @@
 </form>
 
 <style>
+	.profile-form section {
+		margin: 0 0 var(--space-6);
+	}
+
+	.profile-form h2 {
+		margin-bottom: var(--space-3);
+		padding-bottom: var(--space-2);
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.profile-form h3 {
+		margin: var(--space-4) 0 var(--space-2);
+	}
+
 	fieldset {
 		border: 0;
-		margin: 0 0 var(--space-5);
+		margin: 0;
 		padding: 0;
 		min-width: 0;
 	}
 
 	legend {
 		padding: 0;
-	}
-
-	legend h2 {
-		margin-bottom: var(--space-2);
-	}
-
-	fieldset > fieldset > legend {
 		font-weight: var(--font-weight-semibold);
 		margin-bottom: var(--space-1);
 	}
 
-	fieldset.nation {
-		border-left: 4px solid var(--color-line);
-		padding-left: var(--space-4);
-		margin-bottom: var(--space-4);
+	/* A field, or a group of choices, with whether it is used on the right, lined up with the Credit column of the tables. */
+	.field-with-use {
+		display: grid;
+		/* The last track matches the tables' Remove column, so every Shown and Private mark lines up. */
+		grid-template-columns: minmax(0, 1fr) 8.5rem var(--layout-target-minimum);
+		gap: 0;
+		align-items: end;
+		margin: 0 0 var(--space-4);
+	}
+
+	.profile-form select {
+		font-size: inherit;
+		padding: 0 var(--space-3);
+		min-width: 12rem;
+	}
+
+	.field-with-use > :first-child {
+		min-width: 0;
+	}
+
+	.field-with-use .field {
+		margin: 0;
+	}
+
+	/* The table cells' own padding, so the marks sit exactly under the Credit column. */
+	.field-with-use > .use,
+	.picture-row > .use {
+		padding-left: var(--space-2);
+		box-sizing: border-box;
+		width: 8.5rem;
+	}
+
+	.use {
+		width: 8.5rem;
+	}
+
+	.picture-row {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) 8.5rem var(--layout-target-minimum);
+		column-gap: 0;
+		align-items: center;
+		margin: 0 0 var(--space-4);
+	}
+
+	.avatar {
+		margin-right: var(--space-4);
+		display: grid;
+		place-items: center;
+		width: 6rem;
+		height: 6rem;
+		border-radius: 50%;
+		background: var(--color-surface);
+		border: 2px dashed var(--color-control-border);
+		color: var(--color-ink-muted);
+	}
+
+	.picture-actions .hint {
+		margin: var(--space-1) 0 0;
+	}
+
+	.file-button {
+		gap: var(--space-2);
+		position: relative;
+	}
+
+	.file-button:focus-within {
+		outline: 3px solid var(--color-focus-ring);
+		box-shadow: 0 0 0 6px var(--color-focus);
+	}
+
+	table.rows {
+		margin: 0;
+		font-size: var(--font-size-base, 1rem);
+	}
+
+	table.rows th {
+		font-size: var(--font-size-small);
+		white-space: nowrap;
+	}
+
+	table.rows td {
+		vertical-align: middle;
+		padding: var(--space-2);
+	}
+
+	table.rows th {
+		padding: var(--space-2);
+	}
+
+	table.rows .use {
+		width: 8.5rem;
+	}
+
+	table.rows .mark {
+		width: 3.5rem;
+		text-align: center;
+	}
+
+	table.rows .mark input {
+		width: 1.25rem;
+		height: 1.25rem;
+		margin: 0;
+	}
+
+	table.rows .remove,
+	table.rows th:last-child {
+		width: var(--layout-target-minimum);
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	table.rows input[type='text'],
+	table.rows input[type='email'],
+	table.rows select {
+		width: 100%;
+		max-width: none;
+	}
+
+	.name-pair {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-2);
+	}
+
+	.fixed-kind {
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+	}
+
+	.sign-in-email {
+		font-weight: var(--font-weight-semibold);
+		overflow-wrap: anywhere;
+	}
+
+	.not-applicable {
+		color: var(--color-ink-muted);
+	}
+
+	.other-text {
+		margin-top: var(--space-2);
+	}
+
+	.add {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin: var(--space-2) 0 var(--space-4);
+	}
+
+	.add .button {
+		gap: var(--space-2);
 	}
 
 	.choice {
 		display: flex;
-		gap: var(--space-3);
+		gap: var(--space-2);
 		align-items: flex-start;
-		margin: var(--space-3) 0;
+		margin: var(--space-2) 0;
 	}
 
 	.choice input {
-		margin-top: 0.3em;
 		width: 1.25rem;
 		height: 1.25rem;
+		margin-top: 0.15em;
 		flex: none;
 	}
 
 	.choice .hint {
 		display: block;
+		margin: 0;
 	}
 
-	.field-row {
+	.choices-inline {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0 var(--space-4);
 	}
 
-	.field-row .field {
-		flex: 1 1 14rem;
+	.where {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 var(--space-5);
+		align-items: center;
+		margin: 0 0 var(--space-4);
+	}
+
+	.where legend {
+		float: left;
+		margin: 0 var(--space-2) 0 0;
+	}
+
+	.credit-preview {
+		padding: var(--space-3) var(--space-4);
+		border-left: 4px solid var(--color-link);
+		background: var(--color-surface);
+		border-radius: var(--radius-control);
+	}
+
+	.credit-preview p {
+		margin: 0;
+	}
+
+	.credit-line {
+		font-family: var(--font-family-reading);
+		font-size: var(--font-size-lead);
 	}
 
 	.actions {
@@ -563,5 +648,91 @@
 		flex-wrap: wrap;
 		gap: var(--space-3);
 		margin-top: var(--space-5);
+	}
+
+	/* On a phone each row becomes a card, with the column names written beside the boxes. */
+	@container (max-width: 40rem) {
+		table.rows,
+		table.rows tbody,
+		table.rows tr,
+		table.rows td {
+			display: block;
+			width: auto;
+		}
+
+		table.rows thead {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+		}
+
+		table.rows tr {
+			position: relative;
+			margin: 0 0 var(--space-3);
+			padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3);
+			border: 1px solid var(--color-line);
+			border-radius: var(--radius-control);
+		}
+
+		table.rows td {
+			border: 0;
+			padding: var(--space-1) 0;
+		}
+
+		table.rows td.mark,
+		table.rows td.use {
+			display: inline-flex;
+			align-items: center;
+			gap: var(--space-2);
+			width: auto;
+			margin-right: var(--space-3);
+		}
+
+		table.rows td.mark::before {
+			content: attr(data-label);
+			font-size: var(--font-size-small);
+		}
+
+		table.rows td.mark:has(.not-applicable) {
+			display: none;
+		}
+
+		table.rows td.remove {
+			position: absolute;
+			top: var(--space-1);
+			right: var(--space-1);
+			width: auto;
+		}
+
+		table.rows td.remove:empty {
+			display: none;
+		}
+
+		table.rows tr:has(td.remove:not(:empty)) td:first-child {
+			padding-right: calc(var(--layout-target-minimum) + var(--space-1));
+		}
+
+		.fixed-kind {
+			display: none !important;
+		}
+
+		.name-pair {
+			grid-template-columns: 1fr;
+		}
+
+		.field-with-use,
+		.picture-row {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		.picture-row {
+			grid-template-columns: auto minmax(0, 1fr);
+		}
+
+		.picture-row > .use {
+			grid-column: 1 / -1;
+		}
 	}
 </style>

@@ -23,13 +23,19 @@
 		choices,
 		value,
 		onchange,
-		placeholder = 'Type to search'
+		placeholder = 'Type to search',
+		hideLabel = false,
+		name
 	}: {
 		label: string;
 		choices: SearchableChoice<Value>[];
 		value: Value;
 		onchange: (value: Value) => void;
 		placeholder?: string;
+		/** Keeps the label for screen readers only, as in a table row whose column header already names the box. */
+		hideLabel?: boolean;
+		/** Sends the picked value with the form around the dropdown under this name. */
+		name?: string;
 	} = $props();
 
 	const identifier = $props.id();
@@ -135,7 +141,8 @@
 </script>
 
 <div class="searchable-dropdown">
-	<label class="searchable-dropdown-label" for="{identifier}-input">{label}</label>
+	<label class="searchable-dropdown-label" class:visually-hidden={hideLabel} for="{identifier}-input">{label}</label>
+	{#if name}<input type="hidden" {name} {value} />{/if}
 	<div class="searchable-dropdown-control" class:expanded>
 		<input
 			bind:this={input}

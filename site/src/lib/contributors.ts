@@ -60,6 +60,71 @@ export const contactMethodLabels: Record<ContactMethod, string> = {
 	'text-message': 'Text message'
 };
 
+/**
+ * Names beyond the first and last name, as many as a person likes (Trevor,
+ * Nov. 23, 2026: "allow for adding additional name fields, more than one").
+ */
+export const nameKinds = ['native', 'goes-by', 'pen-name', 'other'] as const;
+export type NameKind = (typeof nameKinds)[number];
+
+export const nameKindLabels: Record<NameKind, string> = {
+	native: 'Native name',
+	'goes-by': 'Name I go by',
+	'pen-name': 'Pen name',
+	other: 'Other'
+};
+
+export interface ProfileName {
+	name: string;
+	kind: NameKind;
+	/** Printed with the credit. */
+	shown: boolean;
+}
+
+/** Ways to reach someone, each with what it may be used for (Trevor, Nov. 23, 2026: "contacts should be a table to show what can and cannot be used"). */
+export const contactKinds = ['email', 'phone'] as const;
+export type ContactKind = (typeof contactKinds)[number];
+
+export interface ProfileContact {
+	kind: ContactKind;
+	/** An email address, or a phone number in E.164 form, such as +17025550134. */
+	value: string;
+	/** The phone number's country, as an ISO 3166-1 alpha-2 code. */
+	country: string | null;
+	/** The address the person signed in with. It cannot be removed here. */
+	signIn: boolean;
+	mayEmail: boolean;
+	mayCall: boolean;
+	mayText: boolean;
+	/** The one way the person would most like to be reached. */
+	best: boolean;
+}
+
+/** How a person is connected to a nation; several may apply (Trevor, Nov. 23, 2026: "member, and works there"). */
+export const nationConnections = ['citizen', 'descendant', 'family', 'community', 'works-for', 'works-with', 'other'] as const;
+export type NationConnection = (typeof nationConnections)[number];
+
+export const nationConnectionLabels: Record<NationConnection, string> = {
+	citizen: 'Citizen or member',
+	descendant: 'Descendant',
+	family: 'Family by marriage or adoption',
+	community: 'Live in the community',
+	'works-for': 'Work for the nation',
+	'works-with': 'Work with the nation',
+	other: 'Other'
+};
+
+export interface ProfileLanguage {
+	/** The ISO 639-3 code from src/lib/languages.ts, or null for a language written in. */
+	code: string | null;
+	/** The language's name as the person wrote it, when it is not in the list. */
+	otherName: string | null;
+	speaks: boolean;
+	reads: boolean;
+	/** Shown on the person's contributor page. */
+	shown: boolean;
+}
+
 export const nationAnswers = ['listed', 'none', 'not-saying'] as const;
 export type NationAnswer = (typeof nationAnswers)[number];
 
