@@ -1,7 +1,7 @@
 profile: content/tribes/o/otoe-missouria-tribe-of-indians.yaml
 topic: gaming-dispute-procedures
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -43,8 +43,44 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2018-04-30 has no text layer on most pages (25 of 25 pages have no text
     layer; no OCR available).
-next_steps: Read the scanned ordinance listed 1994-06-02 (https://www.nigc.gov/wp-content/uploads/2025/03/otoemissouria-otoeord060294.pdf)
-  with OCR or by hand. Read the scanned amendment listed 1998-03-23 (https://www.nigc.gov/wp-content/uploads/2025/03/otoemissouria-otoeamend032398.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2009-03-20 (https://www.nigc.gov/wp-content/uploads/2025/03/otoemissouria-3.20.09-Otoe-Missouria-Ord-Amen-App.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2018-04-30 (https://www.nigc.gov/wp-content/uploads/2025/03/20180430OrdAmendAppr.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20180430OrdAmendAppr.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-25 of 25 of this amendment listed 2018-04-30 as page
+    images (it has no text layer) and recorded 2 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#otoe-missouria-tribe-of-indians-amendment-2018-04-30#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#otoe-missouria-tribe-of-indians-amendment-2018-04-30#p2
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/otoemissouria-3.20.09-Otoe-Missouria-Ord-Amen-App.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-17 of 17 of this amendment listed 2009-03-20 as page
+    images (it has no text layer) and found no dispute procedure (the only hearing and appeal passages
+    are the licence determination appeal (4.3), a management contract termination (7.3) and the Commission's
+    compliance hearings on records (6.2 C); none is framed as dispute resolution, and the Commission's
+    duty list has no patron complaint hearings).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/otoemissouria-otoeamend032398.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-17 of 17 of this amendment listed 1998-03-23 as page
+    images (it has no text layer) and found no dispute procedure (the passages are licence hearings and
+    summary suspensions (2-6 to 2-10), enforcement against licensees (3-9, 3-10) and records compliance
+    hearings (4-1), with no dispute framing).
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Older scanned documents were not
+  read, because the newer documents read replace them: ordinance listed 1994-06-02 (https://www.nigc.gov/wp-content/uploads/2025/03/otoemissouria-otoeord060294.pdf).'

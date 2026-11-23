@@ -83,27 +83,16 @@ limits: >-
 
 # Hand-pulled documents, batch 1
 
-The lead author sent 26 files in three uploads; by SHA-256 they were 15
-distinct files. A table of each file, where its private copy is filed and what
-it settled is in the project's working files,
-`research/pull-results/2026-11-22-hand-pulled-batch-1.md`. Private copies are
-under `research/captures/` there, never in this repository.
+The lead author sent 26 files in three uploads; by SHA-256 they were 15 distinct files. A table of each file, where its private copy is filed and what it settled is in the project's working files, `research/pull-results/2026-11-22-hand-pulled-batch-1.md`. Private copies are under `research/captures/` there, never in this repository.
 
 Findings recorded in records:
 
-- **8 U.S.C. § 1359**: KeyCite shows a yellow flag for proposed legislation
-  only, and none of its seven Notes of Decisions concerns people born in
-  Mexico (`united-states-code-8-1359`).
-- **Mitchell v. M.N.R., 2001 SCC 33**: the claimed right was not proven; the
-  Jay Treaty appears only in a quotation in the concurrence
-  (`mitchell-v-mnr-2001`).
+- **8 U.S.C. § 1359**: KeyCite shows a yellow flag for proposed legislation only, and none of its seven Notes of Decisions concerns people born in Mexico (`united-states-code-8-1359`).
+- **Mitchell v. M.N.R., 2001 SCC 33**: the claimed right was not proven; the Jay Treaty appears only in a quotation in the concurrence (`mitchell-v-mnr-2001`).
 - **Ross v. Sulu**: decided July 5, 1991 (`ross-v-sulu-hopi-appellate-court`).
-- **Newton, Tribal Court Praxis (1998)**: evidence passage at 318-19 & n.127
-  (`newton-1998-tribal-court-praxis`).
-- **Navajo Nation**: a 2026 invitation to bid for a Supreme Court peacemaking
-  building and amphitheater (`navajo-nation-itb-26-09-4310sb-peacemaking-building-2026`).
-- The Oneida Indian Nation's "Liberty Trees and the Tree of Peace" page tells
-  no peacemaking story (`oneida-indian-nation-tree-of-peace`).
+- **Newton, Tribal Court Praxis (1998)**: evidence passage at 318-19 & n.127 (`newton-1998-tribal-court-praxis`).
+- **Navajo Nation**: a 2026 invitation to bid for a Supreme Court peacemaking building and amphitheater (`navajo-nation-itb-26-09-4310sb-peacemaking-building-2026`).
+- The Oneida Indian Nation's "Liberty Trees and the Tree of Peace" page tells no peacemaking story (`oneida-indian-nation-tree-of-peace`).
 - **Native Hawaiian Law: A Treatise (MacKenzie ed. 2015)**: EPUB filed privately under `books/` (not on the pull list); all rights reserved, never served (`mackenzie-2015-native-hawaiian-law-treatise`).
 
 # Hand-pulled documents, batch 2

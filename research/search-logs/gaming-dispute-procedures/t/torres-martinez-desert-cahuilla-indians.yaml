@@ -1,7 +1,7 @@
 profile: content/tribes/t/torres-martinez-desert-cahuilla-indians.yaml
 topic: gaming-dispute-procedures
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -63,9 +63,43 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2020-01-08 has no text layer on most pages (18 of 18 pages have no text
     layer; no OCR available).
-next_steps: Read the scanned amendment listed 2006-12-12 (https://www.nigc.gov/wp-content/uploads/2025/03/torresmartinez-Ordappr121206.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2008-04-09 (https://www.nigc.gov/wp-content/uploads/2025/03/torresmartinez-torrmartordamend040908.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2008-07-25 (https://www.nigc.gov/wp-content/uploads/2025/03/torresmartinez-torrmartordamend072508.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2008-09-22 (https://www.nigc.gov/wp-content/uploads/2025/03/torresmartinez-torresmartinezordamed092208.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2020-01-08 (https://www.nigc.gov/wp-content/uploads/2025/03/20200108OrdAmendAppr.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20200108OrdAmendAppr.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-18 of 18 of this amendment listed 2020-01-08 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#torres-martinez-desert-cahuilla-indians-amendment-2020-01-08#p1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/torresmartinez-torresmartinezordamed092208.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-19 of 19 of this amendment listed 2008-09-22 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#torres-martinez-desert-cahuilla-indians-amendment-2008-09-22#p1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/torresmartinez-torrmartordamend072508.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-20 of 20 of this amendment listed 2008-07-25 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#torres-martinez-desert-cahuilla-indians-amendment-2008-07-25#p1
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Older scanned documents were not
+  read, because the newer documents read replace them: amendment listed 2008-04-09 (https://www.nigc.gov/wp-content/uploads/2025/03/torresmartinez-torrmartordamend040908.pdf);
+  amendment listed 2006-12-12 (https://www.nigc.gov/wp-content/uploads/2025/03/torresmartinez-Ordappr121206.pdf).'

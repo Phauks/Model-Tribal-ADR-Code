@@ -107,35 +107,18 @@ limits: >-
 
 ## What this session added
 
-- A proposed record format for stories (decision record
-  [0019](../../../docs/decisions/0019-story-records.md), schema
-  `schemas/story.schema.json`), with the credit, permission and access shapes
-  agreed with the contributor intake forms thread.
-- Twenty story records in `content/stories/`, from eighteen nations and the
-  Native Hawaiian community, and thirty-four new source records.
-- Twenty-five excerpts in the tellers' own words across nineteen of the
-  stories, replacing the project's summaries.
-- The catalog and anthology shortlist in
-  [research/analyses/2026-11-21-peacemaking-stories.md](../../analyses/2026-11-21-peacemaking-stories.md).
+- A proposed record format for stories (decision record [0019](../../../docs/decisions/0019-story-records.md), schema `schemas/story.schema.json`), with the credit, permission and access shapes agreed with the contributor intake forms thread.
+- Twenty story records in `content/stories/`, from eighteen nations and the Native Hawaiian community, and thirty-four new source records.
+- Twenty-five excerpts in the tellers' own words across nineteen of the stories, replacing the project's summaries.
+- The catalog and anthology shortlist in [research/analyses/2026-11-21-peacemaking-stories.md](../../analyses/2026-11-21-peacemaking-stories.md).
 - Nine library and database pulls, added to the lead author's list of documents to get by hand (`research/documents-to-get.md` in the project's working files).
 
 ## What the helpers found, in brief
 
-Most nations' websites describe peacemaking programs rather than tell
-stories. The stories and accounts that nations do publish are mostly about
-peace between nations (the Haudenosaunee Great Peace and Two Row Wampum, the
-Umonhon and Oglala peace, Ute and Spanish treaties, present-day treaties of
-friendship) rather than about settling a quarrel between two people. Nations
-that tell stories about everyday disputes tend to do it in books, in elders'
-collections and in court opinions, which this sweep reached only at catalog
-level (project analysis).
+Most nations' websites describe peacemaking programs rather than tell stories. The stories and accounts that nations do publish are mostly about peace between nations (the Haudenosaunee Great Peace and Two Row Wampum, the Umonhon and Oglala peace, Ute and Spanish treaties, present-day treaties of friendship) rather than about settling a quarrel between two people. Nations that tell stories about everyday disputes tend to do it in books, in elders' collections and in court opinions, which this sweep reached only at catalog level (project analysis).
 
 ## Excluded on purpose
 
-- A Mescalero Apache origin passage on the Tribe's culture page: it may be
-  sacred and the page does not say, so no record was made.
-- A Chickasaw.tv timeline entry: the helper reported a 1795 Creek peace that
-  the saved page does not state, so it was dropped.
-- Program pages without stories (Colville, Wilton, Ho-Chunk, Yurok, Grand
-  Ronde, Umatilla, Blue Lake) are listed in the analysis as leads, not as
-  stories.
+- A Mescalero Apache origin passage on the Tribe's culture page: it may be sacred and the page does not say, so no record was made.
+- A Chickasaw.tv timeline entry: the helper reported a 1795 Creek peace that the saved page does not state, so it was dropped.
+- Program pages without stories (Colville, Wilton, Ho-Chunk, Yurok, Grand Ronde, Umatilla, Blue Lake) are listed in the analysis as leads, not as stories.

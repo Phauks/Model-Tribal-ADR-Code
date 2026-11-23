@@ -17,6 +17,4 @@ Rules:
 - A single mention like "Court" in a long menu is enough only if the link or snippet clearly belongs to this nation's site.
 - `not-found` does not mean the court closed; the reviewer will decide.
 
-Output: write a JSON array to the output path you are given, one object per item, in input order:
-{"profile": "...", "fact_number": 12, "fingerprint": "...", "verdict": "confirmed|confirmed-other-name|link-dead-court-found|not-found|cannot-tell", "evidence_url": "the page that shows it, or null", "name_on_page": "or null", "working_link": "a working address for the court page if different from the listed link, or null", "reason": "one short sentence"}
-Write valid JSON only. When done, reply with the counts of each verdict and nothing else.
+Output: write a JSON array to the output path you are given, one object per item, in input order: {"profile": "...", "fact_number": 12, "fingerprint": "...", "verdict": "confirmed|confirmed-other-name|link-dead-court-found|not-found|cannot-tell", "evidence_url": "the page that shows it, or null", "name_on_page": "or null", "working_link": "a working address for the court page if different from the listed link, or null", "reason": "one short sentence"} Write valid JSON only. When done, reply with the counts of each verdict and nothing else.

@@ -16,6 +16,4 @@ For each group choose the ONE level that is true of every fact in the group, usi
 - A value that the note says was derived, assigned, matched, estimated or taken from another entity is `inferred`.
 - If the examples disagree, or the evidence is thin, choose the WEAKER level in this order: inferred (weakest) < title-only < bulk-import < read-in-full (strongest). Never choose read-in-full by default.
 
-Output: write a JSON array to the output path you are given, one object per group, in input order:
-{"group_id": 5, "group": "...", "level": "read-in-full|title-only|bulk-import|inferred", "mixed": true|false, "reason": "one short sentence citing the note wording you relied on"}
-`mixed` is true when the examples suggest different levels (you then chose the weaker). Write valid JSON only. When done, reply with the counts of each level and nothing else.
+Output: write a JSON array to the output path you are given, one object per group, in input order: {"group_id": 5, "group": "...", "level": "read-in-full|title-only|bulk-import|inferred", "mixed": true|false, "reason": "one short sentence citing the note wording you relied on"} `mixed` is true when the examples suggest different levels (you then chose the weaker). Write valid JSON only. When done, reply with the counts of each level and nothing else.

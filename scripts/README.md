@@ -1,11 +1,8 @@
 # Scripts
 
-Checks that run on every pull request (see `.github/workflows/checks.yml`).
-Run them from the repository root before opening a pull request.
+Checks that run on every pull request (see `.github/workflows/checks.yml`). Run them from the repository root before opening a pull request.
 
-The workflow's final job, `All checks`, passes only when every other check
-passes, and it is the only check the `main` ruleset requires. To add a check,
-add a job to the workflow and list it under `all-checks.needs`.
+The workflow's final job, `All checks`, passes only when every other check passes, and it is the only check the `main` ruleset requires. To add a check, add a job to the workflow and list it under `all-checks.needs`.
 
 | Script | Checks | Needs |
 | --- | --- | --- |
@@ -27,10 +24,7 @@ add a job to the workflow and list it under `all-checks.needs`.
 
 ## Native nations dataset
 
-Scripts that built the first profiles in `content/tribes/` from cited facts in
-`research/raw/` (see [research/raw/README.md](../research/raw/README.md)).
-They are kept so the first edition can be reproduced; once profiles are edited
-by hand, add new facts by hand or in a new raw file and review the diff.
+Scripts that built the first profiles in `content/tribes/` from cited facts in `research/raw/` (see [research/raw/README.md](../research/raw/README.md)). They are kept so the first edition can be reproduced; once profiles are edited by hand, add new facts by hand or in a new raw file and review the diff.
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -62,9 +56,7 @@ Run by hand, never in continuous integration:
 
 ## Data gap review
 
-Run by hand, never in continuous integration. They follow up rows 1, 7 and
-11 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md)
-and fill in the `verification` level from [decision record 0014](../docs/decisions/0014-verification-levels-and-record-lint.md).
+Run by hand, never in continuous integration. They follow up rows 1, 7 and 11 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and fill in the `verification` level from [decision record 0014](../docs/decisions/0014-verification-levels-and-record-lint.md).
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -77,9 +69,7 @@ and fill in the `verification` level from [decision record 0014](../docs/decisio
 
 ## Dispute resolution coverage search
 
-Run by hand, never in continuous integration. It follows up row 2 of the
-[dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and
-writes the [search logs](../research/search-logs/README.md) of decision record
+Run by hand, never in continuous integration. It follows up row 2 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and writes the [search logs](../research/search-logs/README.md) of decision record
 0025. It never changes a profile.
 
 | Script | Does | Needs |
@@ -93,6 +83,7 @@ Run by hand, never in continuous integration. It reads the gaming ordinances alr
 | Script | Does | Needs |
 | --- | --- | --- |
 | `review/ordinance_disputes.py` | `batches` reads the saved text of every ordinance and amendment in `research/gaming/ordinance-documents.json`, marks pages with no text layer, approval letter pages and tables of contents, finds sections on patron disputes, employee grievances, licensing hearings and appeals, mediation, arbitration, peacemaking and Tribal court review by heading and keyword, picks each nation's newest document with each kind of procedure, records every document checked (scanned ones as `scanned-unreadable`; no OCR) and writes review batches for reviewers following [the brief](../research/reviews/briefs/2026-11-22-ordinance-disputes.md) into a private work folder; `merge` checks every reviewer snippet against the document text, queues low-confidence and garbled items for a second look and applies its verdicts, and writes `research/reviews/2026-11-22-ordinance-disputes.{json,csv}` (empty decision column), a counts file, one search log per profile and a private file of the snippets; `grab` (Nov. 23, 2026) adds the compact passages readers set aside, flags items with no steps, and marks every item keep, under the lead author's grab-now answer | Python 3 standard library and the saved text (`pdftotext` only for a missing text file); `merge` also `scripts/requirements.txt` |
+| `review/ordinance_scans.py` | Reads the scanned ordinances (no text layer) as page images, in steps run in the `ordinance_disputes.py` work folder. `select` picks, for each nation whose `gaming-dispute-procedures` search log is `partly-searched` (or a list given with `--nations`), the newest full ordinance on the list if it is scanned and the scanned amendments listed on or after it, at most 3, and lists the same choice for every other nation as a second tier that is not downloaded. `download` fetches each first-tier PDF from its public link on the Commission's site, one at a time with a pause; it stops on a refusal and never tries to get around one. `pages` classifies each page as approval letter, other text, blank or image (no OCR). `batches` writes reading batches for reviewers following [the scan brief](../research/reviews/briefs/2026-11-23-ordinance-scans.md); it refuses to overwrite existing batches without `--force`. `merge-scans` adds the readers' items to `research/reviews/2026-11-22-ordinance-disputes.{json,csv}` (ids ending `#p<n>`, `partly-read` flags, the `grab` flags and decision, and spot-check verdicts from the work folder), appends a search entry per document to each nation's search log and sets its status, updates the counts file and the private snippets file. `spot-check` prints the seeded sample of items to check by hand. Run `merge-scans` after `ordinance_disputes.py merge` and `grab`, because `merge` rewrites the review files and search logs from scratch | Python 3, `curl`, poppler (`pdfinfo`, `pdftotext`, `pdftoppm`); `merge-scans` also `scripts/requirements.txt` |
 
 ## Applying the second gap review, Nov. 22, 2026
 
@@ -130,9 +121,7 @@ Run by hand, never in continuous integration. They build the catalog in [`resear
 
 ## Tribal law texts
 
-Run by hand, never in continuous integration. They build
-[`research/tribal-law/`](../research/tribal-law/README.md) and never change a
-profile. The documents they download, and the quotations, stay private.
+Run by hand, never in continuous integration. They build [`research/tribal-law/`](../research/tribal-law/README.md) and never change a profile. The documents they download, and the quotations, stay private.
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -151,11 +140,7 @@ Run by hand, never in continuous integration. Both use free public data with no 
 
 ## Constitutions
 
-Run by hand, in this order, never in continuous integration. They build the
-catalog in [`research/constitutions/`](../research/constitutions/README.md)
-and the constitution version histories in `content/documents/`. The documents
-they download stay private, outside the repository; the work files (JSON
-between steps) go in a scratch folder.
+Run by hand, in this order, never in continuous integration. They build the catalog in [`research/constitutions/`](../research/constitutions/README.md) and the constitution version histories in `content/documents/`. The documents they download stay private, outside the repository; the work files (JSON between steps) go in a scratch folder.
 
 | Script | Does | Needs |
 | --- | --- | --- |

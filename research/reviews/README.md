@@ -1,9 +1,6 @@
 # Data reviews
 
-Each review checks records the project already holds against their sources
-and writes its findings beside them, for the lead author to accept, change or
-reject. A review never edits a record. Changes it leads to are made in a
-separate pull request after the lead author decides.
+Each review checks records the project already holds against their sources and writes its findings beside them, for the lead author to accept, change or reject. A review never edits a record. Changes it leads to are made in a separate pull request after the lead author decides.
 
 | Review | Covers | Files |
 | --- | --- | --- |
@@ -21,5 +18,4 @@ separate pull request after the lead author decides.
 | [Case citations against CourtListener, Nov. 23, 2026](2026-11-23-case-citations-courtlistener.md) | All 109 case source records, looked up by citation in CourtListener's bulk data (release of Sept. 30, 2026) with name and year compared: 96 matched, 1 year differs, 5 not in CourtListener, 7 with no reporter citation, as run by `scripts/caselaw/check_case_citations.py` | report and `2026-11-23-case-citations-courtlistener.csv` (one row per record) |
 | Indian law journals, Nov. 23, 2026 | Every catalog entry of the American Indian Law Review, Tribal Law Journal and American Indian Law Journal (1,291 entries, 523 kept) and 97 bar journal, Federal Bar Association, NAICJA, NARF and Tribal Law and Policy Institute items, swept after the lead author noticed how much the project draws on these journals ([session note](../sessions/2026/2026-11-23-indian-law-journals.md)) | `2026-11-23-indian-law-journals.csv` (every item with its priority and status) and `2026-11-23-indian-law-journals-nation-facts.csv` (87 facts from the pieces read in full, with pinpoints and whether each is now in a profile) |
 
-Each file name starts with the date of the review, so a later review of the
-same records sits beside the earlier one instead of replacing it.
+Each file name starts with the date of the review, so a later review of the same records sits beside the earlier one instead of replacing it.

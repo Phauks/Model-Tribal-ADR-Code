@@ -38,22 +38,8 @@ limits: >-
   taken from.
 ---
 
-Output: [the pre-review report](../../reviews/2026-11-21-provision-pre-review.md),
-its [verdicts](../../reviews/2026-11-21-provision-pre-review.json),
-the same as a [spreadsheet](../../reviews/2026-11-21-provision-pre-review.csv),
-its [counts](../../reviews/2026-11-21-provision-pre-review-counts.json) and the
-reviewers' [briefs](../../reviews/briefs/).
+Output: [the pre-review report](../../reviews/2026-11-21-provision-pre-review.md), its [verdicts](../../reviews/2026-11-21-provision-pre-review.json), the same as a [spreadsheet](../../reviews/2026-11-21-provision-pre-review.csv), its [counts](../../reviews/2026-11-21-provision-pre-review-counts.json) and the reviewers' [briefs](../../reviews/briefs/).
 
-Method: the provisional analysis of dispute resolution practice (pull request
-#10) placed 938 provisions in the bulk database tier and 291 in the title-only
-tier, and asked for them to be checked one by one. This session fetched every
-cited page, matched each record to the passage nearest its title or section
-number, and gave the evidence to reviewer agents in batches of about 45
-records, keeping each nation's records together so duplicates could be found.
-A second, more careful pass re-checked records the first pass could not
-verify, rated low confidence or proposed to drop although they were labeled
-with a dispute resolution kind. The second pass changed 53 of 114 verdicts.
+Method: the provisional analysis of dispute resolution practice (pull request #10) placed 938 provisions in the bulk database tier and 291 in the title-only tier, and asked for them to be checked one by one. This session fetched every cited page, matched each record to the passage nearest its title or section number, and gave the evidence to reviewer agents in batches of about 45 records, keeping each nation's records together so duplicates could be found. A second, more careful pass re-checked records the first pass could not verify, rated low confidence or proposed to drop although they were labeled with a dispute resolution kind. The second pass changed 53 of 114 verdicts.
 
-Ruled out: no record was deleted or edited, and the scope question (whether
-diversion and restorative sentencing belong in the code) was flagged for the
-lead author rather than decided.
+Ruled out: no record was deleted or edited, and the scope question (whether diversion and restorative sentencing belong in the code) was flagged for the lead author rather than decided.
