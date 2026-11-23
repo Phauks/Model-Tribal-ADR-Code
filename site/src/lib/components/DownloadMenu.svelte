@@ -261,7 +261,7 @@
 				</a>
 			</li>
 			<li>
-				<a class="row" href="/verify" onclick={() => close()}>
+				<a class="row" href="/downloads#checking" onclick={() => close()}>
 					<FileCheck size={20} strokeWidth={1.75} />
 					<span class="choice">
 						<span class="choice-name">Verify a file</span>

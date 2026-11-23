@@ -21,7 +21,7 @@
 			<li><a href="/acknowledgments">Acknowledgments</a></li>
 			<li><a href="/changelog">Changelog</a></li>
 			<li><a href="/downloads">Downloads</a></li>
-			<li><a href="/verify">Verify a file</a></li>
+			<li><a href="/downloads#checking">Verify a file</a></li>
 			<li><a href="/copies">Copies of documents</a></li>
 			<li><a href="/licenses">Licenses by material</a></li>
 			<li><a href="{repositoryLink}"><GithubMark /><span>GitHub</span></a></li>

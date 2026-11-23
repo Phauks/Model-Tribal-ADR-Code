@@ -17,12 +17,7 @@ export const libraryPages: LibraryPage[] = [
 		label: 'Downloads',
 		link: '/downloads',
 		description:
-			'Files to keep: the list of nations, the dispute resolution provisions, the glossary and the map’s layers, as spreadsheets, JSON and ZIP files, and the United States documents in one ZIP file.'
-	},
-	{
-		label: 'Verify a file',
-		link: '/verify',
-		description: 'Check in your browser that a file you downloaded from this site is the one published here, by its SHA-256.'
+			'Files to keep: the list of nations, the dispute resolution provisions, the glossary and the map’s layers, as spreadsheets, JSON and ZIP files, and the United States documents in one ZIP file, with a way to check that a file you downloaded is the one published here.'
 	},
 	{
 		label: 'Back matter',

@@ -133,7 +133,7 @@ The website is the primary edition. It carries every part, plus what print canno
 | Essays | One page per design choice | Part IV | After drafting |
 | Methods and stories | Methods catalog, case histories and the stories collection | Part V | Records exist |
 | Nations | Map (state presence only) and table, one profile per nation with review status and sources | Directory | Built |
-| Library | Sources, documents with version history, constitutions, compacts, bibliographies, data downloads | Back matter | Partly built: the Library page gathers Copies of documents, Downloads, Verify a file, Back matter and Licenses by material; bibliographies not yet published |
+| Library | Sources, documents with version history, constitutions, compacts, bibliographies, data downloads | Back matter | Partly built: the Library page gathers Copies of documents, Downloads (with Checking a file), Back matter and Licenses by material; bibliographies not yet published |
 | Glossary | Every defined term with hover cards | Back matter | Built |
 | About | Charter, positionality, how to cite, the changes log for all three tracks | Front matter | Partly built |
 
