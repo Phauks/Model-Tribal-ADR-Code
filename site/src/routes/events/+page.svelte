@@ -20,11 +20,6 @@
 
 <div class="reading">
 	<h1>{data.past ? 'Past events' : 'Events'}</h1>
-	<p class="lead">
-		Talks, panels, workshops and gatherings about dispute resolution in Native nations. Each event's page says where it
-		is, how to take part and how to register.
-	</p>
-
 	<nav class="event-views" aria-label="Events">
 		<a href="/events" aria-current={data.past ? undefined : 'page'}>Upcoming</a>
 		<a href="/events?when=past" aria-current={data.past ? 'page' : undefined}>Past</a>
