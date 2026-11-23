@@ -11,3 +11,19 @@ searches:
   query: links whose words or address say contact; mailto links and email addresses
   outcome: found
   reason: Found contact page https://coharietribe.org/contact/. 3 other addresses (departments, people or other sites) were found and not added.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Coharie Intra-Tribal Council, Inc North Carolina official website contact
+  outcome: not-found
+  reason: Result coharietribe.org; Wikipedia and aggregators otherwise. Searched for coharie-intra-tribal-council-inc, a second record for the same group, merged into this one on Nov. 23, 2026.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: official website
+  outcome: not-found
+  reason: Found https://coharietribe.org/, which is already the website of coharie-tribe-of-north-carolina; not added, since the two records may name the same group. Searched for coharie-intra-tribal-council-inc, a second record for the same group, merged into this one on Nov. 23, 2026.

@@ -19,3 +19,19 @@ searches:
   query: official website, contact page, general email
   outcome: found
   reason: Claude found the site by web search; a script opened it and found each value on the page named.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Duwamish Tribe Seattle Washington official website contact
+  outcome: not-found
+  reason: Result list included duwamishtribe.org/contact, the tribe's own site. Searched for duwamish-tribe, a second record for the same group, merged into this one on Nov. 23, 2026.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: official website
+  outcome: not-found
+  reason: Found https://www.duwamishtribe.org, which is already the website of duwamish-tribal-organization; not added, since the two records may name the same group. Searched for duwamish-tribe, a second record for the same group, merged into this one on Nov. 23, 2026.
