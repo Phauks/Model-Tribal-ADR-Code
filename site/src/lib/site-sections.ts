@@ -2,6 +2,8 @@
 // (docs/outline.md, "The website"). The sidebar lists them on every page and
 // opens the current one into the outline of the page being read.
 
+import { libraryOutline } from '#lib/library-pages.ts';
+
 /** One entry in a page's outline: a heading on the page, or a page within a section. */
 export type OutlineItem = {
 	label: string;
@@ -26,8 +28,13 @@ export type PageOutline = {
  * A section of the site. `built` is false until its pages exist; the sidebar
  * then shows its name without a link, so readers see the whole shape of the
  * site without following links to pages that are not there yet.
+ *
+ * A section can gather pages that keep addresses of their own (`gathers`), as
+ * the Library gathers Downloads and Copies of documents. On those pages the
+ * section counts as current, and when the page gives no outline of its own the
+ * sidebar lists the gathered pages instead.
  */
-export type SiteSection = { label: string; link: string; built: boolean };
+export type SiteSection = { label: string; link: string; built: boolean; gathers?: OutlineItem[] };
 
 export const siteSections: SiteSection[] = [
 	{ label: 'Model code', link: '/code', built: false },
@@ -37,7 +44,7 @@ export const siteSections: SiteSection[] = [
 	// Only the stories are published so far; the methods catalog joins them later.
 	{ label: 'Methods and stories', link: '/stories', built: true },
 	{ label: 'Nations', link: '/nations', built: true },
-	{ label: 'Library', link: '/library', built: false },
+	{ label: 'Library', link: '/library', built: true, gathers: libraryOutline() },
 	{ label: 'Glossary', link: '/glossary', built: true },
 	{ label: 'Events', link: '/events', built: true },
 	{ label: 'About', link: '/about', built: true },
@@ -46,6 +53,7 @@ export const siteSections: SiteSection[] = [
 
 /** The section a path belongs to, if any. */
 export function sectionOf(path: string): SiteSection | undefined {
-	return siteSections.find((section) => path === section.link || path.startsWith(`${section.link}/`));
+	const within = (link: string) => path === link || path.startsWith(`${link}/`);
+	return siteSections.find((section) => within(section.link) || section.gathers?.some((page) => within(page.link)));
 }
 

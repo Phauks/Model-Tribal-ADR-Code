@@ -27,8 +27,21 @@ describe('site sections for the sidebar', () => {
 		expect(sectionOf('/nationsx')).toBeUndefined();
 	});
 
+	it('counts the pages the Library gathers as part of it', () => {
+		expect(sectionOf('/library')?.label).toBe('Library');
+		expect(sectionOf('/copies')?.label).toBe('Library');
+		expect(sectionOf('/copies/list/statutes')?.label).toBe('Library');
+		expect(sectionOf('/downloads')?.label).toBe('Library');
+		expect(sectionOf('/verify')?.label).toBe('Library');
+		expect(sectionOf('/back-matter/cases-by-topic')?.label).toBe('Library');
+		expect(sectionOf('/licenses/cc-by-4.0')?.label).toBe('Library');
+		expect(sectionOf('/copiesx')).toBeUndefined();
+		const library = siteSections.find((section) => section.label === 'Library');
+		expect(library?.gathers?.map((page) => page.link)).toEqual(['/copies', '/downloads', '/verify', '/back-matter', '/licenses']);
+	});
+
 	it('links only sections whose pages exist', () => {
 		const built = siteSections.filter((section) => section.built).map((section) => section.link);
-		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/glossary', '/events', '/about', '/sponsor']);
+		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/library', '/glossary', '/events', '/about', '/sponsor']);
 	});
 });

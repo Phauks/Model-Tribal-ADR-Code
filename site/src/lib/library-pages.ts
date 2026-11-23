@@ -1,0 +1,45 @@
+// The pages the Library section gathers (docs/outline.md, "The website"). They
+// keep their own addresses, so links to them from the footer, the Download menu
+// and other pages still work; the Library page lists them and the sidebar opens
+// the Library section into them on any of these pages.
+import type { OutlineItem } from '#lib/site-sections.ts';
+
+export type LibraryPage = { label: string; link: string; description: string };
+
+export const libraryPages: LibraryPage[] = [
+	{
+		label: 'Copies of documents',
+		link: '/copies',
+		description:
+			'Our own copies of documents the site cites: United States laws and government documents, Native nations’ constitutions and laws, and tribal court opinions. Each gives where it was published, the date it was saved and its SHA-256.'
+	},
+	{
+		label: 'Downloads',
+		link: '/downloads',
+		description:
+			'Files to keep: the list of nations, the dispute resolution provisions, the glossary and the map’s layers, as spreadsheets, JSON and ZIP files, and the United States documents in one ZIP file.'
+	},
+	{
+		label: 'Verify a file',
+		link: '/verify',
+		description: 'Check in your browser that a file you downloaded from this site is the one published here, by its SHA-256.'
+	},
+	{
+		label: 'Back matter',
+		link: '/back-matter',
+		description: 'Pages that close the book and help readers find their way through it, such as the index of cases by topic.'
+	},
+	{
+		label: 'Licenses by material',
+		link: '/licenses',
+		description: 'What you may copy and share from this site, and on what terms, for each kind of material.'
+	}
+];
+
+/**
+ * The Library's outline in the sidebar: its pages in order. A page can open its
+ * own entry into the pages under it, as the Back matter index does.
+ */
+export function libraryOutline(children: Record<string, OutlineItem[]> = {}): OutlineItem[] {
+	return libraryPages.map(({ label, link }) => ({ label, link, ...(children[link]?.length ? { children: children[link] } : {}) }));
+}
