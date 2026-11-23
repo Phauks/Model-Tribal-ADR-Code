@@ -1,6 +1,6 @@
 # Working outline: model code, book and website
 
-**Version 0.4, Nov. 22, 2026.** This is the project's framework: the parts, divisions and website sections, and what each one is for. It is a working draft that will change. Nothing here is provision text, which waits for Gate 1 and Gate 2 under the [roadmap](roadmap.md). A readable copy for review and comments is kept as a Claude Doc ([working outline](https://claude.ai/artifact/CMngzviK5V9QX2htVpgpT7)); this file is the record.
+**Version 0.5, Nov. 22, 2026.** This is the project's framework: the parts, divisions and website sections, and what each one is for. It is a working draft that will change. Nothing here is provision text, which waits for Gate 1 and Gate 2 under the [roadmap](roadmap.md). A readable copy for review and comments is kept as a Claude Doc ([working outline](https://claude.ai/artifact/CMngzviK5V9QX2htVpgpT7)); this file is the record.
 
 The project is built for the website first; the book's order, title and print form are settled later, at export time (lead author, Nov. 22, 2026).
 
@@ -174,7 +174,7 @@ The data review changes contents, not the framework. These parts need its result
 - **Part I, "Dispute resolution in Native nations today" and "Peacemaking in nations' own words"**: rest on the re-run analysis of reviewed data.
 - **General provisions**: which confidentiality, referral and agreement models a drafter can rely on depends on confirming the text-read records ([roadmap, Gate 1 item 3](roadmap.md#gate-1-review-of-the-pull-request-2-data)).
 - **Restorative processes and family divisions**: whether they exist at all depends on triaging the bulk records (Gate 1 item 2).
-- **Methods catalog**: waits on accepting or setting aside the proposed method records (Gate 1 item 6).
+- **Methods catalog**: no longer waits. The lead author adopted all 33 method records on Nov. 22, 2026 (Gate 1 item 6), so the catalog can be built from them.
 - **Directory of nations cited**: waits on resolving duplicates (Gate 1 item 4).
 
 ## Where parked research lands
@@ -198,6 +198,7 @@ The 1st Edition covers Native nations in the United States, as the [charter's pu
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.5 | Nov. 22, 2026 | Methods catalog unblocked: all 33 method records adopted (Gate 1 item 6) |
 | 0.4 | Nov. 22, 2026 | Lead author's answers to scope questions 2, 3, 5, 7, 8, 9, 10, 12 and 14 recorded; definitions move into the general division; question 4 deferred to Gate 2 and question 6 kept open |
 | 0.3 | Nov. 22, 2026 | Website first, book form later; five parts (Foundations, Model Code, Commentary, Essays, Methods and Manners); one model code in divisions with peacemaking as a division (decision record 0026); essays explain design choices; scope questions 15 and 16 added |
 | 0.2 | Nov. 22, 2026 | Definitions moved to an appendix; case histories added; commentary placement stated; peacemaking reason in the project's own words; scope questions 12 to 14 added |
