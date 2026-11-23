@@ -43,10 +43,13 @@
 		label,
 		data: given,
 		camera = $bindable(),
+		by = 'nation',
 		onready,
 		onfail
 	}: {
 		view: TileMapView;
+		/** For a shaded view: shade each nation's land areas, or each state by the category most of its nations have. */
+		by?: 'nation' | 'state';
 		/** What the map shows, for screen readers, such as "Nations by State". */
 		label: string;
 		/** One nation's land areas, for its page: the map shows only those, fitted to them, with no place buttons or table to go to. Without it the map shows every nation and fetches its data from /nations/map/tile-map.json. */
@@ -164,6 +167,14 @@
 				layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 13, 'text-max-width': 8 },
 				paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2 }
 			});
+		} else if (isShadedMapView(view) && by === 'state') {
+			// A shaded view by state: each state takes the shade of the category most of its nations have.
+			const entries = Object.entries(shadingIn(data)?.states ?? {});
+			const byStateShade = (entries.length > 0
+				? ['match', ['get', 'code'], ...entries.flatMap(([code, state]) => [code, colors.classes[state.shade]]), colors.classes[0]]
+				: colors.classes[0]) as unknown as ExpressionSpecification;
+			fills.push({ id: 'states', type: 'fill', source: 'places', 'source-layer': 'states', paint: { 'fill-color': hovered(byStateShade), 'fill-opacity': 0.85 } });
+			tops.push({ id: 'states-lines', type: 'line', source: 'places', 'source-layer': 'states', paint: { 'line-color': colors.line, 'line-width': 0.8 } });
 		} else if (isShadedMapView(view)) {
 			// A shaded view: each area takes its category's shade, and areas with no fact stay the lightest. Only areas with a fact get a dot, so the dots show where the facts are.
 			const shading = shadingIn(data);
@@ -279,7 +290,7 @@
 		}
 
 		// Nations with no Census land area, marked at their offices with a dark ring, on every view of the big map.
-		if (!oneNation) {
+		if (!oneNation && by === 'nation') {
 			const officeShade = ['match', ['get', 'shade'], 1, colors.classes[1], 2, colors.classes[2], 3, colors.classes[3], 4, colors.classes[4], colors.classes[0]] as unknown as ExpressionSpecification;
 			tops.push(
 				{
@@ -478,7 +489,7 @@
 
 				// Selecting a place goes to its row; hovering marks it, as the drawn map does.
 				const interactive: { layer: string; source: string; sourceLayer?: string; anchor: (properties: Record<string, unknown>) => string | undefined }[] = [
-					{ layer: 'states', source: 'places', sourceLayer: 'states', anchor: (properties) => data.states[String(properties.code)]?.anchor },
+					{ layer: 'states', source: 'places', sourceLayer: 'states', anchor: (properties) => (by === 'state' ? shadingIn(data)?.states[String(properties.code)]?.anchor : data.states[String(properties.code)]?.anchor) },
 					{ layer: 'regions', source: 'regions', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'area-dots', source: 'area-points', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'office-dots', source: 'offices', anchor: (properties) => String(properties.anchor ?? '') },

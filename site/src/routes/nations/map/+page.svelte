@@ -57,9 +57,12 @@
 	/**
 	 * The views that shade the land areas by a fact about their nations, such as Public Law 280 (src/lib/shaded-map-views.ts), are fetched the same way, each the first time it is shown.
 	 */
-	type ShadedBody = Omit<ShadedViewData, 'drawn' | 'labels'> & { drawing: string };
+	type ShadedBody = Omit<ShadedViewData, 'drawn' | 'labels' | 'drawnStates'> & { drawing: string; stateDrawing?: string };
 	let shaded = $state<Partial<Record<ShadedMapView, ShadedBody>>>({});
 	let shadedFailed = $state<Partial<Record<ShadedMapView, boolean>>>({});
+	/** Whether each shaded view shows its nations' land areas or its states (Trevor, Nov. 23, 2026: a by-state variant of each view, since dots are hard to read). */
+	let shownBy = $state<Partial<Record<ShadedMapView, 'nation' | 'state'>>>({});
+	const byOf = (view: string): 'nation' | 'state' => (isShadedMapView(view) ? (shownBy[view] ?? 'nation') : 'nation');
 	const shadedLoading = new Map<ShadedMapView, Promise<void>>();
 
 	function loadShaded(view: ShadedMapView): Promise<void> {
@@ -109,6 +112,8 @@
 		current = view as NationsMapView;
 		if (view === 'lands') await loadLands();
 		if (isShadedMapView(view)) await loadShaded(view);
+		// A state's row is in the view's by-state table.
+		if (shadedView && anchor.startsWith(`${shadedView}-state-`) && (shaded[shadedView]?.stateRows.length ?? 0) > 0) shownBy[shadedView] = 'state';
 		await tick();
 		target ??= anchor ? document.getElementById(anchor) : null;
 		// A row reached from the map opens to show its nations.
@@ -215,6 +220,32 @@
 		}));
 	}
 
+	/** A shaded view by state: each state's nations, and how many have each category. */
+	function byStateColumns(body: ShadedBody): TableColumn[] {
+		return [
+			{ key: 'state', header: 'State', isRowHeader: true, sortable: true },
+			{ key: 'total', header: 'Nations', type: 'number', sortable: true },
+			...body.stateColumns.map((column) => ({ key: `count-${column.key}`, header: column.header, type: 'number' as const, sortable: true }))
+		];
+	}
+
+	function byStateRows(body: ShadedBody): TableRow[] {
+		return body.stateRows.map((row) => ({
+			key: row.anchor,
+			anchor: row.anchor,
+			cells: {
+				state: { text: row.name, href: `/nations/state/${row.code.toLowerCase()}` },
+				total: { text: row.total.toLocaleString('en-US'), sortValue: row.total },
+				...Object.fromEntries(
+					body.stateColumns.map((column) => {
+						const count = (row.counts as Record<string, number>)[column.key] ?? 0;
+						return [`count-${column.key}`, { text: count.toLocaleString('en-US'), sortValue: count }];
+					})
+				)
+			}
+		}));
+	}
+
 	const landAreaColumns: TableColumn[] = [
 		{ key: 'area', header: 'Area', isRowHeader: true, sortable: true, custom: true },
 		{ key: 'kind', header: 'Kind', sortable: true, filterable: true },
@@ -300,13 +331,28 @@
 		hidden={view.key !== current}
 	>
 		<h2 id={view.heading} class="view-heading">{view.label}</h2>
+		{#if isShadedMapView(view.key) && (shaded[view.key]?.stateRows.length ?? 0) > 0}
+			{@const key = view.key}
+			<fieldset class="shown-by">
+				<legend class="small">Show by</legend>
+				<div class="shown-by-choices">
+					{#each [{ value: 'nation', label: 'Nation' }, { value: 'state', label: 'State' }] as choice (choice.value)}
+						<label class="shown-by-choice">
+							<input class="visually-hidden" type="radio" name="shown-by-{key}" value={choice.value} checked={byOf(key) === choice.value} onchange={() => (shownBy[key] = choice.value as 'nation' | 'state')} />
+							{choice.label}
+						</label>
+					{/each}
+				</div>
+			</fieldset>
+		{/if}
 		<figure class="map-figure" data-print-part="maps">
 			<div class="map-drawing" class:tiled={tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
 				{#if tileMapWanted && view.key === current}
-					{#key view.key}
+					{#key `${view.key}-${byOf(view.key)}`}
 						<TileMap
 							view={view.key}
-							label={view.label}
+							by={byOf(view.key)}
+							label={byOf(view.key) === 'state' ? `${view.label}, by state` : view.label}
 							bind:camera={tileMapCamera}
 							onready={() => (tileMapReady = true)}
 							onfail={() => {
@@ -320,7 +366,9 @@
 				<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
 					{#if isShadedMapView(view.key)}
 						{@const body = shaded[view.key]}
-						{#if body}
+						{#if body && byOf(view.key) === 'state' && body.stateDrawing}
+							{@html body.stateDrawing}
+						{:else if body}
 							{@html body.drawing}
 						{:else if shadedFailed[view.key]}
 							<p class="map-status">This view could not be loaded. Check your connection and choose the view again.</p>
@@ -359,7 +407,7 @@
 						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
 							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
-						{@render officeKey()}
+						{#if byOf(view.key) === 'nation'}{@render officeKey()}{/if}
 					</ul>
 				</figcaption>
 			{:else if view.key === 'lands'}
@@ -409,10 +457,28 @@
 			{:else if isShadedMapView(view.key)}
 				{@const body = shaded[view.key]}
 				{@const definition = shadedViewDefinitions[view.key]}
-				<p class="small muted map-note">
-					{definition.note} {@render officeNote()} {@render insetNote()}
-				</p>
-				{#if body && definition.rows !== 'nations'}
+				{#if byOf(view.key) === 'state'}
+					<p class="small muted map-note">
+						Each state is shaded by the entry in the key that most of its nations fall under, including the last entry, for nations with nothing recorded; a tie goes to the one listed first. A nation with more than one counts under the first, as the map by nation shades it. A nation in more than one state counts in each state its entry places it in, except where a fact names its own state, such as an agreement, a gaming compact or state recognition, which counts only in that state. The table gives how many of each state’s nations have each one. Select a state to go to its row. {@render insetNote()}
+					</p>
+				{:else}
+					<p class="small muted map-note">
+						{definition.note} {@render officeNote()} {@render insetNote()}
+					</p>
+				{/if}
+				{#if body && byOf(view.key) === 'state'}
+					<div class="by-state-table">
+					<DataTable
+						identifier="{view.key}-by-state"
+						download="{view.key}-by-state"
+						label="Table: {view.label}, by state"
+						caption="{view.label}: how many of each state’s nations have each category"
+						columns={byStateColumns(body)}
+						rows={byStateRows(body)}
+						defaultSort={{ key: 'state', direction: 'ascending' }}
+					/>
+					</div>
+				{:else if body && definition.rows !== 'nations'}
 					<DataTable
 						identifier={view.key}
 						download={view.key}
@@ -478,6 +544,64 @@
 <style>
 	.map-view-picker {
 		margin: var(--space-5) 0 var(--space-4);
+	}
+
+	/* Show by nation or by state: two buttons side by side, as the reading settings' alignment choices are. */
+	.shown-by {
+		margin: 0 0 var(--space-3);
+		padding: 0;
+		border: 0;
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	.shown-by legend {
+		float: left;
+		margin-right: var(--space-2);
+	}
+
+	.shown-by-choices {
+		display: inline-flex;
+		border: 2px solid var(--color-control-border);
+		border-radius: var(--radius-control);
+		overflow: hidden;
+	}
+
+	.shown-by-choice {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: var(--layout-target-minimum);
+		min-height: var(--layout-target-minimum);
+		padding: var(--space-1) var(--space-3);
+		box-sizing: border-box;
+		background: var(--color-paper);
+		color: var(--color-ink);
+		cursor: pointer;
+	}
+
+	.shown-by-choice + .shown-by-choice {
+		border-left: 2px solid var(--color-control-border);
+	}
+
+	.shown-by-choice:has(input:checked) {
+		background: var(--color-action);
+		color: var(--color-action-text);
+		box-shadow: inset 0 -4px 0 var(--color-action-text);
+	}
+
+	.shown-by-choice:has(input:focus-visible) {
+		outline: 3px solid var(--color-focus-ring);
+		outline-offset: -3px;
+		background: var(--color-focus);
+		color: var(--focus-text);
+	}
+
+	/* A state's name breaks only between words, however narrow the column. */
+	.by-state-table :global(tbody th a) {
+		overflow-wrap: normal;
+		hyphens: none;
 	}
 
 	/* The dropdown already names the view; the heading stays for screen readers, outlines and print. */
@@ -585,6 +709,11 @@
 			position: sticky;
 			top: var(--space-3);
 			margin: 0;
+		}
+
+		/* The switch spans both columns, above the map and its table. */
+		.shown-by {
+			grid-column: 1 / -1;
 		}
 
 		.map-drawing {

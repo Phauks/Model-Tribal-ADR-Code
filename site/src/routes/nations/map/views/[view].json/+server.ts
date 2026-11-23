@@ -1,6 +1,6 @@
 import geometry from 'virtual:map-geometry';
 import { error, json } from '@sveltejs/kit';
-import { drawShadedLandAreasMap } from '#lib/nations-map-drawing.ts';
+import { drawShadedLandAreasMap, drawShadedStatesMap } from '#lib/nations-map-drawing.ts';
 import { mapViews } from '#lib/map-views.ts';
 import { shadedView } from '#lib/server/nations-map.ts';
 import { isShadedMapView, shadedMapViews } from '#lib/shaded-map-views.ts';
@@ -15,7 +15,9 @@ export const GET: RequestHandler = ({ params }) => {
 	if (!isShadedMapView(params.view)) error(404, 'No such map view');
 	const data = shadedView(params.view);
 	const title = mapViews.find((entry) => entry.key === params.view)?.description ?? params.view;
-	const { drawn, labels, offices, ...rest } = data;
+	const { drawn, labels, offices, drawnStates, ...rest } = data;
 	const drawnOffices = offices.map((office) => ({ ...office, href: office.anchor ? `#${office.anchor}` : undefined }));
-	return json({ ...rest, drawing: drawShadedLandAreasMap(geometry, { key: params.view, title, areas: drawn, offices: drawnOffices, labels }) });
+	// The same view by state, for views about nations.
+	const stateDrawing = drawnStates.length > 0 ? drawShadedStatesMap(geometry, { key: params.view, title, states: drawnStates }) : undefined;
+	return json({ ...rest, drawing: drawShadedLandAreasMap(geometry, { key: params.view, title, areas: drawn, offices: drawnOffices, labels }), stateDrawing });
 };

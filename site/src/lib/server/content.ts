@@ -177,7 +177,7 @@ export interface NationRecord {
 			recording?: string;
 		})[];
 	};
-	recognition?: (CitedFact & { type: string; legal_basis?: string })[];
+	recognition?: (CitedFact & { type: string; legal_basis?: string; state?: string })[];
 	states?: (CitedFact & { state: string; presence?: string })[];
 	census_areas?: (CitedFact & {
 		geographic_identifier: string;
