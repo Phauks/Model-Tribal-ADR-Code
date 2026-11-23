@@ -15,6 +15,7 @@ export type WorkspacePageName =
 	| 'nation-teams'
 	| 'access'
 	| 'address-book'
+	| 'changes'
 	| 'activity';
 
 export interface WorkspacePage {
@@ -37,6 +38,7 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', needs: 'manage-people' },
 	{ name: 'access', label: 'Access', link: '/workspace/access', needs: 'manage-people' },
 	{ name: 'address-book', label: 'Address book', link: '/workspace/address-book', needs: 'manage-address-book' },
+	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', needs: 'hide-changes' },
 	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', needs: 'manage-people' }
 ];
 

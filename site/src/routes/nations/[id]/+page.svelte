@@ -91,6 +91,7 @@
 			<span class="muted">
 				{page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
 			</span>
+			<a class="no-print" href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a>
 		</p>
 	{/snippet}
 
