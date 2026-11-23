@@ -40,7 +40,7 @@ describe('Lulu product codes', () => {
 			podPackageIdentifier({ ...defaultPrintChoice, size: 'us-letter', binding: 'linenWrap', linenColor: 'navy', foilColor: 'gold' })
 		).toBe('0850X1100.BW.STD.LW.060UW444.MNG');
 		expect(podPackageIdentifier({ ...defaultPrintChoice, size: 'pocket-book', finish: 'gloss' })).toBe(
-			'0425X0688.BW.STD.PB.060UW444.GXX'
+			'0425X0687.BW.STD.PB.060UW444.GXX'
 		);
 	});
 
@@ -115,6 +115,13 @@ describe('reading an order', () => {
 			expect(read.form.address.country_code).toBe('US');
 			expect(fileSetFor(read.form.choice)).toBe('current/us-trade/paperback');
 		}
+	});
+
+	it('prints case wrap and linen wrap from the hardcover set', () => {
+		const choice = { ...defaultPrintChoice, size: 'a4' };
+		expect(fileSetFor({ ...choice, binding: 'caseWrap' })).toBe('current/a4/hardcover');
+		expect(fileSetFor({ ...choice, binding: 'linenWrap', linenColor: 'navy', foilColor: 'gold' })).toBe('current/a4/hardcover');
+		expect(fileSetFor({ ...choice, binding: 'coilBound' })).toBe('current/a4/coil-bound');
 	});
 
 	it('needs only a place for a price, but a full address and email for an order', () => {

@@ -20,13 +20,29 @@ Lulu prints from two PDFs per copy: the interior and a one-page cover spread. Th
 { "title": "Model Tribal ADR Code", "pages": 312, "size": "us-trade", "binding": "paperback" }
 ```
 
-The file set for a choice is `current/<size>/paperback` or `current/<size>/hardcover` (`fileSetFor`): the interior depends on the size, and the cover on the size, binding and page count. Ink, paper and finish do not change the files. The print build in `pdf/` already makes the interior for every size; it does not yet make covers.
+The file set for a choice is `current/<size>/paperback` or `current/<size>/hardcover` (`fileSetFor`). Case wrap and linen wrap both print from the hardcover set. Ink, paper and finish do not change the files. Coil binding has no cover yet, so a reader who picks it is told the book is not ready in that binding.
+
+To make and publish the file sets:
+
+1. In `pdf/`, run `npm run build:editions`. It builds the interior at every size, then a paperback and a hardcover cover for each (`pipeline/cover.mjs`, `typst/cover.typ`), and checks each cover with `tools/check_cover.py`. The output is in `pdf/output/editions/current/`. Add `--trim us-trade` to build one size.
+2. From the repository root, run `python3 scripts/books/publish_file_sets.py` to see the plan, then again with `--confirm` to upload. It sends `details.json` last, so a file set only appears once both PDFs are in the bucket.
+
+### Cover sizes
+
+| Binding | Spread | Spine | Source |
+| --- | --- | --- | --- |
+| Paperback | Both covers plus the spine, with 0.125 in bleed on every side | Pages / 444 + 0.06 in | Lulu, *Book Creation Guide*, pp. 10 and 13 |
+| Hardcover (case wrap) | Each board is 0.125 in larger than the page at the top, bottom and fore edge, and the artwork wraps 0.75 in around every edge | Lulu's table by page count, 0.25 in to 2.125 in | Lulu, "Casewrap Books: The Basics"; *Book Creation Guide*, p. 15 |
+
+Text stays 0.5 in inside each cover's edge and 0.125 in inside the spine, and the spine has text only from 100 pages (`pdf/book-sizes.yaml`). Lulu does not publish a formula for the whole hardcover spread, so the hardcover size is the project's reading of those rules. When `LULU_CLIENT_KEY`, `LULU_CLIENT_SECRET` and `LULU_ENVIRONMENT` are set in the shell, `build:editions` asks Lulu's cover-dimensions call for each cover and stops if the sizes differ by more than 0.02 in. Run it once with the sandbox keys before the first upload.
+
+The cover text (title, author, edition, back cover paragraph) comes from `pdf/book.yaml`.
 
 ## Still to build
 
-- **Covers.** A cover spread sized from Lulu's cover-dimensions call (or the spine formula in `pdf/book-sizes.yaml`) for each size and binding.
 - **Custom books.** Readers choosing parts and nations need the print build to run on demand. The plan is a Cloudflare Container running `pdf/` (Node, Typst, Python checks), started by the Worker, writing the two PDFs to `books/custom/<hash of the choices>/` so the same book is built once. Until then, readers can order only the prepared editions.
-- **Publishing file sets.** A script that runs the print build for each size and uploads the PDFs and `details.json` with the bucket keys, like `scripts/captures/mirror_captures.py`.
+- **Coil-bound covers.** Lulu's coil binding needs its own cover layout.
+- **A barcode.** Copies sold through bookstores need an ISBN (decision record 0005). Lulu asks for the barcode on covers made outside its own tools ("Casewrap Books: The Basics"). The back cover has room for one but does not print it yet.
 
 ## Settings
 

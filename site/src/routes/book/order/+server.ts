@@ -30,7 +30,7 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress }) =
 	const { choice, shippingLevel, address, email } = read.form;
 
 	const fileSet = await readFileSet(environment.sourceDocuments, fileSetFor(choice));
-	if (!fileSet) return json({ placed: false, reason: 'This size is not ready to print yet.' }, { status: 409 });
+	if (!fileSet) return json({ placed: false, reason: 'The book is not ready to print in this size and binding yet. Try a US Trade paperback.' }, { status: 409 });
 
 	const settings = state.settings;
 	let quote;

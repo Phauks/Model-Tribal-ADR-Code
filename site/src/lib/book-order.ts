@@ -25,7 +25,9 @@ export interface BookSize {
 }
 
 function size(identifier: string, name: string, width: number, height: number): BookSize {
-	const hundredths = (inches: number) => String(Math.round(inches * 100)).padStart(4, '0');
+	// Lulu cuts off, not rounds: the Pocket Book (4.25 x 6.875 in) is 0425X0687
+	// in the Print API's own examples (openapi_public.yml).
+	const hundredths = (inches: number) => String(Math.floor(inches * 100 + 1e-6)).padStart(4, '0');
 	return {
 		identifier,
 		name,

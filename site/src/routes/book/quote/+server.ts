@@ -28,7 +28,7 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 	const { choice, shippingLevel, address } = read.form;
 
 	const fileSet = await readFileSet(environment.sourceDocuments, fileSetFor(choice));
-	if (!fileSet) return json({ available: false, reason: 'This size is not ready to print yet. Try US Trade.' }, { status: 409 });
+	if (!fileSet) return json({ available: false, reason: 'The book is not ready to print in this size and binding yet. Try a US Trade paperback.' }, { status: 409 });
 
 	try {
 		const quote = await quoteOrder(state.settings, fileSet, choice, shippingLevel, addressForQuote(address));

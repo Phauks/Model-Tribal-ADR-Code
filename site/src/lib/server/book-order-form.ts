@@ -33,9 +33,15 @@ function oneOf<Value extends string>(value: unknown, allowed: readonly Value[]):
 	return allowed.find((candidate) => candidate === value);
 }
 
-/** The prepared files for a choice: one interior per size, one cover per size and binding. */
+/**
+ * The prepared files for a choice: one interior per size, one cover per size
+ * and binding. Case wrap and linen wrap share the hardcover cover. The print
+ * build makes no coil-bound cover yet, so that set is never found and the
+ * order page says the book is not ready in that binding.
+ */
 export function fileSetFor(choice: PrintChoice): string {
-	return `current/${choice.size}/${choice.binding === 'caseWrap' || choice.binding === 'linenWrap' ? 'hardcover' : 'paperback'}`;
+	const set = { paperback: 'paperback', caseWrap: 'hardcover', linenWrap: 'hardcover', coilBound: 'coil-bound' }[choice.binding];
+	return `current/${choice.size}/${set}`;
 }
 
 export function readBookOrderForm(body: unknown, needsEmail: boolean): Result {

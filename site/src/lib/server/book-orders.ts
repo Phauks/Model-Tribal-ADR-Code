@@ -75,7 +75,8 @@ export interface FileSet {
 	title: string;
 	pages: number;
 	size: string;
-	binding: PrintChoice['binding'];
+	/** Linen wrap books print from the hardcover set (fileSetFor). */
+	binding: 'paperback' | 'hardcover';
 }
 
 const fileSetPattern = /^[a-z0-9][a-z0-9-]{0,80}(\/[a-z0-9][a-z0-9-]{0,80}){0,4}$/;
@@ -90,7 +91,8 @@ export async function readFileSet(bucket: R2Bucket, identifier: string): Promise
 	if (!object) return undefined;
 	const details = (await object.json()) as Partial<FileSet>;
 	if (typeof details.title !== 'string' || typeof details.pages !== 'number' || typeof details.size !== 'string') return undefined;
-	return { identifier, title: details.title, pages: details.pages, size: details.size, binding: details.binding ?? 'paperback' };
+	if (details.binding !== 'paperback' && details.binding !== 'hardcover') return undefined;
+	return { identifier, title: details.title, pages: details.pages, size: details.size, binding: details.binding };
 }
 
 export type BookFile = 'interior.pdf' | 'cover.pdf';

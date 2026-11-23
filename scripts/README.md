@@ -160,3 +160,9 @@ between steps) go in a scratch folder.
 | `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers. The summaries stay in the private work files: no AI summaries of constitutions are published | `scripts/requirements.txt` and `requests` |
 | `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, a history record for every nation with a text, and source records | `scripts/requirements.txt` and `requests` |
 | `constitutions/name_versions_in_profiles.py` | Adds `document_version` beside profile facts that cite a superseded or undated version | `scripts/requirements.txt` |
+
+## Printed book
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `books/publish_file_sets.py` | Uploads the editions that `npm run build:editions` writes in `pdf/output/editions/` to the bucket under `books/`, where the website's order routes read them; skips files already there and sends `details.json` last ([docs/book-orders.md](../docs/book-orders.md)). Lists the plan unless given `--confirm` | `boto3` and the R2 keys in the environment |
