@@ -14,7 +14,7 @@ function escape(text: string): string {
 
 function entryTitle(change: ChangeView): string {
 	const page = change.title ?? 'A page no longer on this site';
-	const what = change.change === 'new' ? 'New page' : change.change === 'removed' ? 'Page removed' : change.change === 'published' ? 'Published' : 'Changed';
+	const what = change.change === 'new' ? 'New page' : change.change === 'removed' ? 'Page removed' : change.change === 'published' ? 'Published' : change.change === 'restored' ? 'Restored an earlier version' : 'Changed';
 	return `${what}: ${page} (${pageKindLabels[change.kind]})`;
 }
 
@@ -32,7 +32,8 @@ function entrySummary(change: ChangeView): string {
 export const GET: RequestHandler = async ({ url }) => {
 	const { database, bucket } = storageForPages();
 	await recordThisBuildOnce(database, bucket);
-	const filters = readFilters(url.searchParams);
+	// A feed reader is not signed in, so "Only pages I follow" does not apply here.
+	const filters = { ...readFilters(url.searchParams), following: false };
 	const { changes } = await listChanges(database, { ...filters, limit: Math.min(filters.limit, 100) }, await builtPages());
 	const origin = url.origin;
 	const self = `${origin}/changes/feed.xml${url.search}`;

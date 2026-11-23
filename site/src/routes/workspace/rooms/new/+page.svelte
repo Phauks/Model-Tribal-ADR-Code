@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import RoomFields from '../RoomFields.svelte';
 	import type { PageProps } from './$types';
 
@@ -11,12 +12,14 @@
 	<title>Plan a room · Video rooms · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/rooms">Video rooms</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Video rooms', href: '/workspace/rooms' }
+	]}
+/>
 <h1>Plan a room</h1>
-<p>
-	For an interview, choose a private room that is recorded, then send the person an invite link from the room’s page.
-	They are told it is recorded, and who may watch the recording, and must agree before they join.
-</p>
+<p>For an interview, choose a private room, then send the person an invite link from the room’s page.</p>
 {#if form?.problem}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
 {/if}

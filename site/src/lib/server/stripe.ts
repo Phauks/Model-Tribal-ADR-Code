@@ -37,6 +37,12 @@ export interface CheckoutRequest {
 	/** An optional gift to the project, shown as its own line (docs/book-orders.md, "Adding a gift"). */
 	gift?: { amountInCents: number; description: string };
 	email?: string;
+	/**
+	 * For an order from the Store (docs/store.md, "Buying in one step"): Stripe's
+	 * page asks for the name, street address and telephone, in this one country
+	 * only, since the price was worked out for it.
+	 */
+	shippingCountry?: string;
 	successAddress: string;
 	cancelAddress: string;
 }
@@ -60,6 +66,9 @@ export async function createCheckout(
 		client_reference_id: order.reference,
 		'metadata[order]': order.reference,
 		customer_email: order.email,
+		...(order.shippingCountry
+			? { 'shipping_address_collection[allowed_countries][0]': order.shippingCountry, 'phone_number_collection[enabled]': 'true' }
+			: {}),
 		success_url: order.successAddress,
 		cancel_url: order.cancelAddress,
 		'line_items[0][quantity]': 1,

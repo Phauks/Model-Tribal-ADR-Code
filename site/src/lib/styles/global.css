@@ -509,6 +509,12 @@ select {
 	color: var(--color-ink);
 }
 
+/* A fieldset is as wide as its widest field by default, so one long option
+   in a select pushed a phone's form past the screen. It shrinks like a div. */
+fieldset {
+	min-inline-size: 0;
+}
+
 /* Form fields (request form and co-author workspace). Labels sit above
    their fields; hints and errors sit between the label and the field. */
 .field {
@@ -549,7 +555,8 @@ textarea {
 
 /* A one-line field is as wide as the answer it expects, never wider than the column; a text area and the label, hint and error around it take the text width. */
 .field :is(input[type='text'], input[type='email'], input[type='password'], input[type='search'], select) {
-	max-width: var(--layout-field);
+	/* The 100% keeps a select with a long option, such as an event's time zone, inside a phone's screen. */
+	max-width: min(var(--layout-field), 100%);
 }
 
 .field input.short,

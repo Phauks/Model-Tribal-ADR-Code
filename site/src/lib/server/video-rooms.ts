@@ -65,6 +65,16 @@ export async function roomOfEvent(database: D1Database, eventIdentifier: string)
 	return (await database.prepare(`SELECT ${roomColumns} FROM video_rooms WHERE event_identifier = ?`).bind(eventIdentifier).first<VideoRoom>()) ?? undefined;
 }
 
+/** Which of these events use the website's video room, for the list of events. */
+export async function roomsOfEvents(database: D1Database, eventIdentifiers: readonly string[]): Promise<Set<string>> {
+	if (eventIdentifiers.length === 0) return new Set();
+	const result = await database
+		.prepare(`SELECT event_identifier AS event FROM video_rooms WHERE event_identifier IN (SELECT value FROM json_each(?))`)
+		.bind(JSON.stringify(eventIdentifiers))
+		.all<{ event: string }>();
+	return new Set(result.results.map((row) => row.event));
+}
+
 /** Turns the room on for an event, or changes its style or who may watch its recordings. */
 export async function saveEventRoom(
 	database: D1Database,
@@ -103,28 +113,30 @@ export interface StandaloneRoomInput {
 	title: string;
 	visibility: 'public' | 'private';
 	style: RoomStyle;
-	recording: RecordingChoice;
 	watchers: RecordingWatchers;
 	startsAt: Date;
 	closesAt: Date;
 	timeZone: string;
 }
 
-/** Makes a room of its own and returns its identifier. */
+/**
+ * Makes a room of its own and returns its identifier. Nobody decides about
+ * recording beforehand: everyone is told the room may be recorded, and the
+ * hosts start and stop recording in the call (Trevor, Nov. 23, 2026).
+ */
 export async function createRoom(database: D1Database, input: StandaloneRoomInput, createdBy: string | null, time: Date = new Date()): Promise<string> {
 	const identifier = newIdentifier();
 	const at = time.toISOString();
 	await database
 		.prepare(
 			`INSERT INTO video_rooms (identifier, title, visibility, style, recording, watchers, starts_at, closes_at, time_zone, created_by, created_at, updated_at)
-			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+			 VALUES (?, ?, ?, ?, 'undecided', ?, ?, ?, ?, ?, ?, ?)`
 		)
 		.bind(
 			identifier,
 			input.title.slice(0, 200),
 			input.visibility,
 			input.style,
-			input.recording,
 			input.watchers,
 			input.startsAt.toISOString(),
 			input.closesAt.toISOString(),
@@ -141,14 +153,13 @@ export async function createRoom(database: D1Database, input: StandaloneRoomInpu
 export async function updateRoom(database: D1Database, identifier: string, input: StandaloneRoomInput, time: Date = new Date()): Promise<boolean> {
 	const result = await database
 		.prepare(
-			`UPDATE video_rooms SET title = ?, visibility = ?, style = ?, recording = ?, watchers = ?, starts_at = ?, closes_at = ?, time_zone = ?, updated_at = ?
+			`UPDATE video_rooms SET title = ?, visibility = ?, style = ?, recording = 'undecided', watchers = ?, starts_at = ?, closes_at = ?, time_zone = ?, updated_at = ?
 			 WHERE identifier = ? AND visibility <> 'event'`
 		)
 		.bind(
 			input.title.slice(0, 200),
 			input.visibility,
 			input.style,
-			input.recording,
 			input.watchers,
 			input.startsAt.toISOString(),
 			input.closesAt.toISOString(),
@@ -172,7 +183,7 @@ export function instantRoomTitle(time: Date, timeZone: string): string {
  */
 export async function startInstantRoom(
 	database: D1Database,
-	input: { title?: string; recording: RecordingChoice; style?: RoomStyle; timeZone: string; createdBy: string | null },
+	input: { title?: string; style?: RoomStyle; timeZone: string; createdBy: string | null },
 	time: Date = new Date()
 ): Promise<{ room: string; secret: string }> {
 	const title = input.title?.trim() || instantRoomTitle(time, input.timeZone);
@@ -182,7 +193,6 @@ export async function startInstantRoom(
 			title,
 			visibility: 'private',
 			style: input.style ?? 'discussion',
-			recording: input.recording,
 			watchers: 'hosts',
 			startsAt: time,
 			closesAt: new Date(time.getTime() + instantRoomHours * 3_600_000),

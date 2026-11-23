@@ -192,6 +192,14 @@ export function eventWhen(startsAt: string, endsAt: string, zone: string): strin
 	return `${startDay}, ${timeText(start, zone)} to ${ending} ${zoneName(zone)}`;
 }
 
+/** An event's times without its day, such as "9:00 AM to 12:15 PM Pacific time"; with both days when it runs past midnight. */
+export function eventClock(startsAt: string, endsAt: string, zone: string): string {
+	const start = new Date(startsAt);
+	const end = new Date(endsAt);
+	if (dayText(start, zone) !== dayText(end, zone)) return eventWhen(startsAt, endsAt, zone);
+	return `${timeText(start, zone)} to ${timeText(end, zone)} ${zoneName(zone)}`;
+}
+
 /** The day an event starts, in its own time zone, such as "Thursday, March 11, 2027". */
 export function eventDay(startsAt: string, zone: string): string {
 	return dayText(new Date(startsAt), zone);
@@ -201,6 +209,73 @@ export function eventDay(startsAt: string, zone: string): string {
 export function eventMoment(instant: string, zone: string): string {
 	const time = new Date(instant);
 	return `${dayText(time, zone)}, ${timeText(time, zone)} ${zoneName(zone)}`;
+}
+
+/** What a person may ask for when registering (design/events-and-cle, "3-registration"); "Something else" has its own box. */
+export const accessNeedChoices = ['Live captions', 'ASL interpreting', 'Large-print or screen-reader copy of the materials', 'Step-free entry'] as const;
+
+/**
+ * The registration form's access needs, as the one line the people running
+ * the event read, such as "Live captions; ASL interpreting; Also: a quiet
+ * room". Null when nothing was asked for.
+ */
+export function readAccessNeeds(form: FormData): { chosen: string[]; other: string; text: string | null } {
+	const chosen = form
+		.getAll('need')
+		.map(String)
+		.filter((need) => (accessNeedChoices as readonly string[]).includes(need));
+	const other = String(form.get('need-other') ?? '')
+		.trim()
+		.slice(0, 1500);
+	const parts = [...chosen, ...(other ? [`Also: ${other}`] : [])];
+	return { chosen, other, text: parts.length > 0 ? parts.join('; ') : null };
+}
+
+/** The date tile on the list of events: "MAR", "11", "Thursday", in the event's own zone. */
+export function dateTile(startsAt: string, zone: string): { month: string; day: string; weekday: string } {
+	const parts = Object.fromEntries(
+		new Intl.DateTimeFormat('en-US', { timeZone: zone, month: 'short', day: 'numeric', weekday: 'long' })
+			.formatToParts(new Date(startsAt))
+			.map((part) => [part.type, part.value])
+	);
+	return { month: String(parts.month).toUpperCase(), day: String(parts.day), weekday: String(parts.weekday) };
+}
+
+/** A session's times in the event's zone, such as "9:00 AM to 10:00 AM", or only its start. */
+export function sessionTimes(startsAt: string, endsAt: string | null, zone: string): string {
+	const start = timeText(new Date(startsAt), zone);
+	return endsAt ? `${start} to ${timeText(new Date(endsAt), zone)}` : start;
+}
+
+/** One kind of seat, as counted for the seat status. */
+export interface SeatCount {
+	attendance: Attendance;
+	capacity: number | null;
+	taken: number;
+	waiting: number;
+}
+
+/**
+ * The seat status on the list of events and in the Register card, as in the
+ * approved mockup: "Open seats", "38 of 120 in-person seats left", or "Full. 6
+ * on the waitlist". A kind of seat with people waiting counts as full, since
+ * a freed seat goes to them first.
+ */
+export function seatStatus(seats: readonly SeatCount[]): { words: string; full: boolean } | null {
+	if (seats.length === 0) return null;
+	const isFull = (seat: SeatCount) => seat.capacity !== null && (seat.taken >= seat.capacity || seat.waiting > 0);
+	if (seats.every(isFull)) {
+		const waiting = seats.reduce((sum, seat) => sum + seat.waiting, 0);
+		return { words: waiting > 0 ? `Full. ${waiting} on the waitlist` : 'Full', full: true };
+	}
+	const limited = seats.filter((seat) => seat.capacity !== null && !isFull(seat));
+	if (limited.length > 0) {
+		const total = limited.reduce((sum, seat) => sum + (seat.capacity ?? 0), 0);
+		const left = limited.reduce((sum, seat) => sum + Math.max(0, (seat.capacity ?? 0) - seat.taken), 0);
+		const kind = seats.some((seat) => seat.capacity === null) && limited.every((seat) => seat.attendance === 'in-person') ? ' in-person' : '';
+		return { words: `${left} of ${total}${kind} ${total === 1 ? 'seat' : 'seats'} left`, full: false };
+	}
+	return { words: 'Open seats', full: false };
 }
 
 /** Addresses under /events that are pages of their own, not events. */
@@ -247,10 +322,21 @@ export function isWebLink(value: unknown): value is string {
  * and online". An event is online when it offers online seats, or takes no
  * registration and has an online link.
  */
+/** Whether an event can be attended online, in person, or both, from its seats or, without seats, its link and place. */
+export function eventModes(
+	event: { venueName: string | null; venueAddress: string | null; onlineLink: string | null },
+	attendances: readonly Attendance[]
+): { online: boolean; inPerson: boolean } {
+	const venue = event.venueName ?? event.venueAddress;
+	return {
+		online: attendances.includes('online') || (attendances.length === 0 && event.onlineLink !== null),
+		inPerson: venue !== null && (attendances.length === 0 || attendances.includes('in-person'))
+	};
+}
+
 export function whereLine(event: { venueName: string | null; venueAddress: string | null; onlineLink: string | null }, attendances: readonly Attendance[]): string {
 	const venue = event.venueName ?? event.venueAddress;
-	const online = attendances.includes('online') || (attendances.length === 0 && event.onlineLink !== null);
-	const inPerson = venue !== null && (attendances.length === 0 || attendances.includes('in-person'));
+	const { online, inPerson } = eventModes(event, attendances);
 	if (inPerson && online) return `In person at ${venue}, and online`;
 	if (inPerson) return `In person at ${venue}`;
 	if (online) return 'Online';

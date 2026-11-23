@@ -20,6 +20,11 @@ export const libraryPages: LibraryPage[] = [
 			'Files to keep: the list of nations, the dispute resolution provisions, the glossary and the map’s layers, as spreadsheets, JSON and ZIP files, and the United States documents in one ZIP file, with a way to check that a file you downloaded is the one published here.'
 	},
 	{
+		label: 'Supreme Court',
+		link: '/supreme-court',
+		description: 'Each Court of the Supreme Court of the United States that decided a case on this site, named for its Chief Justice: its Justices, its history and its cases.'
+	},
+	{
 		label: 'Back matter',
 		link: '/back-matter',
 		description: 'Pages that close the book and help readers find their way through it, such as the index of cases by topic.'

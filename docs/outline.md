@@ -136,6 +136,7 @@ The website is the primary edition. It carries every part, plus what print canno
 | Library | Sources, documents with version history, constitutions, compacts, bibliographies, data downloads | Back matter | Partly built: the Library page gathers Copies of documents, Downloads (with Checking a file), Back matter and Licenses by material; bibliographies not yet published |
 | Glossary | Every defined term with hover cards | Back matter | Built |
 | About | Charter, positionality, how to cite, the changes log for all three tracks | Front matter | Partly built |
+| Store | Printed copies in the standard formats, bought in one step, and a special order for every other print choice; merchandise later ([store.md](store.md)) | None | Built, ordering off until the lead author opens it |
 
 ### Always available
 

@@ -15,31 +15,36 @@
 	full timeline stays readable. Kinds listed in `aggregate` are one line per
 	era that opens into its entries.
 
-	Without scripts the drawing shows every year and the list every entry;
-	the buttons need scripts and are hidden.
+	Two layouts, switched by arrow icons in the toolbar (Trevor asked on Nov.
+	23, 2026 for a timeline that runs down the page as you scroll): across,
+	the drawing over the list; and down, the list itself drawn as a line
+	through time, with each era's heading held at the top while its entries
+	scroll past and a thin rail beside it that marks the years in view. Each
+	reader's choice is remembered on their device; down the page is the
+	default (Trevor, Nov. 23, 2026).
+
+	Without scripts the timeline runs down the page with every entry; the
+	buttons and the rail's marker of the years on screen need scripts.
 
 	Use:
 	<Timeline entries={timeline.entries} opinions={timeline.opinions} fullLink="/nations/timeline?nation=navajo-nation" />
 -->
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import ArrowDownUp from '@lucide/svelte/icons/arrow-down-up';
 	import Copy from '@lucide/svelte/icons/copy';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
-	import FileText from '@lucide/svelte/icons/file-text';
 	import Funnel from '@lucide/svelte/icons/funnel';
-	import Gavel from '@lucide/svelte/icons/gavel';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import Link from '@lucide/svelte/icons/link';
 	import Maximize2 from '@lucide/svelte/icons/maximize-2';
+	import MoveHorizontal from '@lucide/svelte/icons/move-horizontal';
+	import MoveVertical from '@lucide/svelte/icons/move-vertical';
 	import Quote from '@lucide/svelte/icons/quote';
 	import Scale from '@lucide/svelte/icons/scale';
 	import Scan from '@lucide/svelte/icons/scan';
-	import ScrollText from '@lucide/svelte/icons/scroll-text';
-	import X from '@lucide/svelte/icons/x';
 	import ZoomIn from '@lucide/svelte/icons/zoom-in';
 	import ZoomOut from '@lucide/svelte/icons/zoom-out';
 	import type { CitationMark } from '#lib/citation-marks.ts';
+	import { kindIcons } from '#lib/timeline-icons.ts';
 	import {
 		axisYears,
 		barYears,
@@ -92,8 +97,14 @@
 		chips?: boolean;
 		/** Draw a small overview of every year above the rows, with the view marked on it. */
 		overview?: boolean;
-		/** Say how many entries are in view, and which years. */
+		/** Say how many entries are in view, and which years. Down the page it is always said. */
 		summary?: boolean;
+		/** Draw the toolbar on the line of the section heading just above, as on a nation's page. */
+		besideHeading?: boolean;
+		/** Say "in view" after each row's count, as the full timeline does. */
+		countsInView?: boolean;
+		/** Shown in the toolbar after the count, such as the chosen era with a button that clears it. */
+		toolbarStart?: Snippet;
 	}
 
 	let {
@@ -110,10 +121,13 @@
 		extent: givenExtent,
 		chips = true,
 		overview = false,
-		summary = false
+		summary = false,
+		besideHeading = false,
+		countsInView = false,
+		toolbarStart
 	}: Props = $props();
 
-	const icons = { treaty: ScrollText, document: FileText, case: Gavel, opinion: Scale, federal: Landmark };
+	const icons = kindIcons;
 
 	const extent = $derived(givenExtent ?? extentOf(entries, opinions));
 	/** The kinds that have anything to show, in row order. */
@@ -131,8 +145,33 @@
 	let width = $state(760);
 	let historyPublished = $state(false);
 
+	/* The layout ------------------------------------------------------------- */
+
+	type Layout = 'across' | 'down';
+	const layoutKey = 'timeline-layout';
+	// Down the page from the first paint, so the page does not jump when scripts start.
+	let layout = $state<Layout>('down');
+	const down = $derived(layout === 'down');
+
+	function chooseLayout(next: Layout) {
+		layout = next;
+		active = undefined;
+		try {
+			localStorage.setItem(layoutKey, next);
+		} catch {
+			// Private windows may refuse storage; the choice then lasts for this page.
+		}
+	}
+
 	onMount(() => {
 		interactive = true;
+		let saved: string | null = null;
+		try {
+			saved = localStorage.getItem(layoutKey);
+		} catch {
+			saved = null;
+		}
+		layout = saved === 'across' ? 'across' : 'down';
 		// The era headings link to the legal history essay once it is published.
 		fetch('/foundations/published.json')
 			.then((response) => (response.ok ? response.json() : []))
@@ -206,11 +245,13 @@
 		return Math.max(3, (Math.sqrt(count) / Math.sqrt(own)) * (rowHeight - 12));
 	};
 
-	const eraBands = $derived(
-		eras
+	// None when the whole view lies in one era: the list's heading names it, as in the approved mockup.
+	const eraBands = $derived.by(() => {
+		const bands = eras
 			.map((era, index) => ({ era, index, from: Math.max(era.start, view.from), to: Math.min(era.end, view.to) }))
-			.filter((band) => band.to > band.from)
-	);
+			.filter((band) => band.to > band.from);
+		return bands.length > 1 ? bands : [];
+	});
 
 	// The era's name in its band: the whole name, else its first word, else nothing, whichever fits (about 7.5 pixels a capital letter).
 	const eraLabel = (name: string, room: number) =>
@@ -253,13 +294,19 @@
 		if (event.key === 'Escape' && active) active = undefined;
 	}
 
+	/** A kept card closes when the reader selects anything outside it other than a mark. */
+	function onPointerDown(event: PointerEvent) {
+		const target = event.target as Element | null;
+		if (active?.pinned && !target?.closest?.('.card, .mark')) active = undefined;
+	}
+
 	/* The list --------------------------------------------------------------- */
 
 	interface EraGroup {
 		era: Era;
 		entries: TimelineEntry[];
 		aggregated: Map<TimelineKind, TimelineEntry[]>;
-		opinions: { count: number; peacemaking: number; from: number; to: number; byNation: Map<string, number> } | undefined;
+		opinions: { count: number; peacemaking: number; from: number; to: number; byNation: Map<string, number>; byYear: Map<number, { count: number; peacemaking: number }> } | undefined;
 	}
 
 	const groups = $derived.by((): EraGroup[] => {
@@ -276,14 +323,19 @@
 		};
 		for (const entry of sorted) {
 			// A law shown for context is drawn, not listed: the list is the records of what is filtered.
-			if (entry.context) continue;
+			// Down the page, the list is the drawing, so it keeps them, drawn faintly.
+			if (entry.context && !down) continue;
 			const group = groupOf(eraOf(Math.floor(yearOf(entry.date))));
 			if (aggregate.includes(entry.kind)) group.aggregated.set(entry.kind, [...(group.aggregated.get(entry.kind) ?? []), entry]);
 			else group.entries.push(entry);
 		}
 		for (const year of opinionsInView) {
 			const group = groupOf(eraOf(year.year));
-			const counts = group.opinions ?? { count: 0, peacemaking: 0, from: year.year, to: year.year, byNation: new Map() };
+			const counts = group.opinions ?? { count: 0, peacemaking: 0, from: year.year, to: year.year, byNation: new Map(), byYear: new Map() };
+			const yearCounts = counts.byYear.get(year.year) ?? { count: 0, peacemaking: 0 };
+			yearCounts.count += year.count;
+			yearCounts.peacemaking += year.peacemaking;
+			counts.byYear.set(year.year, yearCounts);
 			counts.count += year.count;
 			counts.peacemaking += year.peacemaking;
 			counts.from = Math.min(counts.from, year.year);
@@ -295,7 +347,7 @@
 		return newestFirst ? ordered.reverse() : ordered;
 	});
 
-	const listed = $derived(entriesInView.filter((entry) => !entry.context));
+	const listed = $derived(entriesInView.filter((entry) => down || !entry.context));
 	const inViewCount = $derived(listed.length + opinionsInView.reduce((total, year) => total + year.count, 0));
 	const shownYears = $derived.by(() => {
 		const years = [...listed.map((entry) => Math.floor(yearOf(entry.date))), ...opinionsInView.map((year) => year.year)];
@@ -304,6 +356,71 @@
 		const last = Math.max(...years);
 		return first === last ? String(first) : `${first}–${last}`;
 	});
+
+	/* The rail, down the page --------------------------------------------- */
+
+	let list = $state<HTMLElement>();
+	let railHeight = $state(400);
+	/** The years of the entries on screen, and the year at the reading line a third of the way down. */
+	let onScreen = $state<{ from: number; to: number; at: number } | undefined>();
+	const railYear = (year: number) => ((year - view.from) / span) * railHeight;
+	const railTicks = $derived(axisYears(view, Math.max(3, Math.round(railHeight / 90))));
+	const railLanes = $derived(visibleKinds);
+	const railMarks = $derived([
+		...entriesInView.map((entry) => ({ kind: entry.kind, year: yearOf(entry.date) })),
+		...opinionsInView.map((year) => ({ kind: 'opinion' as TimelineKind, year: year.year + 0.5 }))
+	]);
+
+	function measure() {
+		if (!down || !list) return;
+		const rows = [...list.querySelectorAll<HTMLElement>('[data-year]')];
+		const reading = innerHeight / 3;
+		let from = Infinity;
+		let to = -Infinity;
+		let at: number | undefined;
+		for (const row of rows) {
+			const box = row.getBoundingClientRect();
+			if (box.bottom < 0 || box.top > innerHeight) continue;
+			const year = Number(row.dataset.year);
+			from = Math.min(from, year);
+			to = Math.max(to, year);
+			if (at === undefined && box.bottom >= reading) at = year;
+		}
+		onScreen = Number.isFinite(from) ? { from, to, at: at ?? from } : undefined;
+	}
+
+	let measuring = false;
+	function onScroll() {
+		if (measuring) return;
+		measuring = true;
+		requestAnimationFrame(() => {
+			measuring = false;
+			measure();
+		});
+	}
+
+	$effect(() => {
+		// Measure again when the layout, the order or the entries in view change.
+		void [down, groups];
+		requestAnimationFrame(measure);
+	});
+
+	/** Selecting a year on the rail brings its first entry to the top. */
+	function jumpTo(event: MouseEvent) {
+		if (!list) return;
+		const box = (event.currentTarget as HTMLElement).getBoundingClientRect();
+		const year = view.from + ((event.clientY - box.top) / box.height) * span;
+		const rows = [...list.querySelectorAll<HTMLElement>('[data-year]')];
+		const target = rows.find((row) => (newestFirst ? Number(row.dataset.year) <= year : Number(row.dataset.year) >= year)) ?? rows.at(-1);
+		target?.scrollIntoView({ block: 'center' });
+	}
+
+	/** Years between one entry and the next, said down the page where they are far apart. */
+	const gapBefore = (list: TimelineEntry[], index: number) => {
+		if (!down || index === 0) return 0;
+		const gap = Math.abs(Math.floor(yearOf(list[index].date)) - Math.floor(yearOf(list[index - 1].date)));
+		return gap >= 15 ? gap : 0;
+	};
 
 	/** The aggregated lines that are open, by era and kind. */
 	let opened = $state<Record<string, boolean>>({});
@@ -319,15 +436,16 @@
 	const external = (link: string | undefined) => !!link && /^https?:/.test(link);
 </script>
 
-<svelte:window onkeydown={onKey} />
+<svelte:window onkeydown={onKey} onpointerdown={onPointerDown} onscroll={onScroll} onresize={onScroll} />
 
-<div class="timeline">
+<div class="timeline" class:down>
 	{#if interactive}
-		<div class="toolbar no-print">
-			{#if summary}
+		<div class="toolbar no-print" class:beside={besideHeading && !down}>
+			{#if summary || down}
 				<p class="summary"><strong>{plural(inViewCount, 'entry', 'entries')}, {shownYears}</strong></p>
 			{/if}
-			{#if chips}
+			{@render toolbarStart?.()}
+			{#if chips && !down}
 				<button type="button" class="icon-button" aria-label="Kinds shown" title="Kinds shown" aria-expanded={chipsOpen} onclick={() => (chipsOpen = !chipsOpen)}>
 					<Funnel size={20} aria-hidden="true" />
 				</button>
@@ -340,6 +458,13 @@
 			</button>
 			<button type="button" class="icon-button" aria-label="Show every year" title="Show every year" disabled={!canZoomOut} onclick={() => (range = undefined)}>
 				<Scan size={20} aria-hidden="true" />
+			</button>
+			<span class="separator" aria-hidden="true"></span>
+			<button type="button" class="icon-button" aria-label="Across" title="Across" aria-pressed={layout === 'across'} onclick={() => chooseLayout('across')}>
+				<MoveHorizontal size={20} aria-hidden="true" />
+			</button>
+			<button type="button" class="icon-button" aria-label="Down the page" title="Down the page" aria-pressed={layout === 'down'} onclick={() => chooseLayout('down')}>
+				<MoveVertical size={20} aria-hidden="true" />
 			</button>
 			<span class="separator" aria-hidden="true"></span>
 			<button
@@ -358,7 +483,7 @@
 				</a>
 			{/if}
 		</div>
-		{#if chips && chipsOpen}
+		{#if chips && chipsOpen && !down}
 			<div class="chips no-print" role="group" aria-label="Kinds shown">
 				{#each present as kind (kind)}
 					<button type="button" class="chip kind-{kind}" aria-pressed={visibleKinds.includes(kind)} onclick={() => toggleKind(kind)}>
@@ -369,7 +494,7 @@
 		{/if}
 	{/if}
 
-	{#if overview}
+	{#if overview && !down}
 		{@const decades = (() => {
 			const counts = new Map<number, Map<TimelineKind, number>>();
 			const add = (year: number, kind: TimelineKind, count: number) => {
@@ -413,13 +538,13 @@
 				{/each}
 			{/each}
 			<rect class="overview-window" x={ox(view.from)} y="1" width={Math.max(4, ox(view.to) - ox(view.from))} height="47" rx="3" />
-			{#each axisYears(extent, narrow ? 4 : 7) as year (year)}
+			{#each axisYears(extent, narrow ? 4 : 7) as year}
 				<text class="tick" x={ox(year)} y="62" text-anchor="middle">{year}</text>
 			{/each}
 		</svg>
 	{/if}
 
-	<div class="chart" bind:clientWidth={width}>
+	<div class="chart" class:hidden={down} bind:clientWidth={width}>
 		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 		<svg width={width} height={chartHeight} viewBox="0 0 {width} {chartHeight}" aria-hidden="true" onpointerleave={leave}>
 			{#each eraBands as band (band.era.name)}
@@ -436,7 +561,9 @@
 					<Icon x={4} y={middle - 9} size={18} />
 					{#if !narrow}
 						<text class="row-label" x="28" y={middle - 2}>{kindLabels[row.kind]}</text>
-						<text class="row-count" x="28" y={middle + 12}>{row.count.toLocaleString('en-US')}</text>
+						<text class="row-count" x="28" y={middle + 12}
+								>{row.count.toLocaleString('en-US')}{row.marks.length > 0 && row.marks.every((entry) => entry.context) ? ' for context' : countsInView ? ' in view' : ''}</text
+							>
 					{/if}
 					<line class="row-line" x1={labelWidth} x2={width - right} y1={middle} y2={middle} />
 					{#each row.bars as bar (bar.start)}
@@ -479,7 +606,7 @@
 				</g>
 			{/each}
 			<line class="axis" x1={labelWidth} x2={width - right} y1={chartHeight - axisHeight} y2={chartHeight - axisHeight} />
-			{#each ticks as year (year)}
+			{#each ticks as year}
 				<line class="axis" x1={x(year)} x2={x(year)} y1={chartHeight - axisHeight} y2={chartHeight - axisHeight + 4} />
 				<text class="tick" x={x(year)} y={chartHeight - 5} text-anchor="middle">{year}</text>
 			{/each}
@@ -489,7 +616,9 @@
 			{@const Icon = icons[entry.kind]}
 			<div class="card kind-{entry.kind}" style:left="{active.left}px" style:top="{active.top}px" role="group" aria-label={entry.title}>
 				<p class="card-kind"><Icon size={16} aria-hidden="true" /> {kindLabels[entry.kind]} · {timelineDate(entry.date)}</p>
-				<p class="card-title">{#if entry.italic}<i>{entry.title}</i>{:else}{entry.title}{/if}{#if entry.citation}, {entry.citation}{/if}</p>
+				<p class="card-title">{#if entry.italic}<i>{entry.title}</i>{:else}{entry.title}{/if}{#if entry.citation}, {entry.citation}{/if}{#if entry.citations?.length}<sup class="card-marks"
+							>{entry.citations.map((mark) => `[${mark.number}]`).join('')}</sup
+						>{/if}</p>
 				{#if entry.detail}<p class="card-detail">{entry.detail}</p>{/if}
 				{#if active.pinned}
 					<div class="card-actions">
@@ -500,10 +629,7 @@
 							<Quote size={18} aria-hidden="true" />
 						</button>
 						<button type="button" class="icon-button" aria-label="Copy a link to this entry" title="Copy a link to this entry" onclick={() => copy(entryAddress(entry), 'Link')}>
-							<Link size={18} aria-hidden="true" />
-						</button>
-						<button type="button" class="icon-button close" aria-label="Close" title="Close" onclick={() => (active = undefined)}>
-							<X size={18} aria-hidden="true" />
+							<Copy size={18} aria-hidden="true" />
 						</button>
 					</div>
 					<p class="card-status small" role="status">{copied}</p>
@@ -511,6 +637,17 @@
 			</div>
 		{/if}
 	</div>
+	{#if down}
+		<p class="key small muted" aria-hidden="true">
+			{#each visibleKinds as kind (kind)}
+				<span class="kind-{kind}"><span class="key-ring"></span>{kindLabels[kind]}</span>
+			{/each}
+			<span><span class="key-ring partial"></span>Year or month only</span>
+			{#if entries.some((entry) => entry.context)}
+				<span><svg width="12" height="12"><rect class="key-context" x="2" y="2" width="8" height="8" transform="rotate(45 6 6)" /></svg> Applies to every nation</span>
+			{/if}
+		</p>
+	{:else}
 	<p class="key small muted" aria-hidden="true">
 		<span><svg width="12" height="12"><circle class="key-mark" cx="6" cy="6" r="5" /></svg> Exact date</span>
 		<span><svg width="12" height="12"><circle class="key-mark partial" cx="6" cy="6" r="4.5" /></svg> Year or month only</span>
@@ -521,9 +658,13 @@
 			<span><svg width="12" height="12"><rect class="key-context" x="2" y="2" width="8" height="8" transform="rotate(45 6 6)" /></svg> Applies to every nation</span>
 		{/if}
 	</p>
+	{/if}
 
-	<div class="list">
+	<div class="body">
+	<div class="list" bind:this={list}>
 		{#each groups as group (group.era.name)}
+			<!-- Each era in its own box, so its held heading leaves the screen with its last entry. -->
+			<div class="era">
 			<div class="era-heading">
 				<svelte:element this={`h${headingLevel}`}>{group.era.name}</svelte:element>
 				<span class="muted small">{group.era.years}</span>
@@ -532,13 +673,15 @@
 				{/if}
 			</div>
 			<ol class="entries">
-				{#each group.entries as entry (entry.id)}
+				{#each group.entries as entry, index (entry.id)}
+					{@const gap = gapBefore(group.entries, index)}
+					{#if gap}<li class="gap" aria-hidden="true">{gap} years</li>{/if}
 					{@render row(entry)}
 				{/each}
 				{#each [...group.aggregated.entries()] as [kind, list] (kind)}
 					{@const Icon = icons[kind]}
 					{@const key = `${group.era.name}|${kind}`}
-					<li class="entry kind-{kind}">
+					<li class="entry kind-{kind}" data-year={Math.floor(yearOf(list[0].date))}>
 						<span class="date">{Math.floor(yearOf(list[0].date))}–{Math.floor(yearOf(list.at(-1)!.date))}</span>
 						<span class="icon"><Icon size={16} aria-hidden="true" /></span>
 						<details class="aggregate" bind:open={() => opened[key] ?? false, (value) => (opened[key] = value)}>
@@ -555,7 +698,7 @@
 				{/each}
 				{#if group.opinions}
 					{@const counts = group.opinions}
-					<li class="entry kind-opinion">
+					<li class="entry kind-opinion" data-year={counts.from}>
 						<span class="date">{counts.from === counts.to ? counts.from : `${counts.from}–${counts.to}`}</span>
 						<span class="icon"><Scale size={16} aria-hidden="true" /></span>
 						<span class="what">
@@ -576,22 +719,49 @@
 							{#if counts.peacemaking > 0}
 								<span class="detail">{plural(counts.peacemaking, 'mentions', 'mention')} peacemaking</span>
 							{/if}
+							{#if down}
+								{@const most = Math.max(1, ...[...counts.byYear.values()].map((year) => year.count))}
+								<svg class="by-year" width={(counts.to - counts.from + 1) * 7} height="32" aria-hidden="true">
+									{#each [...counts.byYear.entries()] as [year, each] (year)}
+										{@const height = Math.max(2, Math.sqrt(each.count / most) * 26)}
+										<rect class="bar" x={(year - counts.from) * 7} y={27 - height} width="6" height={height} />
+										{#if each.peacemaking > 0}<rect class="peacemaking" x={(year - counts.from) * 7} y="29" width="6" height="3" />{/if}
+									{/each}
+								</svg>
+							{/if}
 						</span>
 					</li>
 				{/if}
 			</ol>
+			</div>
 		{/each}
+	</div>
+	{#if down}
+		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+		<div class="rail no-print" aria-hidden="true" bind:clientHeight={railHeight} onclick={jumpTo}>
+			{#each railTicks as year}
+				<span class="rail-tick" style:top="{railYear(year)}px">{year}</span>
+			{/each}
+			{#each railMarks as mark, index (index)}
+				<span class="rail-mark kind-{mark.kind}" style:top="{railYear(mark.year)}px" style:--lane={railLanes.indexOf(mark.kind)}></span>
+			{/each}
+			{#if onScreen}
+				<span class="rail-window" style:top="{railYear(onScreen.from)}px" style:height="{Math.max(6, railYear(onScreen.to + 1) - railYear(onScreen.from))}px"></span>
+				<span class="rail-year" style:top="{railYear(onScreen.at)}px">{onScreen.at}</span>
+			{/if}
+		</div>
+	{/if}
 	</div>
 </div>
 
 {#snippet row(entry: TimelineEntry)}
 	{@const Icon = icons[entry.kind]}
-	<li class="entry kind-{entry.kind}" id="timeline-{entry.id}">
+	<li class="entry kind-{entry.kind}" class:partial={isPartialDate(entry.date)} class:context={entry.context} id="timeline-{entry.id}" data-year={Math.floor(yearOf(entry.date))}>
 		<span class="date">{timelineDate(entry.date)}</span>
 		<span class="icon"><Icon size={16} aria-hidden="true" /><span class="visually-hidden">{kindLabels[entry.kind]}:</span></span>
 		<span class="what">
 			{#if entry.link}<a href={entry.link} rel={external(entry.link) ? 'noopener' : undefined}>{#if entry.italic}<i>{entry.title}</i>{:else}{entry.title}{/if}</a>{:else if entry.italic}<i>{entry.title}</i>{:else}{entry.title}{/if}{#if entry.citation}, {entry.citation}{/if}<CitationMarks marks={entry.citations} />
-			{#if entry.detail}<span class="detail">{entry.detail}</span>{/if}
+			{#if entry.detail}<span class="detail">{entry.detail}</span>{:else if entry.context && down}<span class="detail">Applies to every nation</span>{/if}
 			{#if entry.nations?.length}
 				<span class="detail">{entry.nations.map((nation) => nations[nation]?.name ?? nation).join(' · ')}</span>
 			{/if}
@@ -618,6 +788,28 @@
 		margin: 0 auto 0 0;
 	}
 
+	/* On a nation's page the buttons sit on the line of the section's heading, as in the approved mockup. */
+	.toolbar.beside {
+		position: relative;
+		z-index: 1;
+		margin-top: calc(-1 * var(--timeline-heading-height, 3.9rem));
+		margin-left: auto;
+		width: max-content;
+		border-bottom: 0;
+	}
+
+	.key-ring {
+		display: inline-block;
+		width: 0.75rem;
+		height: 0.75rem;
+		border: 2px solid var(--kind-color, var(--color-ink-muted));
+		border-radius: 50%;
+	}
+
+	.key-ring.partial {
+		border-style: dashed;
+	}
+
 	@media (max-width: 30rem) {
 		.summary {
 			flex-basis: 100%;
@@ -642,25 +834,26 @@
 		margin: 0 var(--space-1);
 	}
 
+	/* Small pills on one line, as in the approved mockup; 28px high, over the 24px target minimum. */
 	.chips {
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--space-2);
-		margin: var(--space-3) 0 0;
+		gap: var(--space-1) 0.375rem;
+		margin: var(--space-2) 0 0;
 	}
 
 	.chip {
 		display: inline-flex;
 		align-items: center;
-		gap: var(--space-2);
-		min-height: 2.25rem;
-		padding: 0 var(--space-3);
+		gap: 0.375rem;
+		min-height: 1.75rem;
+		padding: 0 0.5rem;
 		border: 1px solid var(--color-control-border);
 		border-radius: 999px;
 		background: var(--color-surface-raised);
 		color: var(--color-ink);
 		font: inherit;
-		font-size: var(--font-size-small);
+		font-size: 0.8125rem;
 		cursor: pointer;
 	}
 
@@ -847,8 +1040,8 @@
 		border-top: 1px solid var(--color-line);
 	}
 
-	.card-actions .close {
-		margin-left: auto;
+	.card-marks {
+		color: var(--color-link);
 	}
 
 	.key {
@@ -910,13 +1103,10 @@
 	}
 
 	/*
-	 * An entry's title is a link, so markers right after it have little plain text around them, and WCAG 2.5.8 (target size) applies to each: each gets a 24px box, as in the services list.
+	 * An entry's title is a link, so markers right after it have little plain text around them, and WCAG 2.5.8 (target size) applies to each. Padding on the inline link gives each a box about 24px high without making its line taller, as an inline-block would.
 	 */
 	.entry :global(.note-marker) {
-		display: inline-block;
-		min-width: 24px;
-		min-height: 24px;
-		text-align: center;
+		padding: 6px 4px;
 	}
 
 	.entry {
@@ -973,7 +1163,236 @@
 		background: var(--color-notice-background);
 	}
 
+	/* Down the page ------------------------------------------------------- */
+
+	.hidden {
+		display: none;
+	}
+
+	.down .body {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 7.5rem;
+		gap: 1.5rem;
+		align-items: start;
+	}
+
+	/* Below 64rem the sidebar's Menu bar stays at the top of the screen, so held headings and the rail stop below it. */
+	.timeline {
+		--held-top: 0px;
+	}
+
+	@media (max-width: 63.99rem) {
+		.timeline {
+			--held-top: calc(var(--layout-target-minimum) + 1px);
+		}
+	}
+
+	/* Down the page the toolbar stays at the top too, with each era's heading under it, as in the approved mockup. */
+	.down .toolbar {
+		position: sticky;
+		top: var(--held-top);
+		z-index: 3;
+		background: var(--color-paper);
+		padding-top: var(--space-1);
+	}
+
+	.down {
+		--held-under-toolbar: calc(var(--held-top) + 3.3rem);
+	}
+
+	@media (max-width: 30rem) {
+		.down {
+			--held-under-toolbar: calc(var(--held-top) + 5.2rem);
+		}
+	}
+
+	.down .era-heading {
+		position: sticky;
+		top: var(--held-under-toolbar);
+		z-index: 2;
+		background: var(--color-paper);
+		padding-top: var(--space-2);
+	}
+
+	.down .entries {
+		position: relative;
+		padding: var(--space-2) 0;
+	}
+
+	/* The line through time runs down the middle of the icons' column. */
+	.down .entries:not(.nested)::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: calc(7rem + var(--space-3) + 0.8125rem - 1px);
+		width: 2px;
+		background: var(--color-line);
+	}
+
+	.down .entry {
+		grid-template-columns: 7rem 1.625rem minmax(0, 1fr);
+		border-bottom: 0;
+		padding: 7px 0;
+	}
+
+	.down .era-heading :global(h2),
+	.down .era-heading :global(h3),
+	.down .era-heading :global(h4) {
+		font-size: 1.3125rem;
+	}
+
+	.down .entries:not(.nested) > .entry > .icon :global(svg) {
+		width: 14px;
+		height: 14px;
+	}
+
+	.down .entries:not(.nested) > .entry > .date {
+		text-align: right;
+		padding-top: 0.2em;
+	}
+
+	.down .entries:not(.nested) > .entry > .icon {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		place-items: center;
+		width: 1.625rem;
+		height: 1.625rem;
+		padding: 0;
+		border: 2px solid var(--kind-color);
+		border-radius: 50%;
+		background: var(--color-paper);
+	}
+
+	.down .entry.partial > .icon {
+		border-style: dashed !important;
+	}
+
+	.down .entry.context > .icon {
+		border-color: var(--color-timeline-federal) !important;
+		border-radius: 3px !important;
+		transform: rotate(45deg) scale(0.8);
+	}
+
+	.down .entry.context > .icon :global(svg) {
+		transform: rotate(-45deg);
+	}
+
+	.down .entry.context > .what,
+	.down .entry.context > .what a {
+		color: var(--color-ink-muted);
+	}
+
+	.gap {
+		padding: 0 0 var(--space-2) calc(7rem + 1.625rem + 2 * var(--space-3));
+		color: var(--color-ink-muted);
+		font-size: 0.8125rem;
+		font-style: italic;
+	}
+
+	.by-year {
+		display: block;
+		margin-top: var(--space-1);
+		max-width: 100%;
+	}
+
+	.rail {
+		position: sticky;
+		top: calc(var(--held-under-toolbar, var(--held-top)) + var(--space-4));
+		height: calc(100vh - var(--held-under-toolbar, var(--held-top)) - 2 * var(--space-4));
+		max-height: 48rem;
+		margin-top: var(--space-5);
+		border-left: 1px solid var(--color-line);
+		font-size: 0.75rem;
+		color: var(--color-ink-muted);
+		cursor: pointer;
+	}
+
+	.rail-tick {
+		position: absolute;
+		left: 0;
+		padding-left: 0.5rem;
+		transform: translateY(-50%);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.rail-tick::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 0.3rem;
+		border-top: 1px solid var(--color-control-border);
+	}
+
+	.rail-mark {
+		position: absolute;
+		left: calc(2.75rem + var(--lane) * 0.875rem);
+		width: 0.625rem;
+		height: 3px;
+		border-radius: 1px;
+		background: var(--kind-color);
+	}
+
+	.rail-window {
+		position: absolute;
+		left: -0.35rem;
+		right: 0;
+		border: 2px solid var(--color-ink);
+		border-radius: 4px;
+		background: color-mix(in srgb, var(--color-ink) 6%, transparent);
+	}
+
+	.rail-year {
+		position: absolute;
+		right: 0;
+		transform: translateY(-50%);
+		padding: 0 0.3rem;
+		border-radius: 4px;
+		background: var(--color-ink);
+		color: var(--color-paper);
+		font-weight: var(--font-weight-bold);
+	}
+
 	@media (max-width: 36rem) {
+		.down .body {
+			grid-template-columns: minmax(0, 1fr) 2.125rem;
+			gap: var(--space-2);
+		}
+
+		/* On a phone the rail keeps its tick marks and the year at the reading line, without the tick years. */
+		.rail-tick {
+			font-size: 0;
+		}
+
+		.rail-mark {
+			left: calc(0.2rem + var(--lane) * 0.3rem);
+			width: 0.25rem;
+		}
+
+		.down .entries:not(.nested)::before {
+			left: calc(0.8125rem - 1px);
+		}
+
+		.down .entry {
+			grid-template-columns: 1.625rem minmax(0, 1fr);
+		}
+
+		/* On a phone the date follows the title, as in the approved mockup. */
+		.down .entries:not(.nested) > .entry > .date {
+			text-align: left;
+			grid-row: 2;
+		}
+
+		.down .entries:not(.nested) > .entry > .what {
+			grid-row: 1;
+		}
+
+		.gap {
+			padding-left: calc(1.625rem + var(--space-3));
+		}
+
 		.entry,
 		.nested .entry {
 			grid-template-columns: 1.25rem minmax(0, 1fr);

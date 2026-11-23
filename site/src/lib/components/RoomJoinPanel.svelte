@@ -1,7 +1,7 @@
 <script lang="ts">
 	/**
-	 * What everyone sees before joining a video room: whether it is recorded
-	 * and who may watch, the box to agree to that when it is or may be
+	 * What everyone sees before joining a video room: one line on recording
+	 * and who may watch, the box to agree to it when the room is or may be
 	 * recorded, and the join button. People with an invite link and no
 	 * account also give the name shown in the room.
 	 */
@@ -22,8 +22,7 @@
 </script>
 
 <section class="panel" aria-labelledby="notice-heading">
-	<h2 id="notice-heading">{notice.heading}</h2>
-	<p>{notice.text}</p>
+	<p><strong id="notice-heading">{notice.heading}</strong> {notice.text}</p>
 	{#if problem}
 		<div class="notice notice-problem" role="alert"><p>{problem}</p></div>
 	{/if}
@@ -51,7 +50,6 @@
 		{/if}
 		<p><button class="button" type="submit"><Video size={20} strokeWidth={1.75} /> Join the room</button></p>
 	</form>
-	<p class="hint">Your browser will ask before it uses your camera or microphone. You can join with both off.</p>
 </section>
 
 <style>

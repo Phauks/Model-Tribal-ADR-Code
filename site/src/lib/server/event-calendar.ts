@@ -14,7 +14,8 @@ import {
 	type EventKind,
 	type EventStatus,
 	type RecordingChoice,
-	type RegistrationStatus
+	type RegistrationStatus,
+	type SeatCount
 } from '#lib/event-calendar.ts';
 import { newIdentifier } from './identifiers.ts';
 
@@ -211,6 +212,23 @@ export async function attendanceByEvent(database: D1Database, eventIdentifiers: 
 	return found;
 }
 
+/** Each event's kinds of seat with their counts, for the seat status on the list of events. */
+export async function seatCountsByEvent(database: D1Database, eventIdentifiers: readonly string[]): Promise<Map<string, SeatCount[]>> {
+	const found = new Map<string, SeatCount[]>();
+	if (eventIdentifiers.length === 0) return found;
+	const result = await database
+		.prepare(
+			`SELECT t.event_identifier AS event, t.attendance, t.capacity,
+			        (SELECT count(*) FROM calendar_registrations r WHERE r.ticket_identifier = t.identifier AND r.status IN ('registered', 'offered')) AS taken,
+			        (SELECT count(*) FROM calendar_registrations r WHERE r.ticket_identifier = t.identifier AND r.status = 'waitlisted') AS waiting
+			 FROM calendar_ticket_types t WHERE t.event_identifier IN (SELECT value FROM json_each(?)) ORDER BY t.sort_order, t.name`
+		)
+		.bind(JSON.stringify(eventIdentifiers))
+		.all<SeatCount & { event: string }>();
+	for (const { event, ...seat } of result.results) found.set(event, [...(found.get(event) ?? []), seat]);
+	return found;
+}
+
 export async function speakersOf(database: D1Database, eventIdentifier: string): Promise<Speaker[]> {
 	const result = await database
 		.prepare(
@@ -223,7 +241,7 @@ export async function speakersOf(database: D1Database, eventIdentifier: string):
 }
 
 /** Whether registration is open now: published, with seats to offer, before it closes. */
-export function registrationOpen(event: CalendarEvent, tickets: readonly TicketType[], time: Date = new Date()): boolean {
+export function registrationOpen(event: CalendarEvent, tickets: readonly unknown[], time: Date = new Date()): boolean {
 	return (
 		event.status === 'published' &&
 		tickets.length > 0 &&
@@ -506,6 +524,131 @@ export async function removeSpeaker(database: D1Database, eventIdentifier: strin
 		.prepare(`DELETE FROM calendar_speakers WHERE identifier = ? AND event_identifier = ?`)
 		.bind(speakerIdentifier, eventIdentifier)
 		.run();
+}
+
+// ---------------------------------------------------------------------------
+// Sessions and materials
+// ---------------------------------------------------------------------------
+
+export interface EventSession {
+	identifier: string;
+	startsAt: string;
+	endsAt: string | null;
+	title: string;
+	about: string;
+}
+
+export interface SessionInput {
+	startsAt: Date;
+	endsAt: Date | null;
+	title: string;
+	about: string;
+}
+
+/** An event's schedule, earliest first. */
+export async function sessionsOf(database: D1Database, eventIdentifier: string): Promise<EventSession[]> {
+	const result = await database
+		.prepare(
+			`SELECT identifier, starts_at AS startsAt, ends_at AS endsAt, title, about
+			 FROM calendar_sessions WHERE event_identifier = ? ORDER BY starts_at, title`
+		)
+		.bind(eventIdentifier)
+		.all<EventSession>();
+	return result.results;
+}
+
+/** Adds a session, or changes one already on the event. */
+export async function saveSession(database: D1Database, eventIdentifier: string, sessionIdentifier: string | null, input: SessionInput): Promise<string> {
+	const values = [input.startsAt.toISOString(), input.endsAt?.toISOString() ?? null, input.title.slice(0, 200), input.about.slice(0, 500)];
+	if (sessionIdentifier) {
+		await database
+			.prepare(`UPDATE calendar_sessions SET starts_at = ?, ends_at = ?, title = ?, about = ? WHERE identifier = ? AND event_identifier = ?`)
+			.bind(...values, sessionIdentifier, eventIdentifier)
+			.run();
+		return sessionIdentifier;
+	}
+	const identifier = newIdentifier();
+	await database
+		.prepare(`INSERT INTO calendar_sessions (identifier, event_identifier, starts_at, ends_at, title, about) VALUES (?, ?, ?, ?, ?, ?)`)
+		.bind(identifier, eventIdentifier, ...values)
+		.run();
+	return identifier;
+}
+
+export async function removeSession(database: D1Database, eventIdentifier: string, sessionIdentifier: string): Promise<void> {
+	await database.prepare(`DELETE FROM calendar_sessions WHERE identifier = ? AND event_identifier = ?`).bind(sessionIdentifier, eventIdentifier).run();
+}
+
+export interface EventMaterial {
+	identifier: string;
+	title: string;
+	fileName: string;
+	objectKey: string;
+	contentType: string;
+	sizeBytes: number;
+	sha256: string;
+	createdAt: string;
+}
+
+const materialColumns = `identifier, title, file_name AS fileName, object_key AS objectKey, content_type AS contentType,
+	size_bytes AS sizeBytes, sha256, created_at AS createdAt`;
+
+/** Where a material's file is kept in the private bucket. */
+export function materialObjectKey(eventIdentifier: string, materialIdentifier: string): string {
+	return `event-materials/${eventIdentifier}/${materialIdentifier}`;
+}
+
+/** The largest file the workspace takes as a material. */
+export const largestMaterialBytes = 25 * 1024 * 1024;
+
+export async function materialsOf(database: D1Database, eventIdentifier: string): Promise<EventMaterial[]> {
+	const result = await database
+		.prepare(`SELECT ${materialColumns} FROM calendar_materials WHERE event_identifier = ? ORDER BY created_at, title`)
+		.bind(eventIdentifier)
+		.all<EventMaterial>();
+	return result.results;
+}
+
+export async function materialOf(database: D1Database, eventIdentifier: string, materialIdentifier: string): Promise<EventMaterial | undefined> {
+	const row = await database
+		.prepare(`SELECT ${materialColumns} FROM calendar_materials WHERE identifier = ? AND event_identifier = ?`)
+		.bind(materialIdentifier, eventIdentifier)
+		.first<EventMaterial>();
+	return row ?? undefined;
+}
+
+/** Notes a material whose file is already stored and in line for the scanner. */
+export async function addMaterial(
+	database: D1Database,
+	input: { identifier: string; eventIdentifier: string; title: string; fileName: string; contentType: string; sizeBytes: number; sha256: string; createdBy: string | null },
+	time: Date = new Date()
+): Promise<void> {
+	await database
+		.prepare(
+			`INSERT INTO calendar_materials (identifier, event_identifier, title, file_name, object_key, content_type, size_bytes, sha256, created_by, created_at)
+			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+		)
+		.bind(
+			input.identifier,
+			input.eventIdentifier,
+			input.title.slice(0, 200),
+			input.fileName.slice(0, 200),
+			materialObjectKey(input.eventIdentifier, input.identifier),
+			input.contentType,
+			input.sizeBytes,
+			input.sha256,
+			input.createdBy,
+			time.toISOString()
+		)
+		.run();
+}
+
+/** Takes a material off the event and returns it, so its file can be deleted too. */
+export async function removeMaterial(database: D1Database, eventIdentifier: string, materialIdentifier: string): Promise<EventMaterial | undefined> {
+	const found = await materialOf(database, eventIdentifier, materialIdentifier);
+	if (!found) return undefined;
+	await database.prepare(`DELETE FROM calendar_materials WHERE identifier = ? AND event_identifier = ?`).bind(materialIdentifier, eventIdentifier).run();
+	return found;
 }
 
 // ---------------------------------------------------------------------------

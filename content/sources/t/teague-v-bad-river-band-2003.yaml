@@ -24,6 +24,11 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['2002-11-07']
+  printed: "Oral argument November 7, 2002. Decided July 17, 2003."
+  source: https://static.case.law/wis-2d/265/cases/0064-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 1975174
   citation: "265 Wis. 2d 64"

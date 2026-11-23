@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Download from '@lucide/svelte/icons/download';
 	import EventFields from '#lib/components/EventFields.svelte';
 	import { attendanceKinds, attendanceLabels } from '#lib/event-calendar.ts';
@@ -18,7 +19,12 @@
 	<title>{data.event.title} · Events · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/events">Events</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Events', href: '/workspace/events' }
+	]}
+/>
 <h1>{data.event.title}</h1>
 <p>
 	<span class="chip">{data.event.status === 'draft' ? 'Draft' : data.event.status === 'published' ? 'Published' : 'Cancelled'}</span>
@@ -147,6 +153,66 @@
 	<button class="button" type="submit">Add the speaker</button>
 </form>
 
+<h2>Sessions</h2>
+<p class="hint">The schedule on the event page, each with its times on {data.event.day}.</p>
+{#each data.sessions as session (session.identifier)}
+	<div class="speaker">
+		<p><strong>{session.times}</strong> {session.title}{session.about ? `: ${session.about}` : ''}</p>
+		<form method="post" action="?/removeSession">
+			<input type="hidden" name="session" value={session.identifier} />
+			<button class="button button-quiet" type="submit">Remove<span class="visually-hidden"> {session.title}</span></button>
+		</form>
+	</div>
+{/each}
+<form method="post" action="?/saveSession" class="panel">
+	<div class="row-form first">
+		<div class="field">
+			<label for="session-starts">Starts at</label>
+			<input type="time" id="session-starts" name="starts" required />
+		</div>
+		<div class="field">
+			<label for="session-ends">Ends at <span class="hint">(optional)</span></label>
+			<input type="time" id="session-ends" name="ends" />
+		</div>
+	</div>
+	<div class="field">
+		<label for="session-title">Title</label>
+		<input type="text" id="session-title" name="title" maxlength="200" required />
+	</div>
+	<div class="field">
+		<label for="session-about">One line about it <span class="hint">(optional)</span></label>
+		<input type="text" id="session-about" name="about" maxlength="500" />
+	</div>
+	<button class="button" type="submit">Add the session</button>
+</form>
+
+<h2>Materials</h2>
+<p class="hint">
+	Files for the people coming, such as written materials or slides, up to {data.largestMaterial}. Everyone who can see the
+	event can download them once the virus check passes, and each shows its SHA-256 fingerprint.
+</p>
+{#each data.materials as material (material.identifier)}
+	<div class="speaker">
+		<p><strong>{material.title}</strong> ({material.fileName}, {material.size}) · {material.check}</p>
+		<form method="post" action="?/removeMaterial">
+			<input type="hidden" name="material" value={material.identifier} />
+			<button class="button button-quiet" type="submit">Remove<span class="visually-hidden"> {material.title}</span></button>
+		</form>
+	</div>
+{/each}
+<form method="post" action="?/addMaterial" enctype="multipart/form-data" class="panel">
+	<div class="field">
+		<label for="material-title">Name it</label>
+		<p class="hint" id="material-title-hint">Such as "Written materials" or "Slides".</p>
+		<input type="text" id="material-title" name="title" maxlength="200" required aria-describedby="material-title-hint" />
+	</div>
+	<div class="field">
+		<label for="material-file">File</label>
+		<input type="file" id="material-file" name="file" required />
+	</div>
+	<button class="button" type="submit">Add the file</button>
+</form>
+
 <h2>Video room</h2>
 <p>
 	The website’s own video room, with recording. When it is on, people registered for an online seat join it from the
@@ -194,7 +260,7 @@
 	<button class="button" type="submit">{data.room ? 'Save the room' : 'Use the website’s video room'}</button>
 </form>
 {#if data.room}
-	<p><a href="/events/{data.event.slug}/room">Open the room</a></p>
+	<p><a href="/events/{data.event.slug}/room" target="_blank" rel="noopener">Open the room<span class="visually-hidden"> (opens in a new tab)</span></a></p>
 	{#if data.recordings.length === 0}
 		<form method="post" action="?/removeRoom">
 			<button class="button button-quiet" type="submit">Stop using the website’s video room</button>

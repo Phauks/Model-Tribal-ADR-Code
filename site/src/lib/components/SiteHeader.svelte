@@ -1,23 +1,30 @@
 <script lang="ts">
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). One row: the
-	// site's name, Report a problem and Contribute, then the reader's controls:
-	// search, Star, Follow, Print and Download as icons (Star and Follow only where the page can
-	// be starred or followed), theme, Settings, and sign-in or the account menu at the far right
-	// (Trevor, Nov. 22, 2026). Star, Print and Download act on the page the reader is on;
-	// Download opens a list of what the page offers (DownloadMenu.svelte). The
-	// site's sections are in the sidebar (SiteSidebar.svelte), so the masthead
-	// has no menu row. The content version shows only on paper; on screen it
-	// is in the footer.
+	// sidebar button and the site's name at the left; at the right one evenly
+	// spaced row of icon buttons (search, Report a problem as a flag, Star,
+	// Follow, Print, Download, theme, Settings), then sign-in or the account
+	// menu, and Contribute at the far right (Trevor, Nov. 23, 2026). Star and
+	// Follow show only where the page can be starred or followed; Star, Print
+	// and Download act on the page the reader is on, and Download opens a list
+	// of what the page offers (DownloadMenu.svelte). The site's sections are in
+	// the sidebar (SiteSidebar.svelte), so the masthead has no menu row. The
+	// content version shows only on paper; on screen it is in the footer.
+	//
+	// On wide screens a hamburger button near the page's left edge, before the
+	// name, hides and shows the sidebar, so a hidden sidebar leaves nothing
+	// behind on the page (Trevor, Nov. 23, 2026; sidebar/sidebar-visibility.svelte.ts).
+	// It needs scripts; without them the sidebar always shows.
 	//
 	// On phones (Trevor approved this from the Wikiwand review, Nov. 22,
 	// 2026) the masthead is one short row: the name, search, and a "More"
-	// button. Report a problem, Contribute, Star, Print, Download, theme,
-	// Settings and sign-in move into a panel that More opens. The panel is a native
-	// popover, so it opens without scripts; on wider screens CSS shows its
-	// contents in the row as before, and the More button is hidden.
+	// button. The other controls move, in the same order, into a panel that
+	// More opens. The panel is a native popover, so it opens without scripts;
+	// on wider screens CSS shows its contents in the row, and More is hidden.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import Ellipsis from '@lucide/svelte/icons/ellipsis';
+	import Menu from '@lucide/svelte/icons/menu';
+	import { sidebarVisibility, toggleSidebar } from './sidebar/sidebar-visibility.svelte.ts';
 	import AccountLink from './AccountLink.svelte';
 	import DownloadMenu from './DownloadMenu.svelte';
 	import PrintOptions from './PrintOptions.svelte';
@@ -80,28 +87,36 @@
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="masthead">
-	<div class="page-width masthead-top">
-		<p class="wordmark">
-			<a href="/">{siteName}</a>
-			<span class="edition print-only">Draft, content {contentVersion}</span>
-		</p>
-		<div class="masthead-phone no-print">
+	<div class="page-width masthead-row">
+		<div class="masthead-start">
+			<button
+				type="button"
+				class="icon-button sidebar-toggle needs-scripts no-print"
+				aria-controls="site-sidebar"
+				aria-expanded={sidebarVisibility.shown}
+				title="{sidebarVisibility.shown ? 'Hide' : 'Show'} sidebar (Ctrl+\)"
+				onclick={toggleSidebar}
+			>
+				<Menu size={24} aria-hidden="true" />
+				<span class="visually-hidden">{sidebarVisibility.shown ? 'Hide' : 'Show'} sidebar</span>
+			</button>
+			<p class="wordmark">
+				<a href="/">{siteName}</a>
+				<span class="edition print-only">Draft, content {contentVersion}</span>
+			</p>
+		</div>
+		<div class="masthead-controls no-print">
 			<SiteSearch bind:this={search} />
 			<button
 				class="more-button"
 				type="button"
 				popovertarget="masthead-more"
-				aria-label="More: report a problem, contribute, star, follow, print, download, settings and sign in"
+				aria-label="More: report a problem, star, follow, print, download, theme, settings, sign in and contribute"
 			>
 				<Ellipsis size={24} /><span aria-hidden="true">More</span>
 			</button>
-		</div>
-		<div class="masthead-more no-print" id="masthead-more" popover>
-			<ul class="masthead-actions">
-				<li><ReportProblem link={reportLink} /></li>
-				<li><a class="button" href="/requests?kind=contribute">Contribute</a></li>
-			</ul>
-			<div class="masthead-tools">
+			<div class="masthead-more" id="masthead-more" popover>
+				<ReportProblem link={reportLink} />
 				<StarButton />
 				<FollowButton />
 				<PrintOptions bind:this={printOptions} />
@@ -109,6 +124,7 @@
 				<ThemeSetting />
 				<SettingsPanel />
 				<AccountLink />
+				<a class="button contribute" href="/requests?kind=contribute">Contribute</a>
 			</div>
 		</div>
 	</div>
@@ -135,7 +151,7 @@
 		color: var(--color-band-text);
 	}
 
-	.masthead-top {
+	.masthead-row {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -144,6 +160,32 @@
 		/* Only a thin margin around the 44 px controls, so the band takes little height (Trevor, Nov. 23, 2026). */
 		padding-top: var(--space-1);
 		padding-bottom: var(--space-1);
+	}
+
+	.masthead-start {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	/* The sidebar is on wide screens only; on phones the Menu bar holds it. */
+	.sidebar-toggle {
+		display: none;
+		color: var(--color-band-text);
+	}
+
+	/*
+	 * The hamburger sits near the page's left edge, closer than the page's
+	 * usual margin, with the name just after it (Trevor, Nov. 23, 2026).
+	 */
+	@media (min-width: 64rem) {
+		:global(:root[data-scripts='on']) .sidebar-toggle {
+			display: inline-grid;
+		}
+
+		:global(:root[data-scripts='on']) .masthead-row {
+			padding-left: var(--space-2);
+		}
 	}
 
 	.wordmark {
@@ -165,11 +207,20 @@
 	}
 
 	/*
-	 * Wide screens: the More panel's contents sit in the row as flex items of
-	 * .masthead-top (display: contents overrides the popover's hidden state),
-	 * in the approved order: name, Report a problem and Contribute, search,
-	 * then the other controls. The More button is not shown.
+	 * Every control at the right, search through Contribute, sits in one row
+	 * with one gap between each pair (Trevor, Nov. 23, 2026). The More panel's
+	 * contents join that row on wide screens (display: contents overrides the
+	 * popover's hidden state), and the More button is not shown.
 	 */
+	.masthead-controls {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-end;
+		gap: var(--space-2);
+		margin-left: auto;
+	}
+
 	.masthead-more {
 		display: contents;
 		/*
@@ -181,32 +232,17 @@
 		background: none;
 	}
 
-	.masthead-actions {
-		order: 1;
-	}
-
-	.masthead-phone {
-		order: 2;
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-	}
-
-	.masthead-tools {
-		order: 3;
-	}
-
 	.more-button {
 		display: none;
 	}
 
 	/*
 	 * Phones: one row with the name, search and More. More opens the panel
-	 * under the masthead, in the band's colors, with the actions and controls
-	 * from the left.
+	 * under the masthead, in the band's colors, with the controls from the
+	 * left in the same order as on wide screens.
 	 */
 	@media (max-width: 40rem) {
-		.masthead-top {
+		.masthead-row {
 			flex-wrap: nowrap;
 			gap: var(--space-2);
 		}
@@ -245,8 +281,9 @@
 
 		.masthead-more:popover-open {
 			display: flex;
-			flex-direction: column;
-			gap: var(--space-4);
+			flex-wrap: wrap;
+			align-items: center;
+			gap: var(--space-2);
 			position: fixed;
 			/* Just under the one-row masthead (about 3.25rem tall). */
 			inset: 3.5rem var(--space-2) auto;
@@ -258,55 +295,6 @@
 			border-radius: var(--radius-panel);
 			background: var(--color-band);
 			color: var(--color-band-text);
-		}
-	}
-
-	/* The controls keep to the right; an open search box grows to their left. */
-	.masthead-tools {
-		display: flex;
-		flex: 0 1 auto;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: flex-end;
-		gap: var(--space-2);
-	}
-
-	@media (max-width: 40rem) {
-		.masthead-tools {
-			justify-content: flex-start;
-		}
-	}
-
-	/* Report a problem and Contribute, before the controls. */
-	.masthead-actions {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: flex-end;
-		gap: var(--space-2) var(--space-4);
-		list-style: none;
-		margin: 0 0 0 auto;
-		padding: 0;
-	}
-
-	.masthead-actions a:not(.button) {
-		display: inline-flex;
-		align-items: center;
-		min-height: var(--layout-target-minimum);
-		color: var(--color-band-text);
-		text-decoration: none;
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.masthead-actions a:not(.button):hover {
-		text-decoration: underline;
-	}
-
-	/* Phones: the name, then the actions, then the controls, each from the left. */
-	@media (max-width: 40rem) {
-		.masthead-actions {
-			margin-left: 0;
-			justify-content: flex-start;
 		}
 	}
 

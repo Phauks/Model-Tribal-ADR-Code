@@ -2,13 +2,15 @@
  * Comments on an essay's draft (src/lib/server/essay-comments.ts), for
  * anyone with comment access or above. GET lists them, with who is asking
  * and whether they may mark any thread done. POST adds a comment on
- * selected words ({ body, asks, quote, version }) or a reply ({ body,
- * thread }). PATCH ?thread= { resolved } marks a thread done or reopens
+ * selected words ({ body, asks, quote, version, mentions }) or a reply
+ * ({ body, thread, mentions }); `mentions` are the people chosen with
+ * "@ mention", and only those who can open the essay are kept. PATCH ?thread= { resolved } marks a thread done or reopens
  * it: its author may, and so may anyone who can edit the essay.
  */
 import { error, json } from '@sveltejs/kit';
 import { essayAccess } from '#lib/server/essay-workspace.ts';
 import { addComment, essayComments, setThreadResolved } from '#lib/server/essay-comments.ts';
+import { essayPeople } from '#lib/server/essay-review-requests.ts';
 import { isCommentAsk } from '#lib/essays/comments.ts';
 import { atLeast } from '#lib/permissions.ts';
 import type { RequestHandler } from './$types';
@@ -32,6 +34,8 @@ export const POST: RequestHandler = async (event) => {
 	if (!thread && (typeof quote?.quote !== 'string' || typeof quote.prefix !== 'string' || typeof quote.suffix !== 'string')) {
 		error(400, 'Select the words to comment on.');
 	}
+	const asked = Array.isArray(body.mentions) ? body.mentions.filter((person): person is string => typeof person === 'string') : [];
+	const mayOpen = asked.length ? new Set((await essayPeople(database, identifier)).map((candidate) => candidate.identifier)) : new Set<string>();
 	try {
 		await addComment(database, {
 			essay: identifier,
@@ -40,7 +44,8 @@ export const POST: RequestHandler = async (event) => {
 			thread,
 			asks: Array.isArray(body.asks) ? body.asks.filter(isCommentAsk) : [],
 			quote: thread ? null : { quote: quote!.quote as string, prefix: quote!.prefix as string, suffix: quote!.suffix as string },
-			versionNumber: typeof body.version === 'number' ? body.version : null
+			versionNumber: typeof body.version === 'number' ? body.version : null,
+			mentions: asked.filter((person) => mayOpen.has(person))
 		});
 	} catch (problem) {
 		if (problem instanceof Error && /Write|at most|Select|not on this essay/.test(problem.message)) error(400, problem.message);

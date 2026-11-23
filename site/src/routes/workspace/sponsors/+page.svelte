@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { costedEarmarks, earmarkCostQuestions, earmarkCostUnits } from '#lib/sponsorship.ts';
+	import { costItemQuestions, costItemUnits, costItems } from '#lib/sponsorship.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -59,11 +59,11 @@
 		<div class="notice" role="status"><p>{form.done}</p></div>
 	{/if}
 	<form method="post" action="?/costs">
-		{#each costedEarmarks as earmark (earmark)}
+		{#each costItems as item (item)}
 			<div class="field">
-				<label for="cost-{earmark}">{earmarkCostQuestions[earmark]}</label>
-				<p class="hint">US dollars a {earmarkCostUnits[earmark]}.</p>
-				<input id="cost-{earmark}" name={earmark} type="text" inputmode="decimal" value={data.costs[earmark]} class="amount" />
+				<label for="cost-{item}">{costItemQuestions[item]}</label>
+				<p class="hint">US dollars a {costItemUnits[item]}.</p>
+				<input id="cost-{item}" name={item} type="text" inputmode="decimal" value={data.costs[item]} class="amount" />
 			</div>
 		{/each}
 		<button class="button" type="submit">Save costs</button>

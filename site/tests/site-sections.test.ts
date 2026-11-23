@@ -14,7 +14,8 @@ describe('site sections for the sidebar', () => {
 			'Glossary',
 			'Events',
 			'About',
-			'Sponsorship'
+			'Sponsorship',
+			'Store'
 		]);
 	});
 
@@ -27,6 +28,12 @@ describe('site sections for the sidebar', () => {
 		expect(sectionOf('/nationsx')).toBeUndefined();
 	});
 
+	it('counts the special-order page as part of the Store', () => {
+		expect(sectionOf('/store')?.label).toBe('Store');
+		expect(sectionOf('/book')?.label).toBe('Store');
+		expect(sectionOf('/bookx')).toBeUndefined();
+	});
+
 	it('counts the pages the Library gathers as part of it', () => {
 		expect(sectionOf('/library')?.label).toBe('Library');
 		expect(sectionOf('/copies')?.label).toBe('Library');
@@ -34,13 +41,14 @@ describe('site sections for the sidebar', () => {
 		expect(sectionOf('/downloads')?.label).toBe('Library');
 		expect(sectionOf('/back-matter/cases-by-topic')?.label).toBe('Library');
 		expect(sectionOf('/licenses/cc-by-4.0')?.label).toBe('Library');
+		expect(sectionOf('/supreme-court/marshall-court')?.label).toBe('Library');
 		expect(sectionOf('/copiesx')).toBeUndefined();
 		const library = siteSections.find((section) => section.label === 'Library');
-		expect(library?.gathers?.map((page) => page.link)).toEqual(['/copies', '/downloads', '/back-matter', '/licenses']);
+		expect(library?.gathers?.map((page) => page.link)).toEqual(['/copies', '/downloads', '/supreme-court', '/back-matter', '/licenses']);
 	});
 
 	it('links only sections whose pages exist', () => {
 		const built = siteSections.filter((section) => section.built).map((section) => section.link);
-		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/library', '/glossary', '/events', '/about', '/sponsor']);
+		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/library', '/glossary', '/events', '/about', '/sponsor', '/store']);
 	});
 });

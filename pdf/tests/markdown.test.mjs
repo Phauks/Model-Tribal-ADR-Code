@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { CitationEngine } from "../pipeline/citations.mjs";
 import { createMarkdown, parseMarkdown, prepareSource } from "../pipeline/markdown.mjs";
-import { ChapterWriter, KINDS, caseFacts, subsectionLevel } from "../pipeline/typst-writer.mjs";
+import { ChapterWriter, KINDS, caseFacts, courtDays, subsectionLevel } from "../pipeline/typst-writer.mjs";
 import { escapeTypst } from "../pipeline/typst-text.mjs";
 
 const variables = { "nation.name": { model: "[Name of Nation]" } };
@@ -193,6 +193,19 @@ test("case boxes give the decision date, take Background, Question and Holding p
   const law = plain(essay(":::: law act\n::: summary\nWhat it did.\n:::\n::::"));
   assert.ok(law.startsWith("#law-block(["), law);
   assert.ok(law.includes('#case-part("What it does")[What it did.]'), law);
+});
+
+test("a case box gives each court date its own line, in the order they happened", () => {
+  const facts = plain(
+    caseFacts({
+      citation: { issued: { "date-parts": [[1990, 2, 20]] } },
+      court_dates: { argued_and_submitted: ["1988-05-11"], amended: ["1992-03-16"] },
+    }),
+  );
+  assert.ok(facts.startsWith('(("Argued and submitted", [May 11, 1988]), ("Decided", [February 20, 1990]), ("Amended", [March 16, 1992])'), facts);
+  assert.equal(courtDays(["1823-02-19", "1823-02-17", "1823-02-18"]), "February 17–19, 1823");
+  assert.equal(courtDays(["1823-02-15", "1823-02-17"]), "February 15 and 17, 1823");
+  assert.equal(courtDays(["1831-12-30", "1832-01-02"]), "December 30, 1831, and January 2, 1832");
 });
 
 test("a link to #case-KEY prints the page of that case's box", () => {

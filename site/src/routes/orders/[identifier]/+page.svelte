@@ -10,6 +10,7 @@
 		problemStatusLabels,
 		type ProblemKind
 	} from '#lib/book-order-problems.ts';
+	import OrderLines from '#lib/components/orders/OrderLines.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { PageProps } from './$types';
 
@@ -26,12 +27,12 @@
 </script>
 
 <svelte:head>
-	<title>Your printed copy · Model Tribal ADR Code</title>
+	<title>Your order · Model Tribal ADR Code</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <div class="reading">
-	<h1>Your printed copy</h1>
+	<h1>Your order</h1>
 	{#if data.justPaid}
 		<p class="lead">Thank you. Stripe has emailed your receipt. Keep this page’s address to check on the order.</p>
 	{/if}
@@ -39,7 +40,8 @@
 		<div class="notice" role="status"><p>Test order: nothing was charged and nothing will be printed.</p></div>
 	{/if}
 	<div class="panel">
-		<p><strong>{data.order.title}</strong>, {data.order.pages} pages, {money(data.order.priceCents)}</p>
+		<OrderLines lines={data.order.lines} />
+		<p><strong>{money(data.order.priceCents)}</strong></p>
 		{#if data.order.giftCents > 0}
 			<p>And a gift to the project of {money(data.order.giftCents)}. Thank you.</p>
 		{/if}

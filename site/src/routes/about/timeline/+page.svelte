@@ -4,6 +4,7 @@
 	// only by color or shape. Motion answers only what the reader does: a
 	// step's details open and close by their height, and the step a link goes
 	// to arrives highlighted (site/DESIGN.md, section 6, "Motion").
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Check from '@lucide/svelte/icons/check';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import ArrowDown from '@lucide/svelte/icons/arrow-down';
@@ -24,6 +25,7 @@
 </svelte:head>
 
 <div class="timeline-page">
+	<Breadcrumbs trail={[{ label: 'About', href: '/about' }]} />
 	<h1>{data.title}</h1>
 	<div class="lead reading">{@html data.introductionHtml}</div>
 

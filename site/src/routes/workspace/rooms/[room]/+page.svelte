@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Video from '@lucide/svelte/icons/video';
 	import CopyLink from '#lib/components/CopyLink.svelte';
 	import RoomRecords from '#lib/components/RoomRecords.svelte';
@@ -19,7 +20,12 @@
 	<title>{data.room.title} · Video rooms · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/rooms">Video rooms</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Video rooms', href: '/workspace/rooms' }
+	]}
+/>
 <h1>{data.room.title}</h1>
 <p>{data.room.when} · {data.room.visibility === 'public' ? 'Public' : 'Private'}{#if data.room.open}<span class="chip">Open now</span>{:else if data.room.closed}<span class="chip">Closed</span>{/if}</p>
 
@@ -38,7 +44,7 @@
 
 <div class="actions">
 	{#if !data.room.closed}
-		<a class="button" href="/rooms/{data.room.identifier}"><Video size={20} strokeWidth={1.75} /> Go to the room</a>
+		<a class="button" href="/rooms/{data.room.identifier}" target="_blank" rel="noopener"><Video size={20} strokeWidth={1.75} /> Go to the room<span class="visually-hidden"> (opens in a new tab)</span></a>
 	{/if}
 	<form method="post" action="?/keepOpen">
 		<button class="button button-quiet" type="submit">{data.room.closed ? 'Open it again for an hour' : 'Keep it open an hour longer'}</button>
@@ -53,7 +59,7 @@
 <h2>Invite links</h2>
 <p>
 	A link lets one person, or everyone you pass it to, into this room without an account, from 30 minutes before it
-	starts until it closes. They give the name shown in the room and are told about recording before they join. A link
+	starts until it closes. They give the name shown in the room. A link
 	is shown once, when you make it; make another if one is lost, and turn off any you no longer want.
 </p>
 {#if invite}

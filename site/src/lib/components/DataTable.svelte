@@ -28,13 +28,14 @@
 	it"): borderless icons at the right of the count for Copy link (when
 	shareable), download (always: a list of .csv and .xlsx, TableDownload.svelte;
 	the files are named `download`, or the table's identifier) and full screen (Lucide maximize and minimize, as on the map
-	and the charts). Each row has a button to leave it out; the left-out
-	rows are listed to bring back one by one, then "Bring back all" restores
-	every one in one click (Trevor, Nov. 23, 2026), and the
-	count and the files follow the rows shown. `tools={false}` leaves the
-	row off, for a table inside something with its own, such as a chart; such
-	a table still has its leave-out buttons, and binds `leftOut` so the rows
-	left out are the same in every view.
+	and the charts). `tools={false}` leaves the row off, for a table inside
+	something with its own, such as a chart.
+
+	Leaving rows out is for charts only (Trevor chose this on Nov. 23, 2026,
+	after it showed on every table): `leaveOut` gives each row a button to
+	leave it out, and a chart's own table turns it on and binds `leftOut`, so
+	the rows left out are the same in every view of the chart. Left-out rows
+	are listed to bring back one by one, then "Bring back all".
 
 	Use:
 	<DataTable identifier="nations" label="Table: nations" {columns} {rows}
@@ -98,6 +99,8 @@
 		tools?: boolean;
 		/** The rows left out, by key; bind it to share one list with something around the table, such as a chart's other views. */
 		leftOut?: string[];
+		/** Gives each row a button to leave it out; only a chart's own table turns it on (Trevor, Nov. 23, 2026: leaving data out stays on charts only). */
+		leaveOut?: boolean;
 	}
 
 	let {
@@ -116,7 +119,8 @@
 		shareable = false,
 		count: showCount = true,
 		tools = true,
-		leftOut = $bindable([])
+		leftOut = $bindable([]),
+		leaveOut = false
 	}: Props = $props();
 
 	// A table drawn on the server gets its buttons once the browser has it; one made later in the browser, such as a map view's table, starts with them, so it is drawn once and does not jump (src/lib/page-started.ts).
@@ -374,7 +378,7 @@
 						{#if column.isRowHeader || (column === columns[0] && !columns.some((other) => other.isRowHeader))}
 							{@const Cell = column.isRowHeader ? 'th' : 'td'}
 							<svelte:element this={Cell} scope={column.isRowHeader ? 'row' : undefined} class:number={column.type === 'number'}>
-								{#if interactive}
+								{#if interactive && leaveOut}
 									<span class="row-head">
 										<span class="row-head-content">{@render content()}</span>
 										<button type="button" class="leave-out no-print" aria-label="Leave out {rowLabel(row)}" title="Leave out this row" onclick={() => (leftOut = [...leftOut, row.key])}>

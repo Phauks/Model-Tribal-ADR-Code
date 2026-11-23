@@ -18,10 +18,10 @@ import { needsTwoStep, permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
 
 /** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/sign-out', '/requests', '/following', '/uploads', '/book/orders', '/book/files', '/events', '/rooms', '/sponsorship'];
+const privatePrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/sign-out', '/requests', '/following', '/uploads', '/orders', '/book/orders', '/book/files', '/events', '/rooms', '/sponsorship'];
 
-/** Pages that need to know who is signed in. */
-const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/following', '/uploads', '/files', '/events', '/rooms', '/sponsorship/invite'];
+/** Pages that need to know who is signed in. Recent changes needs it for "Only pages I follow". */
+const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/following', '/uploads', '/files', '/events', '/rooms', '/sponsorship/invite', '/changes'];
 
 /**
  * Files people send (src/lib/server/uploads.ts): starting a file at

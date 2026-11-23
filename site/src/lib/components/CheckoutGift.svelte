@@ -25,6 +25,8 @@
 
 	const roundUp = $derived(roundUpCents(priceCents));
 	const money = (amount: number) => formatDollars(amount / 100);
+	// A whole-dollar amount without cents, as "Round up to $25" (the approved mockup, design/checkout-gift).
+	const wholeMoney = (amount: number) => (amount % 100 === 0 ? `$${(amount / 100).toLocaleString('en-US')}` : money(amount));
 
 	$effect(() => {
 		if (picked === 'none') choice = { kind: 'none' };
@@ -48,23 +50,23 @@
 	</p>
 	<fieldset class="choices">
 		<legend class="visually-hidden">Gift amount</legend>
-		<label class="chip">
+		<label class="gift-choice">
 			<input type="radio" name="checkout-gift" value="none" bind:group={picked} />
 			No thanks
 		</label>
 		{#if roundUp > 0}
-			<label class="chip">
+			<label class="gift-choice">
 				<input type="radio" name="checkout-gift" value="round-up" bind:group={picked} />
-				Round up to {money(priceCents + roundUp)} <span class="muted">(+{money(roundUp)})</span>
+				Round up to {wholeMoney(priceCents + roundUp)} <span class="muted">(+{money(roundUp)})</span>
 			</label>
 		{/if}
 		{#each giftPresets as preset (preset)}
-			<label class="chip">
+			<label class="gift-choice">
 				<input type="radio" name="checkout-gift" value={String(preset)} bind:group={picked} />
 				${preset}
 			</label>
 		{/each}
-		<label class="chip">
+		<label class="gift-choice">
 			<input type="radio" name="checkout-gift" value="other" bind:group={picked} />
 			Other
 		</label>
@@ -78,17 +80,19 @@
 	{/if}
 	<p class="small muted">
 		The gift is separate from the book’s price: Lulu doesn’t receive it, and it shows as its own line on your receipt.
-		It goes to {receiver}.
+		It goes to {receiver}. [Nevada solicitation disclosure goes here once the nonprofit is registered.]
 	</p>
-	<table class="totals">
-		<caption class="visually-hidden">Your total</caption>
-		<tbody>
-			<tr><th scope="row">{priceLabel}</th><td>{money(priceCents)}</td></tr>
-			<tr><th scope="row">Gift to the project</th><td>{money(shownGift)}</td></tr>
-			<tr class="total"><th scope="row">Total</th><td>{money(priceCents + shownGift)}</td></tr>
-		</tbody>
-	</table>
 </section>
+
+<!-- The total sits below the gift panel, just above the order button (the approved mockup). -->
+<table class="totals">
+	<caption class="visually-hidden">Your total</caption>
+	<tbody>
+		<tr><th scope="row">{priceLabel}</th><td>{money(priceCents)}</td></tr>
+		<tr><th scope="row">Gift to the project</th><td>{money(shownGift)}</td></tr>
+		<tr class="total"><th scope="row">Total</th><td>{money(priceCents + shownGift)}</td></tr>
+	</tbody>
+</table>
 
 <style>
 	h2 .muted {
@@ -104,7 +108,8 @@
 		border: 0;
 	}
 
-	.chip {
+	/* Not ".chip": that is the site's small status chip (global.css), which would set these in small muted text. */
+	.gift-choice {
 		display: flex;
 		align-items: center;
 		gap: var(--space-2);
@@ -115,12 +120,12 @@
 		cursor: pointer;
 	}
 
-	.chip:has(input:checked) {
+	.gift-choice:has(input:checked) {
 		border-color: var(--color-action);
 		box-shadow: 0 0 0 1px var(--color-action);
 	}
 
-	.chip input {
+	.gift-choice input {
 		width: 1.1rem;
 		height: 1.1rem;
 		margin: 0;
@@ -131,10 +136,12 @@
 		max-width: var(--layout-field-short);
 	}
 
+	/* Body size, not the small type of data tables (global.css, "table"). */
 	.totals {
 		width: 100%;
 		border-collapse: collapse;
-		margin-top: var(--space-3);
+		margin: var(--space-3) 0;
+		font-size: inherit;
 	}
 
 	.totals th,
