@@ -1,4 +1,4 @@
-// Builds the map tiles that the website's map draws with MapLibre (decision record 0038), and uploads them to the private bucket.
+// Builds the map tiles that the website's map draws with MapLibre (decision record 0039), and uploads them to the private bucket.
 //
 // Two tile sets, each one PMTiles file:
 //

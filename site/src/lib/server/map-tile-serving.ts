@@ -1,5 +1,5 @@
 /**
- * Serves one map tile from a PMTiles file in the private bucket (decision record 0038). Kept apart from the route so the tests can give it a bucket of their own.
+ * Serves one map tile from a PMTiles file in the private bucket (decision record 0039). Kept apart from the route so the tests can give it a bucket of their own.
  *
  * A PMTiles file holds every tile of a tile set with a directory of where each one starts. The pmtiles library reads the file's header and directories with ranged reads and keeps them in memory, so after the first request a tile costs one ranged read from the bucket. Only the tile sets named in geography/map-tiles.json are served; any other name is "not found", whatever the bucket holds.
  *

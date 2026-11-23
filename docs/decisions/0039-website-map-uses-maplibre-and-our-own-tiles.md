@@ -1,4 +1,4 @@
-# 0038. Draw the website's map with MapLibre and the project's own map tiles
+# 0039. Draw the website's map with MapLibre and the project's own map tiles
 
 - **Status:** Accepted (lead author, Nov. 23, 2026)
 - **Date:** 2026-11-23
