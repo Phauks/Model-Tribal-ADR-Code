@@ -10,19 +10,43 @@
  * transcript are written in the essay itself, so they keep the essay's
  * version history and show up in drafts like any other change.
  *
+ * A chart is a figure too: a bar chart drawn from a small table written in
+ * the essay, so its numbers stay as they were when the essay was written
+ * (the data views plan: essay blocks are "frozen as of a date" by default).
+ * The table's first column names each bar and its second gives the number.
+ *
  * Shared by the website (render.ts), the editor and the tests.
  */
 import { isUploadReference } from '../uploads.ts';
 import { youtubeVideoIdentifier, youtubeWatchAddress } from '../video-links.ts';
+import { essayBlocks } from './syntax.ts';
 
-export const figureKinds = ['picture', 'video', 'sound'] as const;
+export const figureKinds = ['picture', 'video', 'sound', 'chart'] as const;
 export type FigureKind = (typeof figureKinds)[number];
 
 export const figureKindLabels: Record<FigureKind, string> = {
 	picture: 'Picture',
 	video: 'Video',
-	sound: 'Sound recording'
+	sound: 'Sound recording',
+	chart: 'Chart'
 };
+
+/** A figure's kind and address from the words after its opening colons ("figure picture /files/…", "figure chart"). */
+export function readFigureInfo(info: string): { kind: FigureKind; address: string } {
+	const [, kind, address, chart] = essayBlocks.figure.exec(info.trim()) ?? [];
+	if (chart) return { kind: 'chart', address: '' };
+	return { kind: (kind ?? 'picture') as FigureKind, address: address ?? '' };
+}
+
+/** The words after a figure's opening colons, the reverse of readFigureInfo. */
+export function figureInfo(kind: FigureKind, address: string): string {
+	return figureHasFile(kind) ? `figure ${kind} ${address}` : `figure ${kind}`;
+}
+
+/** Kinds shown from a file or a link; a chart is drawn from its own table. */
+export function figureHasFile(kind: FigureKind): boolean {
+	return kind !== 'chart';
+}
 
 /**
  * The labeled parts of a figure, besides its caption: the description of a
@@ -36,6 +60,14 @@ export const figureParts = {
 } as const;
 export type FigurePart = keyof typeof figureParts;
 export const figurePartOrder: FigurePart[] = ['description', 'credit', 'transcript'];
+
+/** The parts each kind of figure can take: a chart's bars are already read aloud, and only sound and video have words to transcribe. */
+export const figurePartsFor: Record<FigureKind, FigurePart[]> = {
+	picture: ['description', 'credit'],
+	video: ['description', 'credit', 'transcript'],
+	sound: ['description', 'credit', 'transcript'],
+	chart: ['credit']
+};
 
 /** A figure as the editor's dialog hands it over, with its text as Markdown. */
 export interface NewFigure {
@@ -60,6 +92,7 @@ const filePattern = /^\/files\/([^/\s]+)\/([^/\s]+)$/;
  * is refused, so an essay never shows a file from an unknown place.
  */
 export function figureSource(kind: FigureKind, address: string): FigureSource | undefined {
+	if (!figureHasFile(kind)) return undefined;
 	const file = filePattern.exec(address);
 	if (file && isUploadReference(file[1])) return { kind: 'file', reference: file[1], address };
 	if (kind !== 'video') return undefined;
@@ -88,4 +121,29 @@ export function figureKindFor(mediaType: string): FigureKind | undefined {
 export function figureRemovalLink(source: FigureSource): string {
 	const record = source.kind === 'file' ? `uploads/${source.reference}` : `videos/youtube-${source.identifier}`;
 	return `/requests?${new URLSearchParams({ kind: 'remove', record }).toString().replaceAll('%2F', '/')}`;
+}
+
+/** One bar of a chart, with its number as written in the table ("1,234", "45%"). */
+export interface ChartBarText {
+	label: string;
+	value: number;
+	shown: string;
+}
+
+/** A chart's bars read from its table's rows (the header row first), or what is wrong with the table. */
+export function chartFromRows(rows: string[][]): { labelHeader: string; valueHeader: string; bars: ChartBarText[] } | { problem: string } {
+	const [header, ...body] = rows;
+	if (!header || header.length < 2 || body.length === 0) {
+		return { problem: 'A chart needs a table with a header row, at least one row of data, and two columns: a name, then a number.' };
+	}
+	const bars: ChartBarText[] = [];
+	for (const row of body) {
+		const shown = (row[1] ?? '').trim();
+		const value = Number(shown.replace(/[,\s]/g, '').replace(/%$/, ''));
+		if (shown === '' || !Number.isFinite(value) || value < 0) {
+			return { problem: `A chart's second column must hold numbers of zero or more; "${shown || '(empty)'}" in the row "${row[0] ?? ''}" is not one.` };
+		}
+		bars.push({ label: (row[0] ?? '').trim(), value, shown });
+	}
+	return { labelHeader: header[0].trim(), valueHeader: header[1].trim(), bars };
 }
