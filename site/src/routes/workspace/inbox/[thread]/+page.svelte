@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { invalidateAll } from '$app/navigation';
 	import Archive from '@lucide/svelte/icons/archive';
 	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import BellRing from '@lucide/svelte/icons/bell-ring';
@@ -16,6 +17,7 @@
 	import ReplyAll from '@lucide/svelte/icons/reply-all';
 	import StickyNote from '@lucide/svelte/icons/sticky-note';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import Undo2 from '@lucide/svelte/icons/undo-2';
 	import X from '@lucide/svelte/icons/x';
 	import { deliveryLabels, formatAddress, heldForVirusCheck, messageStatusLabels, replyAllReach } from '#lib/mail.ts';
 	import Avatar from '../Avatar.svelte';
@@ -65,6 +67,26 @@
 				) > 1
 			: false
 	);
+
+	// A message in the pause before it goes (undo send) counts down, and the page looks again once it has gone.
+	let now = $state(Date.now());
+	const held = $derived(thread.messages.filter((message) => message.undoUntil));
+	$effect(() => {
+		if (held.length === 0) return;
+		let refreshed = false;
+		const tick = setInterval(() => {
+			now = Date.now();
+			const last = Math.max(...held.map((message) => new Date(message.undoUntil ?? 0).getTime()));
+			if (!refreshed && now > last + 1500) {
+				refreshed = true;
+				void invalidateAll();
+			}
+		}, 250);
+		return () => clearInterval(tick);
+	});
+	function secondsLeft(until: string | null): number {
+		return Math.max(0, Math.ceil((new Date(until ?? 0).getTime() - now) / 1000));
+	}
 
 	function size(bytes: number): string {
 		return bytes > 1024 * 1024 ? `${(bytes / 1024 / 1024).toFixed(1)} MB` : `${Math.max(1, Math.ceil(bytes / 1024))} KB`;
@@ -146,10 +168,22 @@
 	</p>
 </header>
 
+{#each held as message (message.identifier)}
+	<form method="post" class="notice undo-banner" aria-live="polite">
+		<input type="hidden" name="message" value={message.identifier} />
+		<p>{ready ? (secondsLeft(message.undoUntil) > 0 ? `Sending in ${secondsLeft(message.undoUntil)} seconds.` : 'Sending…') : 'Sending in a few seconds.'}</p>
+		<button class="button" type="submit" formaction="?/undo"><Undo2 size={18} aria-hidden="true" />Undo</button>
+		<button class="button button-quiet" type="submit" formaction="?/again">Send now</button>
+	</form>
+{/each}
 {#if form && 'problem' in form}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
 {:else if form && 'done' in form}
 	<div class="notice" role="status"><p>{form.done}</p></div>
+{:else if data.undone}
+	<div class="notice" role="status">
+		<p>Not sent. The message is back in the reply box below as a draft.{#if data.undone === 'files'} Its attachments were not kept: attach them again.{/if}</p>
+	</div>
 {/if}
 
 {#if thread.stopRequested}
@@ -187,6 +221,7 @@
 						{#if message.direction === 'in'}{listDate(message.receivedAt ?? message.createdAt)}
 						{:else if message.status === 'sent'}{listDate(message.sentAt ?? message.createdAt)}
 						{:else if message.status === 'scheduled' && message.error === heldForVirusCheck}<span class="status">Waiting for the virus check</span>
+						{:else if message.undoUntil}<span class="status">Sending</span>
 						{:else if message.status === 'scheduled'}<span class="status">Goes {listDate(message.scheduledFor ?? message.createdAt)}</span>
 						{:else}<span class="status">{messageStatusLabels[message.status] ?? message.status}</span>{/if}
 					</span>
@@ -255,7 +290,9 @@
 							<a class="answer-link small" href={composeLink('forward', message.identifier)}><ForwardIcon size={16} aria-hidden="true" />Forward</a>
 						</nav>
 					{/if}
-					{#if message.status === 'scheduled' || message.status === 'failed'}
+					{#if message.undoUntil}
+						<p class="small status-line">Waiting a moment before it goes; Undo is at the top of the page.</p>
+					{:else if message.status === 'scheduled' || message.status === 'failed'}
 						<form method="post" class="actions">
 							<input type="hidden" name="message" value={message.identifier} />
 							{#if message.carrier !== 'smtp'}
@@ -287,7 +324,10 @@
 					{#if answering}<span class="small muted answering">{data.compose.mode === 'forward' ? 'Forwarding' : 'Answering'} {answering.from.name ?? answering.from.email}, {listDate(answering.receivedAt ?? answering.sentAt ?? answering.createdAt)}</span>{/if}
 				</nav>
 			{/if}
-			{#key `${data.compose.mode}:${data.compose.message}`}
+			{#if data.compose.otherDraft}
+				<p class="small muted draft-note">You have a draft in this conversation. Writing here replaces it. <a href="?draft#reply">Open the draft</a></p>
+			{/if}
+			{#key `${data.compose.mode}:${data.compose.message}:${data.compose.draft}`}
 				<Composer
 					action="?/reply"
 					idPrefix="reply"
@@ -301,6 +341,16 @@
 					message={data.compose.message}
 					forwarded={data.compose.attachments}
 					focus={data.compose.asked}
+					bcc={data.compose.bcc}
+					text={data.compose.text}
+					draft={data.compose.draft}
+					thread={thread.identifier}
+					signed={data.compose.signed}
+					signatures={data.writing.signatures}
+					savedReplies={data.writing.savedReplies}
+					mergeValues={data.writing.mergeValues}
+					senderName={data.writing.senderName}
+					manageLink={data.canManage ? '/workspace/inbox/settings#saved-replies' : null}
 				/>
 			{/key}
 		</section>
@@ -651,6 +701,22 @@
 		flex-wrap: wrap;
 		gap: var(--space-2);
 		margin-top: var(--space-3);
+	}
+	.undo-banner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2) var(--space-3);
+	}
+	.undo-banner p {
+		margin: 0;
+		margin-right: auto;
+	}
+	.undo-banner .button {
+		gap: var(--space-1);
+	}
+	.draft-note {
+		margin: 0 0 var(--space-2);
 	}
 	.answer {
 		display: flex;

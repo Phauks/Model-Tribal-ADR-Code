@@ -1,10 +1,12 @@
 /**
  * Shows the project any picture a nation's changes have named, so it can
  * review pictures before or after they go live. Readers see only the live
- * pictures, at /nations/<id>/pictures/<picture>.
+ * pictures, at /nations/<id>/pictures/<picture>. Like every file sent from
+ * outside, a picture is held until the virus check passes (site/SCANNING.md).
  */
 import { error } from '@sveltejs/kit';
 import { pictureKey } from '#lib/nation-page-changes.ts';
+import { heldFileAnswer, openScannedFile } from '#lib/server/file-scans.ts';
 import { picturesEverNamed } from '#lib/server/nation-page-changes.ts';
 import { requirePermission, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
@@ -14,9 +16,13 @@ export const GET: RequestHandler = async (event) => {
 	const { database, bucket } = storage(event);
 	const { nation, picture: identifier } = event.params;
 	const picture = (await picturesEverNamed(database, nation)).find((candidate) => candidate.identifier === identifier);
-	const stored = picture ? await bucket.get(pictureKey(nation, picture.identifier)) : null;
-	if (!picture || !stored) error(404, 'No such picture.');
-	return new Response(await stored.arrayBuffer(), {
+	if (!picture) error(404, 'No such picture.');
+	const opened = await openScannedFile(database, bucket, pictureKey(nation, picture.identifier));
+	if (opened.state !== 'ready') {
+		const answer = heldFileAnswer(opened);
+		error(answer.status, answer.message);
+	}
+	return new Response(await opened.object.arrayBuffer(), {
 		headers: {
 			'Content-Type': picture.type,
 			'Cache-Control': 'private, no-store',
