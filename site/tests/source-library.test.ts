@@ -26,10 +26,13 @@ const secondBuildName = '2026-11-23T05:16:51+00:00';
 
 type Value = string | number | null;
 
-/** D1 in tests: Node's SQLite with prepare, bind, first, all, run and exec. */
+/** D1 in tests: Node's SQLite with prepare, bind, first, all, run, batch and exec. */
 function libraryDatabase(): D1Database {
 	const database = new DatabaseSync(':memory:');
+	type Statement = { sql: string; values: Value[] };
 	const statement = (sql: string, values: Value[] = []) => ({
+		sql,
+		values,
 		bind: (...more: Value[]) => statement(sql, more),
 		first: async () => database.prepare(sql).get(...values) ?? null,
 		all: async () => ({ results: database.prepare(sql).all(...values) }),
@@ -37,6 +40,20 @@ function libraryDatabase(): D1Database {
 	});
 	return {
 		prepare: (sql: string) => statement(sql),
+		// Like D1, a batch is one transaction: all of it or none of it.
+		batch: async (statements: Statement[]) => {
+			database.exec('BEGIN');
+			try {
+				const results = statements.map(({ sql, values }) => ({
+					meta: { changes: Number(database.prepare(sql).run(...values).changes) }
+				}));
+				database.exec('COMMIT');
+				return results;
+			} catch (problem) {
+				database.exec('ROLLBACK');
+				throw problem;
+			}
+		},
 		exec: async (sql: string) => {
 			database.exec(sql);
 			return { count: 0, duration: 0 };
