@@ -29,7 +29,7 @@ export interface PageDownloads {
 
 export function pageDownloads(path: string): PageDownloads {
 	const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
-	if (nation && nation !== 'map' && nation !== 'recourse') {
+	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data') {
 		return {
 			citable: true,
 			files: [

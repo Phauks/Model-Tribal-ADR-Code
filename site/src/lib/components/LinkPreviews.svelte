@@ -47,7 +47,7 @@
 	// tables, search results, and anything that asks for none.
 	const noPreview = 'nav, header, table, dialog, [role="dialog"], .sidebar-wide, .sidebar-narrow, [data-no-preview]';
 	// Addresses under /nations/ that are lists or maps, not a nation's page.
-	const nationLists = new Set(['map', 'letter', 'state', 'previews.json', 'recourse']);
+	const nationLists = new Set(['map', 'letter', 'state', 'previews.json', 'recourse', 'data']);
 
 	let terms: Promise<Map<string, Term>> | undefined;
 	let nations: Promise<Map<string, Nation>> | undefined;
