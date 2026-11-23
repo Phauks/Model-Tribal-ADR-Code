@@ -13,6 +13,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import CSL from 'citeproc';
 import { escapeHtml, savedCopyLink } from './markdown.ts';
+import { readingLinksHtml } from '../reading-links.ts';
 import { repositoryRoot, type SourceRecord } from './content.ts';
 import { caseItem } from './case-citations.ts';
 
@@ -99,7 +100,7 @@ export function fullCitations(records: SourceRecord[]): Record<string, string> {
 			const address = new URL(link);
 			html = `${html} <a href="${escapeHtml(address.href)}">${escapeHtml(address.hostname)}</a>`;
 		}
-		citations[record.key] = html + savedCopyLink(record);
+		citations[record.key] = html + savedCopyLink(record) + readingLinksHtml(record.reading_links);
 	}
 	return citations;
 }

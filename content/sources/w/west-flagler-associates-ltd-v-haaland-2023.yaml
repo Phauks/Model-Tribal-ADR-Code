@@ -35,6 +35,26 @@ courtlistener:
   link: https://www.courtlistener.com/opinion/9410778/west-flagler-associates-ltd-v-debra-haaland/
   release: '2026-09-30'
   checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/9410778/west-flagler-associates-ltd-v-debra-haaland/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2271%20F.4th%201059%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=71%20F.4th%201059
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=71%20F.4th%201059
 rights:
   status: no-permission-needed
   basis: fact-only
