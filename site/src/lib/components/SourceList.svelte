@@ -117,7 +117,8 @@
 
 {#if sources.length > 0}
 	<div class="notes" class:showing-facts={showFacts} data-print-part="sources">
-		<Collapsible heading="Sources" identifier="sources-heading" count={sources.length}>
+		<!-- "References", not "Sources", so it never clashes with a story's "Source" (Trevor, Nov. 23, 2026). -->
+		<Collapsible heading="References" identifier="sources-heading" count={sources.length}>
 			<div class="source-tools needs-scripts no-print">
 				{#if groups}
 					<!-- The open and close symbols, not words (Trevor, Nov. 23, 2026). -->

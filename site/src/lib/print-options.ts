@@ -74,7 +74,7 @@ export const partDescriptions: PartDescription[] = [
 		hint: 'A line at the top with the page’s address and the date you printed it, so a reader can find the current version'
 	},
 	{ part: 'reviewStatus', label: 'Review status', hint: 'Whether the nation has claimed or reviewed the page' },
-	{ part: 'officialImages', label: 'Seal or logo', hint: 'The nation’s image; its credit is in the Sources list' },
+	{ part: 'officialImages', label: 'Seal or logo', hint: 'The nation’s image; its credit is in the References list' },
 	{ part: 'maps', label: 'Maps' },
 	{ part: 'tables', label: 'Tables', hint: 'The tables of nations, states and regions' },
 	{
@@ -82,7 +82,7 @@ export const partDescriptions: PartDescription[] = [
 		label: 'Document history',
 		hint: 'Every recorded version of a constitution, compact or code, and how it changed'
 	},
-	{ part: 'sources', label: 'Sources', hint: 'The list of sources at the end of the page' }
+	{ part: 'sources', label: 'References', hint: 'The list of references at the end of the page' }
 ];
 
 export interface Choice<Value extends string> {
@@ -92,7 +92,7 @@ export interface Choice<Value extends string> {
 }
 
 export const noteOptions: Choice<NotePlacement>[] = [
-	{ value: 'end', label: 'Note numbers, with the notes in the Sources list at the end' },
+	{ value: 'end', label: 'Note numbers, with the notes in the References list at the end' },
 	{
 		value: 'inline',
 		label: 'Each note under its paragraph',

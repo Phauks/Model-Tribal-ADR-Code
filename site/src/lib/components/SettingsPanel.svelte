@@ -309,7 +309,7 @@
 				(value) => change('sourceLinks', value)
 			)}
 			{@render choiceGroup(
-				'Groups in long Sources lists',
+				'Groups in long References lists',
 				'source-groups',
 				sourceGroupOptions,
 				settings.sourceGroups,

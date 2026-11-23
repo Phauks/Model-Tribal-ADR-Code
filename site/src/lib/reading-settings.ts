@@ -177,10 +177,10 @@ export const contrastChoices: Choice<Contrast>[] = [
 export const noteDisplayChoices: Choice<NoteDisplay>[] = [
 	{
 		value: 'popup',
-		label: 'Go to the Sources list, and preview the source when you point at the number',
+		label: 'Go to the References list, and preview the source when you point at the number',
 		hint: 'The preview has a button to copy the citation. Phones go straight to the list'
 	},
-	{ value: 'end', label: 'Go to the Sources list, with no preview' },
+	{ value: 'end', label: 'Go to the References list, with no preview' },
 	{ value: 'inline', label: 'Show the note under the paragraph' }
 ];
 

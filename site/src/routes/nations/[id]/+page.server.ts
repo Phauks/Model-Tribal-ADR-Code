@@ -1204,7 +1204,7 @@ export const load: PageServerLoad = ({ params }) => {
 	if (result.neighbors.length > 0) {
 		items.push({ label: 'Nearby Nations', link: '#neighbors-heading' });
 	}
-	items.push({ label: 'Sources', link: '#sources-heading' });
+	items.push({ label: 'References', link: '#sources-heading' });
 
 	// The sidebar puts the nation and these headings under Directory (src/lib/sidebar-outline.ts).
 	const outline: PageOutline = { title: page.officialName, items };
