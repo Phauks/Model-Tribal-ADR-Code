@@ -401,6 +401,38 @@ jurisdiction:
   as_of: '2026-05-26'
   locator: 91 FR 30694 (Tribe column of the designated agent table)
   note: 'Listed as: Minnesota Chippewa Tribe - Leech Lake Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands'' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table).'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Minnesota Department of Human Services
+  agreement: Leech Lake Band of Ojibwe and the Minnesota Department of Human Services Title IV-E Foster Care Maintenance, Administrative and Training Agreement
+  state: MN
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for MN
+  note: 'The source reads: “Leech Lake Band of Ojibwe and the Minnesota Department of Human Services Title IV-E Foster Care Maintenance, Administrative and Training Agreement”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Minnesota Department of Human Services
+  agreement: Title IV-E agreement
+  state: MN
+  date: '2007-12-04'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.F, Minnesota
+  note: 'The source reads: “The Leech Lake Band of Ojibwe entered into an agreement with the state on December 4, 2007”. Report date is March 2014, so current status needs confirming.'
+- kind: tax-agreement
+  other_party: Minnesota Department of Revenue
+  agreement: Tribal government tax agreement (collection assistance and audits for sales and use, cigarette and tobacco, liquor and motor fuel excise taxes)
+  state: MN
+  status: in-effect
+  source: minnesota-department-of-revenue-tribal-government-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table of tribal governments with tax agreements
+  note: 'The source reads: “Leech Lake Walker, Cass Lake, and Deer River”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Leech Lake", matched to the roster by name and state.'
 treaties:
 - title: Treaty with the Pillager Band of Chippewa Indians, 1847
   signed: '1847-08-21'

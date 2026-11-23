@@ -486,6 +486,18 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image, and the name was found word for word in the notice''s
     machine-read (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+jurisdiction_agreements:
+- kind: cross-deputization
+  other_party: Clark County, Washington
+  agreement: Agreement for law enforcement and prosecution (cross-commissioning of patrol units)
+  state: WA
+  date: 2017-04
+  status: unknown
+  source: cowlitz-indian-tribe-clark-county-law-enforcement-and-prosecution-agreement-2017
+  confidence: high
+  verification: read-in-full
+  locator: Commissioning and Cross-Commissioning of Patrol and Special Law Enforcement Units
+  note: 'The source reads: “The parties agree to cross-commission or specially commission each other’s full”. The day in April 2017 is partly illegible in the scan. The posted copy is a sample in a federal resource library; current status is not confirmed.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

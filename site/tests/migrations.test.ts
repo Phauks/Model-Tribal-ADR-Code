@@ -114,3 +114,34 @@ describe('migration 0018', () => {
 		expect(database.prepare('SELECT COUNT(*) AS count FROM upload_nation_comments').get()).toEqual({ count: 0 });
 	});
 });
+
+describe('migration 20261123T0435_add_essay_about_pages', () => {
+	it('adds the part for pages about the site and keeps every essay, version and publication', () => {
+		const database = new DatabaseSync(':memory:');
+		database.exec('PRAGMA foreign_keys = ON');
+		const files = readdirSync(folder).filter((name) => name.endsWith('.sql') && name < '20261123T0435').sort();
+		for (const file of files) {
+			database.exec('BEGIN');
+			database.exec(migration(file));
+			database.exec('COMMIT');
+		}
+		database.exec(`
+			INSERT INTO essays VALUES ('i-timeline', 'foundations', '2026-11-22T00:00:00Z', NULL);
+			INSERT INTO essay_versions (essay_identifier, number, object_key, sha256, bytes, title, origin, created_at)
+				VALUES ('i-timeline', 1, 'essays/i-timeline/versions/1-abc.md', 'abc', 10, 'Timeline', 'git', '2026-11-22T00:00:00Z');
+			INSERT INTO essay_publications (essay_identifier, number, version_number, published_at) VALUES ('i-timeline', 1, 1, '2026-11-22T01:00:00Z');
+		`);
+		expect(() => database.exec(`INSERT INTO essays VALUES ('about', 'about', '2026-11-23T00:00:00Z', NULL)`)).toThrow(/CHECK/);
+		database.exec('BEGIN');
+		database.exec(migration('20261123T0435_add_essay_about_pages.sql'));
+		database.exec('COMMIT');
+		expect(database.prepare('PRAGMA foreign_key_check').all()).toEqual([]);
+		expect({ ...(database.prepare(`SELECT part FROM essays WHERE identifier = 'i-timeline'`).get() as object) }).toEqual({ part: 'foundations' });
+		database.exec(`INSERT INTO essays VALUES ('about', 'about', '2026-11-23T00:00:00Z', NULL)`);
+		// Versions still point at the rebuilt table.
+		expect(() =>
+			database.exec(`INSERT INTO essay_versions (essay_identifier, number, object_key, sha256, bytes, title, origin, created_at)
+				VALUES ('nobody', 1, 'x', 'x', 1, 'x', 'git', '2026-11-23T00:00:00Z')`)
+		).toThrow(/FOREIGN KEY/);
+	});
+});

@@ -4,9 +4,9 @@
  * A category is a summary for a national map. The nation's page holds the facts behind it, each with its source and the state it applies in.
  */
 
-export type ShadedMapView = 'public-law-280' | 'violence-against-women-act' | 'indian-health-service';
+export type ShadedMapView = 'courts-and-peacemaking' | 'public-law-280' | 'violence-against-women-act' | 'indian-health-service';
 
-export const shadedMapViews: ShadedMapView[] = ['public-law-280', 'violence-against-women-act', 'indian-health-service'];
+export const shadedMapViews: ShadedMapView[] = ['courts-and-peacemaking', 'public-law-280', 'violence-against-women-act', 'indian-health-service'];
 
 export function isShadedMapView(view: string): view is ShadedMapView {
 	return (shadedMapViews as string[]).includes(view);
@@ -18,6 +18,21 @@ export interface ShadeCategory {
 	label: string;
 	shade: number;
 }
+
+/**
+ * How the courts view sums up a nation's justice institutions and dispute resolution forums (each record's `justice_institutions` and `dispute_resolution.forums`), in order of precedence. The table shows every kind the nation has; the map shows the first.
+ *
+ * 1. peacemaking: a peacemaking program or a traditional or customary forum, such as an elders' council or a circle.
+ * 2. wellness: a healing to wellness court.
+ * 3. court: a tribal court of any kind, including an intertribal court the nation shares.
+ * 4. federal: only a Court of Indian Offenses, which the Bureau of Indian Affairs runs (25 C.F.R. part 11).
+ */
+export const courtCategories: ShadeCategory[] = [
+	{ key: 'peacemaking', label: 'Peacemaking or a traditional forum', shade: 4 },
+	{ key: 'wellness', label: 'Healing to wellness court', shade: 3 },
+	{ key: 'court', label: 'Tribal court', shade: 2 },
+	{ key: 'federal', label: 'Court of Indian Offenses only (federal)', shade: 1 }
+];
 
 /**
  * How the Public Law 280 view sums up a nation's facts, in order of precedence (a nation whose facts fit several takes the first):
@@ -60,6 +75,7 @@ export const healthServiceAreaShades: Record<string, number> = {
 
 /** What the legend calls land areas the view has no fact for. */
 export const unrecordedLabels: Record<ShadedMapView, string> = {
+	'courts-and-peacemaking': 'No court or forum recorded yet',
 	'public-law-280': 'No Public Law 280 fact recorded yet',
 	'violence-against-women-act': 'Not recorded as exercising it',
 	'indian-health-service': 'No Area recorded yet'

@@ -4,13 +4,13 @@ import { requireDocumentLevel } from '#lib/server/access.ts';
 import { essayDateTime } from '#lib/essays/dates.ts';
 import {
 	SaveConflict,
-	essayParts,
 	essayPartLabels,
 	essayPath,
 	isEssayIdentifier,
 	latestVersion,
 	listEssays,
 	saveVersion,
+	startableEssayParts,
 	type EssayPart
 } from '#lib/server/essays.ts';
 import { canStartEssays, gitText, levelOn } from '#lib/server/essay-workspace.ts';
@@ -57,7 +57,7 @@ export const load: PageServerLoad = async (event) => {
 		gitConflicts,
 		fromGit,
 		canStart,
-		parts: essayParts.map((part) => ({ value: part, label: essayPartLabels[part] }))
+		parts: startableEssayParts.map((part) => ({ value: part, label: essayPartLabels[part] }))
 	};
 };
 
@@ -103,7 +103,7 @@ export const actions: Actions = {
 		const part = formText(form, 'part') as EssayPart | null;
 		const identifier = (formText(form, 'identifier', 120) ?? '').toLowerCase();
 		if (!title) return fail(400, { problem: 'Give the essay a title.' });
-		if (!part || !essayParts.includes(part)) return fail(400, { problem: 'Choose where the essay goes.' });
+		if (!part || !startableEssayParts.includes(part)) return fail(400, { problem: 'Choose where the essay goes.' });
 		const fullIdentifier = part === 'foundations' && !identifier.startsWith('i-') ? `i-${identifier}` : identifier;
 		if (!isEssayIdentifier(fullIdentifier)) {
 			return fail(400, { problem: 'The address uses lower-case letters, numbers and hyphens, such as "why-consent-matters".' });

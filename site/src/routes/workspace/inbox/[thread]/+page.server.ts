@@ -17,6 +17,7 @@ import {
 	setTag,
 	type MessageDetail
 } from '#lib/server/mail/store.ts';
+import { releaseAttachment } from '#lib/server/mail/scans.ts';
 import { suppress } from '#lib/server/mail/suppressions.ts';
 import { formText, requirePermission } from '#lib/server/workspace.ts';
 import { readAttachments, whenFromForm } from '../compose.ts';
@@ -69,7 +70,12 @@ export const load: PageServerLoad = async (event) => {
 			asked: named !== undefined || isComposeMode(asked),
 			from: thread.projectAddress && context.settings.addresses.includes(thread.projectAddress) ? thread.projectAddress : (context.settings.defaultAddress ?? ''),
 			...defaults,
-			attachments: mode === 'forward' && target ? target.attachments.filter((item) => !item.inline) : []
+			attachments:
+				mode === 'forward' && target
+					? target.attachments
+							.filter((item) => !item.inline)
+							.map((item) => ({ identifier: item.identifier, filename: item.filename, size: item.size, held: item.check?.held ?? false, label: item.check?.label ?? null }))
+					: []
 		},
 		canManage: can(person, 'manage-mail')
 	};
@@ -182,6 +188,16 @@ export const actions: Actions = {
 		}
 		await clearStopRequest(context, person.identifier, thread.identifier, confirmed);
 		return { done: confirmed ? `${thread.counterpartAddress} is on the do-not-email list.` : 'Dismissed.' };
+	},
+	release: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const attachment = formText(form, 'attachment', 100);
+		const note = formText(form, 'note', 500) ?? '';
+		if (!attachment || !(await releaseAttachment(mailContext(), person.identifier, attachment, note))) {
+			return fail(400, { problem: 'That file cannot be released: only a file the virus check could not finish can be, never one where something was found.' });
+		}
+		return { done: 'Released. The file can now be downloaded and forwarded.' };
 	},
 	cancel: async (event) => {
 		const person = requirePermission(event, 'read-mail');

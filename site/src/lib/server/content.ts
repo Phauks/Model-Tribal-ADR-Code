@@ -83,10 +83,17 @@ export interface SourceRecord {
 		title?: string;
 		author?: CitationName[];
 		'container-title'?: string;
+		/** A case's court, and where it is reported. */
+		authority?: string;
+		volume?: string;
+		page?: string;
+		number?: string;
 		issued?: { 'date-parts'?: number[][] };
 		URL?: string;
 	};
 	original_link?: string;
+	/** The nations a source is about, by profile id. */
+	tribes?: string[];
 	archives?: { link?: string; url?: string; captured?: string }[];
 }
 
@@ -202,6 +209,15 @@ export interface NationRecord {
 	})[];
 	dispute_resolution_law?: string[];
 	jurisdiction?: (CitedFact & { topic: string; value?: string; detail?: string })[];
+	jurisdiction_agreements?: (CitedFact & {
+		kind: string;
+		other_party: string;
+		agreement?: string;
+		state?: string;
+		date?: string;
+		status?: string;
+		detail?: string;
+	})[];
 	treaties?: (CitedFact & {
 		title: string;
 		signed: string;

@@ -9,7 +9,8 @@ import {
 	searchSummary,
 	sources as sourceRecords,
 	type CitedFact,
-	type NationRecord
+	type NationRecord,
+	type SourceRecord
 } from '#lib/server/content.ts';
 import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
@@ -23,6 +24,7 @@ import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
+import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -44,6 +46,46 @@ interface FactItem {
 	note?: string;
 	/** The markers of the fact's sources (src/lib/citation-marks.ts). */
 	citations?: CitationMark[];
+}
+
+const opinionsHeading = 'Court opinions';
+
+/** The opinions the section names before linking to the full list. */
+const opinionsShown = 5;
+
+interface CourtOpinions {
+	count: number;
+	/** How many mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial. */
+	disputeResolutionCount: number;
+	shown: TribalCourtOpinion[];
+	/** The years of the oldest and newest opinion. */
+	from: string;
+	to: string;
+	citations: CitationMark[];
+	link: string;
+}
+
+/**
+ * The nation's court opinions in the Caselaw Access Project's tribal
+ * reporters (decision record 0047): how many there are, and the newest few,
+ * those that mention a way of settling a dispute outside a trial first.
+ */
+function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | undefined {
+	const all = opinionsOf(nationId);
+	if (all.length === 0) return undefined;
+	const citations: CitationMark[] = [];
+	sources.cite(opinionsSourceKey, { section: opinionsHeading, text: `${all.length} published opinions` }, citations);
+	const mentioning = all.filter((opinion) => opinion.mentionsDisputeResolution);
+	const shown = [...mentioning, ...all.filter((opinion) => !opinion.mentionsDisputeResolution)].slice(0, opinionsShown);
+	return {
+		count: all.length,
+		disputeResolutionCount: mentioning.length,
+		shown,
+		from: all.at(-1)!.year,
+		to: all[0].year,
+		citations,
+		link: `/nations/${nationId}/opinions`
+	};
 }
 
 /** What the courts and jurisdiction sections say when they have nothing to show. */
@@ -384,7 +426,82 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 		list.push(cited(sources, section, fact, { label: undefined, text }));
 		byTopic.set(label, list);
 	}
-	return [...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items }));
+	return [
+		...[...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items })),
+		...agreementGroups(record, sources, section),
+		...group('court-cases', 'Court cases about the nation', courtCases(record, sources, section))
+	];
+}
+
+/** Reporter names written out in some records, in their short form. */
+const reporterShortNames: Record<string, string> = { 'United States Reports': 'U.S.' };
+
+/**
+ * The court cases in the project's sources that are about the nation (the
+ * source record lists it), oldest first: the case name, where it is reported
+ * and the year, with the court under it. Each links the opinion the record
+ * cites and is listed under Sources like any other fact.
+ */
+function courtCases(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	const year = (source: SourceRecord) => source.citation.issued?.['date-parts']?.[0]?.[0];
+	const cases = [...sourceRecords().values()]
+		.filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(record.id) && source.citation.title)
+		.sort((first, second) => (year(first) ?? 0) - (year(second) ?? 0));
+	return cases.map((source) => {
+		const { volume, page, number, authority } = source.citation;
+		const reporter = source.citation['container-title'];
+		const reported = volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number;
+		const when = year(source);
+		const address = source.citation.URL ?? source.original_link;
+		return cited(sources, section, { source: source.key, confidence: 'high' }, {
+			text: source.citation.title ?? source.key,
+			link: address && URL.canParse(address) ? webLink(address) : undefined,
+			detail: [reported, when ? `(${when})` : undefined].filter(Boolean).join(' ') || undefined,
+			note: authority
+		});
+	});
+}
+
+/** The names the page gives each kind of jurisdiction agreement, in the order the page shows them. */
+const agreementKinds: Record<string, string> = {
+	'cross-deputization': 'Cross-deputization and law enforcement agreements',
+	'tax-agreement': 'Tax agreements',
+	'child-welfare-agreement': 'Child welfare agreements',
+	other: 'Other agreements'
+};
+
+/**
+ * Agreements with a state, county, city or federal agency, one group per
+ * kind: what the agreement is, who the other party is, when it was signed,
+ * and whether it has expired. Most sources do not say whether an agreement
+ * is still in force, so only an expired one is marked.
+ */
+function agreementGroups(record: NationRecord, sources: SourceUses, section: string): FactGroup[] {
+	const order = Object.keys(agreementKinds);
+	const rank = (kind: string) => (order.includes(kind) ? order.indexOf(kind) : order.length);
+	const facts = [...(record.jurisdiction_agreements ?? [])].sort(
+		(first, second) => rank(first.kind) - rank(second.kind) || (first.date ?? '').localeCompare(second.date ?? '')
+	);
+	const byKind = new Map<string, FactItem[]>();
+	for (const fact of facts) {
+		const label = agreementKinds[fact.kind] ?? humanize(fact.kind);
+		const list = byKind.get(label) ?? [];
+		list.push(
+			cited(sources, section, fact, {
+				text: fact.agreement ?? fact.other_party,
+				detail: [
+					fact.agreement ? `with ${fact.other_party}` : undefined,
+					fact.date ? readableDate(fact.date) : undefined,
+					fact.status === 'expired' ? 'expired' : undefined
+				]
+					.filter(Boolean)
+					.join(', '),
+				note: fact.detail
+			})
+		);
+		byKind.set(label, list);
+	}
+	return [...byKind.entries()].map(([label, items]) => ({ field: `jurisdiction-agreements-${label}`, label, items }));
 }
 
 /** How the page words each way a land base was set aside. */
@@ -776,6 +893,7 @@ export const load: PageServerLoad = ({ params }) => {
 			contacts: { websites: [], offices: [] },
 			government: [],
 			courts: [],
+			opinions: undefined,
 			law: [],
 			documents: [],
 			jurisdiction: [],
@@ -881,6 +999,8 @@ export const load: PageServerLoad = ({ params }) => {
 	);
 	sources.part('Courts and dispute resolution');
 	const courts = courtsAndDisputeResolution(record, sources);
+	sources.part(opinionsHeading);
+	const opinions = courtOpinions(record.id, sources);
 	// Within Laws and agreements, each document's sources go under its heading.
 	const documents = histories.map((history) => {
 		const heading = documentHeading(history.title, names);
@@ -932,6 +1052,7 @@ export const load: PageServerLoad = ({ params }) => {
 		map,
 		government,
 		courts,
+		opinions,
 		law,
 		documents,
 		jurisdiction,
@@ -948,6 +1069,7 @@ export const load: PageServerLoad = ({ params }) => {
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
 	items.push({ label: governmentHeading, link: '#government-heading' });
 	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	if (opinions) items.push({ label: opinionsHeading, link: '#opinions-heading' });
 	items.push({
 		label: lawHeading,
 		link: '#law-heading',

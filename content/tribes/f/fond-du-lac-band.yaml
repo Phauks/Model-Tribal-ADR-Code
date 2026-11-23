@@ -337,6 +337,17 @@ jurisdiction:
   as_of: '2026-05-26'
   locator: 91 FR 30694 (Tribe column of the designated agent table)
   note: 'Listed as: Minnesota Chippewa Tribe - Fond du Lac Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands'' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table).'
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: Minnesota Department of Revenue
+  agreement: Tribal government tax agreement (collection assistance and audits for sales and use, cigarette and tobacco, liquor and motor fuel excise taxes)
+  state: MN
+  status: in-effect
+  source: minnesota-department-of-revenue-tribal-government-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table of tribal governments with tax agreements
+  note: 'The source reads: “Fond du Lac Carlton and Duluth”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Fond du Lac", matched to the roster by name and state.'
 treaties:
 - title: Treaty with the Chippewa, 1842
   signed: '1842-10-04'

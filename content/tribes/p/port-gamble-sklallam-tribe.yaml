@@ -690,6 +690,38 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Port Gamble S’Klallam Tribe". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Washington Department of Social and Health Services
+  agreement: Indian Nation Program Agreement for Tribal Participation Title IV-E Program - Federal Payments for Foster Care and Adoption Assistance [Port Gamble S'Klallam Tribe]
+  state: WA
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for WA
+  note: 'The source reads: “Indian Nation Program Agreement for Tribal Participation Title IV-E Program - Federal Payments for Foster Care and Adoption Assistance [Port Gamble S''Klallam Tribe]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Washington Department of Social and Health Services, Children's Administration
+  agreement: Title IV-E agreement
+  state: WA
+  date: '2005-09-30'
+  status: expired
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.P, Washington
+  note: 'The source reads: “The State of Washington previously had an agreement with the Port Gamble S’Klallam Tribe dated September 30, 2005.”. The report says the agreement is no longer in force because the tribe obtained direct federal funding on April 1, 2012. Report date is March 2014, so current status needs confirming.'
+- kind: child-welfare-agreement
+  other_party: United States Department of Health and Human Services, Administration for Children and Families
+  agreement: Federal Title IV-E plan (direct tribal funding)
+  date: '2012-04-01'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: low
+  verification: inferred
+  locator: Section I.P, Washington
+  note: 'The source reads: “Port Gamble was the first tribe to obtain direct federal funding, on April 1, 2012”. federal Title IV-E plan. The first tribe to obtain direct funding, per the report. Reported in March 2014 and not checked against the current Administration for Children and Families list, which could not be fetched.'
 treaties:
 - title: Treaty with the S'klallam, 1855
   signed: '1855-01-26'

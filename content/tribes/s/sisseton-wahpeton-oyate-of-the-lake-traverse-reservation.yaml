@@ -912,6 +912,38 @@ jurisdiction:
   verification: read-in-full
   locator: N.D. Legis. Council Memo. 59215, Conclusion (p. 3)
   note: 'Secondary source (legislative staff memo, 2004); the research has no later source. "This amendment" is the 1968 consent amendment. The 1946 Devils Lake act (separate fact) is a separate criminal grant. Also cites: three-affiliated-tribes-v-wold-engineering-1984.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: South Dakota Department of Social Services
+  agreement: Purchase of Services Agreement Between Sisseton Wahpeton Oyate and the State of South Dakota Department of Social Services (2014)
+  state: SD
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for SD
+  note: 'The source reads: “Purchase of Services Agreement Between Sisseton Wahpeton Oyate and the State of South Dakota Department of Social Services (2014)”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: tax-agreement
+  other_party: South Dakota Department of Revenue
+  agreement: Limited tax collection agreement (use tax and contractor's excise tax at listed businesses)
+  state: SD
+  status: in-effect
+  source: south-dakota-department-of-revenue-sales-of-products-or-service-within-indian-country
+  confidence: high
+  verification: bulk-import
+  locator: Section "Limited Tax Collection Agreement"
+  note: 'The source reads: “The two Indian tribes with limited tax collection agreements are the Sisseton Wahpeton Oyate and the Yankton Sioux Tribe.”. Covers use tax and contractor''s excise tax, not sales tax, at specific listed businesses. The page gives no signing date.'
+- kind: child-welfare-agreement
+  other_party: South Dakota Department of Social Services, Division of Child Protection
+  agreement: Title IV-E agreement (purchase of services)
+  state: SD
+  date: '2013'
+  status: expired
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.N, South Dakota
+  note: 'The source reads: “the Sisseton-”. The report says "All agreements expired on May 31, 2013"; later agreements are not shown in this source. The roster name is split across a line break in the report ("Sisseton-Wahpeton Oyate of the Lake Traverse Reservation"). Report date is March 2014, so current status needs confirming.'
 treaties:
 - title: Treaty with the Sauk and Foxes, etc., 1830
   signed: '1830-07-15'

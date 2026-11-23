@@ -392,6 +392,18 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: New Mexico Children, Youth and Families Department
+  agreement: Title IV-E agreement (maintenance costs only)
+  state: NM
+  date: '1997'
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.I, New Mexico
+  note: 'The source reads: “Nambe Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
 land_establishment:
 - land_area: Pueblo of Nambe land grant, New Mexico
   method: statute

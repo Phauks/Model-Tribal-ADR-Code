@@ -9,6 +9,9 @@
 	// this person may do with the essay; a person with access gets the bar
 	// above the text (EssayAccessBar.svelte), the draft with its changes
 	// marked, and the editor in place of the text, loaded only then.
+	//
+	// A page about the site, such as the About page (src/lib/server/about-pages.ts),
+	// has no section, and shows the text from git until it is first published.
 	import { onMount } from 'svelte';
 	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
@@ -37,14 +40,14 @@
 		path
 	}: {
 		identifier: string;
-		section: string;
-		sectionLink: string;
+		section?: string;
+		sectionLink?: string;
 		title: string;
 		html: string;
 		sources: SourceEntry[];
-		publication: Publication;
+		publication?: Publication;
 		isNewest: boolean;
-		newest: Publication;
+		newest?: Publication;
 		publicationCount: number;
 		path: string;
 	} = $props();
@@ -107,12 +110,14 @@
 </script>
 
 <svelte:head>
-	<title>{title} · {section} · Model Tribal ADR Code</title>
+	<title>{[title, section, 'Model Tribal ADR Code'].filter(Boolean).join(' · ')}</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small no-print">
-	<a href={sectionLink}>{section}</a> › {title}
-</nav>
+{#if section}
+	<nav aria-label="Breadcrumb" class="small no-print">
+		<a href={sectionLink}>{section}</a> › {title}
+	</nav>
+{/if}
 
 {#if access}
 	<EssayAccessBar state={access} bind:view bind:mode />
@@ -121,7 +126,7 @@
 <article class="reading essay">
 	<!-- The editor shows the title as the essay's own first heading, to edit there. -->
 	<h1 class:visually-hidden={mode === 'editing'}>{title}</h1>
-	{#if !isNewest}
+	{#if !isNewest && publication && newest}
 		<div class="notice" role="note">
 			<p>
 				This is an earlier version, published {publication.publishedAtText}. <a href={newest.link}>Read the current version</a>, published {newest.publishedAtText}.
@@ -142,10 +147,12 @@
 		</div>
 		<SourceList sources={shown.sources} />
 	{/if}
-	<p class="small muted essay-dateline" data-print-part="pageDetails">
-		Published {publication.publishedAtText}.
-		{#if publicationCount > 1}<a class="no-print" href="{path}/history">Earlier versions</a>{/if}
-	</p>
+	{#if publication}
+		<p class="small muted essay-dateline" data-print-part="pageDetails">
+			Published {publication.publishedAtText}.
+			{#if publicationCount > 1 && section}<a class="no-print" href="{path}/history">Earlier versions</a>{/if}
+		</p>
+	{/if}
 </article>
 
 <style>

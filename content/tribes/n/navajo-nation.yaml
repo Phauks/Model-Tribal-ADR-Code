@@ -834,6 +834,59 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+jurisdiction_agreements:
+- kind: cross-deputization
+  other_party: Arizona Department of Public Safety
+  agreement: Law enforcement agreement with peace officer commission cards for state officers
+  state: AZ
+  status: unknown
+  source: navajo-nation-arizona-department-of-public-safety-law-enforcement-agreement
+  confidence: medium
+  verification: read-in-full
+  locator: Sections I, II and V(A)
+  note: 'The source reads: “Peace Officer Commission Card form (Exhibit 1) for each AZ DPS officer who is qualified for a mutual aid law enforcement certification.”. The posted copy is unsigned and undated, so the date and current status are unconfirmed. It provides Navajo Nation peace officer commissions for qualified state officers.'
+- kind: child-welfare-agreement
+  other_party: Arizona Department of Economic Security
+  agreement: Title IV-E tribal-state agreement
+  state: AZ
+  date: 2007-01
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.B, Arizona
+  note: 'The source reads: “There is one Arizona agreement with the Navajo Nation that was originally executed in January 2007 and has been extended until June 30, 2016.”. Covers administration, training and maintenance funding; the report says it had not been implemented in practice. The state agency name is inferred (the report says "the state of Arizona"). Report date is March 2014, so current status needs confirming.'
+- kind: child-welfare-agreement
+  other_party: New Mexico Children, Youth and Families Department
+  agreement: Title IV-E agreement (maintenance costs only)
+  state: NM
+  date: '1997'
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.I, New Mexico
+  note: 'The source reads: “Navajo Nation”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. The Navajo Nation was also reported approved for direct federal funding. Report date is March 2014, so current status needs confirming.'
+- kind: child-welfare-agreement
+  other_party: United States Department of Health and Human Services, Administration for Children and Families
+  agreement: Federal Title IV-E plan (direct tribal funding)
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: low
+  verification: inferred
+  locator: Section I.I, New Mexico
+  note: 'The source reads: “The Navajo Nation was recently approved for direct federal funding.”. federal Title IV-E plan. Approval date is not given. Reported in March 2014 and not checked against the current Administration for Children and Families list, which could not be fetched.'
+- kind: cross-deputization
+  other_party: New Mexico State Police
+  agreement: Agreement for state police commissions as New Mexico peace officers to tribal officers
+  state: NM
+  date: '1981-08-31'
+  status: unknown
+  source: new-mexico-state-police-navajo-tribe-agreement-1981
+  confidence: high
+  verification: read-in-full
+  locator: First recital and effective-date section
+  note: 'The source reads: “issue commissions as New Mexico Peace Officers to members of the police or sheriff’s department of any New Mexico Indian tribe or pueblo”. Effective date reads "31st day of August, 1981"; the agreement and an amendment carry the same date. The posted copy is a sample in a federal resource library; current status is not confirmed.'
 treaties:
 - title: Treaty with the Navaho, 1849
   signed: '1849-09-09'
