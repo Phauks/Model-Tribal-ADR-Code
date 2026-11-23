@@ -43,6 +43,11 @@
 	// The text starts as what the page passed (a draft kept after a problem, plus the quote) and is the writer's from then on.
 	const startingText = () => `${text}${quote}`;
 	let message = $state(startingText());
+	// Every box keeps what was typed in it as state: a box written as value={…} would be reset whenever another part of the form changes.
+	const startingFields = () => ({ to, subject, from: from || addresses[0] || '' });
+	let fields = $state(startingFields());
+	let cc = $state('');
+	let bcc = $state('');
 	let files = $state<string[]>([]);
 	let sendAt = $state('');
 	let followUpAt = $state('');
@@ -75,16 +80,16 @@
 		<div class="row">
 			<label for="{idPrefix}-from">From</label>
 			{#if addresses.length > 1}
-				<select id="{idPrefix}-from" name="from">
-					{#each addresses as address (address)}<option value={address} selected={address === from}>{address}</option>{/each}
+				<select id="{idPrefix}-from" name="from" bind:value={fields.from}>
+					{#each addresses as address (address)}<option value={address}>{address}</option>{/each}
 				</select>
 			{:else}
-				<input type="text" id="{idPrefix}-from" name="from" value={from || addresses[0] || ''} readonly />
+				<input type="text" id="{idPrefix}-from" name="from" value={fields.from} readonly />
 			{/if}
 		</div>
 		<div class="row">
 			<label for="{idPrefix}-to">To</label>
-			<input type="text" id="{idPrefix}-to" name="to" value={to} list="{idPrefix}-book" required autocomplete="off" placeholder="Name or address; commas between several" />
+			<input type="text" id="{idPrefix}-to" name="to" bind:value={fields.to} list="{idPrefix}-book" required autocomplete="off" placeholder="Name or address; commas between several" />
 			{#if ready && !showCopies}
 				<button type="button" class="link-button" onclick={() => (showCopies = true)}>Cc Bcc</button>
 			{/if}
@@ -92,16 +97,16 @@
 		{#if showCopies || !ready}
 			<div class="row">
 				<label for="{idPrefix}-cc">Cc</label>
-				<input type="text" id="{idPrefix}-cc" name="cc" list="{idPrefix}-book" autocomplete="off" />
+				<input type="text" id="{idPrefix}-cc" name="cc" bind:value={cc} list="{idPrefix}-book" autocomplete="off" />
 			</div>
 			<div class="row">
 				<label for="{idPrefix}-bcc">Bcc</label>
-				<input type="text" id="{idPrefix}-bcc" name="bcc" list="{idPrefix}-book" autocomplete="off" />
+				<input type="text" id="{idPrefix}-bcc" name="bcc" bind:value={bcc} list="{idPrefix}-book" autocomplete="off" />
 			</div>
 		{/if}
 		<div class="row">
 			<label for="{idPrefix}-subject">Subject</label>
-			<input type="text" id="{idPrefix}-subject" name="subject" value={subject} required />
+			<input type="text" id="{idPrefix}-subject" name="subject" bind:value={fields.subject} required />
 		</div>
 	</div>
 	{#if suggestions.length}

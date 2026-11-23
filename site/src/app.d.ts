@@ -65,8 +65,6 @@ declare global {
 		MAIL_SENDER_NAME?: string;
 		/** Secret: signs unsubscribe and acknowledgment links. Set as a Secret in the dashboard. */
 		MAIL_SIGNING_KEY?: string;
-		/** The website's address, such as https://example.org, for links in mail. */
-		SITE_ADDRESS?: string;
 		/** Which service carries outreach: "smtp" (src/lib/server/mail/carriers.ts). Empty while outreach is off. */
 		OUTREACH_CARRIER?: string;
 		/** The address outreach comes from, on the outreach mail service. */

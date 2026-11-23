@@ -309,8 +309,13 @@ interface ExistingMessage {
 	attachment: number;
 }
 
+/** An address the way rules look at it: the address, and the name and "Name <address>" when there is a name. */
+export function ruleAddressForms(address: { email: string; name?: string | null }): string[] {
+	return address.name ? [address.email, address.name, `${address.name} <${address.email}>`] : [address.email];
+}
+
 function addressesOf(value: string): string[] {
-	return parseJson<{ email: string; name?: string | null }>(value).map((item) => (item.name ? `${item.name} <${item.email}>` : item.email));
+	return parseJson<{ email: string; name?: string | null }>(value).flatMap(ruleAddressForms);
 }
 
 /** The facts for a message, in the same shape receiveMail builds for an arriving one. */
@@ -325,7 +330,7 @@ export function factsFor(message: {
 	automatic: boolean;
 }): RuleFacts {
 	return {
-		from: message.fromName ? `${message.fromName} <${message.fromAddress}>` : message.fromAddress,
+		from: ruleAddressForms({ email: message.fromAddress, name: message.fromName }),
 		to: message.to,
 		subject: message.subject,
 		body: message.body,

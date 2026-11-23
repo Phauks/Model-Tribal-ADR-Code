@@ -82,7 +82,9 @@ export interface RuleAction {
 
 /** What a rule is checked against: one arriving message, flattened. */
 export interface RuleFacts {
-	from: string;
+	/** The sender's address, and the name and "Name <address>" when there is a name, so "ends with @example.org" works. */
+	from: string[];
+	/** Each To and Cc address, and the project address it came to, the same way. */
 	to: string[];
 	subject: string;
 	body: string;
@@ -115,16 +117,18 @@ export function conditionHolds(condition: RuleCondition, facts: RuleFacts): bool
 		case 'nation':
 		case 'automatic':
 			return facts[condition.field] === (condition.value === 'yes');
+		case 'from':
 		case 'to':
 			// "does not contain" must hold for every address; the others for any one.
 			return condition.operator === 'not-contains'
-				? facts.to.every((address) => textMatches(address, condition.operator, condition.value))
-				: facts.to.some((address) => textMatches(address, condition.operator, condition.value));
+				? facts[condition.field].every((address) => textMatches(address, condition.operator, condition.value))
+				: facts[condition.field].some((address) => textMatches(address, condition.operator, condition.value));
 		case 'anywhere':
 			return condition.operator === 'not-contains'
 				? textMatches(facts.subject, condition.operator, condition.value) && textMatches(facts.body, condition.operator, condition.value)
 				: textMatches(facts.subject, condition.operator, condition.value) || textMatches(facts.body, condition.operator, condition.value);
-		default:
+		case 'subject':
+		case 'body':
 			return textMatches(facts[condition.field], condition.operator, condition.value);
 	}
 }

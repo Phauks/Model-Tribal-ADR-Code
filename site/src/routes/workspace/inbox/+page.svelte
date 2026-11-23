@@ -314,7 +314,7 @@
 		align-items: stretch;
 		border-bottom: 1px solid var(--color-line);
 		background: var(--color-paper);
-		transition: background-color 120ms ease;
+		transition: background-color var(--motion-duration-short) var(--motion-easing-standard);
 	}
 	.threads li.unread {
 		background: var(--color-surface-raised);

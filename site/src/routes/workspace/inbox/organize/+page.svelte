@@ -4,7 +4,6 @@
 	import Tag from '@lucide/svelte/icons/tag';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import { folderDepthLimit, tagColors } from '#lib/mail.ts';
-	import TagChip from '../TagChip.svelte';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -37,7 +36,7 @@
 							<FolderIcon size={18} aria-hidden="true" />
 							<label for="folder-{folder.identifier}" class="visually-hidden">Name of the folder {folder.path}</label>
 							<input type="text" id="folder-{folder.identifier}" name="name" value={folder.name} maxlength="60" required />
-							<button class="button-quiet small" type="submit">Rename</button>
+							<button class="button button-quiet small" type="submit">Rename</button>
 						</form>
 						<form method="post" action="?/deleteFolder">
 							<input type="hidden" name="folder" value={folder.identifier} />
@@ -81,14 +80,14 @@
 					<li>
 						<form method="post" action="?/changeTag" class="item-form">
 							<input type="hidden" name="tag" value={tag.identifier} />
-							<TagChip {tag} />
+							<span class="dot" style="--tag-color: var(--tag-{tag.color})" aria-hidden="true"></span>
 							<label for="tag-{tag.identifier}" class="visually-hidden">Name of the tag {tag.name}</label>
 							<input type="text" id="tag-{tag.identifier}" name="name" value={tag.name} maxlength="60" required />
 							<label for="tag-color-{tag.identifier}" class="visually-hidden">Color of the tag {tag.name}</label>
 							<select id="tag-color-{tag.identifier}" name="color">
 								{#each tagColors as color (color)}<option value={color} selected={color === tag.color}>{colorNames[color]}</option>{/each}
 							</select>
-							<button class="button-quiet small" type="submit">Save</button>
+							<button class="button button-quiet small" type="submit">Save</button>
 						</form>
 						<form method="post" action="?/deleteTag">
 							<input type="hidden" name="tag" value={tag.identifier} />
@@ -124,7 +123,7 @@
 		display: grid;
 		gap: var(--space-5);
 	}
-	@media (min-width: 75rem) {
+	@media (min-width: 110rem) {
 		.columns {
 			grid-template-columns: 1fr 1fr;
 			align-items: start;
@@ -162,6 +161,7 @@
 		flex: 1;
 		min-width: 0;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--space-2);
 	}
@@ -179,6 +179,21 @@
 	.items :global(svg) {
 		flex: none;
 		color: var(--color-ink-muted);
+	}
+	.dot {
+		flex: none;
+		width: 0.8rem;
+		height: 0.8rem;
+		border-radius: 50%;
+		background: var(--tag-color);
+	}
+	.columns {
+		--tag-teal: var(--color-link);
+		--tag-orange: var(--color-action);
+		--tag-gray: var(--color-ink-muted);
+		--tag-gold: var(--color-placeholder-rule);
+		--tag-green: var(--color-map-class-2);
+		--tag-purple: var(--color-band);
 	}
 	.new {
 		margin-top: var(--space-4);

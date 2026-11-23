@@ -14,10 +14,10 @@
  * - Mail that fails the sender's own DMARC policy goes to Spam.
  */
 import PostalMime, { type Email } from 'postal-mime';
-import { cleanAddress, formatAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type MailAddress } from '#lib/mail.ts';
+import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type MailAddress } from '#lib/mail.ts';
 import { actionStatement, bucketKeys, currentTime, type MailContext } from './context.ts';
 import { isProjectAddress } from './settings.ts';
-import { factsFor, runRules } from './rules.ts';
+import { factsFor, ruleAddressForms, runRules } from './rules.ts';
 import { suppress } from './suppressions.ts';
 import { readToken, unsubscribeAddressToken } from './tokens.ts';
 
@@ -406,7 +406,7 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 					factsFor({
 						fromAddress: from.email,
 						fromName: from.name ?? null,
-						to: [...to, ...cc].map(formatAddress).concat(projectAddress ? [projectAddress] : []),
+						to: [...to, ...cc].flatMap(ruleAddressForms).concat(projectAddress ? [projectAddress] : []),
 						subject,
 						body: text,
 						attachment: attachmentRows.some((row) => row.inline === 0),

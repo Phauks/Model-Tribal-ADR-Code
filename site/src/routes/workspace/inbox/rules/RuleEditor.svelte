@@ -185,7 +185,7 @@
 		max-width: 28rem;
 	}
 	.check {
-		display: inline-flex;
+		display: flex;
 		align-items: center;
 		gap: var(--space-2);
 		min-height: var(--layout-target-minimum);

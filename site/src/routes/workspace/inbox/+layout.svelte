@@ -7,6 +7,7 @@
 	import Archive from '@lucide/svelte/icons/archive';
 	import BellRing from '@lucide/svelte/icons/bell-ring';
 	import CalendarClock from '@lucide/svelte/icons/calendar-clock';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import Clock from '@lucide/svelte/icons/clock';
 	import FolderIcon from '@lucide/svelte/icons/folder';
 	import FolderCog from '@lucide/svelte/icons/folder-cog';
@@ -50,7 +51,7 @@
 
 <div class="mail">
 	<details class="mail-nav" bind:open>
-		<summary>Mailboxes</summary>
+		<summary><ChevronDown size={18} aria-hidden="true" class="fold" />Mailboxes</summary>
 		<nav aria-label="Mailboxes">
 			<a class="button compose" href="{base}/new"><SquarePen size={18} aria-hidden="true" /> Write a message</a>
 			<ul class="nav-list">
@@ -147,6 +148,21 @@
 		gap: var(--space-5);
 		align-items: start;
 	}
+	.mail-nav > summary {
+		font-weight: var(--font-weight-semibold);
+		min-height: var(--layout-target-minimum);
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		cursor: pointer;
+		list-style: none;
+	}
+	.mail-nav > summary::-webkit-details-marker {
+		display: none;
+	}
+	.mail-nav:not([open]) > summary :global(.fold) {
+		transform: rotate(-90deg);
+	}
 	@media (min-width: 50rem) {
 		.mail {
 			grid-template-columns: 15rem minmax(0, 1fr);
@@ -158,13 +174,6 @@
 			position: sticky;
 			top: var(--space-4);
 		}
-	}
-	.mail-nav > summary {
-		font-weight: var(--font-weight-semibold);
-		min-height: var(--layout-target-minimum);
-		display: flex;
-		align-items: center;
-		cursor: pointer;
 	}
 	.compose {
 		width: 100%;

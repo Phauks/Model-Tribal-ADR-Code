@@ -131,7 +131,7 @@
 		{#if data.canManage}
 			<form method="post" action="?/stop" class="actions">
 				<button class="button" type="submit" name="confirm" value="yes">Put the address on the list</button>
-				<button class="button-quiet" type="submit" name="confirm" value="no">It does not ask that</button>
+				<button class="button button-quiet" type="submit" name="confirm" value="no">It does not ask that</button>
 			</form>
 		{/if}
 	</div>
@@ -202,9 +202,9 @@
 						<form method="post" class="actions">
 							<input type="hidden" name="message" value={message.identifier} />
 							{#if message.carrier !== 'smtp'}
-								<button class="button-quiet" type="submit" formaction="?/again">{message.status === 'failed' ? 'Send again' : 'Send now'}</button>
+								<button class="button button-quiet" type="submit" formaction="?/again">{message.status === 'failed' ? 'Send again' : 'Send now'}</button>
 							{/if}
-							<button class="button-quiet" type="submit" formaction="?/cancel">Cancel this message</button>
+							<button class="button button-quiet" type="submit" formaction="?/cancel">Cancel this message</button>
 						</form>
 					{/if}
 				</div>
@@ -243,7 +243,7 @@
 						<option value={person.identifier} selected={person.identifier === thread.assigneeIdentifier}>{person.name}</option>
 					{/each}
 				</select>
-				<button class="button-quiet small" type="submit">Save</button>
+				<button class="button button-quiet small" type="submit">Save</button>
 			</form>
 		</section>
 
@@ -251,13 +251,13 @@
 			<h2><Clock size={16} aria-hidden="true" />Snooze</h2>
 			{#if thread.snoozedUntil}
 				<p class="small">Hidden until {fullDate(thread.snoozedUntil)}.</p>
-				<form method="post" action="?/snooze"><button class="button-quiet small" type="submit" name="clear" value="yes">Bring it back now</button></form>
+				<form method="post" action="?/snooze"><button class="button button-quiet small" type="submit" name="clear" value="yes">Bring it back now</button></form>
 			{:else}
 				<form method="post" action="?/snooze" class="stack">
 					<input type="hidden" name="zone" value={zone} />
 					<label for="snooze-until" class="small">Hide from the inbox until</label>
 					<input id="snooze-until" type="datetime-local" name="until" value={localInputValue(24)} />
-					<button class="button-quiet small" type="submit">Snooze</button>
+					<button class="button button-quiet small" type="submit">Snooze</button>
 				</form>
 			{/if}
 		</section>
@@ -266,13 +266,13 @@
 			<h2><BellRing size={16} aria-hidden="true" />Reminder if no reply</h2>
 			{#if thread.followUpAt}
 				<p class="small">On {fullDate(thread.followUpAt)}, unless they reply first.</p>
-				<form method="post" action="?/followUp"><button class="button-quiet small" type="submit" name="clear" value="yes">Clear the reminder</button></form>
+				<form method="post" action="?/followUp"><button class="button button-quiet small" type="submit" name="clear" value="yes">Clear the reminder</button></form>
 			{:else}
 				<form method="post" action="?/followUp" class="stack">
 					<input type="hidden" name="zone" value={zone} />
 					<label for="follow-at" class="small">Remind me on</label>
 					<input id="follow-at" type="datetime-local" name="at" value={localInputValue(24 * 7)} />
-					<button class="button-quiet small" type="submit">Set the reminder</button>
+					<button class="button button-quiet small" type="submit">Set the reminder</button>
 				</form>
 			{/if}
 		</section>
@@ -282,7 +282,7 @@
 			<form method="post" action="?/note" class="stack">
 				<label for="note-body" class="visually-hidden">Note (only the project team sees it)</label>
 				<textarea id="note-body" name="body" rows="3" required placeholder="Only the team sees notes"></textarea>
-				<button class="button-quiet small" type="submit">Add the note</button>
+				<button class="button button-quiet small" type="submit">Add the note</button>
 			</form>
 		</section>
 

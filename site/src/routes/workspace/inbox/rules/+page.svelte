@@ -50,7 +50,7 @@
 		<ListFilter size={48} aria-hidden="true" />
 		<p class="lead">No rules yet.</p>
 		<p class="muted">For example: mail whose sender ends with “@navajo-nsn.gov” goes to a Navajo Nation folder with the tag “Outreach reply”.</p>
-		<p><a class="button-quiet button" href="/workspace/inbox/rules/new">Make the first rule</a></p>
+		<p><a class="button button-quiet" href="/workspace/inbox/rules/new">Make the first rule</a></p>
 	</div>
 {:else}
 	<ol class="rules">
@@ -89,7 +89,7 @@
 					<a class="icon-button" href="/workspace/inbox/rules/{rule.identifier}" aria-label="Change {rule.name}" title="Change"><Pencil size={18} aria-hidden="true" /></a>
 					<form method="post" action="?/apply">
 						<input type="hidden" name="rule" value={rule.identifier} />
-						<button class="button-quiet small" type="submit" title="Run this rule on the conversations in the inbox now">Run on inbox</button>
+						<button class="button button-quiet small" type="submit" title="Run this rule on the conversations in the inbox now">Run on inbox</button>
 					</form>
 					<form method="post" action="?/delete">
 						<input type="hidden" name="rule" value={rule.identifier} />
@@ -199,26 +199,20 @@
 		padding: 2px;
 		border-radius: 999px;
 		background: var(--color-control-border);
-		transition: background-color 150ms ease;
+		transition: background-color var(--motion-duration-short) var(--motion-easing-standard);
 	}
 	.thumb {
 		width: 1.1rem;
 		height: 1.1rem;
 		border-radius: 50%;
 		background: var(--color-paper);
-		transition: transform 150ms ease;
+		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
 	}
 	.switch[aria-checked='true'] .track {
 		background: var(--color-link);
 	}
 	.switch[aria-checked='true'] .thumb {
 		transform: translateX(1.1rem);
-	}
-	@media (prefers-reduced-motion: reduce) {
-		.track,
-		.thumb {
-			transition: none;
-		}
 	}
 	@media (forced-colors: active) {
 		.track {

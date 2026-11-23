@@ -36,7 +36,7 @@ async function filed(context: Awaited<ReturnType<typeof testContext>>, from: str
 }
 
 const facts: RuleFacts = {
-	from: 'Tribal Office <office@navajo-nsn.gov>',
+	from: ['office@navajo-nsn.gov', 'Tribal Office', 'Tribal Office <office@navajo-nsn.gov>'],
 	to: ['contact@example.org'],
 	subject: 'Correction to our page',
 	body: 'Please remove the old chairman’s name.',
@@ -50,7 +50,7 @@ function rule(overrides: Partial<RuleInput> = {}): RuleInput {
 		name: 'Navajo Nation mail',
 		enabled: true,
 		matchAll: true,
-		conditions: [{ field: 'from', operator: 'ends-with', value: '@navajo-nsn.gov>' }],
+		conditions: [{ field: 'from', operator: 'ends-with', value: '@navajo-nsn.gov' }],
 		actions: [{ action: 'tag', value: 'tag-correction' }],
 		stopAfter: false,
 		...overrides
@@ -60,6 +60,9 @@ function rule(overrides: Partial<RuleInput> = {}): RuleInput {
 describe('rule conditions', () => {
 	it('match words without regard to capital letters', () => {
 		expect(conditionHolds({ field: 'from', operator: 'contains', value: 'NAVAJO-NSN.GOV' }, facts)).toBe(true);
+		expect(conditionHolds({ field: 'from', operator: 'ends-with', value: '@navajo-nsn.gov' }, facts)).toBe(true);
+		expect(conditionHolds({ field: 'from', operator: 'is', value: 'tribal office' }, facts)).toBe(true);
+		expect(conditionHolds({ field: 'from', operator: 'not-contains', value: 'navajo' }, facts)).toBe(false);
 		expect(conditionHolds({ field: 'subject', operator: 'starts-with', value: 'correction' }, facts)).toBe(true);
 		expect(conditionHolds({ field: 'subject', operator: 'is', value: 'correction' }, facts)).toBe(false);
 		expect(conditionHolds({ field: 'body', operator: 'not-contains', value: 'remove' }, facts)).toBe(false);
