@@ -31,6 +31,7 @@
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
 	import { boxParts, casePartOrder, citationReferences, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
 	import type { RenderedEssay } from '#lib/essays/render.ts';
+	import { componentFrames } from '#lib/essays/components.ts';
 	import { checkMarks, issueAt } from '#lib/essays/check-marks.ts';
 	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
 	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
@@ -606,6 +607,7 @@
 					? [ySyncPlugin(room.fragment, { mapping: shared.mapping }), yCursorPlugin(room.awareness), yUndoPlugin()]
 					: [history()]),
 				checkMarks(),
+				componentFrames(),
 				tracker
 			]
 		});
@@ -1466,6 +1468,46 @@
 
 	.editor-area :global(.essay-term-chip) {
 		text-decoration: underline dotted;
+	}
+
+	/* Every block is a component with a frame and a label (components.ts), so no text sits loose on the page. */
+	.editor-area :global(.ProseMirror > .essay-component) {
+		position: relative;
+		margin-top: calc(2 * var(--space-2) + 1.25rem);
+		outline: 1px dashed var(--color-line);
+		outline-offset: var(--space-2);
+		border-radius: var(--radius-control);
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component-boxed) {
+		border-radius: var(--radius-panel);
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component.is-current) {
+		outline: 2px solid var(--color-link);
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component[data-component]::before) {
+		content: attr(data-component);
+		position: absolute;
+		top: calc(-1 * var(--space-2) - 0.75em);
+		left: var(--space-2);
+		padding: 0 var(--space-1);
+		background: var(--color-paper);
+		font-size: 0.75rem;
+		font-style: normal;
+		font-weight: var(--font-weight-semibold);
+		line-height: 1.5;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		text-indent: 0;
+		color: var(--color-ink-muted);
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.editor-area :global(.ProseMirror > .essay-component.is-current::before) {
+		color: var(--color-link);
 	}
 
 	.editor-area :global(.ProseMirror-selectednode) {
