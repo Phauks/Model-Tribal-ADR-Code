@@ -1,0 +1,66 @@
+# Fetches Wayback Machine captures for a cloud session that cannot reach
+# web.archive.org itself (it can reach only archive.org's lookup service).
+# Runs when a branch other than main changes a request file under
+# research/fetch-requests/, or by hand. Uses no secrets.
+#
+# What it fetches comes back as an encrypted artifact kept for one day: the
+# request carries the session's RSA public key, the job encrypts the files
+# with a fresh AES key and encrypts that key with the public key, so only the
+# requesting session can open them. This keeps copyrighted pages private even
+# though workflow artifacts can be downloaded by others. Nothing fetched is
+# committed; the session files what it gets in the private bucket with
+# scripts/captures/mirror_captures.py. Request files are removed from the
+# branch before it merges.
+#
+# See scripts/captures/fetch_archived_copies.py for the request format. It
+# fetches only Internet Archive addresses, never a nation's own site.
+name: fetch archived copies
+
+on:
+  push:
+    branches-ignore: [main]
+    paths:
+      - "research/fetch-requests/*.json"
+  workflow_dispatch:
+    inputs:
+      request:
+        description: "Request file path on the chosen branch"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Fetch the captures each changed request asks for
+        env:
+          REQUEST: ${{ inputs.request }}
+        run: |
+          if [ -n "$REQUEST" ]; then files="$REQUEST"; else
+            files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'research/fetch-requests/*.json'); fi
+          mkdir -p sealed
+          for f in $files; do
+            name=$(basename "$f" .json)
+            python3 scripts/captures/fetch_archived_copies.py "$f" "out/$name"
+            python3 -c 'import json,sys; open("pub.pem","w").write(json.load(open(sys.argv[1]))["public_key"])' "$f"
+            tar -C out -czf "$name.tgz" "$name"
+            openssl rand -hex 32 > key.txt
+            openssl enc -aes-256-cbc -pbkdf2 -salt -in "$name.tgz" -out "sealed/$name.tgz.enc" -pass file:key.txt
+            openssl pkeyutl -encrypt -pubin -inkey pub.pem -pkeyopt rsa_padding_mode:oaep -in key.txt -out "sealed/$name.key.enc"
+            rm -f key.txt "$name.tgz"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: archived-copies
+          path: sealed/
+          retention-days: 1
+          if-no-files-found: ignore
