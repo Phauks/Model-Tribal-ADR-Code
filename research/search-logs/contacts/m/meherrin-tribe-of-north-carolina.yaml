@@ -11,3 +11,19 @@ searches:
   query: links whose words or address say contact; mailto links and email addresses
   outcome: found
   reason: Found contact page https://meherrinnation.org/contact-us/.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Meherrin Tribe North Carolina official website contact
+  outcome: not-found
+  reason: BIA petition pages, Wikipedia, and meherrinnation.org, which surfaced as the nation's own site. Searched for meherrin-tribe, a second record for the same group, merged into this one on Nov. 23, 2026.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: official website
+  outcome: not-found
+  reason: Found https://meherrinnation.org/, which is already the website of meherrin-tribe-of-north-carolina; not added, since the two records may name the same group. Searched for meherrin-tribe, a second record for the same group, merged into this one on Nov. 23, 2026.
