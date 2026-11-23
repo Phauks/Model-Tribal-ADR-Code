@@ -1,4 +1,4 @@
-# 0036. Order printed copies on the website through the Lulu Print API
+# 0044. Order printed copies on the website through the Lulu Print API
 
 - **Status:** Proposed (ordering stays off until the lead author decides who receives the money)
 - **Date:** 2026-11-23
@@ -18,7 +18,7 @@ The website and its downloads are free. Trevor Goldsmith asked that readers also
 ## Consequences
 
 - The project becomes the seller of record for each copy: sales tax, refunds and support are its duties (docs/book-orders.md, "Before ordering goes live").
-- New Worker secrets and variables, all in Cloudflare (decision record 0006), and a new table `book_orders` (migration 0013).
+- New Worker secrets and variables, all in Cloudflare (decision record 0006), and a new table `book_orders` (migration 0016).
 - Lulu Direct buy buttons and retail distribution stay possible for the standard editions; this does not rule them out.
 
 ## Sources

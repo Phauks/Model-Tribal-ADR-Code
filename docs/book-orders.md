@@ -1,6 +1,6 @@
 # Printed copies
 
-Readers can order a printed copy of the book on the website at `/book`. Lulu's Print API prints each copy on demand and mails it; Stripe Checkout takes the payment. Ordering is **off** until the lead author decides who receives the money (see "Before ordering goes live" below). Decision record [0036](decisions/0036-order-printed-copies-through-the-lulu-print-api.md) explains why.
+Readers can order a printed copy of the book on the website at `/book`. Lulu's Print API prints each copy on demand and mails it; Stripe Checkout takes the payment. Ordering is **off** until the lead author decides who receives the money (see "Before ordering goes live" below). Decision record [0044](decisions/0044-order-printed-copies-through-the-lulu-print-api.md) explains why.
 
 ## How an order flows
 

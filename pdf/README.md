@@ -78,9 +78,7 @@ npm run build:editions       # interior and paperback and hardcover covers at ev
 npm test
 ```
 
-Each build writes `output/<name>/interior.pdf` and `report.json` (page count,
-margins, spine width, cover size and warnings). `build:editions` also writes a cover for each size and binding to `output/editions/current/<size>/<binding>/`, checked by `tools/check_cover.py`; see [docs/book-orders.md](../docs/book-orders.md) for the cover sizes and how the files reach the website. `output/` is not committed;
-the `checks` workflow uploads the PDFs as a build artifact.
+Each build writes `output/<name>/interior.pdf` and `report.json` (page count, margins, spine width, cover size and warnings). `build:editions` also writes a cover for each size and binding to `output/editions/current/<size>/<binding>/`, checked by `tools/check_cover.py`; see [docs/book-orders.md](../docs/book-orders.md) for the cover sizes and how the files reach the website. `output/` is not committed; the `checks` workflow uploads the PDFs as a build artifact.
 
 ## What the build checks
 
