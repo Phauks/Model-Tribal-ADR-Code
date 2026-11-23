@@ -147,6 +147,8 @@ function main() {
 		const address = addressOf(file);
 		if (neverSaved.has(address) || /\/nations\/[^/]+\/image$/.test(address)) continue;
 		if (neverCached.some((prefix) => under(address, prefix))) continue;
+		// Files made to be downloaded into other programs, which the service worker never saves (downloadOnly there).
+		if (/\.(ris|bib|vcf|geojson)$/.test(address)) continue;
 		const content = readFileSync(path.join(output, file));
 		if (file.endsWith('.html')) {
 			const blanked = withoutBuild(content.toString('utf8'), version);

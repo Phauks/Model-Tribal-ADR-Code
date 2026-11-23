@@ -3,7 +3,7 @@
 	import { version } from '$app/env';
 	import Download from '@lucide/svelte/icons/download';
 	import { buildTime, formatBytes } from '#lib/offline-collections.ts';
-	import { citationDate } from '#lib/page-downloads.ts';
+	import { citationDate, mapFiles, pageFormats } from '#lib/page-downloads.ts';
 	import { checksumsTextAddress, downloadChecksums, fileName, verifyAddress, verifyLink, type ChecksumEntry } from '#lib/checksums.ts';
 	import type { PageProps } from './$types';
 
@@ -57,6 +57,13 @@
 				}
 			],
 			after: 'A single nation’s record and its sources are in the Download menu on the nation’s page. In the ZIP file, a story’s full text is included where it is in the public domain or a nation’s law; for the others, the file gives the story’s page.'
+		},
+		{
+			heading: 'Maps',
+			lead: 'The map’s layers, for mapping programs such as QGIS or ArcGIS.',
+			// The same list the map page's Download menu offers (src/lib/page-downloads.ts).
+			files: mapFiles.map((file) => ({ label: file.label, description: file.description, links: [{ format: file.format, href: file.link }] })),
+			after: 'Simplified for a national map. The land areas are the Census Bureau’s, not a statement of any nation’s territory, and an area a nation asked to leave off the map is left out.'
 		},
 		{
 			heading: 'Documents',
@@ -122,6 +129,9 @@
 	<p class="muted">
 		{#if built}Made {citationDate(built)}, content version {data.versions.content}.{:else}Content version {data.versions.content}.{/if}
 		To read the site without a connection instead, see <a href="/offline">Read offline</a>.
+	</p>
+	<p>
+		Any page can also be saved from its Download menu as a PDF or as {pageFormats.map((format) => format.format).join(', ').replace(/, ([^,]*)$/, ' or $1')}. A nation’s page also offers its record, its sources for citation managers (CSL JSON, RIS and BibTeX) and its offices’ contact cards.
 	</p>
 	<p>
 		Each file’s SHA-256 is shown with it, so you can check that a file you downloaded is the one published here, unchanged. <a href={verifyAddress}>Verify a file</a> does it in your browser without uploading anything, and <a href={checksumsTextAddress} download>checksums.txt</a> lists every file.

@@ -9,8 +9,8 @@
 // - checksums/downloads.json: the downloads only, without the copies and each nation's own files.
 //
 // A download is a built file a reader saves rather than reads: a spreadsheet, ZIP, PDF, Word or
-// EPUB file, a model court form under /help/forms, or one of the JSON files the Download menu and
-// the Downloads page offer. The copies' hashes come from the built list of copies, /copies/list.csv,
+// EPUB file, a map layer as GeoJSON, a calendar file, a model court form under /help/forms, or one of
+// the JSON, RIS, BibTeX or vCard files the Download menu and the Downloads page offer. The copies' hashes come from the built list of copies, /copies/list.csv,
 // which takes them from the capture index, since the copies themselves are served from the bucket.
 
 import { createHash } from 'node:crypto';
@@ -18,10 +18,10 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import path from 'node:path';
 
 const output = '.svelte-kit/cloudflare/client';
-const downloadExtensions = new Set(['.csv', '.zip', '.pdf', '.docx', '.odt', '.epub']);
+const downloadExtensions = new Set(['.csv', '.zip', '.pdf', '.docx', '.odt', '.epub', '.geojson', '.ics']);
 const downloadFolders = ['/help/forms/'];
 const downloadData = new Set(['/nations/recourse/provisions.json', '/glossary/terms.json']);
-const nationFile = /^\/nations\/[a-z0-9-]+\/(record|sources)\.json$/;
+const nationFile = /^\/nations\/[a-z0-9-]+\/(record\.json|sources\.(json|ris|bib)|contacts\.vcf)$/;
 const ownFiles = new Set(['/checksums.json', '/checksums.txt', '/checksums/downloads.json']);
 
 /**

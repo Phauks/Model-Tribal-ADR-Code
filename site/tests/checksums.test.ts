@@ -12,6 +12,9 @@ describe('the checksums the build writes', () => {
 		expect(isDownload('/help/forms/petition-for-peacemaking.pdf')).toBe(true);
 		expect(isDownload('/glossary/terms.json')).toBe(true);
 		expect(isDownload('/nations/navajo-nation/record.json')).toBe(true);
+		expect(isDownload('/nations/navajo-nation/sources.bib')).toBe(true);
+		expect(isDownload('/nations/navajo-nation/contacts.vcf')).toBe(true);
+		expect(isDownload('/nations/map/land-areas.geojson')).toBe(true);
 		expect(isDownload('/nations/navajo-nation/__data.json')).toBe(false);
 		expect(isDownload('/search/index.json')).toBe(false);
 		expect(isDownload('/_app/immutable/x.js')).toBe(false);
@@ -21,6 +24,7 @@ describe('the checksums the build writes', () => {
 	it('keeps each nation’s own files off the short list', () => {
 		expect(isListedDownload('/zip/data.zip')).toBe(true);
 		expect(isListedDownload('/nations/navajo-nation/sources.json')).toBe(false);
+		expect(isListedDownload('/nations/navajo-nation/sources.ris')).toBe(false);
 	});
 
 	it('reads the list of copies, quoted fields and all', () => {
