@@ -1,43 +1,9 @@
-import { profileStatusLabels } from '#lib/contributors.ts';
-import { emailChoiceLabels } from '#lib/following.ts';
-import { ordersOfAccount } from '#lib/server/book-order-problems.ts';
-import { accountSettingsCopy, signedInDevices } from '#lib/server/account-pages.ts';
-import { profileBySubject } from '#lib/server/contributor-profiles.ts';
-import { settingsFor } from '#lib/server/following.ts';
-import { sponsorsManagedBy } from '#lib/server/sponsors.ts';
-import { requireAccount, storage } from '#lib/server/workspace.ts';
+import { redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-/** One line about each Account page, so the overview says where things stand. */
-export const load: PageServerLoad = async (event) => {
-	const account = requireAccount(event);
-	const { database } = storage(event);
-	const [profile, devices, follow, settingsCopy, sponsorships, orders] = await Promise.all([
-		profileBySubject(database, account.subject),
-		signedInDevices(database, account.subject, event.locals.session?.tokenHash),
-		settingsFor(database, account.subject),
-		accountSettingsCopy(database, account.subject),
-		sponsorsManagedBy(database, account.subject),
-		ordersOfAccount(database, account.subject)
-	]);
-	const hasPassword = event.locals.session?.account.hasPassword ?? false;
-	return {
-		summaries: {
-			profile: profile
-				? `${profileStatusLabels[profile.status]}.${profile.confirmedVersion ? ` Your credit uses version ${profile.confirmedVersion}.` : ''}${profile.hasUnconfirmedChanges ? ' You have changes to check and confirm.' : ''}`
-				: 'Not started. Tell us about yourself if you would like to help write the code.',
-			security: `${hasPassword ? 'Password set.' : 'No password; you sign in with a code.'} Signed in on ${devices.length} ${devices.length === 1 ? 'device' : 'devices'}.`,
-			email: emailChoiceLabels[follow.email] + '.',
-			orders:
-				orders.length === 0
-					? 'Printed copies you order while signed in, with tracking and help with problems.'
-					: `${orders.length} ${orders.length === 1 ? 'order' : 'orders'}${orders.some((order) => order.openProblems > 0) ? ', with a problem waiting for an answer' : ''}.`,
-			sponsorship:
-				sponsorships.length === 0
-					? 'For organizations that give to the project.'
-					: `You manage ${sponsorships.map((sponsor) => sponsor.name).join(', ')}.`,
-			data: 'Download a copy of what the project keeps about you, or delete your account.'
-		},
-		settingsEverywhere: Boolean(settingsCopy)
-	};
+// The Account overview was removed (Trevor, Nov. 23, 2026). Its address
+// still opens, on Sign-in and security, so old links keep working; the left
+// sidebar lists the other Account pages from there.
+export const load: PageServerLoad = () => {
+	redirect(308, '/account/security');
 };

@@ -1,13 +1,15 @@
 <script lang="ts">
 	// The groups under the site's sections in the sidebar (SiteSidebar.svelte):
-	// the Account pages on those pages, the Workspace for people who can use it,
-	// and the reader's own links (Recent changes, Changes to this page, Starred
-	// pages). The Workspace group folds like a section; it starts open on
-	// workspace pages and shut elsewhere, until the reader chooses.
+	// the Account pages and the Workspace for people signed in, and the
+	// reader's own links (Recent changes, Changes to this page, Starred pages).
+	// The Your account and Workspace groups fold like a section; each starts
+	// open on its own pages and shut elsewhere, until the reader chooses.
 	import FileClock from '@lucide/svelte/icons/file-clock';
 	import History from '@lucide/svelte/icons/history';
 	import Star from '@lucide/svelte/icons/star';
 	import type { AccountPage } from '#lib/account-menu.ts';
+	import { followingState } from '#lib/following-state.svelte.ts';
+	import { unreadLabel } from '#lib/following.ts';
 	import type { WorkspacePage } from '#lib/workspace-menu.ts';
 	import FoldButton from './FoldButton.svelte';
 	import type { SidebarState } from './sidebar-state.svelte.ts';
@@ -25,7 +27,7 @@
 		idSuffix: string;
 		path: string;
 		sidebar: SidebarState;
-		/** Listed only on the Account pages. */
+		/** Listed for someone signed in, and on the Account pages. */
 		accountPages: AccountPage[];
 		currentAccount: AccountPage | undefined;
 		workspaceMenu: WorkspacePage[];
@@ -35,16 +37,35 @@
 	} = $props();
 
 	const workspaceOpen = $derived(sidebar.isOpen('workspace', Boolean(currentWorkspacePage)));
+	const accountOpen = $derived(sidebar.isOpen('account', Boolean(currentAccount)));
+	// Updates to followed pages not yet seen, beside Following (site/DESIGN.md, section 6, "Follow").
+	const unread = $derived(followingState.current.signedIn ? followingState.current.unread : 0);
 </script>
 
 {#if accountPages.length > 0}
-	<!-- The Account pages, on those pages only (site/DESIGN.md, section 6, "Settings and Account"). -->
+	<!-- The Account pages and Following, for someone signed in (site/DESIGN.md, section 6, "Settings and Account"). -->
 	<div class="group">
-		<p class="group-title" id="sidebar-account-{idSuffix}">Your account</p>
-		<ul aria-labelledby="sidebar-account-{idSuffix}">
+		<div class="group-heading">
+			<FoldButton
+				controls="sidebar-account-list-{idSuffix}"
+				expanded={accountOpen}
+				name="Pages in Your account"
+				onclick={() => sidebar.setOpen('account', !accountOpen)}
+			/>
+			<p class="group-title" id="sidebar-account-{idSuffix}">Your account</p>
+			{#if unread > 0 && !accountOpen}
+				<span class="unread-count" title="{unread} new {unread === 1 ? 'update' : 'updates'} to pages you follow"
+					>{unreadLabel(unread)}<span class="visually-hidden"> new</span></span
+				>
+			{/if}
+		</div>
+		<ul id="sidebar-account-list-{idSuffix}" aria-labelledby="sidebar-account-{idSuffix}" hidden={!accountOpen}>
 			{#each accountPages as item (item.link)}
 				<li>
-					<a href={item.link} aria-current={item === currentAccount ? 'page' : undefined}>{item.label}</a>
+					<a href={item.link} aria-current={item === currentAccount ? 'page' : undefined}>
+						{item.label}
+						{#if item.link === '/following' && unread > 0}<span class="unread-count">{unreadLabel(unread)} new</span>{/if}
+					</a>
 				</li>
 			{/each}
 		</ul>
@@ -128,7 +149,16 @@
 		padding-left: var(--space-1);
 	}
 
-	/* Without scripts the Workspace group cannot fold, so it shows. */
+	/* The number of updates not yet seen, in the action color. */
+	.unread-count {
+		margin-left: auto;
+		padding: 0 var(--space-3) 0 var(--space-2);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-action);
+	}
+
+	/* Without scripts the groups cannot fold, so they show. */
 	:global(:root:not([data-scripts='on'])) ul[hidden] {
 		display: block;
 	}

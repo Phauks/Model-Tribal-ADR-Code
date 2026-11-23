@@ -331,7 +331,7 @@
 		{:else if id === 'editing'}
 			<p class="hint">
 				When people edit an essay together, each person’s cursor shows in their color. This changes only what
-				you see. The color others see for you is in <a href="/account" onclick={close}>Account settings</a>.
+				you see. The color others see for you is under <a href="/account/security" onclick={close}>Your account</a>.
 			</p>
 			{@render choiceGroup(
 				'Other people’s cursors',
