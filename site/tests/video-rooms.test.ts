@@ -7,6 +7,7 @@
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { beforeEach, describe, expect, it } from 'vitest';
 import {
+	agreementLabel,
 	durationWords,
 	eventRoomWindow,
 	recordingNotice,
@@ -141,26 +142,27 @@ describe('who may enter a room of its own', () => {
 });
 
 describe('the recording notice', () => {
-	it('asks for agreement when the room is or may be recorded, and says who may watch', () => {
+	it('is one short line, and asks for agreement when the room is or may be recorded', () => {
 		const recorded = recordingNotice('recorded', 'registered');
 		expect(recorded.needsAgreement).toBe(true);
-		expect(recorded.text).toContain('the people who registered for this event');
-		expect(recorded.text).toContain('tone');
+		expect(recorded.heading).toBe('This event is recorded.');
+		expect(recorded.text).toBe('People registered for the event can watch it.');
 		expect(recordingNotice('undecided', 'hosts').needsAgreement).toBe(true);
-		expect(recordingNotice('undecided', 'hosts').text).toContain('only the people running');
+		expect(recordingNotice('undecided', 'hosts').text).toBe('Only the people running events can watch it.');
+		expect(agreementLabel('undecided')).toBe('I agree to join a room that may be recorded.');
 	});
 
 	it('speaks of a room, and of its hosts, for a room of its own', () => {
-		const notice = recordingNotice('recorded', 'hosts', 'room');
-		expect(notice.heading).toBe('This room is recorded');
-		expect(notice.text).toContain('only the room’s hosts');
-		expect(recordingNotice('recorded', 'joined', 'room').text).toContain('the people who joined this room');
+		const notice = recordingNotice('undecided', 'hosts', 'room');
+		expect(notice.heading).toBe('This room may be recorded.');
+		expect(notice.text).toBe('Only the hosts can watch it.');
+		expect(recordingNotice('undecided', 'joined', 'room').text).toContain('People who joined');
 	});
 
-	it('still says what happens if a recording starts in a room not to be recorded', () => {
+	it('still says what happens if a recording starts in an event not to be recorded', () => {
 		const notice = recordingNotice('not-recorded', 'signed-in');
 		expect(notice.needsAgreement).toBe(false);
-		expect(notice.text).toContain('recording mark');
+		expect(notice.text).toContain('you will see and hear it');
 	});
 
 	it('puts a length in words', () => {
@@ -449,7 +451,7 @@ describe('rooms of their own', () => {
 	}
 
 	it('starts an instant room: private, open now for four hours, with a guest link', async () => {
-		const started = await startInstantRoom(database, { recording: 'undecided', timeZone: 'America/Los_Angeles', createdBy: host }, at(0));
+		const started = await startInstantRoom(database, { timeZone: 'America/Los_Angeles', createdBy: host }, at(0));
 		const room = (await roomByIdentifier(database, started.room)) as StandaloneRoom;
 		expect(room).toMatchObject({ visibility: 'private', recording: 'undecided', watchers: 'hosts', style: 'discussion', createdBy: host });
 		expect(room.startsAt).toBe(at(0).toISOString());
@@ -463,8 +465,8 @@ describe('rooms of their own', () => {
 
 	it('runs several rooms at once, each with its own meeting', async () => {
 		const api = realtimeKit();
-		const first = (await roomByIdentifier(database, (await startInstantRoom(database, { recording: 'recorded', timeZone: 'America/Los_Angeles', createdBy: host }, at(0))).room)) as StandaloneRoom;
-		const second = (await roomByIdentifier(database, (await startInstantRoom(database, { recording: 'recorded', timeZone: 'America/Los_Angeles', createdBy: host }, at(0))).room)) as StandaloneRoom;
+		const first = (await roomByIdentifier(database, (await startInstantRoom(database, { timeZone: 'America/Los_Angeles', createdBy: host }, at(0))).room)) as StandaloneRoom;
+		const second = (await roomByIdentifier(database, (await startInstantRoom(database, { timeZone: 'America/Los_Angeles', createdBy: host }, at(0))).room)) as StandaloneRoom;
 		const visitor = { kind: 'account' as const, identifier: host };
 		const input = { visitor, name: 'Host', role: 'host' as const, toldRecording: 'recorded' as const };
 		await letIntoRoom({ database, settings, fetcher: api.fetcher }, { ...input, room: first, window: first }, at(0.1));
@@ -475,7 +477,7 @@ describe('rooms of their own', () => {
 
 	it('lets two people in on one shared link as two people, and the same browser back in as the same person', async () => {
 		const api = realtimeKit();
-		const started = await startInstantRoom(database, { recording: 'recorded', timeZone: 'America/Los_Angeles', createdBy: host }, at(0));
+		const started = await startInstantRoom(database, { timeZone: 'America/Los_Angeles', createdBy: host }, at(0));
 		let room = (await roomByIdentifier(database, started.room)) as StandaloneRoom;
 		const invite = (await inviteBySecret(database, room.identifier, started.secret))!;
 		const join = async (browser: string, name: string) => {
@@ -506,7 +508,7 @@ describe('rooms of their own', () => {
 	it('turns an invite link off for good', async () => {
 		const room = await createRoom(
 			database,
-			{ title: 'Interview', visibility: 'private', style: 'discussion', recording: 'recorded', watchers: 'hosts', startsAt: at(10), closesAt: at(12), timeZone: 'America/Denver' },
+			{ title: 'Interview', visibility: 'private', style: 'discussion', watchers: 'hosts', startsAt: at(10), closesAt: at(12), timeZone: 'America/Denver' },
 			host,
 			today
 		);
@@ -519,7 +521,7 @@ describe('rooms of their own', () => {
 	it('closes a room now, and keeps one open longer, counting from now once it has closed', async () => {
 		const room = await createRoom(
 			database,
-			{ title: 'Talking circle', visibility: 'public', style: 'discussion', recording: 'not-recorded', watchers: 'hosts', startsAt: at(0), closesAt: at(2), timeZone: 'America/Chicago' },
+			{ title: 'Talking circle', visibility: 'public', style: 'discussion', watchers: 'hosts', startsAt: at(0), closesAt: at(2), timeZone: 'America/Chicago' },
 			host,
 			today
 		);
@@ -533,7 +535,7 @@ describe('rooms of their own', () => {
 	});
 
 	it('lists only public rooms still open on the Rooms page', async () => {
-		const room = { style: 'discussion' as const, recording: 'recorded' as const, watchers: 'hosts' as const, timeZone: 'America/Los_Angeles' };
+		const room = { style: 'discussion' as const, watchers: 'hosts' as const, timeZone: 'America/Los_Angeles' };
 		await createRoom(database, { ...room, title: 'Open public', visibility: 'public', startsAt: at(0), closesAt: at(2) }, host, today);
 		await createRoom(database, { ...room, title: 'Closed public', visibility: 'public', startsAt: at(-3), closesAt: at(-1) }, host, today);
 		await createRoom(database, { ...room, title: 'Interview', visibility: 'private', startsAt: at(0), closesAt: at(2) }, host, today);
@@ -545,7 +547,7 @@ describe('rooms of their own', () => {
 	it('copies the recordings of a room of its own, keyed by the room', async () => {
 		const room = await createRoom(
 			database,
-			{ title: 'Interview', visibility: 'private', style: 'discussion', recording: 'recorded', watchers: 'hosts', startsAt: at(10), closesAt: at(12), timeZone: 'America/Denver' },
+			{ title: 'Interview', visibility: 'private', style: 'discussion', watchers: 'hosts', startsAt: at(10), closesAt: at(12), timeZone: 'America/Denver' },
 			host,
 			today
 		);

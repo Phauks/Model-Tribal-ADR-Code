@@ -1,6 +1,6 @@
 <script lang="ts">
 	// The fields of a room of its own in the workspace (src/routes/workspace/rooms/room-form.ts).
-	import { eventTimeZones, recordingChoiceLabels, recordingChoices } from '#lib/event-calendar.ts';
+	import { eventTimeZones } from '#lib/event-calendar.ts';
 	import {
 		longestRoomHours,
 		recordingWatcherLabels,
@@ -51,16 +51,8 @@
 </fieldset>
 
 <fieldset class="group">
-	<legend>Recording</legend>
-	{@render error('recording')}
-	{#each recordingChoices as choice (choice)}
-		<div class="choice">
-			<input type="radio" id="recording-{choice}" name="recording" value={choice} checked={values.recording === choice} />
-			<label for="recording-{choice}">{recordingChoiceLabels[choice]}</label>
-		</div>
-	{/each}
-	<p class="hint">Everyone is told this before they join, and must agree when the room is or may be recorded.</p>
-	<p class="field-label">Who may watch the recordings</p>
+	<legend>Who may watch recordings</legend>
+	<p class="hint">Hosts start and stop recording in the call. Everyone is told before they join that the room may be recorded.</p>
 	{@render error('watchers')}
 	{#each roomRecordingWatchers as watchers (watchers)}
 		<div class="choice">
@@ -128,11 +120,6 @@
 
 	.choice input {
 		margin-top: 0.3em;
-	}
-
-	.field-label {
-		font-weight: 600;
-		margin: var(--space-3) 0 var(--space-2);
 	}
 
 	input[type='date'],

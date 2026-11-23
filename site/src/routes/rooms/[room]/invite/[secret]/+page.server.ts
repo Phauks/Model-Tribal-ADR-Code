@@ -85,7 +85,7 @@ export const actions: Actions = {
 			);
 			return { token, role: access.kind };
 		} catch (problem) {
-			console.error('Could not open the video room', room.identifier, problem);
+			console.error('Could not open the video room', room.identifier, problem instanceof Error ? problem.message : String(problem));
 			return fail(502, { problem: 'The video room could not be reached just now. Try again in a minute.' });
 		}
 	}

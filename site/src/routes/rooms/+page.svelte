@@ -24,7 +24,7 @@
 	<ul class="rooms">
 		{#each data.rooms as room (room.identifier)}
 			<li class="panel">
-				<h2><a href="/rooms/{room.identifier}">{room.title}</a></h2>
+				<h2><a href="/rooms/{room.identifier}" target="_blank" rel="noopener">{room.title}<span class="visually-hidden"> (opens in a new tab)</span></a></h2>
 				<p>{room.when}</p>
 				<p class="small">{room.open ? 'Open now' : 'Not open yet'}</p>
 			</li>
