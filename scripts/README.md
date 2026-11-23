@@ -160,3 +160,11 @@ between steps) go in a scratch folder.
 | `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers. The summaries stay in the private work files: no AI summaries of constitutions are published | `scripts/requirements.txt` and `requests` |
 | `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, a history record for every nation with a text, and source records | `scripts/requirements.txt` and `requests` |
 | `constitutions/name_versions_in_profiles.py` | Adds `document_version` beside profile facts that cite a superseded or undated version | `scripts/requirements.txt` |
+
+## Indian law journals sweep, Nov. 23, 2026
+
+Run by hand, never in continuous integration. It reads the public catalogs that law school repositories publish for harvesters, so later sweeps can compare new articles against `content/sources/` ([session note](../research/sessions/2026/2026-11-23-indian-law-journals.md)).
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/journal_oai_harvest.py` | Harvests the OAI-PMH catalog of each named repository collection (for example the American Indian Law Review at the University of Oklahoma) into one JSON list of titles, authors, dates, keywords, abstracts and landing pages; downloads no articles | Python standard library only |
