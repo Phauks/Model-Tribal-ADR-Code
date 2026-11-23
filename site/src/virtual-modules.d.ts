@@ -76,6 +76,8 @@ declare module 'virtual:build' {
 declare module 'cloudflare:workers' {
 	/** The Worker's bindings and secrets (src/app.d.ts). */
 	export const env: WorkerEnvironment;
+	/** Keeps the Worker running until the promise settles, after the response has gone (at most 30 seconds). */
+	export function waitUntil(promise: Promise<unknown>): void;
 }
 
 declare module 'virtual:followable-pages' {

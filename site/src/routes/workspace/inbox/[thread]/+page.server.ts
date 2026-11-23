@@ -1,7 +1,8 @@
 import { error, fail, redirect } from '@sveltejs/kit';
 import { composeDefaults, isComposeMode, parseAddressList, type AnsweredMessage, type ComposeMode } from '#lib/mail.ts';
 import { can } from '#lib/permissions.ts';
-import { cancelScheduled, CompositionError, queueMessage, sendAgain, sendMessage } from '#lib/server/mail/outbound.ts';
+import { afterResponse } from '#lib/server/environment.ts';
+import { cancelScheduled, CompositionError, queueMessage, sendAgain, sendMessage, sendWhenPauseEnds } from '#lib/server/mail/outbound.ts';
 import { mailCarriers, mailContext } from '#lib/server/mail/runtime.ts';
 import { currentTime } from '#lib/server/mail/context.ts';
 import {
@@ -19,8 +20,10 @@ import {
 } from '#lib/server/mail/store.ts';
 import { releaseAttachment } from '#lib/server/mail/scans.ts';
 import { suppress } from '#lib/server/mail/suppressions.ts';
+import { deleteDraft, draftForThread, getUndoSeconds, undoSend } from '#lib/server/mail/writing.ts';
 import { formText, requirePermission } from '#lib/server/workspace.ts';
 import { readAttachments, whenFromForm } from '../compose.ts';
+import { composerData } from '../composer-data.server.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 // One conversation: its messages, notes and history, and the reply box.
@@ -51,8 +54,44 @@ export const load: PageServerLoad = async (event) => {
 	if (thread.unread) await markRead(context, person.identifier, thread.identifier, true);
 
 	// The reply box answers one message: the one a Reply, Reply all or Forward button named (?compose=…&message=…), else the latest one received.
+	// A draft the person saved here opens instead, unless a button asked for something else.
 	const finished = thread.messages.filter((message) => message.status === 'received' || message.status === 'sent');
 	const asked = event.url.searchParams.get('compose');
+	const draft = await draftForThread(context, person.identifier, thread.identifier);
+	const writing = await composerData(context, person.displayName, [thread.counterpartAddress]);
+	if (draft && !isComposeMode(asked)) {
+		const fields = draft.fields;
+		const target = finished.find((message) => message.identifier === fields.message) ?? null;
+		return {
+			thread,
+			people: await assignablePeople(context, assignableRoles),
+			addresses: context.settings.addresses,
+			compose: {
+				mode: fields.mode ?? ('reply' as ComposeMode),
+				message: target?.identifier ?? null,
+				asked: event.url.searchParams.has('draft'),
+				from: fields.from,
+				to: fields.to,
+				cc: fields.cc,
+				bcc: fields.bcc,
+				subject: fields.subject,
+				text: fields.text,
+				quote: '',
+				attachments:
+					fields.mode === 'forward' && target
+						? target.attachments
+								.filter((item) => !item.inline)
+								.map((item) => ({ identifier: item.identifier, filename: item.filename, size: item.size, held: item.check?.held ?? false, label: item.check?.label ?? null }))
+						: [],
+				draft: draft.identifier,
+				signed: true,
+				otherDraft: false
+			},
+			writing,
+			undone: event.url.searchParams.get('undone'),
+			canManage: can(person, 'manage-mail')
+		};
+	}
 	const mode: ComposeMode = isComposeMode(asked) ? asked : 'reply';
 	const named = finished.find((message) => message.identifier === event.url.searchParams.get('message'));
 	const target = named ?? [...finished].reverse().find((message) => message.direction === 'in') ?? finished.at(-1) ?? null;
@@ -70,13 +109,21 @@ export const load: PageServerLoad = async (event) => {
 			asked: named !== undefined || isComposeMode(asked),
 			from: thread.projectAddress && context.settings.addresses.includes(thread.projectAddress) ? thread.projectAddress : (context.settings.defaultAddress ?? ''),
 			...defaults,
+			bcc: '',
+			text: '',
 			attachments:
 				mode === 'forward' && target
 					? target.attachments
 							.filter((item) => !item.inline)
 							.map((item) => ({ identifier: item.identifier, filename: item.filename, size: item.size, held: item.check?.held ?? false, label: item.check?.label ?? null }))
-					: []
+					: [],
+			/** Writing here replaces the draft the person saved in this conversation. */
+			draft: draft?.identifier ?? null,
+			signed: false,
+			otherDraft: draft !== null
 		},
+		writing,
+		undone: null,
 		canManage: can(person, 'manage-mail')
 	};
 };
@@ -100,6 +147,7 @@ export const actions: Actions = {
 		const message = formText(form, 'message', 100);
 		const forward = mode === 'forward' && message ? { message, attachments: form.getAll('forwardAttachment').map(String).filter(Boolean) } : null;
 		if (!text && !forward) return fail(400, { problem: 'Write a message first.' });
+		const sendAt = whenFromForm(form, 'sendAt');
 		try {
 			const queued = await queueMessage(context, {
 				personIdentifier: person.identifier,
@@ -113,10 +161,18 @@ export const actions: Actions = {
 				attachments: await readAttachments(form),
 				answering: message,
 				forward,
-				sendAt: whenFromForm(form, 'sendAt'),
-				remindAt: whenFromForm(form, 'remindAt')
+				sendAt,
+				remindAt: whenFromForm(form, 'remindAt'),
+				holdForUndo: sendAt ? 0 : await getUndoSeconds(context)
 			});
+			await deleteDraft(context, person.identifier, { threadIdentifier: threadOf(event) });
 			if (queued.scheduled) return { done: 'Scheduled. It is listed below and in Scheduled until it goes.' };
+			if (queued.pause) {
+				// It goes when the pause ends, unless Undo pulls it back first (src/lib/server/mail/writing.ts).
+				afterResponse(sendWhenPauseEnds(context, mailCarriers(context), queued.messageIdentifier, queued.pause));
+				// The page shows the countdown with Undo at the top, so no other words are needed.
+				return { paused: true };
+			}
 			const sent = await sendMessage(context, mailCarriers(context), queued.messageIdentifier);
 			return sent.sent ? { done: 'Sent.' } : fail(502, { problem: `Not sent: ${sent.error} The message is kept below; use Send again.` });
 		} catch (problem) {
@@ -198,6 +254,16 @@ export const actions: Actions = {
 			return fail(400, { problem: 'That file cannot be released: only a file the virus check could not finish can be, never one where something was found.' });
 		}
 		return { done: 'Released. The file can now be downloaded and forwarded.' };
+	},
+	undo: async (event) => {
+		const person = requirePermission(event, 'read-mail');
+		const form = await event.request.formData();
+		const message = formText(form, 'message', 100);
+		const undone = message ? await undoSend(mailContext(), person.identifier, message) : null;
+		if (!undone) return fail(400, { problem: 'Too late to undo: the message has gone.' });
+		const files = undone.hadAttachments ? 'files' : 'yes';
+		if (!undone.threadIdentifier) redirect(303, `/workspace/inbox/new?draft=${undone.draftIdentifier}&undone=${files}`);
+		redirect(303, `/workspace/inbox/${undone.threadIdentifier}?draft&undone=${files}#reply`);
 	},
 	cancel: async (event) => {
 		const person = requirePermission(event, 'read-mail');
