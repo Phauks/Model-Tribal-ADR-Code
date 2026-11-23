@@ -8,6 +8,7 @@ Anyone who is signed in can send the project documents, pictures, sound recordin
 - **Your uploads** (`/uploads`, also in the account menu). Everything the person has sent, with its status and a line explaining it. Here they answer a reviewer's question and withdraw a file before it is filed. Withdrawing deletes the file at once.
 - **Uploads** in the workspace (`/workspace/uploads`, for the lead author and editors, permission `review-uploads`). The queue, oldest first, in five views: to review, waiting on someone, decided, not accepted or withdrawn, and all. It can be narrowed to one kind of file.
 - **One upload** (`/workspace/uploads/<reference>`). The reviewer sees the file (picture, player or YouTube embed; documents are downloaded, never opened in the browser), what the checks found, and what the sender said. From here they ask the sender a question, leave a note for other reviewers, and then file it, keep it for reference, wait for the nation, or mark it not used with a reason the sender sees. A decided upload can be reopened. Each step is written to the activity log.
+- **Files about your nation** (`/workspace/nation-uploads`, for nation reviewers, permission `comment-on-nation-uploads`). The files people sent that name the reviewer's nation, with a page for each where they see it and comment for the nation. See "Comments from the nation".
 
 ## Statuses
 
@@ -53,6 +54,12 @@ Filing sets where the file goes: a nation page source, picture or video, a story
 
 A filed file is served at `/files/<reference>/<name>` with byte ranges, so the browser's own player can play and seek a video or recording stored in the bucket. Everyone can open it once it is filed for everyone, once its embargo date has passed, or, for an essay figure, once its essay is published. Reviewers can always open it, and anyone with comment access to an essay can open its figures while it is a draft, so co-authors see them in the editor. Pictures, sound and video are shown in the browser with a Content-Security-Policy that blocks scripts and with `nosniff`; documents are always downloaded (OWASP File Upload Cheat Sheet, "File Storage Location").
 
+## Comments from the nation
+
+A nation reviewer sees the files people sent that name their nation, as decision record 0038 set out: they comment, and only the project's reviewers file. A file shows up once it has arrived and stays while it is in review or decided. Files that were withdrawn, refused or deleted do not show. The nation reviewer sees the file, what it is, where it came from, how the project may use it, whether the sender asked that the nation see it first, and where it was filed. They do not see who sent it, the reviewers' notes, or the questions and answers between the sender and reviewers, because the sender gave those to the project and not to the nation. A picture is shown as its copy without location details.
+
+A comment from the nation appears on the reviewer's page for that upload, marked as coming from the nation, and is written to the activity log. The sender does not see it. If the lead author lowers a nation reviewer's access to their nation below comment, the page stops showing that nation's files. Comments are stored in `upload_nation_comments`, with the nation each one speaks for (migration `0018_upload_nation_comments.sql`).
+
 ## Essay figures
 
 The essay editor sends a picture, sound recording or video the same way, with `wayIn: "essay-figure"` and the essay's identifier on `POST /uploads/pieces` or `POST /uploads/links`. The writer needs "contribute" access to that essay. Figures skip the queue, because publishing the essay is the review, and are filed with the essay as soon as they arrive.
@@ -66,12 +73,11 @@ The essay editor sends a picture, sound recording or video the same way, with `w
 
 ## Database
 
-Migration `0010_uploads.sql` adds `uploads`, `upload_pieces` (each piece's size, hash and bucket tag, and what the checks found), `upload_links` (nations an upload is about) and `upload_messages` (questions, answers and reviewers' notes). It also rebuilds the activity log to allow entries about uploads. Every entry keeps its sequence number and fields, so its seal still matches.
+Migration `0018_upload_nation_comments.sql` adds `upload_nation_comments`, the comments from nations. Migration `0010_uploads.sql` adds `uploads`, `upload_pieces` (each piece's size, hash and bucket tag, and what the checks found), `upload_links` (nations an upload is about) and `upload_messages` (questions, answers and reviewers' notes). It also rebuilds the activity log to allow entries about uploads. Every entry keeps its sequence number and fields, so its seal still matches.
 
 ## Not built yet
 
 - A virus scan. Cloudflare's own upload scanning is part of its Enterprise plan, so the plan is ClamAV running in a Cloudflare Container, with files held at "Checking" until it passes. Until then, reviewers see a reminder to open downloaded files with care.
-- Comments from nation reviewers on uploads about their nation. They will be able to comment but not file.
 - Email notices to the sender when a status changes. These wait on the project's domain.
 - Showing filed files on nation, story and essay pages. Today a reviewer files a file and puts its `/files/` address on the page by pull request or in the essay editor.
 - Video in print: a still frame, a caption and a short link or QR code, once the domain exists.

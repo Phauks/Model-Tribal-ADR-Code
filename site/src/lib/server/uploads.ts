@@ -144,7 +144,7 @@ export interface PieceRow {
 
 export interface MessageRow {
 	identifier: string;
-	kind: 'question' | 'answer' | 'note';
+	kind: 'question' | 'answer' | 'note' | 'nation-comment';
 	body: string;
 	created_at: string;
 	person_name: string | null;
@@ -918,11 +918,18 @@ export async function uploadDetail(database: D1Database, reference: string): Pro
 			.all<LinkRow>(),
 		database
 			.prepare(
-				`SELECT upload_messages.identifier, kind, body, created_at, people.display_name AS person_name
+				`SELECT upload_messages.identifier, upload_messages.kind, upload_messages.body, upload_messages.created_at,
+				        people.display_name AS person_name
 				 FROM upload_messages LEFT JOIN people ON people.identifier = upload_messages.person_identifier
-				 WHERE upload_identifier = ? ORDER BY created_at`
+				 WHERE upload_messages.upload_identifier = ?
+				 UNION ALL
+				 SELECT comments.identifier, 'nation-comment' AS kind, comments.body, comments.created_at,
+				        people.display_name AS person_name
+				 FROM upload_nation_comments AS comments LEFT JOIN people ON people.identifier = comments.person_identifier
+				 WHERE comments.upload_identifier = ?
+				 ORDER BY created_at`
 			)
-			.bind(upload.identifier)
+			.bind(upload.identifier, upload.identifier)
 			.all<MessageRow>(),
 		database
 			.prepare(
@@ -995,6 +1002,116 @@ export async function addUploadMessage(
 		);
 	}
 	await database.batch(statements);
+}
+
+// ---------------------------------------------------------------------------
+// Comments from the nation (decision record 0038): a nation reviewer reads
+// the files linked to their nation and comments on them; only the project's
+// reviewers file them. The nation sees what was sent and why, not who sent it.
+// ---------------------------------------------------------------------------
+
+/** What a nation sees: the file arrived and is not withdrawn, refused or deleted. */
+const nationVisibleStatuses: readonly UploadStatus[] = [
+	'waiting-for-review',
+	'in-review',
+	'needs-answer',
+	'waiting-for-nation',
+	'filed',
+	'kept-for-reference',
+	'not-used'
+];
+
+/**
+ * The nation a person comments for on uploads, or null. Today that is a
+ * nation reviewer's own nation, unless the lead author lowered their access
+ * to it below comment.
+ */
+export async function nationSpokenFor(database: D1Database, person: SignedInPerson): Promise<string | null> {
+	if (!can(person, 'comment-on-nation-uploads') || !person.nationIdentifier) return null;
+	const access = await accessTo(database, person, { kind: 'nation', identifier: person.nationIdentifier });
+	return atLeast(access.level, 'comment') ? person.nationIdentifier : null;
+}
+
+const nationUploadFilter = `uploads.status IN (${nationVisibleStatuses.map((status) => `'${status}'`).join(', ')})
+	AND uploads.deleted_at IS NULL
+	AND EXISTS (
+		SELECT 1 FROM upload_links
+		WHERE upload_links.upload_identifier = uploads.identifier
+		  AND upload_links.target_kind = 'nation' AND upload_links.target_identifier = ?
+	)`;
+
+export interface NationUploadItem {
+	reference: string;
+	name: string;
+	kind: UploadKind | null;
+	source: 'file' | 'youtube';
+	sizeBytes: number | null;
+	status: UploadStatus;
+	receivedAt: string;
+	comments: number;
+}
+
+/** The files people sent about the person's nation, newest first. */
+export async function nationUploads(database: D1Database, person: SignedInPerson): Promise<NationUploadItem[]> {
+	const nation = await nationSpokenFor(database, person);
+	if (!nation) return [];
+	const rows = await database
+		.prepare(
+			`SELECT uploads.reference, COALESCE(uploads.title, uploads.file_name, 'YouTube video') AS name, uploads.kind,
+			        uploads.source, uploads.size_bytes AS sizeBytes, uploads.status, uploads.received_at AS receivedAt,
+			        (SELECT COUNT(*) FROM upload_nation_comments AS comments
+			         WHERE comments.upload_identifier = uploads.identifier AND comments.nation_identifier = ?) AS comments
+			 FROM uploads WHERE ${nationUploadFilter}
+			 ORDER BY uploads.received_at DESC`
+		)
+		.bind(nation, nation)
+		.all<NationUploadItem>();
+	return rows.results;
+}
+
+/** One upload as its nation sees it, or null when the person may not see it. */
+export async function nationUpload(
+	database: D1Database,
+	person: SignedInPerson,
+	reference: string
+): Promise<{ upload: UploadRow; nation: string; comments: MessageRow[] } | null> {
+	const nation = await nationSpokenFor(database, person);
+	if (!nation) return null;
+	const upload = await database
+		.prepare(`SELECT * FROM uploads WHERE reference = ? AND ${nationUploadFilter}`)
+		.bind(reference, nation)
+		.first<UploadRow>();
+	if (!upload) return null;
+	const comments = await database
+		.prepare(
+			`SELECT comments.identifier, 'nation-comment' AS kind, comments.body, comments.created_at,
+			        people.display_name AS person_name
+			 FROM upload_nation_comments AS comments LEFT JOIN people ON people.identifier = comments.person_identifier
+			 WHERE comments.upload_identifier = ? AND comments.nation_identifier = ? ORDER BY comments.created_at`
+		)
+		.bind(upload.identifier, nation)
+		.all<MessageRow>();
+	return { upload, nation, comments: comments.results };
+}
+
+/** A nation reviewer comments on an upload about their nation. Reviewers see it with the upload. */
+export async function addNationComment(
+	database: D1Database,
+	person: SignedInPerson,
+	upload: UploadRow,
+	body: string
+): Promise<void> {
+	const found = await nationUpload(database, person, upload.reference);
+	if (!found) throw new UploadProblem('You can comment only on files about your nation.', 403);
+	await database.batch([
+		database
+			.prepare(
+				`INSERT INTO upload_nation_comments (identifier, upload_identifier, nation_identifier, person_identifier, body, created_at)
+				 VALUES (?, ?, ?, ?, ?, ?)`
+			)
+			.bind(newIdentifier(), upload.identifier, found.nation, person.identifier, body, now()),
+		uploadEvent(database, upload, 'Comment from the nation', person.identifier)
+	]);
 }
 
 /** The file waits until the nation has seen it. */
