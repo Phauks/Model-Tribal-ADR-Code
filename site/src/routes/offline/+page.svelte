@@ -35,10 +35,16 @@
 			why: 'So that a nation can withdraw it at once, on every device.'
 		},
 		{
-			what: 'Our copies of documents, such as laws and constitutions',
-			where: 'Online only',
-			saved: false,
-			why: 'Some are large. The page that cites a document is saved, with its link.'
+			what: 'United States laws and government documents we hold',
+			where: 'Saved, if you choose',
+			saved: true,
+			why: 'Works of the United States government are free for anyone to share.'
+		},
+		{
+			what: 'Nations’ constitutions and laws we hold',
+			where: 'Saved, one nation at a time',
+			saved: true,
+			why: 'Shared until a nation asks us to remove one. A removed document also leaves your device the next time you are online. All of them together come to several gigabytes, so each nation’s page has its own button.'
 		},
 		{
 			what: 'Documents held by the National Indian Law Library',
@@ -100,6 +106,10 @@
 		never saved, because they need a connection to send anything.
 	</p>
 	<h2>Save more now</h2>
+	<p>
+		You can save whole parts of the site, the United States documents we hold, and, from each
+		nation’s page, that nation’s constitutions and laws.
+	</p>
 	<OfflineSaving headingLevel={3} />
 	<p class="muted">The same choices are under Settings, in “Data.”</p>
 

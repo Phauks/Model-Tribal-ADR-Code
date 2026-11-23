@@ -31,5 +31,6 @@ describe('offline collections', () => {
 		expect(formatBytes(1)).toBe('1 KB');
 		expect(formatBytes(45_300)).toBe('45 KB');
 		expect(formatBytes(3_140_000)).toBe('3.1 MB');
+		expect(formatBytes(3_186_082_179)).toBe('3.2 GB');
 	});
 });

@@ -6,6 +6,8 @@
  * own globals.
  */
 
+import type { DocumentSet, DocumentsStatus } from './offline-documents.ts';
+
 export type CollectionIdentifier = 'nations' | 'stories' | 'glossary' | 'other';
 
 export interface Collection {
@@ -68,6 +70,9 @@ export interface OfflineStatus {
 
 export type WorkerRequest =
 	| { type: 'skip-waiting' }
+	| { type: 'documents-status'; sets: DocumentSet[] }
+	| { type: 'documents-save'; set: DocumentSet }
+	| { type: 'documents-remove'; set: DocumentSet }
 	| { type: 'offline-status' }
 	| { type: 'offline-save'; collection: CollectionIdentifier }
 	| { type: 'offline-remove'; collection: CollectionIdentifier }
@@ -76,6 +81,8 @@ export type WorkerRequest =
 export type WorkerReply =
 	| { type: 'status'; status: OfflineStatus }
 	| { type: 'progress'; collection: CollectionIdentifier; done: number; total: number }
+	| { type: 'documents'; status: DocumentsStatus }
+	| { type: 'documents-progress'; set: DocumentSet; done: number; total: number }
 	| { type: 'failed'; message: string };
 
 /** The time a build was made, from the build version "<site version>+<milliseconds>". */
@@ -86,5 +93,6 @@ export function buildTime(version: string): Date | undefined {
 
 export function formatBytes(bytes: number): string {
 	if (bytes < 1000 * 1000) return `${Math.max(1, Math.round(bytes / 1000))} KB`;
-	return `${(bytes / (1000 * 1000)).toFixed(1)} MB`;
+	if (bytes < 1000 * 1000 * 1000) return `${(bytes / (1000 * 1000)).toFixed(1)} MB`;
+	return `${(bytes / (1000 * 1000 * 1000)).toFixed(1)} GB`;
 }

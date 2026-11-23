@@ -15,9 +15,20 @@
 		type OfflineStatus
 	} from '#lib/offline-collections.ts';
 	import {
+		documentSummary,
+		nationOfSet,
+		type DocumentSet,
+		type DocumentSetSummary,
+		type DocumentsStatus
+	} from '#lib/offline-documents.ts';
+	import {
 		askToKeepStorage,
 		controllingWorker,
+		documentsStatus,
 		offlineStatus,
+		removeDocuments,
+		saveDocuments,
+		type DocumentsProgress,
 		removeCollection,
 		saveCollection,
 		storageUse,
@@ -34,6 +45,12 @@
 	let problem = $state<string | undefined>();
 	let available = $state(true);
 	let online = $state(true);
+	let documents = $state<DocumentsStatus | undefined>();
+	let summary = $state<DocumentSetSummary | undefined>();
+	let documentProgress = $state<Partial<Record<DocumentSet, DocumentsProgress>>>({});
+	const federal = $derived(documents?.sets.find((item) => item.set === 'federal'));
+	const savedNations = $derived(documents?.sets.filter((item) => nationOfSet(item.set) && (item.kept || item.saved > 0)) ?? []);
+	const allNations = $derived(summary ? Object.values(summary.nations) : []);
 	/** About how many bytes each whole collection takes, from /offline-sizes.json (written after the build). */
 	let sizes = $state<Partial<Record<CollectionIdentifier, number>>>({});
 
@@ -65,9 +82,35 @@
 		if (!available) return;
 		try {
 			status = await offlineStatus();
+			documents = await documentsStatus(['federal']);
 		} catch {
 			available = false;
 		}
+	}
+
+	async function saveSet(set: DocumentSet): Promise<void> {
+		problem = undefined;
+		try {
+			documents = await saveDocuments(set, (update) => (documentProgress = { ...documentProgress, [set]: update }));
+			documents = await documentsStatus(['federal']);
+			const left = documents.sets.find((item) => item.set === set);
+			if (left && left.saved < left.total) {
+				problem = `${left.total - left.saved} files could not be saved. Press the button again to try them once more.`;
+			}
+		} catch {
+			problem = 'Saving stopped, perhaps because the connection dropped. Press the button again to continue where it stopped.';
+		} finally {
+			const { [set]: _finished, ...rest } = documentProgress;
+			documentProgress = rest;
+			storage = await storageUse();
+		}
+	}
+
+	async function removeSet(set: DocumentSet): Promise<void> {
+		problem = undefined;
+		await removeDocuments(set).catch(() => undefined);
+		documents = await documentsStatus(['federal']).catch(() => documents);
+		storage = await storageUse();
 	}
 
 	async function save(id: CollectionIdentifier): Promise<void> {
@@ -109,6 +152,7 @@
 		window.addEventListener('offline', update);
 		void refresh();
 		void loadSizes();
+		void documentSummary().then((loaded) => (summary = loaded));
 		return () => {
 			window.removeEventListener('online', update);
 			window.removeEventListener('offline', update);
@@ -220,7 +264,78 @@
 		{#if problem}<p class="field-error" role="alert">{problem}</p>{/if}
 	{/if}
 
-	<svelte:element this={heading} class="group-heading">Pictures, sound and video</svelte:element>
+	<svelte:element this={heading} class="group-heading">Documents this site holds</svelte:element>
+	<p class="hint">Our own copies of documents we cite and are allowed to share. Each one names where it came from.</p>
+	{#if available && documents}
+		<ul class="collections">
+			{#if federal && federal.total > 0}
+				{@const running = documentProgress.federal}
+				<li class="collection">
+					<div class="collection-text">
+						<svelte:element this={subheading} class="collection-name">{federal.title}</svelte:element>
+						<p class="hint">Statutes, regulations and reports from GovInfo and federal agencies, which are free for anyone to share</p>
+						<p>
+							{#if federal.saved === 0}
+								Not saved yet. {numbers.format(federal.total)} files, about {formatBytes(federal.totalBytes)}.
+							{:else if federal.saved === federal.total}
+								All {numbers.format(federal.total)} files saved, {formatBytes(federal.bytes)}.
+							{:else}
+								{numbers.format(federal.saved)} of {numbers.format(federal.total)} files saved, {formatBytes(federal.bytes)}.
+							{/if}
+						</p>
+					</div>
+					{#if running}
+						<p class="collection-actions" role="status">
+							<label>
+								Saving: {numbers.format(running.done)} of {numbers.format(running.total)} files
+								<progress max={running.total} value={running.done}></progress>
+							</label>
+						</p>
+					{:else}
+						<p class="collection-actions">
+							{#if federal.saved < federal.total}
+								<button class="button" type="button" disabled={!online} onclick={() => saveSet('federal')}>
+									{federal.saved === 0
+										? `Save all ${numbers.format(federal.total)} files`
+										: `Save the other ${numbers.format(federal.total - federal.saved)} files`}
+								</button>
+							{/if}
+							{#if federal.saved > 0 || federal.kept}
+								<button class="button button-quiet" type="button" onclick={() => removeSet('federal')}>
+									Remove saved files
+								</button>
+							{/if}
+						</p>
+					{/if}
+				</li>
+			{/if}
+			<li class="collection">
+				<div class="collection-text">
+					<svelte:element this={subheading} class="collection-name">Nations’ constitutions and laws</svelte:element>
+					<p class="hint">
+						Saved one nation at a time, from the nation’s page{#if allNations.length > 0}, because all {numbers.format(allNations.length)} nations together take about {formatBytes(allNations.reduce((total, item) => total + item.bytes, 0))}{/if}.
+					</p>
+					{#if savedNations.length === 0}
+						<p>None saved yet.</p>
+					{:else}
+						<ul class="saved-nations">
+							{#each savedNations as item (item.set)}
+								<li>
+									<span><a href="/nations/{nationOfSet(item.set)}">{item.title}</a>, {numbers.format(item.saved)} of {numbers.format(item.total)} files, {formatBytes(item.bytes)}</span>
+									<button class="button button-quiet" type="button" onclick={() => removeSet(item.set)}>
+										Remove<span class="visually-hidden"> {item.title}’s documents</span>
+									</button>
+								</li>
+							{/each}
+						</ul>
+					{/if}
+					<p class="hint">When a nation asks us to remove a document, it is also removed from this device the next time you are online.</p>
+				</div>
+			</li>
+		</ul>
+	{/if}
+
+		<svelte:element this={heading} class="group-heading">Pictures, sound and video</svelte:element>
 	<ul class="plain-list">
 		<li>
 			<strong>Pictures</strong> on a page are saved with the page, except a nation’s seal or logo.
@@ -235,7 +350,6 @@
 		<summary>Online only, never saved on this device</summary>
 		<ul>
 			<li>A nation’s seal or logo, so that a nation can withdraw it at once</li>
-			<li>Our copies of documents, such as laws and constitutions; the pages that cite them are saved</li>
 			<li>
 				Documents held by the National Indian Law Library or by code publishers, and articles and
 				books: pages link to them
@@ -342,6 +456,20 @@
 	.collection .collection-text > :last-child,
 	.collection .collection-actions {
 		margin-bottom: 0;
+	}
+
+	.saved-nations {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-2);
+	}
+
+	.saved-nations li {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-1) var(--space-2);
+		padding: var(--space-1) 0;
 	}
 
 	.kept {

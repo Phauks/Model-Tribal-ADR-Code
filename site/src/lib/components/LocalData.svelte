@@ -11,7 +11,7 @@
 	import Upload from '@lucide/svelte/icons/upload';
 	import { tick } from 'svelte';
 	import { collections } from '#lib/offline-collections.ts';
-	import { controllingWorker, offlineStatus, removeCollection } from '#lib/offline-saving.ts';
+	import { controllingWorker, documentsStatus, offlineStatus, removeCollection, removeDocuments } from '#lib/offline-saving.ts';
 	import { defaultPrintOptions, loadPrintOptions, savePrintOptions } from '#lib/print-options.ts';
 	import { buildReaderData, parseReaderData, readerDataFileName, readerDataSizeLimit, type ReaderData } from '#lib/reader-data.ts';
 	import { loadSettings, loadTheme, saveSettings, saveTheme } from '#lib/reading-settings.ts';
@@ -38,7 +38,7 @@
 		{ id: 'settings', label: 'Settings', hint: 'Text, colors, citations and glossary choices' },
 		{ id: 'print', label: 'Print choices', hint: 'What you chose to include when printing' },
 		{ id: 'starred', label: 'Starred pages', hint: 'The pages you starred and your notes on them' },
-		{ id: 'pages', label: 'Saved pages', hint: 'Pages saved for reading without a connection' }
+		{ id: 'pages', label: 'Saved pages', hint: 'Pages and documents saved for reading without a connection' }
 	];
 
 	const heading = $derived(`h${headingLevel}`);
@@ -138,6 +138,12 @@
 			if (controllingWorker()) {
 				for (const collection of collections) {
 					await removeCollection(collection.id).catch(() => notDone.push(collection.label));
+				}
+				// Saved copies of documents go too (src/lib/offline-documents.ts).
+				try {
+					for (const { set } of (await documentsStatus()).sets) await removeDocuments(set);
+				} catch {
+					notDone.push('saved documents');
 				}
 			} else {
 				notDone.push('saved pages');
