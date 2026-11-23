@@ -32,6 +32,7 @@ import {
 	directoryOf,
 	hideChange,
 	listChanges,
+	pageHistorySummary,
 	pageRecordedSince,
 	recordBuildChanges,
 	showChange,
@@ -250,6 +251,18 @@ describe('recording the changes a build brings', () => {
 		expect(await pageRecordedSince(database, '/nations/hopi-tribe')).toBe('2026-11-23T03:49:00Z');
 		// A page the history does not follow has no start.
 		expect(await pageRecordedSince(database, '/about')).toBeUndefined();
+	});
+
+	it('sums up a page’s history for its badge: how many changes and the newest', async () => {
+		const first = build('2026-11-23T00:00:00Z', [nationPage('navajo-nation', { Contacts: 'a', Courts: 'b' })]);
+		await recordBuildChanges(database, bucket, first, '2026-11-23T03:49:00Z');
+		expect(await pageHistorySummary(database, '/nations/navajo-nation')).toEqual({ count: 0, latest: undefined, recordedSince: '2026-11-23T03:49:00Z' });
+
+		const commits = [{ title: 'Update the courts', merged: '2026-11-23T05:00:00Z', bulk: false }];
+		const second = build('2026-11-23T06:00:00Z', [nationPage('navajo-nation', { Contacts: 'a', Courts: 'c' }, [0])], commits);
+		await recordBuildChanges(database, bucket, second, '2026-11-23T06:01:00Z');
+		const summary = await pageHistorySummary(database, '/nations/navajo-nation');
+		expect(summary).toMatchObject({ count: 1, recordedSince: undefined, latest: { change: 'edit', parts: ['Courts'], who: 'Site release' } });
 	});
 
 	it('compares two versions of a page, and refuses to show hidden text', async () => {
