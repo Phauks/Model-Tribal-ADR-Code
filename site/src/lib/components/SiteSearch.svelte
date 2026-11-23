@@ -310,17 +310,11 @@
 
 	.fold-mark {
 		display: inline-flex;
-		transition: transform 0.15s;
+		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
 	}
 
 	details:not([open]) .fold-mark {
 		transform: rotate(-90deg);
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.fold-mark {
-			transition: none;
-		}
 	}
 
 	.count {

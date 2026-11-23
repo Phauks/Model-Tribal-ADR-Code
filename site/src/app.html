@@ -24,7 +24,8 @@
 						'contrast',
 						'noteDisplay',
 						'sourceLinks',
-						'glossaryCards'
+						'glossaryCards',
+						'motion'
 					].forEach(function (name) {
 						var value = settings && settings[name];
 						if (typeof value === 'string' && /^[a-z0-9.-]+$/.test(value)) root.dataset[name] = value;

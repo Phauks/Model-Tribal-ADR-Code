@@ -159,7 +159,7 @@
 
 	.fold-mark {
 		display: inline-flex;
-		transition: transform 0.15s;
+		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
 	}
 
 	.result-group:not([open]) .fold-mark {

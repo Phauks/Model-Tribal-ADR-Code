@@ -35,8 +35,27 @@
 </details>
 
 <style>
+	/*
+	 * The section opens and closes by its height (site/DESIGN.md, section 6,
+	 * "Motion"). Browsers that cannot animate to a height of "auto" open and
+	 * close at once, as before; the element stays a plain <details>, so
+	 * find-in-page and printing still open it.
+	 */
 	.collapsible {
 		margin-top: var(--space-5);
+		interpolate-size: allow-keywords;
+	}
+
+	.collapsible::details-content {
+		block-size: 0;
+		overflow-y: clip;
+		transition:
+			block-size var(--motion-duration-medium) var(--motion-easing-standard),
+			content-visibility var(--motion-duration-medium) allow-discrete;
+	}
+
+	.collapsible[open]::details-content {
+		block-size: auto;
 	}
 
 	summary {
@@ -59,16 +78,10 @@
 	.fold-mark {
 		display: inline-flex;
 		flex: none;
-		transition: transform 0.15s;
+		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
 	}
 
 	.collapsible:not([open]) .fold-mark {
 		transform: rotate(-90deg);
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.fold-mark {
-			transition: none;
-		}
 	}
 </style>
