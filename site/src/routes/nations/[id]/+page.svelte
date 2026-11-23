@@ -437,6 +437,11 @@
 	.case-detail {
 		font-weight: normal;
 	}
+	/* Room between the case's link and the source marker under it, so each
+	   is a touch target of its own (WCAG 2.2, 2.5.8). */
+	.case-name {
+		margin-bottom: var(--space-2);
+	}
 	/* On a phone the Court and Role columns fold into a line under the case's
 	   name, so the name keeps the width it needs. */
 	.case-detail.case-phone {
