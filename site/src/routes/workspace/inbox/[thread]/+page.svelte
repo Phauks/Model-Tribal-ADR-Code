@@ -29,6 +29,7 @@
 	import TagChip from '../TagChip.svelte';
 	import { fullDate, listDate, localInputValue } from '../dates.ts';
 	import type { PageProps } from './$types';
+	import DateTimeField from '#lib/components/DateTimeField.svelte';
 
 	let { data, form }: PageProps = $props();
 
@@ -451,7 +452,7 @@
 					<input type="hidden" name="zone" value={zone} />
 					<p class="small muted explain">The conversation leaves the inbox and comes back at this time, or as soon as they reply.</p>
 					<label for="remind-at" class="small">Bring it back</label>
-					<input id="remind-at" type="datetime-local" name="at" bind:value={remindAt} />
+					<DateTimeField id="remind-at" name="at" bind:value={remindAt} defaultTime="08:00" hint="" />
 					{#if ready}
 						<span class="quick">
 							<button type="button" class="link-button" onclick={() => (remindAt = morning(1))}>Tomorrow</button>
@@ -985,17 +986,6 @@
 		display: grid;
 		gap: var(--space-2);
 		justify-items: start;
-	}
-	.stack input[type='datetime-local'] {
-		font: inherit;
-		font-size: var(--font-size-small);
-		min-height: var(--layout-target-minimum);
-		width: 100%;
-		border: 2px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-		color: var(--color-ink);
-		padding: 0 var(--space-2);
 	}
 	.stack textarea {
 		font-size: var(--font-size-small);

@@ -125,7 +125,10 @@ if (!existsSync(tileMapPath) || !existsSync(landAreasPath)) {
 			continue;
 		}
 		const body = JSON.parse(readFileSync(viewPath, 'utf8'));
-		const viewRows = new Set([...body.nationRows, ...body.areaRows].map((row) => row.anchor));
+		const anchors = [...body.nationRows, ...body.areaRows].map((row) => row.anchor);
+		const viewRows = new Set(anchors);
+		// Two rows with one id would break the links to them and the table itself.
+		if (viewRows.size !== anchors.length) problem(`views/${view}.json has ${anchors.length - viewRows.size} rows with an id another row has`);
 		if (!body.drawing?.startsWith('<svg')) problem(`views/${view}.json has no drawing`);
 		for (const [code, area] of Object.entries(shading.areas)) {
 			if (!viewRows.has(area.anchor)) problem(`tile-map.json: ${view} sends land area ${code} to ${area.anchor}, which is not a row of its table`);

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CodeInput from '#lib/components/CodeInput.svelte';
 	import ErrorSummary from '#lib/components/ErrorSummary.svelte';
 	import PasswordInput from '#lib/components/PasswordInput.svelte';
 	import Mail from '@lucide/svelte/icons/mail';
@@ -80,20 +81,13 @@
 			<input type="hidden" name="returnTo" value={returnTo} />
 			<div class="field">
 				<label for="code">Code from the email</label>
-				<p class="hint" id="code-hint">For example, 482 913</p>
+				<p class="hint" id="code-hint">The six digits in the email, for example 482 913.</p>
 				{@render fieldError('code')}
-				<input
+				<CodeInput
 					id="code"
 					name="code"
-					type="text"
-					class="code-field"
-					inputmode="numeric"
-					autocomplete="one-time-code"
-					pattern="[0-9 ]*"
-					maxlength="8"
-					aria-describedby={describedBy('code', 'code-hint')}
-					aria-invalid={field === 'code' && problem ? 'true' : undefined}
-					required
+					describedBy={describedBy('code', 'code-hint')}
+					invalid={field === 'code' && Boolean(problem)}
 				/>
 			</div>
 			{@render keepSignedIn('keep-code', keep)}
@@ -233,11 +227,6 @@
 		margin: 0;
 	}
 
-	.code-field {
-		max-width: 12ch;
-		font-size: var(--font-size-lead);
-		letter-spacing: 0.2em;
-	}
 
 	.label-row {
 		display: flex;

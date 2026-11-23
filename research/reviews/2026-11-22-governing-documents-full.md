@@ -91,3 +91,13 @@ The lead author asked on Nov. 23 that these results be checked against the docum
 
 **Law codes with no text at the link.** The other searches do not change these much. The tribal law texts collection fetched the same pages on Nov. 21 and got the same bot checks, sign-in pages and errors; its captures confirm this review's verdicts.
 
+
+## Applied, Nov. 23
+
+The lead author chose to have the near-certain fixes made now and the other rows left for the decision column. `python3 scripts/review/governing_documents_review.py plain` made them:
+
+- 12 links to Code Publishing now go to the eCode360 address that Code Publishing's own page names (Chehalis, Puyallup and Tulalip). eCode360 refuses automated requests, so the new addresses are unread.
+- 7 links to a page not about the nation were removed: the climate resolutions page linked as four Alaska villages' "tribal code" and an EPA page linked as Sokaogon's, the Pribilof Islands climate resolution, and the Yankton constitution link that opens a South Dakota state page. Each note keeps the old address. The Fond du Lac link to the EPA's list of approved water quality standards is left for the decision column, since the list may link to the Band's standards.
+- 17 facts whose link would not load now name an archived copy of the page in their note. The link itself is kept, because a bot check or a server error does not show the page is gone.
+
+Everything else (different documents, dead or blocked links without a copy, the 70 unconfirmed direct links and the 193 facts with no link) waits for the decision column.

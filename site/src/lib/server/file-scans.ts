@@ -29,7 +29,7 @@ export type ScanPurpose =
 	| 'nation-team-proof'
 	| 'profile-picture'
 	| 'sponsor-logo'
-	| 'event-recording';
+	| 'room-recording';
 
 export interface FileScan {
 	objectKey: string;

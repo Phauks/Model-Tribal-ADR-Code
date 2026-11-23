@@ -15,6 +15,7 @@
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import { fillTemplate, parseAddressList, signatureBlock, type MergeValues } from '#lib/mail.ts';
 	import { localInputValue } from './dates.ts';
+	import DateTimeField from '#lib/components/DateTimeField.svelte';
 
 	let {
 		action,
@@ -361,7 +362,7 @@
 			<div class="popover">
 				<div class="field">
 					<label for="{idPrefix}-later">Send later <span class="hint">your time</span></label>
-					<input id="{idPrefix}-later" type="datetime-local" name="sendAt" bind:value={sendAt} />
+					<DateTimeField id="{idPrefix}-later" name="sendAt" bind:value={sendAt} defaultTime="08:00" hint="" />
 					{#if ready}
 						<span class="quick">
 							<button type="button" class="link-button" onclick={() => (sendAt = morning(1))}>Tomorrow 8 AM</button>
@@ -372,7 +373,7 @@
 				</div>
 				<div class="field">
 					<label for="{idPrefix}-remind">Remind me <span class="hint">unless they reply first</span></label>
-					<input id="{idPrefix}-remind" type="datetime-local" name="remindAt" bind:value={remindAt} />
+					<DateTimeField id="{idPrefix}-remind" name="remindAt" bind:value={remindAt} defaultTime="08:00" hint="" />
 					{#if ready}
 						<span class="quick">
 							<button type="button" class="link-button" onclick={() => (remindAt = morning(3))}>In 3 days</button>
@@ -561,15 +562,6 @@
 	}
 	.popover .field:last-child {
 		margin-bottom: 0;
-	}
-	.popover input[type='datetime-local'] {
-		font: inherit;
-		min-height: var(--layout-target-minimum);
-		border: 2px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-		color: var(--color-ink);
-		padding: 0 var(--space-2);
 	}
 	.hint {
 		font-weight: var(--font-weight-regular);

@@ -47,17 +47,41 @@ export const pageFormats: PageFormat[] = [
 	}
 ];
 
-/** A file the page offers, built with the site. */
+/** One format of a file the page offers, built with the site. */
+export interface PageFileLink {
+	/** The file format as readers know it, such as "CSV" or "JSON". */
+	format: string;
+	link: string;
+}
+
+/** A file the page offers, in one or more formats. The menu shows one row for it, with a button for each format. */
 export interface PageFile {
 	/** What the file holds, such as "This nation’s record". */
 	label: string;
-	/** The file format as readers know it, such as "CSV" or "JSON". */
-	format: string;
 	/** One line on what the file is for. */
 	description: string;
-	/** Picks the icon. */
+	/** Picks the icon and the group the menu lists the file under. */
 	kind: 'data' | 'table' | 'sources' | 'contact' | 'map';
-	link: string;
+	links: PageFileLink[];
+}
+
+/**
+ * The groups the menu lists files under, in this order, so that a reader sees at a glance what is
+ * the page itself, what is data, what is for a citation manager and what is for an address book or
+ * a mapping program (Trevor asked on Nov. 23, 2026 that downloads be better separated).
+ */
+export const fileGroups: { heading: string; kinds: PageFile['kind'][] }[] = [
+	{ heading: 'Data', kinds: ['data', 'table'] },
+	{ heading: 'Sources for a citation manager', kinds: ['sources'] },
+	{ heading: 'Contacts for an address book', kinds: ['contact'] },
+	{ heading: 'Map layers for a mapping program', kinds: ['map'] }
+];
+
+/** A page's files sorted into the menu's groups, leaving out groups with none. */
+export function groupedFiles(files: PageFile[]): { heading: string; files: PageFile[] }[] {
+	return fileGroups
+		.map((group) => ({ heading: group.heading, files: files.filter((file) => group.kinds.includes(file.kind)) }))
+		.filter((group) => group.files.length > 0);
 }
 
 export interface PageDownloads {
@@ -74,38 +98,25 @@ export function pageDownloads(path: string): PageDownloads {
 			files: [
 				{
 					label: 'This nation’s record',
-					format: 'JSON',
 					description: 'Every fact on this page with its source, for programs and research',
 					kind: 'data',
-					link: `/nations/${nation}/record.json`
+					links: [{ format: 'JSON', link: `/nations/${nation}/record.json` }]
 				},
 				{
 					label: 'This page’s sources',
-					format: 'CSL JSON',
-					description: 'For Zotero or another citation manager',
+					description: 'CSL JSON for Zotero, RIS for EndNote or Mendeley, BibTeX for LaTeX',
 					kind: 'sources',
-					link: `/nations/${nation}/sources.json`
-				},
-				{
-					label: 'This page’s sources',
-					format: 'RIS',
-					description: 'For EndNote, Mendeley or another citation manager',
-					kind: 'sources',
-					link: `/nations/${nation}/sources.ris`
-				},
-				{
-					label: 'This page’s sources',
-					format: 'BibTeX',
-					description: 'For LaTeX and BibTeX-based tools',
-					kind: 'sources',
-					link: `/nations/${nation}/sources.bib`
+					links: [
+						{ format: 'CSL JSON', link: `/nations/${nation}/sources.json` },
+						{ format: 'RIS', link: `/nations/${nation}/sources.ris` },
+						{ format: 'BibTeX', link: `/nations/${nation}/sources.bib` }
+					]
 				},
 				{
 					label: 'Government office contacts',
-					format: 'vCard',
-					description: 'The offices’ public addresses, phones and emails, for an address book',
+					description: 'The offices’ public addresses, phones and emails',
 					kind: 'contact',
-					link: `/nations/${nation}/contacts.vcf`
+					links: [{ format: 'vCard', link: `/nations/${nation}/contacts.vcf` }]
 				}
 			]
 		};
@@ -116,10 +127,9 @@ export function pageDownloads(path: string): PageDownloads {
 			files: [
 				{
 					label: 'The list of nations',
-					format: 'CSV',
 					description: 'Every nation and community with its recognition and states, for a spreadsheet',
 					kind: 'table',
-					link: '/nations/nations.csv'
+					links: [{ format: 'CSV', link: '/nations/nations.csv' }]
 				}
 			]
 		};
@@ -133,17 +143,12 @@ export function pageDownloads(path: string): PageDownloads {
 			files: [
 				{
 					label: 'Dispute resolution provisions',
-					format: 'CSV',
-					description: 'Every provision on this page, with its citation, for a spreadsheet',
+					description: 'Every provision on this page with its citation: CSV for a spreadsheet, JSON for programs',
 					kind: 'table',
-					link: '/nations/recourse/provisions.csv'
-				},
-				{
-					label: 'Dispute resolution provisions',
-					format: 'JSON',
-					description: 'The same list, for programs and research',
-					kind: 'data',
-					link: '/nations/recourse/provisions.json'
+					links: [
+						{ format: 'CSV', link: '/nations/recourse/provisions.csv' },
+						{ format: 'JSON', link: '/nations/recourse/provisions.json' }
+					]
 				}
 			]
 		};
@@ -154,10 +159,9 @@ export function pageDownloads(path: string): PageDownloads {
 			files: [
 				{
 					label: 'The glossary',
-					format: 'JSON',
 					description: 'Every term with its short definition, for programs and research',
 					kind: 'data',
-					link: '/glossary/terms.json'
+					links: [{ format: 'JSON', link: '/glossary/terms.json' }]
 				}
 			]
 		};
@@ -169,24 +173,21 @@ export function pageDownloads(path: string): PageDownloads {
 export const mapFiles: PageFile[] = [
 	{
 		label: 'Land areas',
-		format: 'GeoJSON',
 		description: 'The Census Bureau’s American Indian and Alaska Native areas, simplified for a national map',
 		kind: 'map',
-		link: '/nations/map/land-areas.geojson'
+		links: [{ format: 'GeoJSON', link: '/nations/map/land-areas.geojson' }]
 	},
 	{
 		label: 'Bureau of Indian Affairs regions',
-		format: 'GeoJSON',
 		description: 'The twelve regions’ outlines, simplified for a national map',
 		kind: 'map',
-		link: '/nations/map/bureau-of-indian-affairs-regions.geojson'
+		links: [{ format: 'GeoJSON', link: '/nations/map/bureau-of-indian-affairs-regions.geojson' }]
 	},
 	{
 		label: 'Offices of nations without a Census land area',
-		format: 'GeoJSON',
 		description: 'The dots on the drawn map, each placed from the office’s public address',
 		kind: 'map',
-		link: '/nations/map/government-offices.geojson'
+		links: [{ format: 'GeoJSON', link: '/nations/map/government-offices.geojson' }]
 	}
 ];
 

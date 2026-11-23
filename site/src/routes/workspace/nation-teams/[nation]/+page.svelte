@@ -10,6 +10,7 @@
 		type TeamLevel
 	} from '#lib/nation-teams.ts';
 	import type { PageProps } from './$types';
+	import DateField from '#lib/components/DateField.svelte';
 
 	let { data, form }: PageProps = $props();
 
@@ -163,7 +164,7 @@
 			<label for="expires">Until</label>
 			<p class="hint">Two years at most; it can be renewed.</p>
 			{#key level}
-				<input type="date" id="expires" name="expires" required value={data.usualEnds[level]} max={data.latestEnd} />
+				<DateField id="expires" name="expires" required value={data.usualEnds[level]} max={data.latestEnd} hint="" />
 			{/key}
 		</div>
 		<button class="button" type="submit">Save</button>
@@ -215,11 +216,6 @@
 
 	.indented {
 		margin-left: var(--space-6);
-	}
-
-	input[type='date'] {
-		font: inherit;
-		min-height: var(--layout-target-minimum);
 	}
 
 	.activity {

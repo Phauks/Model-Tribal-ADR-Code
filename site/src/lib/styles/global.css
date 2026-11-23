@@ -454,6 +454,24 @@ input.short {
 	max-width: 16rem;
 }
 
+/*
+ * The browser's own date and time boxes. Pages use the shared date field (DateField.svelte, DESIGN.md section 6, "Date fields"); these boxes are what it shows before scripts run or without them, so they match the other fields.
+ */
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'] {
+	display: block;
+	max-width: 100%;
+	box-sizing: border-box;
+	font: inherit;
+	min-height: var(--layout-target-minimum);
+	padding: var(--space-2);
+	border: 2px solid var(--color-control-border);
+	border-radius: var(--radius-control);
+	background: var(--color-paper);
+	color: var(--color-ink);
+}
+
 input[type='file'] {
 	font: inherit;
 	font-size: var(--font-size-small);

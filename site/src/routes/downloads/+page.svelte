@@ -23,12 +23,14 @@
 	// each copy opens from its own page.
 	const numbers = new Intl.NumberFormat('en-US');
 	const groups: {
+		id: string;
 		heading: string;
 		lead: string;
 		files: { label: string; description: string; links: { format: string; href: string }[]; checking?: string }[];
 		after: string;
 	}[] = $derived([
 		{
+			id: 'data',
 			heading: 'Data',
 			lead: 'The facts behind the site, each with its source.',
 			files: [
@@ -56,16 +58,18 @@
 					links: [{ format: 'ZIP', href: '/zip/data.zip' }]
 				}
 			],
-			after: 'A single nation’s record and its sources are in the Download menu on the nation’s page. In the ZIP file, a story’s full text is included where it is in the public domain or a nation’s law; for the others, the file gives the story’s page.'
+			after: 'In the ZIP file, a story’s full text is included where it is in the public domain or a nation’s law; for the others, the file gives the story’s page.'
 		},
 		{
+			id: 'maps',
 			heading: 'Maps',
 			lead: 'The map’s layers, for mapping programs such as QGIS or ArcGIS.',
 			// The same list the map page's Download menu offers (src/lib/page-downloads.ts).
-			files: mapFiles.map((file) => ({ label: file.label, description: file.description, links: [{ format: file.format, href: file.link }] })),
+			files: mapFiles.map((file) => ({ label: file.label, description: file.description, links: file.links.map((link) => ({ format: link.format, href: link.link })) })),
 			after: 'Simplified for a national map. The land areas are the Census Bureau’s, not a statement of any nation’s territory, and an area a nation asked to leave off the map is left out.'
 		},
 		{
+			id: 'documents',
 			heading: 'Documents',
 			lead: 'Copies of documents we cite and are allowed to share, each with where it came from.',
 			files: [
@@ -81,9 +85,40 @@
 					links: [{ format: 'CSV', href: '/copies/list.csv' }]
 				}
 			],
-			after: `A nation’s constitutions, laws and court opinions download as a ZIP from the nation’s page, under “Laws and agreements”; we hold them for ${numbers.format(data.nationsWithDocuments)} nations. If a nation asks us to remove a document, it leaves the site and these files at the next update. A file you already downloaded cannot be changed, so check this page for the current version.`
+			after: 'A nation’s own documents download from its page: see From a page, below.'
 		}
 	]);
+
+	// What the Download menu offers on a page, so this page says where those files are without
+	// repeating a list for every nation. Kept beside the groups above so the two are read as one list.
+	const fromPages = $derived([
+		{
+			page: 'Any page',
+			offers: [{ what: 'The page itself, to print, edit or keep as plain text', formats: ['PDF', ...pageFormats.map((format) => format.format)] }]
+		},
+		{
+			page: 'A nation’s page',
+			offers: [
+				{ what: 'The nation’s record, every fact with its source', formats: ['JSON'] },
+				{ what: 'The page’s sources, for a citation manager', formats: ['CSL JSON', 'RIS', 'BibTeX'] },
+				{ what: 'The government offices’ contacts, for an address book', formats: ['vCard'] },
+				{
+					what: `Under “Laws and agreements”: the nation’s constitutions, laws and court opinions we hold, for ${numbers.format(data.nationsWithDocuments)} nations`,
+					formats: ['ZIP']
+				}
+			]
+		}
+	]);
+
+	const contents = [
+		{ id: 'data', label: 'Data' },
+		{ id: 'maps', label: 'Maps' },
+		{ id: 'documents', label: 'Documents' },
+		{ id: 'from-a-page', label: 'From a page' },
+		{ id: 'book-heading', label: 'The book' },
+		{ id: 'checking', label: 'Checking a file' },
+		{ id: 'never', label: 'Never in a download' }
+	];
 
 	onMount(() => {
 		void downloadChecksums().then((list) => (hashes = list?.files ?? {}));
@@ -130,15 +165,16 @@
 		{#if built}Made {citationDate(built)}, content version {data.versions.content}.{:else}Content version {data.versions.content}.{/if}
 		To read the site without a connection instead, see <a href="/offline">Read offline</a>.
 	</p>
-	<p>
-		Any page can also be saved from its Download menu as a PDF or as {pageFormats.map((format) => format.format).join(', ').replace(/, ([^,]*)$/, ' or $1')}. A nation’s page also offers its record, its sources for citation managers (CSL JSON, RIS and BibTeX) and its offices’ contact cards.
-	</p>
-	<p>
-		Each file’s SHA-256 is shown with it, so you can check that a file you downloaded is the one published here, unchanged. <a href={verifyAddress}>Verify a file</a> does it in your browser without uploading anything, and <a href={checksumsTextAddress} download>checksums.txt</a> lists every file.
-	</p>
+	<nav class="contents" aria-label="On this page">
+		<ul>
+			{#each contents as item (item.id)}
+				<li><a href="#{item.id}">{item.label}</a></li>
+			{/each}
+		</ul>
+	</nav>
 
 	{#each groups as group (group.heading)}
-		<h2>{group.heading}</h2>
+		<h2 id={group.id} class="group-heading">{group.heading}</h2>
 		<p>{group.lead}</p>
 		<ul class="files">
 			{#each group.files as file (file.label)}
@@ -176,6 +212,24 @@
 		<p class="hint">{group.after}</p>
 	{/each}
 
+	<h2 id="from-a-page" class="group-heading">From a page</h2>
+	<p>These are in the Download menu on the page they belong to, built from what that page shows.</p>
+	{#each fromPages as from (from.page)}
+		<h3>{from.page}</h3>
+		<ul class="files">
+			{#each from.offers as offer (offer.what)}
+				<li>
+					<p class="file-text">{offer.what}</p>
+					<p class="file-links">
+						{#each offer.formats as format (format)}
+							<span class="format-tag">{format}</span>
+						{/each}
+					</p>
+				</li>
+			{/each}
+		</ul>
+	{/each}
+
 	<!-- Empty state: says what will appear and when (site/DESIGN.md, section 12). -->
 	<section class="panel panel-filled empty-state" aria-labelledby="book-heading">
 		<h2 id="book-heading">The book</h2>
@@ -185,7 +239,13 @@
 		</p>
 	</section>
 
-	<h2>Never in a download</h2>
+	<h2 id="checking" class="group-heading">Checking a file</h2>
+	<p>
+		Each file’s SHA-256 is shown with it, so you can check that a file you downloaded is the one published here, unchanged. <a href={verifyAddress}>Verify a file</a> does it in your browser without uploading anything, and <a href={checksumsTextAddress} download>checksums.txt</a> lists every file.
+	</p>
+	<p class="hint">If a nation asks us to remove a document, it leaves the site and these files at the next update. A file you already downloaded cannot be changed, so check this page for the current version.</p>
+
+	<h2 id="never" class="group-heading">Never in a download</h2>
 	<ul>
 		<li>Material a nation has asked us to restrict</li>
 		<li>A nation’s seal or logo</li>
@@ -200,6 +260,31 @@
 </div>
 
 <style>
+	.contents ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1) var(--space-4);
+		list-style: none;
+		padding: 0;
+		margin: var(--space-3) 0 var(--space-4);
+	}
+
+	/* A rule above each group, so where one kind of download ends and the next begins is plain. */
+	.group-heading {
+		margin-top: var(--space-6);
+		padding-top: var(--space-4);
+		border-top: 2px solid var(--color-line);
+	}
+
+	.format-tag {
+		display: inline-block;
+		padding: var(--space-1) var(--space-2);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+	}
+
 	.files {
 		list-style: none;
 		padding: 0;

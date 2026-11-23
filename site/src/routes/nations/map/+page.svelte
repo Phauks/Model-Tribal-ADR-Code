@@ -191,10 +191,12 @@
 		}));
 	}
 
-	/** A shaded view whose table lists categories, as the Indian Health Service view lists its Areas: each row opens to its nations. */
+	/** A shaded view whose table lists categories, as the Indian Health Service view lists its Areas, or land areas, as the Census Residents view does: each row opens to its nations. */
 	function categoryColumns(body: ShadedBody): TableColumn[] {
+		const definition = shadedViewDefinitions[body.view];
 		return [
-			{ key: 'area', header: shadedViewDefinitions[body.view].categoryHeader ?? 'Category', isRowHeader: true, sortable: true, custom: true },
+			{ key: 'area', header: definition.categoryHeader ?? 'Category', isRowHeader: true, sortable: true, custom: true },
+			...(definition.valueHeader ? [{ key: 'value', header: definition.valueHeader, type: 'number' as const, sortable: true }] : []),
 			{ key: 'count', header: 'Nations', type: 'number', sortable: true }
 		];
 	}
@@ -205,6 +207,7 @@
 			anchor: row.anchor,
 			cells: {
 				area: { text: row.name },
+				value: { text: row.value?.toLocaleString('en-US') ?? '', sortValue: row.value ?? 0 },
 				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length },
 				// Not a column: shown when the Area's row is opened.
 				states: { text: row.states.join(', ') }
@@ -409,7 +412,7 @@
 				<p class="small muted map-note">
 					{definition.note} {@render officeNote()} {@render insetNote()}
 				</p>
-				{#if body && definition.rows === 'categories'}
+				{#if body && definition.rows !== 'nations'}
 					<DataTable
 						identifier={view.key}
 						download={view.key}

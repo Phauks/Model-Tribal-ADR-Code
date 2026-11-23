@@ -6,6 +6,7 @@ document is often a page that lists the document, not the document itself.
     python3 scripts/review/governing_documents_review.py merge WORK_DIRECTORY
     python3 scripts/review/governing_documents_review.py apply WORK_DIRECTORY
     python3 scripts/review/governing_documents_review.py crosscheck WORK_DIRECTORY
+    python3 scripts/review/governing_documents_review.py plain WORK_DIRECTORY
 
 `gather` downloads every `governing_documents[].link` in the profiles (files
 already in WORK_DIRECTORY/files are reused) and sorts each link by what the
@@ -46,6 +47,14 @@ capture index, the search logs and the Nov. 23 retry of failed fetches. It
 fills the CSV's `other_searches` column, writes the facts that have no link at
 all to research/reviews/2026-11-23-governing-documents-without-links.csv, and
 points three links at texts those searches downloaded (see CONFIRMED_ELSEWHERE).
+
+`plain` (Nov. 23, 2026) makes the near-certain fixes the lead author approved
+("plain fixes now", the rest left to the decision column): Code Publishing
+links go to the eCode360 address the publisher's own page names; links to a
+page not about the nation are removed; and where an archived copy of a page
+that would not load was found, its address is added to the fact's note. The
+original link stays, since a bot check or a server error does not show the
+page is gone.
 """
 
 import collections
@@ -730,8 +739,77 @@ def crosscheck(work):
     print(json.dumps(summary["other_searches"], indent=1, ensure_ascii=False))
 
 
+# `plain` --------------------------------------------------------------------
+
+# Pages not about the nation (reviewer verdict generic-page). The Fond du Lac link to the
+# EPA's list of approved tribal water quality standards is left: the list may link to the
+# Band's standards, so it waits for the decision column.
+NOT_ABOUT_THE_NATION = {
+    ("alatna-village", 0), ("allakaket-village", 0), ("native-village-of-koyuk", 1),
+    ("native-village-of-white-mountain", 1), ("sokaogon-chippewa-community", 0),
+    ("pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands", 0),
+    ("yankton-sioux-tribe-of-south-dakota", 2),
+}
+# Wayback Machine prints hand-pulled on Nov. 22 (research/capture-index.csv, constitutions/).
+HAND_PULLED_PRINTS = {
+    "http://www.pbpindiantribe.com/our-constitution.aspx":
+        "https://web.archive.org/web/20170804133632/http://www.pbpindiantribe.com/our-constitution.aspx",
+    "http://www.shoshonebannocktribes.com/shoshone-bannock-constitution.html":
+        "https://web.archive.org/web/20171031011621/http://www.shoshonebannocktribes.com:80/shoshone-bannock-constitution.html",
+}
+
+
+def plain(work):
+    csv_path = OUT.with_suffix(".csv")
+    rows = list(csv.DictReader(csv_path.open(encoding="utf-8")))
+    retried = other_holdings()["retried"]
+    tree = base.record_facts.Tree(ROOT)
+    by_id = {profile["id"]: (path, profile) for path, profile in tree.profiles.items()}
+    changed, counts = collections.defaultdict(dict), collections.Counter()
+    for row in rows:
+        path, profile = by_id[row["profile"]]
+        index = int(row["index"])
+        facts = profile.get("governing_documents") or []
+        if index >= len(facts) or facts[index].get("link") != row["link"]:
+            continue
+        fact, key = facts[index], link_key(row["link"])
+        moved = next((new for old, new in MOVED.items() if key.startswith(old)), None)
+        if moved:
+            fact["link"] = moved
+            add_note(fact, f"Link changed on 2026-11-23 from {row['link']}: Code Publishing's page now says the "
+                           f"code is hosted on eCode360 at {moved} (page saved on 2026-11-21). eCode360 refuses "
+                           f"automated requests, so the new address has not been read. See {CROSSCHECK_NOTE}.")
+            counts["moved to eCode360"] += 1
+        elif (row["profile"], index) in NOT_ABOUT_THE_NATION:
+            add_note(fact, f"Link {fact.pop('link')} removed on 2026-11-23: the full link review found the page is "
+                           f"not about this nation ({REVIEW_FILE}).")
+            counts["link to a page not about the nation removed"] += 1
+        else:
+            archived = HAND_PULLED_PRINTS.get(row["link"]) or next(
+                (r["address_read"] for r in retried.get(key, [])), None)
+            if not archived or row["tier"] != "link problem":
+                continue
+            add_note(fact, f"The link did not load for the full link review; an archived copy of the page is at "
+                           f"{archived} (found 2026-11-23; see {CROSSCHECK_NOTE}).")
+            counts["archived copy noted"] += 1
+        changed[path][index] = fact
+    for path, edits in changed.items():
+        lines = (ROOT / path).read_text(encoding="utf-8").splitlines(keepends=True)
+        for index, fact in sorted(edits.items(), reverse=True):
+            first, last = fact_lines(lines, "governing_documents", index)
+            lines[first:last] = [yaml.safe_dump([fact], allow_unicode=True, sort_keys=False, width=1_000_000)]
+        (ROOT / path).write_text("".join(lines), encoding="utf-8")
+        check = yaml.safe_load((ROOT / path).read_text(encoding="utf-8"))
+        assert all(check["governing_documents"][i] == f for i, f in edits.items()), path
+    counts_path = pathlib.Path(f"{OUT}-counts.json")
+    summary = json.loads(counts_path.read_text())
+    summary["plain_fixes_2026_11_23"] = dict(sorted(counts.items()))
+    counts_path.write_text(json.dumps(summary, indent=1, ensure_ascii=False) + "\n")
+    print(json.dumps(dict(counts, profiles=len(changed)), indent=1))
+
+
 if __name__ == "__main__":
-    commands = {"gather": gather, "merge": merge, "apply": apply, "crosscheck": crosscheck}
+    commands = {"gather": gather, "merge": merge, "apply": apply, "crosscheck": crosscheck, "plain": plain}
     if len(sys.argv) != 3 or sys.argv[1] not in commands:
         sys.exit(__doc__)
     commands[sys.argv[1]](pathlib.Path(sys.argv[2]))

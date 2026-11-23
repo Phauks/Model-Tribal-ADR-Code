@@ -16,6 +16,7 @@
 	import Undo2 from '@lucide/svelte/icons/undo-2';
 	import { fullDate } from '../dates.ts';
 	import type { PageProps } from './$types';
+	import DateTimeField from '#lib/components/DateTimeField.svelte';
 
 	let { data, form }: PageProps = $props();
 
@@ -279,11 +280,11 @@
 			<div class="dates">
 				<div class="field">
 					<label for="away-from">Starting <span class="hint">optional, your time</span></label>
-					<input type="datetime-local" id="away-from" name="from" bind:value={awayTimes.from} />
+					<DateTimeField id="away-from" name="from" bind:value={awayTimes.from} defaultTime="00:00" hint="" />
 				</div>
 				<div class="field">
 					<label for="away-until">Ending <span class="hint">optional, your time</span></label>
-					<input type="datetime-local" id="away-until" name="until" bind:value={awayTimes.until} />
+					<DateTimeField id="away-until" name="until" bind:value={awayTimes.until} defaultTime="23:59" hint="" />
 				</div>
 			</div>
 			<div class="field">
@@ -441,17 +442,7 @@
 	.dates {
 		display: grid;
 		gap: var(--space-3);
-		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-	}
-	.dates input {
-		width: 100%;
-		font: inherit;
-		min-height: var(--layout-target-minimum);
-		border: 2px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-		color: var(--color-ink);
-		padding: 0 var(--space-2);
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
 	}
 	.hint {
 		font-weight: var(--font-weight-regular);

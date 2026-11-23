@@ -16,7 +16,7 @@ export const prerender = false;
 export const load: PageServerLoad = async ({ locals, url }) => {
 	const returnTo = safeReturnPath(url.searchParams.get('returnTo'));
 	if (!locals.waitingSession) redirect(303, locals.account ? returnTo : `/sign-in?returnTo=${encodeURIComponent(returnTo)}`);
-	return { returnTo, email: locals.waitingSession.account.email };
+	return { returnTo, email: locals.waitingSession.account.email, backup: url.searchParams.has('backup') };
 };
 
 function text(form: FormData, name: string): string {
@@ -31,10 +31,14 @@ export const actions: Actions = {
 		const session = locals.waitingSession;
 		if (!session) redirect(303, `/sign-in?returnTo=${encodeURIComponent(returnTo)}`);
 		const environment = workerEnvironment();
-		const again = (problem: string, status = 400) => fail(status, { problem, field: 'code' as const });
+		// Which field was shown: the six boxes for the app's code, or one field for a backup code.
+		const backup = text(form, 'kind') === 'backup';
+		const again = (problem: string, status = 400) => fail(status, { problem, field: 'code' as const, backup });
 		if (!environment.database) return again('Sign-in is not available right now.', 503);
 		const typed = text(form, 'code').trim();
-		if (typed === '') return again('Enter the six-digit code from your authenticator app, or a backup code.');
+		if (typed === '') {
+			return again(backup ? 'Enter one of your backup codes.' : 'Enter the six-digit code from your authenticator app.');
+		}
 		const limit = await environment.signInLimit?.limit({ key: `two-step:${session.account.identifier}` });
 		if (limit && !limit.success) return again('Too many tries in a minute. Wait a minute and try again.', 429);
 
@@ -53,7 +57,11 @@ export const actions: Actions = {
 			return again('Two-step sign-in is not set up for this account any more. Sign in again.');
 		}
 		if (result.outcome === 'wrong') {
-			return again('That code is not right. Use the code your app shows now, or one of your backup codes.');
+			return again(
+				backup
+					? 'That backup code is not right, or it was already used. Check it and try again.'
+					: 'That code is not right. Type the code your app shows now; it changes every 30 seconds.'
+			);
 		}
 		markSignedIn(cookies);
 		if (result.usedBackupCode && result.backupCodesLeft <= 3) {

@@ -260,6 +260,15 @@ jurisdiction:
   as_of: '2026-05-26'
   locator: 91 FR 30694 (Tribe column of the designated agent table)
   note: 'Listed as: Minnesota Chippewa Tribe - Grand Portage Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands'' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table).'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  verification: inferred
+  as_of: '2026-05-26'
+  locator: 91 FR 30694 (Tribe column of the designated agent table)
+  note: 'Listed as: Minnesota Chippewa Tribe - Grand Portage Band. Added on 2026-11-23: the second data gap review found this band''s own row in the notice (page image p-027; the govinfo PDF has no text layer for the table), and the Minnesota Chippewa Tribe profile already lists the six band rows (research/reviews/2026-11-22-second-gap-review.md). Verification is inferred because the name was read from a page image, not matched in machine-read text.'
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: Minnesota Department of Revenue
