@@ -225,7 +225,7 @@ Open `/sign-in` and sign in with the `LEAD_AUTHOR_EMAIL` address. The Workspace 
 | `events` | The activity log: who did what and when, numbered in order. Cannot be changed or deleted. |
 | `event_seals` | The seal of each activity log entry, chained to the one before. |
 | `follows`, `page_updates`, `page_fingerprints`, `following_checks`, `follow_settings` | Pages each account follows, when each followed page changed, the last fingerprint of every page that can be followed, which build was compared last, and each account's email choice (`migrations/0011_following.sql`; see Following pages). |
-| `page_changes`, `page_states`, `page_history_checks`, `hidden_changes` | Each change to a page built with the site, the last version seen of each such page, which build was compared last, and the parts of changes the lead author hid (`migrations/0015_page_changes.sql`; see Recent changes). |
+| `page_changes`, `page_states`, `page_history_checks`, `hidden_changes` | Each change to a page built with the site, the last version seen of each such page, which build was compared last, and the parts of changes the lead author hid (`migrations/0017_page_changes.sql`; see Recent changes). |
 
 `migrations/0003_contributor_profiles.sql` adds contributor profiles, their nations, interests and confirmed versions; see [docs/contributor-profiles.md](../docs/contributor-profiles.md).
 

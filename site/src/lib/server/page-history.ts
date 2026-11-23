@@ -1,6 +1,6 @@
 /**
  * Recent changes and page histories: the database side (site/
- * COLLABORATION.md, "Recent changes"; migrations/0015_page_changes.sql;
+ * COLLABORATION.md, "Recent changes"; migrations/0017_page_changes.sql;
  * shared rules in src/lib/page-history.ts).
  *
  * Where changes come from. Essays are published from the workspace, and
