@@ -345,6 +345,32 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - **Filters.** Page (`?page=` shows one page's history), kind of page, who, dates, size of change in bytes, kinds of change (edits, new pages, published versions, removed pages), whether changes are grouped by page, and how many to show. A change that came with an update to more than 25 pages at once is a bulk update, hidden unless the reader asks for it, the way a wiki hides bots. The same filters give an Atom feed at `/changes/feed.xml`.
 - **Hiding.** The lead author can hide the text, the summary or the name on any change from `/workspace/changes/<change>`, with a reason readers see, the way a wiki hides a revision (MediaWiki, "Help:RevisionDelete", https://www.mediawiki.org/wiki/Help:RevisionDelete). The change stays listed with a line through what is hidden. Hidden text cannot be read or compared, including as the earlier side of the next change, and its size is not shown or filtered on. An essay publication held back in the workspace is hidden the same way. Each hiding and showing again is recorded in the activity log. Hidden changes are listed at `/workspace/changes`.
 
+## Nonprofit
+
+`/workspace/nonprofit` (lead author only, permission `manage-nonprofit`) keeps the facts, filings and to-dos of the project's Nevada nonprofit corporation, which the lead author chose to form and take to the IRS with Form 1023-EZ (Nov. 23, 2026). It is a planning aid, not legal or tax advice, and says so on the page.
+
+- **Tables** (`migrations/20261123T0440_add_nonprofit_records.sql`): `nonprofit_facts` holds one row per fact, such as the date of incorporation or the fiscal year's last month. `nonprofit_completions` records a filing or setup step marked done, with the day, a confirmation number and who recorded it. `nonprofit_tasks` holds the lead author's own to-dos, once or every year.
+- **Due dates are worked out, not stored** (`src/lib/nonprofit.ts`), from the facts and today's date in Nevada. They cover the annual list and the charitable registration filed with it, due the last day of the month the articles were filed in each year (Nev. Rev. Stat. §§ 82.193, 78.150, 82A.100); Form 990-N, due the 15th day of the fifth month after the fiscal year ends (26 U.S.C. § 6033(i); Treas. Reg. § 1.6033-2(e)); Form 1023-EZ, due 27 months after the end of the month of incorporation for exemption back to that date, and done once its filing date is entered as a fact; and the directors' yearly conflict-of-interest statements. Each shows its fee and its source. A missed filing stays on the list as overdue next to the next one, and anything due within 60 days is due soon.
+- **Setting up** lists the one-time steps in the order of the brief on becoming a 501(c)(3); the articles and the application are marked done by the facts.
+- **To-dos.** Marking a yearly to-do done records it and moves its due date on a year.
+- **Calendar.** `/workspace/nonprofit/calendar.ics` is a calendar file (RFC 5545) with each open due date as an all-day event and reminders 30 and 7 days before. It is downloaded, not subscribed to, so it is downloaded again after the dates change.
+- **Overview.** The workspace overview shows the lead author anything overdue or due soon. Until the migration is applied to the live database, the overview leaves this out and the Nonprofit page says how to apply it: `npx wrangler d1 migrations apply database --remote` from the site folder.
+
+## Service checks
+
+`/workspace/service-checks` (lead author only, permission `check-services`) checks each service the site depends on whenever the page is opened (`src/lib/server/service-checks.ts`). For each it says whether it is working, needs a look, has a problem, or is not set up yet, and what to do about it. The checks only read and sign in: nothing is sent, charged, ordered or changed. Each check stops after ten seconds, and one that fails shows as a problem without stopping the others. Passwords and keys are never shown.
+
+- **Database:** answers, and every migration file in this build is in `d1_migrations`; the missing ones are named.
+- **File storage:** the private bucket can be listed.
+- **Live editing, rate limits, site address and lead author:** the binding or setting is there; a workers.dev address is flagged, since email waits on the project domain.
+- **Sign-in email and update emails:** the sender is set and the email binding is there.
+- **Project inbox:** the mail domain, the sending binding and the signing key are set.
+- **Outreach mailbox (Zoho):** signs in to the SMTP server with the saved password (EHLO, STARTTLS on port 587, AUTH, QUIT) and leaves without sending anything.
+- **Book ordering, Lulu and Stripe:** ordering's settings must agree, so a test-mode site with a live Stripe key is a problem. The Lulu check signs in with the client key and looks for the print status webhook. The Stripe check reads the balance to prove the key and looks for the payment webhook with both checkout events.
+- **Virus scanner:** files waiting more than 30 minutes are a problem and failed scans need a look.
+
+A new service gets a check here when it is added: a function in `serviceChecks` that returns its state, a summary and the details.
+
 ## Testing
 
 `npm test` runs the unit tests in `tests/` with Vitest, including the database code against the real migrations in an in-memory SQLite database. That includes codes, links, passwords and sessions (`tests/sign-in.test.ts`). Sending real email is tried by hand once `SIGN_IN_EMAIL_FROM` is set.
