@@ -303,6 +303,13 @@
 					aria-describedby={describedBy('details')}>{value('details')}</textarea
 				>
 			</div>
+			{#if value('nationIdentifier', nationIdentifier) && (kind === 'correct' || kind === 'question' || kind === 'contribute')}
+				<!-- Reports about a claimed page also go to the nation's team (src/lib/nation-team-reports.ts). -->
+				<p class="hint">
+					If people the nation chose keep this page, they see where and what you wrote here as well as the
+					project, but never your name or contact details.
+				</p>
+			{/if}
 			{#if kind !== 'add-nation'}
 				<p class="hint">
 					You can attach up to three files, for example a nation’s resolution or a corrected citation

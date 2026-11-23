@@ -48,6 +48,8 @@
 		You are {teamLevelLabels[data.own.level ?? 'reviewer'].toLocaleLowerCase('en-US')} for {data.nation.title},
 		for {describeParts(data.own.parts)}. A steward of the team adds and removes people.
 	{/if}
+	<a href="/workspace/nation-teams/{data.nation.identifier}/edit">Edit the page</a>.
+	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a>.
 	{#if data.nation.page}<a href={data.nation.page}>View the page</a>.{/if}
 </p>
 

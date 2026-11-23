@@ -12,6 +12,8 @@
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
 	import Clock from '@lucide/svelte/icons/clock';
+	import { afterNavigate } from '$app/navigation';
+	import { fillNationSlots } from '#lib/nation-page-slots.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -21,6 +23,13 @@
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
 	const hasContacts = $derived(data.contacts.websites.length > 0 || data.contacts.offices.length > 0);
+
+	// The Worker fills the nation's own changes into the page before it is
+	// sent. After a move within the site the page came from the build, so it
+	// asks for them itself (src/lib/nation-page-slots.ts).
+	afterNavigate((navigation) => {
+		if (navigation.type !== 'enter') void fillNationSlots(data.page.id);
+	});
 </script>
 
 <svelte:head>
@@ -83,16 +92,26 @@
 			{/each}
 		{/if}
 
-		<!-- 2. Review status: a small badge and one line, not a panel (Trevor, Nov. 22, 2026).
-		     Report a problem in the masthead takes requests, so the line has no link of its own. -->
-		<p class="review-status small" id="review-status" data-print-part="reviewStatus">
-			<span class="visually-hidden">Review status:</span>
-			<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />{page.review.label}</span>
-			<span class="muted">
-				{page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
-			</span>
+		<!-- 2. Who keeps the page, like a map listing: "Unclaimed" until people the
+		     nation chose keep it (Trevor, Nov. 23, 2026). The build always says
+		     "Unclaimed"; for a claimed page the Worker hides this line and puts the
+		     claimed one in the top place below (src/lib/server/nation-page-overlay.ts). -->
+		<p class="review-status small" id="review-status" data-print-part="reviewStatus" data-build-status>
+			<span class="visually-hidden">Who keeps this page:</span>
+			{#if page.withdrawn}
+				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />{page.review.label}</span>
+				<span class="muted">{page.review.meaning}</span>
+			{:else}
+				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unclaimed</span>
+				<span class="muted">
+					No one from the nation keeps this page yet. {page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
+				</span>
+				<a class="no-print" href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a>
+			{/if}
 			<a class="no-print" href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a>
 		</p>
+		<!-- The nation's own words and pictures, filled in by the Worker from what its team published (decision record 0041). -->
+		{#if !page.withdrawn}<div class="nation-slot" data-nation-slot="top"></div>{/if}
 	{/snippet}
 
 	{#if !page.withdrawn}
@@ -117,6 +136,7 @@
 			{:else}
 				<NationServices categories={data.courts} />
 			{/if}
+			<div class="nation-slot" data-nation-slot="courts"></div>
 		</Collapsible>
 
 		<!-- 6. Laws and agreements: where the nation publishes its laws, linked, not
@@ -128,6 +148,7 @@
 					<FactGroups groups={data.law} />
 				{/if}
 				<DocumentHistoryList documents={data.documents} />
+				<div class="nation-slot" data-nation-slot="law"></div>
 			</Collapsible>
 		</div>
 
@@ -138,6 +159,7 @@
 			{:else}
 				<FactGroups groups={data.jurisdiction} />
 			{/if}
+			<div class="nation-slot" data-nation-slot="jurisdiction"></div>
 		</Collapsible>
 
 		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
@@ -201,6 +223,7 @@
 				{/if}
 			{/snippet}
 			<FactGroups groups={data.glance} />
+			<div class="nation-slot" data-nation-slot="glance"></div>
 			{#if data.map}
 				<div class="glance-map">
 					<NationMap map={data.map} nationName={page.officialName} />
@@ -213,6 +236,7 @@
 			<ContactCard cards={data.contacts} headingLevel={3} />
 		</Collapsible>
 	{/if}
+	<div class="nation-slot" data-nation-slot="contacts"></div>
 {/snippet}
 
 <style>

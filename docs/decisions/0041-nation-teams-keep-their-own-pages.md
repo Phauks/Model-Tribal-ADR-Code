@@ -23,13 +23,19 @@ A proposal with mockups set out how a person proves they speak for a nation, the
 
 **Log.** Every request, confirmation, place given, changed or ended, and suspension is written to the sealed activity log under the nation's team. Each team sees its own entries.
 
-**Built in stages.** This record covers teams and delegation (the first stage). Editing and publishing, with the nation's own words live at once, a 3-day hold on new contact details, and statements beside government records, come next; then the project's review queue, emails to nations' offices, and a nightly copy into git. Teams open to nations once the project domain can send email, because sign-in codes and notices to offices need it.
+**Built in stages.** Teams and delegation came first, then editing and publishing (below); then the project's review queue, emails to nations' offices, and a nightly copy into git. Teams open to nations once the project domain can send email, because sign-in codes and notices to offices need it.
+
+**Stage 2: editing and publishing.** The rule is "who said it". The nation's own words, a note on its courts, its statements beside government records and its pictures go live when an editor publishes them. New contacts wait 3 days, unless a second editor for the nation approves them, so nobody can quietly send a nation's mail somewhere else. Any editor can hide a part of the page at once. Facts cited to government records are never edited by a nation; its statement stands beside them. Nations may add pictures, but pages start with none and the project does not choose pictures for nations (the lead author, Nov. 23, 2026). Each publish keeps the earlier versions, which an editor can put back; the history stays private to the team and the project. Because nation pages are prerendered, the Worker adds the live changes to each page as it is sent.
+
+
+**Claimed pages and problem reports.** Like a map listing, a nation's page says "Unclaimed", with a link to claim it, until someone the project confirmed with the nation's office keeps it; then it says "Claimed by the nation" (the lead author, Nov. 23, 2026, replacing the line that said the nation had not reviewed the page). Problem reports about a claimed page go to the nation's team as well as the project: the team sees what was reported, never who sent it, and answers; the project steps in when the team has not answered within 7 days. Requests to restrict or remove material stay with the project.
 
 ## Consequences
 
 - Migration 0015 adds `nation_team_members` and `nation_team_applications`.
 - Places count as grants on the nation's record in `grantsOf` (`site/src/lib/server/access.ts`), so every existing check, including reviews, sees them; anyone on a team approves the record in the nation's capacity.
 - New pages: `/profile/nation-team` (ask to join), `/workspace/nation-teams` (the lead author's list), `/workspace/nation-teams/requests/<reference>` (confirm or decline) and `/workspace/nation-teams/<nation>` (the team).
+- Stage 2: migration 0020 adds `nation_page_changes` and `nation_team_report_answers`; new pages `/workspace/nation-teams/<nation>/edit` and `/workspace/nation-teams/<nation>/changes`; `/nations/<id>/changes.json` and `/nations/<id>/pictures/<picture>` are served by the Worker, and `tools/add-nation-page-changes.mjs` makes the Worker run first for `/nations/*`.
 - The "Nation reviewer" role stays for people the project adds by hand; a person new to the project who joins a team gets that role for the team's nation.
 
 ## Sources
