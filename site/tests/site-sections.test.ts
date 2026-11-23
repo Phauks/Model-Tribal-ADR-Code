@@ -41,9 +41,10 @@ describe('site sections for the sidebar', () => {
 		expect(sectionOf('/downloads')?.label).toBe('Library');
 		expect(sectionOf('/back-matter/cases-by-topic')?.label).toBe('Library');
 		expect(sectionOf('/licenses/cc-by-4.0')?.label).toBe('Library');
+		expect(sectionOf('/supreme-court/marshall-court')?.label).toBe('Library');
 		expect(sectionOf('/copiesx')).toBeUndefined();
 		const library = siteSections.find((section) => section.label === 'Library');
-		expect(library?.gathers?.map((page) => page.link)).toEqual(['/copies', '/downloads', '/back-matter', '/licenses']);
+		expect(library?.gathers?.map((page) => page.link)).toEqual(['/copies', '/downloads', '/supreme-court', '/back-matter', '/licenses']);
 	});
 
 	it('links only sections whose pages exist', () => {

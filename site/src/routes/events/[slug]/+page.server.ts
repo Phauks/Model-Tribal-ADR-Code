@@ -6,6 +6,8 @@ import {
 	eventWhen,
 	paragraphsOf,
 	recordingLabels,
+	seatStatus,
+	sessionTimes,
 	whereLine
 } from '#lib/event-calendar.ts';
 import { durationWords } from '#lib/video-rooms.ts';
@@ -16,15 +18,34 @@ import {
 	acceptOffer,
 	cancelRegistration,
 	expireOffers,
-	register,
+	materialsOf,
 	registrationFor,
 	registrationOpen,
+	sessionsOf,
 	speakersOf,
 	ticketTypesOf
 } from '#lib/server/event-calendar.ts';
-import { formText, requireAccount, storage } from '#lib/server/workspace.ts';
+import { requireAccount, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 import { findEvent, isHost } from './find-event.ts';
+
+/** A speaker's initials for the round mark beside their name, such as "AS" for "A. Speaker". */
+function initialsOf(name: string): string {
+	const words = name.split(/\s+/).filter((word) => /\p{L}/u.test(word));
+	const letters = words.length > 1 ? [words[0], words[words.length - 1]] : words;
+	return letters.map((word) => (word.match(/\p{L}/u)?.[0] ?? '').toUpperCase()).join('');
+}
+
+/** "PDF, 2.4 MB": a file's kind from its name, and its size. */
+function fileKind(name: string): string {
+	const extension = name.includes('.') ? name.split('.').pop()?.toUpperCase() : undefined;
+	return extension && extension.length <= 5 ? extension : 'File';
+}
+
+function fileSize(bytes: number): string {
+	if (bytes >= 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+	return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+}
 
 /**
  * An event's page: what it is, when and where, who is speaking, and the
@@ -37,11 +58,14 @@ export const load: PageServerLoad = async (event) => {
 	event.setHeaders({ 'cache-control': 'private, no-store' });
 	const time = new Date();
 	await expireOffers(database, time);
-	const [tickets, speakers, credits] = await Promise.all([
+	const [tickets, speakers, credits, sessions, materials] = await Promise.all([
 		ticketTypesOf(database, found.identifier),
 		speakersOf(database, found.identifier),
-		confirmedCredits(database)
+		confirmedCredits(database),
+		sessionsOf(database, found.identifier),
+		materialsOf(database, found.identifier)
 	]);
+	const materialScans = await fileScans(database, materials.map((material) => material.objectKey));
 	const publicPages = new Set(credits.filter((credit) => credit.onWebsite && credit.slug).map((credit) => credit.slug));
 	const account = event.locals.account;
 	const own = account ? await registrationFor(database, found.identifier, account.subject) : undefined;
@@ -60,6 +84,28 @@ export const load: PageServerLoad = async (event) => {
 	const recordings = mayWatch && room ? (await recordingsOf(database, room.identifier)).filter((recording) => recording.objectKey && (host || !recording.hidden)) : [];
 	const scans = await fileScans(database, recordings.map((recording) => recording.objectKey as string));
 	return {
+		sessions: sessions.map((session) => ({
+			identifier: session.identifier,
+			times: sessionTimes(session.startsAt, session.endsAt, found.timeZone),
+			title: session.title,
+			about: session.about
+		})),
+		// Materials show once the scanner has passed them; until then only the hosts see that one is being checked.
+		materials: materials
+			.map((material) => {
+				const scan = materialScans.get(material.objectKey) ?? null;
+				return {
+					address: `/events/${found.slug}/materials/${material.identifier}`,
+					title: material.title,
+					size: fileSize(material.sizeBytes),
+					kind: fileKind(material.fileName),
+					sha256: material.sha256,
+					ready: mayServe(scan),
+					checking: stillScanning(scan)
+				};
+			})
+			.filter((material) => material.ready || (host && material.checking)),
+		seatStatus: seatStatus(tickets)?.words ?? null,
 		event: {
 			slug: found.slug,
 			title: found.title,
@@ -81,6 +127,7 @@ export const load: PageServerLoad = async (event) => {
 			closes: found.registrationClosesAt ? eventMoment(found.registrationClosesAt, found.timeZone) : null
 		},
 		speakers: speakers.map((speaker) => ({
+			initials: initialsOf(speaker.name),
 			name: speaker.name,
 			about: speaker.about,
 			page: speaker.contributorSlug && publicPages.has(speaker.contributorSlug) ? `/contributors/${speaker.contributorSlug}` : null
@@ -90,6 +137,8 @@ export const load: PageServerLoad = async (event) => {
 			name: ticket.name,
 			attendance: attendanceLabels[ticket.attendance],
 			seatsLeft: ticket.capacity === null ? null : Math.max(0, ticket.capacity - ticket.taken),
+			capacity: ticket.capacity,
+			taken: ticket.taken,
 			full: ticket.capacity !== null && (ticket.taken >= ticket.capacity || ticket.waiting > 0)
 		})),
 		over,
@@ -124,35 +173,6 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
-	register: async (event) => {
-		const account = requireAccount(event);
-		const found = await findEvent(event);
-		const { database } = storage(event);
-		const form = await event.request.formData();
-		const tickets = await ticketTypesOf(database, found.identifier);
-		const ticket = tickets.find((item) => item.identifier === form.get('ticket'));
-		const name = formText(form, 'name', 200);
-		const values = { name: name ?? '', accessNeeds: formText(form, 'access-needs', 2000) ?? '' };
-		if (!ticket) return fail(400, { problem: 'Choose how you will take part.', field: 'ticket', values });
-		if (!name) return fail(400, { problem: 'Enter your name as it should appear on the list.', field: 'name', values });
-		const result = await register(database, {
-			eventIdentifier: found.identifier,
-			ticketIdentifier: ticket.identifier,
-			accountIdentifier: account.subject,
-			name,
-			accessNeeds: formText(form, 'access-needs', 2000),
-			wantsReminders: form.get('reminders') === 'yes'
-		});
-		if (result.kind === 'closed') return fail(409, { problem: 'Registration for this event is closed.', values });
-		if (result.kind === 'already') return { done: 'You are already signed up for this event.' };
-		return {
-			done:
-				result.kind === 'registered'
-					? 'You are registered. Your seat is listed below.'
-					: 'The seats are taken, so you are on the waitlist. If a seat opens, it is held for you for up to 48 hours.'
-		};
-	},
-
 	accept: async (event) => {
 		const account = requireAccount(event);
 		await findEvent(event);
