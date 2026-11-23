@@ -50,6 +50,8 @@ export const load: PageServerLoad = async (event) => {
 				level: levels.get(summary.identifier)!,
 				latestVersion: summary.latestVersion,
 				latestSavedAt: summary.latestSavedAt ? essayDateTime(summary.latestSavedAt) : null,
+				// The essay's own page, where it is read, commented on and edited in place.
+				page: essayPath(summary.identifier, summary.part),
 				published: summary.published
 					? { versionNumber: summary.published.versionNumber, at: essayDateTime(summary.published.publishedAt), link: essayPath(summary.identifier, summary.part) }
 					: null

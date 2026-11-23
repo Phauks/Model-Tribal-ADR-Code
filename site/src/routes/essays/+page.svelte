@@ -5,4 +5,4 @@
 	let { data }: PageProps = $props();
 </script>
 
-<EssayIndex section="Essays" lead="Essays on the design choices behind the model code." essays={data.essays} />
+<EssayIndex part="essays" section="Essays" lead="Essays on the design choices behind the model code." essays={data.essays} />
