@@ -201,17 +201,13 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Revised Constitution under the Indian Reorganization Act of June 18, 1934
-  quote: the Indian Reorganization Act of June 18, 1934, (48 Stat, 984), desiring
-  source: constitution-jicarilla-apache-nation-1969-text
-  confidence: medium
+  value: Revised Constitution under Indian Reorganization Act
+  quote: pursuant to the authorities conferred by the Indian Reorganization Act of June 18, 1934 (48 Stat. 984)
+  source: jicarilla-apache-nation-website-about-us-government
+  confidence: high
   verification: read-in-full
-  as_of: '1969-02-13'
-  locator: Preamble
-  document_version:
-    document: jicarilla-apache-nation-constitution
-    version: 1969-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: These are pages of the Jicarilla Oil and Gas Administration, a Nation department site rather than the Nation''s main site; the Revised Constitution text is not among the saved pages.'
 - aspect: governing-body
   value: Jicarilla Apache Tribal Council
   quote: be exercised by the Jicarilla Apache Tribal Council, hereinafter
@@ -461,17 +457,13 @@ governance:
     version: 1969-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
 - aspect: other
-  value: Executive committee of four council members
-  quote: composed of four (4) council members to assure the prompt conduct of
-  source: constitution-jicarilla-apache-nation-1969-text
-  confidence: medium
+  value: Oil and gas administration is a Nation department
+  quote: The Jicarilla Oil and Gas Administration is a department under the Jicarilla Apache Nation Government
+  source: jicarillaoga-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1969-02-13'
-  locator: Article XII, Section 1
-  document_version:
-    document: jicarilla-apache-nation-constitution
-    version: 1969-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: These are pages of the Jicarilla Oil and Gas Administration, a Nation department site rather than the Nation''s main site; the Revised Constitution text is not among the saved pages.'
 governing_documents:
 - kind: law-code
   title: Jicarilla Apache Nation - Code
@@ -709,6 +701,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: First recital
   note: 'The source reads: “issue commissions as New Mexico Peace Officers to members of the police or sheriff’s department of any New Mexico Indian tribe or pueblo”. The copy has a blank effective date. The recital cites a New Mexico statute that authorizes the State Police chief to issue such commissions. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: NM
+  county: Rio Arriba County
+  court: District Court for Rio Arriba County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Rio Arriba County holds 85% of the land of Jicarilla Apache Nation Reservation (Census GEOID 1700), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Sandoval County
+  court: District Court for Sandoval County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Sandoval County holds 15% of the land of Jicarilla Apache Nation Reservation (Census GEOID 1700), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Jicarilla Apache Reserve (Colorado line to the Navajo reservation), New Mexico
   method: executive-order

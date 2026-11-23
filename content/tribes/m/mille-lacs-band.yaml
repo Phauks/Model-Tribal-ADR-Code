@@ -113,6 +113,31 @@ indian_health_service:
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Mille Lacs Band". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Mille Lacs Band of Ojibwe Indians (1994)); the list does not say which service unit or programs the compact covers.'
 governance:
+- aspect: governing-body
+  value: Band Assembly
+  quote: The Band Assembly serves as the legislative authority of the Mille Lacs Band of Ojibwe.
+  source: mille-lacs-band-website-government-legislative
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: governing-body-size
+  value: 3 District Representatives and Speaker
+  quote: comprised of three District Representatives and the Speaker of the Assembly
+  source: mille-lacs-band-website-government-legislative
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: head-of-government
+  value: Chief Executive
+  quote: The leader of the Executive Branch shall be the popularly-elected tribal chairman, whose title shall be Chief Executive.
+  source: mille-lacs-band-website-government-tribal-register-constitution-and-band-statutes-ti
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Title 4, § 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -121,6 +146,80 @@ governance:
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Popularly elected
+  quote: The leader of the Executive Branch shall be the popularly-elected tribal chairman
+  source: mille-lacs-band-website-government-tribal-register-constitution-and-band-statutes-ti
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Title 4, § 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Chief Executive is the top official in the Executive Branch and is elected by Band members every four years.
+  source: mille-lacs-band-website-government-executive1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: other-officers
+  value: Secretary-Treasurer
+  quote: The Speaker of the Assembly wears two hats, as he or she is also the Secretary-Treasurer.
+  source: mille-lacs-band-website-government-legislative
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: elections
+  value: Every 4 years
+  quote: The Chief Executive is the top official in the Executive Branch and is elected by Band members every four years.
+  source: mille-lacs-band-website-government-executive1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: branches
+  value: Executive, Legislative and Judicial
+  quote: Our Band has a three-branch division-of-powers form of government, with an Executive Branch, Legislative Branch and Judicial Branch.
+  source: millelacsband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: judiciary
+  value: Court of Appeals and District Court
+  quote: The Judicial Branch consists of the Court of Appeals and the District Court.
+  source: mille-lacs-band-of-ojibwe-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: judicial-selection
+  value: Nominated by Chief Executive, confirmed by Band Assembly
+  quote: The justices are nominated for six-year overlapping terms by the Mille Lacs Band Chief Executive and confirmed by the Mille Lacs Band Assembly.
+  source: mille-lacs-band-website-government-judicial-court-of-appeals
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: judicial-term
+  value: 6 years, overlapping
+  quote: The justices are nominated for six-year overlapping terms
+  source: mille-lacs-band-website-government-judicial-court-of-appeals
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
+- aspect: recall-and-removal
+  value: Two-thirds Joint Session vote
+  quote: The Joint Session of the Band Assembly shall by two-thirds majority vote render its final decision on the recall of the appointed officer.
+  source: mille-lacs-band-website-government-tribal-register-constitution-and-band-statutes-ti
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Title 4, § 15(e)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Band Constitution is referred to but its text is not among the pages; facts come from the website and the Title 4 statute text.'
 governing_documents:
 - kind: law-code
   title: Mille Lacs Band Statutes Annotated
@@ -401,6 +500,34 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Mille Lacs Hinckley and Onamia”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Mille Lacs", matched to the roster by name and state.'
+nearby_state_courts:
+- state: MN
+  county: Mille Lacs County
+  court: District Court for Mille Lacs County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Mille Lacs County holds 96% of the land of Mille Lacs Reservation (Census GEOID 2270), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Pine County
+  court: District Court for Pine County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pine County holds 2% of the land of Mille Lacs Reservation (Census GEOID 2270), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Aitkin County
+  court: District Court for Aitkin County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Aitkin County holds 2% of the land of Mille Lacs Reservation (Census GEOID 2270), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1826
   signed: '1826-08-05'

@@ -20,6 +20,7 @@ import {
 	teamActivity,
 	teamOf
 } from '#lib/server/nation-teams.ts';
+import { fileScan } from '#lib/server/file-scans.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
 import { testDatabase } from './database.ts';
 
@@ -143,6 +144,25 @@ describe('nation teams in the database', () => {
 		expect(granter).toMatchObject({ level: 'steward', parts: null });
 		expect((await granterOn(database, steward, hopi)).level).toBeUndefined();
 		expect((await teamOf(database, navajo))[0]).toMatchObject({ level: 'steward', addedByProject: true });
+	});
+
+	it('holds the proof for the virus check from the moment it is stored', async () => {
+		const stored = new Map<string, unknown>();
+		const bucket = { put: async (key: string, bytes: unknown) => void stored.set(key, bytes), delete: async () => undefined } as never;
+		const reference = await saveApplication(database, bucket, {
+			accountIdentifier: 'account-c',
+			email: 'c@example.org',
+			displayName: 'C',
+			nationIdentifier: hopi,
+			office: 'Staff',
+			route: 'letter',
+			parts: null,
+			details: null,
+			proof: { name: 'letter.pdf', type: 'application/pdf', bytes: new Uint8Array([0x25, 0x50, 0x44, 0x46]) }
+		});
+		const [key] = [...stored.keys()];
+		expect(key).toMatch(/^nation-teams\//);
+		expect(await fileScan(database, key!)).toMatchObject({ status: 'waiting', purpose: 'nation-team-proof', subject: reference });
 	});
 
 	it('lets a declined request say why', async () => {

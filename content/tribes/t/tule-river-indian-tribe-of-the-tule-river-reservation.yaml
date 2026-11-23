@@ -198,29 +198,29 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: governing-body
-  value: Tule River Tribal Council
-  quote: The governing body of the Tule River Tribe shall con-
-  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
-  confidence: medium
+  value: Tribal Council
+  quote: Our Council consists of nine council members.
+  source: tule-river-indian-tribe-of-the-tule-river-reservation-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1974-03-04'
-  locator: Article III, Section 1
-  document_version:
-    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
-    version: 1974-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 1 carries unrelated third-party promotional text and pages 2 and 4 are 2018-2019 news posts, so the facts come from the 2026 Tribal Council page (page 3).'
+- aspect: governing-body-size
+  value: 9 members
+  quote: Our Council consists of nine council members.
+  source: tule-river-indian-tribe-of-the-tule-river-reservation-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 1 carries unrelated third-party promotional text and pages 2 and 4 are 2018-2019 news posts, so the facts come from the 2026 Tribal Council page (page 3).'
 - aspect: governing-body-selection
-  value: Elected by secret ballot
-  quote: councilmen elected by secret ballot,
-  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
-  confidence: medium
+  value: Voted for by tribal members residing on the reservation
+  quote: Each member is voted for by the Tule River Tribal Members residing on the reservation.
+  source: tule-river-indian-tribe-of-the-tule-river-reservation-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1974-03-04'
-  locator: Article III, Section 2
-  document_version:
-    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
-    version: 1974-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 1 carries unrelated third-party promotional text and pages 2 and 4 are 2018-2019 news posts, so the facts come from the 2026 Tribal Council page (page 3).'
 - aspect: governing-body-term
   value: 2 years
   quote: Councilmen shall hold office for a term of two years, or
@@ -235,16 +235,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
 - aspect: head-of-government
   value: Chairman
-  quote: its own membership, a council chairman and vice-chairman;
-  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
-  confidence: medium
+  quote: The elected officials then decide who will perform functions of Chairman, Vice Chairman, Secretary and Treasurer.
+  source: tule-river-indian-tribe-of-the-tule-river-reservation-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1974-03-04'
-  locator: Article III, Section 3
-  document_version:
-    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
-    version: 1974-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 1 carries unrelated third-party promotional text and pages 2 and 4 are 2018-2019 news posts, so the facts come from the 2026 Tribal Council page (page 3).'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -254,17 +250,13 @@ governance:
   locator: Tule River Indian Tribe of the Tule River Reservation, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 - aspect: head-of-government-selection
-  value: Elected by the Council from its own membership
-  quote: its own membership, a council chairman and vice-chairman;
-  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
-  confidence: medium
+  value: Decided by elected officials
+  quote: The elected officials then decide who will perform functions of Chairman, Vice Chairman, Secretary and Treasurer.
+  source: tule-river-indian-tribe-of-the-tule-river-reservation-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1974-03-04'
-  locator: Article III, Section 3
-  document_version:
-    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
-    version: 1974-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 1 carries unrelated third-party promotional text and pages 2 and 4 are 2018-2019 news posts, so the facts come from the 2026 Tribal Council page (page 3).'
 - aspect: head-of-government-term
   value: 2 years
   quote: Councilmen shall hold office for a term of two years, or
@@ -278,17 +270,13 @@ governance:
     version: 1974-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
 - aspect: other-officers
-  value: Vice-chairman, secretary, treasurer
-  quote: and from within or without its own membership, a secretary, a treas-
-  source: constitution-tule-river-indian-tribe-of-the-tule-river-reservation-1974-text-2
-  confidence: medium
+  value: Chairman, Vice Chairman, Secretary, Treasurer
+  quote: The elected officials then decide who will perform functions of Chairman, Vice Chairman, Secretary and Treasurer.
+  source: tule-river-indian-tribe-of-the-tule-river-reservation-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1974-03-04'
-  locator: Article III, Section 3
-  document_version:
-    document: tule-river-indian-tribe-of-the-tule-river-reservation-constitution
-    version: 1974-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan includes the 1936 base constitution with Amendments I-V (1940 and 1974) appended; some certification dates are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 1 carries unrelated third-party promotional text and pages 2 and 4 are 2018-2019 news posts, so the facts come from the 2026 Tribal Council page (page 3).'
 - aspect: elections
   value: Every 2 years on the third Saturday in January
   quote: and thereafter elections shall be held every two
@@ -597,6 +585,16 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Tulare County
+  court: Superior Court for Tulare County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Tulare County holds 100% of the land of Tule River Reservation (Census GEOID 4300), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Tule River Reserve (first tract), California
   method: executive-order

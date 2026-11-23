@@ -17,7 +17,8 @@ import Token from 'markdown-it/lib/token.mjs';
 import type { LineChange } from './merge.ts';
 import { markAnchor, marksHtml, type CitationMark } from '../citation-marks.ts';
 import type { SourceEntry } from '../server/source-uses.ts';
-import { figureKindLabels, figureRemovalLink, figureSource, type FigureKind } from './figures.ts';
+import { chartFromRows, figureKindLabels, figureRemovalLink, figureSource, readFigureInfo, type FigureKind } from './figures.ts';
+import { scaleTop } from '../bar-chart.ts';
 import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
 import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 
@@ -233,11 +234,21 @@ function arrangeFigures(tokens: Token[]): Token[] {
 			}
 		}
 		open.meta = { description: descriptions.filter(Boolean).join(' ') };
+		// A chart's table gives its bars, and stays under them as "Show as a table".
+		if (figureInfo(open).kind === 'chart') {
+			const start = caption.findIndex((token) => token.type === 'table_open' && token.level === open.level + 1);
+			if (start >= 0) {
+				const end = closingIndex(caption, start, 'table_close');
+				const table = caption.splice(start, end - start + 1);
+				open.meta.rows = tableRows(table);
+				open.meta.table = [htmlToken('<details class="essay-chart-table">\n<summary>Show as a table</summary>\n'), ...table, htmlToken('</details>\n')];
+			}
+		}
 		const removal = figureRemoval(open);
 		if (caption.length > 0 || removal) {
-			arranged.push(open, htmlToken('<figcaption>\n'), ...caption, htmlToken(`${removal}</figcaption>\n</figure>\n`));
+			arranged.push(open, ...(open.meta.table ?? []), htmlToken('<figcaption>\n'), ...caption, htmlToken(`${removal}</figcaption>\n</figure>\n`));
 		} else {
-			arranged.push(open, htmlToken('</figure>\n'));
+			arranged.push(open, ...(open.meta.table ?? []), htmlToken('</figure>\n'));
 		}
 		arranged.push(...transcript, tokens[close]);
 		index = close + 1;
@@ -246,8 +257,47 @@ function arrangeFigures(tokens: Token[]): Token[] {
 }
 
 function figureInfo(token: Token): { kind: FigureKind; address: string } {
-	const [, kind = 'picture', address = ''] = essayBlocks.figure.exec(token.info.trim()) ?? [];
-	return { kind: kind as FigureKind, address };
+	return readFigureInfo(token.info);
+}
+
+/** A Markdown table's cells as plain text, row by row, the header row first. */
+function tableRows(tokens: Token[]): string[][] {
+	const rows: string[][] = [];
+	for (const token of tokens) {
+		if (token.type === 'tr_open') rows.push([]);
+		else if (token.type === 'inline') rows.at(-1)?.push(plainText(token));
+	}
+	return rows;
+}
+
+/**
+ * A chart's bars, drawn as the Data and charts page draws them
+ * (BarChart.svelte): each bar is a list item holding its name and number,
+ * which is what a screen reader reads; the drawn bar is decoration.
+ */
+function chartHtml(token: Token, state: RenderState): string {
+	const chart = chartFromRows((token.meta?.rows as string[][] | undefined) ?? []);
+	if ('problem' in chart) {
+		state.problems.push(chart.problem);
+		return '<p class="essay-figure-missing">This chart cannot be drawn until its table is fixed.</p>\n';
+	}
+	const scale = scaleTop(Math.max(0, ...chart.bars.map((bar) => bar.value)));
+	const percent = (value: number) => `${Number(((value / scale.top) * 100).toFixed(3))}%`;
+	const ticks = Array.from({ length: Math.round(scale.top / scale.step) + 1 }, (_, index) => index * scale.step);
+	const bars = chart.bars
+		.map(
+			(bar) =>
+				`<li><span class="essay-chart-label">${escapeHtml(bar.label)}</span>` +
+				`<span class="essay-chart-track" aria-hidden="true"><span class="essay-chart-fill" style="width: ${percent(bar.value)}"></span></span>` +
+				`<span class="essay-chart-value">${escapeHtml(bar.shown)}</span></li>`
+		)
+		.join('\n');
+	const axis = ticks.map((tick) => `<span style="left: ${percent(tick)}">${tick.toLocaleString('en-US')}</span>`).join('');
+	return (
+		`<div class="essay-chart" style="--grid-step: ${percent(scale.step)}">\n` +
+		`<ol class="essay-chart-bars" aria-label="${escapeHtml(`${chart.valueHeader} by ${chart.labelHeader.toLowerCase()}`)}">\n${bars}\n</ol>\n` +
+		`<div class="essay-chart-axis" aria-hidden="true"><span></span><span class="essay-chart-ticks">${axis}</span><span></span></div>\n</div>\n`
+	);
 }
 
 function figureRemoval(token: Token): string {
@@ -264,6 +314,7 @@ function figureRemoval(token: Token): string {
  */
 function figureMedia(token: Token, state: RenderState): string {
 	const { kind, address } = figureInfo(token);
+	if (kind === 'chart') return chartHtml(token, state);
 	const source = figureSource(kind, address);
 	const description = String(token.meta?.description ?? '');
 	if (!source) {

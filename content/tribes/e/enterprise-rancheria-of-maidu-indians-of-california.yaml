@@ -188,29 +188,13 @@ governance:
     version: 2003-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
 - aspect: governing-body
-  value: General Council
-  quote: The governing body of the Enterprise Rancheria shall be the General
-  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
-  confidence: medium
-  verification: read-in-full
-  as_of: '2003-10-29'
-  locator: Article IV, Section 3
-  document_version:
-    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
-    version: 2003-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
-- aspect: governing-body
   value: Tribal Council
-  quote: Enterprise Rancheria, by and through General Council, shall be vested in the Tribal Council.
-  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
-  confidence: medium
+  quote: Tribal Council
+  source: enterprise-rancheria-of-maidu-indians-of-california-website-our-tribe
+  confidence: high
   verification: read-in-full
-  as_of: '2003-10-29'
-  locator: Article VI, Section 1
-  document_version:
-    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
-    version: 2003-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The council and officers are listed with names; only titles are given.'
 - aspect: governing-body-size
   value: 7 members
   quote: consist of seven (7) members, which shall be comprised of a Chairperson, Vice-Chairperson, Treasurer,
@@ -260,17 +244,13 @@ governance:
     version: 2003-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
 - aspect: head-of-government
-  value: Chairperson
-  quote: The Chairperson of the Estom Yumeka Maidu Tribal Council of the Enterprise
-  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
-  confidence: medium
+  value: Tribal Chairperson
+  quote: Tribal Chairperson
+  source: enterprise-rancheria-of-maidu-indians-of-california-website-our-tribe
+  confidence: high
   verification: read-in-full
-  as_of: '2003-10-29'
-  locator: Article VII, Section 1
-  document_version:
-    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
-    version: 2003-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The council and officers are listed with names; only titles are given.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -587,6 +567,25 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Butte County
+  court: Superior Court for Butte County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Butte County holds 50% of the land of Enterprise Rancheria (Census GEOID 1055), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: CA
+  county: Yuba County
+  court: Superior Court for Yuba County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Yuba County holds 50% of the land of Enterprise Rancheria (Census GEOID 1055), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

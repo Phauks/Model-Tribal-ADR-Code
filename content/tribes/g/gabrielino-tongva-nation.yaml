@@ -50,6 +50,232 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: General office address as shown on the page.
+governance:
+- aspect: governing-body
+  value: Peo’tskome
+  quote: The Peo’tskome is the elected governing council of the Gabrielino/
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 9 members
+  quote: The Peo’tskome of the Gabrielino/Tongva Nation shall consist of nine (9)
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: The Peo’tskome shall be selected in at large elections open to all eligible
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 6 years, staggered
+  quote: member of the Peo’tskome of the Gabrielino/Tongva Nation shall be six (6)
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All Citizens; 4 meetings a year
+  quote: The Gabrielino/Tongva Nation shall hold not less than four (4) general
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 1
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chair
+  quote: The Chair of the Peo’tskome, unless unable or in situations described
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 6
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-selection
+  value: Appointed by Peo’tskome from its members
+  quote: The duly elected representatives of the Peo’tskome shall appoint a Chair
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 5
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice Chair, Secretary
+  quote: The duly elected representatives of the Peo’tskome shall appoint a Vice
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 7
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every 2 years, 3 seats
+  quote: Every two (2) years, starting with 2007, there shall be an election, in
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: All Citizens eighteen (18) years of age and older, who
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VIII
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: The Election Board shall have overall responsibility to conduct all elections in
+  source: gabrielino-tongva-nation-website-wp-content-uploads-2026-09-gtn-election-act-r11-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 4, B
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: branches
+  value: Legislative and judicial branches
+  quote: balances of the other branches of the Gabrielino/Tongva Nation
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 2
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Supreme Court and District Court
+  quote: The Supreme Court of the Gabrielino/Tongva Nation shall consist of
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VII, Section 4
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Appointed by Peo’tskome (District Court)
+  quote: The Peo’tskome shall appoint District Court Judge(s). The Peo’tskome
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VII, Section 8
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 4 years (Supreme Court)
+  quote: for a four (4) year term except as provided herein.
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VII, Section 4
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 3 years (District Court)
+  quote: The term of office for District Court Judge(s) shall be three
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VII, Section 7
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Removed only by Grievance Process
+  quote: Judges may only be removed pursuant to the Grievance Process as
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VII, Section 10
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Two-thirds voter ratification
+  quote: purposes, when ratified by two thirds (2/3) of the registered voters of the
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XI, Section 2
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal on felony or moral turpitude conviction
+  quote: Peo’tskome members may only be removed upon, conviction of any felony,
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 10
+  document_version:
+    document: gabrielino-tongva-nation-constitution
+    version: 2020-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

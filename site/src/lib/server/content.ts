@@ -84,10 +84,17 @@ export interface SourceRecord {
 		title?: string;
 		author?: CitationName[];
 		'container-title'?: string;
+		/** A case's court, and where it is reported. */
+		authority?: string;
+		volume?: string;
+		page?: string;
+		number?: string;
 		issued?: { 'date-parts'?: number[][] };
 		URL?: string;
 	};
 	original_link?: string;
+	/** The nations a source is about, by profile id. */
+	tribes?: string[];
 	archives?: { link?: string; url?: string; captured?: string }[];
 	/** Other places to read a case or law (src/lib/reading-links.ts). */
 	reading_links?: ReadingLinks;
@@ -214,6 +221,8 @@ export interface NationRecord {
 		status?: string;
 		detail?: string;
 	})[];
+	/** The state trial court for each county the nation's Census area lies in. */
+	nearby_state_courts?: (CitedFact & { state: string; county: string; court: string; link?: string })[];
 	treaties?: (CitedFact & {
 		title: string;
 		signed: string;

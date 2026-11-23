@@ -9,7 +9,8 @@ import {
 	searchSummary,
 	sources as sourceRecords,
 	type CitedFact,
-	type NationRecord
+	type NationRecord,
+	type SourceRecord
 } from '#lib/server/content.ts';
 import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
@@ -23,6 +24,7 @@ import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
+import { offlineSets } from '#lib/server/copy-lists.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -392,8 +394,8 @@ function governmentAtAGlance(record: NationRecord, sources: SourceUses): FactGro
 	const bodyLabel = 'Governing body';
 	const headLabel = 'Head of government';
 	return [
-		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value, link: '#government-heading' })] : []),
-		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value, link: '#government-heading' })] : [])
+		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value })] : []),
+		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value })] : [])
 	];
 }
 
@@ -427,8 +429,54 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 	}
 	return [
 		...[...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items })),
-		...agreementGroups(record, sources, section)
+		...agreementGroups(record, sources, section),
+		...group('nearby-state-courts', 'State trial courts for the same counties', nearbyStateCourts(record, sources, section)),
+		...group('court-cases', 'Court cases about the nation', courtCases(record, sources, section))
 	];
+}
+
+/**
+ * The state trial court of general jurisdiction for each county the nation's
+ * Census area lies in, largest share first as the record lists them, each
+ * linking the state judiciary's list of those courts.
+ */
+function nearbyStateCourts(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	return (record.nearby_state_courts ?? []).map((fact) =>
+		cited(sources, section, fact, {
+			text: fact.court,
+			link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+			detail: stateName(fact.state)
+		})
+	);
+}
+
+/** Reporter names written out in some records, in their short form. */
+const reporterShortNames: Record<string, string> = { 'United States Reports': 'U.S.' };
+
+/**
+ * The court cases in the project's sources that are about the nation (the
+ * source record lists it), oldest first: the case name, where it is reported
+ * and the year, with the court under it. Each links the opinion the record
+ * cites and is listed under Sources like any other fact.
+ */
+function courtCases(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	const year = (source: SourceRecord) => source.citation.issued?.['date-parts']?.[0]?.[0];
+	const cases = [...sourceRecords().values()]
+		.filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(record.id) && source.citation.title)
+		.sort((first, second) => (year(first) ?? 0) - (year(second) ?? 0));
+	return cases.map((source) => {
+		const { volume, page, number, authority } = source.citation;
+		const reporter = source.citation['container-title'];
+		const reported = volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number;
+		const when = year(source);
+		const address = source.citation.URL ?? source.original_link;
+		return cited(sources, section, { source: source.key, confidence: 'high' }, {
+			text: source.citation.title ?? source.key,
+			link: address && URL.canParse(address) ? webLink(address) : undefined,
+			detail: [reported, when ? `(${when})` : undefined].filter(Boolean).join(' ') || undefined,
+			note: authority
+		});
+	});
 }
 
 /** The names the page gives each kind of jurisdiction agreement, in the order the page shows them. */
@@ -829,6 +877,11 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 	};
 }
 
+function heldCopies(id: string): { count: number; bytes: number } {
+	const files = offlineSets().nations.get(id)?.files ?? [];
+	return { count: files.length, bytes: files.reduce((total, [, bytes]) => total + bytes, 0) };
+}
+
 export const load: PageServerLoad = ({ params }) => {
 	const record = nations().find((candidate) => candidate.id === params.id);
 	if (!record) error(404, 'No nation page has this address.');
@@ -848,7 +901,9 @@ export const load: PageServerLoad = ({ params }) => {
 			...status,
 			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined
 		},
-		withdrawn: record.review?.status === 'withdrawn-at-request'
+		withdrawn: record.review?.status === 'withdrawn-at-request',
+		// The copies of the nation's documents this site holds, to save offline or download as a ZIP.
+		heldCopies: heldCopies(record.id)
 	};
 
 	if (page.withdrawn) {

@@ -39,6 +39,7 @@ export const siteSections: SiteSection[] = [
 	{ label: 'Nations', link: '/nations', built: true },
 	{ label: 'Library', link: '/library', built: false },
 	{ label: 'Glossary', link: '/glossary', built: true },
+	{ label: 'Events', link: '/events', built: true },
 	{ label: 'About', link: '/about', built: true },
 	{ label: 'Sponsorship', link: '/sponsor', built: true }
 ];

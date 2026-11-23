@@ -217,29 +217,21 @@ governance:
     version: 1941-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR-fragmented scan with split words and stray parentheses; the text is the 1941 original with no amendments.'
 - aspect: governing-body
-  value: Council
-  quote: The managing body shall be a Council composed of nine members elected by
-  source: university-of-oklahoma-indian-reorganization-act-dougcons
-  confidence: medium
+  value: Tribal Council
+  quote: The Douglas Indian Association is governed by 9 tribal council members.
+  source: douglas-indian-association-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1941-11-24'
-  locator: Article III, Section 1(a)
-  document_version:
-    document: douglas-indian-association-constitution
-    version: 1941-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR-fragmented scan with split words and stray parentheses; the text is the 1941 original with no amendments.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is mentioned on the Tribal Council page but is not among the saved pages.'
 - aspect: governing-body-size
   value: 9 members
-  quote: The managing body shall be a Council composed of nine members elected by
-  source: university-of-oklahoma-indian-reorganization-act-dougcons
-  confidence: medium
+  quote: Governed by 9 Council Members
+  source: douglas-indian-association-website-tribal-council-members
+  confidence: high
   verification: read-in-full
-  as_of: '1941-11-24'
-  locator: Article III, Section 1(a)
-  document_version:
-    document: douglas-indian-association-constitution
-    version: 1941-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR-fragmented scan with split words and stray parentheses; the text is the 1941 original with no amendments.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is mentioned on the Tribal Council page but is not among the saved pages.'
 - aspect: governing-body-selection
   value: Elected by the Association by secret ballot
   quote: shall be elected by the Association on the annual election date by secret
@@ -277,17 +269,13 @@ governance:
     version: 1941-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR-fragmented scan with split words and stray parentheses; the text is the 1941 original with no amendments.'
 - aspect: head-of-government
-  value: President of the Council
-  quote: The President of the Council shall preside
-  source: university-of-oklahoma-indian-reorganization-act-dougcons
-  confidence: medium
+  value: President
+  quote: Council Member/President
+  source: douglas-indian-association-website-tribal-council-members
+  confidence: high
   verification: read-in-full
-  as_of: '1941-11-24'
-  locator: By-laws, Article I, Section 1
-  document_version:
-    document: douglas-indian-association-constitution
-    version: 1941-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR-fragmented scan with split words and stray parentheses; the text is the 1941 original with no amendments.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is mentioned on the Tribal Council page but is not among the saved pages.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -309,17 +297,13 @@ governance:
     version: 1941-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR-fragmented scan with split words and stray parentheses; the text is the 1941 original with no amendments.'
 - aspect: other-officers
-  value: Vice President, Secretary, Treasurer
-  quote: and from within or without, a Secretary,
-  source: university-of-oklahoma-indian-reorganization-act-dougcons
-  confidence: medium
+  value: Secretary
+  quote: Council Member/Secretary
+  source: douglas-indian-association-website-tribal-council-members
+  confidence: high
   verification: read-in-full
-  as_of: '1941-11-24'
-  locator: Article III, Section 2(c)
-  document_version:
-    document: douglas-indian-association-constitution
-    version: 1941-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR-fragmented scan with split words and stray parentheses; the text is the 1941 original with no amendments.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is mentioned on the Tribal Council page but is not among the saved pages.'
 - aspect: elections
   value: Annually, first Monday in January
   quote: The annual election date shall be the first Monday
@@ -475,6 +459,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Juneau City and Borough
+  court: Superior Court for Juneau City and Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Juneau City and Borough holds 100% of the land of Douglas ANVSA (Census GEOID 6420), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

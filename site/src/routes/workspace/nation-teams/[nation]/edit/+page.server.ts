@@ -29,8 +29,10 @@ import {
 	waitingChanges,
 	type ChangeRow
 } from '#lib/server/nation-page-changes.ts';
+import { longestPauseText, pauseProblem } from '#lib/nation-page-review.ts';
 import { teamAnswerOutcomes, type TeamAnswerOutcome } from '#lib/nation-team-reports.ts';
 import { atLeastTeamLevel } from '#lib/nation-teams.ts';
+import { answerPause, currentPause } from '#lib/server/nation-page-review.ts';
 import { answerReport, reportsForTeam } from '#lib/server/nation-team-reports.ts';
 import { nationAndGranter } from '#lib/server/nation-team-access.ts';
 import { readFile } from '#lib/server/request-form.ts';
@@ -58,10 +60,14 @@ export const load: PageServerLoad = async (event) => {
 	const live = await liveChanges(database, nation.identifier);
 	const drafts = await draftsOf(database, nation.identifier);
 	const waiting = await waitingChanges(database, nation.identifier);
+	const pause = await currentPause(database, nation.identifier);
 	const allowed = Object.fromEntries(
 		changeKinds.map((kind) => [
 			kind,
-			{ draft: !changeProblem(granter, kind, 'draft'), publish: !changeProblem(granter, kind, 'publish') }
+			{
+				draft: !changeProblem(granter, kind, 'draft'),
+				publish: !changeProblem(granter, kind, 'publish') && !pauseProblem(Boolean(pause), kind)
+			}
 		])
 	) as Record<ChangeKind, { draft: boolean; publish: boolean }>;
 	// Each form starts from the person's own draft of that part, else the newest
@@ -82,14 +88,18 @@ export const load: PageServerLoad = async (event) => {
 		drafts: drafts.map((draft) => shown(draft)),
 		waiting: waiting.map((change) => ({
 			...shown(change),
-			canApprove: !approvalProblem(granter, change),
-			canCancel: allowed[change.kind].publish
+			canApprove: !approvalProblem(granter, change) && !pause,
+			// Cancelling takes something off, so a pause does not stop it.
+			canCancel: !changeProblem(granter, change.kind, 'publish')
 		})),
 		personIdentifier: person.identifier,
 		isAdministrator: granter.isAdministrator,
 		contactRows: mostContacts,
 		reports: await reportsForTeam(database, nation.identifier),
-		canAnswer: granter.isAdministrator || Boolean(granter.level && atLeastTeamLevel(granter.level, 'editor'))
+		canAnswer: granter.isAdministrator || Boolean(granter.level && atLeastTeamLevel(granter.level, 'editor')),
+		pause: pause
+			? { question: pause.question, pausedAt: pause.pausedAt, answer: pause.answer, answeredByName: pause.answeredByName, answeredAt: pause.answeredAt }
+			: null
 	};
 };
 
@@ -179,6 +189,8 @@ export const actions: Actions = {
 			event.locals.refused = `nation page change refused on nation ${nation.identifier}: ${problem}`;
 			return fail(403, { kind, problem });
 		}
+		const paused = intent === 'publish' ? pauseProblem(Boolean(await currentPause(database, nation.identifier)), kind) : undefined;
+		if (paused) return fail(409, { kind, problem: paused });
 		const credit = formText(form, 'credit', 200) || nation.title;
 		const current = (await liveChanges(database, nation.identifier))[kind]?.content ?? emptyContent(kind);
 		// Pictures in the person's own draft can be kept as well as those on the page.
@@ -189,7 +201,7 @@ export const actions: Actions = {
 				? { pictures: [...(current as { pictures: NationPicture[] }).pictures, ...(ownDraft.content as { pictures: NationPicture[] }).pictures] }
 				: current;
 		const errors: Record<string, string> = {};
-		const raw = await rawContent(kind, form, base, (file) => savePicture(bucket, nation.identifier, file), errors);
+		const raw = await rawContent(kind, form, base, (file) => savePicture(database, bucket, nation.identifier, file), errors);
 		const { content, problem: contentProblem } = readContent(kind, raw);
 		const firstError = Object.values(errors)[0];
 		if (firstError || contentProblem) return fail(400, { kind, problem: firstError ?? contentProblem });
@@ -222,6 +234,8 @@ export const actions: Actions = {
 		}
 		const problem = changeProblem(granter, draft.kind, 'publish');
 		if (problem) refuse(event, `nation page draft publish refused on nation ${nation.identifier}: ${problem}`);
+		const paused = pauseProblem(Boolean(await currentPause(database, nation.identifier)), draft.kind);
+		if (paused) return fail(409, { problem: paused });
 		const result = await publishDraft(database, draft, person);
 		return {
 			done:
@@ -275,7 +289,22 @@ export const actions: Actions = {
 			event.locals.refused = `nation page approval refused on nation ${nation.identifier}: ${problem}`;
 			return fail(403, { problem });
 		}
+		const paused = pauseProblem(Boolean(await currentPause(database, nation.identifier)), change.kind);
+		if (paused) return fail(409, { problem: paused });
 		await approveEarly(database, change, person);
 		return { done: 'Approved. The new contacts are on the page now.' };
+	},
+
+	answerProject: async (event) => {
+		const { nation, granter, database, person } = await nationAndGranter(event);
+		if (!granter.isAdministrator && !(granter.level && atLeastTeamLevel(granter.level, 'editor'))) {
+			refuse(event, `only an editor answers the project for nation ${nation.identifier}`);
+		}
+		const pause = await currentPause(database, nation.identifier);
+		if (!pause) return fail(404, { problem: 'Publishing is no longer paused, so there is nothing to answer.' });
+		const answer = formText(await event.request.formData(), 'answer', longestPauseText);
+		if (!answer) return fail(400, { problem: 'Write your answer to the project.' });
+		await answerPause(database, pause, answer, person);
+		return { done: 'Thank you. The project sees your answer and will resume publishing or write back.' };
 	}
 };

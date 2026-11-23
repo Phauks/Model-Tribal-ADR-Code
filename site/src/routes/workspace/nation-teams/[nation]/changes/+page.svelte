@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { changeKindLabels, contactKindLabels, hideableSectionLabels, statementSectionLabels, type ChangeContents, type StatementSection } from '#lib/nation-page-changes.ts';
+	import NationChangeContent from '#lib/components/NationChangeContent.svelte';
+	import { changeKindLabels } from '#lib/nation-page-changes.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 
-	const stateLabels = { live: 'On the page now', waiting: 'Waiting to go live', replaced: 'Replaced', cancelled: 'Cancelled' } as const;
+	const stateLabels = { live: 'On the page now', waiting: 'Waiting to go live', replaced: 'Replaced', cancelled: 'Cancelled', undone: 'Undone by the project' } as const;
 
 	function when(value: string | null): string {
 		return value ? new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) : '';
@@ -25,6 +26,12 @@
 	Every version your team published, newest first. Only your nation’s team and the project see this history; the
 	page itself never shows earlier versions. An editor can put an earlier version back.
 </p>
+
+{#if data.paused}
+	<div class="notice" role="status">
+		<p>The project has paused publishing for this page. <a href="/workspace/nation-teams/{data.nation.identifier}/edit#project-question">See its question</a>.</p>
+	</div>
+{/if}
 
 {#if form && 'problem' in form}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
@@ -50,30 +57,11 @@
 						</span>
 					</summary>
 					<div class="version-body">
-						<p class="small muted">{changeKindLabels[version.kind]}, credited to {version.credit}.</p>
-						{#if version.kind === 'about' || version.kind === 'courts'}
-							<p class="version-text">{(version.content as ChangeContents['about']).text || '(empty)'}</p>
-						{:else if version.kind === 'statements'}
-							{#each Object.entries((version.content as ChangeContents['statements']).statements) as [section, text] (section)}
-								<p><strong>{statementSectionLabels[section as StatementSection]}:</strong> <span class="version-text">{text}</span></p>
-							{/each}
-						{:else if version.kind === 'contacts'}
-							<ul>
-								{#each (version.content as ChangeContents['contacts']).contacts as contact, index (index)}
-									<li>{contact.office}: {contactKindLabels[contact.kind]} {contact.value}</li>
-								{/each}
-							</ul>
-						{:else if version.kind === 'pictures'}
-							<ul class="version-pictures">
-								{#each (version.content as ChangeContents['pictures']).pictures as picture (picture.identifier)}
-									<li><img src="/workspace/nation-teams/{data.nation.identifier}/pictures/{picture.identifier}" alt={picture.alt} /></li>
-								{/each}
-							</ul>
-						{:else if version.kind === 'hidden'}
-							<p>
-								{(version.content as ChangeContents['hidden']).sections.map((section) => hideableSectionLabels[section]).join(', ') || 'Nothing hidden'}
-							</p>
+						{#if version.state === 'undone'}
+							<p class="small">The project took this version off the page{#if version.projectNote}: “{version.projectNote}”{/if}.</p>
 						{/if}
+						<p class="small muted">{changeKindLabels[version.kind]}, credited to {version.credit}.</p>
+						<NationChangeContent kind={version.kind} content={version.content} pictureBase="/workspace/nation-teams/{data.nation.identifier}/pictures" />
 						{#if version.canRestore}
 							<form method="post" action="?/restore">
 								<input type="hidden" name="change" value={version.identifier} />
@@ -108,22 +96,5 @@
 
 	.version-body {
 		padding: var(--space-2) 0 var(--space-2) var(--space-4);
-	}
-
-	.version-text {
-		white-space: pre-wrap;
-	}
-
-	.version-pictures {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-3);
-		padding: 0;
-		list-style: none;
-	}
-
-	.version-pictures img {
-		width: 8rem;
-		height: auto;
 	}
 </style>

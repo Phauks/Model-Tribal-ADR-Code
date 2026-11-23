@@ -35,6 +35,8 @@ declare global {
 	interface WorkerEnvironment {
 		database: D1Database;
 		sourceDocuments: R2Bucket;
+		/** The built site's own files, set by @sveltejs/adapter-cloudflare (the ZIP downloads read the copy lists from it). */
+		ASSETS?: { fetch(request: Request | string): Promise<Response> };
 		requestFormLimit?: RateLimit;
 		workspaceChangeLimit?: RateLimit;
 		signInLimit?: RateLimit;
@@ -80,6 +82,14 @@ declare global {
 		OUTREACH_SMTP_USERNAME?: string;
 		/** Secret: the mailbox's app password. Set as a Secret in the dashboard. */
 		OUTREACH_SMTP_PASSWORD?: string;
+		/**
+		 * The secret key every password hash also goes through
+		 * (src/lib/server/sign-in-secrets.ts, passwordHash). A Secret in the
+		 * Cloudflare dashboard, at least 32 random characters, never in GitHub.
+		 * Once set it must never be removed or changed, or passwords made with
+		 * it stop working.
+		 */
+		PASSWORD_KEY?: string;
 		/**
 		 * Printed copies (docs/book-orders.md). Ordering stays off unless
 		 * BOOK_ORDERS is "test" (Stripe test keys and Lulu's sandbox only) or

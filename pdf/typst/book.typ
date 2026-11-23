@@ -405,11 +405,12 @@
   stroke: (paint: black, thickness: 0.6pt, dash: "dashed"),
 )
 
-// An essay's picture, video or sound recording. The book prints its
-// caption, description, credit and transcript, and where to see or hear it.
+// An essay's picture, video, sound recording or chart. The book prints its
+// caption, description, credit and transcript, and where to see or hear it;
+// a chart prints its table.
 #let figure-block(label, where, body) = boxed(
   label,
-  [#body #block(above: 0.8em, text(size: 0.85em, style: "italic", where))],
+  [#body #if where != none { block(above: 0.8em, text(size: 0.85em, style: "italic", where)) }],
   stroke: (paint: black, thickness: 0.6pt, dash: "dotted"),
 )
 

@@ -238,65 +238,38 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws under the Thomas-Rogers Oklahoma Indian Welfare Act
-  quote: do adopt the following Constitution and By-laws pursuant
-  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  value: Constitution and By-Laws approved 1996
+  quote: Laws approved by the U.S. Secretary of the Interior on February 22, 1996.
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1939-10-10'
-  locator: Preamble
-  document_version:
-    document: miami-tribe-of-oklahoma-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  locator: Section 1.1 P
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
 - aspect: governing-body
-  value: Miami Council
-  quote: The supreme governing body of the Tribe shall be
-  source: university-of-oklahoma-indian-reorganization-act-okmiacons
-  confidence: medium
+  value: Tribal Business Committee
+  quote: Since that constitution our Nation has been governed by an elected leadership consisting of a Chief, Second Chief, Secretary-Treasurer, and two Councilpersons; known collectively as the Tribal Business Committee.
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1939-10-10'
-  locator: Article III
-  document_version:
-    document: miami-tribe-of-oklahoma-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
-- aspect: governing-body
-  value: Business Committee
-  quote: There shall be a Business Committee which
-  source: university-of-oklahoma-indian-reorganization-act-okmiacons
-  confidence: medium
-  verification: read-in-full
-  as_of: '1939-10-10'
-  locator: Article V, Section 1
-  document_version:
-    document: miami-tribe-of-oklahoma-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
 - aspect: governing-body-size
   value: 5 members
-  quote: Chief, Secretary-Treasurer, and two councilmen, who shall be elected at
-  source: university-of-oklahoma-indian-reorganization-act-okmiacons
-  confidence: medium
+  quote: The General Council is the governing body of the Nation and that Council, under authority of the Miami Constitution, elects five Tribal members to serve as the Tribe’s Business Committee
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1939-10-10'
-  locator: Article IV
-  document_version:
-    document: miami-tribe-of-oklahoma-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
 - aspect: governing-body-selection
-  value: Elected by majority vote of members present at open Council meeting
-  quote: an open Council meeting by a majority vote of the membership present
-  source: university-of-oklahoma-indian-reorganization-act-okmiacons
-  confidence: medium
+  value: Chosen by the General Council
+  quote: The General Council is the governing body of the Nation and that Council, under authority of the Miami Constitution, elects five Tribal members to serve as the Tribe’s Business Committee
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1939-10-10'
-  locator: Article IV
-  document_version:
-    document: miami-tribe-of-oklahoma-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
 - aspect: governing-body-term
   value: 3 years
   quote: The term of office shall be for three years
@@ -311,16 +284,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
   value: Chief
-  quote: The officers of the Tribe shall be the Chief, Second
-  source: university-of-oklahoma-indian-reorganization-act-okmiacons
-  confidence: medium
+  quote: elected leadership consisting of a Chief, Second Chief, Secretary-Treasurer, and two Councilpersons
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1939-10-10'
-  locator: Article IV
-  document_version:
-    document: miami-tribe-of-oklahoma-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -354,17 +323,13 @@ governance:
     version: 1939-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: other-officers
-  value: Second Chief, Secretary-Treasurer, two councilmen
-  quote: Chief, Secretary-Treasurer, and two councilmen, who shall be elected at
-  source: university-of-oklahoma-indian-reorganization-act-okmiacons
-  confidence: medium
+  value: Second Chief, Secretary-Treasurer, two Councilpersons
+  quote: elected leadership consisting of a Chief, Second Chief, Secretary-Treasurer, and two Councilpersons
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1939-10-10'
-  locator: Article IV
-  document_version:
-    document: miami-tribe-of-oklahoma-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
 - aspect: elections
   value: Every 3 years on the first Tuesday of September
   quote: held by the Council on the first Tuesday of September 1939, and each third
@@ -401,18 +366,50 @@ governance:
     document: miami-tribe-of-oklahoma-constitution
     version: 1939-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
-- aspect: amendment
-  value: Majority vote in a referendum, after Secretary approval
-  quote: and if approved by the Secretary of the Interior shall be submitted to
-  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+- aspect: judiciary
+  value: District Court and Court of Appeals
+  quote: The Tribal Court is comprised of a District Court and a Court of Appeals.
+  source: miami-tribe-of-oklahoma-court-miamination-com
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: judicial-selection
+  value: Chosen by majority vote of the Business Committee
+  quote: majority vote of the Business Committee to serve a term of four (4) years, subject to the
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1939-10-10'
-  locator: Article IX
-  document_version:
-    document: miami-tribe-of-oklahoma-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  locator: Section 2.7 A
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: judicial-term
+  value: 4 years
+  quote: majority vote of the Business Committee to serve a term of four (4) years, subject to the
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 2.7 A
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: judicial-independence
+  value: Pay may not be lowered during term
+  quote: Business Committee, and a Judge’s pay shall not be lowered during his or her term as a
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 2.12 A
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: amendment
+  value: Ordinances adopted by the Business Committee
+  quote: This Code may be amended by the adoption of ordinances by the Business Committee.
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 1.6
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
 - aspect: secretarial-approval
   value: Required for amendments
   quote: and if approved by the Secretary of the Interior shall be submitted to
@@ -426,17 +423,22 @@ governance:
     version: 1939-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: recall-and-removal
-  value: Removal by majority vote of Miami Council after a hearing
-  quote: after giving the accused a hearing, to remove him from office and proceed
-  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  value: Removal by majority vote of Business Committee
+  quote: Business Committee at a validly called meeting for abuse of office, neglect of duty, or
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1939-10-10'
-  locator: Article VII, Removal of Officers
-  document_version:
-    document: miami-tribe-of-oklahoma-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  locator: Section 2.10 B
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: other
+  value: General Council is governing body of the Nation
+  quote: The General Council is the governing body of the Nation and that Council, under authority of the Miami Constitution, elects five Tribal members to serve as the Tribe’s Business Committee
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -730,6 +732,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Miami Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+nearby_state_courts:
+- state: OK
+  county: Ottawa County
+  court: District Court for Ottawa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Ottawa County holds 100% of the land of Miami OTSA (Census GEOID 5730), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1795
   signed: '1795-08-03'

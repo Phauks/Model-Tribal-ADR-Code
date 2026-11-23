@@ -85,6 +85,31 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-23'
   note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
+governance:
+- aspect: head-of-government
+  value: Chief
+  quote: newly appointed Nanticoke Chief
+  source: nanticoke-indian-association-website-senator-tom-carper-meets-with-nanticoke-indian-tribes-leader
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The leadership page lists officer titles beside names only, and no governing document is among the pages.'
+- aspect: head-of-government-selection
+  value: Appointed
+  quote: newly appointed Nanticoke Chief
+  source: nanticoke-indian-association-website-senator-tom-carper-meets-with-nanticoke-indian-tribes-leader
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The leadership page lists officer titles beside names only, and no governing document is among the pages.'
+- aspect: other-officers
+  value: Assistant Chief, Assistant Secretary, Secretary, Historian, Field Agent
+  quote: Tribal Leadership Officers
+  source: nanticoke-indian-association-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The leadership page lists officer titles beside names only, and no governing document is among the pages.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

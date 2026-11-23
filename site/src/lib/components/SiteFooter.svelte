@@ -12,6 +12,7 @@
 		<ul class="footer-links">
 			<li><a href="/about">About</a></li>
 			<li><a href="/sponsor">Sponsorship</a></li>
+			<li><a href="/events">Events</a></li>
 			<li><a href="/people">People</a></li>
 			<li><a href="/about/timeline">Timeline to public review</a></li>
 			<li><a href="/requests">Request a correction or removal</a></li>
@@ -20,6 +21,7 @@
 			<li><a href="/acknowledgments">Acknowledgments</a></li>
 			<li><a href="/changelog">Changelog</a></li>
 			<li><a href="/downloads">Downloads</a></li>
+			<li><a href="/verify">Verify a file</a></li>
 			<li><a href="/copies">Copies of documents</a></li>
 			<li><a href="/licenses">Licenses by material</a></li>
 			<li><a href="{repositoryLink}"><GithubMark /><span>GitHub</span></a></li>

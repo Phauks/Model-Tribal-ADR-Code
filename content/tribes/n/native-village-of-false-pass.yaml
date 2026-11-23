@@ -185,17 +185,13 @@ indian_health_service:
   note: 'The source''s words: "Native Village of False Pass".'
 governance:
 - aspect: governing-body
-  value: False Pass Tribal Council
-  quote: be the False Pass Tribal Council, hereinafter referred to as
-  source: constitution-native-village-of-false-pass-1990-text
-  confidence: medium
+  value: Tribal Council
+  quote: Once the enrollment process is completed the approval of new members must be approved by the Native Village of False Pass Tribal Council at one of their regularly scheduled meetings.
+  source: native-village-of-false-pass-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '1990-05-07'
-  locator: Article IV, Section 1
-  document_version:
-    document: native-village-of-false-pass-constitution
-    version: 1990-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 names the Tribal Council only as the body that approves new members, and the pages state nothing else about how the council or government is set up.'
 - aspect: governing-body-size
   value: 5 members
   quote: (5) enrolled resident adult members of the tribe who shall
@@ -394,6 +390,16 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Aleutians East Borough
+  court: Superior Court for Aleutians East Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Aleutians East Borough holds 100% of the land of False Pass ANVSA (Census GEOID 6500), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: The Aleut Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

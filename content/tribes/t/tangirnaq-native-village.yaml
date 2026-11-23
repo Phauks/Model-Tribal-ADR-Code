@@ -206,15 +206,12 @@ indian_health_service:
 governance:
 - aspect: governing-body
   value: Woody Island Tribal Council
-  quote: The governing body of Leisnoi Village (a.k.a. Woody Island) shall be the Woody Island Tribal Council (hereinafter referred to as the Council).
-  source: constitution-tangirnaq-native-village-undated-text
-  confidence: medium
+  quote: Woody Island Tribal Council exists to promote and ensure the social, economic, political, and cultural needs of our citizens.
+  source: woodyisland-home-page
+  confidence: high
   verification: read-in-full
-  locator: Article IV, Section 1
-  document_version:
-    document: tangirnaq-native-village-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution for Leisnoi Village (a.k.a. Woody Island); certificate indicates adoption election on February 15, 2000. Vote counts and member list pages appended to the file were ignored.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages name the Woody Island Tribal Council but describe no council structure, size or selection.'
 - aspect: governing-body-size
   value: 5 members
   quote: The Council shall be composed of five (5) members who shall be elected by a majority vote
@@ -402,6 +399,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Kodiak Island Borough
+  court: Superior Court for Kodiak Island Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Kodiak Island Borough holds 100% of the land of Lesnoi ANVSA (Census GEOID 6860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Koniag Inc.
   relation: alaska-native-claims-settlement-act-regional-corporation

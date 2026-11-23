@@ -213,101 +213,61 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Under the authority of the Indian Reorganization Act (IRA)
-  quote: constitution and bylaws under the authority of the IRA in order to form a more functional
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  value: Constitution and bylaws under Indian Reorganization Act of June 18, 1934
+  quote: The Iowa Tribe of Kansas and Nebraska was organized under a constitution and bylaws approved February 26, 1937 pursuant to the Indian Reorganization Act of June 18, 1934.
+  source: iowatribeofkansasandnebraska-members-government
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Preamble
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
-- aspect: governing-body
-  value: General Council
-  quote: The General Council, composed of all enrolled members who are at
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
-  verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 1
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: governing-body
   value: Executive Committee
-  quote: The Executive Committee, composed of five (5) members elected at
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  quote: The Executive Committee, composed of five (5) members (Chairperson, Vice-Chairperson, Secretary, Treasurer, and Member) elected at large from the General Council for four-year terms of office.
+  source: iowatribeofkansasandnebraska-members-government
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 2
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: governing-body-size
   value: 5 members
-  quote: The Executive Committee, composed of five (5) members elected at
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  quote: The Executive Committee, composed of five (5) members (Chairperson, Vice-Chairperson, Secretary, Treasurer, and Member) elected at large from the General Council for four-year terms of office.
+  source: iowatribeofkansasandnebraska-members-government
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 2
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: governing-body-selection
   value: Elected at large from the General Council
-  quote: large from the General Council for three-year terms of office, shall exercise those
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  quote: The Executive Committee, composed of five (5) members (Chairperson, Vice-Chairperson, Secretary, Treasurer, and Member) elected at large from the General Council for four-year terms of office.
+  source: iowatribeofkansasandnebraska-members-government
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 2
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: governing-body-term
-  value: 3 years
-  quote: for three-year terms of office
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  value: 4 years
+  quote: The Executive Committee, composed of five (5) members (Chairperson, Vice-Chairperson, Secretary, Treasurer, and Member) elected at large from the General Council for four-year terms of office.
+  source: iowatribeofkansasandnebraska-members-government
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 2
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: general-council
-  value: All enrolled members at least 18 years of age
-  quote: The General Council, composed of all enrolled members who are at
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  value: All enrolled members 18 or older
+  quote: The General Council, which is composed of all enrolled members who are at least eighteen (18) years of age
+  source: iowatribeofkansasandnebraska-members-government
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 1
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: head-of-government
   value: Chairman
-  quote: by secret ballot, a Chairman, Vice-Chairmen, Secretary, Treasurer and member.
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  quote: 'Position Title: Chairman of the of the Iowa Tribe of Kansas and Nebraska'
+  source: iowa-tribe-of-kansas-and-nebraska-website-members-leadership-overview
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 2
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -317,41 +277,29 @@ governance:
   locator: Iowa Tribe of Kansas and Nebraska
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
 - aspect: head-of-government-selection
-  value: Elected by the General Council by secret ballot
-  quote: by secret ballot, a Chairman, Vice-Chairmen, Secretary, Treasurer and member.
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  value: Elected by General Council
+  quote: Must be Elected by General Council
+  source: iowa-tribe-of-kansas-and-nebraska-website-members-leadership-overview
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 2
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: head-of-government-term
-  value: 3 years
-  quote: for three-year terms of office
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  value: 4 years
+  quote: elected at large from the General Council for four-year terms of office.
+  source: iowatribeofkansasandnebraska-members-government
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 2
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: other-officers
-  value: Vice-Chairmen, Secretary, Treasurer, member
-  quote: by secret ballot, a Chairman, Vice-Chairmen, Secretary, Treasurer and member.
-  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
-  confidence: medium
+  value: Vice-Chairperson, Secretary, Treasurer, Member
+  quote: (Chairperson, Vice-Chairperson, Secretary, Treasurer, and Member)
+  source: iowatribeofkansasandnebraska-members-government
+  confidence: high
   verification: read-in-full
-  as_of: '1980'
-  locator: Article IV, Section 2
-  document_version:
-    document: iowa-tribe-of-kansas-and-nebraska-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 - aspect: elections
   value: Every third annual meeting, third Saturday in October
   quote: held at each third (3rd) Annual Meeting beginning with the first Annual
@@ -448,6 +396,14 @@ governance:
     document: iowa-tribe-of-kansas-and-nebraska-constitution
     version: 1980-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: other
+  value: Chairman's actions subject to General Council review
+  quote: As a member of the ITKN Executive Counsil the Chairmans actions are subject to review by the ITKN General Tribal Council.
+  source: iowa-tribe-of-kansas-and-nebraska-website-members-leadership-overview
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -664,6 +620,34 @@ jurisdiction:
   verification: read-in-full
   locator: 18 U.S.C. § 3243; Act of June 8, 1940, ch. 276, 54 Stat. 249
   note: 'Criminal only; no civil grant. The four roster entries list KS because of reservation or trust-land presence in Kansas (Iowa Tribe and Sac and Fox of Missouri straddle KS/NE). Also cites: statutes-at-large-54-249.'
+nearby_state_courts:
+- state: KS
+  county: Brown County
+  court: District Court for Brown County
+  link: https://kscourts.gov/About-the-Courts/District-Courts
+  source: state-trial-court-directory-ks
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Brown County holds 60% of the land of Iowa (KS-NE) Reservation (Census GEOID 1590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NE
+  county: Richardson County
+  court: District Court for Richardson County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Richardson County holds 30% of the land of Iowa (KS-NE) Reservation (Census GEOID 1590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: KS
+  county: Doniphan County
+  court: District Court for Doniphan County
+  link: https://kscourts.gov/About-the-Courts/District-Courts
+  source: state-trial-court-directory-ks
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Doniphan County holds 10% of the land of Iowa (KS-NE) Reservation (Census GEOID 1590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Iowa, 1815
   signed: '1815-09-16'

@@ -19,4 +19,12 @@ searches:
   query: jobtitle of the nation's row
   outcome: not-found
   reason: The directory lists federally recognized nations only.
-next_steps: 'The nation''s own website: a government, council or constitution page. Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://cherokeetribeofnortheastalabama.org
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: blocked
+  reason: 'The website could not be read: no page could be fetched.'
+next_steps: The nation's website refused an automated reader; read its government pages by hand.

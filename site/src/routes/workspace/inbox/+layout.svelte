@@ -1,6 +1,6 @@
 <script lang="ts">
-	// The inbox's left column (site/MAIL.md): Write, the views, the folders the
-	// lead author made, the tags, and the rules. On a narrow screen it folds
+	// The inbox's left column (site/MAIL.md): Compose, the views and Drafts,
+	// the folders the lead author made, the tags, the rules and the settings. On a narrow screen it folds
 	// into "Mailboxes" above the page.
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
@@ -8,6 +8,7 @@
 	import BellRing from '@lucide/svelte/icons/bell-ring';
 	import CalendarClock from '@lucide/svelte/icons/calendar-clock';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import FilePen from '@lucide/svelte/icons/file-pen';
 	import FolderIcon from '@lucide/svelte/icons/folder';
 	import FolderCog from '@lucide/svelte/icons/folder-cog';
 	import InboxIcon from '@lucide/svelte/icons/inbox';
@@ -15,6 +16,7 @@
 	import OctagonAlert from '@lucide/svelte/icons/octagon-alert';
 	import Plus from '@lucide/svelte/icons/plus';
 	import Send from '@lucide/svelte/icons/send';
+	import Settings from '@lucide/svelte/icons/settings';
 	import SquarePen from '@lucide/svelte/icons/square-pen';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import UserCheck from '@lucide/svelte/icons/user-check';
@@ -62,6 +64,15 @@
 							{#if data.counts[view.key]}<span class="count" aria-label="{data.counts[view.key]} {view.key === 'reminders' || view.key === 'scheduled' ? 'waiting' : 'unread'}">{data.counts[view.key]}</span>{/if}
 						</a>
 					</li>
+					{#if view.key === 'scheduled'}
+						<li>
+							<a href="{base}/drafts" aria-current={page.url.pathname === `${base}/drafts` ? 'page' : undefined}>
+								<FilePen size={18} aria-hidden="true" />
+								<span class="name">Drafts</span>
+								{#if data.drafts}<span class="count" aria-label="{data.drafts} drafts">{data.drafts}</span>{/if}
+							</a>
+						</li>
+					{/if}
 				{/each}
 			</ul>
 
@@ -123,6 +134,11 @@
 					<li>
 						<a href="{base}/organize" aria-current={page.url.pathname === `${base}/organize` ? 'page' : undefined}>
 							<FolderCog size={18} aria-hidden="true" /><span class="name">Folders and tags</span>
+						</a>
+					</li>
+					<li>
+						<a href="{base}/settings" aria-current={page.url.pathname === `${base}/settings` ? 'page' : undefined}>
+							<Settings size={18} aria-hidden="true" /><span class="name">Inbox settings</span>
 						</a>
 					</li>
 				</ul>

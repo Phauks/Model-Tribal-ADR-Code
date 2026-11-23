@@ -166,12 +166,16 @@
 	);
 
 	/** The Public Law 280 and Violence Against Women Act tables list nations; each name goes to the nation's Jurisdiction section, which has the facts and their sources. */
-	function nationColumns(view: ShadedMapView): TableColumn[] {
-		return [
+	function nationColumns(body: ShadedBody): TableColumn[] {
+		const first: TableColumn[] = [
 			{ key: 'nation', header: 'Nation', isRowHeader: true, sortable: true },
-			{ key: 'states', header: 'States', sortable: true, filterable: true },
-			{ key: 'category', header: view === 'public-law-280' ? 'Summary' : 'Status', sortable: true, filterable: true }
+			{ key: 'states', header: 'States', sortable: true, filterable: true }
 		];
+		// Some tables say which kinds each nation has, one Yes column each, since the map can shade only one.
+		if (body.kindColumns.length > 0) {
+			return [...first, ...body.kindColumns.map((column) => ({ key: `kind-${column.key}`, header: column.header, sortable: true, filterable: true }))];
+		}
+		return [...first, { key: 'category', header: body.view === 'public-law-280' ? 'Summary' : 'Status', sortable: true, filterable: true }];
 	}
 
 	function nationRows(body: ShadedBody): TableRow[] {
@@ -179,9 +183,10 @@
 			key: row.anchor,
 			anchor: row.anchor,
 			cells: {
-				nation: { text: row.name, href: `/nations/${row.id}#jurisdiction-heading` },
+				nation: { text: row.name, href: `/nations/${row.id}#${body.section}` },
 				states: { text: row.states.join(', '), values: row.states },
-				category: { text: row.category }
+				category: { text: row.category },
+				...Object.fromEntries(body.kindColumns.map((column) => [`kind-${column.key}`, { text: (row.kinds as Record<string, boolean>)[column.key] ? 'Yes' : '' }]))
 			}
 		}));
 	}
@@ -339,6 +344,7 @@
 						{#each data.countClasses as entry (entry.key)}
 							<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
+						{#if tileMapReady}{@render officeKey()}{/if}
 					</ul>
 				</figcaption>
 			{:else if isShadedMapView(view.key) && shaded[view.key]}
@@ -347,6 +353,7 @@
 						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
 							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
+						{@render officeKey()}
 					</ul>
 				</figcaption>
 			{:else if view.key === 'lands'}
@@ -355,6 +362,7 @@
 						{#each data.landAreaGroups as group (group.key)}
 							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
 						{/each}
+						{@render officeKey()}
 					</ul>
 				</figcaption>
 			{/if}
@@ -377,7 +385,7 @@
 				/>
 			{:else if view.key === 'lands'}
 				<p class="small muted map-note">
-					Select an area to go to its row in the table, which lists the nations whose entries name it. Areas too small to see at this scale are marked with a dot{tileMapReady ? ', and nearby dots are grouped into numbered circles until you zoom in' : ''}. Outlines are from the Census Bureau’s 2020 cartographic boundary file{tileMapReady ? '' : ', simplified for a national map'}. {@render insetNote()}
+					Select an area to go to its row in the table, which lists the nations whose entries name it. Areas too small to see at this scale are marked with a dot{tileMapReady ? ', and nearby dots are grouped into numbered circles until you zoom in' : ''}. Outlines are from the Census Bureau’s 2020 cartographic boundary file{tileMapReady ? '' : ', simplified for a national map'}. {@render officeNote()} Selecting one goes to the nation’s page. {@render insetNote()}
 				</p>
 				{#if lands}
 					<DataTable
@@ -395,7 +403,7 @@
 			{:else if isShadedMapView(view.key)}
 				{@const body = shaded[view.key]}
 				<p class="small muted map-note">
-					{@render shadedNote(view.key)} {@render insetNote()}
+					{@render shadedNote(view.key)} {@render officeNote()} {@render insetNote()}
 				</p>
 				{#if body && view.key === 'indian-health-service'}
 					<DataTable
@@ -416,8 +424,14 @@
 						label="Table: {view.label}"
 						caption={view.key === 'public-law-280'
 							? 'Nations with a Public Law 280 fact recorded, and a summary of what the facts say'
-							: 'Nations recorded as exercising special Tribal criminal jurisdiction, or holding a grant to prepare for it'}
-						columns={nationColumns(view.key)}
+							: view.key === 'courts-and-peacemaking'
+								? 'Nations with a court or forum recorded, and which kinds'
+								: view.key === 'other-jurisdiction-laws'
+									? 'Nations under another federal law on jurisdiction, and which'
+									: view.key === 'agreements-with-states'
+										? 'Nations with an agreement recorded, and which kinds'
+										: 'Nations recorded as exercising special Tribal criminal jurisdiction, or holding a grant to prepare for it'}
+						columns={nationColumns(body)}
 						rows={nationRows(body)}
 						defaultSort={{ key: 'nation', direction: 'ascending' }}
 					/>
@@ -441,8 +455,23 @@
 	</div>
 {/each}
 
+{#snippet officeKey()}
+	<li><span class="swatch office" aria-hidden="true"></span>Office of a nation with no Census land area</li>
+{/snippet}
+
+<!-- Said under every view that draws office dots: how many nations they mark, and how many are only in the tables. -->
+{#snippet officeNote()}
+	Ringed dots mark the offices of {data.offices.placed} nations with no Census land area, where their entries give an address; {data.offices.unplaced} more have neither, so they are not on the map; the Nations by State view lists every nation.
+{/snippet}
+
 {#snippet shadedNote(key: ShadedMapView)}
-	{#if key === 'public-law-280'}
+	{#if key === 'courts-and-peacemaking'}
+		Each nation’s land areas are shaded by the first of these it has: peacemaking or a traditional forum, a healing to wellness court, a tribal court, or only a Court of Indian Offenses, which the Bureau of Indian Affairs runs. The table shows every kind each nation has. A nation missing here may still have a court: the record is only as complete as its sources. Each nation’s page lists its courts and forums, with their sources. Select an area to go to its nation’s row.
+	{:else if key === 'other-jurisdiction-laws'}
+		Each nation’s land areas are shaded by the first of these that applies to it: a federal law other than Public Law 280 that gives a state criminal or civil jurisdiction, such as the Kansas Act or a land claims settlement act; jurisdiction over child custody cases reassumed under the Indian Child Welfare Act (25 U.S.C. § 1918); or longer sentences under the Tribal Law and Order Act (25 U.S.C. § 1302(b)). The table shows every one each nation has. Each nation’s page has the facts and their sources. Select an area to go to its nation’s row.
+	{:else if key === 'agreements-with-states'}
+		Each nation’s land areas are shaded by the first kind of agreement it has with a state, county, city or federal agency: cross-deputization or law enforcement, child welfare, tax, or another kind. Most sources do not say whether an agreement is still in force; each nation’s page gives the agreement, the other party, its date and its sources. Select an area to go to its nation’s row.
+	{:else if key === 'public-law-280'}
 		Each nation’s land areas are shaded by one summary of its Public Law 280 facts. The summary is only a guide: what the state may do differs by subject, by state and over time, and some nations are in more than one state. Each nation’s page has the facts, the state each applies in and their sources. Nations with no land area on the map are still in the table. Select an area to go to its nation’s row.
 	{:else if key === 'violence-against-women-act'}
 		Shaded areas belong to nations that sources record as exercising special Tribal criminal jurisdiction over non-Indians under the Violence Against Women Act (25 U.S.C. § 1304), or as holding a federal grant to prepare for it. A grant can pay for planning, so it is never counted as exercising. A nation missing here may still exercise it: the record is only as complete as its sources. Select an area to go to its nation’s row.
@@ -682,6 +711,22 @@
 		stroke: var(--color-ink-muted);
 		stroke-width: calc(0.4px * var(--map-unzoom, 1));
 	}
+	/* An office of a nation with no Census land area: a dot with a dark ring, as on the tiled map. */
+	.map-drawing :global(.office) {
+		r: calc(4px * var(--map-unzoom, 1));
+		stroke: var(--color-ink);
+		stroke-width: calc(1.5px * var(--map-unzoom, 1));
+	}
+	.map-drawing :global(a:hover .office),
+	.map-drawing :global(a:focus .office) {
+		fill: var(--color-focus);
+	}
+	.swatch.office {
+		border: 2px solid var(--color-ink);
+		border-radius: 50%;
+		background: var(--color-map-class-0);
+	}
+
 	.map-drawing :global(.land-area.dot) {
 		stroke: var(--color-paper);
 		stroke-width: calc(0.8px * var(--map-unzoom, 1));

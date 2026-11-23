@@ -156,6 +156,9 @@ export const deliveryLabels: Record<string, string> = {
 	complained: 'Marked as spam by the recipient'
 };
 
+/** The note on a message that waits for its attachments to pass the virus check (outbound.ts, sendMessage). */
+export const heldForVirusCheck = 'Waiting for the virus check. It goes out when its files pass.';
+
 export const messageStatusLabels: Record<string, string> = {
 	received: 'Received',
 	draft: 'Draft',
@@ -406,9 +409,25 @@ export function missingFields(template: string, values: MergeValues): string[] {
 	);
 }
 
-/** The template with each field filled in. Fields without a value are left empty. */
-export function fillTemplate(template: string, values: MergeValues): string {
-	return template.replace(fieldPattern, (_whole, key: string) => values[key as MergeFieldKey]?.trim() ?? '');
+/**
+ * The template with each field filled in. Fields without a value are left
+ * empty, or, with keepMissing, left as they are, so a person writing can
+ * see what still needs filling in (a saved reply put into a message).
+ */
+export function fillTemplate(template: string, values: MergeValues, options: { keepMissing?: boolean } = {}): string {
+	return template.replace(fieldPattern, (whole, key: string) => values[key as MergeFieldKey]?.trim() || (options.keepMissing ? whole : ''));
+}
+
+// ---------------------------------------------------------------------------
+// Signatures
+// ---------------------------------------------------------------------------
+
+/** The line a signature starts with in mail (RFC 3676, section 4.3): two dashes and a space. */
+export const signatureMark = '-- ';
+
+/** The block a signature makes after a message's own words: a blank line, the mark, then the signature. */
+export function signatureBlock(signature: string | null | undefined): string {
+	return signature ? `\n\n${signatureMark}\n${signature}` : '';
 }
 
 // ---------------------------------------------------------------------------

@@ -18,7 +18,7 @@ import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type
 import { actionStatement, bucketKeys, currentTime, type MailContext } from './context.ts';
 import { isProjectAddress } from './settings.ts';
 import { factsFor, ruleAddressForms, runRules } from './rules.ts';
-import { holdAttachments } from './scans.ts';
+import { storeSentFile } from '#lib/server/file-scans.ts';
 import { suppress } from './suppressions.ts';
 import { readToken, unsubscribeAddressToken } from './tokens.ts';
 
@@ -41,6 +41,12 @@ export type ArrivalResult =
 			spam: boolean;
 			automatic: boolean;
 			notify: boolean;
+			/**
+			 * Whether a person wrote it to the project, so the away message may
+			 * answer it: not Spam, not an automatic reply or delivery report, not
+			 * from a mailing list, and not from the project's own addresses.
+			 */
+			answerable: boolean;
 			/** The names of the auto-sort rules that matched, in the order they ran. */
 			sortedBy: string[];
 	  }
@@ -284,7 +290,13 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 		const id = crypto.randomUUID();
 		const key = bucketKeys.attachment(identifier, id);
 		const content = typeof part.content === 'string' ? new TextEncoder().encode(part.content) : new Uint8Array(part.content);
-		await context.bucket.put(key, content, { httpMetadata: { contentType: part.mimeType || 'application/octet-stream' } });
+		// Held until the virus check passes (site/SCANNING.md, src/lib/server/mail/scans.ts).
+		await storeSentFile(
+			context.database,
+			context.bucket,
+			{ objectKey: key, purpose: 'mail-attachment', subject: id, bytes: content, httpMetadata: { contentType: part.mimeType || 'application/octet-stream' } },
+			at
+		);
 		attachmentRows.push({
 			id,
 			filename: (part.filename ?? '').trim() || 'attachment',
@@ -396,7 +408,6 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	}
 	await database.batch(statements);
 	// Every attachment is held until the virus check says clean (src/lib/server/mail/scans.ts).
-	await holdAttachments(context, attachmentRows.map((row) => ({ identifier: row.id, key: row.key })));
 
 	if (report) await applyDeliveryReport(context, report, identifier);
 
@@ -427,7 +438,9 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 			.bind(threadIdentifier)
 			.first()) !== null;
 	const notify = !spam && !automatic && !quietened && (await noticeDue(context, at));
-	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify, sortedBy };
+	const fromList = header(email, 'list-id') !== null || header(email, 'list-unsubscribe') !== null;
+	const answerable = !spam && !automatic && !fromList && !isProjectAddress(settings, from.email);
+	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify, answerable, sortedBy };
 }
 
 /** Marks the message a delivery report is about, and puts a permanently failed address on the do-not-email list. */
