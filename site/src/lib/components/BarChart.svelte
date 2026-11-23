@@ -251,6 +251,7 @@
 			rows={table.rows}
 			defaultSort={{ key: 'value', direction: 'descending' }}
 			count={false}
+			tools={false}
 		>
 			{#snippet cell(row)}
 				{@const href = row.cells.label?.href}
