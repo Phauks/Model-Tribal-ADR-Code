@@ -12,9 +12,7 @@ Your batch file is a JSON list. Each item has:
 - `rid` (record id; use it in your output), `pid` (nation), `section`, `index`, `category`
   - `unread:title-only` = known only by a heading; `unread:inferred` = details inferred, maybe from a secondary source; `unread:bulk-import` = copied from a database (often the National Center on Restorative Justice, NCORJ) without reading the code; `mislabeled` = marked read-in-full but its note says the text was not read; `ocr` = read from a scan by OCR and needs a careful re-read.
 - `record_yaml`: the record exactly as stored. Check every factual claim in it (title, citation, kind, case types, participation, relationship to court, enforcement, summary, description).
-- `candidates`: files the project holds that may contain the text. `local_text` is a text extract you can read directly. Otherwise get the file with:
-  `python3 -I WORK_DIRECTORY/tools/fetch_capture.py <key>`
-  which prints a FILE path and a TEXT path. If it says the PDF has little or no text layer, run it again with `--pages --first=N --last=M` (keep ranges small, under 15 pages; find the right pages from a table of contents first) and look at the PNG page images with the Read tool.
+- `candidates`: files the project holds that may contain the text. `local_text` is a text extract you can read directly. Otherwise get the file with `python3 -I WORK_DIRECTORY/tools/fetch_capture.py <key>`, which prints a FILE path and a TEXT path. If it says the PDF has little or no text layer, run it again with `--pages --first=N --last=M` (keep ranges small, under 15 pages; find the right pages from a table of contents first) and look at the PNG page images with the Read tool.
 - Text extracts can be large: use `grep -n -i` for the section number, heading words or terms like "peacemak", "mediat", "arbitrat", then read around the hits with `sed -n 'A,Bp'`. Don't read whole long files.
 
 ### Rules
