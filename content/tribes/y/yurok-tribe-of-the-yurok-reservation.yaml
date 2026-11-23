@@ -135,6 +135,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Contact | Yurok Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: councilops@yuroktribe.nsn.us
+  label: General office email shown on the nation's website
+  source: yuroktribe-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png
