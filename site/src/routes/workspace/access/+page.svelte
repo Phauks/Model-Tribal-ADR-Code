@@ -12,6 +12,7 @@
 		type AccessSource
 	} from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
+	import DateField from '#lib/components/DateField.svelte';
 
 	let { data, form }: PageProps = $props();
 
@@ -279,8 +280,8 @@
 	</div>
 	<div class="field">
 		<label for="grant-expires">Ends (optional)</label>
-		<p class="hint">The grant stops counting after this day. Leave empty to keep it until you end it.</p>
-		<input type="date" id="grant-expires" name="expires" />
+		<p class="hint" id="grant-expires-hint">The grant stops counting after this day. Leave empty to keep it until you end it.</p>
+		<DateField id="grant-expires" name="expires" describedby="grant-expires-hint" />
 	</div>
 	<div class="field">
 		<label for="grant-note">Note (optional)</label>

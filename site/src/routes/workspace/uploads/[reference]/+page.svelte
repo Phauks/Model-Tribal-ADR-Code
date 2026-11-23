@@ -23,6 +23,7 @@
 	} from '#lib/uploads.ts';
 	import { youtubeEmbedAddress, youtubeWatchAddress } from '#lib/video-links.ts';
 	import type { PageProps } from './$types';
+	import DateField from '#lib/components/DateField.svelte';
 
 	let { data, form }: PageProps = $props();
 
@@ -311,7 +312,7 @@
 						<div class="field">
 							<label for="embargoed-until">Shown from</label>
 							{#if filingErrors.embargoedUntil}<p class="field-error">{filingErrors.embargoedUntil}</p>{/if}
-							<input id="embargoed-until" name="embargoedUntil" type="date" value={upload.embargoed_until ?? ''} />
+							<DateField id="embargoed-until" name="embargoedUntil" value={upload.embargoed_until ?? ''} invalid={!!filingErrors.embargoedUntil} />
 						</div>
 					{/if}
 					<div class="field">

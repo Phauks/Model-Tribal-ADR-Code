@@ -10,6 +10,7 @@
 		sourceKinds
 	} from '#lib/address-book.ts';
 	import type { PageProps } from './$types';
+	import DateField from '#lib/components/DateField.svelte';
 
 	let { data, form }: PageProps = $props();
 	const contact = $derived(data.contact);
@@ -147,11 +148,11 @@
 				</div>
 				<div class="field">
 					<label for="verified-{method.identifier}">Last seen at the source</label>
-					<input id="verified-{method.identifier}" name="verifiedOn" type="date" value={method.verifiedOn} required />
+					<DateField id="verified-{method.identifier}" name="verifiedOn" value={method.verifiedOn} max={data.today} required hint="" />
 				</div>
 				<div class="field">
 					<label for="election-{method.identifier}">Nation's next election (optional)</label>
-					<input id="election-{method.identifier}" name="nextElectionOn" type="date" value={method.nextElectionOn ?? ''} />
+					<DateField id="election-{method.identifier}" name="nextElectionOn" value={method.nextElectionOn ?? ''} />
 				</div>
 				<div class="field">
 					<label for="note-{method.identifier}">Note</label>
@@ -206,11 +207,11 @@
 		</div>
 		<div class="field">
 			<label for="new-verified">Last seen at the source</label>
-			<input id="new-verified" name="verifiedOn" type="date" value={data.today} />
+			<DateField id="new-verified" name="verifiedOn" value={data.today} max={data.today} hint="" />
 		</div>
 		<div class="field">
 			<label for="new-election">Nation's next election (optional)</label>
-			<input id="new-election" name="nextElectionOn" type="date" />
+			<DateField id="new-election" name="nextElectionOn" />
 		</div>
 		<div class="field">
 			<label><input name="preferred" type="checkbox" /> Make it the first choice</label>
