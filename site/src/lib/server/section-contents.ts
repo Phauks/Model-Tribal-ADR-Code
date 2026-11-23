@@ -21,6 +21,19 @@ export const nationsPages: OutlineItem[] = [
 	{ label: 'Data and charts', link: '/nations/data' }
 ];
 
+/**
+ * The Nations outline on a nation's own page: the section's pages stay, so the
+ * reader can still reach the directory, map and data views from there (Trevor,
+ * Nov. 23, 2026), with the nation and its page's headings under Directory.
+ */
+export function nationOutline(nation: { name: string; link: string; headings: OutlineItem[] }): OutlineItem[] {
+	return nationsPages.map((item) =>
+		item.link === '/nations'
+			? { ...item, children: [{ label: nation.name, link: nation.link, current: true, children: nation.headings }] }
+			: item
+	);
+}
+
 export function storiesPages(): OutlineItem[] {
 	return [
 		{ label: 'All stories', link: '/stories' },
