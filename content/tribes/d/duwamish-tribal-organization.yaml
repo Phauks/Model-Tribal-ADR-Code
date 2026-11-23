@@ -27,6 +27,16 @@ recognition:
     of the Duwamish Tribal Organization, 80 FR 39142 (2015-07-08); Final Decision on Remand Against Federal
     Acknowledgment of the Duwamish Tribal Organization, 80 FR 45230 (2015-07-29). Office of Federal Acknowledgment
     list entry #25 (2008 edition): Duwamish Tribe - Declined Acknowledgment effective 5/8/2002 66 FR 49966.'
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Duwamish Tribe" among 26 non-federally recognized tribes that received direct
+    federal funding in FY2007-2010 (total $177,000, Table 3). GAO-reported nonprofit status: Yes; state
+    recognition per state officials: No. Not on the 2026 federal list (bia-recognized-entities-2026).
+    Possible match with the petitioning helper record for the Duwamish Tribal Organization; not verified.'
 states:
 - state: WA
   presence: other
@@ -36,6 +46,14 @@ states:
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
+- state: WA
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
 contacts:
 - kind: website
   value: https://www.duwamishtribe.org/
