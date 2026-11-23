@@ -244,3 +244,30 @@ searches:
   query: 'Indian law journals sweep: articles and reports on Tribal courts, wellness courts and peacemaking'
   outcome: found
   reason: Read in full; named a wellness court now in the profile (source van-schilfgaarde-2024-restorative-justice-regenerative-tribal-jurisdiction).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240926234853/https://www.hoopacourt.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2024-09-26 ("Hoopa Valley Tribal Court | Humboldt County, CA | Native
+    American Tribe") shows the nation's court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240926234853/https://www.hoopacourt.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2024-09-26 ("Hoopa Valley Tribal Court | Humboldt County, CA | Native
+    American Tribe") shows the nation's court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.hoopa-nsn.gov/the-tribal-government/hoopa-valley-tribal-court
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: error
+  reason: 'Still not readable on 2026-11-23 (direct request: no answer), and the Wayback Machine had no
+    copy.'

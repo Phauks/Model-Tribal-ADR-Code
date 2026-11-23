@@ -147,9 +147,12 @@ describe('the weekly run', () => {
 	it('has a cron trigger and an address for each scheduled run', async () => {
 		const { entrySource, scheduledPaths } = await import('../tools/add-scheduled-run.mjs');
 		const { readFileSync } = await import('node:fs');
+		const { mailCron } = await import('../tools/add-mail-handlers.mjs');
 		const config = readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8');
-		const crons = JSON.parse(/"crons":\s*(\[[^\]]*\])/.exec(config)?.[1] ?? '[]');
-		expect(Object.keys(scheduledPaths).sort()).toEqual([...crons].sort());
+		const crons: string[] = JSON.parse(/"crons":\s*(\[[^\]]*\])/.exec(config)?.[1] ?? '[]');
+		// The mail handlers wrap this entry and answer their own cron before it reaches here.
+		expect(crons).toContain(mailCron);
+		expect(Object.keys(scheduledPaths).sort()).toEqual(crons.filter((cron) => cron !== mailCron).sort());
 		expect(Object.values(scheduledPaths)).toContain('/address-book/scheduled');
 		expect(entrySource()).toContain('/address-book/scheduled');
 	});

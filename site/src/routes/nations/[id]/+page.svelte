@@ -8,6 +8,7 @@
 	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import NationMap from '#lib/components/NationMap.svelte';
+	import NationDocumentsOffline from '#lib/components/NationDocumentsOffline.svelte';
 	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
@@ -149,6 +150,7 @@
 				{/if}
 				<DocumentHistoryList documents={data.documents} />
 				<div class="nation-slot" data-nation-slot="law"></div>
+				<NationDocumentsOffline nation={data.page.id} />
 			</Collapsible>
 		</div>
 

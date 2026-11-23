@@ -103,7 +103,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	if (privatePrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
 		response.headers.set('cache-control', 'no-store');
-		response.headers.set('x-frame-options', 'DENY');
+		// A message's HTML is shown in a sandboxed frame on the conversation page (src/routes/workspace/inbox/messages).
+		response.headers.set('x-frame-options', /^\/workspace\/inbox\/messages\/[^/]+\/html$/.test(path) ? 'SAMEORIGIN' : 'DENY');
 		response.headers.set('referrer-policy', 'same-origin');
 		response.headers.set('x-content-type-options', 'nosniff');
 	}

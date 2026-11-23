@@ -1,7 +1,7 @@
 profile: content/tribes/c/cahto-tribe-of-the-laytonville-rancheria.yaml
 topic: courts
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -140,5 +140,12 @@ searches:
   reason: '“Tribal Court”: Claude read the gathered evidence against the review brief; verdict cannot-tell.'
   records:
   - research/reviews/2026-11-22-court-listings-second-pass.json#court-026
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-026,
-  cannot-tell). A person could open in a browser the pages that refused the project''s link checker: https://caltribalfamilies.org/places/cahto-tribe-of-the-laytonville-rancheria/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20241128194008/https://caltribalfamilies.org/places/cahto-tribe-of-the-laytonville-rancheria/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2024-11-28 lists the nation's Tribal court as Northern California
+    intertribal Court System (https://www.tribalcourt.org/).

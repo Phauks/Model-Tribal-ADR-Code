@@ -7,7 +7,7 @@
 import { error } from '@sveltejs/kit';
 import { isUploadReference } from '#lib/uploads.ts';
 import { serveUploadFile } from '#lib/server/upload-serving.ts';
-import { uploadByReference } from '#lib/server/uploads.ts';
+import { scanOfKey, uploadByReference } from '#lib/server/uploads.ts';
 import { requirePermission, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
 
@@ -31,6 +31,6 @@ export const GET: RequestHandler = async (event) => {
 			mediaType: upload.media_type ?? 'application/octet-stream',
 			kind: upload.kind
 		},
-		{ inline: event.url.searchParams.has('show') && !original, cacheControl: 'private, no-store' }
+		{ inline: event.url.searchParams.has('show') && !original, cacheControl: 'private, no-store', scan: await scanOfKey(database, key) }
 	);
 };

@@ -1,7 +1,7 @@
 profile: content/tribes/f/fond-du-lac-band.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -199,3 +199,30 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Returned fdlband.org court pages and forms; the Tribal Court page above was confirmed by fetch.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240411030756/http://www.fdlrez.com/GOVERNMENT/COURTMAIN.HTM
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2024-04-11 ("FDL Tribal Government - Tribal Court") shows the nation's
+    court and links to its code.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.fdlband.org/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The site has no sitemap at this address (404 on 2026-11-23); the sitemap was only a way to find
+    pages, so nothing on the topic is missing because of it.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240707202055/https://www.mncourts.gov/mncourtsgov/media/scao_library/CJI/TCSCF-Members-Tribal-Court-Judges-(website-December-2022).pdf
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Minnesota Tribal Court/State Court Forum members list (Wayback Machine copy of 2024-07-07)
+    names judges of the nation's court under "Fond du Lac Band of Lake Superior Chippewa".
