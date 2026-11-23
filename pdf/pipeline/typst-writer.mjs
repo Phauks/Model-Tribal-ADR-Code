@@ -259,7 +259,9 @@ export class ChapterWriter {
         // The book cannot play a video or a recording, and pictures wait on a
         // print copy of each file, so a figure prints as a box with its
         // caption, description, credit and transcript, and where to find it.
-        const [, kind, address] = token.info.trim().split(/\s+/);
+        const [, kind, address = ""] = token.info.trim().split(/\s+/);
+        // A chart prints as its table, the same numbers the website draws as bars.
+        if (kind === "chart") return `#figure-block("Chart", none)[${this.blocks(node.children)}]`;
         const label = { picture: "Picture", video: "Video", sound: "Sound recording" }[kind];
         const youtube = /(?:youtu\.be\/|[?&]v=|\/(?:embed|shorts|live)\/)([A-Za-z0-9_-]{11})/.exec(address);
         const where = youtube

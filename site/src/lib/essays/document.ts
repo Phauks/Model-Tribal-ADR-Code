@@ -14,7 +14,7 @@ import { Fragment, Schema, type DOMOutputSpec, type Node as EditorNode } from 'p
 import { MarkdownParser, MarkdownSerializer, defaultMarkdownSerializer, type MarkdownSerializerState } from 'prosemirror-markdown';
 import type Token from 'markdown-it/lib/token.mjs';
 import { boxParts, essayBlocks, essayMarkdown, type BoxPart } from './syntax.ts';
-import { figureKindLabels, figureParts, figureSource, type FigureKind, type FigurePart } from './figures.ts';
+import { figureInfo, figureKindLabels, figureParts, figureSource, readFigureInfo, type FigureKind, type FigurePart } from './figures.ts';
 import { youtubePosterAddress } from '../video-links.ts';
 
 /**
@@ -22,6 +22,9 @@ import { youtubePosterAddress } from '../video-links.ts';
  * YouTube still frame. It is not part of the text, so it cannot be typed in.
  */
 function figurePreview(kind: FigureKind, address: string): DOMOutputSpec {
+	if (kind === 'chart') {
+		return ['p', { class: 'essay-figure-note' }, 'A bar chart: in the table below, the first column names each bar and the second gives its number.'];
+	}
 	const source = figureSource(kind, address);
 	if (!source) return ['p', { class: 'essay-figure-missing' }, 'The site cannot show a file from this address.'];
 	if (source.kind === 'youtube') return ['img', { src: youtubePosterAddress(source.identifier), alt: '', loading: 'lazy' }];
@@ -302,10 +305,7 @@ const parser = new MarkdownParser(essaySchema, reader, {
 	},
 	container_figure: {
 		block: 'figure_block',
-		getAttrs: (token) => {
-			const [, kind = 'picture', address = ''] = essayBlocks.figure.exec(token.info.trim()) ?? [];
-			return { kind, address };
-		}
+		getAttrs: (token) => readFigureInfo(token.info)
 	},
 	...Object.fromEntries(
 		Object.keys(figureParts).map((kind) => [`container_${kind}`, { block: 'figure_part', getAttrs: () => ({ kind }) }])
@@ -394,7 +394,7 @@ const serializer = new MarkdownSerializer(
 			writeContainer(state, node, `analysis ${node.attrs.title ?? ''}`.trim());
 		},
 		figure_block(state, node) {
-			writeContainer(state, node, `figure ${node.attrs.kind} ${node.attrs.address}`);
+			writeContainer(state, node, figureInfo(node.attrs.kind, node.attrs.address));
 		},
 		figure_part(state, node) {
 			writeContainer(state, node, node.attrs.kind in figureParts ? node.attrs.kind : 'credit');
