@@ -191,11 +191,37 @@ describe('mail going out', () => {
 			queueMessage(context, { personIdentifier: 'lead', threadIdentifier: null, from: 'someone@else.example', to: [{ email: 'a@b.example' }], subject: 'Hi', text: 'Hi' })
 		).rejects.toBeInstanceOf(CompositionError);
 		const carrier = recordingCarrier();
-		carrier.failWith = new Error('Sending domain not verified');
+		// A problem that will not pass by waiting fails at once.
+		carrier.failWith = Object.assign(new Error('Sending domain not verified'), { code: 'E_SENDER_NOT_VERIFIED' });
 		const queued = await queueMessage(context, { personIdentifier: 'lead', threadIdentifier: null, from: 'contact@example.org', to: [{ email: 'a@b.example' }], subject: 'Hi', text: 'Hi' });
 		expect(await sendMessage(context, { replies: carrier, outreach: null }, queued.messageIdentifier)).toEqual({ sent: false, error: 'Sending domain not verified' });
 		const thread = await getThread(context, queued.threadIdentifier, 'lead');
 		expect(thread!.messages[0]).toMatchObject({ status: 'failed', error: 'Sending domain not verified' });
+	});
+
+	it('tries a reply again later when the mail service is busy or down, then gives up', async () => {
+		const context = await testContext(clock);
+		const carrier = recordingCarrier();
+		carrier.failWith = Object.assign(new Error('Rate limit exceeded.'), { code: 'E_RATE_LIMIT_EXCEEDED' });
+		const queued = await queueMessage(context, { personIdentifier: 'lead', threadIdentifier: null, from: 'contact@example.org', to: [{ email: 'a@b.example' }], subject: 'Hi', text: 'Hi' });
+		const row = () =>
+			context.database.prepare('SELECT status, scheduled_for, send_attempts, error FROM mail_messages WHERE identifier = ?').bind(queued.messageIdentifier).first<{ status: string; scheduled_for: string; send_attempts: number; error: string }>();
+		const first = await sendMessage(context, { replies: carrier, outreach: null }, queued.messageIdentifier);
+		expect(first).toMatchObject({ sent: false, held: true });
+		expect(await row()).toMatchObject({ status: 'scheduled', scheduled_for: '2026-11-24T17:01:00.000Z', send_attempts: 1 });
+		expect((await row())!.error).toContain('tried again by itself, try 2 of 6, at 17:01 UTC');
+		// Four more failures wait longer each time; the sixth try fails for good.
+		for (let attempt = 2; attempt <= 5; attempt += 1) await sendMessage(context, { replies: carrier, outreach: null }, queued.messageIdentifier);
+		expect(await row()).toMatchObject({ status: 'scheduled', send_attempts: 5, scheduled_for: '2026-11-24T18:00:00.000Z' });
+		expect(await sendMessage(context, { replies: carrier, outreach: null }, queued.messageIdentifier)).toEqual({ sent: false, error: 'Rate limit exceeded. (after 6 tries)' });
+		expect(await row()).toMatchObject({ status: 'failed' });
+
+		// Once the service answers, a waiting reply goes.
+		const later = await queueMessage(context, { personIdentifier: 'lead', threadIdentifier: null, from: 'contact@example.org', to: [{ email: 'c@d.example' }], subject: 'Hi', text: 'Hi' });
+		carrier.failWith = new Error('fetch failed');
+		expect(await sendMessage(context, { replies: carrier, outreach: null }, later.messageIdentifier)).toMatchObject({ held: true });
+		carrier.failWith = null;
+		expect(await sendMessage(context, { replies: carrier, outreach: null }, later.messageIdentifier)).toEqual({ sent: true });
 	});
 
 	it('records Cloudflare’s delivery events, and stops mail to a hard bounce', async () => {

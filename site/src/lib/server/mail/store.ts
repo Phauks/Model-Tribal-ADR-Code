@@ -777,7 +777,7 @@ export async function bringBackReminders(context: MailContext): Promise<number> 
 /**
  * Deletes conversations that have been in Deleted for 30 days, and those
  * whose inbox is gone (a personal inbox goes with its owner's account), with
- * their files in the bucket. Run by the mail tick, a few at a time.
+ * their files in the bucket, including files sent as links. Run by the mail tick, a few at a time.
  */
 export async function purgeDeleted(context: MailContext): Promise<number> {
 	const before = new Date(currentTime(context).getTime() - 30 * 86_400_000).toISOString();
@@ -790,7 +790,8 @@ export async function purgeDeleted(context: MailContext): Promise<number> {
 			.prepare(
 				`SELECT raw_key AS key FROM mail_messages WHERE thread_identifier = ?1 AND raw_key IS NOT NULL
 				 UNION ALL SELECT html_key FROM mail_messages WHERE thread_identifier = ?1 AND html_key IS NOT NULL
-				 UNION ALL SELECT a.bucket_key FROM mail_attachments a JOIN mail_messages m ON m.identifier = a.message_identifier WHERE m.thread_identifier = ?1`
+				 UNION ALL SELECT a.bucket_key FROM mail_attachments a JOIN mail_messages m ON m.identifier = a.message_identifier WHERE m.thread_identifier = ?1
+				 UNION ALL SELECT f.bucket_key FROM mail_linked_files f JOIN mail_messages m ON m.identifier = f.message_identifier WHERE m.thread_identifier = ?1`
 			)
 			.bind(identifier)
 			.all<{ key: string }>();
@@ -798,6 +799,10 @@ export async function purgeDeleted(context: MailContext): Promise<number> {
 		await forgetAttachmentScans(context, keys.map((row) => row.key));
 		await context.database.batch([
 			context.database.prepare('DELETE FROM mail_search WHERE thread_identifier = ?').bind(identifier),
+			// Its links stop working with it.
+			context.database
+				.prepare('DELETE FROM mail_linked_files WHERE message_identifier IN (SELECT identifier FROM mail_messages WHERE thread_identifier = ?)')
+				.bind(identifier),
 			context.database.prepare('UPDATE outreach_recipients SET thread_identifier = NULL, message_identifier = NULL WHERE thread_identifier = ?').bind(identifier),
 			context.database.prepare('DELETE FROM mail_threads WHERE identifier = ?').bind(identifier),
 			actionStatement(context, { personIdentifier: null, action: 'Deleted for good after 30 days in Deleted', threadIdentifier: identifier })

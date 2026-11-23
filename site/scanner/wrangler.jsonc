@@ -43,7 +43,7 @@
 			{ "name": "scanDesk", "class_name": "ScanDesk" }
 		]
 	},
-	// The same database and bucket as the website, by the same binding names.
+	// The same database and buckets as the website, by the same binding names.
 	"d1_databases": [
 		{
 			"binding": "database",
@@ -56,6 +56,11 @@
 		{
 			"binding": "sourceDocuments",
 			"bucket_name": "model-tribal-adr-code-sources"
+		},
+		// The project inbox's mail; the desk reads files under mail/ from here.
+		{
+			"binding": "mailFiles",
+			"bucket_name": "model-tribal-adr-code-mail"
 		}
 	],
 	// Every minute: wake the desk to scan whatever is waiting. Daily at 06:23

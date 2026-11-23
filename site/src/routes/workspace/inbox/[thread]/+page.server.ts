@@ -174,6 +174,7 @@ export const actions: Actions = {
 				subject: formText(form, 'subject', 500) ?? '(no subject)',
 				text: text ?? '',
 				attachments: await readAttachments(form),
+				links: form.getAll('links').map(String),
 				answering: message,
 				forward,
 				sendAt,

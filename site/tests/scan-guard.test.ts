@@ -85,6 +85,16 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "kept-not-served",
     why: "The whole message as it arrived, kept as a record. Nothing reads it back; its attachments are stored and scanned on their own.",
   },
+  // Arriving mail kept whole until it is filed (site/MAIL.md, "When something
+  // fails"); receiveMail then stores its attachments with storeSentFile.
+  "src/lib/server/mail/arrivals.ts keepArrival put(key)": {
+    kind: "kept-not-served",
+    why: "An arriving message kept whole until it is filed, so a failure loses nothing. Nothing serves it; it is deleted once filed.",
+  },
+  "src/lib/server/mail/arrivals.ts fileArrival get(key)": {
+    kind: "kept-not-served",
+    why: "Reads a kept message to file it. receiveMail stores each attachment with storeSentFile, and nothing here hands the message to anyone.",
+  },
   "src/lib/server/mail/inbound.ts receiveMail put(htmlKey)": {
     kind: "kept-not-served",
     why: 'The HTML version of a message, not a file: shown only in a sandboxed frame that runs no scripts and loads nothing from outside (site/MAIL.md, "Reading HTML mail").',
@@ -97,6 +107,17 @@ const bucketCalls: Record<string, BucketUse> = {
   "src/lib/server/mail/export.ts messageCopy get(row.raw_key)": {
     kind: "sent-file-open",
   },
+  // Big files sent as download links (site/MAIL.md, "Big files as links"):
+  // written piece by piece into a multipart object, put in line by
+  // finishLinkedFile, and served by the link with openScannedFile.
+  "src/lib/server/mail/linked-files.ts startLinkedFile createMultipartUpload(key)":
+    { kind: "sent-file-store" },
+  "src/lib/server/mail/linked-files.ts receiveLinkedPiece resumeMultipartUpload(file.bucket_key)":
+    { kind: "sent-file-store" },
+  "src/lib/server/mail/linked-files.ts finishLinkedFile resumeMultipartUpload(file.bucket_key)":
+    { kind: "sent-file-store" },
+  "src/lib/server/mail/linked-files.ts deleteLinkedFiles resumeMultipartUpload(file.bucket_key)":
+    { kind: "sent-file-store" },
   "src/lib/server/mail/outbound.ts sendMessage put(rawKey)": {
     kind: "project-file",
     why: "A copy of a message the project sent, built by the site after its attachments passed the check.",
@@ -198,6 +219,8 @@ const fileIntakes: Record<string, string> = {
     "Mail arriving from the email Worker. receiveMail stores each attachment with storeSentFile.",
   "src/routes/workspace/inbox/compose.ts readAttachments File.arrayBuffer":
     "Files the team attaches to outgoing mail. queueMessage stores them with storeSentFile, and sendMessage waits until they pass.",
+  "src/routes/workspace/inbox/links/[file]/[piece]/+server.ts PUT Request.arrayBuffer":
+    "Pieces of a big file sent from the inbox as a link, written into its multipart object; finishLinkedFile puts the file in line, and the message and the link wait until it passes.",
   "src/routes/uploads/pieces/[reference]/[number]/+server.ts PUT Request.arrayBuffer":
     "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",
   "src/lib/sha256.ts hashFile Blob.arrayBuffer":

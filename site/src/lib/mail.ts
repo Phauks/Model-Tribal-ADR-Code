@@ -4,6 +4,13 @@
  */
 
 /** The four folders every inbox has. Folders the lead author makes are stored as 'folder' plus the folder's identifier. */
+/**
+ * The most a message's attachments can add up to: Cloudflare Email Service
+ * takes 25 MiB a message, and attachments grow by about a third when encoded
+ * for mail (site/MAIL.md, "Limits"). Bigger files go as download links.
+ */
+export const attachmentLimitBytes = 18 * 1024 * 1024;
+
 export const folders = ['inbox', 'archive', 'spam', 'trash'] as const;
 export type Folder = (typeof folders)[number];
 export type ThreadFolder = Folder | 'folder';

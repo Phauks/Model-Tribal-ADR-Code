@@ -270,6 +270,21 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	// The inbox it goes to: the one for the address it was sent to, or else the catch-all (src/lib/server/mail/inboxes.ts).
 	const inbox = await inboxForArrival(context, cleanAddress(arriving.to));
 	if (!inbox) return { outcome: 'rejected', reason: 'No inbox takes this mail.' };
+	// The same message filed again (a sender's server trying twice, or a try again after filing failed half way) is
+	// not filed twice: it is the one already in this inbox.
+	const ownId = messageIds(email.messageId)[0] ?? null;
+	if (ownId) {
+		const already = await context.database
+			.prepare(
+				`SELECT m.identifier, m.thread_identifier FROM mail_messages m JOIN mail_threads t ON t.identifier = m.thread_identifier
+				 WHERE m.message_id = ? AND m.direction = 'in' AND t.inbox_identifier = ? LIMIT 1`
+			)
+			.bind(ownId, inbox.identifier)
+			.first<{ identifier: string; thread_identifier: string }>();
+		if (already) {
+			return { outcome: 'filed', threadIdentifier: already.thread_identifier, messageIdentifier: already.identifier, spam: false, automatic: false, notify: false, answerable: false, sortedBy: [] };
+		}
+	}
 	const identifier = crypto.randomUUID();
 	const from = addressOf(email.from) ?? addressOf(email.sender) ?? { email: cleanAddress(arriving.from) ?? 'unknown@invalid', name: null };
 	const to = addressList(email.to);

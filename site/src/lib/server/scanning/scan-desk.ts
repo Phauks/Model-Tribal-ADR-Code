@@ -36,6 +36,8 @@ export const defaultSizeLimitBytes = 2048 * 1024 * 1024;
 export interface DeskSetup {
 	database: D1Database;
 	bucket: R2Bucket;
+	/** The project inbox's own bucket, for files under mail/ (site/MAIL.md, "Storage"); the main bucket when not given. */
+	mailBucket?: R2Bucket;
 	provider: ScanProvider;
 	sizeLimitBytes: number;
 	policy?: ScanPolicy;
@@ -79,13 +81,19 @@ type Outcome =
 	| { status: 'flagged' | 'cannot-scan'; reason: string }
 	| { status: 'retry'; reason: string };
 
+/** The bucket a file is kept in: mail has a bucket of its own. */
+export function bucketFor(setup: Pick<DeskSetup, 'bucket' | 'mailBucket'>, objectKey: string): R2Bucket {
+	return objectKey.startsWith('mail/') && setup.mailBucket ? setup.mailBucket : setup.bucket;
+}
+
 /**
  * Scans one file and records the result. Takes the row only if it is still
  * in the state it was found in, so two desks (there is only one, but a
  * deploy can overlap) never scan the same file at once.
  */
 async function scanOne(setup: DeskSetup, due: { objectKey: string; attempts: number; status: string }): Promise<boolean> {
-	const { database, bucket, provider } = setup;
+	const { database, provider } = setup;
+	const bucket = bucketFor(setup, due.objectKey);
 	const now = setup.now ?? (() => new Date());
 	const attempts = due.attempts + 1;
 	const taken = await database

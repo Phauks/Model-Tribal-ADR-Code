@@ -87,6 +87,15 @@
 	</form>
 </header>
 
+{#if data.stuck.length}
+	<div class="notice notice-problem stuck" role="alert">
+		<p>
+			<strong>{data.stuck.length === 1 ? 'A message' : `${data.stuck.length} messages`} could not be filed</strong>, even after trying again for about a day. {data.stuck.length === 1 ? 'It is' : 'They are'} kept safe, unread by anyone, until filing works. Last problem: {data.stuck[data.stuck.length - 1].lastError}
+		</p>
+		<form method="post" action="?/fileAgain"><button class="button button-quiet" type="submit">Try again now</button></form>
+	</div>
+{/if}
+
 {#if form && 'problem' in form}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
 {:else if form && 'done' in form}
@@ -210,6 +219,17 @@
 {/if}
 
 <style>
+	.stuck {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-3);
+	}
+	.stuck p {
+		flex: 1;
+		min-width: 16rem;
+		overflow-wrap: anywhere;
+	}
 	.inbox-name {
 		display: block;
 		font-size: var(--font-size-small);

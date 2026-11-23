@@ -10,19 +10,47 @@
  * carrier (src/lib/server/mail/outreach.ts). A copy of every sent message is
  * kept in the bucket like received mail.
  */
-import { snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/mail.ts';
+import { attachmentLimitBytes, snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/mail.ts';
 import { buildRawMessage, newMessageId, type OutgoingAttachment, type OutgoingMail } from './mime.ts';
 import { actionStatement, bucketKeys, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { noticeHeader } from './inbound.ts';
 import { catchAllInbox, inboxForAddress, mayOpenThread, sendingAddresses } from './inboxes.ts';
 import { openScannedFile, stillScanning, storeSentFile } from '#lib/server/file-scans.ts';
+import { CompositionLinkError, joinStatements, linkedFilesForMessage, linkedFilesState, linkExpiry, withLinks } from './linked-files.ts';
 import { heldForVirusCheck } from '#lib/mail.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
+import { SmtpError } from './smtp.ts';
+
+/** Minutes to wait before each new try of a reply that failed for a reason that may pass: about two hours in all. */
+export const sendRetryMinutes = [1, 5, 15, 30, 60] as const;
+
+/**
+ * Cloudflare Email Service error codes that may pass if the message waits
+ * (Email Service, "Workers API", "Error codes"): the service busy, a sending
+ * limit reached, or the domain still being set up. Every other code, such as
+ * an unverified sender or a message too large, is marked failed at once. An
+ * error without a code (a network fault) is tried again too.
+ */
+const passingSendCodes = new Set([
+	'E_RATE_LIMIT_EXCEEDED',
+	'E_DAILY_LIMIT_EXCEEDED',
+	'E_INTERNAL_SERVER_ERROR',
+	'E_EMAIL_SENDING_NOT_READY',
+	'E_TEMPORARY_AUTHENTICATION_ERROR'
+]);
+
+/** Whether a carrier's error may pass if the message is tried again later. */
+export function mayPass(problem: unknown): boolean {
+	if (problem instanceof SmtpError) return !problem.permanent;
+	if (problem instanceof TypeError) return false;
+	const code = problem && typeof problem === 'object' && 'code' in problem ? String((problem as { code: unknown }).code) : null;
+	return code === null || passingSendCodes.has(code);
+}
 
 /** Cloudflare Email Service takes at most 50 recipients and 25 MiB a message ("Limits"). */
 export const recipientLimit = 50;
 /** Attachments a person adds, before encoding, which adds about a third. */
-export const attachmentLimitBytes = 18 * 1024 * 1024;
+export { attachmentLimitBytes };
 
 export interface Composition {
 	/** Who wrote it; null for the away message, which the inbox sends by itself. */
@@ -37,6 +65,8 @@ export interface Composition {
 	subject: string;
 	text: string;
 	attachments?: { filename: string; mediaType: string; content: Uint8Array }[];
+	/** Big files sent up beforehand (linked-files.ts), which go as download links in the message's text. */
+	links?: string[];
 	/** Send at this time instead of now. */
 	sendAt?: string | null;
 	/** In a conversation, the message this answers; the latest one when not given. */
@@ -84,7 +114,10 @@ export async function queueMessage(context: MailContext, composition: Compositio
 	const forward = composition.threadIdentifier ? (composition.forward ?? null) : null;
 	const attachments = [...(composition.attachments ?? []), ...(forward ? await forwardedAttachments(context, composition.threadIdentifier!, forward) : [])];
 	const size = attachments.reduce((total, item) => total + item.content.byteLength, 0);
-	if (size > attachmentLimitBytes) throw new CompositionError('The attachments are too large together; the limit is 18 MB.');
+	if (size > attachmentLimitBytes) throw new CompositionError('The attachments are too large together; the limit is 18 MB. Send the biggest as a link instead.');
+	const links = await linkedFilesForMessage(context, composition.personIdentifier, composition.links ?? []).catch((problem) => {
+		throw problem instanceof CompositionLinkError ? new CompositionError(problem.message) : problem;
+	});
 
 	let threadIdentifier = composition.threadIdentifier;
 	let inReplyTo: string | null = null;
@@ -112,6 +145,8 @@ export async function queueMessage(context: MailContext, composition: Compositio
 	const pause = !later && composition.holdForUndo && composition.holdForUndo > 0 ? Math.min(composition.holdForUndo, 30) : 0;
 	const sendAt = later ?? (pause ? new Date(at.getTime() + pause * 1000).toISOString() : null);
 	const messageIdentifier = crypto.randomUUID();
+	const expiresAt = linkExpiry(new Date(sendAt ?? stamp));
+	const text = await withLinks(context, composition.text, links, expiresAt);
 	const statements = [];
 	if (!threadIdentifier) {
 		threadIdentifier = crypto.randomUUID();
@@ -153,8 +188,8 @@ export async function queueMessage(context: MailContext, composition: Compositio
 				JSON.stringify(composition.cc ?? []),
 				JSON.stringify(composition.bcc ?? []),
 				composition.subject,
-				composition.text,
-				snippetOf(composition.text),
+				text,
+				snippetOf(text),
 				composition.personIdentifier,
 				sendAt,
 				pause ? 1 : 0,
@@ -180,6 +215,7 @@ export async function queueMessage(context: MailContext, composition: Compositio
 				.bind(id, messageIdentifier, attachment.filename, attachment.mediaType, attachment.content.byteLength, key)
 		);
 	}
+	statements.push(...joinStatements(context, links, messageIdentifier, expiresAt));
 	if (composition.remindAt) {
 		statements.push(
 			database
@@ -251,6 +287,7 @@ interface MessageRow {
 	reply_to: string | null;
 	outreach_recipient_identifier: string | null;
 	sent_by: string | null;
+	send_attempts: number;
 }
 
 export interface SendOptions {
@@ -332,6 +369,16 @@ export async function sendMessage(
 			...(item.content_id ? { contentId: item.content_id } : {})
 		});
 	}
+	// Files sent as links wait for the virus check like attachments, so a link never points at a file that will be held.
+	const linked = await linkedFilesState(context, messageIdentifier);
+	if (linked.state === 'refused') return fail(linked.reason);
+	if (linked.state === 'waiting') {
+		await database
+			.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, held_for_undo = 0, error = ? WHERE identifier = ?`)
+			.bind(new Date(at.getTime() + 60_000).toISOString(), heldForVirusCheck, messageIdentifier)
+			.run();
+		return { sent: false, held: true, error: heldForVirusCheck };
+	}
 	const headers: Record<string, string> = { ...options.headers };
 	if (row.in_reply_to) headers['In-Reply-To'] = `<${row.in_reply_to}>`;
 	if (row.reference_ids) headers.References = row.reference_ids.split(/\s+/).filter(Boolean).map((id) => `<${id}>`).join(' ');
@@ -355,7 +402,20 @@ export async function sendMessage(
 	try {
 		sentId = await carrier.send(mail);
 	} catch (problem) {
-		return fail(problem instanceof Error ? problem.message : String(problem));
+		const reason = problem instanceof Error ? problem.message : String(problem);
+		// A reply that failed for a reason that may pass waits and is tried again by the mail run (site/MAIL.md, "When something fails").
+		// Outreach keeps its own pace and is not tried again here.
+		const attempts = (row.send_attempts ?? 0) + 1;
+		if (!outreach && mayPass(problem) && attempts <= sendRetryMinutes.length) {
+			const next = new Date(at.getTime() + sendRetryMinutes[attempts - 1] * 60_000);
+			const note = `Not sent yet: ${reason} It is tried again by itself, ${attempts === sendRetryMinutes.length ? 'one last time' : `try ${attempts + 1} of ${sendRetryMinutes.length + 1}`}, at ${next.toISOString().slice(11, 16)} UTC.`;
+			await database
+				.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, held_for_undo = 0, send_attempts = ?, error = ? WHERE identifier = ?`)
+				.bind(next.toISOString(), attempts, note, messageIdentifier)
+				.run();
+			return { sent: false, held: true, error: note };
+		}
+		return fail(attempts > 1 ? `${reason} (after ${attempts} tries)` : reason);
 	}
 
 	// Keep a copy as sent, with the Message-ID the other side sees.

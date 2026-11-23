@@ -396,6 +396,18 @@ describe('the scan desk', () => {
 		expect(mayServe(good, { etag: bucket.files.get('uploads/good/original')!.etag })).toBe(false);
 	});
 
+	it('reads mail from the mail bucket and everything else from the main bucket', async () => {
+		const mailBucket = memoryBucket();
+		await mailBucket.put('mail/attachments/m/1', 'MAIL');
+		await bucket.put('uploads/good/original', 'UPLOAD');
+		await requestScan(database, { objectKey: 'mail/attachments/m/1', purpose: 'mail-attachment' });
+		await requestScan(database, { objectKey: 'uploads/good/original', purpose: 'upload' });
+		const provider = fakeProvider(() => cleanFacts);
+		await runScans(setup(provider, { mailBucket }), Number.POSITIVE_INFINITY);
+		expect(provider.seen.sort()).toEqual(['MAIL', 'UPLOAD']);
+		expect(await fileScan(database, 'mail/attachments/m/1')).toMatchObject({ status: 'clean' });
+	});
+
 	it('holds files that are too large or missing without sending them', async () => {
 		await bucket.put('uploads/video/original', 'x'.repeat(1001));
 		await requestScan(database, { objectKey: 'uploads/video/original', purpose: 'upload' });

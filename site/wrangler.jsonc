@@ -46,6 +46,14 @@
 		{
 			"binding": "sourceDocuments",
 			"bucket_name": "model-tribal-adr-code-sources"
+		},
+		// Private bucket for the project inbox (site/MAIL.md, "Storage"): each
+		// message whole, its HTML and its attachments, under mail/. Kept apart
+		// from the source documents so mail has its own access, lifecycle
+		// rules and backups, and a mistake in one cannot touch the other.
+		{
+			"binding": "mailFiles",
+			"bucket_name": "model-tribal-adr-code-mail"
 		}
 	],
 	// Live editing rooms, one per essay. They run in their own Worker,

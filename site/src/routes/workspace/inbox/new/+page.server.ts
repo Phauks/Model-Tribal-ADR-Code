@@ -77,6 +77,7 @@ export const actions: Actions = {
 				subject: values.subject,
 				text: values.text,
 				attachments: await readAttachments(form),
+				links: form.getAll('links').map(String),
 				sendAt,
 				remindAt: whenFromForm(form, 'remindAt'),
 				holdForUndo: sendAt ? 0 : await getUndoSeconds(context)

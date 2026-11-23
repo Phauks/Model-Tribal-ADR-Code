@@ -5,15 +5,20 @@
 	// signature of the From address starts below the message. It works
 	// without scripts; with them, Cc and Bcc fold away, chosen files are
 	// listed, saved replies can be put in, and what is written is saved as a
-	// draft a moment after each change.
+	// draft a moment after each change. Files too big to attach (over 18 MB
+	// together) are sent up in pieces and go as download links instead
+	// (site/MAIL.md, "Big files as links"); that needs scripts.
 	import { onMount } from 'svelte';
 	import Check from '@lucide/svelte/icons/check';
 	import Clock from '@lucide/svelte/icons/clock';
 	import MessageSquareText from '@lucide/svelte/icons/message-square-text';
+	import Link2 from '@lucide/svelte/icons/link-2';
 	import Paperclip from '@lucide/svelte/icons/paperclip';
+	import X from '@lucide/svelte/icons/x';
 	import SendIcon from '@lucide/svelte/icons/send';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
-	import { fillTemplate, parseAddressList, signatureBlock, type MergeValues } from '#lib/mail.ts';
+	import { attachmentLimitBytes, fillTemplate, parseAddressList, signatureBlock, type MergeValues } from '#lib/mail.ts';
+	import { readableSize } from '#lib/uploads.ts';
 	import { localInputValue } from './dates.ts';
 	import DateTimeField from '#lib/components/DateTimeField.svelte';
 
@@ -213,8 +218,83 @@
 		});
 	}
 
+	// ----- Big files as links ----------------------------------------------
+	interface LinkedFile {
+		key: string;
+		name: string;
+		size: number;
+		/** Set once the server has started the file. */
+		identifier: string | null;
+		/** 0 to 1. */
+		progress: number;
+		done: boolean;
+		problem: string | null;
+	}
+	let links = $state<LinkedFile[]>([]);
+	let waitNotice = $state(false);
+	const sendingUp = $derived(links.some((file) => !file.done && !file.problem));
+
+	/**
+	 * Chosen files that fit go as attachments. When they add up to more than
+	 * the limit, the biggest go as links until the rest fit, as webmail does.
+	 */
 	function chose(event: Event): void {
-		files = [...((event.currentTarget as HTMLInputElement).files ?? [])].map((file) => file.name);
+		const input = event.currentTarget as HTMLInputElement;
+		const chosen = [...(input.files ?? [])];
+		const attached: File[] = [];
+		const linked: File[] = [];
+		let total = chosen.reduce((sum, file) => sum + file.size, 0);
+		for (const file of [...chosen].sort((a, b) => b.size - a.size)) {
+			if (total > attachmentLimitBytes) {
+				linked.push(file);
+				total -= file.size;
+			} else attached.push(file);
+		}
+		if (linked.length && typeof DataTransfer !== 'undefined') {
+			const kept = new DataTransfer();
+			for (const file of chosen) if (attached.includes(file)) kept.items.add(file);
+			input.files = kept.files;
+			for (const file of linked) void sendUp(file);
+		}
+		files = [...(input.files ?? [])].map((file) => file.name);
+	}
+
+	/** Sends a file up in pieces, picking up where it stopped if it was started before. */
+	async function sendUp(file: File): Promise<void> {
+		const key = crypto.randomUUID();
+		links = [...links, { key, name: file.name, size: file.size, identifier: null, progress: 0, done: false, problem: null }];
+		const update = (change: Partial<LinkedFile>) => {
+			links = links.map((item) => (item.key === key ? { ...item, ...change } : item));
+		};
+		const answer = async (response: Response) => {
+			if (!response.ok) throw new Error((await response.json().catch(() => null))?.message ?? `The server answered ${response.status}.`);
+			return response.json();
+		};
+		try {
+			const started = (await answer(
+				await fetch('/workspace/inbox/links', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ filename: file.name, size: file.size, type: file.type }) })
+			)) as { identifier: string; pieceBytes: number; pieceCount: number; received: number[] };
+			update({ identifier: started.identifier });
+			const received = new Set(started.received);
+			for (let number = 1; number <= started.pieceCount; number += 1) {
+				if (!links.some((item) => item.key === key)) return;
+				if (!received.has(number)) {
+					const piece = file.slice((number - 1) * started.pieceBytes, number * started.pieceBytes);
+					await answer(await fetch(`/workspace/inbox/links/${started.identifier}/${number}`, { method: 'PUT', body: piece }));
+				}
+				update({ progress: number / started.pieceCount });
+			}
+			await answer(await fetch(`/workspace/inbox/links/${started.identifier}`, { method: 'POST' }));
+			update({ done: true, progress: 1 });
+			waitNotice = false;
+		} catch (problem) {
+			update({ problem: problem instanceof Error ? problem.message : 'It could not be sent up.' });
+		}
+	}
+
+	async function removeLink(item: LinkedFile): Promise<void> {
+		links = links.filter((other) => other.key !== item.key);
+		if (item.identifier) await fetch(`/workspace/inbox/links/${item.identifier}`, { method: 'DELETE' }).catch(() => undefined);
 	}
 
 	/** Tomorrow, or next Monday, at 8 in the morning, for the quick picks. */
@@ -237,7 +317,12 @@
 	enctype="multipart/form-data"
 	class="composer"
 	oninput={changed}
-	onsubmit={() => {
+	onsubmit={(event) => {
+		if (sendingUp) {
+			event.preventDefault();
+			waitNotice = true;
+			return;
+		}
 		sending = true;
 		clearTimeout(timer);
 	}}
@@ -315,6 +400,29 @@
 		<ul class="files small" aria-label="Attached files">
 			{#each files as file (file)}<li><Paperclip size={14} aria-hidden="true" />{file}</li>{/each}
 		</ul>
+	{/if}
+	{#if links.length}
+		<div class="links small">
+			<p class="muted">Too big to attach, so {links.length === 1 ? 'this goes' : 'these go'} as a download link in the message. A link works for 30 days, once the file passes the virus check.</p>
+			<ul aria-label="Files sent as links">
+				{#each links as item (item.key)}
+					<li class:problem={item.problem}>
+						<Link2 size={14} aria-hidden="true" />
+						<span class="link-name">{item.name} <span class="muted">({readableSize(item.size)})</span></span>
+						{#if item.problem}
+							<span role="alert">{item.problem}</span>
+						{:else if item.done}
+							<span class="muted">Ready</span>
+							<input type="hidden" name="links" value={item.identifier} />
+						{:else}
+							<progress max="1" value={item.progress} aria-label="Sending up {item.name}"></progress>
+						{/if}
+						<button type="button" class="remove" onclick={() => removeLink(item)} aria-label="Remove {item.name}" title="Remove"><X size={14} aria-hidden="true" /></button>
+					</li>
+				{/each}
+			</ul>
+			{#if waitNotice && sendingUp}<p role="alert" class="wait">Wait until the big files finish sending up, then send.</p>{/if}
+		</div>
 	{/if}
 	{#if sendAt || remindAt}
 		<p class="small timing">
@@ -506,6 +614,54 @@
 		padding: 0.1em 0.6em;
 		border-radius: 999px;
 		background: var(--color-surface);
+	}
+	.links {
+		margin: var(--space-2) var(--space-4) 0;
+	}
+	.links p {
+		margin: 0 0 var(--space-1);
+	}
+	.links ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: var(--space-1);
+	}
+	.links li {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		padding: 0.1em 0.2em 0.1em 0.6em;
+		border-radius: var(--radius-control);
+		background: var(--color-surface);
+	}
+	.links li.problem {
+		color: var(--color-danger);
+	}
+	.link-name {
+		flex: 1;
+		min-width: 10rem;
+		overflow-wrap: anywhere;
+	}
+	.links progress {
+		width: 8rem;
+		accent-color: var(--color-link);
+	}
+	.links .remove {
+		display: inline-grid;
+		place-items: center;
+		min-width: var(--layout-target-minimum);
+		min-height: var(--layout-target-minimum);
+		border: 0;
+		background: none;
+		color: var(--color-ink-muted);
+		cursor: pointer;
+	}
+	.links .wait {
+		margin-top: var(--space-1);
+		color: var(--color-link);
 	}
 	.timing {
 		margin: var(--space-2) var(--space-4) 0;

@@ -10,11 +10,11 @@ import type { MailCarriers, MailContext } from './context.ts';
 import { mailSettings } from './settings.ts';
 import { workerSocketOpener } from './socket-opener.ts';
 
-/** The inbox's context, or "503" while the database or bucket is not connected. */
+/** The inbox's context, or "503" while the database or the mail bucket is not connected. */
 export function mailContext(): MailContext {
 	const environment = workerEnvironment();
-	if (!environment.database || !environment.sourceDocuments) error(503, 'The database is not connected.');
-	return { database: environment.database, bucket: environment.sourceDocuments, settings: mailSettings(environment) };
+	if (!environment.database || !environment.mailFiles) error(503, 'The database or the mail bucket is not connected.');
+	return { database: environment.database, bucket: environment.mailFiles, settings: mailSettings(environment) };
 }
 
 /** Replies go through Cloudflare Email Service; outreach through the outreach carrier named in OUTREACH_CARRIER. */
