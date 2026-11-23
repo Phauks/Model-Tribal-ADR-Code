@@ -200,6 +200,14 @@ indian_health_service:
   note: 'The source''s words: "Algaaciq Native Village (aka St. Mary".'
   operator: tribal
 governance:
+- aspect: governing-body
+  value: Tribal council
+  quote: Tribal council members
+  source: algaaciq-native-village-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The council is named only in a heading; no structure is stated beyond that.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026

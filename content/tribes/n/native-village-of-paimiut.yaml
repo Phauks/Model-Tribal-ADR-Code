@@ -200,6 +200,30 @@ indian_health_service:
   note: 'The source''s words: "Native Village of Paimiut".'
   operator: tribal
 governance:
+- aspect: governing-body
+  value: Council
+  quote: The Native Village of Paimiut has a five (5) seat council.
+  source: native-village-of-paimiut-website-council-employees-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 seats
+  quote: The Native Village of Paimiut has a five (5) seat council.
+  source: native-village-of-paimiut-website-council-employees-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Council President
+  quote: 'Council President:'
+  source: native-village-of-paimiut-website-council-employees-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -208,6 +232,14 @@ governance:
   as_of: '2026-11-20'
   locator: Native Village of Paimiut
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Native Village of Paimiut Tribal Court was created to protect the inherent and sovereign rights to resolve issues and disputes among Our Tribal members.
+  source: native-village-of-paimiut-website-tribal-courts-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

@@ -91,6 +91,15 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: The nation's own website, found by web search and opened to confirm it is the nation's.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council
+  source: burt-lake-band-of-ottawa-and-chippewa-indians-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The council page lists officers by name and title only, with no size, selection or term stated, and no governing document is saved.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

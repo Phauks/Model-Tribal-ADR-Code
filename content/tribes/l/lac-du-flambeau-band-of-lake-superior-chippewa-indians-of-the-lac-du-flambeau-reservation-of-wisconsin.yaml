@@ -208,54 +208,46 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
 governance:
+- aspect: form
+  value: Constitution & Bylaws, effective 08/24/2025
+  quote: Constitution & Bylaws (Effective 08/24/2025)
+  source: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-f-website-court-ordinances
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer and staff names on the government and court pages are left out, and the constitution files are listed by title only.'
 - aspect: governing-body
   value: Tribal Council
-  quote: Chippewa Indians of Wisconsin shall be the Tribal Council.
-  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
-  confidence: medium
+  quote: Tribal Council
+  source: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-f-website-tribal-operations-tribal-administration
+  confidence: high
   verification: read-in-full
-  as_of: '2005-09-09'
-  locator: Article III, Section 1
-  document_version:
-    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
-    version: 2005-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer and staff names on the government and court pages are left out, and the constitution files are listed by title only.'
 - aspect: governing-body-size
   value: 12 members
-  quote: The Council shall consist of a President, Vice-President, Secretary,
-  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
-  confidence: medium
+  quote: Composed of 12 members.
+  source: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-f-website-tribal-operations-tribal-administration
+  confidence: high
   verification: read-in-full
-  as_of: '2005-09-09'
-  locator: Article III, Section 2
-  document_version:
-    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
-    version: 2005-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer and staff names on the government and court pages are left out, and the constitution files are listed by title only.'
 - aspect: governing-body-selection
-  value: Elected by popular vote
-  quote: nominated and elected by popular vote as provided in Article IV of this Constitution.
-  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
-  confidence: medium
+  value: Elected
+  quote: They are elected officials who oversee the tribes governance
+  source: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-f-website-tribal-operations-tribal-administration
+  confidence: high
   verification: read-in-full
-  as_of: '2005-09-09'
-  locator: Article III, Section 2
-  document_version:
-    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
-    version: 2005-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer and staff names on the government and court pages are left out, and the constitution files are listed by title only.'
 - aspect: governing-body-term
-  value: 2 years
-  quote: officers and councilmen shall be elected for two years and serve until their
-  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
-  confidence: medium
+  value: 2 years, staggered
+  quote: Elections are held every october for two officers positions and four members of the council, two years terms are staggered.
+  source: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-f-website-tribal-operations-tribal-administration
+  confidence: high
   verification: read-in-full
-  as_of: '2005-09-09'
-  locator: Article IV, Section 2
-  document_version:
-    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
-    version: 2005-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer and staff names on the government and court pages are left out, and the constitution files are listed by title only.'
 - aspect: head-of-government
   value: President
   quote: The President of the Tribal Council shall preside at all meetings of the
@@ -313,17 +305,13 @@ governance:
     version: 2005-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
 - aspect: elections
-  value: Every year, first Tuesday in October
-  quote: thereafter elections of six (6) councilmen shall be held every year on the first Tuesday in
-  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
-  confidence: medium
+  value: Every October
+  quote: Elections are held every october for two officers positions and four members of the council, two years terms are staggered.
+  source: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-f-website-tribal-operations-tribal-administration
+  confidence: high
   verification: read-in-full
-  as_of: '2005-09-09'
-  locator: Article IV, Section 1
-  document_version:
-    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
-    version: 2005-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer and staff names on the government and court pages are left out, and the constitution files are listed by title only.'
 - aspect: voting-age
   value: '18'
   quote: Any member of the Tribe who is eighteen (18) years of age or over and
@@ -349,17 +337,13 @@ governance:
     version: 2005-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
 - aspect: judiciary
-  value: Tribal Trial Court and Appeals Court
-  quote: There shall be a Tribal Trial Court and an Appeals
-  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
-  confidence: medium
+  value: Tribal Court and three-member appeals panel
+  quote: Chapter 80; Tribal Court Code; Three-member panel of judges; Notice of Appeals must be filed 20 days after judgment entered; Must post bond and filing fee and transcript deposit
+  source: lac-du-flambeau-band-of-lake-tribal-courts
+  confidence: high
   verification: read-in-full
-  as_of: '2005-09-09'
-  locator: Article X, Section 1
-  document_version:
-    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
-    version: 2005-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer and staff names on the government and court pages are left out, and the constitution files are listed by title only.'
 - aspect: judicial-selection
   value: Appointed by the Tribal Council
   quote: The Tribal Council shall select, by majority vote, Tribal Trial Court and

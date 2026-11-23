@@ -6,8 +6,7 @@ nations:
 jurisdictions:
 - level: tribal
   tribe: comanche-nation
-summary: 'Texts of the nation''s constitution found online on 2026-11-21: 1 text with no legible date.
-  Versions are only those found; others may exist.'
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 1 text with no legible date. Versions are only those found; others may exist.'
 versions:
 - id: 2002-text
   label: 2002 constitution, as amended
@@ -22,13 +21,11 @@ versions:
     path: research/captures/constitutions/comanche-nation/011939f28df00014.pdf
     sha256: 011939f28df000140ab40d9cc7221420b0a55dad41ea0385da888d9906c8fc94
     pages: 16
-  note: Scanned. The first page gives ratification on Nov. 19, 1966 and amendments through Feb. 23, 2002,
-    with an approval stamp of Feb. 23, 2002. Superseded by the 2018 text. Version, status and dates read
-    from the copy by the project (Claude), not yet checked by the lead author.
+  note: Scanned. The first page gives ratification on Nov. 19, 1966 and amendments through Feb. 23, 2002, with an approval stamp of Feb. 23, 2002. Superseded by the 2018 text. Version, status and dates read from the copy by the project (Claude), not yet checked by the lead author.
 - id: 2018-text
   label: 2018 constitution, as amended
   event: edition
-  status: in-effect
+  status: superseded
   dates:
     listed: '2018-03-21'
   supersedes:
@@ -40,10 +37,7 @@ versions:
     path: research/captures/constitutions/comanche-nation/0c083e26c961a5f5.pdf
     sha256: 0c083e26c961a5f534c70f3fbd4260e01c84a8184bdfdd270e82741349ae2712
     pages: 34
-  note: Scanned. The first page gives ratification on Nov. 19, 1966 and amendments through Mar. 21, 2018,
-    with an approval stamp of Mar. 21, 2018. Marked in effect because it is the newest dated text found;
-    a later amendment may not be posted. Version, status and dates read from the copy by the project (Claude),
-    not yet checked by the lead author.
+  note: Scanned. The first page gives ratification on Nov. 19, 1966 and amendments through Mar. 21, 2018, with an approval stamp of Mar. 21, 2018. Version, status and dates read from the copy by the project (Claude), not yet checked by the lead author. Marked superseded because a later text (2026-text) was found on the nation's own site on 2026-11-23 (project inference).
 - id: undated-text
   label: Undated constitution, as amended
   event: original
@@ -55,15 +49,29 @@ versions:
     path: research/captures/constitutions/comanche-nation/b789c83dcbd5013e.pdf
     sha256: b789c83dcbd5013eed02b600af6af5b30fabf1470ba6f1c1065e6890606d93d5
     pages: 59
-  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates
-    read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  note: No adoption, approval, effective or amendment date could be read from the text. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
   clauses:
   - topic: removal-and-recall
     locator: Article VIII (VACANCIES AND REMOVAL FROM OFFICE)
     summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
     verification: title-only
+- id: 2026-text
+  label: 2026 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2026-05-16'
+  supersedes:
+  - 2018-text
+  source: constitution-comanche-nation-2026-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/comanche-nation/7c4e8cd0855100cb.pdf
+    sha256: 7c4e8cd0855100cbc7eb8d5b281b0762bc174e1e85b40fbc4a6dca2a10373163
+    pages: 34
+  note: The first page gives ratification on Nov. 19, 1966 and amendments through May 16, 2026. Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-23; a later amendment may not be posted. Version, status and dates read from the text's first page by the project (Claude), not yet checked by the lead author.
 found_in:
 - 2026-11-21-constitutions
 - 2026-11-22-hand-pulled-documents
-notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
-  events and changes are project inferences from the texts found; see the catalog README.
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses, events and changes are project inferences from the texts found; see the catalog README.

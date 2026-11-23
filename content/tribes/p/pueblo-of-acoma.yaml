@@ -163,6 +163,14 @@ indian_health_service:
   note: 'The source''s words: "Acoma-Canoncito-Laguna SU – IHS".'
   operator: indian-health-service
 governance:
+- aspect: governing-body
+  value: Acoma Tribal Council
+  quote: Acoma Tribal Council 2025
+  source: pueblo-of-acoma-website-departments-administration-acoma-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council and court pages list members and staff by name, so only the existence of the council and court is given as facts.'
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -171,6 +179,14 @@ governance:
   as_of: '2026-11-20'
   locator: Pueblo of Acoma, New Mexico
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Acoma Tribal Court
+  quote: Acoma Tribal Court
+  source: pueblo-of-acoma-website-departments-acoma-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council and court pages list members and staff by name, so only the existence of the council and court is given as facts.'
 governing_documents:
 - kind: law-code
   title: Tribal code

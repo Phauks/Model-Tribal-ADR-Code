@@ -42,6 +42,23 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: General office address as shown on the page.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Every core tribal family has had representation on our tribal council
+  source: chappaquiddickwampanoag-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on page 3 are left out, and the site states no council size, selection method or term.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: 'Chairperson:'
+  source: chappquiddick-tribe-of-the-wampanog-indian-nation-website-our-tribe-today
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on page 3 are left out, and the site states no council size, selection method or term.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

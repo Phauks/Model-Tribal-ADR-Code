@@ -252,29 +252,21 @@ government_structure:
     constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws by authority of the Act of Congress of June 18, 1934
-  quote: by authority of the Act of Congress of June 18, 1934, as amended
-  source: university-of-oklahoma-indian-reorganization-act-unacons
-  confidence: medium
+  value: NVU Constitution
+  quote: pursuant to Article III, Section 1 of the NVU Constitution
+  source: native-village-of-unalakleet-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-30'
-  locator: Preamble
-  document_version:
-    document: native-village-of-unalakleet-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The NVU Constitution itself is not among the saved pages.'
 - aspect: governing-body
-  value: Governing body (kind chosen by Village membership)
-  quote: membership shall decide what kind of governing body it wishes to set up
-  source: university-of-oklahoma-indian-reorganization-act-unacons
-  confidence: medium
+  value: Tribal Council
+  quote: The Tribal Council is the governing body of the Native Village of Unalakleet, as designated by the community pursuant to Article III, Section 1 of the NVU Constitution.
+  source: native-village-of-unalakleet-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-30'
-  locator: Article 3, Section 1
-  document_version:
-    document: native-village-of-unalakleet-constitution
-    version: 1939-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The NVU Constitution itself is not among the saved pages.'
 - aspect: governing-body-selection
   value: Chosen by the Village membership
   quote: shall be chosen and how long they shall serve. The Village shall then choose
@@ -287,6 +279,22 @@ governance:
     document: native-village-of-unalakleet-constitution
     version: 1939-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: Terms 2023–2026 and 2025–2028
+  quote: 'Term: 2023–2026'
+  source: native-village-of-unalakleet-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The NVU Constitution itself is not among the saved pages.'
+- aspect: head-of-government
+  value: President
+  quote: President
+  source: native-village-of-unalakleet-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The NVU Constitution itself is not among the saved pages.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026

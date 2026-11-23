@@ -267,17 +267,13 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and by-laws under the Indian Reorganization Act of June 18, 1934
-  quote: Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by
-  source: university-of-oklahoma-indian-reorganization-act-sccatcons
-  confidence: medium
+  value: General Council style government
+  quote: The Catawba Nation has a General Council style government.
+  source: catawba-indian-nation-website-general-council
+  confidence: high
   verification: read-in-full
-  as_of: '1944-04-13'
-  locator: Certification of Adoption
-  document_version:
-    document: catawba-indian-nation-constitution
-    version: 1944-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 - aspect: governing-body
   value: General Tribal Council
   quote: of South Carolina shall be the General Tribal Council which shall be composed
@@ -291,29 +287,21 @@ governance:
     version: 1944-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: general-council
-  value: All qualified voters of the Catawba Tribe
-  quote: of all qualified voters of the Catawba Tribe.
-  source: university-of-oklahoma-indian-reorganization-act-sccatcons
-  confidence: medium
+  value: Enrolled members 18 or older
+  quote: To be a qualified voter you must be an enrolled member of the Nation who is 18 years of age or over.
+  source: catawba-indian-nation-website-general-council
+  confidence: high
   verification: read-in-full
-  as_of: '1944-04-13'
-  locator: Article III, Section 1
-  document_version:
-    document: catawba-indian-nation-constitution
-    version: 1944-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 - aspect: head-of-government
   value: Chief
-  quote: ballot, shall elect from its own members (a) a Chief, (b) an Assistant
-  source: university-of-oklahoma-indian-reorganization-act-sccatcons
-  confidence: medium
+  quote: The General Council also elects from its own members a Chief, an Assistant Chief, a Secretary Treasurer, and two Committee men who shall serve as the Executive Committee of the Nation
+  source: catawba-indian-nation-website-general-council
+  confidence: high
   verification: read-in-full
-  as_of: '1944-04-13'
-  locator: Article III, Section 3
-  document_version:
-    document: catawba-indian-nation-constitution
-    version: 1944-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -323,53 +311,54 @@ governance:
   locator: Catawba Indian Nation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 - aspect: head-of-government-selection
-  value: Elected by the General Tribal Council from its own members
-  quote: ballot, shall elect from its own members (a) a Chief, (b) an Assistant
-  source: university-of-oklahoma-indian-reorganization-act-sccatcons
-  confidence: medium
+  value: Elected by the General Council from its own members
+  quote: The General Council also elects from its own members a Chief
+  source: catawba-indian-nation-website-general-council
+  confidence: high
   verification: read-in-full
-  as_of: '1944-04-13'
-  locator: Article III, Section 3
-  document_version:
-    document: catawba-indian-nation-constitution
-    version: 1944-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: There are five elected officials that serve four year terms.
+  source: catawba-indian-nation-website-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 - aspect: other-officers
-  value: Assistant Chief, Secretary-Treasurer, two Trustees
-  quote: (c) a Secretary-Treasurer, and (d) two Trustees who shall, ex officio,
-  source: university-of-oklahoma-indian-reorganization-act-sccatcons
-  confidence: medium
+  value: Assistant Chief, Secretary Treasurer, two Committee men
+  quote: an Assistant Chief, a Secretary Treasurer, and two Committee men
+  source: catawba-indian-nation-website-general-council
+  confidence: high
   verification: read-in-full
-  as_of: '1944-04-13'
-  locator: Article III, Section 3
-  document_version:
-    document: catawba-indian-nation-constitution
-    version: 1944-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 - aspect: elections
-  value: Every 2 years at the July meeting
-  quote: at the July meeting of every even year.
-  source: university-of-oklahoma-indian-reorganization-act-sccatcons
-  confidence: medium
+  value: Every 4 years at the July meeting
+  quote: shall be chosen at the July meeting of every four years.
+  source: catawba-indian-nation-website-storage-app-media-1975-cin-constitution-pdf
+  confidence: high
   verification: read-in-full
-  as_of: '1944-04-13'
+  as_of: '2026-11-23'
   locator: Article III, Section 4
-  document_version:
-    document: catawba-indian-nation-constitution
-    version: 1944-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 - aspect: voting-age
-  value: '21'
-  quote: 21 years of age or over shall be qualified voters
-  source: university-of-oklahoma-indian-reorganization-act-sccatcons
-  confidence: medium
+  value: '18'
+  quote: To be a qualified voter you must be an enrolled member of the Nation who is 18 years of age or over.
+  source: catawba-indian-nation-website-general-council
+  confidence: high
   verification: read-in-full
-  as_of: '1944-04-13'
-  locator: Article III, Section 2
-  document_version:
-    document: catawba-indian-nation-constitution
-    version: 1944-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: election-authority
+  value: Election Committee
+  quote: The Election Committee oversees all elections and official votes for the Nation.
+  source: catawba-indian-nation-website-election-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 - aspect: amendment
   value: Majority vote of the General Tribal Council
   quote: proposed by a majority vote of the Catawba General Tribal Council and may
@@ -395,29 +384,22 @@ governance:
     version: 1944-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: recall-and-removal
-  value: Removal by two-thirds vote of those present
-  quote: A two-thirds (2/3) vote of those present
-  source: university-of-oklahoma-indian-reorganization-act-sccatcons
-  confidence: medium
+  value: Removal by majority vote of all eligible voters
+  quote: A majority vote of all eligible voters shall be necessary to remove an official from
+  source: catawba-indian-nation-website-storage-app-media-1975-cin-constitution-pdf
+  confidence: high
   verification: read-in-full
-  as_of: '1944-04-13'
+  as_of: '2026-11-23'
   locator: Article V, Section 2
-  document_version:
-    document: catawba-indian-nation-constitution
-    version: 1944-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 - aspect: other
-  value: Executive Committee of the Chief, Assistant Chief, Secretary-Treasurer and two Trustees
-  quote: consisting of the Chief, Assistant Chief, Secretary-Treasurer, and the
-  source: university-of-oklahoma-indian-reorganization-act-sccatcons
-  confidence: medium
+  value: Five-member Executive Committee elected by General Council
+  quote: The five-member Executive Committee is elected by the General Council to oversee the routine daily operations of the Nation government.
+  source: catawba-indian-nation-website-executive-committee
+  confidence: high
   verification: read-in-full
-  as_of: '1944-04-13'
-  locator: Article III, Section 5
-  document_version:
-    document: catawba-indian-nation-constitution
-    version: 1944-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 governing_documents:
 - kind: constitution
   title: Constitution

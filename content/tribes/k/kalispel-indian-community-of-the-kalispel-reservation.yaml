@@ -196,6 +196,38 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
 governance:
+- aspect: governing-body
+  value: Kalispel Business Council
+  quote: The Kalispel Business Council, consisting of five Tribal members, is a self-governing entity which oversees services, programs, business endeavors and is the policy making body of the Tribe with legislative authority.
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Kalispel Business Council, consisting of five Tribal members,
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
+- aspect: governing-body-selection
+  value: Elected by tribal membership
+  quote: Council members are democratically elected by the tribal membership and serve three-year terms.
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: Council members are democratically elected by the tribal membership and serve three-year terms.
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -204,6 +236,14 @@ governance:
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Kalispel Tribal Court
+  quote: The mission of the Kalispel Tribal Court is to cultivate a Tribal Court System
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
 governing_documents:
 - kind: law-code
   title: Law and Order Code of the Kalispel Indian Community

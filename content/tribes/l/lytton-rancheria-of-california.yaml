@@ -180,6 +180,14 @@ indian_health_service:
 governance:
 - aspect: head-of-government
   value: Chairperson
+  quote: As Chairperson, he provides leadership in tribal government, community planning, and economic development, with a clear focus on long-term stability, opportunity, and the well-being of tribal members.
+  source: lytton-rancheria-of-california-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
   source: bia-tribal-leaders-directory-2026
   confidence: high
   verification: bulk-import

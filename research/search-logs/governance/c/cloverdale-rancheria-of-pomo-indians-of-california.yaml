@@ -21,4 +21,12 @@ searches:
   reason: The directory lists the title of the leader's office.
   records:
   - bia-tribal-leaders-directory-2026
-next_steps: 'The nation''s own website: a government, council or constitution page. Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://cloverdalerancheria.com/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: not-found
+  reason: Read 1 pages (home, government, council, election, court and constitution pages); none states how the government is set up in words that could be quoted.
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

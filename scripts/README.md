@@ -173,7 +173,10 @@ Run by hand, in this order, never in continuous integration. They write the `gov
 | Script | Does | Needs |
 | --- | --- | --- |
 | `governance/prepare_batches.py` | Picks each nation's constitution version to read and splits the texts into batches for AI readers, who follow `governance/reader-brief.md` | `scripts/requirements.txt` |
-| `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |
+| `governance/crawl_websites.py` | Saves the government, council, constitution, election and court pages linked from each nation's home page, politely (one request at a time per site, at most 10 pages); a site that refuses is logged as blocked, not worked around | `scripts/requirements.txt`, `pdftotext` |
+| `governance/prepare_website_batches.py` | Groups the saved pages into batches for AI readers, who follow `governance/website-brief.md` | |
+| `governance/add_site_constitutions.py` | Adds the constitution texts found on nations' sites that the catalog lacked (`research/governance/site-constitutions.json`) to the document histories, with a source record and a private capture | `pdfinfo` |
+| `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `websites` does the same for the website readers and writes `website-readings.json`; `sources` writes a source record for each website page a fact cites; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |
 
 ## Printed book
 

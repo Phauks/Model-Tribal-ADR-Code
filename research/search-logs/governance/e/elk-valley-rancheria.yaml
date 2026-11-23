@@ -10,7 +10,7 @@ searches:
   address: research/captures/constitutions/elk-valley-rancheria/4c1f46f0e8a7668a.txt
   query: 'Governance: governing body, head of government, elections, branches, courts, amendment (scripts/governance/reader-brief.md)'
   outcome: found
-  reason: Read the 1994 constitution (national-indian-law-library-constitution-constitutions-elk-valley); kept 16 facts whose quoted words were found in the text.
+  reason: Read the 1994 constitution (national-indian-law-library-constitution-constitutions-elk-valley); kept 12 facts whose quoted words were found in the text.
   records:
   - national-indian-law-library-constitution-constitutions-elk-valley
 - date: '2026-11-23'
@@ -23,4 +23,15 @@ searches:
   reason: The directory lists the title of the leader's office.
   records:
   - bia-tribal-leaders-directory-2026
-next_steps: 'The nation''s own website: a government, council or constitution page. Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://elk-valley.com/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: found
+  reason: Read 5 pages (home, government, council, election, court and constitution pages); kept 4 facts whose quoted words were found on the page.
+  records:
+  - elk-valley-rancheria-website-the-rancheria
+  - elk-valley-rancheria-website-the-rancheria-tribal-council
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

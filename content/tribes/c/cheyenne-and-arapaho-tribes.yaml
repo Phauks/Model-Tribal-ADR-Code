@@ -249,77 +249,53 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-Laws under the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
-  quote: Thomas -Rogers Oklahoma Indian Welfare Act of June 26, 1S36
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Constitution ratified and adopted in 2006
+  quote: The Tribes operate under a Constitution ratified and adopted in 2006.
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Preamble
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body
-  value: Cheyenne-Arapaho Tribal Council
-  quote: Cheyenne-Arapaho Tribal Council shall be the governing body
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Tribal Council
+  quote: The Tribal Council is composed of all Member of the Tribes ages eighteen and older and operates with an official Office of the Tribal Council.
+  source: cheyenne-and-arapaho-tribes-website-government-tribal-council-branch
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Art. I, Sec. 2
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body
-  value: Cheyenne-Arapaho Business Committee
-  quote: shall have the power to act for the tribes in all matters
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Legislative Branch
+  quote: The Legislative Branch is responsible for making the laws of the Tribes.
+  source: cheyenne-and-arapaho-tribes-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Art. IV, Sec. 2
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body-size
-  value: 8 members (Business Committee)
-  quote: member representative body empowered to act on those matters outlined in Article IV, Sections 2 through 5,
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: 8 members (one per district)
+  quote: consists of one legislator from each of the four Arapaho Districts and four Cheyenne Districts.
+  source: cheyenne-and-arapaho-tribes-website-government-legislative
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Art. I, Sec. 3
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body-selection
-  value: Elected by district by mail ballot
-  quote: Each registered voter shall be furnished a ballot
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Elected
+  quote: Legislators are elected to staggered four-year terms and can serve up to three terms in office.
+  source: cheyenne-and-arapaho-tribes-website-government-legislative
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Article VIII, Section 1
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body-term
-  value: 4 years
-  quote: The term of office for each committeeman elected after the first
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: 4 years, staggered
+  quote: Legislators are elected to staggered four-year terms and can serve up to three terms in office.
+  source: cheyenne-and-arapaho-tribes-website-government-legislative
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Article VIII, Section 3
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: general-council
   value: All enrolled members at least 18 years of age
   quote: composed of all enrolled members at least eighteen (18)
@@ -333,17 +309,13 @@ governance:
     version: 1982-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
 - aspect: head-of-government
-  value: Chairman (of the Business Committee)
-  quote: The chairman of the business committee shall preside over all
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Governor
+  quote: The Cheyenne and Arapaho Tribes Office of the Governor is led by Governor
+  source: cheyenne-and-arapaho-tribes-website-government-executive
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: By-laws, Article XIV, Section 1
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -377,17 +349,13 @@ governance:
     version: 1982-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
 - aspect: other-officers
-  value: Vice-chairman, secretary, treasurer, sergeant-at-arms
-  quote: The vice-chairman of the business committee shall call the roll
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Lieutenant Governor
+  quote: Office of the Lieutenant Governor
+  source: cheyenne-and-arapaho-tribes-website-government-executive
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: By-laws, Article XIV, Section 2
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: election-authority
   value: Election Board of 8 members of the tribal council
   quote: Election Board shall be a board composed of eight (8) members of
@@ -400,6 +368,46 @@ governance:
     document: cheyenne-and-arapaho-tribes-constitution
     version: 1982-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+- aspect: branches
+  value: Executive, Legislative, Tribal Council, Judicial
+  quote: 'The Constitution implements four (4) branches of government to ensure a separation of powers: Executive Branch, Legislative Branch, Tribal Council, and Judicial Branch.'
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: The Constitution implements four (4) branches of government to ensure a separation of powers
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
+- aspect: judiciary
+  value: Supreme Court and Trial Court
+  quote: The Judicial Branch is comprised of one Supreme Court, and one Trial Court, such other lower courts of special jurisdiction as deemed necessary by the Legislature by law,
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
+- aspect: judicial-selection
+  value: Governor nominates; Legislature confirms; Tribal Council approves
+  quote: Each Judge and Justice is selected upon nomination by the Governor, subject to confirmation by the Legislature and approval by the Tribal Council,
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
+- aspect: judicial-independence
+  value: Independent branch of government
+  quote: We are an independent branch of government constitutionally entrusted with the fair and just resolution of disputes
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: amendment
   value: Majority vote of those voting in a referendum
   quote: shall be submitted to a referendum

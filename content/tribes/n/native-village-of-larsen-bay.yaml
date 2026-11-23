@@ -192,16 +192,13 @@ indian_health_service:
   note: 'The source''s words: "Native Village of Larsen Bay".'
 governance:
 - aspect: governing-body
-  value: Larsen Bay Tribal Council
-  quote: Larsen Bay Tribal Council. The council shall consist of (7) members who
-  source: constitution-native-village-of-larsen-bay-undated-text
-  confidence: medium
+  value: Village Council
+  quote: Village Council
+  source: native-village-of-larsen-bay-website-village-council
+  confidence: high
   verification: read-in-full
-  locator: Article IV, Section 1
-  document_version:
-    document: native-village-of-larsen-bay-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The page lists council titles beside names only and states no council size, selection or term.'
 - aspect: governing-body-size
   value: 7 members
   quote: The council shall consist of (7) members who
@@ -236,16 +233,13 @@ governance:
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
 - aspect: head-of-government
-  value: President
-  quote: The president of the Tribal Council shall preside
-  source: constitution-native-village-of-larsen-bay-undated-text
-  confidence: medium
+  value: Tribal President
+  quote: Tribal President
+  source: native-village-of-larsen-bay-website-village-council
+  confidence: high
   verification: read-in-full
-  locator: By-laws, Article 2, Section 1
-  document_version:
-    document: native-village-of-larsen-bay-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The page lists council titles beside names only and states no council size, selection or term.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026

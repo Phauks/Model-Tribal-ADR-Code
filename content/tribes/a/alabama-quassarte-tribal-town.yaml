@@ -169,17 +169,13 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws under the Oklahoma Indian Welfare Act of June 26, 1936
-  quote: he may prescribe pursuant to Section 3 of the Oklahoma
-  source: constitution-alabama-quassarte-tribal-town-1939-text
-  confidence: medium
+  value: Constitutional form of government
+  quote: adopted a constitutional form of government
+  source: alabama-quassarte-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1939-01-10'
-  locator: Article IV
-  document_version:
-    document: alabama-quassarte-tribal-town-constitution
-    version: 1939-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body
   value: Governing Committee
   quote: twelve members of the Governing Commit-

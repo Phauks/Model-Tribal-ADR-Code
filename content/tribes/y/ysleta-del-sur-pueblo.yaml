@@ -185,6 +185,46 @@ indian_health_service:
   note: 'The source''s words: "Ysleta De Sur (YDS) – IHS".'
   operator: indian-health-service
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Ysleta del Sur Pueblo Tribal Council is the duly constituted traditional governing body of the Pueblo
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 4 Council members plus Governor, Lieutenant Governor, Alguacil
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: Annual terms
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: The Governors also provide administrative oversight of tribal government operations and enterprises.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -193,6 +233,46 @@ governance:
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: Annual terms
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Lieutenant Governor, Alguacil, Cacique, War Captain
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Pueblo is governed by oral tradition and the Tribal Code of Laws, enforced by Tribal Police and upheld by the Tribal Court.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Cacique and War Captain appointed for lifelong terms
+  quote: Additional Council seats include a Cacique and a War Captain, both appointed to lifelong terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Ysleta del Sur Pueblo Code of Laws
