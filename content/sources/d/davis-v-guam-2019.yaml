@@ -33,6 +33,11 @@ citator:
   detail: >-
     No flag. Read from the header of Trevor's Westlaw print, filed privately (bucket key westlaw/davis-v-guam-2019.pdf).
   checked: 2026-11-22
+court_dates:
+  argued_and_submitted: ['2018-10-10']
+  printed: "Argued and Submitted October 10, 2018. Filed July 29, 2019."
+  source: https://static.case.law/f3d/932/cases/0822-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 4643679
   citation: "932 F.3d 822"

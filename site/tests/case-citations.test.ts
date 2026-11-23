@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { caseItem, courtAbbreviation } from '#lib/server/case-citations.ts';
-import { caseFacts, lawFacts } from '#lib/server/case-facts.ts';
+import { caseFacts, courtDays, lawFacts } from '#lib/server/case-facts.ts';
 import { everyBoxFact, everyFullCitation } from '#lib/server/essay-library.ts';
 import { nationNamesAndKinds, sources } from '#lib/server/content.ts';
 
@@ -39,6 +39,24 @@ describe('case box facts', () => {
 		expect(facts.Dissent).toBe('<strong>Baldwin</strong> (dissenting opinion)');
 		expect(facts['Vote not recorded']).toBe('Johnson');
 		expect(Object.keys(facts)[0]).toBe('Decided');
+	});
+
+	it('gives each court date its own line, in the order they happened', () => {
+		const merrion = caseFacts(sources().get('merrion-v-jicarilla-apache-tribe') as never, nations).slice(0, 3);
+		expect(merrion).toEqual([
+			['Argued', 'March 30, 1981'],
+			['Reargued', 'November 4, 1981'],
+			['Decided', 'January 25, 1982']
+		]);
+		const wabol = caseFacts(sources().get('wabol-v-villacrusis-1990') as never, nations).slice(0, 3);
+		expect(wabol.map(([label]) => label)).toEqual(['Argued and submitted', 'Decided', 'Amended']);
+		expect(caseFacts(sources().get('johnson-v-mintosh') as never, nations)[0]).toEqual(['Argued', 'February 17–19, 1823']);
+	});
+
+	it('writes several days as one date', () => {
+		expect(courtDays(['1901-01-11', '1901-01-08', '1901-01-09', '1901-01-10'])).toBe('January 8–11, 1901');
+		expect(courtDays(['1823-02-15', '1823-02-17'])).toBe('February 15 and 17, 1823');
+		expect(courtDays(['1831-12-30', '1832-01-02'])).toBe('December 30, 1831, and January 2, 1832');
 	});
 
 	it('names peoples that are not nations as peoples', () => {
