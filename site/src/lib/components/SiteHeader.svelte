@@ -9,6 +9,11 @@
 	// has no menu row. The content version shows only on paper; on screen it
 	// is in the footer.
 	//
+	// On wide screens a button at the far left, before the name, hides and shows
+	// the sidebar, so a hidden sidebar leaves nothing behind on the page
+	// (Trevor, Nov. 23, 2026; sidebar/sidebar-visibility.svelte.ts). It needs
+	// scripts; without them the sidebar always shows.
+	//
 	// On phones (Trevor approved this from the Wikiwand review, Nov. 22,
 	// 2026) the masthead is one short row: the name, search, and a "More"
 	// button. Report a problem, Contribute, Star, Print, Download, theme,
@@ -18,6 +23,9 @@
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import Ellipsis from '@lucide/svelte/icons/ellipsis';
+	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
+	import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
+	import { sidebarVisibility, toggleSidebar } from './sidebar/sidebar-visibility.svelte.ts';
 	import AccountLink from './AccountLink.svelte';
 	import DownloadMenu from './DownloadMenu.svelte';
 	import PrintOptions from './PrintOptions.svelte';
@@ -81,10 +89,26 @@
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="masthead">
 	<div class="page-width masthead-top">
-		<p class="wordmark">
-			<a href="/">{siteName}</a>
-			<span class="edition print-only">Draft, content {contentVersion}</span>
-		</p>
+		<div class="masthead-start">
+			<button
+				type="button"
+				class="icon-button sidebar-toggle needs-scripts no-print"
+				aria-controls="site-sidebar"
+				aria-expanded={sidebarVisibility.shown}
+				title="{sidebarVisibility.shown ? 'Hide' : 'Show'} sidebar (Ctrl+\)"
+				onclick={toggleSidebar}
+			>
+				{#if sidebarVisibility.shown}<PanelLeftClose size={20} aria-hidden="true" />{:else}<PanelLeftOpen
+						size={20}
+						aria-hidden="true"
+					/>{/if}
+				<span class="visually-hidden">{sidebarVisibility.shown ? 'Hide' : 'Show'} sidebar</span>
+			</button>
+			<p class="wordmark">
+				<a href="/">{siteName}</a>
+				<span class="edition print-only">Draft, content {contentVersion}</span>
+			</p>
+		</div>
 		<div class="masthead-phone no-print">
 			<SiteSearch bind:this={search} />
 			<button
@@ -144,6 +168,24 @@
 		/* Only a thin margin around the 44 px controls, so the band takes little height (Trevor, Nov. 23, 2026). */
 		padding-top: var(--space-1);
 		padding-bottom: var(--space-1);
+	}
+
+	.masthead-start {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	/* The sidebar is on wide screens only; on phones the Menu bar holds it. */
+	.sidebar-toggle {
+		display: none;
+		color: var(--color-band-text);
+	}
+
+	@media (min-width: 64rem) {
+		:global(:root[data-scripts='on']) .sidebar-toggle {
+			display: inline-grid;
+		}
 	}
 
 	.wordmark {
