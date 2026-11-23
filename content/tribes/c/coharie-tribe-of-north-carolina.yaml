@@ -21,6 +21,13 @@ names:
     confidence: high
     verification: bulk-import
     as_of: '2026'
+  - name: Coharie Intra-Tribal Council, Inc.
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    verification: bulk-import
+    as_of: '2013-11-12'
+    locator: 'Petitioner #74'
+    note: Name of a second record for the same group (id coharie-intra-tribal-council-inc), merged into this one on Nov. 23, 2026; the match is by name and state, not a source that says the two are the same.
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
 - type: unrecognized
@@ -71,6 +78,18 @@ recognition:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '74'
+  petition_stage: Letter of Intent to Petition 03/13/1981
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  verification: bulk-import
+  as_of: '2013-11-12'
+  locator: 'Petitioner #74'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
 states:
 - state: NC
   presence: other
@@ -102,6 +121,14 @@ states:
   confidence: high
   verification: inferred
   as_of: '2026'
+- state: NC
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  verification: bulk-import
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
 census_areas:
 - geographic_identifier: '9635'
   name: Coharie SDTSA
