@@ -1208,7 +1208,7 @@ export const load: PageServerLoad = ({ params }) => {
 	if (result.neighbors.length > 0) {
 		items.push({ label: 'Nearby Nations', link: '#neighbors-heading' });
 	}
-	items.push({ label: 'Sources', link: '#sources-heading' });
+	items.push({ label: 'References', link: '#sources-heading' });
 
 	// The Nations section's pages stay above it (src/lib/server/section-contents.ts).
 	const outline: PageOutline = { items: nationOutline({ name: page.officialName, link: `/nations/${record.id}`, headings: items }) };
