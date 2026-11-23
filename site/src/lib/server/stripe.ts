@@ -106,3 +106,190 @@ export async function isStripeWebhook(
 	const expected = await hmacSha256Hex(settings.webhookSecret, `${timestamp}.${rawBody}`);
 	return signatures.some((signature) => sameText(expected, signature));
 }
+
+/** A Stripe call that answers with JSON; throws with Stripe's own message when refused. */
+async function stripeRequest<Result>(
+	settings: Pick<StripeSettings, 'secretKey'>,
+	method: 'GET' | 'POST',
+	path: string,
+	fields: Record<string, string | number | undefined> = {},
+	fetcher: Fetch = fetch,
+	idempotencyKey?: string
+): Promise<Result> {
+	const encoded = formEncode(fields);
+	const address = `https://api.stripe.com/v1/${path}${method === 'GET' && encoded ? `?${encoded}` : ''}`;
+	const headers: Record<string, string> = {
+		authorization: `Bearer ${settings.secretKey}`
+	};
+	if (method === 'POST') headers['content-type'] = 'application/x-www-form-urlencoded';
+	if (idempotencyKey) headers['idempotency-key'] = idempotencyKey;
+	const response = await fetcher(address, {
+		method,
+		headers,
+		body: method === 'POST' ? encoded : undefined
+	});
+	const result = (await response.json()) as Result & {
+		error?: { message?: string };
+	};
+	if (!response.ok) throw new Error(`Stripe refused ${method} ${path} (${response.status}): ${result.error?.message ?? 'no message'}`);
+	return result;
+}
+
+/**
+ * Makes the Stripe customer that a sponsor's gifts and billing settings
+ * belong to (https://docs.stripe.com/api/customers/create). The sponsor's
+ * identifier goes in its metadata so the customer can be traced back.
+ */
+export async function createCustomer(
+	settings: Pick<StripeSettings, 'secretKey'>,
+	customer: { name: string; email: string; sponsor: string },
+	fetcher: Fetch = fetch
+): Promise<string> {
+	const result = await stripeRequest<{ id: string }>(
+		settings,
+		'POST',
+		'customers',
+		{
+			name: customer.name,
+			email: customer.email,
+			'metadata[sponsor]': customer.sponsor
+		},
+		fetcher,
+		`sponsor-customer-${customer.sponsor}`
+	);
+	return result.id;
+}
+
+export interface GiftCheckoutRequest {
+	customer: string;
+	sponsor: string;
+	amountInCents: number;
+	monthly: boolean;
+	/** What the giver sees on Stripe's page. */
+	description: string;
+	successAddress: string;
+	cancelAddress: string;
+}
+
+/**
+ * Opens a Stripe Checkout page for a gift: a subscription for a monthly gift,
+ * a single payment otherwise. The amount is the sponsor's own, so the price
+ * is made on the spot rather than set up in Stripe's dashboard.
+ */
+export async function createGiftCheckout(settings: Pick<StripeSettings, 'secretKey'>, gift: GiftCheckoutRequest, fetcher: Fetch = fetch): Promise<string> {
+	const fields: Record<string, string | number | undefined> = {
+		mode: gift.monthly ? 'subscription' : 'payment',
+		customer: gift.customer,
+		client_reference_id: gift.sponsor,
+		'metadata[sponsor]': gift.sponsor,
+		success_url: gift.successAddress,
+		cancel_url: gift.cancelAddress,
+		'line_items[0][quantity]': 1,
+		'line_items[0][price_data][currency]': 'usd',
+		'line_items[0][price_data][unit_amount]': gift.amountInCents,
+		'line_items[0][price_data][product_data][name]': gift.description
+	};
+	if (gift.monthly) {
+		fields['line_items[0][price_data][recurring][interval]'] = 'month';
+		fields['subscription_data[metadata][sponsor]'] = gift.sponsor;
+	} else {
+		fields.submit_type = 'donate';
+		fields['payment_intent_data[metadata][sponsor]'] = gift.sponsor;
+	}
+	const result = await stripeRequest<{ url?: string }>(settings, 'POST', 'checkout/sessions', fields, fetcher);
+	if (!result.url) throw new Error('Stripe gave no address for the checkout page.');
+	return result.url;
+}
+
+/**
+ * Opens Stripe's own billing page for a customer, where a sponsor changes
+ * the amount, card or billing address, cancels, and downloads receipts
+ * (https://docs.stripe.com/api/customer_portal/sessions/create). Stripe's
+ * dashboard must have a saved portal setup for the mode in use.
+ */
+export async function createBillingPortal(
+	settings: Pick<StripeSettings, 'secretKey'>,
+	customer: string,
+	returnAddress: string,
+	fetcher: Fetch = fetch
+): Promise<string> {
+	const result = await stripeRequest<{ url?: string }>(settings, 'POST', 'billing_portal/sessions', { customer, return_url: returnAddress }, fetcher);
+	if (!result.url) throw new Error('Stripe gave no address for the billing page.');
+	return result.url;
+}
+
+export interface MonthlyGift {
+	identifier: string;
+	status: string;
+	amountInCents: number;
+	interval: string;
+	/** When the next payment is due, as an ISO time, if Stripe says. */
+	nextPayment: string | null;
+	cardEnding: string | null;
+	cancelAtPeriodEnd: boolean;
+}
+
+interface StripeSubscription {
+	id: string;
+	status: string;
+	cancel_at_period_end?: boolean;
+	current_period_end?: number;
+	default_payment_method?: { card?: { last4?: string } } | string | null;
+	items?: {
+		data?: {
+			current_period_end?: number;
+			price?: { unit_amount?: number; recurring?: { interval?: string } };
+		}[];
+	};
+}
+
+/** A customer's subscriptions that have not ended, as the Account page and the lead author's diagnostics show them. */
+export async function monthlyGifts(settings: Pick<StripeSettings, 'secretKey'>, customer: string, fetcher: Fetch = fetch): Promise<MonthlyGift[]> {
+	const result = await stripeRequest<{ data?: StripeSubscription[] }>(
+		settings,
+		'GET',
+		'subscriptions',
+		{
+			customer,
+			status: 'all',
+			limit: 10,
+			'expand[0]': 'data.default_payment_method'
+		},
+		fetcher
+	);
+	return (result.data ?? [])
+		.filter((subscription) => !['canceled', 'incomplete_expired'].includes(subscription.status))
+		.map((subscription) => {
+			const item = subscription.items?.data?.[0];
+			// Newer Stripe versions keep the period on each item; older ones on the subscription.
+			const periodEnd = item?.current_period_end ?? subscription.current_period_end;
+			const method = subscription.default_payment_method;
+			return {
+				identifier: subscription.id,
+				status: subscription.status,
+				amountInCents: item?.price?.unit_amount ?? 0,
+				interval: item?.price?.recurring?.interval ?? 'month',
+				nextPayment: periodEnd ? new Date(periodEnd * 1000).toISOString() : null,
+				cardEnding: typeof method === 'object' && method?.card?.last4 ? method.card.last4 : null,
+				cancelAtPeriodEnd: Boolean(subscription.cancel_at_period_end)
+			};
+		});
+}
+
+/** Whether Stripe knows the customer, for the lead author's diagnostics. */
+export async function customerExists(
+	settings: Pick<StripeSettings, 'secretKey'>,
+	customer: string,
+	fetcher: Fetch = fetch
+): Promise<{ exists: boolean; deleted: boolean; email: string | null }> {
+	const result = await stripeRequest<{
+		id?: string;
+		deleted?: boolean;
+		email?: string | null;
+	}>(settings, 'GET', `customers/${encodeURIComponent(customer)}`, {}, fetcher);
+	return {
+		exists: Boolean(result.id),
+		deleted: Boolean(result.deleted),
+		email: result.email ?? null
+	};
+}
