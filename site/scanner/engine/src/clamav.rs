@@ -195,15 +195,18 @@ fn parse_signature(reply: &str) -> String {
         .to_string()
 }
 
-/// Parses the clamd VERSION reply and extracts the signature-database version token.
+/// Parses the clamd VERSION reply and extracts the signature-database version token, with the
+/// database's date when clamd gives one.
 ///
 /// clamd replies to `zVERSION\0` with a line like:
 ///
 ///   `ClamAV 1.0.3/27268/Thu Oct 12 09:31:47 2023`
 ///
-/// The database version is the second `/`-delimited token (between the first and second `/`).
-/// Returns `None` if the reply is missing, malformed, or non-UTF-8 — the caller treats that as a
-/// startup failure (never a blank token that silently freezes the staleness gate).
+/// The database version is the second `/`-delimited token (between the first and second `/`), and
+/// the third is the date of the newest signatures. The token returned is `27268-20231012`, so the
+/// website can show both which signatures and how fresh they were; without a readable date it is
+/// just `27268`. Returns `None` if the reply is missing, malformed, or non-UTF-8 — the caller
+/// treats that as a startup failure (never a blank token that silently freezes the staleness gate).
 pub fn parse_clamav_db_version(reply: &[u8]) -> Option<String> {
     let text = std::str::from_utf8(reply).ok()?;
     // Strip any trailing null bytes or whitespace so a `z`-protocol NUL terminator does not confuse
@@ -216,7 +219,28 @@ pub fn parse_clamav_db_version(reply: &[u8]) -> Option<String> {
     if db_version.is_empty() {
         return None;
     }
-    Some(db_version.to_string())
+    match parts.next().and_then(parse_clamav_date) {
+        Some(date) => Some(format!("{db_version}-{date}")),
+        None => Some(db_version.to_string()),
+    }
+}
+
+/// Reads clamd's database date, such as `Thu Oct 12 09:31:47 2023`, as `20231012`.
+fn parse_clamav_date(text: &str) -> Option<String> {
+    let fields: Vec<&str> = text.split_whitespace().collect();
+    let [_, month, day, _, year] = fields.as_slice() else {
+        return None;
+    };
+    let months = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+    ];
+    let month = months.iter().position(|name| name == month)? + 1;
+    let day: u32 = day.parse().ok().filter(|day| (1..=31).contains(day))?;
+    let year: u32 = year
+        .parse()
+        .ok()
+        .filter(|year| (2000..=9999).contains(year))?;
+    Some(format!("{year:04}{month:02}{day:02}"))
 }
 
 /// Queries clamd's `VERSION` command over the existing loopback TCP transport and returns the
@@ -394,7 +418,7 @@ mod tests {
         // Standard clamd VERSION output: `ClamAV <engine>/<db-version>/<db-date>`.
         assert_eq!(
             parse_clamav_db_version(b"ClamAV 1.0.3/27268/Thu Oct 12 09:31:47 2023"),
-            Some("27268".to_string())
+            Some("27268-20231012".to_string())
         );
     }
 
@@ -403,7 +427,7 @@ mod tests {
         // The `z`-protocol appends a NUL terminator; strip it before parsing.
         assert_eq!(
             parse_clamav_db_version(b"ClamAV 1.0.3/27268/Thu Oct 12 09:31:47 2023\0"),
-            Some("27268".to_string())
+            Some("27268-20231012".to_string())
         );
     }
 
@@ -411,7 +435,23 @@ mod tests {
     fn version_reply_with_whitespace_is_trimmed() {
         assert_eq!(
             parse_clamav_db_version(b"ClamAV 1.0.3/27268/Thu Oct 12 09:31:47 2023\n"),
+            Some("27268-20231012".to_string())
+        );
+    }
+
+    #[test]
+    fn version_reply_without_a_readable_date_keeps_the_version_alone() {
+        assert_eq!(
+            parse_clamav_db_version(b"ClamAV 1.0.3/27268/sometime"),
             Some("27268".to_string())
+        );
+        assert_eq!(
+            parse_clamav_db_version(b"ClamAV 1.0.3/27268"),
+            Some("27268".to_string())
+        );
+        assert_eq!(
+            parse_clamav_db_version(b"ClamAV 1.4.2/27840/Sun Nov  2 08:23:00 2026"),
+            Some("27840-20261102".to_string())
         );
     }
 

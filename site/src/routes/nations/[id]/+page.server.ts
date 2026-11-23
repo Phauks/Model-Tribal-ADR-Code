@@ -393,8 +393,8 @@ function governmentAtAGlance(record: NationRecord, sources: SourceUses): FactGro
 	const bodyLabel = 'Governing body';
 	const headLabel = 'Head of government';
 	return [
-		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value, link: '#government-heading' })] : []),
-		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value, link: '#government-heading' })] : [])
+		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value })] : []),
+		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value })] : [])
 	];
 }
 
@@ -429,8 +429,24 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 	return [
 		...[...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items })),
 		...agreementGroups(record, sources, section),
+		...group('nearby-state-courts', 'State trial courts for the same counties', nearbyStateCourts(record, sources, section)),
 		...group('court-cases', 'Court cases about the nation', courtCases(record, sources, section))
 	];
+}
+
+/**
+ * The state trial court of general jurisdiction for each county the nation's
+ * Census area lies in, largest share first as the record lists them, each
+ * linking the state judiciary's list of those courts.
+ */
+function nearbyStateCourts(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	return (record.nearby_state_courts ?? []).map((fact) =>
+		cited(sources, section, fact, {
+			text: fact.court,
+			link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+			detail: stateName(fact.state)
+		})
+	);
 }
 
 /** Reporter names written out in some records, in their short form. */

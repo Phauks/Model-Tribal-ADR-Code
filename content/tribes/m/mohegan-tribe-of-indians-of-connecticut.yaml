@@ -368,6 +368,16 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 103-377 § 6(a), (b), 108 Stat. at 3505
   note: Criminal only. Quote skips the words "Subject to subsection (b)," at the start of § 6(a). 25 U.S.C. § 1775d (omitted from the Code).
+nearby_state_courts:
+- state: CT
+  county: New London County
+  court: Superior Court for New London County
+  link: https://www.jud.ct.gov/directory/directory/location/default.htm
+  source: state-trial-court-directory-ct
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: New London County holds 100% of the land of Mohegan Reservation (Census GEOID 2320), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

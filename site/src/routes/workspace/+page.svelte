@@ -85,6 +85,21 @@
 	</section>
 {/if}
 
+{#if data.nonprofit && data.nonprofit.items.length > 0}
+	<section class="panel">
+		<h2>Nonprofit</h2>
+		<ul>
+			{#each data.nonprofit.items as item (`${item.title}/${item.due}`)}
+				<li>
+					{#if item.state === 'overdue'}<strong>Overdue:</strong>{:else}Due soon:{/if}
+					{item.title}, {date(`${item.due}T12:00:00`)}.
+				</li>
+			{/each}
+		</ul>
+		<p><a href="/workspace/nonprofit">Open the nonprofit page</a></p>
+	</section>
+{/if}
+
 {#if data.granted.length > 0}
 	<section>
 		<h2>Documents opened to you</h2>
@@ -133,6 +148,17 @@
 				</div>
 			{/if}
 		{/if}
+	</section>
+{/if}
+
+{#if data.nationChanges && data.nationChanges.waiting > 0}
+	<section>
+		<h2>Nations’ changes</h2>
+		<p>
+			{data.nationChanges.waiting} {data.nationChanges.waiting === 1 ? 'change' : 'changes'} that nations published on their own pages
+			{data.nationChanges.waiting === 1 ? 'waits' : 'wait'} for the project to read{#if data.nationChanges.overdue}; <strong>{data.nationChanges.overdue} past 7 days</strong>{/if}.
+			<a href="/workspace/nation-pages">Read them</a>
+		</p>
 	</section>
 {/if}
 

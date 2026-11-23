@@ -203,6 +203,22 @@ indian_health_service:
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Kickapoo Traditional Tribe of Texas".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: TRIBAL COUNCIL
+  source: kickapoo-traditional-tribe-of-texas-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list council members by name and title only, with no constitution or stated term, selection or size rules.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman
+  source: kickapoo-traditional-tribe-of-texas-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list council members by name and title only, with no constitution or stated term, selection or size rules.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -211,6 +227,14 @@ governance:
   as_of: '2026-11-20'
   locator: Kickapoo Traditional Tribe of Texas
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: KTTT Tribal Court
+  quote: 'We, the staff of the KTTT Tribal Court, take pride in working as a team and pledge to:'
+  source: kickapoo-traditional-tribe-of-texas-website-tribal-operations-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list council members by name and title only, with no constitution or stated term, selection or size rules.'
 governing_documents:
 - kind: law-code
   title: Kickapoo Traditional Tribe of Texas - Tribal Codes and Ordinances
@@ -572,6 +596,16 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 97-429 § 6, 96 Stat. at 2270
   note: 25 U.S.C. § 1300b-15 is "omitted" from the Code. This statute was not on the research brief; found through the Cornell notes.
+nearby_state_courts:
+- state: TX
+  county: Maverick County
+  court: District Court for Maverick County
+  link: https://www.txcourts.gov/about-texas-courts/trial-courts/
+  source: state-trial-court-directory-tx
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Maverick County holds 100% of the land of Kickapoo (TX) Reservation (Census GEOID 1775), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

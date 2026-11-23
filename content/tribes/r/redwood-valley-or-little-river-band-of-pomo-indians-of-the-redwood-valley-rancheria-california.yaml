@@ -182,17 +182,13 @@ governance:
     version: 1987-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
 - aspect: governing-body
-  value: Redwood Valley Rancheria Tribal Council
-  quote: The governing body of the Tribe shall be the Redwood Valley Rancheria Tribal Council.
-  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
-  confidence: medium
+  value: Tribal Council
+  quote: Its tribal members elect a Tribal Council which acts as the governing body.
+  source: rvrpomo-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1987-06-20'
-  locator: Article IV, Section 1
-  document_version:
-    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 7 members
   quote: The Tribal Council shall consist of seven (7) members elected at-large from the Tribe.
@@ -206,17 +202,13 @@ governance:
     version: 1987-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
 - aspect: governing-body-selection
-  value: Elected at large
-  quote: The Tribal Council shall consist of seven (7) members elected at-large from the Tribe.
-  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
-  confidence: medium
+  value: Elected by tribal members
+  quote: Its tribal members elect a Tribal Council which acts as the governing body.
+  source: rvrpomo-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1987-06-20'
-  locator: Article IV, Section 1
-  document_version:
-    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
   value: 2 years
   quote: All terms of office shall be for two (2) years
@@ -242,17 +234,13 @@ governance:
     version: 1987-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
 - aspect: head-of-government
-  value: Chairperson
-  quote: The chairperson shall preside at all meetings of the Tribal or General Council
-  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
-  confidence: medium
+  value: Council Chairperson
+  quote: Council Chairperson
+  source: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-val-website-about-us-1
+  confidence: high
   verification: read-in-full
-  as_of: '1987-06-20'
-  locator: Article XIV, Section 2
-  document_version:
-    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -286,17 +274,13 @@ governance:
     version: 1987-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
 - aspect: other-officers
-  value: Vice-chairperson, secretary, treasurer
-  quote: The Tribal Council shall be composed of a chairperson, vice-chairperson, secretary and treasurer and three (3) members
-  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
-  confidence: medium
+  value: Council Vice Chairperson, Council Secretary, Council Treasurer
+  quote: Council Vice Chairperson
+  source: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-val-website-about-us-1
+  confidence: high
   verification: read-in-full
-  as_of: '1987-06-20'
-  locator: Article IV, Section 1
-  document_version:
-    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: elections
   value: Annually on the second Sunday in July
   quote: elections shall be held annually on the second Sunday in July.
@@ -418,6 +402,16 @@ jurisdiction:
     so nation names were read from images and matched to the roster. Row re-read on 2026-11-22 from the
     page image (the govinfo PDF has no text layer for the table); verification level unchanged because
     the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Mendocino County
+  court: Superior Court for Mendocino County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Mendocino County holds 100% of the land of Redwood Valley Rancheria (Census GEOID 3115), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

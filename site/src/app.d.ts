@@ -81,6 +81,14 @@ declare global {
 		/** Secret: the mailbox's app password. Set as a Secret in the dashboard. */
 		OUTREACH_SMTP_PASSWORD?: string;
 		/**
+		 * The secret key every password hash also goes through
+		 * (src/lib/server/sign-in-secrets.ts, passwordHash). A Secret in the
+		 * Cloudflare dashboard, at least 32 random characters, never in GitHub.
+		 * Once set it must never be removed or changed, or passwords made with
+		 * it stop working.
+		 */
+		PASSWORD_KEY?: string;
+		/**
 		 * Printed copies (docs/book-orders.md). Ordering stays off unless
 		 * BOOK_ORDERS is "test" (Stripe test keys and Lulu's sandbox only) or
 		 * "live"; the keys and secrets are set in the Cloudflare dashboard.

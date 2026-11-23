@@ -14,6 +14,7 @@ import {
 	type SourceKind
 } from '#lib/requests.ts';
 import { eventStatement } from './events.ts';
+import { forgetScan, storeSentFile } from './file-scans.ts';
 import { newIdentifier, newRequestReference, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 import type { NewRequest } from './request-form.ts';
@@ -66,7 +67,12 @@ export async function saveRequest(
 		for (const source of sources) {
 			if (!source.file) continue;
 			const key = `${uploadPrefix}/${identifier}/${source.identifier}`;
-			await bucket.put(key, source.file.bytes, {
+			// Held until the virus check passes (site/SCANNING.md).
+			await storeSentFile(database, bucket, {
+				objectKey: key,
+				purpose: 'request-file',
+				subject: reference,
+				bytes: source.file.bytes,
 				httpMetadata: { contentType: source.file.type },
 				customMetadata: { requestReference: reference, fileName: source.file.name }
 			});
@@ -170,7 +176,10 @@ export async function saveRequest(
 		]);
 	} catch (problem) {
 		// Leave no orphaned uploads behind if the request could not be saved.
-		if (uploaded.length > 0) await bucket.delete(uploaded).catch(() => undefined);
+		if (uploaded.length > 0) {
+			await bucket.delete(uploaded).catch(() => undefined);
+			for (const key of uploaded) await forgetScan(database, key).catch(() => undefined);
+		}
 		throw problem;
 	}
 	return reference;

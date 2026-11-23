@@ -208,6 +208,46 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Native Village of Port Lions".'
 governance:
+- aspect: governing-body
+  value: Council
+  quote: The Native Village of Port Lions’ Council consists of seven elected members who serve three-year staggered terms.
+  source: native-village-of-port-lions-website-our-tribe-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Native Village of Port Lions’ Council consists of seven elected members who serve three-year staggered terms.
+  source: native-village-of-port-lions-website-our-tribe-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Appointed by vote at Annual election
+  quote: They are appointed by vote during the Annual election by eligible voting members.
+  source: native-village-of-port-lions-website-our-tribe-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The Native Village of Port Lions’ Council consists of seven elected members who serve three-year staggered terms.
+  source: native-village-of-port-lions-website-our-tribe-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Council President
+  quote: Council President
+  source: native-village-of-port-lions-website-our-tribe-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -216,6 +256,14 @@ governance:
   as_of: '2026-11-20'
   locator: Native Village of Port Lions
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other
+  value: Governs under constitution and bylaws
+  quote: The Council governs the tribe in accordance with the tribe’s constitution, bylaws, ordinances, and resolutions.
+  source: native-village-of-port-lions-website-our-tribe-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Climate Change Resolution
@@ -262,6 +310,16 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Kodiak Island Borough
+  court: Superior Court for Kodiak Island Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Kodiak Island Borough holds 100% of the land of Port Lions ANVSA (Census GEOID 7275), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Koniag Inc.
   relation: alaska-native-claims-settlement-act-regional-corporation

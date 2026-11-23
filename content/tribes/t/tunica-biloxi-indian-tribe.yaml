@@ -210,6 +210,22 @@ indian_health_service:
   locator: Tribally Administered Programs table
   note: Listed as "Tunica-Biloxi Tribe of Louisiana".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: he has held several elected positions on the Tunica-Biloxi Tribal Council
+  source: tunica-biloxi-indian-tribe-website-tribal-info-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Most pages are biographies and history under a ''new website coming soon'' notice, and the saved pages contain no governing document text, so the structure of government is largely unstated.'
+- aspect: head-of-government
+  value: Chairman
+  quote: the proud Chairman and Chief Executive Officer of the Tunica-Biloxi Tribe of Louisiana
+  source: tunica-biloxi-indian-tribe-website-tribal-info-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Most pages are biographies and history under a ''new website coming soon'' notice, and the saved pages contain no governing document text, so the structure of government is largely unstated.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -218,6 +234,14 @@ governance:
   as_of: '2026-11-20'
   locator: Tunica-Biloxi Indian Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Tunica-Biloxi Tribal Court
+  quote: The Tunica-Biloxi Tribal Courts primary function is to uphold the Constitution of the United States and the Constitution of the Tunica-Biloxi Tribe of Louisiana by applying the Code of Civil Procedure.
+  source: tunica-biloxi-indian-tribe-website-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Most pages are biographies and history under a ''new website coming soon'' notice, and the saved pages contain no governing document text, so the structure of government is largely unstated.'
 governing_documents:
 - kind: law-code
   title: Resolutions and Ordinances. Additional codes listed under Tribal Info tab
@@ -476,6 +500,16 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Louisiana by the Census Bureau's land areas.
+nearby_state_courts:
+- state: LA
+  county: Avoyelles Parish
+  court: District Court for Avoyelles Parish
+  link: https://www.lasc.org/press_room/annual_reports/reports/2025_Guide_to_Louisiana_Courts.pdf
+  source: state-trial-court-directory-la
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Avoyelles Parish holds 100% of the land of Tunica-Biloxi Reservation (Census GEOID 4315), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

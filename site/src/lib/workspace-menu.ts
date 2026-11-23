@@ -17,9 +17,12 @@ export type WorkspacePageName =
 	| 'contributors'
 	| 'people'
 	| 'nation-teams'
+	| 'nation-pages'
 	| 'access'
 	| 'address-book'
 	| 'changes'
+	| 'nonprofit'
+	| 'service-checks'
 	| 'sponsors'
 	| 'activity';
 
@@ -46,9 +49,13 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'contributors', label: 'Contributors', link: '/workspace/contributors', needs: 'read-contributors' },
 	{ name: 'people', label: 'People', link: '/workspace/people', needs: 'manage-people' },
 	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', needs: 'manage-people' },
+	// What nations published on their own pages, for the project to read afterwards.
+	{ name: 'nation-pages', label: 'Nations’ changes', link: '/workspace/nation-pages', needs: 'review-nation-pages' },
 	{ name: 'access', label: 'Access', link: '/workspace/access', needs: 'manage-people' },
 	{ name: 'address-book', label: 'Address book', link: '/workspace/address-book', needs: 'manage-address-book' },
 	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', needs: 'hide-changes' },
+	{ name: 'nonprofit', label: 'Nonprofit', link: '/workspace/nonprofit', needs: 'manage-nonprofit' },
+	{ name: 'service-checks', label: 'Service checks', link: '/workspace/service-checks', needs: 'check-services' },
 	{ name: 'sponsors', label: 'Sponsors', link: '/workspace/sponsors', needs: 'manage-sponsors' },
 	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', needs: 'manage-people' }
 ];

@@ -244,76 +244,53 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Revised Constitution and Bylaws
-  quote: REVISED CONSTITUTION AND BYLAWS
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: Tribe's constitution
+  quote: The Choctaw Tribal government operates under the auspices of the Tribe’s constitution.
+  source: mississippi-band-of-choctaw-indians-website-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body
-  value: Tribal Council
-  quote: Indians is vested in the tribal council and shall be exercised in
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: Choctaw Tribal Council
+  quote: The Choctaw Tribal Council is responsible for passing all the laws and regulations on the Reservation.
+  source: mississippi-band-of-choctaw-indians-website-about-us-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article VIII, Section 1
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
-  value: 16 members, seats by community population (3, 3, 3, 2, 2, 2, 1)
-  quote: The tribal council shall consist of elected representatives
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: 17 members
+  quote: The legislative branch is made up of a 17-member Choctaw Tribal Council.
+  source: mississippi-band-of-choctaw-indians-website-about-us-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article IV, Section 2
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-selection
-  value: Elected from seven Choctaw communities
-  quote: The tribal council shall consist of elected representatives
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: Elected from eight communities
+  quote: Council members are elected on staggered four-year terms from the eight Choctaw communities.
+  source: mississippi-band-of-choctaw-indians-website-about-us-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article IV, Section 2
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
-  value: 4 years
-  quote: be four (4) years and until their successors are duly elected and seated,
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: 4 years, staggered
+  quote: Council members are elected on staggered four-year terms from the eight Choctaw communities.
+  source: mississippi-band-of-choctaw-indians-website-about-us-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article V, Section 6
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Tribal Chief
-  quote: Sec. 1. The tribal chief of the Mississippi Band of Choctaw Indians
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  quote: The Executive Branch is headed up by the Tribal Chief, whose primary role is chief executive of the Tribe
+  source: mississippi-band-of-choctaw-indians-website-about-us-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article IX, Section 1
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -323,41 +300,29 @@ governance:
   locator: Mississippi Band of Choctaw Indians
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 - aspect: head-of-government-selection
-  value: Elected at large by the Choctaw people
-  quote: Sec. 3. The tribal chief shall be elected by the Choctaw people
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: Elected
+  quote: The constitutional revision of 1975 authorized the election of a democratically elected Tribal Chief every four years with no term limits.
+  source: mississippi-band-of-choctaw-indians-website-about-us-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article IV, Section 3
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government-term
-  value: 4 years
-  quote: Sec. 9. The term of office for the tribal chief shall be four
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: 4 years, no term limits
+  quote: The constitutional revision of 1975 authorized the election of a democratically elected Tribal Chief every four years with no term limits.
+  source: mississippi-band-of-choctaw-indians-website-about-us-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article V, Section 9
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: other-officers
-  value: Vice-Chief, Secretary-Treasurer
-  quote: a vice-chief and a secretary-treasurer with such powers and duties as
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: Vice-Chief, Secretary/Treasurer, Committee Systems Chair
+  quote: The Council elects a Vice-Chief, Secretary/Treasurer and Committee Systems Chair that serve two-year terms.
+  source: mississippi-band-of-choctaw-indians-website-about-us-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article V, Section 10
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: elections
   value: Every odd-numbered year in June
   quote: elections shall be held in June of odd-numbered years.
@@ -395,29 +360,21 @@ governance:
     version: 1975-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: branches
-  value: Legislative (tribal council) and executive (tribal chief)
-  quote: as head of the executive branch of the tribal government.
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: Executive and Legislative branches, Tribal Court system
+  quote: The Choctaw Tribal Government consists of two branches and a Tribal Court system.
+  source: mississippi-band-of-choctaw-indians-website-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article IX, Section 1(a)
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: judiciary
-  value: Tribal court
-  quote: establishing a tribal court; and defining the powers and
-  source: constitution-mississippi-band-of-choctaw-indians-1975-text
-  confidence: medium
+  value: Five lower courts and a supreme court
+  quote: The legislatively-established Judicial system is comprised of five lower courts and a supreme court.
+  source: mississippi-band-of-choctaw-indians-website-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1975-03-28'
-  locator: Article VIII, Section 1(m)
-  document_version:
-    document: mississippi-band-of-choctaw-indians-constitution
-    version: 1975-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: amendment
   value: Majority vote at Secretary-called election (40% turnout), then Secretary approval
   quote: the qualified voters of the tribe voting at an election called for that
@@ -891,6 +848,79 @@ jurisdiction:
   verification: read-in-full
   locator: 437 U.S. at 653
   note: 'Narrow: John concerns a Major Crimes Act offense (assault with intent to kill) on Choctaw trust land. "Not assumed" for broader civil or criminal matters rests on not finding any grant; the research did not find a Mississippi statute assuming jurisdiction. Quote begins mid-sentence in the opinion.'
+nearby_state_courts:
+- state: MS
+  county: Neshoba County
+  court: Circuit Court for Neshoba County
+  link: https://courts.ms.gov/trialcourts/circuitcourt/circuitcourt.php
+  source: state-trial-court-directory-ms
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Neshoba County holds 59% of the land of Mississippi Choctaw Reservation (Census GEOID 2300), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MS
+  county: Newton County
+  court: Circuit Court for Newton County
+  link: https://courts.ms.gov/trialcourts/circuitcourt/circuitcourt.php
+  source: state-trial-court-directory-ms
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Newton County holds 12% of the land of Mississippi Choctaw Reservation (Census GEOID 2300), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MS
+  county: Leake County
+  court: Circuit Court for Leake County
+  link: https://courts.ms.gov/trialcourts/circuitcourt/circuitcourt.php
+  source: state-trial-court-directory-ms
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Leake County holds 10% of the land of Mississippi Choctaw Reservation (Census GEOID 2300), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MS
+  county: Kemper County
+  court: Circuit Court for Kemper County
+  link: https://courts.ms.gov/trialcourts/circuitcourt/circuitcourt.php
+  source: state-trial-court-directory-ms
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Kemper County holds 10% of the land of Mississippi Choctaw Reservation (Census GEOID 2300), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MS
+  county: Carroll County
+  court: Circuit Court for Carroll County
+  link: https://courts.ms.gov/trialcourts/circuitcourt/circuitcourt.php
+  source: state-trial-court-directory-ms
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Carroll County holds 3% of the land of Mississippi Choctaw Reservation (Census GEOID 2300), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MS
+  county: Jones County
+  court: Circuit Court for Jones County
+  link: https://courts.ms.gov/trialcourts/circuitcourt/circuitcourt.php
+  source: state-trial-court-directory-ms
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Jones County holds 2% of the land of Mississippi Choctaw Reservation (Census GEOID 2300), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MS
+  county: Winston County
+  court: Circuit Court for Winston County
+  link: https://courts.ms.gov/trialcourts/circuitcourt/circuitcourt.php
+  source: state-trial-court-directory-ms
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Winston County holds 1% of the land of Mississippi Choctaw Reservation (Census GEOID 2300), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MS
+  county: Attala County
+  court: Circuit Court for Attala County
+  link: https://courts.ms.gov/trialcourts/circuitcourt/circuitcourt.php
+  source: state-trial-court-directory-ms
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Attala County holds 1% of the land of Mississippi Choctaw Reservation (Census GEOID 2300), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Choctaw, 1786
   signed: '1786-01-03'

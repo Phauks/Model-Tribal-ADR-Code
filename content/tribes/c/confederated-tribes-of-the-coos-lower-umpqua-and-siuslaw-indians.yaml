@@ -809,6 +809,34 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+nearby_state_courts:
+- state: OR
+  county: Lane County
+  court: Circuit Court for Lane County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Lane County holds 65% of the land of Coos, Lower Umpqua, and Siuslaw Reservation (Census GEOID 0770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Coos County
+  court: Circuit Court for Coos County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Coos County holds 27% of the land of Coos, Lower Umpqua, and Siuslaw Reservation (Census GEOID 0770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Curry County
+  court: Circuit Court for Curry County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Curry County holds 8% of the land of Coos, Lower Umpqua, and Siuslaw Reservation (Census GEOID 0770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

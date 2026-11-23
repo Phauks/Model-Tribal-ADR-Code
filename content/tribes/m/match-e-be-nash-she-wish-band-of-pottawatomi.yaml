@@ -232,6 +232,38 @@ indian_health_service:
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Match-e-be-nash-she-wish Band of Pottawatomi Indians of Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians of Michigan (Gun Lake Tribe) (2018)); the list does not say which service unit or programs the compact covers.'
 governance:
+- aspect: governing-body
+  value: Gun Lake Tribal Council
+  quote: The Gun Lake Tribal Council is the elected governing body that is comprised of seven Gun Lake Tribal Members.
+  source: match-e-be-nash-she-wish-band-of-pottawatomi-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Gun Lake Tribal Council is the elected governing body that is comprised of seven Gun Lake Tribal Members.
+  source: match-e-be-nash-she-wish-band-of-pottawatomi-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by voting membership
+  quote: Each Tribal Council Member is elected by voting Membership to serve a four-year term.
+  source: match-e-be-nash-she-wish-band-of-pottawatomi-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Each Tribal Council Member is elected by voting Membership to serve a four-year term. These terms are staggered based on the voting district represented.
+  source: match-e-be-nash-she-wish-band-of-pottawatomi-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -240,6 +272,14 @@ governance:
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians of Michigan)
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Tribal Court and Supreme Court
+  quote: The judicial power of the Match-E-Be-Nash-She-Wish Band of Pottawatomi (Gun Lake Tribe) is vested in the Gun Lake Tribal Judiciary, which is composed of the Gun Lake Tribal Court and the Gun Lake Supreme Court.
+  source: gun-lake-tribe-match-e-be-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Match-e-be-nash-she-wish Band of Pottawatomi Indians of Michigan
@@ -494,6 +534,16 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
   note: 'The source reads: “Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page. Name in the list differs slightly from the roster official name.'
+nearby_state_courts:
+- state: MI
+  county: Allegan County
+  court: Circuit Court for Allegan County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Allegan County holds 100% of the land of Match-e-be-nash-she-wish Band of Pottawatomi Reservation (Census GEOID 2150), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1789
   signed: '1789-01-09'

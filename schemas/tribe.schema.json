@@ -686,6 +686,22 @@
         "unevaluatedProperties": false
       }
     },
+    "nearby_state_courts": {
+      "type": "array",
+      "description": "The state trial court of general jurisdiction for each county (or parish, borough or census area) that the nation's Census land or statistical area lies in, so a reader can see which state court sits alongside the tribal court. One fact per county; the county comes from the Census Bureau's area-to-county relationship file, named in the note.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["state", "county", "court"],
+        "properties": {
+          "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "county": { "type": "string" },
+          "court": { "type": "string", "description": "The state's trial court of general jurisdiction, named for the county." },
+          "link": { "type": "string", "format": "uri", "description": "The state judiciary's directory of those courts." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "treaties": {
       "type": "array",
       "description": "Ratified United States treaties signed by the nation or by the tribes and bands it descends from, each linked to its text in Kappler's Indian Affairs: Laws and Treaties. A link to a historic signatory is a matched fact with its own confidence.",

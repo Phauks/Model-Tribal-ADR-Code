@@ -67,6 +67,39 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Save the date to vote for the Missisquoi Abenaki Tribal Council and Maquam Bay Board open positions.
+  source: missisquoi-st-francis-sokoki-band-website-tribal-council-and-maquam-bay-board-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text is among the pages; the constitution is offered only on request, so facts come from the election and chiefs pages.'
+- aspect: governing-body-selection
+  value: Elected by vote
+  quote: Save the date to vote for the Missisquoi Abenaki Tribal Council and Maquam Bay Board open positions.
+  source: missisquoi-st-francis-sokoki-band-website-tribal-council-and-maquam-bay-board-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text is among the pages; the constitution is offered only on request, so facts come from the election and chiefs pages.'
+- aspect: head-of-government
+  value: Chief
+  quote: These are the past and present chiefs who have guided the Abenaki Nation of Missisquoi throughout the years.
+  source: missisquoi-st-francis-sokoki-band-website-abenaki-chiefs
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text is among the pages; the constitution is offered only on request, so facts come from the election and chiefs pages.'
+- aspect: voting-age
+  value: '15'
+  quote: All current registered card members (ages 15+) are encouraged to vote.
+  source: missisquoi-st-francis-sokoki-band-website-tribal-council-and-maquam-bay-board-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text is among the pages; the constitution is offered only on request, so facts come from the election and chiefs pages.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

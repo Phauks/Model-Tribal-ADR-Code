@@ -62,6 +62,31 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-23'
   note: General office address, shown as text on the page. Found by scripts/tribes/find_emails_deep.mjs.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: All PCT members wishing to run for Tribal Council must be 30 years or older.
+  source: piscataway-conoy-tribe-website-piscataway-conoy-elections-2026-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by tribal members
+  quote: A full, transparent, and inclusive elections of all Piscataway Conoy Tribal (PCT) members.
+  source: piscataway-conoy-tribe-website-piscataway-conoy-elections-2026-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: All PCT wishing to vote must be 18 years and older.
+  source: piscataway-conoy-tribe-website-piscataway-conoy-elections-2026-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

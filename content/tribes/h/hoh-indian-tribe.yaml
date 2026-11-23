@@ -186,6 +186,30 @@ indian_health_service:
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Hoh Indian Tribe".
 governance:
+- aspect: governing-body
+  value: Business Committee
+  quote: The Hoh Tribal Business Committee is the governing body of the Tribal Administration, elected by the General Council.
+  source: hoh-indian-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Hoh Tribe Constitution is listed by title only; its text is not on the saved pages.'
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: The Hoh Tribal Business Committee is the governing body of the Tribal Administration, elected by the General Council.
+  source: hoh-indian-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Hoh Tribe Constitution is listed by title only; its text is not on the saved pages.'
+- aspect: head-of-government
+  value: Chairwoman
+  quote: Chairwoman
+  source: hoh-indian-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Hoh Tribe Constitution is listed by title only; its text is not on the saved pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -194,6 +218,14 @@ governance:
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice Chairwoman, Secretary, Treasurer
+  quote: Vice Chairwoman
+  source: hoh-indian-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Hoh Tribe Constitution is listed by title only; its text is not on the saved pages.'
 governing_documents:
 - kind: law-code
   title: Hoh Indian Tribe
@@ -373,6 +405,16 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+nearby_state_courts:
+- state: WA
+  county: Jefferson County
+  court: Superior Court for Jefferson County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Jefferson County holds 100% of the land of Hoh Indian Reservation (Census GEOID 1460), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Hoh River Reserve, Washington
   method: executive-order

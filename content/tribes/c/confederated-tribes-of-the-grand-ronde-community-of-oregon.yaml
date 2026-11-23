@@ -223,29 +223,21 @@ governance:
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
-  value: Grand Ronde business committee
-  quote: Grand Ronde business committee.
-  source: university-of-oklahoma-indian-reorganization-act-rondcons
-  confidence: medium
+  value: Tribal Council
+  quote: The Grand Ronde Tribal Council, established by the Tribal Constitution, serves as the Tribe's primary governing and legislative authority.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1936-03-13'
-  locator: Article IV, Section 1
-  document_version:
-    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
-  value: 5 members
-  quote: shall consist of a committee of five members
-  source: university-of-oklahoma-indian-reorganization-act-rondcons
-  confidence: medium
+  value: 9 members
+  quote: The Council is composed of nine members, each serving staggered three-year terms.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1936-03-13'
-  locator: Article IV, Section 1
-  document_version:
-    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-selection
   value: Elected by secret ballot
   quote: shall be by secret ballot and they shall be held in accordance with rules
@@ -260,28 +252,20 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body-term
   value: 3 years, staggered
-  quote: shall be 3 years, except as provided in section 1 (a) of article V.
-  source: university-of-oklahoma-indian-reorganization-act-rondcons
-  confidence: medium
+  quote: The Council is composed of nine members, each serving staggered three-year terms.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1936-03-13'
-  locator: Article IV, Section 1
-  document_version:
-    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: general-council
-  value: General council meets annually
-  quote: of the general council of the tribes annually, this meeting to be held
-  source: university-of-oklahoma-indian-reorganization-act-rondcons
-  confidence: medium
+  value: All members
+  quote: General Council Meetings are open to all members.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1936-03-13'
-  locator: Bylaws, Article VI, Section 2
-  document_version:
-    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairman
   quote: The chairman of the business committee shall
@@ -326,6 +310,14 @@ governance:
     document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually in September
+  quote: Elections for Tribal Council are held annually in September.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council-tribal-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: voting-age
   value: '21'
   quote: 21 years of age or over and who have maintained legal residence within
@@ -339,17 +331,13 @@ governance:
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: judiciary
-  value: Reservation court established by ordinance
-  quote: by establishing a reservation court and defining
-  source: university-of-oklahoma-indian-reorganization-act-rondcons
-  confidence: medium
+  value: Tribal Court
+  quote: The Tribal Court shall be empowered to exercise all judicial authority of the Tribe.
+  source: grand-ronde-tribal-court-page
+  confidence: high
   verification: read-in-full
-  as_of: '1936-03-13'
-  locator: Article VII, Section 1(l)
-  document_version:
-    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: amendment
   value: Majority of voters in election called by Secretary, on 4 committee votes
   quote: of the qualified voters of the tribes voting thereon; and if at least 30
@@ -398,6 +386,14 @@ governance:
     document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Advisory committees and boards
+  quote: Tribal Committees and Boards act in an advisory capacity to the Tribal Council in recommending policies and procedures, identifying needs and developing priorities.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council-committees
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Confederated Tribes of the Grand Ronde Community of Oregon - Ordinances
@@ -874,6 +870,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.M, Oregon
   note: 'The source reads: “Confederated Tribes of the Grande Ronde Community of Oregon executed in”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: OR
+  county: Yamhill County
+  court: Circuit Court for Yamhill County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Yamhill County holds 90% of the land of Grand Ronde Community (Census GEOID 1365), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Polk County
+  court: Circuit Court for Polk County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Polk County holds 9% of the land of Grand Ronde Community (Census GEOID 1365), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Rogue River, 1853
   signed: '1853-09-10'

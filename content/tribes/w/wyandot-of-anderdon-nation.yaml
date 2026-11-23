@@ -78,6 +78,55 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: form
+  value: 501(c)3 corporation under By-laws
+  quote: The Wyandot of Anderdon Nation operates as a 501(c)3 corporation according to the Nation’s By-laws and the State of Michigan and is not a federally recognized tribe at this time.
+  source: wyandot-of-anderdon-nation-website-wp-gov
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Parts of the site are restricted to citizens; the by-laws it refers to are not among the saved pages.'
+- aspect: governing-body
+  value: Council
+  quote: The Wyandot of Anderdon Nation is governed by an elected Council made up of Grand Chief, Second Chief and up to 16 additional Family Representatives.
+  source: wyandot-of-anderdon-nation-website-wp-gov
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Parts of the site are restricted to citizens; the by-laws it refers to are not among the saved pages.'
+- aspect: governing-body-size
+  value: Grand Chief, Second Chief and up to 16 Family Representatives
+  quote: The Wyandot of Anderdon Nation is governed by an elected Council made up of Grand Chief, Second Chief and up to 16 additional Family Representatives.
+  source: wyandot-of-anderdon-nation-website-wp-gov
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Parts of the site are restricted to citizens; the by-laws it refers to are not among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Wyandot of Anderdon Nation is governed by an elected Council made up of Grand Chief, Second Chief and up to 16 additional Family Representatives.
+  source: wyandot-of-anderdon-nation-website-wp-gov
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Parts of the site are restricted to citizens; the by-laws it refers to are not among the saved pages.'
+- aspect: head-of-government
+  value: Grand Chief
+  quote: The Wyandot of Anderdon Nation is governed by an elected Council made up of Grand Chief, Second Chief and up to 16 additional Family Representatives.
+  source: wyandot-of-anderdon-nation-website-wp-gov
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Parts of the site are restricted to citizens; the by-laws it refers to are not among the saved pages.'
+- aspect: other-officers
+  value: Second Chief, Family Representatives
+  quote: The Wyandot of Anderdon Nation is governed by an elected Council made up of Grand Chief, Second Chief and up to 16 additional Family Representatives.
+  source: wyandot-of-anderdon-nation-website-wp-gov
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Parts of the site are restricted to citizens; the by-laws it refers to are not among the saved pages.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

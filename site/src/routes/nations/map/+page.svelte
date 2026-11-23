@@ -166,37 +166,27 @@
 	);
 
 	/** The Public Law 280 and Violence Against Women Act tables list nations; each name goes to the nation's Jurisdiction section, which has the facts and their sources. */
-	function nationColumns(view: ShadedMapView): TableColumn[] {
+	function nationColumns(body: ShadedBody): TableColumn[] {
 		const first: TableColumn[] = [
 			{ key: 'nation', header: 'Nation', isRowHeader: true, sortable: true },
 			{ key: 'states', header: 'States', sortable: true, filterable: true }
 		];
-		// The courts table says which kinds each nation has, since the map can shade only one.
-		if (view === 'courts-and-peacemaking') {
-			return [
-				...first,
-				{ key: 'tribalCourt', header: 'Tribal court', sortable: true, filterable: true },
-				{ key: 'peacemaking', header: 'Peacemaking or traditional forum', sortable: true, filterable: true },
-				{ key: 'wellnessCourt', header: 'Wellness court', sortable: true, filterable: true },
-				{ key: 'federalCourt', header: 'Court of Indian Offenses', sortable: true, filterable: true }
-			];
+		// Some tables say which kinds each nation has, one Yes column each, since the map can shade only one.
+		if (body.kindColumns.length > 0) {
+			return [...first, ...body.kindColumns.map((column) => ({ key: `kind-${column.key}`, header: column.header, sortable: true, filterable: true }))];
 		}
-		return [...first, { key: 'category', header: view === 'public-law-280' ? 'Summary' : 'Status', sortable: true, filterable: true }];
+		return [...first, { key: 'category', header: body.view === 'public-law-280' ? 'Summary' : 'Status', sortable: true, filterable: true }];
 	}
-
-	const yes = (value: boolean | undefined) => ({ text: value ? 'Yes' : '' });
 
 	function nationRows(body: ShadedBody): TableRow[] {
 		return body.nationRows.map((row) => ({
 			key: row.anchor,
 			anchor: row.anchor,
 			cells: {
-				nation: { text: row.name, href: `/nations/${row.id}#${body.view === 'courts-and-peacemaking' ? 'courts-heading' : 'jurisdiction-heading'}` },
+				nation: { text: row.name, href: `/nations/${row.id}#${body.section}` },
 				states: { text: row.states.join(', '), values: row.states },
 				category: { text: row.category },
-				...('tribalCourt' in row
-					? { tribalCourt: yes(row.tribalCourt), peacemaking: yes(row.peacemaking), wellnessCourt: yes(row.wellnessCourt), federalCourt: yes(row.federalCourt) }
-					: {})
+				...Object.fromEntries(body.kindColumns.map((column) => [`kind-${column.key}`, { text: (row.kinds as Record<string, boolean>)[column.key] ? 'Yes' : '' }]))
 			}
 		}));
 	}
@@ -436,8 +426,12 @@
 							? 'Nations with a Public Law 280 fact recorded, and a summary of what the facts say'
 							: view.key === 'courts-and-peacemaking'
 								? 'Nations with a court or forum recorded, and which kinds'
-								: 'Nations recorded as exercising special Tribal criminal jurisdiction, or holding a grant to prepare for it'}
-						columns={nationColumns(view.key)}
+								: view.key === 'other-jurisdiction-laws'
+									? 'Nations under another federal law on jurisdiction, and which'
+									: view.key === 'agreements-with-states'
+										? 'Nations with an agreement recorded, and which kinds'
+										: 'Nations recorded as exercising special Tribal criminal jurisdiction, or holding a grant to prepare for it'}
+						columns={nationColumns(body)}
 						rows={nationRows(body)}
 						defaultSort={{ key: 'nation', direction: 'ascending' }}
 					/>
@@ -473,6 +467,10 @@
 {#snippet shadedNote(key: ShadedMapView)}
 	{#if key === 'courts-and-peacemaking'}
 		Each nation’s land areas are shaded by the first of these it has: peacemaking or a traditional forum, a healing to wellness court, a tribal court, or only a Court of Indian Offenses, which the Bureau of Indian Affairs runs. The table shows every kind each nation has. A nation missing here may still have a court: the record is only as complete as its sources. Each nation’s page lists its courts and forums, with their sources. Select an area to go to its nation’s row.
+	{:else if key === 'other-jurisdiction-laws'}
+		Each nation’s land areas are shaded by the first of these that applies to it: a federal law other than Public Law 280 that gives a state criminal or civil jurisdiction, such as the Kansas Act or a land claims settlement act; jurisdiction over child custody cases reassumed under the Indian Child Welfare Act (25 U.S.C. § 1918); or longer sentences under the Tribal Law and Order Act (25 U.S.C. § 1302(b)). The table shows every one each nation has. Each nation’s page has the facts and their sources. Select an area to go to its nation’s row.
+	{:else if key === 'agreements-with-states'}
+		Each nation’s land areas are shaded by the first kind of agreement it has with a state, county, city or federal agency: cross-deputization or law enforcement, child welfare, tax, or another kind. Most sources do not say whether an agreement is still in force; each nation’s page gives the agreement, the other party, its date and its sources. Select an area to go to its nation’s row.
 	{:else if key === 'public-law-280'}
 		Each nation’s land areas are shaded by one summary of its Public Law 280 facts. The summary is only a guide: what the state may do differs by subject, by state and over time, and some nations are in more than one state. Each nation’s page has the facts, the state each applies in and their sources. Nations with no land area on the map are still in the table. Select an area to go to its nation’s row.
 	{:else if key === 'violence-against-women-act'}

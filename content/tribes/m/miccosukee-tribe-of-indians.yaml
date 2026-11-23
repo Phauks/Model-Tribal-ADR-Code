@@ -453,6 +453,43 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: FL
+  county: Broward County
+  court: Circuit Court for Broward County
+  link: https://www.flcourts.gov/Florida-Courts/Trial-Courts-Circuit
+  source: state-trial-court-directory-fl
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Broward County holds 93% of the land of Miccosukee Reservation (Census GEOID 2240), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: FL
+  county: Hendry County
+  court: Circuit Court for Hendry County
+  link: https://www.flcourts.gov/Florida-Courts/Trial-Courts-Circuit
+  source: state-trial-court-directory-fl
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Hendry County holds 3% of the land of Miccosukee Reservation (Census GEOID 2240), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: FL
+  county: Highlands County
+  court: Circuit Court for Highlands County
+  link: https://www.flcourts.gov/Florida-Courts/Trial-Courts-Circuit
+  source: state-trial-court-directory-fl
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Highlands County holds 3% of the land of Miccosukee Reservation (Census GEOID 2240), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: FL
+  county: Miami-Dade County
+  court: Circuit Court for Miami-Dade County
+  link: https://www.flcourts.gov/Florida-Courts/Trial-Courts-Circuit
+  source: state-trial-court-directory-fl
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Miami-Dade County holds 1% of the land of Miccosukee Reservation (Census GEOID 2240), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

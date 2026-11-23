@@ -176,6 +176,46 @@ indian_health_service:
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Lower Elwha Klallam Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Lower Elwha Klallam Tribe (2002)); the list does not say which service unit or programs the compact covers.'
 governance:
+- aspect: governing-body
+  value: Tribal Council or Business Committee
+  quote: The Lower Elwha Tribal Council, or Business Committee, which consists of five elected officials serving staggering three-year-terms, governs the Tribe.
+  source: lower-elwha-tribal-community-website-departments-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Lower Elwha Tribal Council, or Business Committee, which consists of five elected officials serving staggering three-year-terms, governs the Tribe.
+  source: lower-elwha-tribal-community-website-departments-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Lower Elwha Tribal Council, or Business Committee, which consists of five elected officials serving staggering three-year-terms, governs the Tribe.
+  source: lower-elwha-tribal-community-website-departments-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The Lower Elwha Tribal Council, or Business Committee, which consists of five elected officials serving staggering three-year-terms, governs the Tribe.
+  source: lower-elwha-tribal-community-website-departments-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: Eligible voting Tribal members
+  quote: The Community Council is comprised of the eligible voting Tribal members, who in act the laws for the governance of the land and the people under its jurisdiction.
+  source: lower-elwha-tribal-community-website-departments-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -184,6 +224,22 @@ governance:
   as_of: '2026-11-20'
   locator: Lower Elwha Tribal Community
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: election-authority
+  value: Election committee
+  quote: Return your voter registration forms to an election committee member in person, by email to
+  source: lower-elwha-tribal-community-website-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Trial court and appellate court
+  quote: Section 1.4 provides for two divisions, a trial court and an appellate court, with subdivisions of the trial court to be established upon assumption of jurisdiction over additional kinds of cases.
+  source: lower-elwha-klallam-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -359,6 +415,16 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Lower Elwha Klallam Tribe". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+nearby_state_courts:
+- state: WA
+  county: Clallam County
+  court: Superior Court for Clallam County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Clallam County holds 100% of the land of Lower Elwha Reservation (Census GEOID 2040), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the S'klallam, 1855
   signed: '1855-01-26'

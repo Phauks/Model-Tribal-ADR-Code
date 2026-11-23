@@ -73,6 +73,15 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Our governance structure consists of a Tribal Council and a Non-Profit Organization.
+  source: esselen-coastanoan-tribe-of-monterey-county-website-copy-of-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is the tribe''s own, but it also describes a non-profit organization and states no constitution or government document.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

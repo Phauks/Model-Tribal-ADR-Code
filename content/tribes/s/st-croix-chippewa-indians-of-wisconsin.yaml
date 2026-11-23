@@ -213,53 +213,45 @@ governance:
     version: 1942-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
 - aspect: governing-body
-  value: St. Croix Council
-  quote: The governing body of this organization shall be the St.
-  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
-  confidence: medium
+  value: Tribal Council
+  quote: The St. Croix Tribal Council serves as the governing body of our Nation, entrusted with protecting sovereignty, upholding our constitution, and ensuring the well-being of every Tribal member.
+  source: st-croix-chippewa-indians-of-wisconsin-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1942-11-12'
-  locator: Article IV, Section 1
-  document_version:
-    document: st-croix-chippewa-indians-of-wisconsin-constitution
-    version: 1942-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved Constitution page holds only an introduction, not the constitution text; facts come from the government web pages.'
 - aspect: governing-body-size
   value: 5 members
-  quote: Croix Council, which shall be composed of five members elected
-  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
-  confidence: medium
+  quote: The five-member team is elected by popular vote to serve four-year, staggered terms.
+  source: st-croix-chippewa-indians-of-wisconsin-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1942-11-12'
-  locator: Article IV, Section 1
-  document_version:
-    document: st-croix-chippewa-indians-of-wisconsin-constitution
-    version: 1942-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved Constitution page holds only an introduction, not the constitution text; facts come from the government web pages.'
 - aspect: governing-body-selection
   value: Elected by popular vote
-  quote: biennially by popular vote.
-  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
-  confidence: medium
+  quote: The five-member team is elected by popular vote to serve four-year, staggered terms.
+  source: st-croix-chippewa-indians-of-wisconsin-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1942-11-12'
-  locator: Article IV, Section 1
-  document_version:
-    document: st-croix-chippewa-indians-of-wisconsin-constitution
-    version: 1942-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved Constitution page holds only an introduction, not the constitution text; facts come from the government web pages.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: The five-member team is elected by popular vote to serve four-year, staggered terms.
+  source: st-croix-chippewa-indians-of-wisconsin-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved Constitution page holds only an introduction, not the constitution text; facts come from the government web pages.'
 - aspect: head-of-government
-  value: President
-  quote: Theofficers of the Council shall consist of a president,
-  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
-  confidence: medium
+  value: Chairman
+  quote: Chairman, Tribal Council
+  source: st-croix-chippewa-indians-of-wisconsin-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1942-11-12'
-  locator: Article IV, Section 3
-  document_version:
-    document: st-croix-chippewa-indians-of-wisconsin-constitution
-    version: 1942-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved Constitution page holds only an introduction, not the constitution text; facts come from the government web pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -316,18 +308,22 @@ governance:
     document: st-croix-chippewa-indians-of-wisconsin-constitution
     version: 1942-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
-- aspect: amendment
-  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
-  quote: This constitutionand by-laws may be amended by a majority vote
-  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
-  confidence: medium
+- aspect: judiciary
+  value: Court system
+  quote: We have a dedicated court system to address legal matters within our jurisdiction.
+  source: st-croix-chippewa-indians-of-wisconsin-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1942-11-12'
-  locator: Article VII (Amendments)
-  document_version:
-    document: st-croix-chippewa-indians-of-wisconsin-constitution
-    version: 1942-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved Constitution page holds only an introduction, not the constitution text; facts come from the government web pages.'
+- aspect: amendment
+  value: Secretarial election
+  quote: The proposed amendments to the Constitution and By-Laws of the St. Croix Chippewa Indians of Wisconsin passed on November 8th, 2023, with 71 for and 40 against in an election where at least 30% of the 169 registered voters voted.
+  source: st-croix-chippewa-indians-of-wisconsin-website-election-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved Constitution page holds only an introduction, not the constitution text; facts come from the government web pages.'
 - aspect: secretarial-approval
   value: Required for amendments
   quote: effective until it shall have been approved by the Secretary of the
@@ -568,6 +564,34 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: WI
+  county: Burnett County
+  court: Circuit Court for Burnett County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Burnett County holds 55% of the land of St. Croix Reservation (Census GEOID 3305), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WI
+  county: Polk County
+  court: Circuit Court for Polk County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Polk County holds 39% of the land of St. Croix Reservation (Census GEOID 3305), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WI
+  county: Barron County
+  court: Circuit Court for Barron County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Barron County holds 6% of the land of St. Croix Reservation (Census GEOID 3305), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1826
   signed: '1826-08-05'

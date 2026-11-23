@@ -112,6 +112,46 @@ indian_health_service:
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Grand Portage Band".
 governance:
+- aspect: governing-body
+  value: Reservation Tribal Council
+  quote: The Grand Portage Reservation Tribal Government’s governing body is the Reservation Tribal Council.
+  source: grandportageband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Council consists of five elected members including three at-large Committee persons, a Secretary/Treasurer, and a Chairperson elected for staggered four-year terms.
+  source: grandportageband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Council consists of five elected members including three at-large Committee persons, a Secretary/Treasurer, and a Chairperson elected for staggered four-year terms.
+  source: grandportageband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: The Council consists of five elected members including three at-large Committee persons, a Secretary/Treasurer, and a Chairperson elected for staggered four-year terms.
+  source: grandportageband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Council consists of five elected members including three at-large Committee persons, a Secretary/Treasurer, and a Chairperson elected for staggered four-year terms.
+  source: grandportageband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -120,6 +160,14 @@ governance:
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Secretary/Treasurer
+  quote: The Council consists of five elected members including three at-large Committee persons, a Secretary/Treasurer, and a Chairperson elected for staggered four-year terms.
+  source: grandportageband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Formerly at Minnesota Indian Bar Association (MAIBA)'s website . Judicial code
@@ -215,6 +263,16 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Grand Portage Grand Portage”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Grand Portage", matched to the roster by name and state.'
+nearby_state_courts:
+- state: MN
+  county: Cook County
+  court: District Court for Cook County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Cook County holds 100% of the land of Grand Portage Reservation (Census GEOID 1355), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1842
   signed: '1842-10-04'
