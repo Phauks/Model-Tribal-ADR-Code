@@ -179,6 +179,147 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Tanana
+governance:
+- aspect: form
+  value: Amended Constitution by authority of the Act of June 18, 1934
+  quote: authority of the Act of June 18, 1934, as amended by the Acts of June 15,
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Preamble
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: governing-body
+  value: Tanana Tribal Council
+  quote: shall be known as the Tanana Tribal Cornell.
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: governing-body-size
+  value: 7 members (Chairman and 6 others)
+  quote: The seven Council members shall be elected
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: governing-body-selection
+  value: Elected directly by the voters
+  quote: directly by the voters.
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: members or four (4) Council members, as appropriate, for two-year terms
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 3
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: head-of-government
+  value: Chairman
+  quote: shall consist of a Chairman and six (6) other members
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Tanana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its members
+  quote: Chairman, a Vice Chairman and a Secretary from its members.
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: other-officers
+  value: Vice Chairman, Secretary
+  quote: Chairman, a Vice Chairman and a Secretary from its members.
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: voting-age
+  value: '18'
+  quote: years of age or older, shall have the right to vote in all tribal elections,
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article VI, Section 3
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: judiciary
+  value: Council power to establish appropriate tribal courts
+  quote: administration of justice, including through the establishment of
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article VII, Section 1
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
+- aspect: amendment
+  value: Majority vote of the Tribe
+  quote: ttis Amended Constitution may be amended by a majority vote of 1
+  source: constitution-native-village-of-tanana-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-06-13'
+  locator: Article VIII
+  document_version:
+    document: native-village-of-tanana-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Amended 1989 constitution; the scan reads the council name as ''Tribal Cornell'', and recall, removal and amendment-approval passages are largely unreadable.'
 governing_documents:
 - kind: constitution
   title: Constitution

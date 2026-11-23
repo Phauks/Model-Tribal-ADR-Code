@@ -180,6 +180,267 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
+governance:
+- aspect: form
+  value: Constitution adopted as an exercise of sovereign power
+  quote: as an exercise of our sovereign power, in order to organize for our co m mon good,
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Preamble
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Middletown Rancheria shall be the Tribal Council.
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article IV
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: General Council
+  quote: All enrolled members of the Middletown Rancheria who are eighteen (18) years of age or
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article V, Section 1
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Tribal Council shall consist of five members elected by a vote of the General
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article IV, Section 2
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by vote of the General Council
+  quote: The Tribal Council shall consist of five members elected by a vote of the General
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article IV, Section 2
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All enrolled members 18 years or older
+  quote: All enrolled members of the Middletown Rancheria who are eighteen (18) years of age or
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article V, Section 1
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  quote: elect members to serve as Chairperson, Vice-Chairperson, Secretary, Treasurer and Tribal
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article IV, Section 2
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Middletown Rancheria of Pomo Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the General Council
+  quote: elect members to serve as Chairperson, Vice-Chairperson, Secretary, Treasurer and Tribal
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article IV, Section 2
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer, Tribal Representative
+  quote: elect members to serve as Chairperson, Vice-Chairperson, Secretary, Treasurer and Tribal
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article IV, Section 2
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: First election within 120 days of adoption
+  quote: one- hundred- twenty (120) days after adoption of the Constitution, and may provide that there
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article VIII, Section 1
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: All enrolled members of the Middletown Rancheria who are eighteen (18) years of age or
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article V, Section 1
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election Board
+  quote: to be held by the Election Board.
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article V, Section 4
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: branches
+  value: Legislative and judicial
+  quote: The Tribal Judiciary shall be independent from the legislative functions of the tribal government.
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article VI, Section 3
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: separation-of-powers
+  value: Stated
+  quote: No person exercising legislative powers of the government shall exercise powers properly
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article VI, Section 3
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court and Court of Appeals
+  quote: the Tribal Court, a Court of Appeals and other specific courts as the Tribal Council may from
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article VI, Section 1
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Recruited from outside the Middletown community
+  quote: recruited from tribes, tribal courts or other entities outside the Middletown tribal community,
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article VI, Section 3
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Independent from legislative functions
+  quote: The Tribal Judiciary shall be independent from the legislative functions of the tribal government.
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article VI, Section 3
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: General Council may not reverse or influence Tribal Court actions
+  quote: Reverse, overturn or otherwise influence any judicial action of the Tribal Court;
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article V, Section 5(A)
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters, with 51% of eligible voters in favor
+  quote: This Constitution may be amended by a majority vote of the qualified voters of the
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article X
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by General Council under the Election ordinance
+  quote: C. Recall elected tribal officials pursuant to Article XII of the Election Procedures &
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article V, Section 1(C)
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Legislative Appeals Committee of three, elected by General Council
+  quote: The Legislative Appeals Committee shall consist of three members elected by the
+  source: constitution-middletown-rancheria-of-pomo-indians-of-california-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-01-08'
+  locator: Article V, Section 6
+  document_version:
+    document: middletown-rancheria-of-pomo-indians-of-california-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 gaming:
   compacts:
   - state: CA

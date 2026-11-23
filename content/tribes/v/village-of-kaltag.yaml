@@ -189,6 +189,15 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Village of Kaltag
+governance:
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Village of Kaltag
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

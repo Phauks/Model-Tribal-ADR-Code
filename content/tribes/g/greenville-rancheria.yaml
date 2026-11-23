@@ -161,6 +161,202 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Greenville Rancheria
+governance:
+- aspect: form
+  value: Adopted pursuant to the Indian Reorganization Act of June 18, 1934
+  quote: pursuant to the Indian Reorganization Act of June 18, 1934
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Preamble
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Greenville Rancheria shall, be the
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Tribal Council shall consist of a Chairperson, a Vice
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: all elected at-large from the tribal
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: each Tribal Council member shall serve for a term of four (4) years.
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall exercise the following powers as the chief
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article XI, Section 1
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Greenville Rancheria
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large
+  quote: all elected at-large from the tribal
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: each Tribal Council member shall serve for a term of four (4) years.
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: other-officers
+  value: Vice Chairperson, Secretary/Treasurer
+  quote: a Secretary /Treasurer and two (2) Members
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: elections
+  value: As designated by election ordinance
+  quote: Elections shall be held as designated by an election ordinance as
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article IX, Section 4
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled member eighteen (18) years of age or more shall be
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article IX, Section 2
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: judiciary
+  value: Tribal Council may establish courts
+  quote: To establish courts and administrative bodies, and to provide for
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1(n)
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: amendment
+  value: Majority vote in a Secretarial election
+  quote: This Constitution may be amended by a majority vote of the qualified voters of the Tribe voting
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article XV
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: become effective until approved by the Secretary of the Interior or his authorized representative.
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article XV
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters
+  quote: Upon receipt of a petition signed by at least thirty percent (30%) of the
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, Section 4
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: recall-and-removal
+  value: Expulsion by 3 Council votes for neglect or gross misconduct
+  quote: The Tribal Council may by a vote of three (3) expel any member for neglect of duty or gross
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article IX, Section 3
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+- aspect: other
+  value: Initiative and referendum on 30% voter petition
+  quote: The qualified voters of the Tribe reserve the power to independently
+  source: constitution-greenville-rancheria-undated-text-2
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, Section 2
+  document_version:
+    document: greenville-rancheria-constitution
+    version: undated-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
 governing_documents:
 - kind: law-code
   title: Election ordinance

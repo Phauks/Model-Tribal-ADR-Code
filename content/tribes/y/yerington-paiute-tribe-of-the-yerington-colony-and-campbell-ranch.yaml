@@ -178,6 +178,195 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Indian Reorganization Act
+  quote: Indian Reorganization Act, and to create governing units through
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Preamble
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Yerington Paiute Tribal Council
+  quote: shall consist of a council known as the Yerington Paiute Tribal Council.
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article III, Section 1
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 7 members
+  quote: shall be composed of seven
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article III, Section 2
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: councilmen elected by secret ballot.
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article III, Section 2
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years
+  quote: two years or until their successors are elected.
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article III, Section 4
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Council shall preside over
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its own members
+  quote: The Tribal Council so organized shall elect
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: a vice-chairman;
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years on the first Saturday in December
+  quote: elections shall be held every two years on
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: who are 21 years of age or over
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Tribal Council or a board appointed by the Council
+  quote: The Tribal Council, or a board appointed
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article IV, Section 3
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Indian Court, established by ordinance
+  quote: by the establishment of an Indian Court
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article VI, Section 1(h)
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Same manner as adoption, by special election
+  quote: may be ratified and approved in the same manner as this Constitution and
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article VIII, Section 1
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of the Council
+  quote: expelled from the Council by a
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article V, Section 2
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon a petition of at least one-third of
+  source: university-of-oklahoma-indian-reorganization-act-yercons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-13'
+  locator: Article V, Section 3
+  document_version:
+    document: yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada

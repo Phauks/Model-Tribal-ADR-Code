@@ -190,6 +190,231 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Nation, Oklahoma
+governance:
+- aspect: form
+  value: Constitution of the Delaware Nation
+  quote: hereby adopt the following Constitution.
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Preamble
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: governing-body
+  value: Executive Committee
+  quote: The officers of the tribe shall be a president, vice-president, secretary, treasurer, and two
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article V, Section 1
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: The officers of the tribe shall be a president, vice-president, secretary, treasurer, and two
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article V, Section 1
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: governing-body-selection
+  value: Elected at bi-annual elections held at the general council
+  quote: Regular elections to fill vacancies as terms expire on the executive committee shall be held
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article VII, Section 2
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Term of office for each officer shall be four (4) years and until a successor is duly
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article V, Section 2
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: general-council
+  value: All citizens 18 years of age and older
+  quote: The membership of the general council of the Delaware Nation shall consist of all citizens
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article IV
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: head-of-government
+  value: President
+  quote: The president shall preside at all meetings of the general council and of the
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article XIV, Section 1
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Delaware Nation, Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected in bi-annual elections
+  quote: Elections shall be held every two years with citizens being selected to fill three positions on
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article VII, Section 1
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Persons elected to office shall serve four (4) years.
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article VII, Section 2
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer, two Committeemen
+  quote: The officers of the tribe shall be a president, vice-president, secretary, treasurer, and two
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article V, Section 1
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: elections
+  value: Every two years, odd-numbered years, third Saturday in June
+  quote: bi-annually, in odd-numbered years, at the regular annual meeting of the general council on
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article VII, Section 2
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: voting-age
+  value: '18'
+  quote: Any citizen of the tribe shall be qualified to vote, provided he is at least eighteen (18)
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article VII, Section 4
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: election-authority
+  value: Impartial election committee outside the executive committee
+  quote: impartial election committee selected from outside the executive
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article VII, Section 3
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: amendment
+  value: Majority of voters in an election
+  quote: ratified by a majority of those voting in an election.
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article XIII
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: secretarial-approval
+  value: Requirement removed
+  quote: by removing “approved by the Secretary of the Interior and authorized by
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Legislative History, Article XVI
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: recall-and-removal
+  value: Recall by petition of 40 registered voters
+  quote: Upon receipt of a petition signed by at least forty (40) of the tribe's registered voters it shall
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article X, Section 1
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: recall-and-removal
+  value: Removal under ordinance enacted by executive committee
+  quote: The executive committee shall enact an ordinance providing for the removal of members
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article XI
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
+- aspect: other
+  value: Two consecutive terms maximum per position
+  quote: No person shall serve more than two (2) consecutive terms in a
+  source: constitution-delaware-nation-2019-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2019-03-16'
+  locator: Article V, Section 2
+  document_version:
+    document: delaware-nation-constitution
+    version: 2019-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the Constitution of the Delaware Nation as amended through March 16, 2019, with a legislative history appended; facts use the current article text.'
 governing_documents:
 - kind: constitution
   title: Delaware Nation, Oklahoma - Tribal Constitution - Table of Contents

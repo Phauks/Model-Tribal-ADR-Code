@@ -142,6 +142,135 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Platinum Traditional Village
+governance:
+- aspect: governing-body
+  value: Council
+  quote: THERE SHALL BE A COUNCIL COMPOSED OF A PRESIDENT AND FOUR (4)
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Article IV, Section 1
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
+- aspect: governing-body-size
+  value: President and 4 members
+  quote: THERE SHALL BE A COUNCIL COMPOSED OF A PRESIDENT AND FOUR (4)
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Article IV, Section 1
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
+- aspect: governing-body-selection
+  value: Elected by the adult members of the community
+  quote: MEMBERS ELECTED BY THE ADULT MEMBERS OF THE COMMUNITY.
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Article IV, Section 1
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
+- aspect: governing-body-term
+  value: Staggered seat terms of 1, 2, 3, 2 and 1 years
+  quote: 'SEAT A: ONE ( 1 ) YEAR SEAT B : TWO (2) YEARS'
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Amendment I, Article IV, Section 3
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
+- aspect: head-of-government
+  value: President
+  quote: THE PRESIDENT OF THE COUNCIL SHALL PRESIDE OVER
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Platinum Traditional Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President, Secretary/Treasurer
+  quote: OFFICERS FOR THE COUNCIL CONSISTS OF. THE PRESIDENT, VICE PRESIDENT
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Amendment I, Article IV, Section 3
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
+- aspect: voting-age
+  value: '18'
+  quote: ALL MEMBERS OF THE VILLAGE EIGHTEEN (18) YEARS OF AGE OR OVER
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Bylaws, Article IV, Section 1
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
+- aspect: amendment
+  value: Majority vote of adult members, 30% turnout
+  quote: RATIFIED BY A MAJORITY VOTE OF ADULT MEMBERS. PROVIDED THAT AT LEAST 30
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Article VII
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
+- aspect: recall-and-removal
+  value: Office forfeited on felony or dishonesty conviction
+  quote: CONVICTED OF A FELONY OR ANY OTHER OFFENSE INVOLVING DISHONESTY OR
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Article VI, Section 1
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
+- aspect: other
+  value: General community meetings; quorum of one-third of membership
+  quote: FOR A COUNCIL MEETINGS, AND FOR THE GENERAL COMMUNITY MEETINGS ONE THIRD
+  source: constitution-platinum-traditional-village-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-11'
+  locator: Bylaws, Article III, Section 3
+  document_version:
+    document: platinum-traditional-village-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution and bylaws with a November 11, 1994 amendment to Article IV, Section 3, so the 1994 date belongs to the amendment and its seat terms supersede the one-year term.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution

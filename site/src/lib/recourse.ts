@@ -1,14 +1,15 @@
 /**
  * The Find recourse page's rules, shared by the build and the browser: what
  * one provision row holds, the words for its tags, the filters a reader can
- * use, how many rows each choice leaves, and how the choices go into the
- * page address. src/lib/server/recourse.ts builds the rows.
+ * use and how the choices go into the page address.
+ * src/lib/server/recourse.ts builds the rows.
  *
- * Within one filter, choices widen the list (mediation or arbitration);
- * across filters they narrow it (mediation, in family disputes). Each
- * choice's count is the rows it would leave with the other filters as they
- * are, the way faceted search usually counts.
+ * The filters themselves are the site's shared ones (src/lib/search-filters.ts,
+ * the same panel as the advanced search): within one filter, choices widen
+ * the list (mediation or arbitration); across filters they narrow it
+ * (mediation, in family disputes).
  */
+import { choicesFromAddress, writeChoices, type Facet, type FilterChoices } from './search-filters.ts';
 import { foldForSearch, rowsToCsv, type TableColumn, type TableRow } from './tables/table-definition.ts';
 
 export interface RecourseRow {
@@ -78,110 +79,99 @@ export function recognitionFacetValues(types: string[]): string[] {
 	return recognitionFacetKinds.filter((kind) => types.includes(kind));
 }
 
-export interface RecourseFacet {
-	/** The page address parameter, such as "method". */
+interface RecourseFacetRule {
 	key: string;
-	/** The filter's heading. */
 	label: string;
-	/** The values one row has for this filter. */
-	values: (row: RecourseRow) => string[];
-	/** The words for a value. */
-	words: (value: string) => string;
-	/** Lists choices by count, largest first, rather than in reading order. */
+	valuesOf: (row: RecourseRow) => string[];
+	/** The words for a value; the value itself when left out. */
+	words?: (value: string) => string;
+	/** Lists answers by how many provisions have them, largest first, rather than in reading order. */
 	byCount?: boolean;
+	long?: boolean;
 }
 
-const plain = (value: string) => value;
-
-export const recourseFacets: RecourseFacet[] = [
-	{ key: 'method', label: 'Method', values: (row) => [row.method], words: plain, byCount: true },
-	{ key: 'subject', label: 'Kind of dispute', values: (row) => [row.subject], words: plain, byCount: true },
-	{ key: 'setting', label: 'Where it happens', values: (row) => [row.setting], words: (value) => settingLabels[value] ?? value, byCount: true },
-	{ key: 'entry', label: 'How it starts', values: (row) => [row.entry], words: (value) => entryLabels[value] ?? value, byCount: true },
-	{ key: 'outcome', label: 'Result', values: (row) => [row.outcome], words: (value) => outcomeLabels[value] ?? value, byCount: true },
-	{ key: 'state', label: 'State or territory', values: (row) => row.states, words: plain },
-	{ key: 'recognition', label: 'Recognition', values: (row) => row.recognition, words: plain, byCount: true },
-	{ key: 'checked', label: 'Checking', values: (row) => [row.checked ? 'checked' : 'once'], words: (value) => (value === 'checked' ? 'Checked by a second reader' : 'Read once') }
+const recourseFacetRules: RecourseFacetRule[] = [
+	{ key: 'method', label: 'Method', valuesOf: (row) => [row.method], byCount: true },
+	{ key: 'subject', label: 'Kind of dispute', valuesOf: (row) => [row.subject], byCount: true },
+	{ key: 'setting', label: 'Where it happens', valuesOf: (row) => [row.setting], words: (value) => settingLabels[value] ?? value, byCount: true },
+	{ key: 'entry', label: 'How it starts', valuesOf: (row) => [row.entry], words: (value) => entryLabels[value] ?? value, byCount: true },
+	{ key: 'outcome', label: 'Result', valuesOf: (row) => [row.outcome], words: (value) => outcomeLabels[value] ?? value, byCount: true },
+	{ key: 'state', label: 'State or territory', valuesOf: (row) => row.states, long: true },
+	{ key: 'recognition', label: 'Recognition', valuesOf: (row) => row.recognition, byCount: true },
+	{
+		key: 'checked',
+		label: 'Checking',
+		valuesOf: (row) => [row.checked ? 'checked' : 'once'],
+		words: (value) => (value === 'checked' ? 'Checked by a second reader' : 'Read once'),
+		byCount: true
+	}
 ];
 
-/** The reader's choices: search words and, for each filter, the values picked. */
-export interface RecourseQuery {
-	text: string;
-	picked: Record<string, string[]>;
-}
-
-export const emptyRecourseQuery: RecourseQuery = { text: '', picked: {} };
+/** The address parameter of each filter, for links from elsewhere on the site. */
+export const recourseFacetKeys = recourseFacetRules.map((rule) => rule.key);
 
 const textCollator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
 
-function matchesFacet(row: RecourseRow, facet: RecourseFacet, picked: string[] | undefined): boolean {
-	if (!picked || picked.length === 0) return true;
-	return facet.values(row).some((value) => picked.includes(value));
+/**
+ * The filters for the shared filter panel (src/lib/search-filters.ts), with
+ * the answers the rows hold. Answers come in a fixed order, so one set of
+ * choices always makes one page address: by how many provisions have them,
+ * largest first, or in reading order for the states.
+ */
+export function recourseFacets(rows: readonly RecourseRow[]): Facet<RecourseRow>[] {
+	return recourseFacetRules.map((rule) => {
+		const words = rule.words ?? ((value: string) => value);
+		const counts = new Map<string, number>();
+		for (const row of rows) for (const value of new Set(rule.valuesOf(row))) counts.set(value, (counts.get(value) ?? 0) + 1);
+		const options = [...counts]
+			.sort(
+				(first, second) =>
+					(rule.byCount ? second[1] - first[1] : 0) || textCollator.compare(words(first[0]), words(second[0]))
+			)
+			.map(([value]) => ({ value, label: words(value) }));
+		return { key: rule.key, label: rule.label, options, valuesOf: rule.valuesOf, long: rule.long };
+	});
 }
 
-function matchesText(row: RecourseRow, words: string[]): boolean {
-	if (words.length === 0) return true;
-	const haystack = foldForSearch([row.nation.name, row.citation, row.summary, row.method, row.subject].join(' '));
-	return words.every((word) => haystack.includes(word));
+/** The reader's choices: search words and the ticked answers. */
+export interface RecourseQuery {
+	text: string;
+	choices: FilterChoices;
 }
 
 function searchWords(text: string): string[] {
 	return foldForSearch(text).split(/\s+/).filter(Boolean);
 }
 
-/** The rows that match every filter and every search word. */
-export function matchRecourse(rows: RecourseRow[], query: RecourseQuery, skipFacet?: string): RecourseRow[] {
-	const words = searchWords(query.text);
-	return rows.filter(
-		(row) =>
-			matchesText(row, words) &&
-			recourseFacets.every((facet) => facet.key === skipFacet || matchesFacet(row, facet, query.picked[facet.key]))
-	);
+/** The rows whose nation, citation, summary, method or kind of dispute hold every search word, ignoring case and accents. */
+export function rowsWithWords(rows: readonly RecourseRow[], text: string): RecourseRow[] {
+	const words = searchWords(text);
+	if (words.length === 0) return [...rows];
+	return rows.filter((row) => {
+		const haystack = foldForSearch([row.nation.name, row.citation, row.summary, row.method, row.subject].join(' '));
+		return words.every((word) => haystack.includes(word));
+	});
 }
 
-export interface FacetChoice {
-	value: string;
-	words: string;
-	/** Rows this choice leaves, with the other filters as they are. */
-	count: number;
-	picked: boolean;
-}
-
-/** One filter's choices with their counts. A picked choice stays listed even when it leaves no rows. */
-export function facetChoices(rows: RecourseRow[], query: RecourseQuery, facet: RecourseFacet): FacetChoice[] {
-	const counts = new Map<string, number>();
-	for (const row of matchRecourse(rows, query, facet.key)) {
-		for (const value of new Set(facet.values(row))) counts.set(value, (counts.get(value) ?? 0) + 1);
-	}
-	const picked = query.picked[facet.key] ?? [];
-	for (const value of picked) if (!counts.has(value)) counts.set(value, 0);
-	return [...counts]
-		.map(([value, count]) => ({ value, words: facet.words(value), count, picked: picked.includes(value) }))
-		.sort((first, second) =>
-			facet.byCount
-				? second.count - first.count || textCollator.compare(first.words, second.words)
-				: textCollator.compare(first.words, second.words)
-		);
-}
-
-/** The reader's choices as page address parameters: "q" for the words, then one parameter per picked value. */
-export function recourseQueryToParameters(query: RecourseQuery): URLSearchParams {
+/** The reader's choices as page address parameters: "q" for the words, then one parameter per ticked answer. */
+export function recourseAddress(query: RecourseQuery, facets: readonly Facet<RecourseRow>[]): URLSearchParams {
 	const parameters = new URLSearchParams();
 	if (query.text.trim() !== '') parameters.set('q', query.text.trim());
-	for (const facet of recourseFacets) {
-		for (const value of query.picked[facet.key] ?? []) parameters.append(facet.key, value);
-	}
+	writeChoices(parameters, facets, query.choices);
 	return parameters;
 }
 
-/** Reads the choices back from the page address; unknown parameters are ignored. */
-export function recourseQueryFromParameters(parameters: URLSearchParams): RecourseQuery {
-	const picked: Record<string, string[]> = {};
-	for (const facet of recourseFacets) {
-		const values = [...new Set(parameters.getAll(facet.key).filter(Boolean))];
-		if (values.length > 0) picked[facet.key] = values;
-	}
-	return { text: parameters.get('q') ?? '', picked };
+/** Reads the choices back from the page address; unknown parameters and answers are ignored. */
+export function recourseQueryFromAddress(
+	parameters: URLSearchParams,
+	facets: readonly Facet<RecourseRow>[]
+): RecourseQuery {
+	return { text: parameters.get('q') ?? '', choices: choicesFromAddress(parameters, facets) };
+}
+
+/** A link to Find recourse with one answer ticked, such as the provisions for one method. */
+export function recourseLink(key: string, value: string): string {
+	return `/nations/recourse?${new URLSearchParams([[key, value]]).toString()}`;
 }
 
 const csvColumns: TableColumn[] = [

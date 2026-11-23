@@ -12,7 +12,7 @@ import path from 'node:path';
 import { parseCsv } from '../csv.ts';
 import type { BarChartData } from '../bar-chart.ts';
 import { categoryOf } from '../nation-services.ts';
-import { recourseQueryToParameters } from '../recourse.ts';
+import { recourseLink } from '../recourse.ts';
 import { nations, repositoryRoot } from './content.ts';
 import { recourseRows } from './recourse.ts';
 
@@ -29,10 +29,6 @@ function tally<Item>(items: Item[], valuesOf: (item: Item) => string[]): [string
 	return [...counts].sort(
 		(first, second) => second[1] - first[1] || first[0].localeCompare(second[0], 'en', { sensitivity: 'base' })
 	);
-}
-
-function recourseLink(key: string, value: string): string {
-	return `/nations/recourse?${recourseQueryToParameters({ text: '', picked: { [key]: [value] } }).toString()}`;
 }
 
 const constitutionStatusWords: Record<string, string> = {

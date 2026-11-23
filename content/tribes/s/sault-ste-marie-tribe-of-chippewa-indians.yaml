@@ -136,6 +136,207 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sault Ste. Marie Tribe of Chippewa Indians, Michigan
+governance:
+- aspect: form
+  value: Adopted by election under Section 16 of the Indian Reorganization Act
+  quote: in accordance with Section 16 of the Indian Reorganization Act
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Certificate of Results of Election
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: governing-body
+  value: Board of Directors
+  quote: shall consist of a board of directors.
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article IV, Section 1
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: governing-body-size
+  value: Chairperson at large plus one director per 500 members in each of 5 units
+  quote: to the board to represent each five hundred (500) members or
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article IV, Section 2
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: governing-body-selection
+  value: Chairperson elected at large by voters; directors elected by unit
+  quote: A chairperson shall be elected at large by the voters
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article IV, Section 2
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: chairperson and directors shall be four years, or until their
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article IV, Section 4
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The chairperson shall preside over all meetings
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Bylaws, Article II, Section 1
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sault Ste. Marie Tribe of Chippewa Indians, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large by the voters
+  quote: A chairperson shall be elected at large by the voters
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article IV, Section 2
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: chairperson and directors shall be four years, or until their
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article IV, Section 4
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: other-officers
+  value: Vice-chairperson, treasurer, secretary
+  quote: The vice -chairperson of the board of directors shall
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Bylaws, Article II, Section 2
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: voting-age
+  value: '18'
+  quote: Any person eighteen (18) years of age or over who is a
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article V, Section 4
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: election-authority
+  value: Board of directors, by ordinance
+  quote: The board of directors shall enact appropriate ordinances
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article V, Section 6
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: judiciary
+  value: Reservation court established by board ordinance
+  quote: to establish a reservation court
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article VII, Section 1(g)
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: amendment
+  value: Majority vote of eligible voters in an election called by the Secretary
+  quote: may be amended by a majority vote
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article X
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: it shall have been approved by the Secretary of the Interior.
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article X
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the board after hearing
+  quote: may be removed from office by a majority vote
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article VI, Section 5
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: other
+  value: Referendum on petition of 100 eligible voters or board majority
+  quote: least one hundred (100) eligible voters of .the tribe.
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article IX
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
 governing_documents:
 - kind: law-code
   title: Tribal Code - Sault Ste. Marie Tribe of Chippewa Indians

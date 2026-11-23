@@ -18,6 +18,7 @@
 	<li>Your sign-in: your email address, your password and any codes. You are signed out everywhere.</li>
 	{#if data.profile}
 		<li>Your profile: every answer and every version you confirmed, including your phone number and the nations you listed.</li>
+		<li>Your contributor page and your picture, if you have them.</li>
 	{/if}
 	{#if data.hasWorkspaceAccess}
 		<li>Your access to the workspace.</li>
