@@ -1,17 +1,6 @@
 # Native nations' stories about making peace: a first catalog
 
-**Status:** research notes, written Nov. 21, 2026, for the peacemaking track
-and the essays. It lists stories, accounts and teachings about resolving
-disputes and making peace that Native nations, or Native institutions, have
-published, and says who would have to agree before any of them is reprinted.
-It is not a finding about any nation's law or practice, and it retells no
-story: where a story's content is given, it is quoted in the teller's own
-words. Judgments are labeled project analysis. The search method and its
-limits are in the session log,
-[2026-11-21-peacemaking-stories](../sessions/2026/2026-11-21-peacemaking-stories.md).
-It builds on the program survey in
-[2026-11-21-peacemaking-programs](2026-11-21-peacemaking-programs.md) and does
-not repeat it.
+**Status:** research notes, written Nov. 21, 2026, for the peacemaking track and the essays. It lists stories, accounts and teachings about resolving disputes and making peace that Native nations, or Native institutions, have published, and says who would have to agree before any of them is reprinted. It is not a finding about any nation's law or practice, and it retells no story: where a story's content is given, it is quoted in the teller's own words. Judgments are labeled project analysis. The search method and its limits are in the session log, [2026-11-21-peacemaking-stories](../sessions/2026/2026-11-21-peacemaking-stories.md). It builds on the program survey in [2026-11-21-peacemaking-programs](2026-11-21-peacemaking-programs.md) and does not repeat it.
 
 ## Contents
 
@@ -28,69 +17,32 @@ not repeat it.
 
 ## 1. Ground rules for collecting stories
 
-The lead author is not Native, and the charter keeps ceremonial, restricted or
-community-held knowledge out unless the community approves in
-writing.[^charter-5] Archival practice written by Native and non-Native
-archivists makes the same point about publishing: "Permission to publish must
-be obtained from the contributors or home organization."[^protocols] So this
-collection followed five rules (project analysis):
+The lead author is not Native, and the charter keeps ceremonial, restricted or community-held knowledge out unless the community approves in writing.[^charter-5] Archival practice written by Native and non-Native archivists makes the same point about publishing: "Permission to publish must be obtained from the contributors or home organization."[^protocols] So this collection followed five rules (project analysis):
 
-- **The nation's own telling first.** A nation's government, court, cultural
-  office, press or newspaper outranks a Native institution, which outranks a
-  member writing in their own name, which outranks an outside recorder.
-- **Quote, never retell.** Each story is cited directly to the page, opinion
-  or book where it was published, and told only in its teller's exact words:
-  short excerpts (50 words or fewer) with a pinpoint, as the lead author asked
-  on Nov. 21, 2026. Where a telling is Tribal law, a court opinion, or from a
-  publisher that asks to be asked first, the exact words are kept in the
-  project's private files and the record carries only the pinpoint and a
-  fingerprint. The whole story is reprinted only with permission.
+- **The nation's own telling first.** A nation's government, court, cultural office, press or newspaper outranks a Native institution, which outranks a member writing in their own name, which outranks an outside recorder.
+- **Quote, never retell.** Each story is cited directly to the page, opinion or book where it was published, and told only in its teller's exact words: short excerpts (50 words or fewer) with a pinpoint, as the lead author asked on Nov. 21, 2026. Where a telling is Tribal law, a court opinion, or from a publisher that asks to be asked first, the exact words are kept in the project's private files and the record carries only the pinpoint and a fingerprint. The whole story is reprinted only with permission.
 - **Record a protocol only when a source states it**, and follow it.
 - **Leave out what may be sacred** when the page does not say otherwise.
-- **Two permissions for a reprint.** Copyright and cultural authority are
-  asked separately, even when one office holds both.
+- **Two permissions for a reprint.** Copyright and cultural authority are asked separately, even when one office holds both.
 
 ## 2. The record format, and how a story is credited
 
-The lead author asked how stories should be attributed and in what file
-format. Decision record [0019](../../docs/decisions/0019-story-records.md)
-(accepted Nov. 21, 2026) answers with one YAML file per story in
-`content/stories/`, checked against `schemas/story.schema.json`. In short:
+The lead author asked how stories should be attributed and in what file format. Decision record [0019](../../docs/decisions/0019-story-records.md) (accepted Nov. 21, 2026) answers with one YAML file per story in `content/stories/`, checked against `schemas/story.schema.json`. In short:
 
-- A **story** has a title, the nations, its kind and length, its methods and
-  topics, and **excerpts**: exact passages from a telling, each with a
-  pinpoint, a word count and a SHA-256 fingerprint. The project writes no
-  summary of its own. The validator checks that each public excerpt matches
-  its fingerprint, stays within 50 words unless the telling may be published
-  in full, and comes from a telling whose permitted uses allow quotation.
-- Each **telling** cites one source record, or one private contributor filing
-  for a story that reaches the project from a person. It says whose voice it
-  is (`authority`), how the teller is credited (`credit`), what the project
-  may do with it (`permitted_uses`), who may see it (`access`) and who
-  approved sharing it (`cultural_authority`). These shapes are shared with the
-  contributor intake forms, so a told story and a published story are credited
-  the same way.
-- **Protocols** record a season, setting, clan or family ownership, ceremony
-  or name that a source says governs the story.
-- **Anthology** says whether it could be reprinted and whose permission each
-  part needs.
+- A **story** has a title, the nations, its kind and length, its methods and topics, and **excerpts**: exact passages from a telling, each with a pinpoint, a word count and a SHA-256 fingerprint. The project writes no summary of its own. The validator checks that each public excerpt matches its fingerprint, stays within 50 words unless the telling may be published in full, and comes from a telling whose permitted uses allow quotation.
+- Each **telling** cites one source record, or one private contributor filing for a story that reaches the project from a person. It says whose voice it is (`authority`), how the teller is credited (`credit`), what the project may do with it (`permitted_uses`), who may see it (`access`) and who approved sharing it (`cultural_authority`). These shapes are shared with the contributor intake forms, so a told story and a published story are credited the same way.
+- **Protocols** record a season, setting, clan or family ownership, ceremony or name that a source says governs the story.
+- **Anthology** says whether it could be reprinted and whose permission each part needs.
 
-**Credit line in print (proposal, project analysis).** A reprinted story
-would carry the nation's own title, the teller as the nation or teller chose,
-the publisher, and a permission line, with the full Indigo Book citation in
-the Sources section. Once permission is granted, it might read:
+**Credit line in print (proposal, project analysis).** A reprinted story would carry the nation's own title, the teller as the nation or teller chose, the publisher, and a permission line, with the full Indigo Book citation in the Sources section. Once permission is granted, it might read:
 
-> "Two Row Wampum," as published by the Onondaga Nation. Reprinted with the
-> permission of the Onondaga Nation.
+> "Two Row Wampum," as published by the Onondaga Nation. Reprinted with the permission of the Onondaga Nation.
 
 A story cited but not reprinted carries only its citation.
 
 ## 3. The catalog
 
-Every record below has access set to "nation review first": none will be
-published until the nation has seen it (charter, commitment 4).[^charter-4]
-"Teller's authority" is whose voice the cited telling is. A blank protocol
-cell means no source read stated one, not that none exists.
+Every record below has access set to "nation review first": none will be published until the nation has seen it (charter, commitment 4).[^charter-4] "Teller's authority" is whose voice the cited telling is. A blank protocol cell means no source read stated one, not that none exists.
 
 | Story record | Nation | Kind and length | Teller's authority | Protocol stated | Anthology candidate |
 | --- | --- | --- | --- | --- | --- |
@@ -117,31 +69,13 @@ cell means no source read stated one, not that none exists.
 
 **What the catalog shows (project analysis).**
 
-- **Peace between nations is what nations publish most.** Six of the
-  twenty records concern peace or agreement between nations, from the Great
-  Peace and the Two Row Wampum to a Treaty of Friendship signed in 2025.
-  Stories about a quarrel between two people are rare on the web; the ones
-  found are in a memoir, a magazine account and a court's community
-  interviews.
-- **Courts and codes are a source of stories.** The Kake code opens with the
-  Tribe's own account of where its peacemaking comes from (§ 1.01.010; the
-  words are held privately because the code is Tribal law), and the Navajo
-  Judicial Branch writes that "[t]he history of our judiciary begins in our
-  ancient history."[^kake][^nn-guide]
-  The Hopi Appellate Court's decision shows a court sending a clan dispute
-  back to the village.[^ross]
-- **Several nations tell the same lesson about the mediator.** The Lakota
-  Wolakota teaching, which two nations publish, says: "Leaders should always
-  look for a compromise between two irreconcilable forces. Never take sides
-  because a leader should be able to mediate in order to make the best
-  decision for the people."[^rosebud][^wolakota-sr] This is the
-  closest thing in the catalog to a nation's own statement of a mediator's
-  duty. It is one teaching from one people, not a general Native view.
+- **Peace between nations is what nations publish most.** Six of the twenty records concern peace or agreement between nations, from the Great Peace and the Two Row Wampum to a Treaty of Friendship signed in 2025. Stories about a quarrel between two people are rare on the web; the ones found are in a memoir, a magazine account and a court's community interviews.
+- **Courts and codes are a source of stories.** The Kake code opens with the Tribe's own account of where its peacemaking comes from (§ 1.01.010; the words are held privately because the code is Tribal law), and the Navajo Judicial Branch writes that "[t]he history of our judiciary begins in our ancient history."[^kake][^nn-guide] The Hopi Appellate Court's decision shows a court sending a clan dispute back to the village.[^ross]
+- **Several nations tell the same lesson about the mediator.** The Lakota Wolakota teaching, which two nations publish, says: "Leaders should always look for a compromise between two irreconcilable forces. Never take sides because a leader should be able to mediate in order to make the best decision for the people."[^rosebud][^wolakota-sr] This is the closest thing in the catalog to a nation's own statement of a mediator's duty. It is one teaching from one people, not a general Native view.
 
 ## 4. Anthology shortlist and whose permission each needs
 
-These are candidates only. Nothing has been asked. The record for each holds
-the details.
+These are candidates only. Nothing has been asked. The record for each holds the details.
 
 | Candidate | Copyright | Cultural authority | Notes |
 | --- | --- | --- | --- |
@@ -155,60 +89,27 @@ the details.
 | Hoʻopono family legacy | Liliʻuokalani Trust | the teller | Native Hawaiian section, labeled as not a tribe. |
 | Treaty of Friendship (Round Valley and Yurok) | both nations | both nations | The treaty text, if both agree. |
 
-Two published anthologies show that a collection like this can be done and
-how it was framed: *Justice as Healing*, from Living Justice Press, and
-*Navajo Nation Peacemaking*, from the University of Arizona Press, whose page
-offers reprint licenses.[^mccaslin][^nielsen-zion] Neither was read beyond
-the publisher's page, so whether their contributors wrote about their own
-nations is not yet known.
+Two published anthologies show that a collection like this can be done and how it was framed: *Justice as Healing*, from Living Justice Press, and *Navajo Nation Peacemaking*, from the University of Arizona Press, whose page offers reprint licenses.[^mccaslin][^nielsen-zion] Neither was read beyond the publisher's page, so whether their contributors wrote about their own nations is not yet known.
 
 ## 5. What the stories say about protocols
 
-The sources themselves state the rules a collection must follow (project
-analysis of the statements cited):
+The sources themselves state the rules a collection must follow (project analysis of the statements cited):
 
-- **The Hopi Tribe** says that many Hopi stories told to outsiders were
-  published without the storytellers' permission.[^hopi-cpo] No Hopi story
-  is described here.
-- **The Cherokee Nation** says much of the spiritual and ceremonial side of
-  traditional Cherokee life is not shared publicly.[^cn-culture] The
-  **Chickasaw Nation** describes its oral histories as "sacred
-  stories."[^chickasaw] The **Haudenosaunee Confederacy** says wampum had "a
-  more sacred use."[^hcf-wampum]
-- **The Seminole Tribe of Florida** publishes that disputes are settled
-  during the Green Corn Dance, held each spring at undisclosed
-  places.[^semtribe] The project records that one fact and nothing about the
-  ceremony.
-- **The Organized Village of Kake** calls Guwakaan a sacred clan, and also
-  says no one can own the process of peacemaking.[^kake]
-- **Local Contexts** gives communities their own Labels for seasonal,
-  sacred and permission conditions.[^tk-labels] The schema records a Label
-  only when a community applies it (charter, commitment 5).[^charter-5]
+- **The Hopi Tribe** says that many Hopi stories told to outsiders were published without the storytellers' permission.[^hopi-cpo] No Hopi story is described here.
+- **The Cherokee Nation** says much of the spiritual and ceremonial side of traditional Cherokee life is not shared publicly.[^cn-culture] The **Chickasaw Nation** describes its oral histories as "sacred stories."[^chickasaw] The **Haudenosaunee Confederacy** says wampum had "a more sacred use."[^hcf-wampum]
+- **The Seminole Tribe of Florida** publishes that disputes are settled during the Green Corn Dance, held each spring at undisclosed places.[^semtribe] The project records that one fact and nothing about the ceremony.
+- **The Organized Village of Kake** calls Guwakaan a sacred clan, and also says no one can own the process of peacemaking.[^kake]
+- **Local Contexts** gives communities their own Labels for seasonal, sacred and permission conditions.[^tk-labels] The schema records a Label only when a community applies it (charter, commitment 5).[^charter-5]
 
-No source read stated a seasonal rule for any story in the catalog, so no
-seasonal protocol was recorded for one. That is a statement about the pages
-read, not about the stories; asking each nation is the only way to know
-(project analysis).
+No source read stated a seasonal rule for any story in the catalog, so no seasonal protocol was recorded for one. That is a statement about the pages read, not about the stories; asking each nation is the only way to know (project analysis).
 
 ## 6. Leads that are not stories yet
 
-Program pages that describe a nation's peacemaking or traditional court but
-tell no story: the Colville Peacemaker Circle, the Wilton Rancheria
-Traditional Court, the Ho-Chunk Traditional Court and the Yurok Tribal
-Court.[^colville][^wilton][^ho-chunk][^yurok] Each is a place to ask for a
-story the nation chooses to share. Others to follow:
+Program pages that describe a nation's peacemaking or traditional court but tell no story: the Colville Peacemaker Circle, the Wilton Rancheria Traditional Court, the Ho-Chunk Traditional Court and the Yurok Tribal Court.[^colville][^wilton][^ho-chunk][^yurok] Each is a place to ask for a story the nation chooses to share. Others to follow:
 
-- **Navajo Nation:** the Judicial Branch's "History of Peacemaking" page and
-  the Navajo Supreme Court's *Manning v. Abeita*, which a blog summary says
-  quotes a teaching about the family and the hogan.[^nn-guide] Both are on
-  the pull list.
-- **Anishinaabe law:** Matthew L.M. Fletcher's article uses Anishinaabe
-  stories, some from anthropologists' reports, on how communities answered
-  killings and revenge.[^fletcher] Read before deciding whether it belongs;
-  some stories it discusses may be sensitive.
-- **Alaska:** Sealaska Heritage Institute's War and Peace exhibit and the film
-  *Haa Shagoon*;[^juneau] Yup'ik elders' teachings collected with the Calista
-  Elders Council (on the pull list).
+- **Navajo Nation:** the Judicial Branch's "History of Peacemaking" page and the Navajo Supreme Court's *Manning v. Abeita*, which a blog summary says quotes a teaching about the family and the hogan.[^nn-guide] Both are on the pull list.
+- **Anishinaabe law:** Matthew L.M. Fletcher's article uses Anishinaabe stories, some from anthropologists' reports, on how communities answered killings and revenge.[^fletcher] Read before deciding whether it belongs; some stories it discusses may be sensitive.
+- **Alaska:** Sealaska Heritage Institute's War and Peace exhibit and the film *Haa Shagoon*;[^juneau] Yup'ik elders' teachings collected with the Calista Elders Council (on the pull list).
 
 ## 7. Gaps and next steps
 
