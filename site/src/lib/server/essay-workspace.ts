@@ -9,7 +9,7 @@ import { essaysInGit } from 'virtual:essay-library';
 import { atLeast, everyDocument, type AccessLevel } from '#lib/permissions.ts';
 import { accessTo, requireDocumentLevel } from './access.ts';
 import { isEssayIdentifier } from './essays.ts';
-import { requirePerson, storage } from './workspace.ts';
+import { requirePerson, requirePersonForData, storage } from './workspace.ts';
 import type { SignedInPerson } from './people.ts';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 
@@ -19,9 +19,13 @@ interface WorkspaceEvent {
 	params: Partial<Record<string, string>>;
 }
 
-/** The essay named in the address, and the person's level on it (at least `minimum`). */
-export async function essayAccess(event: WorkspaceEvent, minimum: AccessLevel) {
-	const person = requirePerson(event);
+/**
+ * The essay named in the address, and the person's level on it (at least
+ * `minimum`). `forData` is for addresses the editor calls with fetch: a
+ * signed-out request is refused with 401 rather than sent to sign in.
+ */
+export async function essayAccess(event: WorkspaceEvent, minimum: AccessLevel, { forData = false } = {}) {
+	const person = forData ? requirePersonForData(event) : requirePerson(event);
 	const identifier = event.params.id ?? '';
 	if (!isEssayIdentifier(identifier)) error(404, 'No essay has this address.');
 	const { database, bucket } = storage(event);
