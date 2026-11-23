@@ -37,7 +37,9 @@ export const actions: Actions = {
 			redirect(303, '/sign-in/refused');
 		}
 		const account = await verifiedAccount(environment.database, result.email);
-		const finished = await finishSignIn(environment.database, cookies, account, 'link', returnTo, environment.LEAD_AUTHOR_EMAIL, deviceLabel(request.headers.get('user-agent')));
+		const finished = await finishSignIn(environment.database, cookies, account, 'link', returnTo, environment.LEAD_AUTHOR_EMAIL, {
+			device: deviceLabel(request.headers.get('user-agent'))
+		});
 		if (finished.outcome === 'refused') {
 			cookies.set(refusalCookie, finished.reason, { path: '/sign-in', maxAge: 300, httpOnly: true, sameSite: 'lax' });
 			redirect(303, '/sign-in/refused');
@@ -47,6 +49,7 @@ export const actions: Actions = {
 		// has one may have forgotten it (that is often why the lead author
 		// made the link), and can choose a new one without the old one
 		// (src/lib/server/accounts.ts, provedRecently).
-		redirect(303, result.origin === 'email' ? finished.destination : '/profile/password?welcome=1');
+		if (result.origin === 'email' || finished.destination.startsWith('/sign-in/two-step')) redirect(303, finished.destination);
+		redirect(303, '/profile/password?welcome=1');
 	}
 };

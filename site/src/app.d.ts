@@ -22,6 +22,17 @@ declare global {
 			session: ActiveSession | undefined;
 			/** Why a permission check refused this request, for the activity log (src/hooks.server.ts). */
 			refused: string | undefined;
+			/**
+			 * A session that has passed the first step of sign-in but not yet the
+			 * second (src/lib/server/two-step.ts). It reaches only /sign-in/two-step.
+			 */
+			waitingSession: ActiveSession | undefined;
+			/**
+			 * Set when the person's role needs two-step sign-in and they have not
+			 * set it up: the workspace stays closed until they do
+			 * (src/lib/server/workspace.ts, requirePerson).
+			 */
+			twoStepNeeded: boolean;
 		}
 		// interface PageData {}
 		// interface PageState {}

@@ -67,9 +67,9 @@ describe('the Your account group in the sidebar', () => {
 
 describe('where you are signed in', () => {
 	it('lists sessions with this one first, and signs out others but never this one', async () => {
-		const here = await startSession(database, account.subject, 'password', 'Firefox on Windows');
-		const phone = await startSession(database, account.subject, 'code', 'Safari on iPhone');
-		const laptop = await startSession(database, account.subject, 'link', 'Chrome on Mac');
+		const here = await startSession(database, account.subject, 'password', { device: 'Firefox on Windows' });
+		const phone = await startSession(database, account.subject, 'code', { device: 'Safari on iPhone' });
+		const laptop = await startSession(database, account.subject, 'link', { device: 'Chrome on Mac' });
 		const current = (await sessionAccount(database, here.token))!.tokenHash;
 
 		const devices = await signedInDevices(database, account.subject, current);
@@ -91,8 +91,8 @@ describe('where you are signed in', () => {
 
 	it('does not reach another account’s sessions', async () => {
 		const other = await verifiedAccount(database, 'other@example.org');
-		const theirs = await startSession(database, other.identifier, 'code', 'Chrome on Android');
-		const mine = await startSession(database, account.subject, 'code', 'Firefox on Linux');
+		const theirs = await startSession(database, other.identifier, 'code', { device: 'Chrome on Android' });
+		const mine = await startSession(database, account.subject, 'code', { device: 'Firefox on Linux' });
 		const theirHandle = (await signedInDevices(database, other.identifier, undefined))[0].handle;
 		const current = (await sessionAccount(database, mine.token))!.tokenHash;
 		expect(await endOtherSession(database, account.subject, theirHandle, current)).toBe(false);
@@ -137,7 +137,7 @@ describe('download my data', () => {
 			.bind(account.subject, '/nations/navajo-nation', '2026-11-23T00:00:00.000Z')
 			.run();
 		await saveAccountSettingsCopy(database, account.subject, { motion: 'reduce' }, 'dark');
-		await startSession(database, account.subject, 'code', 'Firefox on Windows');
+		await startSession(database, account.subject, 'code', { device: 'Firefox on Windows' });
 
 		const data = await accountDataExport(database, account);
 		const text = JSON.stringify(data);
