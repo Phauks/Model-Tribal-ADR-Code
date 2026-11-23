@@ -10,6 +10,9 @@ import {
 import { requirePermission } from '#lib/server/workspace.ts';
 import type { PageServerLoad } from './$types';
 
+/** Titles mode shows at most this many documents. */
+const titlesShown = 50;
+
 // Search the source library (decision record 0051): every passage of every
 // document in the private bucket. The writing team only, since the library
 // holds private copies.
@@ -31,13 +34,20 @@ export const load: PageServerLoad = async (event) => {
 	const mode = parameters.get('mode') === 'titles' ? 'titles' : 'passages';
 
 	const status = await libraryStatus(database);
-	if (!status.build) {
-		return { status, filters, mode, topics: [], search: null, titles: null };
-	}
+	const nothing = { search: null, titles: null, failed: false, milliseconds: null };
+	if (!status.build) return { status, filters, mode, titlesShown, topics: [], ...nothing };
 	const topics = await libraryTopics(database);
-	if (filters.query === '') return { status, filters, mode, topics, search: null, titles: null };
-	if (mode === 'titles') {
-		return { status, filters, mode, topics, search: null, titles: await findLibraryDocuments(database, filters.query, 50) };
+	if (filters.query === '') return { status, filters, mode, titlesShown, topics, ...nothing };
+
+	// The page shows how long the search took, and says so plainly when the
+	// search could not finish instead of showing an error page.
+	const started = Date.now();
+	try {
+		const titles = mode === 'titles' ? await findLibraryDocuments(database, filters.query, titlesShown) : null;
+		const search = mode === 'titles' ? null : await searchLibrary(database, filters);
+		return { status, filters, mode, titlesShown, topics, search, titles, failed: false, milliseconds: Date.now() - started };
+	} catch (problem) {
+		console.error('The source library search failed:', problem);
+		return { status, filters, mode, titlesShown, topics, ...nothing, failed: true };
 	}
-	return { status, filters, mode, topics, search: await searchLibrary(database, filters), titles: null };
 };

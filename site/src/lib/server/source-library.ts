@@ -163,14 +163,27 @@ function filterClauses(filters: LibraryFilters): { sql: string; values: (string 
 	return { sql: clauses.map((clause) => ` AND ${clause}`).join(''), values };
 }
 
+/** Counting stops here: past it, the page says "more than". */
+export const countLimit = 5000;
+
+export interface LibraryMatchCount {
+	/** Passages that match, up to countLimit. */
+	passages: number;
+	/** Documents those passages are in. */
+	documents: number;
+	/** More than countLimit passages match; documents is then a lower bound. */
+	more: boolean;
+}
+
 /**
  * Passages matching the search, best first, a few per document, one page of
- * documents at a time. Returns the documents and whether there may be more.
+ * documents at a time. Returns the documents, whether there may be more, and
+ * how many passages and documents match in all (counted up to countLimit).
  */
 export async function searchLibrary(
 	database: D1Database,
 	filters: LibraryFilters
-): Promise<{ results: LibraryResult[]; more: boolean; readAs: string | null }> {
+): Promise<{ results: LibraryResult[]; more: boolean; readAs: string | null; total: LibraryMatchCount }> {
 	const page = Math.max(0, filters.page ?? 0);
 	const { sql: where, values } = filterClauses(filters);
 	const statement = (query: string) =>
@@ -200,17 +213,42 @@ export async function searchLibrary(
 			)
 			.bind(query, ...values, resultsPerPage + 1, page * resultsPerPage, passagesPerDocument);
 
+	const countStatement = (query: string) =>
+		database
+			.prepare(
+				`SELECT COUNT(*) AS passages, COUNT(DISTINCT document_id) AS documents FROM (
+				   SELECT p.document_id FROM pages_search JOIN pages p ON p.passage_id = pages_search.rowid
+				   JOIN documents d ON d.document_id = p.document_id
+				   WHERE pages_search MATCH ?${where} LIMIT ${countLimit + 1}
+				 )`
+			)
+			.bind(query, ...values);
+
 	type Row = DocumentRow & { passage_id: number; page: number | null; label: string | null; part: number; excerpt: string };
+	type Count = { passages: number; documents: number };
+	// The passages and the count run side by side.
+	const run = (query: string) => Promise.all([statement(query).all<Row>(), countStatement(query).first<Count>()]);
 	let readAs: string | null = null;
 	let rows: Row[];
+	let count: Count | null;
 	try {
-		rows = (await statement(filters.query).all<Row>()).results;
+		const [found, counted] = await run(filters.query);
+		rows = found.results;
+		count = counted;
 	} catch {
 		// Not valid in the query language: search the words themselves.
 		readAs = plainQuery(filters.query);
-		if (readAs === '') return { results: [], more: false, readAs };
-		rows = (await statement(readAs).all<Row>()).results;
+		if (readAs === '') return { results: [], more: false, readAs, total: { passages: 0, documents: 0, more: false } };
+		const [found, counted] = await run(readAs);
+		rows = found.results;
+		count = counted;
 	}
+	const passages = Number(count?.passages ?? 0);
+	const total: LibraryMatchCount = {
+		passages: Math.min(passages, countLimit),
+		documents: Number(count?.documents ?? 0),
+		more: passages > countLimit
+	};
 
 	const byDocument = new Map<number, LibraryResult>();
 	for (const row of rows) {
@@ -228,7 +266,7 @@ export async function searchLibrary(
 		});
 	}
 	const results = [...byDocument.values()];
-	return { results: results.slice(0, resultsPerPage), more: results.length > resultsPerPage, readAs };
+	return { results: results.slice(0, resultsPerPage), more: results.length > resultsPerPage, readAs, total };
 }
 
 /** Documents whose title, citation, nations or key match, for "find a document". */

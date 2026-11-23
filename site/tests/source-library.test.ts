@@ -83,10 +83,11 @@ async function loadedLibrary(): Promise<D1Database> {
 describe('searching the source library', () => {
 	it('finds passages by stemmed words and proximity, with the matched words marked', async () => {
 		const database = await loadedLibrary();
-		const { results, more, readAs } = await searchLibrary(database, { query: 'peacemaker NEAR(elders, 20)' });
+		const { results, more, readAs, total } = await searchLibrary(database, { query: 'peacemaker NEAR(elders, 20)' });
 		expect(readAs).toBeNull();
 		expect(more).toBe(false);
 		expect(results).toHaveLength(1);
+		expect(total).toEqual({ passages: results[0].passages.length, documents: 1, more: false });
 		expect(results[0].title).toBe('Sample Peacemaking Code');
 		expect(results[0].topic).toBe('peacemaking');
 		const excerpt = results[0].passages[0].excerpt;
@@ -104,7 +105,9 @@ describe('searching the source library', () => {
 
 	it('filters by kind of source', async () => {
 		const database = await loadedLibrary();
-		expect((await searchLibrary(database, { query: 'arbitration', topic: 'peacemaking' })).results).toEqual([]);
+		const none = await searchLibrary(database, { query: 'arbitration', topic: 'peacemaking' });
+		expect(none.results).toEqual([]);
+		expect(none.total).toEqual({ passages: 0, documents: 0, more: false });
 		expect((await searchLibrary(database, { query: 'arbitration', topic: 'articles' })).results).toHaveLength(1);
 	});
 

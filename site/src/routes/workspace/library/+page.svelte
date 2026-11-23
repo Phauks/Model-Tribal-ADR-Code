@@ -1,8 +1,27 @@
 <script lang="ts">
+	import { navigating, page } from '$app/state';
+	import SearchIcon from '@lucide/svelte/icons/search';
+	import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
 	import { copyAddress, documentHeading, excerptPieces, placeLabel } from '#lib/source-library-text.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	// A search is a page load: while the next one is on its way, say so.
+	const searching = $derived(navigating.to?.url.pathname === page.url.pathname);
+	const pendingQuery = $derived(navigating.to?.url.searchParams.get('q')?.trim() ?? '');
+
+	function count(value: number, one: string, many: string): string {
+		return `${value.toLocaleString('en-US')} ${value === 1 ? one : many}`;
+	}
+
+	function took(milliseconds: number | null): string {
+		if (milliseconds === null) return '';
+		const seconds = milliseconds / 1000;
+		return seconds < 0.1 ? 'in less than 0.1 seconds' : `in ${seconds.toFixed(1)} seconds`;
+	}
+
+	const firstShown = $derived((data.filters.page ?? 0) * 20 + 1);
 
 	function pageLink(page: number): string {
 		const parameters = new URLSearchParams();
@@ -83,15 +102,51 @@
 		<div class="field checkbox">
 			<label><input type="checkbox" name="served" value="1" checked={data.filters.served} /> Only copies the website shows</label>
 		</div>
-		<button class="button" type="submit">Search</button>
+		<button class="button" type="submit" disabled={searching}>{searching ? 'Searching…' : 'Search'}</button>
 	</form>
 
+	<div class="search-status" role="status">
+		{#if searching}
+			<p><SearchIcon aria-hidden="true" size={18} /> Searching the library{pendingQuery ? ` for “${pendingQuery}”` : ''}…</p>
+		{:else if data.search && data.search.results.length > 0}
+			<p>
+				{#if data.search.total.more}
+					More than {count(data.search.total.passages, 'passage', 'passages')} match, in at least {count(data.search.total.documents, 'document', 'documents')}, found {took(data.milliseconds)}.
+				{:else}
+					{count(data.search.total.passages, 'passage', 'passages')} in {count(data.search.total.documents, 'document', 'documents')} {data.search.total.passages === 1 ? 'matches' : 'match'}, found {took(data.milliseconds)}.
+				{/if}
+				Showing documents {firstShown.toLocaleString('en-US')} to {(firstShown + data.search.results.length - 1).toLocaleString('en-US')}.
+			</p>
+		{:else if data.titles && data.titles.length > 0}
+			<p>
+				{#if data.titles.length >= data.titlesShown}
+					The first {data.titles.length} documents whose title or citation matches, found {took(data.milliseconds)}.
+				{:else}
+					{count(data.titles.length, 'document', 'documents')} {data.titles.length === 1 ? 'has a title or citation that matches' : 'have a title or citation that matches'}, found {took(data.milliseconds)}.
+				{/if}
+			</p>
+		{:else if (data.search || data.titles) && !data.failed}
+			<p>Nothing matches “{data.filters.query}”. Searched {took(data.milliseconds)}.</p>
+		{/if}
+	</div>
+
+	{#if data.failed && !searching}
+		<div class="notice notice-problem" role="alert">
+			<p class="problem-heading"><TriangleAlert aria-hidden="true" size={18} /> The search could not finish.</p>
+			<p>
+				This is a problem on our side, not with your words. <a href={page.url.pathname + page.url.search}>Try the search again</a>. If
+				it keeps failing, use Report a problem at the top of the page.
+			</p>
+		</div>
+	{/if}
+
+	<div class="results-area" aria-busy={searching} class:stale={searching}>
 	{#if data.search}
 		{#if data.search.readAs}
-			<p class="small muted">Searched for the words themselves: {data.search.readAs}</p>
+			<p class="small muted">The search could not read “{data.filters.query}” as a search expression, so it searched for the words themselves: {data.search.readAs}</p>
 		{/if}
 		{#if data.search.results.length === 0}
-			<p>Nothing matches. Try fewer words, OR between other words for the same idea, or a star for word endings.</p>
+			<p>Try fewer words, OR between other words for the same idea, or a star for word endings. Or search in titles and citations instead.</p>
 		{:else}
 			<ol class="results" start={(data.filters.page ?? 0) * 20 + 1}>
 				{#each data.search.results as result (result.documentId)}
@@ -126,7 +181,7 @@
 		{/if}
 	{:else if data.titles}
 		{#if data.titles.length === 0}
-			<p>No title or citation matches.</p>
+			<p>Try fewer words, or search in the text instead.</p>
 		{:else}
 			<ul class="titles">
 				{#each data.titles as document (document.documentId)}
@@ -138,6 +193,7 @@
 			</ul>
 		{/if}
 	{/if}
+	</div>
 
 	<p class="small muted status">
 		{data.status.documents.toLocaleString('en-US')} documents, as of {built(data.status.build)}.
@@ -213,5 +269,30 @@
 
 	.status {
 		margin-top: var(--space-6);
+	}
+
+	.search-status p {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		margin-bottom: var(--space-4);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.search-status :global(svg),
+	.problem-heading :global(svg) {
+		flex: none;
+	}
+
+	.problem-heading {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	/* The last results stay in place, faded, until the new ones arrive. */
+	.results-area.stale {
+		opacity: 0.5;
 	}
 </style>
