@@ -130,6 +130,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+- kind: email-general
+  value: tribalcounciladmin@ltbbodawa-nsn.gov
+  label: General office email shown on the nation's website
+  source: ltbbodawa-nsn-legislative-and-tribal-council-contacts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: emblem
   alternative_text: Logo
@@ -316,6 +324,15 @@ justice_institutions:
   verification: read-in-full
   as_of: '2026-11-22'
   note: 'The page names the court: “The Tribal Appellate Court consists of a chief justice and two associate justices that hear appeals from Tribal Court.”. No physical address for the appellate court is given; the contact page lists it as ''APPELLATE COURT (leave message with court)''. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, little-traverse-bay-bands-of-odawa-indians#2).'
+- kind: healing-to-wellness-court
+  name: Waabshki-Miigwan Healing to Wellness Program
+  link: https://ltbbodawa-nsn.gov/judicial-branch/
+  source: tlpi-2024-promising-strategies-healing-to-wellness-mentor-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: at 32-33
+  note: 'The report says: "The Little Traverse Bay Bands of Odawa Indians Tribal Court Waabshki-Miigwan Healing to Wellness Program (WMHTWP) has been operational since 2009." It describes a hybrid misdemeanor and felony program of at least 18 months in five phases, with weekly court hearings in the first three phases. The journal sweep of 2026-11-23 (research/sessions/2026/2026-11-23-indian-law-journals.md).'
 dispute_resolution:
   forums:
   - kind: peacemaking

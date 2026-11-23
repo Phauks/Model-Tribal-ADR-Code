@@ -145,6 +145,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Contact - Standing Rock Sioux Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@standingrock.org
+  label: General office email shown on the nation's website
+  source: standingrock-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   image_link: https://www.standingrock.org/wp-content/uploads/2021/09/standingrocksiouxtribe-Crest-Logo-WHT.png
@@ -231,19 +239,25 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.ndcourts.gov/other-courts/tribal
   source: national-indian-law-library-standing-rock
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. Link is the entry in the North
+    Dakota Court System's Tribal Courts list; no page of the court's own was found in a second search
+    (2026-11-23; research/reviews/2026-11-22-service-links.json, service-358).
 - kind: tribal-court
   name: Standing Rock Sioux Tribal Court
+  link: https://www.ndcourts.gov/other-courts/tribal
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: North Dakota section, entry 'Standing Rock Sioux Tribe'
+  note: Link is the entry in the North Dakota Court System's Tribal Courts list; no page of the court's
+    own was found in a second search (2026-11-23; research/reviews/2026-11-22-service-links.json, service-359).
 dispute_resolution:
   database_listings:
   - title: Peacemaking and Extrajudicial Alternatives – Disposition Agreement

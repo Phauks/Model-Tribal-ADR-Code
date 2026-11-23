@@ -1,7 +1,7 @@
 profile: content/tribes/a/amah-mutsun-tribal-band-of-mission-san-juan-bautista.yaml
 topic: contacts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -19,3 +19,27 @@ searches:
   query: official website, contact page, general email
   outcome: found
   reason: Claude found the site by web search; a script opened it and found each value on the page named.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Amah Mutsun Band of Ohlone Costanoan Indians California tribe official website contact
+  outcome: not-found
+  reason: BIA petition pages and amahmutsun.org, which surfaced as the tribe's own site. Searched for amah-mutsun-band-of-ohlone-costanoan-indians, a second record for the same group, merged into this one on Nov. 23, 2026.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: official website
+  outcome: not-found
+  reason: Found https://amahmutsun.org/, which is already the website of amah-mutsun-tribal-band-of-mission-san-juan-bautista; not added, since the two records may name the same group. Searched for amah-mutsun-band-of-ohlone-costanoan-indians, a second record for the same group, merged into this one on Nov. 23, 2026.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://amahmutsun.org
+  query: 'general office email on the nation''s own site: home, contact, about, government, council, office and staff pages, read in a browser'
+  outcome: not-found
+  reason: Read 5 pages in a browser; none showed an email address.

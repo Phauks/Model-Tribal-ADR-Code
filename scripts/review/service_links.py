@@ -18,6 +18,7 @@ A service is an entry in a profile's `justice_institutions` or
     python3 scripts/review/service_links.py gather WORK_DIRECTORY [--reuse CACHE_DIRECTORY ...]
     python3 scripts/review/service_links.py merge WORK_DIRECTORY
     python3 scripts/review/service_links.py apply [--check]
+    python3 scripts/review/service_links.py second WORK_DIRECTORY
 
 `gather` lists every service with no link and what earlier reviews already
 fetched for it (research/reviews/2026-11-21-court-listings.json, whose
@@ -48,6 +49,22 @@ where the link came from and the date it was checked; it keeps the old note
 text and never changes `verification`. Only the profiles it changes are
 rewritten, in the form the profiles are kept in (PyYAML, width 100), so the
 diff shows only the new lines. With `--check` it reports what it would do.
+A service that already has the review's link is left alone, so `apply` can be
+run again after `second`.
+
+`second` records the second, deeper search of Nov. 23, 2026 for the services
+the first pass left with no link. Claude ran web searches (at most 150) and
+fetched the candidate pages with this review's fetch helper
+(court_listings_second_pass.fetch, cache and fetch log in WORK_DIRECTORY); it
+also read the state judicial branch tribal court lists the search turned up.
+WORK_DIRECTORY/searches.tsv holds one row per place looked (the services it
+was for, method, kind of place, address, query, outcome and reason), and
+WORK_DIRECTORY/fetch-log.json the status of each page fetched. `second`
+checks that every link in SECOND_DECISIONS was fetched with status 200,
+updates the review rows those decisions change (rule, link, evidence, note,
+question for the lead author), rewrites the review's CSV, and adds every
+search to the nation's search log with a closing entry per service. Run
+`apply` after it to set the links.
 """
 
 import collections
@@ -931,8 +948,11 @@ def apply(check):
                 facts = profile.get("justice_institutions") or []
             else:
                 facts = (profile.get("dispute_resolution") or {}).get("forums") or []
-            matches = [i for i, f in enumerate(facts) if not f.get("link") and f["source"] == row["source"]
-                       and (f.get("name") or f.get("own_term", {}).get("name") or f.get("kind")) == row["name"]]
+            same = [f for f in facts if f["source"] == row["source"]
+                    and (f.get("name") or f.get("own_term", {}).get("name") or f.get("kind")) == row["name"]]
+            if any(f.get("link") == row["new_link"] for f in same):
+                continue
+            matches = [i for i, f in enumerate(facts) if f in same and not f.get("link")]
             if len(matches) != 1:
                 skipped.append(f"{row['item_id']} {relative} {row['name']}: {len(matches)} matching facts")
                 continue
@@ -946,6 +966,291 @@ def apply(check):
         print("skipped", line)
 
 
+# --------------------------------------------------------------------------- second search (Nov. 23)
+
+SECOND_DATE = "2026-11-23"
+SD_LIST = "https://ujs.sd.gov/tribal-courts/"
+ND_LIST = "https://www.ndcourts.gov/other-courts/tribal"
+NE_LIST = ("https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/"
+           "consortium-tribal-state-and-federal-courts")
+NM_LIST = "https://tribalstate.nmcourts.gov/contact/"
+OR_LIST = "https://www.courts.oregon.gov/programs/jcip/Documents/Tribal%20contact%20info.pdf"
+BIA_SOUTHERN_PLAINS = "https://www.bia.gov/CFRCourts/southern-plains-cfr-court"
+SECOND_LABELS = {
+    SD_LIST: "South Dakota Unified Judicial System's Tribal Courts list (“South Dakota Tribal Court Contact "
+             "Information”)",
+    ND_LIST: "North Dakota Court System's Tribal Courts list",
+    NE_LIST: "Nebraska Judicial Branch's member list of the Consortium of Tribal, State, and Federal Courts",
+    NM_LIST: "New Mexico Tribal-State Judicial Consortium's list of tribal courts (its Contact page)",
+    OR_LIST: "Oregon Judicial Department's “Oregon Tribal Court Contact Information” list",
+    BIA_SOUTHERN_PLAINS: "Bureau of Indian Affairs list of the Tribes the Southern Plains CFR Court (a Court of "
+                         "Indian Offenses) serves",
+}
+SD_FLAG = ("Directory entry to confirm: the South Dakota court system's Tribal Courts page lists the nation under "
+           "“South Dakota Tribal Court Contact Information” with the Tribe's own address, telephone and website, "
+           "not a court office.")
+ND_FLAG = ("Directory entry to confirm: the North Dakota court system's Tribal Courts page gives only the nation's "
+           "name and website.")
+# Claude read each page on 2026-11-23; `seen` is what the page shows.
+SECOND_DECISIONS = {
+    "service-086": {"rule": "own-page", "link": "https://ftbelknap.org/courts",
+                    "seen": "the nation's page headed “Courts”, with the Law and Order Code and the court's filing "
+                            "forms (petitions, filing schedule, request for court document)",
+                    "flag": "Own page to confirm: the page is headed “Courts” and holds the court's forms, with no "
+                            "description or contact details of the court."},
+    "service-159": {"rule": "own-page", "link": "https://www.choctaw.org/about-us/tribal-government/",
+                    "seen": "the “Judicial System” section of the nation's Tribal Government page, which describes "
+                            "the Choctaw Tribal Courts (Criminal, Civil, Domestic Violence, Youth and Peacemaker "
+                            "courts) and the Choctaw Supreme Court",
+                    "flag": "Own page to confirm: the court is described in a section of the nation's Tribal "
+                            "Government page; the nation has no page for the court alone."},
+    "service-146": {"rule": "own-page", "link": "https://mashpeewampanoagtribe-nsn.gov/about-peacemakers-court",
+                    "seen": "the nation's page “About Peacemakers Court”, which says the Peacemakers Court of the "
+                            "Mashpee Wampanoag Tribe is part of the Tribal Judiciary"},
+    "service-061": {"rule": "own-page", "link": "https://ctclusi.org/tribal-court-peacegiving/",
+                    "seen": "the nation's “Tribal Court & Peacegiving Court” page, which names the Healing to "
+                            "Wellness Court as one of the court's problem-solving programs and says who may take part"},
+    "service-153": {"rule": "own-page", "link": "https://mescaleroapachetribe.com/mtc/",
+                    "seen": "the nation's page “Mescalero Tribal Court”, with the court's address, telephone, email "
+                            "and mission statement"},
+    "service-080": {"rule": "own-page", "link": "https://www.elyshoshonetribe.com/departments",
+                    "seen": "the nation's Departments page, whose Judicial Center entry gives the court's address, "
+                            "telephone and fax and its tribal judge and court clerk",
+                    "flag": "Own page to confirm: the court is an entry (Judicial Center) on the nation's Departments "
+                            "page; the nation has no page for the court alone."},
+    "service-271": {"rule": "directory", "link": SD_LIST, "seen": "lists the Oglala Sioux Tribe", "flag": SD_FLAG},
+    "service-138": {"rule": "directory", "link": SD_LIST, "seen": "lists the Lower Brule Sioux Tribe",
+                    "flag": SD_FLAG},
+    "service-072": {"rule": "directory", "link": SD_LIST, "seen": "lists the Crow Creek Sioux Tribe", "flag": SD_FLAG},
+    "service-358": {"rule": "directory", "link": ND_LIST, "seen": "lists the Standing Rock Sioux Tribe",
+                    "flag": ND_FLAG + " The South Dakota court system's list names the Tribe too."},
+    "service-372": {"rule": "directory", "link": ND_LIST, "seen": "lists “Three Affiliated - MHA Nation”",
+                    "flag": ND_FLAG + " The court's own site, https://fbdcourt.com/, refused the project's requests; "
+                                      "if a person opens it and it shows the court, it should replace this link."},
+    "service-386": {"rule": "directory", "link": ND_LIST, "seen": "lists the Turtle Mountain Band of Chippewa",
+                    "flag": ND_FLAG},
+    "service-274": {"rule": "directory", "link": NE_LIST, "seen": "names the “Omaha Tribal Court, Omaha Tribe of "
+                                                                  "Nebraska” among its members"},
+    "service-341": {"rule": "directory", "link": NE_LIST, "seen": "names the “Santee Sioux Nation Tribal Court” among "
+                                                                  "its members"},
+    "service-315": {"rule": "directory", "link": NM_LIST, "seen": "lists “Pueblo of Sandia – Tribal Court” under "
+                                                                  "“Tribal Courts”, with its address, telephone, court "
+                                                                  "handbook and website"},
+    "service-313": {"rule": "directory", "link": NM_LIST,
+                    "seen": "lists “Pueblo of San Ildefonso – San Ildefonso” under “Tribal Courts”, with its address, "
+                            "telephone and court handbook",
+                    "flag": "Directory entry to confirm: the entry sits under “Tribal Courts” and links the Pueblo's "
+                            "court handbook, but its heading names the Pueblo, not a court."},
+    "service-070": {"rule": "directory", "link": OR_LIST,
+                    "seen": "lists the Cow Creek Band of Umpqua Tribe of Indians with its court's judge, court "
+                            "administrator and address"},
+    "service-020": {"rule": "directory", "link": BIA_SOUTHERN_PLAINS,
+                    "seen": "names the Apache Tribe of Oklahoma among the Tribes located in the Southern Plains CFR "
+                            "Court",
+                    "flag": "Kind to check: the link is a Court of Indian Offenses that serves the Tribe, while the "
+                            "entry's kind is tribal-court."},
+}
+# The second entry of a nation listed twice takes the same decision.
+for first, second in (("service-086", "service-087"), ("service-159", "service-160"),
+                      ("service-138", "service-139"), ("service-072", "service-073"), ("service-358", "service-359"),
+                      ("service-372", "service-373"), ("service-386", "service-387"), ("service-341", "service-342"),
+                      ("service-315", "service-316"), ("service-313", "service-314")):
+    SECOND_DECISIONS[second] = SECOND_DECISIONS[first]
+# Services still without a link whose Alaska Tribal Court Directory entry the
+# lead author could accept as the directory link, though it does not say the
+# court is active (Claude read the entries on 2026-11-23).
+AK_QUESTION = ("Directory entry the lead author could accept: the 2022 Alaska Tribal Court Directory "
+               "(https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf) has an entry for the village that ")
+SECOND_QUESTIONS = {
+    "service-210": AK_QUESTION + "leaves the active-court question blank but gives a telephone and email to open a "
+                                 "case; it is left without a link.",
+    "service-284": AK_QUESTION + "leaves the active-court question blank and names the Council as the type of justice "
+                                 "system; it is left without a link.",
+    "service-175": AK_QUESTION + "answers “Currently developing. Check with Tribe on current status”; it is left "
+                                 "without a link.",
+}
+# Services another change on `main` linked after the first pass, with the link
+# the second search would have chosen; the review row records it and `apply`
+# leaves the profile as it is.
+SECOND_ALREADY = {
+    "service-272": {"rule": "directory", "link": SD_LIST,
+                    "why": "The individual courts review (pull request #173, research/reviews/"
+                           "2026-11-22-individual-courts.json) had already linked this entry, now of kind "
+                           "judicial-branch, to the same South Dakota Unified Judicial System list, with its own note"},
+}
+SECOND_FIELDS = ("items", "method", "place_kind", "address", "query", "outcome", "reason")
+
+
+def second_note(item_id, decision):
+    review = f"research/reviews/2026-11-22-service-links.json, {item_id}"
+    if decision["rule"] == "own-page":
+        return (f"Link added {SECOND_DATE} after a second search: {decision['seen']}, fetched with status 200 on "
+                f"{SECOND_DATE}; see {review}.")
+    return (f"Link is the entry in the {SECOND_LABELS[decision['link']]}; no page of the court's own was found in a "
+            f"second search ({SECOND_DATE}; {review}).")
+
+
+def read_searches(work):
+    rows = []
+    for line in (work / "searches.tsv").read_text(encoding="utf-8").splitlines():
+        if not line.strip() or line.startswith("#"):
+            continue
+        rows.append(dict(zip(SECOND_FIELDS, line.split("\t"))))
+    return rows
+
+
+def second(work):
+    fetched = json.loads((work / "fetch-log.json").read_text(encoding="utf-8"))
+    rows = json.loads(REVIEW.with_suffix(".json").read_text(encoding="utf-8"))
+    by_id = {r["item_id"]: r for r in rows}
+    problems = []
+    for item_id, decision in sorted(SECOND_DECISIONS.items()):
+        row = by_id[item_id]
+        entry = fetched.get(decision["link"]) or {}
+        if entry.get("status") != 200:
+            problems.append(f"{item_id}: {decision['link']} was not fetched with status 200")
+        if row["rule"] != "none-found" and row["basis"] != "second-search":
+            problems.append(f"{item_id}: the first pass already decided {row['rule']}")
+            continue
+        earlier = row["evidence"].split(" Earlier: ", 1)[1] if row["basis"] == "second-search" else row["evidence"]
+        where = "the court's or the nation's own site" if decision["rule"] == "own-page" else \
+            f"the {SECOND_LABELS[decision['link']]}"
+        row.update({
+            "new_link": decision["link"], "rule": decision["rule"], "basis": "second-search",
+            "evidence": f"Second search, {SECOND_DATE}: {where}, fetched with status 200, "
+                        + (f"is {decision['seen']}." if decision["rule"] == "own-page" else f"{decision['seen']}.")
+                        + f" Earlier: {earlier}",
+            "fetched": SECOND_DATE, "note_added": second_note(item_id, decision), "evidence_checked": True,
+            "for_lead_author": decision.get("flag"),
+        })
+    for item_id, already in SECOND_ALREADY.items():
+        row = by_id[item_id]
+        earlier = row["evidence"].split(" Earlier: ", 1)[1] if row["basis"] == "second-search" else row["evidence"]
+        if (fetched.get(already["link"]) or {}).get("status") != 200:
+            problems.append(f"{item_id}: {already['link']} was not fetched with status 200")
+        row.update({"new_link": already["link"], "rule": already["rule"], "basis": "second-search",
+                    "evidence": f"Second search, {SECOND_DATE}: {already['why']}; the second search found the same "
+                                f"list. Earlier: {earlier}",
+                    "fetched": SECOND_DATE, "note_added": None, "evidence_checked": True, "for_lead_author": None})
+    for item_id, question in SECOND_QUESTIONS.items():
+        if by_id[item_id]["rule"] == "none-found":
+            by_id[item_id]["for_lead_author"] = question
+    REVIEW.with_suffix(".json").write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    columns = ["item_id", "profile", "nation", "section", "kind", "name", "source", "old_link", "new_link", "rule",
+               "basis", "evidence", "fetched", "note_added", "evidence_checked", "for_lead_author"]
+    with open(REVIEW.with_suffix(".csv"), "w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle, lineterminator="\n")
+        writer.writerow(columns + ["lead_author_decision"])
+        for row in rows:
+            writer.writerow(["" if row[c] is None else row[c] for c in columns] + [""])
+    logs = second_search_logs(work, rows)
+    counts = collections.Counter((r["rule"], r["kind"]) for r in rows if r["basis"] == "second-search")
+    left = collections.Counter(r["kind"] for r in rows if r["rule"] == "none-found")
+    print(f"second search: {sum(counts.values())} linked {dict(counts)}; still none {dict(left)}; {logs} logs")
+    for line in problems:
+        print("problem:", line)
+
+
+def second_search_logs(work, rows):
+    searches = read_searches(work)
+    targets = [r for r in rows if r["rule"] == "none-found" or r["basis"] == "second-search"]
+    by_id = {r["item_id"]: r for r in targets}
+    by_log = collections.defaultdict(list)
+    for row in targets:
+        by_log[(row["topic"], row["profile"])].append(row)
+    written = 0
+    for (topic, profile), group in sorted(by_log.items()):
+        path = SEARCH_LOGS / topic / pathlib.PurePosixPath(profile).parent.name / pathlib.PurePosixPath(profile).name
+        old = yaml.safe_load(path.read_text(encoding="utf-8")) if path.exists() else {}
+        kept = [e for e in old.get("searches", []) if str(e.get("date")) != SECOND_DATE
+                or "second search" not in str(e.get("reason", "")).lower()]
+        alaska = any("courts.alaska.gov" in str(e.get("address")) for e in kept)
+        ids = {r["item_id"] for r in group}
+        names = list(dict.fromkeys(r["name"] for r in group))
+        entries = []
+        for search in searches:
+            wanted = set(search["items"].split(","))
+            if (search["items"] == "ALL" or search["items"] == "ALASKA" and alaska) and topic == "courts":
+                wanted = ids
+            hit = [by_id[i]["name"] for i in sorted(wanted & ids)]
+            if not hit:
+                continue
+            hit = list(dict.fromkeys(hit))
+            web = search["method"] == "web-search"
+            prefix = ("Every service listed for this nation that the first pass left without a link"
+                      if len(names) > 1 and len(hit) == len(names) else " and ".join(f"“{n}”" for n in hit))
+            entry = {"date": SECOND_DATE, "searched_by": SEARCHED_BY, "method": "ai-review" if web else "script",
+                     "place_kind": search["place_kind"], "address": "web search" if web else search["address"],
+                     "query": search["query"] if web else f"{SCRIPT} second: {search['query']}",
+                     "outcome": search["outcome"], "reason": f"Second search: {prefix}: {search['reason']}"}
+            entries.append(entry)
+        for row in group:
+            entries.append({
+                "date": SECOND_DATE, "searched_by": SEARCHED_BY, "method": "ai-review", "place_kind": "project-capture",
+                "address": "research/reviews/2026-11-22-service-links.json",
+                "outcome": "found" if row["new_link"] else "not-found",
+                "reason": f"Second search: “{row['name']}”: Claude weighed what the second search found against the "
+                          f"lead author's order (own page, then directory entry): {row['rule']}"
+                          + (f", {row['new_link']}." if row["new_link"] else
+                             "; the link stays empty and the service stays listed."),
+                "records": [f"research/reviews/2026-11-22-service-links.json#{row['item_id']}"]})
+        all_searches = kept + entries
+        blocked = sorted({s["address"] for s in all_searches if s["outcome"] == "blocked"
+                          and s["place_kind"] in ("nation-website", "court-website")})
+        if any(s["outcome"] == "found" for s in all_searches):
+            status = "found"
+        elif blocked or old.get("status") == "partly-searched":
+            status = "partly-searched"
+        else:
+            status = "none-found"
+        log = {"profile": profile, "topic": topic, "status": status,
+               "last_searched": max(str(s["date"]) for s in all_searches), "searches": all_searches}
+        steps = old.get("next_steps") or ""
+        unlinked = [r["name"] for r in group if not r["new_link"]]
+        linked = [r["name"] for r in group if r["new_link"]]
+        extra = ""
+        if linked:
+            extra += (f" The second search of {SECOND_DATE} linked " + "; ".join(f"“{n}”" for n in linked)
+                      + " (research/reviews/2026-11-22-service-links.json).")
+        if unlinked:
+            extra += (f" The second search of {SECOND_DATE} (web searches and state court lists) found no page or "
+                      "official directory entry for " + "; ".join(f"“{n}”" for n in unlinked)
+                      + "; a call to the nation's office could say whether the court has a page.")
+        if extra.strip() and extra.strip() not in steps:
+            steps = f"{steps}{extra}".strip()
+        if steps:
+            log["next_steps"] = steps
+        write_appended(path, log, entries, kept)
+        written += 1
+    return written
+
+
+def write_appended(path, log, entries, kept):
+    """Add the new entries to the log's own text and set its status, date and
+    next steps, so the earlier entries' lines stay exactly as they were."""
+    if not path.exists() or not kept:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(yaml.dump(log, sort_keys=False, allow_unicode=True, width=100), encoding="utf-8")
+        return
+    text = path.read_text(encoding="utf-8")
+    head, _, rest = text.partition("\nsearches:\n")
+    body, steps_marker, _ = rest.partition("\nnext_steps:")
+    if not steps_marker:
+        body = rest.rstrip("\n")
+    else:
+        body = body.rstrip("\n")
+    # Drop this command's own entries from an earlier run (they are rebuilt).
+    items = re.split(r"(?m)^(?=- date: )", body + "\n")
+    items = [i for i in items if i and not (f"date: '{SECOND_DATE}'" in i and "Second search" in i)]
+    added = yaml.dump(entries, sort_keys=False, allow_unicode=True, width=100) if entries else ""
+    head = re.sub(r"(?m)^status: .*$", f"status: {log['status']}", head)
+    head = re.sub(r"(?m)^last_searched: .*$", f"last_searched: '{log['last_searched']}'", head)
+    out = head + "\nsearches:\n" + "".join(items) + added
+    if log.get("next_steps"):
+        out += yaml.dump({"next_steps": log["next_steps"]}, sort_keys=False, allow_unicode=True, width=100)
+    path.write_text(out, encoding="utf-8")
+
+
 if __name__ == "__main__":
     arguments = sys.argv[1:]
     if len(arguments) >= 2 and arguments[0] == "gather":
@@ -953,6 +1258,8 @@ if __name__ == "__main__":
         gather(pathlib.Path(arguments[1]), reuse)
     elif len(arguments) == 2 and arguments[0] == "merge":
         merge(pathlib.Path(arguments[1]))
+    elif len(arguments) == 2 and arguments[0] == "second":
+        second(pathlib.Path(arguments[1]))
     elif arguments[:1] == ["apply"]:
         apply(check="--check" in arguments)
     else:

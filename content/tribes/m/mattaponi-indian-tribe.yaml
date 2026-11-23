@@ -8,6 +8,13 @@ names:
     confidence: high
     verification: bulk-import
     as_of: '2026'
+  - name: Mattaponi Indian Tribe and Reservation
+    source: ofa-petitions-in-process
+    confidence: high
+    verification: inferred
+    as_of: '2026-11-21'
+    locator: Current Petitions Status table, row 408; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/mattaponi-indian-tribe-and-reservation
+    note: Name of a second record for the same group (id mattaponi-indian-tribe-and-reservation), merged into this one on Nov. 23, 2026; the match is by name and state, not a source that says the two are the same.
   official_source: census-aian-geography-definitions
 recognition:
 - type: unrecognized
@@ -39,6 +46,20 @@ recognition:
   note: 'Source: ''on March 25, 1983, Virginia Joint Resolution 54 officially recognized the Mattaponi
     tribe.'' The Secretary''s page also says two tribes were recognized through a treaty; the annual tribute
     under the 1677 Treaty of Middle Plantation continues (2025 report).'
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '408'
+  petition_stage: Awaiting Active Consideration
+  source: ofa-petitions-in-process
+  confidence: high
+  verification: inferred
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 408; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/mattaponi-indian-tribe-and-reservation
+  note: 'Federal Register history: Receipt of Documented Petition for Federal Acknowledgment as an American
+    Indian Tribe, 90 FR 661 (2025-01-06). Matched by name to letter-of-intent petitioner #157 "Mattaponi
+    Tribe (aka Mattaponi Indian Reservation)" on the 2008 list; match not confirmed by the source. 2013/2008
+    list entry #157: Mattaponi Tribe (aka Mattaponi Indian Reservation) - Letter of Intent to Petition
+    04/04/1995.'
 states:
 - state: VA
   presence: land
@@ -61,6 +82,14 @@ states:
   verification: inferred
   as_of: '2026'
   note: Reservation set aside by treaty; address on Mattaponi Reservation Circle.
+- state: VA
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
 census_areas:
 - geographic_identifier: '9230'
   name: Mattaponi (state) Reservation

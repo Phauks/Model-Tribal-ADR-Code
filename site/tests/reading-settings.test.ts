@@ -47,7 +47,8 @@ describe('reading settings', () => {
 			contrast: undefined,
 			noteDisplay: undefined,
 			sourceLinks: undefined,
-			glossaryCards: undefined
+			glossaryCards: undefined,
+			motion: undefined
 		});
 		expect(settingsAttributes({ ...defaultSettings, textSpacing: 'wide' }).textSpacing).toBe('wide');
 	});
