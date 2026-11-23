@@ -55,7 +55,7 @@
 	const viewKey = 'essay-view';
 	let access = $state<EssayPageState | null>(null);
 	let view = $state<'published' | 'drafts'>('drafts');
-	let mode = $state<'reading' | 'editing'>('reading');
+	let mode = $state<'reading' | 'commenting' | 'editing'>('reading');
 
 	const shown = $derived(
 		access?.draft && view === 'drafts' ? { html: access.draft.html, sources: access.draft.sources } : { html, sources }
@@ -104,7 +104,7 @@
 	// Back to reading: show what was just saved.
 	let previousMode: typeof mode = 'reading';
 	$effect(() => {
-		if (mode === 'reading' && previousMode === 'editing') void loadAccess();
+		if (mode === 'reading' && previousMode !== 'reading') void loadAccess();
 		previousMode = mode;
 	});
 </script>
@@ -125,7 +125,7 @@
 
 <article class="reading essay">
 	<!-- The editor shows the title as the essay's own first heading, to edit there. -->
-	<h1 class:visually-hidden={mode === 'editing'}>{title}</h1>
+	<h1 class:visually-hidden={mode !== 'reading'}>{title}</h1>
 	{#if !isNewest && publication && newest}
 		<div class="notice" role="note">
 			<p>
@@ -133,11 +133,14 @@
 			</p>
 		</div>
 	{/if}
-	{#if access && mode === 'editing'}
+	{#if access && mode !== 'reading'}
 		{#await import('#lib/components/essays/EssayEditor.svelte')}
 			<p class="small muted">Opening the editor…</p>
 		{:then { default: EssayEditor }}
-			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave live onsaved={saved} />
+			{#key mode}
+				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live onsaved={saved} />
+			{/key}
 		{:catch}
 			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
 		{/await}
