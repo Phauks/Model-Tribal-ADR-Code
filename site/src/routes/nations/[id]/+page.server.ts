@@ -303,7 +303,10 @@ function healthItems(record: NationRecord, sources: SourceUses, section: string)
 	if (facts.length === 0) return [];
 	const areas = [...new Set(facts.map((fact) => fact.area))];
 	const areaCitations: CitationMark[] = [];
-	for (const fact of facts) sources.citeFact(fact, section, `${fact.area} Area`, areaCitations);
+	// The Area's markers are those of the facts that name only the Area; the
+	// service unit and operator lines carry their own.
+	const areaOnly = facts.filter((fact) => !fact.service_unit && !fact.operator);
+	for (const fact of areaOnly.length > 0 ? areaOnly : facts) sources.citeFact(fact, section, `${fact.area} Area`, areaCitations);
 	const items: FactItem[] = [{ text: areas.map((area) => `${area} Area`).join('; '), citations: areaCitations }];
 	for (const fact of facts) {
 		if (!fact.service_unit) continue;

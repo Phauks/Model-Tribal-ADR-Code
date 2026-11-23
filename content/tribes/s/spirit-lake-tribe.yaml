@@ -492,6 +492,30 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state-consent-not-given
+  detail: North Dakota's ch. 27-19 extends state civil jurisdiction over a reservation only on acceptance by its Indian citizens, and the Legislative Council staff reported in 2004 that no tribe had voted to consent after 1968. (N.D. Legis. Council Memo. 59215, at 3 (2004).)
+  source: north-dakota-legislative-council-indian-jurisdictional-issues-2004
+  confidence: medium
+  verification: read-in-full
+  locator: N.D. Legis. Council Memo. 59215, Conclusion (p. 3)
+  note: 'Secondary source (legislative staff memo, 2004); the research has no later source. "This amendment" is the 1968 consent amendment. The 1946 Devils Lake act (separate fact) is a separate criminal grant. Also cites: three-affiliated-tribes-v-wold-engineering-1984.'
+- topic: state-jurisdiction-statute
+  value: state-criminal-jurisdiction
+  detail: A 1946 act conferred on North Dakota jurisdiction over offenses by or against Indians on the Devils Lake (now Spirit Lake) Reservation to the same extent as elsewhere in the State, without ousting federal courts. (Act of May 31, 1946, ch. 279, 60 Stat. 229.)
+  source: statutes-at-large-60-229
+  confidence: high
+  verification: read-in-full
+  locator: 60 Stat. 229 (Pub. L. No. 79-394)
+  note: 'Criminal only. The Senate report (S. Rep. 116-130 at 2) identifies the Devils Lake Reservation as the Spirit Lake Reservation. Not codified in the U.S. Code. Also cites: senate-report-116-130.'
+- topic: state-jurisdiction-statute
+  value: state-criminal-jurisdiction
+  detail: Congress has not repealed the 1946 act. Repeal bills in the 115th (S. 2788) and 116th (S. 2159, H.R. 3831) Congresses were reported by the Senate committee or referred, and not enacted; the research found no public law repealing it through the 119th Congress listing. (S. Rep. No. 116-130, at 2 (2019).)
+  source: senate-report-116-130
+  confidence: medium
+  verification: read-in-full
+  locator: S. Rep. 116-130, Legislative History (p. 2)
+  note: '"Not repealed" rests on absence: the Congress.gov API list of enacted laws for the 116th-119th Congresses (checked 2026-11-23; 119th list showed 144 laws) contains no repeal; govinfo BILLSTATUS for S. 2159 ends 2019-10-16 (placed on calendar) and for H.R. 3831 at 2019-08-02 (committee referral). The research did not find a 117th-119th Congress repeal bill. Verify before publishing. Also cites: statutes-at-large-60-229.'
 treaties:
 - title: Treaty with the Sauk and Foxes, etc., 1830
   signed: '1830-07-15'

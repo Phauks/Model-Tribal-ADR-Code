@@ -11,3 +11,11 @@ searches:
   query: 'scripts/jurisdiction/public_law_280_gaps.py: the nation''s states against the mandatory and optional Public Law 280 states'
   outcome: found
   reason: Public Law 280 status recorded for Maine.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: statutes-and-cases
+  address: research/raw/2026-11-23/state-jurisdiction.json
+  query: State jurisdiction under optional Public Law 280 statutes and other federal laws (session laws, codes, Federal Register notices, opinions)
+  outcome: found
+  reason: '1 facts recorded: state-criminal-and-civil-jurisdiction.'

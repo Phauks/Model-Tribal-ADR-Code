@@ -516,6 +516,22 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Montana's 2024 legislative staff summary states that the Flathead Reservation is the only reservation in Montana under Public Law 280; no other Montana reservation is under state jurisdiction by the 1963 act. (Mont. Legis. Servs. Div., Montana & Public Law 280, at 1 (Apr. 2024).)
+  source: montana-legislative-services-division-public-law-280-2024
+  confidence: medium
+  verification: read-in-full
+  locator: Mont. Legis. Servs. Div. memo p. 1; Mont. Code Ann. § 2-1-301
+  note: 'Secondary source (legislative staff). Statutory text names only Flathead in § 2-1-301. Little Shell has no reservation in the roster data. Turtle Mountain (ND-based) has MT presence only. Fort Peck: a state court allowed divorce under a 1938 tribal enactment (State ex rel. Iron Bear v. Dist. Ct., 162 Mont. 335, 512 P.2d 1292 (1973)); that is tribal consent in a domestic-relations setting, not Public Law 280; the research read only the opening. Also cites: montana-code-annotated-2-1-301.'
+- topic: public-law-280
+  value: optional-state
+  detail: Montana law lets any other tribe request state jurisdiction by resolution to the governor, who must proclaim it within 60 days, but only after the tribe's own approval and the consent of each affected county commission. (Mont. Code Ann. § 2-1-302.)
+  source: montana-code-annotated-2-1-301
+  confidence: high
+  verification: read-in-full
+  locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
+  note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
 treaties:
 - title: Treaty with the Crow Tribe, 1825
   signed: '1825-08-04'

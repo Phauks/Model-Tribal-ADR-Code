@@ -58,7 +58,8 @@ def write_source(key: str, kind: str, title: str, author: str, url: str, issued:
             "status": "no-permission-needed",
             "basis": rights_basis,
             "basis_note": "A work of the United States government, not subject to copyright (17 U.S.C. § 105)." if government
-            else "Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.",
+            else "Official legal text; quoted with attribution." if rights_basis == "government-edict"
+            else "Only facts and short quotations are recorded from this source; it is cited and linked, not reproduced.",
             "redistribution": government,
         },
         "found_in": [SESSION],
