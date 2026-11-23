@@ -123,6 +123,7 @@ function withoutFootnoteNumbers(text: string): string {
  * Short lines at the very top that look like that are dropped.
  */
 function withoutRunningHead(lines: string[]): string[] {
+	// "Opinion of the Court" is matched loosely: scans of the United States Reports read it as "Opinron" or "Opimon".
 	let index = 0;
 	while (index < Math.min(lines.length, 4)) {
 		const line = lines[index].trim();
@@ -130,7 +131,7 @@ function withoutRunningHead(lines: string[]): string[] {
 			line === '' ||
 			(line.length <= 60 &&
 				(/^[^a-z]*$/.test(line.replace(/\bv\./g, '')) ||
-					/opinion of the court|october term|syllabus|dissenting|concurring|for educational use only|westlaw/i.test(line) ||
+					/\bop[a-z]{3,6}\s+of\s+the\s+court|october term|syllabus|dissenting|concurring|for educational use only|westlaw/i.test(line) ||
 					/^\d+\s/.test(line) ||
 					/\s\d+$/.test(line)));
 		if (!runningHead) break;
@@ -138,6 +139,9 @@ function withoutRunningHead(lines: string[]): string[] {
 	}
 	return lines.slice(index);
 }
+
+/** The end of a line that introduces a quotation set apart: "the court said (p. 383)", "as follows:". */
+const quotationIntroduced = /(?:\bsaid|\bsays|\bfollows|\bstated|\bdeclared|:|\(pp?\.\s*\d+(?:[-–]\d+)?\))[.,:]?$/;
 
 /**
  * A document's passages as paragraphs. Web pages and plain text mark
@@ -167,6 +171,13 @@ export function paragraphsOf(passages: LibraryPassageText[]): SourceParagraph[] 
 		carried = '';
 	};
 
+	// A court quoting another opinion sets the quotation apart as its own
+	// paragraph, often with a full last line, so line length cannot find its
+	// ends: it starts with an opening quotation mark after "the court said
+	// (p. 382)" and ends at a closing mark after a full stop.
+	let inQuotation = false;
+	let quotationClosed = false;
+
 	let previousPage: number | null | undefined;
 	for (const passage of passages) {
 		const fromPdf = passage.method === 'text-layer' || passage.method === 'ocr';
@@ -181,10 +192,20 @@ export function paragraphsOf(passages: LibraryPassageText[]): SourceParagraph[] 
 				const line = raw.trim();
 				// The library adds blank lines when it splits a long page, so they mark nothing here.
 				if (!line) continue;
+				const opensQuotation = /^["“]/.test(line);
+				if (lines.length > 0 && opensQuotation && quotationIntroduced.test(lines[lines.length - 1])) {
+					endLines();
+					inQuotation = true;
+				} else if (quotationClosed) {
+					if (lines.length > 0 && /^[\p{Lu}"“]/u.test(line)) endLines();
+					inQuotation = opensQuotation;
+				}
+				quotationClosed = false;
 				if (lines.length === 0) linesPage = { page: passage.page, label: passage.label };
 				const last = lines.length - 1;
 				if (last >= 0 && /[\p{L}]-$/u.test(lines[last])) lines[last] = lines[last].slice(0, -1) + line;
 				else lines.push(line);
+				if (inQuotation && /[.?!;]['’]?["”]$/.test(line)) quotationClosed = true;
 				if (/[.?!:;"'’”)]$/.test(line) && line.length < typical * 0.8) endLines();
 			}
 		} else {
