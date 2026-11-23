@@ -20,7 +20,9 @@ Usage: python3 scripts/jurisdiction/build_land_establishment.py > research/juris
 import json
 import re
 
-from sources import ROOT, SESSION, capture, write_source
+import yaml
+
+from sources import ROOT, SESSION, capture, dump, write_source
 
 RAW = ROOT / "research/raw/2026-11-23/land-establishment.json"
 TREATIES = ROOT / "research/raw/2026-11-23/treaties.json"
@@ -102,10 +104,35 @@ def clean_note(text: str) -> str:
                         "It is recorded as the original set-aside, though its legal form is a Commissioner's reservation.")
 
 
+def mark_shared_links(raw: dict, keys: dict[str, str]) -> None:
+    """Orders read in one Kappler scan share its address: say so on each record."""
+    groups: dict[str, list[str]] = {}
+    for source in raw["sources"]:
+        if "archive.org/details/" in source["url"]:
+            groups.setdefault(source["url"], []).append(keys[source["key_suggestion"]])
+    for members in groups.values():
+        if len(members) < 2:
+            continue
+        for key in members:
+            path = ROOT / "content" / "sources" / key[0] / f"{key}.yaml"
+            record = yaml.safe_load(path.read_text(encoding="utf-8"))
+            others = sorted(set(members) - {key})
+            if record.get("shares_link_with") == others:
+                continue
+            rebuilt = {}
+            for field, value in record.items():
+                if field == "found_in":
+                    rebuilt["shares_link_with"] = others
+                if field != "shares_link_with":
+                    rebuilt[field] = value
+            path.write_text(dump(rebuilt), encoding="utf-8")
+
+
 def main() -> None:
     raw = json.loads(RAW.read_text(encoding="utf-8"))
     keys = source_keys(raw)
     write_sources(raw, keys)
+    mark_shared_links(raw, keys)
     batch = {"session": SESSION, "facts": [], "searches": []}
     found: dict[str, list[str]] = {}
     for fact in sorted(raw["facts"], key=lambda item: (item["roster_id"], item["date"], not item["original"])):
