@@ -10,10 +10,10 @@
 	// the sidebar (SiteSidebar.svelte), so the masthead has no menu row. The
 	// content version shows only on paper; on screen it is in the footer.
 	//
-	// On wide screens a button at the far left, before the name, hides and shows
-	// the sidebar, so a hidden sidebar leaves nothing behind on the page
-	// (Trevor, Nov. 23, 2026; sidebar/sidebar-visibility.svelte.ts). It needs
-	// scripts; without them the sidebar always shows.
+	// On wide screens a hamburger button near the page's left edge, before the
+	// name, hides and shows the sidebar, so a hidden sidebar leaves nothing
+	// behind on the page (Trevor, Nov. 23, 2026; sidebar/sidebar-visibility.svelte.ts).
+	// It needs scripts; without them the sidebar always shows.
 	//
 	// On phones (Trevor approved this from the Wikiwand review, Nov. 22,
 	// 2026) the masthead is one short row: the name, search, and a "More"
@@ -23,8 +23,7 @@
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import Ellipsis from '@lucide/svelte/icons/ellipsis';
-	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
-	import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
+	import Menu from '@lucide/svelte/icons/menu';
 	import { sidebarVisibility, toggleSidebar } from './sidebar/sidebar-visibility.svelte.ts';
 	import AccountLink from './AccountLink.svelte';
 	import DownloadMenu from './DownloadMenu.svelte';
@@ -98,10 +97,7 @@
 				title="{sidebarVisibility.shown ? 'Hide' : 'Show'} sidebar (Ctrl+\)"
 				onclick={toggleSidebar}
 			>
-				{#if sidebarVisibility.shown}<PanelLeftClose size={20} aria-hidden="true" />{:else}<PanelLeftOpen
-						size={20}
-						aria-hidden="true"
-					/>{/if}
+				<Menu size={24} aria-hidden="true" />
 				<span class="visually-hidden">{sidebarVisibility.shown ? 'Hide' : 'Show'} sidebar</span>
 			</button>
 			<p class="wordmark">
@@ -178,9 +174,17 @@
 		color: var(--color-band-text);
 	}
 
+	/*
+	 * The hamburger sits near the page's left edge, closer than the page's
+	 * usual margin, with the name just after it (Trevor, Nov. 23, 2026).
+	 */
 	@media (min-width: 64rem) {
 		:global(:root[data-scripts='on']) .sidebar-toggle {
 			display: inline-grid;
+		}
+
+		:global(:root[data-scripts='on']) .masthead-row {
+			padding-left: var(--space-2);
 		}
 	}
 
