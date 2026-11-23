@@ -469,12 +469,16 @@ justice_institutions:
     Court page on the nation''s website (fetched with status 200 on 2026-11-22).'
 - kind: healing-to-wellness-court
   name: Wellness Court
+  link: https://ctclusi.org/tribal-court-peacegiving/
   source: narf-ipi-youth-family-peacemaking-laws
   confidence: medium
   verification: title-only
   as_of: '2025-08-25'
-  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
-    whether it currently operates was not checked.
+  note: 'Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked. Link added 2026-11-23 after a second search: the nation''s
+    “Tribal Court & Peacegiving Court” page, which names the Healing to Wellness Court as one of the court''s
+    problem-solving programs and says who may take part, fetched with status 200 on 2026-11-23; see research/reviews/2026-11-22-service-links.json,
+    service-061.'
 - kind: tribal-court
   name: Tribal Court
   link: https://ctclusi.org/tribal-court-peacegiving/

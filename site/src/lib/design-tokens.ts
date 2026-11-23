@@ -16,7 +16,7 @@
  * a browser or only in Node.
  */
 
-type TokenValue = string | number | string[] | { value: number; unit: string };
+type TokenValue = string | number | string[] | number[] | { value: number; unit: string };
 
 export interface TokenGroup {
 	[name: string]: TokenGroup | TokenValue | undefined;
@@ -36,8 +36,12 @@ function childEntries(group: TokenGroup): [string, TokenGroup][] {
 }
 
 function formatValue(value: TokenValue): string {
+	// A list of four numbers is an easing curve (the format's cubicBezier type).
+	if (Array.isArray(value) && value.every((item) => typeof item === 'number')) {
+		return `cubic-bezier(${value.join(', ')})`;
+	}
 	if (Array.isArray(value)) {
-		return value
+		return (value as string[])
 			.map((family) => (/^[a-z-]+$/.test(family) ? family : `"${family}"`))
 			.join(', ');
 	}

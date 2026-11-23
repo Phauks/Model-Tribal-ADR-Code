@@ -541,19 +541,25 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.ndcourts.gov/other-courts/tribal
   source: national-indian-law-library-turtle-mountain
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. Link is the entry in the North
+    Dakota Court System's Tribal Courts list; no page of the court's own was found in a second search
+    (2026-11-23; research/reviews/2026-11-22-service-links.json, service-386).
 - kind: tribal-court
   name: Turtle Mountain Chippewa Tribal Court
+  link: https://www.ndcourts.gov/other-courts/tribal
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: North Dakota section, entry 'Turtle Mountain Band of Chippewa Indians'
+  note: Link is the entry in the North Dakota Court System's Tribal Courts list; no page of the court's
+    own was found in a second search (2026-11-23; research/reviews/2026-11-22-service-links.json, service-387).
 - kind: court-of-appeals
   name: Tribal Court of Appeals
   link: https://law.tmchippewa.com/us/nsn/tmchippewa/council/code/2.13.010

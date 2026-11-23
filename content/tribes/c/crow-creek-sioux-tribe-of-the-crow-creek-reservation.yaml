@@ -378,19 +378,27 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://ujs.sd.gov/tribal-courts/
   source: national-indian-law-library-crow-creek-sioux
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. Link is the entry in the South
+    Dakota Unified Judicial System's Tribal Courts list (“South Dakota Tribal Court Contact Information”);
+    no page of the court's own was found in a second search (2026-11-23; research/reviews/2026-11-22-service-links.json,
+    service-072).
 - kind: tribal-court
   name: Crow Creek Sioux Tribal Court
+  link: https://ujs.sd.gov/tribal-courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: South Dakota section, entry 'Crow Creek Sioux Tribe'
+  note: Link is the entry in the South Dakota Unified Judicial System's Tribal Courts list (“South Dakota
+    Tribal Court Contact Information”); no page of the court's own was found in a second search (2026-11-23;
+    research/reviews/2026-11-22-service-links.json, service-073).
 gaming:
   compacts:
   - state: SD

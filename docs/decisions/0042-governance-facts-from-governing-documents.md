@@ -1,4 +1,4 @@
-# 0035. Record how each nation's government is set up, as plain facts from its own documents
+# 0042. Record how each nation's government is set up, as plain facts from its own documents
 
 - **Status:** Accepted (lead author, Nov. 23, 2026)
 - **Date:** 2026-11-23

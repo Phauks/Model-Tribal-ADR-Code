@@ -1,7 +1,7 @@
 profile: content/tribes/f/fort-mcdowell-yavapai-nation.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -242,10 +242,86 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: The 2015 Arizona state contact list names 'Fort McDowell Yavapai Nation Tribal Court' in Fort McDowell, AZ.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Arizona courts tribal court directory azcourts.gov Ak-Chin Havasupai Tonto Apache Yavapai-Prescott
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: The Arizona courts site has no tribal court directory in the
+    results; the lists that came up are a state health agency''s and an insurer''s contact lists, not
+    official court directories.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: site:azcourts.gov tribal courts Arizona list of tribal courts contact
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: No Arizona Judicial Branch tribal court list came up; the lists
+    found are a state health agency''s, a child-welfare agency''s and an insurer''s.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: site:azbar.org tribal courts Arizona list nativeamerican tribal court
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: No State Bar of Arizona list of tribal courts came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://fmyn.org/tribal-court/criminal-court/
+  query: 'scripts/review/service_links.py second: Tribal Court'
+  outcome: blocked
+  reason: 'Second search: “Tribal Court”: The Fort McDowell Yavapai Nation''s criminal court page, found
+    by the Yavapai-Prescott search, refused the request (status 403); not worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: The association''s site shows programs, membership and regions;
+    it publishes no directory of tribal courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Arizona State Tribal and Federal Court Forum members tribal courts azcourts
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: The results gave the Arizona Supreme Court''s State, Tribal
+    & Federal Court Forum page and its administrative orders, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.azcourts.gov/stfcf
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Status 200; the Arizona State, Tribal & Federal Court Forum
+    page lists no tribal courts and does not name this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-088
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-070,
   cannot-tell); Fort McDowell Tribal Court (court-071, cannot-tell). A person could open in a browser
   the pages that refused the project''s link checker: http://www.fmyn.org/, http://www.fmyn.org/tribal-court/,
   https://www.fmyn.org/. No website of the nation''s own could be read; the Tribe''s office could be asked
   whether it runs a court. No page or official directory entry was found on 2026-11-22 for “Tribal Court”
   (research/reviews/2026-11-22-service-links.json). A person could open in a browser the pages that refused
-  the project''s link checker: http://www.fmyn.org/, http://www.fmyn.org/tribal-court/, https://www.fmyn.org/.'
+  the project''s link checker: http://www.fmyn.org/, http://www.fmyn.org/tribal-court/, https://www.fmyn.org/.
+  The second search of 2026-11-23 (web searches and state court lists) found no page or official directory
+  entry for “Tribal Court”; a call to the nation''s office could say whether the court has a page.'

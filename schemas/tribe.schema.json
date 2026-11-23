@@ -322,7 +322,7 @@
     },
     "governance": {
       "type": "array",
-      "description": "How the nation's government is set up, one plain fact per item, as the nation's constitution or other governing document, its own website or an official directory states it: its governing body, head of government, elections, branches, courts and how its governing document is changed. Never a summary of a document; an aspect the sources do not state is left out, and the search for it is logged under research/search-logs/governance/ (decision record 0035).",
+      "description": "How the nation's government is set up, one plain fact per item, as the nation's constitution or other governing document, its own website or an official directory states it: its governing body, head of government, elections, branches, courts and how its governing document is changed. Never a summary of a document; an aspect the sources do not state is left out, and the search for it is logged under research/search-logs/governance/ (decision record 0042).",
       "items": {
         "type": "object",
         "$ref": "#/$defs/citedFact",

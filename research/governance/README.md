@@ -1,6 +1,6 @@
 # How each nation's government is set up
 
-Plain facts about each nation's government, gathered on Nov. 23, 2026 for the `governance` list in the Tribe profiles and the Government section of each nation's page ([decision record 0035](../../docs/decisions/0035-governance-facts-from-governing-documents.md)). Lead author's request (Nov. 23, 2026): "Can we add information for these tribes relating to governance structure?"
+Plain facts about each nation's government, gathered on Nov. 23, 2026 for the `governance` list in the Tribe profiles and the Government section of each nation's page ([decision record 0042](../../docs/decisions/0042-governance-facts-from-governing-documents.md)). Lead author's request (Nov. 23, 2026): "Can we add information for these tribes relating to governance structure?"
 
 ## What was found
 

@@ -417,12 +417,16 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.elyshoshonetribe.com/departments
   source: national-indian-law-library-ely-shoshone
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link added 2026-11-23 after
+    a second search: the nation''s Departments page, whose Judicial Center entry gives the court''s address,
+    telephone and fax and its tribal judge and court clerk, fetched with status 200 on 2026-11-23; see
+    research/reviews/2026-11-22-service-links.json, service-080.'
 - kind: tribal-court
   name: Ely Shoshone Judicial Center
   link: http://elyshoshonetribe-nsn.gov/departments.html

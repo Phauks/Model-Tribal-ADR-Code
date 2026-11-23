@@ -522,19 +522,27 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://ftbelknap.org/courts
   source: national-indian-law-library-fort-belknap
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link added 2026-11-23 after
+    a second search: the nation''s page headed “Courts”, with the Law and Order Code and the court''s
+    filing forms (petitions, filing schedule, request for court document), fetched with status 200 on
+    2026-11-23; see research/reviews/2026-11-22-service-links.json, service-086.'
 - kind: tribal-court
   name: Fort Belknap Tribal Court
+  link: https://ftbelknap.org/courts
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Montana section, entry 'Fort Belknap Indian Community'
+  note: 'Link added 2026-11-23 after a second search: the nation''s page headed “Courts”, with the Law
+    and Order Code and the court''s filing forms (petitions, filing schedule, request for court document),
+    fetched with status 200 on 2026-11-23; see research/reviews/2026-11-22-service-links.json, service-087.'
 dispute_resolution: {}
 gaming:
   compacts:

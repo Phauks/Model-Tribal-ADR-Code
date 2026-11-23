@@ -15,9 +15,10 @@ import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
 import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
-import { documentHeading, documentHistoriesFor } from '#lib/server/document-history.ts';
+import { documentHeading, documentHistoryView, labelOf, nationDocumentHistories } from '#lib/server/document-history.ts';
 import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
+import { recognitionBadges } from '#lib/recognition-badges.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
@@ -212,7 +213,7 @@ const governmentHeading = 'Government';
 /**
  * The groups of the Government section, in the order the page shows them,
  * and the label each aspect of `governance` gets in its group
- * (schemas/tribe.schema.json; decision record 0035).
+ * (schemas/tribe.schema.json; decision record 0042).
  */
 const governanceGroups: { field: string; label: string; aspects: Record<string, string | undefined> }[] = [
 	{ field: 'governance-form', label: 'Form of government', aspects: { form: undefined } },
@@ -280,7 +281,7 @@ const governmentStructureKinds: Record<string, string> = {
  * document, its website or an official directory states it. Each line is one
  * plain fact with its source; the words of the source that state it go in the
  * Sources list beside the fact, so a reader can check it. Never a summary of
- * a constitution (decision record 0035). The last line names the version of
+ * a constitution (decision record 0042). The last line names the version of
  * each governing document the facts were read from, linked to its history in
  * "Laws and agreements".
  */
@@ -299,10 +300,10 @@ function governmentFacts(
 				const text = governmentStructureKinds[fact.kind] ?? humanize(fact.kind);
 				const note = fact.as_of ? `As of ${fact.as_of}` : undefined;
 				if (items.some((item) => item.text === text)) {
-					sources.citeFact(fact, `${governmentHeading}: ${definition.label}`, text, items.find((item) => item.text === text)!.citations);
+					sources.citeFact(fact, definition.label, text, items.find((item) => item.text === text)!.citations);
 					continue;
 				}
-				items.push(cited(sources, `${governmentHeading}: ${definition.label}`, fact, { text, note }));
+				items.push(cited(sources, definition.label, fact, { text, note }));
 			}
 		}
 		for (const [aspect, label] of Object.entries(definition.aspects)) {
@@ -312,7 +313,7 @@ function governmentFacts(
 				const shown = [itemLabel, fact.value].filter(Boolean).join(': ');
 				const citations: CitationMark[] = [];
 				const sourceText = fact.quote ? `${shown}. “${fact.quote}”` : shown;
-				sources.citeFact(fact, `${governmentHeading}: ${definition.label}`, sourceText, citations);
+				sources.citeFact(fact, definition.label, sourceText, citations);
 				items.push({ label: itemLabel, text: fact.value, citations });
 				const version = fact.document_version as { document: string; version: string } | undefined;
 				if (version && !read.has(`${version.document}/${version.version}`)) {
@@ -650,6 +651,8 @@ export const load: PageServerLoad = ({ params }) => {
 		example: record.example === true,
 		officialName: displayName(record.names.official),
 		listedName: record.names.official,
+		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
+		badges: recognitionBadges(record.recognition ?? []),
 		review: {
 			...status,
 			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined
@@ -683,6 +686,10 @@ export const load: PageServerLoad = ({ params }) => {
 	}
 
 	const sources = new SourceUses();
+	// Each source is filed under the part of the page that first cites it, so a
+	// long Sources list folds into groups that follow the page (Trevor, Nov. 23,
+	// 2026). The name and seal at the top go with At a glance.
+	sources.part('At a glance');
 	// The nation's seal or logo, only when its reuse status allows showing it
 	// (docs/official-images.md). The Worker serves it from the private bucket.
 	// It is shown first, under the name, so its source is numbered first.
@@ -751,15 +758,32 @@ export const load: PageServerLoad = ({ params }) => {
 	// the order the page shows them: At a glance comes right after the title.
 	const names = [page.listedName, page.officialName];
 	const glance = atAGlance(record, sources);
+	sources.part(contactsHeading);
 	const contacts = contactCard(record, sources);
+	sources.part('Map');
 	const map = nationMap(record, sources);
-	const documents = documentHistoriesFor(record.id, sources).map((document) => ({
-		...document,
-		heading: documentHeading(document.title, names)
-	}));
-	const government = governmentFacts(record, sources, documents);
+	const histories = nationDocumentHistories(record.id);
+	sources.part(governmentHeading);
+	const government = governmentFacts(
+		record,
+		sources,
+		histories.map((history) => ({
+			id: history.id,
+			heading: documentHeading(history.title, names),
+			versions: history.versions.map((version) => ({ id: version.id, label: labelOf(version, version.id) }))
+		}))
+	);
+	sources.part('Courts and dispute resolution');
 	const courts = courtsAndDisputeResolution(record, sources);
+	// Within Laws and agreements, each document's sources go under its heading.
+	const documents = histories.map((history) => {
+		const heading = documentHeading(history.title, names);
+		sources.part(lawHeading, heading);
+		return { ...documentHistoryView(history, sources), heading };
+	});
+	sources.part(lawHeading, documentsLabel);
 	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
+	sources.part('Jurisdiction');
 	const jurisdiction = jurisdictionFacts(record, sources);
 	// The legal sections always show, and say plainly when nothing was found,
 	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).

@@ -540,6 +540,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://www.choctaw.org/about-us/tribal-government/
   source: national-indian-law-library-mississippi-choctaw
   confidence: medium
   verification: bulk-import
@@ -547,16 +548,23 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (http://www.choctaw.org/government/court/index.html) returned HTTP 404, so it
-    is not recorded.'
+    is not recorded. Link added 2026-11-23 after a second search: the “Judicial System” section of the
+    nation''s Tribal Government page, which describes the Choctaw Tribal Courts (Criminal, Civil, Domestic
+    Violence, Youth and Peacemaker courts) and the Choctaw Supreme Court, fetched with status 200 on 2026-11-23;
+    see research/reviews/2026-11-22-service-links.json, service-159.'
 - kind: tribal-court
   name: Mississippi Band of Choctaw Indians Tribal Court
+  link: https://www.choctaw.org/about-us/tribal-government/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/index.html)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link added 2026-11-23 after a second search: the “Judicial
+    System” section of the nation''s Tribal Government page, which describes the Choctaw Tribal Courts
+    (Criminal, Civil, Domestic Violence, Youth and Peacemaker courts) and the Choctaw Supreme Court, fetched
+    with status 200 on 2026-11-23; see research/reviews/2026-11-22-service-links.json, service-160.'
 dispute_resolution:
   forums:
   - kind: peacemaking

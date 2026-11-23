@@ -218,6 +218,7 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://tribalstate.nmcourts.gov/contact/
   source: national-indian-law-library-pueblo-san-ildefonso
   confidence: medium
   verification: bulk-import
@@ -225,16 +226,21 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (https://www.sanipueblo.org/tribal-courts.aspx) returned HTTP 404, so it is
-    not recorded.'
+    not recorded. Link is the entry in the New Mexico Tribal-State Judicial Consortium''s list of tribal
+    courts (its Contact page); no page of the court''s own was found in a second search (2026-11-23; research/reviews/2026-11-22-service-links.json,
+    service-313).'
 - kind: tribal-court
   name: Pueblo of San Ildefonso Tribal Court
+  link: https://tribalstate.nmcourts.gov/contact/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of San Ildefonso'
   note: 'Link check 2026-11-21: the link the source gives (http://sanipueblo.org/tribal-courts.aspx) returned
-    HTTP 404, so it is not recorded.'
+    HTTP 404, so it is not recorded. Link is the entry in the New Mexico Tribal-State Judicial Consortium''s
+    list of tribal courts (its Contact page); no page of the court''s own was found in a second search
+    (2026-11-23; research/reviews/2026-11-22-service-links.json, service-314).'
 - kind: tribal-court
   name: Pueblo of San Ildefonso Tribal Court
   link: https://law.sanipueblo.org/us/nsn/san-ildefonso/council/code/4/index.full.html

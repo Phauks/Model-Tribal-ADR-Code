@@ -2,7 +2,7 @@
 """Write governance facts into the Tribe profiles, and log every search.
 
 Governance facts (the `governance` list of schemas/tribe.schema.json) come
-from three places, in this order of preference (decision record 0035):
+from three places, in this order of preference (decision record 0042):
 
 1. The nation's own constitution or other governing document, as the
    project's captured text of it. AI readers (Claude Haiku) followed

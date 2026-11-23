@@ -68,6 +68,7 @@ const neverCached = [
 	'/sign-in',
 	'/sign-out',
 	'/requests',
+	'/following',
 	'/edition.json',
 	fingerprintsAddress,
 	'/_app/version.json',
@@ -123,6 +124,7 @@ const precached = [
 		'/glossary/terms.json',
 		'/nations/previews.json',
 		'/search/index.json',
+		'/search/records.json',
 		...corePageFiles
 	].filter((path) => builtPaths.has(path))
 ];

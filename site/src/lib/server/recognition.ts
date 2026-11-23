@@ -6,6 +6,7 @@
  */
 import { citationParts, shortCitation, type CitationPart } from '../legal-citations.ts';
 import { recognitionLabel } from '../nation-labels.ts';
+import { recognitionBadge, type RecognitionBadge } from '../recognition-badges.ts';
 import { copyPath } from '../public-copies.ts';
 import { publicCopyFor, sources, type NationRecord } from './content.ts';
 
@@ -16,6 +17,8 @@ export interface RecognitionView {
 	legalBasis: CitationPart[];
 	/** A short form for lists, such as "25 C.F.R. Part 83". */
 	short?: CitationPart;
+	/** The badge lists show for it; none for no federal recognition (src/lib/recognition-badges.ts). */
+	badge?: RecognitionBadge;
 }
 
 type RecognitionFact = NonNullable<NationRecord['recognition']>[number];
@@ -37,11 +40,13 @@ function toSavedCopy(part: CitationPart): CitationPart {
 export function recognitionView(fact: RecognitionFact): RecognitionView {
 	const state = typeof fact.state === 'string' ? fact.state : undefined;
 	const label = recognitionLabel(fact.type, state);
-	if (!fact.legal_basis) return { label, legalBasis: [] };
+	const badge = recognitionBadge(fact.type, state);
+	if (!fact.legal_basis) return { label, legalBasis: [], badge };
 	const fallback = sourceLink(fact);
 	const short = shortCitation(fact.legal_basis, fallback);
 	return {
 		label,
+		badge,
 		legalBasis: citationParts(fact.legal_basis, fallback).map(toSavedCopy),
 		short: short ? toSavedCopy(short) : undefined
 	};
