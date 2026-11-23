@@ -23,6 +23,7 @@ import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
+import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -44,6 +45,46 @@ interface FactItem {
 	note?: string;
 	/** The markers of the fact's sources (src/lib/citation-marks.ts). */
 	citations?: CitationMark[];
+}
+
+const opinionsHeading = 'Court opinions';
+
+/** The opinions the section names before linking to the full list. */
+const opinionsShown = 5;
+
+interface CourtOpinions {
+	count: number;
+	/** How many mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial. */
+	disputeResolutionCount: number;
+	shown: TribalCourtOpinion[];
+	/** The years of the oldest and newest opinion. */
+	from: string;
+	to: string;
+	citations: CitationMark[];
+	link: string;
+}
+
+/**
+ * The nation's court opinions in the Caselaw Access Project's tribal
+ * reporters (decision record 0047): how many there are, and the newest few,
+ * those that mention a way of settling a dispute outside a trial first.
+ */
+function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | undefined {
+	const all = opinionsOf(nationId);
+	if (all.length === 0) return undefined;
+	const citations: CitationMark[] = [];
+	sources.cite(opinionsSourceKey, { section: opinionsHeading, text: `${all.length} published opinions` }, citations);
+	const mentioning = all.filter((opinion) => opinion.mentionsDisputeResolution);
+	const shown = [...mentioning, ...all.filter((opinion) => !opinion.mentionsDisputeResolution)].slice(0, opinionsShown);
+	return {
+		count: all.length,
+		disputeResolutionCount: mentioning.length,
+		shown,
+		from: all.at(-1)!.year,
+		to: all[0].year,
+		citations,
+		link: `/nations/${nationId}/opinions`
+	};
 }
 
 /** What the courts and jurisdiction sections say when they have nothing to show. */
@@ -821,6 +862,7 @@ export const load: PageServerLoad = ({ params }) => {
 			contacts: { websites: [], offices: [] },
 			government: [],
 			courts: [],
+			opinions: undefined,
 			law: [],
 			documents: [],
 			jurisdiction: [],
@@ -926,6 +968,8 @@ export const load: PageServerLoad = ({ params }) => {
 	);
 	sources.part('Courts and dispute resolution');
 	const courts = courtsAndDisputeResolution(record, sources);
+	sources.part(opinionsHeading);
+	const opinions = courtOpinions(record.id, sources);
 	// Within Laws and agreements, each document's sources go under its heading.
 	const documents = histories.map((history) => {
 		const heading = documentHeading(history.title, names);
@@ -977,6 +1021,7 @@ export const load: PageServerLoad = ({ params }) => {
 		map,
 		government,
 		courts,
+		opinions,
 		law,
 		documents,
 		jurisdiction,
@@ -993,6 +1038,7 @@ export const load: PageServerLoad = ({ params }) => {
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
 	items.push({ label: governmentHeading, link: '#government-heading' });
 	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	if (opinions) items.push({ label: opinionsHeading, link: '#opinions-heading' });
 	items.push({
 		label: lawHeading,
 		link: '#law-heading',
