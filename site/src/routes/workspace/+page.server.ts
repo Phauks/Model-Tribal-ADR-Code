@@ -4,6 +4,7 @@ import { grantsOf } from '#lib/server/access.ts';
 import { administrationSummary } from '#lib/server/administration.ts';
 import { deadlinesOf } from '#lib/requests.ts';
 import { profileOfPerson } from '#lib/server/contributor-profiles.ts';
+import { placesOf } from '#lib/server/nation-teams.ts';
 import { listRequests } from '#lib/server/request-store.ts';
 import { latestReviews } from '#lib/server/reviews.ts';
 import { requirePerson, storage } from '#lib/server/workspace.ts';
@@ -58,7 +59,17 @@ export const load: PageServerLoad = async (event) => {
 	const profile = await profileOfPerson(database, person.identifier);
 	const profileState = !profile ? 'missing' : profile.hasUnconfirmedChanges ? 'unconfirmed' : 'confirmed';
 
+	// Nations whose teams this person is on, so they can reach the team page.
+	const teams = (await placesOf(database, person.identifier)).map((place) => ({
+		nationIdentifier: place.nationIdentifier,
+		level: place.level,
+		title:
+			reviewSubjects.find((subject) => subject.kind === 'nation' && subject.identifier === place.nationIdentifier)
+				?.title ?? place.nationIdentifier
+	}));
+
 	return {
+		teams,
 		openRequests,
 		recentReviews,
 		ownNation,
