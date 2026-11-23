@@ -84,6 +84,7 @@ export interface SourceRecord {
 		title?: string;
 		author?: CitationName[];
 		'container-title'?: string;
+		'container-title-short'?: string;
 		/** A case's court, and where it is reported. */
 		authority?: string;
 		volume?: string;

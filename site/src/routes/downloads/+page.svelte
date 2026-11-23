@@ -131,7 +131,7 @@
 		{ id: 'never', label: 'Never in a download' }
 	];
 
-	// A "Check your copy" link carries the file's hash as ?sha256=<hash>&name=<file>#checking, so the
+	// A "Verify File" link carries the file's hash as ?sha256=<hash>&name=<file>#checking, so the
 	// checker below starts set to compare with it (Trevor asked on Nov. 23, 2026 that verifying a file
 	// be part of this page). Read from the address in the browser, since the page is built ahead of
 	// time, and again whenever a link on this page changes it.
@@ -223,7 +223,7 @@
 								{#if hashes[link.href]}
 									<li>
 										<span class="hint">SHA-256{file.links.length > 1 ? ` (${fileExtension(link.href)})` : ''}</span>
-										<a href={verifyLink(hashes[link.href].sha256, fileName(link.href))}>Check your copy<span class="visually-hidden"> of the {fileExtension(link.href)} file, {file.label}</span></a>
+										<a href={verifyLink(hashes[link.href].sha256, fileName(link.href))}>Verify File<span class="visually-hidden"> of the {fileExtension(link.href)} file, {file.label}</span></a>
 										<code>{hashes[link.href].sha256}</code>
 									</li>
 								{/if}
@@ -265,7 +265,7 @@
 
 	<h2 id={verifySection} class="group-heading">Checking a file</h2>
 	<p>
-		Check that a file you downloaded from this site, or a copy of a document someone gave you, is the file this site published, with nothing changed or missing. Every file has a SHA-256, a string of 64 letters and digits worked out from every byte in it; change one byte and the SHA-256 changes. Each download above shows its SHA-256, and “Check your copy” sets the checker below to compare with it.
+		Check that a file you downloaded from this site, or a copy of a document someone gave you, is the file this site published, with nothing changed or missing. Every file has a SHA-256, a string of 64 letters and digits worked out from every byte in it; change one byte and the SHA-256 changes. Each download above shows its SHA-256, and “Verify File” sets the checker below to compare with it.
 	</p>
 
 	{#key expected}

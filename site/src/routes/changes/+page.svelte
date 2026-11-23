@@ -265,10 +265,6 @@
 	</p>
 {:else}
 	<h1>Recent changes</h1>
-	<p class="lede">
-		Every change to a page on this site, newest first. Open a change to see what was added and taken out, or a page’s
-		history to see every version. Nation pages and stories show what changed and when, but not the earlier wording.
-	</p>
 
 	<form method="get" class="filters" aria-label="Filter changes">
 		<div class="fields">

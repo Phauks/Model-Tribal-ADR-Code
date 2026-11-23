@@ -14,6 +14,7 @@
 -->
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
+	import CountBadge from './CountBadge.svelte';
 	import RecognitionBadges from './RecognitionBadges.svelte';
 	import { page } from '$app/state';
 	import { SvelteSet } from 'svelte/reactivity';
@@ -185,7 +186,7 @@
 								<summary>
 									<span class="fold-mark"><ChevronDown size={18} /></span>
 									<span>{searchKindLabels[group.kind]}</span>
-									<span class="count">{group.results.length.toLocaleString('en-US')}</span>
+									<CountBadge count={group.results.length} />
 								</summary>
 								<ul>
 									{#each group.results.slice(0, perGroup) as result (result.link)}
@@ -317,12 +318,6 @@
 		transform: rotate(-90deg);
 	}
 
-	.count {
-		color: var(--color-ink-muted);
-		font-size: var(--font-size-small);
-		font-weight: normal;
-	}
-
 	ul {
 		list-style: none;
 		margin: 0;
@@ -367,7 +362,7 @@
 	@media (max-width: 40rem) {
 		.search-panel {
 			position: fixed;
-			top: var(--search-panel-top, 4.5rem);
+			top: var(--search-panel-top, 3.5rem);
 			left: var(--space-4);
 			right: var(--space-4);
 			width: auto;

@@ -37,9 +37,9 @@
 			{
 				field: 'methods',
 				label: 'Methods',
-				items: story.methods.length > 0 ? [{ text: story.methods.join(', '), badges: story.methods }] : []
+				items: story.methods.length > 0 ? [{ text: story.methods.map((method) => method.name).join(', '), badges: story.methods.map((method) => ({ text: method.name, link: method.link })) }] : []
 			},
-			{ field: 'topics', label: 'Topics', items: story.topics.length > 0 ? [{ text: story.topics.join(', '), badges: story.topics }] : [] }
+			{ field: 'topics', label: 'Topics', items: story.topics.length > 0 ? [{ text: story.topics.map((topic) => topic.name).join(', '), badges: story.topics.map((topic) => ({ text: topic.name, link: topic.link })) }] : [] }
 		].filter((group) => group.items.length > 0)
 	);
 </script>

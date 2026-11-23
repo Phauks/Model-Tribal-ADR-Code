@@ -206,7 +206,7 @@
 
 	.dropdown-control {
 		position: relative;
-		width: min(100%, 24rem);
+		width: min(100%, var(--layout-field));
 	}
 
 	.dropdown-button {

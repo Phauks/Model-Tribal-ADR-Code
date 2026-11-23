@@ -39,7 +39,8 @@
 		isNewest,
 		newest,
 		publicationCount,
-		path
+		path,
+		unpublished = false
 	}: {
 		identifier: string;
 		section?: string;
@@ -52,6 +53,8 @@
 		newest?: Publication;
 		publicationCount: number;
 		path: string;
+		/** Nothing is published yet: readers see only that, and people with access see the draft. */
+		unpublished?: boolean;
 	} = $props();
 
 	const viewKey = 'essay-view';
@@ -60,8 +63,9 @@
 	let mode = $state<'reading' | 'commenting' | 'editing'>('reading');
 
 	const shown = $derived(
-		access?.draft && view === 'drafts' ? { html: access.draft.html, sources: access.draft.sources } : { html, sources }
+		access?.draft && (view === 'drafts' || unpublished) ? { html: access.draft.html, sources: access.draft.sources } : { html, sources }
 	);
+	const shownTitle = $derived(unpublished && access ? access.title : title);
 
 	async function loadAccess(): Promise<void> {
 		const response = await fetch(`/workspace/essays/${identifier}/page`, {
@@ -91,16 +95,19 @@
 		// A review request's link opens the draft for commenting at its section: ?review=<section>, or ?review for the whole draft.
 		const asked = new URL(location.href).searchParams;
 		if (asked.has('review')) reviewAt = asked.get('review') || null;
+		// The workspace's Edit button opens the page with ?edit.
+		openToEdit = asked.has('edit');
 		void loadAccess();
 	});
 
 	let reviewAt = $state<string | null | undefined>(undefined);
+	let openToEdit = false;
 	let openedForReview = false;
 	$effect(() => {
-		if (access && reviewAt !== undefined && !openedForReview) {
+		if (access && (reviewAt !== undefined || openToEdit) && !openedForReview) {
 			openedForReview = true;
 			view = 'drafts';
-			mode = 'commenting';
+			mode = openToEdit && access.canEdit ? 'editing' : 'commenting';
 		}
 	});
 
@@ -125,12 +132,13 @@
 </script>
 
 <svelte:head>
-	<title>{[title, section, 'Model Tribal ADR Code'].filter(Boolean).join(' · ')}</title>
+	<title>{[shownTitle, section, 'Model Tribal ADR Code'].filter(Boolean).join(' · ')}</title>
+	{#if unpublished}<meta name="robots" content="noindex" />{/if}
 </svelte:head>
 
 {#if section}
 	<nav aria-label="Breadcrumb" class="small no-print">
-		<a href={sectionLink}>{section}</a> › {title}
+		<a href={sectionLink}>{section}</a> › {shownTitle}
 	</nav>
 {/if}
 
@@ -140,7 +148,10 @@
 
 <article class="reading essay">
 	<!-- The editor shows the title as the essay's own first heading, to edit there. -->
-	<h1 class:visually-hidden={mode !== 'reading'}>{title}</h1>
+	<h1 class:visually-hidden={mode !== 'reading'}>{shownTitle}</h1>
+	{#if unpublished && !access}
+		<p>This page is not published yet.</p>
+	{/if}
 	{#if !isNewest && publication && newest}
 		<div class="notice" role="note">
 			<p>

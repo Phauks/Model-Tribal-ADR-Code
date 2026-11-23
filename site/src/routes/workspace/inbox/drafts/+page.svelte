@@ -56,7 +56,7 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		max-width: 60rem;
+		max-width: var(--layout-measure);
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-panel);
 		background: var(--color-surface-raised);

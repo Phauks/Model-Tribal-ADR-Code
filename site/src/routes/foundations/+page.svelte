@@ -5,4 +5,4 @@
 	let { data }: PageProps = $props();
 </script>
 
-<EssayIndex section="Foundations" lead="Background for the model code: the history of federal Indian law and Tribal justice, the court cases a drafter must know, and the model codes and frameworks that came before." essays={data.essays} />
+<EssayIndex part="foundations" section="Foundations" lead="Background for the model code: the history of federal Indian law and Tribal justice, the court cases a drafter must know, and the model codes and frameworks that came before." essays={data.essays} />

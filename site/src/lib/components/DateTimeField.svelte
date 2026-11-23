@@ -72,7 +72,7 @@
 	}
 
 	.date-time :global(.date-field) {
-		width: 12rem;
+		width: var(--layout-field-short);
 	}
 
 	/* The date's hint sits above both boxes. */

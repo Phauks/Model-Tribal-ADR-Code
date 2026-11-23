@@ -15,10 +15,12 @@ import { splitFrontMatter } from '../essays/syntax.ts';
 import type { SourceEntry } from './source-uses.ts';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderWithGenerated } from './essay-pages.ts';
-import { latestVersion, publications, readVersionText, version as versionRow } from './essays.ts';
+import { latestVersion, publications, readVersionText, titleOf, version as versionRow } from './essays.ts';
 
 export interface EssayPageState {
 	identifier: string;
+	/** The newest version's title, for a page not published yet. */
+	title: string;
 	level: AccessLevel;
 	canEdit: boolean;
 	canPublish: boolean;
@@ -63,6 +65,7 @@ export async function essayPageState(
 	}
 	return {
 		identifier,
+		title: titleOf(text),
 		level,
 		canEdit: atLeast(level, 'contribute'),
 		canPublish: atLeast(level, 'full'),

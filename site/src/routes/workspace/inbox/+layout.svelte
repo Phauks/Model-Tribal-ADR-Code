@@ -5,6 +5,7 @@
 	// narrows the views, folders and tags to it (?inbox=). On a narrow screen
 	// it folds into "Mailboxes" above the page.
 	import { onMount } from 'svelte';
+	import CountBadge from '#lib/components/CountBadge.svelte';
 	import { page } from '$app/state';
 	import Archive from '@lucide/svelte/icons/archive';
 	import BellRing from '@lucide/svelte/icons/bell-ring';
@@ -80,7 +81,7 @@
 							<a href="{base}?inbox={inbox.identifier}" aria-current={onList && data.chosenInbox === inbox.identifier && currentView === 'inbox' ? 'page' : undefined} title={inbox.address}>
 								{#if inbox.kind === 'personal'}<UserRound size={18} aria-hidden="true" />{:else}<InboxIcon size={18} aria-hidden="true" />{/if}
 								<span class="name">{inbox.name}<span class="visually-hidden">, {inbox.kind === 'personal' ? 'your own inbox' : 'shared'}, {inbox.address}</span></span>
-								{#if inbox.unread}<span class="count" aria-label="{inbox.unread} unread">{inbox.unread}</span>{/if}
+								{#if inbox.unread}<CountBadge count={inbox.unread} label="unread" />{/if}
 							</a>
 						</li>
 					{/each}
@@ -97,7 +98,7 @@
 						<a href={view.key === 'inbox' ? listLink() : listLink({ view: view.key })} aria-current={currentView === view.key && (data.inboxes.length <= 1 || view.key !== 'inbox') ? 'page' : undefined}>
 							<Icon size={18} aria-hidden="true" />
 							<span class="name">{view.label}</span>
-							{#if data.counts[view.key]}<span class="count" aria-label="{data.counts[view.key]} {view.key === 'reminders' || view.key === 'scheduled' ? 'waiting' : 'unread'}">{data.counts[view.key]}</span>{/if}
+							{#if data.counts[view.key]}<CountBadge count={data.counts[view.key] ?? 0} label={view.key === 'reminders' || view.key === 'scheduled' ? 'waiting' : 'unread'} />{/if}
 						</a>
 					</li>
 					{#if view.key === 'scheduled'}
@@ -105,7 +106,7 @@
 							<a href="{base}/drafts" aria-current={page.url.pathname === `${base}/drafts` ? 'page' : undefined}>
 								<FilePen size={18} aria-hidden="true" />
 								<span class="name">Drafts</span>
-								{#if data.drafts}<span class="count" aria-label="{data.drafts} drafts">{data.drafts}</span>{/if}
+								{#if data.drafts}<CountBadge count={data.drafts} label="drafts" />{/if}
 							</a>
 						</li>
 					{/if}
@@ -130,7 +131,7 @@
 							>
 								<FolderIcon size={18} aria-hidden="true" />
 								<span class="name">{folder.name}</span>
-								{#if folder.unread}<span class="count" aria-label="{folder.unread} unread">{folder.unread}</span>{/if}
+								{#if folder.unread}<CountBadge count={folder.unread} label="unread" />{/if}
 							</a>
 						</li>
 					{/each}
@@ -269,10 +270,6 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-	}
-	.count {
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-bold);
 	}
 	.section-head {
 		display: flex;

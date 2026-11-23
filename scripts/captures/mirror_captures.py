@@ -30,6 +30,11 @@ Subcommands, in the order they are run:
            index. Needs --confirm; without it, prints what it would delete.
   add      File new hand-pulled documents: copy each into the captures folder
            under a topic, upload it, verify it, and append it to the index.
+  intake   File what was sent on the website's Intake page (docs/uploads.md,
+           "Intake"; scripts/captures/intake_uploads.py): without --apply, plan
+           (download, hash, match to the pull list); with --apply PLAN, copy
+           each file to its key inside the bucket, check it, index it and tell
+           the website it is filed.
 
 Credentials come from the environment and never from a file in the
 repository: R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, and CLOUDFLARE_ACCOUNT_ID
@@ -42,6 +47,7 @@ Usage:
   python3 scripts/captures/mirror_captures.py prune --captures ... [--confirm]
   python3 scripts/captures/mirror_captures.py add --captures ... --topic westlaw FILE... \
       [--record KEY] [--obtained "hand pull by Trevor Goldsmith"] [--title TITLE] [--link URL]
+  python3 scripts/captures/mirror_captures.py intake --captures ... [--apply PLAN]
 """
 
 from __future__ import annotations
@@ -454,6 +460,37 @@ def client():
                         config=Config(retries={"max_attempts": 5, "mode": "standard"}))
 
 
+def bucket_name() -> str:
+    return os.environ.get("R2_BUCKET", DEFAULT_BUCKET)
+
+
+def safe_name(name: str) -> str:
+    """A file name with no folders or odd characters, for a local copy."""
+    cleaned = re.sub(r"[^A-Za-z0-9._ ()-]", "_", Path(name).name).strip(" .")
+    return cleaned[-150:] or "file"
+
+
+def index_row(*, key: str, size: int, digest: str, media: str, topic: str, title: str, nations: str,
+              obtained: str, links: list[str], record: str, redistribution: str, rights: str | None,
+              existing_keys: set) -> dict:
+    """A new capture index row, with the rights and redistribution rules every filing follows."""
+    rights_note = rights or TOPIC_RIGHTS.get(topic, DEFAULT_RIGHTS)
+    policy = nation_law_policy(topic, " ".join(links)) if redistribution == "unknown" else None
+    if policy:
+        redistribution, rights_note = policy[0], rights or policy[1]
+    today = dt.date.today().isoformat()
+    return {
+        "key": key, "bytes": size, "sha256": digest, "media_type": media,
+        "topic": topic, "title": title, "nations": nations,
+        "obtained": obtained, "link": " ".join(links), "captured": today,
+        "records": record, "record_kinds": "source" if record else "", "listed_in": "",
+        "catalog": "", "derived_from": main_file_for(key, existing_keys | {key}) or "", "rights": rights_note,
+        "redistribution": "no" if topic in NEVER_SERVED else redistribution,
+        "keep_local": "yes" if key.endswith(TEXT_SUFFIXES) else "no",
+        "orphan": "no" if record else "yes",
+    }
+
+
 def load_index() -> list[dict]:
     with INDEX_CSV.open(encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
@@ -558,25 +595,18 @@ def add(args) -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
         media = mimetypes.guess_type(key)[0] or "application/octet-stream"
-        redistribution, rights = args.redistribution, args.rights or TOPIC_RIGHTS.get(args.topic, DEFAULT_RIGHTS)
-        policy = nation_law_policy(args.topic, " ".join(args.link or [])) if args.redistribution == "unknown" else None
-        if policy:
-            redistribution, rights = policy[0], args.rights or policy[1]
         if s3 is not None:
             s3.upload_file(str(target), bucket, key, ExtraArgs={"ContentType": media, "Metadata": {
                 "sha256": digest, "captured": dt.date.today().isoformat()}})
             if remote_state(s3, bucket, key) != (target.stat().st_size, digest):
                 sys.exit(f"verification failed for {key}; local copy kept")
-        rows.append({
-            "key": key, "bytes": target.stat().st_size, "sha256": digest, "media_type": media,
-            "topic": args.topic, "title": args.title or "", "nations": args.nations or "",
-            "obtained": f"{args.obtained}, {dt.date.today().isoformat()}", "link": " ".join(args.link or []), "captured": dt.date.today().isoformat(),
-            "records": args.record or "", "record_kinds": "source" if args.record else "", "listed_in": "",
-            "catalog": "", "derived_from": main_file_for(key, {r["key"] for r in rows} | {key}) or "", "rights": rights,
-            "redistribution": "no" if args.topic in NEVER_SERVED else redistribution,
-            "keep_local": "yes" if key.endswith(TEXT_SUFFIXES) else "no",
-            "orphan": "no" if args.record else "yes",
-        })
+        rows.append(index_row(
+            key=key, size=target.stat().st_size, digest=digest, media=media, topic=args.topic,
+            title=args.title or "", nations=args.nations or "",
+            obtained=f"{args.obtained}, {dt.date.today().isoformat()}", links=args.link or [],
+            record=args.record or "", redistribution=args.redistribution, rights=args.rights,
+            existing_keys={r["key"] for r in rows},
+        ))
         if s3 is not None and not args.keep_local:
             target.unlink()
         print(f"filed {key} ({digest[:16]})" + ("" if s3 is not None else ", local only until the next upload"))
@@ -586,7 +616,7 @@ def add(args) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("index", "upload", "verify", "prune", "add"):
+    for name in ("index", "upload", "verify", "prune", "add", "intake"):
         p = sub.add_parser(name)
         p.add_argument("--captures", required=True, help="the research/captures folder in the project's working files")
         if name == "index":
@@ -608,7 +638,18 @@ def main() -> None:
             p.add_argument("--nations")
             p.add_argument("--rights")
             p.add_argument("--keep-local", action="store_true")
+        if name == "intake":
+            p.add_argument("--apply", metavar="PLAN", help="carry out a checked plan; without it, make the plan")
+            p.add_argument("--plan", help="where to write the plan (default: intake-plan.json next to the captures folder)")
+            p.add_argument("--pull-list", help="the pull list (default: documents-to-get.md next to the captures folder)")
+            p.add_argument("--work", help="folder for the downloaded files (default: a temporary folder)")
+            p.add_argument("--obtained", default=f"hand pull by {HAND_PULLER}, sent through the website")
     args = parser.parse_args()
+    if args.command == "intake":
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import intake_uploads
+        (intake_uploads.apply if args.apply else intake_uploads.plan)(args)
+        return
     {"index": build_index, "upload": upload, "verify": verify, "prune": prune, "add": add}[args.command](args)
 
 

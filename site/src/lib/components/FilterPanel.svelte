@@ -15,6 +15,7 @@
 -->
 <script lang="ts" generics="Row">
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import CountBadge from './CountBadge.svelte';
 	import { foldForSearch } from '#lib/tables/table-definition.ts';
 	import { toggleChoice, type Facet, type FilterChoices } from '#lib/search-filters.ts';
 
@@ -91,7 +92,7 @@
 								/>
 								<label for={id}>
 									{option.label}
-									<span class="count muted">{count.toLocaleString('en-US')}</span>
+									<CountBadge {count} />
 								</label>
 							</li>
 						{:else}
@@ -188,7 +189,4 @@
 		font-size: var(--font-size-small);
 	}
 
-	.count {
-		font-variant-numeric: tabular-nums;
-	}
 </style>

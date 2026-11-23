@@ -93,6 +93,8 @@ export interface UploadRow {
 	group_identifier: string;
 	account_identifier: string | null;
 	way_in: WayIn;
+	/** 1 for a file a workspace editor sent from the pull list (docs/uploads.md, "Intake"). */
+	from_pull_list: number;
 	essay_identifier: string | null;
 	kind: UploadKind | null;
 	source: UploadSource;
@@ -247,18 +249,13 @@ export function expectedPieceSize(sizeBytes: number, number: number): number {
 	return number < count ? pieceBytes : sizeBytes - (count - 1) * pieceBytes;
 }
 
-/** The limits for an account: none for reviewers, more for contributors who confirmed a profile. */
+/** The limits for an account: none for anyone who can reach the page (decision record 0038, "Limits"). */
 export async function allowanceFor(
-	database: D1Database,
-	accountIdentifier: string,
-	person: SignedInPerson | undefined
+	_database: D1Database,
+	_accountIdentifier: string,
+	_person: SignedInPerson | undefined
 ): Promise<UploadAllowance> {
-	if (person && can(person, 'review-uploads')) return allowances.unlimited;
-	const profile = await database
-		.prepare(`SELECT 1 AS found FROM contributor_profiles WHERE sign_in_subject = ? AND status = 'welcomed'`)
-		.bind(accountIdentifier)
-		.first<{ found: number }>();
-	return profile ? allowances.confirmedContributor : allowances.signedIn;
+	return allowances.unlimited;
 }
 
 function uploadEvent(
@@ -341,8 +338,12 @@ export interface StartInput {
 	sizeBytes: number;
 	wayIn: WayIn;
 	essayIdentifier?: string | null;
-	/** Required for files sent on the Send files page. */
+	/** Required for files sent on the Send files page, except pulled files. */
 	answers?: SenderAnswers;
+	/** A file from the pull list: no answers, no review queue, filed by the intake script. */
+	fromPullList?: boolean;
+	/** For a pulled file: anything the sender noted about the batch. */
+	note?: string | null;
 }
 
 export interface StartedUpload {
@@ -368,7 +369,8 @@ export async function startUpload(
 	if (input.sizeBytes > largestAnyFileBytes) {
 		throw new UploadProblem(`This file is larger than ${readableSize(largestAnyFileBytes)}, the largest we can take.`, 413);
 	}
-	if (input.wayIn === 'send-files' && !input.answers) throw new UploadProblem('Answer the questions about the files first.');
+	const pulled = input.wayIn === 'send-files' && input.fromPullList === true;
+	if (input.wayIn === 'send-files' && !input.answers && !pulled) throw new UploadProblem('Answer the questions about the files first.');
 	if (input.wayIn === 'essay-figure' && !input.essayIdentifier) throw new UploadProblem('Name the essay.');
 
 	const unfinished = await database
@@ -402,16 +404,17 @@ export async function startUpload(
 		customMetadata: { reference }
 	});
 	const at = now();
-	const answers = input.answers;
+	const answers = pulled ? undefined : input.answers;
+	const note = pulled ? (input.note?.normalize('NFC').trim().slice(0, 4000) || null) : null;
 	await database.batch([
 		database
 			.prepare(
 				`INSERT INTO uploads (
-					identifier, reference, group_identifier, account_identifier, way_in, essay_identifier, source, status,
-					file_name, size_bytes, original_key, multipart_identifier,
+					identifier, reference, group_identifier, account_identifier, way_in, from_pull_list, essay_identifier, source,
+					status, file_name, size_bytes, original_key, multipart_identifier,
 					title, description, origin, origin_note, permitted_use, nation_first, sender_under_eighteen, described_at,
 					received_at
-				) VALUES (?, ?, ?, ?, ?, ?, 'file', 'sending', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+				) VALUES (?, ?, ?, ?, ?, ?, ?, 'file', 'sending', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 			)
 			.bind(
 				identifier,
@@ -419,14 +422,15 @@ export async function startUpload(
 				input.groupIdentifier,
 				input.accountIdentifier,
 				input.wayIn,
+				pulled ? 1 : 0,
 				input.essayIdentifier ?? null,
 				fileName,
 				input.sizeBytes,
 				originalKey,
 				multipart.uploadId,
 				answers?.title ?? null,
-				...(answers ? answerColumns(answers) : [null, null, null, null, 0, 0]),
-				answers ? at : null,
+				...(answers ? answerColumns(answers) : [note, null, null, null, 0, 0]),
+				answers || note ? at : null,
 				at
 			),
 		...linkStatements(database, identifier, answers?.nations ?? [], at),
@@ -704,6 +708,8 @@ export interface SenderUpload {
 	receivedAt: string;
 	reason: string | null;
 	youtubeIdentifier: string | null;
+	/** Sent from the pull list, so filed by the intake rather than reviewed. */
+	pulled: boolean;
 	/** Questions and answers, oldest first; reviewers' private notes are left out. */
 	messages: { kind: 'question' | 'answer'; body: string; createdAt: string }[];
 }
@@ -736,6 +742,7 @@ export async function uploadsOfAccount(database: D1Database, accountIdentifier: 
 		receivedAt: row.received_at,
 		reason: row.status === 'not-used' || row.status === 'not-accepted' ? row.decision_reason : null,
 		youtubeIdentifier: row.youtube_identifier,
+		pulled: row.from_pull_list === 1,
 		messages: messages.results
 			.filter((message) => message.upload === row.identifier)
 			.map(({ kind, body, createdAt }) => ({ kind, body, createdAt }))
@@ -854,6 +861,7 @@ export async function advanceCheckedUploads(
 					.bind(now(), upload.identifier),
 				uploadEvent(database, upload, released ? 'Released without a virus check' : 'Virus check passed')
 			]);
+			if (upload.from_pull_list === 1) await offerForIntake(bucket, upload);
 			moved += 1;
 		} else {
 			const missing = keys.filter((key) => !found.has(key));
@@ -895,12 +903,193 @@ export async function checkAgain(database: D1Database, person: SignedInPerson, u
 	await database.batch([uploadEvent(database, upload, 'Virus check asked for again', person.identifier)]);
 }
 
+// ---------------------------------------------------------------------------
+// Intake (docs/uploads.md, "Intake"). A workspace editor sends
+// the files they fetched for the pull list (research/documents-to-get.md)
+// with no questions. Once the virus check passes, the Worker leaves a note
+// for each at intake/waiting/<reference>.json in the same bucket. The intake
+// script (scripts/captures/mirror_captures.py intake) copies the file to its
+// place among the research captures and answers with
+// intake/filed/<reference>.json, or with intake/declined/<reference>.json for
+// a file that is not wanted. The Worker then settles the upload and deletes
+// its own copy. The bucket carries the notes, so the script needs no access
+// to the database.
+// ---------------------------------------------------------------------------
+
+/** What the Worker tells the intake script about a pulled file. */
+export interface IntakeOffer {
+	reference: string;
+	key: string;
+	fileName: string | null;
+	sizeBytes: number | null;
+	mediaType: string | null;
+	receivedAt: string;
+	note: string | null;
+}
+
+/** The notes about one pulled file: waiting, filed and declined. */
+export function intakeKeys(reference: string): string[] {
+	return ['waiting', 'filed', 'declined'].map((stage) => `intake/${stage}/${reference}.json`);
+}
+
+/** Leaves the note that tells the intake script a pulled file is ready. */
+export async function offerForIntake(bucket: R2Bucket, upload: UploadRow): Promise<void> {
+	if (!upload.original_key) return;
+	const offer: IntakeOffer = {
+		reference: upload.reference,
+		key: upload.original_key,
+		fileName: upload.file_name,
+		sizeBytes: upload.size_bytes,
+		mediaType: upload.media_type,
+		receivedAt: upload.received_at,
+		note: upload.description
+	};
+	await bucket
+		.put(`intake/waiting/${upload.reference}.json`, JSON.stringify(offer), {
+			httpMetadata: { contentType: 'application/json' }
+		})
+		.catch((problem) => console.error('Could not offer a pulled file for intake', problem));
+}
+
+/** A bucket key the intake script may name as a filed copy: inside the captures, never an upload or a note. */
+export function isCaptureKey(key: unknown): key is string {
+	return (
+		typeof key === 'string' &&
+		key.length > 0 &&
+		key.length <= 1000 &&
+		!/^(uploads|intake|requests|mail|filings)\//.test(key) &&
+		!key.split('/').some((part) => part === '' || part === '.' || part === '..')
+	);
+}
+
+async function readNote(bucket: R2Bucket, key: string): Promise<Record<string, unknown> | null> {
+	const object = await bucket.get(key);
+	if (!object) return null;
+	try {
+		const value: unknown = JSON.parse(await object.text());
+		return value && typeof value === 'object' ? (value as Record<string, unknown>) : null;
+	} catch {
+		return null;
+	}
+}
+
+/**
+ * Settles pulled files the intake script has answered for, and offers again
+ * any waiting file whose note is missing. Runs when Uploads in the workspace
+ * or Your uploads is opened. Returns how many files were settled.
+ */
+export async function settlePulledFiles(database: D1Database, bucket: R2Bucket): Promise<number> {
+	let settled = 0;
+	for (const stage of ['filed', 'declined'] as const) {
+		const listed = await bucket.list({ prefix: `intake/${stage}/`, limit: 100 });
+		for (const object of listed.objects) {
+			const reference = object.key.slice(`intake/${stage}/`.length).replace(/\.json$/, '');
+			const upload = await uploadByReference(database, reference);
+			if (!upload || upload.from_pull_list !== 1 || !(['waiting-for-review', 'in-review'] as UploadStatus[]).includes(upload.status)) {
+				// Already settled, withdrawn, or not a pulled file: the note has nothing left to do.
+				await bucket.delete(intakeKeys(reference));
+				continue;
+			}
+			const note = await readNote(bucket, object.key);
+			if (!note) continue;
+			const at = now();
+			if (stage === 'declined') {
+				const reason = typeof note.reason === 'string' && note.reason.trim() ? note.reason.trim().slice(0, 1000) : 'Not needed.';
+				await database.batch([
+					database
+						.prepare(`UPDATE uploads SET status = 'not-used', decision_reason = ?, decided_at = ? WHERE identifier = ?`)
+						.bind(reason, at, upload.identifier),
+					uploadEvent(database, upload, 'Not used at intake', null, reason)
+				]);
+			} else {
+				const captureKey = note.captureKey;
+				if (!isCaptureKey(captureKey)) {
+					console.error(`Intake note for ${reference} names a key outside the captures`);
+					continue;
+				}
+				// The script copies first and writes the note after; the copy must be there, whole, before ours goes.
+				const copy = await bucket.head(captureKey);
+				if (!copy || copy.size !== upload.size_bytes) {
+					console.error(`Intake note for ${reference} names ${captureKey}, which is missing or a different size`);
+					continue;
+				}
+				await deleteBytes(database, bucket, upload);
+				const held = note.alreadyHeld === true;
+				await database.batch([
+					database
+						.prepare(
+							`UPDATE uploads SET status = 'filed', destination = 'research-library', access_level = 'restricted',
+							 filed_key = ?, decided_at = ?, deleted_at = ? WHERE identifier = ?`
+						)
+						.bind(captureKey, at, at, upload.identifier),
+					uploadEvent(database, upload, held ? 'Already held; matched at intake' : 'Filed at intake', null, captureKey)
+				]);
+			}
+			await bucket.delete(intakeKeys(reference));
+			settled += 1;
+		}
+	}
+	const waiting = await database
+		.prepare(`SELECT * FROM uploads WHERE from_pull_list = 1 AND status = 'waiting-for-review' ORDER BY received_at LIMIT 100`)
+		.all<UploadRow>();
+	for (const upload of waiting.results) {
+		if (!(await bucket.head(`intake/waiting/${upload.reference}.json`))) await offerForIntake(bucket, upload);
+	}
+	return settled;
+}
+
+/** A file one account sent on Intake, for the table there. */
+export interface IntakeFile {
+	reference: string;
+	name: string;
+	sizeBytes: number | null;
+	statusText: string;
+	problem: boolean;
+	done: boolean;
+	filedAs: string | null;
+}
+
+/** What the account sent on Intake in the last 30 days, newest first. */
+export async function intakeFilesOf(database: D1Database, accountIdentifier: string): Promise<IntakeFile[]> {
+	const since = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
+	const rows = await database
+		.prepare(
+			`SELECT * FROM uploads WHERE account_identifier = ? AND from_pull_list = 1 AND status <> 'withdrawn' AND received_at > ?
+			 ORDER BY received_at DESC LIMIT 2000`
+		)
+		.bind(accountIdentifier, since)
+		.all<UploadRow>();
+	return rows.results.map((row) => {
+		const problem = row.status === 'not-accepted' || row.status === 'not-used' || row.status === 'sending';
+		const statusText =
+			row.status === 'sending'
+				? 'Stopped. Add the same file again to carry on.'
+				: row.status === 'checking'
+					? 'Virus check'
+					: row.status === 'filed'
+						? 'Filed'
+						: problem
+							? `Not filed${row.decision_reason ? `: ${row.decision_reason}` : ''}`
+							: 'Waiting to be filed';
+		return {
+			reference: row.reference,
+			name: row.file_name ?? row.reference,
+			sizeBytes: row.size_bytes,
+			statusText,
+			problem,
+			done: row.status === 'filed',
+			filedAs: row.status === 'filed' ? row.filed_key : null
+		};
+	});
+}
+
 /** The sender takes a file back. Its bytes are deleted at once. */
 export async function withdrawUpload(database: D1Database, bucket: R2Bucket, upload: UploadRow): Promise<void> {
 	if (!withdrawableStatuses.includes(upload.status)) {
 		throw new UploadProblem('This file can no longer be withdrawn. Write to us and we will help.', 409);
 	}
 	await deleteBytes(database, bucket, upload);
+	if (upload.from_pull_list === 1) await bucket.delete(intakeKeys(upload.reference));
 	const at = now();
 	await database.batch([
 		database
@@ -963,7 +1152,7 @@ export async function uploadQueue(
 	kind: UploadKind | null = null
 ): Promise<QueueRow[]> {
 	const statuses = viewStatuses[view];
-	const conditions = [`uploads.way_in = 'send-files'`, `uploads.status <> 'sending'`];
+	const conditions = [`uploads.way_in = 'send-files'`, 'uploads.from_pull_list = 0', `uploads.status <> 'sending'`];
 	const values: (string | number)[] = [];
 	if (statuses) {
 		conditions.push(`uploads.status IN (${statuses.map(() => '?').join(', ')})`);
@@ -1003,7 +1192,8 @@ export async function uploadQueue(
 export async function queueCounts(database: D1Database): Promise<Record<QueueView, number>> {
 	const rows = await database
 		.prepare(
-			`SELECT status, COUNT(*) AS count FROM uploads WHERE way_in = 'send-files' AND status <> 'sending' GROUP BY status`
+			`SELECT status, COUNT(*) AS count FROM uploads
+			 WHERE way_in = 'send-files' AND from_pull_list = 0 AND status <> 'sending' GROUP BY status`
 		)
 		.all<{ status: UploadStatus; count: number }>();
 	const counts = { open: 0, waiting: 0, decided: 0, 'not-accepted': 0, all: 0 } as Record<QueueView, number>;

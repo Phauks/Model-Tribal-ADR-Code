@@ -71,7 +71,8 @@
 			{/if}
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">
-					Listed as “{page.listedName}” on the list that recognizes it.<CitationMarks
+					Listed as “{page.listedName}”{#if page.listedIn}
+						in <cite>{page.listedIn.title}</cite>{#if page.listedIn.rest}, {page.listedIn.rest}{/if}{/if}.<CitationMarks
 						marks={data.nameCitations}
 					/>
 				</p>
@@ -162,7 +163,7 @@
 				<ul class="opinions">
 					{#each opinions.shown as opinion (opinion.path)}
 						<li>
-							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics} /></span>{/if}
+							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic }))} /></span>{/if}
 						</li>
 					{/each}
 				</ul>
@@ -381,7 +382,7 @@
 
 	/* As many columns as fit, so the list spreads out under At a glance. */
 	.neighbors {
-		columns: 14rem;
+		columns: var(--layout-card-min);
 		column-gap: var(--space-5);
 		max-width: none;
 	}

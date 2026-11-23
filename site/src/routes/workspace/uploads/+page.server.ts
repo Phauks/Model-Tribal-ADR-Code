@@ -1,5 +1,12 @@
 import { isOneOf, uploadKinds } from '#lib/uploads.ts';
-import { advanceCheckedUploads, deleteOldUploads, queueCounts, queueViews, uploadQueue } from '#lib/server/uploads.ts';
+import {
+	advanceCheckedUploads,
+	deleteOldUploads,
+	queueCounts,
+	queueViews,
+	settlePulledFiles,
+	uploadQueue
+} from '#lib/server/uploads.ts';
 import { requirePermission, storage } from '#lib/server/workspace.ts';
 import type { PageServerLoad } from './$types';
 
@@ -14,6 +21,8 @@ export const load: PageServerLoad = async (event) => {
 	const deleted = await deleteOldUploads(database, bucket);
 	// Files whose virus check finished move into the queue, or are refused.
 	await advanceCheckedUploads(database, bucket);
+	// Pulled files the intake script has answered for are settled (docs/uploads.md, "Intake").
+	await settlePulledFiles(database, bucket);
 	return {
 		view,
 		kind,

@@ -149,7 +149,7 @@
 	}
 
 	.modal.fit-content {
-		width: min(36rem, calc(100% - 2 * var(--space-4)));
+		width: min(var(--layout-panel), calc(100% - 2 * var(--space-4)));
 		/* "auto" would stretch a dialog to the full window; this follows its content. */
 		height: fit-content;
 		max-height: calc(100% - 2 * var(--space-4));

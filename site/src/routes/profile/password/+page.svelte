@@ -143,7 +143,7 @@
 	}
 
 	.panel {
-		max-width: 30rem;
+		max-width: var(--layout-panel);
 	}
 
 	.panel > .button + .small {

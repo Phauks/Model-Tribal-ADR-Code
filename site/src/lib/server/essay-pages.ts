@@ -188,8 +188,28 @@ export async function essayPage(part: EssayPart, slug: string, publicationNumber
 	const essay = await essayRow(database, identifier);
 	if (!essay || essay.part !== part) error(404, 'No essay has this address.');
 	const listed = await publications(database, identifier, true);
-	if (listed.length === 0) error(404, 'This essay is not published yet.');
 	const path = essayPath(identifier, part);
+	// Not published yet: readers get a page that says so and nothing more,
+	// and people with access to the essay get its draft there to read,
+	// comment on and edit (EssayArticle.svelte), as on a published essay.
+	if (listed.length === 0) {
+		if (publicationNumber !== undefined) error(404, 'This essay is not published yet.');
+		return {
+			identifier,
+			part,
+			path,
+			title: 'Not published yet',
+			html: '',
+			sources: [],
+			headings: [],
+			publication: undefined,
+			isNewest: true,
+			newest: undefined,
+			publicationCount: 0,
+			unpublished: true,
+			outline: outlineOf('Not published yet', [])
+		};
+	}
 	const row = publicationNumber === undefined ? listed[0] : listed.find((candidate) => candidate.number === publicationNumber);
 	if (!row?.object_key || !row.sha256) error(404, 'No publication of this essay has this number.');
 	const rendered = await renderedVersion(bucket, { object_key: row.object_key, sha256: row.sha256 });
@@ -206,6 +226,7 @@ export async function essayPage(part: EssayPart, slug: string, publicationNumber
 		isNewest: row === listed[0],
 		newest: summary(listed[0], path, true),
 		publicationCount: listed.length,
+		unpublished: false,
 		outline: outlineOf(rendered.title, rendered.headings)
 	};
 }
@@ -223,6 +244,17 @@ export async function essayHistory(part: EssayPart, slug: string) {
 		title: listed[0].title ?? identifier,
 		publications: listed.map((row, index) => summary(row, path, index === 0))
 	};
+}
+
+/** The published essays of every part, as the sidebar lists them, from one read of the database. */
+export async function essayLists(): Promise<Partial<Record<EssayPart, { label: string; link: string }[]>>> {
+	const { database } = storageForPages();
+	const lists: Partial<Record<EssayPart, { label: string; link: string }[]>> = {};
+	for (const essay of await listEssays(database)) {
+		if (!essay.published) continue;
+		(lists[essay.part] ??= []).push({ label: essay.published.title, link: essayPath(essay.identifier, essay.part) });
+	}
+	return lists;
 }
 
 export async function essayIndex(part: EssayPart) {

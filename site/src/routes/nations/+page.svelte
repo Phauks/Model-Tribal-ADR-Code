@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CountBadge from '#lib/components/CountBadge.svelte';
 	import NationBrowse from '#lib/components/NationBrowse.svelte';
 	import NationTable from '#lib/components/NationTable.svelte';
 	import type { PageProps } from './$types';
@@ -33,7 +34,7 @@
 		{#each data.states as state (state.key)}
 			<li>
 				<a href="/nations/state/{state.key}">{state.label}</a>
-				<span class="muted small">{state.count.toLocaleString('en-US')}</span>
+				<CountBadge count={state.count} label={state.count === 1 ? 'nation' : 'nations'} />
 			</li>
 		{/each}
 	</ul>
@@ -48,7 +49,7 @@
 
 <style>
 	.state-list {
-		columns: 14rem auto;
+		columns: var(--layout-card-min) auto;
 		column-gap: var(--space-5);
 		list-style: none;
 		padding: 0;

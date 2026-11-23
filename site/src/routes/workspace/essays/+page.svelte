@@ -61,11 +61,12 @@
 				</p>
 				<p class="essay-row-actions">
 					{#if essay.level === 'contribute' || essay.level === 'full'}
-						<a class="button" href="/workspace/essays/{essay.identifier}/edit">Edit</a>
+						<a class="button" href="{essay.page}?edit">Edit</a>
 					{:else}
-						<a class="button" href="/workspace/essays/{essay.identifier}/edit">Read</a>
+						<a class="button" href={essay.page}>Read and comment</a>
 					{/if}
 					<a class="button button-quiet" href="/workspace/essays/{essay.identifier}">Versions</a>
+					<a class="button button-quiet" href="/workspace/essays/{essay.identifier}/edit">Full-page editor</a>
 				</p>
 			</li>
 		{/each}
