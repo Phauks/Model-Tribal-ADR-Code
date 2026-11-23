@@ -47,3 +47,17 @@ describe('reading a save answer', () => {
 		expect(keepaliveLimit).toBeLessThan(64 * 1024);
 	});
 });
+
+describe('forgetting kept copies', () => {
+	it('removes every essay copy and nothing else', async () => {
+		const stored = new Map<string, string>([['essay-draft:timeline', '{}'], ['essay-draft:other', '{}'], ['essay-view', 'drafts']]);
+		vi.stubGlobal('localStorage', {
+			removeItem: (key: string) => void stored.delete(key),
+			...Object.fromEntries(stored)
+		});
+		const { forgetLocalDrafts } = await import('../src/lib/essays/local-draft.ts');
+		forgetLocalDrafts();
+		expect([...stored.keys()]).toEqual(['essay-view']);
+		vi.unstubAllGlobals();
+	});
+});

@@ -54,3 +54,16 @@ export const keepaliveLimit = 60_000;
 export function isSaveAnswer(response: Response): boolean {
 	return !response.redirected && (response.headers.get('content-type') ?? '').includes('application/json');
 }
+
+/**
+ * Forgets every kept copy, so unpublished text is not left on a shared
+ * computer: at sign-out, and on any page opened while signed out except the
+ * sign-in pages (where someone whose sign-in ended comes back for it).
+ */
+export function forgetLocalDrafts(): void {
+	try {
+		for (const stored of Object.keys(localStorage)) if (stored.startsWith('essay-draft:')) localStorage.removeItem(stored);
+	} catch {
+		// As above.
+	}
+}

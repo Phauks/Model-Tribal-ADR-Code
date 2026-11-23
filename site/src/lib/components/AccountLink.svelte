@@ -24,6 +24,7 @@
 	import LayoutDashboard from '@lucide/svelte/icons/layout-dashboard';
 	import { roleLabels, type Role } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
+	import { forgetLocalDrafts } from '#lib/essays/local-draft.ts';
 
 	interface SignedInAs {
 		name: string;
@@ -60,7 +61,11 @@
 		hintHasWorkspace = hint.workspacePageNames.length > 0;
 		try {
 			if (fromPage) localStorage.setItem(nameStorageKey, JSON.stringify(fromPage));
-			else if (!signedIn) localStorage.removeItem(nameStorageKey);
+			else if (!signedIn) {
+				localStorage.removeItem(nameStorageKey);
+				// Unsaved essay text kept by the editor (local-draft.ts) does not outlast the sign-in.
+				if (!location.pathname.startsWith('/sign-in')) forgetLocalDrafts();
+			}
 			else {
 				const stored = JSON.parse(localStorage.getItem(nameStorageKey) ?? 'null') as SignedInAs | null;
 				if (stored && typeof stored.name === 'string') remembered = { name: stored.name, role: String(stored.role ?? '') };
@@ -76,6 +81,7 @@
 		} catch {
 			// Nothing was kept.
 		}
+		forgetLocalDrafts();
 	}
 
 	function closeOnOutside(event: FocusEvent | MouseEvent) {
