@@ -36,44 +36,15 @@ limits: >-
   does not assess whether they change the legal effect of the clause.
 ---
 
-Output: the document history
-[`content/documents/a/ak-chin-indian-community-arizona-gaming-compact.yaml`](../../../content/documents/a/ak-chin-indian-community-arizona-gaming-compact.yaml),
-four new source records and a `document_version` link on the existing record
-for the 2003 compact.
+Output: the document history [`content/documents/a/ak-chin-indian-community-arizona-gaming-compact.yaml`](../../../content/documents/a/ak-chin-indian-community-arizona-gaming-compact.yaml), four new source records and a `document_version` link on the existing record for the 2003 compact.
 
-Method: each version's text was extracted from the captured PDF. The front
-matter (approval letters and, for 1993, the Federal Register notice) gave
-the dates. Section 23(a) of the 2003 and 2021 compacts and paragraph 4 of
-the 2008 and 2022 agreements say which earlier text each one replaces or
-leaves in force. Section 15 of the 1993, 2003 and 2021 compacts was read in
-full, and the 2003 and 2021 texts were compared sentence by sentence.
+Method: each version's text was extracted from the captured PDF. The front matter (approval letters and, for 1993, the Federal Register notice) gave the dates. Section 23(a) of the 2003 and 2021 compacts and paragraph 4 of the 2008 and 2022 agreements say which earlier text each one replaces or leaves in force. Section 15 of the 1993, 2003 and 2021 compacts was read in full, and the 2003 and 2021 texts were compared sentence by sentence.
 
-Finding: the Ak-Chin profile's dispute clause fact cites the 2003 compact,
-which the 2021 amended and restated compact superseded. Section 15 changed
-only in wording in 2021, so the fact's summary still describes the clause,
-but the new `superseded-citation` lint check now reports the fact so that it
-can be pointed at the 2021 version or marked as describing the 2003 one.
-The Office of Indian Gaming list labels the 2022 agreement to amend as a
-compact.
+Finding: the Ak-Chin profile's dispute clause fact cites the 2003 compact, which the 2021 amended and restated compact superseded. Section 15 changed only in wording in 2021, so the fact's summary still describes the clause, but the new `superseded-citation` lint check now reports the fact so that it can be pointed at the 2021 version or marked as describing the 2003 one. The Office of Indian Gaming list labels the 2022 agreement to amend as a compact.
 
 ## Profile changes for Gate 1 review
 
-After the first record was merged, the project coordinator chose (easy to
-reverse) to point current-state profile facts at the version in effect. Both
-changes are listed here for Trevor's Gate 1 review
-([roadmap, item 3](../../../docs/roadmap.md#gate-1-review-of-the-pull-request-2-data)):
+After the first record was merged, the project coordinator chose (easy to reverse) to point current-state profile facts at the version in effect. Both changes are listed here for Trevor's Gate 1 review ([roadmap, item 3](../../../docs/roadmap.md#gate-1-review-of-the-pull-request-2-data)):
 
-- **Ak-Chin Indian Community**, `gaming.compacts` dispute clause: now cites
-  the 2021 amended and restated compact (Section 15, read in full) and names
-  that version in `document_version`, instead of the superseded 2003 compact.
-  The summary did not need to change, because Section 15 changed only in
-  wording.
-- **Yavapai-Prescott Indian Tribe**, `gaming.compacts` dispute clause: now
-  cites the nation's own 2003 compact (Section 15, read in full; new source
-  record `compact-az-yavapai-prescott-indian-tribe-2003`), instead of the
-  Ak-Chin Indian Community's copy of the same form. Its Section 15 states the
-  same process. The nation's version in effect, the 2022 amended and restated
-  compact, could not be cited for the clause: the Office of Indian Gaming list
-  posts only its approval letter and the 2022 Agreement to Amend, which routes
-  disputes to Section 15 without amending it. Its text is a Westlaw or
-  request item.
+- **Ak-Chin Indian Community**, `gaming.compacts` dispute clause: now cites the 2021 amended and restated compact (Section 15, read in full) and names that version in `document_version`, instead of the superseded 2003 compact. The summary did not need to change, because Section 15 changed only in wording.
+- **Yavapai-Prescott Indian Tribe**, `gaming.compacts` dispute clause: now cites the nation's own 2003 compact (Section 15, read in full; new source record `compact-az-yavapai-prescott-indian-tribe-2003`), instead of the Ak-Chin Indian Community's copy of the same form. Its Section 15 states the same process. The nation's version in effect, the 2022 amended and restated compact, could not be cited for the clause: the Office of Indian Gaming list posts only its approval letter and the 2022 Agreement to Amend, which routes disputes to Section 15 without amending it. Its text is a Westlaw or request item.

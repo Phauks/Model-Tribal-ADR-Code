@@ -61,7 +61,7 @@ The essay editor sends a picture, sound recording or video the same way, with `w
 
 - Withdrawn files are deleted at once.
 - Not used files are deleted 30 days after the decision. The workspace queue does this when it is opened.
-- When someone deletes their account, `forgetAccountUploads` deletes everything they sent that was not filed or kept for reference. Filed and kept files stay, no longer tied to the account.
+- When someone deletes their account (`deleteAccount`, docs/contributor-profiles.md), `forgetAccountUploads` deletes everything they sent that was not filed or kept for reference. Filed and kept files stay, no longer tied to the account.
 - Every deletion leaves the upload's record and its activity log entries, so the sender and reviewers can see what happened.
 
 ## Database

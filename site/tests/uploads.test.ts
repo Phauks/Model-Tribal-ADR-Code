@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
+import { deleteAccount } from '#lib/server/account-deletion.ts';
 import { allowances, pieceBytes } from '#lib/uploads.ts';
 import { eventsFor } from '#lib/server/events.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
@@ -324,6 +325,17 @@ describe('when the sender deletes their account', () => {
 		expect(await uploadByReference(database, filedOne.reference)).toMatchObject({ status: 'filed', account_identifier: null });
 		await database.prepare('DELETE FROM accounts WHERE identifier = ?').bind(sender).run();
 		expect((await uploadQueue(database, 'decided'))[0]).toMatchObject({ reference: filedOne.reference, senderEmail: null });
+	});
+
+	it('happens as part of deleting the account', async () => {
+		const filedOne = await sendWhole(png(), 'filed.png');
+		await fileUpload(database, reviewer, (await uploadByReference(database, filedOne.reference))!, filing);
+		const waiting = await sendWhole(png(), 'waiting.png');
+		const account = { subject: sender, email: 'sender@example.org', name: null };
+		expect(await deleteAccount(database, account, false, fake.bucket)).toEqual({ outcome: 'deleted' });
+		expect(await database.prepare('SELECT 1 FROM accounts WHERE identifier = ?').bind(sender).first()).toBeNull();
+		expect(await uploadByReference(database, waiting.reference)).toBeNull();
+		expect(await uploadByReference(database, filedOne.reference)).toMatchObject({ status: 'filed', account_identifier: null });
 	});
 });
 

@@ -5,9 +5,7 @@
 
 ## Context
 
-The model provisions, the commentary, the data and the code have different
-users. A single license would either stop nations from enacting provisions
-freely or give away more than intended.
+The model provisions, the commentary, the data and the code have different users. A single license would either stop nations from enacting provisions freely or give away more than intended.
 
 ## Decision
 
@@ -20,14 +18,11 @@ freely or give away more than intended.
 | Third-party, tribal and quoted material | Owners' terms | A license covers only what the licensor owns |
 | Art | Each artist's agreement | Artists keep their rights |
 
-Contributors certify their right to submit under these licenses with a
-[Developer Certificate of Origin](https://developercertificate.org/) sign-off.
+Contributors certify their right to submit under these licenses with a [Developer Certificate of Origin](https://developercertificate.org/) sign-off.
 
 ## Consequences
 
-The lead author may still sell the print edition, because these licenses
-restrict others, not the licensor; contributors' sign-off covers their text.
-See [LICENSE.md](../../LICENSE.md).
+The lead author may still sell the print edition, because these licenses restrict others, not the licensor; contributors' sign-off covers their text. See [LICENSE.md](../../LICENSE.md).
 
 ## Sources
 
