@@ -70,3 +70,8 @@ declare module 'virtual:followable-pages' {
 	/** The pages built with the site that readers can follow, with a fingerprint of each (src/lib/server/following.ts). */
 	export const followableBuild: import('#lib/server/following.ts').FollowableBuild;
 }
+
+declare module 'virtual:page-history' {
+	/** The pages built with the site, for Recent changes and page histories (src/lib/server/page-history-build.ts). */
+	export const historyBuild: import('#lib/page-history.ts').HistoryBuild;
+}

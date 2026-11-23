@@ -15,6 +15,7 @@
 	// Worker renders them; the pages built ahead of time read it from the
 	// signed-in hint (src/lib/signed-in-hint.ts) once the script runs.
 	import { page } from '$app/state';
+	import History from '@lucide/svelte/icons/history';
 	import Menu from '@lucide/svelte/icons/menu';
 	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
 	import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
@@ -227,9 +228,16 @@
 			</ul>
 		</div>
 	{/if}
-	<!-- The reader's own pages, kept on this device (site/DESIGN.md, section 6, "Star"). -->
-	<ul class="sections reader-links needs-scripts">
+	<!-- Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"),
+	     and the reader's own pages, kept on this device (site/DESIGN.md, section 6, "Star"). -->
+	<ul class="sections reader-links">
 		<li>
+			<a href="/changes" aria-current={path === '/changes' ? 'page' : undefined}>
+				<History size={18} aria-hidden="true" />
+				Recent changes
+			</a>
+		</li>
+		<li class="needs-scripts">
 			<a href="/starred" aria-current={path === '/starred' ? 'page' : undefined}>
 				<Star size={18} aria-hidden="true" />
 				Starred pages
