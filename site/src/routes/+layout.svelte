@@ -40,6 +40,7 @@
 	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
 	import { crossFadePages, startMotion } from '#lib/motion.ts';
+	import { resizableTables } from '#lib/tables/resizable-columns.ts';
 	import type { LayoutProps } from './$types';
 
 	let { children, data }: LayoutProps = $props();
@@ -65,7 +66,7 @@
 <UpdateNotice versions={data.versions} />
 <div class="site-body">
 	<SiteSidebar />
-	<main id="main-content" class="page-width" tabindex="-1">
+	<main id="main-content" class="page-width" tabindex="-1" {@attach resizableTables}>
 		{@render children()}
 	</main>
 </div>
