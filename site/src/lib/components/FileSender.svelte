@@ -8,6 +8,8 @@
 		problem: boolean;
 		done: boolean;
 		filedAs: string | null;
+		/** Where it stands with the virus check; null when it never reached it. */
+		scan?: 'checking' | 'clean' | 'flagged' | null;
 	}
 </script>
 
@@ -32,6 +34,9 @@
 	import Play from '@lucide/svelte/icons/play';
 	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
 	import Search from '@lucide/svelte/icons/search';
+	import ShieldCheck from '@lucide/svelte/icons/shield-check';
+	import ShieldEllipsis from '@lucide/svelte/icons/shield-ellipsis';
+	import ShieldX from '@lucide/svelte/icons/shield-x';
 	import Trash from '@lucide/svelte/icons/trash';
 	import Upload from '@lucide/svelte/icons/upload';
 	import X from '@lucide/svelte/icons/x';
@@ -70,6 +75,8 @@
 		earlier?: EarlierFile[];
 		/** Show the "Filed as" column. */
 		filedColumn?: boolean;
+		/** Reads the earlier files again. Given, the table refreshes itself while a sent file waits for its virus check. */
+		refresh?: () => Promise<unknown>;
 		sendLabel?: (count: number) => string;
 		/** Shown beside the table, such as the questions on Send files. */
 		aside?: Snippet<[{ sending: boolean }]>;
@@ -84,6 +91,7 @@
 		folders = true,
 		earlier = [],
 		filedColumn = false,
+		refresh,
 		sendLabel = (count) => `Send ${count}`,
 		aside
 	}: Props = $props();
@@ -148,6 +156,18 @@
 			return tab === 'all' || (tab === 'sent' && !file.problem);
 		})
 	);
+	// What the server says about a file sent from this page, once it has read the list again.
+	const earlierByReference = $derived(new Map(earlier.map((file) => [file.reference, file])));
+	/** Files still waiting for the virus check, or sent but not yet in the server's list. */
+	const stillChecking = $derived(
+		earlier.some((file) => file.scan === 'checking') ||
+			rows.some((row) => row.state === 'sent' && !row.link && row.reference !== null && !earlierByReference.has(row.reference))
+	);
+	$effect(() => {
+		if (!refresh || !stillChecking) return;
+		const timer = setInterval(() => void refresh(), 4000);
+		return () => clearInterval(timer);
+	});
 	function earlierHere(): EarlierFile[] {
 		const references = new Set(rows.map((row) => row.reference));
 		return earlier.filter((file) => !references.has(file.reference));
@@ -616,6 +636,7 @@
 							<th>Name</th>
 							<th class="number">Size</th>
 							<th>Status</th>
+							<th>Virus check</th>
 							{#if filedColumn}<th>Filed as</th>{/if}
 							<th><span class="visually-hidden">Actions</span></th>
 						</tr>
@@ -636,14 +657,30 @@
 									{:else if row.state === 'paused'}
 										<span class="small">Paused at {Math.floor(row.progress * 100)}%</span>
 									{:else if row.state === 'sent'}
-										<span class="state done"><CircleCheck size={16} aria-hidden="true" /> Sent</span>
+										{@const after = row.reference ? earlierByReference.get(row.reference) : undefined}
+										{#if after}
+											<span class="state" class:done={after.done} class:bad={after.problem} class:muted={!after.done && !after.problem}>
+												{#if after.done}<CircleCheck size={16} aria-hidden="true" />{:else if after.problem}<CircleAlert
+														size={16}
+														aria-hidden="true"
+													/>{:else}<Clock size={16} aria-hidden="true" />{/if}
+												{after.statusText}
+											</span>
+										{:else}
+											<span class="state done"><CircleCheck size={16} aria-hidden="true" /> Sent</span>
+										{/if}
 									{:else if row.state === 'problem'}
 										<span class="state bad"><CircleAlert size={16} aria-hidden="true" /> {row.message}</span>
 									{:else}
 										<span class="state muted">Ready</span>
 									{/if}
 								</td>
-								{#if filedColumn}<td class="small muted">{row.state === 'sent' ? 'Waiting to be filed' : ''}</td>{/if}
+								<td class="scan">
+									{#if row.state === 'sent' && !row.link}{@render scanBadge(
+											row.reference && earlierByReference.has(row.reference) ? earlierByReference.get(row.reference)?.scan : 'checking'
+										)}{/if}
+								</td>
+								{#if filedColumn}<td class="small filed">{row.reference ? (earlierByReference.get(row.reference)?.filedAs ?? '') : ''}</td>{/if}
 								<td class="actions">
 									{#if row.state === 'sending' && row.file}
 										<button class="icon-button" type="button" aria-label="Pause {row.name}" title="Pause" onclick={() => (row.state = 'paused')}>
@@ -704,6 +741,7 @@
 										{file.statusText}
 									</span>
 								</td>
+								<td class="scan">{@render scanBadge(file.scan)}</td>
 								{#if filedColumn}<td class="small filed">{file.filedAs ?? ''}</td>{/if}
 								<td class="actions"></td>
 							</tr>
@@ -751,6 +789,16 @@
 		</aside>
 	{/if}
 </div>
+
+{#snippet scanBadge(scan: EarlierFile['scan'])}
+	{#if scan === 'clean'}
+		<span class="badge clean"><ShieldCheck size={14} aria-hidden="true" /> Clean</span>
+	{:else if scan === 'flagged'}
+		<span class="badge flagged"><ShieldX size={14} aria-hidden="true" /> Flagged</span>
+	{:else if scan === 'checking'}
+		<span class="badge checking"><ShieldEllipsis size={14} aria-hidden="true" /> Checking</span>
+	{/if}
+{/snippet}
 
 {#if dragDepth > 0}
 	<div class="drop-over" aria-hidden="true">
@@ -904,6 +952,28 @@
 	.filed {
 		overflow-wrap: anywhere;
 	}
+	.scan {
+		white-space: nowrap;
+	}
+	.badge {
+		display: inline-flex;
+		gap: 4px;
+		align-items: center;
+		border-radius: 999px;
+		padding: 1px var(--space-2);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		border: 1px solid currentColor;
+	}
+	.badge.clean {
+		color: var(--color-link);
+	}
+	.badge.flagged {
+		color: var(--color-danger);
+	}
+	.badge.checking {
+		color: var(--color-ink-muted);
+	}
 	tr.chosen {
 		background: color-mix(in srgb, var(--color-link) 10%, transparent);
 	}
@@ -1000,17 +1070,18 @@
 			padding: 2px 0;
 		}
 		td.choose {
-			grid-row: span 3;
+			grid-row: span 4;
 		}
 		td.name {
 			grid-column: 2;
 		}
 		td.actions {
 			grid-column: 3;
-			grid-row: 1 / span 3;
+			grid-row: 1 / span 4;
 		}
 		td.number,
 		td.status,
+		td.scan,
 		td.filed {
 			grid-column: 2;
 			text-align: left;

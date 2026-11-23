@@ -34,6 +34,7 @@ import {
 	uploadDetail,
 	settlePulledFiles,
 	isCaptureKey,
+	scanBadgeFor,
 	type Filing,
 	type SenderAnswers
 } from '#lib/server/uploads.ts';
@@ -600,5 +601,21 @@ describe('pulled files', () => {
 		expect(fake.stored.has(`intake/waiting/${upload.reference}.json`)).toBe(true);
 		await withdrawUpload(database, fake.bucket, upload);
 		expect(fake.stored.has(`intake/waiting/${upload.reference}.json`)).toBe(false);
+	});
+});
+
+describe('scanBadgeFor', () => {
+	it('follows the scan while the file is being checked', () => {
+		expect(scanBadgeFor('checking', null, null)).toBe('checking');
+		expect(scanBadgeFor('checking', 'waiting', null)).toBe('checking');
+		expect(scanBadgeFor('checking', 'clean', null)).toBe('clean');
+		expect(scanBadgeFor('checking', 'flagged', null)).toBe('flagged');
+	});
+	it('reads the upload’s own status once the check is over', () => {
+		expect(scanBadgeFor('waiting-for-review', null, null)).toBe('clean');
+		expect(scanBadgeFor('filed', null, null)).toBe('clean');
+		expect(scanBadgeFor('not-accepted', null, 'The virus check found “Eicar-Signature”, so the file was deleted.')).toBe('flagged');
+		expect(scanBadgeFor('not-accepted', null, 'Archives such as ZIP files can’t be sent.')).toBeNull();
+		expect(scanBadgeFor('sending', null, null)).toBeNull();
 	});
 });
