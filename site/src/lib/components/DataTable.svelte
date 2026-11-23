@@ -97,6 +97,8 @@
 		tools?: boolean;
 		/** The rows left out, by key; bind it to share one list with something around the table, such as a chart's other views. */
 		leftOut?: string[];
+		/** How many rows there are in all, when the page passes only the first of them (with its own "Show all"), so the count reads "Showing 50 of 52". */
+		total?: number;
 	}
 
 	let {
@@ -115,7 +117,8 @@
 		shareable = false,
 		count: showCount = true,
 		tools = true,
-		leftOut = $bindable([])
+		leftOut = $bindable([]),
+		total
 	}: Props = $props();
 
 	let interactive = $state(false);
@@ -140,9 +143,10 @@
 	const rowHeader = $derived(columns.find((column) => column.isRowHeader) ?? columns[0]);
 	/** A row's name, for its leave-out button and its chip: its row header's text. */
 	const rowLabel = (row: TableRow) => row.cells[rowHeader?.key ?? '']?.text || row.key;
+	const allRows = $derived(Math.max(total ?? 0, rows.length));
 	const count = $derived(
-		`Showing ${shownRows.length.toLocaleString('en-US')} of ${rows.length.toLocaleString('en-US')} ${
-			rows.length === 1 ? rowName[0] : rowName[1]
+		`Showing ${shownRows.length.toLocaleString('en-US')} of ${allRows.toLocaleString('en-US')} ${
+			allRows === 1 ? rowName[0] : rowName[1]
 		}`
 	);
 
