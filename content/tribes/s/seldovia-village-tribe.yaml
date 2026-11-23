@@ -208,29 +208,21 @@ indian_health_service:
   note: 'The source''s words: "Seldovia Village Tribe".'
 governance:
 - aspect: form
-  value: Constitution under the Indian Reorganization Act of June 18, 1934
-  quote: we ordain and institute this constitution to promote our Tribe's social, economic and cultural progress, pursuant to the Indian Reorganization Act of June 18, 1934 (49 Stat. 984), as amended.
-  source: constitution-seldovia-village-tribe-2010-text
-  confidence: medium
+  value: Under the Indian Reorganization Act of 1934
+  quote: Seldovia Village Tribe, IRA is a federally recognized Tribe under the provisions of the U.S. Federal Indian Reorganization Act of 1934.
+  source: seldovia-village-tribe-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '2010-01-07'
-  locator: Preamble
-  document_version:
-    document: seldovia-village-tribe-constitution
-    version: 2010-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body
   value: Seldovia Tribal Council
-  quote: The governing body of the Seldovia Village Tribe shall be the Seldovia Tribal Council.
-  source: constitution-seldovia-village-tribe-2010-text
-  confidence: medium
+  quote: Seldovia Village Tribe is governed by the Seldovia Tribal Council, elected by tribal members 18 and older.
+  source: seldovia-village-tribe-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '2010-01-07'
-  locator: Article V, Section 1
-  document_version:
-    document: seldovia-village-tribe-constitution
-    version: 2010-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 9 members
   quote: The Council shall consist of nine (9) members
@@ -244,17 +236,13 @@ governance:
     version: 2010-text
   note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
 - aspect: governing-body-selection
-  value: Elected by majority vote of qualified members
-  quote: who shall be elected by a majority vote of qualified members of the Tribe at their annual election or meeting
-  source: constitution-seldovia-village-tribe-2010-text
-  confidence: medium
+  value: Elected by tribal members
+  quote: Seldovia Village Tribe is governed by the Seldovia Tribal Council, elected by tribal members 18 and older.
+  source: seldovia-village-tribe-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '2010-01-07'
-  locator: Article V, Section 2
-  document_version:
-    document: seldovia-village-tribe-constitution
-    version: 2010-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
   value: 3 years, staggered
   quote: Except as may be necessary to establish and maintain the staggered terms of the Council, all Council members shall serve three (3) year terms.
@@ -337,16 +325,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
 - aspect: voting-age
   value: '18'
-  quote: Any duly enrolled voting member of the Seldovia Village Tribe eighteen (18) years of age or older shall be eligible to vote in all Tribal elections.
-  source: constitution-seldovia-village-tribe-2010-text
-  confidence: medium
+  quote: Seldovia Village Tribe is governed by the Seldovia Tribal Council, elected by tribal members 18 and older.
+  source: seldovia-village-tribe-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '2010-01-07'
-  locator: Article VI, Section 1
-  document_version:
-    document: seldovia-village-tribe-constitution
-    version: 2010-text
-  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: election-authority
   value: Election committee of 3 members appointed by the Council
   quote: There shall be an election committee consisting of three (3) members appointed by the Council for each tribal election or meeting

@@ -25,6 +25,8 @@ describe('the workspace pages in the left sidebar', () => {
 			'access',
 			'address-book',
 			'changes',
+			'nonprofit',
+			'service-checks',
 			'activity'
 		]);
 	});

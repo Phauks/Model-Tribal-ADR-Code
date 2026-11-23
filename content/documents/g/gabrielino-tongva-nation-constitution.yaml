@@ -1,0 +1,26 @@
+id: gabrielino-tongva-nation-constitution
+kind: constitution
+title: The Constitution of the Gabrielino/Tongva Nation
+nations:
+- gabrielino-tongva-nation
+jurisdictions:
+- level: tribal
+  tribe: gabrielino-tongva-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-23: 1 dated version. Versions are only those found; others may exist.'
+versions:
+- id: 2020-text
+  label: 2020 constitution, as amended
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2020-02-22'
+  source: constitution-gabrielino-tongva-nation-2020-text
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/gabrielino-tongva-nation/26d49fd68c9fe38b.pdf
+    sha256: 26d49fd68c9fe38b4b20a624905fefa8e5ae927ccaf224bfc4b1c353fb886eab
+    pages: 20
+  note: The first page gives ratification on Feb. 17, 2007 and amendment on Feb. 22, 2020. Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-23; a later amendment may not be posted. Version, status and dates read from the text's first page by the project (Claude), not yet checked by the lead author.
+found_in:
+- 2026-11-23-governance

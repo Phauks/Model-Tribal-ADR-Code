@@ -485,29 +485,13 @@ governance:
     version: 1987-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
 - aspect: other
-  value: Appointed advisory committee of elders
-  quote: appointed advisory committee of elders to consult with the Council on
-  source: constitution-pit-river-tribe-1987-text
-  confidence: medium
+  value: 11 autonomous bands
+  quote: The Pit River Tribe is a Tribe comprised of eleven (11) autonomous bands
+  source: pit-river-tribe-website-home
+  confidence: high
   verification: read-in-full
-  as_of: '1987-08-15'
-  locator: Article VII, Section 1(r)
-  document_version:
-    document: pit-river-tribe-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
-- aspect: other
-  value: Each band elects its own Council representative and an alternate
-  quote: and to elect an alternate Council person who may
-  source: constitution-pit-river-tribe-1987-text
-  confidence: medium
-  verification: read-in-full
-  as_of: '1987-08-15'
-  locator: Article VII, Section 2(d)
-  document_version:
-    document: pit-river-tribe-constitution
-    version: 1987-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages say nothing about the council, officers or elections.'
 governing_documents:
 - kind: law-code
   title: Tribal code

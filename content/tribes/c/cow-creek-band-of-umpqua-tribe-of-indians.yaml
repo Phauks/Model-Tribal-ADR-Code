@@ -221,6 +221,30 @@ indian_health_service:
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Cow Creek Band of Umpqua Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Cow Creek Band of Umpqua Tribe of Indians (2015)); the list does not say which service unit or programs the compact covers.'
 governance:
+- aspect: governing-body
+  value: Tribal Board of Directors
+  quote: is governed by an elected eleven-member council known as the Tribal Board of Directors.
+  source: cowcreek-nsn-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 11 members
+  quote: is governed by an elected eleven-member council known as the Tribal Board of Directors.
+  source: cowcreek-nsn-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: was elected Chairman of the Tribal Board of Directors by her fellow board members
+  source: cow-creek-band-of-umpqua-tribe-of-indians-website-government-our-chairman
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -229,6 +253,22 @@ governance:
   as_of: '2026-11-20'
   locator: Cow Creek Band of Umpqua Tribe of Indians
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by fellow board members
+  quote: was elected Chairman of the Tribal Board of Directors by her fellow board members
+  source: cow-creek-band-of-umpqua-tribe-of-indians-website-government-our-chairman
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court system
+  quote: Established by the Tribal Board, the Tribal Court system consists of a Chief Judge, Appellate Judges, Peacemakers, Tribal Court Administrator, and Tribal Court Clerk.
+  source: cowcreek-nsn-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Cow Creek Band of Umpqua Tribe of Indians - Tribal Code - Table of Contents

@@ -9,7 +9,8 @@ import {
 	searchSummary,
 	sources as sourceRecords,
 	type CitedFact,
-	type NationRecord
+	type NationRecord,
+	type SourceRecord
 } from '#lib/server/content.ts';
 import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
@@ -392,8 +393,8 @@ function governmentAtAGlance(record: NationRecord, sources: SourceUses): FactGro
 	const bodyLabel = 'Governing body';
 	const headLabel = 'Head of government';
 	return [
-		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value, link: '#government-heading' })] : []),
-		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value, link: '#government-heading' })] : [])
+		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value })] : []),
+		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value })] : [])
 	];
 }
 
@@ -427,8 +428,38 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 	}
 	return [
 		...[...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items })),
-		...agreementGroups(record, sources, section)
+		...agreementGroups(record, sources, section),
+		...group('court-cases', 'Court cases about the nation', courtCases(record, sources, section))
 	];
+}
+
+/** Reporter names written out in some records, in their short form. */
+const reporterShortNames: Record<string, string> = { 'United States Reports': 'U.S.' };
+
+/**
+ * The court cases in the project's sources that are about the nation (the
+ * source record lists it), oldest first: the case name, where it is reported
+ * and the year, with the court under it. Each links the opinion the record
+ * cites and is listed under Sources like any other fact.
+ */
+function courtCases(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	const year = (source: SourceRecord) => source.citation.issued?.['date-parts']?.[0]?.[0];
+	const cases = [...sourceRecords().values()]
+		.filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(record.id) && source.citation.title)
+		.sort((first, second) => (year(first) ?? 0) - (year(second) ?? 0));
+	return cases.map((source) => {
+		const { volume, page, number, authority } = source.citation;
+		const reporter = source.citation['container-title'];
+		const reported = volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number;
+		const when = year(source);
+		const address = source.citation.URL ?? source.original_link;
+		return cited(sources, section, { source: source.key, confidence: 'high' }, {
+			text: source.citation.title ?? source.key,
+			link: address && URL.canParse(address) ? webLink(address) : undefined,
+			detail: [reported, when ? `(${when})` : undefined].filter(Boolean).join(' ') || undefined,
+			note: authority
+		});
+	});
 }
 
 /** The names the page gives each kind of jurisdiction agreement, in the order the page shows them. */

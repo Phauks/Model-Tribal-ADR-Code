@@ -169,6 +169,22 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Ramona Band of Cahuilla".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Ramona Band of Cahuilla remains a customs and traditions Tribe and utilizes a Tribal Council for all decisions that impact Tribal interests.
+  source: ramona-band-of-cahuilla-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name the Chairwoman and Council but give no terms, size or selection.'
+- aspect: head-of-government
+  value: Chairwoman
+  quote: As Chairwoman, I invite you to explore our site and learn not only about our rich history
+  source: ramona-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name the Chairwoman and Council but give no terms, size or selection.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026

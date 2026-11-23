@@ -186,6 +186,30 @@ indian_health_service:
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Hoh Indian Tribe".
 governance:
+- aspect: governing-body
+  value: Business Committee
+  quote: The Hoh Tribal Business Committee is the governing body of the Tribal Administration, elected by the General Council.
+  source: hoh-indian-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Hoh Tribe Constitution is listed by title only; its text is not on the saved pages.'
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: The Hoh Tribal Business Committee is the governing body of the Tribal Administration, elected by the General Council.
+  source: hoh-indian-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Hoh Tribe Constitution is listed by title only; its text is not on the saved pages.'
+- aspect: head-of-government
+  value: Chairwoman
+  quote: Chairwoman
+  source: hoh-indian-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Hoh Tribe Constitution is listed by title only; its text is not on the saved pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -194,6 +218,14 @@ governance:
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice Chairwoman, Secretary, Treasurer
+  quote: Vice Chairwoman
+  source: hoh-indian-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Hoh Tribe Constitution is listed by title only; its text is not on the saved pages.'
 governing_documents:
 - kind: law-code
   title: Hoh Indian Tribe

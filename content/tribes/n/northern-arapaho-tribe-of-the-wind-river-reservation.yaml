@@ -181,17 +181,13 @@ indian_health_service:
   note: Listed as "Northern Arapaho Business Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
 - aspect: governing-body
-  value: Shoshone and Arapahoe Business Council
-  quote: known fit the Shoshone and Arapahoe Business Council.
-  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
-  confidence: medium
+  value: Business Council
+  quote: and the Northern Arapaho Business Council below.
+  source: northernarapaho-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1938-09-27'
-  locator: Preamble
-  document_version:
-    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
-    version: 1938-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Home page is a news feed and the Business Council members are listed by name only, so no size or selection facts are given.'
 - aspect: governing-body-size
   value: 6 members from each tribe
   quote: Council is to consist of six members duly
@@ -228,6 +224,14 @@ governance:
     document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
     version: 1938-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: general-council
+  value: Enrolled adult citizens (18+)
+  quote: Open only to enrolled adult citizens (18+) of the Northern Arapaho Tribe.
+  source: northernarapaho-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Home page is a news feed and the Business Council members are listed by name only, so no size or selection facts are given.'
 - aspect: head-of-government
   value: Chairman (one for each tribe's Council)
   quote: Council members of each tribe ere to elect

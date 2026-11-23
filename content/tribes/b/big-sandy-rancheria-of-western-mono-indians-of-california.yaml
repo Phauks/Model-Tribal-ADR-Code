@@ -159,6 +159,22 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Big Sandy Rancheria of Western Mono Indians of California".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: All Tribal Council meetings are held on the last Wednesday of each month.
+  source: big-sandy-rancheria-of-western-mono-indians-of-california-website-governance-administration-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: Chairperson
+  source: big-sandy-rancheria-of-western-mono-indians-of-california-website-governance-administration-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026

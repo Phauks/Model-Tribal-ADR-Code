@@ -369,17 +369,21 @@ governance:
     version: 1989-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
 - aspect: election-authority
-  value: Election board of three members
-  quote: an election board consisting
-  source: constitution-the-seminole-nation-of-oklahoma-1989-text
-  confidence: medium
+  value: Election Board
+  quote: 'NAME: ELECTION BOARD'
+  source: the-seminole-nation-of-oklahoma-website-getpage-php-name-boards-sub-government
+  confidence: high
   verification: read-in-full
-  as_of: '1989-02-25'
-  locator: Article X, Section 3
-  document_version:
-    document: the-seminole-nation-of-oklahoma-constitution
-    version: 1989-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Executive Office page names the Chief and Assistant Chief only by name, and the Constitution and Codes linked from the Tribal Court page are not among the saved pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: SEMINOLE NATION TRIBAL COURT
+  source: the-seminole-nation-of-oklahoma-tribal-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Executive Office page names the Chief and Assistant Chief only by name, and the Constitution and Codes linked from the Tribal Court page are not among the saved pages.'
 - aspect: amendment
   value: Majority vote of qualified voters in special election
   quote: amended Fy a majority vote of the

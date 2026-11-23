@@ -180,6 +180,14 @@ indian_health_service:
   note: 'The source''s words: "Native Village of Georgetown".'
   operator: tribal
 governance:
+- aspect: governing-body
+  value: Georgetown Tribal Council
+  quote: Georgetown Tribal Council (GTC) is the governing body for the federally recognized tribe of the Native Village of Georgetown, Alaska.
+  source: georgetowntc-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026

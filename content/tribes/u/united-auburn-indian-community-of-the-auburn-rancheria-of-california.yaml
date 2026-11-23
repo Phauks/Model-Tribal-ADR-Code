@@ -165,6 +165,22 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "United Auburn Indian Community of the Auburn Rancheria of California".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: serves as Vice Chairman of the United Auburn Indian Community (UAIC) Tribal Council, a position he has held since December 2025.
+  source: united-auburn-indian-community-of-the-auburn-rancheria-of-california-website-about-us-tribal-council-gabe-cayton
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages are member-portal biographies of council officers and state no constitution, council size, selection or term rules.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: serves as the Tribal Chairman of the United Auburn Indian Community (UAIC) Tribal Council, a position he has held since June 2024.
+  source: united-auburn-indian-community-of-the-auburn-rancheria-of-california-website-about-us-tribal-council-john-williams
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages are member-portal biographies of council officers and state no constitution, council size, selection or term rules.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026

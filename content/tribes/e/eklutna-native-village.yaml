@@ -224,28 +224,30 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Eklutna Native Village".'
 governance:
-- aspect: governing-body
-  value: Traditional Tribal Council
-  quote: The governing body of Eklutna shall be the Native
-  source: constitution-eklutna-native-village-undated-text
-  confidence: medium
+- aspect: form
+  value: Traditional Tribal Government
+  quote: We have a Traditional Tribal Government, as in not formed under the IRA.
+  source: eklutna-native-village-website-about
+  confidence: high
   verification: read-in-full
-  locator: Article III, Section I
-  document_version:
-    document: eklutna-native-village-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The people have entrusted their governing powers to the Tribal Council.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 7 members
-  quote: Section II Composition The Council shall consist of seven (7)
-  source: constitution-eklutna-native-village-undated-text
-  confidence: medium
+  quote: Seven (7) Council Members serve three (3) year staggered terms.
+  source: eklutna-native-village-website-about
+  confidence: high
   verification: read-in-full
-  locator: Article III, Section II
-  document_version:
-    document: eklutna-native-village-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-selection
   value: Elected by majority of qualified members
   quote: by a majority of qualified members.
@@ -259,26 +261,20 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
 - aspect: governing-body-term
   value: 3 years, staggered
-  quote: terms to be staggered so that no more than
-  source: constitution-eklutna-native-village-undated-text
-  confidence: medium
+  quote: Seven (7) Council Members serve three (3) year staggered terms.
+  source: eklutna-native-village-website-about
+  confidence: high
   verification: read-in-full
-  locator: Article III, Section IV
-  document_version:
-    document: eklutna-native-village-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
-  quote: Section III Officers The council shall include a President,
-  source: constitution-eklutna-native-village-undated-text
-  confidence: medium
+  quote: Tribal Council President, Vice President, Secretary, and Treasurer have duties outlined in our Constitutions.
+  source: eklutna-native-village-website-about
+  confidence: high
   verification: read-in-full
-  locator: Article III, Section III
-  document_version:
-    document: eklutna-native-village-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -288,16 +284,21 @@ governance:
   locator: Eklutna Native Village
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 - aspect: other-officers
-  value: Vice-President, Secretary, Treasurer, three Trustees
-  quote: Vice-President, Secretary, Treasurer, and three (3) Trustees.
-  source: constitution-eklutna-native-village-undated-text
-  confidence: medium
+  value: Vice President, Secretary, Treasurer
+  quote: Tribal Council President, Vice President, Secretary, and Treasurer have duties outlined in our Constitutions.
+  source: eklutna-native-village-website-about
+  confidence: high
   verification: read-in-full
-  locator: Article III, Section III
-  document_version:
-    document: eklutna-native-village-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually, in winter
+  quote: Annual elections occur in the winter.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: voting-age
   value: '18'
   quote: eighteen (18) years of age or older shall be
@@ -320,6 +321,22 @@ governance:
     document: eklutna-native-village-constitution
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: judiciary
+  value: Rule Keepers (Tribal Judges)
+  quote: Five (5) traditional Rule Keepers, (i.e. Tribal Judges) chosen by each prominent clan family.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Chosen by each clan family
+  quote: Five (5) traditional Rule Keepers, (i.e. Tribal Judges) chosen by each prominent clan family.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: amendment
   value: Majority of qualified voters in an election, 15% must vote
   quote: This constitution may be amended by a

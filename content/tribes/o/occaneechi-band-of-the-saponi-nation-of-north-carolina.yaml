@@ -183,6 +183,55 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Chairperson - Soon to be decided by the newly elected OBSN Tribal Council.
+  source: occaneechi-band-of-the-saponi-nation-of-north-carolina-website-tribal-council-and-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The page says the officer posts are soon to be decided by the newly elected council, so the officer facts describe a pending selection.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: Eight Tribal Council seats | Election held September 26, 2026
+  source: occaneechi-band-of-the-saponi-nation-of-north-carolina-website-wp-content-uploads-2026-09-obsn-2026-elected-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The page says the officer posts are soon to be decided by the newly elected council, so the officer facts describe a pending selection.'
+- aspect: governing-body-selection
+  value: Elected by vote
+  quote: Eight Tribal Council seats | Election held September 26, 2026
+  source: occaneechi-band-of-the-saponi-nation-of-north-carolina-website-wp-content-uploads-2026-09-obsn-2026-elected-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The page says the officer posts are soon to be decided by the newly elected council, so the officer facts describe a pending selection.'
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: Tribal Chairperson - Soon to be decided by the newly elected OBSN Tribal Council.
+  source: occaneechi-band-of-the-saponi-nation-of-north-carolina-website-tribal-council-and-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The page says the officer posts are soon to be decided by the newly elected council, so the officer facts describe a pending selection.'
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council
+  quote: Tribal Chairperson - Soon to be decided by the newly elected OBSN Tribal Council.
+  source: occaneechi-band-of-the-saponi-nation-of-north-carolina-website-tribal-council-and-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The page says the officer posts are soon to be decided by the newly elected council, so the officer facts describe a pending selection.'
+- aspect: other-officers
+  value: Vice Tribal Chairperson
+  quote: Vice Tribal Chairperson - Soon to be decided by the newly elected Tribal Council.
+  source: occaneechi-band-of-the-saponi-nation-of-north-carolina-website-tribal-council-and-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The page says the officer posts are soon to be decided by the newly elected council, so the officer facts describe a pending selection.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

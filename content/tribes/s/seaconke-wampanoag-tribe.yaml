@@ -50,6 +50,23 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Current Tribal Council and Leadership, Elected 2025
+  source: seaconke-wampanoag-tribe-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The leadership page lists officers by title with names and gives no seat count, term or selection rule.'
+- aspect: governing-body-selection
+  value: Elected (2025)
+  quote: Current Tribal Council and Leadership, Elected 2025
+  source: seaconke-wampanoag-tribe-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The leadership page lists officers by title with names and gives no seat count, term or selection rule.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

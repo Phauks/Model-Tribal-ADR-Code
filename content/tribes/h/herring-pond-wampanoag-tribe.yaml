@@ -55,6 +55,31 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council Member ~ At Large
+  source: herringpondtribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is only mentioned as under reform; no governing document text is on the saved pages.'
+- aspect: head-of-government
+  value: Chairlady / President
+  quote: Chairlady / President
+  source: herringpondtribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is only mentioned as under reform; no governing document text is on the saved pages.'
+- aspect: other-officers
+  value: Secretary/Treasurer
+  quote: Secretary/Treasurer
+  source: herringpondtribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is only mentioned as under reform; no governing document text is on the saved pages.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

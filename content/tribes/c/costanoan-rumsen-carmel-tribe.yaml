@@ -50,6 +50,23 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Youth Council meets on the same day as Tribal Council
+  source: costanoan-rumsen-carmel-tribe-website-youth-council-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document saved; the Tribal Council fact comes from a youth council passage.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman of the Costanoan Rumsen Carmel Tribe
+  source: costanoanrumsen-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document saved; the Tribal Council fact comes from a youth council passage.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

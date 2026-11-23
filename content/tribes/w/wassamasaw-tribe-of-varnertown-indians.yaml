@@ -103,6 +103,63 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+governance:
+- aspect: governing-body
+  value: Executive Board
+  quote: The tribe is governed by an Executive Board, which consists of the Chief, Vice Chief, and five elected Tribal Council members.
+  source: wassamasaw-tribe-of-varnertown-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The tribe is governed by an Executive Board, which consists of the Chief, Vice Chief, and five elected Tribal Council members.
+  source: wassamasaw-tribe-of-varnertown-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by tribal membership
+  quote: All Executive Board positions are filled through election of the Tribal membership.
+  source: wassamasaw-tribe-of-varnertown-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: All tribal offices are 4-year terms.
+  source: wassamasaw-tribe-of-varnertown-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  quote: The tribe is governed by an Executive Board, which consists of the Chief, Vice Chief, and five elected Tribal Council members.
+  source: wassamasaw-tribe-of-varnertown-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Secretary, Treasurer, Archivist/Publicist, Enrollment Officer, Spiritual Leader, Tribal Historian
+  quote: include the Secretary, Treasurer, Archivist/Publicist, Enrollment Officer, Spiritual Leader and Tribal Historian.
+  source: wassamasaw-tribe-of-varnertown-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Council of Elders, advisory to Executive Board
+  quote: The tribe also has a Council of Elders who serve in an advisory capacity to the Executive Board
+  source: wassamasaw-tribe-of-varnertown-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

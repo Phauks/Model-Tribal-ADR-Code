@@ -186,6 +186,46 @@ indian_health_service:
   locator: Tribally Administered Programs table
   note: Listed as "Coushatta Tribe of Louisiana".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: 'The Coushatta Tribal Council is the democratically-elected governing body consisting of five members: four council members and the chairman.'
+  source: coushatta-tribe-of-louisiana-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from the Tribal Government page.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: 'The Coushatta Tribal Council is the democratically-elected governing body consisting of five members: four council members and the chairman.'
+  source: coushatta-tribe-of-louisiana-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from the Tribal Government page.'
+- aspect: governing-body-selection
+  value: Democratically elected
+  quote: 'The Coushatta Tribal Council is the democratically-elected governing body consisting of five members: four council members and the chairman.'
+  source: coushatta-tribe-of-louisiana-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from the Tribal Government page.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: The first tribal council elections were held in 1985 and members serve staggered four-year terms.
+  source: coushatta-tribe-of-louisiana-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from the Tribal Government page.'
+- aspect: head-of-government
+  value: Chairman
+  quote: 'consisting of five members: four council members and the chairman.'
+  source: coushatta-tribe-of-louisiana-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from the Tribal Government page.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -194,6 +234,14 @@ governance:
   as_of: '2026-11-20'
   locator: Coushatta Tribe of Louisiana
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: took office in June 2025 and is serving a four-year term.
+  source: coushatta-tribe-of-louisiana-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from the Tribal Government page.'
 governing_documents:
 - kind: law-code
   title: Coushatta Tribe of Louisiana Judicial Codes

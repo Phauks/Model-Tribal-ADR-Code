@@ -168,6 +168,22 @@ indian_health_service:
   note: 'The source''s words: "Ugashik Village".'
   operator: tribal
 governance:
+- aspect: form
+  value: Articles of Incorporation/Constitution
+  quote: our Signed Articles of Incorporation/Constitution
+  source: ugashik-village-website-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Home page carries only excerpts of the constitution, the saved PDFs are council minutes, and the constitution text itself is not among the pages.'
+- aspect: governing-body
+  value: Ugashik Traditional Village Council
+  quote: The Ugashik Traditional Village Council proposed a change to our Articles of Incorporation/Constitution
+  source: ugashik-village-website-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Home page carries only excerpts of the constitution, the saved PDFs are council minutes, and the constitution text itself is not among the pages.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -176,6 +192,15 @@ governance:
   as_of: '2026-11-20'
   locator: Ugashik Village
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: amendment
+  value: Majority vote of qualified voters in an election, with at least 30% of eligible voters voting
+  quote: This constitution may be amended by a majority vote of the qualified voters in an election called for that purpose, provided that at least thirty percent of those eligible votes.
+  source: ugashik-village-website-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XIV
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Home page carries only excerpts of the constitution, the saved PDFs are council minutes, and the constitution text itself is not among the pages.'
 governing_documents:
 - kind: constitution
   title: At tribe's website
