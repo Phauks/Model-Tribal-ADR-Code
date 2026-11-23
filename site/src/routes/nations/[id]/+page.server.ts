@@ -22,6 +22,7 @@ import { SourceUses, whereInSource, type CitationMark } from '#lib/server/source
 import { sourceAnchor } from '#lib/citation-marks.ts';
 import { recognitionBadges } from '#lib/recognition-badges.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
+import { listedIn } from '#lib/listed-in.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
@@ -980,6 +981,11 @@ export const load: PageServerLoad = ({ params }) => {
 		example: record.example === true,
 		officialName: displayName(record.names.official),
 		listedName: record.names.official,
+		// The document the listed name comes from, cited by its own name (Trevor, Nov. 23, 2026).
+		listedIn: listedIn(
+			record.names.official_source ? sourceRecords().get(record.names.official_source) : undefined,
+			record.recognition?.find((fact) => fact.source === record.names.official_source)?.locator
+		),
 		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
 		badges: recognitionBadges(record.recognition ?? []),
 		review: status,
