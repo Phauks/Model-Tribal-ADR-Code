@@ -187,10 +187,4 @@ Task A: statute text for 18 U.S.C. 1162 and 28 U.S.C. 1360 from Cornell's Legal 
 
 ## Review by the lead session
 
-The Indian Child Welfare Act designated-agent facts were lowered from high to
-medium confidence before the build (570 facts; the rest were already medium),
-because the 2026 notice prints its table as page images and the nation names
-were read from those images. The July 2025 notice (90 Fed. Reg. 30950) has a
-text table that can be used to check them. The values `reassumed-jurisdiction`
-and `concurrent-federal-jurisdiction-accepted` were kept: the jurisdiction
-`value` field is free text described in the schema.
+The Indian Child Welfare Act designated-agent facts were lowered from high to medium confidence before the build (570 facts; the rest were already medium), because the 2026 notice prints its table as page images and the nation names were read from those images. The July 2025 notice (90 Fed. Reg. 30950) has a text table that can be used to check them. The values `reassumed-jurisdiction` and `concurrent-federal-jurisdiction-accepted` were kept: the jurisdiction `value` field is free text described in the schema.

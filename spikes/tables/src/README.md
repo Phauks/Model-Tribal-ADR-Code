@@ -1,14 +1,10 @@
 # Table spike source
 
-Findings are in [`../REPORT.md`](../REPORT.md). Every nation in the sample
-data is fictional ("Sample Nation 2", "Sample Nation Ä" and so on).
+Findings are in [`../REPORT.md`](../REPORT.md). Every nation in the sample data is fictional ("Sample Nation 2", "Sample Nation Ä" and so on).
 
 ## Rebuild
 
-Needs Node 22, Typst 0.15.1, Python 3 with `pypdf` and `pypdfium2`, Java for
-EPUBCheck 5.3.0, and the `zip` command. The browser checks use the Playwright
-and Chromium already installed in the build container. Outputs go to
-`../out/`, which git ignores. Run every command from this folder.
+Needs Node 22, Typst 0.15.1, Python 3 with `pypdf` and `pypdfium2`, Java for EPUBCheck 5.3.0, and the `zip` command. The browser checks use the Playwright and Chromium already installed in the build container. Outputs go to `../out/`, which git ignores. Run every command from this folder.
 
 ```sh
 npm ci

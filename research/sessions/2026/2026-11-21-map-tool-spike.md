@@ -36,7 +36,4 @@ limits: >-
   pages were read through GitHub mirrors.
 ---
 
-Findings and measurements are in `spikes/map/REPORT.md`. Result: d3-geo at
-build time with us-atlas and `geoAlbersUsaTerritories`, a separate grayscale
-SVG for print, and an architecture that leaves room for a Census American
-Indian, Alaska Native and Native Hawaiian Areas layer without building it.
+Findings and measurements are in `spikes/map/REPORT.md`. Result: d3-geo at build time with us-atlas and `geoAlbersUsaTerritories`, a separate grayscale SVG for print, and an architecture that leaves room for a Census American Indian, Alaska Native and Native Hawaiian Areas layer without building it.

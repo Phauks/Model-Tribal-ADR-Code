@@ -1,20 +1,8 @@
 # Provision pre-review
 
-**Status:** pre-review findings, written Nov. 21, 2026, for the lead author,
-Trevor Goldsmith, to accept, change or reject. Nothing here changes a profile,
-and no verdict is a finding about any nation's law or practice. Every verdict
-says what the cited source shows about one provision record. Changes the lead
-author approves will be made in a separate pull request.
+**Status:** pre-review findings, written Nov. 21, 2026, for the lead author, Trevor Goldsmith, to accept, change or reject. Nothing here changes a profile, and no verdict is a finding about any nation's law or practice. Every verdict says what the cited source shows about one provision record. Changes the lead author approves will be made in a separate pull request.
 
-Every count comes from
-[`2026-11-21-provision-pre-review-counts.json`](2026-11-21-provision-pre-review-counts.json),
-written by [`scripts/review/provision_pre_review.py`](../../scripts/review/provision_pre_review.py)
-from the verdicts in
-[`2026-11-21-provision-pre-review.json`](2026-11-21-provision-pre-review.json).
-The same verdicts are in
-[`2026-11-21-provision-pre-review.csv`](2026-11-21-provision-pre-review.csv),
-which has an empty `lead_author_decision` column for the review. Interpretation
-is labeled as project analysis.
+Every count comes from [`2026-11-21-provision-pre-review-counts.json`](2026-11-21-provision-pre-review-counts.json), written by [`scripts/review/provision_pre_review.py`](../../scripts/review/provision_pre_review.py) from the verdicts in [`2026-11-21-provision-pre-review.json`](2026-11-21-provision-pre-review.json). The same verdicts are in [`2026-11-21-provision-pre-review.csv`](2026-11-21-provision-pre-review.csv), which has an empty `lead_author_decision` column for the review. Interpretation is labeled as project analysis.
 
 ## Lead author's decision
 
@@ -22,63 +10,21 @@ On Nov. 22, 2026 the lead author accepted these recommendations and kept diversi
 
 ## Why this review
 
-The provisional analysis of dispute resolution practice (pull request #10)
-found that 938 of the 1,327 provision records are bulk imports from the
-National Center on Restorative Justice database, 291 rest on section titles
-alone, and only 98 come from text a research session read. Its review queue
-asked for the bulk and title-only records to be checked one by one, for
-duplicates to be merged, and for a decision on whether diversion and
-restorative sentencing belong in a dispute resolution code.[^analysis][^ncorj]
-This pre-review does the checking so the lead author's review can start from
-evidence instead of from the raw records.
+The provisional analysis of dispute resolution practice (pull request #10) found that 938 of the 1,327 provision records are bulk imports from the National Center on Restorative Justice database, 291 rest on section titles alone, and only 98 come from text a research session read. Its review queue asked for the bulk and title-only records to be checked one by one, for duplicates to be merged, and for a decision on whether diversion and restorative sentencing belong in a dispute resolution code.[^analysis][^ncorj] This pre-review does the checking so the lead author's review can start from evidence instead of from the raw records.
 
 ## Method
 
-1. **Sources fetched.** The script fetched every page and PDF that a provision
-   cites as its link or locator: 1,358 addresses, of which 1,279 returned
-   (62 refused automated access, 12 were not found, 5 failed). All 938
-   database pages returned. PDFs were converted to text.[^counts-fetch]
-2. **Evidence matched.** For each record, the script found the passage of the
-   cited text nearest the record's title or section number and kept it with
-   the database's own quotation, if any. It also flagged likely duplicates
-   within each profile by title, citation or page.
-3. **First pass.** Twenty-nine automated reviewers, AI assistants working in
-   parallel, each read one batch of about 45 records (all of a nation's
-   records in one batch) and answered the questions in the
-   [first-pass brief](briefs/2026-11-21-provision-pre-review-first-pass.md):
-   does the provision exist in the source, is the record accurate, is it a
-   dispute resolution provision, is it a duplicate, which method does it map
-   to, and what should happen to it, with a confidence level and a quotation.
-   They worked only from the fetched evidence.
-4. **Second pass.** A more capable assistant re-checked the 114 hardest cases
-   under the [second-pass brief](briefs/2026-11-21-provision-pre-review-second-pass.md):
-   every record the first pass could not verify or rated low confidence, every
-   "not found," and every proposed drop of a record already labeled with a
-   dispute resolution kind or whose title names a process. It could search the
-   full fetched text and fetch a source again. The second pass changed 53 of
-   the 114 verdicts.[^counts-second]
-5. **Checks.** Every verdict file was checked for one verdict per record,
-   allowed values, and duplicate references that resolve within the same
-   profile. No duplicate points to another duplicate. A sample of first-pass
-   "drop" verdicts was read against the evidence by the lead session (project
-   analysis).
+1. **Sources fetched.** The script fetched every page and PDF that a provision cites as its link or locator: 1,358 addresses, of which 1,279 returned (62 refused automated access, 12 were not found, 5 failed). All 938 database pages returned. PDFs were converted to text.[^counts-fetch]
+2. **Evidence matched.** For each record, the script found the passage of the cited text nearest the record's title or section number and kept it with the database's own quotation, if any. It also flagged likely duplicates within each profile by title, citation or page.
+3. **First pass.** Twenty-nine automated reviewers, AI assistants working in parallel, each read one batch of about 45 records (all of a nation's records in one batch) and answered the questions in the [first-pass brief](briefs/2026-11-21-provision-pre-review-first-pass.md): does the provision exist in the source, is the record accurate, is it a dispute resolution provision, is it a duplicate, which method does it map to, and what should happen to it, with a confidence level and a quotation. They worked only from the fetched evidence.
+4. **Second pass.** A more capable assistant re-checked the 114 hardest cases under the [second-pass brief](briefs/2026-11-21-provision-pre-review-second-pass.md): every record the first pass could not verify or rated low confidence, every "not found," and every proposed drop of a record already labeled with a dispute resolution kind or whose title names a process. It could search the full fetched text and fetch a source again. The second pass changed 53 of the 114 verdicts.[^counts-second]
+5. **Checks.** Every verdict file was checked for one verdict per record, allowed values, and duplicate references that resolve within the same profile. No duplicate points to another duplicate. A sample of first-pass "drop" verdicts was read against the evidence by the lead session (project analysis).
 
 ### What "dispute resolution provision" meant
 
-The brief used a working test, not a decision on scope (project choice, for
-this review only). A provision counted as dispute resolution when it creates,
-governs, refers matters to, or enforces the result of a process that resolves a
-dispute by agreement or by a neutral other than ordinary trial: negotiation,
-mediation, arbitration (including award enforcement and immunity waivers for
-arbitration), peacemaking, circles and family group conferences that decide a
-matter, settlement conferences, elders' councils and traditional forums, and
-ombuds. Diversion or restorative sentencing that sends a case into a
-consensual or community process was marked **borderline**, and left to the
-lead author. Diversion to treatment, probation or services, ordinary court
-procedure, and sentencing options were marked **not** dispute resolution.
+The brief used a working test, not a decision on scope (project choice, for this review only). A provision counted as dispute resolution when it creates, governs, refers matters to, or enforces the result of a process that resolves a dispute by agreement or by a neutral other than ordinary trial: negotiation, mediation, arbitration (including award enforcement and immunity waivers for arbitration), peacemaking, circles and family group conferences that decide a matter, settlement conferences, elders' councils and traditional forums, and ombuds. Diversion or restorative sentencing that sends a case into a consensual or community process was marked **borderline**, and left to the lead author. Diversion to treatment, probation or services, ordinary court procedure, and sentencing options were marked **not** dispute resolution.
 
-Peacemaking was mapped to the `peacemaking` method and kept as its own track,
-not described as alternative dispute resolution.[^charter-3]
+Peacemaking was mapped to the `peacemaking` method and kept as its own track, not described as alternative dispute resolution.[^charter-3]
 
 ## Results
 
@@ -103,125 +49,45 @@ By evidence tier, the picture splits:[^counts]
 
 In the project's view, three things follow:
 
-- **The bulk records are mostly outside dispute resolution.** Of 938, 657 are
-  drop-candidates: treatment and wellness courts, court-ordered services,
-  probation, dispositions and sentencing options. Another 150 are scope
-  questions, chiefly informal adjustment conferences, family conferences and
-  peacemaker referrals inside juvenile, child welfare or criminal cases. Only
-  107 look like dispute resolution provisions on their own terms.
-- **The title-only records are mostly real but duplicated.** 128 of 291 repeat
-  another record, usually the same table of contents read twice under two
-  source keys (review queue item 3 of the analysis estimated 71 repeated
-  titles; matching by section found more). Their keep verdicts are medium
-  confidence at best, because only the title was seen.
-- **After review, 99 of the 182 nations with a provision record keep at least
-  one.** The rest have only drop-candidates, scope questions, duplicates or
-  unverified records.[^counts]
+- **The bulk records are mostly outside dispute resolution.** Of 938, 657 are drop-candidates: treatment and wellness courts, court-ordered services, probation, dispositions and sentencing options. Another 150 are scope questions, chiefly informal adjustment conferences, family conferences and peacemaker referrals inside juvenile, child welfare or criminal cases. Only 107 look like dispute resolution provisions on their own terms.
+- **The title-only records are mostly real but duplicated.** 128 of 291 repeat another record, usually the same table of contents read twice under two source keys (review queue item 3 of the analysis estimated 71 repeated titles; matching by section found more). Their keep verdicts are medium confidence at best, because only the title was seen.
+- **After review, 99 of the 182 nations with a provision record keep at least one.** The rest have only drop-candidates, scope questions, duplicates or unverified records.[^counts]
 
-Of the 647 provisions judged dispute resolution or borderline, the closest
-methods are peacemaking (209), arbitration (86), mediation (71),
-family group conference (30), settlement conference (18), conciliation (15),
-elders' council (12) and administrative adjudication (12); 171 fit no listed
-method, often because only a title was seen.[^counts][^methods]
+Of the 647 provisions judged dispute resolution or borderline, the closest methods are peacemaking (209), arbitration (86), mediation (71), family group conference (30), settlement conference (18), conciliation (15), elders' council (12) and administrative adjudication (12); 171 fit no listed method, often because only a title was seen.[^counts][^methods]
 
 ### The scope decision
 
-The 161 scope questions are the decision the analysis flagged: whether the
-code covers diversion and restorative sentencing when the matter goes to a
-consensual process. By category: 121 diversion into a consensual process
-(conferences, peacemaker referrals, community accountability boards), 23
-restorative sentencing (sentencing circles, peacemaker input at disposition),
-and 17 others close to that line.[^counts] Filtering the spreadsheet on
-`verdict` = `scope-question` and `practice_category` gives the list. A
-nation's own use of these processes is described by its code; whether the
-model code addresses them is a drafting choice (project analysis).
+The 161 scope questions are the decision the analysis flagged: whether the code covers diversion and restorative sentencing when the matter goes to a consensual process. By category: 121 diversion into a consensual process (conferences, peacemaker referrals, community accountability boards), 23 restorative sentencing (sentencing circles, peacemaker input at disposition), and 17 others close to that line.[^counts] Filtering the spreadsheet on `verdict` = `scope-question` and `practice_category` gives the list. A nation's own use of these processes is described by its code; whether the model code addresses them is a drafting choice (project analysis).
 
 ## Reliability and limits
 
-- **Automated pre-review, not review.** The verdicts were written by AI
-  assistants from fetched text. They are a starting point for the lead
-  author's review, which is still required before any record is changed or
-  relied on.
-- **The second pass changed nearly half of the hard cases.** Of 114 records
-  re-checked, 53 changed verdict: 47 records the first pass could not verify
-  were resolved once the full text was searched or refetched (18 keep, 9
-  keep-relabel, 10 scope-question, 10 drop-candidate), and 5 of the 26 proposed drops sent for a second look were reversed (one more became check-source). One
-  first-pass search missed a rule that was in the fetched text (Little
-  Traverse Bay Bands Rule XXIX). Treat first-pass verdicts, especially
-  title-only "keep" calls, as leads.[^counts-second]
-- **Existence of bulk records mostly rests on the database's quotation.** Many
-  bulk records link to a court home page or whole-code index, or to a site
-  that refused automated access, so the reviewers confirmed the section from
-  the database's quoted text rather than from the nation's own document. Each
-  such record says so in `accuracy_issues`. 781 records are marked `partly`
-  accurate, mostly for this reason or because the title is the database's
-  paraphrase.[^counts]
-- **Database titles often misdescribe the section.** Thirty-six records are
-  marked inaccurate; Appendix B lists them. Typical problems are a title that
-  names a treatment program for a penalty section, a truncated citation, or a
-  section number that disagrees with the code's table of contents.
-- **Some sources could not be read at all.** Forty-one records stay
-  check-source (Appendix A): scanned PDFs without a text layer, code hosts that
-  refuse automated access, and NILL pages that return "not found."
-- **Some second-pass quotations are transcriptions.** Where a PDF was a page
-  image, the second-pass reviewer transcribed the passage; those quotations
-  were not machine-checked against a text layer.
-- **Versions.** The code versions fetched in November 2026 may differ from the
-  version a record was taken from; the reviewers noted several renumberings
-  (for example Nisqually Title 50 and Mississippi Band of Choctaw Indians
-  Title 11).
-- **Nations have not been consulted.** As with every profile, nothing here has
-  been sent to the nations, and no nation is used as an example before
-  consultation.[^charter-4]
+- **Automated pre-review, not review.** The verdicts were written by AI assistants from fetched text. They are a starting point for the lead author's review, which is still required before any record is changed or relied on.
+- **The second pass changed nearly half of the hard cases.** Of 114 records re-checked, 53 changed verdict: 47 records the first pass could not verify were resolved once the full text was searched or refetched (18 keep, 9 keep-relabel, 10 scope-question, 10 drop-candidate), and 5 of the 26 proposed drops sent for a second look were reversed (one more became check-source). One first-pass search missed a rule that was in the fetched text (Little Traverse Bay Bands Rule XXIX). Treat first-pass verdicts, especially title-only "keep" calls, as leads.[^counts-second]
+- **Existence of bulk records mostly rests on the database's quotation.** Many bulk records link to a court home page or whole-code index, or to a site that refused automated access, so the reviewers confirmed the section from the database's quoted text rather than from the nation's own document. Each such record says so in `accuracy_issues`. 781 records are marked `partly` accurate, mostly for this reason or because the title is the database's paraphrase.[^counts]
+- **Database titles often misdescribe the section.** Thirty-six records are marked inaccurate; Appendix B lists them. Typical problems are a title that names a treatment program for a penalty section, a truncated citation, or a section number that disagrees with the code's table of contents.
+- **Some sources could not be read at all.** Forty-one records stay check-source (Appendix A): scanned PDFs without a text layer, code hosts that refuse automated access, and NILL pages that return "not found."
+- **Some second-pass quotations are transcriptions.** Where a PDF was a page image, the second-pass reviewer transcribed the passage; those quotations were not machine-checked against a text layer.
+- **Versions.** The code versions fetched in November 2026 may differ from the version a record was taken from; the reviewers noted several renumberings (for example Nisqually Title 50 and Mississippi Band of Choctaw Indians Title 11).
+- **Nations have not been consulted.** As with every profile, nothing here has been sent to the nations, and no nation is used as an example before consultation.[^charter-4]
 
 ## Reviewer notes worth a look
 
-These came from the reviewers' reports and are not all captured in a single
-field. Each is a lead to check, not a finding.
+These came from the reviewers' reports and are not all captured in a single field. Each is a lead to check, not a finding.
 
-- **Duplicates kept in the wrong direction.** Klamath Tribes #5 quotes the Chapter 18 text but was marked the duplicate of #0, which was confirmed only from a table of contents;
-  Kiowa Tribe #1 has the purpose clause but was marked the duplicate of #0.
-  The lead author may prefer to keep the fuller record.
-- **Records to split or narrow.** Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians #15 joins
-  Chapter 2-3 (Arbitration) and Chapter 2-14 (Peacegiving Court) under one
-  citation. Squaxin Island #11 lists the 4.52 Arbitration Code inside a run of
-  table of contents entries. Alabama-Coushatta #1 is the whole constitution;
-  the Peacemaker Court is Article XIII, § 3(c).
-- **Section numbers to correct.** Oneida Nation #14 cites "Rule 1.10" for
-  8 O.C. 801.6; Oneida Indian Nation #2 and #5 swap Rules 803 and 804; Osage
-  Nation #5 and #9 cite 1-123 and 1-135 for text numbered 2-123 and 2-135;
-  Seminole Nation of Oklahoma #3 cites section 809 where the table of
-  contents shows 810; Red Cliff #16 cites 17.12 for 17.11; Pascua Yaqui #12
-  points to the custody chapter for a conciliation division at 5 PYTC
-  §§ 2-260 to 2-290; Minnesota Chippewa Tribe #10 and Mississippi Band of
-  Choctaw Indians #14 disagree with the National Indian Law Library table of
-  contents.
-- **Mediation bars are dispute resolution.** Several codes prohibit court-
-  ordered mediation in domestic violence cases (for example Omaha, Ponca
-  Tribe of Indians of Oklahoma, Dry Creek Rancheria, Chitimacha). The
-  reviewers kept these as dispute resolution provisions, since a limit on a
-  process matters to drafting (project analysis).
-- **Possible elders' councils marked as drops.** Lummi #5 (Grandparents
-  Committee) and Minnesota Chippewa Tribe #5 (court taking elders' advice)
-  may deserve a second look as elders' council records.
-- **Kind labels outside the schema list.** Some records use
-  `traditional-dispute-resolution`, which the schema's suggested kinds do not
-  include; the reviewers suggested a listed kind for each.[^schema]
-- **Tier labels.** A few records counted as "text read" by the analysis rest
-  only on a NARF description or a search title (for example Tulalip #0,
-  Skokomish #7, Snoqualmie #1), because the tier comes from the record's note.
+- **Duplicates kept in the wrong direction.** Klamath Tribes #5 quotes the Chapter 18 text but was marked the duplicate of #0, which was confirmed only from a table of contents; Kiowa Tribe #1 has the purpose clause but was marked the duplicate of #0. The lead author may prefer to keep the fuller record.
+- **Records to split or narrow.** Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians #15 joins Chapter 2-3 (Arbitration) and Chapter 2-14 (Peacegiving Court) under one citation. Squaxin Island #11 lists the 4.52 Arbitration Code inside a run of table of contents entries. Alabama-Coushatta #1 is the whole constitution; the Peacemaker Court is Article XIII, § 3(c).
+- **Section numbers to correct.** Oneida Nation #14 cites "Rule 1.10" for 8 O.C. 801.6; Oneida Indian Nation #2 and #5 swap Rules 803 and 804; Osage Nation #5 and #9 cite 1-123 and 1-135 for text numbered 2-123 and 2-135; Seminole Nation of Oklahoma #3 cites section 809 where the table of contents shows 810; Red Cliff #16 cites 17.12 for 17.11; Pascua Yaqui #12 points to the custody chapter for a conciliation division at 5 PYTC §§ 2-260 to 2-290; Minnesota Chippewa Tribe #10 and Mississippi Band of Choctaw Indians #14 disagree with the National Indian Law Library table of contents.
+- **Mediation bars are dispute resolution.** Several codes prohibit court- ordered mediation in domestic violence cases (for example Omaha, Ponca Tribe of Indians of Oklahoma, Dry Creek Rancheria, Chitimacha). The reviewers kept these as dispute resolution provisions, since a limit on a process matters to drafting (project analysis).
+- **Possible elders' councils marked as drops.** Lummi #5 (Grandparents Committee) and Minnesota Chippewa Tribe #5 (court taking elders' advice) may deserve a second look as elders' council records.
+- **Kind labels outside the schema list.** Some records use `traditional-dispute-resolution`, which the schema's suggested kinds do not include; the reviewers suggested a listed kind for each.[^schema]
+- **Tier labels.** A few records counted as "text read" by the analysis rest only on a NARF description or a search title (for example Tulalip #0, Skokomish #7, Snoqualmie #1), because the tier comes from the record's note.
 
 ## How to use this
 
 1. Open the spreadsheet and sort by `verdict`.
-2. Decide the scope question once, for the 161 records in that group, by
-   `practice_category`.
-3. Accept or reject the duplicates (`duplicate_of`) and drop-candidates in
-   bulk where the reasons hold, reading the quotations for any that look
-   wrong.
-4. Fill in `lead_author_decision`. A follow-up pull request can then apply the
-   decisions to the profiles and record how each surviving provision was
-   verified.
+2. Decide the scope question once, for the 161 records in that group, by `practice_category`.
+3. Accept or reject the duplicates (`duplicate_of`) and drop-candidates in bulk where the reasons hold, reading the quotations for any that look wrong.
+4. Fill in `lead_author_decision`. A follow-up pull request can then apply the decisions to the profiles and record how each surviving provision was verified.
 
 ## Appendix
 

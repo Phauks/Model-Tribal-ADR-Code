@@ -3,7 +3,7 @@
 	import { profileStatusLabels } from '#lib/contributors.ts';
 	import type { PageProps } from './$types';
 
-	let { data, form }: PageProps = $props();
+	let { data }: PageProps = $props();
 
 	const profile = $derived(data.profile);
 
@@ -15,12 +15,6 @@
 <svelte:head>
 	<title>Your profile · Model Tribal ADR Code</title>
 </svelte:head>
-
-{#if data.deleted}
-	<div class="notice" role="status">
-		<p>Your profile and everything in it are deleted. Thank you for your interest.</p>
-	</div>
-{/if}
 
 {#if !profile}
 	<h1>Help write the code</h1>
@@ -112,27 +106,6 @@
 	<p><a class="button button-quiet" href="/profile/edit">Edit your profile</a></p>
 
 	<ProfileSummary answers={profile.answers} email={profile.email} />
-
-	<details class="leave">
-		<summary>Delete your profile</summary>
-		<p>
-			This deletes your profile, your answers and every confirmed version, at once. A credit already
-			printed in a book cannot be recalled, but the next edition leaves it out.
-			{#if data.hasWorkspaceAccess}
-				Your workspace access is not changed; ask the lead author to end it.
-			{/if}
-		</p>
-		{#if form?.problem}
-			<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
-		{/if}
-		<form method="post" action="?/delete">
-			<div class="choice">
-				<input type="checkbox" id="sure" name="sure" value="yes" />
-				<label for="sure">I want to delete my profile</label>
-			</div>
-			<p><button class="button button-quiet" type="submit">Delete my profile</button></p>
-		</form>
-	</details>
 {/if}
 
 <section class="nation-team" aria-labelledby="nation-team-heading">
@@ -142,6 +115,15 @@
 		nation’s office confirms you, your changes go live on the page, labeled as coming from the nation.
 	</p>
 	<p><a class="button button-quiet" href="/profile/nation-team">Ask to edit your nation’s page</a></p>
+</section>
+
+<section class="leave" aria-labelledby="leave-heading">
+	<h2 id="leave-heading">Delete your account</h2>
+	<p>
+		This deletes your sign-in, and your profile if you have one, at once. You choose whether your name stays on work you
+		helped with.
+	</p>
+	<p><a class="button button-quiet" href="/profile/delete-account">Delete your account</a></p>
 </section>
 
 <style>
@@ -155,25 +137,5 @@
 		margin-top: var(--space-6);
 		border-top: 1px solid var(--color-line);
 		padding-top: var(--space-4);
-	}
-
-	.leave summary {
-		cursor: pointer;
-		font-weight: var(--font-weight-semibold);
-		min-height: var(--layout-target-minimum);
-	}
-
-	.choice {
-		display: flex;
-		gap: var(--space-3);
-		align-items: flex-start;
-		margin: var(--space-3) 0;
-	}
-
-	.choice input {
-		margin-top: 0.3em;
-		width: 1.25rem;
-		height: 1.25rem;
-		flex: none;
 	}
 </style>

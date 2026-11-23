@@ -29,5 +29,4 @@ limits: >-
   page gives inconsistent edition labels (see docs/citation-style.md).
 ---
 
-All quotations in `docs/charter.md` and `docs/citation-style.md` come from the
-pages listed in their footnotes, as read in this session.
+All quotations in `docs/charter.md` and `docs/citation-style.md` come from the pages listed in their footnotes, as read in this session.
