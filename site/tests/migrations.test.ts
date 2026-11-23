@@ -115,11 +115,11 @@ describe('migration 0018', () => {
 	});
 });
 
-describe('migration 0022', () => {
+describe('migration 20261123T0435_add_essay_about_pages', () => {
 	it('adds the part for pages about the site and keeps every essay, version and publication', () => {
 		const database = new DatabaseSync(':memory:');
 		database.exec('PRAGMA foreign_keys = ON');
-		const files = readdirSync(folder).filter((name) => name.endsWith('.sql') && name < '0022').sort();
+		const files = readdirSync(folder).filter((name) => name.endsWith('.sql') && name < '20261123T0435').sort();
 		for (const file of files) {
 			database.exec('BEGIN');
 			database.exec(migration(file));
@@ -133,7 +133,7 @@ describe('migration 0022', () => {
 		`);
 		expect(() => database.exec(`INSERT INTO essays VALUES ('about', 'about', '2026-11-23T00:00:00Z', NULL)`)).toThrow(/CHECK/);
 		database.exec('BEGIN');
-		database.exec(migration('0022_essay_about_pages.sql'));
+		database.exec(migration('20261123T0435_add_essay_about_pages.sql'));
 		database.exec('COMMIT');
 		expect(database.prepare('PRAGMA foreign_key_check').all()).toEqual([]);
 		expect({ ...(database.prepare(`SELECT part FROM essays WHERE identifier = 'i-timeline'`).get() as object) }).toEqual({ part: 'foundations' });
