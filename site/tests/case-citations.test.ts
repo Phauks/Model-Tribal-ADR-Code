@@ -33,7 +33,7 @@ describe('case box facts', () => {
 	it('lists the date, nations and the Supreme Court bench with opinion writers first, in bold', () => {
 		const facts = Object.fromEntries(caseFacts(worcester as never, nations));
 		expect(facts.Decided).toMatch(/^March \d+, 1832$/);
-		expect(facts.Court).toBe('Marshall Court');
+		expect(facts.Court).toBe('<a href="/supreme-court/marshall-court">Marshall Court</a>');
 		expect(facts.Vote).toBe('5–1');
 		expect(facts.Majority).toMatch(/^<strong>Marshall<\/strong> \(opinion of the Court\), <strong>McLean<\/strong> \(concurring opinion\), /);
 		expect(facts.Dissent).toBe('<strong>Baldwin</strong> (dissenting opinion)');

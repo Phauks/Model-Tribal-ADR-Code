@@ -10,6 +10,7 @@
  */
 import { displayName } from '../nation-labels.ts';
 import { escapeHtml } from './markdown.ts';
+import { courtPath } from './supreme-courts.ts';
 
 export type FactLine = [label: string, html: string];
 
@@ -95,7 +96,9 @@ export function caseFacts(record: CaseRecord, nations: Map<string, { name: strin
 	if (nationFact) facts.push(nationFact);
 	const bench = record.supreme_court;
 	if (bench) {
-		facts.push(['Court', escapeHtml(bench.court)]);
+		// The Court's name links to its page (src/routes/supreme-court/[court]) when it has one.
+		const path = courtPath(bench.court);
+		facts.push(['Court', path ? `<a href="${path}">${escapeHtml(bench.court)}</a>` : escapeHtml(bench.court)]);
 		const { majority, minority } = bench.vote ?? {};
 		if (Number.isInteger(majority) && Number.isInteger(minority)) facts.push(['Vote', `${majority}–${minority}`]);
 		const decision = bench.decision_type ? decisionLabels[bench.decision_type] : undefined;

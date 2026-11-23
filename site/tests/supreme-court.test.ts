@@ -1,0 +1,46 @@
+import { describe, expect, it } from 'vitest';
+import { sources } from '#lib/server/content.ts';
+import { courtPage, courtsWithPages } from '#lib/server/supreme-court-pages.ts';
+import { associatesOf, courtPath, courts } from '#lib/server/supreme-courts.ts';
+
+describe('Supreme Court pages', () => {
+	it('names each Court for its Chief Justice, oldest first', () => {
+		const names = courts().map((court) => court.name);
+		expect(names[0]).toBe('Jay Court');
+		expect(names).toContain('Marshall Court');
+		expect(names.at(-1)).toBe('Roberts Court');
+	});
+
+	it('gives every Court that decided a case on the site a page', () => {
+		for (const record of sources().values()) {
+			const court = (record as { supreme_court?: { court: string } }).supreme_court?.court;
+			if (court) expect(courtPath(court), `${record.key}: ${court}`).toMatch(/^\/supreme-court\/[a-z-]+$/);
+		}
+	});
+
+	it('lists who sat on the Marshall Court and how its membership changed', () => {
+		const marshall = courts().find((court) => court.key === 'marshall-court')!;
+		expect(associatesOf(marshall)).toHaveLength(15);
+		const page = courtPage('marshall-court')!;
+		expect(page.bench[0]).toMatchObject({ name: 'John Marshall', role: 'Chief Justice', appointedBy: 'John Adams' });
+		expect(page.facts.find((fact) => fact.label === 'Seats')?.text).toBe('6; 7 from Feb. 24, 1807');
+		expect(page.changes.find((change) => change.date === '1807-05-04')?.events).toEqual(['Thomas Todd took a new seat (2 Stat. 420).']);
+		expect(page.changes.at(-1)?.events).toEqual(['Chief Justice John Marshall died.']);
+		expect(page.cases.map((item) => item.key)).toEqual(['johnson-v-mintosh', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		expect(page.sources.map((source) => source.key)).toContain('supreme-court-historical-society-marshall-court');
+	});
+
+	it('names who held a seat before and how service ended', () => {
+		const page = courtPage('marshall-court')!;
+		const johnson = page.bench.find((justice) => justice.name === 'William Johnson')!;
+		expect(johnson.seat).toBe('Alfred Moore');
+		expect(johnson.ending).toBe('died');
+	});
+
+	it('keeps the present Court open-ended', () => {
+		const roberts = courtPage('roberts-court')!;
+		expect(roberts.endText).toBeUndefined();
+		expect(roberts.facts.find((fact) => fact.label === 'Served')?.text).toBe('Since Sept. 29, 2005');
+		expect(courtsWithPages().map((court) => court.key)).toContain('roberts-court');
+	});
+});
