@@ -4,9 +4,22 @@
  * A category is a summary for a national map. The nation's page holds the facts behind it, each with its source and the state it applies in.
  */
 
-export type ShadedMapView = 'courts-and-peacemaking' | 'public-law-280' | 'violence-against-women-act' | 'indian-health-service';
+export type ShadedMapView =
+	| 'courts-and-peacemaking'
+	| 'public-law-280'
+	| 'violence-against-women-act'
+	| 'other-jurisdiction-laws'
+	| 'agreements-with-states'
+	| 'indian-health-service';
 
-export const shadedMapViews: ShadedMapView[] = ['courts-and-peacemaking', 'public-law-280', 'violence-against-women-act', 'indian-health-service'];
+export const shadedMapViews: ShadedMapView[] = [
+	'courts-and-peacemaking',
+	'public-law-280',
+	'violence-against-women-act',
+	'other-jurisdiction-laws',
+	'agreements-with-states',
+	'indian-health-service'
+];
 
 export function isShadedMapView(view: string): view is ShadedMapView {
 	return (shadedMapViews as string[]).includes(view);
@@ -32,6 +45,23 @@ export const courtCategories: ShadeCategory[] = [
 	{ key: 'wellness', label: 'Healing to wellness court', shade: 3 },
 	{ key: 'court', label: 'Tribal court', shade: 2 },
 	{ key: 'federal', label: 'Court of Indian Offenses only (federal)', shade: 1 }
+];
+
+/**
+ * Federal laws on jurisdiction besides Public Law 280 and the Violence Against Women Act (each record's `jurisdiction` facts on the topics state-jurisdiction-statute, tribal-law-and-order-act-enhanced-sentencing and indian-child-welfare-act), in order of precedence. The table shows every one each nation has.
+ */
+export const otherJurisdictionLawCategories: ShadeCategory[] = [
+	{ key: 'state-statute', label: 'State jurisdiction under another federal law, such as the Kansas Act or a land claims settlement', shade: 4 },
+	{ key: 'child-welfare-reassumed', label: 'Reassumed jurisdiction under the Indian Child Welfare Act', shade: 3 },
+	{ key: 'enhanced-sentencing', label: 'Longer sentences under the Tribal Law and Order Act', shade: 2 }
+];
+
+/** Agreements with a state, county, city or federal agency (each record's `jurisdiction_agreements`), in order of precedence. Most sources do not say whether an agreement is still in force. */
+export const agreementCategories: ShadeCategory[] = [
+	{ key: 'cross-deputization', label: 'Cross-deputization or law enforcement agreement', shade: 4 },
+	{ key: 'child-welfare-agreement', label: 'Child welfare agreement', shade: 3 },
+	{ key: 'tax-agreement', label: 'Tax agreement', shade: 2 },
+	{ key: 'other', label: 'Other agreement', shade: 1 }
 ];
 
 /**
@@ -76,6 +106,8 @@ export const healthServiceAreaShades: Record<string, number> = {
 /** What the legend calls land areas the view has no fact for. */
 export const unrecordedLabels: Record<ShadedMapView, string> = {
 	'courts-and-peacemaking': 'No court or forum recorded yet',
+	'other-jurisdiction-laws': 'None of these recorded',
+	'agreements-with-states': 'No agreement recorded yet',
 	'public-law-280': 'No Public Law 280 fact recorded yet',
 	'violence-against-women-act': 'Not recorded as exercising it',
 	'indian-health-service': 'No Area recorded yet'

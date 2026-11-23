@@ -69,6 +69,22 @@ export const mapViews: MapViewEntry[] = [
 		keywords: ['vawa', 'stcj', 'special tribal criminal jurisdiction', 'domestic violence', 'dating violence', 'non-indian', 'criminal']
 	},
 	{
+		key: 'other-jurisdiction-laws',
+		label: 'Other Jurisdiction Laws',
+		heading: 'other-jurisdiction-laws-heading',
+		group: 'Jurisdiction',
+		description: 'State jurisdiction under other federal laws, child welfare jurisdiction reassumed, and enhanced sentencing',
+		keywords: ['kansas act', 'land claims settlement', 'icwa', 'indian child welfare act', 'reassumption', 'tloa', 'tribal law and order act', 'enhanced sentencing', 'state jurisdiction']
+	},
+	{
+		key: 'agreements-with-states',
+		label: 'Agreements with States',
+		heading: 'agreements-with-states-heading',
+		group: 'Jurisdiction',
+		description: 'Cross-deputization, child welfare, tax and other agreements with states and local governments',
+		keywords: ['cross-deputization', 'law enforcement', 'title iv-e', 'child welfare', 'tax compact', 'tax agreement', 'intergovernmental agreement', 'compact']
+	},
+	{
 		key: 'regions',
 		label: 'Bureau of Indian Affairs Regions',
 		heading: 'bureau-of-indian-affairs-regions',
