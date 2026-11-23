@@ -146,6 +146,10 @@ Of the 305 nations with a court link, 169 gave nothing usable. Fifty-two Alaska 
 
 Population and Census areas were already on every federally recognized nation's page from the Nov. 21 population session, and the Commission's gaming tribe report from the Nov. 21 gaming session, so this session did not redo them.
 
+## Languages
+
+`scripts/jurisdiction/build_languages.py` added ten languages for nine of the 242 federally recognized nations that had none after the Nov. 21 pass (`research/raw/2026-11-23/languages.json`): Lingít and Xaad Kíl (Central Council of the Tlingit and Haida Indian Tribes), Anishinaabemowin (Fond du Lac), Ojibwe (Grand Portage, Mille Lacs), Iñupiaq (Iñupiat Community of the Arctic Slope), Bodewadmi Zheshmowen (Gun Lake), Modoc, Oneida and Cupeño (Pala). A Sonnet agent read about 245 pages from the nations' own sites, fetching each home page and its most promising language, culture or department link; it reached the first 139 nations in the list before its page budget ran out. The yield was low because the Nov. 21 pass had already read the obvious pages. One fact was left out: the Nisqually page spells its language's name in a Lushootseed font's ASCII encoding, so the text read ("sEalifucid") is not the name. The Administration for Native Americans' language grant abstracts were behind a bot check. The 130 nations checked without a result have a `languages` search-log entry; the 103 not reached have none. A further pass would do better with site searches than with link-following.
+
 ## Output
 
 Batches in `research/jurisdiction/`; the Violence Against Women Act research is in `research/raw/2026-11-23/violence-against-women-act-jurisdiction.json`.
