@@ -45,6 +45,10 @@ export function loadConfiguration({ trim, overridesFile, bookFile = path.join(PR
     const value = book.metadata[field];
     if (value && !LATIN_TEXT.test(value)) problems.push(`book.yaml: metadata.${field} must use Latin characters only`);
   }
+  for (const field of ["back_text", "back_note"]) {
+    const value = book.cover?.[field];
+    if (value && !LATIN_TEXT.test(value)) problems.push(`book.yaml: cover.${field} must use Latin characters only`);
+  }
   const fullTitle = [book.metadata.title, book.metadata.subtitle].filter(Boolean).join(": ");
   if (fullTitle.length > 200) problems.push("book.yaml: title and subtitle must be 200 characters or fewer");
   for (const [key, trimRecord] of Object.entries(sizes.trims)) {
