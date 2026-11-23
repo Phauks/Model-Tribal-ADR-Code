@@ -545,11 +545,7 @@ with WCAG 2.2 AA.[^govuk-a11y] Criteria the design leans on:
 | 2.5.8 Target size (minimum)[^wcag-258] | 44 px controls, above the 24 px minimum |
 | 3.3.7 Redundant entry and 3.3.8 Accessible authentication | The request flow never asks twice; future sign-in uses an emailed link or a passkey, with no puzzle |
 
-Also: a "Skip to main content" link; one `h1` per page and headings in order;
-landmarks (`header`, `nav` with labels, `main`, `aside`, `footer`); a visible
-yellow focus with an ink ring; motion only in answer to an action, and none
-when `prefers-reduced-motion` is set or the reader picks Reduce motion (see Motion in section 6);[^mdn-reduced-motion] every page readable
-and every form usable without scripts.
+Also: a "Skip to main content" link; one `h1` per page and headings in order; landmarks (`header`, `nav` with labels, `main`, `aside`, `footer`); a visible yellow focus with an ink ring; motion only in answer to an action, and none when `prefers-reduced-motion` is set or the reader picks Reduce motion (see Motion in section 6);[^mdn-reduced-motion] every page readable and every form usable without scripts.
 
 **Testing.** Automated checks with axe-core run on every built page in
 continuous integration, in both themes. Automated tools find only part of the
