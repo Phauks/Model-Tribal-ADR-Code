@@ -18,7 +18,8 @@ import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
 import { documentHeading, documentHistoryView, labelOf, nationDocumentHistories } from '#lib/server/document-history.ts';
 import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
-import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
+import { SourceUses, whereInSource, type CitationMark } from '#lib/server/source-uses.ts';
+import { sourceAnchor } from '#lib/citation-marks.ts';
 import { recognitionBadges } from '#lib/recognition-badges.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
@@ -90,6 +91,19 @@ function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | u
 }
 
 /** What the courts and jurisdiction sections say when they have nothing to show. */
+/** The nation's seal or logo at the top of At a glance, and what the image viewer shows with it. */
+interface NationImage {
+	src: string;
+	kind: string;
+	credit: string;
+	/** Where the image is published, such as the nation's website. */
+	original: string;
+	/** The image's entry in the Sources list, as a link within the page. */
+	source?: string;
+	/** Where the nation asks for the image to be taken down. */
+	removal: string;
+}
+
 interface EmptySections {
 	government?: EmptyNote;
 	courts?: EmptyNote;
@@ -1018,18 +1032,27 @@ export const load: PageServerLoad = ({ params }) => {
 	// It has no caption (Trevor, Nov. 22, 2026): the credit, and the statement
 	// that the nation does not endorse the site, go in its Sources entry,
 	// and a removal request goes through Report a problem.
-	let image: { src: string; kind: string } | undefined;
+	// Selecting it opens it larger in the image viewer, which shows the same
+	// credit and links to its Sources entry, to where it is published and to
+	// a removal request (src/lib/image-viewer.ts).
+	let image: NationImage | undefined;
 	if (shownImage) {
 		const kind = humanize(shownImage.kind);
 		// A copy from somewhere other than the nation's own website, such as
 		// Wikimedia Commons, names who made it and its license instead.
 		const origin = shownImage.credit ?? 'As the nation’s website publishes it.';
-		sources.use(
-			shownImage,
+		const credit = `${origin} It belongs to the nation, which does not endorse this site.`;
+		const sourceNumber = shownImage.source
+			? sources.add(shownImage.source, { section: kind, text: credit, where: whereInSource(shownImage) })
+			: undefined;
+		image = {
+			src: imagePath(record.id),
 			kind,
-			`${origin} It belongs to the nation, which does not endorse this site.`
-		);
-		image = { src: imagePath(record.id), kind };
+			credit,
+			original: shownImage.image_link,
+			source: sourceNumber ? `#${sourceAnchor(sourceNumber)}` : undefined,
+			removal: `/requests?${new URLSearchParams({ kind: 'remove', record: `nation-images/${record.id}` }).toString().replaceAll('%2F', '/')}`
+		};
 	}
 
 	const nameCitations: CitationMark[] = [];

@@ -19,6 +19,7 @@ import { markAnchor, marksHtml, type CitationMark } from '../citation-marks.ts';
 import type { SourceEntry } from '../server/source-uses.ts';
 import { chartFromRows, figureKindLabels, figureRemovalLink, figureSource, readFigureInfo, type FigureKind } from './figures.ts';
 import { scaleTop } from '../bar-chart.ts';
+import { imageViewerAttributeText } from '../image-viewer.ts';
 import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
 import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 
@@ -334,7 +335,10 @@ function figureMedia(token: Token, state: RenderState): string {
 		);
 	}
 	const file = escapeHtml(source.address);
-	if (kind === 'picture') return `<img src="${file}" alt="${escapeHtml(description)}" loading="lazy" decoding="async">\n`;
+	// A picture is a link to its file, which opens it larger in the image viewer (src/lib/image-viewer.ts).
+	if (kind === 'picture') {
+		return `<a href="${file}"${imageViewerAttributeText(description)}><img src="${file}" alt="${escapeHtml(description)}" loading="lazy" decoding="async"></a>\n`;
+	}
 	const fallback = `<a href="${file}">Download the ${kind === 'video' ? 'video' : 'recording'}</a>`;
 	return kind === 'video'
 		? `<video controls preload="metadata" src="${file}"${named}>${fallback}</video>\n`

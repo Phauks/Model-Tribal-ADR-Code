@@ -20,6 +20,7 @@ import {
 	type NationContact,
 	type StatementSection
 } from '../nation-page-changes.ts';
+import { imageViewerAttributeText } from '../image-viewer.ts';
 import { readableDate } from '../readable-date.ts';
 import type { ChangeRow, LiveChanges } from './nation-page-changes.ts';
 
@@ -137,7 +138,9 @@ function slotsFor(nationIdentifier: string, live: LiveChanges, claim: PageClaim 
 		const figures = pictures
 			.map((picture) => {
 				const caption = [picture.caption, picture.credit ? `Credit: ${picture.credit}` : null].filter(Boolean) as string[];
-				return `<figure><img src="/nations/${encodeURIComponent(nationIdentifier)}/pictures/${encodeURIComponent(picture.identifier)}" alt="${escapeHtml(picture.alt)}" loading="lazy" decoding="async">${
+				// Each picture opens larger in the image viewer (src/lib/image-viewer.ts), which shows this caption.
+				const file = `/nations/${encodeURIComponent(nationIdentifier)}/pictures/${encodeURIComponent(picture.identifier)}`;
+				return `<figure><a href="${file}"${imageViewerAttributeText(picture.alt)}><img src="${file}" alt="${escapeHtml(picture.alt)}" loading="lazy" decoding="async"></a>${
 					caption.length > 0 ? `<figcaption class="small">${caption.map(escapeHtml).join(' ')}</figcaption>` : ''
 				}</figure>`;
 			})
