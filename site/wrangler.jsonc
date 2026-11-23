@@ -83,14 +83,48 @@
 	// SIGN_IN_EMAIL_FROM below. While that is empty, the site sends no email
 	// and people sign in with a password or a link from the lead author
 	// (COLLABORATION.md, "Setting up sign-in").
-	"send_email": [{ "name": "signInEmail" }],
+	"send_email": [
+		{ "name": "signInEmail" },
+		// Cloudflare Email Service again, for replies from the project inbox
+		// (site/MAIL.md). It sends only mail people started: replies, and the
+		// inbox's own "new mail" notice. Outreach goes through a separate
+		// mailbox's SMTP server (the OUTREACH_ settings), because Cloudflare's
+		// terms do not allow unsolicited mail.
+		{ "name": "projectEmail" }
+	],
+	// The project inbox's run every five minutes: scheduled messages,
+	// snoozed conversations, outreach pacing, and emptying Deleted after 30
+	// days (tools/add-mail-handlers.mjs). It does nothing while MAIL_DOMAIN
+	// is empty.
+	"triggers": { "crons": ["*/5 * * * *"] },
 	"vars": {
-		"SIGN_IN_EMAIL_FROM": ""
+		"SIGN_IN_EMAIL_FROM": "",
+		// The project inbox (site/MAIL.md, "Switching email on"). While
+		// MAIL_DOMAIN is empty, the inbox pages open but no mail is received
+		// or sent. MAIL_SIGNING_KEY and OUTREACH_SMTP_PASSWORD are Secrets set
+		// in the dashboard, never here.
+		"MAIL_DOMAIN": "",
+		"MAIL_ADDRESSES": "contact",
+		"MAIL_NOTICE_ADDRESS": "",
+		"MAIL_SENDER_NAME": "Model Tribal ADR Code",
+		"SITE_ADDRESS": "",
+		"OUTREACH_CARRIER": "",
+		"OUTREACH_FROM": "",
+		"OUTREACH_REPLY_TO": "",
+		"OUTREACH_SMTP_HOST": "",
+		"OUTREACH_SMTP_PORT": "465",
+		"OUTREACH_SMTP_USERNAME": ""
 	}
-	// One setting is made in the Cloudflare dashboard (Worker > Settings >
-	// Variables and Secrets) rather than here, because this file is public:
-	// LEAD_AUTHOR_EMAIL, the first lead author's address, added as the Secret
-	// type so that deploys keep it (plain-text dashboard variables are
-	// replaced by this file on each deploy). No secret keys are needed. See
-	// COLLABORATION.md, "Setting up sign-in".
+	// The queue consumer for delivery events from Cloudflare Email Service is
+	// added when email is switched on, because a deploy fails while the
+	// queue does not exist yet (site/MAIL.md, "Delivery reports").
+	//
+	// Some settings are made in the Cloudflare dashboard (Worker > Settings >
+	// Variables and Secrets) rather than here, because this file is public,
+	// each added as the Secret type so that deploys keep it (plain-text
+	// dashboard variables are replaced by this file on each deploy):
+	// LEAD_AUTHOR_EMAIL, the first lead author's address (COLLABORATION.md,
+	// "Setting up sign-in"); MAIL_SIGNING_KEY, which signs unsubscribe links;
+	// and OUTREACH_SMTP_PASSWORD, the outreach mailbox's app password
+	// (MAIL.md, "Switching email on").
 }

@@ -14,6 +14,7 @@ import {
 	essaysForReview,
 	glossary,
 	glossaryForReview,
+	nations,
 	nationsForReview,
 	publicCopies,
 	servableImages,
@@ -116,6 +117,35 @@ function reviewSubjects(): Plugin {
 				}))
 			];
 			return `export const reviewSubjects = ${JSON.stringify(subjects)};`;
+		}
+	};
+}
+
+const mailNationsModule = 'virtual:mail-nations';
+const resolvedMailNationsModule = `\0${mailNationsModule}`;
+
+/**
+ * The nations outreach can write to, with the states each is in, so the
+ * outreach pages can fill in a nation's name and send in the nation's own
+ * time zone (src/lib/server/mail/outreach.ts). Restricted records are left
+ * out, as in the review list.
+ */
+function mailNations(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:mail-nations',
+		resolveId(identifier) {
+			return identifier === mailNationsModule ? resolvedMailNationsModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedMailNationsModule) return undefined;
+			const states = new Map(nations().map((record) => [record.id, [...new Set((record.states ?? []).map((fact) => fact.state))]]));
+			const list = nationsForReview().map((record) => ({
+				identifier: record.id,
+				name: record.name,
+				states: states.get(record.id) ?? [],
+				page: record.published ? `/nations/${record.id}` : null
+			}));
+			return `export const mailNations = ${JSON.stringify(list)};`;
 		}
 	};
 }
@@ -304,6 +334,7 @@ export default defineConfig({
 		designTokens(),
 		mapGeometry(),
 		reviewSubjects(),
+		mailNations(),
 		nationImages(),
 		publicCopiesList(),
 		sourceCitations(),

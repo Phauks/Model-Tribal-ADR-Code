@@ -58,7 +58,13 @@ export type Permission =
 	| 'read-reviews'
 	| 'comment'
 	| 'sign-off'
-	| 'review-for-nation';
+	| 'review-for-nation'
+	// The project inbox (site/MAIL.md): reading and answering mail, sending
+	// outreach batches, and changing labels and the do-not-email list. Only
+	// the lead author for now (Trevor, Nov. 23, 2026: an admin-only inbox).
+	| 'read-mail'
+	| 'send-outreach'
+	| 'manage-mail';
 
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
@@ -69,7 +75,10 @@ const grants: Record<Role, readonly Permission[]> = {
 		'handle-requests',
 		'read-reviews',
 		'comment',
-		'sign-off'
+		'sign-off',
+		'read-mail',
+		'send-outreach',
+		'manage-mail'
 	],
 	editor: ['read-contributors', 'read-requests', 'handle-requests', 'read-reviews', 'comment', 'sign-off'],
 	'co-author': ['read-reviews', 'comment'],
