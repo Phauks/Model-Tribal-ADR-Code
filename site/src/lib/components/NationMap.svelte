@@ -7,36 +7,31 @@
 	to the nation, the main one zoomed to them (src/lib/presence-map.ts). The
 	views share one copy of each state outline, drawn with <use>.
 
-	The view buttons follow the WAI-ARIA tabs pattern, like the map of all
-	nations. Without scripts every view is shown, one after another. The same
+	The views are picked from the same searchable dropdown as the map of all
+	nations (src/lib/map-views.ts). Without scripts every view is shown, one after another. The same
 	facts are listed in words under "At a glance", so the map is never the only
 	way to them.
 -->
 <script lang="ts">
 	import type { NationMapData } from '#lib/presence-map.ts';
 	import ZoomableMap from './ZoomableMap.svelte';
+	import TileMap from './TileMap.svelte';
+	import SearchableDropdown from './SearchableDropdown.svelte';
+	import { nationMapViewChoices, type NationMapView } from '#lib/map-views.ts';
 
 	let { map, nationName }: { map: NationMapData; nationName: string } = $props();
 
-	let current = $state(0);
-	let tabs: HTMLButtonElement[] = $state([]);
+	const choices = $derived(nationMapViewChoices(map.views.map((view) => view.key)));
+	let chosen = $state<NationMapView | undefined>();
+	const currentKey = $derived(chosen ?? map.views[0]?.key);
+	const current = $derived(Math.max(0, map.views.findIndex((view) => view.key === currentKey)));
+	/** The Land Areas view is drawn with MapLibre over the site's tiles when the browser can (TileMap.svelte); the drawn map stays for print, offline reading and old devices. */
+	let tileMapWanted = $state(true);
+	let tileMapReady = $state(false);
 
-	function choose(index: number): void {
-		current = (index + map.views.length) % map.views.length;
-		tabs[current]?.focus();
-	}
-
-	function onTabKey(event: KeyboardEvent, index: number): void {
-		const moves: Record<string, number> = {
-			ArrowRight: index + 1,
-			ArrowLeft: index - 1,
-			Home: 0,
-			End: map.views.length - 1
-		};
-		if (event.key in moves) {
-			event.preventDefault();
-			choose(moves[event.key]);
-		}
+	function choose(key: NationMapView): void {
+		tileMapReady = false;
+		chosen = key;
 	}
 
 	const titles = $derived({
@@ -52,7 +47,7 @@
 			.nation-map-view[hidden] {
 				display: block !important;
 			}
-			.nation-map-tabs {
+			.nation-map-picker {
 				display: none !important;
 			}
 		</style>
@@ -70,35 +65,35 @@
 	</svg>
 
 	{#if map.views.length > 1}
-		<div class="nation-map-tabs" role="tablist" aria-label="Map views">
-			{#each map.views as view, index (view.key)}
-				<button
-					bind:this={tabs[index]}
-					type="button"
-					role="tab"
-					id="nation-map-tab-{view.key}"
-					aria-selected={index === current}
-					aria-controls="nation-map-view-{view.key}"
-					tabindex={index === current ? 0 : -1}
-					onclick={() => choose(index)}
-					onkeydown={(event) => onTabKey(event, index)}
-				>
-					{view.label}
-				</button>
-			{/each}
+		<div class="nation-map-picker">
+			<SearchableDropdown label="Map view" choices={choices} value={currentKey} onchange={choose} />
 		</div>
 	{/if}
 
 	{#each map.views as view, index (view.key)}
 		{@const layout = view.layout}
+		{@const tiled = view.key === 'lands' && tileMapReady && index === current}
 		<figure
 			class="nation-map-view"
 			id="nation-map-view-{view.key}"
-			role={map.views.length > 1 ? 'tabpanel' : undefined}
-			aria-labelledby={map.views.length > 1 ? `nation-map-tab-${view.key}` : undefined}
+			aria-label={map.views.length > 1 ? `${view.label} map` : undefined}
 			hidden={index !== current}
 		>
-			<div class="drawing" style:max-width="{layout.shareOfFullWidth * 100}%">
+			{#if view.key === 'lands' && map.tileMap && tileMapWanted && index === current}
+				<div class="tile-holder" class:tiled>
+					<TileMap
+						view="lands"
+						label="Land Areas map of {nationName}"
+						data={map.tileMap}
+						onready={() => (tileMapReady = true)}
+						onfail={() => {
+							tileMapWanted = false;
+							tileMapReady = false;
+						}}
+					/>
+				</div>
+			{/if}
+			<div class="drawing" class:tiled style:max-width="{layout.shareOfFullWidth * 100}%">
 				<ZoomableMap label="{view.label} map of {nationName}" maximum={view.key === 'lands' ? 16 : 8}>
 					<svg viewBox="0 0 {layout.width} {layout.height}" role="img" aria-labelledby="nation-map-title-{view.key}">
 						<title id="nation-map-title-{view.key}">{titles[view.key]}</title>
@@ -166,7 +161,11 @@
 						{/each}
 					</ul>
 					<p class="small muted">
-						Outlines are the Census Bureau’s 2020 areas, simplified for a national map. They are not a statement of the nation’s own boundaries.{#if Object.values(view.layers).some((layer) => layer.dots.length > 0)}{' '}A dot marks an area too small to see.{/if}
+						{#if tiled}
+							Outlines are the Census Bureau’s 2020 areas, drawn over a map of OpenStreetMap data. They are not a statement of the nation’s own boundaries. A dot marks an area until it is big enough to see. Hold Ctrl or ⌘ and scroll, or pinch, to zoom.
+						{:else}
+							Outlines are the Census Bureau’s 2020 areas, simplified for a national map. They are not a statement of the nation’s own boundaries.{#if Object.values(view.layers).some((layer) => layer.dots.length > 0)}{' '}A dot marks an area too small to see.{/if}
+						{/if}
 						<a href="/nations/map?view=lands">Map of all land areas</a>.
 					</p>
 				{/if}
@@ -187,41 +186,26 @@
 		overflow: hidden;
 	}
 
-	/* One strip of buttons, like the text alignment setting. */
-	.nation-map-tabs {
-		display: flex;
+	.nation-map-picker {
 		margin-bottom: var(--space-2);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		overflow: hidden;
-	}
-
-	.nation-map-tabs button {
-		flex: 1 1 auto;
-		min-height: var(--layout-target-minimum);
-		padding: var(--space-1) var(--space-2);
-		border: 0;
-		border-right: 1px solid var(--color-control-border);
-		background: var(--color-paper);
-		color: var(--color-ink);
-		font: inherit;
-		font-size: var(--font-size-small);
-		cursor: pointer;
-	}
-
-	/* The chosen view: filled and bold, so color is not the only cue. */
-	.nation-map-tabs button:last-child {
-		border-right: 0;
-	}
-
-	.nation-map-tabs button[aria-selected='true'] {
-		background: var(--color-surface);
-		font-weight: var(--font-weight-semibold);
-		box-shadow: inset 0 -3px 0 var(--color-link);
 	}
 
 	.nation-map-view {
+		position: relative;
 		margin: 0;
+	}
+
+	/* The tiled map is laid out out of sight while it loads, then takes the drawn map's place on screen; paper keeps the drawn map. */
+	.tile-holder:not(.tiled) {
+		position: absolute;
+		inset: 0 0 auto;
+		visibility: hidden;
+	}
+
+	@media screen {
+		.drawing.tiled {
+			display: none;
+		}
 	}
 
 	svg {
