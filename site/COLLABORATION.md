@@ -106,7 +106,16 @@ A team edits its nation's page at `/workspace/nation-teams/<nation>/edit` (decis
 
 **Problem reports go to the team too.** A report about a claimed page that asks for a correction, asks a question or offers material appears for the nation's team on its edit page, with where and what was reported but never who sent it; requests to restrict or remove material stay with the project. An editor answers "Fixed on the page" or "No change needed", with an optional note, which goes into the report's own history (table `nation_team_report_answers`). The project still sees every report, and its Requests list shows the team's part: with the team, the team's answer, or no answer in 7 days, when the project steps in (`src/lib/nation-team-reports.ts`). The report form tells the sender this.
 
-Still to build (stage 3): the project's review queue (mark read, undo, pause, suspend), emails to a nation's office about changes, notices to people following the page, and the nightly copy into `content/tribes` with source records. Teams open to nations once the project domain can send email.
+**The project's review** (stage 3). A nation's changes go live without waiting for the project, so the project reads each one afterwards on `/workspace/nation-pages` ("Nations' changes"; permission `review-nation-pages`, held by the lead author and editors), oldest first, within 7 days. The workspace overview counts what waits and what is past 7 days. For each change the reviewer can:
+
+- **Mark read**, leaving it as it is.
+- **Undo** it, with a note. The change is set aside and the page goes back to the version before it; the team's history shows it as "Undone by the project" with the note, and the team cannot put it back by restoring.
+- **Pause and ask.** Publishing for the nation stops until the project resumes it, and the team sees the question at the top of its edit page and answers there. Drafts, cancelling a waiting change and hiding keep working, so a nation can always take something off its page.
+- **Suspend** the person who published it, with everyone they added (the lead author only, as on the team page). Their changes stay until undone.
+
+Reviews and pauses are in `nation_page_reviews` and `nation_page_pauses` (migration 0022); the rules are in `src/lib/nation-page-review.ts` and the storage in `src/lib/server/nation-page-review.ts`. Every step goes into the sealed activity log under `nation-page/<nation>`.
+
+Still to build: emails to a nation's office about changes, notices to people following the page, and the nightly copy into `content/tribes` with source records. Teams open to nations once the project domain can send email.
 
 ## Essays
 

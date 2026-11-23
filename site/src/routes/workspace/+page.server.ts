@@ -5,6 +5,8 @@ import { administrationSummary } from '#lib/server/administration.ts';
 import { deadlinesOf } from '#lib/requests.ts';
 import { profileOfPerson } from '#lib/server/contributor-profiles.ts';
 import { placesOf } from '#lib/server/nation-teams.ts';
+import { reviewDays } from '#lib/nation-page-review.ts';
+import { reviewCounts } from '#lib/server/nation-page-review.ts';
 import { listRequests } from '#lib/server/request-store.ts';
 import { latestReviews } from '#lib/server/reviews.ts';
 import { requirePerson, storage } from '#lib/server/workspace.ts';
@@ -55,6 +57,11 @@ export const load: PageServerLoad = async (event) => {
 
 	const administration = can(person, 'manage-people') ? await administrationSummary(database) : undefined;
 
+	// Nations' published changes the project has yet to read (decision record 0041, "Stage 3").
+	const nationChanges = can(person, 'review-nation-pages')
+		? await reviewCounts(database, new Date(Date.now() - reviewDays * 24 * 60 * 60 * 1000).toISOString())
+		: undefined;
+
 	// Co-authors and reviewers keep a contributor profile too, so their credit is their own choice.
 	const profile = await profileOfPerson(database, person.identifier);
 	const profileState = !profile ? 'missing' : profile.hasUnconfirmedChanges ? 'unconfirmed' : 'confirmed';
@@ -75,6 +82,7 @@ export const load: PageServerLoad = async (event) => {
 		ownNation,
 		granted: can(person, 'read-reviews') ? [] : granted.slice(0, 50),
 		administration,
+		nationChanges,
 		profileState
 	};
 };
