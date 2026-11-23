@@ -13,9 +13,14 @@ interface PlaceRow {
 	nations: unknown[];
 }
 
+/*
+ * A count column is drawn by the page (custom), so the number opens the row's
+ * list of nations (Trevor, Nov. 23, 2026: "all tables should be clickable into
+ * the data to explain itself"); the CSV keeps the plain number.
+ */
 export const stateColumns: TableColumn[] = [
 	{ key: 'state', header: 'State or territory', isRowHeader: true, sortable: true, custom: true },
-	{ key: 'count', header: 'Nations', type: 'number', sortable: true }
+	{ key: 'count', header: 'Nations', type: 'number', sortable: true, custom: true }
 ];
 
 export function stateRows(rows: (PlaceRow & { code: string })[]): TableRow[] {
@@ -31,7 +36,7 @@ export function stateRows(rows: (PlaceRow & { code: string })[]): TableRow[] {
 
 export const regionColumns: TableColumn[] = [
 	{ key: 'region', header: 'Region', isRowHeader: true, sortable: true, custom: true },
-	{ key: 'count', header: 'Nations', type: 'number', sortable: true }
+	{ key: 'count', header: 'Nations', type: 'number', sortable: true, custom: true }
 ];
 
 export function regionRows(rows: (PlaceRow & { anchor: string; states: string[] })[]): TableRow[] {
@@ -50,7 +55,7 @@ export function regionRows(rows: (PlaceRow & { anchor: string; states: string[] 
 export const landAreaColumns: TableColumn[] = [
 	{ key: 'area', header: 'Area', isRowHeader: true, sortable: true, custom: true },
 	{ key: 'kind', header: 'Kind', sortable: true, filterable: true },
-	{ key: 'count', header: 'Nations linked', type: 'number', sortable: true }
+	{ key: 'count', header: 'Nations linked', type: 'number', sortable: true, custom: true }
 ];
 
 export function landAreaRows(rows: LandAreaRow[]): TableRow[] {
@@ -97,7 +102,7 @@ export function categoryColumns(body: ShadedTableData): TableColumn[] {
 	return [
 		{ key: 'area', header: definition.categoryHeader ?? 'Category', isRowHeader: true, sortable: true, custom: true },
 		...(definition.valueHeader ? [{ key: 'value', header: definition.valueHeader, type: 'number' as const, sortable: true }] : []),
-		{ key: 'count', header: 'Nations', type: 'number', sortable: true }
+		{ key: 'count', header: 'Nations', type: 'number', sortable: true, custom: true }
 	];
 }
 
@@ -119,8 +124,9 @@ export function categoryRows(body: ShadedTableData): TableRow[] {
 export function byStateColumns(body: ShadedTableData): TableColumn[] {
 	return [
 		{ key: 'state', header: 'State', isRowHeader: true, sortable: true },
-		{ key: 'total', header: 'Nations', type: 'number', sortable: true },
-		...body.stateColumns.map((column) => ({ key: `count-${column.key}`, header: column.header, type: 'number' as const, sortable: true }))
+		// Each count opens to the nations it is made of (Trevor, Nov. 23, 2026: every table opens to the data behind it).
+		{ key: 'total', header: 'Nations', type: 'number', sortable: true, custom: true },
+		...body.stateColumns.map((column) => ({ key: `count-${column.key}`, header: column.header, type: 'number' as const, sortable: true, custom: true }))
 	];
 }
 

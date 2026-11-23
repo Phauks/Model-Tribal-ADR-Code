@@ -42,7 +42,7 @@ export function scaleTop(largest: number): { top: number; step: number } {
 	return { top: Math.ceil(largest / step) * step, step };
 }
 
-/** The chart as a table definition, for the table view and its CSV download. */
+/** The chart as a table definition, for the table view and its CSV download. A bar's address links both its name and its number. */
 export function chartTable(chart: BarChartData): { columns: TableColumn[]; rows: TableRow[] } {
 	return {
 		columns: [
@@ -53,7 +53,8 @@ export function chartTable(chart: BarChartData): { columns: TableColumn[]; rows:
 			key: bar.label,
 			cells: {
 				label: { text: bar.label, href: bar.href },
-				value: { text: bar.value.toLocaleString('en-US'), sortValue: bar.value }
+				// The number opens the records it counts, as the name does.
+				value: { text: bar.value.toLocaleString('en-US'), sortValue: bar.value, href: bar.href }
 			}
 		}))
 	};
