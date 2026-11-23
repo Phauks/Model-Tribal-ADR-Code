@@ -1,7 +1,7 @@
 profile: content/tribes/r/red-lake-band-of-chippewa-indians.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -66,5 +66,101 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.rlnn.org/MinorSponsors/RLCourtsMain.html;
-  https://www.redlakenation.org/wp-content/uploads/2022/01/TITLE-XVIII-CHAPTER-1800-ELECTION-CODE-.pdf.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Red Lake Nation Tribal Court mediation OR alternative dispute resolution OR peacemaking
+    (limited to redlakenation.org, mncourts.gov, narf.org, tribal-institute.org)'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Results were Minnesota state court ADR pages for Red Lake County and generic peacemaking resources,
+    nothing about the Band's own program.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Red Lake Band of Chippewa tribal court OR code mediation OR peacemaking OR "dispute
+    resolution"'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
+    court lists, with no page showing dispute resolution wording for this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=rlnn.org/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 444 archived addresses for rlnn.org/*; those whose address names a code,
+    law, court or dispute resolution page were fetched in this retry or are listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20220330080449id_/http://www.rlnn.org/MinorSponsors/RLCourtsMain.html
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: found
+  reason: The archived Red Lake courts page links to a page on the Ojibwe Based Culture Mediation Court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260714063502id_/https://www.redlakenation.org/wp-content/uploads/2022/01/TITLE-XVIII-CHAPTER-1800-ELECTION-CODE-.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: scanned-unreadable
+  reason: Archived copy (capture of 2026-07-14) is a PDF with no text layer; it was not read from page
+    images in this retry.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=redlakenation.org/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: error
+  reason: The Wayback Machine capture index did not answer (connection refused) in any of the three rounds;
+    worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=rlnn.com/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 5000 archived addresses for rlnn.com/*; those whose address names a
+    code, law, court or dispute resolution page were fetched in this retry or are listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://www.rlnn.com/main/RedLakeTribalCode.html
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20071024152117id_/http://www.rlnn.com:80/ArtJune07/OjibweCultureBasedMediationCourt.html
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: found
+  reason: A Red Lake Net News article (June 2007) says the Band received a federal grant to run an Ojibwe
+    Culture Based Mediation Court for criminal and civil referrals and voluntary community referrals.
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#red-lake-band-of-chippewa-indians-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20220330080449/http://www.rlnn.org/MinorSponsors/RLCourtsMain.html
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2022-03-30 ("WiiJiiWaagan Path of life Main Page") shows mediation,
+    codes or ordinances, a court.
+next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
+  (Gate 1) before any record goes into the profile.

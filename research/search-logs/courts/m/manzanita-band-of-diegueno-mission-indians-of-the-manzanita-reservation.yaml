@@ -1,7 +1,7 @@
 profile: content/tribes/m/manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -203,3 +203,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Directory lists Intertribal Court of Southern California for San Diego and Riverside counties; no Manzanita row.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260421194248/https://caltribalfamilies.org/places/manzanita-band-of-diegueno-mission-indians/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-04-21 lists the nation's Tribal court as Intertribal Court
+    of Southern California (https://www.intertribalcourt.org/).

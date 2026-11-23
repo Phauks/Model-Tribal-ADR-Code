@@ -15,7 +15,7 @@ Anyone who is signed in can send the project documents, pictures, sound recordin
 | Status | Meaning |
 | --- | --- |
 | Sending | Still arriving. Choosing the same file again picks up where it stopped. |
-| Checking | Reserved for the virus scan, which is not built yet. |
+| Checking | It arrived and is held until the virus check says every stored copy is clean. Reviewers see it under "Waiting on someone". |
 | Not accepted | The checks refused it; the reason is shown. |
 | Waiting for review | It arrived and is in the queue. |
 | In review | A reviewer took it. |
@@ -43,10 +43,20 @@ Each account can send 20 files a day and have 5 GB waiting for review. Someone w
 
 1. The browser asks to start (`POST /uploads/pieces`) with the file's name, size and the answers. The Worker checks the account's allowance and starts a multipart upload in the private `sourceDocuments` bucket at `uploads/<identifier>/original` (Cloudflare R2, "Use the R2 multipart API from Workers").
 2. The browser sends the file in 10 MB pieces (`PUT /uploads/pieces/<reference>/<number>`), one at a time, retrying a dropped piece. Pieces keep each request well under the Workers request size limit of 100 MB (Cloudflare Workers, "Limits"). The first piece decides the file's type and size limit. Each piece is hashed with SHA-256 and searched for hidden content: scripts, launch actions and attached files in a PDF; macros, outside links and embedded objects in Office and OpenDocument files. A refused piece ends the upload and drops what arrived.
-3. When every piece is in (`POST /uploads/pieces/<reference>/finish`), the Worker joins them, records a fingerprint, and puts the file in the queue. The fingerprint is the SHA-256 of a one-piece file, or "pieces:" and the SHA-256 of the piece hashes for a longer one. A picture of 20 MB or less gets a copy at `uploads/<identifier>/preview` without its Exif, XMP and text metadata, which can say where a photo was taken. That copy is what a reviewer sees and what gets filed.
+3. When every piece is in (`POST /uploads/pieces/<reference>/finish`), the Worker joins them, records a fingerprint, and holds the file at "Checking" for the virus check (see "The virus check"). The fingerprint is the SHA-256 of a one-piece file, or "pieces:" and the SHA-256 of the piece hashes for a longer one. A picture of 20 MB or less gets a copy at `uploads/<identifier>/preview` without its Exif, XMP and text metadata, which can say where a photo was taken. That copy is what a reviewer sees and what gets filed.
 4. If the sender closes the page, choosing the same file again (same name and size) picks up at the first missing piece. A file that does not finish within 7 days is given up, matching the bucket's default rule that drops unfinished multipart uploads after 7 days (Cloudflare R2, "Object lifecycles").
 
 A YouTube link (`POST /uploads/links`) stores nothing but the video's 11-character identifier. Reviewers watch it embedded from youtube-nocookie.com, YouTube's privacy-enhanced mode (YouTube Help, "Embed videos & playlists").
+
+## The virus check
+
+Every stored copy of a file, the file as sent and a picture's copy without location, is put in line for the project's virus scanner as soon as the file is finished (`requestScan`, site/SCANNING.md). The file waits at "Checking" until every copy has a result:
+
+- **Clean**, or released by a reviewer: the file moves into the queue at "Waiting for review".
+- **Something found:** the file is refused and deleted at once. The sender sees "Not accepted" with what the check found, and the record stays.
+- **Could not be checked** (locked with a password, too large, or the check gave up): the file stays held. A reviewer can release it from its page, giving a reason that goes in the history, or put it back in line. A file where something was found can never be released.
+
+Files move on when the queue, the file's own page or Your uploads is opened (`advanceCheckedUploads`); the scanner writes only its own table. Nothing is shown, downloaded, played or filed until its scan allows it, and the check is made against the very bytes that were scanned, so a copy replaced afterwards is held again. Essay figures are filed with their essay at once but are not served until they pass. If the scans table cannot be read, every file stays held. Deleting a file also deletes its scan results (`forgetScan`).
 
 ## Filing and showing
 
@@ -77,7 +87,6 @@ Migration `0018_upload_nation_comments.sql` adds `upload_nation_comments`, the c
 
 ## Not built yet
 
-- A virus scan. Cloudflare's own upload scanning is part of its Enterprise plan, so the plan is ClamAV running in a Cloudflare Container, with files held at "Checking" until it passes. Until then, reviewers see a reminder to open downloaded files with care.
 - Email notices to the sender when a status changes. These wait on the project's domain.
 - Showing filed files on nation, story and essay pages. Today a reviewer files a file and puts its `/files/` address on the page by pull request or in the essay editor.
 - Video in print: a still frame, a caption and a short link or QR code, once the domain exists.

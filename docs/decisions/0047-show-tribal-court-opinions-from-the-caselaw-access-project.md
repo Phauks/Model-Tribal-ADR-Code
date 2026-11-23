@@ -1,4 +1,4 @@
-# 0046. Show tribal court opinions from the Caselaw Access Project on the website
+# 0047. Show tribal court opinions from the Caselaw Access Project on the website
 
 - **Status:** Accepted
 - **Date:** 2026-11-23

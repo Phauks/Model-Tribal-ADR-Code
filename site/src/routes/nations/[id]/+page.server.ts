@@ -66,7 +66,7 @@ interface CourtOpinions {
 
 /**
  * The nation's court opinions in the Caselaw Access Project's tribal
- * reporters (decision record 0046): how many there are, and the newest few,
+ * reporters (decision record 0047): how many there are, and the newest few,
  * those that mention a way of settling a dispute outside a trial first.
  */
 function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | undefined {
@@ -438,7 +438,8 @@ const establishmentWords: Record<string, string> = {
 	purchase: 'Purchase',
 	'court-decree': 'Court decree',
 	'state-action': 'State action',
-	other: 'Other'
+	// A letter or proclamation of an official: the instrument says what it is.
+	other: ''
 };
 
 /**

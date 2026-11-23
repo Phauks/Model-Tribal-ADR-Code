@@ -1,7 +1,7 @@
 profile: content/tribes/n/native-village-of-barrow-inupiat-traditional-government.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: none-found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -68,4 +68,67 @@ searches:
   reason: The Court Procedures Code's preamble says the Iñupiat have long resolved disputes through customary
     law and traditional practices, but the code read sets up court procedure and names no peacemaking,
     circle, mediation or elders' process.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.nvbarrow.net.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://nvb-nsn.gov/wp-content/uploads/2024/12/NVB-Code-of-Laws-Title-1-Court-Procedures4.pdf
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Title 1 purpose speaks of a judicial system for resolving disputes by tradition; no mediation,
+    arbitration, peacemaking or elders wording.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://nvb-nsn.gov/tribal-courts/
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Court page says it integrates Inupiaq values; no mediation or peacemaking wording.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Native Village of Barrow Inupiat Traditional Government tribal court OR code dispute
+    resolution'
+  query: Native Village of Barrow Inupiat Traditional Government tribal court OR code dispute resolution
+  outcome: not-found
+  reason: Found the nation's court pages and code PDFs.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20201024031703id_/http://www.nvbarrow.net
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2020-10-24) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=nvbarrow.net/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: error
+  reason: The Wayback Machine capture index did not answer (connection refused) in any of the three rounds;
+    worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'this nation''s entry: justice system, cases heard, diversion agreements'
+  outcome: not-found
+  reason: 'Entry (pp. 20-21): Tribal Court active over 20 years, three judges and one additional elder;
+    it hears child protection cases; no dispute resolution or peacemaking listed.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20201024031703/http://www.nvbarrow.net/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2020-10-24 is an empty page or an error page (Error. Page cannot
+    be displayed. Please contact your service).
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

@@ -1,5 +1,5 @@
 /**
- * Tribal court opinions the website shows (decision record 0046, Trevor,
+ * Tribal court opinions the website shows (decision record 0047, Trevor,
  * Nov. 23, 2026): the opinions in the Caselaw Access Project's American Tribal
  * Law Reporter and Navajo Reporter, each served as its own page from the
  * private bucket at /copies/caselaw-access-project/…

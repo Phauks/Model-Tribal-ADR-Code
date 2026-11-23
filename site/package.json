@@ -14,7 +14,7 @@
 	},
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/add-scheduled-run.mjs",
+		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/add-scheduled-run.mjs && node tools/add-nation-page-changes.mjs && node tools/add-mail-handlers.mjs",
 		"preview": "npm run build && wrangler dev",
 		"deploy": "npm run build && wrangler deploy",
 		"prepare": "svelte-kit sync || echo ''",
@@ -29,6 +29,7 @@
 		"sign-in-link": "node tools/make-sign-in-link.mjs"
 	},
 	"devDependencies": {
+		"@cloudflare/containers": "^0.3.7",
 		"@cloudflare/workers-types": "^5.20261121.1",
 		"@fontsource/atkinson-hyperlegible-next": "^5.3.0",
 		"@fontsource/noto-sans": "^5.3.0",
@@ -66,6 +67,7 @@
 		"playwright": "1.63.0",
 		"pmtiles": "^4.5.0",
 		"polylabel": "^2.1.0",
+		"postal-mime": "^2.7.6",
 		"prosemirror-commands": "^1.7.2",
 		"prosemirror-history": "^1.5.2",
 		"prosemirror-inputrules": "^1.7.0",

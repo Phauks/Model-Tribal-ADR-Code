@@ -1,7 +1,7 @@
 profile: content/tribes/h/hualapai-indian-tribe-of-the-hualapai-indian-reservation.yaml
 topic: dispute-resolution
 status: partly-searched
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -67,4 +67,128 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://hualapai-nsn.gov/Documents/Government/Tribal%20Court/Law-and-Order-Code.pdf.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://hualapai-nsn.gov/?p=1834
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Tribal court staff page; no ADR wording.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Hualapai Tribe Law and Order Code tribal court "mediation" OR "peacemaker" OR "alternative
+    dispute resolution"'
+  query: Hualapai Tribe Law and Order Code tribal court "mediation" OR "peacemaker" OR "alternative dispute
+    resolution"
+  outcome: not-found
+  reason: Nothing new from the nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Hualapai Tribe tribal code OR court mediation OR peacemaking OR "dispute resolution"'
+  query: Hualapai Tribe tribal code OR court mediation OR peacemaking OR "dispute resolution"
+  outcome: not-found
+  reason: Found tribe's own court page and unrelated articles.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=hualapai-nsn.gov/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 5000 archived addresses for hualapai-nsn.gov/*; those whose address
+    names a code, law, court or dispute resolution page were fetched in this retry or are listed in next
+    steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/government/tribal-court/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: blocked
+  reason: The Wayback Machine refused this capture (403); the project does not try to get past it.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/judicial_branch_of_government/index.php
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/government/tribal-council/hualapai-tribal-council-ordinances/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/judicial_branch_of_government/tribal_court/index.php
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: error
+  reason: The archived copy could not be fetched in any round (connection refused); worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/wp-content/uploads/2021/09/ORDINANCE-9-LAW-ORDER-CHAPTERS-1-5.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: error
+  reason: The archived copy could not be fetched in any round (connection refused); worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/wp-content/uploads/2021/09/ORDINANCE-NO.-9-LAW-ORDER-CHAPTER-14-19.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: error
+  reason: The archived copy could not be fetched in any round (TLS handshake timed out); worth trying
+    again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/wp-content/uploads/2021/09/ORDINANCE-NO.-9-LAW-ORDER-CHAPTER-6.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: scanned-unreadable
+  reason: Archived copy is a PDF with no text layer; it was not read from page images in this retry.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/wp-content/uploads/2021/09/ORDINANCE-NO.-9-LAW-ORDER-CHAPTER-7-13.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: error
+  reason: The archived copy could not be fetched in any round (connection refused); worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/wp-content/uploads/2021/09/ORDINANCE-NO.-9-LAW-ORDER-LIST-OF-AMENDMENTS.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: Scanned one-page list of Law and Order Code amendments read from the page image; no amendment
+    names mediation, peacemaking or dispute resolution.
+next_steps: 'Try again later, or open by hand in a browser: https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/government/tribal-court/;
+  https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/judicial_branch_of_government/tribal_court/index.php;
+  https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/wp-content/uploads/2021/09/ORDINANCE-9-LAW-ORDER-CHAPTERS-1-5.pdf;
+  https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/wp-content/uploads/2021/09/ORDINANCE-NO.-9-LAW-ORDER-CHAPTER-14-19.pdf;
+  https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/wp-content/uploads/2021/09/ORDINANCE-NO.-9-LAW-ORDER-CHAPTER-6.pdf;
+  https://web.archive.org/web/2026id_/http://hualapai-nsn.gov/wp-content/uploads/2021/09/ORDINANCE-NO.-9-LAW-ORDER-CHAPTER-7-13.pdf.'

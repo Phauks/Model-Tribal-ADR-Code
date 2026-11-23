@@ -321,6 +321,17 @@ treaties:
   verification: inferred
   locator: p. 648 (Treaty with the Chippewa, 1854; Kappler header "Sept. 30, 1854. | 10 Stats., 1109. | Ratified Jan. 10, 1855. | Proclaimed Jan. 29, 1855.")
   note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+land_establishment:
+- land_area: Fond du Lac tract, Minnesota
+  method: treaty
+  instrument: Treaty of La Pointe, Sept. 30, 1854, art. II, 10 Stat. 1110
+  date: '1854-09-30'
+  detail: First set aside
+  source: treaty-with-the-chippewa-1854
+  confidence: high
+  verification: read-in-full
+  locator: 10 Stat. 1110
+  note: 'The instrument reads: “For the Fond Du Lac bands, a tract of land bounded as follows”. Kappler: Fond du Lac Reservation "established by treaty September 30, 1854" (1 Kappler 850).'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

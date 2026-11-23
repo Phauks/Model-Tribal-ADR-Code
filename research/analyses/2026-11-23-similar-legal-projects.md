@@ -153,7 +153,7 @@ These are recommendations drawn from the sources above; each says what it rests 
 
 NILL says a nation's permission to NILL "does not serve as implied consent" to use its laws elsewhere, and reuse needs "separate permission from the Tribal Nation itself" [1]. Decision record 0031 serves our own copies of nations' constitutions with a removal link. In `research/constitutions/documents.csv`, 51 documents for 48 nations were captured from NILL (publisher `national-indian-law-library`), and 42 of them are the primary copy we show (project analysis). Serving those copies is the reuse NILL says it cannot authorize. I recommend linking to NILL's copy for those 51 until each nation says yes, and keeping our copies for documents found on the nation's own site, in BIA files or in the University of Oklahoma collection. NILL's goodwill matters more to us than any one file.
 
-**Decided Nov. 22, 2026.** Trevor chose to link to NILL until nations consent and to keep the copies in the bucket. Decision record [0042](../../docs/decisions/0042-link-to-the-national-indian-law-library-for-its-copies.md) applies the rule to every copy whose only address is NILL's: 54 constitution copies and 471 law copies, for 236 nations, are no longer served.
+**Decided Nov. 22, 2026.** Trevor chose to link to NILL until nations consent and to keep the copies in the bucket. Decision record [0043](../../docs/decisions/0043-link-to-the-national-indian-law-library-for-its-copies.md) applies the rule to every copy whose only address is NILL's: 54 constitution copies and 471 law copies, for 236 nations, are no longer served.
 
 ### 6b. Run Gate 2 like a ULC drafting committee
 

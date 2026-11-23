@@ -1,0 +1,79 @@
+# The scan engine for the website's malware scanner (site/SCANNING.md): a small HTTP service that runs
+# inside a Cloudflare Container beside the ClamAV daemon. It reports raw facts (ClamAV, YARA, structural
+# checks); the project's policy in site/src/lib/server/scanning/verdict.ts turns them into a verdict.
+#
+# Adapted, with Trevor Goldsmith's permission as its owner, from containers/scan in his Magna Carta
+# repository (github.com/Phauks/magna-carta). That repository is "All rights reserved"; this copy is
+# published here under this repository's code licence by the same owner (site/SCANNING.md, "Where it
+# came from"). Removed from the original: the Magika file-type engine (/identify), the signature
+# prefilter, the score histogram and the Vectorscan feature, none of which the website uses.
+[package]
+name = "scan-engine"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+# A lib (the router + engine modules, unit-testable) plus a thin binary that serves it on :8080.
+[lib]
+name = "scan_engine"
+path = "src/lib.rs"
+
+[[bin]]
+name = "scan-engine"
+path = "src/main.rs"
+
+# The build-time YARA Forge bundler. Runs in the image build (never at runtime): reads the downloaded
+# YARA Forge package, compiles the rules with yara-x, and serializes them to the blob the runtime
+# deserializes. Fail-closed + fail-loud — see src/bin/build-yara-rules.rs.
+[[bin]]
+name = "build-yara-rules"
+path = "src/bin/build-yara-rules.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+axum = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Stream the request body straight to clamd's scratch file and map it read-only so the in-process
+# engines (yara, the structural heuristics) read the same bytes with no heap copy.
+memmap2 = "0.9"
+futures-util = { version = "0.3", default-features = false, features = ["std"] }
+# Pure-Rust YARA engine (the heuristic-rule scanner); no libyara C dependency.
+yara-x = "1.22"
+# Structural-heuristic parsers (all pure Rust). zip uses the lean deflate-flate2 feature set.
+lopdf = "0.46"
+cfb = "0.16"
+zip = { version = "9.4", default-features = false, features = ["deflate-flate2"] }
+# Inflate `/Type /ObjStm` object-stream bodies in the PDF abort guard.
+flate2 = "1"
+
+[dev-dependencies]
+reqwest = { version = "0.12", default-features = false }
+
+[lints.rust]
+# `unsafe_code` is not denied over one site: spool.rs maps the scratch file so the in-process engines
+# read the same bytes clamd scans without a second heap copy. The block carries its SAFETY note.
+non_ascii_idents = "forbid"
+ffi_unwind_calls = "deny"
+missing_abi = "deny"
+macro_use_extern_crate = "deny"
+unused_extern_crates = "deny"
+meta_variable_misuse = "deny"
+explicit_outlives_requirements = "deny"
+redundant_lifetimes = "deny"
+unused_lifetimes = "deny"
+unused_import_braces = "deny"
+unused_macro_rules = "deny"
+unit_bindings = "deny"
+keyword_idents_2018 = "deny"
+keyword_idents_2024 = "deny"
+non_local_definitions = "deny"
+trivial_numeric_casts = "deny"
+
+[lints.clippy]
+panic = "deny"
+panic_in_result_fn = "deny"
+todo = "deny"
+unimplemented = "deny"
+dbg_macro = "deny"

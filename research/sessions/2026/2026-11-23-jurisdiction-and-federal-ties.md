@@ -110,6 +110,12 @@ The 703 low-confidence treaty links were checked on Nov. 23, 2026. The 195 treat
 
 Every link stays `verification: inferred`, and its note says what the check found. The report is `research/raw/2026-11-23/treaty-link-check.json`.
 
+## How the land was set aside
+
+`scripts/jurisdiction/build_land_establishment.py` recorded 127 instruments for 110 nations (`research/raw/2026-11-23/land-establishment.json`): 58 executive orders, 38 treaties, 24 acts of Congress, 2 agreements ratified by Congress and 5 others (letters and proclamations of officials). Executive orders are cited as Kappler prints them in volumes 1, 3 and 4 (Internet Archive full-text scans; the Oklahoma State University database's copy where it has one), and treaties and acts are cited to the Statutes at Large on govinfo. Each fact quotes the words that set the land aside and is marked "First set aside" or "Later change". Every quotation was checked against the source text.
+
+Coverage is about a third of the nations with a land area. Not covered: reservations proclaimed by the Secretary of the Interior after 1934 (25 U.S.C. § 5110), because the Federal Register search starts in 1994 and the 1936-1950 volumes have no full-text search (most California rancherias, Nevada colonies, and Oklahoma, New York, New England and Southeast lands); Metlakatla; and 20 cases the research left out as doubtful (each has a search-log entry with the candidate instrument and the reason), among them the San Bernardino County Mission reserves, La Jolla ("La Joya" in Kappler), Barona and Viejas, San Pasqual, Summit Lake, Fort Mojave, the Seminole Tribe of Florida and the Minnesota Chippewa reservations. Kappler page numbers come from the scans' OCR; the Grande Ronde order's date (June 30, 1857) was read from the earlier print because the 1904 OCR reads 1867. One database address first recorded for the Spokane order of 1881 returned "not found", so that source links the Kappler scan.
+
 ## Output
 
 Batches in `research/jurisdiction/`; the Violence Against Women Act research is in `research/raw/2026-11-23/violence-against-women-act-jurisdiction.json`.

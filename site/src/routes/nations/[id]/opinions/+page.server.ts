@@ -1,6 +1,6 @@
 /**
  * Every court opinion of one nation that the site shows (decision record
- * 0046), as a table: src/lib/server/tribal-court-opinions.ts.
+ * 0047), as a table: src/lib/server/tribal-court-opinions.ts.
  */
 import { error } from '@sveltejs/kit';
 import { displayName } from '#lib/nation-labels.ts';

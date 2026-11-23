@@ -1,6 +1,6 @@
 # Tribal court opinions
 
-An index of the tribal court opinions in the Caselaw Access Project's free files. Trevor chose on Nov. 23, 2026, to load them as research data. Trevor then chose to show each opinion on the website as its own page, with a link the nation can use to ask for its removal ([decision record 0046](../../docs/decisions/0046-show-tribal-court-opinions-from-the-caselaw-access-project.md); [sources note](../analyses/2026-11-23-free-legal-information-sources.md), section 4).
+An index of the tribal court opinions in the Caselaw Access Project's free files. Trevor chose on Nov. 23, 2026, to load them as research data. Trevor then chose to show each opinion on the website as its own page, with a link the nation can use to ask for its removal ([decision record 0047](../../docs/decisions/0047-show-tribal-court-opinions-from-the-caselaw-access-project.md); [sources note](../analyses/2026-11-23-free-legal-information-sources.md), section 4).
 
 ## What is here
 

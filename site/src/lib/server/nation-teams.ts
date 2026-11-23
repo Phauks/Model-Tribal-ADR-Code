@@ -599,3 +599,36 @@ export async function declineApplication(
 export async function withdrawApplication(database: D1Database, application: ApplicationRow): Promise<void> {
 	await database.batch(statusStatement(database, application, 'withdrawn', null, 'Withdrawn by the person who sent it'));
 }
+
+/**
+ * Whether people the nation chose keep its page: a page is claimed while
+ * someone the project confirmed with the nation's office has a current place
+ * on its team (Trevor, Nov. 23, 2026: like a map listing). Returns when the
+ * earliest such place began.
+ */
+export async function claimOf(
+	database: D1Database,
+	nationIdentifier: string,
+	time = now()
+): Promise<{ claimedSince: string } | undefined> {
+	const row = await database
+		.prepare(
+			`SELECT MIN(granted_at) AS claimedSince FROM nation_team_members
+			 WHERE nation_identifier = ? AND added_by_project = 1 AND ended_at IS NULL AND expires_at > ?`
+		)
+		.bind(nationIdentifier, time)
+		.first<{ claimedSince: string | null }>();
+	return row?.claimedSince ? { claimedSince: row.claimedSince } : undefined;
+}
+
+/** Every nation whose page is claimed now (see claimOf). */
+export async function claimedNations(database: D1Database, time = now()): Promise<Set<string>> {
+	const result = await database
+		.prepare(
+			`SELECT DISTINCT nation_identifier AS nationIdentifier FROM nation_team_members
+			 WHERE added_by_project = 1 AND ended_at IS NULL AND expires_at > ?`
+		)
+		.bind(time)
+		.all<{ nationIdentifier: string }>();
+	return new Set(result.results.map((row) => row.nationIdentifier));
+}

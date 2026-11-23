@@ -30,7 +30,7 @@ def capture(key: str, url: str, suffix: str) -> str | None:
 
 def write_source(key: str, kind: str, title: str, author: str, url: str, issued: list[int] | None,
                  rights_basis: str, notes: str, suffix: str = ".html", citation_type: str = "webpage",
-                 extra_citation: dict | None = None, accessed: tuple = (2026, 11, 23)) -> Path:
+                 extra_citation: dict | None = None, accessed: tuple = (2026, 11, 23), save_copy: bool = True) -> Path:
     path = ROOT / "content" / "sources" / key[0] / f"{key}.yaml"
     if path.exists():
         record = yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -38,7 +38,7 @@ def write_source(key: str, kind: str, title: str, author: str, url: str, issued:
             record.setdefault("found_in", []).append(SESSION)
             path.write_text(dump(record), encoding="utf-8")
         return path
-    copy = capture(key, url, suffix)
+    copy = capture(key, url, suffix) if save_copy else None
     citation = {"type": citation_type, "title": title, "author": [{"literal": author}]}
     citation.update(extra_citation or {})
     citation["URL"] = url
@@ -63,7 +63,7 @@ def write_source(key: str, kind: str, title: str, author: str, url: str, issued:
             "redistribution": government,
         },
         "found_in": [SESSION],
-        "notes": notes + (f" Private copy {copy}." if copy else " No private copy saved (download refused)."),
+        "notes": notes + (f" Private copy {copy}." if copy else " No private copy saved (download refused)." if save_copy else ""),
     }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(dump(record), encoding="utf-8")

@@ -6,7 +6,9 @@
  * own globals.
  */
 
-export type CollectionIdentifier = 'nations' | 'glossary' | 'other';
+import type { DocumentSet, DocumentsStatus } from './offline-documents.ts';
+
+export type CollectionIdentifier = 'nations' | 'stories' | 'glossary' | 'other';
 
 export interface Collection {
 	id: CollectionIdentifier;
@@ -18,13 +20,14 @@ export const collections: Collection[] = [
 	{
 		id: 'nations',
 		label: 'Nation profiles',
-		hint: 'A page for each nation, the list of nations and the maps'
+		hint: 'A page for each nation, the list of nations, the drawn maps, the tables, the charts and Find recourse'
 	},
+	{ id: 'stories', label: 'Stories', hint: 'Each story in full, with its credit and source' },
 	{ id: 'glossary', label: 'Glossary', hint: 'Every glossary entry' },
 	{
 		id: 'other',
 		label: 'Other pages',
-		hint: 'The home page, stories, changelog, downloads and help pages'
+		hint: 'The home page, changelog, downloads, help and about pages'
 	}
 ];
 
@@ -42,6 +45,7 @@ function under(path: string, section: string): boolean {
 export function collectionOf(path: string): CollectionIdentifier {
 	const page = pageOf(path);
 	if (under(page, '/nations')) return 'nations';
+	if (under(page, '/stories')) return 'stories';
 	if (under(page, '/glossary')) return 'glossary';
 	return 'other';
 }
@@ -66,6 +70,9 @@ export interface OfflineStatus {
 
 export type WorkerRequest =
 	| { type: 'skip-waiting' }
+	| { type: 'documents-status'; sets: DocumentSet[] }
+	| { type: 'documents-save'; set: DocumentSet }
+	| { type: 'documents-remove'; set: DocumentSet }
 	| { type: 'offline-status' }
 	| { type: 'offline-save'; collection: CollectionIdentifier }
 	| { type: 'offline-remove'; collection: CollectionIdentifier }
@@ -74,6 +81,8 @@ export type WorkerRequest =
 export type WorkerReply =
 	| { type: 'status'; status: OfflineStatus }
 	| { type: 'progress'; collection: CollectionIdentifier; done: number; total: number }
+	| { type: 'documents'; status: DocumentsStatus }
+	| { type: 'documents-progress'; set: DocumentSet; done: number; total: number }
 	| { type: 'failed'; message: string };
 
 /** The time a build was made, from the build version "<site version>+<milliseconds>". */
@@ -84,5 +93,6 @@ export function buildTime(version: string): Date | undefined {
 
 export function formatBytes(bytes: number): string {
 	if (bytes < 1000 * 1000) return `${Math.max(1, Math.round(bytes / 1000))} KB`;
-	return `${(bytes / (1000 * 1000)).toFixed(1)} MB`;
+	if (bytes < 1000 * 1000 * 1000) return `${(bytes / (1000 * 1000)).toFixed(1)} MB`;
+	return `${(bytes / (1000 * 1000 * 1000)).toFixed(1)} GB`;
 }

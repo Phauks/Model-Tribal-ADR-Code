@@ -23,6 +23,11 @@ declare module 'virtual:public-contacts' {
 	export const publicNationContacts: import('#lib/address-book-sync.ts').PublicNationContacts[];
 }
 
+declare module 'virtual:mail-nations' {
+	/** The nations outreach can write to, with their state codes (src/lib/server/mail/outreach.ts). */
+	export const mailNations: { identifier: string; name: string; states: string[]; page: string | null }[];
+}
+
 declare module 'virtual:nation-images' {
 	/** The nations' official images the Worker may serve, listed at build time. */
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];
@@ -76,6 +81,14 @@ declare module 'cloudflare:workers' {
 declare module 'virtual:followable-pages' {
 	/** The pages built with the site that readers can follow, with a fingerprint of each (src/lib/server/following.ts). */
 	export const followableBuild: import('#lib/server/following.ts').FollowableBuild;
+}
+
+declare module 'cloudflare:sockets' {
+	/** Opens a TCP connection from the Worker (Cloudflare, "TCP sockets"); used for outreach over SMTP (src/lib/server/mail/socket-opener.ts). */
+	export function connect(
+		address: { hostname: string; port: number },
+		options?: { secureTransport?: 'off' | 'on' | 'starttls'; allowHalfOpen?: boolean }
+	): unknown;
 }
 
 declare module 'virtual:page-history' {

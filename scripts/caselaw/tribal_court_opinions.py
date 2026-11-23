@@ -25,7 +25,7 @@ bucket and the capture index (research/capture-index.csv):
   built from the Caselaw Access Project's HTML with a heading that names the
   case, credits the source and links to the removal request. These have
   redistribution "yes": the website serves them at /copies/<key> and lists
-  them on each nation's page (decision record 0046, Trevor, Nov. 23, 2026).
+  them on each nation's page (decision record 0047, Trevor, Nov. 23, 2026).
   A nation's removal request is carried out as for any copy: set
   "redistribution": "no" for the key in research/capture-index-overrides.json.
 
@@ -73,7 +73,7 @@ OPINION_FIELDS = ["case_id", "citation", "other_citations", "name", "decision_da
                   "docket_number", "words", "topics", "reporter", "volume", "copy_key", "volume_key", "link"]
 OPINION_RIGHTS = ("Tribal court opinion as the Caselaw Access Project (Harvard Law School Library) published it, released "
                   "without restriction in March 2024, with the publisher's headnotes removed. Served on the website under "
-                  "decision record 0046; the nation can ask for removal or redaction.")
+                  "decision record 0047; the nation can ask for removal or redaction.")
 VOLUME_RIGHTS = ("Released by the Harvard Library Innovation Lab without restriction (Mar. 2024); publisher headnotes removed. "
                  "Private archive of the volume; each opinion is filed and served as its own page.")
 CITE_FIELDS = ["case_id", "citation", "name", "decision_date", "nations", "cites", "record", "times"]

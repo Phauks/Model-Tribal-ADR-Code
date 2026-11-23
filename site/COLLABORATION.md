@@ -76,7 +76,37 @@ Each Native nation can choose a team of people who keep its own page up to date 
 - Every change is written to the activity log under the target "grant", identifier `nation-team/<nation>`.
 - Someone new to the project gets a person record with the "Nation reviewer" role for that nation. If they already have an account, it is linked at once; otherwise when they first sign in with that address.
 
-Teams can edit the nation's page itself once the next stage is built (editing and publishing, then the review queue, emails to offices and the nightly copy into git). Teams open to nations once the project domain can send email.
+### Editing the nation's page
+
+A team edits its nation's page at `/workspace/nation-teams/<nation>/edit` (decision record 0041, "Stage 2"). The rules are in `src/lib/nation-page-changes.ts`; the database side is `src/lib/server/nation-page-changes.ts` (migration 0020, table `nation_page_changes`).
+
+| Part | Who | Goes live |
+| --- | --- | --- |
+| About, in the nation's own words | Drafters write, editors publish | When published |
+| A note on courts and dispute resolution | Drafters write, editors publish | When published |
+| Statements beside government records (recognition, laws and agreements, jurisdiction) | Drafters write, editors publish | When published |
+| Pictures, each with a required description, and an optional caption and credit | Drafters write, editors publish | When published |
+| Contacts (office, and email, phone, website or mailing address) | Drafters write, editors publish | 3 days later, or at once when a second editor approves |
+| Hiding a part of the page | Any editor, whatever parts their place covers | At once |
+
+- **Who said it.** Facts the project cites to government records are never edited by a nation; its statement is shown beside them. Every addition says "Written by" whoever the change is credited to (the nation's name unless the person types another, such as "Navajo Nation Judicial Branch"), and the date. A person's own name is never shown unless they type it.
+- **No pictures by default.** Pages start with none; the project does not choose pictures for nations (the lead author, Nov. 23, 2026). Pictures go to the private bucket under `nation-pages/<nation>/pictures/<identifier>` and are never deleted there. Readers get only the pictures in the live version, at `/nations/<id>/pictures/<identifier>`; the team can see every picture its changes named, at `/workspace/nation-teams/<nation>/pictures/<identifier>`.
+- **Versions.** Each publish adds a row; the page shows, for each part, the newest published row whose time to go live has come. Each person keeps one draft per part. An editor can publish anyone's draft (the writer stays recorded), cancel a waiting change, and put an earlier version back from `/workspace/nation-teams/<nation>/changes`. That history is private to the team and the project: nation pages never get a public history.
+- **Log.** Every draft, publish, approval, cancellation and restore is written to the sealed activity log under the target "document", identifier `nation-page/<nation>`.
+
+**How the changes reach a prerendered page.** Nation pages are built ahead of time from the records in `content/`, which the Worker cannot read, so the changes are added as the page is sent:
+
+1. The page has empty places marked `data-nation-slot` (top, courts, law, jurisdiction, glance, contacts) in `src/routes/nations/[id]/+page.svelte`. They hold no Svelte content, so hydration leaves what is put in them alone.
+2. `/nations/<id>/changes.json` returns the HTML for each place (`src/lib/server/nation-page-overlay.ts`), with everything the nation typed escaped and links limited to https.
+3. `tools/add-nation-page-changes.mjs`, the last step of `npm run build`, wraps the built Worker with `tools/nation-page-changes-worker.js` and sets `assets.run_worker_first` to `/nations/*`. For a nation's page it reads `changes.json` and fills the places with `HTMLRewriter` as the page streams out, with an ETag that changes when a different version goes live. Pages of nations with no changes pass through untouched.
+4. After a move within the site the page comes from the build, so it fills the places itself from `changes.json` (`src/lib/nation-page-slots.ts`).
+5. Hiding works by a style in the top place, so a hidden part disappears at once; the project removes it from the site's files when it follows up. The offline copy and the print edition show the cited record until the nightly copy into git (stage 3).
+
+**Claimed or unclaimed, like a map listing** (the lead author, Nov. 23, 2026). A nation's page says "Unclaimed" until someone the project confirmed with the nation's office has a current place on its team (`claimOf` in `src/lib/server/nation-teams.ts`); then it says "Claimed by the nation" and when. The build always writes the "Unclaimed" line (marked `data-build-status`) with a "Claim this page" link to `/profile/nation-team?nation=<id>`; for a claimed page the top place hides it and shows the claimed line instead.
+
+**Problem reports go to the team too.** A report about a claimed page that asks for a correction, asks a question or offers material appears for the nation's team on its edit page, with where and what was reported but never who sent it; requests to restrict or remove material stay with the project. An editor answers "Fixed on the page" or "No change needed", with an optional note, which goes into the report's own history (table `nation_team_report_answers`). The project still sees every report, and its Requests list shows the team's part: with the team, the team's answer, or no answer in 7 days, when the project steps in (`src/lib/nation-team-reports.ts`). The report form tells the sender this.
+
+Still to build (stage 3): the project's review queue (mark read, undo, pause, suspend), emails to a nation's office about changes, notices to people following the page, and the nightly copy into `content/tribes` with source records. Teams open to nations once the project domain can send email.
 
 ## Essays
 
@@ -159,6 +189,10 @@ On the request's page in the workspace, editors see each form, open the filled f
 ## Files people send
 
 Anyone signed in can send files on `/uploads/send` and follow them on `/uploads` (Your uploads, also in the account menu). The lead author and editors review them on `/workspace/uploads` (permission `review-uploads`). Files arrive in 10 MB pieces into the private bucket under `uploads/<identifier>/`, are checked by type and for hidden content as they arrive, and wait for a reviewer, who files them, keeps them for reference, or says why they were not used. A YouTube link can stand in for a video. Filed files are served at `/files/<reference>/<name>`. The code is in `src/lib/uploads.ts`, `src/lib/server/uploads.ts`, `src/lib/server/upload-checks.ts` and `src/lib/server/upload-serving.ts`; the design is docs/uploads.md and decision record 0038. A nation reviewer reads and comments on the files that name their nation on `/workspace/nation-uploads` (permission `comment-on-nation-uploads`); they never see who sent a file.
+
+## Virus and malware scanning
+
+Files people send and email attachments are held until a virus scan says they are clean. Site code puts a file in line with `requestScan` and serves it only when `mayServe` says yes (`src/lib/server/file-scans.ts`); the scanner, a Worker of its own (`model-tribal-adr-code-scanner`, `scanner/wrangler.jsonc`), scans waiting files with ClamAV, YARA rules and structural checks in a Cloudflare Container and writes the results to the `file_scans` table. The provider is a setting. Everything about it, including how to set it up, is in SCANNING.md; the choices are decision record 0046.
 
 ## How sign-in works
 
@@ -325,7 +359,7 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - The public "Requests log" page (docs/requests.md, "Public log").
 - A filings list in the workspace, and emailing a signer their copy of a form (waits on a domain).
 - Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
-- Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) will edit their nation's page from the website in the next stage.
+- Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) are the exception for their own nation's page.
 - Emails to a nation's office when someone joins or leaves its team, and the weekly summary of changes (waits on a domain).
-- A virus scan for files people send (docs/uploads.md, "Not built yet").
+- Using the virus scan for email attachments. The scanner is built (SCANNING.md); the inbox starts using it in its own change. Files people send already use it (docs/uploads.md, "The virus check").
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

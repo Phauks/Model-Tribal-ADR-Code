@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { publicCopies } from '#lib/server/content.ts';
 import { nationsWithOpinions, opinionsOf, tribalCourtOpinions } from '#lib/server/tribal-court-opinions.ts';
 
-describe('tribal court opinions (decision record 0046)', () => {
+describe('tribal court opinions (decision record 0047)', () => {
 	const opinions = tribalCourtOpinions();
 	const served = new Set(publicCopies().map((copy) => `/copies/${copy.key}`));
 

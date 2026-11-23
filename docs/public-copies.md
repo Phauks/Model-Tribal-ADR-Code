@@ -11,7 +11,7 @@ Never copied or served:
 
 - Westlaw prints and journal articles (always `no`, decision record 0030), books, and anything else under copyright.
 - Tribal codes copied from commercial code publishers (eCode360, Municode, Code Publishing Company, American Legal Publishing), whose compilations can carry their own copyright and terms.
-- Constitutions and laws whose only published address is the National Indian Law Library's. NILL says a nation's permission to NILL is not consent to use its laws elsewhere, so the copies stay in the bucket and pages link to NILL until the nation agrees (decision record [0042](decisions/0042-link-to-the-national-indian-law-library-for-its-copies.md)).
+- Constitutions and laws whose only published address is the National Indian Law Library's. NILL says a nation's permission to NILL is not consent to use its laws elsewhere, so the copies stay in the bucket and pages link to NILL until the nation agrees (decision record [0043](decisions/0043-link-to-the-national-indian-law-library-for-its-copies.md)).
 - State court documents marked `government-edict`, for now. Some, such as the Alaska restorative justice plans, were written with tribes, so each needs a look first.
 - Web pages that change, such as the eCFR or the Legal Information Institute. A saved web page is served only when it is itself the document, such as a constitution published as a page.
 - Files over 64 MB, such as whole Statutes at Large volumes scanned by the Library of Congress. Pages link to the original for those.

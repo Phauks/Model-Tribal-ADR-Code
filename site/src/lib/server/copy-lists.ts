@@ -6,6 +6,7 @@
  */
 import { displayName } from '../nation-labels.ts';
 import { copyPath, fileSize, mediaLabel, removalRequestPath, type PublicCopy } from '../public-copies.ts';
+import type { DocumentFile, DocumentSetList, DocumentSetSummary } from '../offline-documents.ts';
 import { formatCaptureDate } from './markdown.ts';
 import { nations, publicCopies } from './content.ts';
 
@@ -50,7 +51,7 @@ function namesOf(copy: PublicCopy, names: Map<string, string>): string[] {
 	});
 }
 
-/** Tribal court opinions (decision record 0046) are listed one nation at a time. */
+/** Tribal court opinions (decision record 0047) are listed one nation at a time. */
 const opinionPrefix = 'opinions-';
 
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
@@ -124,3 +125,49 @@ export function allCopyRows(): CopyRow[] {
 }
 
 export { groupTitle };
+
+/**
+ * The copies a reader can save for offline reading, by set (src/lib/offline-documents.ts): the
+ * United States documents as one set, and each nation's constitutions and laws as its own. A
+ * document that belongs to several nations is in each of their sets.
+ */
+let offlineSetCache: { federal: DocumentSetList; nations: Map<string, DocumentSetList> } | undefined;
+
+export function offlineSets(): { federal: DocumentSetList; nations: Map<string, DocumentSetList> } {
+	offlineSetCache ??= buildOfflineSets();
+	return offlineSetCache;
+}
+
+function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, DocumentSetList> } {
+	const names = nationNames();
+	const federal: DocumentFile[] = [];
+	const byNation = new Map<string, DocumentFile[]>();
+	for (const copy of publicCopies()) {
+		const file: DocumentFile = [copyPath(copy), copy.bytes, copy.sha256.slice(0, 16)];
+		if (copy.topic !== 'constitutions' && copy.topic !== 'tribal-law') {
+			federal.push(file);
+			continue;
+		}
+		const ids = copy.nations.length > 0 ? copy.nations : copy.topic === 'constitutions' ? [copy.key.split('/')[1]] : [];
+		for (const id of ids) {
+			if (!id || !names.has(id)) continue;
+			byNation.set(id, [...(byNation.get(id) ?? []), file]);
+		}
+	}
+	const nationLists = new Map(
+		[...byNation].sort(([first], [second]) => first.localeCompare(second)).map(([id, files]) => [id, { title: names.get(id) ?? id, files }])
+	);
+	return { federal: { title: 'United States laws and government documents', files: federal }, nations: nationLists };
+}
+
+/** The short list of every set, for the Data section in Settings. */
+export function offlineSetSummary(): DocumentSetSummary {
+	const { federal, nations: nationLists } = offlineSets();
+	const sum = (files: DocumentFile[]) => files.reduce((total, [, bytes]) => total + bytes, 0);
+	return {
+		federal: { title: federal.title, count: federal.files.length, bytes: sum(federal.files) },
+		nations: Object.fromEntries(
+			[...nationLists].map(([id, list]) => [id, { title: list.title, count: list.files.length, bytes: sum(list.files) }])
+		)
+	};
+}
