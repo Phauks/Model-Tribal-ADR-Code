@@ -74,7 +74,7 @@ export const uploadStatusLabels: Record<UploadStatus, string> = {
 /** The line under each status on Your uploads. */
 export const uploadStatusExplanations: Record<UploadStatus, string> = {
 	sending: 'Still arriving. Choose the same file again on Send files to pick up where it stopped.',
-	checking: 'Safety checks are running. This usually takes a few minutes.',
+	checking: 'It is held for the virus check, and goes to the reviewers by itself once it passes.',
 	'not-accepted': 'This file could not be accepted.',
 	'waiting-for-review': 'It arrived and is waiting for a reviewer.',
 	'in-review': 'A reviewer is looking at it.',
