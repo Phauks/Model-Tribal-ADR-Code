@@ -90,7 +90,8 @@ export interface PageDownloads {
 	citable: boolean;
 }
 
-export function pageDownloads(path: string): PageDownloads {
+/** On the map page, the view on screen, whose table the menu offers first. */
+export function pageDownloads(path: string, mapTable?: { file: string; label: string }): PageDownloads {
 	const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
 	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data') {
 		return {
@@ -135,7 +136,17 @@ export function pageDownloads(path: string): PageDownloads {
 		};
 	}
 	if (path === '/nations/map') {
-		return { citable: false, files: mapFiles };
+		const table: PageFile[] = mapTable
+			? [
+					{
+						label: `The ${mapTable.label} table`,
+						description: 'The table beside the map, for a spreadsheet',
+						kind: 'table',
+						links: [{ format: 'CSV', link: `/nations/map/tables/${mapTable.file}.csv` }]
+					}
+				]
+			: [];
+		return { citable: false, files: [...table, ...mapFiles] };
 	}
 	if (path === '/nations/recourse') {
 		return {

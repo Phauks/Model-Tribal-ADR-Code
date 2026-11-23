@@ -93,7 +93,7 @@
 					/>
 				</div>
 			{/if}
-			<div class="drawing" class:tiled style:max-width="{layout.shareOfFullWidth * 100}%">
+			<div class="drawing" class:tiled class:waiting={view.key === 'lands' && map.tileMap && tileMapWanted && !tileMapReady && index === current} style:max-width="{layout.shareOfFullWidth * 100}%">
 				<ZoomableMap label="{view.label} map of {nationName}" maximum={view.key === 'lands' ? 16 : 8}>
 					<svg viewBox="0 0 {layout.width} {layout.height}" role="img" aria-labelledby="nation-map-title-{view.key}">
 						<title id="nation-map-title-{view.key}">{titles[view.key]}</title>
@@ -162,7 +162,7 @@
 					</ul>
 					<p class="small muted">
 						{#if tiled}
-							Outlines are the Census Bureau’s 2020 areas, drawn over a map of OpenStreetMap data. They are not a statement of the nation’s own boundaries. A dot marks an area until it is big enough to see. Hold Ctrl or ⌘ and scroll, or pinch, to zoom.
+							Outlines are the Census Bureau’s 2020 areas, drawn over a map of OpenStreetMap data. They are not a statement of the nation’s own boundaries. A dot marks an area until it is big enough to see. Scroll over the map, or pinch, to zoom.
 						{:else}
 							Outlines are the Census Bureau’s 2020 areas, simplified for a national map. They are not a statement of the nation’s own boundaries.{#if Object.values(view.layers).some((layer) => layer.dots.length > 0)}{' '}A dot marks an area too small to see.{/if}
 						{/if}
@@ -205,6 +205,11 @@
 	@media screen {
 		.drawing.tiled {
 			display: none;
+		}
+
+		/* While the tiled map loads, the drawn map keeps its place but is not shown, so the reader never sees one map and then the other. It shows again if the tiled map cannot start, and always without scripts. */
+		:global(html[data-scripts='on']) .drawing.waiting {
+			visibility: hidden;
 		}
 	}
 
