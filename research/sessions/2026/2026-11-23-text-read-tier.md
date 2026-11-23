@@ -115,6 +115,17 @@ These need a decision, not more reading (the review file gives each record's fin
 - **Grand Traverse Band peacemaking** (`grand-traverse-band-of-ottawa-and-chippewa-indians`, forum 1): the only source is the 1999 Honoring Nations report; it stays `inferred`.
 - **Eastern Band of Cherokee Indians training materials and the Pokagon Band's 2019 training**: known only from NARF news items; no nation text is expected.
 
+## Decisions (Nov. 23, 2026)
+
+Trevor confirmed the review and gave the go-ahead for the fixes proposed above ("You can do those fixes"):
+
+- **Nisqually, "24.19 Mediation of Disputes"** was withdrawn from the profile. The Tribe's current Title 24 makes 24.19 Post Trial Procedures, and the record rested only on the National Indian Law Library's 2016 table of contents. The Nisqually mediation provisions in Title 50 remain. The withdrawal is recorded in the nation's search log.
+- **Minnesota Chippewa Tribe compact** was removed. The Tribe is not a party to a gaming compact; its member bands hold their own, recorded on the band profiles ([decision record 0016](../../../docs/decisions/0016-component-bands-own-profiles.md)). The record had summarized the Prairie Island Indian Community's compact.
+- **Tulalip Alternative Court Code** and **Seminole Nation § 809** stay as recorded, under the grab-now rule, with their notes saying what each covers.
+- **Grand Traverse Band peacemaking** stays `inferred` until the search in pull list 4g returns the Band's own text.
+
+After these changes, 575 of 625 records in scope are read from the nation's own text, and 50 are unread (`select`, run after the changes).
+
 ## The 52 not confirmed
 
 | Why | Records |

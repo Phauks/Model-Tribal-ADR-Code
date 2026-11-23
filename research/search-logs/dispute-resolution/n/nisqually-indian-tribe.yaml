@@ -262,3 +262,15 @@ searches:
   reason: The project's copy does not hold the text (an index, table of contents or other document).
   records:
   - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://www.nisqually-nsn.gov/application/files/2617/1269/8025/Title_24_-_Judiciary_and_Judicial_Procedure.pdf
+  query: 24.19 Mediation of Disputes
+  outcome: not-found
+  reason: The Tribe's current Title 24 makes 24.19 Post Trial Procedures and has no mediation section,
+    so the provision known only from the National Indian Law Library's 2016 table of contents was withdrawn
+    at the lead author's direction (Nov. 23, 2026); the mediation provisions in Title 50 remain.
+  records:
+  - content/tribes/n/nisqually-indian-tribe.yaml#dispute_resolution.provisions

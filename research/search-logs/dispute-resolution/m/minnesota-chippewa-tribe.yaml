@@ -87,5 +87,17 @@ searches:
   reason: The project's copy does not hold the text (an index, table of contents or other document).
   records:
   - content/tribes/m/minnesota-chippewa-tribe.yaml#gaming.compacts
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/minnesota/
+  query: Minnesota Chippewa Tribe compact
+  outcome: not-found
+  reason: The Tribe is not a party to a gaming compact; its member bands hold their own compacts, recorded
+    on the band profiles (decision record 0016). The compact record, which summarized the Prairie Island
+    Indian Community's compact, was removed at the lead author's direction (Nov. 23, 2026).
+  records:
+  - content/tribes/m/minnesota-chippewa-tribe.yaml#gaming.compacts
 next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
   dispute resolution program, and check law library holdings of its code.
