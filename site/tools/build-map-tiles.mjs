@@ -12,12 +12,15 @@
 // Run from site/:
 //   node tools/build-map-tiles.mjs build [--basemap-build 20261122] [--work /tmp/map-tiles]
 //   node tools/build-map-tiles.mjs upload [--work /tmp/map-tiles]
+//   node tools/build-map-tiles.mjs upload-assets --assets path/to/basemaps-assets
 //
 // "build" writes the two files to the work folder and records their bucket keys, sizes and SHA-256 in geography/map-tiles.json. "upload" puts them in the bucket (skipping a file already there with the same SHA-256), with credentials from the environment: R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and CLOUDFLARE_ACCOUNT_ID (or R2_ACCOUNT_ID); R2_BUCKET changes the bucket. Upload before the change to geography/map-tiles.json is merged, so the live site never names a file the bucket lacks.
+//
+// "upload-assets" puts the basemap's label fonts (Noto Sans Regular, Medium and Italic, SIL Open Font License) and its light and dark icon sheets (MIT) in the bucket under map-tiles/assets/, from a checkout of https://github.com/protomaps/basemaps-assets (`git clone --depth 1 --filter=blob:none --sparse https://github.com/protomaps/basemaps-assets`, then `git sparse-checkout set "fonts/Noto Sans Regular" "fonts/Noto Sans Medium" "fonts/Noto Sans Italic" sprites/v4`), and records the checkout's commit in geography/map-tiles.json.
 
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { createReadStream, existsSync, mkdirSync, openSync, readFileSync, readSync, closeSync, statSync, writeFileSync } from 'node:fs';
+import { closeSync, createReadStream, existsSync, mkdirSync, openSync, readdirSync, readFileSync, readSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { geoArea, geoBounds } from 'd3-geo';
 import { unzipSync } from 'fflate';
@@ -210,6 +213,8 @@ async function build() {
 			retrieved
 		})
 	};
+	// The fonts and icon sheets are uploaded on their own (upload-assets), so their entry is kept.
+	if (existsSync(manifestPath)) manifest.assets = JSON.parse(readFileSync(manifestPath, 'utf8')).assets;
 	writeFileSync(manifestPath, `${JSON.stringify(manifest, null, '\t')}\n`);
 	const pointsFile = {
 		metadata: {
@@ -226,16 +231,71 @@ async function build() {
 	console.log(`Built ${points.length} land areas (${manifest.landAreas.bytes.toLocaleString('en-US')} bytes) and basemap ${build} (${manifest.basemap.bytes.toLocaleString('en-US')} bytes) in ${work}.`);
 }
 
+function bucketClient() {
+	return import('aws4fetch').then(({ AwsClient }) => {
+		const account = process.env.R2_ACCOUNT_ID ?? process.env.CLOUDFLARE_ACCOUNT_ID;
+		if (!account || !process.env.R2_ACCESS_KEY_ID || !process.env.R2_SECRET_ACCESS_KEY) {
+			throw new Error('Set R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and CLOUDFLARE_ACCOUNT_ID (or R2_ACCOUNT_ID).');
+		}
+		const client = new AwsClient({ accessKeyId: process.env.R2_ACCESS_KEY_ID, secretAccessKey: process.env.R2_SECRET_ACCESS_KEY, service: 's3', region: 'auto' });
+		const bucket = process.env.R2_BUCKET ?? 'model-tribal-adr-code-sources';
+		return { client, base: `https://${account}.r2.cloudflarestorage.com/${bucket}` };
+	});
+}
+
+const assetFonts = ['Noto Sans Regular', 'Noto Sans Medium', 'Noto Sans Italic'];
+const assetSprites = ['white', 'black'].flatMap((name) => [`${name}.json`, `${name}.png`, `${name}@2x.json`, `${name}@2x.png`]);
+
+/** Uploads the basemap's fonts and icon sheets, sixteen at a time, skipping files already there with the same SHA-256. */
+async function uploadAssets() {
+	const folder = option('assets');
+	if (!folder || !existsSync(join(folder, 'fonts'))) throw new Error('Give --assets, a checkout of protomaps/basemaps-assets (see the comment at the top of this file).');
+	const { client, base } = await bucketClient();
+	const files = [];
+	for (const font of assetFonts) {
+		for (const name of readdirSync(join(folder, 'fonts', font))) {
+			if (name.endsWith('.pbf')) files.push([join(folder, 'fonts', font, name), `glyphs/${font}/${name}`]);
+		}
+	}
+	for (const name of assetSprites) files.push([join(folder, 'sprites', 'v4', name), `sprites/${name}`]);
+	let sent = 0;
+	let skipped = 0;
+	const queue = [...files];
+	async function worker() {
+		for (let next = queue.shift(); next; next = queue.shift()) {
+			const [path, name] = next;
+			const bytes = readFileSync(path);
+			const sha256 = createHash('sha256').update(bytes).digest('hex');
+			const address = `${base}/map-tiles/assets/${name.split('/').map(encodeURIComponent).join('/')}`;
+			const head = await client.fetch(address, { method: 'HEAD' });
+			if (head.ok && head.headers.get('x-amz-meta-sha256') === sha256) {
+				skipped += 1;
+				continue;
+			}
+			const response = await client.fetch(address, { method: 'PUT', body: bytes, headers: { 'x-amz-meta-sha256': sha256 } });
+			if (!response.ok) throw new Error(`The bucket refused ${name}: ${response.status}`);
+			sent += 1;
+		}
+	}
+	await Promise.all(Array.from({ length: 16 }, worker));
+	const commit = execFileSync('git', ['-C', folder, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+	const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+	manifest.assets = {
+		prefix: 'map-tiles/assets/',
+		source: `https://github.com/protomaps/basemaps-assets/tree/${commit}`,
+		fonts: assetFonts,
+		font_license: 'SIL Open Font License 1.1',
+		sprites: assetSprites,
+		sprite_license: 'MIT (derived from tangrams/icons)',
+		files: files.length
+	};
+	writeFileSync(manifestPath, `${JSON.stringify(manifest, null, '\t')}\n`);
+	console.log(`Uploaded ${sent} map files; ${skipped} were already in the bucket.`);
+}
+
 /** Uploads one file to R2 through its S3 interface, in 64 MB parts, recording its SHA-256 as metadata. */
 async function upload() {
-	const { AwsClient } = await import('aws4fetch');
-	const account = process.env.R2_ACCOUNT_ID ?? process.env.CLOUDFLARE_ACCOUNT_ID;
-	if (!account || !process.env.R2_ACCESS_KEY_ID || !process.env.R2_SECRET_ACCESS_KEY) {
-		throw new Error('Set R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and CLOUDFLARE_ACCOUNT_ID (or R2_ACCOUNT_ID).');
-	}
-	const client = new AwsClient({ accessKeyId: process.env.R2_ACCESS_KEY_ID, secretAccessKey: process.env.R2_SECRET_ACCESS_KEY, service: 's3', region: 'auto' });
-	const bucket = process.env.R2_BUCKET ?? 'model-tribal-adr-code-sources';
-	const base = `https://${account}.r2.cloudflarestorage.com/${bucket}`;
+	const { client, base } = await bucketClient();
 	const work = option('work', '/tmp/map-tiles');
 	const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 	const files = [
@@ -289,4 +349,5 @@ async function upload() {
 const command = process.argv[2];
 if (command === 'build') await build();
 else if (command === 'upload') await upload();
-else console.log('Usage: node tools/build-map-tiles.mjs build|upload [--work folder] [--basemap-build YYYYMMDD]');
+else if (command === 'upload-assets') await uploadAssets();
+else console.log('Usage: node tools/build-map-tiles.mjs build|upload|upload-assets [--work folder] [--basemap-build YYYYMMDD] [--assets folder]');

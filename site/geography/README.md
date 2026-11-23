@@ -58,3 +58,5 @@ node tools/build-map-tiles.mjs upload --work /tmp/map-tiles
 ```
 
 `build` downloads the Census files and the latest Protomaps build (or the one given with `--basemap-build YYYYMMDD`), writes the two PMTiles files to the work folder, and rewrites `map-tiles.json` and `census-land-area-points-2020.json`. `upload` puts the files in the bucket under `map-tiles/`, skipping any already there with the same SHA-256; it reads `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` and `CLOUDFLARE_ACCOUNT_ID` from the environment. Upload before merging the new `map-tiles.json`, so the live site never names a file the bucket lacks. Each file's name carries its build (the land areas' SHA-256, the basemap's date), so browsers may keep tiles for a year. Rebuild after a change to `withdrawn-land-areas.json`.
+
+The basemap's labels and icons need its fonts (Noto Sans, SIL Open Font License) and icon sheets (MIT), which `node tools/build-map-tiles.mjs upload-assets --assets <folder>` puts in the bucket under `map-tiles/assets/` from a checkout of [protomaps/basemaps-assets](https://github.com/protomaps/basemaps-assets); the comment at the top of the script says which folders to check out.

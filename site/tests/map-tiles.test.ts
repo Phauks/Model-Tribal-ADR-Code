@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { afterEach, describe, expect, it } from 'vitest';
-import { forgetMapTileFiles, isTileAddress, serveMapTile, tileSets } from '../src/lib/server/map-tile-serving.ts';
+import { forgetMapTileFiles, isTileAddress, mapAssetKey, serveMapAsset, serveMapTile, tileSets } from '../src/lib/server/map-tile-serving.ts';
 
 /** A one-area PMTiles file (Blue Lake Rancheria's bounding box, zooms 0 to 4), made with tippecanoe. */
 const fixture = readFileSync(new URL('./fixtures/map-tiles.pmtiles', import.meta.url));
@@ -70,5 +70,26 @@ describe('serving map tiles from the bucket', () => {
 		expect((await serveMapTile(bucket, 'other', 0, 0, 0)).status).toBe(404);
 		expect((await serveMapTile(bucket, landAreas.set, 0, 1, 0)).status).toBe(404);
 		expect(reads).toEqual([]);
+	});
+});
+
+describe('serving the map fonts and icons', () => {
+	it('names only the fonts and icon sheets the basemap uses', () => {
+		expect(mapAssetKey('glyphs/Noto Sans Regular/0-255.pbf')).toBe('map-tiles/assets/glyphs/Noto Sans Regular/0-255.pbf');
+		expect(mapAssetKey('sprites/black@2x.png')).toBe('map-tiles/assets/sprites/black@2x.png');
+		expect(mapAssetKey('glyphs/Comic Sans/0-255.pbf')).toBeUndefined();
+		expect(mapAssetKey('../land-areas-fe4ab6eac717.pmtiles')).toBeUndefined();
+		expect(mapAssetKey('sprites/white.json/../../secret')).toBeUndefined();
+	});
+
+	it('serves a font range with its type, and refuses anything else', async () => {
+		const glyphs = new Uint8Array([1, 2, 3]);
+		const { bucket } = memoryBucket({ 'map-tiles/assets/glyphs/Noto Sans Medium/256-511.pbf': glyphs });
+		const response = await serveMapAsset(bucket, 'glyphs/Noto Sans Medium/256-511.pbf');
+		expect(response.status).toBe(200);
+		expect(response.headers.get('content-type')).toBe('application/x-protobuf');
+		expect(new Uint8Array(await response.arrayBuffer())).toEqual(glyphs);
+		expect((await serveMapAsset(bucket, 'glyphs/Noto Sans Medium/512-767.pbf')).status).toBe(404);
+		expect((await serveMapAsset(bucket, 'other/file.txt')).status).toBe(404);
 	});
 });

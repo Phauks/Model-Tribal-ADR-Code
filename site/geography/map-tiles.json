@@ -46,5 +46,27 @@
 		"attribution": "© OpenStreetMap contributors",
 		"region": "geography/map-tile-region.json",
 		"retrieved": "2026-11-23"
+	},
+	"assets": {
+		"prefix": "map-tiles/assets/",
+		"source": "https://github.com/protomaps/basemaps-assets/tree/028c18f713baecad011301ff7a69acc39bcc2ae7",
+		"fonts": [
+			"Noto Sans Regular",
+			"Noto Sans Medium",
+			"Noto Sans Italic"
+		],
+		"font_license": "SIL Open Font License 1.1",
+		"sprites": [
+			"white.json",
+			"white.png",
+			"white@2x.json",
+			"white@2x.png",
+			"black.json",
+			"black.png",
+			"black@2x.json",
+			"black@2x.png"
+		],
+		"sprite_license": "MIT (derived from tangrams/icons)",
+		"files": 776
 	}
 }

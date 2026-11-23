@@ -81,3 +81,36 @@ export async function serveMapTile(bucket: R2Bucket, setName: string, z: number,
 	if (!tile || tile.data.byteLength === 0) return new Response(null, { status: 204, headers: tileHeaders });
 	return new Response(tile.data, { status: 200, headers: tileHeaders });
 }
+
+/**
+ * The basemap's fonts and icons, from the Protomaps basemaps-assets repository (fonts under the SIL Open Font License, icons MIT), kept in the bucket under map-tiles/assets/ by tools/build-map-tiles.mjs. Only these files are served: label glyphs of the three Noto Sans fonts the basemap uses, and the light and dark icon sheets.
+ */
+const assetPattern = /^(glyphs\/Noto Sans (Regular|Medium|Italic)\/\d{1,5}-\d{1,5}\.pbf|sprites\/(white|black)(@2x)?\.(json|png))$/;
+
+const assetTypes: Record<string, string> = {
+	pbf: 'application/x-protobuf',
+	json: 'application/json',
+	png: 'image/png'
+};
+
+/** The bucket key of a map asset, or undefined for any path the map does not use. */
+export function mapAssetKey(path: string): string | undefined {
+	return assetPattern.test(path) ? `map-tiles/assets/${path}` : undefined;
+}
+
+/** The response for /map-tiles/assets/<path>. */
+export async function serveMapAsset(bucket: R2Bucket, path: string): Promise<Response> {
+	const key = mapAssetKey(path);
+	const object = key ? await bucket.get(key) : null;
+	if (!object || !('arrayBuffer' in object)) return new Response('No such map file.', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+	return new Response(await object.arrayBuffer(), {
+		status: 200,
+		headers: {
+			'Content-Type': assetTypes[path.split('.').at(-1) ?? ''] ?? 'application/octet-stream',
+			// A week: the files change only when the basemap's style does.
+			'Cache-Control': 'public, max-age=604800',
+			'X-Content-Type-Options': 'nosniff',
+			'Cross-Origin-Resource-Policy': 'same-origin'
+		}
+	});
+}
