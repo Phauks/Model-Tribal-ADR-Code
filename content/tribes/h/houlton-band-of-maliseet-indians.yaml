@@ -174,6 +174,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Houlton Band of Maliseet Indians
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Houlton Band of Maliseet Indians". Also listed under the same Area in: indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Houlton Band of Maliseet Indians".
 governance:
 - aspect: head-of-government
   value: Tribal Chief
@@ -227,6 +243,32 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Maine is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Maine. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Maine by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: implementation-grant
+  detail: Received a Justice Department Tribal Jurisdiction Program grant (fiscal year 2024) for special Tribal criminal jurisdiction. These grants also fund planning, so the grant alone does not show that the nation exercises the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Appendix D (PDF p.52)
+  note: Listed as "HOULTON BAND OF MALISEET INDIANS".
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: Indians and tribes in Maine other than the Passamaquoddy and Penobscot, including the Houlton Band of Maliseets, and their lands are subject to state civil and criminal jurisdiction and state courts as any other person or land, except where the Act provides otherwise. (Pub. L. No. 96-420, § 6(a), 94 Stat. at 1793.)
+  source: public-law-96-420
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 96-420 § 6(a), 94 Stat. at 1793
+  note: Section 6(e)(2) (94 Stat. at 1794) lets the State and the Band agree on state jurisdiction over Band lands. Section 6(a) is "except as provided in section 8(e) and section 5(d)(4)." Houlton Band is not named in 6(a); it falls in "all other Indians." Section 6(b)(1) names only the two tribes.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

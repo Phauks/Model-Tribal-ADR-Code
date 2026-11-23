@@ -195,6 +195,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: 'Listed as "Karuk Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Karuk Tribe of California (1998)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: governing-body
   value: Tribal Council

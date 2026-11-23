@@ -1,0 +1,54 @@
+profile: content/tribes/o/oneida-nation.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Oneida Nation peacemaking mediation division video
+  outcome: not-found
+  reason: Results were code PDFs and NARF peacemaking pages, with no Oneida video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Oneida Nation judiciary youtube video
+  outcome: not-found
+  reason: Results were Oneida judiciary web pages and PDFs, with no video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://oneida-nsn.gov/judiciary/
+  query: embedded video, gallery or podcast about the judiciary or peacemaking
+  outcome: error
+  reason: Fetch was refused because the session's web-fetch budget was used up, so the page was not read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://oneida-nsn.gov/government/judiciary/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: blocked
+  reason: Fetched with curl; HTTP 403 or a bot check page, which the project does not try to get past.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://oneida-nsn.gov/judiciary/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: blocked
+  reason: Fetched with curl; HTTP 403 or a bot check page, which the project does not try to get past.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oneida-nsn.gov/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: blocked
+  reason: Fetched with curl; HTTP 403 or a bot check page, which the project does not try to get past.
+next_steps: The Nation's site refused curl (HTTP 403); a person can open the Judiciary and Peacemaking and Mediation Division pages in a browser.

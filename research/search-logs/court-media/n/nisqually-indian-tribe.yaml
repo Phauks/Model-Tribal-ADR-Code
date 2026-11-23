@@ -1,0 +1,38 @@
+profile: content/tribes/n/nisqually-indian-tribe.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Nisqually Indian Tribe tribal court video youtube
+  outcome: not-found
+  reason: Results were the Tribe's Welcome to Tribal Court page and Judicial Services page; no video from the Tribe appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Nisqually peacemaking podcast or video judicial services
+  outcome: not-found
+  reason: Results were general peacemaking media from other nations and organizations; none was Nisqually-specific.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Nisqually tribal court judge podcast
+  outcome: not-found
+  reason: The only Nisqually podcast was from Metro Parks Tacoma about Fort Nisqually, not the Tribe's court, so it was not counted.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.nisqually-nsn.gov/tribal-services/Judicial-Services
+  query: video, photos
+  outcome: not-found
+  reason: Fetched with curl. Judicial Services page loaded with no video or court photos; footer says 'Nisqually Indian Tribe. All Rights Reserved.'; site links a YouTube channel (UCn1OzIjE2cVB5aQ1nPlLXUQ) not opened.
+next_steps: Open the Nisqually YouTube channel https://www.youtube.com/channel/UCn1OzIjE2cVB5aQ1nPlLXUQ by hand for court videos.

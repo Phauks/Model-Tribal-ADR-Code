@@ -44,6 +44,7 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0035](0035-follow-pages-with-notices-that-never-quote.md) | Following pages, with notices that never say what changed | Accepted |
 | [0036](0036-show-every-story-in-full.md) | Show every story in full on the website | Accepted |
 | [0037](0037-keep-a-copy-of-every-directly-cited-page.md) | Keep our own copy of every page a record directly cites | Accepted |
+| [0038](0038-files-people-send-stored-in-the-bucket-with-youtube-links.md) | Files people send are stored in the private bucket, and a video can be a YouTube link | Accepted |
 | [0039](0039-website-map-uses-maplibre-and-our-own-tiles.md) | Draw the website's map with MapLibre and the project's own map tiles | Accepted |
 | [0042](0042-governance-facts-from-governing-documents.md) | Record how each nation's government is set up, as plain facts from its own documents | Accepted |
 | [0043](0043-link-to-the-national-indian-law-library-for-its-copies.md) | Link to the National Indian Law Library for copies taken from it | Accepted |

@@ -302,6 +302,21 @@
       },
       "unevaluatedProperties": false
     },
+    "indian_health_service": {
+      "type": "array",
+      "description": "The Indian Health Service Area that serves the nation and, where the Indian Health Service names them, its service units or health programs and who runs them. Each fact comes from one source; the Area is repeated in each so that a fact stands on its own.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["area"],
+        "properties": {
+          "area": { "type": "string", "description": "Indian Health Service Area, such as Billings or Navajo." },
+          "service_unit": { "type": "string", "description": "Service unit, service area or health program as the source names it." },
+          "operator": { "type": "string", "enum": ["indian-health-service", "tribal"], "description": "Who runs the nation's health services as the source states it: the Indian Health Service itself (Direct Service Tribes list), or the nation or a Tribal organization under the Indian Self-Determination and Education Assistance Act." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "government_structure": {
       "type": "array",
       "description": "The legal form of the government, only where a source states it.",
@@ -639,13 +654,52 @@
             "type": "string",
             "enum": [
               "public-law-280",
+              "state-jurisdiction-statute",
               "violence-against-women-act-special-tribal-criminal-jurisdiction",
               "tribal-law-and-order-act-enhanced-sentencing",
               "indian-child-welfare-act",
               "other"
             ]
           },
-          "value": { "type": "string", "description": "Short value as defined for the topic in docs/data-model.md, for example mandatory-state, optional-state, excepted, retroceded, exercising, implementing or designated-agent-listed." },
+          "value": { "type": "string", "description": "Short value as defined for the topic in docs/data-model.md, for example mandatory-state, optional-state, not-a-public-law-280-state, excepted, retroceded, state-criminal-jurisdiction, exercising, implementing or designated-agent-listed." },
+          "detail": { "type": "string" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "treaties": {
+      "type": "array",
+      "description": "Ratified United States treaties signed by the nation or by the tribes and bands it descends from, each linked to its text in Kappler's Indian Affairs: Laws and Treaties. A link to a historic signatory is a matched fact with its own confidence.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["title", "signed"],
+        "properties": {
+          "title": { "type": "string", "description": "The treaty's title as Kappler gives it." },
+          "signed": { "$ref": "common.schema.json#/$defs/partialDate" },
+          "statutes_at_large": { "type": "string", "description": "Statutes at Large citation, such as 15 Stat. 667." },
+          "kappler": {
+            "type": "object",
+            "properties": { "volume": { "type": "integer" }, "page": { "type": "integer" }, "link": { "type": "string", "format": "uri" } },
+            "additionalProperties": false
+          },
+          "signatory": { "type": "string", "description": "How the treaty names the party the nation descends from." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "land_establishment": {
+      "type": "array",
+      "description": "How the nation's reservation or other land base was set aside (treaty, executive order, statute, agreement, purchase or proclamation), with the instrument cited.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["land_area", "method"],
+        "properties": {
+          "land_area": { "type": "string", "description": "The reservation, rancheria, colony or other area as the source names it." },
+          "method": { "type": "string", "enum": ["treaty", "executive-order", "statute", "agreement", "secretarial-proclamation", "purchase", "court-decree", "state-action", "other"] },
+          "instrument": { "type": "string", "description": "The treaty, order or act, in short citation form." },
+          "date": { "$ref": "common.schema.json#/$defs/partialDate" },
           "detail": { "type": "string" }
         },
         "unevaluatedProperties": false

@@ -148,6 +148,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Miccosukee Tribe of Indians
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Miccosukee Tribe of Indians of Florida". Also listed under the same Area in: indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Miccosukee Tribe of Indians of Florida".
 governance:
 - aspect: form
   value: Constitution and Bylaws under Section 16 of the Indian Reorganization Act

@@ -1,0 +1,38 @@
+profile: content/tribes/a/alabama-coushatta-tribe-of-texas.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Alabama-Coushatta Tribe of Texas peacemaking video
+  outcome: found
+  reason: Results were mostly history and government pages, but one result pointed to the NARF Videos About Peacemaking page, which lists a session with an Alabama-Coushatta presenter.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Alabama-Coushatta tribal court youtube
+  outcome: not-found
+  reason: Results were court codes, a news item about new appellate judges and NARF pages, with no YouTube or video result.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://peacemaking.narf.org/videos-about-peacemaking/
+  query: list of peacemaking videos, looking for Alabama-Coushatta
+  outcome: found
+  reason: The page lists 18 videos with no YouTube or Vimeo links, and one 2014 conference session names an Alabama-Coushatta peacemaker as a presenter.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=Y4PNdEMwPqA
+  query: title and channel of the video
+  outcome: found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "Peacemaking Programs at Work in Tribal Nations Tribal Models" on the Native American Rights Fund channel, public and embeddable on 2026-11-23.'
+next_steps: The nation website alabama-coushatta.com was not checked because the fetch budget ran out. Check its news and media pages and look for a tribal court or peacemaking video on the tribe's own YouTube channel. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

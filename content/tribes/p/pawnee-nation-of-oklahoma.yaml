@@ -151,6 +151,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Pawnee Nation of Oklahoma". Also listed under the same Area in: indian-health-service-direct-service-tribes, indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Pawnee Nation of Oklahoma (2022)); the list does not say which service unit or programs the compact covers.'
+- area: Oklahoma City
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Oklahoma City Area
+  note: Listed as "Pawnee Nation of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Pawnee Indians of Oklahoma" among organizations under constitutions approved
@@ -698,6 +714,120 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+treaties:
+- title: Treaty with the Grand Pawnee, 1818
+  signed: '1818-06-18'
+  statutes_at_large: 7 Stat. 172
+  kappler:
+    volume: 2
+    page: 156
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-grand-pawnee-1818-0156
+  signatory: Grand Pawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 156 (Treaty with the Grand Pawnee, 1818; Kappler header "June 18, 1818. | 7 Stat., 172. | Proclamation, Jan. 7, 1819.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Pawnee Nation of Oklahoma; bands Grand, Loup, Republican, Tappage, Marhar, Noisy The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Noisy Pawnee, 1818
+  signed: '1818-06-19'
+  statutes_at_large: 7 Stat. 173
+  kappler:
+    volume: 2
+    page: 157
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-noisy-pawnee-1818-0157
+  signatory: Noisy Pawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 157 (Treaty with the Noisy Pawnee, 1818; Kappler header "June 19, 1818. | 7 Stat., 173. | Proclamation, Jan. 7, 1819.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Pawnee Nation of Oklahoma; bands Grand, Loup, Republican, Tappage, Marhar, Noisy The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Pawnee Republic, 1818
+  signed: '1818-06-20'
+  statutes_at_large: 7 Stat. 174
+  kappler:
+    volume: 2
+    page: 158
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-pawnee-republic-1818-0158
+  signatory: Pawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 158 (Treaty with the Pawnee Republic, 1818; Kappler header "June 20, 1818. | 7 Stat., 174. | Proclamation, Jan. 17, 1819.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Pawnee Nation of Oklahoma; bands Grand, Loup, Republican, Tappage, Marhar, Noisy The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Pawnee Marhar, 1818
+  signed: '1818-06-22'
+  statutes_at_large: 7 Stat. 175
+  kappler:
+    volume: 2
+    page: 159
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-pawnee-marhar-1818-0159
+  signatory: Pawnee Marhar
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 159 (Treaty with the Pawnee Marhar, 1818; Kappler header "June 22, 1818. | 7 Stat., 175. | Proclamation, Jan. 5, 1819.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Pawnee Nation of Oklahoma; bands Grand, Loup, Republican, Tappage, Marhar, Noisy The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Pawnee Tribe, 1825
+  signed: '1825-09-30'
+  statutes_at_large: 7 Stat. 279
+  kappler:
+    volume: 2
+    page: 258
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-pawnee-tribe-1825-0258
+  signatory: Pawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 258 (Treaty with the Pawnee Tribe, 1825; Kappler header "Sept. 30, 1825. | 7 Stat., 279. | Proclamation, Feb. 6, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Pawnee Nation of Oklahoma; bands Grand, Loup, Republican, Tappage, Marhar, Noisy The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Pawnee, 1833
+  signed: '1833-10-09'
+  statutes_at_large: 7 Stat. 448
+  kappler:
+    volume: 2
+    page: 416
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-pawnee-1833-0416
+  signatory: Pawnee Republicans; Grand Pawnee; Pawnee Loups; Pawnee Tappahs
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 416 (Treaty with the Pawnee, 1833; Kappler header "Oct. 9, 1833. | 7 Stat., 448.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Pawnee Nation of Oklahoma; bands Grand, Loup, Republican, Tappage, Marhar, Noisy The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Pawnee - Grand, Loups, Republicans, etc., 1848
+  signed: '1848-08-06'
+  statutes_at_large: 9 Stat. 949
+  kappler:
+    volume: 2
+    page: 571
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-pawnee-grand-loups-republicans-etc-1848-0571
+  signatory: Pawnee; Grand Pawnee; Pawnee Loups; Pawnee Republicans; Pawnee Tappahs
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 571 (Treaty with the Pawnee - Grand, Loups, Republicans, etc., 1848; Kappler header "Aug. 6, 1848. | 9 Stat., 949. | Ratified Jan. 8, 1849.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Pawnee Nation of Oklahoma; bands Grand, Loup, Republican, Tappage, Marhar, Noisy The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Pawnee, 1857
+  signed: '1857-09-24'
+  statutes_at_large: 11 Stat. 729
+  kappler:
+    volume: 2
+    page: 764
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-pawnee-1857-0764
+  signatory: Pawnee; Grand Pawnee; Pawnee Republicans; Pawnee Loups; Pawnee Tappahs
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 764 (Treaty with the Pawnee, 1857; Kappler header "Sept. 24, 1857. | 11 Stats., 729. | Ratified, Mar. 31, 1858. | Proclaimed May 26, 1858.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Pawnee Nation of Oklahoma; bands Grand, Loup, Republican, Tappage, Marhar, Noisy The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

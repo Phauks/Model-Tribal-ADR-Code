@@ -131,6 +131,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Council
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: 'Listed as "Native Village of Council". Name on Indian Health Service profile differs from roster name (roster: "Native Village of Council"); matched manually. Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.'
+- area: Alaska
+  service_unit: Norton Sound Service Area
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: 'The source''s words: "Native Village of Council".'
+  operator: tribal
 governance:
 - aspect: head-of-government
   value: Chairperson

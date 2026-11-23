@@ -1,0 +1,30 @@
+profile: content/tribes/s/snoqualmie-indian-tribe.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Snoqualmie Tribe Peacemaker Court video
+  outcome: not-found
+  reason: Results were NARF video pages and general peacemaking material, but none was shown to be from the Snoqualmie Tribe.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.snoqualmietribe.us/TribalCourt
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: blocked
+  reason: Fetched with curl; HTTP 202 or a bot check page, which the project does not try to get past.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://snoqualmietribe.us/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+next_steps: The TribalCourt page answered with a bot check; a person can open it in a browser.
