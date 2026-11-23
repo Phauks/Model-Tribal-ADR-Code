@@ -1,6 +1,6 @@
 profile: content/tribes/m/mattaponi-indian-tribe.yaml
 topic: contacts
-status: none-found
+status: found
 last_searched: '2026-11-22'
 searches:
 - date: '2026-11-22'
@@ -11,3 +11,19 @@ searches:
   query: contact page and general email
   outcome: not-found
   reason: The website on file is shared with other nations or is a social media page, so its contact page is not this nation's own.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Mattaponi Indian Tribe King William County Virginia official website contact
+  outcome: found
+  reason: Found mattaponi.gov, the tribe's own site, with contact page. Searched for mattaponi-indian-tribe-and-reservation, a second record for the same group, merged into this one on Nov. 23, 2026.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://mattaponi.gov/
+  query: official website, contact page, general email
+  outcome: found
+  reason: Claude found the site by web search; a script opened it and found each value on the page named. Searched for mattaponi-indian-tribe-and-reservation, a second record for the same group, merged into this one on Nov. 23, 2026.

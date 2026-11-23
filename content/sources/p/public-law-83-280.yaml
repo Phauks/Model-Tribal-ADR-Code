@@ -25,7 +25,10 @@ citation:
       - 21
 original_link: https://www.govinfo.gov/content/pkg/STATUTE-67/pdf/STATUTE-67-Pg588.pdf
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260223095828/https://www.govinfo.gov/content/pkg/STATUTE-67/pdf/STATUTE-67-Pg588.pdf
+  captured: '2026-02-23'
 history:
   status: live
   last_checked: '2026-11-21'

@@ -21,7 +21,10 @@ citation:
       - 21
 original_link: https://thorpe.law.ou.edu/sol_opinions/p451-475.html
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260512131741/https://thorpe.law.ou.edu/sol_opinions/p451-475.html
+  captured: '2026-05-12'
 history:
   status: live
   last_checked: '2026-11-21'
