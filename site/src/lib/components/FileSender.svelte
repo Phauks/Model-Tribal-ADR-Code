@@ -30,6 +30,7 @@
 	import FolderUp from '@lucide/svelte/icons/folder-up';
 	import Image from '@lucide/svelte/icons/image';
 	import Link from '@lucide/svelte/icons/link';
+	import Pencil from '@lucide/svelte/icons/pencil';
 	import Pause from '@lucide/svelte/icons/pause';
 	import Play from '@lucide/svelte/icons/play';
 	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
@@ -41,7 +42,7 @@
 	import Upload from '@lucide/svelte/icons/upload';
 	import X from '@lucide/svelte/icons/x';
 	import { isZipName, unzipFiles, ZipProblem } from '#lib/unzip-files.ts';
-	import { readableSize } from '#lib/uploads.ts';
+	import { readableSize, refusedByName } from '#lib/uploads.ts';
 	import { youtubeVideoIdentifier } from '#lib/video-links.ts';
 
 	type RowState = 'ready' | 'sending' | 'paused' | 'sent' | 'problem';
@@ -60,6 +61,8 @@
 		retryable: boolean;
 		chosen: boolean;
 		reference: string | null;
+		/** A note that goes with this file only, in place of the page's (Intake). */
+		note: string;
 	}
 
 	interface Props {
@@ -79,6 +82,8 @@
 		/** Reads the earlier files again. Given, the table refreshes itself while a sent file waits for its virus check. */
 		refresh?: () => Promise<unknown>;
 		sendLabel?: (count: number) => string;
+		/** Offer "Add a note to the chosen files" (Intake); the note is sent as `note` with each of them. */
+		notes?: boolean;
 		/** Shown beside the table, such as the questions on Send files. */
 		aside?: Snippet<[{ sending: boolean }]>;
 	}
@@ -94,6 +99,7 @@
 		filedColumn = false,
 		refresh,
 		sendLabel = (count) => `Send ${count}`,
+		notes = false,
 		aside
 	}: Props = $props();
 
@@ -121,6 +127,10 @@
 	let linkProblem = $state('');
 	let dragDepth = $state(0);
 	let dragCount = $state(0);
+	/** Whether everything being dragged is a file (a folder has no type), so the drop card can say "files". */
+	let dragAllFiles = $state(false);
+	let noteOpen = $state(false);
+	let noteText = $state('');
 	let running = $state(false);
 	let problem = $state('');
 	let fileInput: HTMLInputElement | undefined = $state();
@@ -221,7 +231,8 @@
 					message: problem instanceof ZipProblem ? problem.message : 'This ZIP could not be opened.',
 					retryable: false,
 					chosen: false,
-					reference: null
+					reference: null,
+					note: ''
 				});
 			}
 		}
@@ -229,18 +240,21 @@
 		for (const file of unpacked) {
 			// Folders bring their hidden files with them (.DS_Store, desktop.ini); leave those out.
 			if (file.name.startsWith('.') || file.name === 'desktop.ini' || file.name === 'Thumbs.db') continue;
+			// A kind of file that is never accepted shows as a problem at once, not after Send.
+			const refusal = refusedByName(file.name);
 			added.push({
 				key: nextKey++,
 				file,
 				link: null,
 				name: file.webkitRelativePath || file.name,
 				size: file.size,
-				state: 'ready',
+				state: refusal ? 'problem' : 'ready',
 				progress: 0,
-				message: '',
-				retryable: true,
+				message: refusal ?? '',
+				retryable: !refusal,
 				chosen: false,
-				reference: null
+				reference: null,
+				note: ''
 			});
 		}
 		rows = [...rows, ...added];
@@ -265,7 +279,8 @@
 				message: '',
 				retryable: true,
 				chosen: false,
-				reference: null
+				reference: null,
+				note: ''
 			}
 		];
 		linkText = '';
@@ -304,7 +319,9 @@
 			if (!hasFiles(event)) return;
 			event.preventDefault();
 			dragDepth += 1;
-			dragCount = event.dataTransfer?.items.length ?? 0;
+			const items = [...(event.dataTransfer?.items ?? [])];
+			dragCount = items.length;
+			dragAllFiles = items.length > 0 && items.every((item) => item.kind === 'file' && item.type !== '');
 		};
 		const over = (event: DragEvent) => {
 			if (hasFiles(event)) event.preventDefault();
@@ -410,7 +427,8 @@
 			fileName: file.name,
 			sizeBytes: file.size,
 			groupIdentifier,
-			...extra()
+			...extra(),
+			...(row.note ? { note: row.note } : {})
 		});
 		if (!started.ok) {
 			if (started.data.errors) {
@@ -552,30 +570,47 @@
 		rows = rows.filter((row) => !row.chosen || row.state === 'sending');
 	}
 
+	/** Gives the chosen files that are not sent yet their own note. */
+	function saveNote() {
+		for (const row of chosen) if (row.state !== 'sent' && row.state !== 'sending') row.note = noteText.trim();
+		noteOpen = false;
+		noteText = '';
+	}
+
+	/** The second line of a row on a phone: its status, then its size or where it was filed (design/upload-table, mockup 4). */
+	function rowDetail(row: Row): string {
+		if (row.state === 'problem') return '';
+		const after = row.reference ? earlierByReference.get(row.reference) : undefined;
+		if (after?.filedAs) return after.filedAs;
+		return row.link ? 'Video' : readableSize(row.size);
+	}
+
 	function chooseShown(value: boolean) {
 		for (const row of shown) if (row.state !== 'sending') row.chosen = value;
 	}
 
 	const tabs = [
 		{ value: 'all', label: 'All' },
-		{ value: 'ready', label: 'Ready' },
+		{ value: 'ready', label: 'Ready', phone: false },
 		{ value: 'sending', label: 'Sending' },
-		{ value: 'sent', label: 'Sent' },
+		{ value: 'sent', label: 'Sent', phone: false },
 		{ value: 'problem', label: 'Problems' }
 	] as const;
 </script>
 
 <div class="sender" class:with-aside={!!aside}>
 	<div class="main">
-		<div class="strip">
-			<Upload size={20} aria-hidden="true" />
-			<span class="strip-text"><strong>Drop files{folders ? ' or folders' : ''} anywhere on this page</strong></span>
+		<div class="strip" class:empty={counts.all === 0}>
+			<span class="strip-icon"><Upload size={counts.all === 0 ? 32 : 20} aria-hidden="true" /></span>
+			<span class="strip-text"
+				><strong>{aside ? 'Drop files here' : `Drop files${folders ? ' or folders' : ''} anywhere on this page`}</strong></span
+			>
 			<label class="button button-quiet pick">
-				<Upload size={18} aria-hidden="true" /> Files
+				<Upload size={18} aria-hidden="true" /> <span class="wide-only">Files</span><span class="phone-only">Choose files</span>
 				<input bind:this={fileInput} class="visually-hidden" type="file" multiple onchange={(event) => void add(event.currentTarget.files ?? [])} />
 			</label>
 			{#if folders}
-				<label class="button button-quiet pick">
+				<label class="button button-quiet pick folder-pick">
 					<FolderUp size={18} aria-hidden="true" /> Folder
 					<input
 						bind:this={folderInput}
@@ -590,6 +625,9 @@
 				<button class="button button-quiet" type="button" aria-expanded={linkOpen} onclick={() => (linkOpen = !linkOpen)}>
 					<Link size={18} aria-hidden="true" /> YouTube
 				</button>
+			{/if}
+			{#if counts.all === 0}
+				<span class="strip-kinds small muted">PDF, Word, Excel, text, pictures, sound and video.</span>
 			{/if}
 		</div>
 		{#if linkOpen}
@@ -621,6 +659,7 @@
 					{#each tabs as choice (choice.value)}
 						<button
 							type="button"
+							class:wide-only={'phone' in choice}
 							class:on={tab === choice.value}
 							aria-pressed={tab === choice.value}
 							onclick={() => (tab = choice.value)}
@@ -631,16 +670,31 @@
 				</nav>
 				<span class="grow"></span>
 				{#if chosen.length > 0}
-					<span class="small muted">{chosen.length} chosen</span>
-					<button class="icon-button" type="button" aria-label="Remove the chosen files" title="Remove the chosen files" onclick={removeChosen}>
+					<span class="small muted wide-only">{chosen.length} chosen</span>
+					{#if notes}
+						<button
+							class="icon-button wide-only"
+							type="button"
+							aria-label="Add a note to the chosen files"
+							title="Add a note to the chosen files"
+							aria-expanded={noteOpen}
+							onclick={() => {
+								noteOpen = !noteOpen;
+								noteText = chosen.find((row) => row.note)?.note ?? '';
+							}}
+						>
+							<Pencil size={20} />
+						</button>
+					{/if}
+					<button class="icon-button wide-only" type="button" aria-label="Remove the chosen files" title="Remove the chosen files" onclick={removeChosen}>
 						<Trash size={20} />
 					</button>
 				{/if}
 				{#if finding}
-					<input class="find" type="search" aria-label="Find a file" placeholder="Find a file" bind:value={findText} />
+					<input class="find wide-only" type="search" aria-label="Find a file" placeholder="Find a file" bind:value={findText} />
 				{/if}
 				<button
-					class="icon-button"
+					class="icon-button wide-only"
 					type="button"
 					aria-label="Find a file"
 					title="Find a file"
@@ -653,6 +707,17 @@
 					<Search size={20} />
 				</button>
 			</div>
+			{#if noteOpen && chosen.length > 0}
+				<div class="field note-form">
+					<label for="chosen-note">Note for the {chosen.length} chosen file{chosen.length === 1 ? '' : 's'}</label>
+					<p class="hint">Such as which pull-list item it is, or what could not be got.</p>
+					<textarea id="chosen-note" rows="2" bind:value={noteText}></textarea>
+					<div class="inline">
+						<button class="button button-quiet" type="button" onclick={saveNote}>Save note</button>
+						<button class="button button-quiet" type="button" onclick={() => (noteOpen = false)}>Cancel</button>
+					</div>
+				</div>
+			{/if}
 
 			<div class="table-wrap">
 				<table>
@@ -681,33 +746,15 @@
 								<td class="choose">
 									<input type="checkbox" aria-label="Choose {row.name}" bind:checked={row.chosen} disabled={row.state === 'sending'} />
 								</td>
-								<td class="name"><span><Icon size={18} aria-hidden="true" /> <span class="text">{row.name}</span></span></td>
-								<td class="number">{row.link ? 'Video' : readableSize(row.size)}</td>
-								<td class="status" aria-live="polite">
-									{#if row.state === 'sending'}
-										<span class="small">Sending, {Math.floor(row.progress * 100)}%</span>
-										<span class="bar" aria-hidden="true"><span style:width="{Math.floor(row.progress * 100)}%"></span></span>
-									{:else if row.state === 'paused'}
-										<span class="small">Paused at {Math.floor(row.progress * 100)}%</span>
-									{:else if row.state === 'sent'}
-										{@const after = row.reference ? earlierByReference.get(row.reference) : undefined}
-										{#if after}
-											<span class="state" class:done={after.done} class:bad={after.problem} class:muted={!after.done && !after.problem}>
-												{#if after.done}<CircleCheck size={16} aria-hidden="true" />{:else if after.problem}<CircleAlert
-														size={16}
-														aria-hidden="true"
-													/>{:else}<Clock size={16} aria-hidden="true" />{/if}
-												{after.statusText}
-											</span>
-										{:else}
-											<span class="state done"><CircleCheck size={16} aria-hidden="true" /> Sent</span>
-										{/if}
-									{:else if row.state === 'problem'}
-										<span class="state bad"><CircleAlert size={16} aria-hidden="true" /> {row.message}</span>
-									{:else}
-										<span class="state muted">Ready</span>
-									{/if}
+								<td class="name">
+									<span><Icon size={18} aria-hidden="true" /> <span class="text">{row.name}</span></span>
+									{#if row.note}<span class="row-note small muted">Note: {row.note}</span>{/if}
+									<span class="phone-only phone-detail small">
+										{@render rowStatus(row)}{#if rowDetail(row)}<span class="muted"> · {rowDetail(row)}</span>{/if}
+									</span>
 								</td>
+								<td class="number">{row.link ? 'Video' : readableSize(row.size)}</td>
+								<td class="status" aria-live="polite">{@render rowStatus(row)}</td>
 								<td class="scan">
 									{#if row.state === 'sent' && !row.link}{@render scanBadge(
 											row.reference && earlierByReference.has(row.reference) ? earlierByReference.get(row.reference)?.scan : 'checking'
@@ -763,17 +810,18 @@
 						{#each shownEarlier as file (file.reference)}
 							<tr class:problem={file.problem}>
 								<td class="choose"></td>
-								<td class="name"><span><FileText size={18} aria-hidden="true" /> <span class="text">{file.name}</span></span></td>
-								<td class="number">{readableSize(file.sizeBytes)}</td>
-								<td class="status">
-									<span class="state" class:done={file.done} class:bad={file.problem} class:muted={!file.done && !file.problem}>
-										{#if file.done}<CircleCheck size={16} aria-hidden="true" />{:else if file.problem}<CircleAlert
-												size={16}
-												aria-hidden="true"
-											/>{:else}<Clock size={16} aria-hidden="true" />{/if}
-										{file.statusText}
+								<td class="name">
+									<span><FileText size={18} aria-hidden="true" /> <span class="text">{file.name}</span></span>
+									<span class="phone-only phone-detail small">
+										{@render earlierStatus(file)}{#if file.filedAs}<span class="muted"> · {file.filedAs}</span>{:else if !file.problem && file.sizeBytes}<span
+												class="muted"
+											>
+												· {readableSize(file.sizeBytes)}</span
+											>{/if}
 									</span>
 								</td>
+								<td class="number">{readableSize(file.sizeBytes)}</td>
+								<td class="status">{@render earlierStatus(file)}</td>
 								<td class="scan">{@render scanBadge(file.scan)}</td>
 								{#if filedColumn}<td class="small filed">{file.filedAs ?? ''}</td>{/if}
 								<td class="actions"></td>
@@ -792,7 +840,7 @@
 			<div class="foot">
 				<span>
 					<strong>{doneCount} of {rows.length} sent</strong>
-					<span class="small muted">
+					<span class="small muted wide-only">
 						· {readableSize(sentBytes) || '0 KB'} of {readableSize(totalBytes) || '0 KB'}{#if minutesLeft()}
 							· {minutesLeft()}{/if}
 					</span>
@@ -803,7 +851,7 @@
 					<button class="button button-quiet" type="button" onclick={retryProblems}><RefreshCw size={18} aria-hidden="true" /> Retry problems</button>
 				{/if}
 				{#if !aside}
-					<button class="button" type="button" disabled={running || waiting.length === 0} onclick={sendAll}>
+					<button class="button send" type="button" disabled={running || waiting.length === 0} onclick={sendAll}>
 						<Upload size={18} aria-hidden="true" />
 						{running ? 'Sending…' : waiting.length > 0 ? sendLabel(waiting.length) : 'Send'}
 					</button>
@@ -823,6 +871,42 @@
 	{/if}
 </div>
 
+{#snippet rowStatus(row: Row)}
+	{#if row.state === 'sending'}
+		<span class="small">Sending, {Math.floor(row.progress * 100)}%</span>
+		<span class="bar" aria-hidden="true"><span style:width="{Math.floor(row.progress * 100)}%"></span></span>
+	{:else if row.state === 'paused'}
+		<span class="small">Paused at {Math.floor(row.progress * 100)}%</span>
+	{:else if row.state === 'sent'}
+		{@const after = row.reference ? earlierByReference.get(row.reference) : undefined}
+		{#if after}
+			<span class="state" class:done={after.done} class:bad={after.problem} class:muted={!after.done && !after.problem}>
+				{#if after.done}<CircleCheck size={16} aria-hidden="true" />{:else if after.problem}<CircleAlert
+						size={16}
+						aria-hidden="true"
+					/>{:else}<Clock size={16} aria-hidden="true" />{/if}
+				{after.statusText}
+			</span>
+		{:else}
+			<span class="state done"><CircleCheck size={16} aria-hidden="true" /> Sent</span>
+		{/if}
+	{:else if row.state === 'problem'}
+		<span class="state bad"><CircleAlert size={16} aria-hidden="true" /> {row.message}</span>
+	{:else}
+		<span class="state muted">Ready</span>
+	{/if}
+{/snippet}
+
+{#snippet earlierStatus(file: EarlierFile)}
+	<span class="state" class:done={file.done} class:bad={file.problem} class:muted={!file.done && !file.problem}>
+		{#if file.done}<CircleCheck size={16} aria-hidden="true" />{:else if file.problem}<CircleAlert
+				size={16}
+				aria-hidden="true"
+			/>{:else}<Clock size={16} aria-hidden="true" />{/if}
+		{file.statusText}
+	</span>
+{/snippet}
+
 {#snippet scanBadge(scan: EarlierFile['scan'])}
 	{#if scan === 'clean'}
 		<span class="badge clean"><ShieldCheck size={14} aria-hidden="true" /> Clean</span>
@@ -837,7 +921,7 @@
 	<div class="drop-over" aria-hidden="true">
 		<div class="drop-card">
 			<Upload size={44} />
-			<p>{dragCount > 1 ? `Drop to add ${dragCount} items` : 'Drop to add'}</p>
+			<p>{dragCount > 1 ? `Drop to add ${dragCount} ${dragAllFiles ? 'files' : 'items'}` : 'Drop to add'}</p>
 		</div>
 	</div>
 {/if}
@@ -876,9 +960,42 @@
 		background: var(--color-surface);
 		margin-bottom: var(--space-4);
 	}
+	.strip-icon {
+		display: inline-flex;
+	}
 	.strip-text {
 		flex: 1;
 		min-width: 12rem;
+	}
+	/* Before any file is added: a large drop area, as drawn (design/upload-table, mockup 2). */
+	.strip.empty {
+		flex-direction: column;
+		justify-content: center;
+		min-height: 14rem;
+		padding: var(--space-5);
+		text-align: center;
+	}
+	.strip.empty .strip-icon {
+		color: var(--color-link);
+	}
+	.strip.empty .strip-text {
+		flex: none;
+		min-width: 0;
+	}
+	.strip-kinds {
+		flex-basis: 100%;
+	}
+	.phone-only {
+		display: none;
+	}
+	.row-note {
+		display: block;
+		margin: 2px 0 0 calc(18px + var(--space-2));
+		overflow-wrap: anywhere;
+	}
+	.note-form {
+		max-width: 40rem;
+		margin: var(--space-2) 0 var(--space-3);
 	}
 	.pick {
 		cursor: pointer;
@@ -940,8 +1057,18 @@
 		width: 20px;
 		height: 20px;
 	}
-	th {
+	/* Column headings in small capitals with no fill, as drawn (design/upload-table, mockup 1). */
+	thead th {
 		white-space: nowrap;
+		background: transparent;
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		border-bottom: 2px solid var(--color-line);
+	}
+	input[type='checkbox'] {
+		accent-color: var(--color-link);
 	}
 	.name {
 		min-width: 14rem;
@@ -1087,40 +1214,92 @@
 		font-weight: var(--font-weight-bold, 700);
 		margin: var(--space-2) 0 0;
 	}
+	/*
+	 * Phones (design/upload-table, mockup 4): a compact list of two-line rows
+	 * (the name, then the status with the size or where it was filed), no
+	 * checkboxes, one "Choose files" button, only the All, Sending and Problems
+	 * tabs, and a full-width Send button.
+	 */
 	@media (max-width: 40rem) {
+		.wide-only {
+			display: none !important;
+		}
+		.phone-only {
+			display: revert;
+		}
+		.strip,
+		.strip.empty {
+			justify-content: center;
+			min-height: 0;
+			padding: var(--space-3);
+		}
+		.strip-icon,
+		.strip-text,
+		.folder-pick,
+		.strip-kinds {
+			display: none;
+		}
 		thead {
 			display: none;
 		}
 		tr {
 			display: grid;
-			grid-template-columns: auto minmax(0, 1fr) auto;
+			grid-template-columns: minmax(0, 1fr) auto;
 			gap: 0 var(--space-2);
+			align-items: center;
 			border-bottom: 1px solid var(--color-line);
-			padding: var(--space-2) 0;
+			padding: var(--space-3) 0;
+		}
+		tr.chosen,
+		tr.problem {
+			background: transparent;
 		}
 		td {
 			border: 0;
-			padding: 2px 0;
+			padding: 0;
 		}
-		td.choose {
-			grid-row: span 4;
-		}
-		td.name {
-			grid-column: 2;
-		}
-		td.actions {
-			grid-column: 3;
-			grid-row: 1 / span 4;
-		}
+		td.choose,
 		td.number,
 		td.status,
 		td.scan,
 		td.filed {
+			display: none;
+		}
+		td.name {
+			grid-column: 1;
+			min-width: 0;
+			font-weight: var(--font-weight-semibold);
+		}
+		td.actions {
 			grid-column: 2;
-			text-align: left;
+		}
+		.phone-detail {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			margin: var(--space-1) 0 0 calc(18px + var(--space-2));
+			font-weight: normal;
+		}
+		.phone-detail .muted {
+			padding-left: 0.25em;
+		}
+		.phone-detail .bar {
+			order: 3;
+			flex-basis: 100%;
+			width: auto;
+		}
+		.foot {
+			gap: var(--space-2) var(--space-3);
 		}
 		.bar.wide {
 			flex: 1;
+		}
+		.foot .grow {
+			display: none;
+		}
+		.foot .button {
+			flex-basis: 100%;
+			justify-content: center;
 		}
 	}
 </style>
