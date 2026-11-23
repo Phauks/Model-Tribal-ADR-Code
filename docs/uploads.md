@@ -4,7 +4,8 @@ Anyone who is signed in can send the project documents, pictures, sound recordin
 
 ## The pages
 
-- **Send files** (`/uploads/send`). Choose or drag up to 20 files, or paste a YouTube link, then answer a few questions that apply to all of them. The questions are: what the files are, which Native nations they are about, where they came from, how the project may use them, and whether the nation should see them first. There is also an "I am under 18" box, and the sender confirms they may share the files. Each file shows its progress, and a file that cannot be accepted says why.
+- **Send files** (`/uploads/send`). Files go in the upload table (see "The upload table"), with any number in a batch, and a YouTube link can be added too. The questions that apply to all of them sit in a panel beside the table: what the files are, which Native nations they are about, where they came from, how the project may use them, and whether the nation should see them first. There is also an "I am under 18" box, and the sender confirms they may share the files.
+- **Intake** in the workspace (`/workspace/intake`, permission `review-uploads`). Files for the research library, such as what the lead author fetched for the pull list. There are no questions, only an optional note, and these files never enter the review queue. See "Intake".
 - **Your uploads** (`/uploads`, also in the account menu). Everything the person has sent, with its status and a line explaining it. Here they answer a reviewer's question and withdraw a file before it is filed. Withdrawing deletes the file at once.
 - **Uploads** in the workspace (`/workspace/uploads`, for the lead author and editors, permission `review-uploads`). The queue, oldest first, in five views: to review, waiting on someone, decided, not accepted or withdrawn, and all. It can be narrowed to one kind of file.
 - **One upload** (`/workspace/uploads/<reference>`). The reviewer sees the file (picture, player or YouTube embed; documents are downloaded, never opened in the browser), what the checks found, and what the sender said. From here they ask the sender a question, leave a note for other reviewers, and then file it, keep it for reference, wait for the nation, or mark it not used with a reason the sender sees. A decided upload can be reopened. Each step is written to the activity log.
@@ -37,7 +38,17 @@ Anyone who is signed in can send the project documents, pictures, sound recordin
 
 The type comes from the file's first bytes, not its name. Archives, programs, web pages, SVG pictures, macro-enabled Office files (.docm, .xlsm, .pptm), older Office files (.doc, .xls) and password-protected files are refused, each with a plain reason (OWASP File Upload Cheat Sheet, "List allowed extensions" and "File content validation").
 
-Each account can send 20 files a day and have 5 GB waiting for review. Someone whose contributor profile is confirmed can send 50 a day with 20 GB waiting. Reviewers have no limit. Cloudflare also limits each account to starting 30 files a minute (`uploadLimit` in `site/wrangler.jsonc`).
+There is no limit on how many files a batch holds, how many an account sends in a day, or how much waits for review (decision record 0038, "Limits"). Anyone who can reach the page counts as vetted. Cloudflare stops one account from starting more than 600 files a minute (`uploadLimit` in `site/wrangler.jsonc`), which guards against a runaway script. When that happens the page waits a few seconds and carries on, so a person never sees it as a limit.
+
+## The upload table
+
+Send files and Intake share one table (`site/src/lib/components/FileSender.svelte`), modeled on the upload screens of Google Drive and Dropbox (mockups in project files, `design/upload-table/`).
+
+- Files can be dropped anywhere on the page, folders included, and the whole page shows that it will take them. The Files and Folder buttons do the same. Hidden files that folders carry (`.DS_Store`, `desktop.ini`, `Thumbs.db`) are left out.
+- There is one row per file, with its name (and its folder path), size and status. Tabs show all files, or only the ones that are ready, sending, sent or have a problem. Find narrows the rows by name, and the checkboxes let several rows be removed at once.
+- Files are sent three at a time. A sending file can be paused and carried on later. A file that stopped (for example, the connection dropped) can be tried again, alone or with every other stopped file; a refused file says why.
+- A total at the bottom gives how many files and bytes are sent and about how long is left. Leaving the page while files are sending asks first.
+- On a phone the table becomes a list.
 
 ## How a file travels
 
@@ -70,6 +81,18 @@ A nation reviewer sees the files people sent that name their nation, as decision
 
 A comment from the nation appears on the reviewer's page for that upload, marked as coming from the nation, and is written to the activity log. The sender does not see it. If the lead author lowers a nation reviewer's access to their nation below comment, the page stops showing that nation's files. Comments are stored in `upload_nation_comments`, with the nation each one speaks for (migration `0018_upload_nation_comments.sql`).
 
+## Intake
+
+Intake is for files that go straight to the research library, without a reviewer: what the lead author fetched for the pull list (`research/documents-to-get.md` in project files), and any other document the project should keep (general intake). It is for people with `review-uploads`.
+
+1. The page sends each file like any other, with `pulled: true` and the note in place of the answers (`POST /uploads/pieces`). The upload is marked `from_pull_list` (migration `20261123T2057_add_pulled_uploads.sql`) and kept out of the review queue and its counts.
+2. Once the virus check passes, the Worker leaves a note for the intake script in the bucket, `intake/waiting/<reference>.json`, with the file's key, name, size and type and the sender's note.
+3. Someone with the bucket keys runs `python3 scripts/captures/mirror_captures.py intake --captures /mnt/project-files/research/captures`. It downloads each waiting file, hashes it with SHA-256, and checks the capture index for the same hash, because people send the same file twice. It reads the first pages of a new file and matches them to an open item of the pull list. A Westlaw print, found by its "For Educational Use Only" line, only matches Westlaw items. Each match suggests a topic, bucket key, record, title and link. A file that matches nothing is general intake, and a person gives it a topic and a name. The plan is written to `research/intake-plan.json` in project files.
+4. A person checks the plan and sets each file's action: `file`, `held` (already in the index), `decline` with a reason, or `skip`. Then `intake --apply research/intake-plan.json` copies each file to its key inside the bucket, checks the copy by size, SHA-256 metadata and its bytes, adds the index row, fills the source record's `file` field, and answers the Worker with `intake/filed/<reference>.json` or `intake/declined/<reference>.json`.
+5. The next time Intake, Uploads or Your uploads is opened, the Worker settles each answered file (`settlePulledFiles`): a filed one becomes "Filed", with the capture's key as its filed key, and the upload's own copy is deleted, so the bucket holds one copy. A declined one becomes "Not used", with the reason. Before it deletes anything, the Worker checks that the capture key is outside `uploads/` and `intake/` and that the copy there is the same size.
+
+The bucket notes carry everything between the Worker and the script, so the script needs only the bucket keys it already uses, not the database. The person running it then moves the matched items to Done on the pull list and writes the batch up in `research/pull-results/`.
+
 ## Essay figures
 
 The essay editor sends a picture, sound recording or video the same way, with `wayIn: "essay-figure"` and the essay's identifier on `POST /uploads/pieces` or `POST /uploads/links`. The writer needs "contribute" access to that essay. Figures skip the queue, because publishing the essay is the review, and are filed with the essay as soon as they arrive.
@@ -82,6 +105,8 @@ The essay editor sends a picture, sound recording or video the same way, with `w
 - Every deletion leaves the upload's record and its activity log entries, so the sender and reviewers can see what happened.
 
 ## Database
+
+Migration `20261123T2057_add_pulled_uploads.sql` adds `uploads.from_pull_list`, set for files sent on Intake.
 
 Migration `0018_upload_nation_comments.sql` adds `upload_nation_comments`, the comments from nations. Migration `0010_uploads.sql` adds `uploads`, `upload_pieces` (each piece's size, hash and bucket tag, and what the checks found), `upload_links` (nations an upload is about) and `upload_messages` (questions, answers and reviewers' notes). It also rebuilds the activity log to allow entries about uploads. Every entry keeps its sequence number and fields, so its seal still matches.
 
