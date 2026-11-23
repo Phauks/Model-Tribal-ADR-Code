@@ -173,6 +173,55 @@ tribal_insignia_database_entries:
   as_of: '2026-11-21'
   verification: bulk-import
   locator: Serial number 89003222
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is the legislative authority for the Mattaponi Indian Tribe & Reservation.
+  source: mattaponi-indian-tribe-website-mattaponi-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members plus the chiefs
+  quote: The Council is made up of seven members and the chiefs.
+  source: mattaponi-indian-tribe-website-mattaponi-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by popular vote
+  quote: The Council members are elected every four years by popular vote of tribal members.
+  source: mattaponi-indian-tribe-website-mattaponi-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: The Council members are elected every four years by popular vote of tribal members.
+  source: mattaponi-indian-tribe-website-mattaponi-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  quote: We are governed by a Chief, an assistant chief, and seven council members.
+  source: mattaponi-indian-tribe-website-mattaponi-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Assistant chief
+  quote: We are governed by a Chief, an assistant chief, and seven council members.
+  source: mattaponi-indian-tribe-website-mattaponi-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 representatives:
 - office: Chief
   listed_by: Virginia Secretary of the Commonwealth, State Recognized Tribes

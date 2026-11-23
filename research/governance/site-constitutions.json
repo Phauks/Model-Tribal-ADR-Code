@@ -1,0 +1,55 @@
+{
+ "about": "Constitution texts found on nations' own websites by the governance website pass on 2026-11-23 that the constitution catalog did not hold (no captured text with the same SHA-256). scripts/governance/add_site_constitutions.py adds each to the catalog. Dates are read from each text's first page.",
+ "texts": [
+  {
+   "nation": "comanche-nation",
+   "page": 8,
+   "version": "2026-text",
+   "label": "2026 constitution, as amended",
+   "event": "edition",
+   "date_field": "listed",
+   "dates": {"listed": "2026-05-16"},
+   "title": "Constitution of the Comanche Nation",
+   "author": "Comanche Nation, Oklahoma",
+   "note": "The first page gives ratification on Nov. 19, 1966 and amendments through May 16, 2026."
+  },
+  {
+   "nation": "central-council-of-the-tlingit-and-haida-indian-tribes",
+   "page": 8,
+   "version": "2025-text",
+   "label": "2025 constitution, as revised",
+   "event": "edition",
+   "date_field": "listed",
+   "dates": {"listed": "2025-04-18"},
+   "title": "Constitution",
+   "author": "Central Council of the Tlingit & Haida Indian Tribes",
+   "note": "The first page reads \"Revised April 18, 2025\"."
+  },
+  {
+   "nation": "meherrin-tribe-of-north-carolina",
+   "page": 5,
+   "version": "1996-text",
+   "label": "1996 constitution and bylaws, with later amendments",
+   "event": "original",
+   "date_field": "adopted",
+   "dates": {"adopted": "1996-05-11"},
+   "title": "1996 Meherrin Tribal Constitution and Bylaws",
+   "history_title": "Constitution and Bylaws of the Meherrin Indian Tribe",
+   "author": "Meherrin Tribe of North Carolina",
+   "note": "The first page gives adoption on May 11, 1996; an editor's note says later amendments are reproduced as they appear in the source document."
+  },
+  {
+   "nation": "gabrielino-tongva-nation",
+   "page": 5,
+   "version": "2020-text",
+   "label": "2020 constitution, as amended",
+   "event": "edition",
+   "date_field": "listed",
+   "dates": {"listed": "2020-02-22"},
+   "title": "The Constitution of the Gabrielino/Tongva Nation",
+   "history_title": "The Constitution of the Gabrielino/Tongva Nation",
+   "author": "Gabrielino/Tongva Nation",
+   "note": "The first page gives ratification on Feb. 17, 2007 and amendment on Feb. 22, 2020."
+  }
+ ]
+}

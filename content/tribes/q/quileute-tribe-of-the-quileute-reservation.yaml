@@ -729,6 +729,47 @@ jurisdiction:
   as_of: '2024'
   locator: Appendix D (PDF p.53)
   note: Listed as "QUILEUTE INDIAN TRIBE OF THE QUILEUTE INDIAN RESERVATION".
+court_practice:
+- kind: public-defender
+  title: Quileute Tribal Court (UW Public Defense Clinic)
+  court: Quileute Tribal Court
+  link: https://quileutetribe.com/government/tribal-court/
+  detail: Court page lists the UW Public Defense Clinic with a Public Defender contact among court personnel.
+  source: quileute-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: court personnel list
+  note: 'The source reads: “UW Public Defense Clinic”.'
+- kind: legal-aid
+  title: Legal Support Resources
+  court: Quileute Tribal Court
+  link: https://cjcpbl.org/
+  detail: Court page gives a Legal Support Resources link.
+  source: quileute-tribe-tribal-court
+  confidence: medium
+  verification: title-only
+  locator: court page
+  note: Linked site not opened; its scope was not checked.
+- kind: court-rules
+  title: Law and Order Codes
+  court: Quileute Tribal Court
+  link: https://quileutetribe.com/government/tribal-court/law-and-order-codes/
+  detail: Law and Order Codes page linked from the Tribal Court page.
+  source: quileute-tribe-tribal-court
+  confidence: medium
+  verification: title-only
+  locator: menu
+  note: Page not opened; whether it holds procedure rules was not checked.
+nearby_state_courts:
+- state: WA
+  county: Clallam County
+  court: Superior Court for Clallam County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Clallam County holds 100% of the land of Quileute Reservation (Census GEOID 3030), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Quinaielt, etc., 1855
   signed: '1855-07-01'

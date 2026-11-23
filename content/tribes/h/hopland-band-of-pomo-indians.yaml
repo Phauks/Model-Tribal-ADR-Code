@@ -663,16 +663,16 @@ dispute_resolution:
     as_of: '2025'
     locator: Sections 12-3.10 to 12-3.160
   - kind: peacemaking
-    title: Title 12, Chapter 12-1 – Tribal Court Ordinance
-    citation: Title 12, Chapter 12-1 – Tribal Court Ordinance
+    title: Title 12, Chapter 12-1, Sections 12-1.20.020 and 12-1.100 - Peace Making Roster (Tribal Court Ordinance)
+    citation: Hopland Band of Pomo Indians Tribal Code, Title 12, Chapter 12-1 Tribal Court Ordinance, Sections 12-1.20.020 and 12-1.100
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: hopland-title-12-tribal-court
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Hopland Band of Pomo Indians, California
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      procedures, qualifications, and authority to lead community-related peace activities.'
+    locator: Chapter 12-1, Sections 12-1.10(c), 12-1.20.020 and 12-1.100.010-12-1.100.070 (Peace Making Roster)
+    note: Read in full on 2026-11-23 (Hopland Band of Pomo Indians Tribal Code Title 12 Tribal Court, Chapter 12-1 Tribal Court Ordinance (no enactment date printed; history Ord. No. 10-12-14 per first reader)). Provisions read in the Title 12 Tribal Court Ordinance text. NARF's phrase 'authority to lead community-related peace activities' is looser than the code, which limits peacemakers to mediating disputes by consent. No enactment date is printed on the chapter. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 165.
+    summary: The Tribal Council, advised by the Chief Judge and Culture Committee, keeps a roster of Peacemakers (tribal members at least 50 years old, known and respected, with no conviction in the past five years) to mediate disputes in an optional, non-adversarial process that needs every party's consent and can be used before any lawsuit is filed. A party files a request with the Court Clerk; if no one objects the Judge refers it to a Peacemaker within ten days, and any party may object to the Peacemaker or decline once the rules are explained. Lawyers may not represent parties. A settlement is written and signed by the parties and the Peacemaker and is an enforceable agreement, treated as the final judgment if a lawsuit is pending; discussions are confidential, and parties may still go to Tribal Court if peacemaking fails.
 gaming:
   compacts:
   - state: CA
@@ -764,6 +764,27 @@ gaming:
     locator: table row 100, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 100 lists the nation
       as "Hopland Band of Pomo Indians".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-03
+    date: '2005-02-17'
+    link: https://www.nigc.gov?wpdmdl=8196&ind=8218
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-03
+    note: The list titles the action “Hopland Band of Pomo Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-03
+    date: '2005-05-11'
+    link: https://www.nigc.gov?wpdmdl=8172&ind=8183
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-03
+    note: The list titles the action “Hopland Band of Pomo Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -790,6 +811,46 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+court_practice:
+- kind: filing-fees
+  title: Fee Schedules
+  court: Northern California Intertribal Court System
+  link: https://www.tribalcourt.org/fee-schedules
+  detail: Fee Schedules page linked from the court system home page.
+  source: northern-california-intertribal-fees
+  confidence: medium
+  verification: title-only
+  locator: menu
+  note: Page opened; it links a fee schedule PDF that was not opened. Site belongs to the intertribal court system serving member tribes.
+- kind: forms
+  title: FORMS & FILING
+  court: Northern California Intertribal Court System
+  link: https://www.tribalcourt.org/forms-filing
+  detail: Forms and filing page with links to forms and current court fees; domestic violence and court forms pages are also linked from the home page.
+  source: northern-california-intertribal-forms
+  confidence: medium
+  verification: title-only
+  locator: FORMS & FILING INFORMATION
+  note: 'The source reads: “FORMS & FILING INFORMATION”. Linked form documents not opened.'
+nearby_state_courts:
+- state: CA
+  county: Mendocino County
+  court: Superior Court for Mendocino County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Mendocino County holds 81% of the land of Hopland Rancheria (Census GEOID 1515), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: CA
+  county: Lake County
+  court: Superior Court for Lake County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Lake County holds 19% of the land of Hopland Rancheria (Census GEOID 1515), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

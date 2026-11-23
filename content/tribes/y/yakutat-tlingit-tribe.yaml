@@ -217,6 +217,22 @@ indian_health_service:
   note: 'The source''s words: "Yakutat Tlingit Tribe".'
   operator: tribal
 governance:
+- aspect: form
+  value: Tribal government under the Indian Reorganization Act
+  quote: In the early 1990s, the Yakutat Native Association began to draft a constitution that would allow it to reorganize and become recognized as a tribal government under the authority of the Indian Reorganization Act.
+  source: yakutat-tlingit-tribe-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution the Nation drafted is mentioned on the About Us page but its text is not among the saved pages.'
+- aspect: governing-body
+  value: Yakutat Tlingit Tribe
+  quote: the Yakutat Tlingit Tribe, as the self-governing body duly formed to oversee the affairs of the Tlingit people and its native land
+  source: yakutat-tlingit-tribe-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution the Nation drafted is mentioned on the About Us page but its text is not among the saved pages.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -225,6 +241,14 @@ governance:
   as_of: '2026-11-20'
   locator: Yakutat Tlingit Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Yakutat Tlingit Tribal Court
+  quote: The Yakutat Tlingit Tribal Court was established in 2019 and has grown to encompass three full time staff members.
+  source: yakutat-tlingit-tribe-website-tribalcourt
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution the Nation drafted is mentioned on the About Us page but its text is not among the saved pages.'
 representatives:
 - office: President
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -271,6 +295,27 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: forms
+  title: Forms
+  court: Yakutat Tlingit Tribal Court
+  link: https://yakutattlingittribe.org/forms/
+  detail: Forms page linked from the tribal court page.
+  source: yakutat-tlingit-tribe-website-tribalcourt
+  confidence: medium
+  verification: title-only
+  locator: menu
+  note: Page not opened.
+nearby_state_courts:
+- state: AK
+  county: Yakutat City and Borough
+  court: Superior Court for Yakutat City and Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Yakutat City and Borough holds 100% of the land of Yakutat ANVSA (Census GEOID 7765), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

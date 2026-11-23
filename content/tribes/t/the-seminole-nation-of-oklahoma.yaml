@@ -369,17 +369,21 @@ governance:
     version: 1989-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
 - aspect: election-authority
-  value: Election board of three members
-  quote: an election board consisting
-  source: constitution-the-seminole-nation-of-oklahoma-1989-text
-  confidence: medium
+  value: Election Board
+  quote: 'NAME: ELECTION BOARD'
+  source: the-seminole-nation-of-oklahoma-website-getpage-php-name-boards-sub-government
+  confidence: high
   verification: read-in-full
-  as_of: '1989-02-25'
-  locator: Article X, Section 3
-  document_version:
-    document: the-seminole-nation-of-oklahoma-constitution
-    version: 1989-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Executive Office page names the Chief and Assistant Chief only by name, and the Constitution and Codes linked from the Tribal Court page are not among the saved pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: SEMINOLE NATION TRIBAL COURT
+  source: the-seminole-nation-of-oklahoma-tribal-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Executive Office page names the Chief and Assistant Chief only by name, and the Constitution and Codes linked from the Tribal Court page are not among the saved pages.'
 - aspect: amendment
   value: Majority vote of qualified voters in special election
   quote: amended Fy a majority vote of the
@@ -534,12 +538,8 @@ dispute_resolution:
     confidence: medium
     verification: title-only
     as_of: '2017'
-    locator: Table of Contents, under 'CHAPTER EIGHT WORK RULES, EMPLOYEE CONDUCT, DISCIPLINE AND ADMINISTRATIVE
-      REVIEW'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not
-      read. Places searched: research/search-logs/dispute-resolution/t/the-seminole-nation-of-oklahoma.yaml.'
+    locator: Table of Contents, under 'CHAPTER EIGHT WORK RULES, EMPLOYEE CONDUCT, DISCIPLINE AND ADMINISTRATIVE REVIEW'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: the heading appears not to concern dispute resolution; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 565.'
 gaming:
   compacts:
   - state: OK
@@ -698,6 +698,159 @@ gaming:
     locator: table row 250, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 250 lists the nation
       as "Seminole Nation of Oklahoma". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-98-01
+    date: '1998-01-13'
+    link: https://www.nigc.gov?wpdmdl=1899&ind=1900
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-98-01
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - closure-order
+    tracking_number: CO-98-01
+    date: '1998-01-13'
+    link: https://www.nigc.gov?wpdmdl=1883&ind=1884
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-98-01
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as CO.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-98-01
+    date: '1998-02-12'
+    link: https://www.nigc.gov?wpdmdl=1901&ind=1902
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-98-01
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-98-01
+    date: '1998-11-30'
+    link: https://www.nigc.gov?wpdmdl=1915&ind=1909
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-98-01
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as SA.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-99-03
+    date: '1999-04-01'
+    link: https://www.nigc.gov?wpdmdl=1945&ind=1946
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-99-03
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as CFA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-CO-00-06
+    date: '2000-05-30'
+    link: https://www.nigc.gov?wpdmdl=2030&ind=2031
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-CO-00-06
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-00-06
+    date: '2000-08-17'
+    link: https://www.nigc.gov?wpdmdl=2036&ind=2037
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-00-06
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as CFA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-01-02
+    date: '2001-05-18'
+    link: https://www.nigc.gov?wpdmdl=8278&ind=8290
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-01-02
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-01-02
+    date: '2002-04-26'
+    link: https://www.nigc.gov?wpdmdl=8274&ind=8286
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-01-02
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as CFA.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-00-10
+    date: '2002-08-13'
+    link: https://www.nigc.gov?wpdmdl=8254&ind=8265
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-00-10
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as CFA.
+  - kinds:
+    - other-order
+    tracking_number: RO-03-04
+    date: '2004-03-05'
+    link: https://www.nigc.gov?wpdmdl=8233&ind=8244
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row RO-03-04
+    note: The list titles the action “Authorization to re-open Seminole Nation gaming facility” and gives its type as RO.
+  - kinds:
+    - pre-opening-agreement
+    - settlement-agreement
+    tracking_number: POA/SA Dec-12-03
+    date: '2004-09-28'
+    link: https://www.nigc.gov?wpdmdl=8202&ind=8224
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA/SA Dec-12-03
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as POA/SA.
+  - kinds:
+    - pre-opening-agreement
+    - settlement-agreement
+    tracking_number: POA-SA-00-06/00-10
+    date: '2008-04-02'
+    link: https://www.nigc.gov?wpdmdl=8061&ind=8072
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA-SA-00-06/00-10
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as POA/SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-16-01
+    date: '2016-05-20'
+    link: https://www.nigc.gov?wpdmdl=7724&ind=7735
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-16-01
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-16-01
+    date: '2016-12-13'
+    link: https://www.nigc.gov?wpdmdl=7711&ind=7733
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-16-01
+    note: The list titles the action “Seminole Nation of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -752,6 +905,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Seminole Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+nearby_state_courts:
+- state: OK
+  county: Seminole County
+  court: District Court for Seminole County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Seminole County holds 100% of the land of Seminole OTSA (Census GEOID 5830), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Florida Tribes of Indians, 1823
   signed: '1823-09-18'

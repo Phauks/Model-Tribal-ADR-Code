@@ -41,7 +41,7 @@
 			why: 'Works of the United States government are free for anyone to share.'
 		},
 		{
-			what: 'Nations’ constitutions and laws we hold',
+			what: 'Nations’ constitutions, laws and court opinions we hold',
 			where: 'Saved, one nation at a time',
 			saved: true,
 			why: 'Shared until a nation asks us to remove one. A removed document also leaves your device the next time you are online. All of them together come to several gigabytes, so each nation’s page has its own button.'
@@ -108,7 +108,7 @@
 	<h2>Save more now</h2>
 	<p>
 		You can save whole parts of the site, the United States documents we hold, and, from each
-		nation’s page, that nation’s constitutions and laws.
+		nation’s page, that nation’s constitutions, laws and court opinions.
 	</p>
 	<OfflineSaving headingLevel={3} />
 	<p class="muted">The same choices are under Settings, in “This device.”</p>

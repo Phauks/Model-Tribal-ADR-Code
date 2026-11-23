@@ -126,6 +126,79 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Establishes the Legislative Branch as consisting of 7 elected representatives making up a Tribal Council and Chief of Tribal Council.
+  source: waccamaw-indian-people-website-resolutions
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: Establishes the Legislative Branch as consisting of 7 elected representatives making up a Tribal Council and Chief of Tribal Council.
+  source: waccamaw-indian-people-website-resolutions
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Tribal Council members are elected for 4 years, and until the next person is elected and seated.
+  source: waccamaw-indian-people-website-resolutions
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
+- aspect: head-of-government
+  value: Tribal Chief
+  quote: Establishes the Executive Branch as the Tribal Chief, Vice Chief, and two second Chiefs.
+  source: waccamaw-indian-people-website-resolutions
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
+- aspect: head-of-government-selection
+  value: Elected by all full tribal members
+  quote: Tribal Chief shall be a full member with genealogical ties to the settlement, and who will be elected by a vote of all full tribal members.
+  source: waccamaw-indian-people-website-resolutions
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Tribal Chief serves for 4 years and until a successor is chosen.
+  source: waccamaw-indian-people-website-resolutions
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
+- aspect: other-officers
+  value: Vice Chief, Second Chiefs
+  quote: Establishes the Executive Branch as the Tribal Chief, Vice Chief, and two second Chiefs.
+  source: waccamaw-indian-people-website-resolutions
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
+- aspect: branches
+  value: 3 branches
+  quote: Establishes 3 separate branches of Tribal government.
+  source: waccamaw-indian-people-website-resolutions
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
+- aspect: other
+  value: Council of Elders
+  quote: tribal council, guided by a Council of Elders and served by tribal officers.
+  source: waccamaw-indian-people-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
 representatives:
 - office: Chief
   listed_by: South Carolina Commission for Community Advancement and Engagement, SC Recognized Tribes

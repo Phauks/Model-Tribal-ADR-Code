@@ -191,6 +191,38 @@ indian_health_service:
   locator: Tribally Administered Programs table
   note: Listed as "Houlton Band of Maliseet Indians".
 governance:
+- aspect: governing-body-size
+  value: 6 members
+  quote: The governmental structure of the Tribe consists of a six (6) member Council
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: governing-body-selection
+  value: Elected by membership
+  quote: The leaders are chosen by the membership through an election process.
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: the Tribal Council members serve four (4) year, staggered terms
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: head-of-government
+  value: Tribal Chief
+  quote: plus one (1) elected as Tribal Chief.
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
 - aspect: head-of-government
   value: Tribal Chief
   source: bia-tribal-leaders-directory-2026
@@ -199,6 +231,30 @@ governance:
   as_of: '2026-11-20'
   locator: Houlton Band of Maliseet Indians
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by membership
+  quote: The leaders are chosen by the membership through an election process.
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Tribal Chief serves a four (4) year term
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Tribal Court is a court of general jurisdiction with authority to hear a wide range of criminal, civil, juvenile and probate matters.
+  source: houlton-band-of-maliseet-indians-nation-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
 representatives:
 - office: Tribal Chief
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -280,6 +336,37 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 96-420 § 6(a), 94 Stat. at 1793
   note: Section 6(e)(2) (94 Stat. at 1794) lets the State and the Band agree on state jurisdiction over Band lands. Section 6(a) is "except as provided in section 8(e) and section 5(d)(4)." Houlton Band is not named in 6(a); it falls in "all other Indians." Section 6(b)(1) names only the two tribes.
+court_practice:
+- kind: court-rules
+  title: Rules of Court
+  court: Maliseet Nation Tribal Court
+  link: https://maliseets.net/files/2026/02/Rules_of_Court.pdf
+  detail: PDF of Rules of Court listed on the Tribal Court page under Maliseet Nation Codes.
+  source: houlton-band-of-maliseet-indians-nation-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Maliseet Nation Codes
+  note: 'The source reads: “Maliseet Nation Codes”. PDF not opened.'
+- kind: forms
+  title: Divorce with Minor Children (and related forms)
+  court: Maliseet Nation Tribal Court
+  link: https://maliseets.net/files/2026/02/Divorce_with_minor_children_FM-080.pdf
+  detail: Forms listed include Complaint for Divorce, Divorce with and without Minor Children and Acknowledgement of Receipt of Summons.
+  source: houlton-band-of-maliseet-indians-nation-tribal-court
+  confidence: high
+  verification: title-only
+  locator: forms list
+  note: 'The source reads: “Complaint for Divorce”. PDFs not opened.'
+nearby_state_courts:
+- state: ME
+  county: Aroostook County
+  court: Superior Court for Aroostook County
+  link: https://www.courts.maine.gov/courts/superior/index.html
+  source: state-trial-court-directory-me
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Aroostook County holds 100% of the land of Houlton Maliseet Reservation (Census GEOID 1530), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

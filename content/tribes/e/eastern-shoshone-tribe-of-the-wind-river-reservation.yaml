@@ -202,16 +202,13 @@ governance:
     version: 1938-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
 - aspect: governing-body
-  value: Shoshone and Arapahoe Business Council
-  quote: known fit the Shoshone and Arapahoe Business Council.
-  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
-  confidence: medium
+  value: Business Council
+  quote: Business-Council - Eastern Shoshone
+  source: eastern-shoshone-tribe-of-the-wind-river-reservation-website-business-council
+  confidence: high
   verification: read-in-full
-  as_of: '1938-09-27'
-  document_version:
-    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
-    version: 1938-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site has little governance text; the council is listed only with names, so only the body name is given.'
 - aspect: governing-body-size
   value: 6 members from each tribe
   quote: Council is to consist of six members duly
@@ -420,21 +417,13 @@ dispute_resolution:
   provisions:
   - kind: peacemaking
     title: 'DRAFT Title XVI: Peacemaker Court (Dated: June 20, 1989)'
-    citation: 'DRAFT Title XVI: Peacemaker Court (Dated: June 20, 1989); Ch. 2. Peacemakers (Appointment
-      & qualifications -- Powers of peacemakers -- Limitations; peacemakers not judges; agreed arbitration
-      -- Duties of peacemakers -- Reports to tribal court); Ch. 3. Procedure (Request for peacemaking
-      -- Requests and objections -- Duties of clerk of tribal court -- Appointment of peacemaker -- Notice
-      to begin proceedings -- Compensation of peacemaker -- Subpoena -- Fees)\; Ch. 5. Conduct of Peacemakers
-      (Gene...'
+    citation: 'DRAFT Title XVI: Peacemaker Court (Dated: June 20, 1989); Ch. 2. Peacemakers (Appointment & qualifications -- Powers of peacemakers -- Limitations; peacemakers not judges; agreed arbitration -- Duties of peacemakers -- Reports to tribal court); Ch. 3. Procedure (Request for peacemaking -- Requests and objections -- Duties of clerk of tribal court -- Appointment of peacemaker -- Notice to begin proceedings -- Compensation of peacemaker -- Subpoena -- Fees)\; Ch. 5. Conduct of Peacemakers (Gene...'
     link: https://www.narf.org/nill/codes/shoshonearapaho/index.html
     source: national-indian-law-library-code-codes-shoshonearapaho
     confidence: medium
     verification: title-only
     as_of: 2018-06
-    note: 'Listed as a draft. Section or chapter title(s) from the National Indian Law Library table of
-      contents; the provision text was not read, so there is no summary. Kind assigned from words in the
-      title. Shared code of the Eastern Shoshone and Northern Arapaho Tribes. Searched for the text on
-      2026-11-22 and not read. Places searched: research/search-logs/dispute-resolution/e/eastern-shoshone-tribe-of-the-wind-river-reservation.yaml.'
+    note: 'Listed as a draft. Kind assigned from words in the title. Shared code of the Eastern Shoshone and Northern Arapaho Tribes. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 114.'
   database_listings:
   - title: Informal Hearings for Juvenile Offenders
     citation: Shoshone & Arapaho Law & Order Code Title III Children's Code Section 3-5-10
@@ -548,6 +537,76 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Wyoming by the Census Bureau's land areas.
+court_practice:
+- kind: bar-admission
+  title: Attorney & Non-Attorney Information
+  court: Wind River Tribal Court
+  link: https://www.wrtribalcourt.com/attorney-non-attorney-information/
+  detail: 'Attorneys in good standing of any state bar may be admitted: application, one-time admission fee $25 and yearly fee $100. Non-attorney advocates and lay counselors must pass a court-administered examination with a score of 70 percent; yearly fee $50 stated. Lists of attorneys and advocates in good standing (8.13.25) are linked.'
+  source: wind-river-tribal-court-shoshone-and-arapaho-tribes-attorney-non-attor
+  confidence: high
+  verification: read-in-full
+  locator: Admission to Practice
+  note: 'The source reads: “One Time Non-Refundable Admission Fee $25”.'
+- kind: court-rules
+  title: Rules of Court
+  court: Wind River Tribal Court
+  link: https://www.wrtribalcourt.com/forms/rules-of-court/
+  detail: Rules of Court page and the Shoshone & Arapaho Law & Order Code are linked from the home page.
+  source: shoshone-arapaho-tribal-court-wind-river
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
+- kind: filing-fees
+  title: Schedule of Fees
+  court: Wind River Tribal Court
+  link: https://www.wrtribalcourt.com/schedule-of-fees/
+  detail: Schedule of Fees page linked from home page; amounts not read.
+  source: shoshone-arapaho-tribal-court-wind-river
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
+- kind: forms
+  title: Forms
+  court: Wind River Tribal Court
+  link: https://www.wrtribalcourt.com/forms/
+  detail: Forms page linked from home page.
+  source: shoshone-arapaho-tribal-court-wind-river
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
+- kind: public-defender
+  title: Wind River Tribal Court (public defender matters contact)
+  court: Wind River Tribal Court
+  link: https://www.wrtribalcourt.com/
+  detail: Home page gives a contact phone line "For public defender matters".
+  source: shoshone-arapaho-tribal-court-wind-river
+  confidence: medium
+  verification: read-in-full
+  locator: Home page contact list
+  note: 'The source reads: “For public defender matters :”. Only a contact line; no description of the office.'
+nearby_state_courts:
+- state: WY
+  county: Fremont County
+  court: District Court for Fremont County
+  link: https://www.wyocourts.gov/district-courts/
+  source: state-trial-court-directory-wy
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Fremont County holds 88% of the land of Wind River Reservation (Census GEOID 4610), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WY
+  county: Hot Springs County
+  court: District Court for Hot Springs County
+  link: https://www.wyocourts.gov/district-courts/
+  source: state-trial-court-directory-wy
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Hot Springs County holds 12% of the land of Wind River Reservation (Census GEOID 4610), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Eastern Shoshoni, 1863
   signed: '1863-07-02'

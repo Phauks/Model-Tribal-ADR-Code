@@ -169,29 +169,45 @@ indian_health_service:
   note: Listed as "La Posta Band of Diegueno Mission Indians of the La Posta Indian Reservation, California".
 governance:
 - aspect: form
-  value: Constitution under the Indian Reorganization Act of June 18, 1934
-  quote: Indian Reorganization Act of June 18, 1934 (48 Stat, 984), and the
-  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
-  confidence: medium
+  value: IRA constitution approved March 5, 1973
+  quote: The band is organized under an IRA constitution that was approved on March 5, 1973.
+  source: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reser-website-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1973-05-03'
-  locator: Article VI
-  document_version:
-    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
-    version: 1973-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal History page gives a three-officer council while the About page lists five seats; the facts use the About page, and officer names are left out.'
 - aspect: governing-body
   value: General Council
-  quote: The governing body of the La Posta Band shall be the general
-  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
-  confidence: medium
+  quote: The La Posta Reservation is governed by a general council.
+  source: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reser-website-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1973-05-03'
-  locator: Article IV, Section 1
-  document_version:
-    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
-    version: 1973-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal History page gives a three-officer council while the About page lists five seats; the facts use the About page, and officer names are left out.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Elected council members include a chairperson, a vice-chairperson, secretary-treasurer, and two council members.
+  source: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reser-website-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal History page gives a three-officer council while the About page lists five seats; the facts use the About page, and officer names are left out.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: Elected council members include a chairperson
+  source: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reser-website-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal History page gives a three-officer council while the About page lists five seats; the facts use the About page, and officer names are left out.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Elected members serve two-year terms
+  source: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reser-website-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal History page gives a three-officer council while the About page lists five seats; the facts use the About page, and officer names are left out.'
 - aspect: general-council
   value: All qualified voters
   quote: council which shall be composed of all qualified voters.
@@ -205,17 +221,13 @@ governance:
     version: 1973-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
-  value: Chairman
-  quote: the general council shall be a chairman and secretary-treasurer, who
-  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
-  confidence: medium
+  value: Chairperson
+  quote: Elected council members include a chairperson
+  source: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reser-website-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1973-05-03'
-  locator: Article IV, Section 1
-  document_version:
-    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
-    version: 1973-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal History page gives a three-officer council while the About page lists five seats; the facts use the About page, and officer names are left out.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -237,17 +249,13 @@ governance:
     version: 1973-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: other-officers
-  value: Secretary-Treasurer
-  quote: the general council shall be a chairman and secretary-treasurer, who
-  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
-  confidence: medium
+  value: Vice-Chairperson, Secretary-Treasurer, two Council Members
+  quote: Elected council members include a chairperson, a vice-chairperson, secretary-treasurer, and two council members.
+  source: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reser-website-about-us
+  confidence: high
   verification: read-in-full
-  as_of: '1973-05-03'
-  locator: Article IV, Section 1
-  document_version:
-    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
-    version: 1973-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal History page gives a three-officer council while the About page lists five seats; the facts use the About page, and officer names are left out.'
 - aspect: voting-age
   value: '18'
   quote: Adult members eighteen (18) years of age or older shall qualify as
@@ -372,6 +380,27 @@ gaming:
     locator: table row 128, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 128 lists the nation
       as "La Posta Band of Diegueno Mission Indians". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-13
+    date: '2009-03-30'
+    link: https://www.nigc.gov?wpdmdl=7879&ind=7902
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-13
+    note: The list titles the action “La Posta Band of Mission Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-13
+    date: '2009-05-05'
+    link: https://www.nigc.gov?wpdmdl=7849&ind=7864
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-13
+    note: The list titles the action “La Posta Band of Mission Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -398,6 +427,16 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of La Posta Indian Reservation (Census GEOID 1895), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

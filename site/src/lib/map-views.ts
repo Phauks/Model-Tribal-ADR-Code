@@ -23,7 +23,7 @@ export interface MapViewEntry {
 }
 
 /** Groups in the order they are listed. */
-export const mapViewGroups = ['Where nations are', 'Jurisdiction', 'Federal administration'] as const;
+export const mapViewGroups = ['Where nations are', 'Recognition', 'Courts and dispute resolution', 'Jurisdiction', 'Gaming', 'Treaties and land', 'Federal administration'] as const;
 
 export const mapViews: MapViewEntry[] = [
 	{
@@ -45,6 +45,22 @@ export const mapViews: MapViewEntry[] = [
 		nationPage: { key: 'lands', label: 'Land Areas', description: 'The census areas the nation’s entry names' }
 	},
 	{
+		key: 'recognition',
+		label: 'Recognition',
+		heading: 'recognition-heading',
+		group: 'Recognition',
+		description: 'Federal and state recognition, petitions for federal acknowledgment, and other statuses',
+		keywords: ['federally recognized', 'state recognized', 'acknowledgment', 'petition', 'office of federal acknowledgment', 'list act', 'status', 'territorial']
+	},
+	{
+		key: 'courts-and-peacemaking',
+		label: 'Courts and Peacemaking',
+		heading: 'courts-and-peacemaking-heading',
+		group: 'Courts and dispute resolution',
+		description: 'Nations with a tribal court, a peacemaking or traditional forum, or a healing to wellness court',
+		keywords: ['court', 'tribal court', 'peacemaking', 'traditional', 'elders', 'circle', 'wellness', 'drug court', 'court of indian offenses', 'cfr court', 'adr', 'dispute resolution']
+	},
+	{
 		key: 'public-law-280',
 		label: 'Public Law 280',
 		heading: 'public-law-280-heading',
@@ -59,6 +75,46 @@ export const mapViews: MapViewEntry[] = [
 		group: 'Jurisdiction',
 		description: 'Nations exercising special Tribal criminal jurisdiction over non-Indians',
 		keywords: ['vawa', 'stcj', 'special tribal criminal jurisdiction', 'domestic violence', 'dating violence', 'non-indian', 'criminal']
+	},
+	{
+		key: 'other-jurisdiction-laws',
+		label: 'Other Jurisdiction Laws',
+		heading: 'other-jurisdiction-laws-heading',
+		group: 'Jurisdiction',
+		description: 'State jurisdiction under other federal laws, child welfare jurisdiction reassumed, and enhanced sentencing',
+		keywords: ['kansas act', 'land claims settlement', 'icwa', 'indian child welfare act', 'reassumption', 'tloa', 'tribal law and order act', 'enhanced sentencing', 'state jurisdiction']
+	},
+	{
+		key: 'agreements-with-states',
+		label: 'Agreements with States',
+		heading: 'agreements-with-states-heading',
+		group: 'Jurisdiction',
+		description: 'Cross-deputization, child welfare, tax and other agreements with states and local governments',
+		keywords: ['cross-deputization', 'law enforcement', 'title iv-e', 'child welfare', 'tax compact', 'tax agreement', 'intergovernmental agreement', 'compact']
+	},
+	{
+		key: 'gaming',
+		label: 'Gaming',
+		heading: 'gaming-heading',
+		group: 'Gaming',
+		description: 'Class III gaming compacts, Secretarial Procedures, gaming ordinances and nations that operate gaming',
+		keywords: ['igra', 'indian gaming regulatory act', 'casino', 'compact', 'class iii', 'class ii', 'nigc', 'national indian gaming commission', 'ordinance', 'secretarial procedures']
+	},
+	{
+		key: 'treaties',
+		label: 'Treaties',
+		heading: 'treaties-heading',
+		group: 'Treaties and land',
+		description: 'How many ratified treaties with the United States each nation’s entry lists',
+		keywords: ['treaty', 'kappler', 'ratified', 'cession', 'statutes at large']
+	},
+	{
+		key: 'land-set-aside',
+		label: 'How Land Was Set Aside',
+		heading: 'land-set-aside-heading',
+		group: 'Treaties and land',
+		description: 'Whether a reservation was set aside by treaty, executive order, act of Congress or other means',
+		keywords: ['reservation', 'executive order', 'act of congress', 'statute', 'established', 'land base', 'trust land']
 	},
 	{
 		key: 'regions',

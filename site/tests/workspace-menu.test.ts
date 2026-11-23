@@ -19,12 +19,18 @@ describe('the workspace pages in the left sidebar', () => {
 			'outreach',
 			'uploads',
 			'reviews',
+			'library',
 			'contributors',
+			'events',
 			'people',
 			'nation-teams',
+			'nation-pages',
 			'access',
 			'address-book',
 			'changes',
+			'nonprofit',
+			'service-checks',
+			'sponsors',
 			'activity'
 		]);
 	});
@@ -36,9 +42,12 @@ describe('the workspace pages in the left sidebar', () => {
 			'requests',
 			'uploads',
 			'reviews',
-			'contributors'
+			'library',
+			'contributors',
+			'events',
+			'nation-pages'
 		]);
-		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'essays', 'reviews']);
+		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'essays', 'reviews', 'library']);
 		expect(names(workspacePagesFor(permissionsOf('nation-reviewer')))).toEqual(['overview', 'essays', 'nation-uploads', 'reviews']);
 	});
 

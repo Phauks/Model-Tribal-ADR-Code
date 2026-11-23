@@ -79,6 +79,23 @@ def add_items(text: str, key: str, items: list[dict]) -> str:
     return "".join(lines[:end]) + block + "".join(lines[end:])
 
 
+def add_nested_items(text: str, parent: str, key: str, items: list[dict]) -> str:
+    """Append items to the list `key` inside the top-level mapping `parent`, leaving the rest of the block as written."""
+    lines = text.splitlines(keepends=True)
+    tops = top_level(lines)
+    start = next((index for index in tops if lines[index].split(":")[0] == parent), None)
+    block = "".join("  " + line for line in dump(items).splitlines(keepends=True))
+    if start is None:
+        at = insertion_point(lines, parent)
+        return "".join(lines[:at]) + f"{parent}:\n  {key}:\n" + block + "".join(lines[at:])
+    end = next((index for index in tops if index > start), len(lines))
+    child = next((index for index in range(start + 1, end) if lines[index].rstrip() == f"  {key}:"), None)
+    if child is None:
+        return "".join(lines[:end]) + f"  {key}:\n" + block + "".join(lines[end:])
+    after = next((index for index in range(child + 1, end) if re.match(r"  [a-z_]+:", lines[index])), end)
+    return "".join(lines[:after]) + block + "".join(lines[after:])
+
+
 def set_object(text: str, key: str, value: dict) -> str:
     lines = text.splitlines(keepends=True)
     tops = top_level(lines)
@@ -106,7 +123,13 @@ def apply_profiles(batch: dict) -> int:
         new_items: dict[str, list] = {}
         for kind, entry in entries:
             key = entry["key"]
-            if kind == "fact":
+            if kind == "fact" and "." in key:
+                parent, child = key.split(".")
+                existing = ((expected.get(parent) or {}).get(child) or []) + new_items.get(key, [])
+                if entry["fact"] in existing:
+                    continue
+                new_items.setdefault(key, []).append(entry["fact"])
+            elif kind == "fact":
                 existing = (expected.get(key) or []) + new_items.get(key, [])
                 if entry["fact"] in existing:
                     continue
@@ -117,8 +140,14 @@ def apply_profiles(batch: dict) -> int:
                 text = set_object(text, key, entry["value"])
                 expected[key] = entry["value"]
         for key, items in new_items.items():
-            text = add_items(text, key, items)
-            expected[key] = (expected.get(key) or []) + items
+            if "." in key:
+                parent, child = key.split(".")
+                text = add_nested_items(text, parent, child, items)
+                expected.setdefault(parent, {})
+                expected[parent][child] = (expected[parent].get(child) or []) + items
+            else:
+                text = add_items(text, key, items)
+                expected[key] = (expected.get(key) or []) + items
         if text == path.read_text(encoding="utf-8"):
             continue
         if yaml.safe_load(text) != expected:

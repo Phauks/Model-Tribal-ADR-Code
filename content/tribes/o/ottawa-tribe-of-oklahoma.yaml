@@ -233,40 +233,36 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
 - aspect: governing-body
   value: Ottawa Council
-  quote: The supreme governing body of this organization shall be the Ottawa
-  source: constitution-ottawa-tribe-of-oklahoma-1980-text
-  confidence: medium
+  quote: The supreme governing body of the Ottawa Tribe is the Ottawa Council, comprised of all members of the tribe eighteen years of age and over.
+  source: ottawa-tribe-of-oklahoma-website-tribal-leaders
+  confidence: high
   verification: read-in-full
-  as_of: '1980-12-19'
-  locator: Article IV
-  document_version:
-    document: ottawa-tribe-of-oklahoma-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The full 1979 constitution PDF (page 7) has no extractable text, page 4 is only the preamble with a 1938 date, page 2 summarizes proposed 2025 changes that are not treated as current, and page 1 says the constitution was ratified in 1978.'
 - aspect: governing-body
   value: Business Committee
-  quote: The business committee shall have power to transact business and otherwise
-  source: constitution-ottawa-tribe-of-oklahoma-1980-text
-  confidence: medium
+  quote: Together They compose the Business Committee.
+  source: ottawa-tribe-of-oklahoma-website-tribal-leaders
+  confidence: high
   verification: read-in-full
-  as_of: '1980-12-19'
-  locator: Article VI
-  document_version:
-    document: ottawa-tribe-of-oklahoma-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The full 1979 constitution PDF (page 7) has no extractable text, page 4 is only the preamble with a 1938 date, page 2 summarizes proposed 2025 changes that are not treated as current, and page 1 says the constitution was ratified in 1978.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The officers of the Ottawa Tribe are the Chief, Second Chief, Secretary-Treasurer, and two Council members.
+  source: ottawa-tribe-of-oklahoma-website-tribal-leaders
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The full 1979 constitution PDF (page 7) has no extractable text, page 4 is only the preamble with a 1938 date, page 2 summarizes proposed 2025 changes that are not treated as current, and page 1 says the constitution was ratified in 1978.'
 - aspect: governing-body-selection
-  value: Elected by majority vote
-  quote: The candidate receiving a majority vote
-  source: constitution-ottawa-tribe-of-oklahoma-1980-text
-  confidence: medium
+  value: Elected
+  quote: an elected tribal council and a tribal court system
+  source: ottawa-tribe-of-oklahoma-home
+  confidence: high
   verification: read-in-full
-  as_of: '1980-12-19'
-  locator: Article VIII, Section 4
-  document_version:
-    document: ottawa-tribe-of-oklahoma-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The full 1979 constitution PDF (page 7) has no extractable text, page 4 is only the preamble with a 1938 date, page 2 summarizes proposed 2025 changes that are not treated as current, and page 1 says the constitution was ratified in 1978.'
 - aspect: governing-body-term
   value: 3 years
   quote: after, all terms of office shall be for three (3) years and elections shall be
@@ -280,29 +276,21 @@ governance:
     version: 1980-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
 - aspect: general-council
-  value: All tribal members 18 or older, forming the Ottawa Council
-  quote: eighteen (18) years of age and over.
-  source: constitution-ottawa-tribe-of-oklahoma-1980-text
-  confidence: medium
+  value: All members aged 18 and over
+  quote: comprised of all members of the tribe eighteen years of age and over
+  source: ottawa-tribe-of-oklahoma-website-tribal-leaders
+  confidence: high
   verification: read-in-full
-  as_of: '1980-12-19'
-  locator: Article IV
-  document_version:
-    document: ottawa-tribe-of-oklahoma-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The full 1979 constitution PDF (page 7) has no extractable text, page 4 is only the preamble with a 1938 date, page 2 summarizes proposed 2025 changes that are not treated as current, and page 1 says the constitution was ratified in 1978.'
 - aspect: head-of-government
   value: Chief
-  quote: Section 1 . Chief. It shall be the duty of the chief to preside at all meetings
-  source: constitution-ottawa-tribe-of-oklahoma-1980-text
-  confidence: medium
+  quote: The officers of the Ottawa Tribe are the Chief, Second Chief, Secretary-Treasurer, and two Council members.
+  source: ottawa-tribe-of-oklahoma-website-tribal-leaders
+  confidence: high
   verification: read-in-full
-  as_of: '1980-12-19'
-  locator: Bylaws, Article I, Section 1
-  document_version:
-    document: ottawa-tribe-of-oklahoma-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The full 1979 constitution PDF (page 7) has no extractable text, page 4 is only the preamble with a 1938 date, page 2 summarizes proposed 2025 changes that are not treated as current, and page 1 says the constitution was ratified in 1978.'
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -324,17 +312,13 @@ governance:
     version: 1980-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
 - aspect: other-officers
-  value: Second chief, secretary-treasurer, two council members
-  quote: The officers of the tribe shall be a chief, second chief, secretary-treasurer
-  source: constitution-ottawa-tribe-of-oklahoma-1980-text
-  confidence: medium
+  value: Second Chief, Secretary-Treasurer, two Council members
+  quote: The officers of the Ottawa Tribe are the Chief, Second Chief, Secretary-Treasurer, and two Council members.
+  source: ottawa-tribe-of-oklahoma-website-tribal-leaders
+  confidence: high
   verification: read-in-full
-  as_of: '1980-12-19'
-  locator: Article V
-  document_version:
-    document: ottawa-tribe-of-oklahoma-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The full 1979 constitution PDF (page 7) has no extractable text, page 4 is only the preamble with a 1938 date, page 2 summarizes proposed 2025 changes that are not treated as current, and page 1 says the constitution was ratified in 1978.'
 - aspect: elections
   value: Annually on the first Saturday in May
   quote: held annually on the first Saturday in May. Officials of the business
@@ -360,17 +344,21 @@ governance:
     version: 1980-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
 - aspect: election-authority
-  value: Election committee appointed by the business committee
-  quote: election committee shall be solely responsible for calling and conducting the
-  source: constitution-ottawa-tribe-of-oklahoma-1980-text
-  confidence: medium
+  value: Election Committee
+  quote: 2025 Election Committee
+  source: ottawa-tribe-of-oklahoma-website-tribal-leaders
+  confidence: high
   verification: read-in-full
-  as_of: '1980-12-19'
-  locator: Article VIII, Section 2
-  document_version:
-    document: ottawa-tribe-of-oklahoma-constitution
-    version: 1980-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The full 1979 constitution PDF (page 7) has no extractable text, page 4 is only the preamble with a 1938 date, page 2 summarizes proposed 2025 changes that are not treated as current, and page 1 says the constitution was ratified in 1978.'
+- aspect: judiciary
+  value: Tribal court system
+  quote: an elected tribal council and a tribal court system
+  source: ottawa-tribe-of-oklahoma-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The full 1979 constitution PDF (page 7) has no extractable text, page 4 is only the preamble with a 1938 date, page 2 summarizes proposed 2025 changes that are not treated as current, and page 1 says the constitution was ratified in 1978.'
 - aspect: amendment
   value: Majority vote of business committee or petition of 20% of adult members, then referendum
   quote: Amendments to this constitution and bylaws may be proposed by a majority
@@ -570,6 +558,17 @@ gaming:
     locator: table row 181, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 181 lists the nation
       as "Ottawa Tribe of Oklahoma".
+  indian_lands_opinions:
+  - parcel: Ottawa County, Oklahoma
+    legal_theory: Former Within Reservation Boundaries
+    accepted: true
+    date: '2012-08-09'
+    link: https://www.nigc.gov?wpdmdl=2653&ind=2654
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ottawa Tribe of Oklahoma, 2012-08-09
+    note: The list names the tribe as “Ottawa Tribe of Oklahoma”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -604,6 +603,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Ottawa Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+nearby_state_courts:
+- state: OK
+  county: Ottawa County
+  court: District Court for Ottawa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Ottawa County holds 100% of the land of Ottawa OTSA (Census GEOID 5770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1785
   signed: '1785-01-21'

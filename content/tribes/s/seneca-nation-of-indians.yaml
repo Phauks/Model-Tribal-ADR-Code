@@ -716,6 +716,98 @@ gaming:
     locator: table row 252, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 252 lists the nation
       as "Seneca Nation of New York". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Buffalo parcels, Erie County, NY
+    legal_theory: Settlement of a Land Claim
+    accepted: true
+    date: '2002-11-12'
+    link: https://www.nigc.gov?wpdmdl=2544&ind=2545
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Seneca Nation of Indians, 2002-11-12
+    note: The list names the tribe as “Seneca Nation of Indians”.
+  - parcel: Buffalo parcels, Erie County, NY
+    legal_theory: Settlement of a Land Claim
+    accepted: true
+    date: '2007-07-02'
+    link: https://www.nigc.gov?wpdmdl=2596&ind=2597
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Seneca Nation of Indians, 2007-07-02
+    note: The list names the tribe as “Seneca Nation of Indians”.
+  - parcel: Buffalo parcels, Erie County, NY
+    legal_theory: After Aquired Land
+    accepted: true
+    date: '2009-01-20'
+    link: https://www.nigc.gov?wpdmdl=2631&ind=2632
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Seneca Nation of Indians, 2009-01-20
+    note: The list names the tribe as “Seneca Nation of Indians”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-02-04
+    date: '2002-05-30'
+    link: https://www.nigc.gov?wpdmdl=8270&ind=8282
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-02-04
+    note: The list titles the action “Seneca Nation of Indian” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-05
+    date: '2005-03-16'
+    link: https://www.nigc.gov?wpdmdl=8195&ind=8217
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-05
+    note: The list titles the action “Seneca Nation of Indians” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-05-05
+    date: '2005-04-29'
+    link: https://www.nigc.gov?wpdmdl=8185&ind=8206
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-05-05
+    note: The list titles the action “Seneca Nation of Indians” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-NOV-CFA-05-05
+    date: '2005-06-08'
+    link: https://www.nigc.gov?wpdmdl=12974&ind=12975
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-NOV-CFA-05-05
+    note: The list titles the action “Seneca Nation of Indian s” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-12
+    date: '2005-06-16'
+    link: https://www.nigc.gov?wpdmdl=8171&ind=8182
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-12
+    note: The list titles the action “Seneca Nation of Indians” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-20
+    date: '2008-09-03'
+    link: https://www.nigc.gov?wpdmdl=7983&ind=7994
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-20
+    note: The list titles the action “Seneca Nation of Indians” and gives its type as NOV.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -754,6 +846,43 @@ jurisdiction:
   verification: read-in-full
   locator: 25 U.S.C. § 233; Act of Sept. 13, 1950, ch. 947, 64 Stat. 845
   note: Section 233 also excludes civil actions involving Indian lands or claims about events before Sept. 13, 1952; tribes could preserve their own laws and customs by enactment before Sept. 13, 1952.
+nearby_state_courts:
+- state: NY
+  county: Cattaraugus County
+  court: Supreme Court for Cattaraugus County
+  link: https://www.nycourts.gov/court-locator
+  source: state-trial-court-directory-ny
+  confidence: medium
+  verification: title-only
+  locator: Supreme Courts by county or district
+  note: Cattaraugus County holds 100% of the land of Allegany Reservation (Census GEOID 0080), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NY
+  county: Erie County
+  court: Supreme Court for Erie County
+  link: https://www.nycourts.gov/court-locator
+  source: state-trial-court-directory-ny
+  confidence: medium
+  verification: title-only
+  locator: Supreme Courts by county or district
+  note: Erie County holds 75% of the land of Cattaraugus Reservation (Census GEOID 0540), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NY
+  county: Chautauqua County
+  court: Supreme Court for Chautauqua County
+  link: https://www.nycourts.gov/court-locator
+  source: state-trial-court-directory-ny
+  confidence: medium
+  verification: title-only
+  locator: Supreme Courts by county or district
+  note: Chautauqua County holds 7% of the land of Cattaraugus Reservation (Census GEOID 0540), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NY
+  county: Allegany County
+  court: Supreme Court for Allegany County
+  link: https://www.nycourts.gov/court-locator
+  source: state-trial-court-directory-ny
+  confidence: medium
+  verification: title-only
+  locator: Supreme Courts by county or district
+  note: Allegany County holds 61% of the land of Oil Springs Reservation (Census GEOID 2535), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Six Nations, 1784
   signed: '1784-10-22'

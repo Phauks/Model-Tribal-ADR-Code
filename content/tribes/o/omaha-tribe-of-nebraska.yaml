@@ -572,12 +572,8 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2013'
     locator: 11-5-12
-    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
-      is left for the lead author's review. Read from a scanned copy by OCR.
-    summary: Bars the Tribal Court, in protection order proceedings, from ordering the parties into counseling,
-      mediation, restorative justice, peacemaking, circle sentencing, traditional ceremonies or similar
-      processes that would put the petitioner in direct dealing with the respondent, even if the petitioner
-      may refuse to take part.
+    note: Read in full on 2026-11-23 from page images (Omaha Tribal Code (2013), Title 11. Domestic Violence). Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision is left for the lead author's review. Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 351.
+    summary: Bars the Tribal Court, in protection order proceedings, from ordering the parties into counseling, mediation, restorative justice, peacemaking, circle sentencing, traditional ceremonies or similar processes that would put the petitioner in direct dealing with the respondent, even if the petitioner may refuse to take part.
   - kind: arbitration
     title: TITLE 49. ARBITRATION ORDINANCE
     citation: Title 49 Arbitration Ordinance (Omaha Tribal Code, 2013), 49-1-1 to 49-1-13
@@ -587,14 +583,8 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2007-06-07'
     locator: 49-1-1 to 49-1-13
-    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. The table
-      of contents also lists this section as "CHAPTER 1. ARBITRATION"; that record was folded into this
-      one on 2026-11-22.
-    summary: Authorizes arbitration of disputes under written contracts approved by Tribal Council resolution,
-      makes agreements to arbitrate enforceable, requires the Tribal Court to stay its own proceedings
-      and order arbitration, and lets a party obtain court confirmation of an award, which the court confirms
-      as written unless it finds listed grounds to decline or may modify for listed errors, with no appeal
-      from orders enforcing agreements or awards.
+    note: 'Read in full on 2026-11-23 from page images (Omaha Tribal Code (2013), Title 49. Arbitration Ordinance; Source: Omaha Tribal Council Ordinance No. 07-68 (6-7-07)). Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. ARBITRATION"; that record was folded into this one on 2026-11-22. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 352.'
+    summary: Authorizes arbitration of disputes under written contracts approved by Tribal Council resolution, makes agreements to arbitrate enforceable, requires the Tribal Court to stay its own proceedings and order arbitration, and lets a party obtain court confirmation of an award, which the court confirms as written unless it finds listed grounds to decline or may modify for listed errors, with no appeal from orders enforcing agreements or awards.
   - kind: arbitration
     title: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
     citation: Compact between the Omaha Tribe of Nebraska and the State of Iowa (Appendix D to the Omaha
@@ -750,6 +740,38 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Omaha Tribe of Nebraska". Name
       extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-24
+    date: '2008-11-04'
+    link: https://www.nigc.gov?wpdmdl=7961&ind=7972
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-24
+    note: The list titles the action “Omaha Tribe of Nebraska and Iowa” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-24
+    date: '2008-12-15'
+    link: https://www.nigc.gov?wpdmdl=7943&ind=7965
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-24
+    note: The list titles the action “Omaha Tribe of Nebraska and Iowa” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    - pre-opening-agreement
+    tracking_number: NOV/POA-09-39
+    date: '2009-10-02'
+    link: https://www.nigc.gov?wpdmdl=7765&ind=7776
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/POA-09-39
+    note: The list titles the action “Omaha Tribe of Nebraska” and gives its type as NOV/POA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -819,6 +841,43 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.H, Nebraska
   note: 'The source reads: “Omaha Tribe,”. Effective July 1, 2010 through June 30, 2013 per the report, so the term had ended by the report date unless renewed. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: NE
+  county: Thurston County
+  court: District Court for Thurston County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Thurston County holds 73% of the land of Omaha Reservation (Census GEOID 2550), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NE
+  county: Cuming County
+  court: District Court for Cuming County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Cuming County holds 23% of the land of Omaha Reservation (Census GEOID 2550), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NE
+  county: Burt County
+  court: District Court for Burt County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Burt County holds 3% of the land of Omaha Reservation (Census GEOID 2550), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: IA
+  county: Monona County
+  court: District Court for Monona County
+  link: https://www.iowacourts.gov/iowa-courts/district-court
+  source: state-trial-court-directory-ia
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Monona County holds 2% of the land of Omaha Reservation (Census GEOID 2550), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Makah, 1815
   signed: '1815-07-20'

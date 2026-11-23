@@ -1,11 +1,12 @@
 import { deviceLabel } from '#lib/device-label.ts';
 import { fail, redirect } from '@sveltejs/kit';
 import {
-	checkPassword,
 	cleanEmail,
 	codeLifetimeMinutes,
 	issueCode,
 	looksLikeEmail,
+	tryPassword,
+	usablePasswordKey,
 	useCode,
 	verifiedAccount
 } from '#lib/server/accounts.ts';
@@ -60,18 +61,23 @@ export const actions: Actions = {
 		const email = cleanEmail(formText(form, 'email'));
 		const returnTo = safeReturnPath(formText(form, 'returnTo'));
 		if (!looksLikeEmail(email)) {
-			return fail(400, { step: 'email' as const, email, problem: 'Enter your email address, for example name@example.com.' });
+			return fail(400, {
+				step: 'email' as const,
+				email, returnTo,
+				field: 'email' as const,
+				problem: 'Enter your email address, for example name@example.com.'
+			});
 		}
 		const environment = workerEnvironment();
 		const delivery = emailDelivery(environment, url);
 		if (delivery.kind === 'none' || !environment.database) {
 			return fail(503, {
 				step: 'email' as const,
-				email,
+				email, returnTo,
 				problem: 'This site cannot send sign-in codes yet. Sign in with your password, or ask the lead author for a sign-in link.'
 			});
 		}
-		if (!(await withinLimit(request, email, 'send'))) return fail(429, { step: 'email' as const, email, problem: tooMany });
+		if (!(await withinLimit(request, email, 'send'))) return fail(429, { step: 'email' as const, email, returnTo, problem: tooMany });
 
 		const issued = await issueCode(environment.database, email, 'email');
 		const link = new URL('/sign-in/link', url.origin);
@@ -85,14 +91,15 @@ export const actions: Actions = {
 				console.error('Could not send a sign-in email', problem);
 				return fail(502, {
 					step: 'email' as const,
-					email,
+					email, returnTo,
 					problem: 'The email could not be sent just now. Please try again in a few minutes.'
 				});
 			}
 		}
 		return {
 			step: 'code' as const,
-			email,
+			email, returnTo,
+			keep: form.get('keep') === 'yes',
 			minutes: codeLifetimeMinutes.email,
 			// Only on a copy running on this computer, where no email is sent.
 			shownCode: delivery.kind === 'on-screen' ? issued.code : undefined,
@@ -108,7 +115,7 @@ export const actions: Actions = {
 		const returnTo = safeReturnPath(formText(form, 'returnTo'));
 		const environment = workerEnvironment();
 		const again = (problem: string, status = 400) =>
-			fail(status, { step: 'code' as const, email, minutes: codeLifetimeMinutes.email, problem });
+			fail(status, { step: 'code' as const, email, returnTo, keep: form.get('keep') === 'yes', minutes: codeLifetimeMinutes.email, problem, field: 'code' as const });
 		if (!environment.database) return again('Sign-in is not available right now.', 503);
 		if (!/^\d{6}$/.test(code)) return again('Enter the six-digit code from the email.');
 		if (!(await withinLimit(request, email, 'code'))) return again(tooMany, 429);
@@ -124,7 +131,10 @@ export const actions: Actions = {
 		}
 
 		const account = await verifiedAccount(environment.database, result.email);
-		const finished = await finishSignIn(environment.database, cookies, account, 'code', returnTo, environment.LEAD_AUTHOR_EMAIL, deviceLabel(request.headers.get('user-agent')));
+		const finished = await finishSignIn(environment.database, cookies, account, 'code', returnTo, environment.LEAD_AUTHOR_EMAIL, {
+			device: deviceLabel(request.headers.get('user-agent')),
+			keep: form.get('keep') === 'yes'
+		});
 		if (finished.outcome === 'refused') {
 			cookies.set(refusalCookie, finished.reason, { path: '/sign-in', maxAge: 300, httpOnly: true, sameSite: 'lax' });
 			redirect(303, '/sign-in/refused');
@@ -132,25 +142,46 @@ export const actions: Actions = {
 		redirect(303, finished.destination);
 	},
 
-	/** Signs in with a password the person chose earlier. */
-	password: async ({ request, cookies }) => {
+	/**
+	 * Signs in with a password the person chose earlier. Wrong passwords are
+	 * counted for the address: after 10 in a row password sign-in pauses, and
+	 * after 100 it stays off until a new password is chosen
+	 * (src/lib/server/accounts.ts, tryPassword).
+	 */
+	password: async ({ request, cookies, url }) => {
 		const form = await request.formData();
 		const email = cleanEmail(formText(form, 'email'));
 		const password = formText(form, 'password');
 		const returnTo = safeReturnPath(formText(form, 'returnTo'));
 		const environment = workerEnvironment();
-		const again = (problem: string, status = 400) => fail(status, { step: 'email' as const, email, problem });
-		if (!environment.database) return again('Sign-in is not available right now.', 503);
-		if (!looksLikeEmail(email) || password === '') return again('Enter your email address and your password.');
-		if (!(await withinLimit(request, email, 'password'))) return again(tooMany, 429);
+		const again = (problem: string, field: 'email' | 'password' | undefined, status = 400) =>
+			fail(status, { step: 'email' as const, email, returnTo, problem, field });
+		if (!environment.database) return again('Sign-in is not available right now.', undefined, 503);
+		if (!looksLikeEmail(email)) return again('Enter your email address, for example name@example.com.', 'email');
+		if (password === '') return again('Enter your password.', 'password');
+		if (!(await withinLimit(request, email, 'password'))) return again(tooMany, undefined, 429);
 
-		const account = await checkPassword(environment.database, email, password);
+		const result = await tryPassword(environment.database, email, password, usablePasswordKey(environment.PASSWORD_KEY));
+		if (result.outcome === 'paused' || result.outcome === 'off') {
+			return fail(429, {
+				step: 'email' as const,
+				email, returnTo,
+				paused: {
+					off: result.outcome === 'off',
+					minutes: result.outcome === 'paused' ? Math.max(1, Math.ceil((Date.parse(result.until) - Date.now()) / 60_000)) : 0,
+					codesAvailable: emailDelivery(environment, url).kind !== 'none'
+				}
+			});
+		}
 		// The same answer whether or not the address has an account, so this
 		// form cannot be used to find out who has signed up.
-		if (!account) {
-			return again('The email address or password is not right. If you have not chosen a password, sign in with a code instead.');
+		if (result.outcome !== 'accepted') {
+			return again('The email address or password is not right. Check both, or sign in with a code instead.', 'password');
 		}
-		const finished = await finishSignIn(environment.database, cookies, account, 'password', returnTo, environment.LEAD_AUTHOR_EMAIL, deviceLabel(request.headers.get('user-agent')));
+		const finished = await finishSignIn(environment.database, cookies, result.account, 'password', returnTo, environment.LEAD_AUTHOR_EMAIL, {
+			device: deviceLabel(request.headers.get('user-agent')),
+			keep: form.get('keep') === 'yes'
+		});
 		if (finished.outcome === 'refused') {
 			cookies.set(refusalCookie, finished.reason, { path: '/sign-in', maxAge: 300, httpOnly: true, sameSite: 'lax' });
 			redirect(303, '/sign-in/refused');

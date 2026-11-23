@@ -141,6 +141,46 @@ indian_health_service:
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Fond du Lac Band". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
 governance:
+- aspect: governing-body
+  value: Reservation Business Committee, Tribal Council
+  quote: The governing body of the Fond du Lac Reservation is the Reservation Business Committee, or Tribal Council,
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: which is composed of a Chairperson, Secretary/Treasurer, and Three Representatives; one from District 1, Cloquet;
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: All are elected to four-year terms on a staggered basis
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: All are elected to four-year terms on a staggered basis
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: which is composed of a Chairperson, Secretary/Treasurer, and Three Representatives
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -149,6 +189,22 @@ governance:
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: All are elected to four-year terms on a staggered basis
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Secretary/Treasurer
+  quote: which is composed of a Chairperson, Secretary/Treasurer, and Three Representatives
+  source: fond-du-lac-band-website-government-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 representatives:
 - office: President
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -264,6 +320,17 @@ gaming:
       as "Fond du Lac Band of Minnesota Chippewa Tribe". Name matched to roster by spelling variant. Ordinance
       of the Fond du Lac Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
       only the Minnesota Chippewa Tribe.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-11-02
+    date: '2011-07-12'
+    link: https://www.nigc.gov?wpdmdl=7748&ind=7768
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-11-02
+    note: The list titles the action “Fond du Lac Band of Lake Superior Chippewa” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -303,6 +370,36 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Fond du Lac Carlton and Duluth”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Fond du Lac", matched to the roster by name and state.'
+court_practice:
+- kind: forms
+  title: Court Forms (Fond du Lac)
+  court: Fond du Lac Tribal Court
+  link: https://www.fdlband.org/government/tribal_court/court_forms.php
+  detail: Packets and forms for commonly filed cases, including Motion to Appear by Telephone, General Motion, Name Change Minor and Adult packets (filing fee $50.00 each) and probate packets.
+  source: fond-du-lac-tribal-court-forms
+  confidence: high
+  verification: title-only
+  locator: Document Center
+  note: 'The source reads: “Filing Fee: $50.00”. Packets not opened.'
+nearby_state_courts:
+- state: MN
+  county: Carlton County
+  court: District Court for Carlton County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Carlton County holds 53% of the land of Fond du Lac Reservation (Census GEOID 1125), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: St. Louis County
+  court: District Court for St. Louis County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: St. Louis County holds 46% of the land of Fond du Lac Reservation (Census GEOID 1125), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1842
   signed: '1842-10-04'

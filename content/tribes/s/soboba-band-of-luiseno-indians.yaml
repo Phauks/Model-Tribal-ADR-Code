@@ -191,6 +191,46 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Soboba Band of Luiseno Indians, California".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Soboba Tribal Government consists of five Tribal Members who are elected by the general membership to Tribal Council for a staggered two year term.
+  source: soboba-band-of-luiseno-indians-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Soboba Tribal Government consists of five Tribal Members who are elected by the general membership to Tribal Council for a staggered two year term.
+  source: soboba-band-of-luiseno-indians-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by general membership
+  quote: The Soboba Tribal Government consists of five Tribal Members who are elected by the general membership to Tribal Council for a staggered two year term.
+  source: soboba-band-of-luiseno-indians-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: The Soboba Tribal Government consists of five Tribal Members who are elected by the general membership to Tribal Council for a staggered two year term.
+  source: soboba-band-of-luiseno-indians-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman is elected by a majority vote of the general membership but the positions for Vice-Chair, Tribal Secretary, Tribal Treasurer and Sergeant at Arms are decided by the elected council.
+  source: soboba-band-of-luiseno-indians-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -199,6 +239,22 @@ governance:
   as_of: '2026-11-20'
   locator: Soboba Band of Luiseno Indians, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of general membership
+  quote: The Chairman is elected by a majority vote of the general membership but the positions for Vice-Chair, Tribal Secretary, Tribal Treasurer and Sergeant at Arms are decided by the elected council.
+  source: soboba-band-of-luiseno-indians-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chair, Tribal Secretary, Tribal Treasurer, Sergeant at Arms
+  quote: The Chairman is elected by a majority vote of the general membership but the positions for Vice-Chair, Tribal Secretary, Tribal Treasurer and Sergeant at Arms are decided by the elected council.
+  source: soboba-band-of-luiseno-indians-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -307,6 +363,47 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Soboba Band of Luiseno Indians".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-13
+    date: '2006-07-19'
+    link: https://www.nigc.gov?wpdmdl=8125&ind=8136
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-13
+    note: The list titles the action “Soboba Band of Luiseno Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-13
+    date: '2006-08-18'
+    link: https://www.nigc.gov?wpdmdl=8107&ind=8118
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-13
+    note: The list titles the action “Soboba Band of Luiseno Indians” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-19-01
+    date: '2019-04-09'
+    link: https://www.nigc.gov?wpdmdl=3008&ind=3009
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-19-01
+    note: The list titles the action “Soboba Band of Luiseno Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-19-01
+    date: '2019-05-08'
+    link: https://www.nigc.gov?wpdmdl=3004&ind=3005
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-19-01
+    note: The list titles the action “Soboba Band of Luiseno Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -333,6 +430,16 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+nearby_state_courts:
+- state: CA
+  county: Riverside County
+  court: Superior Court for Riverside County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Riverside County holds 100% of the land of Soboba Reservation (Census GEOID 3870), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

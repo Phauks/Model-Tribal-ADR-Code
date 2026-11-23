@@ -657,57 +657,52 @@ dispute_resolution:
       name: Mnodaawin
       language_tag: otw
       translation: Odawa peacemaking (as glossed in the rule)
-    description: The Odawa peacemaking program to which Tribal Court cases may be transferred.
+    description: The Odawa peacemaking program (peacemaking circles) to which Tribal Court cases may be transferred; the Tribal Court's program page says it starts with juvenile cases such as truancy, curfew, incorrigibility and minor offenses, with civil disputes planned later.
     legal_basis: Little Traverse Bay Bands Rules of Civil Procedure, Rule XXIX (Mnodaawin)
     case_types:
+    - juvenile
     - civil
     - other
     participation: voluntary
-    relationship_to_court: A party may request transfer of a Tribal Court case at any time on evidence
-      that all parties voluntarily consent and the Mnodaawin program has affirmed it can accept the case.
+    relationship_to_court: A party may request transfer of a Tribal Court case at any time on evidence that all parties voluntarily consent and the Mnodaawin program has affirmed it can accept the case.
     enforcement: Parties must consent to be bound by any agreement reached in Mnodaawin.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
     source: little-traverse-civil-rules-2015
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: 2015-08
     locator: Rule XXIX
-    note: Language tag otw (Ottawa/Odawa) assigned because the rule glosses the term as Odawa peacemaking.
-      The Judicial Branch's peacemaking page, listed under published materials, describes Mnodaawin circles
-      for juvenile cases (folded 2026-11-22, review queue item 5).
+    note: Read in full on 2026-11-23 (Little Traverse Bay Bands of Odawa Indians Tribal Court, Chapter 3 Rules of Civil Procedure (Rule XXIX; Judiciary orders of August 21, 2015 noted in the text)). Language tag otw (Ottawa/Odawa) assigned because Rule XXIX glosses the term as Odawa peacemaking. The Tribal Court's own peacemaking page describes Mnodaawin peacemaking circles, first for juvenile cases. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 243.
   - kind: mediation
     name: Court-ordered mediation in child protection
-    description: After finding probable cause at a preliminary hearing the court may order custodians
-      to participate in mediation; statements are not part of the record or used against them, except
-      new abuse or neglect allegations, which are reported.
+    description: At any time after a preliminary hearing at which it finds probable cause, the court may order the custodians to participate in mediation; statements made in mediation are not part of the official record or used against them in further proceedings, except that statements about new abuse or neglect allegations are reported to the Department of Human Services.
     legal_basis: Waganakising Odawak Tribal Code of Law (WOTCL) 5.118(J)
     case_types:
     - child-welfare
     participation: required
     relationship_to_court: Ordered by the court within child protection proceedings.
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+    source: little-traverse-wotcl-2024-2
     confidence: medium
-    verification: bulk-import
-    as_of: '2026'
-    locator: https://ncorj.org/tribal-law/court-ordered-mediation-in-child-protection/
+    verification: read-in-full
+    as_of: 2022-01
+    locator: Title V Child Welfare, Sec. 5.118(J)
+    note: Read in full on 2026-11-23 (WOTCL Title V Child Welfare, version 2024.2 (codified through March 1, 2024); Sec. 5.118 source WOS 2022-001, January 26, 2022). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 244.
   - kind: peacemaking
     name: Peacemaking in child protection cases
-    description: In lieu of mediation, parties may request peacemaking, a voluntary and confidential process
-      using cultural approaches to dispute resolution; statements cannot be used in court except new abuse
-      or neglect allegations, which are reported.
+    description: In lieu of mediation, parties may request peacemaking, a voluntary and confidential process using cultural approaches to dispute resolution; statements cannot be used in court except new abuse or neglect allegations, which are reported.
     legal_basis: Waganakising Odawak Tribal Code of Law (WOTCL) 5.118(K)
     case_types:
     - child-welfare
     participation: voluntary
-    relationship_to_court: Available as an alternative to court-ordered mediation within child protection
-      proceedings.
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: Parties in a child protection case may request peacemaking in place of the court-ordered mediation under Sec. 5.118(J); the section does not say who approves the request or who facilitates.
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+    source: little-traverse-wotcl-2024-2
     confidence: medium
-    verification: bulk-import
-    as_of: '2026'
-    locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
+    verification: read-in-full
+    as_of: 2022-01
+    locator: Title V Child Welfare, Sec. 5.118(K)
+    note: Read in full on 2026-11-23 (WOTCL Title V Child Welfare, version 2024.2; Sec. 5.118 source WOS 2022-001, January 26, 2022). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 245.
   provisions:
   - kind: peacemaking
     title: 'Rule XXIX: Mnodaawin'
@@ -751,95 +746,69 @@ dispute_resolution:
   - context: other
     kind: arbitration-clause
     citation: 18.278 (Waganakising Odawak statute, as listed by NILL)
-    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
-      arbitration of disputes related to the loan, along with law on security interests.
-    link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-codes-ltraverse
+    summary: Council resolution approving swap documents with Wells Fargo Bank to hedge interest rates on the Tribe's existing loan, and reaffirming the Dispute Resolution Provisions of the loan documents (arbitration, limited waiver of sovereign immunity, forum selection) for the swaps, with New York law and the New York state and federal courts in Manhattan applying to the swap documents. The Tribal Court gives full faith and credit to federal and state court awards and tribal police may carry out Tribal Court judgments.
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+    source: little-traverse-wotcl-2024-2
     confidence: medium
-    verification: title-only
-    as_of: 2024-03
-    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
-      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.278 AUTHORIZING
-      SWAP DOCUMENTS AND RELATED DOCUMENTS FROM WELLS FARGO BANK, NATIONAL ASSOCIATION, AUTHORIZING TRIBAL
-      APPROPRIATIONS FOR PAYMENTS OF THE SWAP OBLIGATIONS, AFFIRMING ADOPTION OF LAW GOVERNING THE ARBITRATION
-      OF DISPUTES RELATED TO THE LOAN (INCLUDING THE SWAP), AND LAW REGARDING SECURITY INTERESTS AND ADDRESSING
-      RELATED MATTERS.'
+    verification: read-in-full
+    as_of: 2015-12
+    note: 'Read in full on 2026-11-23 (Waganakising Odawak Tribal Code of Law (WOTCL), Title XVIII Post Constitution Resolutions, version 2024.2, codified through March 1, 2024; Sec. 18.278 source Tribal Resolution #121015-06). Date inferred from the resolution number (#121015-06); no enactment date printed in the code. Read from the nation''s code text, version 2024.2. The Tribe''s arbitration law applicable to the loan is the Limited Arbitration Provisions in the 2014 resolution, see Sec. 18.507. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 249.'
+    locator: WOTCL Title XVIII, Ch. 2, Sec. 18.278 (recitals A-D, resolution paragraphs 4-5)
   - context: other
     kind: arbitration-clause
     citation: 18.400(7.20)(a) (Waganakising Odawak statute, as listed by NILL)
-    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
-      arbitration of disputes related to the loan, along with law on security interests.
-    link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-codes-ltraverse
+    summary: 'Council resolution approving a PNC Bank loan (initial $26.5 million) and its documents, approving their dispute resolution provisions and limited waiver of sovereign immunity as binding on the Tribe, and appropriating casino revenue for repayment. Enacts as tribal law the Limited Arbitration Provisions (Exhibit A): the Tribe''s agreement to arbitrate is valid, irrevocable and enforceable; any party may apply to a Tribal Court within one year to confirm an award; the Tribal Court may not review or modify the award but may decline to enforce it for corruption, fraud, partiality, misconduct or excess of arbitrator powers; the confirming judgment is docketed and enforced like a civil judgment with no further appeal, and tribal police support enforcement.'
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+    source: little-traverse-wotcl-2024-2
     confidence: medium
-    verification: title-only
-    as_of: 2024-03
-    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
-      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.400(7.20)(a)
-      AUTHORIZING LOAN FROM PNC BANK, NATIONAL ASSOCIATION, AND RELATED DOCUMENTS, AUTHORIZING TRIBAL
-      APPROPRIATIONS FOR PAYMENTS OF THE LOAN, ADOPTING LAW GOVERNING THE ARBITRATION OF DISPUTES RELATED
-      TO THE LOAN, ADOPTING LAW REGARDING SECURITY INTERESTS AND ADDRESSING RELATED MATTERS.'
+    verification: read-in-full
+    as_of: 2020-07
+    note: 'Read in full on 2026-11-23 (Waganakising Odawak Tribal Code of Law (WOTCL), Title XVIII Post Constitution Resolutions, version 2024.2, codified through March 1, 2024; Sec. 18.400(7.20)(a) source Tribal Resolution #070920-01). Date inferred from the resolution number (#070920-01); no enactment date printed in the code. Read from the nation''s code text, version 2024.2. Exhibit A applies only to disputes under the transaction documents that provide for arbitration. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 250.'
+    locator: WOTCL Title XVIII, Ch. 4, Sec. 18.400(7.20)(a) (recitals F-H, resolution paragraphs 4-8, Exhibit A)
   - context: other
     kind: waiver-of-sovereign-immunity
     citation: 18.400(6.23)(a) (Waganakising Odawak statute, as listed by NILL)
-    summary: Statute title states a limited waiver of the Bands' sovereign immunity to authorize arbitration
-      with a named company.
-    link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-codes-ltraverse
+    summary: Council resolution expressly waiving the Tribe's sovereign immunity for the benefit of Dropbox only, for the limited and sole purpose of consenting to arbitration under Dropbox's Business Agreement (a take-it-or-leave-it contract Dropbox would not change to provide for arbitration enforceable only in Tribal Court); any arbitration judgment is enforceable under California law and the waiver is limited to the value of the contract.
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+    source: little-traverse-wotcl-2024-2
     confidence: medium
-    verification: title-only
-    as_of: 2024-03
-    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
-      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.400(6.23)(a)
-      LIMITED WAIVER OF SOVEREIGN IMMUNITY OF THE LITTLE TRAVERSE BAY BANDS OF ODAWA INDIANS TO AUTHORIZE
-      ARBITRATION WITH DROPBOX.'
+    verification: read-in-full
+    as_of: 2023-06
+    note: 'Read in full on 2026-11-23 (Waganakising Odawak Tribal Code of Law (WOTCL), Title XVIII Post Constitution Resolutions, version 2024.2, codified through March 1, 2024; Sec. 18.400(6.23)(a) source Tribal Resolution #062223-03). Date inferred from the resolution number (#062223-03). Read from the nation''s code text, version 2024.2. Context: vendor Business Agreement for confidential document exchange with Tribal Citizens, not a loan. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 251.'
+    locator: WOTCL Title XVIII, Ch. 4, Sec. 18.400(6.23)(a)
   - context: other
     kind: arbitration-clause
     citation: 18.507 (Waganakising Odawak statute, as listed by NILL)
-    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
-      arbitration of disputes related to the loan, along with law on security interests.
-    link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-codes-ltraverse
+    summary: 'Council resolution authorizing a $41 million Wells Fargo revolving credit facility to refinance existing notes and approving its dispute resolution provisions and limited waiver of sovereign immunity as binding on the Tribe. Enacts as tribal law the Limited Arbitration Provisions (Exhibit A): the Tribe''s agreement to arbitrate is valid, irrevocable and enforceable; any party may apply to a Tribal Court within one year to confirm an award; the Tribal Court may not review or modify the award but may decline to enforce it for corruption, fraud, partiality, misconduct or excess of arbitrator powers; the confirming judgment is docketed and enforced like a civil judgment with no further appeal, and tribal police support enforcement.'
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+    source: little-traverse-wotcl-2024-2
     confidence: medium
-    verification: title-only
-    as_of: 2024-03
-    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
-      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.507 AUTHORIZING
-      LOAN FROM WELLS FARGO BANK, NATIONAL ASSOCIATION AND RELATED DOCUMENTS, AUTHORIZING TRIBAL APPROPRIATIONS
-      FOR PAYMENTS OF THE LOAN, ADOPTING LAW GOVERNING THE ARBITRATION OF DISPUTES RELATED TO THE LOAN,
-      ADOPTING LAW REGARDING SECURITY INTERESTS AND ADDRESSING RELATED MATTERS.'
+    verification: read-in-full
+    as_of: 2014-02
+    note: 'Read in full on 2026-11-23 (Waganakising Odawak Tribal Code of Law (WOTCL), Title XVIII Post Constitution Resolutions, version 2024.2, codified through March 1, 2024; Sec. 18.507 source Tribal Resolution #020214-01). Date inferred from the resolution number (#020214-01; loan documents dated February 7, 2014); no enactment date printed in the code. Read from the nation''s code text, version 2024.2. This is the Tribe''s original Limited Arbitration Provisions, reaffirmed in Secs. 18.278 and 18.511. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 252.'
+    locator: WOTCL Title XVIII, Ch. 5, Sec. 18.507 (recitals E-G, resolution paragraphs 4-7, Exhibit A)
   - context: other
     kind: arbitration-clause
     citation: 18.511(3.17)(a) (Waganakising Odawak statute, as listed by NILL)
-    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
-      arbitration of disputes related to the loan, along with law on security interests.
-    link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-codes-ltraverse
+    summary: Council resolution authorizing a refinancing term loan from Wells Fargo Bank (Term Note of about $24.4 million), approving the loan documents' dispute resolution provisions and limited waiver of sovereign immunity as binding, and reaffirming and re-enacting the Tribe's Limited Arbitration Provisions (awards confirmed and enforced by the Tribal Court as in the original 2014 resolution) for the loan documents.
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+    source: little-traverse-wotcl-2024-2
     confidence: medium
-    verification: title-only
-    as_of: 2024-03
-    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
-      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.511(3.17)(a)
-      AUTHORIZING REFINANCING LOAN FROM WELLS FARGO BANK, NATIONAL ASSOCIATION AND RELATED DOCUMENTS,
-      AUTHORIZING TRIBAL APPROPRIATIONS FOR PAYMENTS OF THE LOAN, REAFFIRMING AND RE-ADOPTING LAW GOVERNING
-      THE ARBITRATION OF DISPUTES RELATED TO THE LOAN, REAFFIRMING AND RE-ADOPTING LAW REGARDING SECURITY
-      INTERESTS AND ADDRESSING RELATED MATTERS.'
+    verification: read-in-full
+    as_of: 2017-03
+    note: 'Read in full on 2026-11-23 (Waganakising Odawak Tribal Code of Law (WOTCL), Title XVIII Post Constitution Resolutions, version 2024.2, codified through March 1, 2024; Sec. 18.511(3.17)(a) source Tribal Resolution #032317-01). Date inferred from the resolution number (#032317-01). Read from the nation''s code text, version 2024.2. The codified section refers to Exhibit A but does not print it; the arbitration terms appear in Sec. 18.507. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 253.'
+    locator: WOTCL Title XVIII, Ch. 5, Sec. 18.511(3.17)(a) (recitals F-K, resolution paragraphs 4-7)
   - context: other
     kind: arbitration-clause
     citation: 18.528(1.22)(a) (Waganakising Odawak statute, as listed by NILL)
-    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
-      arbitration of disputes related to the loan, along with law on security interests.
-    link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-codes-ltraverse
+    summary: 'Council resolution approving a first amendment to the Tribe''s PNC Bank loan agreement and a $3 million Term Note, approving the loan documents'' dispute resolution provisions as binding, and enacting the Limited Arbitration Provisions for them. Enacts as tribal law the Limited Arbitration Provisions (Exhibit A): the Tribe''s agreement to arbitrate is valid, irrevocable and enforceable; any party may apply to a Tribal Court within one year to confirm an award; the Tribal Court may not review or modify the award but may decline to enforce it for corruption, fraud, partiality, misconduct or excess of arbitrator powers; the confirming judgment is docketed and enforced like a civil judgment with no further appeal, and tribal police support enforcement.'
+    link: https://ltbbodawa-nsn.gov/wp-content/uploads/2021/02/TribalCode.pdf
+    source: little-traverse-wotcl-2024-2
     confidence: medium
-    verification: title-only
-    as_of: 2024-03
-    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
-      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.528(1.22)(a)
-      AUTHORIZING FIRST AMENDMENT TO LOAN AGREEMENT FROM PNC BANK, NATIONAL ASSOCIATION, AND RELATED DOCUMENTS,
-      AUTHORIZING TRIBAL APPROPRIATIONS FOR PAYMENTS OF THE LOAN, CONFIRMING ADOPTION OF LAW GOVERNING
-      THE ARBITRATION OF DISPUTES RELATED TO THE LOAN, CONFIRMING ADOPTION OF LAW REGARDING SECURITY INTERESTS
-      AND ADDRESSING RELATED MATTERS.'
+    verification: read-in-full
+    as_of: 2022-01
+    note: 'Read in full on 2026-11-23 (Waganakising Odawak Tribal Code of Law (WOTCL), Title XVIII Post Constitution Resolutions, version 2024.2, codified through March 1, 2024; Sec. 18.528(1.22)(a) source Tribal Resolution #012022-02). Date inferred from the resolution number (#012022-02). Read from the nation''s code text, version 2024.2. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 254.'
+    locator: WOTCL Title XVIII, Ch. 5, Sec. 18.528(1.22)(a) (recitals E-G, resolution paragraphs 4-7, Exhibit A)
   database_listings:
   - title: Court Ordered Mediation in Child Protection
     citation: WOTCL 5.118(J) - Court Ordered Mediation
@@ -1011,6 +980,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little Traverse Bay Band of Odawa
       Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Mackinaw City Tract, Emmet County, MI
+    legal_theory: Restored Lands
+    accepted: true
+    date: '1997-11-12'
+    link: https://www.nigc.gov?wpdmdl=2484&ind=2485
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Little Traverse Bay Band of Odawa Indians, 1997-11-12
+    note: The list names the tribe as “Little Traverse Bay Band of Odawa Indians”.
+  - parcel: Victories Tract, Emmet County, MI
+    legal_theory: Restored Lands
+    accepted: true
+    date: '1999-08-05'
+    link: https://www.nigc.gov?wpdmdl=2502&ind=2503
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Little Traverse Bay Band of Odawa Indians, 1999-08-05
+    note: The list names the tribe as “Little Traverse Bay Band of Odawa Indians”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -1078,6 +1068,34 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.E, Michigan
   note: 'The source reads: “Little Traverse Bay Bands of Odawa Indians, executed on November 19, 2012”. Date is the execution date as reported; most were amended 2008-10-01. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: MI
+  county: Emmet County
+  court: Circuit Court for Emmet County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Emmet County holds 83% of the land of Little Traverse Bay Reservation (Census GEOID 1963), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Charlevoix County
+  court: Circuit Court for Charlevoix County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Charlevoix County holds 12% of the land of Little Traverse Bay Reservation (Census GEOID 1963), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Delta County
+  court: Circuit Court for Delta County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Delta County holds 5% of the land of Little Traverse Bay Reservation (Census GEOID 1963), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Ottawa, etc., 1836
   signed: '1836-03-28'

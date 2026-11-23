@@ -199,6 +199,22 @@ indian_health_service:
   locator: Direct Service Tribes by IHS Area > Navajo Area
   note: Listed as "Navajo Nation". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
+- aspect: governing-body
+  value: Navajo Nation Council
+  quote: 25TH NAVAJO NATION COUNCIL
+  source: navajo-nation-website-portals-0-press-20releases-2026-may-ohnir-nhlc-pdf
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only a Navajo Nation Council press release and the Office of the President page were read, and they state little about the structure of government.'
+- aspect: head-of-government
+  value: President
+  quote: President of the Navajo Nation
+  source: navajo-nation-website-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only a Navajo Nation Council press release and the Office of the President page were read, and they state little about the structure of government.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -207,6 +223,14 @@ governance:
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President
+  quote: Vice President, Navajo Nation
+  source: navajo-nation-website-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only a Navajo Nation Council press release and the Office of the President page were read, and they state little about the structure of government.'
 representatives:
 - office: President
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -499,12 +523,8 @@ dispute_resolution:
     own_term:
       name: Hózhóójí Naat’áanii
       language_tag: nv
-      translation: Peacemaking Program (the statutory program name; the Judicial Branch uses hózhóójí
-        naat’áanii for the Peacemaker)
-    description: A program within the Judicial Branch serving as the central point of peacemaking information
-      and coordination; it promotes a non-adversarial forum where parties voluntarily agree or are referred
-      to peacemaking, peacemaking counseling for court clients, sentencing recommendations on request,
-      and education on Navajo culture and traditions.
+      translation: Peacemaking Program (the statutory program name; the Judicial Branch uses hózhóójí naat’áanii for the Peacemaker)
+    description: A program within the Judicial Branch serving as the central point of peacemaking information and coordination; it promotes a non-adversarial forum where parties voluntarily agree or are referred to peacemaking, peacemaking counseling for court clients, sentencing recommendations on request, and education on Navajo culture and traditions.
     legal_basis: 7 N.N.C. §§ 409-413 (Chapter 3, Subchapter 10, Navajo Nation Peacemaking Program)
     case_types:
     - family
@@ -515,25 +535,15 @@ dispute_resolution:
     - civil
     - other
     participation: voluntary-or-court-referred
-    relationship_to_court: Located in the Judicial Branch under the legislative oversight of the Judiciary
-      Committee and a Plan of Operation; per the Plan of Operations, where a court order is sought the
-      matter must first be filed in court and then referred to peacemaking by the court.
+    relationship_to_court: Located in the Judicial Branch under the legislative oversight of the Judiciary Committee and a Plan of Operation; per the Plan of Operations, where a court order is sought the matter must first be filed in court and then referred to peacemaking by the court.
     enforcement: Not specified in the subchapter reviewed.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Navajo-Title-7-Courts-and-Procedure.pdf
     source: navajo-title-7-courts-and-procedures
     confidence: medium
     verification: read-in-full
     as_of: '2003-10-24'
-    locator: 7 N.N.C. §§ 409-413; Title 7 annotation citing In the Matter of the Estate of Kindle (Nav.
-      Sup. Ct. 2001)
-    note: own_term spelling taken from NARF's Tribal Peacemaking Laws page ('Hózhóójí Naat’áanii'); the
-      Navajo Nation Code PDF text layer shows 'Hózh==jí Naat'áanii' and the Judicial Branch plan page
-      shows 'hózh̨ǫ́ójí naat’áanii' (font conversion artifacts in both). A Code annotation states local
-      peacemaking programs exist in the seven judicial districts and are also used for probate. Child-welfare
-      and juvenile case types are from the Plan of Operations (family preservation and reunification;
-      Álchíní Bi Beehaz’áannii Act matters). The Plan of Operations page's description of Diné traditional
-      peacemaking is kept with that page under published materials (folded 2026-11-22, review queue item
-      5).
+    locator: 7 N.N.C. §§ 409-413; Title 7 annotation citing In the Matter of the Estate of Kindle (Nav. Sup. Ct. 2001)
+    note: Read in full on 2026-11-23 from page images (Navajo Nation Code Title 7 Chapter 3 Subchapter 10, Navajo Nation Peacemaking Program; history CO-72-03, October 24, 2003; CO-76-01, October 17, 2001). own_term spelling taken from NARF's Tribal Peacemaking Laws page ('Hózhóójí Naat’áanii'); the Navajo Nation Code PDF text layer shows 'Hózh==jí Naat'áanii' and the Judicial Branch plan page shows 'hózh̨ǫ́ójí naat’áanii' (font conversion artifacts in both). A Code annotation states local peacemaking programs exist in the seven judicial districts and are also used for probate. Child-welfare and juvenile case types are from the Plan of Operations (family preservation and reunification; Álchíní Bi Beehaz’áannii Act matters). The Plan of Operations page's description of Diné traditional peacemaking is kept with that page under published materials (folded 2026-11-22, review queue item 5). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 309.
   provisions:
   - kind: peacemaking
     title: Subchapter 10. Navajo Nation Peacemaking Program
@@ -576,13 +586,11 @@ dispute_resolution:
   - kind: brochure
     title: Peacemaking Program brochure (updated October 2025)
     link: https://courts.navajo-nsn.gov/wp-content/uploads/2025/10/Peacemaking-Program-Brochure-OCT.2025.pdf
-    source: web-search-navajo-peacemaking-2026-11-21
-    confidence: low
+    source: navajo-peacemaking-program-brochure-2025
+    confidence: medium
     verification: read-in-full
     as_of: 2025-10
-    note: 'Title and ''Updated: October 2025'' read through a fetch-and-summarize tool. Direct download
-      returned 404 or connection resets on Nov. 21, 2026. A 2026 brochure is listed in search results
-      but was not opened.'
+    note: 'Read in full on 2026-11-23 (Judicial Branch of the Navajo Nation, Peacemaking Program brochure; ''Updated: October 2025''). Read in full from the project capture of the October 2025 brochure (Judicial Branch of the Navajo Nation); title and ''Updated: October 2025'' confirmed. Program description only, not a legal provision. Earlier 2026-11-21 search note superseded. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 313.'
   - kind: rules
     title: Peacemaking Program Plan of Operations (July 30, 2012; Section 5 amended Feb. 25, 2013)
     link: https://tribaljustice.org/wp-content/uploads/2022/04/PPPO2013-2-25.pdf
@@ -874,6 +882,61 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: First recital and effective-date section
   note: 'The source reads: “issue commissions as New Mexico Peace Officers to members of the police or sheriff’s department of any New Mexico Indian tribe or pueblo”. Effective date reads "31st day of August, 1981"; the agreement and an amendment carry the same date. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: AZ
+  county: Apache County
+  court: Superior Court for Apache County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Apache County holds 28% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AZ
+  county: Coconino County
+  court: Superior Court for Coconino County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Coconino County holds 21% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AZ
+  county: Navajo County
+  court: Superior Court for Navajo County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Navajo County holds 17% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: San Juan County
+  court: District Court for San Juan County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: San Juan County holds 14% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: McKinley County
+  court: District Court for McKinley County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: McKinley County holds 10% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: UT
+  county: San Juan County
+  court: District Court for San Juan County
+  link: https://www.utcourts.gov/en/about/miscellaneous/directory.html
+  source: state-trial-court-directory-ut
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: San Juan County holds 8% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Navaho, 1849
   signed: '1849-09-09'

@@ -23,7 +23,7 @@ export interface PublicContact {
 	sourceKind: SourceKind;
 }
 
-/** An office an official list names as the nation's leader, as the nation page shows it (decision record 0050). */
+/** An office an official list names as the nation's leader, as the nation page shows it (decision record 0052). */
 export interface PublicRepresentative {
 	office: string;
 	listedBy: string;

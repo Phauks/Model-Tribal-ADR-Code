@@ -219,17 +219,13 @@ governance:
     version: 1950-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
 - aspect: governing-body
-  value: Council
-  quote: shall be a Council composed of eight members, elected by the adult members
-  source: university-of-oklahoma-indian-reorganization-act-wrancons
-  confidence: medium
+  value: Tribal Council
+  quote: Our tribal council members are elected through an election process where eligible community members vote for their preferred candidates.
+  source: wcatribe-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1950-12-28'
-  locator: Article III, Section 1
-  document_version:
-    document: wrangell-cooperative-association-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officer titles appear only beside names, so no officer facts are given.'
 - aspect: governing-body-size
   value: 8 members
   quote: shall be a Council composed of eight members, elected by the adult members
@@ -243,17 +239,13 @@ governance:
     version: 1950-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
 - aspect: governing-body-selection
-  value: Elected by adult members
-  quote: shall be a Council composed of eight members, elected by the adult members
-  source: university-of-oklahoma-indian-reorganization-act-wrancons
-  confidence: medium
+  value: Elected by eligible community members
+  quote: Our tribal council members are elected through an election process where eligible community members vote for their preferred candidates.
+  source: wcatribe-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1950-12-28'
-  locator: Article III, Section 1
-  document_version:
-    document: wrangell-cooperative-association-constitution
-    version: 1950-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officer titles appear only beside names, so no officer facts are given.'
 - aspect: governing-body-term
   value: 2 years
   quote: annual election date and shall serve for a period of two years or until
@@ -510,6 +502,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Wrangell City and Borough
+  court: Superior Court for Wrangell City and Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Wrangell City and Borough holds 100% of the land of Wrangell ANVSA (Census GEOID 7755), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

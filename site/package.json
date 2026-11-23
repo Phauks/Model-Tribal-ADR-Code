@@ -14,7 +14,7 @@
 	},
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/add-scheduled-run.mjs && node tools/add-nation-page-changes.mjs && node tools/add-mail-handlers.mjs",
+		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/write-checksums.mjs && node tools/add-scheduled-run.mjs && node tools/add-nation-page-changes.mjs && node tools/add-mail-handlers.mjs",
 		"preview": "npm run build && wrangler dev",
 		"deploy": "npm run build && wrangler deploy",
 		"prepare": "svelte-kit sync || echo ''",
@@ -26,6 +26,7 @@
 		"check:accessibility": "node tools/check-accessibility.mjs",
 		"database:migrate:local": "wrangler d1 migrations apply database --local",
 		"database:migrate:remote": "wrangler d1 migrations apply database --remote",
+		"database:new-migration": "node tools/new-migration.mjs",
 		"sign-in-link": "node tools/make-sign-in-link.mjs"
 	},
 	"devDependencies": {
@@ -95,6 +96,9 @@
 		"yjs": "^13.6.33"
 	},
 	"dependencies": {
-		"harper.js": "^3.2.0"
+		"@cloudflare/realtimekit": "2.0.4",
+		"@cloudflare/realtimekit-ui": "2.0.3",
+		"harper.js": "^3.2.0",
+		"uqr": "^0.1.3"
 	}
 }

@@ -537,9 +537,7 @@ dispute_resolution:
   forums:
   - kind: customary-dispute-resolution
     name: Traditional Tlingit law in children's cases
-    description: Tribal Court judges may apply traditional Tlingit law by referring to written or oral
-      accounts of traditional Tlingit life, interviewing Elders or Culture Bearers, or calling on the
-      Haa Dachxanx’i Yan Jeeis (For Our Grandchildren) Committee or the Tribe's Cultural Resources Committee.
+    description: Tribal Court judges may apply traditional Tlingit law by referring to written or oral accounts of traditional Tlingit life, interviewing Elders or Culture Bearers, or calling on the Haa Dachxanx’i Yan Jeeis (For Our Grandchildren) Committee or the Tribe's Cultural Resources Committee.
     own_term:
       name: Haa Dachxanx’i Yan Jeeis
       language_tag: tli
@@ -549,14 +547,14 @@ dispute_resolution:
     - child-welfare
     - family
     participation: court-referred
-    relationship_to_court: Traditional sources may give persuasive recommendations, but only the Presiding
-      Judge enters a final order or judgment.
+    relationship_to_court: Traditional sources may give persuasive recommendations, but only the Presiding Judge enters a final order or judgment.
     link: https://sitkatribe.org/our-government/governance-documents/
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
     verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/traditional-tlingit-law-in-childrens-cases/
+    note: 'Not confirmed from the nation''s own text on 2026-11-23: a copy was seen online only through a fetch-and-summarize tool, which does not count as reading; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 499.'
   provisions:
   - kind: other
     title: Problem Solving (alternative and traditional tools for dispute resolution)
@@ -606,6 +604,37 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.A, Alaska
   note: 'The source reads: “Sitka Tribe of Alaska is a federally recognized tribe with an agreement executed on April”. Part of the eleven identical Alaska form agreements. The state agency is inferred. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: forms
+  title: Sitka Tribal Court forms (Tribal Court page)
+  court: Sitka Tribe of Alaska Tribal Court
+  link: https://sitkatribe.org/our-services/tribal-court/
+  detail: Page lists downloadable forms including Petition to use Tribal Court, Tribal Divorce Complaint, Tribal Youth Custody Petition, adoption petitions and consents, Petition for Adult Change of Name, Notice to the Court and Request to Modify Guardianship.
+  source: sitka-tribe-of-alaska-tribal-court-court-rules-forms
+  confidence: high
+  verification: title-only
+  locator: Adoption of a Tribal Youth and other form lists
+  note: 'The source reads: “Petition to use Tribal Court”. Form PDFs not opened.'
+- kind: court-rules
+  title: Code Governing Tribal Court Rules and Civil Procedure
+  court: Sitka Tribe of Alaska Tribal Court
+  link: https://sitkatribe.org/our-government/law-and-policy/
+  detail: Page says the Tribal Council approved a Code Governing Tribal Court Rules and Civil Procedure; the Tribal Law page is linked from the court page.
+  source: sitka-tribe-of-alaska-tribal-court-court-rules-forms
+  confidence: high
+  verification: title-only
+  locator: Tribal court history paragraph
+  note: Linked Tribal Law page not opened; the court page only mentions the code.
+nearby_state_courts:
+- state: AK
+  county: Sitka City and Borough
+  court: Superior Court for Sitka City and Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Sitka City and Borough holds 100% of the land of Sitka ANVSA (Census GEOID 7475), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

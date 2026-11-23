@@ -576,14 +576,13 @@ dispute_resolution:
     title: 'Title 21: Wodakota: Traditional Court Ordinance'
     citation: 'Title 21: Wodakota: Traditional Court Ordinance'
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: spirit-lake-title-21-wodakota
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Spirit Lake Tribe of North Dakota
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      philosophy, values, and tribal prayer, standards of conduct, authority to use traditional ways and
-      instruct on tribal teachings, referral standards, and procedures.'
+    locator: Title 21, sections 21-1-101 to 21-1-119
+    note: 'Read in full on 2026-11-23 (Spirit Lake Law and Order Code, Title 21: Wodakota: Traditional Court Ordinance. Enacted March 24, 2014 by Resolution No. A05-14-151). Read from the Spirit Lake Law and Order Code, Title 21 (enacted March 24, 2014, Resolution No. A05-14-151), the nation''s own text. Participation is voluntary and requires every party''s written consent (21-1-109, 21-1-113(7)). Peacemakers have no power to decide a dispute unless all parties agree in writing (21-1-110(8), (10)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 520.'
+    summary: 'Establishes the Wodakota: Traditional Court inside the Tribal Court system, where Spirit Lake peacemakers use traditional methods and circles to mediate civil disputes and juvenile matters. A tribal member may file a request (or the Juvenile Intake Officer may refer a case with the judge''s signature), the panel of Peacemakers grants or denies it, and all parties must consent in writing; peacemakers cannot decide fault or force an agreement, and the resulting written peacemaking compact can be adopted as an enforceable Tribal Court order and judgment, with unresolved matters sent back to the Tribal Court.'
   - kind: peacemaking
     title: '§21-1-110 Peacemakers: Qualifications, Appointment, Authorities.'
     citation: 'Spirit Lake Law and Order Code, Title 21: Wodakota: Traditional Court Ordinance, 21-1-110
@@ -762,6 +761,36 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.K, North Dakota
   note: 'The source reads: “Devils Lake Sioux Tribe/Spirit Lake Sioux Tribe original agreement dated September 30, 1983”. Original 1983 agreement with later addenda; a 2022 state presentation (not used as a source here) says an enhanced agreement was signed in September 2019. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: court-rules
+  title: Court Rules and Procedures
+  court: Spirit Lake Tribal Court
+  link: https://www.spiritlakenation.com/linkgen?media_id=4072
+  detail: Document link on the Spirit Lake Tribal Court program page; not opened.
+  source: spirit-lake-nation-programs-spirit-lake-nation
+  confidence: high
+  verification: title-only
+  locator: Programs page
+  note: Document not opened.
+nearby_state_courts:
+- state: ND
+  county: Benson County
+  court: District Court for Benson County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Benson County holds 79% of the land of Spirit Lake Reservation (Census GEOID 3935), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: Eddy County
+  court: District Court for Eddy County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Eddy County holds 20% of the land of Spirit Lake Reservation (Census GEOID 3935), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Sauk and Foxes, etc., 1830
   signed: '1830-07-15'

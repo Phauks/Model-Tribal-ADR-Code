@@ -187,6 +187,46 @@ indian_health_service:
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
 governance:
+- aspect: form
+  value: Constitution and Bylaws
+  quote: do hereby establish this Constitution and Bylaws
+  source: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsi-website-constitution
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The constitution and bylaws pages show article headings with only some article text, so the board size, term and selection facts come from a drafting manual and a board page.'
+- aspect: governing-body
+  value: Tribal Governing Board
+  quote: the Tribal Governing Board serves as the governing body of Lac Courte Oreilles Band of Lake Superior Chippewa Indians pursuant to
+  source: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsi-website-us-nsn-lco-council-drafting-manual
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws pages show article headings with only some article text, so the board size, term and selection facts come from a drafting manual and a board page.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: the Tribal Governing Board is composed of seven (7) members
+  source: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsi-website-us-nsn-lco-council-drafting-manual
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws pages show article headings with only some article text, so the board size, term and selection facts come from a drafting manual and a board page.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: The TGB members’ term is 4-years, the term of their elected positions.
+  source: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsi-website-boards-and-committees
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws pages show article headings with only some article text, so the board size, term and selection facts come from a drafting manual and a board page.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: The TGB members’ term is 4-years, the term of their elected positions.
+  source: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsi-website-boards-and-committees
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws pages show article headings with only some article text, so the board size, term and selection facts come from a drafting manual and a board page.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -195,6 +235,32 @@ governance:
   as_of: '2026-11-20'
   locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Secretary/Treasurer
+  quote: as Secretary/Treasurer of the Lac Courte Oreilles Tribal Governing Board
+  source: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsi-website-us-nsn-lco-council-drafting-manual
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and bylaws pages show article headings with only some article text, so the board size, term and selection facts come from a drafting manual and a board page.'
+- aspect: judiciary
+  value: Tribal court by ordinance
+  quote: To establish a tribal court for the purpose of enforcing tribal ordinance
+  source: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsi-website-constitution
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The constitution and bylaws pages show article headings with only some article text, so the board size, term and selection facts come from a drafting manual and a board page.'
+- aspect: recall-and-removal
+  value: Removal for three unexcused absences
+  quote: Absence from three (3) successive regularly scheduled board meetings without an excuse acceptable to a majority of the members of the board
+  source: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsi-website-constitution
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article III
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The constitution and bylaws pages show article headings with only some article text, so the board size, term and selection facts come from a drafting manual and a board page.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -282,21 +348,19 @@ dispute_resolution:
   forums:
   - kind: peacemaking
     name: Peacemaking in child-in-need-of-care matters
-    description: The Child Welfare Director and affected parties (including a child 12 or older) may,
-      by mutual consent, petition the Children's Court to institute peacemaking, conducted under rules
-      set by peacemakers appointed by the Tribal Court.
-    legal_basis: LCO Code DMR.1.3.120 (Informal Disposition)
+    description: The Child Welfare Director and affected parties (including a child 12 or older) may, by mutual consent, petition the Children's Court to institute peacemaking, conducted under rules set by peacemakers appointed by the Tribal Court.
+    legal_basis: LCO Tribal Code of Law DMR.1.3.120(b) (Informal Disposition), Res. No. 15-87
     case_types:
     - child-welfare
     participation: voluntary
-    relationship_to_court: Occurs at the direction of the Children's Court; formal proceedings may be
-      instituted at any time the Child Welfare Director deems appropriate.
-    link: https://law.lco-nsn.gov
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: Occurs at the direction of the Children's Court; formal proceedings may be instituted at any time the Child Welfare Director deems appropriate.
+    link: https://www.narf.org/nill/triballaw/us/nsn/lco/council/code/DMR.1.3.120
+    source: lco-tribal-code-dmr-1-3-120
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/informal-disposition-and-peacemaking/
+    note: Read in full on 2026-11-23 (Lac Courte Oreilles Tribal Code of Law, DMR.1.3.120 Informal Disposition (Res. No. 15-87), as hosted by NILL (copy of law.lco-nsn.gov)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 222.
   clauses:
   - context: other
     kind: waiver-of-sovereign-immunity
@@ -446,6 +510,27 @@ gaming:
       as "Red Cliff, Sokogon, Chippewa Lac Court Orielles Band Tribe". Name matched to roster by spelling
       variant. This row names three nations jointly (Red Cliff, Sokaogon and Lac Courte Oreilles); the
       fact is repeated for each.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-22
+    date: '2008-10-01'
+    link: https://www.nigc.gov?wpdmdl=7977&ind=7988
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-22
+    note: The list titles the action “Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-22
+    date: '2008-10-15'
+    link: https://www.nigc.gov?wpdmdl=7964&ind=7986
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-22
+    note: The list titles the action “Lac Courtes Oreille Band of Lake Superior Chippewa Indians of Wisconsin” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -493,6 +578,47 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Article on the program
   note: 'The source reads: “The County-Tribe Deputies will be deputized to enforce the laws of the State of Wisconsin”. Cover reads 2021; the signature pages were not checked. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: court-rules
+  title: Court Rules
+  court: Lac Courte Oreilles Tribal Court
+  link: https://www.lcotribalcourt.org/rules-of-court/
+  detail: Page linked from the home page; the page itself returned a bot-challenge when fetched.
+  source: lac-courte-oreilles-tribal-court-lac-courte-oreilles-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: Home page links
+  note: Target page not readable (bot challenge).
+- kind: forms
+  title: Forms
+  court: Lac Courte Oreilles Tribal Court
+  link: https://www.lcotribalcourt.org/forms/
+  detail: Page linked from the home page; the page itself returned a bot-challenge when fetched.
+  source: lac-courte-oreilles-tribal-court-lac-courte-oreilles-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: Home page links
+  note: Target page not readable (bot challenge).
+- kind: filing-fees
+  title: Fees
+  court: Lac Courte Oreilles Tribal Court
+  link: https://www.lcotribalcourt.org/schedule-of-fees/
+  detail: Page linked from the home page; the page itself returned a bot-challenge when fetched.
+  source: lac-courte-oreilles-tribal-court-lac-courte-oreilles-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: Home page links
+  note: Target page not readable (bot challenge).
+nearby_state_courts:
+- state: WI
+  county: Sawyer County
+  court: Circuit Court for Sawyer County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Sawyer County holds 100% of the land of Lac Courte Oreilles Reservation (Census GEOID 1815), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1842
   signed: '1842-10-04'

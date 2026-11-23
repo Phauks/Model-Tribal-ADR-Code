@@ -1,7 +1,7 @@
 profile: content/tribes/f/fort-mcdowell-yavapai-nation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -73,3 +73,53 @@ searches:
   outcome: found
   reason: The 1993 Gaming Ordinance Section 17 on patron disputes exists but is not confirmed as this
     provision.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/ff85d41140c5f7467665.txt
+  query: Sec. 5-21. - Conciliation and settlement of dispute.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/f/fort-mcdowell-yavapai-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: https://www.narf.org/nill/codes/fort_mcdowell/
+  query: Fort McDowell Sec. 5-21
+  outcome: found
+  reason: NILL lists heading only, links to Municode.
+  records:
+  - content/tribes/f/fort-mcdowell-yavapai-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://naair.arizona.edu/sites/default/files/ft_mcdowell_law_order_code_0.pdf
+  query: Sec. 5-21
+  outcome: not-found
+  reason: Summary showed only Chs. 15 and 19.
+  records:
+  - content/tribes/f/fort-mcdowell-yavapai-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/ordinances/fort-mcdowell-yavapai-nation/TribeFortMcDowellYavapaiNationAmendmentDate05112020.txt
+  query: CHAPTER 8. PATRON DISPUTE RESOLUTION
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/f/fort-mcdowell-yavapai-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/0b21d29c6b7027e28728.txt
+  query: CHAPTER 8. PATRON DISPUTE RESOLUTION
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/f/fort-mcdowell-yavapai-nation.yaml#dispute_resolution.provisions

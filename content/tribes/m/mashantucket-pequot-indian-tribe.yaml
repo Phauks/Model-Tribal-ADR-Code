@@ -487,20 +487,14 @@ dispute_resolution:
     locator: 10 M.P.T.L. ch. 1 § 2
   - kind: mediation
     title: § 3. Establishment of Mediation Panel
-    citation: TITLE 31. MASHANTUCKET EMPLOYMENT RIGHTS LAW (2015-2025 Supplement), 31 M.P.T.L. ch. 2 §
-      3
+    citation: TITLE 31. MASHANTUCKET EMPLOYMENT RIGHTS LAW (2015-2025 Supplement), 31 M.P.T.L. ch. 2 § 3
     link: https://law.mptn-nsn.gov/globalassets/laws/01.08.2026-current-supplment-of-mptl.pdf
     source: mashantucket-pequot-title-31-mashantucket-employment-rights-law-2015
     confidence: medium
     verification: read-in-full
     as_of: '2018-10-25'
-    note: Read in full on 2026-11-22 (review queue item 2). The National Indian Law Library table of contents
-      lists it as "5. Establishment of Mediation Panel"; the printed heading, number or version differs
-      (see research/reviews/2026-11-22-title-only-provisions.json). Read from a scanned copy by OCR.
-    summary: Establishes a three-member mediation panel, drawn case by case from the Peacemakers, to help
-      employers and employees resolve disputes under tribal labor and employment laws, where all parties
-      must agree to mediate and any resulting agreement becomes a written order signed by the parties
-      and the panel, and where failure to agree sends the matter back into MERO processes.
+    note: Read in full on 2026-11-23 from page images (Mashantucket Pequot Tribal Laws 2015-2025 Supplement, Title 31 Mashantucket Employment Rights Law; amended by TCR102518-01 of 06, effective October 25, 2018). Read in full on 2026-11-22 (review queue item 2). Establishment of Mediation Panel"; the printed heading, number or version differs (see research/reviews/2026-11-22-title-only-provisions.json). Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 268.
+    summary: Establishes a three-member mediation panel, drawn case by case from the Peacemakers, to help employers and employees resolve disputes under tribal labor and employment laws, where all parties must agree to mediate and any resulting agreement becomes a written order signed by the parties and the panel, and where failure to agree sends the matter back into MERO processes.
     locator: 31 M.P.T.L. ch. 2 § 3
   - kind: arbitration
     title: § 11. Arbitration
@@ -706,6 +700,16 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 98-134 § 6, 97 Stat. at 855
   note: The statute's sentence continues "to the maximum extent provided in title IV of such Act." 25 U.S.C. § 1755 is "omitted" from the Code. The text layer of this page prints "title the research V of s u c h Act" so the research stopped the quote earlier.
+nearby_state_courts:
+- state: CT
+  county: New London County
+  court: Superior Court for New London County
+  link: https://www.jud.ct.gov/directory/directory/location/default.htm
+  source: state-trial-court-directory-ct
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: New London County holds 100% of the land of Mashantucket Pequot Reservation (Census GEOID 2145), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

@@ -1,7 +1,7 @@
 profile: content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -46,3 +46,33 @@ searches:
   address: https://narf.org/nill/codes/grand_traverse/index.html
   outcome: found
   reason: 'Heading appears in the Title 3 index as the same chapter as record #1.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/g/grand-traverse-band-of-ottawa-and-tribal-court.html
+  query: Peacemaking (Tribal Court)
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/427c1b144579557377cc.txt
+  query: Peacemaking (Tribal Court)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/a570fd7e3acc7f623440.txt
+  query: Peacemaking (Tribal Court)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml#dispute_resolution.forums

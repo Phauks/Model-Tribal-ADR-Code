@@ -749,6 +749,47 @@ gaming:
     locator: table row 296, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 296 lists the nation
       as "Turtle Mountain Band of Chippewa Indians".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-22
+    date: '2009-04-13'
+    link: https://www.nigc.gov?wpdmdl=7872&ind=7884
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-22
+    note: The list titles the action “Turtle Mountain Band of Chippewa Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-22
+    date: '2009-06-01'
+    link: https://www.nigc.gov?wpdmdl=7811&ind=7822
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-22
+    note: The list titles the action “Turtle Mountain Band of Chippewa Indians” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-23-01
+    date: '2023-02-16'
+    link: https://www.nigc.gov?wpdmdl=2976&ind=2977
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-23-01
+    note: The list titles the action “Turtle Mountain Band of Chippewa Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-23-02
+    date: '2023-06-01'
+    link: https://www.nigc.gov?wpdmdl=2972&ind=2973
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-23-02
+    note: The list titles the action “Turtle Mountain Band of Chippewa Indians” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -793,6 +834,70 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.K, North Dakota
   note: 'The source reads: “Turtle Mountain Band of Chippewa Indians original agreement dated September 30, 1983”. Original 1983 agreement with later addenda; a 2022 state presentation (not used as a source here) says an enhanced agreement was signed in September 2019. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: ND
+  county: Rolette County
+  court: District Court for Rolette County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Rolette County holds 53% of the land of Turtle Mountain Reservation (Census GEOID 4345), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Phillips County
+  court: District Court for Phillips County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Phillips County holds 13% of the land of Turtle Mountain Reservation (Census GEOID 4345), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Blaine County
+  court: District Court for Blaine County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Blaine County holds 10% of the land of Turtle Mountain Reservation (Census GEOID 4345), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Sheridan County
+  court: District Court for Sheridan County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Sheridan County holds 9% of the land of Turtle Mountain Reservation (Census GEOID 4345), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: Williams County
+  court: District Court for Williams County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Williams County holds 5% of the land of Turtle Mountain Reservation (Census GEOID 4345), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Roosevelt County
+  court: District Court for Roosevelt County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Roosevelt County holds 5% of the land of Turtle Mountain Reservation (Census GEOID 4345), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Daniels County
+  court: District Court for Daniels County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Daniels County holds 1% of the land of Turtle Mountain Reservation (Census GEOID 4345), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa-Red Lake and Pembina Bands, 1863
   signed: '1863-10-02'

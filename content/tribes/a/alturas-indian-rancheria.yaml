@@ -281,6 +281,58 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Alturas Indian Rancheria,
       California". Facilities as machine-extracted from the report text (verify): Desert Rose Casino.
       Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Modoc County, CA
+    legal_theory: Pre-IGRA Trust Acquisiton
+    accepted: true
+    date: '1999-09-09'
+    link: https://www.nigc.gov?wpdmdl=2504&ind=2505
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Alturas Rancheria, 1999-09-09
+    note: The list names the tribe as “Alturas Rancheria”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-01
+    date: '2009-01-27'
+    link: https://www.nigc.gov?wpdmdl=7937&ind=7948
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-01
+    note: The list titles the action “Alturas Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-01
+    date: '2009-02-26'
+    link: https://www.nigc.gov?wpdmdl=7915&ind=7926
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-01
+    note: The list titles the action “Alturas Rancheria” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-22-02
+    date: '2022-10-07'
+    link: https://www.nigc.gov?wpdmdl=2982&ind=2983
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-22-02
+    note: The list titles the action “Alturas Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-23-01
+    date: '2023-01-06'
+    link: https://www.nigc.gov?wpdmdl=2978&ind=2979
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-23-01
+    note: The list titles the action “Alturas Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -306,6 +358,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Modoc County
+  court: Superior Court for Modoc County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Modoc County holds 100% of the land of Alturas Indian Rancheria (Census GEOID 0095), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

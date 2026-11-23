@@ -11,7 +11,8 @@
  * replaced; and signed forms, which are records of consent and are changed or
  * withdrawn through the change or withdrawal request. Files the person sent
  * are deleted unless they were filed or kept for reference (docs/uploads.md,
- * "Deleting").
+ * "Deleting"). A sponsorship the person managed stays with its other
+ * managers, and its history no longer names them (docs/sponsorship.md).
  */
 import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { creditOf } from '#lib/contributors.ts';
@@ -91,6 +92,10 @@ export async function deleteAccount(
 		);
 	}
 	statements.push(
+		// A sponsorship's history names who changed it by email address; the
+		// address goes, and the change stays (docs/sponsorship.md). Being a
+		// manager ends with the account (ON DELETE CASCADE).
+		database.prepare(`UPDATE sponsor_history SET actor = 'A former manager' WHERE account_identifier = ?`).bind(account.subject),
 		database.prepare('DELETE FROM sign_in_codes WHERE email = ?').bind(account.email),
 		// Sessions go with the account (ON DELETE CASCADE).
 		database.prepare('DELETE FROM accounts WHERE identifier = ?').bind(account.subject)

@@ -1,7 +1,7 @@
 profile: content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -57,3 +57,83 @@ searches:
   outcome: not-found
   reason: The code site is a script-driven page whose section text is not served in the HTML; nothing
     readable.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/3c50420415b19891158b.txt
+  query: SECTION 5. DISPUTE RESOLUTION
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/california/508_compliant_2020.12.11_shingle_spring_band_of_miwok_indians_tribal_state_gaming_compact_0.txt
+  query: SECTION 5. DISPUTE RESOLUTION
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Shingle Springs Arbitration Ordinance Enforceability of Agreements to Arbitrate
+  outcome: not-found
+  reason: only Tort Claims and gaming ordinances
+  records:
+  - content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: http://www.shinglespringsrancheria.com/government/codes-policies-and-bylaws/
+  query: codes page
+  outcome: not-found
+  reason: no link to trust agreement
+  records:
+  - content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/3c50420415b19891158b.txt
+  query: TITLE VI. ARBITRATION ORDINANCE
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Shingle Springs Tribal Gaming Authority bylaws Arbitration Ordinance Arbitration Award Not Appealable
+  outcome: not-found
+  reason: no Title VI text
+  records:
+  - content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/3c50420415b19891158b.txt
+  query: Section 3. Tribal Dispute Resolution Process
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Shingle Springs Arbitration Ordinance
+  outcome: found
+  reason: Tort Claims Ordinance PDF on tribe's site
+  records:
+  - content/tribes/s/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria.yaml#dispute_resolution.provisions

@@ -229,30 +229,30 @@ indian_health_service:
   locator: list of Tribes
   note: Listed as "Kiowa Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
-- aspect: governing-body
-  value: Kiowa Indian Council (KIC)
-  quote: The governing body of the tribe,
-  source: constitution-kiowa-tribe-1982-text
-  confidence: medium
+- aspect: form
+  value: Constitution approved by tribal membership
+  quote: The Kiowa Tribe is organized under the Constitution approved by tribal
+  source: kiowa-tribe-website-sites-default-files-inline-files-kic-cy-0007-2025-kic-20cons
+  confidence: high
   verification: read-in-full
-  as_of: '1982-06-05'
-  locator: Article I, Section 2
-  document_version:
-    document: kiowa-tribe-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
 - aspect: governing-body
-  value: Kiowa Business Committee
-  quote: four (4) officers and four (4) committeemen,
-  source: constitution-kiowa-tribe-1982-text
-  confidence: medium
+  value: Kiowa Indian Council
+  quote: Kiowa Indian Council the power to set policy for the Tribe, and shall have all
+  source: kiowa-tribe-website-sites-default-files-inline-files-kic-cy-0007-2025-kic-20cons
+  confidence: high
   verification: read-in-full
-  as_of: '1982-06-05'
-  locator: Article III, Section 1
-  document_version:
-    document: kiowa-tribe-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
+- aspect: governing-body
+  value: Kiowa Legislative Branch
+  quote: The Kiowa Legislative Branch
+  source: kiowa-tribe-website-legislative
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
 - aspect: governing-body-size
   value: 8 members
   quote: An eight (8) member representative
@@ -382,29 +382,21 @@ governance:
     version: 1982-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
 - aspect: election-authority
-  value: General election board
-  quote: There shall be a general election board composed of five (5) people
-  source: constitution-kiowa-tribe-1982-text
-  confidence: medium
+  value: Election Commission
+  quote: The Election Commission shall call and hold a Special Election to amend the Constitution
+  source: kiowa-tribe-website-sites-default-files-inline-files-kic-cy-0007-2025-kic-20cons
+  confidence: high
   verification: read-in-full
-  as_of: '1982-06-05'
-  locator: Article XIII, Section 1
-  document_version:
-    document: kiowa-tribe-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
 - aspect: amendment
-  value: Majority of eligible voters, in an election with at least 600 voting
-  quote: Such amendment shall be effective if ratified by a majority of the eligible
-  source: constitution-kiowa-tribe-1982-text
-  confidence: medium
+  value: Majority vote in a Special Election
+  quote: The Constitution may be amended by a majority vote of the voters
+  source: kiowa-tribe-website-sites-default-files-inline-files-kic-cy-0007-2025-kic-20cons
+  confidence: high
   verification: read-in-full
-  as_of: '1982-06-05'
-  locator: Article IV, Section 1
-  document_version:
-    document: kiowa-tribe-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Kiowa Constitution text is not on the saved pages, so the constitutional facts come from a 2025 resolution that quotes it and from department pages.'
 - aspect: recall-and-removal
   value: Recall by ballot vote of Kiowa Indian Council
   quote: the Kiowa Indian Council.
@@ -545,22 +537,21 @@ dispute_resolution:
   forums:
   - kind: peacemaking
     name: Peacemakers of the District Court (Kiowa Tribe Peacemaking Act)
-    description: The Act authorizes the District Court of the Kiowa Tribe to use peacemakers and provides
-      for use of Kiowa Tribe traditions and customs, referral of existing actions, agreements and proposed
-      orders, and enforcement of orders.
+    description: The Act authorizes the District Court of the Kiowa Tribe to use peacemakers, as a court division operating under Kiowa customs and traditions, to resolve disputes in a fair, informal and inexpensive way. Parties may request peacemaking in writing or move to refer a pending case, and the court may refer on its own motion only if all parties consent. A peacemaker cannot force a resolution; a peacemaker may decide a referred matter only if all parties agree to be bound.
     legal_basis: Kiowa Tribe Peacemaking Act, Sections 1-18
     case_types:
     - civil
     - other
     participation: voluntary-or-court-referred
     link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    source: kiowa-tribe-court-codes
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: '2026'
-    locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
-    note: Details from the Act's table of contents and opening section as quoted by NCORJ; the structure
-      parallels the Choctaw Nation and Chickasaw Nation acts.
+    locator: Kiowa Tribe Peacemaking Act, Sections 2-16 (Kiowa Tribe Court Codes pp. 1-7)
+    note: 'Read in full on 2026-11-23 from page images (Kiowa Tribe Peacemaking Act, in Kiowa Tribe Court Codes (approval date per first reader: Resolution KL-CY-2020-0007, Aug. 8, 2020; not re-checked)). Read from the Kiowa Tribe Court Codes (scanned PDF): Sections 2-16 read from page images; Sections 1 (title only), 17 and 18 not read. Section 4 lets a peacemaker decide a referred matter only if all parties agree to be bound. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 210.'
+    relationship_to_court: Peacemaking is a division of the District Court, which assigns, supervises and certifies peacemakers. The court refers cases by order on a party's request or motion (it must grant a joint motion) or on its own motion with all parties' consent; unresolved matters go back to the court.
+    enforcement: The parties' signed written agreement and proposed order are reviewed by the District Court and, if sufficient, entered as a final, non-appealable order, enforceable like any other order of the District Court (Section 13). Statements made in peacemaking are not admissible in court proceedings.
   provisions:
   - kind: peacemaking
     title: Kiowa Tribe Peacemaking Act
@@ -691,6 +682,58 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kiowa Tribe of Oklahoma".
       Facilities as machine-extracted from the report text (verify): Kiowa Casino Carnegie; Kiowa Casino
       Red River. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Cotton County, OK
+    legal_theory: Indian Lands Oklahoma
+    accepted: true
+    date: '2005-11-15'
+    link: https://www.nigc.gov?wpdmdl=2580&ind=2581
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Kiowa Tribe of Oklahoma, 2005-11-15
+    note: The list names the tribe as “Kiowa Tribe of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-99-06
+    date: '1999-04-01'
+    link: https://www.nigc.gov?wpdmdl=1941&ind=1942
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-99-06
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - closure-order
+    tracking_number: CO-99-06
+    date: '1999-04-01'
+    link: https://www.nigc.gov?wpdmdl=1943&ind=1944
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-99-06
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-00-03
+    date: '2000-01-19'
+    link: https://www.nigc.gov?wpdmdl=2022&ind=2023
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-00-03
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - pre-opening-agreement
+    tracking_number: POA-00-08
+    date: '2005-08-31'
+    link: https://www.nigc.gov?wpdmdl=8169&ind=8180
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA-00-08
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as POA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -734,6 +777,155 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “KiowaTribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: bar-admission
+  title: Attorney Bar Admission Application (revised 4-14-2025)
+  court: Kiowa Tribe Judicial
+  link: https://www.kiowatribe.org/sites/default/files/2025-06/Attorney%20Bar%20Admission%20Application_Revised_4-14-2025.pdf
+  detail: Application form for attorney admission, listed on the Judicial page.
+  source: kiowa-tribe-judicial
+  confidence: high
+  verification: read-in-full
+  locator: Judicial page, document list
+  note: 'The source reads: “Attorney Bar Admission Application_Revised_4-14-2025”.'
+- kind: bar-admission
+  title: Interim Kiowa Standards of Professional Responsibility for Attorney and Lay Advocates-Kiowa Bar Association 6-30-2026
+  court: Kiowa Tribe Judicial
+  link: https://www.kiowatribe.org/sites/default/files/2026-06/Interim%20Kiowa%20Standards%20of%20Professional%20Responsibility%20for%20Attorney%20and%20Lay%20Advocates-Kiowa%20Bar%20Association%206-30-2026.pdf
+  detail: Interim standards for attorneys and lay advocates of the Kiowa Bar Association, dated 2026-06-30; shows that lay advocates also practice.
+  source: kiowa-tribe-judicial
+  confidence: high
+  verification: read-in-full
+  locator: Judicial page, document list
+  note: 'The source reads: “Kiowa Standards of Professional Responsibility for Attorney and Lay Advocates”.'
+- kind: court-rules
+  title: Kiowa Rules of Civil Procedure
+  court: Kiowa Tribe Judicial
+  link: https://www.kiowatribe.org/sites/default/files/2026-02/Kiowa%20Rules%20of%20Civil%20Procedure.pdf
+  detail: Rules of civil procedure file uploaded 2026-02.
+  source: kiowa-tribe-judicial
+  confidence: high
+  verification: read-in-full
+  locator: Judicial page, document list
+- kind: court-rules
+  title: Kiowa Tribe Appellate Rules
+  court: Kiowa Tribe Judicial
+  link: https://www.kiowatribe.org/sites/default/files/2024-05/Kiowa%20Tribe%20Appelate%20Rules.pdf
+  detail: Appellate rules file uploaded 2024-05 (the file name spells it Appelate).
+  source: kiowa-tribe-judicial
+  confidence: high
+  verification: read-in-full
+  locator: Judicial page, document list
+- kind: filing-fees
+  title: Fee Schedule (2-23-23)
+  court: Kiowa Tribe Judicial
+  link: https://www.kiowatribe.org/sites/default/files/2024-02/Fee%20Schedule%202-23-23.pdf
+  detail: Fee schedule dated 2023-02-23 per file name.
+  source: kiowa-tribe-judicial
+  confidence: high
+  verification: read-in-full
+  locator: Judicial page, document list
+  note: 'The source reads: “Fee Schedule”.'
+nearby_state_courts:
+- state: OK
+  county: Comanche County
+  court: District Court for Comanche County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Comanche County holds 17% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Kiowa County
+  court: District Court for Kiowa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Kiowa County holds 16% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Tillman County
+  court: District Court for Tillman County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Tillman County holds 14% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Jackson County
+  court: District Court for Jackson County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Jackson County holds 13% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Greer County
+  court: District Court for Greer County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Greer County holds 10% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Cotton County
+  court: District Court for Cotton County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Cotton County holds 10% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Harmon County
+  court: District Court for Harmon County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Harmon County holds 8% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Caddo County
+  court: District Court for Caddo County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Caddo County holds 5% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Stephens County
+  court: District Court for Stephens County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Stephens County holds 3% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Jefferson County
+  court: District Court for Jefferson County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Jefferson County holds 2% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Grady County
+  court: District Court for Grady County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Grady County holds 2% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Kiowa, etc., 1837
   signed: '1837-05-26'

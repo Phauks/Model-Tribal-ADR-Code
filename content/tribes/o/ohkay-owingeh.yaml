@@ -382,6 +382,37 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+court_practice:
+- kind: filing-fees
+  title: Ohkay Owingeh Court Fees and Costs Schedule
+  court: Ohkay Owingeh Tribal Court
+  link: http://ohkay.org/ohkay-owingeh-tribal-court/
+  detail: 'Schedule on the court page: civil filing fee personal/private party $40.00; business/corporate/agency $80.00; emergency protection orders no fee unless denied or withdrawn ($40.00); criminal arraignments and civil traffic trials $50.00; criminal/civil trials $100.00 to $200.00; jury trials $800.00 to $1000.00; appeals $250.00 (includes recordings and transcripts); certified copies $1.00 per page; hearing recordings $75.00 per proceeding.'
+  source: ohkay-owingeh-ohkay-org-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: OHKAY OWINGEH COURT FEES AND COSTS SCHEDULE
+  note: 'The source reads: “PERSONAL/PRIVATE PARTY – $40.00”. Page shows a 2019 notice, so the schedule may be older than five years.'
+- kind: forms
+  title: Tribal court Forms
+  court: Ohkay Owingeh Tribal Court
+  link: http://ohkay.org/ohkay-owingeh-tribal-court/
+  detail: Downloadable forms on the court page include Petition for Restraining Order, Petition for Dissolution of Marriage, Petition for Custody of Minor Child, Motion, Civil Complaint, and Appearance Plea Waiver.
+  source: ohkay-owingeh-ohkay-org-tribal-court
+  confidence: medium
+  verification: title-only
+  locator: Tribal court Forms
+  note: Form files dated 2018 and 2019; form PDFs not opened.
+nearby_state_courts:
+- state: NM
+  county: Rio Arriba County
+  court: District Court for Rio Arriba County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Rio Arriba County holds 100% of the land of Ohkay Owingeh (Census GEOID 2510), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: San Juan Pueblo (Ohkay Owingeh) land grant, New Mexico
   method: statute

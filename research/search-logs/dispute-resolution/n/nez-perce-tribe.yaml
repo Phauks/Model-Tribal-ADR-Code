@@ -189,6 +189,62 @@ searches:
     stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-254
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/cc6c33c097da6aa59cab.pdf
+  query: Chapter 1-8 – Peacemaker Court
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/n/narf-ipi-tribal-peacemaking-laws.html
+  query: Chapter 1-8 – Peacemaker Court
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/idaho/508_compliant_1995.11.14_nez_perce_tribe_tribal_state_gaming_compact.txt
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#gaming.compacts
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/idaho/508_compliant_1993.02.12_coeur_d_alene_tribe_tribal_state_gaming_comapct.txt
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#gaming.compacts
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/idaho/508_compliant_2003.01.08_nez_perce_tribe_tribal_state_gaming_compact.txt
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#gaming.compacts
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/idaho/508_compliant_2008.10.07_nez_perce_tribe_tribal_state_gaming_compact.txt
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nez-perce-tribe.yaml#gaming.compacts
 next_steps: No page or official directory entry was found on 2026-11-22 for “Peacemaker Court” (research/reviews/2026-11-22-service-links.json).
   The second search of 2026-11-23 (web searches and state court lists) found no page or official directory
   entry for “Peacemaker Court”; a call to the nation's office could say whether the court has a page.

@@ -231,17 +231,13 @@ governance:
     version: 1935-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
-  value: Cheyenne River Sioux Tribal Council
-  quote: Sioux Tribe shall consist of a council, known as the Cheyenne River Sioux
-  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
-  confidence: medium
+  value: Tribal Council
+  quote: Tribal Council Representatives
+  source: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-website-councilrepresentatives
+  confidence: high
   verification: read-in-full
-  as_of: '1935-10-29'
-  locator: Article III, Section 1
-  document_version:
-    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
-    version: 1935-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and council representatives by name and do not state the constitutional structure, so only title-level facts are given.'
 - aspect: governing-body-size
   value: 15 councilmen plus 3 officers
   quote: also fifteen (15) councilmen and
@@ -279,17 +275,13 @@ governance:
     version: 1935-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
-  value: Tribal chairman
-  quote: It shall be the duty of the chairman to
-  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
-  confidence: medium
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-website-executives-council
+  confidence: high
   verification: read-in-full
-  as_of: '1935-10-29'
-  locator: By-laws, Article I, Section 1
-  document_version:
-    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
-    version: 1935-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and council representatives by name and do not state the constitutional structure, so only title-level facts are given.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -323,17 +315,13 @@ governance:
     version: 1935-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: other-officers
-  value: Tribal secretary, tribal treasurer, assistant chairman
-  quote: one assistant chairman from their own membership.
-  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
-  confidence: medium
+  value: Tribal Vice-Chairman, Tribal Secretary, Tribal Treasurer
+  quote: Tribal Vice-Chairman
+  source: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-website-executives-council
+  confidence: high
   verification: read-in-full
-  as_of: '1935-10-29'
-  locator: Article III, Section 6
-  document_version:
-    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
-    version: 1935-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and council representatives by name and do not state the constitutional structure, so only title-level facts are given.'
 - aspect: elections
   value: Every 2 years on the first Tuesday after the first Monday in September
   quote: general elections will be held every two years on the first Tuesday
@@ -611,6 +599,57 @@ gaming:
     locator: table row 40, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 40 lists the nation
       as "Cheyenne River Sioux Tribe". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-16-02
+    date: '2016-09-06'
+    link: https://www.nigc.gov?wpdmdl=7723&ind=7734
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-16-02
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-18-03
+    date: '2018-10-24'
+    link: https://www.nigc.gov?wpdmdl=3014&ind=3016
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-18-03
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-18-03
+    date: '2018-11-21'
+    link: https://www.nigc.gov?wpdmdl=3012&ind=3015
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-18-03
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-18-03
+    date: '2019-01-17'
+    link: https://www.nigc.gov?wpdmdl=3010&ind=3011
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-18-03
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-18-03
+    date: '2019-05-15'
+    link: https://www.nigc.gov?wpdmdl=2998&ind=2999
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-18-03
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -668,6 +707,36 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Section "Comprehensive Tax Collection Agreement"
   note: 'The source reads: “The five Indian tribes with comprehensive tax collection agreements are Cheyenne River Sioux Tribe, Crow Creek Sioux Tribe, Oglala Sioux Tribe, Rosebud Sioux Tribe, and Standing Rock Sioux Tribe.”. Revenue from the tribe''s Special Jurisdiction is remitted on the state return and divided between the state and the tribe under the agreement terms. The page gives no signing date.'
+court_practice:
+- kind: public-defender
+  title: Judicial Department (Public Defender)
+  court: Cheyenne River Sioux Tribe Judicial Department
+  link: https://www.cheyenneriversioux.com/judicial-department
+  detail: Public Defender office listed with phone; its objectives are to protect legal and constitutional rights of clients at all stages of criminal and juvenile proceedings.
+  source: cheyenne-river-sioux-tribe-judicial-department
+  confidence: high
+  verification: read-in-full
+  locator: Judicial Department page
+  note: 'The source reads: “Public Defender”.'
+nearby_state_courts:
+- state: SD
+  county: Dewey County
+  court: Circuit Court for Dewey County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Dewey County holds 54% of the land of Cheyenne River Reservation (Census GEOID 0605), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Ziebach County
+  court: Circuit Court for Ziebach County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Ziebach County holds 46% of the land of Cheyenne River Reservation (Census GEOID 0605), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Sioux-Miniconjou Band, 1865
   signed: '1865-10-10'

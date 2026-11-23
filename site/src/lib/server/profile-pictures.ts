@@ -9,6 +9,7 @@
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import type { Profile } from './contributor-profiles.ts';
 import { eventStatement } from './events.ts';
+import { forgetScan, storeSentFile } from './file-scans.ts';
 import { newIdentifier, now } from './identifiers.ts';
 
 /** The size the browser makes, in pixels on each side. */
@@ -98,7 +99,15 @@ export async function savePicture(
 	bytes: Uint8Array
 ): Promise<void> {
 	const key = `profile-pictures/${profile.identifier}/${newIdentifier()}.jpg`;
-	await bucket.put(key, bytes, { httpMetadata: { contentType: 'image/jpeg' } });
+	// Held until the virus check passes (site/SCANNING.md): the cleaning above
+	// keeps the picture's own data byte for byte.
+	await storeSentFile(database, bucket, {
+		objectKey: key,
+		purpose: 'profile-picture',
+		subject: profile.identifier,
+		bytes,
+		httpMetadata: { contentType: 'image/jpeg' }
+	});
 	const time = now();
 	await database.batch([
 		database
@@ -111,7 +120,10 @@ export async function savePicture(
 			targetIdentifier: profile.identifier
 		})
 	]);
-	if (profile.pictureKey) await bucket.delete(profile.pictureKey);
+	if (profile.pictureKey) {
+		await bucket.delete(profile.pictureKey);
+		await forgetScan(database, profile.pictureKey);
+	}
 }
 
 /** Removes the person's picture from the profile and the bucket. */
@@ -134,4 +146,5 @@ export async function removePicture(
 		})
 	]);
 	await bucket.delete(profile.pictureKey);
+	await forgetScan(database, profile.pictureKey);
 }

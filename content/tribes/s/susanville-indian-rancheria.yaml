@@ -186,6 +186,62 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: 'Listed as "Susanville Indian Rancheria, California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Susanville Indian Rancheria (2007)); the list does not say which service unit or programs the compact covers.'
 governance:
+- aspect: form
+  value: Charter under Indian Reorganization Act of 1934
+  quote: The tribe elected to charter under authority of the Indian Reorganization Act (IRA) of 1934
+  source: susanville-indian-rancheria-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says members are elected by the General Council, while the council page says elected by secret ballot; the About page wording is used.'
+- aspect: governing-body
+  value: Tribal Business Council
+  quote: The Tribal Business Council is the elected governing body of the Susanville Indian Rancheria.
+  source: susanville-indian-rancheria-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says members are elected by the General Council, while the council page says elected by secret ballot; the About page wording is used.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The governing body of the Susanville Indian Rancheria is the General Council, which is composed of all tribal members who are at least eighteen years old.
+  source: susanville-indian-rancheria-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says members are elected by the General Council, while the council page says elected by secret ballot; the About page wording is used.'
+- aspect: governing-body-selection
+  value: Elected by General Council
+  quote: The members are elected by the General Council members every three years.
+  source: susanville-indian-rancheria-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says members are elected by the General Council, while the council page says elected by secret ballot; the About page wording is used.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: The members are elected by the General Council members every three years.
+  source: susanville-indian-rancheria-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says members are elected by the General Council, while the council page says elected by secret ballot; the About page wording is used.'
+- aspect: general-council
+  value: All tribal members 18 or older
+  quote: The governing body of the Susanville Indian Rancheria is the General Council, which is composed of all tribal members who are at least eighteen years old.
+  source: susanville-indian-rancheria-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says members are elected by the General Council, while the council page says elected by secret ballot; the About page wording is used.'
+- aspect: head-of-government
+  value: Chairman
+  quote: 'The officers of the Tribal Business Council are: Chairman, Vice Chairman and Secretary/Treasurer.'
+  source: susanville-indian-rancheria-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says members are elected by the General Council, while the council page says elected by secret ballot; the About page wording is used.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -194,6 +250,22 @@ governance:
   as_of: '2026-11-20'
   locator: Susanville Indian Rancheria, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice Chairman, Secretary/Treasurer
+  quote: 'The officers of the Tribal Business Council are: Chairman, Vice Chairman and Secretary/Treasurer.'
+  source: susanville-indian-rancheria-website-about-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says members are elected by the General Council, while the council page says elected by secret ballot; the About page wording is used.'
+- aspect: election-authority
+  value: Election Board
+  quote: The Susanville Indian Rancheria Election Board is responsible for administering fair, impartial, and transparent Tribal elections in accordance with the Tribe’s Constitution and Election Ordinance.
+  source: susanville-indian-rancheria-website-boards-committees-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says members are elected by the General Council, while the council page says elected by secret ballot; the About page wording is used.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -358,6 +430,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Susanville Indian Rancheria". Name
       extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-24
+    date: '2009-04-21'
+    link: https://www.nigc.gov?wpdmdl=7856&ind=7880
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-24
+    note: The list titles the action “Susanville Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-24
+    date: '2009-05-26'
+    link: https://www.nigc.gov?wpdmdl=7825&ind=7836
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-24
+    note: The list titles the action “Susanville Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -383,6 +476,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Lassen County
+  court: Superior Court for Lassen County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Lassen County holds 100% of the land of Susanville Indian Rancheria (Census GEOID 4060), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

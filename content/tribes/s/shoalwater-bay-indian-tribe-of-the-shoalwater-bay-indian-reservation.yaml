@@ -630,6 +630,27 @@ gaming:
     locator: table row 259, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 259 lists the nation
       as "Shoalwater Bay Tribe". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-99-10
+    date: '1999-08-05'
+    link: https://www.nigc.gov?wpdmdl=1955&ind=1956
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-99-10
+    note: The list titles the action “Shoalwater Bay Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: SA/NOV/CO-99-10
+    date: '2003-11-12'
+    link: https://www.nigc.gov?wpdmdl=8235&ind=8246
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA/NOV/CO-99-10
+    note: The list titles the action “Shoalwater Bay Indian Tribe” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -669,6 +690,27 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Title
   note: 'The source reads: “CROSS COMMISSION LAW ENFORCEMENT AGREEMENT BETWEEN THE SHOALWATER BAY TRIBAL COMMUNITY AND PACI FIC COUNTY”. Effective date reads "___ day of ___ 2011" and the term runs to December 31, 2014 unless terminated, so it may have lapsed. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: court-rules
+  title: Title 1 Court Procedures (04-01-25)
+  court: Shoalwater Bay Tribal Court
+  link: https://www.shoalwaterbay-nsn.gov/assets/Tribal-Codes/Title-1/Title-01-Court-Procedures-04-01-25.pdf
+  detail: Code of Laws list on the court page includes Title 1 Court Procedures and Title 3 Evidence Code.
+  source: shoalwater-bay-indian-tribe-tribal-court
+  confidence: high
+  verification: title-only
+  locator: The Code of Laws consists of
+  note: 'The source reads: “Court Procedures”. PDF not opened.'
+nearby_state_courts:
+- state: WA
+  county: Pacific County
+  court: Superior Court for Pacific County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Pacific County holds 100% of the land of Shoalwater Bay Indian Reservation (Census GEOID 3780), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Shoalwater Reserve, Washington Territory
   method: executive-order

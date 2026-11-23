@@ -247,41 +247,29 @@ government_structure:
     constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws under the act of June 18, 1934
-  quote: By-laws, by authority of the act of Congress of June 18, 1934, as
-  source: constitution-native-village-of-barrow-inupiat-traditional-government-1940-text
-  confidence: medium
+  value: Governance structure under the Indian Reorganization Act
+  quote: The Native Village of Barrow’s formal governance structure was established in the 1930s through the Indian Reorganization Act, which allowed Alaska Native communities to organize as federally recognized tribal entities.
+  source: native-village-of-barrow-inupiat-traditional-government-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '1940-03-21'
-  locator: Preamble
-  document_version:
-    document: native-village-of-barrow-inupiat-traditional-government-constitution
-    version: 1940-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members and officers appear on the pages only with personal names, so seats and officer titles are left out.'
 - aspect: governing-body
-  value: Governing body chosen by the Village membership
-  quote: shall decide what kind of governing body it wishes to set up to spea
-  source: constitution-native-village-of-barrow-inupiat-traditional-government-1940-text
-  confidence: medium
+  value: Tribal Council
+  quote: The Native Village of Barrow is governed by a Tribal Council, which oversees all tribal operations, programs, and services.
+  source: native-village-of-barrow-inupiat-traditional-government-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '1940-03-21'
-  locator: Article 3, Section 1
-  document_version:
-    document: native-village-of-barrow-inupiat-traditional-government-constitution
-    version: 1940-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members and officers appear on the pages only with personal names, so seats and officer titles are left out.'
 - aspect: governing-body-selection
-  value: Chosen by the Village membership
-  quote: how members and officers of the governing body shall be chosen
-  source: constitution-native-village-of-barrow-inupiat-traditional-government-1940-text
-  confidence: medium
+  value: Elected officials
+  quote: The Tribal Council consists of elected officials who serve terms to represent and lead the Native Village of Barrow.
+  source: nvb-nsn-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1940-03-21'
-  locator: Article 3, Section 2
-  document_version:
-    document: native-village-of-barrow-inupiat-traditional-government-constitution
-    version: 1940-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members and officers appear on the pages only with personal names, so seats and officer titles are left out.'
 - aspect: general-council
   value: General meeting of whole membership, yearly
   quote: shall be held at least once a year.
@@ -302,6 +290,14 @@ governance:
   as_of: '2026-11-20'
   locator: Native Village of Barrow Inupiat Traditional Government
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: elections
+  value: Annual election
+  quote: Notice of Annual Election and Council Meeting
+  source: native-village-of-barrow-inupiat-traditional-government-website-notice-of-annual-election-and-council-meeting
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members and officers appear on the pages only with personal names, so seats and officer titles are left out.'
 - aspect: voting-age
   value: '21'
   quote: Village 21 years of
@@ -326,6 +322,14 @@ governance:
     document: native-village-of-barrow-inupiat-traditional-government-constitution
     version: 1940-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Tribal Court follows the Native Village of Barrow Code of Laws (Title 1 – Court Procedures) to administer fair and culturally appropriate justice.
+  source: native-village-of-barrow-inupiat-traditional-tribal-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members and officers appear on the pages only with personal names, so seats and officer titles are left out.'
 - aspect: amendment
   value: Majority vote, approved by Secretary of the Interior
   quote: changes are approved by the Secretary of the Interior and by a ma-
@@ -463,6 +467,18 @@ justice_institutions:
   verification: read-in-full
   as_of: '2026-11-22'
   note: 'The page names the court: “Juvenile Healing to Wellness Court”. Described on the same page as a therapeutic program for youth ages 0-21 addressing alcohol and substance abuse, integrating traditional practices with the judicial process. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, native-village-of-barrow-inupiat-traditional-government#2).'
+gaming:
+  indian_lands_opinions:
+  - parcel: Unspecified parcel
+    legal_theory: Governmental Power
+    accepted: false
+    date: '1997-08-12'
+    link: https://www.nigc.gov?wpdmdl=2468&ind=2482
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Native Village of Barrow – Appeal to Commission, 1997-08-12
+    note: The list names the tribe as “Native Village of Barrow – Appeal to Commission”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -497,6 +513,27 @@ jurisdiction:
   confidence: high
   verification: inferred
   as_of: '1999-07-06'
+court_practice:
+- kind: court-rules
+  title: Native Village of Barrow Code of Laws, Title 1 Court Procedures
+  court: Native Village of Barrow Tribal Court
+  link: https://nvb-nsn.gov/wp-content/uploads/2024/12/NVB-Code-of-Laws-Title-1-Court-Procedures5.pdf
+  detail: The court page says the court follows Title 1 (Court Procedures) of the village Code of Laws and links the PDF.
+  source: native-village-of-barrow-inupiat-traditional-tribal-courts
+  confidence: high
+  verification: title-only
+  locator: Programs and Services
+  note: 'The source reads: “Code of Laws (Title 1 – Court Procedures)”. Page not opened; PDF linked on the court page.'
+nearby_state_courts:
+- state: AK
+  county: North Slope Borough
+  court: Superior Court for North Slope Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: North Slope Borough holds 100% of the land of Barrow ANVSA (Census GEOID 6175), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Arctic Slope Regional Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

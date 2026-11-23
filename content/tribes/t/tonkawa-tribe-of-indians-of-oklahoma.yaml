@@ -548,6 +548,68 @@ gaming:
     locator: table row 289, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 289 lists the nation
       as "Tonkawa Tribe of Indians of Oklahoma".
+  enforcement_actions:
+  - kinds:
+    - closure-order
+    tracking_number: CO 06-01
+    date: '2006-02-02'
+    link: https://www.nigc.gov?wpdmdl=8151&ind=8161
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO 06-01
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-06
+    date: '2006-02-02'
+    link: https://www.nigc.gov?wpdmdl=8152&ind=8162
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-06
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - pre-opening-agreement
+    - settlement-agreement
+    tracking_number: POA/SA-06-01
+    date: '2006-07-05'
+    link: https://www.nigc.gov?wpdmdl=8126&ind=8137
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA/SA-06-01
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as POA/SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-06
+    date: '2009-02-12'
+    link: https://www.nigc.gov?wpdmdl=7921&ind=7932
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-06
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-06A(replacing NOV-09-06)
+    date: '2009-02-18'
+    link: https://www.nigc.gov?wpdmdl=7920&ind=7931
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-06A(replacing NOV-09-06)
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-06
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7901&ind=7923
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-06
+    note: The list titles the action “Tonkawa Indian Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -582,6 +644,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Tonakawa Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+nearby_state_courts:
+- state: OK
+  county: Kay County
+  court: District Court for Kay County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Kay County holds 100% of the land of Tonkawa OTSA (Census GEOID 5860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., 1846
   signed: '1846-05-15'

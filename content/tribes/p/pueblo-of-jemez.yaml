@@ -230,6 +230,30 @@ indian_health_service:
   note: 'The source''s words: "Jemez Health Center – Tribal".'
   operator: tribal
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is the governing body and has legislative and other responsibilities for the Pueblo of Jemez in its exercise of its inherent sovereign powers.
+  source: pueblo-of-jemez-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Past governors
+  quote: The Tribal Council members are made up of past leaders who served as the Governor of the Pueblo of Jemez.
+  source: pueblo-of-jemez-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: The Governor represents the Pueblo of Jemez as an official Head of State and serves as the head of the tribal government.
+  source: pueblo-of-jemez-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -238,6 +262,38 @@ governance:
   as_of: '2026-11-20'
   locator: Pueblo of Jemez, New Mexico
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Appointed yearly by religious leaders
+  quote: The Governor, Lieutenant Governor and Second Lieutenant Governor are appointed at the start of each year by religious leaders
+  source: pueblo-of-jemez-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Lt. Governors, fiscales, sheriff
+  quote: The secular Tribal Government includes the Tribal Council, the Jemez Governor, two Lt. Governors, two fiscales, and a sheriff.
+  source: jemez-history-and-culture
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Pueblo of Jemez Tribal Court serves as the judicial arm of the Tribal government and serves the public.
+  source: pueblo-of-jemez-website-government-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Separate traditional governing body
+  quote: Traditional matters are still handled through a separate governing body that is rooted in prehistory.
+  source: jemez-history-and-culture
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 representatives:
 - office: Governor
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -359,6 +415,27 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+court_practice:
+- kind: court-rules
+  title: Rules of Criminal Procedure (Title II)
+  court: Pueblo of Jemez Tribal Court
+  link: https://www.jemezpueblo.org/wp-content/uploads/2026/04/2.-Title-II-Rules-of-Criminal-Procedure.pdf
+  detail: Pueblo of Jemez Codes list on the court page, files dated April 2026; a Civil title (Title XIV) is also linked.
+  source: pueblo-of-jemez-website-government-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Pueblo of Jemez Codes
+  note: 'The source reads: “Rules of Criminal Procedure”. Page not opened.'
+nearby_state_courts:
+- state: NM
+  county: Sandoval County
+  court: District Court for Sandoval County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Sandoval County holds 100% of the land of Jemez Pueblo (Census GEOID 1685), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Pueblo of Jemez land grant, New Mexico
   method: statute

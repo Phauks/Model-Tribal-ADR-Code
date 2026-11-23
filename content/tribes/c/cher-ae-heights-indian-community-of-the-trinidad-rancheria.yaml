@@ -162,28 +162,29 @@ indian_health_service:
   note: Listed as "Cher-Ae Heights Indian Community of the Trinidad Rancheria, California".
 governance:
 - aspect: form
-  value: Articles of Association
-  quote: hereby adopt these Articles of Association.
-  source: constitution-cher-ae-heights-indian-community-of-the-trinidad-rancheria-1961-text
-  confidence: medium
+  value: Constitution approved June 2008
+  quote: In June of 2008, the Tribe approved a Constitution which supersedes the Articles of Association and its amendments.
+  source: cher-ae-heights-indian-community-of-the-trinidad-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1961-06-06'
-  document_version:
-    document: cher-ae-heights-indian-community-of-the-trinidad-rancheria-constitution
-    version: 1961-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Typed articles with OCR errors; parts of the approval block are garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2008 Constitution text is not among the saved pages, so the facts come from the Tribal Council web page.'
 - aspect: governing-body
   value: Community Council
-  quote: The governing body shall be the Community Council,
-  source: constitution-cher-ae-heights-indian-community-of-the-trinidad-rancheria-1961-text
-  confidence: medium
+  quote: The Trinidad Rancheria is governed by the Community Council, from which is elected a Tribal Council
+  source: cher-ae-heights-indian-community-of-the-trinidad-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1961-06-06'
-  locator: Section 4, Governing Body
-  document_version:
-    document: cher-ae-heights-indian-community-of-the-trinidad-rancheria-constitution
-    version: 1961-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Typed articles with OCR errors; parts of the approval block are garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2008 Constitution text is not among the saved pages, so the facts come from the Tribal Council web page.'
+- aspect: governing-body-size
+  value: 5 members (Tribal Council)
+  quote: a Tribal Council—a Chairperson, a Vice-Chairperson, a Secretary-Treasurer and two Members-at-Large.
+  source: cher-ae-heights-indian-community-of-the-trinidad-rancheria-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2008 Constitution text is not among the saved pages, so the facts come from the Tribal Council web page.'
 - aspect: general-council
   value: All members 21 years of age or over
   quote: which shall consist of all members twenty-one (21) years of age or
@@ -197,17 +198,13 @@ governance:
     version: 1961-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Typed articles with OCR errors; parts of the approval block are garbled.'
 - aspect: head-of-government
-  value: Chairman
-  quote: The Chairman shall preside at all meetings.
-  source: constitution-cher-ae-heights-indian-community-of-the-trinidad-rancheria-1961-text
-  confidence: medium
+  value: Chairperson
+  quote: a Tribal Council—a Chairperson, a Vice-Chairperson, a Secretary-Treasurer and two Members-at-Large.
+  source: cher-ae-heights-indian-community-of-the-trinidad-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1961-06-06'
-  locator: Section 9, A
-  document_version:
-    document: cher-ae-heights-indian-community-of-the-trinidad-rancheria-constitution
-    version: 1961-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Typed articles with OCR errors; parts of the approval block are garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2008 Constitution text is not among the saved pages, so the facts come from the Tribal Council web page.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -241,17 +238,13 @@ governance:
     version: 1961-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Typed articles with OCR errors; parts of the approval block are garbled.'
 - aspect: other-officers
-  value: Vice-Chairman, Secretary-Treasurer, two additional members
-  quote: elect from its membership a Chairman, Vice-Chairman, Secretary-
-  source: constitution-cher-ae-heights-indian-community-of-the-trinidad-rancheria-1961-text
-  confidence: medium
+  value: Vice-Chairperson, Secretary-Treasurer, two Members-at-Large
+  quote: a Tribal Council—a Chairperson, a Vice-Chairperson, a Secretary-Treasurer and two Members-at-Large.
+  source: cher-ae-heights-indian-community-of-the-trinidad-rancheria-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1961-06-06'
-  locator: Section 4, Governing Body
-  document_version:
-    document: cher-ae-heights-indian-community-of-the-trinidad-rancheria-constitution
-    version: 1961-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Typed articles with OCR errors; parts of the approval block are garbled.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2008 Constitution text is not among the saved pages, so the facts come from the Tribal Council web page.'
 - aspect: voting-age
   value: '21'
   quote: All Community Council members twenty-one (21) years of age
@@ -439,20 +432,14 @@ gaming:
   - state: CA
     status: deemed-approved
     approved: '2026-01-26'
-    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
-      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
-      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
-      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
-      or other methods may be used by mutual agreement.
-    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days and must meet and confer within 30 days; disputes still unresolved may be taken to the United States District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory or specific-performance relief only (no damages, other than money the compact expressly requires), under a limited mutual waiver of sovereign immunity. After a 30-day notice to cure, either party may also sue in federal court for a declaration of material breach, which can end in enforcement or termination of the compact (sec. 13.4). Mediation or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.4
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: high
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2026-01-26'
-    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    note: Dispute-resolution clause read from this nation's own compact document. Read from the 2026 Cher-Ae
-      Heights Indian Community compact, which follows the form California has used in its recent compacts;
-      many California nations still operate under 1999-era compacts with a different dispute section.
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.4
+    note: Read in full on 2026-11-23 (Tribal-State Compact between the State of California and the Cher-Ae Heights Indian Community of the Trinidad Rancheria, with Interior Department letter dated Jan. 21, 2026 (deemed approved)). Dispute-resolution clause read from this nation's own compact document. Read from the 2026 Cher-Ae Heights Indian Community compact, which follows the form California has used in its recent compacts; many California nations still operate under 1999-era compacts with a different dispute section. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 40.
   ordinances:
   - approved: '1993-11-16'
     link: https://www.nigc.gov?wpdmdl=9471&ind=9482
@@ -481,6 +468,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cher-Ae Heights Indian Community
       of the Trinidad Rancheria". Facilities as machine-extracted from the report text (verify): Cher-Ae-Heights
       Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-26
+    date: '2009-05-19'
+    link: https://www.nigc.gov?wpdmdl=7827&ind=7838
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-26
+    note: The list titles the action “Trinidad Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -507,6 +505,27 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+court_practice:
+- kind: court-rules
+  title: Rules of Court (mentioned on Tribal Court page)
+  court: Trinidad Rancheria Tribal Court
+  link: https://trinidad-rancheria.org/tribal-court/
+  detail: Court page refers readers to the Rules of Court for more information.
+  source: trinidad-rancheria-tribal-court-court-rules
+  confidence: medium
+  verification: title-only
+  locator: Court Contact Information
+  note: 'The source reads: “please see the Rules of Court”. Link target not captured; document not opened.'
+nearby_state_courts:
+- state: CA
+  county: Humboldt County
+  court: Superior Court for Humboldt County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Humboldt County holds 100% of the land of Trinidad Rancheria (Census GEOID 4275), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

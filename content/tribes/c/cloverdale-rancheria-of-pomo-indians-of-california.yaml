@@ -169,6 +169,17 @@ gaming:
     locator: table row 47, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 47 lists the nation
       as "Cloverdale Rancheria of Pomo Indians of California".
+  indian_lands_opinions:
+  - parcel: Cloverdale Parcels, Sonoma City CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2008-12-12'
+    link: https://www.nigc.gov?wpdmdl=2624&ind=2626
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Cloverdale Rancheria of Pomo Indians, 2008-12-12
+    note: The list names the tribe as “Cloverdale Rancheria of Pomo Indians”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -173,16 +173,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
 - aspect: governing-body
   value: Upper Skagit Tribal Council
-  quote: The governing body of the Upper Skagit Indij
-  source: constitution-upper-skagit-indian-tribe-1977-text
-  confidence: medium
+  quote: The Upper Skagit Tribal Council is the governing body of the Upper Skagit Indian Tribe.
+  source: upper-skagit-indian-tribe-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1977-03-26'
-  locator: Article III, Section 1
-  document_version:
-    document: upper-skagit-indian-tribe-constitution
-    version: 1977-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name the Tribal Council as governing body but give no size, selection, term or constitution text.'
 - aspect: governing-body-size
   value: 7 members
   quote: The tribal council shall consist of seven (7)
@@ -574,6 +570,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: WA
+  county: Skagit County
+  court: Superior Court for Skagit County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Skagit County holds 100% of the land of Upper Skagit Reservation (Census GEOID 4455), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Dwamish, Suquamish, etc., 1855
   signed: '1855-01-22'

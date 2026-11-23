@@ -9,7 +9,8 @@ import {
 	searchSummary,
 	sources as sourceRecords,
 	type CitedFact,
-	type NationRecord
+	type NationRecord,
+	type SourceRecord
 } from '#lib/server/content.ts';
 import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
@@ -23,6 +24,7 @@ import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
+import { offlineSets } from '#lib/server/copy-lists.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -317,7 +319,7 @@ const representativesLabel = 'Official representatives';
  * Indian Affairs Tribal Leaders Directory, or a state's list of the Tribes it
  * recognizes) names as the nation's leader, with a link to the list and the
  * name to look up there. Never the person: the list names who holds the
- * office now (decision record 0050).
+ * office now (decision record 0052).
  */
 function representativeItems(record: NationRecord, sources: SourceUses): FactItem[] {
 	const facts = record.representatives ?? [];
@@ -427,8 +429,8 @@ function governmentAtAGlance(record: NationRecord, sources: SourceUses): FactGro
 	const bodyLabel = 'Governing body';
 	const headLabel = 'Head of government';
 	return [
-		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value, link: '#government-heading' })] : []),
-		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value, link: '#government-heading' })] : [])
+		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value })] : []),
+		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value })] : [])
 	];
 }
 
@@ -462,8 +464,54 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 	}
 	return [
 		...[...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items })),
-		...agreementGroups(record, sources, section)
+		...agreementGroups(record, sources, section),
+		...group('nearby-state-courts', 'State trial courts for the same counties', nearbyStateCourts(record, sources, section)),
+		...group('court-cases', 'Court cases about the nation', courtCases(record, sources, section))
 	];
+}
+
+/**
+ * The state trial court of general jurisdiction for each county the nation's
+ * Census area lies in, largest share first as the record lists them, each
+ * linking the state judiciary's list of those courts.
+ */
+function nearbyStateCourts(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	return (record.nearby_state_courts ?? []).map((fact) =>
+		cited(sources, section, fact, {
+			text: fact.court,
+			link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+			detail: stateName(fact.state)
+		})
+	);
+}
+
+/** Reporter names written out in some records, in their short form. */
+const reporterShortNames: Record<string, string> = { 'United States Reports': 'U.S.' };
+
+/**
+ * The court cases in the project's sources that are about the nation (the
+ * source record lists it), oldest first: the case name, where it is reported
+ * and the year, with the court under it. Each links the opinion the record
+ * cites and is listed under Sources like any other fact.
+ */
+function courtCases(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	const year = (source: SourceRecord) => source.citation.issued?.['date-parts']?.[0]?.[0];
+	const cases = [...sourceRecords().values()]
+		.filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(record.id) && source.citation.title)
+		.sort((first, second) => (year(first) ?? 0) - (year(second) ?? 0));
+	return cases.map((source) => {
+		const { volume, page, number, authority } = source.citation;
+		const reporter = source.citation['container-title'];
+		const reported = volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number;
+		const when = year(source);
+		const address = source.citation.URL ?? source.original_link;
+		return cited(sources, section, { source: source.key, confidence: 'high' }, {
+			text: source.citation.title ?? source.key,
+			link: address && URL.canParse(address) ? webLink(address) : undefined,
+			detail: [reported, when ? `(${when})` : undefined].filter(Boolean).join(' ') || undefined,
+			note: authority
+		});
+	});
 }
 
 /** The names the page gives each kind of jurisdiction agreement, in the order the page shows them. */
@@ -562,8 +610,41 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 				})
 			)
 		),
-		...group('indian_health_service', 'Indian Health Service', healthItems(record, sources, section))
+		...group('indian_health_service', 'Indian Health Service', healthItems(record, sources, section)),
+		...group(
+			'indian-lands-opinions',
+			'Indian lands opinions on gaming',
+			[...(record.gaming?.indian_lands_opinions ?? [])]
+				.sort((first, second) => first.date.localeCompare(second.date))
+				.map((fact) =>
+					cited(sources, section, fact, {
+						text: fact.parcel,
+						link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+						detail: [readableDate(fact.date), fact.legal_theory, fact.accepted === undefined ? undefined : fact.accepted ? 'accepted' : 'not accepted']
+							.filter(Boolean)
+							.join(', ')
+					})
+				)
+		),
+		...group(
+			'gaming-enforcement-actions',
+			'Gaming Commission enforcement actions',
+			[...(record.gaming?.enforcement_actions ?? [])]
+				.sort((first, second) => first.date.localeCompare(second.date))
+				.map((fact) =>
+					cited(sources, section, fact, {
+						text: sentenceCase(fact.kinds.map(humanize).join(' and ')),
+						link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+						detail: `${fact.tracking_number}, ${readableDate(fact.date)}`
+					})
+				)
+		)
 	];
+}
+
+/** The first letter in capitals, the rest as given. */
+function sentenceCase(text: string): string {
+	return text.charAt(0).toLocaleUpperCase('en-US') + text.slice(1).toLocaleLowerCase('en-US');
 }
 
 /**
@@ -611,6 +692,43 @@ function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): 
 		[...(record.justice_institutions ?? []), ...(record.dispute_resolution?.forums ?? [])],
 		(fact, section, text, marks) => sources.citeFact(fact, section, text, marks)
 	);
+}
+
+/** The names the page gives each kind of court practice item, in the order the page shows them. */
+const practiceKinds: Record<string, string> = {
+	'bar-admission': 'Admission to practice',
+	'court-rules': 'Court rules',
+	'filing-fees': 'Filing fees',
+	forms: 'Court forms',
+	'public-defender': 'Public defender',
+	'legal-aid': 'Legal aid'
+};
+
+/**
+ * What a person needs to use the nation's courts, one group per kind: each
+ * page or document linked, with the court it belongs to and what it says,
+ * such as the fee amounts or how to apply.
+ */
+function courtPractice(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const section = 'Courts and dispute resolution';
+	const order = Object.keys(practiceKinds);
+	const rank = (kind: string) => (order.includes(kind) ? order.indexOf(kind) : order.length);
+	const facts = [...(record.court_practice ?? [])].sort((first, second) => rank(first.kind) - rank(second.kind));
+	const byKind = new Map<string, FactItem[]>();
+	for (const fact of facts) {
+		const label = practiceKinds[fact.kind] ?? humanize(fact.kind);
+		const list = byKind.get(label) ?? [];
+		list.push(
+			cited(sources, section, fact, {
+				text: fact.title,
+				link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+				detail: fact.court,
+				note: fact.detail
+			})
+		);
+		byKind.set(label, list);
+	}
+	return [...byKind.entries()].map(([label, items]) => ({ field: `court-practice-${label}`, label, items }));
 }
 
 /** The section that joins the nation's published law and its documents' histories. */
@@ -864,6 +982,11 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 	};
 }
 
+function heldCopies(id: string): { count: number; bytes: number } {
+	const files = offlineSets().nations.get(id)?.files ?? [];
+	return { count: files.length, bytes: files.reduce((total, [, bytes]) => total + bytes, 0) };
+}
+
 export const load: PageServerLoad = ({ params }) => {
 	const record = nations().find((candidate) => candidate.id === params.id);
 	if (!record) error(404, 'No nation page has this address.');
@@ -883,7 +1006,9 @@ export const load: PageServerLoad = ({ params }) => {
 			...status,
 			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined
 		},
-		withdrawn: record.review?.status === 'withdrawn-at-request'
+		withdrawn: record.review?.status === 'withdrawn-at-request',
+		// The copies of the nation's documents this site holds, to save offline or download as a ZIP.
+		heldCopies: heldCopies(record.id)
 	};
 
 	if (page.withdrawn) {
@@ -897,6 +1022,7 @@ export const load: PageServerLoad = ({ params }) => {
 			contacts: { websites: [], offices: [] },
 			government: [],
 			courts: [],
+			practice: [],
 			opinions: undefined,
 			law: [],
 			documents: [],
@@ -1003,6 +1129,7 @@ export const load: PageServerLoad = ({ params }) => {
 	);
 	sources.part('Courts and dispute resolution');
 	const courts = courtsAndDisputeResolution(record, sources);
+	const practice = courtPractice(record, sources);
 	sources.part(opinionsHeading);
 	const opinions = courtOpinions(record.id, sources);
 	// Within Laws and agreements, each document's sources go under its heading.
@@ -1029,7 +1156,7 @@ export const load: PageServerLoad = ({ params }) => {
 						searchSummary('governance', record.id)
 					),
 		courts:
-			courts.length > 0
+			courts.length > 0 || practice.length > 0
 				? undefined
 				: emptySectionNote(
 						'a court or other forum',
@@ -1056,6 +1183,7 @@ export const load: PageServerLoad = ({ params }) => {
 		map,
 		government,
 		courts,
+		practice,
 		opinions,
 		law,
 		documents,

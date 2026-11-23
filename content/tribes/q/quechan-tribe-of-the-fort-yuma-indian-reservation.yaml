@@ -232,17 +232,13 @@ governance:
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
-  value: Quechan Tribal Council
-  quote: SECTION 1. The Quechan Tribal Council shall be composed
-  source: university-of-oklahoma-indian-reorganization-act-quecons
-  confidence: medium
+  value: Tribal Council
+  quote: 2025/2026 Quechan Tribal Council
+  source: quechan-tribe-of-the-fort-yuma-indian-reservation-website-government-html
+  confidence: high
   verification: read-in-full
-  as_of: '1936-11-03'
-  locator: Article III, Section 1
-  document_version:
-    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked from the Government page, but its text is not among the saved pages.'
 - aspect: governing-body-size
   value: 7 members
   quote: of seven members of the Quechan Tribe, who shall be residents of the Fort
@@ -280,17 +276,13 @@ governance:
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
-  value: President
-  quote: to preside at all meetings of the Council.
-  source: university-of-oklahoma-indian-reorganization-act-quecons
-  confidence: medium
+  value: Tribal President
+  quote: Quechan Tribal President
+  source: quechan-tribe-of-the-fort-yuma-indian-reservation-website-government-html
+  confidence: high
   verification: read-in-full
-  as_of: '1936-11-03'
-  locator: By-laws, Article I, Section 1
-  document_version:
-    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked from the Government page, but its text is not among the saved pages.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -312,17 +304,13 @@ governance:
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: other-officers
-  value: Vice-President, Tribal Secretary, Tribal Treasurer
-  quote: a Tribal Secretary and a Tribal Treasurer.
-  source: university-of-oklahoma-indian-reorganization-act-quecons
-  confidence: medium
+  value: Vice President
+  quote: Quechan Tribal Vice President
+  source: quechan-tribe-of-the-fort-yuma-indian-reservation-website-government-html
+  confidence: high
   verification: read-in-full
-  as_of: '1936-11-03'
-  locator: Article III, Section 5
-  document_version:
-    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked from the Government page, but its text is not among the saved pages.'
 - aspect: elections
   value: Every 2 years, first Monday in January
   quote: first Monday of January of each alternate year
@@ -335,18 +323,22 @@ governance:
     document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
     version: 1936-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
-- aspect: judiciary
-  value: Council may establish minor courts
-  quote: to establish minor courts for
-  source: university-of-oklahoma-indian-reorganization-act-quecons
-  confidence: medium
+- aspect: election-authority
+  value: Election Board
+  quote: The 2026 Election Board members are as follows
+  source: quechan-tribe-of-the-fort-yuma-indian-reservation-website-committees-election-html
+  confidence: high
   verification: read-in-full
-  as_of: '1936-11-03'
-  locator: Article IV, Section 7
-  document_version:
-    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
-    version: 1936-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked from the Government page, but its text is not among the saved pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Quechan Tribal Court is a Court of “general jurisdiction” that hears many types of cases
+  source: quechan-tribe-of-the-fort-yuma-indian-reservation-website-departments-court-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked from the Government page, but its text is not among the saved pages.'
 - aspect: amendment
   value: Majority vote of qualified voters at an election called by the Secretary
   quote: amended by a majority vote of the qualified voters of the Tribe voting
@@ -717,6 +709,36 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+court_practice:
+- kind: court-rules
+  title: Quechan Law and Order Code Title 2 Tribal Court System
+  court: Quechan Tribal Court
+  link: https://www.quechantribe.com/documents/download/84
+  detail: Court page links the Title 2 Tribal Court System code and the full Law and Order Code.
+  source: quechan-tribe-of-the-fort-yuma-indian-reservation-website-departments-court-html
+  confidence: high
+  verification: title-only
+  locator: Documents list
+  note: Page not opened.
+nearby_state_courts:
+- state: CA
+  county: Imperial County
+  court: Superior Court for Imperial County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Imperial County holds 95% of the land of Fort Yuma Indian Reservation (Census GEOID 1280), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AZ
+  county: Yuma County
+  court: Superior Court for Yuma County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Yuma County holds 5% of the land of Fort Yuma Indian Reservation (Census GEOID 1280), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Yuma Reserve (Arizona side of the Colorado River opposite the Gila mouth)
   method: executive-order

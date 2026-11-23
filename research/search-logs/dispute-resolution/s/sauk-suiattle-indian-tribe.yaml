@@ -1,7 +1,7 @@
 profile: content/tribes/s/sauk-suiattle-indian-tribe.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -64,3 +64,53 @@ searches:
   outcome: not-found
   reason: The 2000 NIGC-approved ordinance differs from the 1999 text and has no Section 7.3 on dispute
     resolution.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/58f65d51b9a37f336cea.txt
+  query: 7.3 Dispute Resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/sauk-suiattle-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/ordinances/sauk-suiattle-indian-tribe/sauksuiattleindiantribe-sauksuiattleord042700.txt
+  query: 7.3 Dispute Resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/sauk-suiattle-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/ordinances/sauk-suiattle-indian-tribe/4537-9.txt
+  query: 7.3 Dispute Resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/sauk-suiattle-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Sauk-Suiattle Gaming Ordinance 1999 7.3 dispute resolution
+  outcome: found
+  reason: tribe-hosted PDF
+  records:
+  - content/tribes/s/sauk-suiattle-indian-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://www.sauk-suiattle.com/Documents/SSIT%20Gaming%20OrdinanceRes_11_29n_99.pdf
+  query: '7.3'
+  outcome: found
+  reason: summary read
+  records:
+  - content/tribes/s/sauk-suiattle-indian-tribe.yaml#dispute_resolution.provisions

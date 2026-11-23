@@ -18,7 +18,8 @@ import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type
 import { actionStatement, bucketKeys, currentTime, type MailContext } from './context.ts';
 import { isProjectAddress } from './settings.ts';
 import { factsFor, ruleAddressForms, runRules } from './rules.ts';
-import { holdAttachments } from './scans.ts';
+import { storeSentFile } from '#lib/server/file-scans.ts';
+import { blockedPattern } from './senders.ts';
 import { suppress } from './suppressions.ts';
 import { readToken, unsubscribeAddressToken } from './tokens.ts';
 
@@ -41,6 +42,12 @@ export type ArrivalResult =
 			spam: boolean;
 			automatic: boolean;
 			notify: boolean;
+			/**
+			 * Whether a person wrote it to the project, so the away message may
+			 * answer it: not Spam, not an automatic reply or delivery report, not
+			 * from a mailing list, and not from the project's own addresses.
+			 */
+			answerable: boolean;
 			/** The names of the auto-sort rules that matched, in the order they ran. */
 			sortedBy: string[];
 	  }
@@ -263,13 +270,15 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	const ownNotice = header(email, noticeHeader.toLowerCase()) !== null;
 	const report = deliveryReport(email, arriving.from);
 	const automatic = ownNotice || report !== null || isAutomatic(email);
-	const spam = report ? null : spamReason(email);
+	// A blocked sender's mail is kept, in Spam, in a conversation of its own (src/lib/server/mail/senders.ts).
+	const blocked = report ? null : await blockedPattern(context, from.email);
+	const spam = report ? null : blocked ? `You blocked ${blocked.startsWith('@') ? `mail from ${blocked}` : 'this sender'}.` : spamReason(email);
 	const references = [...messageIds(email.references), ...messageIds(email.inReplyTo), ...(report?.originalIds ?? [])];
 	const projectAddress = cleanAddress(arriving.to) ?? settings.defaultAddress;
 	// The other side of the conversation: whoever wrote, or, for a copy of our own mail, whoever it went to.
 	const counterpart = isProjectAddress(settings, (replyTo ?? from).email) ? (to.find((item) => !isProjectAddress(settings, item.email)) ?? from) : (replyTo ?? from);
 	const normalized = normalizeSubject(subject);
-	const existing = await findConversation(context, references, normalized, report ? null : counterpart.email, at);
+	const existing = blocked ? null : await findConversation(context, references, normalized, report ? null : counterpart.email, at);
 	const threadIdentifier = existing?.identifier ?? crypto.randomUUID();
 	const nation = existing?.nation_identifier ?? (await nationForAddress(context, counterpart.email));
 	const stamp = at.toISOString();
@@ -284,7 +293,13 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 		const id = crypto.randomUUID();
 		const key = bucketKeys.attachment(identifier, id);
 		const content = typeof part.content === 'string' ? new TextEncoder().encode(part.content) : new Uint8Array(part.content);
-		await context.bucket.put(key, content, { httpMetadata: { contentType: part.mimeType || 'application/octet-stream' } });
+		// Held until the virus check passes (site/SCANNING.md, src/lib/server/mail/scans.ts).
+		await storeSentFile(
+			context.database,
+			context.bucket,
+			{ objectKey: key, purpose: 'mail-attachment', subject: id, bytes: content, httpMetadata: { contentType: part.mimeType || 'application/octet-stream' } },
+			at
+		);
 		attachmentRows.push({
 			id,
 			filename: (part.filename ?? '').trim() || 'attachment',
@@ -342,8 +357,8 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 			.prepare(
 				`INSERT INTO mail_messages (identifier, thread_identifier, direction, status, message_id, in_reply_to, reference_ids,
 				 from_address, from_name, to_list, cc_list, reply_to, subject, text_body, snippet, html_key, raw_key, size, spam_reason,
-				 automatic, received_at, created_at)
-				 VALUES (?, ?, 'in', 'received', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+				 automatic, list_unsubscribe, list_unsubscribe_post, received_at, created_at)
+				 VALUES (?, ?, 'in', 'received', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 			)
 			.bind(
 				identifier,
@@ -364,6 +379,8 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 				raw.byteLength,
 				spam,
 				automatic ? 1 : 0,
+				header(email, 'list-unsubscribe')?.slice(0, 2000) ?? null,
+				header(email, 'list-unsubscribe-post')?.slice(0, 200) ?? null,
 				email.date ? new Date(email.date).toISOString() : stamp,
 				stamp
 			),
@@ -396,7 +413,6 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	}
 	await database.batch(statements);
 	// Every attachment is held until the virus check says clean (src/lib/server/mail/scans.ts).
-	await holdAttachments(context, attachmentRows.map((row) => ({ identifier: row.id, key: row.key })));
 
 	if (report) await applyDeliveryReport(context, report, identifier);
 
@@ -427,7 +443,9 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 			.bind(threadIdentifier)
 			.first()) !== null;
 	const notify = !spam && !automatic && !quietened && (await noticeDue(context, at));
-	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify, sortedBy };
+	const fromList = header(email, 'list-id') !== null || header(email, 'list-unsubscribe') !== null;
+	const answerable = !spam && !automatic && !fromList && !isProjectAddress(settings, from.email);
+	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify, answerable, sortedBy };
 }
 
 /** Marks the message a delivery report is about, and puts a permanently failed address on the do-not-email list. */

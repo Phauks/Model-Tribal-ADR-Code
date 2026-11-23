@@ -223,16 +223,45 @@ government_structure:
     constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws under Act of Congress of June 18, 1934
-  quote: By-laws, by authority of the act of Congress of June 18, 1934, as
-  source: constitution-native-village-of-kotzebue-1947-text
-  confidence: medium
+  value: Organized under the 1934 Indian Reorganization Act
+  quote: due to its organization pursuant to the 1934 Indian Reorganization Act and as amended for Alaska in 1936.
+  source: kotzebueira-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1947-04-05'
-  document_version:
-    document: native-village-of-kotzebue-constitution
-    version: 1947-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in the officers and governing-body articles; facts are omitted where the text could not be read reliably.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages describe the Tribal Council and Elders Council but do not include the text of the Constitution or By-Laws.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Native Village of Kotzebue Tribal Council serves as the governing body of the Tribe and is responsible for carrying out the duties and authorities established by the Tribe’s Constitution, By-Laws, ordinances, and applicable laws.
+  source: native-village-of-kotzebue-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages describe the Tribal Council and Elders Council but do not include the text of the Constitution or By-Laws.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: The Tribal Council consists of nine elected representatives who serve staggered three-year terms.
+  source: native-village-of-kotzebue-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages describe the Tribal Council and Elders Council but do not include the text of the Constitution or By-Laws.'
+- aspect: governing-body-selection
+  value: Elected by Tribal membership at Annual Meeting
+  quote: Council members are elected by the Tribal membership during the Tribe’s Annual Meeting
+  source: native-village-of-kotzebue-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages describe the Tribal Council and Elders Council but do not include the text of the Constitution or By-Laws.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The Tribal Council consists of nine elected representatives who serve staggered three-year terms.
+  source: native-village-of-kotzebue-website-about-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages describe the Tribal Council and Elders Council but do not include the text of the Constitution or By-Laws.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -278,17 +307,13 @@ governance:
     version: 1947-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in the officers and governing-body articles; facts are omitted where the text could not be read reliably.'
 - aspect: other
-  value: Membership decides kind of governing body at general meeting
-  quote: shall decide what kind of governing body it wishes to set up to speak
-  source: constitution-native-village-of-kotzebue-1947-text
-  confidence: medium
+  value: Elder Representative appointed by Elders Council
+  quote: the Elders Council appoints an Elder Representative to serve on the Tribal Council
+  source: native-village-of-kotzebue-website-kotzebue-elders-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-04-05'
-  locator: Article 8, Section 1
-  document_version:
-    document: native-village-of-kotzebue-constitution
-    version: 1947-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in the officers and governing-body articles; facts are omitted where the text could not be read reliably.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages describe the Tribal Council and Elders Council but do not include the text of the Constitution or By-Laws.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -404,6 +429,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Northwest Arctic Borough
+  court: Superior Court for Northwest Arctic Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Northwest Arctic Borough holds 100% of the land of Kotzebue ANVSA (Census GEOID 6820), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: NANA Regional Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

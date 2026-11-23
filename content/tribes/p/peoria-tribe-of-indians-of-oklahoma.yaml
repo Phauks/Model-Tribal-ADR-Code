@@ -621,6 +621,47 @@ gaming:
     locator: table row 190, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 190 lists the nation
       as "Peoria Tribe of Indians of Oklahoma".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-21
+    date: '2008-09-26'
+    link: https://www.nigc.gov?wpdmdl=7978&ind=7989
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-21
+    note: The list titles the action “Peoria Tribe of Indians of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-21
+    date: '2008-10-15'
+    link: https://www.nigc.gov?wpdmdl=7976&ind=7987
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-21
+    note: The list titles the action “Peoria Tribe of Indians of Oklahoma” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-19-03
+    date: '2019-05-10'
+    link: https://www.nigc.gov?wpdmdl=3000&ind=3001
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-19-03
+    note: The list titles the action “Peoria Tribe of Indians of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-19-03
+    date: '2020-10-19'
+    link: https://www.nigc.gov?wpdmdl=2992&ind=2993
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-19-03
+    note: The list titles the action “Peoria Tribe of Indians of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -655,6 +696,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Peoria Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+nearby_state_courts:
+- state: OK
+  county: Ottawa County
+  court: District Court for Ottawa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Ottawa County holds 100% of the land of Peoria OTSA (Census GEOID 5795), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1795
   signed: '1795-08-03'

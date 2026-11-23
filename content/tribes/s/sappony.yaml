@@ -197,6 +197,55 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+governance:
+- aspect: governing-body
+  value: Council
+  quote: 'Our Tribe still carries on our traditional way of governing: a Council consisting of one elected representative from each of the seven families that make up the High Plains settlement.'
+  source: sappony-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members, one per family
+  quote: 'Our Tribe still carries on our traditional way of governing: a Council consisting of one elected representative from each of the seven families that make up the High Plains settlement.'
+  source: sappony-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected, one representative per family
+  quote: 'Our Tribe still carries on our traditional way of governing: a Council consisting of one elected representative from each of the seven families that make up the High Plains settlement.'
+  source: sappony-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Tribal Chair
+  quote: The Sappony continue to practice shared leadership through an elected Tribal Chair and Chief.
+  source: sappony-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Executive Director, Secretary, Financial Officer
+  quote: An Executive Committee including an Executive Director, Secretary, and Financial Officer help with the daily business of the tribe.
+  source: sappony-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: All positions are volunteer
+  quote: All positions in the tribe are volunteer.
+  source: sappony-website-governance
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 representatives:
 - office: Chief
   listed_by: North Carolina Commission of Indian Affairs, NC Tribal Communities

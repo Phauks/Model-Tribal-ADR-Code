@@ -309,6 +309,46 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
 governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of 1934
+  quote: It was originally adopted under the Indian Reorganization Act of 1934 and has been amended over time.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Confederated Salish and Kootenai Tribes are governed by a Tribal Council consisting of ten elected members representing different districts.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body-size
+  value: 10 members, elected from districts
+  quote: The Confederated Salish and Kootenai Tribes are governed by a Tribal Council consisting of ten elected members representing different districts.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body-selection
+  value: Elected by enrolled members residing in districts
+  quote: Tribal Council members are elected by enrolled tribal members residing within the Reservation’s districts.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body-term
+  value: Staggered terms
+  quote: Elections are held periodically, and members serve staggered terms to ensure continuity in governance.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -317,6 +357,30 @@ governance:
   as_of: '2026-11-20'
   locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Tribal Court and Tribal Appellate Court
+  quote: Tribal law places the judicial power of CSKT in the Tribal Court and Tribal Appellate Court.
+  source: confederated-salish-and-kootenai-tribes-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: judicial-selection
+  value: Appointed
+  quote: The Chief Justice is appointed to serve a four-year term, and the Associate Justices are appointed to serve a three-year term.
+  source: confederated-salish-and-kootenai-tribes-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: judicial-term
+  value: Chief Justice 4 years; associate justices 3 years
+  quote: The Chief Justice is appointed to serve a four-year term, and the Associate Justices are appointed to serve a three-year term.
+  source: confederated-salish-and-kootenai-tribes-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -662,6 +726,27 @@ gaming:
       Tribes of the Flathead Reservation". Facilities as machine-extracted from the report text (verify):
       Gray Wolf Peak Casino; Big Arm Marina Casino; KwaTaqNuk Resort. Name extracted from the PDF by the
       page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-11
+    date: '2008-07-11'
+    link: https://www.nigc.gov?wpdmdl=8024&ind=8035
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-11
+    note: The list titles the action “Confederated Salish and Kootenai Tribes” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-11
+    date: '2008-08-04'
+    link: https://www.nigc.gov?wpdmdl=8018&ind=8029
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-11
+    note: The list titles the action “Confederated Salish and Kootenai Tribes” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -725,6 +810,43 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table "State and Tribal Tax Agreements"
   note: 'The source reads: “Confederated Salish and Kootenai Tribes Alcoholic Beverages Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+nearby_state_courts:
+- state: MT
+  county: Lake County
+  court: District Court for Lake County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Lake County holds 52% of the land of Flathead Reservation (Census GEOID 1110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Sanders County
+  court: District Court for Sanders County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Sanders County holds 37% of the land of Flathead Reservation (Census GEOID 1110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Missoula County
+  court: District Court for Missoula County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Missoula County holds 8% of the land of Flathead Reservation (Census GEOID 1110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Flathead County
+  court: District Court for Flathead County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Flathead County holds 2% of the land of Flathead Reservation (Census GEOID 1110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Flatheads, etc., 1855
   signed: '1855-07-16'

@@ -154,6 +154,47 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+governance:
+- aspect: form
+  value: Constitution and Articles of Incorporation
+  quote: In 1993, the Tribe adopted a Constitution and filed its Articles of Incorporation with the Louisiana Secretary of State.
+  source: pointe-au-chien-indian-tribe-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages; the officer facts come from individual biographies on the Leadership page.'
+- aspect: governing-body
+  value: Executive Body, Tribal Council
+  quote: The Tribe is governed by an Executive Body, the Tribal Council and Council of Elders.
+  source: pointe-au-chien-indian-tribe-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages; the officer facts come from individual biographies on the Leadership page.'
+- aspect: governing-body-selection
+  value: Elected by tribal membership
+  quote: With the adoption of a Constitution, the Tribe formalized its governing body through elections by the tribal membership.
+  source: pointe-au-chien-indian-tribe-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages; the officer facts come from individual biographies on the Leadership page.'
+- aspect: head-of-government
+  value: Chairman
+  quote: He has served as the Chairman of the Pointe-au-Chien Tribe since 1999.
+  source: pointe-au-chien-indian-tribe-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages; the officer facts come from individual biographies on the Leadership page.'
+- aspect: other-officers
+  value: Secretary
+  quote: She has served as the Tribal Secretary since 2001.
+  source: pointe-au-chien-indian-tribe-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages; the officer facts come from individual biographies on the Leadership page.'
 representatives:
 - office: Chairperson
   listed_by: Louisiana Governor's Office of Indian Affairs, Federally and State-Recognized Tribes

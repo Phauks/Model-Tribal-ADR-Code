@@ -701,6 +701,25 @@ jurisdiction:
   verification: read-in-full
   locator: 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12, 1-1-18
   note: 'Quote is the 1957 assumption text, § 1-1-12, shown because it is still printed in the code. Conclusion that nothing is in force is mine, drawn from Rosebud (1990) plus the statutes; the research did not find any later tribal consent election or any post-1990 South Dakota assumption. Goldberg (2010) fn. 4 reaches the same view. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-18.'
+nearby_state_courts:
+- state: SD
+  county: Lyman County
+  court: Circuit Court for Lyman County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Lyman County holds 87% of the land of Lower Brule Reservation (Census GEOID 2030), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Stanley County
+  court: Circuit Court for Stanley County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Stanley County holds 13% of the land of Lower Brule Reservation (Census GEOID 2030), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Sioux-Lower Brule Band, 1865
   signed: '1865-10-14'

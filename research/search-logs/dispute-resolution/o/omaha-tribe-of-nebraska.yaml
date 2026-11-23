@@ -1,7 +1,7 @@
 profile: content/tribes/o/omaha-tribe-of-nebraska.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -151,3 +151,23 @@ searches:
   address: https://narf.org/nill/codes/omaha_of_nebraska/index.html
   outcome: found
   reason: 'Heading is the chapter read under record #1.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/o/omaha-nebraska-title-11-domestic-violence-omaha-tribal-code.pdf
+  query: SECTION 11-5-12. Mediation Prohibited.
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/o/omaha-nebraska-title-49-arbitration-ordinance-omaha-tribal-code.pdf
+  query: TITLE 49. ARBITRATION ORDINANCE
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/o/omaha-tribe-of-nebraska.yaml#dispute_resolution.provisions

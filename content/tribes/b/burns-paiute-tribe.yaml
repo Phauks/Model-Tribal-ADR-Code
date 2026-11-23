@@ -203,6 +203,22 @@ indian_health_service:
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: Listed as "Burns Paiute Tribe".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: the Burns Paiute Tribe welcomed new and returning leaders to the Tribal Council
+  source: burns-paiute-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name a Tribal Council and a Chairwoman but state no council size, term or selection rule, and no governing document is among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: Newly elected Council members include
+  source: burns-paiute-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name a Tribal Council and a Chairwoman but state no council size, term or selection rule, and no governing document is among the saved pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -211,6 +227,14 @@ governance:
   as_of: '2026-11-20'
   locator: Burns Paiute Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Burns Tribal Agency and Court
+  quote: Burns Tribal Agency and Court
+  source: burns-paiute-tribe-website-burns-tribal-agency-and-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages name a Tribal Council and a Chairwoman but state no council size, term or selection rule, and no governing document is among the saved pages.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -571,6 +595,16 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+nearby_state_courts:
+- state: OR
+  county: Harney County
+  court: Circuit Court for Harney County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Harney County holds 100% of the land of Burns Paiute Indian Colony (Census GEOID 0400), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

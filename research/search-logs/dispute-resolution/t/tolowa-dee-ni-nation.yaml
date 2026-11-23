@@ -1,7 +1,7 @@
 profile: content/tribes/t/tolowa-dee-ni-nation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -67,3 +67,73 @@ searches:
   address: Tolowa Smith River diversion mediation family unit programs
   outcome: not-found
   reason: No code text found.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/tolowa-childrens-code.pdf
+  query: Diversion/mediation/family unity.
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/t/tolowa-dee-ni-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/5dfc111faf88e3b5130c.txt
+  query: Diversion/mediation/family unity.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/tolowa-dee-ni-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/tolowa-childrens-code.pdf
+  query: Diversion, mediation and family unit programs.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/tolowa-dee-ni-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/5dfc111faf88e3b5130c.txt
+  query: Diversion, mediation and family unit programs.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/tolowa-dee-ni-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Tolowa Resolution 06-10 Diversion mediation and family unit programs
+  query: same
+  outcome: found
+  reason: NILL index returned.
+  records:
+  - content/tribes/t/tolowa-dee-ni-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/smith_river/index.html
+  query: ordinance link
+  outcome: found
+  reason: Gave PDF link.
+  records:
+  - content/tribes/t/tolowa-dee-ni-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: http://www.tolowa-nsn.gov/wp-content/uploads/2010/11/Smith+River+Tribal+Court+Ordinance11.pdf
+  query: pdf
+  outcome: blocked
+  reason: robots disallowed.
+  records:
+  - content/tribes/t/tolowa-dee-ni-nation.yaml#dispute_resolution.provisions

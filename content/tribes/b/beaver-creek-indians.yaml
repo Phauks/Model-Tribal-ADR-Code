@@ -82,6 +82,39 @@ official_images:
   confidence: medium
   as_of: '2026-11-22'
   verification: read-in-full
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: We live by the tribal laws and constitution. C tribal council is our governing body.
+  source: beaver-creek-indians-website-our-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is referred to on the history page but its text is not on the site.'
+- aspect: governing-body-selection
+  value: Elected for set terms
+  quote: Today, we are guided by a Tribal Council that is elected for set terms of office.
+  source: beaver-creek-indians-website-our-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is referred to on the history page but its text is not on the site.'
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: Tribal Chairperson
+  source: beaver-creek-indians-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is referred to on the history page but its text is not on the site.'
+- aspect: other
+  value: Elders part of Council
+  quote: Our Elders being respected by our tribe. They are part of our Council and part of our leadership.
+  source: beaver-creek-indians-website-our-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is referred to on the history page but its text is not on the site.'
 representatives:
 - office: Chief
   listed_by: South Carolina Commission for Community Advancement and Engagement, SC Recognized Tribes

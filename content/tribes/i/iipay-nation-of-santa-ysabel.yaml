@@ -159,6 +159,22 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Iipay Nation of Santa Ysabel, California".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: They are governed by a democratically elected tribal council.
+  source: iipay-nation-of-santa-ysabel-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Constitution and codes are listed by title only; their text is not on the saved pages.'
+- aspect: governing-body-selection
+  value: Democratically elected
+  quote: They are governed by a democratically elected tribal council.
+  source: iipay-nation-of-santa-ysabel-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Constitution and codes are listed by title only; their text is not on the saved pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -167,6 +183,22 @@ governance:
   as_of: '2026-11-20'
   locator: Iipay Nation of Santa Ysabel, California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Intertribal Court of Southern California
+  quote: The Iipay Nation of Santa Ysabel is a member tribe of the Intertribal Court of Southern California.
+  source: iipay-nation-of-santa-ysabel-website-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Constitution and codes are listed by title only; their text is not on the saved pages.'
+- aspect: other
+  value: Constitution established 2007
+  quote: In 2007, the Iipay Nation of Santa Ysabel established their Constitution in order to preserve and protect their culture, lands, and rights and to promote equality and justice.
+  source: iipay-nation-of-santa-ysabel-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Constitution and codes are listed by title only; their text is not on the saved pages.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -259,6 +291,27 @@ gaming:
     locator: table row 245, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 245 lists the nation
       as "Santa Ysabel Band of Diegueno Mission Indians". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-32
+    date: '2009-06-08'
+    link: https://www.nigc.gov?wpdmdl=7806&ind=7817
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-32
+    note: The list titles the action “IIPAY Nation of the Santa Ysabel Reservation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-32
+    date: '2009-07-29'
+    link: https://www.nigc.gov?wpdmdl=7781&ind=7797
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-32
+    note: The list titles the action “IIPAY Nation of the Santa Ysabel Reservation” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -285,6 +338,16 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of Santa Ysabel Reservation (Census GEOID 3550), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

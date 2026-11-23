@@ -444,6 +444,27 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+court_practice:
+- kind: court-rules
+  title: Tribal Court Rules
+  court: Mesa Grande Tribal Court
+  link: https://www.mesagrandeband-nsn.gov/wp-content/uploads/Mesa-Grande-Tribal-Court-Rules9194276.2.pdf
+  detail: Court page links the Tribal Court Rules and the Judicial Ordinance.
+  source: mesa-grande-tribal-court-court-rules
+  confidence: high
+  verification: title-only
+  locator: document links
+  note: PDF not opened.
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of Mesa Grande Reservation (Census GEOID 2190), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

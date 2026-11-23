@@ -754,6 +754,27 @@ gaming:
       as "Red Cliff, Sokogon, Chippewa Lac Court Orielles Band Tribe". Name matched to roster by spelling
       variant. This row names three nations jointly (Red Cliff, Sokaogon and Lac Courte Oreilles); the
       fact is repeated for each.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-26
+    date: '2008-12-01'
+    link: https://www.nigc.gov?wpdmdl=7959&ind=7970
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-26
+    note: The list titles the action “Red Cliff Band of Lake Superior Chippewa Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-26
+    date: '2009-01-07'
+    link: https://www.nigc.gov?wpdmdl=7942&ind=7953
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-26
+    note: The list titles the action “Red Cliff Band of Lake Superior Chippewa Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -789,6 +810,16 @@ jurisdiction:
   confidence: high
   verification: read-in-full
   as_of: '1996-01-23'
+nearby_state_courts:
+- state: WI
+  county: Bayfield County
+  court: Circuit Court for Bayfield County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Bayfield County holds 100% of the land of Red Cliff Reservation (Census GEOID 3085), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1826
   signed: '1826-08-05'

@@ -3,7 +3,7 @@
 
 An official representative here is an office, never a person: the office that
 an official government list names as the nation's leader (the `representatives`
-list of schemas/tribe.schema.json; decision record 0050). Two kinds of list:
+list of schemas/tribe.schema.json; decision record 0052). Two kinds of list:
 
 1. The Tribal Leaders Directory of the Bureau of Indian Affairs, for every
    federally recognized nation. The title of each nation's leader comes from

@@ -535,6 +535,52 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: UT
+  county: Uintah County
+  court: District Court for Uintah County
+  link: https://www.utcourts.gov/en/about/miscellaneous/directory.html
+  source: state-trial-court-directory-ut
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Uintah County holds 43% of the land of Uintah and Ouray Reservation (Census GEOID 4390), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: UT
+  county: Duchesne County
+  court: District Court for Duchesne County
+  link: https://www.utcourts.gov/en/about/miscellaneous/directory.html
+  source: state-trial-court-directory-ut
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Duchesne County holds 42% of the land of Uintah and Ouray Reservation (Census GEOID 4390), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: UT
+  county: Wasatch County
+  court: District Court for Wasatch County
+  link: https://www.utcourts.gov/en/about/miscellaneous/directory.html
+  source: state-trial-court-directory-ut
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Wasatch County holds 9% of the land of Uintah and Ouray Reservation (Census GEOID 4390), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: UT
+  county: Grand County
+  court: District Court for Grand County
+  link: https://www.utcourts.gov/en/about/miscellaneous/directory.html
+  source: state-trial-court-directory-ut
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Grand County holds 5% of the land of Uintah and Ouray Reservation (Census GEOID 4390), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: UT
+  county: Carbon County
+  court: District Court for Carbon County
+  link: https://www.utcourts.gov/en/about/miscellaneous/directory.html
+  source: state-trial-court-directory-ut
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Carbon County holds 1% of the land of Uintah and Ouray Reservation (Census GEOID 4390), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Utah, 1849
   signed: '1849-12-30'

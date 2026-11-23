@@ -31,3 +31,11 @@ searches:
   query: How the nation's reservation was set aside
   outcome: not-found
   reason: 'Candidate: Exec. Order No. 1379 (June 28, 1911) and later Florida reservations. Not entered: The 1911 order covers Everglades land that was not clearly the present Seminole reservation lands; the modern reservations rest on later statutes and purchases not read.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 7 enforcement actions.

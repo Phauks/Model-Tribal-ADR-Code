@@ -10,6 +10,7 @@ import {
 	saveRequest
 } from '#lib/server/request-store.ts';
 import { eventsFor } from '#lib/server/events.ts';
+import { fileScan } from '#lib/server/file-scans.ts';
 import { testDatabase } from './database.ts';
 
 let database: D1Database;
@@ -56,6 +57,8 @@ describe('request store', () => {
 		expect(found?.request.status).toBe('received');
 		expect(found?.sources[0]?.fileKey).toMatch(/^requests\//);
 		expect(stored.has(found!.sources[0]!.fileKey!)).toBe(true);
+		// Held for the virus check from the moment it is stored.
+		expect(await fileScan(database, found!.sources[0]!.fileKey!)).toMatchObject({ status: 'waiting', purpose: 'request-file', subject: reference });
 		const history = await eventsFor(database, 'request', found!.request.identifier);
 		expect(history.map((event) => event.action)).toEqual(['Request received through the website']);
 	});

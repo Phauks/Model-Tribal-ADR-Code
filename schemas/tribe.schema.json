@@ -618,6 +618,43 @@
       "additionalProperties": false,
       "description": "Gaming under the Indian Gaming Regulatory Act (25 U.S.C. §§ 2701-2721).",
       "properties": {
+        "indian_lands_opinions": {
+          "type": "array",
+          "description": "Opinions of the National Indian Gaming Commission or the Interior Department's Solicitor on whether the nation may game on a parcel under 25 U.S.C. §§ 2703 and 2719, one fact per opinion.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["parcel", "date"],
+            "properties": {
+              "parcel": { "type": "string", "description": "The parcel as the Commission's list names it." },
+              "legal_theory": { "type": "string", "description": "The ground claimed, such as restored lands or within the reservation." },
+              "accepted": { "type": "boolean", "description": "Whether the opinion accepted that ground." },
+              "date": { "$ref": "common.schema.json#/$defs/partialDate" },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "enforcement_actions": {
+          "type": "array",
+          "description": "Enforcement actions of the Chair of the National Indian Gaming Commission against the nation or its gaming regulator (25 C.F.R. part 573), and settlement and pre-opening agreements in their place, one fact per action.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["kinds", "tracking_number", "date"],
+            "properties": {
+              "kinds": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "string", "enum": ["notice-of-violation", "settlement-agreement", "civil-fine-assessment", "closure-order", "temporary-closure-order", "pre-opening-agreement", "other-order"] }
+              },
+              "tracking_number": { "type": "string" },
+              "date": { "$ref": "common.schema.json#/$defs/partialDate" },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
         "operates_gaming": {
           "type": "object",
           "$ref": "#/$defs/citedFact",
@@ -711,6 +748,39 @@
           "date": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Signed or effective date." },
           "status": { "type": "string", "enum": ["in-effect", "expired", "unknown"] },
           "detail": { "type": "string" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "court_practice": {
+      "type": "array",
+      "description": "What a person needs to use the nation's courts: admission to practice before them, court rules, filing fees, court forms, a public defender and legal aid. One fact per item per source, read from the court's or the nation's own pages.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind", "title"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["bar-admission", "court-rules", "filing-fees", "forms", "public-defender", "legal-aid"] },
+          "title": { "type": "string", "description": "The page or document, as the source names it." },
+          "court": { "type": "string", "description": "The court the item belongs to, as the source names it." },
+          "link": { "type": "string", "format": "uri" },
+          "detail": { "type": "string", "description": "What the page or document says, in a sentence or two, such as the fee amounts or how to apply." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "nearby_state_courts": {
+      "type": "array",
+      "description": "The state trial court of general jurisdiction for each county (or parish, borough or census area) that the nation's Census land or statistical area lies in, so a reader can see which state court sits alongside the tribal court. One fact per county; the county comes from the Census Bureau's area-to-county relationship file, named in the note.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["state", "county", "court"],
+        "properties": {
+          "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "county": { "type": "string" },
+          "court": { "type": "string", "description": "The state's trial court of general jurisdiction, named for the county." },
+          "link": { "type": "string", "format": "uri", "description": "The state judiciary's directory of those courts." }
         },
         "unevaluatedProperties": false
       }

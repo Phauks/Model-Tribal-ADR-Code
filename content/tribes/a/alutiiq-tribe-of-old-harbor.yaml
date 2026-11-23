@@ -196,16 +196,12 @@ indian_health_service:
 governance:
 - aspect: governing-body
   value: Tribal Council
-  quote: The Tribal Council shall be the governing body of the Native Village of
-  source: constitution-alutiiq-tribe-of-old-harbor-1970-text
-  confidence: medium
+  quote: Alutiiq Tribe of Old Harbor Council Members
+  source: alutiiq-tribe-of-old-harbor-website-alutiiqtribe-org-main-tribal-council-members
+  confidence: high
   verification: read-in-full
-  as_of: '1970'
-  locator: Article IV, Section I
-  document_version:
-    document: alutiiq-tribe-of-old-harbor-constitution
-    version: 1970-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbling and a duplicated Article VII/VIII; the amendment notice periods conflict (30 days in Article VI, 15 days in Article VIII), so only the Article VI amendment vote is stated; facts drawn from Articles IV, III and VI.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and by-laws are linked from the site, but their text is not among the saved pages.'
 - aspect: governing-body-size
   value: 7 members
   quote: composed of seven (7) members elected by
@@ -231,17 +227,21 @@ governance:
     version: 1970-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbling and a duplicated Article VII/VIII; the amendment notice periods conflict (30 days in Article VI, 15 days in Article VIII), so only the Article VI amendment vote is stated; facts drawn from Articles IV, III and VI.'
 - aspect: governing-body-term
-  value: 3 years
-  quote: Each member of the Tribal Council shall serve for a three (3) year term,
-  source: constitution-alutiiq-tribe-of-old-harbor-1970-text
-  confidence: medium
+  value: 3 years, staggered
+  quote: 'Seat B: Term 2024-2027'
+  source: alutiiq-tribe-of-old-harbor-website-alutiiqtribe-org-main-tribal-council-members
+  confidence: high
   verification: read-in-full
-  as_of: '1970'
-  locator: Article IV, Section IV
-  document_version:
-    document: alutiiq-tribe-of-old-harbor-constitution
-    version: 1970-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbling and a duplicated Article VII/VIII; the amendment notice periods conflict (30 days in Article VI, 15 days in Article VIII), so only the Article VI amendment vote is stated; facts drawn from Articles IV, III and VI.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and by-laws are linked from the site, but their text is not among the saved pages.'
+- aspect: head-of-government
+  value: Tribal Chief
+  quote: Tribal Chief
+  source: alutiiq-tribe-of-old-harbor-website-alutiiqtribe-org-main-tribal-council-members
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and by-laws are linked from the site, but their text is not among the saved pages.'
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -250,6 +250,14 @@ governance:
   as_of: '2026-11-20'
   locator: Alutiiq Tribe of Old Harbor
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Tribal Vice Chief, Tribal Secretary, Tribal Treasurer
+  quote: Tribal Secretary
+  source: alutiiq-tribe-of-old-harbor-website-alutiiqtribe-org-main-tribal-council-members
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution and by-laws are linked from the site, but their text is not among the saved pages.'
 - aspect: voting-age
   value: '18'
   quote: Any Native person who is eighteen (18) years of age or older will be
@@ -330,6 +338,16 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Kodiak Island Borough
+  court: Superior Court for Kodiak Island Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Kodiak Island Borough holds 100% of the land of Old Harbor ANVSA (Census GEOID 7150), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Koniag Inc.
   relation: alaska-native-claims-settlement-act-regional-corporation

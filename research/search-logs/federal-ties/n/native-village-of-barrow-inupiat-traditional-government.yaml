@@ -21,3 +21,11 @@ searches:
   query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
   outcome: not-found
   reason: 'No treaties: the United States made no treaties with Alaska Native villages; their claims were settled by statute (Alaska Native Claims Settlement Act, 1971).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 1 indian lands opinions.

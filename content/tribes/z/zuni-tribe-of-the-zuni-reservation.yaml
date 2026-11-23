@@ -774,6 +774,53 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.I, New Mexico
   note: 'The source reads: “Zuni Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: court-rules
+  title: Zuni Rules of Criminal Procedure
+  court: Pueblo of Zuni Tribal Courts
+  link: https://ashiwi.org/Documents/ZuniCriminalRulesofProcedure.pdf
+  detail: Rules of criminal procedure PDF linked from the Tribal Courts page.
+  source: pueblo-of-zuni-tribal-courts
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Courts page
+- kind: filing-fees
+  title: Schedule of Court Fees
+  court: Pueblo of Zuni Tribal Courts
+  link: https://ashiwi.org/Documents/ZuniTribalCourtFees.pdf
+  detail: Schedule of court fees PDF linked from the Tribal Courts page.
+  source: pueblo-of-zuni-tribal-courts
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Courts page
+nearby_state_courts:
+- state: NM
+  county: McKinley County
+  court: District Court for McKinley County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: McKinley County holds 70% of the land of Zuni Reservation (Census GEOID 4785), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Cibola County
+  court: District Court for Cibola County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Cibola County holds 27% of the land of Zuni Reservation (Census GEOID 4785), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AZ
+  county: Apache County
+  court: Superior Court for Apache County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Apache County holds 3% of the land of Zuni Reservation (Census GEOID 4785), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Zuni Pueblo Reserve, New Mexico
   method: executive-order

@@ -341,6 +341,34 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Bois Forte Lake Vermillion and Nett Lake”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Bois Forte", matched to the roster by name and state.'
+nearby_state_courts:
+- state: MN
+  county: Koochiching County
+  court: District Court for Koochiching County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Koochiching County holds 65% of the land of Bois Forte Reservation (Census GEOID 0335), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: St. Louis County
+  court: District Court for St. Louis County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: St. Louis County holds 17% of the land of Bois Forte Reservation (Census GEOID 0335), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Itasca County
+  court: District Court for Itasca County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Itasca County holds 17% of the land of Bois Forte Reservation (Census GEOID 0335), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1826
   signed: '1826-08-05'

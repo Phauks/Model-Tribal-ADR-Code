@@ -38,7 +38,7 @@ limits: 'The federal directory has no page for one nation, so each listing links
 
 ## What was done
 
-Trevor Goldsmith asked whether Native nations have "verified representatives" and, if so, to use the federal list and the state commissions' lists. Each nation decides who speaks for it; governments keep lists of who holds each nation's leading office. This session read those lists and recorded only the office (decision record [0050](../../../docs/decisions/0050-show-the-offices-official-lists-name-as-representatives.md)).
+Trevor Goldsmith asked whether Native nations have "verified representatives" and, if so, to use the federal list and the state commissions' lists. Each nation decides who speaks for it; governments keep lists of who holds each nation's leading office. This session read those lists and recorded only the office (decision record [0052](../../../docs/decisions/0052-show-the-offices-official-lists-name-as-representatives.md)).
 
 - Federal: the Tribal Leaders Directory of the Bureau of Indian Affairs, for 572 federally recognized nations with a title (7 rows give none). The office titles had already been read for governance facts (decision record 0042); this session re-queried the service (title fields only) and found no change.
 - States: the lists of Alabama, Louisiana, North Carolina, South Carolina and Virginia name each Tribe's leader, so their offices were recorded for 56 nations, federally recognized ones included where the state lists them. Louisiana's list names a person but no title for the Clifton Choctaw Tribe, so no office was recorded for it.

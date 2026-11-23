@@ -593,23 +593,20 @@ dispute_resolution:
   forums:
   - kind: family-group-conference
     name: Family group conferencing / extended family hearing (juvenile)
-    description: Uses the extended families of the Community to help the juvenile court resolve juvenile
-      offender, incorrigibility and dependency problems by applying the customs and traditions of the
-      Pima and Maricopa peoples; the court may appoint a Community member qualified to act as a tribal
-      elder to conduct the hearing.
-    legal_basis: Salt River Pima-Maricopa Indian Community Code, § 11-31
+    description: Alternative juvenile court procedure that uses the extended families of the Community, and the customs and traditions of the Pima and Maricopa peoples, to resolve juvenile offender, incorrigibility and dependency problems. Before a hearing on the merits the court, on its own motion or on motion of a parent, guardian or the Community, may order the case heard this way after inquiring into whether it is applicable and suitable. The court may appoint a Community member qualified to act as a tribal elder to conduct the informal hearing, and may order extended family members to attend.
+    legal_basis: Salt River Pima-Maricopa Indian Community Code of Ordinances, Chapter 11 (Minors), § 11-31
     case_types:
     - juvenile
     - child-welfare
     participation: court-referred
-    relationship_to_court: The appointed elder makes written disposition recommendations to the court,
-      which seeks to incorporate the extended family in its order.
-    link: https://srpmic-nsn.gov/government/ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: The appointed elder makes written recommendations of disposition to the court. The court enters judgment (stating that this procedure was used), tries to shape its order to include the extended family and may require family members to perform specific acts or services for the juvenile; appeals go under section 11-29.
+    link: https://srpmic-nsn.gov/wp-content/uploads/2023/10/Chapter11.pdf
+    source: srpmic-code-chapter-11-minors
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2026'
-    locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
+    locator: Ch. 11, Sec. 11-31 (a)-(f), pp. CD11:12-13
+    note: Read in full on 2026-11-23 (Salt River Pima-Maricopa Indian Community Code of Ordinances, Chapter 11 Minors, Sec. 11-31 (Ord. SRO-210-96; SRO-402-2012)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 467.
   provisions:
   - kind: other
     title: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
@@ -873,6 +870,57 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+court_practice:
+- kind: filing-fees
+  title: Court (Filing Fees)
+  court: Salt River Community Court
+  link: https://srpmic-nsn.gov/government/court/
+  detail: 'Filing fees: $10 civil complaint, probate, forcible detainer, guardianship petitions; $40 divorce, separate maintenance, annulment petitions; $50 appeal petition. A Court Fees page is also linked.'
+  source: salt-river-pima-maricopa-indian-community-court
+  confidence: high
+  verification: read-in-full
+  locator: Filing Fees
+  note: 'The source reads: “Filing Fees”.'
+- kind: bar-admission
+  title: Advocate, Attorney, Judicial Court Admissions
+  court: Salt River Community Court
+  link: https://srpmic-nsn.gov/government/court/advocate-attorney-judicial-court-admissions/
+  detail: Applicants (attorney, legal advocate or judicial admission) submit an application by appointment with the Court Administrator's Office and take an in-person admissions examination of 30 multiple choice and 6 short answer questions.
+  source: salt-river-pima-maricopa-indian-community-advocate-attorney-judicial-c
+  confidence: high
+  verification: read-in-full
+  locator: Admission Roadmap
+  note: 'The source reads: “Admission Roadmap”.'
+- kind: court-rules
+  title: Court Rules
+  court: Salt River Community Court
+  link: https://www.srpmic-nsn.gov/government/court/courtrules/
+  detail: Court Rules page linked from the Court page; not opened.
+  source: salt-river-pima-maricopa-indian-community-court
+  confidence: high
+  verification: title-only
+  locator: Court menu
+  note: Page not opened.
+- kind: forms
+  title: Court Forms
+  court: Salt River Community Court
+  link: https://www.srpmic-nsn.gov/government/court/courtforms/
+  detail: Court Forms page linked from the Court page; not opened.
+  source: salt-river-pima-maricopa-indian-community-court
+  confidence: high
+  verification: title-only
+  locator: Court menu
+  note: Page not opened.
+nearby_state_courts:
+- state: AZ
+  county: Maricopa County
+  court: Superior Court for Maricopa County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Maricopa County holds 100% of the land of Salt River Reservation (Census GEOID 3340), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Salt River lands (Pima and Maricopa Reserve), Arizona
   method: executive-order

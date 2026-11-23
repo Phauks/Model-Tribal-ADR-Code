@@ -1,7 +1,7 @@
 /**
  * Saving our copies of documents for offline reading (site/DESIGN.md, section 10). Trevor asked on
  * Nov. 23, 2026 for offline saving to follow which files the site may share: the United States
- * documents it holds are saved as one set, and each nation's constitutions and laws as a set of
+ * documents it holds are saved as one set, and each nation's constitutions, laws and court opinions as a set of
  * their own, from the nation's page, since all of them together come to several gigabytes.
  *
  * Copies keep their own cache, apart from the build's, because they do not change from one build to
@@ -18,8 +18,8 @@ export const documentsCacheName = 'documents';
 /** A set of copies a reader can save: the United States documents, or one nation's documents. */
 export type DocumentSet = 'federal' | `nation:${string}`;
 
-/** One copy: its address on this site, its size in bytes and the first 16 digits of its SHA-256. */
-export type DocumentFile = [path: string, bytes: number, fingerprint: string];
+/** One copy: its address on this site, its size in bytes, its SHA-256, its title and the address it was published at. */
+export type DocumentFile = [path: string, bytes: number, sha256: string, title?: string, original?: string];
 
 /** The list of a set's copies, built with the site. */
 export interface DocumentSetList {

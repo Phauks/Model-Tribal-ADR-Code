@@ -517,16 +517,14 @@ dispute_resolution:
   - kind: mediation
     title: Diversion/mediation/family unity.
     citation: Diversion/mediation/family unity.
-    link: https://narf.org/nill/codes/smith_river/index.html
-    source: national-indian-law-library-code-codes-smith-river
+    link: http://www.tolowa-nsn.gov/wp-content/uploads/2010/11/ChildrensCode2.pdf
+    source: smith-river-rancheria-childrens-code-2006
     confidence: medium
-    verification: title-only
-    as_of: '2008'
-    locator: Table of Contents, under 'Children’s code'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
-      2006-2008); the provision itself was not read. The heading it falls under is taken from the page
-      layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/t/tolowa-dee-ni-nation.yaml.'
+    verification: read-in-full
+    as_of: '2006'
+    locator: Children's Code (Resolution 06-11), Section 9, subsections A(1) and B(2)-(5), code p. 10
+    note: 'Read in full on 2026-11-23 from page images (Smith River Rancheria Children''s Code, Resolution No. 06-11, date approved April 25, 2006 (page footer dated April 24, 2006)). Read from the Smith River Rancheria Children''s Code PDF (no text layer; quote read from the page image). The NILL table of contents lists it as dated 2006-2008. Date: 2006 (adopted April 25, 2006, Resolution 06-11). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 572.'
+    summary: In child cases under the Children's Code, the Tribal Court judge may at any stage order the parties into peacemaking or mediation under the Mediation Program's written guidelines, order the child's family into family unity conferencing, or stay a case pending a diversion plan. A plan reached is reviewed by the judge, who approves, modifies or rejects it; an approved plan becomes a valid Tribal Court order.
   - kind: mediation
     title: Diversion, mediation and family unit programs.
     citation: Diversion, mediation and family unit programs.
@@ -536,10 +534,7 @@ dispute_resolution:
     verification: title-only
     as_of: '2008'
     locator: Table of Contents, under 'Tribal court ordinance'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
-      2006-2008); the provision itself was not read. The heading it falls under is taken from the page
-      layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/t/tolowa-dee-ni-nation.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: the only online copy sits on a site that refused automated requests; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 573.'
 gaming:
   compacts:
   - state: CA
@@ -678,6 +673,27 @@ jurisdiction:
   as_of: '2023'
   locator: Appendix C (PDF p.49)
   note: Listed as "TOLOWA DEE-NI NATION".
+court_practice:
+- kind: forms
+  title: K'ii-daa-naa-dvn (Tribal Judicial System)
+  court: K'ii-daa-naa-dvn (Tribal Judicial System)
+  link: https://www.tolowa.gov/208/Kii-daa-naa-dvn-Tribal-Judicial-System
+  detail: 'Fillable packets (2025 revised): Child Custody Petition, Dissolution Petition, Guardianship Petition and Name Change Petition.'
+  source: tolowa-dee-ni-nation-k-ii-daa-naa-dvn-tribal-judicial-system
+  confidence: high
+  verification: title-only
+  locator: Available Court Services
+  note: 'The source reads: “Dissolution Petition Fillable Packet 2025 Revised.pdf”. Packets not opened.'
+nearby_state_courts:
+- state: CA
+  county: Del Norte County
+  court: Superior Court for Del Norte County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Del Norte County holds 100% of the land of Smith River Rancheria (Census GEOID 3855), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

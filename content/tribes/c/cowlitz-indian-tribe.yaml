@@ -205,6 +205,22 @@ indian_health_service:
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Cowlitz Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Cowlitz Indian Tribe (2011)); the list does not say which service unit or programs the compact covers.'
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is a governing body made up of democratically elected Cowlitz Indian Tribe members.
+  source: cowlitz-indian-tribe-website-council-members
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Democratically elected
+  quote: The Tribal Council is a governing body made up of democratically elected Cowlitz Indian Tribe members.
+  source: cowlitz-indian-tribe-website-council-members
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -213,6 +229,38 @@ governance:
   as_of: '2026-11-20'
   locator: Cowlitz Indian Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: voting-age
+  value: '18'
+  quote: Voting in the Tribal elections is open to all enrolled Cowlitz Indian Tribe members 18 and older.
+  source: cowlitz-indian-tribe-website-council-members
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: Cowlitz Indian Tribe Election Board. Open to Enrolled Cowlitz Indian Tribe Members Only.
+  source: cowlitz-indian-tribe-website-election-board-open-seats
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Cowlitz Tribal Court hears civil and criminal matters that fall within the court’s jurisdiction and is staffed by a Tribal Judge and a Tribal Court Administrator.
+  source: cowlitz-indian-tribe-website-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Legislative powers over membership and enrollment
+  quote: The Tribal Council also exercises legislative powers regarding Tribal membership and enrollment
+  source: cowlitz-indian-tribe-website-council-members
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -423,6 +471,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cowlitz Tribe". Facilities
       as machine-extracted from the report text (verify): ilani Casino Resort. Name extracted from the
       PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Clark County, WA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2005-11-23'
+    link: https://www.nigc.gov?wpdmdl=2582&ind=2583
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Cowlitz Tribe, 2005-11-23
+    note: The list names the tribe as “Cowlitz Tribe”.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -461,6 +520,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Commissioning and Cross-Commissioning of Patrol and Special Law Enforcement Units
   note: 'The source reads: “The parties agree to cross-commission or specially commission each other’s full”. The day in April 2017 is partly illegible in the scan. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: WA
+  county: Clark County
+  court: Superior Court for Clark County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Clark County holds 100% of the land of Cowlitz Reservation (Census GEOID 0820), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

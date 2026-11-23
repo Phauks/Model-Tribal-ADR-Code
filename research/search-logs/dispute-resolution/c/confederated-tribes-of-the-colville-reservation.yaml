@@ -1,7 +1,7 @@
 profile: content/tribes/c/confederated-tribes-of-the-colville-reservation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -76,3 +76,43 @@ searches:
     (own page, then directory entry): own-page, https://www.cct-pmc.com/peacemaker-circle.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-059
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/ceaa9b463ca9f6c151af.pdf
+  query: Peacemaking Circle (juvenile)
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-colville-reservation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/confederated-tribes-of-the-colville-reservation/6a514e87e5fda103.txt
+  query: Peacemaking Circle (juvenile)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-the-colville-reservation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/60144f13015df64ef866.txt
+  query: Peacemaking Circle (juvenile)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-the-colville-reservation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/ceaa9b463ca9f6c151af.pdf
+  query: Juveniles – Peacemaking Circle
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-colville-reservation.yaml#dispute_resolution.provisions

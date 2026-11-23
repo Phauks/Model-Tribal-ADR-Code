@@ -37,3 +37,11 @@ searches:
   query: Child welfare agreements with the state
   outcome: not-found
   reason: 'Not recorded: Lakota Oyate Wakanyeja Owicakiyapi (LOWO) (association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014). The report says LOWO is a privately chartered tribal child welfare agency organized under Oglala Sioux law, so the agreement party is an agency, not the nation itself.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: dataset
+  address: https://www2.census.gov/geo/docs/maps-data/data/rel2020/aiannh/tab20_aiannh20_county20_natl.txt
+  query: Counties the nation's Census area lies in, and each state's trial court of general jurisdiction (scripts/jurisdiction/build_nearby_state_courts.py)
+  outcome: found
+  reason: 3 county or counties with at least 1 percent of the area's land.

@@ -31,3 +31,11 @@ searches:
   query: How the nation's reservation was set aside
   outcome: not-found
   reason: 'Candidate: Kansas/Nebraska reservations: treaties of 1854 (10 Stat. 1043 Omaha entered), 1861 (12 Stat. 1171, 1191), 1862 (13 Stat. 623). Not entered: The 1861 and 1862 treaties reduce and allot existing reserves created by earlier treaties of the 1830s-1850s; the first instrument was not read for Prairie Band, Kickapoo or Iowa.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 2 enforcement actions.

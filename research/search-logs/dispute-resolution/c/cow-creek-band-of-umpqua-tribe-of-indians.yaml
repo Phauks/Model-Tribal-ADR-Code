@@ -1,7 +1,7 @@
 profile: content/tribes/c/cow-creek-band-of-umpqua-tribe-of-indians.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -33,3 +33,24 @@ searches:
   address: http://www.cowcreek.com/title-25-chapter-14
   outcome: not-found
   reason: Second search returned only the NILL page and federal code; the nation's page was not reachable.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/cow_creek_umpqua/
+  query: Arbitration code 70-10
+  outcome: not-found
+  reason: No permission
+  records:
+  - content/tribes/c/cow-creek-band-of-umpqua-tribe-of-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/n/narf-ipi-news-cow-creek-training-2023.html
+  query: First Cow Creek Band of Umpqua Indians Peacemaking Training (Canyonville, Oregon, April 21-23,
+    2023)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/cow-creek-band-of-umpqua-tribe-of-indians.yaml#dispute_resolution.training_programs

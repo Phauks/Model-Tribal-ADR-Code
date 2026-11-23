@@ -8,6 +8,7 @@ The workflow's final job, `All checks`, passes only when every other check passe
 | --- | --- | --- |
 | `check_text.py` | Every text file is UTF-8 without a byte order mark, in Unicode Normalization Form C, with LF line endings and a final newline | Python 3 standard library |
 | `check_prose.py` | Warnings only, never a failure: on the lines a pull request adds to Markdown in `content/` and `docs/`, flags watch-list words, "serves as" and similar stand-ins for "is", trailing claims of significance, vague attributions, "not X but Y" frames, dashes and sentences over 40 words ([style guide, section 8](../docs/style-guide.md#8-sound-and-rhythm)). Words inside quotation marks are not checked. Without `--base` it checks every file, as an audit | Python 3 standard library |
+| `check_migrations.py` | Every database migration in `site/migrations/` is named for the UTC time it was written and what it does (`20261123T0430_add_file_scans.sql`), apart from the 21 numbered files already applied; no two share a timestamp; each opens with a comment of at least five words saying what it changes, with no TODO left; and with `--base <ref>` no migration already on the base is changed, renamed or deleted ([site/migrations/README.md](../site/migrations/README.md)) | Python 3 standard library |
 | `validate_records.py` | Every schema, example and content record is valid, and every citation key, glossary link, research session reference and document version link resolves; each search log (decision record 0025) sits in its topic and letter folder, names an existing profile, and has a status and `last_searched` date that agree with its searches | `pip install -r scripts/requirements.txt` |
 | `lint_records.py` | Catches unchecked data (decision record 0014): profile facts with no `verification` level, services (`justice_institutions` and `dispute_resolution.forums` entries) with no `link`, two source records at one address, forum kinds with no method record, sources still unarchived 30 days after retrieval, sources cited by content headed for an edition that are unarchived, lack a citator result or are marked unverified, and (decision record 0018) document versions whose dates, order or status disagree, clause topics with no recorded change between versions, source records whose `document_version` does not match, and profile facts citing a version no longer in effect without naming it. With `--base <ref>` it fails only on problems the pull request adds or changes; run it with `--edition` before exporting an edition | `scripts/requirements.txt` |
 | `find_archived_copies.py` | Asks the Wayback Machine to capture (`--save`) or find a capture of each source record's original link that has no archived copy, and writes a report (`--report FILE`); it never edits records. `--reuse-days D` reuses a copy the Archive already holds when it was taken within D days of the record's retrieval date, looking up every record before it saves any, `--state FILE` remembers lookups with no recent copy and failed saves between runs, `--minutes M` stops starting new records after M minutes, and the report is rewritten after each record. The archive workflow runs it on each pull request's sources and in back-to-back catch-up runs on older ones | `scripts/requirements.txt` |
@@ -21,6 +22,12 @@ The workflow's final job, `All checks`, passes only when every other check passe
 | Script | Does | Needs |
 | --- | --- | --- |
 | `analysis/dispute_resolution_practice.py` | Counts the dispute resolution records in the profiles by kind, evidence tier, recognition and region, and lists data quality flags, as JSON for `research/analyses/` | `scripts/requirements.txt` |
+
+## Model forms
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `forms/build_forms.py` | Builds a Word (.docx) and a PDF copy of each model court form in `content/forms/`, leaving off its front matter and its notes for courts and putting in each placeholder's model text from `content/variables/`, then writes `SHA256SUMS.txt` and `checksums.json` with each file's SHA-256 hash (decision record 0049). `--out DIR` (default `site/static/help/forms`, served at `/help/forms/`), `--no-pdf` | `scripts/requirements.txt`, pandoc, LibreOffice |
 
 ## Native nations dataset
 
@@ -137,7 +144,8 @@ Run by hand, never in continuous integration. Both use free public data with no 
 | --- | --- | --- |
 | `caselaw/check_case_citations.py` | Looks up every case source record's citations in CourtListener's newest quarterly bulk files and compares the case name and year; writes `research/reviews/<date>-case-citations-courtlistener.csv`, and with `--apply` (or later `--apply-report`) a `courtlistener` block (cluster number and link) in each record that matches. About 2.6 GB of downloads, cached for re-runs | `scripts/requirements.txt`, `curl` |
 | `caselaw/tribal_court_opinions.py` | Indexes the tribal court opinions in the Caselaw Access Project reporters named in `research/tribal-court-opinions/sources.yaml`: nations, topics and the case records each opinion cites; with `--file-captures` files each volume as a private capture and each opinion as a page the website serves (decision record 0047) ([README](../research/tribal-court-opinions/README.md)) | `scripts/requirements.txt`, `curl`; R2 keys for `--file-captures` |
-| `caselaw/caselaw_sources.py` | Shared helpers for both: downloads, the newest CourtListener release, citation parsing and case name comparison | |
+| `caselaw/reading_links.py` | Builds and checks the other places to read each case and law record (official texts, free sites, Westlaw and Lexis, Wikipedia) from `research/reading-links/sites.yaml`; writes `research/reviews/<date>-reading-links.csv`, and with `--apply` a `reading_links` block in each record that the website prints after the citation ([README](../research/reading-links/README.md)) | `scripts/requirements.txt`, `curl` |
+| `caselaw/caselaw_sources.py` | Shared helpers for these: downloads, the newest CourtListener release, citation parsing and case name comparison | |
 
 ## Constitutions
 
@@ -172,11 +180,23 @@ Run by hand, in this order, never in continuous integration. They write the `gov
 | Script | Does | Needs |
 | --- | --- | --- |
 | `governance/prepare_batches.py` | Picks each nation's constitution version to read and splits the texts into batches for AI readers, who follow `governance/reader-brief.md` | `scripts/requirements.txt` |
-| `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |
+| `governance/crawl_websites.py` | Saves the government, council, constitution, election and court pages linked from each nation's home page, politely (one request at a time per site, at most 10 pages); a site that refuses is logged as blocked, not worked around | `scripts/requirements.txt`, `pdftotext` |
+| `governance/prepare_website_batches.py` | Groups the saved pages into batches for AI readers, who follow `governance/website-brief.md` | |
+| `governance/add_site_constitutions.py` | Adds the constitution texts found on nations' sites that the catalog lacked (`research/governance/site-constitutions.json`) to the document histories, with a source record and a private capture | `pdfinfo` |
+| `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `websites` does the same for the website readers and writes `website-readings.json`; `sources` writes a source record for each website page a fact cites; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |
+
+## Source library
+
+The text of every document in the private bucket, page by page, in one SQLite file with a full-text index, for Claude and other writers to find passages and the page to cite (decision record [0051](../docs/decisions/0051-search-the-source-documents-through-a-private-full-text-library.md)). The library lives in the bucket, never in git.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `library/library.py` | Searches the library: `search` (FTS5 queries with phrases, `NEAR`, `OR`, prefixes; filters by nation, topic, format, citing record or served copies), `titles`, `read` (a page, star page or passage, with `--around`), `document`, `nation`, `record`, `original` (download the file itself), `stats` and read-only `sql`. Downloads the library on first use to `~/.cache/model-tribal-library/` | `boto3`; bucket credentials in the environment |
+| `library/build_library.py` | Builds the library. `update` is the usual command after files land in the bucket: it lists the bucket, downloads and reads only the files the published library has not read (`--ocr` reads their scanned pages with Tesseract), rebuilds and publishes. A nightly scheduled task runs it. The steps can also be run one at a time: `sync` downloads every text-bearing file to a work folder, `extract` reads each file once by SHA-256 (PDF text layer, OCR with `--ocr`, saved web pages with menus left out, opinions split at their star pages; `--seed` reuses the published library's text), `index` writes the SQLite file with the capture index's metadata, keeping each document's number from the last build, and `publish` uploads it with a manifest and writes the website's change files under `_library/d1/` (`--d1-whole` writes the whole library from an empty database, to reload the website's copy). `d1-sql` writes the whole library as one SQL file for D1's import. The website's own files (request proofs, uploads, essay drafts, page versions) are never read | `boto3`, `pymupdf`, `lxml`; `tesseract` for `--ocr` |
 
 ## Official representatives
 
-Run by hand after `governance/apply.py directory` or after re-reading a state list into `research/representatives/state-listings.json`. Records only the office each list names, never the person ([decision record 0050](../docs/decisions/0050-show-the-offices-official-lists-name-as-representatives.md)).
+Run by hand after `governance/apply.py directory` or after re-reading a state list into `research/representatives/state-listings.json`. Records only the office each list names, never the person ([decision record 0052](../docs/decisions/0052-show-the-offices-official-lists-name-as-representatives.md)).
 
 | Script | Does | Needs |
 | --- | --- | --- |

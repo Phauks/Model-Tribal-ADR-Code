@@ -103,6 +103,71 @@ tribal_insignia_database_entries:
   as_of: '2026-11-21'
   verification: bulk-import
   locator: Serial number 89003185
+governance:
+- aspect: form
+  value: Constitution and By-Laws
+  quote: The governance of the Piqua Shawnee Tribe is outlined in our Constitution and By-Laws, which serve as the foundation for our self-governance.
+  source: piqua-shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page says the Council is elected by enrolled citizens, while the home page says it is a Tribal Council of Clan leaders; the Constitution text is available only by request.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is the legislative voice of the Piqua Shawnee Tribe — elected by enrolled citizens and convened in regular and special session at the Council House.
+  source: piqua-shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page says the Council is elected by enrolled citizens, while the home page says it is a Tribal Council of Clan leaders; the Constitution text is available only by request.'
+- aspect: governing-body-selection
+  value: Elected by enrolled citizens
+  quote: The Tribal Council is the legislative voice of the Piqua Shawnee Tribe — elected by enrolled citizens and convened in regular and special session at the Council House.
+  source: piqua-shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page says the Council is elected by enrolled citizens, while the home page says it is a Tribal Council of Clan leaders; the Constitution text is available only by request.'
+- aspect: head-of-government
+  value: Principal Chief
+  quote: The Principal Chief chairs the Council, administers its determinations, and carries out additional duties assigned by the Council.
+  source: piqua-shawnee-tribe-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page says the Council is elected by enrolled citizens, while the home page says it is a Tribal Council of Clan leaders; the Constitution text is available only by request.'
+- aspect: head-of-government-selection
+  value: Elected by the Tribal Council from Clan Chiefs and Mothers
+  quote: Under Article 4, Section D, Paragraph 1 of the Tribal Constitution and Bylaws, the Tribal Council elects the Principal Chief from among the Clan Chiefs and Mothers.
+  source: piqua-shawnee-tribe-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page says the Council is elected by enrolled citizens, while the home page says it is a Tribal Council of Clan leaders; the Constitution text is available only by request.'
+- aspect: other-officers
+  value: Second Chief
+  quote: Governed by a Principal Chief and Second Chief, a Tribal Council of Clan leaders, and a Council of Elders serving in an advisory capacity.
+  source: piquashawnee-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page says the Council is elected by enrolled citizens, while the home page says it is a Tribal Council of Clan leaders; the Constitution text is available only by request.'
+- aspect: judiciary
+  value: Judicial System
+  quote: Administers tribal justice in accordance with the Constitution and tribal law.
+  source: piqua-shawnee-tribe-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page says the Council is elected by enrolled citizens, while the home page says it is a Tribal Council of Clan leaders; the Constitution text is available only by request.'
+- aspect: other
+  value: Council of Elders (advisory)
+  quote: a Council of Elders serving in an advisory capacity
+  source: piquashawnee-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page says the Council is elected by enrolled citizens, while the home page says it is a Tribal Council of Clan leaders; the Constitution text is available only by request.'
 representatives:
 - office: Principal Chief
   listed_by: Alabama Indian Affairs Commission, Tribes Recognized by the State of Alabama

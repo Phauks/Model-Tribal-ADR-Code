@@ -648,23 +648,22 @@ dispute_resolution:
       as_of is the NARF posting year; enactment date not shown. Confidence high because the same file
       is published on the nation's own website (upload date used as as_of).
   training_programs:
-  - name: Advanced peacemaker training for community members, tribal officials and staff (September 19-20,
-      2017, Durant)
-    provider: Indigenous Peacemaking Initiative (Native American Rights Fund), with the Choctaw Nation
-      of Oklahoma
+  - name: Advanced peacemaker training for community members, tribal officials and staff (September 19-20, 2017, Durant)
+    provider: Indigenous Peacemaking Initiative (Native American Rights Fund), with the Choctaw Nation of Oklahoma
     link: https://peacemaking.narf.org/2017/08/training-choctaw-nation-of-oklahoma-september-2017/
     source: narf-ipi-news-choctaw-training-2017
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: 2017-09
-    note: Read from excerpts on NARF news listing pages.
+    note: Read in full on 2026-11-23 (NARF IPI news post, Training - Choctaw Nation of Oklahoma September 2017 (URL path 2017/08)). Confirmed from the full NARF news post, which is an advance announcement of the training; it covers the Nation's own Peacemaking Act and uses materials made for the Nation. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 559.
   - name: Peacemaking training for the Choctaw Nation Judicial Branch (October 3-4, 2022, Durant)
     provider: Indigenous Peacemaking Initiative (Native American Rights Fund)
     link: https://peacemaking.narf.org/2022/10/peacemaking-training-for-the-choctaw-nation/
     source: narf-ipi-news-choctaw-training-2022
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: 2022-10
+    note: Read in full on 2026-11-23 (NARF IPI news post, Peacemaking Training for the Choctaw Nation (URL path 2022/10)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 560.
   provisions:
   - kind: other
     title: Section 1-4-504. Alternative Dispute Resolution
@@ -699,14 +698,13 @@ dispute_resolution:
     title: Choctaw Nation Peacemaking Act
     citation: Choctaw Nation Peacemaking Act
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Choctaw-Nation-Peacemaking-Act.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: choctaw-nation-peacemaking-act
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Choctaw Nation of Oklahoma
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and purpose, qualifications for peacemakers, permits the use of tradition and customs, as well as
-      tribal customary law, procedures, and inadmissibility of statements in peacemaking.'
+    locator: Sections 1-18 (purpose s.2; qualifications s.3; jurisdiction and limits ss.4-5; customs s.7; request and referral ss.8-10; procedure s.11; enforcement s.13; inadmissibility s.14)
+    note: Read in full on 2026-11-23 (Choctaw Nation Peacemaking Act (7-page copy); no enactment date printed). Read from the Choctaw Nation Peacemaking Act (7-page copy, no enactment date printed), the nation's own text. Section 8 is headed 'Use of tribal traditions and customary law' but its text is the written-request procedure; customs and traditions are addressed in section 7. Statements made in peacemaking are treated as settlement negotiations and inadmissible in court (s.14). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 558.
+    summary: Authorizes the Choctaw Nation District Court to use peacemakers, a court division operating under Choctaw customs and traditions, for cases referred when all parties consent, on a party's request or the court's own motion. The peacemaker cannot force a settlement or adjudicate; a signed agreement is endorsed by the District Court as a final order enforceable like its other orders, and an unresolved case goes back to the court.
 gaming:
   compacts:
   - state: OK
@@ -846,6 +844,18 @@ gaming:
       Casino Too - McAlester Travel Plaza; Choctaw Casino - Idabel; Choctaw Casino - Pocola; Choctaw Casino
       - Wilburton Travel Plaza. Name extracted from the PDF by the page-fetch tool and matched to the
       roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    - closure-order
+    tracking_number: NOV/CO-99-04
+    date: '1999-07-08'
+    link: https://www.nigc.gov?wpdmdl=1953&ind=1954
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/CO-99-04
+    note: The list titles the action “Choctaw Nation of Oklahoma” and gives its type as NOV/CO.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -901,6 +911,147 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Choctaw Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: bar-admission
+  title: Choctaw Nation Legal Services | Choctaw Nation Bar Association
+  court: Choctaw Nation of Oklahoma Judicial Branch
+  link: https://www.choctawnationcourt.com/bar-association/
+  detail: Members of the Bar Association of the Choctaw Nation are licensed to practice before all courts of the Choctaw Nation. Page links Bar Association Rules, Code of Ethical Conduct and Judicial Cannon (PDF, 2019 upload), a Bar Association Application Form (PDF, 2022 upload), and a Contract for Court Appointed Attorney. No fee amount stated on the page.
+  source: choctaw-nation-of-oklahoma-judicial-branch-choctaw-nation-legal-servic
+  confidence: high
+  verification: read-in-full
+  locator: Requirements to Join the Choctaw Nation Bar Association
+  note: 'The source reads: “Members of the Bar Association of the Choctaw Nation of Oklahoma are licensed to practice law before all courts of the Choctaw Nation.”.'
+- kind: public-defender
+  title: Office of the Choctaw Nation Public Defender
+  court: Choctaw Nation of Oklahoma Judicial Branch
+  link: https://www.choctawnationcourt.com/public-defender-office/
+  detail: The Public Defender's Office represents people who financially qualify, in felony, misdemeanor and juvenile delinquency matters; applicants file an Application for Court Appointed Counsel with the Court Clerk at least 15 days before the first hearing.
+  source: choctaw-nation-of-oklahoma-judicial-branch-choctaw-nation-oklahoma-cou
+  confidence: high
+  verification: read-in-full
+  locator: Office of the Choctaw Nation Public Defender
+  note: 'The source reads: “The Choctaw Nation of Oklahoma Public Defender’s Office represents individuals that financially qualify”.'
+- kind: forms
+  title: Tribal Forms
+  court: Choctaw Nation of Oklahoma Judicial Branch
+  link: https://www.choctawnationcourt.com/tribal-forms/
+  detail: Downloadable forms include divorce, paternity, minor and adult guardianship, termination of guardianship, name change related packets, protective order, marriage license application, worker's injury claim packet, and the Choctaw bar application.
+  source: choctaw-nation-of-oklahoma-judicial-branch-tribal-forms-choctaw-nation
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Forms
+  note: 'The source reads: “Select a PDF”.'
+- kind: legal-aid
+  title: Tribal Forms (Court Advocate assistance)
+  court: Choctaw Nation of Oklahoma Judicial Branch
+  link: https://www.choctawnationcourt.com/tribal-forms/
+  detail: A Court Advocate gives legal assistance to enrolled Choctaw Nation members only, including forms for divorce, paternity, small claims, name change and guardianship cases; not criminal, juvenile or adoption cases.
+  source: choctaw-nation-of-oklahoma-judicial-branch-tribal-forms-choctaw-nation
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Forms, notice
+  note: 'The source reads: “Court Advocate can provide legal assistance to ENROLLED CHOCTAW NATION MEMBERS only”. Tribal court advocate office, not a Legal Services Corporation program.'
+nearby_state_courts:
+- state: OK
+  county: McCurtain County
+  court: District Court for McCurtain County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: McCurtain County holds 17% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Le Flore County
+  court: District Court for Le Flore County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Le Flore County holds 15% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Pushmataha County
+  court: District Court for Pushmataha County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pushmataha County holds 13% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Pittsburg County
+  court: District Court for Pittsburg County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pittsburg County holds 12% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Atoka County
+  court: District Court for Atoka County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Atoka County holds 9% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Choctaw County
+  court: District Court for Choctaw County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Choctaw County holds 7% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Latimer County
+  court: District Court for Latimer County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Latimer County holds 7% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Bryan County
+  court: District Court for Bryan County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Bryan County holds 6% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Haskell County
+  court: District Court for Haskell County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Haskell County holds 5% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Coal County
+  court: District Court for Coal County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Coal County holds 4% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Hughes County
+  court: District Court for Hughes County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Hughes County holds 3% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Choctaw, 1786
   signed: '1786-01-03'

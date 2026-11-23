@@ -664,20 +664,20 @@ dispute_resolution:
     confidence: medium
     verification: read-in-full
     as_of: '2014-05-15'
-    note: Section heading confirmed; contents not reviewed in detail. NARF summarizes 702.6 and 705.7
-      together as providing authorization, procedures, appeals policies and referral standards.
+    note: Read in full on 2026-11-23 (Title 7. Children, Elders and Family - Chapter 705 Child Custody, Placement, and Visitation; adopted BC-06-24-09-D, amended through BC-05-15-14-E). Section 705.7 read in full (Oneida Code 7 O.C. 705, last amended BC-05-15-14-E). Referral requires party agreement; Court-paid costs on referral (705.7-1); recognized peacemakers (705.7-2); mediator qualifications and powers (705.7-3); written agreement submitted as a stipulation, which the Court may reject (705.7-4); post-order referral (705.7-5). No appeals provision in 705.7; NARF's reference to 702.6 was not checked. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 366.
+    summary: In a custody, placement or visitation case the Court may refer the parents to peacemaking or mediation only if they agree, and not where attending would cause undue hardship or endanger a party (evidence of domestic abuse is considered); the Court pays when it refers. Peacemakers are those recognized by the Tribe's Cultural Heritage Department or the Court, and the parties choose the type; mediators need 25 hours of training or 3 years of experience plus domestic violence training. An agreement is written, certified by the peacemaker or mediator and submitted to the Court as a stipulation in the order; the Court may reject it if not in the child's best interest, giving written reasons. If there is no agreement the Court is told and the parties may return to peacemaking before trial. After an order, the Court may also refer a parent to peacemaking or mediation to resolve problems (705.7-5).
+    locator: 7 O.C. 705.7-1 to 705.7-5
   - kind: peacemaking
     title: Title 8. Judicial System, Chapter 801 – Judiciary, Rule 1.10 – Peacemaking and Mediation
     citation: Title 8. Judicial System, Chapter 801 – Judiciary, Rule 1.10 – Peacemaking and Mediation
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Oneida-Trial-Court-Rules.pdf
+    source: oneida-wi-trial-court-rules
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Oneida Nation of Wisconsin
-    note: 'Native American Rights Fund description (provision itself not read): Provides procedures, qualifications,
-      referral procedures, standards of conduct, and authority of Tribal Court or Cultural Heritage Department
-      to appoint peacemakers.'
+    locator: Oneida Trial Court Rules, Rule 1.10 (1.10-1 to 1.10-5)
+    note: 'Read in full on 2026-11-23 (Title 8. Judicial System, Chapter 801 Judiciary, Rule #1 Oneida Trial Court Rules; original effective date 09-25-2019). Rule 1.10 read in full (original effective date 09-25-2019). The Cultural Heritage Department''s recognition is one way to show qualification (1.10-2(a)(1)); it does not appoint peacemakers. The earlier note repeating NARF''s wording that the Department has authority to appoint peacemakers was wrong. Referral procedure is in 8 O.C. 801.6-2, not read here. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 367.'
+    summary: Sets who may serve as a Trial Court peacemaker or mediator and how they are used. Outsiders apply to the Court Administrator, pass a background check and are approved by the judges after an interview. Before being used a person must show understanding of the role (training, prior Trial Court work, recognition by the Cultural Heritage Department or another jurisdiction, or other means the Court accepts). The Trial Court may refer parties under 8 O.C. 801.6-2, keeps the list and selects from it, and no one with an interest in the case may be appointed without the parties' consent. Peacemakers must keep cases confidential, avoid conflicts and give the Court a written update within three business days of a session; the Trial Court hears complaints and may discipline, including removal from the list; pay is at a reasonable rate set by the Court, and nothing is paid for work by a full-time Judge.
   - kind: peacemaking
     title: 702.6. Peacemaking and Mediation
     citation: Oneida Code Chapter 702 Divorce, Annulment and Legal Separation, 702.6
@@ -887,6 +887,73 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+court_practice:
+- kind: bar-admission
+  title: What are the Rules of Admission to Practice Before the Judiciary?
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/wp-content/uploads/2017/02/Rules-of-Admission-Revised-11-2017.pdf
+  detail: Rules of Admission to Practice (revised 11-2017) per file name; the same page links an Application for Admission, professional conduct law for attorneys and advocates, and a Referral Directory (May 2026) of those approved to practice.
+  source: oneida-nation-oneida-nation-admission-to-practice
+  confidence: high
+  verification: read-in-full
+  locator: Admission to Practice
+- kind: bar-admission
+  title: How Do I Apply For Admission To Practice Before the Judiciary?
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/wp-content/uploads/2017/02/Application-for-Admission.pdf
+  detail: Application for Admission to practice before the Judiciary.
+  source: oneida-nation-oneida-nation-admission-to-practice
+  confidence: high
+  verification: read-in-full
+  locator: Admission to Practice
+- kind: filing-fees
+  title: What Does It Cost to File an Action?
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/wp-content/uploads/2024/07/What-Does-It-Cost-to-File-an-Action.pdf
+  detail: Filing cost document (2024 upload); the page also links a 2026-2027 Fee Waiver Request with guidelines.
+  source: oneida-nation-oneida-nation-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Court Fees
+- kind: forms
+  title: Judiciary Forms
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/judiciary/judiciary-forms/
+  detail: Forms in general and family-law groups, including Fee Waiver, Consent to Electronic Service, Motion packet, Transcript Request, Petition for Divorce, Legal Separation or Annulment, and custody and child support motions.
+  source: oneida-nation-oneida-nation-judiciary-forms
+  confidence: high
+  verification: read-in-full
+  locator: Judiciary Forms
+  note: 'The source reads: “File a Motion on an Established Case”.'
+- kind: legal-aid
+  title: Can the General Tribal Council (GTC) Legal Resource Center assist me?
+  court: Oneida Nation Judiciary
+  link: https://oneida-nsn.gov/wp-content/uploads/2019/06/Contact-the-Oneida-General-Tribal-Council-Legal-Resource-Center.pdf
+  detail: Document on whether the General Tribal Council Legal Resource Center can assist; contents not opened.
+  source: oneida-nation-oneida-nation-admission-to-practice
+  confidence: medium
+  verification: read-in-full
+  locator: Admission to Practice
+  note: Nation's own legal resource office; eligibility not read.
+nearby_state_courts:
+- state: WI
+  county: Outagamie County
+  court: Circuit Court for Outagamie County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Outagamie County holds 60% of the land of Oneida (WI) Reservation (Census GEOID 2560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WI
+  county: Brown County
+  court: Circuit Court for Brown County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Brown County holds 40% of the land of Oneida (WI) Reservation (Census GEOID 2560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Six Nations, 1784
   signed: '1784-10-22'

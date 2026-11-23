@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { invalidateAll } from '$app/navigation';
 	import Archive from '@lucide/svelte/icons/archive';
+	import Ban from '@lucide/svelte/icons/ban';
+	import BookUser from '@lucide/svelte/icons/book-user';
+	import Download from '@lucide/svelte/icons/download';
+	import MailX from '@lucide/svelte/icons/mail-x';
 	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import BellRing from '@lucide/svelte/icons/bell-ring';
 	import FolderInput from '@lucide/svelte/icons/folder-input';
@@ -16,8 +21,9 @@
 	import ReplyAll from '@lucide/svelte/icons/reply-all';
 	import StickyNote from '@lucide/svelte/icons/sticky-note';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import Undo2 from '@lucide/svelte/icons/undo-2';
 	import X from '@lucide/svelte/icons/x';
-	import { deliveryLabels, formatAddress, messageStatusLabels, replyAllReach } from '#lib/mail.ts';
+	import { deliveryLabels, formatAddress, heldForVirusCheck, messageStatusLabels, replyAllReach } from '#lib/mail.ts';
 	import Avatar from '../Avatar.svelte';
 	import Composer from '../Composer.svelte';
 	import TagChip from '../TagChip.svelte';
@@ -66,6 +72,26 @@
 			: false
 	);
 
+	// A message in the pause before it goes (undo send) counts down, and the page looks again once it has gone.
+	let now = $state(Date.now());
+	const held = $derived(thread.messages.filter((message) => message.undoUntil));
+	$effect(() => {
+		if (held.length === 0) return;
+		let refreshed = false;
+		const tick = setInterval(() => {
+			now = Date.now();
+			const last = Math.max(...held.map((message) => new Date(message.undoUntil ?? 0).getTime()));
+			if (!refreshed && now > last + 1500) {
+				refreshed = true;
+				void invalidateAll();
+			}
+		}, 250);
+		return () => clearInterval(tick);
+	});
+	function secondsLeft(until: string | null): number {
+		return Math.max(0, Math.ceil((new Date(until ?? 0).getTime() - now) / 1000));
+	}
+
 	function size(bytes: number): string {
 		return bytes > 1024 * 1024 ? `${(bytes / 1024 / 1024).toFixed(1)} MB` : `${Math.max(1, Math.ceil(bytes / 1024))} KB`;
 	}
@@ -93,6 +119,7 @@
 	<form method="post" action="?/read" class="tools">
 		<button class="tool" type="submit" name="read" value="no"><Mail size={18} aria-hidden="true" /><span>Mark unread</span></button>
 	</form>
+	<a class="tool" href="/workspace/inbox/{thread.identifier}/export" download title="Save the whole conversation as an .mbox file, which mail programs import"><Download size={18} aria-hidden="true" /><span>Export</span></a>
 	{#if data.mailFolders.length}
 		<form method="post" action="?/move" class="tools move">
 			<label for="move-folder" class="visually-hidden">Move to a folder</label>
@@ -146,10 +173,24 @@
 	</p>
 </header>
 
+{#each held as message (message.identifier)}
+	<form method="post" class="notice undo-banner" aria-live="polite">
+		<input type="hidden" name="message" value={message.identifier} />
+		<p>{ready ? (secondsLeft(message.undoUntil) > 0 ? `Sending in ${secondsLeft(message.undoUntil)} seconds.` : 'Sending…') : 'Sending in a few seconds.'}</p>
+		<button class="button" type="submit" formaction="?/undo"><Undo2 size={18} aria-hidden="true" />Undo</button>
+		<button class="button button-quiet" type="submit" formaction="?/again">Send now</button>
+	</form>
+{/each}
 {#if form && 'problem' in form}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
 {:else if form && 'done' in form}
-	<div class="notice" role="status"><p>{form.done}</p></div>
+	<div class="notice" role="status">
+		<p>{form.done}{#if 'page' in form && form.page}{' '}<a href={form.page} target="_blank" rel="noopener noreferrer nofollow">Open the list’s unsubscribe page</a>{/if}</p>
+	</div>
+{:else if data.undone}
+	<div class="notice" role="status">
+		<p>Not sent. The message is back in the reply box below as a draft.{#if data.undone === 'files'} Its attachments were not kept: attach them again.{/if}</p>
+	</div>
 {/if}
 
 {#if thread.stopRequested}
@@ -186,6 +227,8 @@
 						{#if message.attachments.some((item) => !item.inline)}<Paperclip size={14} aria-label="Has attachments" />{/if}
 						{#if message.direction === 'in'}{listDate(message.receivedAt ?? message.createdAt)}
 						{:else if message.status === 'sent'}{listDate(message.sentAt ?? message.createdAt)}
+						{:else if message.status === 'scheduled' && message.error === heldForVirusCheck}<span class="status">Waiting for the virus check</span>
+						{:else if message.undoUntil}<span class="status">Sending</span>
 						{:else if message.status === 'scheduled'}<span class="status">Goes {listDate(message.scheduledFor ?? message.createdAt)}</span>
 						{:else}<span class="status">{messageStatusLabels[message.status] ?? message.status}</span>{/if}
 					</span>
@@ -200,7 +243,8 @@
 					{/if}
 					{#if message.automatic}<p class="small status-line">Automatic reply</p>{/if}
 					{#if message.spamReason}<p class="small warning">In Spam because: {message.spamReason}</p>{/if}
-					{#if message.error}<p class="small warning">Not sent: {message.error}</p>{/if}
+					{#if message.error === heldForVirusCheck}<p class="small status-line">{message.error}</p>
+					{:else if message.error}<p class="small warning">Not sent: {message.error}</p>{/if}
 					<div class="text">{message.text}</div>
 					{#if message.hasHtml}
 						<details class="formatted">
@@ -223,7 +267,7 @@
 										<span class="held" title={attachment.check.explanation}>
 											<ShieldEllipsis size={16} aria-hidden="true" />
 											<span class="file">{attachment.filename}</span>
-											<span class="small muted">{attachment.check.label}</span>
+											<span class="small muted">{attachment.check.label}{attachment.check.checkedBy ? ` ${attachment.check.checkedBy}` : ''}</span>
 										</span>
 										{#if attachment.check.releasable && data.canManage}
 											<form method="post" action="?/release" class="release small">
@@ -239,6 +283,7 @@
 											<span class="file">{attachment.filename}</span>
 											<span class="small muted">{size(attachment.size)}</span>
 										</a>
+										{#if attachment.check?.checkedBy}<span class="small muted checked-by">{attachment.check.checkedBy}</span>{/if}
 									{/if}
 								</li>
 							{/each}
@@ -250,9 +295,20 @@
 							<a class="answer-link small" href={composeLink('reply', message.identifier)}><ReplyIcon size={16} aria-hidden="true" />Reply</a>
 							{#if many}<a class="answer-link small" href={composeLink('all', message.identifier)}><ReplyAll size={16} aria-hidden="true" />Reply all</a>{/if}
 							<a class="answer-link small" href={composeLink('forward', message.identifier)}><ForwardIcon size={16} aria-hidden="true" />Forward</a>
+							{#if message.hasCopy}
+								<a class="answer-link small" href="/workspace/inbox/messages/{message.identifier}/export" download title="Save this message as an .eml file, which any mail program opens"><Download size={16} aria-hidden="true" />Save as .eml</a>
+							{/if}
+							{#if message.fromList}
+								<form method="post" action="?/unsubscribe" class="inline-answer">
+									<input type="hidden" name="message" value={message.identifier} />
+									<button class="answer-link small" type="submit"><MailX size={16} aria-hidden="true" />Unsubscribe</button>
+								</form>
+							{/if}
 						</nav>
 					{/if}
-					{#if message.status === 'scheduled' || message.status === 'failed'}
+					{#if message.undoUntil}
+						<p class="small status-line">Waiting a moment before it goes; Undo is at the top of the page.</p>
+					{:else if message.status === 'scheduled' || message.status === 'failed'}
 						<form method="post" class="actions">
 							<input type="hidden" name="message" value={message.identifier} />
 							{#if message.carrier !== 'smtp'}
@@ -284,7 +340,10 @@
 					{#if answering}<span class="small muted answering">{data.compose.mode === 'forward' ? 'Forwarding' : 'Answering'} {answering.from.name ?? answering.from.email}, {listDate(answering.receivedAt ?? answering.sentAt ?? answering.createdAt)}</span>{/if}
 				</nav>
 			{/if}
-			{#key `${data.compose.mode}:${data.compose.message}`}
+			{#if data.compose.otherDraft}
+				<p class="small muted draft-note">You have a draft in this conversation. Writing here replaces it. <a href="?draft#reply">Open the draft</a></p>
+			{/if}
+			{#key `${data.compose.mode}:${data.compose.message}:${data.compose.draft}`}
 				<Composer
 					action="?/reply"
 					idPrefix="reply"
@@ -298,12 +357,76 @@
 					message={data.compose.message}
 					forwarded={data.compose.attachments}
 					focus={data.compose.asked}
+					bcc={data.compose.bcc}
+					text={data.compose.text}
+					draft={data.compose.draft}
+					thread={thread.identifier}
+					signed={data.compose.signed}
+					signatures={data.writing.signatures}
+					savedReplies={data.writing.savedReplies}
+					mergeValues={data.writing.mergeValues}
+					senderName={data.writing.senderName}
+					manageLink={data.canManage ? '/workspace/inbox/settings#saved-replies' : null}
 				/>
 			{/key}
 		</section>
 	</div>
 
 	<aside class="side" aria-label="About this conversation">
+		{#if data.sender}
+			{@const sender = data.sender}
+			<section class="card sender-card" aria-labelledby="sender-heading">
+				<h2 id="sender-heading"><BookUser size={16} aria-hidden="true" />Sender</h2>
+				{#if sender.contact}
+					<p class="sender-name"><strong>{sender.contact.name}</strong>{#if sender.contact.role}<span class="small muted">{sender.contact.role}</span>{/if}</p>
+					{#if sender.contact.organization}<p class="small">{sender.contact.organization}</p>{/if}
+					{#if sender.nation}
+						<p class="small">{#if sender.nation.page}<a href={sender.nation.page}>{sender.nation.name}</a>{:else}{sender.nation.name}{/if}</p>
+					{/if}
+					<p class="small muted break">{sender.address}</p>
+					{#if sender.contact.otherWays.length}
+						<ul class="ways small">
+							{#each sender.contact.otherWays as way (way.value)}
+								<li>{#if way.method === 'email'}<a href="/workspace/inbox/new?to={encodeURIComponent(way.value)}" class="break">{way.value}</a>{:else}<a href="tel:{way.value.replace(/[^\d+]/g, '')}">{way.value}</a>{/if}</li>
+							{/each}
+						</ul>
+					{/if}
+					<p class="small muted">From {sender.contact.source}, checked {new Date(sender.contact.verifiedOn).toLocaleDateString('en-US', { dateStyle: 'medium', timeZone: 'UTC' })}.</p>
+					{#if data.canSeeAddressBook}<p class="small"><a href="/workspace/address-book/{sender.contact.identifier}">Open in the address book</a></p>{/if}
+				{:else}
+					<p class="small"><span class="break">{sender.address}</span> is not in the address book.</p>
+					{#if data.canSeeAddressBook}<p class="small"><a href="/workspace/address-book">Go to the address book</a></p>{/if}
+				{/if}
+				{#if sender.conversations.length}
+					<h3 class="small">Earlier conversations{#if sender.conversationCount > sender.conversations.length}{' '}({sender.conversationCount}){/if}</h3>
+					<ul class="earlier small">
+						{#each sender.conversations as earlier (earlier.identifier)}
+							<li><a href="/workspace/inbox/{earlier.identifier}">{earlier.subject}</a> <span class="muted">{listDate(earlier.lastMessageAt)}</span></li>
+						{/each}
+					</ul>
+				{:else}
+					<p class="small muted">No earlier conversations.</p>
+				{/if}
+				{#if data.canManage}
+					{#if sender.blockedBy}
+						<form method="post" action="?/unblock" class="block-form small">
+							<input type="hidden" name="pattern" value={sender.blockedBy} />
+							<span class="blocked"><Ban size={14} aria-hidden="true" />Blocked ({sender.blockedBy})</span>
+							<button class="link-button" type="submit">Unblock</button>
+						</form>
+					{:else}
+						<details class="block-menu small">
+							<summary><Ban size={14} aria-hidden="true" />Block</summary>
+							<form method="post" action="?/block" class="block-choices">
+								<p class="muted">New mail goes straight to Spam, and this conversation moves there. Nothing is sent to them.</p>
+								<button class="button button-quiet" type="submit" name="whole" value="address">Block {sender.address}</button>
+								<button class="button button-quiet" type="submit" name="whole" value="domain">Block everyone at {sender.address.split('@')[1]}</button>
+							</form>
+						</details>
+					{/if}
+				{/if}
+			</section>
+		{/if}
 		<section class="card">
 			<h2>Assigned to</h2>
 			<form method="post" action="?/assign" class="inline-form">
@@ -382,6 +505,9 @@
 	}
 	.move select {
 		min-height: 2.25rem;
+	}
+	a.tool {
+		text-decoration: none;
 	}
 	.tool {
 		display: inline-flex;
@@ -626,6 +752,11 @@
 		border-radius: var(--radius-control);
 		color: var(--color-ink-muted);
 	}
+	.checked-by {
+		display: block;
+		max-width: 40ch;
+		margin-top: var(--space-1);
+	}
 	.release {
 		display: flex;
 		flex-wrap: wrap;
@@ -643,6 +774,22 @@
 		flex-wrap: wrap;
 		gap: var(--space-2);
 		margin-top: var(--space-3);
+	}
+	.undo-banner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2) var(--space-3);
+	}
+	.undo-banner p {
+		margin: 0;
+		margin-right: auto;
+	}
+	.undo-banner .button {
+		gap: var(--space-1);
+	}
+	.draft-note {
+		margin: 0 0 var(--space-2);
 	}
 	.answer {
 		display: flex;
@@ -736,6 +883,87 @@
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-panel);
 		background: var(--color-surface-raised);
+	}
+	.sender-card p {
+		margin: 0 0 var(--space-1);
+	}
+	.sender-name {
+		display: flex;
+		flex-direction: column;
+	}
+	.sender-card h3 {
+		margin: var(--space-3) 0 var(--space-1);
+		font-weight: var(--font-weight-semibold);
+	}
+	.break {
+		overflow-wrap: anywhere;
+	}
+	.ways,
+	.earlier {
+		list-style: none;
+		margin: 0 0 var(--space-2);
+		padding: 0;
+		display: grid;
+		gap: var(--space-1);
+	}
+	.block-menu,
+	.block-form {
+		margin-top: var(--space-3);
+		padding-top: var(--space-2);
+		border-top: 1px solid var(--color-line);
+	}
+	.block-menu {
+		display: block;
+		width: 100%;
+	}
+	.block-menu summary {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		cursor: pointer;
+		color: var(--color-ink-muted);
+	}
+	.block-choices {
+		display: grid;
+		gap: var(--space-2);
+		margin-top: var(--space-2);
+	}
+	.block-choices .button {
+		justify-content: flex-start;
+		text-align: left;
+		overflow-wrap: anywhere;
+	}
+	.block-form {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+	}
+	.blocked {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		overflow-wrap: anywhere;
+	}
+	.link-button {
+		border: 0;
+		background: none;
+		color: var(--color-link);
+		font: inherit;
+		cursor: pointer;
+		text-decoration: underline;
+		padding: var(--space-1);
+	}
+	.inline-answer {
+		display: inline;
+	}
+	button.answer-link {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		background: none;
+		font: inherit;
+		cursor: pointer;
 	}
 	.card h2 {
 		display: flex;

@@ -762,6 +762,78 @@ gaming:
     locator: table row 216, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 216 lists the nation
       as "Puyallup Tribe of the Puyallup Reservation".
+  indian_lands_opinions:
+  - parcel: Fife Property, Pierce County, WA
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2004-11-12'
+    link: https://www.nigc.gov?wpdmdl=2568&ind=2569
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Puyallup Tribe, 2004-11-12
+    note: The list names the tribe as “Puyallup Tribe”.
+  - parcel: Fife Property, Pierce County, WA
+    legal_theory: Jurisdiction
+    accepted: true
+    date: '2004-11-12'
+    link: https://www.nigc.gov?wpdmdl=2570&ind=2569
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Puyallup Tribe, 2004-11-12
+    note: The list names the tribe as “Puyallup Tribe”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-11
+    date: '2006-06-12'
+    link: https://www.nigc.gov?wpdmdl=8127&ind=8138
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-11
+    note: The list titles the action “Puyallup Tribe of Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-11
+    date: '2006-10-03'
+    link: https://www.nigc.gov?wpdmdl=8104&ind=8115
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-11
+    note: The list titles the action “Puyallup Tribe of Indians” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-PUY/BJS
+    date: '2007-01-23'
+    link: https://www.nigc.gov?wpdmdl=8089&ind=8100
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-PUY/BJS
+    note: The list titles the action “Puyallup Tribe of Indians/BJ’s Bingo” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-07-06
+    date: '2007-12-06'
+    link: https://www.nigc.gov?wpdmdl=8063&ind=8074
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-07-06
+    note: The list titles the action “Puyallup Tribe of Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-07-06
+    date: '2007-12-28'
+    link: https://www.nigc.gov?wpdmdl=8062&ind=8073
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-07-06
+    note: The list titles the action “Puyallup Tribe of Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -789,6 +861,16 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+nearby_state_courts:
+- state: WA
+  county: Pierce County
+  court: Superior Court for Pierce County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Pierce County holds 99% of the land of Puyallup Reservation (Census GEOID 3000), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Nisqualli, Puyallup, etc., 1854
   signed: '1854-12-26'

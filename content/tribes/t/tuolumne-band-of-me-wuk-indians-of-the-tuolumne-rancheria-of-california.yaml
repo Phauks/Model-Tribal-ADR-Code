@@ -212,29 +212,29 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and by-laws under the Indian Reorganization Act
-  quote: by the Indian Reorganization Act, do hereby ordain and establish this
-  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
-  confidence: medium
+  value: Constitution written during the Indian Reorganization Act period
+  quote: The Tuolumne Band of Me-Wuk Indians is governed by a constitution written during the Indian Reorganization Act (IRA) period of Indian Policy.
+  source: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-californi-website-tribal-government-governmental-structure
+  confidence: high
   verification: read-in-full
-  as_of: '2001-04-10'
-  locator: Preamble
-  document_version:
-    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
-    version: 2001-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body
   value: Community Council
-  quote: shall be the Conraunlty Council Tihich shall be composed of all the Qualified
-  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
-  confidence: medium
+  quote: The Tribe is governed by the Community Council, which is composed of voting members.
+  source: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-californi-website-tribal-government-governmental-structure
+  confidence: high
   verification: read-in-full
-  as_of: '2001-04-10'
-  locator: Article III, Section 1
-  document_version:
-    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
-    version: 2001-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 141 members
+  quote: The governing body of the tribe is the Community Council, which is composed of 141 members.
+  source: tuolumne-band-of-me-wuk-indians-of-the-t-cultural-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: general-council
   value: All qualified voters of the band
   quote: shall be the Conraunlty Council Tihich shall be composed of all the Qualified
@@ -280,29 +280,21 @@ governance:
     version: 2001-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
 - aspect: other-officers
-  value: Vice-chairman, Secretary, Treasurer
-  quote: ballot, (a) chairman; (b) vice-chairman; (c) secretary; (d) treasurer;
-  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
-  confidence: medium
+  value: Chair, Vice Chair, Secretary, Treasurer
+  quote: 'The executive duties of the Tribe are carried out through four Community Council Officers: Chair, Vice Chair, Secretary and Treasurer.'
+  source: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-californi-website-tribal-government-governmental-structure
+  confidence: high
   verification: read-in-full
-  as_of: '2001-04-10'
-  locator: Article III, Section 5
-  document_version:
-    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
-    version: 2001-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: elections
-  value: Officials chosen at the November meeting (as amended 1940)
-  quote: Thereafter, officials shall be chosen at the November
-  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
-  confidence: medium
+  value: Annually, for officers
+  quote: These leaders are elected annually from within the ranks of the Community Council.
+  source: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-californi-website-tribal-government-governmental-structure
+  confidence: high
   verification: read-in-full
-  as_of: '2001-04-10'
-  locator: Amendment No. 1, item 4
-  document_version:
-    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
-    version: 2001-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: voting-age
   value: '21'
   quote: who are 21 years of age or over, and who have maintained legal residence in
@@ -352,17 +344,13 @@ governance:
     version: 2001-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
 - aspect: other
-  value: Business committee of chairman, secretary and treasurer
-  quote: The business committee shall consist of the chairman,
-  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
-  confidence: medium
+  value: Committees advisory to Community Council
+  quote: Act in an advisory capacity to the Community Council, tribal departments and their programs by recommending policies and procedures, identifying needs, and developing priorities for the tribe
+  source: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-californi-website-tribal-government-committees
+  confidence: high
   verification: read-in-full
-  as_of: '2001-04-10'
-  locator: Article III, Section 7
-  document_version:
-    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
-    version: 2001-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -582,6 +570,16 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Tuolumne County
+  court: Superior Court for Tuolumne County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Tuolumne County holds 100% of the land of Tuolumne Rancheria (Census GEOID 4330), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

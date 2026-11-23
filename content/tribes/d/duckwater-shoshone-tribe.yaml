@@ -208,65 +208,45 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and Bylaws under the Act of June 18, 1934, as amended
-  quote: approved same, as provided in the Act of June 18, 1.934, as amended by
-  source: constitution-duckwater-shoshone-tribe-1966-text
-  confidence: medium
+  value: Constitution and By-Laws
+  quote: The Constitution and By-Laws of the Duckwater Shoshone Tribe
+  source: duckwater-shoshone-tribe-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1966-09-28'
-  locator: Article III
-  document_version:
-    document: duckwater-shoshone-tribe-constitution
-    version: 1966-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; the 1944 and 1966 amendments are appended and facts are read as amended.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body
-  value: Duckwater Tribal Council
-  quote: the Duckwater Reservation shall be a council known as the Duckwater
-  source: constitution-duckwater-shoshone-tribe-1966-text
-  confidence: medium
+  value: Tribal Council
+  quote: The Tribal Council is responsible for setting all policies and procedures that guide the operations of the Duckwater Shoshone Tribe.
+  source: duckwater-shoshone-tribe-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1966-09-28'
-  locator: Article III, Section 1
-  document_version:
-    document: duckwater-shoshone-tribe-constitution
-    version: 1966-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; the 1944 and 1966 amendments are appended and facts are read as amended.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 5 members
-  quote: The Tribal Council shall consist of five members dulY elected
-  source: constitution-duckwater-shoshone-tribe-1966-text
-  confidence: medium
+  quote: consists of a five-member Council
+  source: duckwater-shoshone-tribe-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1966-09-28'
-  locator: Article III, Section 2
-  document_version:
-    document: duckwater-shoshone-tribe-constitution
-    version: 1966-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; the 1944 and 1966 amendments are appended and facts are read as amended.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-selection
-  value: Elected by tribal members aged 21 or over
-  quote: Any member of the Duckwater Shoshone Tribe 2l years of age
-  source: constitution-duckwater-shoshone-tribe-1966-text
-  confidence: medium
+  value: Elected by reservation residents
+  quote: which is elected annually to staggered terms by members who are residents of the Duckwater Shoshone Reservation for one-year and are registered to vote.
+  source: duckwater-shoshone-tribe-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1966-09-28'
-  locator: Article IV, Section 5
-  document_version:
-    document: duckwater-shoshone-tribe-constitution
-    version: 1966-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; the 1944 and 1966 amendments are appended and facts are read as amended.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
-  value: 3 years, staggered
-  quote: to serve three years, two members being elected each year except that
-  source: constitution-duckwater-shoshone-tribe-1966-text
-  confidence: medium
+  value: 1 year, staggered
+  quote: elected annually to staggered terms by members who are residents of the Duckwater Shoshone Reservation for one-year
+  source: duckwater-shoshone-tribe-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1966-09-28'
-  locator: Article III, Section 2
-  document_version:
-    document: duckwater-shoshone-tribe-constitution
-    version: 1966-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; the 1944 and 1966 amendments are appended and facts are read as amended.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairman
   quote: number, (1) a chairman; (2) a vice chairman; and from within or without,
@@ -288,17 +268,13 @@ governance:
   locator: Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation, Nevada)
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 - aspect: head-of-government-selection
-  value: Chosen by the Council from within its own number
-  quote: The Council so organized shall elect from within its own
-  source: constitution-duckwater-shoshone-tribe-1966-text
-  confidence: medium
+  value: Elected by Council from within
+  quote: The Constitution and By-Laws of the Duckwater Shoshone Tribe provide that officers are elected from within the Council by the Council annually.
+  source: duckwater-shoshone-tribe-website-tribal-government
+  confidence: high
   verification: read-in-full
-  as_of: '1966-09-28'
-  locator: Article III, Section 3
-  document_version:
-    document: duckwater-shoshone-tribe-constitution
-    version: 1966-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; the 1944 and 1966 amendments are appended and facts are read as amended.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: other-officers
   value: Vice Chairman, Secretary, Treasurer
   quote: (3) a secretary; and (4) a treasurer; and may appoint or employ such
@@ -480,6 +456,16 @@ jurisdiction:
   verification: read-in-full
   locator: 1973 Nev. Stat. ch. 601, § 1, subsec. 4, at 1052; NRS 41.430(4)
   note: 'Sections 1-5 took effect July 1, 1974 (§ 16). The current NRS text still carries this language. Goldberg (2010) says no tribe asked to continue; the 1976 AIPRC report says Ely Colony alone chose to keep state jurisdiction. Goldberg''s date for the assumption (1967) conflicts with the Statutes (1955). Also cites: nevada-revised-statutes-41-430.'
+nearby_state_courts:
+- state: NV
+  county: Nye County
+  court: District Court for Nye County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Nye County holds 100% of the land of Duckwater Reservation (Census GEOID 0975), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Western Shoshoni, 1863
   signed: '1863-10-01'

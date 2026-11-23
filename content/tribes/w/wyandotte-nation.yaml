@@ -714,6 +714,88 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Wyandotte Nation, Oklahoma". Name
       extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Shriner Tract, Wyandotte County, KS
+    legal_theory: Settlement of a Land Claim
+    accepted: false
+    date: '2004-07-19'
+    link: https://www.nigc.gov?wpdmdl=2557&ind=2558
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wyandotte Nation, 2004-07-19
+    note: The list names the tribe as “Wyandotte Nation”.
+  - parcel: Shriner Tract, Wyandotte County, KS
+    legal_theory: Last Recognized Reservation
+    accepted: false
+    date: '2004-07-19'
+    link: https://www.nigc.gov?wpdmdl=2559&ind=2558
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wyandotte Nation, 2004-07-19
+    note: The list names the tribe as “Wyandotte Nation”.
+  - parcel: Cherokee County, Oklahoma
+    legal_theory: Indian Lands Oklahoma
+    accepted: false
+    date: '2004-07-19'
+    link: https://www.nigc.gov?wpdmdl=2560&ind=2558
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wyandotte Nation, 2004-07-19
+    note: The list names the tribe as “Wyandotte Nation”.
+  - parcel: Shriner Tract, Wyandotte County, KS
+    legal_theory: Settlement of a Land Claim
+    accepted: false
+    date: '2004-09-10'
+    link: https://www.nigc.gov?wpdmdl=2561&ind=2562
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wyandotte Nation, 2004-09-10
+    note: The list names the tribe as “Wyandotte Nation”.
+  - parcel: Shriner Tract, Wyandotte County, KS
+    legal_theory: Last Recognized Reservation
+    accepted: false
+    date: '2004-09-10'
+    link: https://www.nigc.gov?wpdmdl=2563&ind=2562
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wyandotte Nation, 2004-09-10
+    note: The list names the tribe as “Wyandotte Nation”.
+  - parcel: Shriner Tract, Wyandotte County, KS
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2004-09-10'
+    link: https://www.nigc.gov?wpdmdl=2564&ind=2562
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wyandotte Nation, 2004-09-10
+    note: The list names the tribe as “Wyandotte Nation”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-07
+    date: '2009-02-23'
+    link: https://www.nigc.gov?wpdmdl=7918&ind=7929
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-07
+    note: The list titles the action “Wyandotte Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-07
+    date: '2009-03-13'
+    link: https://www.nigc.gov?wpdmdl=7896&ind=7907
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-07
+    note: The list titles the action “Wyandotte Nation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -758,6 +840,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Introductory provisions, paragraphs 2 and 3
   note: 'The source reads: “Such officers shall be referred to herein as “Cross-Commissioned Officers.””. The copy is an unsigned, undated form. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: OK
+  county: Ottawa County
+  court: District Court for Ottawa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Ottawa County holds 100% of the land of Wyandotte OTSA (Census GEOID 5890), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1785
   signed: '1785-01-21'

@@ -10,7 +10,7 @@ searches:
   address: research/captures/constitutions/pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands/720cc2d36a18d472.txt
   query: 'Governance: governing body, head of government, elections, branches, courts, amendment (scripts/governance/reader-brief.md)'
   outcome: found
-  reason: Read the 1950 constitution and bylaws (Library of Congress copy) (constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2); kept 8 facts whose quoted words were found in the text.
+  reason: Read the 1950 constitution and bylaws (Library of Congress copy) (constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2); kept 7 facts whose quoted words were found in the text.
   records:
   - constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
 - date: '2026-11-23'
@@ -21,4 +21,15 @@ searches:
   query: jobtitle of the nation's row
   outcome: not-found
   reason: The directory lists the nation but gives no title for its leader's office, or gives another office's.
-next_steps: 'The nation''s own website: a government, council or constitution page. Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://www.aleut.com
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: found
+  reason: Read 8 pages (home, government, council, election, court and constitution pages); kept 2 facts whose quoted words were found on the page.
+  records:
+  - pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-website-service-areas-governance
+  - pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-website-tribal-council
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

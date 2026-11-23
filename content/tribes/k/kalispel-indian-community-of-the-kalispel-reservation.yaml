@@ -196,6 +196,38 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
 governance:
+- aspect: governing-body
+  value: Kalispel Business Council
+  quote: The Kalispel Business Council, consisting of five Tribal members, is a self-governing entity which oversees services, programs, business endeavors and is the policy making body of the Tribe with legislative authority.
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Kalispel Business Council, consisting of five Tribal members,
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
+- aspect: governing-body-selection
+  value: Elected by tribal membership
+  quote: Council members are democratically elected by the tribal membership and serve three-year terms.
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: Council members are democratically elected by the tribal membership and serve three-year terms.
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -204,6 +236,14 @@ governance:
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Kalispel Tribal Court
+  quote: The mission of the Kalispel Tribal Court is to cultivate a Tribal Court System
+  source: kalispel-indian-community-of-the-kalispel-reservation-website-our-government-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages call the governing body the Kalispel Business Council while staff titles say Business Committee, and some pages are on the dev.kalispeltribe.com subdomain.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -324,25 +364,20 @@ dispute_resolution:
   forums:
   - kind: other
     name: Traditional Peacemakers Panel
-    description: A panel named in the civil actions chapter that may allow alternative service, decides
-      tolling questions, and in execution of judgments orders the judgment debtor to appear, determines
-      available property and orders seizure.
-    legal_basis: Kalispel Law and Order Code, Chapter 3 – Civil Actions, Sections 3-1, 3-5.01, 3-21 (Execution
-      of Judgments)
+    description: A panel named in the civil actions chapter that may allow alternative service, decides tolling questions, and in execution of judgments orders the judgment debtor to appear, determines available property and orders seizure.
+    legal_basis: Kalispel Law and Order Code, Chapter 3 – Civil Actions, Sections 3-1, 3-5.01, 3-21 (Execution of Judgments)
     case_types:
     - civil
     participation: required
     relationship_to_court: Functions within the Tribal Court's civil process as described in Chapter 3.
-    enforcement: Orders seizure and public sale of a judgment debtor's property; failure to appear may
-      be deemed contempt.
+    enforcement: Orders seizure and public sale of a judgment debtor's property; failure to appear may be deemed contempt.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kalispel-Chapter-3-Civil-Actions-4.9.2025.pdf
     source: kalispel-law-and-order-code-chapter-3-civil-actions
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '2025-04-09'
     locator: Sections 3-1.04, 3-5.01, 3-21.01-3-21.03
-    note: Kind 'other' because the chapter shows the panel acting in an adjudicative and enforcement role
-      rather than as a consensual forum; the chapter reviewed does not define the panel's composition.
+    note: Read in full on 2026-11-23 (Law and Order Code of the Kalispel Indian Community, Chapter 3 - Civil Actions (page footers 11.21.2017; cites Resolutions 2007-51, 2008-39)). Kind 'other' because the chapter shows the panel acting in an adjudicative and enforcement role rather than as a consensual forum; the chapter reviewed does not define the panel's composition. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 184.
   provisions:
   - kind: arbitration
     title: CHAPTER 22 - ARBITRATION CODE
@@ -639,6 +674,27 @@ gaming:
       of the Kalispel Reservation". Facilities as machine-extracted from the report text (verify): Kalispel
       Casino; Northern Quest Resort & Casino. Name extracted from the PDF by the page-fetch tool and matched
       to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-03
+    date: '2008-04-30'
+    link: https://www.nigc.gov?wpdmdl=8048&ind=8070
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-03
+    note: The list titles the action “Kalispel Tribe of Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-03
+    date: '2008-05-27'
+    link: https://www.nigc.gov?wpdmdl=8043&ind=8054
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-03
+    note: The list titles the action “Kalispel Tribe of Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -666,6 +722,25 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: WA
+  county: Pend Oreille County
+  court: Superior Court for Pend Oreille County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Pend Oreille County holds 96% of the land of Kalispel Reservation (Census GEOID 1735), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WA
+  county: Spokane County
+  court: Superior Court for Spokane County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Spokane County holds 4% of the land of Kalispel Reservation (Census GEOID 1735), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Kalispel Reservation, Washington
   method: executive-order

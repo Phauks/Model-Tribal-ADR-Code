@@ -22,6 +22,17 @@ declare global {
 			session: ActiveSession | undefined;
 			/** Why a permission check refused this request, for the activity log (src/hooks.server.ts). */
 			refused: string | undefined;
+			/**
+			 * A session that has passed the first step of sign-in but not yet the
+			 * second (src/lib/server/two-step.ts). It reaches only /sign-in/two-step.
+			 */
+			waitingSession: ActiveSession | undefined;
+			/**
+			 * Set when the person's role needs two-step sign-in and they have not
+			 * set it up: the workspace stays closed until they do
+			 * (src/lib/server/workspace.ts, requirePerson).
+			 */
+			twoStepNeeded: boolean;
 		}
 		// interface PageData {}
 		// interface PageState {}
@@ -35,6 +46,10 @@ declare global {
 	interface WorkerEnvironment {
 		database: D1Database;
 		sourceDocuments: R2Bucket;
+		/** The built site's own files, set by @sveltejs/adapter-cloudflare (the ZIP downloads read the copy lists from it). */
+		ASSETS?: { fetch(request: Request | string): Promise<Response> };
+		/** The source library's own database (src/lib/server/source-library.ts, decision record 0051). */
+		sourceLibrary?: D1Database;
 		requestFormLimit?: RateLimit;
 		workspaceChangeLimit?: RateLimit;
 		signInLimit?: RateLimit;
@@ -81,6 +96,14 @@ declare global {
 		/** Secret: the mailbox's app password. Set as a Secret in the dashboard. */
 		OUTREACH_SMTP_PASSWORD?: string;
 		/**
+		 * The secret key every password hash also goes through
+		 * (src/lib/server/sign-in-secrets.ts, passwordHash). A Secret in the
+		 * Cloudflare dashboard, at least 32 random characters, never in GitHub.
+		 * Once set it must never be removed or changed, or passwords made with
+		 * it stop working.
+		 */
+		PASSWORD_KEY?: string;
+		/**
 		 * Printed copies (docs/book-orders.md). Ordering stays off unless
 		 * BOOK_ORDERS is "test" (Stripe test keys and Lulu's sandbox only) or
 		 * "live"; the keys and secrets are set in the Cloudflare dashboard.
@@ -98,6 +121,26 @@ declare global {
 		LULU_CLIENT_SECRET?: string;
 		STRIPE_SECRET_KEY?: string;
 		STRIPE_WEBHOOK_SECRET?: string;
+		/**
+		 * Sponsor gifts (docs/sponsorship.md). Off unless SPONSOR_GIFTS is
+		 * "test" (a Stripe test key only) or "live" (a live key, and
+		 * SPONSOR_GIFTS_RECEIVER naming who receives the money).
+		 */
+		SPONSOR_GIFTS?: string;
+		/** The signing secret of the Stripe webhook endpoint at /sponsorship/payment-webhook. */
+		STRIPE_SPONSOR_WEBHOOK_SECRET?: string;
+		/** Who receives sponsors' gifts, as the gift form names them. */
+		SPONSOR_GIFTS_RECEIVER?: string;
+		/**
+		 * The events video room on Cloudflare RealtimeKit (site/COLLABORATION.md,
+		 * "The video room"). The room stays off until all three are set, as
+		 * Secrets in the dashboard so a deploy never clears them: the Cloudflare
+		 * account's id, the RealtimeKit app's id, and an API token with the
+		 * Realtime permission.
+		 */
+		VIDEO_ROOM_ACCOUNT?: string;
+		VIDEO_ROOM_APPLICATION?: string;
+		VIDEO_ROOM_TOKEN?: string;
 	}
 }
 

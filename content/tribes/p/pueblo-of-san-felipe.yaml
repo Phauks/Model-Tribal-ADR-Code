@@ -194,6 +194,30 @@ indian_health_service:
   locator: Direct Service Tribes by IHS Area > Albuquerque Area
   note: Listed as "Pueblo of San Felipe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
+- aspect: form
+  value: Traditional form of government
+  quote: The Pueblo of San Felipe is a sovereign tribe with a traditional form of government
+  source: pueblo-of-san-felipe-website-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Governor serves as executive officer of the Pueblo and is tasked at the executive of laws and orders enacted by the Tribal Council.
+  source: pueblo-of-san-felipe-website-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: Appointed on an annual basis, the Governor serves as the head of the tribal government along with the Lieutenant Governor.
+  source: pueblo-of-san-felipe-website-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -202,6 +226,22 @@ governance:
   as_of: '2026-11-20'
   locator: Pueblo of San Felipe, New Mexico
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Appointed annually
+  quote: Appointed on an annual basis
+  source: pueblo-of-san-felipe-website-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Traditional and Contemporary Tribal Courts
+  quote: it exercises its judicial authority through a two court system, the first being a traditional Tribal Court, in which the Governor of the Pueblo acts as its Chief Judge
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 representatives:
 - office: Governor
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -443,6 +483,17 @@ gaming:
     locator: table row 208, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 208 lists the nation
       as "Pueblo of San Felipe".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-04-04
+    date: '2004-08-11'
+    link: https://www.nigc.gov?wpdmdl=8227&ind=8238
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-04-04
+    note: The list titles the action “San Felipe Pueblo” and gives its type as NOV.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -465,6 +516,37 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+court_practice:
+- kind: court-rules
+  title: Tribal Court (rules of procedure statement)
+  court: Pueblo of San Felipe Contemporary Tribal Court
+  link: https://sfpueblo.com/tribal-programs/tribal-court/
+  detail: Court page states it has adopted separate rules of procedure for civil and criminal proceedings and that copies are on the website with the Judicial Code.
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Court description
+  note: 'The source reads: “has adopted two separate rules of procedure for process in Civil and Criminal proceedings”. Rules documents not opened.'
+- kind: forms
+  title: Civil Matters Forms for the Pro Se Litigant
+  court: Pueblo of San Felipe Contemporary Tribal Court
+  link: https://sfpueblo.com/wp-content/uploads/2025/11/CIVIL-PRO-SE-PACKAGE.pdf
+  detail: Court page links a civil pro se package, a Petition for Order of Protection From Domestic Abuse and Notice of Change of Name forms.
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Forms list
+  note: PDF not opened.
+nearby_state_courts:
+- state: NM
+  county: Sandoval County
+  court: District Court for Sandoval County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Sandoval County holds 100% of the land of San Felipe Pueblo (Census GEOID 3400), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Pueblo of San Felipe land grant, New Mexico
   method: statute

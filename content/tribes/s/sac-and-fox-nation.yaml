@@ -257,29 +257,13 @@ governance:
     version: 1991-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
 - aspect: governing-body
-  value: Governing Council
-  quote: The Supreme Governing body of the Sac and Fox Nation shall be the Governing Council, having all the powers herein delegated to it by this constitution.
-  source: constitution-sac-and-fox-nation-1991-text
-  confidence: medium
-  verification: read-in-full
-  as_of: '1991-12-28'
-  locator: Article II, Section 1
-  document_version:
-    document: sac-and-fox-nation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
-- aspect: governing-body
   value: Business Committee
-  quote: There shall be a Business Committee which shall consist of the Principal Chief, Second Chief, Secretary, Treasurer, and one (1) Committee member who shall be elected by secret ballot.
-  source: constitution-sac-and-fox-nation-1991-text
-  confidence: medium
+  quote: The administrative staff aids the elected Business Committee in operating efficiently and effectively over a wide range of responsibilities.
+  source: sac-and-fox-nation-about-council
+  confidence: high
   verification: read-in-full
-  as_of: '1991-12-28'
-  locator: Article III, Section 1
-  document_version:
-    document: sac-and-fox-nation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is linked from the Council page but is not among the saved pages; page 10 is the 2008 federal corporate charter of Sac and Fox Nation, Inc., so its facts come from that charter only.'
 - aspect: governing-body-size
   value: 5 members
   quote: shall consist of the Principal Chief, Second Chief, Secretary, Treasurer, and one (1) Committee member who shall be
@@ -293,17 +277,13 @@ governance:
     version: 1991-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
 - aspect: governing-body-selection
-  value: Elected in regular elections
-  quote: Regular elections of members of the Business Committee and members of the Grievance Committee shall be held in each odd-numbered year
-  source: constitution-sac-and-fox-nation-1991-text
-  confidence: medium
+  value: Elected
+  quote: the elected Business Committee
+  source: sac-and-fox-nation-about-council
+  confidence: high
   verification: read-in-full
-  as_of: '1991-12-28'
-  locator: Article VI, Section 5
-  document_version:
-    document: sac-and-fox-nation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is linked from the Council page but is not among the saved pages; page 10 is the 2008 federal corporate charter of Sac and Fox Nation, Inc., so its facts come from that charter only.'
 - aspect: governing-body-term
   value: 4 years
   quote: Thereafter, each member of the Business Committee shall be elected to a four (4) year term of office
@@ -397,17 +377,13 @@ governance:
     version: 1991-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
 - aspect: judiciary
-  value: Supreme Court of five Justices and inferior courts
-  quote: one Supreme Court of the Sac and Fox Nation consisting of five (5) Justices
-  source: constitution-sac-and-fox-nation-1991-text
-  confidence: medium
+  value: Tribal Court
+  quote: As an independent branch of tribal government, the Court upholds the laws and constitutional authority of the Nation
+  source: sac-and-fox-nation-website-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1991-12-28'
-  locator: Article V, Section 1
-  document_version:
-    document: sac-and-fox-nation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is linked from the Council page but is not among the saved pages; page 10 is the 2008 federal corporate charter of Sac and Fox Nation, Inc., so its facts come from that charter only.'
 - aspect: judicial-selection
   value: Selected by Business Committee, confirmed by Governing Council
   quote: The Justices and Judges of the Sac and Fox Nation shall be selected by the Business Committee and confirmed by the Governing Council
@@ -445,29 +421,23 @@ governance:
     version: 1991-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
 - aspect: amendment
-  value: Majority vote of adult members in referendum, after Secretary approval
-  quote: and if approved by the Secretary of the Interior, shall be submitted to a referendum vote of the adult members of the tribe
-  source: constitution-sac-and-fox-nation-1991-text
+  value: Business Committee resolution, Secretary approval
+  quote: may be proposed by resolution of the Business Committee. Such amendments shall be effective
+  source: sac-and-fox-nation-website-wp-content-uploads-2021-01-fcsfn08-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1991-12-28'
-  locator: Article XI
-  document_version:
-    document: sac-and-fox-nation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
+  as_of: '2026-11-23'
+  locator: Article VII
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution is linked from the Council page but is not among the saved pages; page 10 is the 2008 federal corporate charter of Sac and Fox Nation, Inc., so its facts come from that charter only.'
 - aspect: secretarial-approval
   value: Required for amendments
-  quote: and if approved by the Secretary of the Interior, shall be submitted to a referendum vote of the adult members of the tribe
-  source: constitution-sac-and-fox-nation-1991-text
+  quote: upon approval by the Secretary of the Interior or his authorized representative.
+  source: sac-and-fox-nation-website-wp-content-uploads-2021-01-fcsfn08-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1991-12-28'
-  locator: Article XI
-  document_version:
-    document: sac-and-fox-nation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
+  as_of: '2026-11-23'
+  locator: Article VII
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution is linked from the Council page but is not among the saved pages; page 10 is the 2008 federal corporate charter of Sac and Fox Nation, Inc., so its facts come from that charter only.'
 - aspect: recall-and-removal
   value: Removal by two-thirds vote of Governing Council after hearing
   quote: The Governing Council shall have power, by a two-thirds (2/3) majority vote by secret ballot taken after giving the accused a hearing, to remove him from office.
@@ -481,17 +451,14 @@ governance:
     version: 1991-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
 - aspect: other
-  value: Grievance Committee of 3 members elected by secret ballot
-  quote: There shall be a Grievance Committee which shall consist of three (3) members of the Governing Council who shall be elected by secret ballot.
-  source: constitution-sac-and-fox-nation-1991-text
+  value: Constitution approved June 19, 1987
+  quote: Constitution and Charter approved by the Secretary of the Interior on the 19th day of June, 1987,
+  source: sac-and-fox-nation-website-wp-content-uploads-2021-01-fcsfn08-pdf
   confidence: medium
   verification: read-in-full
-  as_of: '1991-12-28'
-  locator: Article IV, Section 1
-  document_version:
-    document: sac-and-fox-nation-constitution
-    version: 1991-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1987 constitution with Amendment III (1991, amending Article III, Section 2) and a proposed Amendment 1A page appended; the batch label says 1991.'
+  as_of: '2026-11-23'
+  locator: Recitals
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution is linked from the Council page but is not among the saved pages; page 10 is the 2008 federal corporate charter of Sac and Fox Nation, Inc., so its facts come from that charter only.'
 representatives:
 - office: Principal Chief
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -749,6 +716,34 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Paragraph 3
   note: 'The source reads: “the City of Stroud agrees to issue Peace Officer of Police”. Month and year read from a scanned entry date ("August 1991"); the copy bears an Oklahoma Secretary of State filing stamp of April 8, 1992. The roster match is by the agreement title "Sac and Fox Nation" and Oklahoma location. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: OK
+  county: Lincoln County
+  court: District Court for Lincoln County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Lincoln County holds 73% of the land of Sac and Fox OTSA (Census GEOID 5820), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Payne County
+  court: District Court for Payne County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Payne County holds 15% of the land of Sac and Fox OTSA (Census GEOID 5820), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Pottawatomie County
+  court: District Court for Pottawatomie County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pottawatomie County holds 12% of the land of Sac and Fox OTSA (Census GEOID 5820), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1789
   signed: '1789-01-09'

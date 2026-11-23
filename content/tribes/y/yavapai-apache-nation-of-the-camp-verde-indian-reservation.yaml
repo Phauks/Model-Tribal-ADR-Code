@@ -737,6 +737,37 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+court_practice:
+- kind: court-rules
+  title: Rules of Civil Procedure
+  court: Yavapai-Apache Nation Tribal Court
+  link: https://yavapai-apache.org/documents/rules-of-civil-procedure/
+  detail: Listed among codes on the Tribal Court page, with Judicial Code and Professional Rules of Conduct.
+  source: yavapai-apache-nation-tribal-court-bar-admission-court-rules
+  confidence: high
+  verification: title-only
+  locator: codes list
+  note: Page not opened.
+- kind: bar-admission
+  title: 2025 Practitioner List
+  court: Yavapai-Apache Nation Tribal Court
+  link: https://yavapai-apache.org/documents/practitioner-list-2024/
+  detail: Tribal Court page lists a 2025 Practitioner List and Professional Rules of Conduct.
+  source: yavapai-apache-nation-tribal-court-bar-admission-court-rules
+  confidence: high
+  verification: title-only
+  locator: document list
+  note: Page not opened.
+nearby_state_courts:
+- state: AZ
+  county: Yavapai County
+  court: Superior Court for Yavapai County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Yavapai County holds 100% of the land of Yavapai-Apache Nation Reservation (Census GEOID 4708), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

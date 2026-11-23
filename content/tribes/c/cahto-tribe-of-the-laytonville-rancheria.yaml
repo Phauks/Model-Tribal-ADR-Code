@@ -422,6 +422,27 @@ gaming:
     locator: table row 29, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 29 lists the nation
       as "Cahto Indian Tribe of the Laytonville Rancheria". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-05
+    date: '2009-02-03'
+    link: https://www.nigc.gov?wpdmdl=7922&ind=7944
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-05
+    note: The list titles the action “Cahto Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-05
+    date: '2009-03-02'
+    link: https://www.nigc.gov?wpdmdl=7914&ind=7925
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-05
+    note: The list titles the action “Cahto Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -448,6 +469,16 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+nearby_state_courts:
+- state: CA
+  county: Mendocino County
+  court: Superior Court for Mendocino County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Mendocino County holds 100% of the land of Laytonville Rancheria (Census GEOID 1925), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

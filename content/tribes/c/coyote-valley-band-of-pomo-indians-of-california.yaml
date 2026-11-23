@@ -559,6 +559,78 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Coyote Valley Band of Pomo
       Indians". Facilities as machine-extracted from the report text (verify): Coyote Valley Mini Casino;
       Coyote Valley Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Sho-Ka-Wah Casino Site, Mendocino County, CA
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '1998-09-02'
+    link: https://www.nigc.gov?wpdmdl=2495&ind=2497
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Coyote Valley Band of Pomo Indians, 1998-09-02
+    note: The list names the tribe as “Coyote Valley Band of Pomo Indians”.
+  - parcel: Pine Crest Parcel, Redwood Valley, Mendocino County, CA
+    legal_theory: Contiguous to Reservation
+    accepted: true
+    date: '2017-10-30'
+    link: https://www.nigc.gov?wpdmdl=2673&ind=2674
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Coyote Valley Band of Pomo Indians, 2017-10-30
+    note: The list names the tribe as “Coyote Valley Band of Pomo Indians”.
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-01-01
+    date: '2001-05-18'
+    link: https://www.nigc.gov?wpdmdl=8277&ind=8289
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-01-01
+    note: The list titles the action “Coyote Valley Band of Pomo Indians” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-04-01 / TCO-04-01
+    date: '2004-06-04'
+    link: https://www.nigc.gov?wpdmdl=8232&ind=8243
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-04-01 / TCO-04-01
+    note: The list titles the action “Coyote Valley Band of Pomo Indians” and gives its type as NOV.
+  - kinds:
+    - closure-order
+    tracking_number: CO-04-01
+    date: '2004-06-10'
+    link: https://www.nigc.gov?wpdmdl=8230&ind=8241
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-04-01
+    note: The list titles the action “Coyote Valley Band of Pomo Indians” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-02
+    date: '2006-01-18'
+    link: https://www.nigc.gov?wpdmdl=8133&ind=8175
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-02
+    note: The list titles the action “Coyote Valley Band of Pomo Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-02
+    date: '2006-03-29'
+    link: https://www.nigc.gov?wpdmdl=12971&ind=12972
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-02
+    note: The list titles the action “Coyote Valley Band of Pomo Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -585,6 +657,16 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Mendocino County
+  court: Superior Court for Mendocino County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Mendocino County holds 100% of the land of Coyote Valley Reservation (Census GEOID 0825), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

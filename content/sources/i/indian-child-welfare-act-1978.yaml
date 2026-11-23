@@ -29,6 +29,25 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: govinfo
+    label: "GovInfo"
+    access: official
+    link: https://www.govinfo.gov/link/statute/92/3069
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=92%20Stat.%203069
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=92%20Stat.%203069
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Indian_Child_Welfare_Act
 rights:
   status: no-permission-needed
   basis: us-government-work

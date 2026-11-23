@@ -752,6 +752,37 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Winnebago Tribe of Nebraska". Name
       extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-25
+    date: '2008-11-04'
+    link: https://www.nigc.gov?wpdmdl=7962&ind=7973
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-25
+    note: The list titles the action “Winnebago Tribe of Nebraska” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-08-25
+    date: '2008-12-15'
+    link: https://www.nigc.gov?wpdmdl=7955&ind=7966
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-08-25
+    note: The list titles the action “Winnebago Tribe of Nebraska” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-25
+    date: '2009-01-14'
+    link: https://www.nigc.gov?wpdmdl=7941&ind=7952
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-25
+    note: The list titles the action “Winnebago Tribe of Nebraska” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -829,6 +860,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Title page
   note: 'The source reads: “AND THE WINNEBAGO TRIBE OF NEBR, SKA”. Year read from a received stamp on the scanned title page ("2002"), which is partly illegible; the quote reproduces a character-recognition error in "NEBRASKA". The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: NE
+  county: Thurston County
+  court: District Court for Thurston County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Thurston County holds 97% of the land of Winnebago Reservation (Census GEOID 4625), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NE
+  county: Dixon County
+  court: District Court for Dixon County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Dixon County holds 3% of the land of Winnebago Reservation (Census GEOID 4625), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Winnebago, 1816
   signed: '1816-06-03'

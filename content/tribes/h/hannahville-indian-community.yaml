@@ -600,6 +600,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section on commissions, paragraph B
   note: 'The source reads: “The County Sheriff may without undue delay commission as a Menominee County Deputy each law enforcement officer so named”. Text states "This Agreement dated: January 01, 2001". The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: MI
+  county: Menominee County
+  court: Circuit Court for Menominee County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Menominee County holds 97% of the land of Hannahville Indian Community (Census GEOID 1410), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Delta County
+  court: Circuit Court for Delta County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Delta County holds 3% of the land of Hannahville Indian Community (Census GEOID 1410), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1789
   signed: '1789-01-09'

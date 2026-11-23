@@ -123,6 +123,9 @@ test("a figure prints as a box with its caption, parts and where to find it", ()
   );
   const video = plain(essay(":::: figure video https://youtu.be/dQw4w9WgXcQ\nA hearing.\n::::"));
   assert.ok(video.startsWith('#figure-block("Video", [Watch it at #link("https://www.youtube.com/watch?v=dQw4w9WgXcQ")])[A hearing.]'), video);
+  const chart = plain(essay(":::: figure chart\nCompacts by state.\n\n| State | Compacts |\n| --- | ---: |\n| California | 70 |\n::::"));
+  assert.ok(chart.startsWith('#figure-block("Chart", none)[Compacts by state.'), chart);
+  assert.ok(chart.includes("California"), chart);
 });
 
 test("with endnotes, a citation prints a numbered mark and the chapter's notes print at its end", () => {

@@ -183,15 +183,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
 - aspect: governing-body
   value: Tribal Council
-  quote: The governing body of the Greenville Rancheria shall, be the
-  source: constitution-greenville-rancheria-undated-text-2
-  confidence: medium
+  quote: The Tribal Council
+  source: greenville-rancheria-website-about
+  confidence: high
   verification: read-in-full
-  locator: Article VI, Section 1
-  document_version:
-    document: greenville-rancheria-constitution
-    version: undated-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is the Tribe''s health-system site, and its only governance content is the Tribal Council roster.'
 - aspect: governing-body-size
   value: 5 members
   quote: The Tribal Council shall consist of a Chairperson, a Vice
@@ -226,16 +223,13 @@ governance:
     version: undated-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
 - aspect: head-of-government
-  value: Chairperson
-  quote: The Chairperson shall exercise the following powers as the chief
-  source: constitution-greenville-rancheria-undated-text-2
-  confidence: medium
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: greenville-rancheria-website-about
+  confidence: high
   verification: read-in-full
-  locator: Article XI, Section 1
-  document_version:
-    document: greenville-rancheria-constitution
-    version: undated-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is the Tribe''s health-system site, and its only governance content is the Tribal Council roster.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -267,16 +261,13 @@ governance:
     version: undated-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
 - aspect: other-officers
-  value: Vice Chairperson, Secretary/Treasurer
-  quote: a Secretary /Treasurer and two (2) Members
-  source: constitution-greenville-rancheria-undated-text-2
-  confidence: medium
+  value: Tribal Vice-Chairwoman
+  quote: Tribal Vice-Chairwoman
+  source: greenville-rancheria-website-about
+  confidence: high
   verification: read-in-full
-  locator: Article VI, Section 2
-  document_version:
-    document: greenville-rancheria-constitution
-    version: undated-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of results is mostly illegible and its date is only partly readable, so the adoption date cannot be confirmed.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The site is the Tribe''s health-system site, and its only governance content is the Tribal Council roster.'
 - aspect: elections
   value: As designated by election ordinance
   quote: Elections shall be held as designated by an election ordinance as
@@ -433,6 +424,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Plumas County
+  court: Superior Court for Plumas County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Plumas County holds 100% of the land of Greenville Rancheria (Census GEOID 1380), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -807,6 +807,78 @@ gaming:
     locator: table row 162, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
       as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Holdenville Site, Hughes County, OK
+    legal_theory: Jurisdiction
+    accepted: true
+    date: '2008-04-23'
+    link: https://www.nigc.gov?wpdmdl=2610&ind=2611
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2008-04-23
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: Kellyville Parcel, Creek City, OK
+    legal_theory: Indian Lands Oklahoma
+    accepted: true
+    date: '2009-01-06'
+    link: https://www.nigc.gov?wpdmdl=2629&ind=2630
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2009-01-06
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: Twin Hills Parcel, Okmulgee County, OK
+    legal_theory: Indian lands Oklahoma
+    accepted: true
+    date: '2009-01-06'
+    link: https://www.nigc.gov?wpdmdl=2627&ind=2628
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2009-01-06
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: Okmulgee County, OK
+    legal_theory: Within Boundaries of Reservation / Indian Lands Oklahoma
+    accepted: true
+    date: '2019-05-14'
+    link: https://www.nigc.gov?wpdmdl=2682&ind=2683
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2019-05-14
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: River Spirit Triangle, Tulsa County, OK
+    legal_theory: Within Boundaries of the Reservation
+    accepted: true
+    date: '2019-05-14'
+    link: https://www.nigc.gov?wpdmdl=2684&ind=2685
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2019-05-14
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-08
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7899&ind=7910
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-08
+    note: The list titles the action “Muscogee Creek Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-08
+    date: '2009-03-23'
+    link: https://www.nigc.gov?wpdmdl=7893&ind=7904
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-08
+    note: The list titles the action “Muscogee Creek Nation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -882,6 +954,137 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: City Addendum, page 1
   note: 'The source reads: “DEPUTATION AGREEMENT FOR LAW ENFORCEMENT IN THE Muscogee Creek Nation”. Date is the Oklahoma Secretary of State filing stamp (August 25, 2020). The addendum adds the City of Tulsa to the nation''s deputation agreement; the main agreement is not in this file. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: court-rules
+  title: Rules of the Muscogee District Court
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/court-rules/
+  detail: Court rules page; rule 1 says new members of the Muscogee (Creek) Nation Bar Association receive a copy of the rules on payment of admission fees. A Word file of the rules is linked (Rules-of-the-MCN-District-Court.docx, uploaded 2024-05).
+  source: muscogee-creek-nation-district-court-court-rules
+  confidence: high
+  verification: read-in-full
+  locator: Court Rules page, Rule 1
+- kind: bar-admission
+  title: Rules of the Muscogee District Court (Rule 1, Bar Association references)
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/court-rules/
+  detail: The rules mention a Muscogee (Creek) Nation Bar Association and admission fees, but this page does not set out an application process or fee amount.
+  source: muscogee-creek-nation-district-court-court-rules
+  confidence: low
+  verification: inferred
+  locator: Rule 1. Official Court Rules
+  note: 'The source reads: “New members of the Muscogee (Creek) Nation Bar Association will be presented a copy of the Rules upon payment of admission fees.”. Only an indirect reference; no admission procedure page found. Confidence set low because it gives no process.'
+- kind: filing-fees
+  title: Fee Schedule
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/fees/
+  detail: Fee schedule listing civil filing fee $84.00, appeal fee $175.00, jury fee $100.00, criminal complaint $84.00, copy fee $1.00 and other fees.
+  source: muscogee-creek-nation-district-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Fees page
+  note: 'The source reads: “FEE SCHEDULE”.'
+- kind: forms
+  title: District Court Forms
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/forms/
+  detail: Forms page lists request and application for court appointed counsel, plea agreement, guardianship, small claims, garnishment, foreign judgment, attorney entry of appearance, and protection order forms.
+  source: muscogee-creek-nation-district-court-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms page
+  note: 'The source reads: “DISTRICT COURT FORMS”.'
+nearby_state_courts:
+- state: OK
+  county: Creek County
+  court: District Court for Creek County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Creek County holds 21% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Okmulgee County
+  court: District Court for Okmulgee County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Okmulgee County holds 15% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Okfuskee County
+  court: District Court for Okfuskee County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Okfuskee County holds 13% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Hughes County
+  court: District Court for Hughes County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Hughes County holds 12% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: McIntosh County
+  court: District Court for McIntosh County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: McIntosh County holds 11% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Wagoner County
+  court: District Court for Wagoner County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Wagoner County holds 10% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Tulsa County
+  court: District Court for Tulsa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Tulsa County holds 8% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Muskogee County
+  court: District Court for Muskogee County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Muskogee County holds 8% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Rogers County
+  court: District Court for Rogers County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Rogers County holds 1% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Seminole County
+  court: District Court for Seminole County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Seminole County holds 100% of the land of Creek/Seminole joint-use OTSA (Census GEOID 5915), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Creeks, 1790
   signed: '1790-08-07'

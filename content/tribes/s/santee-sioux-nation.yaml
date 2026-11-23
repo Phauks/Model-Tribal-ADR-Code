@@ -162,53 +162,53 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Adopted by election under Section 16 of the Indian Reorganization Act
-  quote: accordance with sedion 16 of the Indian Reorganization
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  value: Indian Reorganization Act of 1934
+  quote: The Santee Sioux Nation is federally recognized tribe organized pursuant to the Indian Reorganization Act of 1934 as amended in 1935.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Certification of Adoption
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: governing-body
   value: Tribal Council
-  quote: Stated meetings of the tribal council shall be held
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  quote: The Tribal Council governs under the authority of the Santee Sioux Nation constitution with the powers authorized.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Bylaws, Article IV, Section 1
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: In 2002 the constitution was amended and the council was reduced to eight members consisting of a Chairman, Vice Chairman, Secretary and Treasurer.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: governing-body-selection
-  value: Elected by popular assembly of each voting district
-  quote: Eacll voting district shall, in popular assembly
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  value: Officers elected at large; one member per district
+  quote: Each of the 4 districts has one member. The officers run at large.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Article V, Section 2
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Annually one officer and one district representative are elected for four years. The council terms are staggered in order to maintain stability.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: head-of-government
   value: Chairman
-  quote: The chairman of the tribal council shall preside at all
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  quote: In 2002 the constitution was amended and the council was reduced to eight members consisting of a Chairman, Vice Chairman, Secretary and Treasurer.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Bylaws, Article I, Section 1
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -217,30 +217,30 @@ governance:
   as_of: '2026-11-20'
   locator: Santee Sioux Nation, Nebraska
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large
+  quote: The officers run at large.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: other-officers
-  value: Vice chairman, secretary, treasurer
-  quote: The vice chairman shall preside at all meetings of the
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  value: Vice Chairman, Secretary, Treasurer
+  quote: In 2002 the constitution was amended and the council was reduced to eight members consisting of a Chairman, Vice Chairman, Secretary and Treasurer.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Bylaws, Article I, Section 2
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: elections
-  value: Annually, last Tuesday of September
-  quote: annually .elect one
-  source: constitution-santee-sioux-nation-1936-text-2
-  confidence: medium
+  value: Annually
+  quote: Annually one officer and one district representative are elected for four years.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
   verification: read-in-full
-  as_of: '1936-04-03'
-  locator: Article III, Section 2
-  document_version:
-    document: santee-sioux-nation-constitution
-    version: 1936-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
 - aspect: amendment
   value: Majority vote of qualified voters in an election called by the Secretary
   quote: may be amended by a majority vote
@@ -350,21 +350,18 @@ dispute_resolution:
   forums:
   - kind: elders-council
     name: Forum for Traditional Dispute Resolution
-    description: The Court Administrator is directed to seek the assistance of Santee Sioux Nation elders
-      to establish a traditional forum to provide guidance and assist the Judiciary with cases involving
-      members.
-    legal_basis: Santee Sioux Nation Code, Title I, Chapter 1, Section 19
+    description: The Court Administrator is directed to seek the assistance of Santee Sioux Nation elders to establish a traditional forum to provide guidance and assist the Judiciary with cases involving members.
+    legal_basis: Santee Sioux Nation Judiciary Act of 2000, Title I, Chapter 1, Section 19
     case_types:
     - other
-    relationship_to_court: Assists the Judiciary whenever possible; a written report on its formation
-      was due to the Tribal Council within twelve months of the Act.
-    link: https://www.narf.org/nill/codes/santee_sioux_nation/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: Assists the Judiciary whenever possible; a written report on its formation was due to the Tribal Council within twelve months of the Act.
+    link: https://nill.narf.org/codes/santee_sioux_nation/title1.PDF
+    source: santee-sioux-judiciary-act-2000
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/forum-for-traditional-dispute-resolution-with-elders/
-    note: The provision directs establishment of the forum; whether it is operating was not verified.
+    note: Read in full on 2026-11-23 (Santee Sioux Nation Judiciary Act of 2000, Title I, Chapter 1 (Santee Sioux Nation Tribal Court)). The provision directs establishment of the forum; whether it is operating was not verified. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 476.
   database_listings:
   - title: Forum for Traditional Dispute Resolution with Elders
     citation: Title I, Chapter 1, Section 19
@@ -421,6 +418,37 @@ gaming:
     locator: table row 246, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 246 lists the nation
       as "Santee Sioux Nation".
+  enforcement_actions:
+  - kinds:
+    - closure-order
+    tracking_number: CO-96-01
+    date: '1996-04-25'
+    link: https://www.nigc.gov?wpdmdl=1863&ind=1864
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-96-01
+    note: The list titles the action “Santee Sioux – Dissolution of Closure Order” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-33
+    date: '2009-06-16'
+    link: https://www.nigc.gov?wpdmdl=7805&ind=7816
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-33
+    note: The list titles the action “Santee Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-33
+    date: '2009-07-15'
+    link: https://www.nigc.gov?wpdmdl=7784&ind=7799
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-33
+    note: The list titles the action “Santee Sioux Nation” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: retroceded
@@ -476,6 +504,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.H, Nebraska
   note: 'The source reads: “the Santee Sioux Nation,”. Effective July 1, 2010 through June 30, 2013 per the report, so the term had ended by the report date unless renewed. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: NE
+  county: Knox County
+  court: District Court for Knox County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Knox County holds 100% of the land of Santee Reservation (Census GEOID 3565), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Sauk and Foxes, etc., 1830
   signed: '1830-07-15'

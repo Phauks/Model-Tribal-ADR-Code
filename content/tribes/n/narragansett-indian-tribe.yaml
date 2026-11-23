@@ -181,6 +181,22 @@ indian_health_service:
   locator: Tribally Administered Programs table
   note: Listed as "Narragansett Indian Tribe".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council
+  source: narragansett-indian-tribe-website-history-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and election notices but quote no governing document; the election rules are referred to, not reproduced.'
+- aspect: head-of-government
+  value: Chief Sachem
+  quote: Chief Sachem
+  source: narragansett-indian-tribe-website-history-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and election notices but quote no governing document; the election rules are referred to, not reproduced.'
 - aspect: head-of-government
   value: Chief Sachem
   source: bia-tribal-leaders-directory-2026
@@ -189,6 +205,22 @@ governance:
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Tribal Secretary, Assistant Tribal Secretary, Tribal Treasurer, Assistant Tribal Treasurer, War Chief, Medicine Man, Medicine Woman
+  quote: Tribal Secretary
+  source: narragansett-indian-tribe-website-history-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and election notices but quote no governing document; the election rules are referred to, not reproduced.'
+- aspect: election-authority
+  value: Tribal Election Committee
+  quote: Tribal Election Committee
+  source: narragansett-indian-tribe-website-history-tribal-election-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list officers and election notices but quote no governing document; the election rules are referred to, not reproduced.'
 representatives:
 - office: Chief Sachem
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -281,6 +313,16 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 95-395 § 9, 92 Stat. at 817
   note: 'Applies to "settlement lands"; the research did not research later trust acquisitions. The 1996 amendment (Pub. L. 104-208, § 330, 110 Stat. 3009-227) kept the sentence as § 9(a) and added § 9(b), settlement lands are not "Indian lands" for the Indian Gaming Regulatory Act. 25 U.S.C. § 1708 is "omitted" from the Code. Whether Narragansett''s "civil regulatory" reach holds today was not rechecked beyond the 1994 opinion. Also cites: rhode-island-v-narragansett-indian-tribe-1994, public-law-104-208-section-330.'
+nearby_state_courts:
+- state: RI
+  county: Washington County
+  court: Superior Court for Washington County
+  link: https://www.courts.ri.gov/Courts/SuperiorCourt
+  source: state-trial-court-directory-ri
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Washington County holds 100% of the land of Narragansett Reservation (Census GEOID 2415), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

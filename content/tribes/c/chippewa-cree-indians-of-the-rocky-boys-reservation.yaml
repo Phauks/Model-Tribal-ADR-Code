@@ -483,9 +483,9 @@ dispute_resolution:
   forums:
   - kind: circle-process
     name: Traditional Circle sessions (child support and paternity)
-    description: The domestic relations code refers to Traditional Circle sessions or stipulation conferences
-      coordinated by the Child Support Program, in which in-kind support values may be stipulated.
+    description: The domestic relations code refers to Traditional Circle sessions or stipulation conferences coordinated by the Child Support Program, in which in-kind support values may be stipulated.
     legal_basis: Chippewa Cree Domestic Relations Code, Chapter 6 (Child Support), 6.6
+    link: https://acf.gov/css/training-technical-assistance/tribal-child-support-agency-contacts
     case_types:
     - family
     participation: voluntary
@@ -494,8 +494,7 @@ dispute_resolution:
     verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/traditional-circles-for-child-support/
-    note: NCORJ also lists a related record on traditional circles for paternity cases. Participation
-      recorded as voluntary because values are 'stipulated'; the excerpt does not otherwise state it.
+    note: 'NCORJ also lists a related record on traditional circles for paternity cases. Participation recorded as voluntary because values are ''stipulated''; the excerpt does not otherwise state it. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 49.'
   database_listings:
   - title: Traditional Circles for Child Support
     citation: DOMESTIC RELATIONS
@@ -613,6 +612,67 @@ gaming:
       Rocky Boy''s Reservation, Montana". Facilities as machine-extracted from the report text (verify):
       Northern Winz Casino II; Northern Winz Hotel and Casino. Name extracted from the PDF by the page-fetch
       tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-04
+    date: '2008-05-21'
+    link: https://www.nigc.gov?wpdmdl=8045&ind=8056
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-04
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-04
+    date: '2008-06-24'
+    link: https://www.nigc.gov?wpdmdl=8040&ind=8051
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-04
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-21
+    date: '2009-04-13'
+    link: https://www.nigc.gov?wpdmdl=7871&ind=7883
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-21
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-21
+    date: '2009-05-15'
+    link: https://www.nigc.gov?wpdmdl=7829&ind=7840
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-21
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-31
+    date: '2009-06-04'
+    link: https://www.nigc.gov?wpdmdl=7808&ind=7819
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-31
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-31
+    date: '2009-07-14'
+    link: https://www.nigc.gov?wpdmdl=7785&ind=7800
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-31
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -675,6 +735,25 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table "State and Tribal Tax Agreements"
   note: 'The source reads: “Chippewa Cree Tribe Alcoholic Beverage Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+nearby_state_courts:
+- state: MT
+  county: Hill County
+  court: District Court for Hill County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Hill County holds 70% of the land of Rocky Boy's Reservation (Census GEOID 3205), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Chouteau County
+  court: District Court for Chouteau County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Chouteau County holds 30% of the land of Rocky Boy's Reservation (Census GEOID 3205), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Rocky Boy's Reservation (about 56,035 acres of the former Fort Assinniboine Military Reservation), Montana
   method: statute

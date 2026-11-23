@@ -230,6 +230,46 @@ indian_health_service:
   note: 'The source''s words: "Fallon Pauite-Shoshone Tribe".'
   operator: tribal
 governance:
+- aspect: governing-body
+  value: Fallon Business Council
+  quote: The Tribe has an elected governing body called the Fallon Business Council (FBC).
+  source: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony-website-166-fallon-business-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 (the 2026 election schedule) is a saved image in binary form and could not be read; the constitution linked on page 2 is not among the pages.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The FBC is comprised of a Tribal Chairman, Vice Chairman, Secretary, Treasurer, and three Tribal Council Members
+  source: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony-website-166-fallon-business-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 (the 2026 election schedule) is a saved image in binary form and could not be read; the constitution linked on page 2 is not among the pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Tribe has an elected governing body
+  source: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony-website-166-fallon-business-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 (the 2026 election schedule) is a saved image in binary form and could not be read; the constitution linked on page 2 is not among the pages.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: who serve staggered four-year terms
+  source: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony-website-166-fallon-business-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 (the 2026 election schedule) is a saved image in binary form and could not be read; the constitution linked on page 2 is not among the pages.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: The FBC is comprised of a Tribal Chairman
+  source: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony-website-166-fallon-business-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 (the 2026 election schedule) is a saved image in binary form and could not be read; the constitution linked on page 2 is not among the pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -238,6 +278,30 @@ governance:
   as_of: '2026-11-20'
   locator: Paiute-Shoshone Tribe of the Fallon Reservation and Colony, Nevada
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice Chairman, Secretary, Treasurer, 3 Tribal Council Members
+  quote: a Tribal Chairman, Vice Chairman, Secretary, Treasurer, and three Tribal Council Members
+  source: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony-website-166-fallon-business-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 (the 2026 election schedule) is a saved image in binary form and could not be read; the constitution linked on page 2 is not among the pages.'
+- aspect: election-authority
+  value: Tribal Election Committee
+  quote: Tribal Election Committee
+  source: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony-website-242-tribal-election-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 (the 2026 election schedule) is a saved image in binary form and could not be read; the constitution linked on page 2 is not among the pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: 'The Fallon Paiute-Shoshone Tribal Court hears the following types of cases:'
+  source: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony-website-175-judicial-services-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 (the 2026 election schedule) is a saved image in binary form and could not be read; the constitution linked on page 2 is not among the pages.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -364,6 +428,36 @@ jurisdiction:
   verification: inferred
   locator: 40 Fed. Reg. at 27,501
   note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+court_practice:
+- kind: forms
+  title: Court Forms (Fallon)
+  court: Fallon Paiute-Shoshone Tribal Court
+  link: https://www.fpst.org/244/Court-Forms
+  detail: Page lists the Tribal Court forms currently in use, says a filing fee applies to all new files except temporary orders for protection, and links a list of attorneys and advocates updated 5/2026.
+  source: fallon-paiute-shoshone-tribal-court-forms
+  confidence: high
+  verification: title-only
+  locator: Court Forms
+  note: 'The source reads: “Below are the Tribal Court Forms currently used in the Fallon Tribal Court.”. Forms not opened.'
+nearby_state_courts:
+- state: NV
+  county: Churchill County
+  court: District Court for Churchill County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Churchill County holds 97% of the land of Fallon Paiute-Shoshone Colony (Census GEOID 1070), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NV
+  county: Lyon County
+  court: District Court for Lyon County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Lyon County holds 3% of the land of Fallon Paiute-Shoshone Colony (Census GEOID 1070), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

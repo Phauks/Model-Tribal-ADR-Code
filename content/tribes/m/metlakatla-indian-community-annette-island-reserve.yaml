@@ -247,29 +247,21 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws under Section 16 of the Indian Reorganization Act
-  quote: in accordance with Section 16 of the Indian Reorganization
-  source: constitution-metlakatla-indian-community-annette-island-reserve-1944-text-2
-  confidence: medium
+  value: Constitution and By-Laws approved under the Indian Reorganization Act
+  quote: The MIC’s Annette Islands Reserve (AIR) was established under its Constitution and By-Laws, approved on August 23, 1944, under the Indian Reorganization Act.
+  source: metlakatla-indian-community-website
+  confidence: high
   verification: read-in-full
-  as_of: '1944-12-19'
-  locator: Certification
-  document_version:
-    document: metlakatla-indian-community-annette-island-reserve-constitution
-    version: 1944-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The OCR is heavily garbled; facts are drawn only from legible passages and the 1944 ratification certificate.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members are listed by surname only, so no size is given; the constitution text itself is not on the pages.'
 - aspect: governing-body
-  value: Council
-  quote: a Council consisting of 12 memebers
-  source: constitution-metlakatla-indian-community-annette-island-reserve-1944-text-2
-  confidence: medium
+  value: MIC Tribal Council
+  quote: The MIC Tribal Council conducts the legislative function of the city, approves the budget, plans for capital improvements, approves major land transactions, and more.
+  source: metlakatla-indian-community-website
+  confidence: high
   verification: read-in-full
-  as_of: '1944-12-19'
-  locator: Article III, Section 1
-  document_version:
-    document: metlakatla-indian-community-annette-island-reserve-constitution
-    version: 1944-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The OCR is heavily garbled; facts are drawn only from legible passages and the 1944 ratification certificate.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members are listed by surname only, so no size is given; the constitution text itself is not on the pages.'
 - aspect: governing-body-size
   value: 12 members
   quote: a Council consisting of 12 memebers
@@ -592,6 +584,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Metlakatla Indian Community, Annette
       Island Reservation". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-18-02
+    date: '2018-03-27'
+    link: https://www.nigc.gov?wpdmdl=7702&ind=7713
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-18-02
+    note: The list titles the action “Metlakatla Indian Community” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-18-02
+    date: '2018-05-16'
+    link: https://www.nigc.gov?wpdmdl=3017&ind=3018
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-18-02
+    note: The list titles the action “Metlakatla Indian Community” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: excepted
@@ -626,6 +639,16 @@ jurisdiction:
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
   note: Statute is primary; nation placed in Alaska by the Census Bureau's land areas, so confidence is medium. Cited jointly with us-code-title-28-section-1360. Added on 2026-11-23 where the profile had no fact for this state (for example a band split out of a combined record).
+nearby_state_courts:
+- state: AK
+  county: Prince of Wales-Hyder Census Area
+  court: Superior Court for Prince of Wales-Hyder Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Prince of Wales-Hyder Census Area holds 100% of the land of Annette Island Reserve (Census GEOID 0110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corporation
   relation: alaska-native-claims-settlement-act-regional-corporation

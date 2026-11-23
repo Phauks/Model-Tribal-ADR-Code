@@ -202,16 +202,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Signature and date block is partly illegible in the scan.'
 - aspect: governing-body
   value: Tribal Council
-  quote: The governing body of the Mooretown Rancheria shall be the Tribal
-  source: constitution-mooretown-rancheria-of-maidu-indians-of-california-1999-text
-  confidence: medium
+  quote: Under the general guidance of the Tribal Council, this department conducts the business and administrative functions for the Rancheria
+  source: mooretown-rancheria-of-maidu-indians-of-california-website-departments-tribal-administration-index-html
+  confidence: high
   verification: read-in-full
-  as_of: '1999-01-02'
-  locator: Article III, Section 2
-  document_version:
-    document: mooretown-rancheria-of-maidu-indians-of-california-constitution
-    version: 1999-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Signature and date block is partly illegible in the scan.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Council page is only a heading; the one council fact is a sentence about the administration department.'
 - aspect: governing-body-size
   value: 7 members
   quote: The Tribal Council shall consist of seven (7) lineal voting members
@@ -471,6 +467,17 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Mooretown Rancheria of Maidu Indians
       of California". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Feather Falls Site, Butte County, CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2007-10-25'
+    link: https://www.nigc.gov?wpdmdl=2602&ind=2603
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Mooretown Rancheria of Maidu Indians of California, 2007-10-25
+    note: The list names the tribe as “Mooretown Rancheria of Maidu Indians of California”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -497,6 +504,16 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Butte County
+  court: Superior Court for Butte County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Butte County holds 100% of the land of Mooretown Rancheria (Census GEOID 2340), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

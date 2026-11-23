@@ -184,6 +184,55 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The United Houma Nation is governed by an 11 member tribal council elected to serve distinct tribal communities within the 6-parish UHN service area
+  source: unitedhoumanation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page links to a constitution that is not among the saved pages.'
+- aspect: governing-body-size
+  value: 11 members
+  quote: The United Houma Nation is governed by an 11 member tribal council
+  source: unitedhoumanation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page links to a constitution that is not among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected to serve distinct tribal communities
+  quote: elected to serve distinct tribal communities within the 6-parish UHN service area
+  source: unitedhoumanation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page links to a constitution that is not among the saved pages.'
+- aspect: head-of-government
+  value: Principal Chief
+  quote: as well as a Principal Chief elected by the entire Tribe.
+  source: unitedhoumanation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page links to a constitution that is not among the saved pages.'
+- aspect: head-of-government-selection
+  value: Elected by the entire Tribe
+  quote: as well as a Principal Chief elected by the entire Tribe.
+  source: unitedhoumanation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page links to a constitution that is not among the saved pages.'
+- aspect: other
+  value: Principal Chief chairs Tribal Council and votes in a tie
+  quote: chair meetings of the Tribal Council and vote in the event of a tie
+  source: unitedhoumanation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page links to a constitution that is not among the saved pages.'
 representatives:
 - office: Principal Chief
   listed_by: Louisiana Governor's Office of Indian Affairs, Federally and State-Recognized Tribes

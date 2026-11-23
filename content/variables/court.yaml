@@ -1,0 +1,66 @@
+group: court
+variables:
+  name:
+    description: The court's name as used in its own rules.
+    model: "[Name of Tribal Court]"
+    example: Pyramid Lake Tribal Court
+  address:
+    description: The clerk's street address, phone and opening hours, printed on a summons or notice.
+    model: "[court address, phone and hours]"
+  answer_days:
+    description: Days a defendant has to answer a civil complaint after service. The forms read give 20 to 30.
+    model: "[number]"
+    example: "20"
+  service_rule:
+    description: One or two sentences on who serves court papers and how (Tribal police, certified mail, a non-party adult).
+    model: "[The court's rule on who serves papers and how.]"
+    example: Tribal police serve papers inside the reservation. Outside it, the clerk sends them by certified mail.
+  objection_days:
+    description: Days the other party has to object after notice of a petition to recognize an order from another court.
+    model: "[number]"
+    example: "20"
+  emergency_hearing_days:
+    description: Days within which a hearing follows an emergency protection order made without notice.
+    model: "[number]"
+    example: "14"
+  child_consent_age:
+    description: Age at which a child's own view or nomination is asked for in guardianship and name change cases.
+    model: "[age]"
+    example: "14"
+  publication_rule:
+    description: One or two sentences on whether and where a name change must be published, and who pays.
+    model: "[The court's rule on publishing notice of a name change.]"
+    example: The court will publish notice of your petition once in the tribal newspaper. You pay the cost.
+  fee_civil:
+    description: Filing fee for a civil complaint, with any service fee.
+    model: "[amount]"
+    example: "$30, and $15 for service inside the reservation"
+  fee_small_claims:
+    description: Filing fee for a small claim.
+    model: "[amount]"
+    example: "$20"
+  fee_foreign_order:
+    description: Filing fee for a petition to recognize an order from another court.
+    model: "[amount]"
+  fee_guardianship:
+    description: Filing fee for a guardianship petition.
+    model: "[amount]"
+  fee_name_change:
+    description: Filing fee for a name change petition.
+    model: "[amount]"
+  fee_payment_days:
+    description: Days a person has to pay the fee after a fee waiver is denied.
+    model: "[number]"
+    example: "10"
+  small_claims_limit:
+    description: The most a small claim may ask for.
+    model: "[dollar limit]"
+    example: "$5,000"
+  small_claims_notice_days:
+    description: Least number of days between service of a small claim and the hearing.
+    model: "[number]"
+    example: "7"
+  small_claims_representation:
+    description: One sentence on whether lawyers or lay advocates may speak for a party in small claims.
+    model: "[The court's rule on lawyers and advocates in small claims.]"
+    example: Lawyers may not appear. A family member may speak for you at no charge.

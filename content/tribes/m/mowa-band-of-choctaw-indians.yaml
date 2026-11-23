@@ -188,6 +188,31 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The MOWA Band of Choctaw Indians Band is governed by a Tribal Council, which oversees the community's affairs
+  source: mowa-band-of-choctaw-indians-website-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  quote: Chief of the MOWA Choctaw Nation
+  source: mowa-band-of-choctaw-indians-website-chahta-corner
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chariman, Tribal Secretary, Treasurer
+  quote: Tribal Secretary
+  source: mowa-band-of-choctaw-indians-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 representatives:
 - office: Chief
   listed_by: Alabama Indian Affairs Commission, Tribes Recognized by the State of Alabama

@@ -100,13 +100,24 @@ A team edits its nation's page at `/workspace/nation-teams/<nation>/edit` (decis
 2. `/nations/<id>/changes.json` returns the HTML for each place (`src/lib/server/nation-page-overlay.ts`), with everything the nation typed escaped and links limited to https.
 3. `tools/add-nation-page-changes.mjs`, the last step of `npm run build`, wraps the built Worker with `tools/nation-page-changes-worker.js` and sets `assets.run_worker_first` to `/nations/*`. For a nation's page it reads `changes.json` and fills the places with `HTMLRewriter` as the page streams out, with an ETag that changes when a different version goes live. Pages of nations with no changes pass through untouched.
 4. After a move within the site the page comes from the build, so it fills the places itself from `changes.json` (`src/lib/nation-page-slots.ts`).
-5. Hiding works by a style in the top place, so a hidden part disappears at once; the project removes it from the site's files when it follows up. The offline copy and the print edition show the cited record until the nightly copy into git (stage 3).
+5. Hiding works by a style in the top place, so a hidden part disappears at once; the project removes it from the site's files when it follows up. A reader's device always asks for a nation's page, its `changes.json` and its pictures again when it is online, and never saves a nation's pictures (`src/service-worker/index.ts`), so a hidden part or an undone change is gone the next time the page is opened; the saved copy answers only offline. Nations' changes stay in the database and are never copied into git, whose history is public and permanent, so a nation can always take its words back (the lead author, Nov. 23, 2026). The print edition shows the cited records only.
 
 **Claimed or unclaimed, like a map listing** (the lead author, Nov. 23, 2026). A nation's page says "Unclaimed" until someone the project confirmed with the nation's office has a current place on its team (`claimOf` in `src/lib/server/nation-teams.ts`); then it says "Claimed by the nation" and when. The build always writes the "Unclaimed" line (marked `data-build-status`) with a "Claim this page" link to `/profile/nation-team?nation=<id>`; for a claimed page the top place hides it and shows the claimed line instead.
 
 **Problem reports go to the team too.** A report about a claimed page that asks for a correction, asks a question or offers material appears for the nation's team on its edit page, with where and what was reported but never who sent it; requests to restrict or remove material stay with the project. An editor answers "Fixed on the page" or "No change needed", with an optional note, which goes into the report's own history (table `nation_team_report_answers`). The project still sees every report, and its Requests list shows the team's part: with the team, the team's answer, or no answer in 7 days, when the project steps in (`src/lib/nation-team-reports.ts`). The report form tells the sender this.
 
-Still to build (stage 3): the project's review queue (mark read, undo, pause, suspend), emails to a nation's office about changes, notices to people following the page, and the nightly copy into `content/tribes` with source records. Teams open to nations once the project domain can send email.
+**The project's review** (stage 3). A nation's changes go live without waiting for the project, so the project reads each one afterwards on `/workspace/nation-pages` ("Nations' changes"; permission `review-nation-pages`, held by the lead author and editors), oldest first, within 7 days. The workspace overview counts what waits and what is past 7 days. For each change the reviewer can:
+
+- **Mark read**, leaving it as it is.
+- **Undo** it, with a note. The change is set aside and the page goes back to the version before it; the team's history shows it as "Undone by the project" with the note, and the team cannot put it back by restoring.
+- **Pause and ask.** Publishing for the nation stops until the project resumes it, and the team sees the question at the top of its edit page and answers there. Drafts, cancelling a waiting change and hiding keep working, so a nation can always take something off its page.
+- **Suspend** the person who published it, with everyone they added (the lead author only, as on the team page). Their changes stay until undone.
+
+Reviews and pauses are in `nation_page_reviews` and `nation_page_pauses` (migration 20261123T0438_add_nation_page_review.sql); the rules are in `src/lib/nation-page-review.ts` and the storage in `src/lib/server/nation-page-review.ts`. Every step goes into the sealed activity log under `nation-page/<nation>`.
+
+**In Recent changes.** Each change a nation's team published is listed at `/changes` once it is live, under the nation's page, with the part of the page it changed and the name the team gave on the page, never the words, like every nation page change. The project's undo takes it off the list. The "Who" filter has "Nations' teams" once there is one.
+
+Still to build: emails to a nation's office about changes, and notices to people following the page. Teams open to nations once the project domain can send email.
 
 ## Essays
 
@@ -202,8 +213,17 @@ The "Sign in" link in the masthead of every page, and "Co-author sign-in" in the
    - works once, for 15 minutes, and only the newest one for an address works;
    - stops working after 5 wrong tries;
    - is kept in the database only as a SHA-256 hash, like the link.
-2. **A password, if they chose one.** Anyone signed in can choose a password at `/profile/password`; it is optional. Passwords are stored only as salted PBKDF2-SHA256 hashes with 100,000 iterations, the most Workers allow (Cloudflare, ["Web Crypto"](https://developers.cloudflare.com/workers/runtime-apis/web-crypto/)). The rules follow NIST SP 800-63B: at least 12 characters, any characters, no forced mixing of character types. A wrong password gets the same answer whether or not the address has an account, so the form cannot be used to find out who has signed up. Changing a password signs out every other browser.
-3. **A link from the lead author.** On the People page the lead author gets a one-time sign-in link for each person they invite, to send them personally. It works once, for 7 days, only for someone who has never signed in, and making one is recorded in the activity log. After using it, the person is offered a password.
+2. **A password, if they chose one.** Anyone signed in can choose a password at `/profile/password`; it is optional. The rules follow NIST SP 800-63B-4, section 3.1.1.2, for a password that is the only factor:
+   - at least 15 characters and at most 256, counted as Unicode code points after NFC normalization, with any characters and no forced mixing of character types;
+   - the whole password is refused if it is the person's email address, the name part of it, or a name of this site, compared without spaces, punctuation or capitals; one or two characters repeated are refused too (`src/lib/server/password-checks.ts`);
+   - passwords seen in data breaches are refused. The check uses Have I Been Pwned's Pwned Passwords range service. Only the first five characters of the password's SHA-1 hash leave the Worker, and the answer is padded, so the service never learns the password or whether it was found (Have I Been Pwned, ["API v3: Searching by range"](https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange)). If the service cannot be reached in 4 seconds the password is allowed and the miss is logged.
+
+   Passwords are stored as salted PBKDF2-SHA256 hashes with 600,000 iterations, the number OWASP recommends (OWASP, ["Password Storage Cheat Sheet"](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)). Workers allow at most 100,000 iterations in one call (Cloudflare, ["Web Crypto"](https://developers.cloudflare.com/workers/runtime-apis/web-crypto/)), so the hash is six calls chained, each fed the last one's output. Argon2id, OWASP's first choice, would need WebAssembly compiled at build time, which this project does not have. When the `PASSWORD_KEY` secret is set, the hash then goes through HMAC-SHA256 with that key, so a copy of the database alone is not enough to start guessing (NIST SP 800-63B-4, section 3.1.1.2). Older hashes (100,000 iterations, no key) still work and are upgraded the next time their owner signs in (`password_keyed` in `accounts`).
+
+   A wrong password gets the same answer whether or not the address has an account, so the form cannot be used to find out who has signed up. Wrong passwords are counted for each address, whether or not it has an account (`password_failures`, migration `20261123T0445_harden_password_sign_in.sql`). After 10 in a row, password sign-in for the address pauses for 15 minutes, then twice as long each time, up to a day. After 100 in a row it stays off until the owner signs in with a code or a link and chooses a new password (NIST SP 800-63B-4, section 3.2.2). Codes and links keep working during a pause. A right password, or a new one, clears the count. Wrong current passwords on `/profile/password` count toward the same limit.
+
+   Changing or removing a password needs the current one, except within 10 minutes of signing in with a code or a link, which already proves who the person is. That is how a forgotten password is replaced: "Forgot your password?" (`/sign-in/forgot`) sends a code and then opens the password page. Changing a password signs out every other browser.
+3. **A link from the lead author.** On the People page the lead author gets a one-time sign-in link for each person they invite, to send them personally. It works once, for 7 days, only for someone who has never signed in, and making one is recorded in the activity log. After using it, the person goes straight to the password page, where they can choose one or skip to the workspace.
 4. **Limits.** Each email address may try each step 5 times a minute, and each network address 30 times (`wrangler.jsonc`, `signInLimit` and `signInNetworkLimit`).
 5. **Matching to a person.** After sign-in the site matches the account to a person (`src/lib/server/people.ts`):
    - someone who has signed in before, by their account;
@@ -211,7 +231,7 @@ The "Sign in" link in the masthead of every page, and "Co-author sign-in" in the
    - the very first lead author, by the `LEAD_AUTHOR_EMAIL` setting.
 
    Anyone else stays signed in and goes to their contributor profile (`/profile`), where they can register to help. The workspace stays closed to them. Someone whose access was removed is not signed in.
-6. **The session** is a random 256-bit token in an HTTP-only, SameSite=Lax, Secure cookie. The database keeps only its hash (`sessions` table). It lasts at most 12 hours and ends after 4 hours without use. "Sign out" deletes it.
+6. **The session** is a random 256-bit token in an HTTP-only, SameSite=Lax, Secure cookie named `__Host-session`, which browsers refuse to accept from a subdomain or over plain HTTP (NIST SP 800-63B-4, section 5.1). The database keeps only its hash (`sessions` table). It lasts at most 12 hours and ends after 4 hours without use. Someone without workspace access may tick "Keep me signed in for 30 days" when they sign in. Their session then lasts 30 days, unused or not, the longest NIST SP 800-63B-4 allows between sign-ins at its first level. Workspace sessions never get this, and a 30-day session from before someone was given workspace access ends at the 12-hour and 4-hour limits. "Sign out" deletes it.
 7. On every workspace page the site checks the database again, so removing someone's access takes effect at once, even if they are signed in.
 8. The masthead's link reads "Workspace" instead of "Sign in" while a `signed-in-hint` cookie is present (`src/lib/signed-in-hint.ts`). It holds only "1", is readable by the page's script because public pages are built ahead of time and cannot ask the Worker, and grants nothing: it is set at a successful sign-in and on each workspace page while the session is valid, and cleared at sign-out or once the session has ended.
 
@@ -219,9 +239,29 @@ Workspace pages, sign-in and the request form are never cached, by the browser o
 
 On a copy of the site running on your own computer (`npm run preview`, `localhost`), no email is sent: the code and link are shown on the sign-in page instead.
 
+
+## Two-step sign-in
+
+Anyone may turn on two-step sign-in at Account > Sign-in and security > Two-step sign-in (`/account/security/two-step`). The lead author, editors, advisors and nation reviewers must: until they set it up the workspace sends them to that page and stays closed (`rolesNeedingTwoStep` in `src/lib/permissions.ts`; `requirePerson` in `src/lib/server/workspace.ts`). Co-authors and contributors may choose it.
+
+1. **The authenticator app.** Setting up shows a QR code and the same key as text. Any authenticator app that reads the usual "otpauth" QR code works, such as Google Authenticator, Microsoft Authenticator or a password manager. The app makes a six-digit code every 30 seconds (RFC 6238 with SHA-1; `src/lib/server/two-step.ts`). Typing one code confirms the app works; the site then turns two-step sign-in on and signs out every other browser.
+2. **Signing in.** After the password, or the code or link from an email, the site asks "Confirm it is you" (`/sign-in/two-step`). Until a right code is typed, the session reaches nothing else. A code works for the 30 seconds before and after its own, so a phone clock a little off still works, and never twice (NIST SP 800-63B-4, section 3.1.4.1). After 5 wrong codes that sign-in ends and the person starts again; each account may also try 5 times a minute (`signInLimit`).
+3. **Backup codes.** Turning it on gives 10 backup codes, shown once, kept only as SHA-256 hashes. Each works once in place of an app code. Someone who signs in with a backup code and has 3 or fewer left is sent to make new ones. Making new ones stops the old ones working.
+4. **The app's secret** has to be kept, not hashed, because the site makes the same codes as the app. It is encrypted with AES-GCM under a key derived (HKDF) from `PASSWORD_KEY`. Until `PASSWORD_KEY` is set, the app's secret is kept as it is, and encrypted the next time it is used after the key is set.
+5. **Changes need a fresh sign-in.** Turning it on, making new backup codes, moving to a new phone and turning it off all need a sign-in from the last 10 minutes. That way someone who finds a browser left signed in cannot add their own app or take the owner's away. Those whose role needs it cannot turn it off, only move it to a new app.
+
+**Lost phone and backup codes.** The lead author turns two-step sign-in off for that account from the database, which leaves its password and email sign-in as they were. The person then sets it up again at their next sign-in. For the lead author's own account, someone with access to the Cloudflare account runs the same command:
+
+```sql
+UPDATE accounts SET authenticator_secret = NULL, authenticator_new_secret = NULL, authenticator_added_at = NULL, authenticator_last_step = NULL WHERE email = 'person@example.org';
+DELETE FROM backup_codes WHERE account_identifier = (SELECT identifier FROM accounts WHERE email = 'person@example.org');
+```
+
+Passkeys, which resist phishing better than any code (NIST SP 800-63B-4, section 3.2.5), come once the site has its own domain, because a passkey is tied to the domain it was made on.
+
 ## Setting up sign-in
 
-Nothing secret has to be set. There are two settings, and the site works without the first.
+Three settings. The site works without the first and the third.
 
 ### 1. The address codes come from
 
@@ -236,6 +276,10 @@ Until this is done, the site sends no email. People sign in with a password, or 
 
 Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**, type **Secret**: `LEAD_AUTHOR_EMAIL`, the lead author's email address. It is set in the dashboard rather than in `wrangler.jsonc` only because that file is public. It must be the **Secret** type even though an email address is not really secret: each deploy replaces plain-text variables set in the dashboard with the ones in `wrangler.jsonc`, but never deletes secrets (Cloudflare, ["Wrangler configuration: source of truth"](https://developers.cloudflare.com/workers/wrangler/configuration/#source-of-truth)).
 
+### 3. The password key
+
+Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**, type **Secret**: `PASSWORD_KEY`, a random value of at least 32 characters, such as the output of `openssl rand -base64 48`. Keep no copy outside Cloudflare. Once set, never change or remove it: every password hashed with it, and every authenticator app set up after it, would stop working, and their owners would have to sign in with a code or a link and choose a new one. Until it is set, passwords are hashed without a key, and the site upgrades them the next time each person signs in after it is set.
+
 ### Database
 
 The tables are created by the files in `migrations/`. Workers Builds does not run them, because its automatically created API token does not include D1 permission (Cloudflare, ["Workers Builds configuration: API token"](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/#api-token)). Apply them once per new migration, from `site/` (migration 0002 adds access levels and the sealed activity log; apply it before deploying the code that uses it):
@@ -244,7 +288,7 @@ The tables are created by the files in `migrations/`. Workers Builds does not ru
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`.
+Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
 
 ### First sign-in
 
@@ -266,7 +310,7 @@ The tables are created by the files in `migrations/`. Workers Builds does not ru
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`.
+Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
 
 ### First sign-in
 
@@ -308,6 +352,30 @@ Anyone signed in can follow a nation's page, the model code or one of its sectio
 
 Once the domain is onboarded in Email Service (see "Setting up sign-in"), set `UPDATE_EMAIL_FROM` in `site/wrangler.jsonc` to an address on it, such as `updates@` the domain, and `SITE_ADDRESS` to the site's address on the domain, and merge the change. Nothing else changes: summaries go out at the next hourly run to everyone whose choice is daily or weekly. Readers who followed pages before then were told on the Following page that emails would start once the site could send them.
 
+## Events
+
+The project lists talks, panels, workshops and gatherings at `/events`, and people sign in to register (decision record 0048; Trevor chose this first phase on 2026-11-23). Continuing legal education credit and paid tickets come later. The rules shared by the pages and the emails are in `src/lib/event-calendar.ts`; the database side is `src/lib/server/event-calendar.ts`, and the tables are in `migrations/20261123T0450_add_event_calendar.sql` (named `calendar_*`, because `events` is the activity log).
+
+- **Running events.** The lead author and editors hold the `manage-events` permission and see Events in the workspace (`/workspace/events`). A new event is a draft that only they can see, at its own address as a preview. On the event's workspace page they add kinds of seat (such as "In person" with a limit of 40 and "Online" with no limit), add speakers, publish, and see who is coming, with a CSV download for the list at the door. An event with no kinds of seat takes no registration, and its online link is shown to everyone. An event someone registered for can only be cancelled, not deleted or turned back into a draft, so the people registered are told. Each change in the workspace is in the activity log like any other.
+- **Times.** An event is held in one time zone, chosen from every zone in the United States, and its times are shown in that zone, such as "9:00 AM to 12:15 PM Pacific time". The form takes the date and clock time where the event is held; the database keeps UTC.
+- **Registering.** A signed-in reader picks a kind of seat, gives the name for the list, may say what they need to take part, and chooses whether to get reminders. The seat count and the new row are one database statement, so two people cannot take the last seat. When the seats are taken, people join that seat's waitlist. A freed seat (someone cancels, or the limit is raised) is offered to the person waiting longest and held for 48 hours, or until the event starts if sooner; a newcomer cannot take it while the offer stands. An offer that runs out lapses and passes to the next person.
+- **The online link** is shown on the event page only to people registered for an online seat, and is never in the calendar files, which anyone can download.
+- **Calendar files.** `/events/<address>/calendar.ics` holds one event and `/events/calendar.ics` every event from the last 90 days on, for calendar programs to subscribe to. A change of time or place raises the event's sequence number, so calendars replace their copy, and a cancelled event stays in the feed marked cancelled.
+- **Emails.** A confirmation or waitlist notice, an offer when a seat opens, a reminder a day before (for people who registered at least a day ahead) and one about two hours before, and word of a change of time or place or a cancellation. They use the same switch as summaries of followed pages: nothing is sent while `UPDATE_EMAIL_FROM` is empty, and the event page always shows where each person stands. Each email is recorded in `calendar_messages` before it is sent and the record removed if sending fails, so it goes once. Confirmations are sent only for registrations from the last two days, so turning email on later does not send old ones (`src/lib/server/event-calendar-email.ts`).
+- **The 15-minute run.** Every 15 minutes (`triggers` in `wrangler.jsonc`), the run at `/events/scheduled` lets lapsed offers go, offers free seats, sends what is due and empties access needs 30 days after each event. It is passed inside the Worker the same way as the hourly following run.
+- **Privacy.** Access needs are seen only by the lead author and editors and are emptied 30 days after the event. A person's registrations are in their "Download my data" file and are deleted with their account.
+
+### The video room
+
+An event can use the website's own video room, with recording, instead of a pasted link (decision record 0048, "The video room"; Trevor chose Cloudflare RealtimeKit on 2026-11-23 and asked that it record). It is turned on per event under "Video room" on the event's workspace page. The rules shared by the pages are in `src/lib/event-rooms.ts`, the database side and the recording run in `src/lib/server/event-rooms.ts`, the calls to RealtimeKit in `src/lib/server/realtime-kit.ts`, and the tables in `migrations/20261123T0452_add_event_video_rooms.sql`.
+
+- **Switching it on.** The room stays off until three settings are added in the Cloudflare dashboard (Workers and Pages, the site's Worker, Settings, Variables and Secrets). Add each as type Secret, so a deploy never clears it. `VIDEO_ROOM_ACCOUNT` is the Cloudflare account's id. `VIDEO_ROOM_APPLICATION` is the id of a RealtimeKit app made under Realtime, RealtimeKit. `VIDEO_ROOM_TOKEN` is an API token with the Realtime Admin permission. Making the app in the dashboard also makes the default presets the room uses: `webinar_presenter` and `webinar_viewer` for a stage with an audience, and `group_call_host` and `group_call_participant` for a discussion. Until the settings are there, hosts can still set rooms up, and the room page says it is not switched on.
+- **Who gets in.** People registered for an online seat, or anyone signed in when the event has no seats, from 30 minutes before the start until two hours after the end. The lead author and editors host every room and can open it any time before it closes to check it works. The room's page is the event's online link, so the link itself is not a secret. Each person is added to the RealtimeKit meeting once, under their account identifier and the name they registered with (never their email address), and each visit gets a fresh token that stops working when the room closes.
+- **The recording notice.** Before joining, everyone is told whether the event is recorded (from the event's "Recording" setting) and who may watch the recording, and must tick that they agree when it is or may be recorded. What each person was told, and when, is kept in `calendar_room_people` and listed for hosts under "Who was told about recording". People join with camera and microphone off.
+- **While recording.** Hosts start and stop recording with a button above the room, shown for events announced as recorded. Whenever a recording runs, the page shows "This room is being recorded" and screen readers are told. As in Magna Carta's meetings, a short rising tone plays when it starts and a falling one when it stops. RealtimeKit's own recording mark shows in the room too.
+- **Keeping recordings.** RealtimeKit keeps a recording for seven days. The 15-minute events run asks it for each recent room's recordings, notes them in `calendar_recordings`, and copies one finished recording per run into the private bucket at `event-recordings/<event>/<recording>.mp4`, then puts it in line for the virus check with purpose `event-recording` (`SCANNING.md`). A copy that fails is tried again on later runs, up to five times, and the problem is shown to hosts.
+- **Watching.** Each room says who may watch its recordings: only the people running events (the default), the people registered for the event, or anyone signed in. A recording is served from `/events/<address>/recordings/<recording>` only to them, and only once the virus check passes, with byte ranges so the player can seek. Hosts can hide a recording, which keeps it but shows it to nobody else. A room with recordings cannot be turned off, so a recording is never lost that way.
+
 ## Account pages
 
 Account settings are separate from display settings (decision record 0045; site/DESIGN.md, section 6, "Settings and Account"). Settings, under the cog, change how the site looks on one screen and are kept on the device. The Account pages hold who someone is to the project and what it keeps about them, on the server, for signed-in people only. The account menu links to them as "Account settings", and the left sidebar lists them under "Your account" while one is open (`src/lib/account-menu.ts`). The server side is `src/lib/server/account-pages.ts`.
@@ -323,6 +391,14 @@ Account settings are separate from display settings (decision record 0045; site/
 
 A new account choice goes on these pages when other people see it or the project keeps it or acts on it; a choice that only changes what one screen shows goes in Settings. Settings for a workspace tool, such as the inbox, stay beside the tool.
 
+## Source library
+
+The workspace's Source library page (`/workspace/library`) searches the words of every document the project keeps in the private bucket: constitutions, codes and ordinances, gaming compacts, tribal court opinions, Federal Register notices, saved web pages, articles and Westlaw prints ([decision record 0051](../docs/decisions/0051-search-the-source-documents-through-a-private-full-text-library.md)). Trevor asked for it on 2026-11-23 alongside the version Claude uses (`scripts/library/library.py`). The lead author, editors, co-authors and advisors can open it (the `search-source-library` permission), since the library holds private copies.
+
+- **Searching.** All the words must appear; "quotation marks" find a phrase, OR gives alternatives, a star matches word endings (mediat*), NEAR(a b, 10) finds words close together, and words match their other forms (SQLite FTS5 with Porter stemming). Text that is not valid in that language is searched as plain words. Results list each document once, best first, with up to three passages and the page each is on: the PDF page, the printed page where the PDF has labels, and the reporter's star page for tribal court opinions. Filters: kind of source (the bucket folder), a nation's identifier, and only copies the website shows. "Titles and citations" finds a document by name.
+- **Reading.** A document's page shows its details (nations, where it was published, the records that cite it, rights) and its text passage by passage, opening at the passage or page asked for, with the search's words marked. Passages read from scans by OCR say so. "Open the original" gives the file from the bucket: a PDF opens in the browser, anything else is downloaded, and only a key the library lists for that document is ever served.
+- **Where it lives.** The library's own D1 database, `model-tribal-adr-code-library` (binding `sourceLibrary`), separate from the site's database. `scripts/library/build_library.py` builds the library and, with each build, writes the changes since the last one as SQL files under `_library/d1/` in the bucket. The scheduled run at minute 29 of each hour applies them in order for up to eight minutes (`src/lib/server/source-library.ts`), keeping its place in the database's `meta` table, so the first load of the whole library takes a few runs and later builds take one. A nightly scheduled task runs `build_library.py update --ocr`, which reads only new files.
+
 ## Recent changes
 
 Every change to the site's pages is listed at `/changes`, newest first, the way a wiki's Recent changes page lists them (MediaWiki, "Help:Recent changes", https://www.mediawiki.org/wiki/Help:Recent_changes), with a history for each page and a page comparing any two versions. Trevor asked for it on 2026-11-23 and chose that nation pages show who changed them, when and which parts, never their earlier wording. The rules shared by the browser and the Worker are in `src/lib/page-history.ts`; the database side is `src/lib/server/page-history.ts`.
@@ -330,7 +406,34 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - **Where changes come from.** Essays: every publication in `essay_publications`, read as it is, with the version's note as its summary and the person who published it. Pages built with the site (nation pages, stories, glossary entries, the acknowledgments, the charter and the licenses, and the model code once it is drafted): `src/lib/server/page-history-build.ts` lists each with a fingerprint of what it shows readers, and the merged pull requests that last touched its files (from `git log`), and bundles the list into the Worker as `virtual:page-history`. `recordBuildChanges` compares it with `page_states` and adds a row to `page_changes` for each page that is new, changed or gone, with the merged pull requests' titles as the summary and "Site release" as who made it. It runs every hour from the scheduled run and the first time a copy of the Worker opens Recent changes. The first comparison only records the pages; changes are listed from then on. A newer build is claimed with a random token, as for Following pages.
 - **What is kept.** For pages whose earlier wording may be shown, each version's text is written once to the private bucket as `page-versions/<address>/<fingerprint>.txt`, so any two versions can be compared. Nation pages and stories keep no text: their rows name the parts of the page that changed (such as "Contacts" or "Courts"), worked out from a hash of each part, and no title, which is looked up from the live site when the change is shown. A nation can ask for something to be taken off its page, and an older version would put it back in view.
 - **Filters.** Page (`?page=` shows one page's history), kind of page, who, dates, size of change in bytes, kinds of change (edits, new pages, published versions, removed pages), whether changes are grouped by page, and how many to show. A change that came with an update to more than 25 pages at once is a bulk update, hidden unless the reader asks for it, the way a wiki hides bots. The same filters give an Atom feed at `/changes/feed.xml`.
+- **Nations' own changes.** What a nation's team publishes on its page comes from `nation_page_changes`, listed as "nation-<identifier>" with the part changed and the name the team gave ("Editing the nation's page", above).
 - **Hiding.** The lead author can hide the text, the summary or the name on any change from `/workspace/changes/<change>`, with a reason readers see, the way a wiki hides a revision (MediaWiki, "Help:RevisionDelete", https://www.mediawiki.org/wiki/Help:RevisionDelete). The change stays listed with a line through what is hidden. Hidden text cannot be read or compared, including as the earlier side of the next change, and its size is not shown or filtered on. An essay publication held back in the workspace is hidden the same way. Each hiding and showing again is recorded in the activity log. Hidden changes are listed at `/workspace/changes`.
+
+## Nonprofit
+
+`/workspace/nonprofit` (lead author only, permission `manage-nonprofit`) keeps the facts, filings and to-dos of the project's Nevada nonprofit corporation, which the lead author chose to form and take to the IRS with Form 1023-EZ (Nov. 23, 2026). It is a planning aid, not legal or tax advice, and says so on the page.
+
+- **Tables** (`migrations/20261123T0440_add_nonprofit_records.sql`): `nonprofit_facts` holds one row per fact, such as the date of incorporation or the fiscal year's last month. `nonprofit_completions` records a filing or setup step marked done, with the day, a confirmation number and who recorded it. `nonprofit_tasks` holds the lead author's own to-dos, once or every year.
+- **Due dates are worked out, not stored** (`src/lib/nonprofit.ts`), from the facts and today's date in Nevada. They cover the annual list and the charitable registration filed with it, due the last day of the month the articles were filed in each year (Nev. Rev. Stat. §§ 82.193, 78.150, 82A.100); Form 990-N, due the 15th day of the fifth month after the fiscal year ends (26 U.S.C. § 6033(i); Treas. Reg. § 1.6033-2(e)); Form 1023-EZ, due 27 months after the end of the month of incorporation for exemption back to that date, and done once its filing date is entered as a fact; and the directors' yearly conflict-of-interest statements. Each shows its fee and its source. A missed filing stays on the list as overdue next to the next one, and anything due within 60 days is due soon.
+- **Setting up** lists the one-time steps in the order of the brief on becoming a 501(c)(3); the articles and the application are marked done by the facts.
+- **To-dos.** Marking a yearly to-do done records it and moves its due date on a year.
+- **Calendar.** `/workspace/nonprofit/calendar.ics` is a calendar file (RFC 5545) with each open due date as an all-day event and reminders 30 and 7 days before. It is downloaded, not subscribed to, so it is downloaded again after the dates change.
+- **Overview.** The workspace overview shows the lead author anything overdue or due soon. Until the migration is applied to the live database, the overview leaves this out and the Nonprofit page says how to apply it: `npx wrangler d1 migrations apply database --remote` from the site folder.
+
+## Service checks
+
+`/workspace/service-checks` (lead author only, permission `check-services`) checks each service the site depends on whenever the page is opened (`src/lib/server/service-checks.ts`). For each it says whether it is working, needs a look, has a problem, or is not set up yet, and what to do about it. The checks only read and sign in: nothing is sent, charged, ordered or changed. Each check stops after ten seconds, and one that fails shows as a problem without stopping the others. Passwords and keys are never shown.
+
+- **Database:** answers, and every migration file in this build is in `d1_migrations`; the missing ones are named.
+- **File storage:** the private bucket can be listed.
+- **Live editing, rate limits, site address and lead author:** the binding or setting is there; a workers.dev address is flagged, since email waits on the project domain.
+- **Sign-in email and update emails:** the sender is set and the email binding is there.
+- **Project inbox:** the mail domain, the sending binding and the signing key are set.
+- **Outreach mailbox (Zoho):** signs in to the SMTP server with the saved password (EHLO, STARTTLS on port 587, AUTH, QUIT) and leaves without sending anything.
+- **Book ordering, Lulu and Stripe:** ordering's settings must agree, so a test-mode site with a live Stripe key is a problem. The Lulu check signs in with the client key and looks for the print status webhook. The Stripe check reads the balance to prove the key and looks for the payment webhook with both checkout events.
+- **Virus scanner:** files waiting more than 30 minutes are a problem and failed scans need a look.
+
+A new service gets a check here when it is added: a function in `serviceChecks` that returns its state, a summary and the details.
 
 ## Testing
 
@@ -361,5 +464,6 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) are the exception for their own nation's page.
 - Emails to a nation's office when someone joins or leaves its team, and the weekly summary of changes (waits on a domain).
+- For events (decision record 0048): continuing legal education (credit applications, attendance codes, certificates) and paid tickets. A transcript of each recording, and a recorded replay for credit through an accredited provider, also come later.
 - Using the virus scan for email attachments. The scanner is built (SCANNING.md); the inbox starts using it in its own change. Files people send already use it (docs/uploads.md, "The virus check").
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

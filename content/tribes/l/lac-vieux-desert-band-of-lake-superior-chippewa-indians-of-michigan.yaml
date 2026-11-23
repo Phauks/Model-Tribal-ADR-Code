@@ -615,6 +615,16 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+nearby_state_courts:
+- state: MI
+  county: Gogebic County
+  court: Circuit Court for Gogebic County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Gogebic County holds 100% of the land of Lac Vieux Desert Reservation (Census GEOID 1830), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1842
   signed: '1842-10-04'

@@ -183,6 +183,46 @@ indian_health_service:
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "The Quapaw Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Quapaw Tribe of Oklahoma (2017)); the list does not say which service unit or programs the compact covers.'
 governance:
+- aspect: governing-body
+  value: Business Committee
+  quote: The Quapaw Nation is governed by the Business Committee, which was established in 1956 through the Governing Resolutions.
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Committee consists of seven elected members who serve staggered two-year terms.
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
+- aspect: governing-body-selection
+  value: Elected by registered voters
+  quote: Members are elected or reelected by registered Quapaw Nation voters.
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: The Committee consists of seven elected members who serve staggered two-year terms.
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -191,6 +231,14 @@ governance:
   as_of: '2026-11-20'
   locator: Quapaw Nation
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chair”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary Treasurer
+  quote: Secretary Treasurer
+  source: quapaw-nation-website-91-business-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution Committee page says the constitutional structure is not finalized, and no constitution text was saved.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -439,6 +487,29 @@ gaming:
     locator: table row 218, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 218 lists the nation
       as "Quapaw Tribe of Indians". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Quapaw Strip Parcel, Cherokee County, KS
+    legal_theory: Last Recognized Reservation
+    accepted: true
+    date: '2014-11-21'
+    link: https://www.nigc.gov?wpdmdl=2665&ind=2666
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Quapaw Tribe of Indians of Oklahoma, 2014-11-21
+    note: The list names the tribe as “Quapaw Tribe of Indians of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    - settlement-agreement
+    tracking_number: NOV/SA-05-09
+    date: '2005-04-11'
+    link: https://www.nigc.gov?wpdmdl=8189&ind=8210
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/SA-05-09
+    note: The list titles the action “Quapaw Tribe of Oklahoma” and gives its type as NOV/SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -491,6 +562,27 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Quapaw Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: filing-fees
+  title: Resolution No. 092025-F (Updated Quapaw Nation Court Fee Schedule, signed)
+  court: Quapaw Nation Court
+  link: https://www.quapawtribe.com/DocumentCenter/View/13259/092025-F-Updated-Quapaw-Nation-Court-Fee-Schedule-Signed
+  detail: Court fee schedule, Resolution No. 092025-F (September 2025 per number), under the Filing Fee section.
+  source: quapaw-nation-quapaw-court-quapaw-tribe-ok-official-website
+  confidence: high
+  verification: read-in-full
+  locator: Filing Fee
+  note: 'The source reads: “Fees are determined by the most recently approved court fee schedule”.'
+nearby_state_courts:
+- state: OK
+  county: Ottawa County
+  court: District Court for Ottawa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Ottawa County holds 100% of the land of Quapaw OTSA (Census GEOID 5810), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Quapaw, 1818
   signed: '1818-08-24'

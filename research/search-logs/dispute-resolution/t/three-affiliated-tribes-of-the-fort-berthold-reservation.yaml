@@ -1,7 +1,7 @@
 profile: content/tribes/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -45,3 +45,53 @@ searches:
   address: https://narf.org/nill/codes/threeaffiliated/index.html
   outcome: not-found
   reason: Retry found no copy of the 2004-era arbitration sections.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/ordinances/three-affiliated-tribes-of-the-fort-berthold-reservation/threeaffiliatedtribes-threeord111794.txt
+  query: Dispute resolution.
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/7287cfe4c9939dc81d1b.txt
+  query: Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/a68637d2cd583f07b960.txt
+  query: Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/north-dakota/508_compliant_2013.03.21_three_affiliated_tribes_tribal_state_gaming_compact.txt
+  query: Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/79c81c5dd6d7f01f647a.txt
+  query: Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml#dispute_resolution.provisions

@@ -1,0 +1,26 @@
+profile: content/tribes/t/tule-river-indian-tribe-of-the-tule-river-reservation.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/n/narf-ipi-news-central-california-training-2026.html
+  query: 2026 Central California Introduction to Peacemaking Training (Porterville, California, May 27-29,
+    2026)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/tule-river-indian-tribe-of-the-tule-river-reservation.yaml#dispute_resolution.training_programs
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://peacemaking.narf.org/2026/06/2026-central-california-introduction-to-peacemaking-training/
+  query: news page
+  outcome: found
+  reason: Details match.
+  records:
+  - content/tribes/t/tule-river-indian-tribe-of-the-tule-river-reservation.yaml#dispute_resolution.training_programs

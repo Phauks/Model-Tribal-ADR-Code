@@ -640,10 +640,7 @@ dispute_resolution:
     verification: title-only
     as_of: '2016'
     locator: Table of Contents, under 'CHAPTER II – RULUES OF CIVIL PROCEDURES'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read.
-      Places searched: research/search-logs/dispute-resolution/n/nisqually-indian-tribe.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: the copy found does not contain the section; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 328.'
   - kind: mediation
     title: 50.40 MEDIATION OF DISPUTES; 50.34.03 Mediator
     citation: TITLE 50 YOUTH, 50.34.03 (Mediator) and 50.40 (Mediation of Disputes), 50.40.01-50.40.05
@@ -661,16 +658,16 @@ dispute_resolution:
       are not usable as evidence without the youth's consent.
     locator: 50.34.03 (Mediator) and 50.40 (Mediation of Disputes), 50.40.01-50.40.05
   - kind: peacemaking
-    title: Title 50 – Youth
-    citation: Title 50 – Youth
+    title: Chapter 50.20 Peacemaker Conference (Title 50 Youth)
+    citation: Nisqually Tribal Code, Title 50 Youth, Chapter 50.20, sections 50.20.01-50.20.06
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
-    source: narf-ipi-youth-family-peacemaking-laws
+    source: nisqually-title-50-youth-code
     confidence: medium
     verification: read-in-full
     as_of: '2025-08-25'
-    locator: Nisqually Indian Tribe of Washington
-    note: 'Native American Rights Fund description (provision itself not read): Provides referral procedures,
-      procedures, and formalization of agreement requirements.'
+    locator: Chapter 50.20, sections 50.20.01-50.20.06
+    note: Read in full on 2026-11-23 (Nisqually Tribal Code Title 50 Youth, Chapter 50.20 Peacemaker Conference; 50.20.04(f) added by Tribal Council Resolution 71-2023, June 8, 2023). Read in full from Title 50 Youth, Chapter 50.20 (NARF-hosted copy). 50.20.04(f) added by Resolution 71-2023 (June 8, 2023). Applies only within youth proceedings. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 330.
+    summary: In youth and child-welfare cases, after a preliminary hearing, any party may ask the Court Clerk for a Peacemaker Conference, or the Court may provisionally transfer a case on its own motion. The informal conference is held within 20 days; a written agreement signed by the child, parents or guardian, child advocate and the Tribe runs for a fixed term not past the child's 18th birthday, is monitored by Nisqually Children and Family Services, and if there is no agreement or it is breached a Fact Finding Hearing follows. The Court may enter the agreement as an order, which is enforced like any other order of the Court.
   - kind: peacemaking
     title: 50.20 PEACEMAKER CONFERENCE
     citation: TITLE 50 YOUTH, 50.20 (Peacemaker Conference), 50.20.01-50.20.04
@@ -844,6 +841,17 @@ gaming:
     locator: table row 167, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 167 lists the nation
       as "Nisqually Indian Tribe".
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-NIS
+    date: '2007-08-17'
+    link: https://www.nigc.gov?wpdmdl=8068&ind=8079
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-NIS
+    note: The list titles the action “Nisqually Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -880,6 +888,36 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: forms
+  title: Nisqually Indian Tribe Judicial Services (court forms)
+  court: Nisqually Tribal Court
+  link: https://www.nisqually-nsn.gov/tribal-services/Judicial-Services
+  detail: Forms listed include Joint Petition for Dissolution of Marriage, Petition for Custody, Petition for Dissolution of Marriage, Petition for Guardianship (Adult), name change petitions and restraining order petitions.
+  source: nisqually-indian-tribe-judicial-services
+  confidence: high
+  verification: title-only
+  locator: form list
+  note: 'The source reads: “Petition for Custody”. Form files not opened.'
+nearby_state_courts:
+- state: WA
+  county: Pierce County
+  court: Superior Court for Pierce County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Pierce County holds 64% of the land of Nisqually Reservation (Census GEOID 2460), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WA
+  county: Thurston County
+  court: Superior Court for Thurston County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Thurston County holds 36% of the land of Nisqually Reservation (Census GEOID 2460), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Nisqualli, Puyallup, etc., 1854
   signed: '1854-12-26'

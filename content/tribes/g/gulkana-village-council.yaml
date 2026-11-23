@@ -220,17 +220,13 @@ governance:
     version: 2001-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
 - aspect: governing-body
-  value: Gulkana Village Council
-  quote: The governing body of the Tribe shall consist of a 7
-  source: constitution-gulkana-village-council-2001-text
-  confidence: medium
+  value: Village Council
+  quote: today has an active and progressive Village Council
+  source: gulkanacouncil-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '2001-03-31'
-  locator: Article V, Section 1
-  document_version:
-    document: gulkana-village-council-constitution
-    version: 2001-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 7 members
   quote: member council known as the Gulkana Village Council and hereinafter will
@@ -269,16 +265,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
 - aspect: head-of-government
   value: President
-  quote: The President of the Council shall preside at all meetings of
-  source: constitution-gulkana-village-council-2001-text
-  confidence: medium
+  quote: Ahtna Shareholder Service Manager and President of the Gulkana Village Council
+  source: gulkana-village-council-website-about-leadership
+  confidence: high
   verification: read-in-full
-  as_of: '2001-03-31'
-  locator: Article VI
-  document_version:
-    document: gulkana-village-council-constitution
-    version: 2001-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -300,17 +292,13 @@ governance:
     version: 2001-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
 - aspect: other-officers
-  value: Vice-President, Secretary/Treasurer
-  quote: members a Vice-President, a Secretary/Treasurer and such other officers,
-  source: constitution-gulkana-village-council-2001-text
-  confidence: medium
+  value: Vice President
+  quote: Vice President of Gulkana Village Council
+  source: gulkana-village-council-website-about-leadership
+  confidence: high
   verification: read-in-full
-  as_of: '2001-03-31'
-  locator: Article V, Section 2
-  document_version:
-    document: gulkana-village-council-constitution
-    version: 2001-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: elections
   value: Annually, on a date set by the Village Council
   quote: The annual general tribal election or meeting shall be held
@@ -431,6 +419,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Copper River Census Area
+  court: Superior Court for Copper River Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Copper River Census Area holds 100% of the land of Gulkana ANVSA (Census GEOID 6560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Ahtna Inc.
   relation: alaska-native-claims-settlement-act-regional-corporation

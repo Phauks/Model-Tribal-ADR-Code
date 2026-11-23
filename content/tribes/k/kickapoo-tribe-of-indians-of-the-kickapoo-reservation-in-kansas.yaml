@@ -185,17 +185,13 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution under the Indian Reorganization Act of June 18, 1934
-  quote: of the Indian Reorganization Act of June 18, 1934, and
-  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
-  confidence: medium
+  value: Constitution and By-Laws
+  quote: CONSTITUTION AND BY-LAWS OF THE KICKAPOO TRIBE OF INDIANS OF THE KICKAPOO RESERVATION IN KANSAS
+  source: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-website-constituion-and-bylaws
+  confidence: high
   verification: read-in-full
-  as_of: '1937-06-19'
-  locator: Preamble
-  document_version:
-    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
-    version: 1937-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution page gives only its title, not the text, and officer names on the government page are left out.'
 - aspect: governing-body
   value: Tribal Council
   quote: shall be the Tribal Council which shall be composed of
@@ -585,6 +581,34 @@ jurisdiction:
   verification: read-in-full
   locator: 18 U.S.C. § 3243; Act of June 8, 1940, ch. 276, 54 Stat. 249
   note: 'Criminal only; no civil grant. The four roster entries list KS because of reservation or trust-land presence in Kansas (Iowa Tribe and Sac and Fox of Missouri straddle KS/NE). Also cites: statutes-at-large-54-249.'
+nearby_state_courts:
+- state: KS
+  county: Brown County
+  court: District Court for Brown County
+  link: https://kscourts.gov/About-the-Courts/District-Courts
+  source: state-trial-court-directory-ks
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Brown County holds 60% of the land of Kickapoo (KS) Reservation (Census GEOID 1770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: KS
+  county: Jackson County
+  court: District Court for Jackson County
+  link: https://kscourts.gov/About-the-Courts/District-Courts
+  source: state-trial-court-directory-ks
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Jackson County holds 27% of the land of Kickapoo (KS) Reservation (Census GEOID 1770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: KS
+  county: Atchison County
+  court: District Court for Atchison County
+  link: https://kscourts.gov/About-the-Courts/District-Courts
+  source: state-trial-court-directory-ks
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Atchison County holds 13% of the land of Kickapoo (KS) Reservation (Census GEOID 1770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1795
   signed: '1795-08-03'

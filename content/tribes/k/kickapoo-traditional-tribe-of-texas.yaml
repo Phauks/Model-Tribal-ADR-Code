@@ -203,6 +203,22 @@ indian_health_service:
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Kickapoo Traditional Tribe of Texas".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: TRIBAL COUNCIL
+  source: kickapoo-traditional-tribe-of-texas-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list council members by name and title only, with no constitution or stated term, selection or size rules.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman
+  source: kickapoo-traditional-tribe-of-texas-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list council members by name and title only, with no constitution or stated term, selection or size rules.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -211,6 +227,14 @@ governance:
   as_of: '2026-11-20'
   locator: Kickapoo Traditional Tribe of Texas
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: KTTT Tribal Court
+  quote: 'We, the staff of the KTTT Tribal Court, take pride in working as a team and pledge to:'
+  source: kickapoo-traditional-tribe-of-texas-website-tribal-operations-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The pages list council members by name and title only, with no constitution or stated term, selection or size rules.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -361,36 +385,26 @@ dispute_resolution:
       not appear the presenting officer may file a petition or proceed to fact finding.
   - kind: arbitration
     title: Chapter 26 Arbitration Ordinance
-    citation: KTTT Tribal Codes, Chapter 26 Arbitration Ordinance, Sections 1-12 (record cites 3, 5 and
-      9)
+    citation: KTTT Tribal Codes, Chapter 26 Arbitration Ordinance, Sections 1-12 (record cites 3, 5 and 9)
     link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-26-Arbitration-Ordinance.pdf
     source: kickapoo-traditional-kttt-tribal-codes-chapter-26-arbitration-ordinance
     confidence: medium
     verification: read-in-full
     as_of: '2012-03-07'
-    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
-    summary: The ordinance makes written agreements to arbitrate contract disputes valid, irrevocable
-      and enforceable (Sec. 3), requires the Tribal Court to stay its own proceedings and order arbitration
-      when a party asks, leaving arbitrability to the arbitrator (Sec. 5), and has the court confirm awards
-      as civil judgments with review limited to the federal arbitration statute's grounds, with no further
-      appeal from an order enforcing an agreement or award (Secs. 8-9).
+    note: Read in full on 2026-11-23 from page images (Kickapoo Traditional Tribe of Texas, Chapter 26 Arbitration Ordinance; enacted March 7, 2012 by Tribal Council). Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 205.
+    summary: The ordinance makes written agreements to arbitrate contract disputes valid, irrevocable and enforceable (Sec. 3), requires the Tribal Court to stay its own proceedings and order arbitration when a party asks, leaving arbitrability to the arbitrator (Sec. 5), and has the court confirm awards as civil judgments with review limited to the federal arbitration statute's grounds, with no further appeal from an order enforcing an agreement or award (Secs. 8-9).
     locator: Sections 1-12 (record cites 3, 5 and 9)
   - kind: other
     title: Section 11. Patron Dispute Resolution
-    citation: Kickapoo Traditional Tribe of Texas Gaming Ordinance (as adopted March 2017; with NIGC approval
-      letter of March 17, 2017), Section 11
+    citation: Kickapoo Traditional Tribe of Texas Gaming Ordinance (as adopted March 2017; with NIGC approval letter of March 17, 2017), Section 11
     link: https://kickapootexas.org/wp-content/uploads/2017/09/NIGC-Approval-Ltr.pdf
     source: kickapoo-traditional-kickapoo-traditional-tribe-of-texas-gaming
     confidence: medium
     verification: read-in-full
     as_of: 2017-03
     locator: Section 11
-    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
-    summary: Makes a written petition to the Tribal Gaming Commission, filed within thirty days of the
-      incident, a patron's sole remedy against a gaming establishment; the Commission holds a hearing
-      within thirty days, the patron may bring counsel and may be allowed to present evidence, and its
-      decision is final, with recovery limited to proven actual damages (or the prize amount in prize
-      disputes).
+    note: Read in full on 2026-11-23 from page images (KTTT Gaming Ordinance, adopted by Tribal Council March 6, 2017, approved by NIGC letter dated March 17, 2017). Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 206.
+    summary: Makes a written petition to the Tribal Gaming Commission, filed within thirty days of the incident, a patron's sole remedy against a gaming establishment; the Commission holds a hearing within thirty days, the patron may bring counsel and may be allowed to present evidence, and its decision is final, with recovery limited to proven actual damages (or the prize amount in prize disputes).
   - kind: peacemaking
     title: Section 1.7 Peacemaker Program
     citation: KTTT Tribal Codes, Chapter 1 (Establishing the Court), in the Ch. 1-17 Tribal Codes compilation,
@@ -583,6 +597,16 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 97-429 § 6, 96 Stat. at 2270
   note: 25 U.S.C. § 1300b-15 is "omitted" from the Code. This statute was not on the research brief; found through the Cornell notes.
+nearby_state_courts:
+- state: TX
+  county: Maverick County
+  court: District Court for Maverick County
+  link: https://www.txcourts.gov/about-texas-courts/trial-courts/
+  source: state-trial-court-directory-tx
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Maverick County holds 100% of the land of Kickapoo (TX) Reservation (Census GEOID 1775), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

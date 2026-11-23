@@ -371,10 +371,7 @@ dispute_resolution:
     confidence: medium
     verification: title-only
     as_of: '2026-11-21'
-    note: 'Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title. No date on the
-      index; as_of is the access date. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/n/native-village-of-white-mountain.yaml.'
+    note: 'Kind assigned from words in the title. No date on the index; as_of is the access date. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 307.'
   - kind: traditional-dispute-resolution
     title: 'Ordinance No. 87-03: Ordinance Establishing a Court of Elders'
     citation: 'Ordinance No. 87-03: Ordinance Establishing a Court of Elders'
@@ -383,10 +380,7 @@ dispute_resolution:
     confidence: medium
     verification: title-only
     as_of: '2026-11-21'
-    note: 'Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title. No date on the
-      index; as_of is the access date. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/n/native-village-of-white-mountain.yaml.'
+    note: 'Kind assigned from words in the title. No date on the index; as_of is the access date. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 308.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -412,6 +406,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Nome Census Area
+  court: Superior Court for Nome Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Nome Census Area holds 100% of the land of White Mountain ANVSA (Census GEOID 7745), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bering Straits Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

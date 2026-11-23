@@ -249,77 +249,53 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-Laws under the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
-  quote: Thomas -Rogers Oklahoma Indian Welfare Act of June 26, 1S36
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Constitution ratified and adopted in 2006
+  quote: The Tribes operate under a Constitution ratified and adopted in 2006.
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Preamble
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body
-  value: Cheyenne-Arapaho Tribal Council
-  quote: Cheyenne-Arapaho Tribal Council shall be the governing body
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Tribal Council
+  quote: The Tribal Council is composed of all Member of the Tribes ages eighteen and older and operates with an official Office of the Tribal Council.
+  source: cheyenne-and-arapaho-tribes-website-government-tribal-council-branch
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Art. I, Sec. 2
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body
-  value: Cheyenne-Arapaho Business Committee
-  quote: shall have the power to act for the tribes in all matters
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Legislative Branch
+  quote: The Legislative Branch is responsible for making the laws of the Tribes.
+  source: cheyenne-and-arapaho-tribes-website-government
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Art. IV, Sec. 2
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body-size
-  value: 8 members (Business Committee)
-  quote: member representative body empowered to act on those matters outlined in Article IV, Sections 2 through 5,
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: 8 members (one per district)
+  quote: consists of one legislator from each of the four Arapaho Districts and four Cheyenne Districts.
+  source: cheyenne-and-arapaho-tribes-website-government-legislative
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Art. I, Sec. 3
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body-selection
-  value: Elected by district by mail ballot
-  quote: Each registered voter shall be furnished a ballot
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Elected
+  quote: Legislators are elected to staggered four-year terms and can serve up to three terms in office.
+  source: cheyenne-and-arapaho-tribes-website-government-legislative
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Article VIII, Section 1
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: governing-body-term
-  value: 4 years
-  quote: The term of office for each committeeman elected after the first
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: 4 years, staggered
+  quote: Legislators are elected to staggered four-year terms and can serve up to three terms in office.
+  source: cheyenne-and-arapaho-tribes-website-government-legislative
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: Article VIII, Section 3
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: general-council
   value: All enrolled members at least 18 years of age
   quote: composed of all enrolled members at least eighteen (18)
@@ -333,17 +309,13 @@ governance:
     version: 1982-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
 - aspect: head-of-government
-  value: Chairman (of the Business Committee)
-  quote: The chairman of the business committee shall preside over all
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Governor
+  quote: The Cheyenne and Arapaho Tribes Office of the Governor is led by Governor
+  source: cheyenne-and-arapaho-tribes-website-government-executive
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: By-laws, Article XIV, Section 1
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: head-of-government
   value: Governor
   source: bia-tribal-leaders-directory-2026
@@ -377,17 +349,13 @@ governance:
     version: 1982-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
 - aspect: other-officers
-  value: Vice-chairman, secretary, treasurer, sergeant-at-arms
-  quote: The vice-chairman of the business committee shall call the roll
-  source: constitution-cheyenne-and-arapaho-tribes-1982-text
-  confidence: medium
+  value: Lieutenant Governor
+  quote: Office of the Lieutenant Governor
+  source: cheyenne-and-arapaho-tribes-website-government-executive
+  confidence: high
   verification: read-in-full
-  as_of: '1982-01-09'
-  locator: By-laws, Article XIV, Section 2
-  document_version:
-    document: cheyenne-and-arapaho-tribes-constitution
-    version: 1982-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: election-authority
   value: Election Board of 8 members of the tribal council
   quote: Election Board shall be a board composed of eight (8) members of
@@ -400,6 +368,46 @@ governance:
     document: cheyenne-and-arapaho-tribes-constitution
     version: 1982-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1974 Revised Constitution with a 1976 boundary correction, not a 1982 version; it also carries a Caddo Indian Tribe amendment that is not part of this document.'
+- aspect: branches
+  value: Executive, Legislative, Tribal Council, Judicial
+  quote: 'The Constitution implements four (4) branches of government to ensure a separation of powers: Executive Branch, Legislative Branch, Tribal Council, and Judicial Branch.'
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: The Constitution implements four (4) branches of government to ensure a separation of powers
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
+- aspect: judiciary
+  value: Supreme Court and Trial Court
+  quote: The Judicial Branch is comprised of one Supreme Court, and one Trial Court, such other lower courts of special jurisdiction as deemed necessary by the Legislature by law,
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
+- aspect: judicial-selection
+  value: Governor nominates; Legislature confirms; Tribal Council approves
+  quote: Each Judge and Justice is selected upon nomination by the Governor, subject to confirmation by the Legislature and approval by the Tribal Council,
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
+- aspect: judicial-independence
+  value: Independent branch of government
+  quote: We are an independent branch of government constitutionally entrusted with the fair and just resolution of disputes
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution text is not among the saved pages, so the facts come from the Tribe''s government web pages.'
 - aspect: amendment
   value: Majority vote of those voting in a referendum
   quote: shall be submitted to a referendum
@@ -472,14 +480,13 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://www.cheyenneandarapaho-nsn.gov/legislative/tribal-codes-acts-and-ordinances
+  link: https://cdn.prod.website-files.com/625854e97e951a806fc03c22/66f2df79fdd57da455bc6c2c_Constitution.pdf
   source: national-indian-law-library-cheyenne-arapaho-ok
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
-  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribes''
-    website .".'
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribes'' website .". Link changed on 2026-11-23 from https://www.cheyenneandarapaho-nsn.gov/legislative/tribal-codes-acts-and-ordinances, a page that leads to the text, to the text itself; the constitution catalog downloaded and read it on 2026-11-21 as the Tribes'' amended constitution of 2006, amended 2021 (research/constitutions/documents.csv, row cheyenne-and-arapaho-tribes:34748b55b07139a4). See research/reviews/2026-11-22-governing-documents-full.md, section on the other document searches.'
 - kind: law-code
   title: Cheyenne-Arapaho Tribes of Oklahoma, Law and Order Code
   year: '1988'
@@ -696,6 +703,37 @@ gaming:
       Lucky Star Travel Center Casino - Hammon; Lucky Star Travel Center Casino - Concho; Lucky Star Casino
       - Concho; Lucky Star Casino - Canton; Lucky Star Casino Clinton; Lucky Star Casino - Watonga. Name
       extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-06
+    date: '2008-05-22'
+    link: https://www.nigc.gov?wpdmdl=8044&ind=8055
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-06
+    note: The list titles the action “Cheyenne & Arapaho Tribes of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-06
+    date: '2008-08-11'
+    link: https://www.nigc.gov?wpdmdl=8004&ind=8015
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-06
+    note: The list titles the action “Cheyenne & Arapaho Tribes of Oklahoma” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-17-01
+    date: '2017-04-11'
+    link: https://www.nigc.gov?wpdmdl=7710&ind=7721
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-17-01
+    note: The list titles the action “Cheyenne & Arapaho Tribes of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -740,6 +778,119 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Cheyenne Arapaho Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: public-defender
+  title: 'Judicial Branch (contact information: Public Defender''s Office)'
+  court: Cheyenne and Arapaho Tribes Judicial Branch
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  detail: The Judicial Branch contact list includes a Public Defender's Office with an email address; no description of eligibility.
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  locator: Contact information
+  note: 'The source reads: “Public Defender''s Office”.'
+- kind: legal-aid
+  title: 'Judicial Branch (contact information: Legal Aid Services)'
+  court: Cheyenne and Arapaho Tribes Judicial Branch
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  detail: Contact list names Legal Aid Services (tribal office) and Oklahoma Indian Legal Services, with phone numbers; no eligibility details.
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  locator: Contact information
+  note: 'The source reads: “Legal Aid Services”. Oklahoma Indian Legal Services is an LSC-funded program; page names it as spelled "Oklahoman Indian Legal Services".'
+- kind: forms
+  title: Judicial Branch (Forms and files)
+  court: Cheyenne and Arapaho Tribes Judicial Branch
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  detail: Forms and files table includes Appearance and Consent to Guardianship, Application for Citation for Contempt, Change of Name Petition, Foreign Judgements, Garnishment Forms, Code of Ethics.
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  locator: Forms and files
+  note: 'The source reads: “Forms and files”.'
+nearby_state_courts:
+- state: OK
+  county: Roger Mills County
+  court: District Court for Roger Mills County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Roger Mills County holds 14% of the land of Cheyenne and Arapaho OTSA (Census GEOID 5560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Washita County
+  court: District Court for Washita County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Washita County holds 12% of the land of Cheyenne and Arapaho OTSA (Census GEOID 5560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Dewey County
+  court: District Court for Dewey County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Dewey County holds 12% of the land of Cheyenne and Arapaho OTSA (Census GEOID 5560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Custer County
+  court: District Court for Custer County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Custer County holds 12% of the land of Cheyenne and Arapaho OTSA (Census GEOID 5560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Beckham County
+  court: District Court for Beckham County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Beckham County holds 11% of the land of Cheyenne and Arapaho OTSA (Census GEOID 5560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Kingfisher County
+  court: District Court for Kingfisher County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Kingfisher County holds 11% of the land of Cheyenne and Arapaho OTSA (Census GEOID 5560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Blaine County
+  court: District Court for Blaine County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Blaine County holds 11% of the land of Cheyenne and Arapaho OTSA (Census GEOID 5560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Canadian County
+  court: District Court for Canadian County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Canadian County holds 9% of the land of Cheyenne and Arapaho OTSA (Census GEOID 5560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Ellis County
+  court: District Court for Ellis County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Ellis County holds 7% of the land of Cheyenne and Arapaho OTSA (Census GEOID 5560), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Cheyenne Tribe, 1825
   signed: '1825-07-06'

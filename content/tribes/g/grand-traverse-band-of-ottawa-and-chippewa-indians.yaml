@@ -200,16 +200,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
   value: Tribal Council
-  quote: The Tribal Council of the Grand Traverse Band shall be composed of seven (7) members of
-  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
-  confidence: medium
+  quote: We, the Tribal Council of the Grand Traverse Band of Ottawa and Chippewa Indians, a Sovereign Nation
+  source: gtbindians-tribal-council-asp
+  confidence: high
   verification: read-in-full
-  as_of: '1988-03-29'
-  locator: Article III, Section 1(a)
-  document_version:
-    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
-    version: 1988-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 7 members
   quote: The Tribal Council of the Grand Traverse Band shall be composed of seven (7) members of
@@ -247,17 +243,13 @@ governance:
     version: 1988-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: head-of-government
-  value: Chairperson
-  quote: 'The Chairperson of the Tribal Council shall:'
-  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
-  confidence: medium
+  value: Chairwoman
+  quote: Chairwoman
+  source: grand-traverse-band-of-ottawa-and-chippewa-indians-website-council-members-asp
+  confidence: high
   verification: read-in-full
-  as_of: '1988-03-29'
-  locator: Article III, Section 3(a)
-  document_version:
-    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
-    version: 1988-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -339,17 +331,13 @@ governance:
     version: 1988-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: branches
-  value: Legislative, executive and judicial
-  quote: independent from the legislative and executive functions of the
-  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
-  confidence: medium
+  value: Judicial, separate branch
+  quote: As a pivotal institution and separate branch of government for the Grand Traverse Band of Ottawa and Chippewa Indians
+  source: grand-traverse-band-of-ottawa-and-chippewa-indians-website-court-judges-asp
+  confidence: high
   verification: read-in-full
-  as_of: '1988-03-29'
-  locator: Article V, Section 6
-  document_version:
-    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
-    version: 1988-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: separation-of-powers
   value: Stated
   quote: no person exercising powers of the legislative or executive functions of
@@ -364,16 +352,12 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: judiciary
   value: Tribal Court and Tribal Appellate Court
-  quote: The judicial power of the Grand Traverse Band shall be vested in a tribal court system.
-  source: constitution-grand-traverse-band-of-ottawa-and-chippewa-indians-1988-text
-  confidence: medium
+  quote: The Grand Traverse Band Tribal Court consists of the Tribal Appellate Court, with three Appellate Judges and the Tribal Court, with one full-time Chief Judge and one part-time Associate Judge.
+  source: grand-traverse-band-of-ottawa-and-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1988-03-29'
-  locator: Article V, Section 1
-  document_version:
-    document: grand-traverse-band-of-ottawa-and-chippewa-indians-constitution
-    version: 1988-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: judicial-selection
   value: Appointed by the Tribal Council
   quote: vote of five (5) of the seven (7) members of the Tribal Council for a term of four (4) years.
@@ -602,19 +586,14 @@ dispute_resolution:
       cannot compel involuntary action.
   - kind: peacemaking
     name: Peacemaking (Tribal Court)
-    description: The Tribal Court uses peacemaking to mediate cases where dispute resolution is preferred
-      over an adversarial approach; the Honoring Nations report says it has helped resolve contentious
-      issues while keeping community ties. The court's current staff list includes a peacemaker and program
-      director position.
+    description: The Tribal Court uses peacemaking to mediate cases where dispute resolution is preferred over an adversarial approach; the Honoring Nations report says it has helped resolve contentious issues while keeping community ties. The court's current staff list includes a peacemaker and program director position.
     relationship_to_court: Used by the Tribal Court as part of its handling of disputes.
     link: https://nnigovernance.arizona.edu/grand-traverse-band-tribal-court
     source: nni-honoring-nations-gtb-tribal-court
     confidence: medium
     verification: inferred
     as_of: '2000'
-    note: Secondary source (Honoring Nations 1999 report). The staff position is from the Band's Tribal
-      Court web page (https://gtbindians.org/tribal_court.asp, read 2026-11-21); no staff names recorded.
-      Case types for peacemaking are not stated, so none are recorded.
+    note: 'Secondary source (Honoring Nations 1999 report). The staff position is from the Band''s Tribal Court web page (https://gtbindians.org/tribal_court.asp, read 2026-11-21); no staff names recorded. Case types for peacemaking are not stated, so none are recorded. Not confirmed from the nation''s own text on 2026-11-23: the text found does not settle the record; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 134.'
   provisions:
   - kind: peacemaking
     title: Juvenile Code – Diversion
@@ -731,6 +710,38 @@ gaming:
       and Chippewa Indians, Michigan". Facilities as machine-extracted from the report text (verify):
       Crystal Shores Casino; Turtle Creek Casino; Leelanau Sands Casino. Name extracted from the PDF by
       the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Turtle Creek Site, Grand Traverse County, MI
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2001-08-31'
+    link: https://www.nigc.gov?wpdmdl=2530&ind=2531
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Grand Traverse Band of Ottawa and Chippewa Indians, 2001-08-31
+    note: The list names the tribe as “Grand Traverse Band of Ottawa and Chippewa Indians”.
+  - parcel: Benzie Parcel, Benzie County, Michigan
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2025-07-22'
+    link: https://www.nigc.gov/wp-content/uploads/2025/08/2025.07.22-Indian-lands-op-Grand-Traverse-Benzie-Parcel.pdf
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Grand Traverse Band of Ottawa and Chippewa Indians, 2025-07-22
+    note: The list names the tribe as “Grand Traverse Band of Ottawa and Chippewa Indians”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-26-01
+    date: '2026-01-12'
+    link: https://www.nigc.gov?wpdmdl=13729&ind=13730
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-26-01
+    note: The list titles the action “Grand Traverse Band of Ottawa and Chippewa Indians” and gives its type as NOV.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -807,6 +818,93 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.E, Michigan
   note: 'The source reads: “Grand Traverse Band of Ottawa and Chippewa Indians, executed on August 17, 1999”. Date is the execution date as reported; most were amended 2008-10-01. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: filing-fees
+  title: Tribal Judiciary Fee Schedule
+  court: Grand Traverse Band Tribal Court
+  link: https://www.gtbindians.org/fees.asp
+  detail: 'Schedule dated 03/01/2020: personal protection order no fee; civil filing (including divorce and adoption) $100.00; probate $100.00; child support $100.00; small claims $60.00; appeal $150.00; civil jury demand $100.00; motion $20.00; marriage $50.00; copies $0.25 per page; certified copy $10.00; transcripts $250.00 deposit.'
+  source: grand-traverse-band-tribal-court-fees-forms
+  confidence: medium
+  verification: read-in-full
+  locator: Tribal Judiciary Fee Schedule
+  note: 'The source reads: “Civil Filing Fee”. Schedule dated 03/01/2020, more than five years old.'
+- kind: bar-admission
+  title: Attorney Admission Process
+  court: Grand Traverse Band Tribal Court
+  link: https://www.gtbindians.org/pages5563180.asp
+  detail: Page offers an Attorney Admission Checklist PDF, the Court Rules (with index) and the statutes of the Grand Traverse Band.
+  source: grand-traverse-band-tribal-court-bar-admission-court-rules
+  confidence: high
+  verification: title-only
+  locator: Attorney Admission Process
+  note: 'The source reads: “Attorney Admission Checklist”. Checklist PDF not opened.'
+- kind: court-rules
+  title: Court Rules (with index)
+  court: Grand Traverse Band Tribal Court
+  link: https://www.gtbindians.org/downloads/court_rules_32009_1.pdf
+  detail: Court Rules PDF linked on the attorney admission page; file name suggests a 2009 version.
+  source: grand-traverse-band-tribal-court-bar-admission-court-rules
+  confidence: medium
+  verification: title-only
+  locator: Attorney Admission Process
+  note: PDF not opened.
+- kind: forms
+  title: Tribal Court Forms
+  court: Grand Traverse Band Tribal Court
+  link: https://www.gtbindians.org/court_forms.asp
+  detail: Tribal Court Forms page linked from the court menu.
+  source: grand-traverse-band-tribal-court-fees-forms
+  confidence: high
+  verification: title-only
+  locator: menu
+  note: Page not opened.
+nearby_state_courts:
+- state: MI
+  county: Leelanau County
+  court: Circuit Court for Leelanau County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Leelanau County holds 43% of the land of Grand Traverse Reservation (Census GEOID 1370), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Grand Traverse County
+  court: Circuit Court for Grand Traverse County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Grand Traverse County holds 25% of the land of Grand Traverse Reservation (Census GEOID 1370), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Antrim County
+  court: Circuit Court for Antrim County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Antrim County holds 17% of the land of Grand Traverse Reservation (Census GEOID 1370), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Benzie County
+  court: Circuit Court for Benzie County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Benzie County holds 11% of the land of Grand Traverse Reservation (Census GEOID 1370), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Charlevoix County
+  court: Circuit Court for Charlevoix County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Charlevoix County holds 4% of the land of Grand Traverse Reservation (Census GEOID 1370), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Ottawa, etc., 1836
   signed: '1836-03-28'

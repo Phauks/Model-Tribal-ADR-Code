@@ -141,6 +141,14 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Buena Vista Rancheria of Me-Wuk Indians of California".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Buena Vista Rancheria Tribal Council is the governing body of the Buena Vista Rancheria of Me-Wuk Indians
+  source: buena-vista-rancheria-of-me-wuk-indians-of-california-website-tribal-council-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages state only the governing body name and the court; no council size, selection, term or governing document text is given.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -149,6 +157,14 @@ governance:
   as_of: '2026-11-20'
   locator: Buena Vista Rancheria of Me-Wuk Indians of California
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Buena Vista Rancheria Tribal Court was established in 2021 and exercises general civil jurisdiction over our citizens and anyone who has consented to Tribal jurisdiction.
+  source: buena-vista-rancheria-of-me-wuk-indians-of-california-website-tribal-court-php
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages state only the governing body name and the court; no council size, selection, term or governing document text is given.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -281,6 +297,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Buena Vista Rancheria of Me-Wuk
       Indians". Facilities as machine-extracted from the report text (verify): Harrah''s Northern California.
       Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Amador County, CA
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2005-06-30'
+    link: https://www.nigc.gov?wpdmdl=2574&ind=2575
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Buena Vista Rancheria of Me-Wuk Indians, 2005-06-30
+    note: The list names the tribe as “Buena Vista Rancheria of Me-Wuk Indians”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

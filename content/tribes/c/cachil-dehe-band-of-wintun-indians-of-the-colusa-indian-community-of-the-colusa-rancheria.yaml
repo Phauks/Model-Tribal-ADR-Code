@@ -212,17 +212,13 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution under the act of June 18, 1934
-  quote: of June 18, 1934 (48 Stat.
-  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
-  confidence: medium
+  value: Constitution and By-Laws (ratified 1941)
+  quote: the Constitution and By-Laws for the Cachil DeHe Band of Wintun Indians of the Colusa Indian Community were ratified and adopted by the Tribe
+  source: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-t-website-government-heritage
+  confidence: high
   verification: read-in-full
-  as_of: '1941-11-23'
-  locator: Preamble
-  document_version:
-    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
-    version: 1941-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officers appear only in lines with names, so no governing-body, officer or selection facts are given.'
 - aspect: governing-body
   value: Colusa Indian Community Council
   quote: shall be composed of all qualified voters
@@ -376,17 +372,13 @@ governance:
     version: 1941-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
 - aspect: other
-  value: Business Committee of chairman, vice-chairman and secretary-treasurer
-  quote: The Business Committee shall consist of the
-  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
-  confidence: medium
+  value: Public Safety Department as a branch of government
+  quote: Our Public Safety Department is a branch of our government, established in August of 2009.
+  source: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-t-website-government-public-safety
+  confidence: high
   verification: read-in-full
-  as_of: '1941-11-23'
-  locator: Article III, Section 7
-  document_version:
-    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
-    version: 1941-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officers appear only in lines with names, so no governing-body, officer or selection facts are given.'
 representatives:
 - office: Chairperson
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -600,6 +592,16 @@ jurisdiction:
     so nation names were read from images and matched to the roster. Row re-read on 2026-11-22 from the
     page image (the govinfo PDF has no text layer for the table); verification level unchanged because
     the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Colusa County
+  court: Superior Court for Colusa County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Colusa County holds 100% of the land of Colusa Rancheria (Census GEOID 0750), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

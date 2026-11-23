@@ -138,6 +138,14 @@ indian_health_service:
   locator: Direct Service Tribes by IHS Area > Bemidji Area
   note: Listed as "White Earth Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
+- aspect: governing-body
+  value: Reservation Business Committee
+  quote: The White Earth Reservation Business Committee and its programs are committed to preserving traditions while working to address contemporary challenges, including economic development, education, and the preservation of language and culture.
+  source: whiteearth-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 is the By-Laws of a single community council (Rice Lake), not the nation''s constitution; no facts were taken from it.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -146,6 +154,22 @@ governance:
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: White Earth District Court
+  quote: The White Earth District Court consists of a Chief Judge and two associate judges.
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 is the By-Laws of a single community council (Rice Lake), not the nation''s constitution; no facts were taken from it.'
+- aspect: judiciary
+  value: White Earth Appellate Court
+  quote: The White Earth Appellate Court consists of a Chief Justice and two associate justices.
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 is the By-Laws of a single community council (Rice Lake), not the nation''s constitution; no facts were taken from it.'
 representatives:
 - office: President
   listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
@@ -337,30 +361,20 @@ dispute_resolution:
       compact. as_of is NARF posting year. Component band: White Earth Band of Ojibwe.'
   - kind: elders-council
     name: Panel of Elders
-    description: Twelve elders appointed by the Tribal Council (four from each district) advise the Tribal
-      Court on disputes under White Earth law when a party asks; the Chief Judge presides and assigns
-      one elder to advise in each case. Elders may also serve as jurors, one may sit on the Appellate
-      Panel, and a Band member, including a juvenile, may choose to have a case heard in consultation
-      with an elder in accordance with the Band's traditional values and practices.
-    legal_basis: White Earth Judicial Code, Title 1, Chapter VIII (Sections 1-7); Chapter I Section 1;
-      Chapter VII Section 6(b)
+    description: Twelve elders appointed by the Tribal Council (four from each district) advise the Tribal Court on disputes under White Earth law when a party asks; the Chief Judge presides and assigns one elder to advise in each case. Elders may also serve as jurors, one may sit on the Appellate Panel, and a Band member, including a juvenile, may choose to have a case heard in consultation with an elder in accordance with the Band's traditional values and practices.
+    legal_basis: White Earth Judicial Code, Title 1, Chapter VIII (Sections 1-7); Chapter I Section 1; Chapter VII Section 6(b)
     case_types:
     - juvenile
     - other
     participation: voluntary
-    relationship_to_court: Part of the White Earth Tribal Court; advises the court on request, and the
-      court may also seek the panel's advice when custom or tradition is in doubt.
+    relationship_to_court: Part of the White Earth Tribal Court; advises the court on request, and the court may also seek the panel's advice when custom or tradition is in doubt.
     link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/5dcba5f024-1727297538/judicial.code.pdf
     source: white-earth-judicial-code
     confidence: medium
     verification: read-in-full
     as_of: '1997-11-03'
     locator: Chapter I § 1; Chapter III § 6; Chapter VII § 6(b); Chapter VIII §§ 1-7
-    note: 'Read by OCR. The chapter applies to all actions within the court''s jurisdiction; only juveniles
-      are named expressly, so other case types are recorded as ''other''. The panel may adopt its own
-      rules of procedure. Adopted by the White Earth Tribal Council on Nov. 3, 1997 (certification). The
-      scanned copy (May 4, 2021) appends a 2021 WERBC resolution adding Chapter 2, § 1(j). Component band:
-      White Earth Band of Ojibwe.'
+    note: 'Read in full on 2026-11-23 from page images (White Earth Band of Chippewa Judicial Code, Title 1: Courts; certification: adopted by the White Earth Tribal Council at a Special Meeting on November 3, 1997 (3 for, 0 against, 0 silent); appended WERBC Resolution 019-21-002 (March 11, 2021)). Read by OCR. The chapter applies to all actions within the court''s jurisdiction; only juveniles are named expressly, so other case types are recorded as ''other''. The panel may adopt its own rules of procedure. Adopted by the White Earth Tribal Council on Nov. 3, 1997 (certification). The scanned copy (May 4, 2021) appends a 2021 WERBC resolution adding Chapter 2, § 1(j). Component band: White Earth Band of Ojibwe. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 600.'
   provisions:
   - kind: peacemaking
     title: Juvenile Justice Code, Chapter 12A – Peacemaking Circle (White Earth Nation)
@@ -376,15 +390,13 @@ dispute_resolution:
   - kind: traditional-dispute-resolution
     title: Panel of Elders
     citation: White Earth Judicial Code, Title 1, Chapter VIII
-    summary: Creates a twelve-member Panel of Elders that advises the court on request of a party, may
-      serve on juries and the Appellate Panel, and sets its own procedure.
+    summary: Creates a twelve-member Panel of Elders that advises the court on request of a party, may serve on juries and the Appellate Panel, and sets its own procedure.
     link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/5dcba5f024-1727297538/judicial.code.pdf
     source: white-earth-judicial-code
     confidence: medium
     verification: read-in-full
     as_of: '1997-11-03'
-    note: 'Read by OCR. Adopted by the White Earth Tribal Council on Nov. 3, 1997 (certification, p. 17
-      of the scan). Component band: White Earth Band of Ojibwe.'
+    note: 'Read in full on 2026-11-23 from page images (White Earth Band of Chippewa Judicial Code, Title 1: Courts; certification: adopted by the White Earth Tribal Council at a Special Meeting on November 3, 1997 (3 for, 0 against, 0 silent); appended WERBC Resolution 019-21-002 (March 11, 2021)). Read by OCR. Adopted by the White Earth Tribal Council on Nov. 3, 1997 (certification, p. 17 of the scan). Component band: White Earth Band of Ojibwe. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 602.'
   - kind: other
     title: SECTION XLI – Patron Dispute Resolution
     citation: White Earth Reservation Gaming Ordinance, XLI
@@ -410,22 +422,18 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2019-06-17'
     locator: Article IX, Sections 1-2
-    note: 'Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White
-      Earth Band of Ojibwe. Context: Tribal housing ordinance (Housing Authority powers).'
+    note: 'Read in full on 2026-11-23 from page images (Tribal Housing Ordinance, Revised 6/17/19). Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White Earth Band of Ojibwe. Context: Tribal housing ordinance (Housing Authority powers). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 604.'
   - context: other
     kind: waiver-of-sovereign-immunity
     citation: White Earth Tribal Housing Ordinance, Article IX
-    summary: Lets the Housing Authority grant limited waivers of its immunity and consent to suit in the
-      White Earth Tribal Court, without waiving the Tribe's immunity and with recovery limited to Housing
-      Authority assets.
+    summary: Lets the Housing Authority grant limited waivers of its immunity and consent to suit in the White Earth Tribal Court, without waiving the Tribe's immunity and with recovery limited to Housing Authority assets.
     link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/f836051d7d-1794247063/tribal-housing-ordinance-revised-june-17-2019.pdf
     source: white-earth-tribal-housing-ordinance-2019
     confidence: medium
     verification: read-in-full
     as_of: '2019-06-17'
     locator: Article IX, Sections 1-2
-    note: 'Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White
-      Earth Band of Ojibwe. Context: Tribal housing ordinance (Housing Authority powers).'
+    note: 'Read in full on 2026-11-23 from page images (Tribal Housing Ordinance, Revised 6/17/19). Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White Earth Band of Ojibwe. Context: Tribal housing ordinance (Housing Authority powers). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 605.'
   - context: other
     kind: waiver-of-sovereign-immunity
     citation: White Earth Title 23 Utilities Code § 1.11
@@ -590,6 +598,17 @@ gaming:
       as "White Earth Band of Minnesota Chippewa Indians". Name matched to roster by spelling variant.
       Ordinance of the White Earth Band, a component reservation of the Minnesota Chippewa Tribe; the
       roster lists only the Minnesota Chippewa Tribe.
+  indian_lands_opinions:
+  - parcel: White Earth, MN
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2005-03-14'
+    link: https://www.nigc.gov?wpdmdl=2571&ind=2573
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for White Earth Band of Chippewa Indians, 2005-03-14
+    note: The list names the tribe as “White Earth Band of Chippewa Indians”.
 jurisdiction:
 - topic: public-law-280
   value: concurrent-federal-jurisdiction-accepted
@@ -650,6 +669,55 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “White Earth Mahnomen”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "White Earth", matched to the roster by name and state.'
+court_practice:
+- kind: legal-aid
+  title: Judicial Services (Anishinabe Legal Services)
+  court: White Earth Nation Judicial Services
+  link: https://www.whiteearth.com/divisions/judicial-services
+  detail: The page states Anishinabe Legal Services is a Legal Services Corporation grantee providing free legal help to low-income people on or near the Leech Lake, Red Lake and White Earth Reservations in northwestern Minnesota.
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  locator: Anishinabe Legal Services
+  note: 'The source reads: “Anishinabe Legal Services is a Legal Services Corporation (LSC) grantee”. Stated by the nation''s own page; also relevant to Leech Lake and Red Lake.'
+- kind: forms
+  title: Judicial Services (Interactive Court Forms)
+  court: White Earth Nation Judicial Services
+  link: https://www.whiteearth.com/divisions/judicial-services
+  detail: Page offers interactive court forms through LawHelp Interactive (a Custody Petition) and sample motions to dismiss.
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  locator: Interactive Court Forms
+  note: 'The source reads: “Interactive Court Forms”.'
+nearby_state_courts:
+- state: MN
+  county: Mahnomen County
+  court: District Court for Mahnomen County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Mahnomen County holds 51% of the land of White Earth Reservation (Census GEOID 4595), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Becker County
+  court: District Court for Becker County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Becker County holds 36% of the land of White Earth Reservation (Census GEOID 4595), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Clearwater County
+  court: District Court for Clearwater County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Clearwater County holds 13% of the land of White Earth Reservation (Census GEOID 4595), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1842
   signed: '1842-10-04'

@@ -705,6 +705,17 @@ gaming:
     locator: table row 217, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 217 lists the nation
       as "Pyramid Lake Paiute Tribe". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Crosby Lodge, Washoe County, NV
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2005-09-27'
+    link: https://www.nigc.gov?wpdmdl=2578&ind=2579
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Pyramid Lake Paiute Tribe, 2005-09-27
+    note: The list names the tribe as “Pyramid Lake Paiute Tribe”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -727,6 +738,47 @@ jurisdiction:
   verification: read-in-full
   locator: 88 Nev. at 446
   note: The court held state courts lacked jurisdiction over Pyramid Lake members' crimes on the reservation and vacated the convictions. Nevada Supreme Court, 1972.
+court_practice:
+- kind: forms
+  title: Applications & Forms (Tribal Court page forms)
+  court: Pyramid Lake Paiute Tribal Court
+  link: https://plpt.nsn.us/tribal-court/
+  detail: Court page lists petitions including Petition for Waiver of Fees, Petition for Uncontested Divorce, Petition for Contested Divorce, Petition for Name Change, guardianship petitions and a Combined Petition to Establish Custody, Support and or Visitation.
+  source: pyramid-lake-paiute-tribal-court-bar-admission-forms
+  confidence: high
+  verification: title-only
+  locator: forms list
+  note: 'The source reads: “Petition for Uncontested Divorce”. Form PDFs not opened.'
+- kind: bar-admission
+  title: 2025 Advocate & Attorney List
+  court: Pyramid Lake Paiute Tribal Court
+  link: https://plpt.nsn.us/wp-content/uploads/2025/05/2025-Advocate-Attorney-List.pdf
+  detail: Court page links a 2025 list of admitted advocates and attorneys.
+  source: pyramid-lake-paiute-tribal-court-bar-admission-forms
+  confidence: high
+  verification: title-only
+  locator: document list
+  note: PDF not opened.
+- kind: public-defender
+  title: Pyramid Lake Tribal Court Staff (Defense Advocate)
+  court: Pyramid Lake Paiute Tribal Court
+  link: https://plpt.nsn.us/tribal-court/
+  detail: Court staff list names a Defense Advocate position alongside the Prosecutor.
+  source: pyramid-lake-paiute-tribal-court-bar-admission-forms
+  confidence: medium
+  verification: read-in-full
+  locator: Pyramid Lake Tribal Court Staff
+  note: 'The source reads: “Defense Advocate”. Position listed on staff roster; no separate defender page. Individual name omitted.'
+nearby_state_courts:
+- state: NV
+  county: Washoe County
+  court: District Court for Washoe County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Washoe County holds 100% of the land of Pyramid Lake Paiute Reservation (Census GEOID 3010), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Pyramid Lake (Truckee) Reserve, Nevada
   method: other

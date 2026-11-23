@@ -37,7 +37,7 @@ export const load: PageServerLoad = async (event) => {
 	);
 	// The offices official lists name for the nation, and the office emails and
 	// phones its page shows: the contacts the project already had (decision
-	// records 0041 and 0050).
+	// records 0041 and 0052).
 	const listed = publicNationContacts.find((entry) => entry.identifier === found.nationIdentifier);
 	return {
 		application: found,

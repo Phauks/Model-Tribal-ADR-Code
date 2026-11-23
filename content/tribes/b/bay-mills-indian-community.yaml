@@ -782,6 +782,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bay Mills Indian Community".
       Facilities as machine-extracted from the report text (verify): Bay Mills Resort & Casino. Name extracted
       from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Vanderbilt Site, Otsego, MI
+    legal_theory: Michigan Indian Lands Claims Settlement
+    accepted: false
+    date: '2010-12-21'
+    link: https://www.nigc.gov?wpdmdl=2641&ind=2642
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Bay Mills Indian Community, 2010-12-21
+    note: The list names the tribe as “Bay Mills Indian Community”.
+  - parcel: Vanderbilt Site, Otsego, MI
+    legal_theory: Indian Lands
+    accepted: false
+    date: '2010-12-21'
+    link: https://www.nigc.gov?wpdmdl=2639&ind=2640
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Bay Mills Indian Community, 2010-12-21
+    note: The list names the tribe as “Bay Mills Indian Community”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -836,6 +857,47 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.E, Michigan
   note: 'The source reads: “Bay Mills Indian Community, executed in July 1999 and amended on October 1, 2008”. Date is the execution date as reported; most were amended 2008-10-01. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: filing-fees
+  title: Fees (Bay Mills Tribal Court)
+  court: Bay Mills Tribal Court
+  link: https://baymillstribalcourt.org/fees/
+  detail: Page lists $40 per case, claim, affidavit or registration of a foreign judgment, and $15 for an appeal.
+  source: bay-mills-tribal-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Fees
+  note: 'The source reads: “$40 per case, claim, affidavit or registration of a foreign judgment”.'
+- kind: forms
+  title: Court Forms and Resources
+  court: Bay Mills Tribal Court
+  link: https://baymillstribalcourt.org/court-forms-resources/
+  detail: Documents include Petition for Change of Name, Petition for Emancipation, Motions in Civil Proceedings, Registration of Foreign Judgement, court rules on foreign judgments and electronic signatures, and a Memorandum Regarding Court Fees.
+  source: bay-mills-tribal-court-forms-public-defender
+  confidence: high
+  verification: title-only
+  locator: document list
+  note: 'The source reads: “Petition for Change of Name”. Documents not opened.'
+- kind: public-defender
+  title: Court Appointed Attorneys and Advocates
+  court: Bay Mills Tribal Court
+  link: https://baymillstribalcourt.org/wp-content/uploads/2018/11/Court-Appointed-Attorneys.pdf
+  detail: Forms and resources page lists a Court Appointed Attorneys and Advocates document (file uploaded 2018).
+  source: bay-mills-tribal-court-forms-public-defender
+  confidence: medium
+  verification: title-only
+  locator: document list
+  note: PDF not opened; not confirmed to be a public defender office.
+nearby_state_courts:
+- state: MI
+  county: Chippewa County
+  court: Circuit Court for Chippewa County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Chippewa County holds 100% of the land of Bay Mills Reservation (Census GEOID 0170), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Ottawa, etc., 1836
   signed: '1836-03-28'
