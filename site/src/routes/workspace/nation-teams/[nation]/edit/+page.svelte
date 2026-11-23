@@ -67,6 +67,34 @@
 	<div class="notice" role="status"><p>{generalMessage.done}</p></div>
 {/if}
 
+{#if data.pause}
+	<section class="panel panel-filled" id="project-question" aria-labelledby="pause-heading">
+		<h2 id="pause-heading">The project has a question</h2>
+		<p>
+			The project paused publishing for this page on {when(data.pause.pausedAt)} and asks your team:
+		</p>
+		<blockquote class="pause-question">{data.pause.question}</blockquote>
+		<p class="small">
+			Until the project resumes publishing, you can still save drafts and hide parts of the page, but nothing else goes live.
+		</p>
+		{#if data.pause.answer}
+			<p class="small">
+				<strong>Your team’s answer</strong>, {data.pause.answeredByName ?? 'your team'}, {when(data.pause.answeredAt)}:
+			</p>
+			<p class="report-details">{data.pause.answer}</p>
+		{/if}
+		{#if data.canAnswer}
+			<form method="post" action="?/answerProject" class="report-answer">
+				<label for="pause-answer">{data.pause.answer ? 'Write a new answer' : 'Your answer'}</label>
+				<textarea id="pause-answer" name="answer" rows="4" required></textarea>
+				<div class="button-row"><button class="button" type="submit">Send to the project</button></div>
+			</form>
+		{:else}
+			<p class="small muted">An editor or steward on your team can answer.</p>
+		{/if}
+	</section>
+{/if}
+
 {#if data.reports.length > 0}
 	<section class="panel panel-filled" aria-labelledby="reports-heading">
 		<h2 id="reports-heading">Problems readers reported</h2>
@@ -519,6 +547,13 @@
 	}
 
 	.report-details {
+		white-space: pre-wrap;
+	}
+
+	.pause-question {
+		margin: var(--space-2) 0;
+		border-left: 4px solid var(--color-line);
+		padding-left: var(--space-3);
 		white-space: pre-wrap;
 	}
 

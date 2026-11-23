@@ -73,6 +73,8 @@ export type Permission =
 	| 'manage-mail'
 	// Hiding parts of a change in Recent changes (migrations/0017_page_changes.sql): the lead author only.
 	| 'hide-changes'
+	// Reading what nations publish on their own pages, undoing it or pausing it (migrations/20261123T0438_add_nation_page_review.sql).
+	| 'review-nation-pages'
 	// The nonprofit corporation's record and due dates (migrations/20261123T0440_add_nonprofit_records.sql): the lead author only.
 	| 'manage-nonprofit'
 	// Checking the services the site depends on (src/lib/server/service-checks.ts): the lead author only.
@@ -94,10 +96,11 @@ const grants: Record<Role, readonly Permission[]> = {
 		'send-outreach',
 		'manage-mail',
 		'hide-changes',
+		'review-nation-pages',
 		'manage-nonprofit',
 		'check-services'
 	],
-	editor: ['read-contributors', 'read-requests', 'handle-requests', 'review-uploads', 'read-reviews', 'comment', 'sign-off'],
+	editor: ['read-contributors', 'read-requests', 'handle-requests', 'review-uploads', 'read-reviews', 'comment', 'sign-off', 'review-nation-pages'],
 	'co-author': ['read-reviews', 'comment'],
 	advisor: ['read-reviews', 'comment', 'sign-off'],
 	contributor: ['comment'],

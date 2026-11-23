@@ -1,0 +1,15 @@
+group: nation
+variables:
+  name:
+    description: The nation's name as used in its own laws.
+    model: "[Name of Nation]"
+    example: Pyramid Lake Paiute Tribe
+  emergency_number:
+    description: The phone number for Tribal police or emergency dispatch, shown beside 911 on the protection order form.
+    model: "[Tribal police number]"
+  victim_services:
+    description: The nation's victim services or domestic violence advocacy program, named on the protection order form.
+    model: "[victim services program]"
+  family_services:
+    description: The nation's child and family services department, which may do a home study for a guardianship.
+    model: "[family services department]"
