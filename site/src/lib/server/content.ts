@@ -245,7 +245,7 @@ export interface NationRecord {
 		provisions?: (CitedFact & { kind: string; title?: string })[];
 	};
 	gaming?: {
-		compacts?: CitedFact[];
+		compacts?: (CitedFact & { state: string; status: string })[];
 		ordinances?: CitedFact[];
 		operates_gaming?: CitedFact & { value: boolean };
 	};
