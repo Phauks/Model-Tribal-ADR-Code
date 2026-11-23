@@ -7,6 +7,9 @@
 	// given by the page, such as "Gaming compact with Arizona", already says
 	// what kind of document it is, so the kind is not repeated under it, and a
 	// status the sources do not record is left out rather than shown as "Unknown".
+	// A document none of whose versions is in effect says how and when it
+	// ended, and names what took its place, such as Secretarial Procedures, so
+	// a reader can find what governs now (Trevor, Nov. 23, 2026).
 	import type { DocumentHistoryView } from '#lib/server/document-history.ts';
 	import CitationMarks from './CitationMarks.svelte';
 	import DocumentTimeline from './DocumentTimeline.svelte';
@@ -22,6 +25,21 @@
 		{:else}
 			<p class="small muted">
 				{document.kind}{#if document.inEffect}. In effect: {document.inEffect}{/if}.
+			</p>
+		{/if}
+		{#if document.ended || document.replacedBy.length > 0}
+			<p class="small">
+				{#if document.ended}{document.ended}.{/if}
+				{#each document.replacedBy as other (other.id)}
+					Replaced by <a href="#document-{other.id}">{other.heading}</a>{#if other.inEffect}, in effect{/if}.
+				{/each}
+			</p>
+		{/if}
+		{#if document.replaces.length > 0}
+			<p class="small muted">
+				{#each document.replaces as other (other.id)}
+					Took the place of the <a href="#document-{other.id}">{other.heading.charAt(0).toLocaleLowerCase('en-US') + other.heading.slice(1)}</a>.
+				{/each}
 			</p>
 		{/if}
 		<DocumentTimeline versions={document.versions} />

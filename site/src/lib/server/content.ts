@@ -299,6 +299,8 @@ export interface DocumentHistoryRecord {
 	states?: string[];
 	summary?: string;
 	versions: DocumentVersion[];
+	/** Other document histories this one depends on or that took its place, such as Secretarial Procedures. */
+	related?: { document: string; relation: string; note?: string }[];
 	sensitivity?: { restricted?: boolean; tribal_review_required?: boolean };
 }
 
