@@ -22,12 +22,14 @@ import { SourceUses, whereInSource, type CitationMark } from '#lib/server/source
 import { sourceAnchor } from '#lib/citation-marks.ts';
 import { recognitionBadges } from '#lib/recognition-badges.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
+import { listedIn } from '#lib/listed-in.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
 import { offlineSets } from '#lib/server/copy-lists.ts';
 import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
+import { nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -980,6 +982,11 @@ export const load: PageServerLoad = ({ params }) => {
 		example: record.example === true,
 		officialName: displayName(record.names.official),
 		listedName: record.names.official,
+		// The document the listed name comes from, cited by its own name (Trevor, Nov. 23, 2026).
+		listedIn: listedIn(
+			record.names.official_source ? sourceRecords().get(record.names.official_source) : undefined,
+			record.recognition?.find((fact) => fact.source === record.names.official_source)?.locator
+		),
 		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
 		badges: recognitionBadges(record.recognition ?? []),
 		review: status,
@@ -1006,6 +1013,7 @@ export const load: PageServerLoad = ({ params }) => {
 			jurisdiction: [],
 			ties: [],
 			stories: [],
+			timeline: undefined,
 			empty: {} as EmptySections,
 			neighbors: [],
 			map: undefined,
@@ -1131,6 +1139,10 @@ export const load: PageServerLoad = ({ params }) => {
 	const jurisdiction = jurisdictionFacts(record, sources);
 	sources.part('Treaties and federal ties');
 	const ties = federalTies(record, sources);
+	// Every dated record on the page on one line, after the sections it
+	// repeats, so its markers reuse their sources' numbers.
+	const timeline = nationTimeline(record, sources, documents);
+	const hasTimeline = timeline.entries.length > 0 || timeline.opinions.length > 0;
 	// The nation's stories, each linked to its own page, which carries the
 	// story's citations; a restricted or withdrawn story is never listed.
 	const stories = nationStorySummaries(record.id);
@@ -1179,6 +1191,7 @@ export const load: PageServerLoad = ({ params }) => {
 		documents,
 		jurisdiction,
 		ties,
+		timeline: hasTimeline ? timeline : undefined,
 		stories,
 		empty,
 		neighbors: sameStates(record),
@@ -1200,6 +1213,7 @@ export const load: PageServerLoad = ({ params }) => {
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
 	if (ties.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (hasTimeline) items.push({ label: timelineHeading, link: '#timeline-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {
 		items.push({ label: 'Nearby Nations', link: '#neighbors-heading' });

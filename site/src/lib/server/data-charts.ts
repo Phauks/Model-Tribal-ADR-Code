@@ -21,7 +21,7 @@ import { displayName, stateName } from '../nation-labels.ts';
 import { categoryOf } from '../nation-services.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { recourseLink } from '../recourse.ts';
-import { dataChartNamed } from '../data-chart-list.ts';
+import { dataChartNamed, dataChartTableLink } from '../data-chart-list.ts';
 import type { TableColumn, TableRow } from '../tables/table-definition.ts';
 import { nations, publicCopyFor, repositoryRoot, type NationRecord } from './content.ts';
 import { recourseRows } from './recourse.ts';
@@ -97,7 +97,12 @@ function inputs(): ChartInputs {
 	return inputCache;
 }
 
+/** The charts, each with the address of its published CSV file. */
 export function dataCharts(): BarChartData[] {
+	return chartDefinitions().map((chart) => ({ ...chart, csvHref: dataChartTableLink(chart.identifier, 'csv') }));
+}
+
+function chartDefinitions(): BarChartData[] {
 	const provisions = recourseRows();
 	const provisionSource =
 		'Dispute resolution provisions read from each nation’s published law codes, court rules and ordinances, Nov. 2026. Each provision is counted once.';
@@ -114,6 +119,7 @@ export function dataCharts(): BarChartData[] {
 	return [
 		{
 			...dataChartNamed('provisions-by-method'),
+			partsOfWhole: true,
 			description: `${provisions.length.toLocaleString('en-US')} dispute resolution provisions in Native nations’ own laws. Pick a method to read its provisions.`,
 			labelHeader: 'Method',
 			valueHeader: 'Provisions',
@@ -126,6 +132,7 @@ export function dataCharts(): BarChartData[] {
 		},
 		{
 			...dataChartNamed('provisions-by-dispute'),
+			partsOfWhole: true,
 			description: 'The same provisions, by the kind of dispute they cover. Pick a kind to read its provisions.',
 			labelHeader: 'Kind of dispute',
 			valueHeader: 'Provisions',
@@ -164,6 +171,7 @@ export function dataCharts(): BarChartData[] {
 		},
 		{
 			...dataChartNamed('constitutions-by-status'),
+			partsOfWhole: true,
 			description:
 				'What the search for each federally recognized nation’s constitution found. “No constitution found” does not mean a nation has none: many are not online, and some nations keep theirs to citizens. Pick a line to see the nations.',
 			labelHeader: 'What was found',
@@ -177,6 +185,7 @@ export function dataCharts(): BarChartData[] {
 		},
 		{
 			...dataChartNamed('compacts-by-arbitration'),
+			partsOfWhole: true,
 			description: `${compacts.length.toLocaleString('en-US')} full tribal-state gaming compacts approved by the Department of the Interior, by what their dispute clause says. Amendments and extensions are left out. Pick a line to see the compacts.`,
 			labelHeader: 'Dispute clause',
 			valueHeader: 'Compacts',

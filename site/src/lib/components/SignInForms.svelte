@@ -351,7 +351,7 @@
 	}
 
 	.panel {
-		max-width: 30rem;
+		max-width: var(--layout-panel);
 	}
 
 	.choice {
@@ -398,7 +398,7 @@
 	}
 
 	.switch {
-		max-width: 30rem;
+		max-width: var(--layout-panel);
 	}
 
 	.wide {

@@ -1,6 +1,8 @@
 <!--
 	@component
-	A document's versions on a line, each placed by the earliest date its
+	A document's versions on a line, the shared timeline drawn small for one
+	document (src/lib/timeline.ts places the dates; Timeline.svelte draws a
+	nation's whole timeline). Each version is placed by the earliest date its
 	sources give, so the gaps between versions show at a glance. It draws only
 	recorded dates and kinds, never generated text. The list below it says the
 	same things in words and links each version, so the drawing is hidden from
@@ -11,14 +13,9 @@
 -->
 <script lang="ts">
 	import type { VersionView } from '#lib/server/document-history.ts';
+	import { yearOf } from '#lib/timeline.ts';
 
 	let { versions }: { versions: VersionView[] } = $props();
-
-	/** A date as a year with a fraction, so 2021-07-01 sits halfway through 2021. */
-	function yearOf(date: string): number {
-		const [year, month = 1, day = 1] = date.split('-').map(Number);
-		return year + (month - 1) / 12 + (day - 1) / 365;
-	}
 
 	/** Labels this close to an end line up with that end, so they stay inside the line. */
 	const edge = 12;

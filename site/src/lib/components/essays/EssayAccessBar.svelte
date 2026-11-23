@@ -5,6 +5,11 @@
 	// draft stands and holds the two choices: what to show (Published only
 	// or With drafts) and what to do (Reading Commenting or Editing). The page's state
 	// comes from src/lib/server/essay-page-state.ts.
+	// An Edit button sits beside the Mode choice so editing is easy to find
+	// (Trevor, Nov. 23, 2026: "cannot figure out how to access it"), and Done
+	// goes back to reading.
+	import Pencil from '@lucide/svelte/icons/pencil';
+	import Check from '@lucide/svelte/icons/check';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
 
 	let {
@@ -42,7 +47,12 @@
 		{/if}
 	</p>
 	<div class="controls">
-		{#if state.draft}
+		{#if state.canEdit && mode === 'reading'}
+			<button class="button" type="button" onclick={() => (mode = 'editing')}><Pencil size={16} aria-hidden="true" /> Edit</button>
+		{:else if mode !== 'reading'}
+			<button class="button" type="button" onclick={() => (mode = 'reading')}><Check size={16} aria-hidden="true" /> Done</button>
+		{/if}
+		{#if state.draft && state.publishedVersion !== null}
 			<label class="small" for="essay-view">Show</label>
 			<select id="essay-view" bind:value={view} disabled={mode !== 'reading'}>
 				<option value="published">Published only</option>
@@ -90,6 +100,12 @@
 		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--space-2);
+	}
+
+	.controls .button {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
 
 	.controls form {

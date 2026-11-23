@@ -397,6 +397,34 @@ function recentChanges(): Change[] {
 	}
 }
 
+const sponsorshipCountsModule = 'virtual:sponsorship-counts';
+const resolvedSponsorshipCountsModule = `\0${sponsorshipCountsModule}`;
+
+/**
+ * The counts the Sponsorship page shows (src/routes/sponsor/): nations with a
+ * page, the federally recognized nations the printed-copy goal counts, and
+ * sources recorded. The Worker renders that page, so it cannot read the
+ * content files itself.
+ */
+function sponsorshipCounts(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:sponsorship-counts',
+		resolveId(identifier) {
+			return identifier === sponsorshipCountsModule ? resolvedSponsorshipCountsModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedSponsorshipCountsModule) return undefined;
+			const real = nations().filter((record) => !record.example);
+			const counts = {
+				nationPages: real.length,
+				federallyRecognized: real.filter((record) => (record.recognition ?? []).some((fact) => fact.type === 'federal')).length,
+				sources: sources().size
+			};
+			return `export const sponsorshipCounts = ${JSON.stringify(counts)};`;
+		}
+	};
+}
+
 const followablePagesModule = 'virtual:followable-pages';
 const resolvedFollowablePagesModule = `\0${followablePagesModule}`;
 
@@ -473,6 +501,7 @@ export default defineConfig({
 		formCatalog(),
 		buildInformation(),
 		followablePages(),
+		sponsorshipCounts(),
 		pageHistory(),
 		sveltekit({
 			compilerOptions: {

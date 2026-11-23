@@ -30,6 +30,6 @@
 	}
 
 	.data-page {
-		max-width: 60rem;
+		max-width: var(--layout-measure);
 	}
 </style>

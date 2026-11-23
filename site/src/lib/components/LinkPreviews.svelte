@@ -62,7 +62,7 @@
 	// tables, search results, and anything that asks for none.
 	const noPreview = 'nav, header, table, dialog, [role="dialog"], .sidebar-wide, .sidebar-narrow, [data-no-preview]';
 	// Addresses under /nations/ that are lists or maps, not a nation's page.
-	const nationLists = new Set(['map', 'letter', 'state', 'previews.json', 'recourse', 'data']);
+	const nationLists = new Set(['map', 'letter', 'state', 'previews.json', 'recourse', 'data', 'timeline']);
 
 	let terms: Promise<Map<string, Term>> | undefined;
 	let nations: Promise<Map<string, Nation>> | undefined;
@@ -291,7 +291,7 @@
 	.link-preview {
 		position: absolute;
 		z-index: 20;
-		width: min(24rem, calc(100vw - 16px));
+		width: min(var(--layout-popover), calc(100vw - 16px));
 		padding: var(--space-3) var(--space-4);
 		border: 1px solid var(--color-control-border);
 		border-radius: var(--radius-panel);

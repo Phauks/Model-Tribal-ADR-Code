@@ -131,7 +131,7 @@
 
 	/* A long list of courts takes two columns where each can be 16rem wide. */
 	.members:has(> li:nth-child(7)) {
-		columns: 16rem 2;
+		columns: var(--layout-card-min) 2;
 		column-gap: var(--space-5);
 	}
 

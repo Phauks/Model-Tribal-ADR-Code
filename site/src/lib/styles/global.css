@@ -287,7 +287,7 @@ blockquote > footer {
 /* Summary list: label and value pairs (DESIGN.md, section 6). */
 .summary-list {
 	display: grid;
-	grid-template-columns: minmax(8rem, 14rem) 1fr;
+	grid-template-columns: minmax(8rem, var(--layout-label-column)) 1fr;
 	gap: 0;
 	margin: 0 0 var(--space-5);
 	border-top: 1px solid var(--color-line);
@@ -342,6 +342,74 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 	font-size: var(--font-size-small);
+}
+
+/*
+ * Column widths readers can change (src/lib/tables/resizable-columns.ts;
+ * Trevor, Nov. 23, 2026). The handle straddles the line between two header
+ * cells, 24 px wide for a pointer or a finger (WCAG 2.5.8), and shows as a
+ * thin rule until it is pointed at, dragged or focused.
+ */
+.resizable-header {
+	position: relative;
+}
+
+.column-resizer {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: -0.75rem;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	width: 1.5rem;
+	cursor: col-resize;
+	touch-action: none;
+}
+
+.resizable-header:last-child > .column-resizer {
+	right: 0;
+}
+
+.column-resizer::before {
+	content: '';
+	width: 1px;
+	margin: var(--space-2) 0;
+	background: var(--color-line);
+}
+
+.column-resizer:hover::before,
+.column-resizer.dragging::before,
+.column-resizer:focus-visible::before {
+	width: 3px;
+	background: var(--color-link);
+}
+
+.columns-measuring .column-resizer {
+	display: none;
+}
+
+/* Once a reader sets the widths, text wraps to fit them, even inside a word. */
+main table.columns-resized :is(th, td),
+main table.columns-resized :is(th, td) :is(a, code) {
+	overflow-wrap: anywhere;
+}
+
+.column-reset {
+	margin: var(--space-2) 0 0;
+	font-size: var(--font-size-small);
+}
+
+@media print {
+	/* Paper has its own width, so a printed table sizes itself again. */
+	table.columns-resized {
+		table-layout: auto !important;
+		width: 100% !important;
+	}
+
+	table.columns-resized > colgroup[data-column-widths] {
+		display: none;
+	}
 }
 
 th,
@@ -479,8 +547,14 @@ textarea {
 	color: var(--color-ink);
 }
 
+/* A one-line field is as wide as the answer it expects, never wider than the column; a text area and the label, hint and error around it take the text width. */
+.field :is(input[type='text'], input[type='email'], input[type='password'], input[type='search'], select) {
+	max-width: var(--layout-field);
+}
+
+.field input.short,
 input.short {
-	max-width: 16rem;
+	max-width: var(--layout-field-short);
 }
 
 /*
@@ -738,15 +812,34 @@ sup.citation {
 }
 
 /*
- * Line width (Settings, Text). The token's 51ch is Standard, about 75
- * characters of English in Atkinson Hyperlegible Next at any size.
+ * Text width (Settings, Text): how much of the page's column running text
+ * may use, from 40 to 100 percent; 100, the default, fills the column (Trevor,
+ * Nov. 23, 2026). cqi is a percentage of the nearest size container, which for
+ * the page's text is <main>, so the setting is a share of the column whether
+ * the sidebar is open or not.
  */
-:root:root[data-line-width='narrow'] {
-	--layout-measure: 44ch;
+:root:root[data-line-width='40'] {
+	--layout-measure: 40cqi;
 }
 
-:root:root[data-line-width='wide'] {
-	--layout-measure: 58ch;
+:root:root[data-line-width='50'] {
+	--layout-measure: 50cqi;
+}
+
+:root:root[data-line-width='60'] {
+	--layout-measure: 60cqi;
+}
+
+:root:root[data-line-width='70'] {
+	--layout-measure: 70cqi;
+}
+
+:root:root[data-line-width='80'] {
+	--layout-measure: 80cqi;
+}
+
+:root:root[data-line-width='90'] {
+	--layout-measure: 90cqi;
 }
 
 /* Wide spacing uses the values WCAG 2.2, 1.4.12 Text Spacing tests. */
@@ -1639,7 +1732,7 @@ sup.citation {
 
 .nation-picture-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(min(14rem, 100%), 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(min(var(--layout-card-min), 100%), 1fr));
 	gap: var(--space-4);
 }
 
@@ -1737,6 +1830,16 @@ sup.citation {
 	vertical-align: baseline;
 }
 
+a.topic-badge {
+	color: var(--color-link);
+	text-decoration: none;
+}
+
+a.topic-badge:hover {
+	border-color: var(--color-link);
+	text-decoration: underline;
+}
+
 .topic-badge {
 	display: inline-block;
 	padding: 0 var(--space-2);
@@ -1746,4 +1849,23 @@ sup.citation {
 	font-size: 0.875em;
 	line-height: 1.6;
 	overflow-wrap: normal;
+}
+
+/* A count beside a heading or label, in a badge rather than a loose number (src/lib/components/CountBadge.svelte; Trevor, Nov. 23, 2026). */
+.count-badge {
+	display: inline-block;
+	min-width: 1.6em;
+	margin-left: 0.4em;
+	padding: 0 0.45em;
+	border: 1px solid var(--color-line);
+	border-radius: 999px;
+	background: var(--color-surface);
+	color: var(--color-ink-muted);
+	font-size: var(--font-size-small);
+	font-weight: normal;
+	font-variant-numeric: tabular-nums;
+	line-height: 1.5;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
 }

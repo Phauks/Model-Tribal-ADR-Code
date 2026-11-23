@@ -19,6 +19,7 @@ const byLabel = (first: OutlineItem, second: OutlineItem) => first.label.localeC
 export const nationsPages: OutlineItem[] = [
 	{ label: 'Directory', link: '/nations' },
 	{ label: 'Map', link: '/nations/map' },
+	{ label: 'Timeline', link: '/nations/timeline' },
 	{ label: 'Find recourse', link: '/nations/recourse' },
 	{ label: 'Data and charts', link: '/nations/data' }
 ];

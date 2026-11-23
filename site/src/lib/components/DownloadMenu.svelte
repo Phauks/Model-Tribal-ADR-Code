@@ -299,7 +299,7 @@
 		right: 0;
 		top: calc(100% + var(--space-2));
 		z-index: 20;
-		width: min(28rem, calc(100vw - 2 * var(--space-3)));
+		width: min(var(--layout-popover), calc(100vw - 2 * var(--space-3)));
 		padding: var(--space-2) 0;
 		background: var(--color-surface-raised);
 		color: var(--color-ink);
@@ -461,9 +461,9 @@
 			position: fixed;
 			left: var(--space-2);
 			right: var(--space-2);
-			top: 4.5rem;
+			top: 3.5rem;
 			width: auto;
-			max-height: calc(100dvh - 5rem);
+			max-height: calc(100dvh - 4rem);
 			overflow-y: auto;
 		}
 	}

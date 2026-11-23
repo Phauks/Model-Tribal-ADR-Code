@@ -99,7 +99,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-3);
-		width: min(28rem, calc(100% - 2 * var(--space-4)));
+		width: min(var(--layout-popover), calc(100% - 2 * var(--space-4)));
 		pointer-events: none;
 	}
 

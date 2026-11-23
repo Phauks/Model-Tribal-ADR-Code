@@ -1,12 +1,9 @@
-import { allowanceFor } from '#lib/server/uploads.ts';
-import { requireAccount, storage } from '#lib/server/workspace.ts';
+import { requireAccount } from '#lib/server/workspace.ts';
 import type { PageServerLoad } from './$types';
 
+// Send files has no limits on how many files a batch or a day holds
+// (decision record 0038, "Limits"); it only needs someone signed in.
 export const load: PageServerLoad = async (event) => {
-	const account = requireAccount(event);
-	const { database } = storage(event);
-	const allowance = await allowanceFor(database, account.subject, event.locals.person);
-	return {
-		filesPerDay: Number.isFinite(allowance.filesPerDay) ? allowance.filesPerDay : null
-	};
+	requireAccount(event);
+	return {};
 };

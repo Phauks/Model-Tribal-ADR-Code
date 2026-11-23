@@ -30,6 +30,32 @@ export const earmarkShortLabels: Record<Earmark, string> = {
 	hosting: 'website and hosting'
 };
 
+/**
+ * The things a gift can fund that have a cost the Sponsorship page shows,
+ * and what one cost buys: a printed copy for one nation, or a year of the
+ * site. The lead author sets each cost on the workspace Sponsors page; none
+ * is fixed here, because prices are not settled (docs/sponsorship.md).
+ */
+export const costedEarmarks = ['books-for-nations', 'large-format', 'hosting'] as const;
+export type CostedEarmark = (typeof costedEarmarks)[number];
+
+export const earmarkCostUnits: Record<CostedEarmark, 'copy' | 'year'> = {
+	'books-for-nations': 'copy',
+	'large-format': 'copy',
+	hosting: 'year'
+};
+
+/** How the workspace asks for each cost. */
+export const earmarkCostQuestions: Record<CostedEarmark, string> = {
+	'books-for-nations': 'One paperback, printed and mailed to a nation',
+	'large-format': 'One large-format copy, printed and mailed to a nation',
+	hosting: 'The website for a year, with its web address'
+};
+
+export function isCostedEarmark(value: unknown): value is CostedEarmark {
+	return typeof value === 'string' && (costedEarmarks as readonly string[]).includes(value);
+}
+
 export function isListing(value: unknown): value is Listing {
 	return typeof value === 'string' && (listings as readonly string[]).includes(value);
 }

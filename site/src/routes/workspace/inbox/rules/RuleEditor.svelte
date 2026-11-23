@@ -169,7 +169,7 @@
 	.editor {
 		display: grid;
 		gap: var(--space-4);
-		max-width: 52rem;
+		max-width: var(--layout-measure);
 	}
 	.card {
 		padding: var(--space-4) var(--space-5);
@@ -182,7 +182,7 @@
 		font-size: var(--font-size-heading-3);
 	}
 	.card .field {
-		max-width: 28rem;
+		max-width: var(--layout-field);
 	}
 	.check {
 		display: flex;

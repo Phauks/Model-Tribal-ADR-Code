@@ -27,6 +27,7 @@ export const GET: RequestHandler = async ({ fetch }) => {
 	await add('nations.csv', '/nations/nations.csv');
 	await add('dispute-resolution-provisions.csv', '/nations/recourse/provisions.csv');
 	await add('dispute-resolution-provisions.json', '/nations/recourse/provisions.json');
+	await add('timeline.csv', '/nations/timeline/entries.csv');
 	await add('glossary.json', '/glossary/terms.json');
 	await add('document-copies.csv', '/copies/list.csv');
 	for (const record of nations()) {
@@ -58,7 +59,7 @@ export const GET: RequestHandler = async ({ fetch }) => {
 			'',
 			`Made ${citationDate(built)}, build ${version}.`,
 			'',
-			'nations.csv lists every nation and community. nations/ holds each nation’s record, with a source for every fact, and its sources as Citation Style Language JSON. dispute-resolution-provisions.csv and .json are the provisions behind Find recourse. glossary.json holds the glossary. document-copies.csv lists the copies of documents the website holds. stories.json holds the stories; a story’s full text is included where it is in the public domain or a nation’s law, and for the others the story’s page on the website has it.',
+			'nations.csv lists every nation and community. nations/ holds each nation’s record, with a source for every fact, and its sources as Citation Style Language JSON. dispute-resolution-provisions.csv and .json are the provisions behind Find recourse. timeline.csv holds every dated entry of the timeline with its citation. glossary.json holds the glossary. document-copies.csv lists the copies of documents the website holds. stories.json holds the stories; a story’s full text is included where it is in the public domain or a nation’s law, and for the others the story’s page on the website has it.',
 			'',
 			'SHA256SUMS.txt gives the SHA-256 of every file here, in the form sha256sum -c reads, and Checking a file on the website’s Downloads page (/downloads) checks this ZIP file itself.',
 			'',

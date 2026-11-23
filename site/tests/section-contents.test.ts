@@ -20,7 +20,7 @@ describe('the pages of each section, for the sidebar’s second column', () => {
 
 	it('lists each section’s own pages and its long list with working addresses', async () => {
 		const nations = await sectionContents('nations');
-		expect(nations?.pages.map((item) => item.link)).toEqual(['/nations', '/nations/map', '/nations/recourse', '/nations/data']);
+		expect(nations?.pages.map((item) => item.link)).toEqual(['/nations', '/nations/map', '/nations/timeline', '/nations/recourse', '/nations/data']);
 		expect(nations?.entries).toEqual({ noun: 'nations', items: [], list: 'nations' });
 		const { withSharedLists } = await import('#lib/section-lists.ts');
 		const filled = withSharedLists(nations)?.entries?.items ?? [];

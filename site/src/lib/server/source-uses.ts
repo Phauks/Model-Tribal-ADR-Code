@@ -136,6 +136,25 @@ export class SourceUses {
 		return mark;
 	}
 
+	/**
+	 * A further marker for a fact the page shows a second time, such as an
+	 * entry on its timeline that repeats a treaty listed above it. When the
+	 * page already cites the source, the marker links to its entry and no
+	 * second line is added to the entry's list of facts; otherwise this is
+	 * cite().
+	 */
+	again(key: string, use: SourceUse): CitationMark {
+		const entry = this.#entries.get(key);
+		if (!entry) return this.cite(key, use);
+		const mark: CitationMark = {
+			number: entry.number,
+			anchor: markAnchor(entry.number, entry.backlinks.length + 1),
+			where: use.where
+		};
+		entry.backlinks.push(mark.anchor);
+		return mark;
+	}
+
 	/** cite() for a cited fact: nothing when the fact names no source. */
 	citeFact(
 		fact: CitedFact | undefined,

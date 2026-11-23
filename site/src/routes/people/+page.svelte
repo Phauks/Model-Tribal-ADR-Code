@@ -71,7 +71,7 @@
 <style>
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(var(--layout-card-min), 1fr));
 		gap: var(--space-3);
 		list-style: none;
 		margin: 0 0 var(--space-5);
@@ -79,7 +79,7 @@
 	}
 
 	.cards.board {
-		grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(var(--layout-card-min), 1fr));
 	}
 
 	.person {

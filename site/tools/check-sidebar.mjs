@@ -75,7 +75,7 @@ const column = `${wide} .pages-column`;
 	check((await page.locator(`${wide} .sections-column .outline`).count()) === 0, 'The first column lists pages inside a section');
 	check((await page.locator(`${wide} .sections-column button.fold`).count()) === 0, 'The first column has carets');
 	const pages = await page.locator(`${column} > ul.outline > li > .entry > a`).evaluateAll((list) => list.map((a) => a.getAttribute('href')));
-	check(['/nations', '/nations/map', '/nations/recourse', '/nations/data'].every((link) => pages.includes(link)), `Nations pages missing from the second column: ${pages.join(', ')}`);
+	check(['/nations', '/nations/map', '/nations/timeline', '/nations/recourse', '/nations/data'].every((link) => pages.includes(link)), `Nations pages missing from the second column: ${pages.join(', ')}`);
 	const nations = await page.locator(`${column} .entries a[href^='/nations/']`).count();
 	check(nations > 500, `The second column lists ${nations} nations`);
 	const current = await page.locator(`${column} a[aria-current='page']`).first().getAttribute('href');

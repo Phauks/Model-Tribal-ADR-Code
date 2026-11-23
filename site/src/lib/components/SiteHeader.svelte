@@ -45,7 +45,7 @@
 		const term = /^\/glossary\/([^/]+)$/.exec(path)?.[1];
 		const story = /^\/stories\/([^/]+)$/.exec(path)?.[1];
 		const record =
-			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data'
+			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data' && nation !== 'timeline'
 				? `tribes/${nation}`
 				: term
 					? `glossary/${term}`
@@ -140,9 +140,10 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
-		gap: var(--space-3) var(--space-5);
-		padding-top: var(--space-3);
-		padding-bottom: var(--space-3);
+		gap: var(--space-1) var(--space-5);
+		/* Only a thin margin around the 44 px controls, so the band takes little height (Trevor, Nov. 23, 2026). */
+		padding-top: var(--space-1);
+		padding-bottom: var(--space-1);
 	}
 
 	.wordmark {
@@ -247,9 +248,9 @@
 			flex-direction: column;
 			gap: var(--space-4);
 			position: fixed;
-			/* Just under the one-row masthead (about 4.25rem tall). */
-			inset: 4.5rem var(--space-2) auto;
-			max-height: calc(100dvh - 5rem);
+			/* Just under the one-row masthead (about 3.25rem tall). */
+			inset: 3.5rem var(--space-2) auto;
+			max-height: calc(100dvh - 4rem);
 			overflow-y: auto;
 			margin: 0;
 			padding: var(--space-4);

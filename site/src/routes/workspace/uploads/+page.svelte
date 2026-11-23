@@ -7,6 +7,7 @@
 	import Image from '@lucide/svelte/icons/image';
 	import ShieldAlert from '@lucide/svelte/icons/shield-alert';
 	import ShieldCheck from '@lucide/svelte/icons/shield-check';
+	import Upload from '@lucide/svelte/icons/upload';
 	import { onMount } from 'svelte';
 	import { nationNames } from '#lib/nation-names.ts';
 	import { readableSize, reviewerStatusLabels, uploadKindLabels, uploadKinds } from '#lib/uploads.ts';
@@ -47,6 +48,7 @@
 <div class="wide">
 	<h1>Uploads</h1>
 	<p class="lead">Files people have sent. Check each one, then file it where it belongs or say why it was not used.</p>
+	<p><a class="button button-quiet" href="/workspace/intake"><Upload size={18} aria-hidden="true" /> Intake</a></p>
 
 	<nav class="filters" aria-label="Show">
 		{#each views as view (view.value)}
@@ -133,7 +135,7 @@
 
 <style>
 	.wide {
-		max-width: 72rem;
+		max-width: none;
 	}
 	.filters {
 		display: flex;
