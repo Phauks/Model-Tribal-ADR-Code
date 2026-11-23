@@ -6,6 +6,7 @@
  * rules (src/lib/tables/table-definition.ts): case and accents are ignored,
  * and every word typed must appear.
  */
+import type { RecognitionBadge } from './recognition-badges.ts';
 import { foldForSearch } from './tables/table-definition.ts';
 
 export type SearchKind = 'nation' | 'story' | 'term' | 'page';
@@ -18,6 +19,8 @@ export interface SearchEntry {
 	also?: string[];
 	/** One line shown under the title, such as the states or a summary. */
 	detail?: string;
+	/** A nation's recognition badges (src/lib/recognition-badges.ts); none for no federal recognition. */
+	badges?: RecognitionBadge[];
 	/** A small picture for the result: a nation's seal or logo, where its page may show one. */
 	image?: string;
 	link: string;

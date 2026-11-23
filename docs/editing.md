@@ -133,7 +133,7 @@ The first version of this design kept drafts in Cloudflare and sent each finishe
 | --- | --- | --- | --- |
 | Saved versions | A full copy of the essay each time someone saves, with who, when and a note ("Sent to advisors") | Markdown in the private bucket under `essays/<id>/versions/`; a row in `essay_versions`; an activity log entry | For good |
 | Publications | Which saved version readers see, and since when | A row in `essay_publications` pointing at a saved version | For good; can be held back from readers |
-| Live history (to be built) | Every keystroke while several people edit together | The draft's Durable Object | While the draft is open |
+| Live history | Every change while several people edit together | The essay's Durable Object (`EssayRoom`) | Until the room saves the next version |
 
 Any two saved versions can be compared, paragraph by paragraph and word by word within a changed paragraph, and any one can be restored by someone with full access (restoring saves it as a new version, so nothing is lost). Each version is dated with its number and the moment it was saved or published, for example "Nov. 22, 2026, 10:30 p.m. PT", not added to the content version number (lead author, Nov. 22, 2026). This is the history of the project's **own** writing; the history of documents the project **cites** is a separate record ([decision record 0018](decisions/0018-document-version-history.md)).
 
@@ -145,7 +145,7 @@ Built (pull request "Edit essays on the website"): the editor with its Markdown 
 
 Next, in this order:
 
-1. **Live co-editing.** One SQLite-backed Durable Object per draft, holding a Yjs document, with hibernating WebSockets and presence (who is in the draft and where), so several people can type at once. Access is checked by the Worker at connection and again during the session (comment-level connections can read but their edits are dropped). Cloudflare's `y-partyserver` (ISC) or the `yjs` package on the WebSocket Hibernation API directly; the Durable Object class is exported from a small second Worker or after the SvelteKit build, settled when built.
+1. **Live co-editing.** The room is built (pull request "Add the live editing room"). Each essay gets one SQLite-backed Durable Object, `EssayRoom` in `site/src/lib/server/live/essay-room.ts`, that holds a Yjs document. It keeps hibernating WebSockets and presence (who is in the essay and where), so several people can type at once. It runs in a small second Worker, `model-tribal-adr-code-live`, so the website's many deploys do not restart rooms mid-sentence. It uses the `yjs` package on the WebSocket Hibernation API directly rather than `y-partyserver`, which saves its copy only every few seconds and does not install beside this site's Cloudflare types. Comment-level connections can read along but their edits are dropped. The room saves one version after each pause, not one per automatic save (versioning option A of the editing review, Nov. 23, 2026). It saves about a minute after the typing stops, at least every ten minutes while it goes on, and a few seconds after the last person leaves. Still to do: the website's handshake and browser module, then the editor joining the room.
 2. **Comments** on drafts in D1, anchored with Yjs relative positions and the quoted words, so they follow the text as it changes. Sign-offs stay in `reviews`.
 3. **Print and ebook from the public copy**, recording each essay's SHA-256 in the build record.
 4. **Figures and media records**, including images in the Typst and EPUB builds.

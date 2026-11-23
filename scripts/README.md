@@ -110,7 +110,7 @@ Run by hand, never in continuous integration. It follows the lead author's rule 
 
 | Script | Does | Needs |
 | --- | --- | --- |
-| `review/service_links.py` | `gather` joins each service with no link to the Nov. 21 and Nov. 22 court reviews and to the linked entries of the same profile, then reads the nation's website, court pages and peacemaking pages where those give no own page, with the helpers of `review/court_listings_second_pass.py` (robots.txt obeyed; pages that review already fetched are read from its saved copies with `--reuse`); `merge` picks each link in the lead author's order (the service's own page, then the official directory entry that lists it, else none) with the hand decisions in `DECISIONS`, checks each link against a fetch log, and writes `research/reviews/2026-11-22-service-links.{json,csv}` and a search log entry for every place looked; `apply` sets `link` and adds to the note where it came from and when it was fetched, leaving `verification` and every other line as it was | `pip install -r scripts/requirements.txt beautifulsoup4`, plus `curl` and `pdftotext` |
+| `review/service_links.py` | `gather` joins each service with no link to the Nov. 21 and Nov. 22 court reviews and to the linked entries of the same profile, then reads the nation's website, court pages and peacemaking pages where those give no own page, with the helpers of `review/court_listings_second_pass.py` (robots.txt obeyed; pages that review already fetched are read from its saved copies with `--reuse`); `merge` picks each link in the lead author's order (the service's own page, then the official directory entry that lists it, else none) with the hand decisions in `DECISIONS`, checks each link against a fetch log, and writes `research/reviews/2026-11-22-service-links.{json,csv}` and a search log entry for every place looked; `apply` sets `link` and adds to the note where it came from and when it was fetched, leaving `verification` and every other line as it was, and leaves alone a service that already has the review's link; `second WORK_DIRECTORY` records the second, deeper search of Nov. 23, 2026 (web searches and state court lists, kept in the work folder as `searches.tsv` and `fetch-log.json`): it checks each link in `SECOND_DECISIONS` against the fetch log, updates the review rows those decisions change and adds every search to the nation's search log, appending to its text so earlier entries stay as they were; run `apply` after it | `pip install -r scripts/requirements.txt beautifulsoup4`, plus `curl` and `pdftotext` |
 
 ## Gaming compacts and ordinances
 
@@ -170,3 +170,11 @@ between steps) go in a scratch folder.
 | `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers. The summaries stay in the private work files: no AI summaries of constitutions are published | `scripts/requirements.txt` and `requests` |
 | `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, a history record for every nation with a text, and source records | `scripts/requirements.txt` and `requests` |
 | `constitutions/name_versions_in_profiles.py` | Adds `document_version` beside profile facts that cite a superseded or undated version | `scripts/requirements.txt` |
+
+## Indian law journals sweep, Nov. 23, 2026
+
+Run by hand, never in continuous integration. It reads the public catalogs that law school repositories publish for harvesters, so later sweeps can compare new articles against `content/sources/` ([session note](../research/sessions/2026/2026-11-23-indian-law-journals.md)).
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/journal_oai_harvest.py` | Harvests the OAI-PMH catalog of each named repository collection (for example the American Indian Law Review at the University of Oklahoma) into one JSON list of titles, authors, dates, keywords, abstracts and landing pages; downloads no articles | Python standard library only |
