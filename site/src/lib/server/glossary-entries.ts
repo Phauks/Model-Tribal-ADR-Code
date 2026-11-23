@@ -44,7 +44,7 @@ export interface GlossaryEntryView {
 	functionalLabel: string;
 	/** The definition as HTML, with term links and numbered source markers. */
 	definition: string;
-	/** Every sense, the definition first; numbered on the page only when there are two or more. */
+	/** Every sense, the definition first; each is numbered on the page. */
 	senses: GlossarySense[];
 	/** The model code section that enacts a definition of the term, when one does, such as "§ 1-102". */
 	codeDefinition?: string;
@@ -223,13 +223,3 @@ export function entriesLinkingTo(id: string): TermReference[] {
 		.map((record) => ({ id: record.id, term: record.term }));
 }
 
-/** The entries just before and after this one in alphabetical order, as a dictionary lists the words near an entry. */
-export function nearbyEntries(id: string, count = 3): { before: TermReference[]; after: TermReference[] } {
-	const all = publishedGlossary();
-	const index = all.findIndex((record) => record.id === id);
-	const reference = (record: GlossaryRecord) => ({ id: record.id, term: record.term });
-	return {
-		before: all.slice(Math.max(0, index - count), index).map(reference),
-		after: all.slice(index + 1, index + 1 + count).map(reference)
-	};
-}

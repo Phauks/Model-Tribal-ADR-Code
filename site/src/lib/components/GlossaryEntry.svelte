@@ -1,8 +1,7 @@
 <script lang="ts">
 	// One glossary entry, laid out as a dictionary entry: the headword in bold,
 	// an italic label for the part of speech, the usage label, other forms,
-	// then the senses, each opened by a bold colon and numbered when there is
-	// more than one. "As used here" follows as a usage paragraph, then the
+	// then the senses, each numbered. "As used here" follows as a usage paragraph, then the
 	// cross-references in small capitals. The glossary page shows every entry
 	// with it, and each entry's own page shows one
 	// (src/lib/server/glossary-entries.ts). The entry's id is its anchor on the
@@ -34,7 +33,6 @@
 	const linkTo = (id: string) => (onGlossaryPage ? `#${id}` : `/glossary/${id}`);
 	const usageIcons = { preferred: CircleCheck, acceptable: CircleCheck, 'context-only': CircleAlert, avoid: Ban };
 	const UsageIcon = $derived(usageIcons[entry.usage]);
-	const numbered = $derived(entry.senses.length > 1);
 </script>
 
 <article
@@ -68,13 +66,12 @@
 	{/if}
 	{@render children?.()}
 
-	<ol class="senses" class:numbered>
+	<ol class="senses">
 		{#each entry.senses as sense, index (index)}
 			<li class="sense">
-				{#if numbered}<span class="sense-number" aria-hidden="true">{index + 1}</span>{/if}
+				<span class="sense-number" aria-hidden="true">{index + 1}</span>
 				<div class="sense-text">
 					{#if sense.label}<i class="sense-label">{sense.label}</i>{/if}
-					<b class="colon" aria-hidden="true">:</b>
 					{@html sense.definition}
 				</div>
 			</li>
@@ -226,12 +223,8 @@
 
 	.sense {
 		display: grid;
-		grid-template-columns: 1fr;
-		margin-bottom: var(--space-3);
-	}
-
-	.senses.numbered .sense {
 		grid-template-columns: 2rem 1fr;
+		margin-bottom: var(--space-3);
 	}
 
 	.sense-number {
@@ -242,11 +235,6 @@
 
 	.sense-label {
 		color: var(--color-link);
-		margin-right: var(--space-1);
-	}
-
-	.colon {
-		font-weight: var(--font-weight-bold);
 		margin-right: var(--space-1);
 	}
 

@@ -83,10 +83,10 @@ export function assembleBook({ book, content: records }) {
   const printedGlossaryIds = new Set(entries.map((entry) => entry.id));
   if (entries.length) {
     const pieces = entries.map((entry) => {
-      // Senses as a dictionary sets them: a bold colon before each, numbered when there are two or more.
+      // Senses as the website shows them: each numbered, with its label in italics.
       const senses = [{ definition: entry.definition }, ...(entry.other_senses || [])];
       const text = senses.map((sense, index) =>
-        [senses.length > 1 ? `**${index + 1}**` : "", sense.label ? `*${sense.label}*` : "", `**:** ${sense.definition}`]
+        [`**${index + 1}.**`, sense.label ? `*${sense.label}*` : "", sense.definition]
           .filter(Boolean)
           .join(" "),
       );

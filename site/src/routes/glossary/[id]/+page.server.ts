@@ -2,7 +2,6 @@ import { error } from '@sveltejs/kit';
 import {
 	entriesLinkingTo,
 	glossaryEntryViews,
-	nearbyEntries,
 	publishedGlossary
 } from '#lib/server/glossary-entries.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -17,5 +16,5 @@ export const load: PageServerLoad = ({ params }) => {
 		entries: [entry],
 		sources
 	} = glossaryEntryViews([record]);
-	return { entry, sources, linkedFrom: entriesLinkingTo(record.id), nearby: nearbyEntries(record.id) };
+	return { entry, sources, linkedFrom: entriesLinkingTo(record.id) };
 };
