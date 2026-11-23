@@ -1,11 +1,8 @@
 # Scripts
 
-Checks that run on every pull request (see `.github/workflows/checks.yml`).
-Run them from the repository root before opening a pull request.
+Checks that run on every pull request (see `.github/workflows/checks.yml`). Run them from the repository root before opening a pull request.
 
-The workflow's final job, `All checks`, passes only when every other check
-passes, and it is the only check the `main` ruleset requires. To add a check,
-add a job to the workflow and list it under `all-checks.needs`.
+The workflow's final job, `All checks`, passes only when every other check passes, and it is the only check the `main` ruleset requires. To add a check, add a job to the workflow and list it under `all-checks.needs`.
 
 | Script | Checks | Needs |
 | --- | --- | --- |
@@ -27,10 +24,7 @@ add a job to the workflow and list it under `all-checks.needs`.
 
 ## Native nations dataset
 
-Scripts that built the first profiles in `content/tribes/` from cited facts in
-`research/raw/` (see [research/raw/README.md](../research/raw/README.md)).
-They are kept so the first edition can be reproduced; once profiles are edited
-by hand, add new facts by hand or in a new raw file and review the diff.
+Scripts that built the first profiles in `content/tribes/` from cited facts in `research/raw/` (see [research/raw/README.md](../research/raw/README.md)). They are kept so the first edition can be reproduced; once profiles are edited by hand, add new facts by hand or in a new raw file and review the diff.
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -62,9 +56,7 @@ Run by hand, never in continuous integration:
 
 ## Data gap review
 
-Run by hand, never in continuous integration. They follow up rows 1, 7 and
-11 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md)
-and fill in the `verification` level from [decision record 0014](../docs/decisions/0014-verification-levels-and-record-lint.md).
+Run by hand, never in continuous integration. They follow up rows 1, 7 and 11 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and fill in the `verification` level from [decision record 0014](../docs/decisions/0014-verification-levels-and-record-lint.md).
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -77,9 +69,7 @@ and fill in the `verification` level from [decision record 0014](../docs/decisio
 
 ## Dispute resolution coverage search
 
-Run by hand, never in continuous integration. It follows up row 2 of the
-[dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and
-writes the [search logs](../research/search-logs/README.md) of decision record
+Run by hand, never in continuous integration. It follows up row 2 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and writes the [search logs](../research/search-logs/README.md) of decision record
 0025. It never changes a profile.
 
 | Script | Does | Needs |
@@ -130,9 +120,7 @@ Run by hand, never in continuous integration. They build the catalog in [`resear
 
 ## Tribal law texts
 
-Run by hand, never in continuous integration. They build
-[`research/tribal-law/`](../research/tribal-law/README.md) and never change a
-profile. The documents they download, and the quotations, stay private.
+Run by hand, never in continuous integration. They build [`research/tribal-law/`](../research/tribal-law/README.md) and never change a profile. The documents they download, and the quotations, stay private.
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -141,11 +129,7 @@ profile. The documents they download, and the quotations, stay private.
 
 ## Constitutions
 
-Run by hand, in this order, never in continuous integration. They build the
-catalog in [`research/constitutions/`](../research/constitutions/README.md)
-and the constitution version histories in `content/documents/`. The documents
-they download stay private, outside the repository; the work files (JSON
-between steps) go in a scratch folder.
+Run by hand, in this order, never in continuous integration. They build the catalog in [`research/constitutions/`](../research/constitutions/README.md) and the constitution version histories in `content/documents/`. The documents they download stay private, outside the repository; the work files (JSON between steps) go in a scratch folder.
 
 | Script | Does | Needs |
 | --- | --- | --- |

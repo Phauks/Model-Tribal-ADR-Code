@@ -1,22 +1,15 @@
 # Research sessions
 
-One file per research session, so the record of how sources were found stays
-easy to read and search instead of growing into one long log.
+One file per research session, so the record of how sources were found stays easy to read and search instead of growing into one long log.
 
 - Path: `sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md`
-- Front matter: fields defined in
-  [`schemas/research-session.schema.json`](../schemas/research-session.schema.json)
-  (date, researchers, tools, purpose, queries, sources added or updated, limits).
+- Front matter: fields defined in [`schemas/research-session.schema.json`](../schemas/research-session.schema.json) (date, researchers, tools, purpose, queries, sources added or updated, limits).
 - Body: what was searched, what was found, what was ruled out.
-- Every source record names the session(s) that found it in its `found_in`
-  field, so you can trace a citation back to how it was found.
+- Every source record names the session(s) that found it in its `found_in` field, so you can trace a citation back to how it was found.
 
-When an AI research assistant is used, list it as a tool and say what it did.
-Organizations the project may ask for help are kept as records in
-[`outreach/`](outreach/README.md).
+When an AI research assistant is used, list it as a tool and say what it did. Organizations the project may ask for help are kept as records in [`outreach/`](outreach/README.md).
 
-The website will generate a browsable index of sessions by month, tool and
-topic.
+The website will generate a browsable index of sessions by month, tool and topic.
 
 ## Pull lists
 
@@ -24,12 +17,7 @@ topic.
 
 ## Analyses
 
-`analyses/` holds dated analyses of the records, each with the script output
-it quotes, for example
-[`2026-11-21-dispute-resolution-practice.md`](analyses/2026-11-21-dispute-resolution-practice.md).
-An analysis describes what the sources document, never what a nation
-practices, and labels its own reasoning as project analysis. Re-run the script
-named in the analysis to reproduce its counts.
+`analyses/` holds dated analyses of the records, each with the script output it quotes, for example [`2026-11-21-dispute-resolution-practice.md`](analyses/2026-11-21-dispute-resolution-practice.md). An analysis describes what the sources document, never what a nation practices, and labels its own reasoning as project analysis. Re-run the script named in the analysis to reproduce its counts.
 
 ## Quotations
 
@@ -37,20 +25,12 @@ named in the analysis to reproduce its counts.
 
 ## Reviews
 
-Reviews of the project's own data, done to help the lead author's review, are
-kept in [`reviews/`](reviews/README.md). They record findings and suggested
-actions; they never change a record by themselves.
+Reviews of the project's own data, done to help the lead author's review, are kept in [`reviews/`](reviews/README.md). They record findings and suggested actions; they never change a record by themselves.
 
 ## Search logs
 
-[`search-logs/`](search-logs/README.md) holds one record per nation and topic
-saying where the project looked for that nation's information and what each
-search found or why it failed, so gaps can be told apart from places no one
-has looked ([decision record 0025](../docs/decisions/0025-search-logs.md)).
+[`search-logs/`](search-logs/README.md) holds one record per nation and topic saying where the project looked for that nation's information and what each search found or why it failed, so gaps can be told apart from places no one has looked ([decision record 0025](../docs/decisions/0025-search-logs.md)).
 
 ## Tribal law texts
 
-[`tribal-law/`](tribal-law/README.md) lists the dispute resolution provisions
-found in Native nations' own law codes, court rules and ordinances, read by
-machine and awaiting the lead author's review. Quotations and fetched copies
-stay private.
+[`tribal-law/`](tribal-law/README.md) lists the dispute resolution provisions found in Native nations' own law codes, court rules and ordinances, read by machine and awaiting the lead author's review. Quotations and fetched copies stay private.

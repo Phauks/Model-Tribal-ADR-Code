@@ -60,34 +60,15 @@ limits: >-
 
 ## What this session added
 
-- Seven story records in `content/stories/`, from seven nations, with eleven
-  excerpts in the tellers' own words, each with a pinpoint and fingerprint.
-  None is held privately: none of the tellings is Tribal law, a court opinion
-  or from a publisher that asks to be asked first.
-- Four new source records and four updated ones (rights now record short
-  quotation; `found_in` adds this session).
-- Section 8 of
-  [research/analyses/2026-11-21-peacemaking-stories.md](../../analyses/2026-11-21-peacemaking-stories.md).
+- Seven story records in `content/stories/`, from seven nations, with eleven excerpts in the tellers' own words, each with a pinpoint and fingerprint. None is held privately: none of the tellings is Tribal law, a court opinion or from a publisher that asks to be asked first.
+- Four new source records and four updated ones (rights now record short quotation; `found_in` adds this session).
+- Section 8 of [research/analyses/2026-11-21-peacemaking-stories.md](../../analyses/2026-11-21-peacemaking-stories.md).
 
 ## Excluded on purpose
 
-- **Tuscarora Nation of North Carolina:** a helper found its history page
-  while looking for the Tuscarora Nation of New York. The project's profile
-  lists the North Carolina group as unrecognized, and the project includes
-  such groups only when they add something to dispute resolution; this page
-  is an account of war and treaties, so no record was made.
-- **Passamaquoddy Tribe:** the Tribe's site reposts a 1794 Massachusetts
-  record and an outside historian's essay. Neither is the Tribe's own telling.
-- **Mi'kmaq Nation StoryMap journals:** the page says permission is needed to
-  use any part of them. They were not read.
-- **Ogichidaa Storytellers, *Every Step: A Healing Circle*:** education
-  materials about the Healing Circle Run among Ojibwe nations. The publisher
-  is not named in the saved copy, so it is a lead until the publisher is
-  confirmed.
-- **Program and court pages without a story** (Little River Band, Leech Lake
-  Band, Red Cliff Band, Klamath Tribes, Dry Creek Rancheria, the Northern
-  California Intertribal Court, the Isleta, Zia and Pojoaque courts) are
-  listed in the analysis as leads.
-- **Accounts of war or displacement without a peace** (Santa Ana and Ysleta
-  del Sur histories of the 1680 Pueblo Revolt; the Coos, Lower Umpqua and
-  Siuslaw Peace Hike notice) were not recorded as stories.
+- **Tuscarora Nation of North Carolina:** a helper found its history page while looking for the Tuscarora Nation of New York. The project's profile lists the North Carolina group as unrecognized, and the project includes such groups only when they add something to dispute resolution; this page is an account of war and treaties, so no record was made.
+- **Passamaquoddy Tribe:** the Tribe's site reposts a 1794 Massachusetts record and an outside historian's essay. Neither is the Tribe's own telling.
+- **Mi'kmaq Nation StoryMap journals:** the page says permission is needed to use any part of them. They were not read.
+- **Ogichidaa Storytellers, *Every Step: A Healing Circle*:** education materials about the Healing Circle Run among Ojibwe nations. The publisher is not named in the saved copy, so it is a lead until the publisher is confirmed.
+- **Program and court pages without a story** (Little River Band, Leech Lake Band, Red Cliff Band, Klamath Tribes, Dry Creek Rancheria, the Northern California Intertribal Court, the Isleta, Zia and Pojoaque courts) are listed in the analysis as leads.
+- **Accounts of war or displacement without a peace** (Santa Ana and Ysleta del Sur histories of the 1680 Pueblo Revolt; the Coos, Lower Umpqua and Siuslaw Peace Hike notice) were not recorded as stories.

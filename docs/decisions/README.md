@@ -1,13 +1,8 @@
 # Decision records
 
-Short, numbered records of why key choices were made, in the style Michael
-Nygard described as "architecture decision records"
-([Cognitect, 2011](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions)).
-They are called decision records here because "ADR" in this project means
-alternative dispute resolution.
+Short, numbered records of why key choices were made, in the style Michael Nygard described as "architecture decision records" ([Cognitect, 2011](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions)). They are called decision records here because "ADR" in this project means alternative dispute resolution.
 
-A record is never rewritten after it is accepted. A later record supersedes it
-and says so.
+A record is never rewritten after it is accepted. A later record supersedes it and says so.
 
 | No. | Decision | Status |
 | --- | --- | --- |

@@ -26,18 +26,8 @@ limits: >-
   terms were counted over the 28 distinct summary texts, not per nation.
 ---
 
-Output: [the provisional analysis](../../analyses/2026-11-21-dispute-resolution-practice.md),
-its [counts](../../analyses/2026-11-21-dispute-resolution-practice.json) and the
-[roadmap for documenting the model code](../../../docs/roadmap.md).
+Output: [the provisional analysis](../../analyses/2026-11-21-dispute-resolution-practice.md), its [counts](../../analyses/2026-11-21-dispute-resolution-practice.json) and the [roadmap for documenting the model code](../../../docs/roadmap.md).
 
-Method: the script sorted each provision into three evidence tiers by its own
-note (text read, section title only, bulk database record), counted forums,
-clauses, training and materials by kind, coverage by recognition and Bureau of
-Indian Affairs region, and compact dispute resolution summaries, and listed
-data quality flags. Examples named in the analysis were checked against the
-full profile record and its source record before citing.
+Method: the script sorted each provision into three evidence tiers by its own note (text read, section title only, bulk database record), counted forums, clauses, training and materials by kind, coverage by recognition and Bureau of Indian Affairs region, and compact dispute resolution summaries, and listed data quality flags. Examples named in the analysis were checked against the full profile record and its source record before citing.
 
-A message from the United States dispute resolution research thread proposed a
-mapping from the profiles' forum kinds to the method ids in pull request #5.
-The roadmap lists it as a step after that pull request merges; no profile was
-changed.
+A message from the United States dispute resolution research thread proposed a mapping from the profiles' forum kinds to the method ids in pull request #5. The roadmap lists it as a step after that pull request merges; no profile was changed.
