@@ -67,6 +67,14 @@
         "$value": "#8A6A00",
         "$description": "Underline of a placeholder."
       },
+      "comment-highlight": {
+        "$value": "#FFF0B3",
+        "$description": "Words someone commented on, in the editor. Ink on it 14.2:1."
+      },
+      "comment-rule": {
+        "$value": "#8A6A00",
+        "$description": "Underline of commented words, and the edge of the comment being written. 5.3:1 on paper."
+      },
       "focus": {
         "$value": "#FFD34D",
         "$description": "Keyboard focus fill."
@@ -264,6 +272,14 @@
       "placeholder-rule": {
         "$value": "#E0B83A",
         "$description": "Underline of a placeholder."
+      },
+      "comment-highlight": {
+        "$value": "#4A3B00",
+        "$description": "Words someone commented on, in the editor. Ink on it 9.6:1."
+      },
+      "comment-rule": {
+        "$value": "#E0B83A",
+        "$description": "Underline of commented words, and the edge of the comment being written."
       },
       "focus": {
         "$value": "#FFD34D",

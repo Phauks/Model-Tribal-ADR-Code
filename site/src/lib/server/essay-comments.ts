@@ -1,13 +1,15 @@
 /**
  * Comments on essay drafts, in D1 (src/lib/essays/comments.ts;
- * migrations/20261123T0613_add_essay_comments.sql). Each comment and each
+ * migrations/20261123T0613_add_essay_comments.sql and
+ * 20261123T2300_add_essay_comment_mentions.sql). Each comment and each
  * thread marked done or reopened is recorded in the activity log in the
  * same batch.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { eventStatement } from './events.ts';
 import { newIdentifier, now } from './identifiers.ts';
-import { isCommentAsk, type CommentAsk, type EssayComment } from '../essays/comments.ts';
+import { askSentence, isCommentAsk, type CommentAsk, type EssayComment } from '../essays/comments.ts';
+import { essayPath, type EssayPart } from './essays.ts';
 
 interface CommentRow extends Omit<EssayComment, 'asks'> {
 	asks: string;
@@ -49,11 +51,15 @@ export interface NewComment {
 	asks?: CommentAsk[];
 	quote?: { quote: string; prefix: string; suffix: string } | null;
 	versionNumber?: number | null;
+	/** People chosen with "@ mention"; the caller checks that each can open the essay. */
+	mentions?: string[];
 }
 
 /** Adds a comment or a reply, and answers its identifier. */
 export async function addComment(database: D1Database, input: NewComment): Promise<string> {
-	const body = input.body.trim();
+	// A one-click ask ("Show your sources") needs no words of its own.
+	const asks = input.thread ? [] : [...new Set(input.asks ?? [])];
+	const body = input.body.trim() || (asks.length ? askSentence(asks) : '');
 	if (!body) throw new Error('Write the comment first.');
 	if (body.length > 5000) throw new Error('A comment can be at most 5,000 characters.');
 	let excerpt: string;
@@ -83,12 +89,18 @@ export async function addComment(database: D1Database, input: NewComment): Promi
 				input.thread ?? null,
 				input.personIdentifier,
 				body,
-				JSON.stringify(input.thread ? [] : [...new Set(input.asks ?? [])]),
+				JSON.stringify(asks),
 				input.thread ? null : input.quote!.quote.slice(0, 2000),
 				input.thread ? null : input.quote!.prefix.slice(0, 64),
 				input.thread ? null : input.quote!.suffix.slice(0, 64),
 				input.versionNumber ?? null,
 				now()
+			),
+		...[...new Set(input.mentions ?? [])]
+			.filter((person) => person !== input.personIdentifier)
+			.slice(0, 20)
+			.map((person) =>
+				database.prepare('INSERT INTO essay_comment_mentions (comment_identifier, person_identifier) VALUES (?, ?)').bind(identifier, person)
 			),
 		eventStatement(database, {
 			personIdentifier: input.personIdentifier,
@@ -131,4 +143,85 @@ export async function setThreadResolved(
 		})
 	]);
 	return true;
+}
+
+/** A thread on someone's Comments for you page. */
+export interface CommentForYou {
+	thread: string;
+	essay: string;
+	essayTitle: string;
+	quote: string;
+	asks: CommentAsk[];
+	/** Why it is here: someone mentioned the person, or answered them. */
+	reason: 'mentioned' | 'answered';
+	lastName: string;
+	lastBody: string;
+	lastAt: string;
+	/** The essay page, opened for commenting at the thread. */
+	link: string;
+}
+
+/*
+ * Open threads waiting on a person: those where someone mentioned them, and
+ * those they wrote in where someone else wrote last. Marking a thread done
+ * takes it off the page.
+ */
+const threadsForYou = `
+	SELECT first.identifier AS thread, first.essay_identifier AS essay, first.quote, first.asks,
+		EXISTS (SELECT 1 FROM essay_comment_mentions AS mention JOIN essay_comments AS entry ON entry.identifier = mention.comment_identifier
+			WHERE mention.person_identifier = ?1 AND (entry.identifier = first.identifier OR entry.thread_identifier = first.identifier)) AS mentioned,
+		last.person_identifier AS lastPerson, author.display_name AS lastName, last.body AS lastBody, last.created_at AS lastAt
+	FROM essay_comments AS first
+	JOIN essay_comments AS last ON last.identifier = (
+		SELECT identifier FROM essay_comments AS entry WHERE entry.identifier = first.identifier OR entry.thread_identifier = first.identifier
+		ORDER BY created_at DESC, identifier DESC LIMIT 1)
+	JOIN people AS author ON author.identifier = last.person_identifier
+	WHERE first.thread_identifier IS NULL AND first.resolved_at IS NULL`;
+
+/** The open threads waiting on a person, newest activity first, for the Comments for you page. */
+export async function commentsForYou(database: D1Database, person: string): Promise<CommentForYou[]> {
+	const result = await database
+		.prepare(
+			`SELECT threads.*,
+				(SELECT title FROM essay_versions WHERE essay_versions.essay_identifier = threads.essay ORDER BY number DESC LIMIT 1) AS essayTitle,
+				(SELECT part FROM essays WHERE essays.identifier = threads.essay) AS essayPart
+			 FROM (${threadsForYou}) AS threads
+			 WHERE threads.mentioned OR EXISTS (SELECT 1 FROM essay_comments AS entry
+				WHERE (entry.identifier = threads.thread OR entry.thread_identifier = threads.thread) AND entry.person_identifier = ?1)
+			 ORDER BY threads.lastAt DESC`
+		)
+		.bind(person)
+		.all<{
+			thread: string;
+			essay: string;
+			quote: string;
+			asks: string;
+			mentioned: number;
+			lastPerson: string;
+			lastName: string;
+			lastBody: string;
+			lastAt: string;
+			essayTitle: string | null;
+			essayPart: EssayPart | null;
+		}>();
+	return result.results
+		// Once the person has written last, the thread waits on someone else.
+		.filter((row) => row.lastPerson !== person)
+		.map((row) => ({
+			thread: row.thread,
+			essay: row.essay,
+			essayTitle: row.essayTitle ?? row.essay,
+			quote: row.quote,
+			asks: readAsks(row.asks),
+			reason: row.mentioned ? 'mentioned' : 'answered',
+			lastName: row.lastName,
+			lastBody: row.lastBody,
+			lastAt: row.lastAt,
+			link: `${essayPath(row.essay, row.essayPart ?? 'essays')}?comment=${encodeURIComponent(row.thread)}`
+		}));
+}
+
+/** How many open threads wait on a person, for the workspace Overview. */
+export async function commentsForYouCount(database: D1Database, person: string): Promise<number> {
+	return (await commentsForYou(database, person)).length;
 }

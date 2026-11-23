@@ -99,12 +99,18 @@
 		// A review request's link opens the draft for commenting at its section: ?review=<section>, or ?review for the whole draft.
 		const asked = new URL(location.href).searchParams;
 		if (asked.has('review')) reviewAt = asked.get('review') || null;
+		// Comments for you opens the page at a comment, with ?comment=.
+		if (asked.get('comment')) {
+			commentAt = asked.get('comment');
+			reviewAt ??= null;
+		}
 		// The workspace's Edit button opens the page with ?edit.
 		openToEdit = asked.has('edit');
 		void loadAccess();
 	});
 
 	let reviewAt = $state<string | null | undefined>(undefined);
+	let commentAt = $state<string | null>(null);
 	let openToEdit = false;
 	let openedForReview = false;
 	$effect(() => {
@@ -170,7 +176,7 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} onsaved={saved}>
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} onsaved={saved}>
 					{#snippet barStart()}<EssayModePicker bind:mode canEdit={access!.canEdit} />{/snippet}
 					{#snippet barEnd()}
 						<a class="bar-link" href="/workspace/essays/{identifier}" title="History: every saved version, and publishing" aria-label="History"><History size={18} aria-hidden="true" /></a>

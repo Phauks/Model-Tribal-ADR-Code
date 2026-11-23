@@ -2,8 +2,8 @@ import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { parseEssay } from '../src/lib/essays/document.ts';
 import { findQuote, quoteAt } from '../src/lib/essays/comment-anchors.ts';
-import { commentThreads } from '../src/lib/essays/comments.ts';
-import { addComment, essayComments, setThreadResolved } from '#lib/server/essay-comments.ts';
+import { askSentence, commentThreads } from '../src/lib/essays/comments.ts';
+import { addComment, commentsForYou, commentsForYouCount, essayComments, setThreadResolved } from '#lib/server/essay-comments.ts';
 import { testDatabase } from './database.ts';
 
 const body = 'In 1832 the Court treats the Cherokee Nation as a distinct political community.\n\nLater the Court treats the Cherokee Nation differently.\n';
@@ -94,5 +94,35 @@ describe('comments in the database', () => {
 	it('refuses a reply to a thread on another essay, and an empty comment', async () => {
 		await expect(addComment(database, { essay: 'i-timeline', personIdentifier: 'lead', body: 'Hi', thread: 'nope' })).rejects.toThrow(/not on this essay/);
 		await expect(addComment(database, { essay: 'i-timeline', personIdentifier: 'lead', body: '  ', quote: { quote: 'x', prefix: '', suffix: '' } })).rejects.toThrow(/Write/);
+	});
+
+	it('saves a one-click ask with the ask as its words', async () => {
+		await addComment(database, { essay: 'i-timeline', personIdentifier: 'reader', body: '', asks: ['sources'], quote: { quote: 'words', prefix: '', suffix: '' } });
+		const [comment] = await essayComments(database, 'i-timeline');
+		expect(comment.body).toBe('Show your sources.');
+		expect(comment.body).toBe(askSentence(comment.asks));
+	});
+
+	it('lists comments that mention someone or answer them, until they reply or it is done', async () => {
+		const first = await addComment(database, {
+			essay: 'i-timeline',
+			personIdentifier: 'reader',
+			body: '@Lead which page?',
+			quote: { quote: 'distinct political community', prefix: '', suffix: '' },
+			mentions: ['lead', 'reader']
+		});
+		let lead = await commentsForYou(database, 'lead');
+		expect(lead).toHaveLength(1);
+		expect(lead[0]).toMatchObject({ reason: 'mentioned', lastName: 'Reader', essayTitle: 'i-timeline', link: '/foundations/timeline?comment=' + first });
+		// Mentioning yourself does nothing, and your own comment does not wait on you.
+		expect(await commentsForYouCount(database, 'reader')).toBe(0);
+
+		await addComment(database, { essay: 'i-timeline', personIdentifier: 'lead', body: 'Page 561.', thread: first });
+		expect(await commentsForYouCount(database, 'lead')).toBe(0);
+		expect((await commentsForYou(database, 'reader'))[0]).toMatchObject({ reason: 'answered', lastBody: 'Page 561.' });
+
+		await setThreadResolved(database, { essay: 'i-timeline', thread: first, personIdentifier: 'reader', mayResolveAny: false, resolved: true });
+		expect(await commentsForYouCount(database, 'reader')).toBe(0);
+		await expect(database.prepare('DELETE FROM essay_comment_mentions').run()).rejects.toThrow(/cannot be deleted/);
 	});
 });

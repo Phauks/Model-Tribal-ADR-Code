@@ -9,6 +9,7 @@ export type WorkspacePageName =
 	| 'overview'
 	| 'essays'
 	| 'review-requests'
+	| 'comments'
 	| 'requests'
 	| 'inbox'
 	| 'outreach'
@@ -46,6 +47,8 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'essays', label: 'Essays', link: '/workspace/essays' },
 	// Drafts and sections people asked this person to review (src/lib/server/essay-review-requests.ts).
 	{ name: 'review-requests', label: 'Review requests', link: '/workspace/review-requests', needs: 'comment' },
+	// Comments that mention this person or answer them (src/lib/server/essay-comments.ts).
+	{ name: 'comments', label: 'Comments for you', link: '/workspace/comments', needs: 'comment' },
 	{ name: 'requests', label: 'Requests', link: '/workspace/requests', needs: 'read-requests' },
 	{ name: 'inbox', label: 'Inbox', link: '/workspace/inbox', needs: 'read-mail' },
 	{ name: 'outreach', label: 'Outreach', link: '/workspace/outreach', needs: 'send-outreach' },
