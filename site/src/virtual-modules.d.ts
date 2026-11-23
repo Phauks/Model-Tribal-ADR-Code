@@ -53,7 +53,7 @@ declare module 'virtual:essay-library' {
 	export const essayTerms: Record<string, string>;
 	/** The lines under each case or law box's heading, as [label, HTML] pairs. */
 	export const essayBoxFacts: { cases: Record<string, [string, string][]>; laws: Record<string, [string, string][]> };
-	/** The essays in content/essays/ and the back matter in content/back-matter/ as git held them when the site was built, by id. */
+	/** The essays in content/essays/, the back matter in content/back-matter/ and the pages about the site in content/about/ as git held them when the site was built, by id. */
 	export const essaysInGit: Record<string, string>;
 	/** Each court case's name and decision date, by source key. */
 	export const essayCaseNames: Record<string, { title: string; date: number[] }>;

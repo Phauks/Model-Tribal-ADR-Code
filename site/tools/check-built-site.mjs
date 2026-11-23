@@ -130,6 +130,9 @@ if (!existsSync(tileMapPath) || !existsSync(landAreasPath)) {
 		for (const [code, area] of Object.entries(shading.areas)) {
 			if (!viewRows.has(area.anchor)) problem(`tile-map.json: ${view} sends land area ${code} to ${area.anchor}, which is not a row of its table`);
 		}
+		for (const [nation, office] of Object.entries(shading.offices ?? {})) {
+			if (!viewRows.has(office.anchor)) problem(`tile-map.json: ${view} sends the office of ${nation} to ${office.anchor}, which is not a row of its table`);
+		}
 	}
 }
 

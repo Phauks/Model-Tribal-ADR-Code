@@ -249,7 +249,7 @@ function drawRegions(geometry: MapGeometry, counts: Map<string, RegionCount>): s
 	);
 }
 
-export function drawLandAreasMap(geometry: MapGeometry, areas: LandAreaCount[]): string {
+export function drawLandAreasMap(geometry: MapGeometry, areas: LandAreaCount[], offices: DrawnOffice[] = []): string {
 	const counts = new Map(areas.map((area) => [area.identifier, area]));
 	// Statistical areas first, so the legal areas inside them are drawn on top.
 	const layers: Record<string, string[]> = { statistical: [], state: [], federal: [] };
@@ -270,6 +270,7 @@ export function drawLandAreasMap(geometry: MapGeometry, areas: LandAreaCount[]):
 		`<path class="land" d="${geometry.land}"/>` +
 		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +
 		`<g class="land-areas">${layers.statistical.join('')}${layers.state.join('')}${layers.federal.join('')}</g>` +
+		drawOffices(geometry, offices) +
 		drawFrameLabels(geometry) +
 		`</svg>`
 	);
@@ -281,6 +282,26 @@ export interface ShadedLandArea {
 	shade: number;
 	anchor?: string;
 	description: string;
+}
+
+/** A nation with no Census land area, marked at its office: its shade, its tooltip, and where selecting it goes (a row of the view's table, or the nation's page). */
+export interface DrawnOffice {
+	nation: string;
+	shade: number;
+	href?: string;
+	description: string;
+}
+
+/** Office dots, drawn over the land areas with a dark ring so they read apart from the areas' own dots. */
+function drawOffices(geometry: MapGeometry, offices: DrawnOffice[]): string {
+	const byNation = new Map(offices.map((office) => [office.nation, office]));
+	const drawn = geometry.offices.flatMap((place) => {
+		const office = byNation.get(place.nation);
+		if (!office) return [];
+		const dot = titled('circle', `class="office count-${office.shade}" cx="${place.x}" cy="${place.y}" r="4"`, office.description);
+		return [office.href ? `<a href="${escape(office.href)}" aria-label="${escape(office.description)}">${dot}</a>` : `<g class="unlinked">${dot}</g>`];
+	});
+	return drawn.length > 0 ? `<g class="offices">${drawn.join('')}</g>` : '';
 }
 
 /** The middle of a drawn shape's bounding box, read from its path. */
@@ -299,7 +320,7 @@ const median = (values: number[]) => [...values].sort((first, second) => first -
  */
 export function drawShadedLandAreasMap(
 	geometry: MapGeometry,
-	view: { key: string; title: string; areas: ShadedLandArea[]; labels?: { name: string; identifiers: string[] }[] }
+	view: { key: string; title: string; areas: ShadedLandArea[]; offices?: DrawnOffice[]; labels?: { name: string; identifiers: string[] }[] }
 ): string {
 	const byIdentifier = new Map(view.areas.map((area) => [area.identifier, area]));
 	const unrecorded: string[] = [];
@@ -332,6 +353,7 @@ export function drawShadedLandAreasMap(
 		`<path class="land" d="${geometry.land}"/>` +
 		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +
 		`<g class="land-areas">${unrecorded.join('')}${recorded.join('')}</g>` +
+		drawOffices(geometry, view.offices ?? []) +
 		(labels.length > 0 ? `<g class="region-labels" aria-hidden="true">${labels.join('')}</g>` : '') +
 		drawFrameLabels(geometry) +
 		`</svg>`
