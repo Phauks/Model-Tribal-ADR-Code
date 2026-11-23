@@ -164,12 +164,11 @@ searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
   method: script
-  place_kind: court-website
-  address: https://www.mohegan.nsn.us/about/government/the-tribal-court-sytem
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261114060647/https://www.mohegan.nsn.us/about/government/the-tribal-court-sytem
   query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
-  outcome: blocked
-  reason: 'Still not readable on 2026-11-23 (direct request: HTTP 403), and the request for the Wayback
-    Machine copy timed out.'
+  outcome: found
+  reason: 'The Wayback Machine copy of 2026-11-14 ("Tribal Court System") shows the nation''s two courts, the Gaming Disputes Court and the Tribal Court, with final review by the Council of Elders.'
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
   method: script
@@ -188,5 +187,3 @@ searches:
   outcome: found
   reason: The Wayback Machine copy of 2022-08-08 ("The Mohegan Tribal Court System | The Mohegan Tribe")
     shows the nation's court.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://www.mohegan.nsn.us/about/government/the-tribal-court-sytem
-  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

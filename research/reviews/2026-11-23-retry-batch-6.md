@@ -14,7 +14,7 @@ The retry went back to every address that had failed in a search log (a refusal,
 
 | Topic | Found | Not found | Blocked | Dead link | Error | Total |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `courts` | 56 | 37 | 14 | 10 | 5 | 122 |
+| `courts` | 59 | 37 | 11 | 10 | 5 | 122 |
 | `dispute-resolution` | 21 | 31 | 2 | 8 | 2 | 64 |
 
 A `dispute-resolution` log counts as `found` when the page read shows the nation's codes, a court or a dispute resolution forum, the test the data gap thread set for these pages (hand-pull list, Part 2f). A court alone is a lead, not a dispute resolution method; the lead author decides whether it belongs in the profile. Sixty logs moved from `partly-searched` to `found` or `none-found`; the rest keep their `next_steps`, naming the addresses still unreadable.
@@ -34,6 +34,7 @@ These are the retry's substantive leads. Each is a reading of a nation's own law
 | Northern Arapaho and Eastern Shoshone (Wind River) | Draft Title XVI, Peacemaker Court (June 20, 1989), with chapters on peacemakers and procedure. The National Indian Law Library says the Tribes have not given permission to put the text online; only the library can send it. | NILL contents page (already held) |
 | Red Lake Band of Chippewa Indians | The Red Lake Nation Courts page links an "Ojibwe Based Culture Mediation Court". The linked article did not load. | `tribal-courts/red-lake-band-of-chippewa-indians/red-lake-nation-courts.html` |
 | Quinault Indian Nation | The Tribal Courts page mentions dispute resolution, mediation, restorative justice and a Healing to Wellness Court. | search log only |
+| Sitka Tribe of Alaska | The Tribal Court page says the court "also offers Mediation and Peacemaking services" and ties its work to Tlingit "traditional laws and peacemaking practices". | `tribal-courts/sitka-tribe-of-alaska/tribal-court.html` |
 | Confederated Tribes of Siletz Indians | The court page offers "spokespersons and peacemakers available to Tribal Court users". | `tribal-courts/confederated-tribes-of-siletz-indians-of-oregon/court-and-justice.html` |
 | Penobscot Nation | The court says the Nation "has moved away from being an adversarial system for resolving disputes to a problem-solving approach", with a culturally based Healing to Wellness Court. | `tribal-courts/penobscot-nation/tribal-court.html` |
 | Pueblo of Nambé | The Tribal Courts apply "proper traditional and customary laws where appropriate". | `tribal-courts/pueblo-of-nambe/tribal-courts.html` |

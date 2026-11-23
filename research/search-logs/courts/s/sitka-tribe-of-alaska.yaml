@@ -206,21 +206,19 @@ searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
   method: script
-  place_kind: court-website
-  address: https://sitkatribe.org/our-services/tribal-court/
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260514040249/https://sitkatribe.org/our-services/tribal-court/
   query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
-  outcome: blocked
-  reason: 'Still not readable on 2026-11-23 (direct request: HTTP 403), and the request for the Wayback
-    Machine copy timed out.'
+  outcome: found
+  reason: 'The Wayback Machine copy of 2026-05-14 ("Tribal Court : Sitka Tribe of Alaska") shows the nation''s court, which "also offers Mediation and Peacemaking services".'
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
   method: script
-  place_kind: nation-website
-  address: https://sitkatribe.org/
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261009083116/https://sitkatribe.org/
   query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
-  outcome: blocked
-  reason: 'Still not readable on 2026-11-23 (direct request: HTTP 403), and the request for the Wayback
-    Machine copy timed out.'
+  outcome: found
+  reason: 'The Wayback Machine copy of 2026-10-09 ("Sitka Tribe of Alaska") is the Tribe''s home page; its services list leads to the Tribal Court page.'
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
   method: script
@@ -239,6 +237,4 @@ searches:
   outcome: blocked
   reason: 'Still not readable on 2026-11-23 (direct request: HTTP 403), and the request for the Wayback
     Machine copy timed out.'
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.sitkatribe.org/, http://www.sitkatribe.org/services/legal/index.html,
-  https://sitkatribe.org/, https://sitkatribe.org/our-services/tribal-court/ (no readable copy on 2026-11-23,
-  directly or in the Wayback Machine).'
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.sitkatribe.org/, http://www.sitkatribe.org/services/legal/index.html (no readable copy on 2026-11-23, directly or in the Wayback Machine).'
