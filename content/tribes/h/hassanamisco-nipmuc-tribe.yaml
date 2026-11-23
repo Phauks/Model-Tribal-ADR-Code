@@ -80,6 +80,23 @@ census_areas:
   locator: AIANNHCE 9150, GEOID 9150R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
     by name comparison with the state-recognized helper list.
+contacts:
+- kind: website
+  value: https://nipmucband.org/
+  label: Official website
+  source: nipmucband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: email-general
+  value: council@nipmucband.org
+  label: General office email shown on the nation's website
+  source: nipmucband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as text on the page; the site was found by web search.
 tribal_insignia_database_entries:
 - serial_number: '89003103'
   wordmark: HASSANAMISCO NIPMUC

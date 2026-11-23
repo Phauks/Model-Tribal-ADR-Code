@@ -58,6 +58,14 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+- kind: email-general
+  value: wintu.tribe1@gmail.com
+  label: General office email shown on the nation's website
+  source: wintutribe-contact
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_emails_deep.mjs.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'
