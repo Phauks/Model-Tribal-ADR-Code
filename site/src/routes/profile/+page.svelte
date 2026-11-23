@@ -153,14 +153,7 @@
 	</section>
 {/if}
 
-<section class="leave" aria-labelledby="leave-heading">
-	<h2 id="leave-heading">Delete your account</h2>
-	<p>
-		This deletes your sign-in, and your profile if you have one, at once. You choose whether your name stays on work you
-		helped with.
-	</p>
-	<p><a class="button button-quiet" href="/profile/delete-account">Delete your account</a></p>
-</section>
+<p class="small muted">To download what the project keeps about you or delete your account, go to <a href="/account/data">Your data</a>.</p>
 
 <style>
 	.own-picture {
@@ -170,9 +163,4 @@
 		object-fit: cover;
 	}
 
-	.leave {
-		margin-top: var(--space-6);
-		border-top: 1px solid var(--color-line);
-		padding-top: var(--space-4);
-	}
 </style>

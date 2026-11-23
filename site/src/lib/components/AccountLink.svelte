@@ -6,8 +6,9 @@
 	// takes its place (Trevor asked for this on Nov. 22, 2026). It opens a
 	// short list, following the WAI-ARIA disclosure pattern rather than a
 	// menu, since the items are plain links and a form: who is signed in, Your
-	// profile, Workspace (for people with workspace access), Password and Sign
-	// out. Trevor asked on Nov. 22, 2026 for "Signed in as" and Sign out to
+	// profile, Following, Workspace (for people with workspace access), Account
+	// settings and Sign out. The password moved into Account settings, under
+	// Sign-in and security (site/DESIGN.md, section 6, "Settings and Account"). Trevor asked on Nov. 22, 2026 for "Signed in as" and Sign out to
 	// live here rather than across the top of the workspace and profile pages.
 	//
 	// The workspace and profile pages know who is signed in; they keep the name
@@ -17,10 +18,10 @@
 	// Nobody needs to sign in to read the site or to make a request.
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
-	import KeyRound from '@lucide/svelte/icons/key-round';
 	import LogIn from '@lucide/svelte/icons/log-in';
 	import LogOut from '@lucide/svelte/icons/log-out';
 	import UserRound from '@lucide/svelte/icons/user-round';
+	import UserRoundCog from '@lucide/svelte/icons/user-round-cog';
 	import LayoutDashboard from '@lucide/svelte/icons/layout-dashboard';
 	import Bell from '@lucide/svelte/icons/bell';
 	import { followingState } from '#lib/following-state.svelte.ts';
@@ -28,6 +29,7 @@
 	import { roleLabels, type Role } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { forgetLocalDrafts } from '#lib/essays/local-draft.ts';
+	import { followSettingsEverywhere, forgetEverywhere } from '#lib/settings-everywhere.ts';
 
 	interface SignedInAs {
 		name: string;
@@ -50,7 +52,9 @@
 		const person = page.data.person as { displayName: string; role: Role } | undefined;
 		if (person) return { name: person.displayName, role: roleLabels[person.role].toLocaleLowerCase('en-US') };
 		const email = page.data.email as string | undefined;
-		if (email && page.url.pathname.startsWith('/profile')) return { name: email, role: '' };
+		if (email && (page.url.pathname.startsWith('/profile') || page.url.pathname.startsWith('/account'))) {
+			return { name: email, role: '' };
+		}
 		return undefined;
 	});
 	const signedInAs = $derived(fromPage ?? remembered);
@@ -65,6 +69,10 @@
 
 	$effect(() => {
 		if (mounted && signedIn) void followingState.refresh(page.url.pathname);
+	});
+	// Settings kept with the account, when the person chose that (Settings, This device).
+	$effect(() => {
+		if (mounted && signedIn) return followSettingsEverywhere();
 	});
 
 	onMount(() => {
@@ -95,6 +103,7 @@
 			// Nothing was kept.
 		}
 		forgetLocalDrafts();
+		forgetEverywhere();
 	}
 
 	function closeOnOutside(event: FocusEvent | MouseEvent) {
@@ -160,9 +169,9 @@
 				</li>
 			{/if}
 			<li>
-				<a href="/profile/password" data-sveltekit-reload>
-					<KeyRound size={20} strokeWidth={1.75} />
-					Password
+				<a href="/account" data-sveltekit-reload>
+					<UserRoundCog size={20} strokeWidth={1.75} />
+					Account settings
 				</a>
 			</li>
 			<li>

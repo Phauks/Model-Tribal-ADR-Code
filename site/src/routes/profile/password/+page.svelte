@@ -11,7 +11,7 @@
 	<title>Password · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/profile">Your profile</a></p>
+<p class="small"><a href="/account/security">Sign-in and security</a></p>
 <h1>{hasPassword ? 'Change your password' : 'Choose a password'}</h1>
 
 {#if form && 'problem' in form}

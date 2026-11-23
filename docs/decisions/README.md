@@ -47,5 +47,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0039](0039-website-map-uses-maplibre-and-our-own-tiles.md) | Draw the website's map with MapLibre and the project's own map tiles | Accepted |
 | [0042](0042-governance-facts-from-governing-documents.md) | Record how each nation's government is set up, as plain facts from its own documents | Accepted |
 | [0042](0042-link-to-the-national-indian-law-library-for-its-copies.md) | Link to the National Indian Law Library for copies taken from it | Accepted |
+| [0045](0045-separate-settings-from-account-settings.md) | Keep display settings on the device and account settings on Account pages | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

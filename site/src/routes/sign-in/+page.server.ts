@@ -1,3 +1,4 @@
+import { deviceLabel } from '#lib/device-label.ts';
 import { fail, redirect } from '@sveltejs/kit';
 import {
 	checkPassword,
@@ -123,7 +124,7 @@ export const actions: Actions = {
 		}
 
 		const account = await verifiedAccount(environment.database, result.email);
-		const finished = await finishSignIn(environment.database, cookies, account, 'code', returnTo, environment.LEAD_AUTHOR_EMAIL);
+		const finished = await finishSignIn(environment.database, cookies, account, 'code', returnTo, environment.LEAD_AUTHOR_EMAIL, deviceLabel(request.headers.get('user-agent')));
 		if (finished.outcome === 'refused') {
 			cookies.set(refusalCookie, finished.reason, { path: '/sign-in', maxAge: 300, httpOnly: true, sameSite: 'lax' });
 			redirect(303, '/sign-in/refused');
@@ -149,7 +150,7 @@ export const actions: Actions = {
 		if (!account) {
 			return again('The email address or password is not right. If you have not chosen a password, sign in with a code instead.');
 		}
-		const finished = await finishSignIn(environment.database, cookies, account, 'password', returnTo, environment.LEAD_AUTHOR_EMAIL);
+		const finished = await finishSignIn(environment.database, cookies, account, 'password', returnTo, environment.LEAD_AUTHOR_EMAIL, deviceLabel(request.headers.get('user-agent')));
 		if (finished.outcome === 'refused') {
 			cookies.set(refusalCookie, finished.reason, { path: '/sign-in', maxAge: 300, httpOnly: true, sameSite: 'lax' });
 			redirect(303, '/sign-in/refused');
