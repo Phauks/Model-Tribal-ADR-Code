@@ -1,7 +1,7 @@
 <script lang="ts">
 	// An essay as readers see it (src/lib/server/essay-pages.ts): the text with
 	// its case, quotation and analysis boxes, numbered citation markers that
-	// open their source in place (CitationPopup.svelte), the Sources list,
+	// preview their source (CitationPopup.svelte), the Sources list,
 	// and when this version was published.
 	//
 	// The page is the same for every reader. When the browser holds the
