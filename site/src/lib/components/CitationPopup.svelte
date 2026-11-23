@@ -294,6 +294,15 @@
 		background: var(--color-paper);
 		color: var(--color-ink);
 		font-size: var(--font-size-small);
+		/* It eases in, rising a few pixels into place (site/DESIGN.md, section 6, "Motion"). */
+		transition:
+			opacity var(--motion-duration-medium) var(--motion-easing-enter),
+			translate var(--motion-duration-medium) var(--motion-easing-enter);
+
+		@starting-style {
+			opacity: 0;
+			translate: 0 var(--space-1);
+		}
 	}
 
 	.citation-drawer {
@@ -313,10 +322,26 @@
 		overflow-y: auto;
 	}
 
+	/* The drawer slides up from the bottom edge (site/DESIGN.md, section 6, "Motion"). */
+	.citation-drawer[open] {
+		transition: translate var(--motion-duration-medium) var(--motion-easing-enter);
+
+		@starting-style {
+			translate: 0 100%;
+		}
+	}
+
 	/* The same shade as the site's other dialogs (Modal.svelte). */
 	.citation-drawer::backdrop {
 		background: var(--color-band);
 		opacity: 0.6;
+		transition: opacity var(--motion-duration-medium) var(--motion-easing-enter);
+	}
+
+	.citation-drawer[open]::backdrop {
+		@starting-style {
+			opacity: 0;
+		}
 	}
 
 	.citation-top {

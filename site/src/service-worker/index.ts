@@ -68,6 +68,7 @@ const neverCached = [
 	'/sign-in',
 	'/sign-out',
 	'/requests',
+	'/following',
 	'/edition.json',
 	fingerprintsAddress,
 	'/_app/version.json',

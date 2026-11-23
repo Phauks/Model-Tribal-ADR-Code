@@ -235,12 +235,16 @@ governing_documents:
 justice_institutions:
 - kind: peacemaking-program
   name: Peacemaker Court
+  link: https://mashpeewampanoagtribe-nsn.gov/about-peacemakers-court
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
   verification: title-only
   as_of: '2025-09-29'
-  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
-    whether it currently operates was not checked.
+  note: 'Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked. Link added 2026-11-23 after a second search: the nation''s
+    page “About Peacemakers Court”, which says the Peacemakers Court of the Mashpee Wampanoag Tribe is
+    part of the Tribal Judiciary, fetched with status 200 on 2026-11-23; see research/reviews/2026-11-22-service-links.json,
+    service-146.'
 - kind: tribal-court
   name: Tribal Court
   link: https://mashpeewampanoagtribe-nsn.gov/tribal-court-homepage

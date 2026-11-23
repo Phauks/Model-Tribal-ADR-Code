@@ -1,7 +1,7 @@
 profile: content/tribes/p/pueblo-of-sandia.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -191,7 +191,69 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: Results contained no Sandia court page; the directory was the only official source found.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Pueblo of Sandia tribal court
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The results led to the New Mexico Tribal-State Judicial Consortium site, whose Contact page is read
+    below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/?p=478
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: blocked
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The New Mexico courts'' Tribal-State Judicial Consortium address from the results answered with a
+    challenge page ("One moment, please..."); not worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/contact/
+  query: 'scripts/review/service_links.py second: Sandia; San Ildefonso'
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    New Mexico Tribal-State Judicial Consortium, Contact page (status 200): under "Tribal Courts" it lists
+    "Pueblo of Sandia – Tribal Court" (address, telephone, court handbook, website) and "Pueblo of San
+    Ildefonso – San Ildefonso" (address, telephone and the court handbook).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): directory, https://tribalstate.nmcourts.gov/contact/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-315
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Pueblo of Sandia Tribal Court”: Claude weighed what the second search found
+    against the lead author''s order (own page, then directory entry): directory, https://tribalstate.nmcourts.gov/contact/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-316
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-243,
   not-found-after-search); Pueblo of Sandia Tribal Court (court-244, not-found-after-search). No page
   or official directory entry was found on 2026-11-22 for “Tribal Court”; “Pueblo of Sandia Tribal Court”
-  (research/reviews/2026-11-22-service-links.json).'
+  (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23 linked “Tribal Court”;
+  “Pueblo of Sandia Tribal Court” (research/reviews/2026-11-22-service-links.json).'

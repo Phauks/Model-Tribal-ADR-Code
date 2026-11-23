@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Settings button and dialog (site/DESIGN.md, section 6, "Settings"). The
 	// dialog is the shared two-panel Modal: sections on the left (Text,
-	// Colors, Citations, Glossary, Data) and the chosen section on the right.
+	// Colors, Motion, Citations, Glossary, Data) and the chosen section on the right.
 	// It has no buttons along the bottom; Close at the top closes it, and
 	// Reset sits in Data. Reading settings apply at once and are kept on this
 	// device only, through src/lib/reading-settings.ts, so they work offline.
@@ -15,6 +15,7 @@
 	import TextAlignJustify from '@lucide/svelte/icons/text-align-justify';
 	import TextAlignStart from '@lucide/svelte/icons/text-align-start';
 	import Type from '@lucide/svelte/icons/type';
+	import Wind from '@lucide/svelte/icons/wind';
 	import Dropdown from './Dropdown.svelte';
 	import LocalData from './LocalData.svelte';
 	import Modal from './Modal.svelte';
@@ -34,6 +35,7 @@
 		sourceLinkOptions,
 		textAlignmentChoices,
 		lineWidthChoices,
+		motionChoices,
 		textSizeChoices,
 		textSizes,
 		textSpacingChoices,
@@ -45,11 +47,12 @@
 		type Theme
 	} from '#lib/reading-settings.ts';
 
-	type SectionIdentifier = 'text' | 'colors' | 'citations' | 'glossary' | 'data';
+	type SectionIdentifier = 'text' | 'colors' | 'motion' | 'citations' | 'glossary' | 'data';
 
 	const sections = [
 		{ id: 'text', label: 'Text', icon: Type },
 		{ id: 'colors', label: 'Colors', icon: Palette },
+		{ id: 'motion', label: 'Motion', icon: Wind },
 		{ id: 'citations', label: 'Citations', icon: Quote },
 		{ id: 'glossary', label: 'Glossary', icon: BookA },
 		{ id: 'data', label: 'Data', icon: Database }
@@ -245,6 +248,10 @@
 			{@render choiceGroup('Theme', 'theme', themeChoices, theme, changeTheme)}
 			{@render choiceGroup('Contrast', 'contrast', contrastChoices, settings.contrast, (value) =>
 				change('contrast', value)
+			)}
+		{:else if id === 'motion'}
+			{@render choiceGroup('Animation', 'motion', motionChoices, settings.motion, (value) =>
+				change('motion', value)
 			)}
 		{:else if id === 'citations'}
 			<p class="hint">

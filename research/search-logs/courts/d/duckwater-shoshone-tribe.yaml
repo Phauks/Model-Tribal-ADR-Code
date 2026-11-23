@@ -1,7 +1,7 @@
 profile: content/tribes/d/duckwater-shoshone-tribe.yaml
 topic: courts
 status: none-found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -182,7 +182,108 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: Results were narf.org and state/bar leads and a Duck Valley page for a different tribe; no official Duckwater court page found.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: nvcourts.gov tribal courts Nevada list Duckwater Ely Shoshone Yerington Winnemucca
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were a Nevada Supreme Court resource file (refused, below), a State Bar of Nevada magazine
+    article and state agency contact lists of tribal chairs; no tribal court directory was read.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://nvcourts.gov/__data/assets/pdf_file/0031/48496/Nevada_Tribal_Jurisdictions_and_Services_Resource_1.pdf
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: blocked
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The Nevada courts site refused the request (status 403); not worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nvbar.org/wp-content/uploads/NevadaLawyer_February2024_NevadasTribalCourts.pdf
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Status 200; a February 2024 Nevada Lawyer article on Nevada''s tribal courts that mentions some of
+    these courts in passing; an article, not a directory entry; not used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts/western-region-cfr-court
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: blocked
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The Bureau of Indian Affairs page for the Western Region Court of Indian Offenses answered "Access
+    denied" (status 403); not worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: '"Duckwater Shoshone Tribal Court"'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were directories, the Nevada courts resource file (refused), another Tribe''s court page and
+    the nation''s Tribal Government page, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://duckwatertribe.org/tribal-government/
+  query: 'scripts/review/service_links.py second: court'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Status 200; the Tribal Government page describes the council and names no court.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/regional-offices/western/court-indian-offenses
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Status 200; the Western Region Court of Indian Offenses page does not name this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-075
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Duckwater Shoshone Tribal Court”: Claude weighed what the second search found
+    against the lead author''s order (own page, then directory entry): none-found; the link stays empty
+    and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-076
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-058,
   not-found-after-search); Duckwater Shoshone Tribal Court (court-059, not-found-after-search). No page
   or official directory entry was found on 2026-11-22 for “Tribal Court”; “Duckwater Shoshone Tribal Court”
-  (research/reviews/2026-11-22-service-links.json).'
+  (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23 (web searches and
+  state court lists) found no page or official directory entry for “Tribal Court”; “Duckwater Shoshone
+  Tribal Court”; a call to the nation''s office could say whether the court has a page.'

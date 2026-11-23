@@ -3,6 +3,7 @@ import type { D1Database, R2Bucket, RateLimit } from '@cloudflare/workers-types/
 import type { ActiveSession } from '#lib/server/accounts.ts';
 import type { SignedInAccount } from '#lib/server/contributor-profiles.ts';
 import type { SignInEmailBinding } from '#lib/server/sign-in-email.ts';
+import type { UpdateEmailBinding } from '#lib/server/following-email.ts';
 import type { SignedInPerson } from '#lib/server/people.ts';
 
 declare global {
@@ -41,6 +42,12 @@ declare global {
 		signInEmail?: SignInEmailBinding;
 		/** The address sign-in codes come from, on a domain onboarded in Email Service. */
 		SIGN_IN_EMAIL_FROM?: string;
+		/** Cloudflare Email Service, for summaries of followed pages (src/lib/server/following-email.ts). */
+		updateEmail?: UpdateEmailBinding;
+		/** The address summaries come from. Empty until the project has a domain, which keeps the emails off. */
+		UPDATE_EMAIL_FROM?: string;
+		/** The site's public address, for links in emails, such as https://example.org. */
+		SITE_ADDRESS?: string;
 		/** The first lead author's email address (site/COLLABORATION.md, "First sign-in"). */
 		LEAD_AUTHOR_EMAIL?: string;
 	}

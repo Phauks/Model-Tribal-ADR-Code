@@ -1,7 +1,7 @@
 profile: content/tribes/m/mashpee-wampanoag-tribe.yaml
 topic: dispute-resolution
-status: none-found
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -76,4 +76,43 @@ searches:
     then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-146
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Mashpee Wampanoag Peacemaker Court
+  outcome: found
+  reason: 'Second search: “Peacemaker Court”: The results included the nation''s "About Peacemakers Court"
+    page.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://mashpeewampanoagtribe-nsn.gov/about-peacemakers-court
+  query: 'scripts/review/service_links.py second: Peacemakers Court'
+  outcome: found
+  reason: 'Second search: “Peacemaker Court”: Status 200; the page "About Peacemakers Court" says the
+    Peacemakers Court of the Mashpee Wampanoag Tribe is part of the Tribal Judiciary; now the service''s
+    link.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://mashpeewampanoagtribe-nsn.gov/peacemakers
+  query: 'scripts/review/service_links.py second: Peacemaker Court'
+  outcome: found
+  reason: 'Second search: “Peacemaker Court”: Status 200; the "Peacemakers" page gives Chapter 3, Operation
+    of Peacemaker Court; the "About Peacemakers Court" page is used as the link.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Peacemaker Court”: Claude weighed what the second search found against the
+    lead author''s order (own page, then directory entry): own-page, https://mashpeewampanoagtribe-nsn.gov/about-peacemakers-court.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-146
 next_steps: No page or official directory entry was found on 2026-11-22 for “Peacemaker Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 linked “Peacemaker Court” (research/reviews/2026-11-22-service-links.json).
