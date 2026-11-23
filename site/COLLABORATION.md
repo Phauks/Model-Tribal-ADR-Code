@@ -400,7 +400,7 @@ Open `/sign-in` and sign in with the `LEAD_AUTHOR_EMAIL` address. The Workspace 
 | `form_submissions` | Forms sent from the Forms pages: which form and version, how it was signed, the answers and the filing number (`migrations/0007_form_submissions.sql`). |
 | `events` | The activity log: who did what and when, numbered in order. Cannot be changed or deleted. |
 | `event_seals` | The seal of each activity log entry, chained to the one before. |
-| `follows`, `page_updates`, `page_fingerprints`, `following_checks`, `follow_settings` | Pages each account follows, when each followed page changed, the last fingerprint of every page that can be followed, which build was compared last, and each account's email choice (`migrations/0009_following.sql`; see Following pages). |
+| `follows`, `page_updates`, `page_fingerprints`, `following_checks`, `follow_settings` | Pages each account follows, when each followed page changed, the last fingerprint of every page that can be followed, which build was compared last, and each account's email choice (`migrations/0010_following.sql`; see Following pages). |
 
 `migrations/0003_contributor_profiles.sql` adds contributor profiles, their
 nations, interests and confirmed versions; see

@@ -118,6 +118,14 @@ describe('following and unfollowing', () => {
 		expect(await isFollowing(database, reader, navajo)).toBe(false);
 	});
 
+	it('forgets what an account follows, and its email setting, when the account is deleted', async () => {
+		await follow(database, reader, navajo, directory);
+		await setEmailChoice(database, reader, 'weekly');
+		await database.prepare('DELETE FROM accounts WHERE identifier = ?').bind(reader).run();
+		const left = await database.prepare('SELECT (SELECT COUNT(*) FROM follows) + (SELECT COUNT(*) FROM follow_settings) AS count').first<{ count: number }>();
+		expect(left?.count).toBe(0);
+	});
+
 	it('shows a followed page that left the site without a title', async () => {
 		await follow(database, reader, navajo, directory);
 		const pages = await followedPages(database, reader, new Map());
