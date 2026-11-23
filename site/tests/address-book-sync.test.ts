@@ -142,3 +142,15 @@ describe('differences with the nation pages', () => {
 		expect(differences(pages, await bookOfficeMethods(database))).toEqual([]);
 	});
 });
+
+describe('the weekly run', () => {
+	it('has a cron trigger and an address for each scheduled run', async () => {
+		const { entrySource, scheduledPaths } = await import('../tools/add-scheduled-run.mjs');
+		const { readFileSync } = await import('node:fs');
+		const config = readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8');
+		const crons = JSON.parse(/"crons":\s*(\[[^\]]*\])/.exec(config)?.[1] ?? '[]');
+		expect(Object.keys(scheduledPaths).sort()).toEqual([...crons].sort());
+		expect(Object.values(scheduledPaths)).toContain('/address-book/scheduled');
+		expect(entrySource()).toContain('/address-book/scheduled');
+	});
+});

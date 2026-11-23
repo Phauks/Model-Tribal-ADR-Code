@@ -135,8 +135,7 @@
 		Reads the federal Tribal Leaders Directory and the State of Alaska's list of tribes, and checks every email in use
 		that came from one of them. An email still listed counts as checked today; one no longer listed is marked replaced,
 		and the address now listed is added to the same contact. Then it brings in any office email or phone a nation page
-		shows that the book lacks. Emails read on a nation's own website are checked by hand on each contact's page. This also
-		runs by itself once a week.
+		shows that the book lacks. Emails read on a nation's own website are checked by hand on each contact's page. The same check runs by itself every Monday morning.
 	</p>
 	<button class="button" type="submit">Check now</button>
 </form>

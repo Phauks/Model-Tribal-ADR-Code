@@ -906,8 +906,8 @@ export interface WeeklySummary extends RefreshSummary {
 
 /**
  * The weekly run: check the directories, then bring in what the nation pages
- * show and the book lacks. Run by the site's scheduled job and by the Address
- * book page's "Check now".
+ * show and the book lacks. Run every Monday by the site's scheduled job
+ * (src/routes/address-book/scheduled) and by the Address book page's "Check now".
  */
 export async function weeklyAddressBookRun(
 	database: D1Database,

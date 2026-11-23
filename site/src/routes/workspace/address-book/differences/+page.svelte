@@ -12,7 +12,7 @@
 		'book-only':
 			'The book holds an office address the page does not show, often one a directory listed after the page was built. Add it to the profile by pull request, with its source, if it belongs on the page.',
 		'page-only':
-			'The page shows an office address the book lacks. Bring it in below; the weekly check also does this by itself.'
+			'The page shows an office address the book lacks. Bring it in below; the weekly check and Check now on the Address book page also do this.'
 	};
 </script>
 
