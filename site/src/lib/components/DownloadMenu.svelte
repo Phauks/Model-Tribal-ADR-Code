@@ -9,9 +9,16 @@
 	// line on what it is for. What a page offers is in
 	// src/lib/page-downloads.ts. Without scripts the button is a link to the
 	// Downloads page.
+	//
+	// Trevor asked on Nov. 23, 2026 that downloads be better separated. The
+	// list is in labeled groups: this page itself, then the page's files by
+	// what they are for (data, sources for a citation manager, contacts, map
+	// layers), then the places to go for more. A file offered in several
+	// formats is one row with a button for each format, so a format is never
+	// mistaken for a different file.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
-	import { pageCitation, pageDownloads, pageFormats, type PageFile, type PageFormat } from '#lib/page-downloads.ts';
+	import { groupedFiles, pageCitation, pageDownloads, pageFormats, type PageFile, type PageFormat } from '#lib/page-downloads.ts';
 	import Check from '@lucide/svelte/icons/check';
 	import Download from '@lucide/svelte/icons/download';
 	import FileBraces from '@lucide/svelte/icons/file-braces';
@@ -19,9 +26,7 @@
 	import FileText from '@lucide/svelte/icons/file-text';
 	import HardDriveDownload from '@lucide/svelte/icons/hard-drive-download';
 	import FileCheck from '@lucide/svelte/icons/file-check';
-	import FileCode from '@lucide/svelte/icons/file-code';
-	import FilePen from '@lucide/svelte/icons/file-pen';
-	import ContactRound from '@lucide/svelte/icons/contact-round';
+			import ContactRound from '@lucide/svelte/icons/contact-round';
 	import MapIcon from '@lucide/svelte/icons/map';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import Quote from '@lucide/svelte/icons/quote';
@@ -29,6 +34,7 @@
 	let { onpdf }: { onpdf: () => void } = $props();
 
 	const offers = $derived(pageDownloads(page.url.pathname));
+	const groups = $derived(groupedFiles(offers.files));
 	const fileIcons: Record<PageFile['kind'], typeof FileBraces> = {
 		data: FileBraces,
 		table: FileSpreadsheet,
@@ -36,14 +42,13 @@
 		contact: ContactRound,
 		map: MapIcon
 	};
-	const formatIcons: Record<PageFormat['id'], typeof FileBraces> = { word: FilePen, opendocument: FilePen, markdown: FileCode };
 
 	let open = $state(false);
 	let copied = $state(false);
 	let message = $state('');
 	let container: HTMLDivElement | undefined = $state();
 	let button: HTMLButtonElement | undefined = $state();
-	let list: HTMLUListElement | undefined = $state();
+	let panel: HTMLDivElement | undefined = $state();
 	let copiedTimer: ReturnType<typeof setTimeout> | undefined;
 
 	// A new page starts closed, with no message.
@@ -55,7 +60,7 @@
 	});
 
 	function items(): HTMLElement[] {
-		return [...(list?.querySelectorAll<HTMLElement>('a, button') ?? [])];
+		return [...(panel?.querySelectorAll<HTMLElement>('a, button') ?? [])];
 	}
 
 	function toggle() {
@@ -84,8 +89,8 @@
 		if (all.length === 0) return;
 		const index = all.indexOf(document.activeElement as HTMLElement);
 		let next: number | undefined;
-		if (event.key === 'ArrowDown') next = index < 0 ? 0 : (index + 1) % all.length;
-		else if (event.key === 'ArrowUp') next = index <= 0 ? all.length - 1 : index - 1;
+		if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = index < 0 ? 0 : (index + 1) % all.length;
+		else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = index <= 0 ? all.length - 1 : index - 1;
 		else if (event.key === 'Home' && index >= 0) next = 0;
 		else if (event.key === 'End' && index >= 0) next = all.length - 1;
 		if (next === undefined) return;
@@ -183,45 +188,27 @@
 	>
 		<Download size={24} />
 	</button>
-	<div class="download-panel" id="download-choices" hidden={!open}>
-		<p class="download-heading" aria-hidden="true">Download</p>
-		<ul bind:this={list} aria-label="Download">
-			<li>
-				<button type="button" onclick={savePdf}>
-					<FileText size={20} strokeWidth={1.75} />
-					<span class="choice">
-						<span class="choice-name"><span class="choice-label">This page</span> <span class="format">PDF</span></span>
-						<span class="choice-hint">Pick what to include, then choose Save as PDF in the print window</span>
+	<div class="download-panel" id="download-choices" hidden={!open} bind:this={panel}>
+		<p class="group-heading" id="download-this-page">This page</p>
+		<ul aria-labelledby="download-this-page">
+			<li class="file">
+				<FileText size={20} strokeWidth={1.75} />
+				<span class="choice">
+					<span class="choice-top">
+					<span class="choice-name">Save this page as</span>
+					<span class="formats">
+						<button type="button" class="format" onclick={savePdf} aria-label="Save this page as PDF" title="Pick what to include, then choose Save as PDF in the print window">PDF</button>
+						{#each pageFormats as format (format.id)}
+							<button type="button" class="format" onclick={() => savePage(format)} aria-label="Save this page as {format.format}" title={format.description}>{format.format}</button>
+						{/each}
 					</span>
-				</button>
+					</span>
+					<span class="choice-hint">PDF to print or share, Word or ODT to edit, Markdown as plain text</span>
+				</span>
 			</li>
-			{#each pageFormats as format (format.id)}
-				{@const Icon = formatIcons[format.id]}
-				<li>
-					<button type="button" onclick={() => savePage(format)}>
-						<Icon size={20} strokeWidth={1.75} />
-						<span class="choice">
-							<span class="choice-name"><span class="choice-label">This page</span> <span class="format">{format.format}</span></span>
-							<span class="choice-hint">{format.description}</span>
-						</span>
-					</button>
-				</li>
-			{/each}
-			{#each offers.files as file (file.link)}
-				{@const Icon = fileIcons[file.kind]}
-				<li>
-					<a href={file.link} download onclick={() => close()}>
-						<Icon size={20} strokeWidth={1.75} />
-						<span class="choice">
-							<span class="choice-name"><span class="choice-label">{file.label}</span> <span class="format">{file.format}</span></span>
-							<span class="choice-hint">{file.description}</span>
-						</span>
-					</a>
-				</li>
-			{/each}
 			{#if offers.citable}
 				<li>
-					<button type="button" onclick={copyCitation}>
+					<button type="button" class="row" onclick={copyCitation}>
 						{#if copied}<Check size={20} strokeWidth={1.75} />{:else}<Quote size={20} strokeWidth={1.75} />{/if}
 						<span class="choice">
 							<span class="choice-name">{copied ? 'Citation copied' : 'Copy a citation'}</span>
@@ -230,8 +217,33 @@
 					</button>
 				</li>
 			{/if}
-			<li class="divided">
-				<a href="/offline" onclick={() => close()}>
+		</ul>
+		{#each groups as group, index (group.heading)}
+			<p class="group-heading" id="download-group-{index}">{group.heading}</p>
+			<ul aria-labelledby="download-group-{index}">
+				{#each group.files as file (file.label)}
+					{@const Icon = fileIcons[file.kind]}
+					<li class="file">
+						<Icon size={20} strokeWidth={1.75} />
+						<span class="choice">
+							<span class="choice-top">
+							<span class="choice-name">{file.label}</span>
+							<span class="formats">
+								{#each file.links as link (link.link)}
+									<a class="format" href={link.link} download onclick={() => close()} aria-label="{file.label}, {link.format}">{link.format}</a>
+								{/each}
+							</span>
+							</span>
+							<span class="choice-hint">{file.description}</span>
+						</span>
+					</li>
+				{/each}
+			</ul>
+		{/each}
+		<p class="group-heading" id="download-more">More</p>
+		<ul aria-labelledby="download-more">
+			<li>
+				<a class="row" href="/offline" onclick={() => close()}>
 					<HardDriveDownload size={20} strokeWidth={1.75} />
 					<span class="choice">
 						<span class="choice-name">Read offline</span>
@@ -240,7 +252,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="/downloads" onclick={() => close()}>
+				<a class="row" href="/downloads" onclick={() => close()}>
 					<Download size={20} strokeWidth={1.75} />
 					<span class="choice">
 						<span class="choice-name">All downloads</span>
@@ -249,7 +261,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="/verify" onclick={() => close()}>
+				<a class="row" href="/verify" onclick={() => close()}>
 					<FileCheck size={20} strokeWidth={1.75} />
 					<span class="choice">
 						<span class="choice-name">Verify a file</span>
@@ -287,25 +299,34 @@
 		right: 0;
 		top: calc(100% + var(--space-2));
 		z-index: 20;
-		width: min(24rem, calc(100vw - 2 * var(--space-3)));
+		width: min(28rem, calc(100vw - 2 * var(--space-3)));
 		padding: var(--space-2) 0;
 		background: var(--color-surface-raised);
 		color: var(--color-ink);
 		border: 1px solid var(--color-control-border);
 		border-radius: var(--radius-control);
 		box-shadow: 0 var(--space-1) var(--space-3) color-mix(in srgb, var(--color-ink) 20%, transparent);
+		max-height: calc(100dvh - 6rem);
+		overflow-y: auto;
 	}
 
 	.download-panel[hidden] {
 		display: none;
 	}
 
-	.download-heading {
+	/* Each group has a small heading and a rule above it, so the groups read as separate lists. */
+	.group-heading {
 		margin: 0;
-		padding: var(--space-1) var(--space-4) var(--space-2);
+		padding: var(--space-2) var(--space-4) var(--space-1);
 		font-size: var(--font-size-small);
 		font-weight: var(--font-weight-semibold);
 		color: var(--color-ink-muted);
+	}
+
+	.group-heading:not(:first-child) {
+		margin-top: var(--space-1);
+		padding-top: var(--space-3);
+		border-top: 1px solid var(--color-line);
 	}
 
 	ul {
@@ -314,20 +335,17 @@
 		list-style: none;
 	}
 
-	li.divided {
-		margin-top: var(--space-2);
-		padding-top: var(--space-2);
-		border-top: 1px solid var(--color-line);
-	}
-
-	li a,
-	li button {
+	li.file,
+	.row {
 		display: flex;
 		align-items: flex-start;
 		gap: var(--space-3);
 		width: 100%;
-		min-height: var(--layout-target-minimum);
 		padding: var(--space-2) var(--space-4);
+	}
+
+	.row {
+		min-height: var(--layout-target-minimum);
 		border: 0;
 		background: transparent;
 		color: var(--color-ink);
@@ -337,7 +355,7 @@
 		cursor: pointer;
 	}
 
-	li a:visited {
+	.row:visited {
 		color: var(--color-ink);
 	}
 
@@ -347,34 +365,32 @@
 		margin-top: 0.15em;
 	}
 
-	li a:hover,
-	li button:hover {
+	/* Beside a row of format buttons, the icon lines up with the name in the middle of the buttons. */
+	li.file > :global(svg) {
+		margin-top: calc((var(--layout-target-minimum) - 20px) / 2);
+	}
+
+	.row:hover {
 		background: var(--color-surface);
 	}
 
-	li a:hover .choice-name:not(:has(.choice-label)),
-	li button:hover .choice-name:not(:has(.choice-label)),
-	li a:hover .choice-label,
-	li button:hover .choice-label {
+	.row:hover .choice-name {
 		text-decoration: underline;
 	}
 
-	li a:focus-visible,
-	li button:focus-visible {
+	.row:focus-visible,
+	.format:focus-visible {
 		background-color: var(--color-focus);
 		color: var(--focus-text);
 	}
 
-	li a:focus-visible .choice-hint,
-	li button:focus-visible .choice-hint,
-	li a:focus-visible .format,
-	li button:focus-visible .format {
+	.row:focus-visible .choice-hint {
 		color: inherit;
-		border-color: currentColor;
 	}
 
 	.choice {
 		display: flex;
+		flex: 1;
 		flex-direction: column;
 		gap: 0.1em;
 		min-width: 0;
@@ -384,16 +400,51 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
-	.format {
-		display: inline-block;
-		margin-left: var(--space-1);
-		padding: 0 0.4em;
-		border: 1px solid var(--color-line);
+	/* As tall as a format button, so the icon lines up with the name whether the buttons sit beside it or under it. */
+	.choice-top .choice-name {
+		display: inline-flex;
+		align-items: center;
+		min-height: var(--layout-target-minimum);
+	}
+
+	/* The file's name, with its format buttons beside it where they fit and under it where not. */
+	.choice-top {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-1) var(--space-3);
+	}
+
+	/* One button for each format of a file. */
+	.formats {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
+
+	.format,
+	.format:visited {
+		display: inline-flex;
+		align-items: center;
+		min-height: var(--layout-target-minimum);
+		min-width: var(--layout-target-minimum);
+		justify-content: center;
+		padding: 0 var(--space-3);
+		border: 1px solid var(--color-control-border);
 		border-radius: var(--radius-control);
+		background: var(--color-surface-raised);
+		color: var(--color-ink);
+		font: inherit;
 		font-size: var(--font-size-small);
-		font-weight: normal;
-		color: var(--color-ink-muted);
+		text-decoration: none;
 		white-space: nowrap;
+		cursor: pointer;
+	}
+
+	.format:hover {
+		background: var(--color-surface);
+		text-decoration: underline;
 	}
 
 	.choice-hint {

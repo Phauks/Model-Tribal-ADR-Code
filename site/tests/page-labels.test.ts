@@ -4,7 +4,7 @@ import { citationDate, pageCitation, pageDownloads } from '../src/lib/page-downl
 import { sourceKeys } from '../src/lib/server/source-keys.ts';
 
 describe('pageDownloads', () => {
-	const links = (path: string) => pageDownloads(path).files.map((file) => file.link);
+	const links = (path: string) => pageDownloads(path).files.flatMap((file) => file.links.map((link) => link.link));
 
 	it('offers a nation page its record, its sources in three formats and its contacts, and the map page its layers', () => {
 		expect(links('/nations/cherokee-nation')).toEqual([
