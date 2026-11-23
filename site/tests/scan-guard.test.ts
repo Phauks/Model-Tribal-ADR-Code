@@ -72,7 +72,7 @@ const bucketCalls: Record<string, BucketUse> = {
   // room"): streamed from RealtimeKit into the bucket, since a recording can
   // be larger than a Worker's memory, then put in line by syncRoomRecordings
   // and served by serveUploadFile.
-  "src/lib/server/event-rooms.ts storeStream put(key)": {
+  "src/lib/server/video-rooms.ts storeStream put(key)": {
     kind: "sent-file-store",
   },
   "src/lib/server/upload-serving.ts serveUploadFile get(file.key)": {

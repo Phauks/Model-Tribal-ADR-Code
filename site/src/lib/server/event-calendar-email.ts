@@ -23,7 +23,7 @@ import {
 	type DueMessage
 } from './event-calendar.ts';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { syncRoomRecordings } from './event-rooms.ts';
+import { syncRoomRecordings } from './video-rooms.ts';
 import { videoRoomSettings } from './realtime-kit.ts';
 
 export interface EventEmail {
@@ -169,7 +169,7 @@ export async function eventCalendarRun(environment: WorkerEnvironment, time: Dat
 	const offered = await offerAllFreeSeats(database, time);
 	const email = await sendDueEventMessages(database, eventEmailDelivery(environment), time);
 	const accessNeedsCleared = await clearOldAccessNeeds(database, time);
-	// The video room's recordings (site/COLLABORATION.md, "The video room"): off until its settings are added.
+	// The video rooms' recordings, events' and rooms' of their own (site/COLLABORATION.md, "The video room"): off until its settings are added.
 	const settings = videoRoomSettings(environment);
 	const recordings = settings && environment.sourceDocuments
 		? await syncRoomRecordings({ database, bucket: environment.sourceDocuments, settings }, time)

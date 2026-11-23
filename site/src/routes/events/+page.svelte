@@ -28,6 +28,7 @@
 	<nav class="event-views" aria-label="Events">
 		<a href="/events" aria-current={data.past ? undefined : 'page'}>Upcoming</a>
 		<a href="/events?when=past" aria-current={data.past ? 'page' : undefined}>Past</a>
+		<a href="/rooms">Open video rooms</a>
 	</nav>
 
 	{#if data.yours.length > 0}

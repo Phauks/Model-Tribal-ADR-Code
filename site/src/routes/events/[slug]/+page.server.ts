@@ -8,9 +8,9 @@ import {
 	recordingLabels,
 	whereLine
 } from '#lib/event-calendar.ts';
-import { durationWords } from '#lib/event-rooms.ts';
+import { durationWords } from '#lib/video-rooms.ts';
 import { confirmedCredits } from '#lib/server/contributor-profiles.ts';
-import { mayWatchRecordings, recordingsOf, roomOf } from '#lib/server/event-rooms.ts';
+import { mayWatchRecordings, recordingsOf, roomOfEvent } from '#lib/server/video-rooms.ts';
 import { fileScans, mayServe, stillScanning } from '#lib/server/file-scans.ts';
 import {
 	acceptOffer,
@@ -47,7 +47,7 @@ export const load: PageServerLoad = async (event) => {
 	const own = account ? await registrationFor(database, found.identifier, account.subject) : undefined;
 	const over = new Date(found.endsAt).getTime() <= time.getTime();
 	const started = new Date(found.startsAt).getTime() <= time.getTime();
-	const room = await roomOf(database, found.identifier);
+	const room = await roomOfEvent(database, found.identifier);
 	const host = isHost(event.locals.person);
 	// With the website's own room, the room's page is the online link: it lets in only the people allowed.
 	const showOnlineLink =
@@ -57,7 +57,7 @@ export const load: PageServerLoad = async (event) => {
 		(tickets.length === 0 || (own?.status === 'registered' && own.attendance === 'online'));
 	const roomLink = room ? `/events/${found.slug}/room` : null;
 	const mayWatch = room ? mayWatchRecordings(room, { signedIn: Boolean(account), host, registered: own?.status === 'registered' }) : false;
-	const recordings = mayWatch ? (await recordingsOf(database, found.identifier)).filter((recording) => recording.objectKey && (host || !recording.hidden)) : [];
+	const recordings = mayWatch && room ? (await recordingsOf(database, room.identifier)).filter((recording) => recording.objectKey && (host || !recording.hidden)) : [];
 	const scans = await fileScans(database, recordings.map((recording) => recording.objectKey as string));
 	return {
 		event: {

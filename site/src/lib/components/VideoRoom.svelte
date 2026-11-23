@@ -1,6 +1,6 @@
 <script lang="ts">
 	/**
-	 * The events video room in the browser: RealtimeKit's ready-made meeting
+	 * A video room in the browser: RealtimeKit's ready-made meeting
 	 * (Cloudflare, "RealtimeKit UI Kit"), loaded only once someone has agreed to
 	 * the recording notice and been given a token, so other pages never carry
 	 * it. People join with their camera and microphone off and turn them on in
@@ -9,20 +9,22 @@
 	 * Recording is never silent: while one runs, a banner says so and screen
 	 * readers are told; a short rising tone plays when it starts and a falling
 	 * one when it stops, as in Magna Carta's meetings. Hosts get a start and
-	 * stop button for events announced as recorded.
+	 * stop button when everyone was told the room is, or may be, recorded.
 	 */
 	import { onMount } from 'svelte';
 	import Circle from '@lucide/svelte/icons/circle';
 	import Square from '@lucide/svelte/icons/square';
+	import type { RecordingChoice } from '#lib/event-calendar.ts';
 
 	interface Props {
 		token: string;
 		host: boolean;
-		/** Whether the event was announced as recorded, so hosts may start a recording. */
-		mayRecord: boolean;
+		/** What everyone was told about recording before joining. Hosts may record unless it was "not recorded". */
+		told: RecordingChoice;
 	}
 
-	let { token, host, mayRecord }: Props = $props();
+	let { token, host, told }: Props = $props();
+	const mayRecord = $derived(told !== 'not-recorded');
 
 	let container: HTMLDivElement | undefined = $state();
 	let loading = $state(true);
@@ -142,10 +144,12 @@
 				</button>
 			{/if}
 			<p class="hint">
-				{#if mayRecord}
-					Everyone was told this event is recorded. Start recording when the event begins.
+				{#if told === 'recorded'}
+					Everyone was told this room is recorded. Start recording when you begin.
+				{:else if told === 'undecided'}
+					Everyone was told this room may be recorded. If you record, say so out loud when you start.
 				{:else}
-					This event was not announced as recorded, so do not record it.
+					Everyone was told this room is not recorded, so do not record it.
 				{/if}
 			</p>
 		</div>
