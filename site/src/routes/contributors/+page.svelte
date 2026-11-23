@@ -12,13 +12,14 @@
 <div class="reading">
 	<h1>Contributors</h1>
 	<p class="lead">People who helped write and review this work, credited as each chose.</p>
+	<p>Names that are links open the person’s own page. The <a href="/people">People</a> page shows them with the board, by contribution and by specialty.</p>
 
 	{#each data.sections as section (section.heading)}
 		<section>
 			<h2>{section.heading}</h2>
 			{#each section.entries as entry, position (position)}
 				<div class="credit">
-					<p class="name">{entry.line}</p>
+					<p class="name">{#if entry.slug}<a href="/contributors/{entry.slug}">{entry.line}</a>{:else}{entry.line}{/if}</p>
 					{#if entry.biography}<p class="biography">{entry.biography}</p>{/if}
 				</div>
 			{/each}

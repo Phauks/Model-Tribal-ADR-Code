@@ -159,6 +159,123 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: La Posta Band of Diegueno Mission Indians of the La Posta Indian Reservation, California
+governance:
+- aspect: form
+  value: Constitution under the Indian Reorganization Act of June 18, 1934
+  quote: Indian Reorganization Act of June 18, 1934 (48 Stat, 984), and the
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-05-03'
+  locator: Article VI
+  document_version:
+    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+    version: 1973-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: General Council
+  quote: The governing body of the La Posta Band shall be the general
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+    version: 1973-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All qualified voters
+  quote: council which shall be composed of all qualified voters.
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+    version: 1973-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: the general council shall be a chairman and secretary-treasurer, who
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+    version: 1973-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: La Posta Band of Diegueno Mission Indians of the La Posta Indian Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The elected officials shall hold office for two (2) years or until
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+    version: 1973-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Secretary-Treasurer
+  quote: the general council shall be a chairman and secretary-treasurer, who
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+    version: 1973-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Adult members eighteen (18) years of age or older shall qualify as
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-05-03'
+  locator: Article V
+  document_version:
+    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+    version: 1973-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: General Council
+  quote: conducted under rules and regulations prescribed by the general council.
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-05-03'
+  locator: Article V
+  document_version:
+    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+    version: 1973-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of general council, ratified by majority vote in an election
+  quote: They shall be ratified by majority vote in an
+  source: constitution-la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-05-03'
+  locator: Article VIII
+  document_version:
+    document: la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation-constitution
+    version: 1973-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 gaming:
   compacts:
   - state: CA

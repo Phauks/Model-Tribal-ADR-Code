@@ -182,6 +182,231 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted by election under Section 16 of the Indian Reorganization Act
+  quote: Adopted by the qualified voters of the Community by an election held pursuant to Section 16 of
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Legislative History
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: governing-body
+  value: General Council
+  quote: The governing body of the Forest County Potawatomi Community shall be the
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article III, Section 1
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: governing-body
+  value: Executive Council
+  quote: The six (6) offices so elected shall constitute the Executive Council, which shall exercise
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article III, Section 6
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: governing-body-size
+  value: 6 members (Executive Council)
+  quote: The six (6) offices so elected shall constitute the Executive Council, which shall exercise
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article III, Section 6
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Election of these officers shall be by secret
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article III, Section 6
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: shall be elected for a term of two (2)
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article VI, Section 3
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: general-council
+  value: Enrolled members 18+ with 1/4 Potawatomi blood
+  quote: Potawatomi Indian blood and is eighteen (18) years of age or over shall be qualified to vote at all
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article III, Section 4
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman shall preside over all meetings of the General and Executive Council
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article IX, Section 1
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Forest County Potawatomi Community, Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: Election of these officers shall be by secret
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article III, Section 6
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: shall be elected for a term of two (2)
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article VI, Section 3
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer, two Council members
+  quote: Secretary, Treasurer and two (2) Council members.
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article III, Section 6
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: elections
+  value: Annually, Saturday before the November Executive Council meeting
+  quote: shall be held on the Saturday prior to the regular Executive
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article VI, Section 2
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: voting-age
+  value: '18'
+  quote: Potawatomi Indian blood and eighteen (18) years of age or over shall be qualified to vote at any
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article VI, Section 5
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: judiciary
+  value: Power to establish a Tribal Court by ordinance
+  quote: including the power to establish a Tribal Court and to
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article IV, Section 1(d)
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: amendment
+  value: Majority vote of qualified voters at Secretary-called election, 30% turnout
+  quote: may be amended by a majority of vote of the qualified voters of the
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article XII, Section 1
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: No amendment of this Constitution shall become effective until it has been approved
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article XII, Section 1
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: recall-and-removal
+  value: Removal by General Council for misconduct, felony conviction or dishonesty
+  quote: The General Council may remove any elective member of its Executive Council for
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article VIII, Section 2(a)
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of qualified voters
+  quote: Upon receipt by the Executive Council of a valid petition signed by at least twenty (20)
+  source: constitution-forest-county-potawatomi-community-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-07-14'
+  locator: Article VIII, Section 3(a)
+  document_version:
+    document: forest-county-potawatomi-community-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 6 has the General Council electing officers while Article VI has them elected by voters; both are in the text and are reported as found.'
 governing_documents:
 - kind: law-code
   title: Forest County Potawatomi Community, Wisconsin - Code of Laws

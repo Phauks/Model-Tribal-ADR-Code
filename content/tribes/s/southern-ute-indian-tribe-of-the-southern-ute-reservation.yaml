@@ -202,6 +202,219 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Southern Ute Indian Tribal Council
+  quote: Indian Reservation shall be known as the Southern Ute Indian Tribal Council.
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article III, Section 1
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: governing-body-size
+  value: '7 members: chairman and six councilmen'
+  quote: members (chairman and six (6) councilmen), all of whom shall be elected on an at-large basis for
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article III, Section 2
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: members (chairman and six (6) councilmen), all of whom shall be elected on an at-large basis for
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article III, Section 2
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: three (3) year staggered terms or until their successors are duly elected and installed.
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article III, Section 2
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman shall preside over meetings of the Southern Ute Indian Tribal
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article X, Section 1
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected from candidates who file for the office
+  quote: chairman shall be elected from among candidates who specifically file for that office.
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article III, Section 2
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: members of the tribal council shall be three (3) years, PROVIDED, that upon adoption and
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article IV, Section 2
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: other-officers
+  value: Vice-Chairman, Treasurer
+  quote: Vice-Chairman. In the absence of the chairman, the vice-chairman shall preside
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article X, Section 2
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: elections
+  value: Annually, first Friday in November
+  quote: annual elections on the first Friday in November to fill for three
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article IV, Section 1
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: voting-age
+  value: '18'
+  quote: male or female, eighteen (18) years of age or over, shall be entitled to vote at any tribal election
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article IV, Section 4
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: election-authority
+  value: Election board appointed by the tribal council
+  quote: Election Board. An election board, appointed by the tribal council, shall
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article IV, Section 6
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: judiciary
+  value: Tribal courts, under council ordinances
+  quote: govern the administration of justice through the tribal courts, prescribe the powers, rules and
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article VII, Section 1(e)
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: amendment
+  value: Majority vote of voters at an election authorized by the Secretary of the Interior
+  quote: This constitution may be amended at an election authorized by the Secretary of
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article XII, Section 1
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: Interior and, if approved by him, it shall thereupon take effect.
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article XII, Section 2
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: recall-and-removal
+  value: Removal by affirmative vote of four council members
+  quote: removed from office by the affirmative vote of not less than four (4) members
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article V, Section 1
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of registered voters
+  quote: at least thirty percent (30%) of the registered voters of the Southern Ute Indian Tribe,
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article V, Section 2
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
+- aspect: other
+  value: Chairman may veto council enactments, overridden by 5 of 6 council members
+  quote: again approved by five (5) of the six (6) tribal council members.
+  source: constitution-southern-ute-indian-tribe-of-the-southern-ute-reservation-1991-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1991-08-16'
+  locator: Article VII, Section 5
+  document_version:
+    document: southern-ute-indian-tribe-of-the-southern-ute-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1975 constitution with a 1991 amendment to Article II, Section 1(c) appended, not a 1991 revision.'
 governing_documents:
 - kind: law-code
   title: Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado

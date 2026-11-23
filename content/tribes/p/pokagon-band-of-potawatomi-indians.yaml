@@ -216,6 +216,315 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+governance:
+- aspect: form
+  value: Approved by BIA under Act to Restore Federal Services and IRA Section 16
+  quote: pursuant to Section 5 of the Act to Restore Federal Services
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: History of Adoption, Approval, and Amendments
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council shall be the governing body of the Pokagon Band.
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article IX
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: governing-body-size
+  value: 11 members
+  quote: There shall be eleven (11) seats on the Pokagon Band Tribal Council.
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: governing-body-selection
+  value: Elected by Band members under Article XIII
+  quote: All Tribal Council members shall be elected in accordance with Article
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1(b)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: each position on the Tribal Council shall have a three (3) year term of
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 4(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: 'Chairperson. The Tribal Council Chairperson shall:'
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 5(c)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by Band voters
+  quote: All Tribal Council members shall be elected in accordance with Article
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1(b)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: each position on the Tribal Council shall have a three (3) year term of
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 4(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: These seats shall include a Chairperson, Vice-Chairperson, Secretary,
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: elections
+  value: Annual, second Saturday in July
+  quote: Election to be conducted on the second Saturday in July each year to
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XIII, Section 4(b)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: voting-age
+  value: '18'
+  quote: provided he/she is at least eighteen (18) years of age on the date of that
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XIII, Section 4(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: election-authority
+  value: Election Board
+  quote: The Election Board shall conduct and certify the results of all elections of
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XIII, Section 3(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: branches
+  value: Legislative, executive and judicial
+  quote: the legislative and executive functions of the tribal government.
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 2
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: powers of the executive or legislative branches of the government shall exercise powers
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 2
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judiciary
+  value: Tribal Court and Court of Appeals
+  quote: A court of general jurisdiction (hereinafter the
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 5(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judicial-selection
+  value: Appointed by at least 8 Tribal Council members
+  quote: affirmative vote of at least eight (8) Tribal Council members,
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 5(a)(i)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judicial-term
+  value: 4 years
+  quote: Terms of office for all Judges of the Tribal Judiciary shall be for four (4)
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 6(b)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judicial-independence
+  value: Judiciary independent of legislative and executive functions
+  quote: The Tribal Judiciary shall be independent from
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 2
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: decrease in compensation due each individual judge shall take effect during his/her
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 11
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: amendment
+  value: Two-thirds vote of voters in an election called for that purpose
+  quote: An amendment to this Constitution shall be effective upon the two-thirds (2/3)
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XXII
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: recall-and-removal
+  value: Recall by voters through initiative process
+  quote: year, may be recalled by the membership through the initiative process in
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XV, Section 1(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: recall-and-removal
+  value: Removal by 8 Council votes after hearing
+  quote: after the hearing and by vote of at least eight (8) members
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XV, Section 2(h)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: other
+  value: Elders Council advisory to the Band and Tribal Council
+  quote: An Elders Council shall serve in an advisory capacity to the Band and to
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article VI, (f)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: other
+  value: Elders Council may reserve one Councilperson seat
+  quote: not a member of the Elders Council, shall be elected by the Band
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 3
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: other
+  value: Membership may make binding decisions for the Band
+  quote: Membership may take official action and make binding decisions for the
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article VI, (a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
 governing_documents:
 - kind: law-code
   title: Pokagon Band of Potawatomi Indians - Code Table of Contents

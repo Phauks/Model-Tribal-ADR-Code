@@ -120,6 +120,159 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cahto Tribe of the Laytonville Rancheria
+governance:
+- aspect: form
+  value: Articles of Association
+  quote: do hereby adopt this updated Articles of Association of the Laytonville Rancheria
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Preamble
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: governing-body
+  value: General Council
+  quote: The governing body of the Tribe shall be the General Council, which shall consist of all adult
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article IV
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: general-council
+  value: All adult members eighteen years of age or over
+  quote: The governing body of the Tribe shall be the General Council, which shall consist of all adult
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article IV
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: head-of-government
+  value: Chairman
+  quote: A. Chairman. He/she shall preside at all meetings of the General Council and Executive
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article X, A
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cahto Tribe of the Laytonville Rancheria
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: There shall be elected an Executive Committee consisting of a Chairman, a Vice-Chairman,
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article V
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: who all shall hold office for three years.
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article V
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: other-officers
+  value: Secretary-Treasurer, Member-At-Large/Alternate
+  quote: Secretary-Treasurer, and a Member-At-I^arge/Alternate
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article V
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the General Council eighteen (18) years of age or older shall have the right to vote.
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article VI
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: election-authority
+  value: Election Committee
+  quote: the Election Committee shall examine the petition,
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article VII, B
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: amendment
+  value: Majority vote of the eligible voters
+  quote: This updated Articles of Association may be amended by a majority vote of the eligible voters of
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article XIII
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: such amendment shall be in effect upon the approval of the Secretary of the Interior
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article XIII
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of eligible voters
+  quote: B. Recall. Upon receipt of a petition signed by at least fifty-one percent (51%) of the
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2006-02-16'
+  locator: Article VII, B
+  document_version:
+    document: cahto-tribe-of-the-laytonville-rancheria-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles in Article VI and the certification block; facts are from the January 28, 2006 updated articles.'
 governing_documents:
 - kind: law-code
   title: Cahto Indian Tribe of the Laytonville Rancheria

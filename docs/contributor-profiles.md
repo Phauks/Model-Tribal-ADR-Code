@@ -23,13 +23,14 @@ People the lead author invites from the People page also keep a profile: the wor
 | About you | First name | Yes | To address the person and print a credit |
 | About you | Last name | No | Only to sort the list of credits. "Not everyone’s name fits the first-name, last-name format,"[^govuk-names] and the W3C advises "don't require that people supply a family name."[^w3c-names] A person with one name writes it in the first box |
 | About you | A Native name, or another name they go by | No | Some people have a name in their nation's language. It is printed only if the person writes it in their credit |
-| About you | 13 or older | Yes | Signing up on the website is for people 13 or older (lead author, 2026-11-22), the age below which federal rules on children's data apply (16 C.F.R. § 312.2). Someone younger helps with a parent or guardian through the request form and the consent for minors form ([docs/contributions.md](contributions.md#contributors-under-the-age-of-majority)) |
+| About you | Age: 13 to 17, or 18 or older | Yes | Signing up on the website is for people 13 or older (lead author, 2026-11-22), the age below which federal rules on children's data apply (16 C.F.R. § 312.2). Someone younger helps with a parent or guardian through the request form and the consent for minors form ([docs/contributions.md](contributions.md#contributors-under-the-age-of-majority)). People under 18 are credited only by a description or a name they choose, with no biography and no picture, so nothing published can identify them (migration 0014 replaced the single "13 or older" box, and earlier answers are asked again) |
 | Contact | Email address | Comes from sign-in | Proved by the sign-in code, so it cannot be mistyped or claimed by someone else |
 | Contact | Phone number | Only if the person asks to be called or texted | "Only collect phone numbers from people if you genuinely need them,"[^govuk-phone] in any format, with country or area code[^govuk-phone] |
 | Contact | Best way to reach you | No (email by default) | GOV.UK: "Not everyone has or can use a phone, so make sure you give users a choice about how they can be contacted."[^govuk-phone] |
 | Native nations | Connected to a Native nation? Yes and list / No / Rather not say | No | So the project knows whose knowledge and perspective it is drawing on, and so a person can choose to be credited with their nation (charter, [commitment 7](charter.md#7-credit-authorship-and-art)) |
 | Native nations | Each nation, and the connection in the person's own words | No | Self-described, as the U.S. Census Bureau's race data are "based on self-identification"[^census]. The project never asks for enrollment numbers, cards or other proof, and listing a nation does not mean speaking for it. A name may be picked from the project's list or typed freely, so First Nations, state-recognized nations and nations the project has not listed fit too |
 | Background | About yourself; languages; organization or school | No | To match work to people's experience |
+| Background | Specialties: peacemaking, mediation, Tribal courts, Tribal codes and constitutions, language and translation, research and sources, and Other in the person's own words | No | Shown with the person's name on the People page and their own page, when they have one (lead author, 2026-11-23) |
 | Help | Ways to help (write, review, share knowledge, research, translate, art, outreach, website) | At least one | Each choice shows what it involves next, so nobody is surprised later (below) |
 | Help | Time available | No | For planning |
 | Credit | Kind of credit | Yes | The five forms of [schemas/common.schema.json](../schemas/common.schema.json) `credit`, the same as the contributor statement: name, name and nation, a description, a name the person chooses, or none |
@@ -60,6 +61,7 @@ The project does not ask for date of birth, address, gender, pronouns, race, enr
 | Name, background, languages, organization, interests, time, nations | The lead author and editors |
 | Email address and phone number | The lead author and editors. Never printed or published |
 | The credit line, and the biography if chosen | Readers of the book and the website, only in the form and places the person confirmed |
+| The contributor page, the picture and the specialties | Readers of the website, only while the person is credited on the website by name or by a chosen name; the picture never for someone under 18 |
 | The history of a profile | The lead author and editors; it names roles and actions, not personal details |
 
 Advisors, co-authors and nation reviewers do not see profiles. Permissions are `read-contributors` (lead author, editors) and `manage-contributors` (lead author) in [site/src/lib/permissions.ts](../site/src/lib/permissions.ts).
@@ -88,6 +90,24 @@ The lead author downloads the book's Credits page from the workspace Contributor
 
 The public `/contributors` page lists credits that people chose to have on the website, read live from the last confirmed versions, so the book and the website can differ by each person's choice. It is not built ahead of time and is cached for five minutes. The Acknowledgments page links to it.
 
+### Contributor pages
+
+Someone credited on the website by name, by name and nation, or by a chosen name gets a public page at `/contributors/<address>`, as Trevor asked on Nov. 23, 2026. The `/contributors` list links each such name to it. A credit by description gets no page, because a description is not a name, and nor does someone credited only in the book. The address comes from the name, with accents removed (`slugOf` in `site/src/lib/contributors.ts`); a second person with the same name gets "-2", and a name with no Latin letters, such as one in Cherokee syllabary, gets a neutral address. It is set each time the person confirms and is stored in `contributor_profiles.public_slug` (migration 0014).
+
+The page is read from the last confirmed version, like the credit, and shows only what the credit allows. That is the name, the nations the person ticked for a credit by name and nation, and the biography if they chose to print it. It also shows the picture, the section they are credited in, the month they signed up, and the published work they helped with. That work is every published essay with a version they saved, and every published essay, nation record, glossary term or provision they reviewed, each once. A nation record held back until the nation approves it is left out. Phone, email, background, interests and the nations not ticked are never shown. The code is `contributorPage` in `site/src/lib/server/contributor-pages.ts`; the page is not built ahead of time and is cached for five minutes.
+
+Uploads people file through the shared upload path, and links to the person's own website, are not listed yet.
+
+### Profile pictures
+
+A person 18 or older can add one picture on their profile page. In the browser it is cropped to a square from its middle and made into a 400 by 400 JPEG (`site/src/lib/components/ProfilePicturePicker.svelte`), so the original photo never leaves the device. The server accepts only a JPEG of at most 1 MB and 1,200 pixels a side, and removes every segment but the picture: Exif (camera details and location), XMP, colour profiles, Photoshop data and comments (`cleanJpeg` in `site/src/lib/server/profile-pictures.ts`). It is kept in the private bucket under `profile-pictures/<profile>/` and served only through the contributor page, at `/contributors/<address>/picture`, while the page shows it. It is never printed in the book. A person can change or remove it at any time; the old file is deleted at once, and so is the picture when the profile or account is deleted or a removed sign-up expires. Someone who answers that they are under 18 cannot add one, and an existing picture stops showing as soon as they save that answer.
+
+### The People page
+
+The public `/people` page lists everyone with a contributor page, each linked to it, as Trevor asked on Nov. 23, 2026. The nonprofit's board comes first. Below it, everyone else is grouped by contribution (Helped write, Reviewed and Thanks, from their credit section) or by specialty, chosen with two links so it works without scripts (`/people?group=specialty`). A person with several specialties appears under each. Each card shows the picture or initials, the name, and a short count of published essays written and public pages reviewed. People credited by a description, or only in the book, stay on the `/contributors` list. The People page is in the footer and linked from the Contributors and Acknowledgments pages; it is not in the sidebar, which follows the working outline's main menu.
+
+Board members are marked by the lead author on the person's workspace Contributors page, with an optional office such as President, left empty until the nonprofit's offices are set (`board_member`, `board_office`, migration 0014). Only someone with a public contributor page can be listed. The code is `peopleDirectory` in `site/src/lib/server/contributor-pages.ts` and `site/src/routes/people/`.
+
 ## Keeping and deleting
 
 A removed sign-up is deleted, with its answers and every confirmed version, 12 months after the decision (`deleteExpiredDeclinedProfiles` in `site/src/lib/server/contributor-profiles.ts`). The check runs each time the workspace Contributors page opens, like the request purge, so no scheduled job is needed. The history keeps only that a profile was deleted and why.
@@ -96,7 +116,7 @@ A removed sign-up is deleted, with its answers and every confirmed version, 12 m
 
 Anyone signed in can delete their own account from the profile page (`/profile/delete-account`), as Trevor asked on Nov. 22, 2026. The page lists what is deleted and what stays, asks one question and needs a ticked box. The code is `deleteAccount` in `site/src/lib/server/account-deletion.ts`.
 
-- **Deleted at once:** the account, its sessions and unused sign-in codes, the contributor profile with every confirmed version, and the pages the person follows with their email setting (those tables cascade from `accounts`). The person is signed out everywhere.
+- **Deleted at once:** the account, its sessions and unused sign-in codes, the contributor profile with every confirmed version, the contributor page and picture, and the pages the person follows with their email setting (those tables cascade from `accounts`). The person is signed out everywhere.
 - **Workspace members:** the row in `people` stays, because reviews, drafts and the sealed activity log point to it. Its email address and sign-in are removed, its access ends, and its name is kept or replaced by "Former contributor", as the person chose.
 - **Credits:** if the person keeps their name, the credit line they last confirmed is kept in `retained_credits` (migration 0009), with nothing else about them, and still prints and shows where they chose. If they remove it, the credit goes. A credit already printed cannot be recalled; the next edition follows the choice (the same rule as [contributions.md](contributions.md#changes-and-withdrawal)).
 - **Files the person sent** (docs/uploads.md) are deleted unless they were filed or kept for reference; those stay, no longer tied to the account. `deleteAccount` calls `forgetAccountUploads` before the account row goes.
@@ -107,9 +127,9 @@ Anyone signed in can delete their own account from the profile page (`/profile/d
 ## How it is built
 
 - **Tables** (`site/migrations/0003_contributor_profiles.sql`): `contributor_profiles` (one per account, `sign_in_subject` holding the account identifier; `person_identifier` links to `people` once the lead author gives workspace access), `contributor_nations`, `contributor_interests`, and `contributor_profile_versions` (one row per confirmation, with a JSON copy of the answers and the previewed credit line). History goes to the shared `events` table with target `profile`, which migration 0002 (permission tiers) allows.
-- **Pages:** `/join` (public, built ahead of time), `/contributors` (public, live), `/profile`, `/profile/edit`, `/profile/review`, `/workspace/contributors` and `/workspace/contributors/<identifier>`. All work without JavaScript. The profile pages are never cached or framed, like the workspace.
+- **Pages:** `/join` (public, built ahead of time), `/contributors`, `/contributors/<address>` and `/people` (public, live), `/profile`, `/profile/edit`, `/profile/review`, `/workspace/contributors` and `/workspace/contributors/<identifier>`. All work without JavaScript. The profile pages are never cached or framed, like the workspace.
 - **Sign-in:** `src/routes/sign-in/callback/+server.ts` sends a verified account that is not on the People list to `/profile` instead of refusing it. `src/hooks.server.ts` sets `locals.account` on profile and workspace pages; `requirePerson` sends an account without workspace access to its profile.
-- **Tests:** `tests/contributors.test.ts` (credit lines, required answers, the form), `tests/contributor-profiles.test.ts` (drafts stay private, versions, credits only from confirmed versions, workspace access, deletion, the 12-month cleanup) and `tests/credits-export.test.ts` (the book's Credits page).
+- **Tests:** `tests/contributors.test.ts` (credit lines, required answers, the form), `tests/contributor-profiles.test.ts` (drafts stay private, versions, credits only from confirmed versions, workspace access, deletion, the 12-month cleanup), `tests/contributor-pages.test.ts` (page addresses, what a page shows, pictures, the People page) and `tests/credits-export.test.ts` (the book's Credits page).
 
 ## Not built yet
 
