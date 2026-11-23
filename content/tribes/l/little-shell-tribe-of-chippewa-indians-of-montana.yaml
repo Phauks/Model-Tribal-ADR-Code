@@ -106,6 +106,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
+- kind: email-general
+  value: frontdesk@lstribe.org
+  label: General office email shown on the nation's website
+  source: montanalittleshelltribe-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   image_link: https://montanalittleshelltribe.org/wp-content/uploads/2020/10/cropped-Little-Shell_Logo_Web-300x300.png
