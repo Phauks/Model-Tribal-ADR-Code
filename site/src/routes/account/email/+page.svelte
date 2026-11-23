@@ -3,6 +3,9 @@
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
+
+	// Most email first, as drawn (design/settings-and-account).
+	const choicesInOrder = ['daily', 'weekly', 'off'] as const satisfies readonly (typeof emailChoices)[number][];
 </script>
 
 <svelte:head>
@@ -21,7 +24,8 @@
 	<div class="notice" role="status"><p>{form.done}</p></div>
 {/if}
 
-<h2>Pages you follow</h2>
+<section class="account-card" aria-labelledby="follow-heading">
+<h2 id="follow-heading">Pages you follow</h2>
 {#if !data.emailReady}
 	<div class="notice" role="note">
 		<p>
@@ -33,21 +37,54 @@
 <form method="post">
 	<fieldset class="choices">
 		<legend>Email me a summary, sent to {data.email}</legend>
-		{#each emailChoices as choice (choice)}
+		{#each choicesInOrder as choice (choice)}
 			<div class="choice">
 				<input type="radio" id="email-{choice}" name="email" value={choice} checked={data.emailChoice === choice} />
 				<label for="email-{choice}">{emailChoiceLabels[choice]}</label>
 			</div>
 		{/each}
 	</fieldset>
+	<p class="small muted">
+		An email lists the pages that changed and links to them. It never says what changed. Every email has a link
+		that stops them.
+	</p>
+	<p><a href="/following">See and manage the pages you follow</a></p>
 	<p><button class="button" type="submit">Save</button></p>
 </form>
-<p class="small muted">
-	An email lists the pages that changed and links to them. It never says what changed. Every email has a link
-	that stops them. <a href="/following">See the pages you follow</a>.
-</p>
+</section>
+
+<section class="account-card" aria-labelledby="other-heading">
+	<h2 id="other-heading">Other email</h2>
+	<dl class="other">
+		<div>
+			<dt>Replies to requests you sent</dt>
+			<dd class="small muted">Always sent, since you asked a question.</dd>
+		</div>
+		<div>
+			<dt>Events and training you signed up for</dt>
+			<dd class="small muted">Reminders a day before and two hours before, if you asked for them when you signed up.</dd>
+		</div>
+	</dl>
+</section>
 
 <style>
+	.other {
+		margin: 0;
+	}
+
+	.other > div {
+		padding: var(--space-3) 0;
+		border-top: 1px solid var(--color-line);
+	}
+
+	.other dt {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.other dd {
+		margin: 0;
+	}
+
 	.choices {
 		margin: 0 0 var(--space-4);
 		padding: 0;
