@@ -131,7 +131,7 @@
 		{#await import('#lib/components/essays/EssayEditor.svelte')}
 			<p class="small muted">Opening the editor…</p>
 		{:then { default: EssayEditor }}
-			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave onsaved={saved} />
+			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave live onsaved={saved} />
 		{:catch}
 			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
 		{/await}

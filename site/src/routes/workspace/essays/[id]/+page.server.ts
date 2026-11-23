@@ -19,6 +19,7 @@ import { renderedVersion } from '#lib/server/essay-pages.ts';
 import { formText } from '#lib/server/workspace.ts';
 import { checkNow } from '#lib/server/following-run.ts';
 import type { Actions, PageServerLoad } from './$types';
+import { notifyLiveRoom } from '#lib/server/live-editing.ts';
 
 export const load: PageServerLoad = async (event) => {
 	const { identifier, database, level } = await essayAccess(event, 'comment');
@@ -93,6 +94,7 @@ export const actions: Actions = {
 				origin: 'restore',
 				note: `Restored from version ${row.number}`
 			});
+			if (!saved.unchanged) await notifyLiveRoom(identifier);
 			return { done: saved.unchanged ? `Version ${row.number} is the same as the newest version.` : `Saved version ${row.number}'s text as version ${saved.version.number}.` };
 		} catch (problem) {
 			if (problem instanceof SaveConflict) return fail(409, { problem: problem.message });
