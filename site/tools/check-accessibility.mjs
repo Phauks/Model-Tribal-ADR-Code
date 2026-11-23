@@ -254,8 +254,10 @@ async function worker(number) {
 			page = await context.newPage();
 			pagesInTab = 0;
 		}
-		pagesInTab += 1;
+		// Another worker may have taken the last page while this one was opening a tab.
 		const pathname = queue.shift();
+		if (pathname === undefined) break;
+		pagesInTab += 1;
 		const pageStarted = Date.now();
 		inProgress.set(number, { pathname, since: pageStarted });
 		let lastError;
