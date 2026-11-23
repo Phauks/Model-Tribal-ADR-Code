@@ -38,6 +38,8 @@ declare global {
 		workspaceChangeLimit?: RateLimit;
 		signInLimit?: RateLimit;
 		signInNetworkLimit?: RateLimit;
+		/** Files one account can start sending in a minute (src/routes/uploads/pieces). */
+		uploadLimit?: RateLimit;
 		/** The live editing rooms, one per essay, in the model-tribal-adr-code-live Worker (src/lib/server/live-editing.ts). */
 		essayRooms?: DurableObjectNamespace;
 		/** Cloudflare Email Service, for sign-in codes (src/lib/server/sign-in-email.ts). */

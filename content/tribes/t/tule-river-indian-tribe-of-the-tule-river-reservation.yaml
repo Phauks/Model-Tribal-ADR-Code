@@ -178,6 +178,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tule River Indian Tribe of the Tule River Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Tule River Indian Tribe of the Tule River Reservation, California".
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Tule River Indian Tribe) (approved 1936) states it was adopted under Act of June

@@ -1,0 +1,30 @@
+profile: content/tribes/k/kalispel-indian-community-of-the-kalispel-reservation.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Kalispel tribal court peacemaking video
+  outcome: not-found
+  reason: Results were general NARF peacemaking video pages and a Kalispel civil actions code PDF, with no nation-made media.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://kalispeltribalcourt.org/
+  query: tribal court site media
+  outcome: blocked
+  reason: 'Not read: the WebFetch budget for this session ran out (proxy HTTP 403), so this site was not opened.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://kalispeltribalcourt.org/
+  query: court video
+  outcome: not-found
+  reason: Fetched with curl. The site is a landing page for the Kalispel Tribe family of sites; it links tribal video files and a YouTube channel (@kalispeltribeofindians2644) that are general tribal media, not court media. Footer '© 2026 Kalispel Tribe of Indians. All rights reserved.'
+next_steps: Check the Kalispel YouTube channel by hand for court videos.

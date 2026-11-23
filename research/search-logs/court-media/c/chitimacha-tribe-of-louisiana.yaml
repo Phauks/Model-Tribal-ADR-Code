@@ -1,0 +1,126 @@
+profile: content/tribes/c/chitimacha-tribe-of-louisiana.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Chitimacha Tribe peacemaking video
+  outcome: not-found
+  reason: Results were a PBS documentary about Chitamacha history, a NARF page and general sites, with no court or peacemaking video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Chitimacha tribal court youtube
+  outcome: not-found
+  reason: Results were code and court documents as PDFs, with no video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.chitimacha.gov/departments-services/tribal-courts
+  query: embedded video, podcast, photo or rights statement about the court
+  outcome: not-found
+  reason: The page loaded with no embedded media and no copyright statement; it links to a photo gallery and a video gallery.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.chitimacha.gov/about-us/video-gallery
+  query: video titles and court or peacemaking content
+  outcome: not-found
+  reason: 'The page embeds three YouTube videos (IDs k7zd8akzv_0, VUH5sRJyc3g, E8bdYBA9VH8) with no titles or descriptions, and none is described as court-related. Checked later: what turned up is not about the nation''s court or peacemaking, so it is not a candidate.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://ncorj.org/tribal-law/chitimacha-peacemaker-court/
+  query: Chitimacha Peacemaker Court media
+  outcome: not-found
+  reason: The page describes the court with no embedded video, podcast or photo of the court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/watch?v=k7zd8akzv_0
+  query: title, channel and license of embedded video
+  outcome: error
+  reason: The fetch tool budget ran out (proxy HTTP 403), so the video could not be opened.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/watch?v=VUH5sRJyc3g
+  query: title, channel and license of embedded video
+  outcome: error
+  reason: The fetch tool budget ran out (proxy HTTP 403), so the video could not be opened.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/watch?v=E8bdYBA9VH8
+  query: title, channel and license of embedded video
+  outcome: error
+  reason: The fetch tool budget ran out (proxy HTTP 403), so the video could not be opened.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Chitimacha peacemaker podcast
+  outcome: not-found
+  reason: Results were regional podcasts and a PBS recollection, with no Chitimacha court or peacemaking podcast.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.chitimacha.gov/departments-services/tribal-courts
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.chitimacha.gov/departments-services/tribal-courts
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.chitimacha.gov/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found embedded YouTube video(s) VUH5sRJyc3g.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.chitimacha.gov/about-us/video-gallery
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found embedded YouTube video(s) E8bdYBA9VH8, VUH5sRJyc3g, k7zd8akzv_0.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=VUH5sRJyc3g
+  query: title and channel of the video
+  outcome: not-found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "John Darden on the Chitimacha Reservation, Louisiana" on the Autry Museum of the American West channel, public and embeddable on 2026-11-23. Checked later: what turned up is not about the nation''s court or peacemaking, so it is not a candidate.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=E8bdYBA9VH8
+  query: title and channel of the video
+  outcome: not-found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "FOT 3 Episode 6: Chitimacha" on the Mushkeg Productions Inc channel, public and embeddable on 2026-11-23. Checked later: what turned up is not about the nation''s court or peacemaking, so it is not a candidate.'
+next_steps: The video gallery holds an Autry Museum interview, a Mushkeg Productions episode and one video YouTube no longer lists; none is about the court.

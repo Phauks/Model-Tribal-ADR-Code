@@ -1,0 +1,38 @@
+profile: content/tribes/m/mashantucket-pequot-indian-tribe.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Mashantucket Pequot peacemakers council video
+  outcome: not-found
+  reason: Results were tribal council, elders and culture pages; no peacemaking video or Peacemakers Council media appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Mashantucket Pequot tribal court youtube video
+  outcome: not-found
+  reason: Results were tribal court history, judge biography, rules and code pages; no video appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Mashantucket Pequot tribal court podcast judge
+  outcome: not-found
+  reason: Results were judge and staff biography pages and news on the Tribe; no podcast or photo gallery appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.mptn-nsn.gov/government/tribal-court/
+  query: court page media
+  outcome: blocked
+  reason: Fetched with curl. Returned a Cloudflare 'Sorry, you have been blocked' page (HTTP 403); not bypassed.
+next_steps: A person should open https://www.mptn-nsn.gov/government/tribal-court/ and the judge and staff biography pages by hand for photos or video, and look for Peacemakers Council media.

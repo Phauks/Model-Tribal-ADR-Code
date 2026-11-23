@@ -24,6 +24,7 @@
 		<li>Your access to the workspace.</li>
 	{/if}
 	<li>Pages you follow, and your email setting for updates to them.</li>
+	<li>Files you sent that the project has not filed or kept for reference.</li>
 </ul>
 
 <h2>What stays</h2>
@@ -37,6 +38,7 @@
 		<a href="/forms/change-or-withdrawal-request">Change or withdrawal</a> form, before or after you delete
 		your account.
 	</li>
+	<li>Files you sent that the project filed or kept for reference stay, no longer tied to you.</li>
 	<li>A credit already printed in a book cannot be recalled. The next edition follows your choice below.</li>
 	<li>Pages you starred or saved on this device stay in this browser. You can clear them in Settings, under Data.</li>
 </ul>

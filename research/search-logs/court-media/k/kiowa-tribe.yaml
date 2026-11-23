@@ -1,0 +1,54 @@
+profile: content/tribes/k/kiowa-tribe.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Kiowa Tribe peacemaking video
+  outcome: not-found
+  reason: No Kiowa peacemaking video appeared; results were the Kiowa Tribe Peacemaking Act text, PBS programs and history videos not about the court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Kiowa Tribe of Oklahoma tribal court youtube
+  outcome: found
+  reason: A Kiowa Tribe blog post has an embedded news video about creating a tribal court; no YouTube channel of the Tribe appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.kiowatribe.org/judicial
+  query: 'Judicial page: embedded video, photos'
+  outcome: error
+  reason: 'Not opened: the page-fetch tool had reached its hourly limit.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.kiowatribe.org/judicial
+  query: video, photos, rights
+  outcome: not-found
+  reason: Fetched with curl. Judicial page has no video or photo gallery; footer reads '© 2026 - Kiowa Tribe, All Rights Reserved'; the site links a YouTube channel (youtube.com/channel/UCZ9CPr0czDHGjYBAqokQDPw) that was not opened.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.kiowatribe.org/blog/kiowa-tribe-creating-tribal-court-completing-new-government
+  query: embedded video
+  outcome: found
+  reason: Fetched with curl. The blog post only links to a KSWO news story; no video is embedded on the Kiowa page itself.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: news-site
+  address: https://www.kswo.com/2022/12/09/kiowa-tribe-creating-tribal-court-completing-new-government/
+  query: video and rights line
+  outcome: found
+  reason: Fetched with curl. KSWO 7News story with a news video file; page shows 'Copyright 2022 KSWO. All rights reserved.' and 'A Gray Local Media Station © 2002-2026'.
+next_steps: Ask KSWO for permission, or link only. Open the Kiowa Tribe YouTube channel https://www.youtube.com/channel/UCZ9CPr0czDHGjYBAqokQDPw by hand to look for court or peacemaking videos. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

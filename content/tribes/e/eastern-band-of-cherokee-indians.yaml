@@ -178,6 +178,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Nashville Area Tribes, Nations and Partners" list'
+  note: 'Listed as "Eastern Band of Cherokee Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Eastern Band of Cherokee Indians (2002)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: head-of-government
   value: Principal Chief
@@ -527,6 +535,220 @@ jurisdiction:
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Eastern Band of Cherokee Nation".
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: North Carolina is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in North Carolina. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in North Carolina by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.51)
+  note: Listed as "EASTERN BAND OF CHEROKEE INDIANS" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+treaties:
+- title: Treaty with the Cherokee, 1785
+  signed: '1785-11-28'
+  statutes_at_large: 7 Stat. 18
+  kappler:
+    volume: 2
+    page: 8
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1785-0008
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 8 (Treaty with the Cherokee, 1785; Kappler header "Nov. 28, 1785. | 7 Stat., 18.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1791
+  signed: '1791-07-02'
+  statutes_at_large: 7 Stat. 39
+  kappler:
+    volume: 2
+    page: 29
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1791-0029
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 29 (Treaty with the Cherokee, 1791; Kappler header "July 2, 1791. | 7 Stat., 39. | Proclamation, Feb. 7, 1792")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1794
+  signed: '1794-06-26'
+  statutes_at_large: 7 Stat. 43
+  kappler:
+    volume: 2
+    page: 33
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1794-0033
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 33 (Treaty with the Cherokee, 1794; Kappler header "June 26, 1794. | 7 Stat., 43. | Proclamation, Jan. 21, 1795. | Ante, p. 29.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1798
+  signed: '1798-10-02'
+  statutes_at_large: 7 Stat. 62
+  kappler:
+    volume: 2
+    page: 51
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1798-0051
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 51 (Treaty with the Cherokee, 1798; Kappler header "Oct. 2, 1798. | 7 Stat., 62. | Ratified April 30, 1802. | Proclaimed May 4, 1802.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1804
+  signed: '1804-10-24'
+  statutes_at_large: 7 Stat. 288
+  kappler:
+    volume: 2
+    page: 73
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1804-0073
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 73 (Treaty with the Cherokee, 1804; Kappler header "Oct. 24, 1804. | 7 Stat., 288. | Proclamation, May 17, 1824.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1805
+  signed: '1805-10-25'
+  statutes_at_large: 7 Stat. 93
+  kappler:
+    volume: 2
+    page: 82
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1805-0082
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 82 (Treaty with the Cherokee, 1805; Kappler header "Oct., 25, 1805. | 7 Stat., 93. | Proclamation, Apr. 24, 1806.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1805
+  signed: '1805-10-27'
+  statutes_at_large: 7 Stat. 95
+  kappler:
+    volume: 2
+    page: 84
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1805-0084
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 84 (Treaty with the Cherokee, 1805; Kappler header "Oct. 27, 1805. | 7 Stat., 95. | Proclamation, June 10, 1806.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1806
+  signed: '1806-01-07'
+  statutes_at_large: 7 Stat. 101
+  kappler:
+    volume: 2
+    page: 90
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1806-0090
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 90 (Treaty with the Cherokee, 1806; Kappler header "Jan. 7, 1806. | 7 Stat., 101. | Ratified May 22, 1807. | Proclaimed May 23, 1807.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1816
+  signed: '1816-03-22'
+  statutes_at_large: 7 Stat. 138
+  kappler:
+    volume: 2
+    page: 124
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0124
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 124 (Treaty with the Cherokee, 1816; Kappler header "Mar. 22, 1816. | 7 Stat., 138. | Ratified Apr. 8, 1816.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1816
+  signed: '1816-03-22'
+  statutes_at_large: 7 Stat. 139
+  kappler:
+    volume: 2
+    page: 125
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0125
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 125 (Treaty with the Cherokee, 1816; Kappler header "Mar. 22, 1816. | 7. Stat., 139. | Ratified Apr. 8, 1816.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1816
+  signed: '1816-09-14'
+  statutes_at_large: 7 Stat. 148
+  kappler:
+    volume: 2
+    page: 133
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0133
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 133 (Treaty with the Cherokee, 1816; Kappler header "Sept. 14, 1816. | 7 Stat., 148. | Proclamation, Dec. 30, 1816.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1817
+  signed: '1817-07-08'
+  statutes_at_large: 7 Stat. 156
+  kappler:
+    volume: 2
+    page: 140
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1817-0140
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 140 (Treaty with the Cherokee, 1817; Kappler header "July 8, 1817. | 7 Stat., 156. | Proclamation, Dec. 26, 1817.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1819
+  signed: '1819-02-27'
+  statutes_at_large: 7 Stat. 195
+  kappler:
+    volume: 2
+    page: 177
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1819-0177
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 177 (Treaty with the Cherokee, 1819; Kappler header "Feb. 27, 1819. | 7 Stat., 195. | Proclamation, Mar. 10, 1819.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche, etc., 1835
+  signed: '1835-08-24'
+  statutes_at_large: 7 Stat. 474
+  kappler:
+    volume: 2
+    page: 435
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-etc-1835-0435
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 435 (Treaty with the Comanche, etc., 1835; Kappler header "Aug. 24, 1835. | 7 Stat., 474. | Proclamation, May 19, 1836.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Cherokee, 1835
+  signed: '1835-12-29'
+  statutes_at_large: 7 Stat. 478
+  kappler:
+    volume: 2
+    page: 439
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1835-0439
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 439 (Treaty with the Cherokee, 1835; Kappler header "Dec. 29, 1835. | 7 Stat., 478. | Proclamation, May 23, 1836.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

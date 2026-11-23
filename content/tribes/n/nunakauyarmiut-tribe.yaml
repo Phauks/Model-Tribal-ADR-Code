@@ -160,6 +160,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nunakauyarmiut Tribe
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'Listed as "Nunakauyarmiut Tribe (aka Native Village of Toksook Bay)". Name on Indian Health Service profile differs from roster name (roster: "Nunakauyarmiut Tribe"); matched manually. Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.'
+- area: Alaska
+  service_unit: Yukon-Kuskokwim Delta Service Area
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'The source''s words: "Nunakauyarmiut Tribe (aka Native Village of Toksook Bay)".'
+  operator: tribal
 governance:
 - aspect: governing-body
   value: Nunakauyak Traditional Council

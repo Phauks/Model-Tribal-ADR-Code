@@ -176,6 +176,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Coeur D'Alene Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Coeur D''Alene Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Coeur D’Alene Tribe (1995)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: form
   value: Approved by Acting Commissioner of Indian Affairs

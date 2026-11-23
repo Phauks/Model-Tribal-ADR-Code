@@ -188,6 +188,7 @@ export interface NationRecord {
 		bureau_of_indian_affairs_region?: string;
 		bureau_of_indian_affairs_agency?: string;
 	};
+	indian_health_service?: (CitedFact & { area: string; service_unit?: string; operator?: string })[];
 	government_structure?: (CitedFact & { kind: string; detail?: string })[];
 	/** How the government is set up, one plain fact per item (decision record 0042). */
 	governance?: (CitedFact & { aspect: string; value: string; quote?: string })[];
@@ -201,6 +202,20 @@ export interface NationRecord {
 	})[];
 	dispute_resolution_law?: string[];
 	jurisdiction?: (CitedFact & { topic: string; value?: string; detail?: string })[];
+	treaties?: (CitedFact & {
+		title: string;
+		signed: string;
+		statutes_at_large?: string;
+		kappler?: { volume?: number; page?: number; link?: string };
+		signatory?: string;
+	})[];
+	land_establishment?: (CitedFact & {
+		land_area: string;
+		method: string;
+		instrument?: string;
+		date?: string;
+		detail?: string;
+	})[];
 	memberships?: (CitedFact & { organization: string })[];
 	dispute_resolution?: {
 		forums?: (CitedFact & { kind: string; name?: string; link?: string })[];

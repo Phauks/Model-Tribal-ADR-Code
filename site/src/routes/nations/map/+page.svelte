@@ -4,7 +4,10 @@
 	import type { RecognitionBadge } from '#lib/recognition-badges.ts';
 	import { replaceState } from '$app/navigation';
 	import DataTable from '#lib/components/DataTable.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
+	import { mapViewChoices, mapViews } from '#lib/map-views.ts';
+	import TileMap, { type TileMapCamera } from '#lib/components/TileMap.svelte';
 	import ZoomableMap from '#lib/components/ZoomableMap.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
 	import type { LandAreaRow } from '#lib/server/nations-map.ts';
@@ -14,17 +17,17 @@
 	let { data }: PageProps = $props();
 
 	/**
-	 * The views of the one map, in the order of their buttons. Map titles are
-	 * in title case (Trevor, 2026-11-22). A new view needs
-	 * an entry here, a drawing in src/lib/nations-map-drawing.ts and a snippet
-	 * below for what goes under the map.
+	 * The views of the one map, picked from a searchable dropdown (Trevor, 2026-11-23) and listed in src/lib/map-views.ts. A new view needs an entry there, a drawing in src/lib/nations-map-drawing.ts and a snippet below for what goes under the map.
 	 */
-	const views: { key: NationsMapView; label: string; heading: string }[] = [
-		{ key: 'states', label: 'Nations by State', heading: 'by-state-heading' },
-		{ key: 'regions', label: 'Bureau of Indian Affairs Regions', heading: 'bureau-of-indian-affairs-regions' },
-		{ key: 'lands', label: 'Land Areas', heading: 'land-areas' }
-	];
+	const views = mapViews;
 	let current = $state<NationsMapView>('states');
+
+	/**
+	 * The map is drawn with MapLibre from the project's own tiles where the device can (decision record 0039). The drawn map underneath stays for printing, and takes over if MapLibre cannot start, so a reader always has a map. Changing views keeps the reader's place.
+	 */
+	let tileMapWanted = $state(true);
+	let tileMapReady = $state(false);
+	let tileMapCamera = $state<TileMapCamera | undefined>();
 
 	/**
 	 * The "Land areas" view is fetched the first time it is shown, because its
@@ -53,26 +56,9 @@
 	$effect(() => {
 		if (current === 'lands' && !lands) void loadLands();
 	});
-	let tabs: HTMLButtonElement[] = $state([]);
-
-	function choose(index: number, remember = true): void {
-		const view = views[(index + views.length) % views.length];
-		current = view.key;
-		tabs[views.indexOf(view)]?.focus();
-		if (remember) replaceState(view.key === views[0].key ? '' : `?view=${view.key}`, {});
-	}
-
-	function onTabKey(event: KeyboardEvent, index: number): void {
-		const moves: Record<string, number> = {
-			ArrowRight: index + 1,
-			ArrowLeft: index - 1,
-			Home: 0,
-			End: views.length - 1
-		};
-		if (event.key in moves) {
-			event.preventDefault();
-			choose(moves[event.key]);
-		}
+	function choose(key: NationsMapView): void {
+		current = key;
+		replaceState(key === views[0].key ? location.pathname : `?view=${key}`, {});
 	}
 
 	/**
@@ -201,7 +187,7 @@
 			.map-view[hidden] {
 				display: block !important;
 			}
-			.map-view-tabs {
+			.map-view-picker {
 				display: none !important;
 			}
 		</style>
@@ -216,23 +202,8 @@
 	<h1>Map of Native Nations</h1>
 </div>
 
-<div class="map-view-tabs" role="tablist" aria-label="Map views">
-	{#each views as view, index (view.key)}
-		{@const isCurrent = view.key === current}
-		<button
-			bind:this={tabs[index]}
-			type="button"
-			role="tab"
-			id="map-tab-{view.key}"
-			aria-selected={isCurrent}
-			aria-controls="map-view-{view.key}"
-			tabindex={isCurrent ? 0 : -1}
-			onclick={() => choose(index)}
-			onkeydown={(event) => onTabKey(event, index)}
-		>
-			{view.label}
-		</button>
-	{/each}
+<div class="map-view-picker">
+	<SearchableDropdown label="Map view" choices={mapViewChoices} value={current} onchange={choose} />
 </div>
 
 {#each views as view (view.key)}
@@ -240,13 +211,28 @@
 		class="map-view"
 		id="map-view-{view.key}"
 		data-map-view={view.key}
-		role="tabpanel"
-		aria-labelledby="map-tab-{view.key}"
+		role="region"
+		aria-labelledby={view.heading}
 		hidden={view.key !== current}
 	>
 		<h2 id={view.heading} class="view-heading">{view.label}</h2>
 		<figure class="map-figure" data-print-part="maps">
-			<div class="map-drawing" data-nations-map={view.key === 'states' ? '' : undefined}>
+			<div class="map-drawing" class:tiled={tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
+				{#if tileMapWanted && view.key === current}
+					{#key view.key}
+						<TileMap
+							view={view.key}
+							label={view.label}
+							bind:camera={tileMapCamera}
+							onready={() => (tileMapReady = true)}
+							onfail={() => {
+								tileMapWanted = false;
+								tileMapReady = false;
+							}}
+						/>
+					{/key}
+				{/if}
+				<div class="drawn-map">
 				<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
 					{#if view.key === 'lands'}
 						{#if lands}
@@ -262,6 +248,7 @@
 						{@html data.drawings[view.key]}
 					{/if}
 				</ZoomableMap>
+				</div>
 			</div>
 			{#if view.key === 'states'}
 				<figcaption>
@@ -299,7 +286,7 @@
 				/>
 			{:else if view.key === 'lands'}
 				<p class="small muted map-note">
-					Select an area to go to its row in the table, which lists the nations whose entries name it. Areas too small to see at this scale are marked with a dot. Outlines are from the Census Bureau’s 2020 cartographic boundary file, simplified for a national map. {@render insetNote()}
+					Select an area to go to its row in the table, which lists the nations whose entries name it. Areas too small to see at this scale are marked with a dot{tileMapReady ? ', and nearby dots are grouped into numbered circles until you zoom in' : ''}. Outlines are from the Census Bureau’s 2020 cartographic boundary file{tileMapReady ? '' : ', simplified for a national map'}. {@render insetNote()}
 				</p>
 				{#if lands}
 					<DataTable
@@ -334,7 +321,11 @@
 {/each}
 
 {#snippet insetNote()}
-	Alaska, Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands are in the boxes below, each drawn at its own scale and not in its true place.
+	{#if tileMapReady}
+		Alaska, Hawaiʻi, Puerto Rico, the U.S. Virgin Islands, Guam, the Northern Mariana Islands and American Samoa are in their true places; the buttons under the map go to each. Hold Ctrl or ⌘ and scroll, or pinch, to zoom.
+	{:else}
+		Alaska, Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands are in the boxes below, each drawn at its own scale and not in its true place.
+	{/if}
 {/snippet}
 
 <div class="reading">
@@ -342,36 +333,11 @@
 </div>
 
 <style>
-	.map-view-tabs {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-		margin: var(--space-5) 0 var(--space-3);
-		border-bottom: 1px solid var(--color-line);
+	.map-view-picker {
+		margin: var(--space-5) 0 var(--space-4);
 	}
 
-	.map-view-tabs button {
-		min-height: var(--layout-target-minimum);
-		padding: var(--space-2) var(--space-4);
-		border: 0;
-		border-bottom: 4px solid transparent;
-		background: transparent;
-		color: var(--color-ink);
-		font: inherit;
-		cursor: pointer;
-	}
-
-	.map-view-tabs button:hover {
-		text-decoration: underline;
-	}
-
-	/* The chosen view is marked by weight and a bar, not color alone. */
-	.map-view-tabs button[aria-selected='true'] {
-		border-bottom-color: var(--color-action);
-		font-weight: var(--font-weight-bold);
-	}
-
-	/* The buttons already name the view; the heading stays for screen readers, outlines and print. */
+	/* The dropdown already names the view; the heading stays for screen readers, outlines and print. */
 	.view-heading {
 		position: absolute;
 		width: 1px;
@@ -383,7 +349,7 @@
 	}
 
 	@media print {
-		.map-view-tabs {
+		.map-view-picker {
 			display: none;
 		}
 
@@ -412,7 +378,23 @@
 	}
 
 	.map-drawing {
+		position: relative;
 		max-width: 975px;
+	}
+
+	/*
+	 * The MapLibre map (src/lib/components/TileMap.svelte) starts hidden on top of the drawn map, the same size, and replaces it on screen once its first view has loaded. Print always uses the drawn map.
+	 */
+	.map-drawing:not(.tiled) :global(.tile-map) {
+		position: absolute;
+		inset: 0 0 auto;
+		visibility: hidden;
+	}
+
+	@media screen {
+		.map-drawing.tiled .drawn-map {
+			display: none;
+		}
 	}
 
 	.map-note {

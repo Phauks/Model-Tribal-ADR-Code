@@ -1,0 +1,25 @@
+profile: content/tribes/e/eastern-shoshone-tribe-of-the-wind-river-reservation.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/sites/careeropps/themes/responsive2017/display_objects/documents/18IHS-OHR604_BRO_Billings_Word_508C_M.pdf
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Billings Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#eastern-shoshone-tribe-of-the-wind-river-reservation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 2 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#eastern-shoshone-tribe-of-the-wind-river-reservation
