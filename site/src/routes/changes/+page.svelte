@@ -1,22 +1,29 @@
 <script lang="ts">
 	// Recent changes, like a wiki's (site/COLLABORATION.md, "Recent changes"),
-	// and, with ?page=, one page's history. The filters are a plain form, so
-	// they work without scripts.
+	// and, with ?page=, one page's history. The filters are a plain form: with
+	// scripts each choice applies at once, as in the approved mockup
+	// (design/recent-changes); without them a "Show changes" button sends it.
+	import { onMount } from 'svelte';
+	import CalendarIcon from '@lucide/svelte/icons/calendar';
+	import Check from '@lucide/svelte/icons/check';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import EyeOff from '@lucide/svelte/icons/eye-off';
 	import Lock from '@lucide/svelte/icons/lock';
 	import Rss from '@lucide/svelte/icons/rss';
+	import Search from '@lucide/svelte/icons/search';
+	import User from '@lucide/svelte/icons/user';
 	import { dateTime, dayHeading, pacificDay, timeOfDay } from '#lib/change-dates.ts';
+	import { essayDate } from '#lib/essays/dates.ts';
 	import {
 		byDay,
 		byPage,
 		changeKindLabels,
 		changeKinds,
 		dayChoices,
+		defaultFilters,
 		filterQuery,
 		largeChange,
-		limitChoices,
 		pageKindFilterLabels,
 		pageKindLabels,
 		pageKinds,
@@ -36,8 +43,6 @@
 	const historyName = $derived(data.pageTitle ? `“${data.pageTitle}”` : (filters.page ?? ''));
 	const historyShowsWording = $derived(historyKind ? wordingIsShown(historyKind) : true);
 	const days = $derived(byDay(data.changes, pacificDay));
-	const feedLink = $derived(`/changes/feed.xml${filterQuery(filters)}`);
-
 	const dayLabels: Record<number, string> = {
 		1: 'Last day',
 		7: 'Last 7 days',
@@ -46,6 +51,58 @@
 		365: 'Last year',
 		0: 'Any time'
 	};
+
+	// A feed reader is not signed in, so the feed leaves out "Only pages I follow".
+	const feedLink = $derived(`/changes/feed.xml${filterQuery({ ...filters, following: false })}`);
+	/** The request form, filled in with this page, for "Ask for a change or removal". */
+	const requestLink = $derived.by(() => {
+		const match = /^\/(nations|stories)\/([a-z0-9-]+)$/.exec(filters.page ?? '');
+		if (!match) return '/requests';
+		return `/requests?record=${match[1] === 'nations' ? 'tribes' : 'stories'}/${match[2]}`;
+	});
+
+	/** The dates the list covers, "Nov. 1 to Nov. 23, 2026", or nothing for any time. */
+	const span = $derived.by(() => {
+		if (!filters.days) return '';
+		const end = data.listedAt;
+		const start = new Date(new Date(end).getTime() - filters.days * 86_400_000).toISOString();
+		const [startText, endText] = [essayDate(start), essayDate(end)];
+		const year = endText.slice(-4);
+		return `${startText.endsWith(year) ? startText.slice(0, -6) : startText} to ${endText}`;
+	});
+
+	/** The choices that narrow the list, for the phone's folded filters ("Filters · 3"). */
+	const narrowing = $derived(
+		[
+			filters.title ? `“${filters.title}”` : '',
+			...filters.kinds.map((kind) => pageKindFilterLabels[kind]),
+			filters.who ? (data.people.find((person) => person.key === filters.who)?.name ?? 'One person') : '',
+			filters.days ? dayLabels[filters.days] : '',
+			filters.size ? sizeLabel(filters.size) : '',
+			filters.changes.length < changeKinds.length ? filters.changes.map((kind) => changeKindLabels[kind]).join(', ') : '',
+			filters.hidden ? 'Hidden changes' : '',
+			filters.following ? 'Pages I follow' : '',
+			filters.showBulk ? '' : 'Hide bulk'
+		].filter(Boolean)
+	);
+
+	let scripted = $state(false);
+	let filtersOpen = $state(true);
+	onMount(() => {
+		scripted = true;
+		// On a phone the filters fold behind one button; on wider screens they stay open.
+		const phone = window.matchMedia('(max-width: 40rem)');
+		filtersOpen = !phone.matches;
+		const follow = () => (filtersOpen = !phone.matches);
+		phone.addEventListener('change', follow);
+		return () => phone.removeEventListener('change', follow);
+	});
+
+	/** Each choice applies at once; typing in the Page box applies when the reader leaves it or presses Enter. */
+	function apply(event: Event & { currentTarget: HTMLFormElement }): void {
+		event.currentTarget.requestSubmit();
+	}
+
 
 	function sizeLabel(size: number): string {
 		return size === 0 ? 'Any size' : `At least ${size.toLocaleString('en-US')} bytes`;
@@ -155,22 +212,23 @@
 	{/if}
 	<span class="kind">{pageKindLabels[change.kind]}</span>
 	{#if change.change === 'new'}<span class="tag new">New page</span>{/if}
+	{#if change.change === 'restored'}<span class="tag">Restored version</span>{/if}
+	{#if change.id.startsWith('nation-')}<span class="tag nation">Nation’s own edit</span>{/if}
 	{#if change.bulk}<span class="tag bulk">Bulk update</span>{/if}
 {/snippet}
 
 {#if history}
 	<Breadcrumbs trail={[{ label: 'Recent changes', href: '/changes' }]} />
-	<h1>History of {historyName}</h1>
+	<h1>{historyShowsWording ? 'History of' : 'Changes to'} {historyName}</h1>
 	<!-- Says plainly that the list is one page's, with the way back to every page's (Trevor, Nov. 23, 2026). -->
 	<p class="showing">
 		Showing changes to {#if data.pageOnSite && filters.page}<a href={filters.page}>{historyName}</a>{:else}{historyName}{/if} only
 		· <a href="/changes">Show all changes</a>
 	</p>
+	<div class:history-columns={!historyShowsWording}>
+	<div class="history-main">
 	{#if !historyShowsWording}
-		<p class="notice">
-			<Lock size={16} aria-hidden="true" />
-			This page lists when the page changed, who changed it and which parts. Only the current page is shown on this site.
-		</p>
+		<p class="lede">When this page changed, who changed it and which parts. Only the current page is shown on this site.</p>
 	{:else}
 		<p class="lede">Every version readers have seen. Choose two to compare, or open one to read it as it stood.</p>
 	{/if}
@@ -191,7 +249,7 @@
 							<th scope="col">Who</th>
 							{#if historyShowsWording}<th scope="col">Size</th>{:else}<th scope="col">Parts changed</th>{/if}
 							<th scope="col">Summary</th>
-							<th scope="col"><span class="visually-hidden">Links</span></th>
+							{#if historyShowsWording}<th scope="col"><span class="visually-hidden">Links</span></th>{/if}
 						</tr>
 					</thead>
 					<tbody>
@@ -218,28 +276,31 @@
 									</td>
 								{/if}
 								<td><time datetime={change.madeAt}>{dateTime(change.madeAt)}</time>{#if index === 0 && change.change !== 'removed'} <span class="tag new">Current</span>{/if}</td>
-								<td>{#if change.whoHidden}<span class="hidden-part">name hidden</span>{:else}{change.who}{/if}</td>
+								<td>
+									{#if change.whoHidden}<span class="hidden-part">name hidden</span>{:else}{change.who}{/if}
+									{#if change.id.startsWith('nation-')}<span class="tag nation">Nation’s own edit</span>{/if}
+								</td>
 								{#if historyShowsWording}
 									<td class="numbers">
 										{#if change.textHidden}<span class="hidden-part">size hidden</span>{:else}{change.size?.toLocaleString('en-US') ?? ''} {@render size(change)}{/if}
 									</td>
 								{:else}
 									<td>
-										{#if change.textHidden}<span class="hidden-part">parts hidden</span>
-										{:else if change.change === 'new'}New page
-										{:else if change.change === 'removed'}Page removed
-										{:else}{change.parts?.join(', ')}{/if}
+										{#if change.textHidden}<span class="part-chip hidden-part">parts hidden</span>
+										{:else if change.change === 'new'}<span class="part-chip">New page</span>
+										{:else if change.change === 'removed'}<span class="part-chip">Page removed</span>
+										{:else}<ul class="part-chips">{#each change.parts ?? [] as part (part)}<li class="part-chip">{part}</li>{/each}</ul>{/if}
 									</td>
 								{/if}
 								<td>
 									{#if change.summaryHidden}<span class="hidden-part">summary hidden</span>{:else if change.summary}<span class="summary">{change.summary}</span>{/if}
 									{@render hiddenTag(change)}
 								</td>
-								<td class="links">
+								{#if historyShowsWording}<td class="links">
 									{#if change.comparable}
 										<a href="/changes/{change.id}/version">read</a> · <a href="/changes/{change.id}">changes</a>
 									{/if}
-								</td>
+								</td>{/if}
 							</tr>
 						{/each}
 						{#if data.changes.length === 0 && data.recordedSince}
@@ -250,7 +311,7 @@
 								<td>{siteReleaseName}</td>
 								<td>{#if !historyShowsWording}No changes yet{/if}</td>
 								<td><span class="summary">The page as it stood when the site began keeping its history. It has not changed since.</span></td>
-								<td class="links">{#if data.pageOnSite && filters.page}<a href={filters.page}>read</a>{/if}</td>
+								{#if historyShowsWording}<td class="links">{#if data.pageOnSite && filters.page}<a href={filters.page}>read</a>{/if}</td>{/if}
 							</tr>
 						{/if}
 					</tbody>
@@ -262,11 +323,46 @@
 		The history begins on Nov. 23, 2026, when the site began recording changes.
 		{#if historyShowsWording}Versions saved while writing, before they were published, are kept in the workspace and are not listed here.{/if}
 	</p>
+	</div>
+	{#if !historyShowsWording}
+		<!-- Why a nation page or story keeps no earlier wording, and where to ask for a change (approved mockup 5, design/recent-changes). -->
+		<aside class="history-notes" aria-label="About this history">
+			<div class="history-note">
+				<p class="note-title"><Lock size={16} aria-hidden="true" /><strong>Why there is no earlier wording here.</strong></p>
+				<p>
+					A nation can ask us to take something off its page. Showing older versions would put that text back in view, so
+					{historyKind === 'story' ? 'stories keep' : 'nation pages keep'} their history private. The nation’s own editors and the project’s reviewers can compare versions in the workspace.
+				</p>
+			</div>
+			<div class="history-note">
+				<p class="note-title"><strong>Something wrong on this page?</strong></p>
+				<p><a href={requestLink}>Ask for a change or removal</a></p>
+			</div>
+		</aside>
+	{/if}
+	</div>
 {:else}
+	<p class="eyebrow">About the site</p>
 	<h1>Recent changes</h1>
+	<p class="lede">
+		Every change to a page on this site, newest first. Open a change to see what was added and taken out, or a page’s
+		history to see every version. Nation pages list what changed and when, but not the earlier wording.
+	</p>
 
-	<form method="get" class="filters" aria-label="Filter changes">
+	<details class="filter-fold" bind:open={filtersOpen}>
+		<summary>
+			<span class="filter-button"><Search size={16} aria-hidden="true" />Filters{#if narrowing.length > 0}{` · ${narrowing.length}`}{/if}</span>
+			{#each narrowing.slice(0, 2) as choice (choice)}<span class="summary-chip">{choice}</span>{/each}
+		</summary>
+	<form method="get" class="filters" aria-label="Filter changes" data-sveltekit-keepfocus data-sveltekit-noscroll onchange={apply}>
 		<div class="fields">
+			<div class="field page-field">
+				<label for="changes-title">Page</label>
+				<span class="with-icon">
+					<Search size={16} aria-hidden="true" />
+					<input id="changes-title" type="search" name="title" value={filters.title ?? ''} placeholder="Any page, or type a title" maxlength="100" autocomplete="off" />
+				</span>
+			</div>
 			<div class="field">
 				<label for="changes-kind">Kind of page</label>
 				<select id="changes-kind" name="kind">
@@ -278,20 +374,26 @@
 			</div>
 			<div class="field">
 				<label for="changes-who">Who</label>
-				<select id="changes-who" name="who">
-					<option value="">Anyone</option>
-					{#each data.people as person (person.key)}
-						<option value={person.key} selected={filters.who === person.key}>{person.name}</option>
-					{/each}
-				</select>
+				<span class="with-icon">
+					<User size={16} aria-hidden="true" />
+					<select id="changes-who" name="who">
+						<option value="">Anyone</option>
+						{#each data.people as person (person.key)}
+							<option value={person.key} selected={filters.who === person.key}>{person.name}</option>
+						{/each}
+					</select>
+				</span>
 			</div>
 			<div class="field">
 				<label for="changes-days">Dates</label>
-				<select id="changes-days" name="days">
-					{#each dayChoices as choice (choice)}
-						<option value={choice} selected={filters.days === choice}>{dayLabels[choice]}</option>
-					{/each}
-				</select>
+				<span class="with-icon">
+					<CalendarIcon size={16} aria-hidden="true" />
+					<select id="changes-days" name="days">
+						{#each dayChoices as choice (choice)}
+							<option value={choice} selected={filters.days === choice}>{dayLabels[choice]}</option>
+						{/each}
+					</select>
+				</span>
 			</div>
 			<div class="field">
 				<label for="changes-size">Size of change</label>
@@ -301,33 +403,46 @@
 					{/each}
 				</select>
 			</div>
-			<div class="field">
-				<label for="changes-limit">Show</label>
-				<select id="changes-limit" name="limit">
-					{#each limitChoices as choice (choice)}
-						<option value={choice} selected={filters.limit === choice}>{choice} changes</option>
-					{/each}
-				</select>
-			</div>
 		</div>
 		<fieldset class="choices">
-			<legend>Kinds of change</legend>
+			<legend class="visually-hidden">Kinds of change</legend>
 			{#each changeKinds as kind (kind)}
-				<label class="chip"><input type="checkbox" name="change" value={kind} checked={filters.changes.includes(kind)} />{changeKindLabels[kind]}</label>
+				<label class="chip"
+					><input class="visually-hidden" type="checkbox" name="change" value={kind} checked={filters.changes.includes(kind)} /><Check
+						class="chip-check"
+						size={14}
+						aria-hidden="true"
+					/>{changeKindLabels[kind]}</label
+				>
 			{/each}
+			<label class="chip"
+				><input class="visually-hidden" type="checkbox" name="hidden" value="1" checked={filters.hidden} /><Check
+					class="chip-check"
+					size={14}
+					aria-hidden="true"
+				/>Hidden changes</label
+			>
 		</fieldset>
 		<div class="toggles">
 			<input type="hidden" name="group" value="0" />
-			<label><input type="checkbox" name="group" value="1" checked={filters.group} /> Group changes by page</label>
-			<label><input type="checkbox" name="bulk" value="1" checked={filters.showBulk} /> Show bulk updates</label>
-			<button type="submit" class="button">Show changes</button>
-			<a href="/changes" class="small">Reset filters</a>
+			<label class="switch"><input type="checkbox" role="switch" name="group" value="1" checked={filters.group} />Group changes by page</label>
+			<!-- "Hide bulk updates" sends bulk=0 after this bulk=1, so turning it off shows them. -->
+			<input type="hidden" name="bulk" value="1" />
+			<label class="switch"><input type="checkbox" role="switch" name="bulk" value="0" checked={!filters.showBulk} />Hide bulk updates</label>
+			<label class="switch"><input type="checkbox" role="switch" name="follow" value="1" checked={filters.following} />Only pages I follow</label>
+			{#if filters.limit !== defaultFilters.limit}<input type="hidden" name="limit" value={filters.limit} />{/if}
+			{#if !scripted}<button type="submit" class="button">Show changes</button>{/if}
+			<a href="/changes" class="reset small">Reset filters</a>
 		</div>
 	</form>
+	</details>
 
 	<p class="count small muted">
-		{#if data.changes.length === 0}No changes match.{:else}{data.more ? `The newest ${data.changes.length}` : data.changes.length}
-			{data.changes.length === 1 ? 'change' : 'changes'}{filters.days ? ` in the ${dayLabels[filters.days].toLowerCase()}` : ''}.{/if}
+		<span>
+			{#if data.changes.length === 0}No changes match.{:else}Showing {data.changes.length.toLocaleString('en-US')} of {data.total.toLocaleString('en-US')}
+				{data.total === 1 ? 'change' : 'changes'}{span ? `, ${span}` : ''}{/if}
+			{#if filters.following && !data.signedIn}<a href="/sign-in?returnTo={encodeURIComponent(`/changes${filterQuery(filters)}`)}">Sign in</a> to see the pages you follow.{/if}
+		</span>
 		<a href={feedLink} class="feed"><Rss size={14} aria-hidden="true" />Feed of these changes</a>
 	</p>
 
@@ -395,8 +510,8 @@
 
 	{#if data.hiddenBulk > 0}
 		<p class="small muted">
-			{data.hiddenBulk.toLocaleString('en-US')} bulk {data.hiddenBulk === 1 ? 'update is' : 'updates are'} not shown: changes
-			that touched many pages at once.
+			{data.hiddenBulk.toLocaleString('en-US')} bulk {data.hiddenBulk === 1 ? 'update' : 'updates'} hidden (changes that touched
+			many pages at once).
 			<a href="/changes{filterQuery(filters, { showBulk: true })}">Show them</a>
 		</p>
 	{/if}
@@ -415,28 +530,68 @@
 		color: var(--color-ink-muted);
 	}
 
+	.eyebrow {
+		margin: 0;
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+	}
+
+	.eyebrow + h1 {
+		margin-top: var(--space-1);
+	}
+
 	.filters {
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-panel);
 		padding: var(--space-3) var(--space-4);
-		background: var(--color-surface);
+		background: var(--color-surface-raised);
 		margin-block: var(--space-4);
+	}
+
+	/* On wider screens the filters are always open, so the fold's button is not drawn. */
+	.filter-fold > summary {
+		display: none;
 	}
 
 	.fields {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+		grid-template-columns: 1.6fr 1fr 1fr 1fr 1.2fr;
 		gap: var(--space-3);
+		align-items: end;
 	}
 
 	.field label {
 		display: block;
 		font-weight: var(--font-weight-semibold);
 		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+		margin-bottom: var(--space-1);
 	}
 
-	.field select {
+	.field select,
+	.field input {
 		width: 100%;
+		margin: 0;
+	}
+
+	/* A Lucide icon inside the box's left edge: search, person, calendar. */
+	.with-icon {
+		position: relative;
+		display: block;
+	}
+
+	.with-icon :global(svg) {
+		position: absolute;
+		inset-inline-start: var(--space-2);
+		top: 50%;
+		translate: 0 -50%;
+		color: var(--color-ink-muted);
+		pointer-events: none;
+	}
+
+	.with-icon select,
+	.with-icon input {
+		padding-inline-start: calc(var(--space-2) + 16px + var(--space-2));
 	}
 
 	.choices {
@@ -448,21 +603,38 @@
 		gap: var(--space-2);
 	}
 
-	.choices legend {
-		font-weight: var(--font-weight-semibold);
-		font-size: var(--font-size-small);
-		margin-bottom: var(--space-1);
-	}
-
+	/* A kind of change is a chip: teal with a check when chosen, plain when not. */
 	.chip {
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-1);
-		border: 1px solid var(--color-control-border);
+		border: 1px solid var(--color-line);
 		border-radius: 999px;
-		padding: 0 var(--space-3);
-		min-height: var(--layout-target-minimum);
-		background: var(--color-paper);
+		padding: var(--space-1) var(--space-3);
+		background: var(--color-surface-raised);
+		font-size: var(--font-size-small);
+		cursor: pointer;
+	}
+
+	.chip :global(.chip-check) {
+		display: none;
+	}
+
+	.chip:has(input:checked) {
+		border-color: var(--color-link);
+		background: var(--color-notice-background);
+		color: var(--color-link);
+		font-weight: var(--font-weight-bold);
+	}
+
+	.chip:has(input:checked) :global(.chip-check) {
+		display: inline;
+	}
+
+	.chip:has(input:focus-visible),
+	.switch:has(input:focus-visible) {
+		outline: 3px solid var(--color-focus-ring);
+		outline-offset: 2px;
 	}
 
 	.toggles {
@@ -471,6 +643,57 @@
 		align-items: center;
 		gap: var(--space-2) var(--space-4);
 		margin-top: var(--space-3);
+		font-size: var(--font-size-small);
+	}
+
+	.toggles .reset {
+		margin-inline-start: auto;
+	}
+
+	.switch {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		cursor: pointer;
+	}
+
+	/* An on/off switch drawn from the checkbox itself, so it still works as one. */
+	.switch input {
+		appearance: none;
+		position: relative;
+		flex: none;
+		width: 2.125rem;
+		height: 1.25rem;
+		margin: 0;
+		border-radius: 999px;
+		background: var(--color-line);
+		cursor: pointer;
+		transition: background var(--motion-duration-short) var(--motion-easing-standard);
+	}
+
+	.switch input::after {
+		content: '';
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		background: var(--color-surface-raised);
+		transition: translate var(--motion-duration-short) var(--motion-easing-standard);
+	}
+
+	.switch input:checked {
+		background: var(--color-band);
+	}
+
+	.switch input:checked::after {
+		translate: 0.875rem 0;
+		background: var(--color-paper);
+	}
+
+	.switch input:focus-visible {
+		outline: none;
 	}
 
 	.count {
@@ -478,6 +701,7 @@
 		flex-wrap: wrap;
 		gap: var(--space-3);
 		justify-content: space-between;
+		margin-top: var(--space-4);
 	}
 
 	.feed {
@@ -503,7 +727,8 @@
 	.change,
 	.change summary {
 		display: grid;
-		grid-template-columns: 5.5rem 8.5rem 1fr;
+		/* Wide enough for "what changed · history" on a nation page's row. */
+		grid-template-columns: 5.5rem 10.5rem 1fr;
 		gap: var(--space-2) var(--space-3);
 		align-items: baseline;
 	}
@@ -623,6 +848,12 @@
 		background: var(--color-surface);
 	}
 
+	.tag.nation {
+		background: var(--color-notice-background);
+		border-color: var(--color-link);
+		color: var(--color-link);
+	}
+
 	.hidden-part {
 		color: var(--color-ink-muted);
 		text-decoration: line-through;
@@ -632,11 +863,63 @@
 		margin-block-start: 0;
 	}
 
-	.notice {
-		background: var(--color-notice-background);
+	/* A nation page's history: the table, with why there is no earlier wording beside it. */
+	.history-columns {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 19rem;
+		gap: var(--space-5);
+		align-items: start;
+	}
+
+	.history-notes {
+		display: grid;
+		gap: var(--space-3);
+	}
+
+	.history-note {
+		background: var(--color-surface);
 		border-radius: var(--radius-panel);
 		padding: var(--space-3) var(--space-4);
-		max-width: var(--layout-measure);
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+	}
+
+	.history-note p {
+		margin: 0;
+	}
+
+	.note-title {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+		color: var(--color-ink);
+	}
+
+	.note-title :global(svg) {
+		color: var(--color-link);
+		flex: none;
+	}
+
+	.part-chips {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-1);
+	}
+
+	.part-chip {
+		display: inline-block;
+		white-space: nowrap;
+		padding: 0 var(--space-2);
+		border-radius: var(--radius-control);
+		background: var(--color-surface);
+	}
+
+	.history .tag.nation {
+		margin-inline: 0;
 	}
 
 	.history td {
@@ -662,7 +945,67 @@
 		word-break: normal;
 	}
 
+	@media (max-width: 60rem) {
+		.fields {
+			grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+		}
+
+		.history-columns {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
 	@media (max-width: 40rem) {
+		/* On a phone the filters fold behind a "Filters" button with the choices in force beside it (approved mockup 2). */
+		.filter-fold > summary {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--space-2);
+			margin-block: var(--space-2) var(--space-3);
+			list-style: none;
+			cursor: pointer;
+		}
+
+		.filter-fold > summary::-webkit-details-marker {
+			display: none;
+		}
+
+		.filter-button,
+		.summary-chip {
+			display: inline-flex;
+			align-items: center;
+			gap: var(--space-1);
+			min-height: 2.25rem;
+			padding: 0 var(--space-3);
+			border: 1px solid var(--color-link);
+			border-radius: 999px;
+			color: var(--color-link);
+			font-weight: var(--font-weight-bold);
+			font-size: var(--font-size-small);
+		}
+
+		.filter-button {
+			border-radius: var(--radius-control);
+		}
+
+		.summary-chip {
+			background: var(--color-notice-background);
+		}
+
+		.filters {
+			margin-top: 0;
+		}
+
+		/* The phone mockup goes straight from the heading to the filters. */
+		.eyebrow,
+		.eyebrow ~ .lede {
+			display: none;
+		}
+
+		.toggles .reset {
+			margin-inline-start: 0;
+		}
+
 		.change,
 		.change summary {
 			grid-template-columns: 1fr;
