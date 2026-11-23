@@ -72,7 +72,12 @@ export type Permission =
 	| 'send-outreach'
 	| 'manage-mail'
 	// Hiding parts of a change in Recent changes (migrations/0017_page_changes.sql): the lead author only.
-	| 'hide-changes';
+	| 'hide-changes'
+	// Seeing every sponsor, their Account page as they see it, and why gifts
+	// work or not, and taking a sponsor off the public pages (docs/sponsorship.md).
+	// The lead author only (Trevor, Nov. 23, 2026: "From admin, make it so I
+	// can see sponsorship page, that way I can fully diagnose").
+	| 'manage-sponsors';
 
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
@@ -89,7 +94,8 @@ const grants: Record<Role, readonly Permission[]> = {
 		'read-mail',
 		'send-outreach',
 		'manage-mail',
-		'hide-changes'
+		'hide-changes',
+		'manage-sponsors'
 	],
 	editor: ['read-contributors', 'read-requests', 'handle-requests', 'review-uploads', 'read-reviews', 'comment', 'sign-off'],
 	'co-author': ['read-reviews', 'comment'],
