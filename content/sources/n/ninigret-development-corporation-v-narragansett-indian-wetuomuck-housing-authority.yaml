@@ -24,6 +24,11 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  heard: ['2000-02-08']
+  printed: "Heard Feb. 8, 2000. Decided March 22, 2000."
+  source: https://static.case.law/f3d/207/cases/0021-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 768058
   citation: "207 F.3d 21"
