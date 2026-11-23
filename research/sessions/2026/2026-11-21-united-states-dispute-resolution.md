@@ -514,112 +514,46 @@ limits: >-
 
 ## What was done
 
-Four sub-agents worked in parallel from one written brief: federal law and
-programs; state law with Nevada as the worked example, court-connected
-programs and tribal-state forums; the five inhabited territories, including
-customary processes where documented; and the history of ADR, treatises,
-journals, ABA resources and tribal and non-tribal intersections. Each opened
-its sources and returned citation data, quotations with pinpoints, an
-annotation, and whether the full text needs Westlaw or a library. The lead
-session merged 161 entries into 155 records (six duplicates or existing
-records removed), looked up Wayback captures, and wrote the annotated
-bibliography at `content/bibliographies/united-states-dispute-resolution.md`.
+Four sub-agents worked in parallel from one written brief: federal law and programs; state law with Nevada as the worked example, court-connected programs and tribal-state forums; the five inhabited territories, including customary processes where documented; and the history of ADR, treatises, journals, ABA resources and tribal and non-tribal intersections. Each opened its sources and returned citation data, quotations with pinpoints, an annotation, and whether the full text needs Westlaw or a library. The lead session merged 161 entries into 155 records (six duplicates or existing records removed), looked up Wayback captures, and wrote the annotated bibliography at `content/bibliographies/united-states-dispute-resolution.md`.
 
-The Native American Rights Fund's peacemaking page was already recorded as
-`narf-ipi-home` and is reused rather than duplicated.
+The Native American Rights Fund's peacemaking page was already recorded as `narf-ipi-home` and is reused rather than duplicated.
 
 ## Methods found that were not on the starting list
 
-The brief asked each agent to propose a new method whenever a source
-described a process the starting list did not fit, which tested the open
-method list (decision record 0012). Proposals and the choices made (project
-analysis):
+The brief asked each agent to propose a new method whenever a source described a process the starting list did not fit, which tested the open method list (decision record 0012). Proposals and the choices made (project analysis):
 
-- Recorded as methods: case evaluation (Michigan; proposed twice, under two
-  names, and merged), settlement week, conflict coaching, conflict
-  assessment, short trial (Nevada), final-offer selection (the Indian Gaming
-  Regulatory Act's court-appointed "mediator" who must pick one side's offer;
-  proposed twice and merged), government-to-government issue resolution
-  (Nevada's tribal liaison process), the Office of Samoan Affairs pre-filing
-  hearing, the Samoan family meeting on matai succession, and ifoga.
-- Folded into an existing method: "facilitated conversation" into
-  facilitation; transformative mediation is a style of mediation.
-- Not methods: the multi-door courthouse and dispute systems design (program
-  designs), neighborhood justice centers and community mediation (settings
-  that deliver mediation), and tribal-state court forums (intergovernmental
-  bodies). These are recorded as source topics.
-- Not yet recorded: online dispute resolution and circle processes appeared
-  in passing but no source opened here defines them; they wait for a source.
+- Recorded as methods: case evaluation (Michigan; proposed twice, under two names, and merged), settlement week, conflict coaching, conflict assessment, short trial (Nevada), final-offer selection (the Indian Gaming Regulatory Act's court-appointed "mediator" who must pick one side's offer; proposed twice and merged), government-to-government issue resolution (Nevada's tribal liaison process), the Office of Samoan Affairs pre-filing hearing, the Samoan family meeting on matai succession, and ifoga.
+- Folded into an existing method: "facilitated conversation" into facilitation; transformative mediation is a style of mediation.
+- Not methods: the multi-door courthouse and dispute systems design (program designs), neighborhood justice centers and community mediation (settings that deliver mediation), and tribal-state court forums (intergovernmental bodies). These are recorded as source topics.
+- Not yet recorded: online dispute resolution and circle processes appeared in passing but no source opened here defines them; they wait for a source.
 
 All method records are `proposed` until Trevor reviews them.
 
 ## Corrections to the starting assumptions
 
-- Puerto Rico's arbitration law is now Ley 147-2024, which repealed Ley 376
-  of 1951 [@pr-ley-147-2024-ley-de-arbitraje].
-- Guam has no Uniform Arbitration Act; its domestic and international
-  arbitration chapter follows the UNCITRAL Model Law
-  [@gca-7-ch-42a-guam-international-arbitration].
-- Nevada has not adopted the Uniform Mediation Act: the Uniform Law
-  Commission's enactment table lists no Nevada enactment
-  [@uniform-law-commission-mediation-act-enactment-status], and Nevada's
-  mediation confidentiality rule is an older statute
-  [@nevada-revised-statutes-48-109].
+- Puerto Rico's arbitration law is now Ley 147-2024, which repealed Ley 376 of 1951 [@pr-ley-147-2024-ley-de-arbitraje].
+- Guam has no Uniform Arbitration Act; its domestic and international arbitration chapter follows the UNCITRAL Model Law [@gca-7-ch-42a-guam-international-arbitration].
+- Nevada has not adopted the Uniform Mediation Act: the Uniform Law Commission's enactment table lists no Nevada enactment [@uniform-law-commission-mediation-act-enactment-status], and Nevada's mediation confidentiality rule is an older statute [@nevada-revised-statutes-48-109].
 
 ## Follow-up: Uniform Law Commission enactment tables
 
-The act pages on uniformlaws.org show enactments only in an embedded map.
-Trevor Goldsmith opened the five act pages in a browser and saved each as a
-PDF (table data "as of" 11/21/2026 12:04 AM UTC); the counts were read from
-those PDFs and recorded as five new source records. The PDFs are kept in the
-project's shared files under `research/captures/uniform-law-commission/`.
-The act page links were found from the Commission's catalog pages. Results:
-Uniform Mediation Act 14 jurisdictions, Revised Uniform Arbitration Act 23,
-Collaborative Law Act 28, Family Law Arbitration Act 9, Uniform Child Custody
-Jurisdiction and Enforcement Act 51. The tables list the 50 states, the
-District of Columbia, Puerto Rico and the U.S. Virgin Islands only.
+The act pages on uniformlaws.org show enactments only in an embedded map. Trevor Goldsmith opened the five act pages in a browser and saved each as a PDF (table data "as of" 11/21/2026 12:04 AM UTC); the counts were read from those PDFs and recorded as five new source records. The PDFs are kept in the project's shared files under `research/captures/uniform-law-commission/`. The act page links were found from the Commission's catalog pages. Results: Uniform Mediation Act 14 jurisdictions, Revised Uniform Arbitration Act 23, Collaborative Law Act 28, Family Law Arbitration Act 9, Uniform Child Custody Jurisdiction and Enforcement Act 51. The tables list the 50 states, the District of Columbia, Puerto Rico and the U.S. Virgin Islands only.
 
 ## Follow-up: archived copies
 
-Save Page Now was slow from a browser and unreachable from the research
-environment, so `.github/workflows/archive-sources.yml` now asks it for
-captures from GitHub's servers, for the source records a pull request adds,
-and prints the capture links for a later commit.
+Save Page Now was slow from a browser and unreachable from the research environment, so `.github/workflows/archive-sources.yml` now asks it for captures from GitHub's servers, for the source records a pull request adds, and prints the capture links for a later commit.
 
 ## Follow-up: Westlaw pulls
 
-On 2026-11-20 (Pacific time) the lead author pulled three items from the
-Westlaw pull list: AT&T Mobility LLC v. Concepcion, C & L Enterprises v.
-Citizen Band Potawatomi, and the Pound Conference addresses at 70 F.R.D. 79.
-The copies are kept privately for the project and are not in this repository.
-They were used to add pinpoints and parallel citations, and to read Sander's
-"Varieties of Dispute Processing" (70 F.R.D. 111-34) in full for the first
-time. That reading led to two changes:
+On 2026-11-20 (Pacific time) the lead author pulled three items from the Westlaw pull list: AT&T Mobility LLC v. Concepcion, C & L Enterprises v. Citizen Band Potawatomi, and the Pound Conference addresses at 70 F.R.D. 79. The copies are kept privately for the project and are not in this repository. They were used to add pinpoints and parallel citations, and to read Sander's "Varieties of Dispute Processing" (70 F.R.D. 111-34) in full for the first time. That reading led to two changes:
 
-- The paper does not use the phrase "multi-door courthouse"; it describes a
-  "Dispute Resolution Center" (at 131). The annotation now says so.
-- It describes a "screening-adjudication model" (at 128-29), recorded as the
-  proposed method `screening-panel`.
+- The paper does not use the phrase "multi-door courthouse"; it describes a "Dispute Resolution Center" (at 131). The annotation now says so.
+- It describes a "screening-adjudication model" (at 128-29), recorded as the proposed method `screening-panel`.
 
 ## Follow-up: first archive workflow runs
 
-The workflow's first two runs on PR #5 got captures for 7 and 8 of the
-pending records; most other requests had their connections refused while
-several runs were going at once. Six captures were added to records. Three
-were not used: the eCFR page for 43 C.F.R. 30.150 redirected to a Federal
-Register block page, and two Uniform Law Commission downloads redirected to
-signed storage links that carry a temporary access token. The script now
-reports such redirects for a person to check, retries once after a refused
-connection, and the workflow runs one at a time.
+The workflow's first two runs on PR #5 got captures for 7 and 8 of the pending records; most other requests had their connections refused while several runs were going at once. Six captures were added to records. Three were not used: the eCFR page for 43 C.F.R. 30.150 redirected to a Federal Register block page, and two Uniform Law Commission downloads redirected to signed storage links that carry a temporary access token. The script now reports such redirects for a person to check, retries once after a refused connection, and the workflow runs one at a time.
 
 ## Follow-up: Whyte v. Bockino
 
-The lead author pulled Whyte v. Bockino, 69 V.I. 749 (2018), and the
-trial-court opinion, 69 V.I. 83 (Super. Ct. 2017), from Westlaw on
-2026-11-20. The record now summarizes the full opinion with pinpoints. Its
-footnote 5 quotes 24 V.I.C. § 74a, which lets employment disputes go to
-arbitration only by written agreement made after the dispute arises. That
-corrects the earlier note that no Virgin Islands arbitration statute was
-found; a new record, `vi-code-24-74a-employment-arbitration`, holds it. Its
-text was read only as quoted in Whyte, because the Justia compilation
-blocked automated access.
+The lead author pulled Whyte v. Bockino, 69 V.I. 749 (2018), and the trial-court opinion, 69 V.I. 83 (Super. Ct. 2017), from Westlaw on 2026-11-20. The record now summarizes the full opinion with pinpoints. Its footnote 5 quotes 24 V.I.C. § 74a, which lets employment disputes go to arbitration only by written agreement made after the dispute arises. That corrects the earlier note that no Virgin Islands arbitration statute was found; a new record, `vi-code-24-74a-employment-arbitration`, holds it. Its text was read only as quoted in Whyte, because the Justia compilation blocked automated access.

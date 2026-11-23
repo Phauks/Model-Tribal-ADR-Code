@@ -1,9 +1,6 @@
 # Schemas
 
-JSON Schemas (draft 2020-12) for every record type. See
-[docs/data-model.md](../docs/data-model.md) for what each record is for and how
-they connect. `examples/` holds one valid example per schema; the tribe example
-uses a fictitious nation on purpose.
+JSON Schemas (draft 2020-12) for every record type. See [docs/data-model.md](../docs/data-model.md) for what each record is for and how they connect. `examples/` holds one valid example per schema; the tribe example uses a fictitious nation on purpose.
 
 | Schema | Validates |
 | --- | --- |

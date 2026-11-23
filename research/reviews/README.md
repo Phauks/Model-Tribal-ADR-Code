@@ -1,9 +1,6 @@
 # Data reviews
 
-Each review checks records the project already holds against their sources
-and writes its findings beside them, for the lead author to accept, change or
-reject. A review never edits a record. Changes it leads to are made in a
-separate pull request after the lead author decides.
+Each review checks records the project already holds against their sources and writes its findings beside them, for the lead author to accept, change or reject. A review never edits a record. Changes it leads to are made in a separate pull request after the lead author decides.
 
 | Review | Covers | Files |
 | --- | --- | --- |
@@ -19,5 +16,4 @@ separate pull request after the lead author decides.
 | [Service links, Nov. 22, 2026](2026-11-22-service-links.md) | The 432 services (`justice_institutions` and `dispute_resolution.forums` entries) with no link, after the lead author's rule "If we list a service, it should have a link": 160 linked to their own page, 102 to an official directory entry, 170 left without a link | report, `2026-11-22-service-links` (`.json` and `.csv` with an empty decision column), and entries in the [search logs](../search-logs/README.md) of every nation searched |
 | [Individual courts, Nov. 22, 2026](2026-11-22-individual-courts.md) | Every court of the 416 nations whose profile lists a court, after the lead author asked that nation pages list each court (for example the Navajo Nation's eleven judicial districts): 549 courts found, 280 facts added to 137 profiles | report, `2026-11-22-individual-courts` (`.json`, `.csv` with an empty decision column, and counts), entries in the [search logs](../search-logs/README.md) of every nation searched, and the reviewers' [brief](briefs/2026-11-22-individual-courts.md) |
 
-Each file name starts with the date of the review, so a later review of the
-same records sits beside the earlier one instead of replacing it.
+Each file name starts with the date of the review, so a later review of the same records sits beside the earlier one instead of replacing it.

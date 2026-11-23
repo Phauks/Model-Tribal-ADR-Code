@@ -41,18 +41,11 @@ limits: >-
   The NAJA guide read was a reporter checklist without a preferred-terms list.
 ---
 
-The search for "NCAI tribal nations terminology" also returned the Native
-Governance Center's two guides, which became the main sources for usage and
-capitalization. Federal statutes were read on the Legal Information
-Institute's site and supply only the legal terms (Indian tribe, Indian,
-Indian country). No citator check has been run on them yet.
+The search for "NCAI tribal nations terminology" also returned the Native Governance Center's two guides, which became the main sources for usage and capitalization. Federal statutes were read on the Legal Information Institute's site and supply only the legal terms (Indian tribe, Indian, Indian country). No citator check has been run on them yet.
 
-Choices that are the project's own, not a source's, are labeled "project
-choice" or "project analysis" in each glossary entry. The main ones:
+Choices that are the project's own, not a source's, are labeled "project choice" or "project analysis" in each glossary entry. The main ones:
 
 - "Native nations" is the default collective term.
-- Tribe and Tribal are capitalized in the project's own voice, following the
-  Native Governance Center style guide; quotations keep their original form.
+- Tribe and Tribal are capitalized in the project's own voice, following the Native Governance Center style guide; quotations keep their original form.
 - "Citizen" is the default word for a person who belongs to a nation.
-- Lowercase "Indian country" for the legal term, capitalized "Indian Country"
-  only for the broader sense.
+- Lowercase "Indian country" for the legal term, capitalized "Indian Country" only for the broader sense.
