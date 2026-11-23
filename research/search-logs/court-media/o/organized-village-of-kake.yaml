@@ -1,0 +1,46 @@
+profile: content/tribes/o/organized-village-of-kake.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Kake Circle Peacemaking video
+  outcome: found
+  reason: Results include a Native Nations Institute page titled Kake Circle Peacemaking Overview Video and a NARF news item about a clan mother video showing circles for healing.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Kake tribal court youtube video
+  outcome: found
+  reason: Results repeated the Native Nations Institute overview video page and listed the court's Judicial Peacemaking Code PDF, with no YouTube channel found.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://kake-nsn.gov/tribal-court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://peacemaking.narf.org/2020/10/news-clan-mother-video-shows-circles-for-healing/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 406) and read the page for embedded video, audio, galleries and the rights line; found embedded YouTube video(s) aDTpovImOCE; links to https://www.youtube.com/c/NativeAmericanRightsFund.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=519Zqbfzn9Y
+  query: title and channel of the video
+  outcome: found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "Kake Circle Peacemaking" on the Tribal Access Justice Innovation channel, public and embeddable on 2026-11-23.'
+next_steps: First pass listed a NARF news item on a "Clan Mother" video; it is a PBS Wisconsin video about a Stockbridge-Munsee family, not Kake, so it was dropped. The Native Nations Institute Vimeo copy of the Kake film needs permission to rehost. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

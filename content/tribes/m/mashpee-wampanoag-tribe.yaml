@@ -199,6 +199,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Direct Service Tribes by IHS Area" list'
+  note: 'Listed as "Mashpee Wampanoag Tribe". Also listed under the same Area in: indian-health-service-nashville-careers-brochure. Service unit named for the tribe; listed as a federal direct care service facility.'
+- area: Nashville
+  service_unit: Mashpee Wampanoag Health Service Unit
+  source: indian-health-service-nashville-mashpee-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Mashpee Wampanoag Health Service Unit".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Federal Direct Care Service Facilities". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
 - aspect: head-of-government
   value: Chairperson
@@ -469,6 +493,15 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Massachusetts is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Massachusetts. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Massachusetts by the Census Bureau's land areas.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

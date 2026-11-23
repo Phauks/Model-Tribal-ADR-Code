@@ -153,6 +153,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Snoqualmie Indian Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: Listed as "Snoqualmie Tribe".
 governance:
 - aspect: head-of-government
   value: Chairperson
@@ -484,6 +492,20 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Snoqualmie
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

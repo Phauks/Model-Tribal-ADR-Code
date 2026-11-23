@@ -1,0 +1,33 @@
+profile: content/tribes/p/pueblo-of-picuris.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/sites/careeropps/themes/responsive2017/display_objects/documents/18IHS-OHR604_BRO_ABQ_Word_508C_M.pdf
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Albuquerque Area; Taos-Picuris Service Unit.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#pueblo-of-picuris
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: not-found
+  reason: 'No ratified treaty linked: the nation''s only treaties were unratified or colonial, or no successor relation to a ratified treaty''s signatory could be shown from the treaty and the nation''s name.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-compilation
+  address: https://archive.org/details/bp_996062
+  query: 'How the nation''s reservation was set aside: Kappler vols. 1, 3 and 4 (executive orders), Statutes at Large (treaties and acts)'
+  outcome: found
+  reason: 1 instrument(s) recorded.
+  records:
+  - research/raw/2026-11-23/land-establishment.json#pueblo-of-picuris

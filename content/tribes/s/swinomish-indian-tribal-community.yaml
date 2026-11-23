@@ -121,6 +121,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Swinomish Indian Tribal Community
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Swinomish Indian Tribal Community". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Swinomish Indian Tribal Community (1997)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Swinomish Indian Tribal Community, Washington" among organizations under constitutions
@@ -828,6 +836,31 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Swinomish Indian Tribal Community". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Skagit; Swin-a-mish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty of Point Elliott; Swinomish signers in text The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Swinomish (Perry's Island/Shais-quihl) tract, Washington
+  method: treaty
+  instrument: Treaty of Point Elliott, Jan. 22, 1855, art. II, 12 Stat. 927, 928
+  date: '1855-01-22'
+  detail: First set aside
+  source: treaty-with-the-dwamish-suquamish-etc-1855
+  confidence: medium
+  verification: read-in-full
+  locator: 12 Stat. 928
+  note: 'The instrument reads: “the peninsula at the southeastern end of Perry’s Island called Shais-quihl”. Exec. Order of Sept. 9, 1873 (1 Kappler 925) fixed the northern boundary of the "Swinomish Reservation."'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

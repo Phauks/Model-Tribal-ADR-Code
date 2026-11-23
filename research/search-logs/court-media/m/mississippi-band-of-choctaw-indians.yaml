@@ -1,0 +1,46 @@
+profile: content/tribes/m/mississippi-band-of-choctaw-indians.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Mississippi Band of Choctaw tribal court peacemaking video
+  outcome: found
+  reason: Results included Native Nations Institute profiles of Choctaw court leaders (Honoring Nations; Rae Nell Vaughn, Part 1), a NAICJA page on the peacemaking court and the nation's Peacemaker Code PDF; none was opened, so it is not confirmed whether any is a video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.choctaw.org/about-us/tribal-government/
+  query: tribal court and peacemaking media
+  outcome: blocked
+  reason: 'Not read: the WebFetch budget for this session ran out (proxy HTTP 403), so this page was not opened.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.choctaw.org/about-us/tribal-government/
+  query: court video
+  outcome: not-found
+  reason: Fetched with curl. Government page describes the Judicial System in text; no video; footer '©2026 Mississippi Band of Choctaw Indians'.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.nnigovernance.arizona.edu/honoring-nations-rae-nell-vaughn-dan-mittan-henderson-williams-andrew-jones-and-hilda-faye-nickey
+  query: video and rights
+  outcome: found
+  reason: Fetched with curl. NNI database page with an embedded Vimeo video 60481528 (oEmbed title matches); footer '© 2026 The Arizona Board of Regents on behalf of' the University of Arizona.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=KqjkOwkcvCM
+  query: title and channel of the video
+  outcome: found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "Mississippi Band of Choctaw Indians: Peacemaking Court" on the NAICJA channel, public and embeddable on 2026-11-23.'
+next_steps: Ask NNI whether embedding the Vimeo video is allowed. Check the NAICJA Choctaw peacemaking page by hand. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

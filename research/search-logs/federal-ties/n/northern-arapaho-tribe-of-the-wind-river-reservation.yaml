@@ -1,0 +1,33 @@
+profile: content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/sites/careeropps/themes/responsive2017/display_objects/documents/18IHS-OHR604_BRO_Billings_Word_508C_M.pdf
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Billings Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#northern-arapaho-tribe-of-the-wind-river-reservation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 3 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#northern-arapaho-tribe-of-the-wind-river-reservation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-compilation
+  address: https://archive.org/details/bp_996062
+  query: How the nation's reservation was set aside
+  outcome: not-found
+  reason: 'Candidate: Treaty of Fort Bridger, July 3, 1868, 15 Stat. 673. Not entered: The treaty sets the reservation apart for the Shoshone; the Northern Arapaho were placed there later (1878 arrangement), and no instrument naming the Arapaho on this land was read.'

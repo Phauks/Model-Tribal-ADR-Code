@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Stephen G. Breyer", vote: majority}
   source: https://api.oyez.org/cases/1996/95-1872
   checked: '2026-11-22'
+courtlistener:
+  cluster: 118105
+  citation: "520 U.S. 438"
+  case_name: "Strate v. A-1 Contractors"
+  link: https://www.courtlistener.com/opinion/118105/strate-v-a-1-contractors/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -354,6 +354,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Seminole Tribe of Florida
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Seminole Tribe of Florida". Also listed under the same Area in: indian-health-service-nashville-careers-brochure, indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Seminole Tribe of Florida (2001)); the list does not say which service unit or programs the compact covers.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Seminole Tribe of Florida".
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Seminole Tribe of Florida) (approved 1957) states it was adopted under Act of
@@ -761,6 +777,54 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: Florida's Public Law 280 assumption (Fla. Stat. § 285.16) continues in force on land taken into trust under the Seminole land claims settlement unless the United States accepts retrocession, and Florida alcohol, gambling and cigarette laws also apply there. (Pub. L. No. 100-228, § 6(d)(1), 101 Stat. at 1560.)
+  source: public-law-100-228
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 100-228 § 6(d)(1), 101 Stat. at 1559-60
+  note: 'Quote is the first part of the clause; it continues "shall continue in full force and effect on such lands unless the United States accepts a retrocession." 25 U.S.C. § 1772d is "omitted" from the Code. The Miccosukee Tribe and Poarch Band: no similar statute found (not researched in depth).'
+treaties:
+- title: Treaty with the Florida Tribes of Indians, 1823
+  signed: '1823-09-18'
+  statutes_at_large: 7 Stat. 224
+  kappler:
+    volume: 2
+    page: 203
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-florida-tribes-of-indians-1823-0203
+  signatory: Florida Tribes
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 203 (Treaty with the Florida Tribes of Indians, 1823; Kappler header "Sept. 18, 1823. | 7 Stat., 224. | Proclamation, Jan. 2, 1824.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Treaty of Moultrie Creek 1823 with the Florida tribes (Seminole). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Seminole, 1832
+  signed: '1832-05-09'
+  statutes_at_large: 7 Stat. 368
+  kappler:
+    volume: 2
+    page: 344
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seminole-1832-0344
+  signatory: Seminole
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 344 (Treaty with the Seminole, 1832; Kappler header "May 9, 1832. | 7 Stat., 368. | Proclamation, April 12, 1834.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Seminole Tribe of Florida descends from Seminole who remained in Florida; Moultrie Creek/Payne''s Landing era. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Seminole, 1833
+  signed: '1833-03-28'
+  statutes_at_large: 7 Stat. 423
+  kappler:
+    volume: 2
+    page: 394
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seminole-1833-0394
+  signatory: Seminole
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 394 (Treaty with the Seminole, 1833; Kappler header "Mar. 28, 1833. | 7 Stat., 423. | Proclamation, Apr. 12, 1834.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Seminole Tribe of Florida descends from Seminole who remained in Florida; Moultrie Creek/Payne''s Landing era. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

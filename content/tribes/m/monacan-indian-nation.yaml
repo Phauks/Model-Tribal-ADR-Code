@@ -169,6 +169,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Monacan Indian Nation
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-monacan-health-center
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: Listed as "Monacan Indian Nation". Listed under Federal Direct Care Service Facilities on the Nashville Area page.
+- area: Nashville
+  service_unit: Monacan Health Center
+  source: indian-health-service-nashville-monacan-health-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "serves the Monacan Indian Nation and other Federally Recognized American Indians".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Federal Direct Care Service Facilities". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
 - aspect: form
   value: Non-profit corporation
@@ -346,6 +370,15 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Virginia is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Virginia. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Virginia by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

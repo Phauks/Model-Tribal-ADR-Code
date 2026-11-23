@@ -180,6 +180,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nisqually Indian Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Nisqually Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Nisqually Indian Tribe (1997)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Nisqually Indian Community, Washington" among organizations under constitutions
@@ -861,6 +869,31 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Nisqualli, Puyallup, etc., 1854
+  signed: '1854-12-26'
+  statutes_at_large: 10 Stat. 1132
+  kappler:
+    volume: 2
+    page: 661
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nisqualli-puyallup-etc-1854-0661
+  signatory: Nisqually
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 661 (Treaty with the Nisqualli, Puyallup, etc., 1854; Kappler header "Dec. 26, 1854. | 10 Stat., 1132. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty of Medicine Creek; named in preamble The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Nisqually tract near the mouth of She-nah-nam Creek, Washington
+  method: treaty
+  instrument: Treaty of Medicine Creek, Dec. 26, 1854, art. II, 10 Stat. 1132
+  date: '1854-12-26'
+  detail: First set aside
+  source: treaty-with-the-nisqualli-puyallup-etc-1854
+  confidence: medium
+  verification: read-in-full
+  locator: 10 Stat. 1132
+  note: 'The instrument reads: “a square tract containing two sections, or twelve hundred and eighty acres, on Puget’s Sound, near the mouth of the She-nah-nam Creek”. Treaty tract identified with the Nisqually reservation by location (She-nah-nam = Sequalitchew/Nisqually); the later Exec. Order of Jan. 20, 1857 enlarged it (not read).'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

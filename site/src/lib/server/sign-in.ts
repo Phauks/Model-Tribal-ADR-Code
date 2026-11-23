@@ -65,7 +65,9 @@ export async function finishSignIn(
 	account: Account,
 	method: SessionMethod,
 	returnTo: string,
-	leadAuthorEmail: string | undefined
+	leadAuthorEmail: string | undefined,
+	/** The browser and system, kept with the session for Account, Sign-in and security. */
+	device: string | null = null
 ): Promise<FinishedSignIn> {
 	const match = await matchSignIn(
 		database,
@@ -76,7 +78,7 @@ export async function finishSignIn(
 		await endAllSessions(database, account.identifier);
 		return { outcome: 'refused', reason: 'removed' };
 	}
-	const { token, expiresAt } = await startSession(database, account.identifier, method);
+	const { token, expiresAt } = await startSession(database, account.identifier, method, device);
 	setSessionCookie(cookies, token, expiresAt);
 	markSignedIn(cookies);
 	if (match.outcome === 'signed-in') return { outcome: 'signed-in', destination: returnTo };

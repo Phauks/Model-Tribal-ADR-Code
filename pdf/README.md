@@ -56,10 +56,11 @@ pip install -r requirements.txt
 npm run build                # the book from content/
 npm run build:specimen       # a specimen chapter plus content/
 npm run build:every-size     # the specimen at every size, with a summary table
+npm run build:editions       # interior and paperback and hardcover covers at every size, for ordering
 npm test
 ```
 
-Each build writes `output/<name>/interior.pdf` and `report.json` (page count, margins, spine width, cover size and warnings). `output/` is not committed; the `checks` workflow uploads the PDFs as a build artifact.
+Each build writes `output/<name>/interior.pdf` and `report.json` (page count, margins, spine width, cover size and warnings). `build:editions` also writes a cover for each size and binding to `output/editions/current/<size>/<binding>/`, checked by `tools/check_cover.py`; see [docs/book-orders.md](../docs/book-orders.md) for the cover sizes and how the files reach the website. `output/` is not committed; the `checks` workflow uploads the PDFs as a build artifact.
 
 ## What the build checks
 
@@ -85,7 +86,8 @@ Working titles for the parts and Part II chapter titles are in `book.yaml`.
 | `book-sizes.yaml` | Every supported size and the rules that turn a size into a layout |
 | `pipeline/` | The build: content loading, Markdown reader, citations, Typst writer, geometry |
 | `typst/book.typ` | The page template |
+| `typst/cover.typ`, `pipeline/cover.mjs` | The cover template and its geometry |
 | `styles/` | The citation style and locale ([README](styles/README.md)) |
 | `fonts/` | Embedded fonts ([README](fonts/README.md)) |
-| `tools/check_interior.py` | The PDF checks |
+| `tools/check_interior.py`, `tools/check_cover.py` | The PDF checks |
 | `tests/` | Tests, and the typesetting specimen in `tests/fixtures/specimen/` |

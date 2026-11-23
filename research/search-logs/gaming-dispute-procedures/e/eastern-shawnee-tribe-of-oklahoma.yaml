@@ -1,7 +1,7 @@
 profile: content/tribes/e/eastern-shawnee-tribe-of-oklahoma.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -70,5 +70,22 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2015-06-09 has no text layer on most pages (89 of 89 pages have no text
     layer; no OCR available).
-next_steps: Read the scanned amendment listed 2015-06-09 (https://www.nigc.gov/wp-content/uploads/2025/03/20150609EasternShawneeTribeofOklahomaOrdAmendApprv.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20150609EasternShawneeTribeofOklahomaOrdAmendApprv.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 21-47 of 89 of this amendment listed 2015-06-09 as page
+    images (it has no text layer) and recorded 3 procedure(s): other, patron-dispute. Not read: pages
+    1-20, 48-89 (40-page budget for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#eastern-shawnee-tribe-of-oklahoma-amendment-2015-06-09#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#eastern-shawnee-tribe-of-oklahoma-amendment-2015-06-09#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#eastern-shawnee-tribe-of-oklahoma-amendment-2015-06-09#p3
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 1-20, 48-89 of
+  the amendment listed 2015-06-09 (https://www.nigc.gov/wp-content/uploads/2025/03/20150609EasternShawneeTribeofOklahomaOrdAmendApprv.pdf),
+  left by the 40-page budget for long documents.'

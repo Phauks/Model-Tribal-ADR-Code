@@ -182,6 +182,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kake
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: Listed as "Organized Village of Kake". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Mt. Edgecumbe Service Area
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: 'The source''s words: "Organized Village of Kake".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution (Organized Village of Kake, Alaska) (approved 1947) states it was adopted under
@@ -708,6 +725,15 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: implementation-grant
+  detail: Received a Justice Department Tribal Jurisdiction Program grant (fiscal year 2024) for special Tribal criminal jurisdiction. These grants also fund planning, so the grant alone does not show that the nation exercises the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Appendix D (PDF p.53)
+  note: Listed as "ORGANIZED VILLAGE OF KAKE".
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

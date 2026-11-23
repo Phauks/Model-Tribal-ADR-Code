@@ -1,0 +1,54 @@
+profile: content/tribes/n/nez-perce-tribe.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Nez Perce Tribe peacemaker court video
+  outcome: not-found
+  reason: Results were tribal code PDFs, court pages, a PBS documentary about Chief Joseph and a NARF generic peacemaking video page that does not name the Nez Perce.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Nez Perce tribal court podcast
+  outcome: not-found
+  reason: Results were general podcasts and an Idaho tribal court page, with no Nez Perce court podcast.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.nezperce.org/government/law-and-justice/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://nezperce.org/government/law-and-justice/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://nezperce.org/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://nezperce.org/government/law-and-justice/tribal-court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+next_steps: The site footer links a "Streaming Media Archive" that a person could browse for court items.

@@ -158,6 +158,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Shoalwater Bay Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Shoalwater Bay Indian Tribe (1999)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: form
   value: Constitution approved by Secretary of the Interior and ratified by voters
@@ -638,6 +646,17 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+land_establishment:
+- land_area: Shoalwater Reserve, Washington Territory
+  method: executive-order
+  instrument: Exec. Order of Sept. 22, 1866, 1 Kappler 924
+  date: '1866-09-22'
+  detail: First set aside
+  source: executive-order-1866-09-shoalwater-reservation
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 924
+  note: 'The instrument reads: “reserved from sale and set apart for Indian purposes”. Order does not itself name the Shoalwater; Kappler''s heading "Shoalwater Reserve" (and OSU) identify it, and Kappler records it as occupied by Shoalwater and Chehalis. Date Sept. 22, 1866 per OSU; Kappler prints "September 1866".'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

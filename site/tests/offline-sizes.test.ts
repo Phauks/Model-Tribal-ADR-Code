@@ -4,7 +4,7 @@ import { addressOf, collectionOf as toolCollectionOf } from '../tools/write-offl
 
 describe('offline sizes written after the build', () => {
 	it('sorts files into the same collections as the service worker', () => {
-		for (const address of ['/', '/__data.json', '/nations', '/nations/__data.json', '/nations/x', '/nations/x/__data.json', '/nations/map/drawings.json', '/glossary', '/glossary/terms.json', '/glossary/mediation/__data.json', '/changelog', '/downloads', '/search/index.json']) {
+		for (const address of ['/', '/__data.json', '/nations', '/nations/__data.json', '/nations/x', '/nations/x/__data.json', '/nations/map/drawings.json', '/stories', '/stories/x', '/stories/x/__data.json', '/glossary', '/glossary/terms.json', '/glossary/mediation/__data.json', '/changelog', '/downloads', '/search/index.json']) {
 			expect(toolCollectionOf(address)).toBe(collectionOf(address));
 		}
 	});

@@ -189,6 +189,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kaw Nation, Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Kaw Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Kaw Nation (1995)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: form
   value: Constitution under Oklahoma Indian Welfare Act
@@ -637,6 +645,94 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+treaties:
+- title: Treaty with the Kansa, 1815
+  signed: '1815-10-28'
+  statutes_at_large: 7 Stat. 137
+  kappler:
+    volume: 2
+    page: 123
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1815-0123
+  signatory: Kansa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 123 (Treaty with the Kansa, 1815; Kappler header "Oct. 28, 1815. | 7 Stat., 137. | Ratified Dec. 26, 1818.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Kaw Nation (Kansa/Kaw) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kansa, 1825
+  signed: '1825-06-03'
+  statutes_at_large: 7 Stat. 244
+  kappler:
+    volume: 2
+    page: 222
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0222
+  signatory: Kansa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 222 (Treaty with the Kansa, 1825; Kappler header "June 3, 1825. | 7 Stat., 244. | Proclamation, Dec. 30, 1825.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Kaw Nation (Kansa/Kaw) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kansa, 1825
+  signed: '1825-08-16'
+  statutes_at_large: 7 Stat. 270
+  kappler:
+    volume: 2
+    page: 248
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kansa-1825-0248
+  signatory: Kansa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 248 (Treaty with the Kansa, 1825; Kappler header "Aug. 16, 1825. | 7 Stat., 270. | Proclamation, May 3, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Kaw Nation (Kansa/Kaw) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kansa Tribe, 1846
+  signed: '1846-01-14'
+  statutes_at_large: 9 Stat. 842
+  kappler:
+    volume: 2
+    page: 552
+    link: https://treaties.okstate.edu/treaties/treaty-with-kansa-tribe-1846-0552
+  signatory: Kansa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 552 (Treaty with the Kansa Tribe, 1846; Kappler header "Jan. 14, 1846. | 9 Stat., 842. | Ratified Apr. 13, 1846. | Proclaimed, Apr. 15, 1846.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Kaw Nation (Kansa/Kaw) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kansa, 1859
+  signed: '1859-10-05'
+  statutes_at_large: 12 Stat. 1111
+  kappler:
+    volume: 2
+    page: 800
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kansa-tribe-1859-0800
+  signatory: Kansa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 800 (Treaty with the Kansa, 1859; Kappler header "Oct. 5, 1859. | 12 Stat., 1111. | Ratified June 27, 1860. | Proclaimed Nov. 17, 1860.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Kaw Nation (Kansa/Kaw) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kansa Indians, 1862
+  signed: '1862-03-13'
+  statutes_at_large: 12 Stat. 1221
+  kappler:
+    volume: 2
+    page: 829
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kansa-indians-1862-0829
+  signatory: Kansa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 829 (Treaty with the Kansa Indians, 1862; Kappler header "Mar. 13, 1862. | 12 Stats., 1221. | Ratified Feb. 6, 1863. | Proclaimed Mar. 16, 1863.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Kaw Nation (Kansa/Kaw) The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

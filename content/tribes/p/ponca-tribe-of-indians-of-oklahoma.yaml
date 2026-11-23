@@ -182,6 +182,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Ponca Tribe of Indians of Oklahoma". Also on the Indian Health Service Self-Governance Tribes list (Ponca Tribe of Oklahoma (2000)); the list does not say which service unit or programs the compact covers.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Constitution (Ponca Tribe of Indians Oklahoma) (approved 1950) states it was adopted under Act
@@ -587,6 +595,68 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+treaties:
+- title: Treaty with the Ponca, 1817
+  signed: '1817-06-25'
+  statutes_at_large: 7 Stat. 155
+  kappler:
+    volume: 2
+    page: 140
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1817-0140
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 140 (Treaty with the Ponca, 1817; Kappler header "June 25, 1817 | 7 Stat., 155. | Proclamation, Dec. 26,1877.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ponca, 1825
+  signed: '1825-06-09'
+  statutes_at_large: 7 Stat. 247
+  kappler:
+    volume: 2
+    page: 225
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1825-0225
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 225 (Treaty with the Ponca, 1825; Kappler header "June 9, 1825. | 7 Stat., 247. | Proclamation, Feb 6, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ponca, 1858
+  signed: '1858-03-12'
+  statutes_at_large: 12 Stat. 997
+  kappler:
+    volume: 2
+    page: 772
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1858-0772
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 772 (Treaty with the Ponca, 1858; Kappler header "Mar. 12, 1858. | 12 Stats., 997. | Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ponca, 1865
+  signed: '1865-03-10'
+  statutes_at_large: 14 Stat. 675
+  kappler:
+    volume: 2
+    page: 875
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1865-0875
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 875 (Treaty with the Ponca, 1865; Kappler header "Mar. 10, 1865. | 14 Stat., 675. | Ratified Mar. 2, 1867. | Proclaimed Mar. 28, 1867.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

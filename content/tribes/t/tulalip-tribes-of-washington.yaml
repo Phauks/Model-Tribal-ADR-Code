@@ -179,6 +179,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tulalip Tribes of Washington
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Tulalip Tribes". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Tulalip Tribes of Washington (2002)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Tulalip Tribes, Washington" among organizations under constitutions approved
@@ -1037,6 +1045,40 @@ jurisdiction:
   verification: read-in-full
   as_of: '2013'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.54)
+  note: Listed as "TULALIP TRIBES OF WASHINGTON" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Sk-tahlmish; Skopeáhmish; Sktahlejum; Shohomish; Sha-ho-mish / Snohomish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Sk-tahlmish: Point Elliott bands; Tulalip Tribes include Snohomish, Skykomish, Snoqualmie descendants. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+land_establishment:
+- land_area: Tulalip (Snohomish) tract on Port Gardner/Tulalip Bay, Washington
+  method: treaty
+  instrument: Treaty of Point Elliott, Jan. 22, 1855, art. II, 12 Stat. 927, 928
+  date: '1855-01-22'
+  detail: First set aside
+  source: treaty-with-the-dwamish-suquamish-etc-1855
+  confidence: medium
+  verification: read-in-full
+  locator: 12 Stat. 928
+  note: 'The instrument reads: “on the north side Hwhomish Bay and the creek emptying into the same called Kwilt-seh-da”. The Dec. 23, 1873 Exec. Order (1 Kappler 925) refers to "the Snohomish or Tulalip Indian Reservation ... provided for in the third article of the treaty ... Point Elliott" [sic]. Place-name identification (Kwilt-seh-da = Tulalip Bay) is from the treaty text as reproduced; confidence medium.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

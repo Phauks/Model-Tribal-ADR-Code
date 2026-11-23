@@ -1,7 +1,24 @@
 import geometry from 'virtual:map-geometry';
+import type { FeatureCollection, MultiPolygon, Polygon } from 'geojson';
+import { feature } from 'topojson-client';
+import type { GeometryCollection, Topology } from 'topojson-specification';
+import regionsTopology from '../../../geography/bureau-of-indian-affairs-regions.json';
+import landAreaPoints from '../../../geography/census-land-area-points-2020.json';
+import tileManifest from '../../../geography/map-tiles.json';
+import withdrawnList from '../../../geography/withdrawn-land-areas.json';
 import { nations } from '#lib/server/content.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { displayName, regionAnchor, stateName } from '#lib/nation-labels.ts';
+import {
+	healthServiceAreaShades,
+	publicLaw280Categories,
+	shadedMapViews,
+	shadedRowAnchor,
+	unrecordedLabels,
+	violenceAgainstWomenActCategories,
+	type ShadeCategory,
+	type ShadedMapView
+} from '#lib/shaded-map-views.ts';
 import { recognitionBadges, type RecognitionBadge } from '#lib/recognition-badges.ts';
 import {
 	landAreaAnchor,
@@ -10,6 +27,7 @@ import {
 	type LandAreaCount,
 	type NationsMapCounts
 } from '#lib/nations-map-drawing.ts';
+import type { LandAreaKind } from '#lib/map-geometry.ts';
 
 /** A nation as a map table lists it, with its recognition badges (none for no federal recognition). */
 interface ListedNation {
@@ -121,6 +139,7 @@ export function nationsMapPage() {
 		.sort((first, second) => first.name.localeCompare(second.name, 'en'));
 
 	addLandAreaSources(records, sources);
+	addShadedViewSources(records, sources);
 
 	const counts: NationsMapCounts = { states, regions };
 
@@ -164,6 +183,14 @@ function addLandAreaSources(records: ReturnType<typeof nations>, sources: Source
 		text: 'reservations, trust lands and statistical areas, simplified for a national map',
 		where: `retrieved ${geometry.landAreaSource.retrieved}`
 	});
+	sources.add('protomaps-basemap-openstreetmap', {
+		section: 'Basemap',
+		text: 'the map of places, roads and water under each view, where the browser can draw it'
+	});
+	sources.add('census-cartographic-boundary-states-2020', {
+		section: 'State and territory outlines',
+		text: 'state and territory outlines on the zoomable map'
+	});
 }
 
 /**
@@ -193,3 +220,257 @@ export function landAreasView() {
 }
 
 export type LandAreaRow = ReturnType<typeof landAreasView>['rows'][number];
+
+/** Each land area's label point, bounds and size (written by tools/build-map-tiles.mjs). */
+interface LandAreaPoint {
+	code: string;
+	name: string;
+	kind: LandAreaKind;
+	square_kilometers: number;
+	point: [number, number];
+	bounds: [number, number, number, number];
+}
+
+const withdrawnLandAreas = new Set<string>(withdrawnList.codes);
+
+/**
+ * What the map drawn with MapLibre needs besides its tiles (decision record 0039), served from /nations/map/tile-map.json: the tile sets' names, each state's shade and table row, the regions' outlines and rows, and each land area's label, dot, bounds and row. Names come from the nation records, so they are never baked into the tiles.
+ */
+export function tileMapData() {
+	const page = nationsMapPage();
+	const rowStates = new Set(page.stateRows.map((row) => row.code));
+	const states = Object.fromEntries(
+		page.counts.states.map((state) => [state.code, { countClass: state.countClass, anchor: rowStates.has(state.code) ? `state-${state.code}` : undefined }])
+	);
+	const topology = regionsTopology as unknown as Topology<{ regions: GeometryCollection<{ name: string }> }>;
+	const regions = feature(topology, topology.objects.regions) as FeatureCollection<Polygon | MultiPolygon, { name: string }>;
+	const regionAnchors = new Map(page.regionRows.map((row) => [row.name, row.anchor]));
+	const byArea = nationsByLandArea(nations());
+	return {
+		tiles: tileSetNames,
+		states,
+		regions: {
+			type: 'FeatureCollection' as const,
+			features: regions.features.map((region) => ({
+				type: 'Feature' as const,
+				properties: { name: region.properties.name, anchor: regionAnchors.get(region.properties.name) ?? regionAnchor(region.properties.name) },
+				geometry: region.geometry
+			}))
+		},
+		areas: tileMapAreas(byArea, () => true),
+		shading: tileMapShading() as ReturnType<typeof tileMapShading> | undefined
+	};
+}
+
+/** The tile sets' names, which change whenever their files do. */
+const tileSetNames = { landAreas: tileManifest.landAreas.set, basemap: tileManifest.basemap.set, maximumZoom: tileManifest.basemap.maxZoom };
+
+/** Each land area's dot, box and label for the tiled map, for the areas the test keeps. */
+function tileMapAreas(byArea: Map<string, ListedNation[]>, keep: (code: string) => boolean) {
+	const groups = new Map<string, string>(landAreaGroups.flatMap((group) => group.kinds.map((kind) => [kind, group.key] as [string, string])));
+	return (landAreaPoints.areas as LandAreaPoint[])
+		.filter((area) => !withdrawnLandAreas.has(area.code) && keep(area.code))
+		.map((area) => {
+			const linked = byArea.get(area.code) ?? [];
+			return {
+				code: area.code,
+				// One nation: its name, which readers know; several or none: the Census Bureau's name for the area.
+				label: linked.length === 1 ? linked[0].name : area.name,
+				group: groups.get(area.kind) ?? 'statistical',
+				squareKilometers: area.square_kilometers,
+				point: area.point,
+				bounds: area.bounds,
+				anchor: landAreaAnchor(area.code),
+				nations: linked.length
+			};
+		});
+}
+
+/**
+ * The tiled map's data for one nation's page: only the land areas its entry names, labeled with the Census Bureau's names, since the page is already about the nation. No states or regions: the page's other views stay drawn.
+ */
+export function nationTileMapData(codes: string[]): TileMapData {
+	const wanted = new Set(codes);
+	return {
+		tiles: tileSetNames,
+		states: {},
+		regions: { type: 'FeatureCollection', features: [] },
+		areas: tileMapAreas(new Map(), (code) => wanted.has(code)),
+		shading: undefined
+	};
+}
+
+export type TileMapData = ReturnType<typeof tileMapData>;
+
+type NationRecord = ReturnType<typeof nations>[number];
+
+/** The record's facts on one jurisdiction topic. */
+const factsOn = (record: NationRecord, topic: string) => (record.jurisdiction ?? []).filter((fact) => fact.topic === topic);
+
+const publicLaw280Topic = 'public-law-280';
+const violenceAgainstWomenActTopic = 'violence-against-women-act-special-tribal-criminal-jurisdiction';
+
+/** The nation's Public Law 280 category (src/lib/shaded-map-views.ts gives the order of precedence), or none if no fact is recorded. */
+function publicLaw280Category(record: NationRecord): string | undefined {
+	const values = new Set(factsOn(record, publicLaw280Topic).map((fact) => fact.value ?? ''));
+	if (values.size === 0) return undefined;
+	if (values.has('retroceded')) return 'returned';
+	if (values.has('mandatory-state')) return 'mandatory';
+	if (values.has('optional-state') && !values.has('repealed')) return 'optional';
+	return 'none';
+}
+
+function violenceAgainstWomenActCategory(record: NationRecord): string | undefined {
+	const values = new Set(factsOn(record, violenceAgainstWomenActTopic).map((fact) => fact.value));
+	if (values.has('exercising')) return 'exercising';
+	if (values.has('implementation-grant')) return 'implementation-grant';
+	return undefined;
+}
+
+const healthServiceArea = (record: NationRecord): string | undefined => record.indian_health_service?.find((fact) => fact.area)?.area;
+
+/** One land area as a shaded view draws it: its shade, the table row it goes to, and what its tooltip says. */
+export interface ShadedArea {
+	code: string;
+	shade: number;
+	anchor?: string;
+	category?: string;
+}
+
+/** A shaded view's legend, its land areas and its table rows. */
+function buildShadedView(view: ShadedMapView) {
+	const records = nations();
+	const byArea = new Map<string, NationRecord[]>();
+	for (const record of records) {
+		for (const area of record.census_areas ?? []) {
+			if (area.vintage && area.vintage !== '2020') continue;
+			const list = byArea.get(area.geographic_identifier) ?? [];
+			if (!list.includes(record)) list.push(record);
+			byArea.set(area.geographic_identifier, list);
+		}
+	}
+
+	let categories: ShadeCategory[];
+	let categoryOf: (record: NationRecord) => string | undefined;
+	/** The row a nation's area goes to. */
+	let rowOf: (record: NationRecord, category: string) => string;
+	if (view === 'indian-health-service') {
+		const names = [...new Set(records.map(healthServiceArea).filter((name): name is string => Boolean(name)))].sort((first, second) => first.localeCompare(second, 'en'));
+		categories = names.map((name) => ({ key: name, label: `${name} Area`, shade: healthServiceAreaShades[name] ?? 2 }));
+		categoryOf = healthServiceArea;
+		rowOf = (_record, category) => shadedRowAnchor(view, category);
+	} else {
+		categories = view === 'public-law-280' ? publicLaw280Categories : violenceAgainstWomenActCategories;
+		categoryOf = view === 'public-law-280' ? publicLaw280Category : violenceAgainstWomenActCategory;
+		rowOf = (record) => shadedRowAnchor(view, record.id);
+	}
+	const order = categories.map((category) => category.key);
+	const rank = (category: string) => order.indexOf(category);
+
+	// An area named by several nations takes the category that comes first in the legend's order of precedence.
+	const areas: ShadedArea[] = (landAreaPoints.areas as LandAreaPoint[])
+		.filter((area) => !withdrawnLandAreas.has(area.code))
+		.map((area) => {
+			const found = (byArea.get(area.code) ?? [])
+				.map((record) => ({ record, category: categoryOf(record) }))
+				.filter((entry): entry is { record: NationRecord; category: string } => entry.category !== undefined && rank(entry.category) >= 0)
+				.sort((first, second) => rank(first.category) - rank(second.category))[0];
+			if (!found) return { code: area.code, shade: 0 };
+			const category = categories[rank(found.category)];
+			return { code: area.code, shade: category.shade, anchor: rowOf(found.record, found.category), category: category.key };
+		});
+
+	return { categories, categoryOf, areas, records };
+}
+
+/** Where to write each Indian Health Service Area's name: the middle (median) of its land areas' label points, in degrees. */
+function healthServiceAreaLabels(areas: ShadedArea[]): { name: string; point: [number, number] }[] {
+	const points = new Map((landAreaPoints.areas as LandAreaPoint[]).map((area) => [area.code, area.point]));
+	const byCategory = new Map<string, [number, number][]>();
+	for (const area of areas) {
+		const point = points.get(area.code);
+		if (!area.category || !point) continue;
+		const list = byCategory.get(area.category) ?? [];
+		list.push(point);
+		byCategory.set(area.category, list);
+	}
+	const median = (values: number[]) => {
+		const sorted = [...values].sort((first, second) => first - second);
+		return sorted[Math.floor(sorted.length / 2)];
+	};
+	return [...byCategory.entries()].map(([name, list]) => ({ name, point: [median(list.map((point) => point[0])), median(list.map((point) => point[1]))] }));
+}
+
+/** What the tiled map needs for each shaded view: each area's shade and row, and for the Indian Health Service view where to write each Area's name. */
+function tileMapShading() {
+	return Object.fromEntries(
+		shadedMapViews.map((view) => {
+			const built = buildShadedView(view);
+			const areas = Object.fromEntries(built.areas.filter((area) => area.anchor).map((area) => [area.code, { shade: area.shade, anchor: area.anchor as string }]));
+			return [view, { areas, labels: view === 'indian-health-service' ? healthServiceAreaLabels(built.areas) : [] }];
+		})
+	) as Record<ShadedMapView, { areas: Record<string, { shade: number; anchor: string }>; labels: { name: string; point: [number, number] }[] }>;
+}
+
+/** The states a nation's entry places it in, by name. */
+const statesOf = (record: NationRecord) => [...new Set((record.states ?? []).map((fact) => stateName(fact.state)))].sort((first, second) => first.localeCompare(second, 'en'));
+
+/**
+ * A shaded view's legend and table, and the shades its drawing is drawn with, served from /nations/map/views/<view>.json when a reader opens the view. Public Law 280 and the Violence Against Women Act list nations; the Indian Health Service view lists its Areas, each opening to its nations.
+ */
+export function shadedView(view: ShadedMapView) {
+	const built = buildShadedView(view);
+	const labelOf = new Map(built.categories.map((category) => [category.key, category.label]));
+	const names = new Map((landAreaPoints.areas as LandAreaPoint[]).map((area) => [area.code, area.name]));
+	const unrecorded = unrecordedLabels[view];
+	const drawn = built.areas.map((area) => ({
+		identifier: area.code,
+		shade: area.shade,
+		anchor: area.anchor,
+		description: `${names.get(area.code) ?? area.code}: ${area.category ? (labelOf.get(area.category) ?? area.category) : unrecorded}`
+	}));
+	const legend = [...built.categories.map(({ key, label, shade }) => ({ key, label, shade })), { key: 'unrecorded', label: unrecorded, shade: 0 }];
+
+	if (view === 'indian-health-service') {
+		const rows = built.categories.map((category) => {
+			const members = built.records.filter((record) => healthServiceArea(record) === category.key);
+			return {
+				anchor: shadedRowAnchor(view, category.key),
+				name: category.label,
+				nations: members.map(listed).sort(byName),
+				states: [...new Set(members.flatMap(statesOf))].sort((first, second) => first.localeCompare(second, 'en'))
+			};
+		});
+		return { view, legend, drawn, labels: built.categories.map((category) => ({ name: category.key, identifiers: built.areas.filter((area) => area.category === category.key).map((area) => area.code) })), nationRows: [], areaRows: rows };
+	}
+
+	const nationRows = built.records
+		.map((record) => ({ record, category: built.categoryOf(record) }))
+		.filter((entry): entry is { record: NationRecord; category: string } => entry.category !== undefined)
+		.map(({ record, category }) => ({
+			anchor: shadedRowAnchor(view, record.id),
+			id: record.id,
+			name: displayName(record.names.official),
+			states: statesOf(record),
+			category: labelOf.get(category) ?? category
+		}))
+		.sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
+	return { view, legend, drawn, labels: [], nationRows, areaRows: [] };
+}
+
+export type ShadedViewData = ReturnType<typeof shadedView>;
+
+/** The sources of the shaded views, listed with the page's other sources. */
+function addShadedViewSources(records: NationRecord[], sources: SourceUses): void {
+	for (const record of records) {
+		for (const fact of factsOn(record, publicLaw280Topic)) {
+			if (fact.source) sources.add(fact.source, { section: 'Public Law 280', text: 'each nation’s Public Law 280 facts, summed up in one category' });
+		}
+		for (const fact of factsOn(record, violenceAgainstWomenActTopic)) {
+			if (fact.source) sources.add(fact.source, { section: 'Violence Against Women Act jurisdiction', text: 'nations exercising special Tribal criminal jurisdiction, and implementation grants' });
+		}
+		for (const fact of record.indian_health_service ?? []) {
+			if (fact.source) sources.add(fact.source, { section: 'Indian Health Service Areas', text: 'the Area that serves each nation' });
+		}
+	}
+}

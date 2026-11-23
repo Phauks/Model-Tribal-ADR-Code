@@ -15,10 +15,12 @@
 	// Worker renders them; the pages built ahead of time read it from the
 	// signed-in hint (src/lib/signed-in-hint.ts) once the script runs.
 	import { page } from '$app/state';
+	import History from '@lucide/svelte/icons/history';
 	import Menu from '@lucide/svelte/icons/menu';
 	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
 	import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
 	import Star from '@lucide/svelte/icons/star';
+	import { accountPages, currentAccountPage, isAccountPath } from '#lib/account-menu.ts';
 	import type { Permission } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { sectionOf, siteSections, type OutlineItem, type PageOutline } from '#lib/site-sections.ts';
@@ -48,12 +50,17 @@
 		workspaceMenu.find((item) => isCurrentWorkspacePage(item.link, path))
 	);
 
+	// On the Account pages, a "Your account" section lists them (src/lib/account-menu.ts).
+	const onAccountPage = $derived(isAccountPath(path));
+	const currentAccount = $derived(onAccountPage ? currentAccountPage(path) : undefined);
+
 	// Where the phone menu says the reader is, beside the word "Menu".
 	const whereLabel = $derived(
 		currentItemLabel(outline?.items ?? []) ??
 			outline?.title ??
 			currentSection?.label ??
-			(currentWorkspacePage ? `Workspace: ${currentWorkspacePage.label}` : 'Home')
+			(currentWorkspacePage ? `Workspace: ${currentWorkspacePage.label}` : undefined) ??
+			(currentAccount ? `Your account: ${currentAccount.label}` : 'Home')
 	);
 
 	function currentItemLabel(items: OutlineItem[]): string | undefined {
@@ -212,6 +219,21 @@
 			</li>
 		{/each}
 	</ul>
+	{#if onAccountPage}
+		<!-- The Account pages, on those pages only (site/DESIGN.md, section 6, "Settings and Account"). -->
+		<div class="workspace-links">
+			<p class="group-title" id="sidebar-account-{idSuffix}">Your account</p>
+			<ul class="sections" aria-labelledby="sidebar-account-{idSuffix}">
+				{#each accountPages as item (item.link)}
+					<li>
+						<a href={item.link} aria-current={item === currentAccount ? 'page' : undefined}>
+							{item.label}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
 	{#if workspaceMenu.length > 0}
 		<!-- The workspace, for people signed in with access to it (site/COLLABORATION.md). -->
 		<div class="workspace-links">
@@ -227,9 +249,16 @@
 			</ul>
 		</div>
 	{/if}
-	<!-- The reader's own pages, kept on this device (site/DESIGN.md, section 6, "Star"). -->
-	<ul class="sections reader-links needs-scripts">
+	<!-- Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"),
+	     and the reader's own pages, kept on this device (site/DESIGN.md, section 6, "Star"). -->
+	<ul class="sections reader-links">
 		<li>
+			<a href="/changes" aria-current={path === '/changes' ? 'page' : undefined}>
+				<History size={18} aria-hidden="true" />
+				Recent changes
+			</a>
+		</li>
+		<li class="needs-scripts">
 			<a href="/starred" aria-current={path === '/starred' ? 'page' : undefined}>
 				<Star size={18} aria-hidden="true" />
 				Starred pages
@@ -238,13 +267,18 @@
 	</ul>
 {/snippet}
 
-<!-- Wide screens: a column beside the page that the reader can hide. -->
+<!-- Wide screens: a column beside the page that the reader can hide. The
+     button that hides it is pinned to the bottom of the column (Trevor, Nov. 23,
+     2026); it stays the <summary>, and so the first thing in the column for a
+     keyboard or screen reader, because a <summary> must come first. -->
 <details class="sidebar-wide no-print" bind:this={wideSidebar} {open} ontoggle={remember}>
-	<summary>
-		<span class="when-open"><PanelLeftClose size={20} aria-hidden="true" /> Hide sidebar</span>
-		<span class="when-closed" title="Show sidebar"
-			><PanelLeftOpen size={20} aria-hidden="true" /><span class="visually-hidden">Show sidebar</span></span
-		>
+	<summary title={open ? undefined : 'Show sidebar'}>
+		<span class="toggle">
+			<span class="when-open"><PanelLeftClose size={20} aria-hidden="true" /> Hide sidebar</span>
+			<span class="when-closed"
+				><PanelLeftOpen size={20} aria-hidden="true" /><span class="visually-hidden">Show sidebar</span></span
+			>
+		</span>
 	</summary>
 	<nav aria-label="Site">
 		{@render sections('wide')}
@@ -413,51 +447,114 @@
 	}
 
 	@media (min-width: 64rem) {
+		/*
+		 * The column itself does not scroll. Its links scroll in the space above
+		 * a footer row pinned to the bottom of the column, which holds the
+		 * button that hides the sidebar, so the button is always in the same
+		 * place, however long the outline is. Hidden, the column is a narrow
+		 * strip with only the button that shows it again, in the same place, so
+		 * the pointer is already on it to undo.
+		 */
 		.sidebar-wide {
+			--sidebar-footer-height: calc(var(--layout-target-minimum) + 2 * var(--space-2) + 1px);
 			display: block;
 			position: sticky;
 			top: 0;
 			align-self: start;
 			height: 100dvh;
-			overflow-y: auto;
-			overscroll-behavior: contain;
+			overflow: hidden;
 			border-right: 1px solid var(--color-line);
-			padding: var(--space-3) var(--space-3) var(--space-6);
 			box-sizing: border-box;
 		}
 
-		.sidebar-wide > summary {
-			display: flex;
-			justify-content: flex-end;
-			margin-bottom: var(--space-2);
+		.sidebar-wide > nav {
+			position: absolute;
+			inset: 0 0 var(--sidebar-footer-height);
+			overflow-y: auto;
+			overscroll-behavior: contain;
+			padding: var(--space-4) var(--space-3) var(--space-4);
 		}
 
-		.sidebar-wide > summary > span {
+		.sidebar-wide > summary {
+			position: absolute;
+			inset: auto 0 0;
+			height: var(--sidebar-footer-height);
+			display: flex;
+			align-items: center;
+			padding: 0 var(--space-3);
+			border-top: 1px solid var(--color-line);
+			background: var(--color-paper);
+			box-sizing: border-box;
+		}
+
+		/* The summary is the control; focus shows on the button inside it, in the site's focus colors. */
+		.sidebar-wide > summary:focus-visible {
+			outline: none;
+			background-color: var(--color-paper);
+			box-shadow: none;
+		}
+
+		.sidebar-wide .toggle {
+			display: flex;
+			flex: 1;
+			align-items: center;
+			min-height: var(--layout-target-minimum);
+			padding: 0 var(--space-3);
+			border-radius: var(--radius-control);
+			color: var(--color-ink-muted);
+			font-size: var(--font-size-small);
+			font-weight: var(--font-weight-semibold);
+			transition:
+				background-color var(--motion-duration-short) var(--motion-easing-standard),
+				color var(--motion-duration-short) var(--motion-easing-standard);
+		}
+
+		.sidebar-wide .toggle > span {
 			display: inline-flex;
 			align-items: center;
-			gap: var(--space-2);
-			min-height: 2.25rem;
-			padding: 0 var(--space-2);
-			border-radius: var(--radius-control);
-			font-size: var(--font-size-small);
-			color: var(--color-ink-muted);
+			gap: var(--space-3);
 		}
 
-		.sidebar-wide > summary:hover > span {
+		.sidebar-wide .toggle :global(svg) {
+			flex: none;
+			transition: transform var(--motion-duration-short) var(--motion-easing-standard);
+		}
+
+		.sidebar-wide > summary:hover .toggle {
 			background: var(--color-surface);
 			color: var(--color-ink);
+		}
+
+		/* A nudge toward where the column goes: left to hide, right to show. */
+		.sidebar-wide[open] > summary:hover .toggle :global(svg) {
+			transform: translateX(-2px);
+		}
+
+		.sidebar-wide:not([open]) > summary:hover .toggle :global(svg) {
+			transform: translateX(2px);
+		}
+
+		.sidebar-wide > summary:focus-visible .toggle {
+			outline: 3px solid var(--color-focus-ring);
+			background-color: var(--color-focus);
+			color: var(--focus-text);
+			box-shadow: 0 0 0 3px var(--color-focus);
 		}
 
 		.sidebar-wide .when-closed {
 			display: none !important;
 		}
 
-		.sidebar-wide:not([open]) {
-			padding: var(--space-3) var(--space-1);
+		.sidebar-wide:not([open]) > summary {
+			padding: 0 var(--space-1);
+			justify-content: center;
 		}
 
-		.sidebar-wide:not([open]) > summary {
+		.sidebar-wide:not([open]) .toggle {
+			flex: none;
 			justify-content: center;
+			min-width: var(--layout-target-minimum);
+			padding: 0;
 		}
 
 		.sidebar-wide:not([open]) .when-open {

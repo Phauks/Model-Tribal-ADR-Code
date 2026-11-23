@@ -201,6 +201,14 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
     and Oregon
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Fort McDermitt Paiute-Shoshone Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Fort McDermitt Paiute and Shoshone Tribe (2017)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Fort McDermitt Pauite and Shoshone Tribe, Nevada" among organizations under constitutions
@@ -419,6 +427,14 @@ jurisdiction:
     page images, so nation names were read from images and matched to the roster. Row re-read on 2026-11-22
     from the page image (the govinfo PDF has no text layer for the table); verification level unchanged
     because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: The 1975 retrocession notice lists only the areas over which Nevada had acquired jurisdiction; Fallon, Walker River, Duck Valley, Fort McDermitt, Moapa, Las Vegas, Summit Lake, Yerington, Fort Mojave and Timbisha lands are not on it, and the notice does not say why. (40 Fed. Reg. 27,501.)
+  source: federal-register-1975-nevada-retrocession
+  confidence: low
+  verification: inferred
+  locator: 40 Fed. Reg. at 27,501
+  note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

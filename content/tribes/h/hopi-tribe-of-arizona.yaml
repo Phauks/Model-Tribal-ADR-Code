@@ -150,6 +150,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopi Tribe of Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Hopi Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes. Facility listed as a Phoenix Area service unit; operator from Direct Service Tribes list.'
+- area: Phoenix
+  service_unit: Hopi Health Care Center
+  source: indian-health-service-phoenix-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Hopi Health Care Center".'
+- area: Phoenix
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Hopi Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Hopi Tribe, Arizona" among organizations under constitutions approved by the
@@ -578,6 +602,41 @@ jurisdiction:
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Hopi Tribe".
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+land_establishment:
+- land_area: Moqui (Hopi) Reserve, Arizona
+  method: executive-order
+  instrument: Exec. Order of Dec. 16, 1882, 1 Kappler 805
+  date: '1882-12-16'
+  detail: First set aside
+  source: executive-order-1882-12-16-moqui-hopi-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 805
+  note: 'The instrument reads: “withdrawn from settlement and sale, and set apart for the use and occupancy of the Moqui and such other Indians as the Secretary of the Interior may see fit to settle thereon”. Moqui = Hopi (Kappler heading "Moqui (Hopi) Reserve").'
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

@@ -45,6 +45,16 @@ import {
 	type WorkerRequest
 } from '#lib/offline-collections.ts';
 import {
+	documentsCacheName,
+	isDocumentSet,
+	listAddress,
+	type DocumentFile,
+	type DocumentSet,
+	type DocumentSetList,
+	type DocumentSetStatus,
+	type DocumentsStatus
+} from '#lib/offline-documents.ts';
+import {
 	cacheNameOf,
 	cachePrefix,
 	fingerprintOf,
@@ -62,17 +72,22 @@ const offlinePage = '/offline';
 const corePages = ['/', '/glossary', '/changelog', '/search', '/starred', '/starred/shared', offlinePage];
 // edition.json, the fingerprints and SvelteKit's version.json say what the server has now, so
 // they always come from the network; a saved version.json would hide a new build from open tabs.
-// Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself.
+// Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself,
+// unless the reader saved them (see copyResponse below).
+// Map tiles (/map-tiles/) are many and never change under their address, so the browser's own cache keeps them;
+// all of them come to over 2 GB, and offline the drawn map takes their place.
 const neverCached = [
 	'/workspace',
 	'/sign-in',
 	'/sign-out',
 	'/requests',
 	'/following',
+	'/account',
 	'/edition.json',
 	fingerprintsAddress,
 	'/_app/version.json',
-	'/copies'
+	'/copies',
+	'/map-tiles'
 ];
 /** Not a real address: the list of collections the reader keeps, stored in the cache. */
 const keptCollectionsKey = '/__kept-collections';
@@ -153,6 +168,7 @@ self.addEventListener('install', (event) => {
 		(async () => {
 			const cache = await caches.open(cacheName);
 			await removeWithdrawnPages();
+			await removeWithdrawnDocuments();
 			await carryForward(cache, await thisBuildFingerprints(cache));
 			const missing: string[] = [];
 			for (const path of precached) {
@@ -286,7 +302,7 @@ async function saveChangedPages(): Promise<void> {
  */
 async function removeWithdrawnPages(): Promise<void> {
 	for (const name of await caches.keys()) {
-		if (name === cacheName) continue;
+		if (name === cacheName || name === documentsCacheName) continue;
 		const oldCache = await caches.open(name);
 		for (const request of await oldCache.keys()) {
 			const path = new URL(request.url).pathname;
@@ -329,7 +345,8 @@ function finishUpdate(): Promise<void> {
 
 async function tidyOldCaches(): Promise<void> {
 	const cache = await caches.open(cacheName);
-	const oldNames = (await caches.keys()).filter((name) => name !== cacheName);
+	// Saved copies of documents keep their own cache across builds (src/lib/offline-documents.ts).
+	const oldNames = (await caches.keys()).filter((name) => name !== cacheName && name !== documentsCacheName);
 	if (oldNames.length === 0) return;
 	await carryForward(cache, await thisBuildFingerprints(cache));
 	const currentFiles = new Set(immutable.map((file) => absolute(file.path)));
@@ -405,7 +422,11 @@ let newerBuildSeen = false;
 
 async function isFromThisBuild(response: Response): Promise<boolean> {
 	if (!response.ok || response.type !== 'basic') return false;
-	if ((response.headers.get('content-type') ?? '').includes('text/html')) {
+	// Video and sound play only online (site/DESIGN.md, section 10): they are large, and a part
+	// of a file (206) cannot be saved anyway.
+	const type = response.headers.get('content-type') ?? '';
+	if (response.status === 206 || type.startsWith('video/') || type.startsWith('audio/')) return false;
+	if (type.includes('text/html')) {
 		const fromThisBuild = (await response.clone().text()).includes(version);
 		if (!fromThisBuild) newerBuildSeen = true;
 		return fromThisBuild;
@@ -526,6 +547,207 @@ async function removeCollection(id: CollectionIdentifier): Promise<void> {
 	}
 }
 
+// Copies of documents saved for offline reading (src/lib/offline-documents.ts). They live in their
+// own cache, so an update does not download them again. Not real addresses: the sets the reader
+// keeps, the sets whose saving is unfinished, and each set's list as last read.
+const keptDocumentsKey = '/__kept-documents';
+const pendingDocumentsKey = '/__pending-documents';
+const fingerprintHeader = 'x-copy-fingerprint';
+
+function documentListKey(set: DocumentSet): string {
+	return `/__document-list/${set}`;
+}
+
+async function readSets(cache: Cache, key: string): Promise<DocumentSet[]> {
+	const saved = await cache.match(key);
+	if (!saved) return [];
+	try {
+		return ((await saved.json()) as unknown[]).filter(isDocumentSet);
+	} catch {
+		return [];
+	}
+}
+
+async function writeSets(cache: Cache, key: string, sets: DocumentSet[]): Promise<void> {
+	await cache.put(key, new Response(JSON.stringify([...new Set(sets)]), { headers: { 'content-type': 'application/json' } }));
+}
+
+async function pendingSets(): Promise<DocumentSet[]> {
+	return readSets(await caches.open(documentsCacheName), pendingDocumentsKey);
+}
+
+/**
+ * A set's list of copies: from the network when fresh is asked for (and kept for offline use), else
+ * the one kept last time. A set the build no longer lists has no copies left.
+ */
+async function documentList(cache: Cache, set: DocumentSet, fresh: boolean): Promise<DocumentSetList | undefined> {
+	if (fresh) {
+		try {
+			const response = await fetch(listAddress(set), { cache: 'no-store' });
+			if (response.ok) {
+				await cache.put(documentListKey(set), response.clone());
+				return (await response.json()) as DocumentSetList;
+			}
+			if (response.status === 404) {
+				await cache.delete(documentListKey(set));
+				return { title: '', files: [] };
+			}
+		} catch {
+			// Offline: fall back on the list kept last time.
+		}
+	}
+	const saved = await cache.match(documentListKey(set));
+	return saved ? ((await saved.json()) as DocumentSetList) : undefined;
+}
+
+/** The addresses of the copies saved on this device. */
+async function savedCopies(cache: Cache): Promise<Set<string>> {
+	return new Set(
+		(await cache.keys()).map((request) => new URL(request.url).pathname).filter((path) => !path.startsWith('/__'))
+	);
+}
+
+async function documentsStatus(asked: DocumentSet[]): Promise<DocumentsStatus> {
+	const cache = await caches.open(documentsCacheName);
+	const kept = await readSets(cache, keptDocumentsKey);
+	const saved = await savedCopies(cache);
+	const sets: DocumentSetStatus[] = [];
+	for (const set of new Set([...kept, ...asked])) {
+		const list = (await documentList(cache, set, false)) ?? (await documentList(cache, set, true));
+		const files = list?.files ?? [];
+		const savedFiles = files.filter(([path]) => saved.has(path));
+		sets.push({
+			set,
+			title: list?.title ?? '',
+			total: files.length,
+			saved: savedFiles.length,
+			bytes: savedFiles.reduce((total, [, bytes]) => total + bytes, 0),
+			totalBytes: files.reduce((total, [, bytes]) => total + bytes, 0),
+			kept: kept.includes(set)
+		});
+	}
+	return { sets };
+}
+
+const documentJobs = new Map<DocumentSet, Promise<void>>();
+const documentListeners = new Map<DocumentSet, Set<MessagePort>>();
+
+/** Saves a set's copies not yet on this device, four at a time, since some are large. */
+async function saveDocumentSet(set: DocumentSet): Promise<void> {
+	const cache = await caches.open(documentsCacheName);
+	await writeSets(cache, keptDocumentsKey, [...(await readSets(cache, keptDocumentsKey)), set]);
+	await writeSets(cache, pendingDocumentsKey, [...(await readSets(cache, pendingDocumentsKey)), set]);
+	const list = await documentList(cache, set, true);
+	if (!list) throw new Error('Could not read the list of documents');
+	const saved = await savedCopies(cache);
+	const queue: DocumentFile[] = list.files.filter(([path]) => !saved.has(path));
+	let done = list.files.length - queue.length;
+	let failed = 0;
+	const report = () => {
+		for (const port of documentListeners.get(set) ?? []) {
+			tell(port, { type: 'documents-progress', set, done, total: list.files.length });
+		}
+	};
+	report();
+	async function next(): Promise<void> {
+		const file = queue.shift();
+		if (!file) return;
+		const [path, , fingerprint] = file;
+		try {
+			// A copy the bucket lacks is a redirect to the original, which is not saved.
+			const response = await fetch(path, { redirect: 'manual' });
+			if (response.status === 200 && response.type === 'basic') {
+				const headers = new Headers(response.headers);
+				headers.set(fingerprintHeader, fingerprint);
+				await cache.put(path, new Response(response.body, { status: 200, headers }));
+				done += 1;
+			} else {
+				failed += 1;
+			}
+		} catch {
+			failed += 1;
+		}
+		if (done % 5 === 0 || queue.length === 0) report();
+		return next();
+	}
+	await Promise.all(Array.from({ length: 4 }, next));
+	report();
+	if (failed === 0) {
+		await writeSets(cache, pendingDocumentsKey, (await readSets(cache, pendingDocumentsKey)).filter((item) => item !== set));
+	}
+}
+
+function runDocumentSave(set: DocumentSet, port: MessagePort | undefined): Promise<void> {
+	if (port) documentListeners.set(set, (documentListeners.get(set) ?? new Set()).add(port));
+	let job = documentJobs.get(set);
+	if (!job) {
+		job = saveDocumentSet(set).finally(() => {
+			documentJobs.delete(set);
+			documentListeners.delete(set);
+		});
+		documentJobs.set(set, job);
+	}
+	return job;
+}
+
+/** Removes a set's copies, except those another kept set also holds. */
+async function removeDocumentSet(set: DocumentSet): Promise<void> {
+	const cache = await caches.open(documentsCacheName);
+	const kept = (await readSets(cache, keptDocumentsKey)).filter((item) => item !== set);
+	await writeSets(cache, keptDocumentsKey, kept);
+	await writeSets(cache, pendingDocumentsKey, (await readSets(cache, pendingDocumentsKey)).filter((item) => item !== set));
+	const stillWanted = new Set<string>();
+	for (const other of kept) {
+		for (const [path] of (await documentList(cache, other, false))?.files ?? []) stillWanted.add(path);
+	}
+	const list = await documentList(cache, set, false);
+	for (const [path] of list?.files ?? []) {
+		if (!stillWanted.has(path)) await cache.delete(path);
+	}
+	await cache.delete(documentListKey(set));
+}
+
+/**
+ * Deletes every saved copy that the new build no longer lists, or lists with other content, as the
+ * new build installs: a nation's request to remove a document reaches saved copies on the reader's
+ * next visit online (charter, commitment 6). Nothing is deleted unless every kept set's new list
+ * could be read. The kept sets are marked unfinished, so the next page load saves their new copies.
+ */
+async function removeWithdrawnDocuments(): Promise<void> {
+	try {
+		if (!(await caches.has(documentsCacheName))) return;
+		const cache = await caches.open(documentsCacheName);
+		const kept = await readSets(cache, keptDocumentsKey);
+		const listed = new Map<string, string>();
+		for (const set of kept) {
+			const response = await fetch(listAddress(set), { cache: 'no-store' });
+			if (response.status === 404) continue;
+			if (!response.ok) return;
+			// The new build's list is not kept yet: the old version, still in charge, reads the old one.
+			for (const [path, , fingerprint] of ((await response.json()) as DocumentSetList).files) listed.set(path, fingerprint);
+		}
+		for (const request of await cache.keys()) {
+			const path = new URL(request.url).pathname;
+			if (path.startsWith('/__')) continue;
+			const saved = await cache.match(request);
+			if (listed.get(path) !== saved?.headers.get(fingerprintHeader)) await cache.delete(request);
+		}
+		await writeSets(cache, pendingDocumentsKey, kept);
+	} catch {
+		// Offline or storage refused: tried again with the next build.
+	}
+}
+
+/** A copy of a document: the saved one if the reader saved it, else from the network. */
+async function copyResponse(request: Request): Promise<Response> {
+	const path = new URL(request.url).pathname;
+	if (await caches.has(documentsCacheName)) {
+		const saved = await (await caches.open(documentsCacheName)).match(path);
+		if (saved) return saved;
+	}
+	return request.mode === 'navigate' ? networkOnly(request) : fetch(request);
+}
+
 function failure(error: unknown): WorkerReply {
 	const message = error instanceof Error ? error.message : String(error);
 	return { type: 'failed', message };
@@ -554,7 +776,22 @@ async function answer(request: WorkerRequest, port: MessagePort | undefined): Pr
 				await saveChangedPages();
 				const kept = await keptCollections(await caches.open(cacheName));
 				for (const id of kept) await runSave(id, port);
+				// Copies of documents are large, so only sets left unfinished are saved again here.
+				for (const set of await pendingSets()) await runDocumentSave(set, undefined).catch(() => undefined);
 				break;
+			}
+			case 'documents-status':
+			case 'documents-save':
+			case 'documents-remove': {
+				const sets = request.type === 'documents-status' ? request.sets.filter(isDocumentSet) : [request.set];
+				if (request.type === 'documents-save' && isDocumentSet(request.set)) {
+					await runDocumentSave(request.set, port);
+				}
+				if (request.type === 'documents-remove' && isDocumentSet(request.set)) {
+					await removeDocumentSet(request.set);
+				}
+				tell(port, { type: 'documents', status: await documentsStatus(sets) });
+				return;
 			}
 		}
 		tell(port, { type: 'status', status: await status() });
@@ -589,6 +826,11 @@ async function networkOnly(request: Request): Promise<Response> {
 self.addEventListener('fetch', (event) => {
 	const url = new URL(event.request.url);
 	if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
+	// A saved copy of a document answers offline; any other copy comes from the network.
+	if (url.pathname.startsWith('/copies/') && !url.pathname.startsWith('/copies/list') && !url.pathname.startsWith('/copies/offline')) {
+		event.respondWith(copyResponse(event.request));
+		return;
+	}
 	if (isNeverCached(url.pathname)) {
 		// Never saved, but a page opened offline still gets the site's own
 		// offline page rather than the browser's error page.

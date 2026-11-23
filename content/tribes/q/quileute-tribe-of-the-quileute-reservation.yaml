@@ -165,6 +165,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quileute Tribe of the Quileute Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: Listed as "Quileute Tribe".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Quileute Tribe of the Quileute Reservation, Washington" among organizations under
@@ -701,6 +709,40 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: implementation-grant
+  detail: Received a Justice Department Tribal Jurisdiction Program grant (fiscal year 2024) for special Tribal criminal jurisdiction. These grants also fund planning, so the grant alone does not show that the nation exercises the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Appendix D (PDF p.53)
+  note: Listed as "QUILEUTE INDIAN TRIBE OF THE QUILEUTE INDIAN RESERVATION".
+treaties:
+- title: Treaty with the Quinaielt, etc., 1855
+  signed: '1855-07-01'
+  statutes_at_large: 12 Stat. 971
+  kappler:
+    volume: 2
+    page: 719
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-quinaielt-etc-1855-0719
+  signatory: Quileute
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 719 (Treaty with the Quinaielt, etc., 1855; Kappler header "July 1, 1855. Jan. 25, 1856. | 12 Stats., 971. | Ratified Mar. 8, 1859. | Proclaimed, Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Quileute (La Push) Reserve, Washington
+  method: executive-order
+  instrument: Exec. Order of Feb. 19, 1889, 1 Kappler 923
+  date: '1889-02-19'
+  detail: First set aside
+  source: executive-order-1889-02-19-quillehute-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 923
+  note: 'The instrument reads: “withdrawn from sale and settlement and set apart for the permanent use and occupation of the Quillehute Indians”. Quillehute = Quileute. The 1873 Quinaielt order also named the Quillehute among the tribes for whom that reserve was set apart, but the Quileute Reservation proper at La Push dates from this order.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

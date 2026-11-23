@@ -232,6 +232,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Umatilla Indian Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Confederated Tribes of the Umatilla Indian Reservation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Umatilla Indian Reservation (2005)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Umatilla Reservation in Oregon) (approved 1949) states it was adopted under Act
@@ -1076,6 +1084,31 @@ jurisdiction:
   verification: read-in-full
   as_of: '2011'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+treaties:
+- title: Treaty with the Wallawalla, Cayuse, etc., 1855
+  signed: '1855-06-09'
+  statutes_at_large: 12 Stat. 945
+  kappler:
+    volume: 2
+    page: 694
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wallawalla-cayuse-etc-1855-0694
+  signatory: Walla Walla; Cayuse; Umatilla
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 694 (Treaty with the Wallawalla, Cayuse, etc., 1855; Kappler header "June 9, 1855. | 12 Stats., 945. | Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Confederated Tribes of the Umatilla Indian Reservation (Umatilla, Cayuse, Walla Walla) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Umatilla Indian Reservation, Oregon
+  method: treaty
+  instrument: Treaty with the Walla-Wallas, Cayuses, and Umatilla, June 9, 1855, art. I, 12 Stat. 945, 946
+  date: '1855-06-09'
+  detail: First set aside
+  source: treaty-with-the-wallawalla-cayuse-etc-1855
+  confidence: high
+  verification: read-in-full
+  locator: 12 Stat. 946
+  note: 'The instrument reads: “shall be set apart as a residence for said Indians”. Article I cedes the country and sets apart the described tract "shall be held and regarded as an Indian reservation" beginning on the Umatilla River.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

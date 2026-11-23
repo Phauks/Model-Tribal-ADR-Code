@@ -36,6 +36,7 @@ jobs:
     outputs:
       site: ${{ steps.decide.outputs.site }}
       every_size: ${{ steps.decide.outputs.every_size }}
+      scan_engine: ${{ steps.decide.outputs.scan_engine }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -47,6 +48,7 @@ jobs:
           if [ -z "$BASE" ]; then
             echo "site=true" >> "$GITHUB_OUTPUT"
             echo "every_size=true" >> "$GITHUB_OUTPUT"
+            echo "scan_engine=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           files=$(git diff --name-only "$BASE"...HEAD)
@@ -76,8 +78,13 @@ jobs:
           # pull requests do it only when they change the print pipeline.
           every_size=false
           if grep -q '^pdf/' <<< "$files"; then every_size=true; fi
+          # The scan engine (site/scanner/engine, Rust) is tested only when it
+          # or this workflow changes.
+          scan_engine=false
+          if grep -q -e '^site/scanner/engine/' -e '^\.github/workflows/checks\.yml$' <<< "$files"; then scan_engine=true; fi
           echo "site=$site" >> "$GITHUB_OUTPUT"
           echo "every_size=$every_size" >> "$GITHUB_OUTPUT"
+          echo "scan_engine=$scan_engine" >> "$GITHUB_OUTPUT"
 
   text:
     name: Text encoding
@@ -161,6 +168,8 @@ jobs:
       - run: npm ci
       - name: Type check
         run: npm run check
+      - name: Type check the scanner Worker (scanner/worker.ts)
+        run: npx tsc -p scanner/tsconfig.json
       - name: Unit tests
         run: npm test
       - name: Colors come only from design-tokens.json
@@ -238,6 +247,8 @@ jobs:
       - run: npm test
       - if: needs.changes.outputs.every_size == 'true'
         run: npm run build:every-size
+      # Covers for one size, both bindings, checked against Lulu's cover rules.
+      - run: npm run build:editions -- --specimen --trim us-trade
       - run: npm run build
       - uses: actions/upload-artifact@v4
         if: always()
@@ -247,7 +258,47 @@ jobs:
             pdf/output/**/interior.pdf
             pdf/output/**/report.json
             pdf/output/every-size/summary.md
+            pdf/output/editions/**/cover.pdf
           if-no-files-found: ignore
+
+  scan-engine:
+    # The malware scan engine (site/SCANNING.md): formatting, lints and tests
+    # of the Rust service. ClamAV itself is tested in the image check below.
+    name: Scan engine
+    needs: changes
+    if: needs.changes.outputs.scan_engine == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: site/scanner/engine
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            site/scanner/engine/target
+          key: scan-engine-${{ runner.os }}-${{ hashFiles('site/scanner/engine/Cargo.lock') }}
+      - run: rustup update stable --no-self-update && rustup default stable && rustup component add rustfmt clippy
+      - run: cargo fmt --check
+      - run: cargo clippy --locked --all-targets -- -D warnings
+      - run: cargo test --locked
+
+  scan-engine-image:
+    # Builds the engine's image and checks that ClamAV finds the EICAR test
+    # file and passes a plain one. Not required by "All checks": it
+    # downloads ClamAV's signatures, and that download can be refused for a
+    # while when many builds ask at once.
+    name: Scan engine image (EICAR)
+    needs: changes
+    if: needs.changes.outputs.scan_engine == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - run: bash site/scanner/engine/tests/eicar_e2e.sh
 
   prose:
     name: Prose flags
@@ -269,7 +320,7 @@ jobs:
   all-checks:
     name: All checks
     if: always()
-    needs: [changes, text, records, lint, prose, site, accessibility, print]
+    needs: [changes, text, records, lint, prose, site, accessibility, print, scan-engine]
     runs-on: ubuntu-latest
     permissions:
       statuses: write

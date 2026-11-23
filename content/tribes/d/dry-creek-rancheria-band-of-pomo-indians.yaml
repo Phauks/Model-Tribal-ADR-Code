@@ -158,6 +158,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Dry Creek Rancheria Band of Pomo Indians, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Dry Creek Rancheria Band of Pomo Indians, California".
 governance:
 - aspect: form
   value: Articles of Association

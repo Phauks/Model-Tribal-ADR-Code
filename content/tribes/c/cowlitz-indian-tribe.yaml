@@ -196,6 +196,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cowlitz Indian Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Cowlitz Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Cowlitz Indian Tribe (2011)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: governing-body
   value: Tribal Council

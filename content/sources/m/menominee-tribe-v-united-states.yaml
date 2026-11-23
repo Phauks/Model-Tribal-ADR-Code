@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Thurgood Marshall", vote: none}
   source: https://api.oyez.org/cases/1967/187
   checked: '2026-11-22'
+courtlistener:
+  cluster: 107703
+  citation: "391 U.S. 404"
+  case_name: "Menominee Tribe of Indians v. United States"
+  link: https://www.courtlistener.com/opinion/107703/menominee-tribe-of-indians-v-united-states/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

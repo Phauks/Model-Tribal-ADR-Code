@@ -1,7 +1,7 @@
 profile: content/tribes/k/kaw-nation.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -69,5 +69,16 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#kaw-nation-oklahoma-amendment-2022-01-12#i1
-next_steps: Read the scanned amendment listed 2002-08-21 (https://www.nigc.gov/wp-content/uploads/2025/03/kawnationofok-Ordapproval08212002.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/kawnationofok-Ordapproval08212002.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF page 1 of 1 of this amendment listed 2002-08-21 as page images
+    (it has no text layer) and found no dispute procedure (the only page is the NIGC letter, which names
+    no patron dispute, complaint, grievance or hearing procedure; the ordinance text is not in the scan).
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

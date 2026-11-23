@@ -28,5 +28,6 @@ rights:
   redistribution: true
 found_in:
   - 2026-11-22-census-land-areas-map
+  - 2026-11-23-map-engine-maplibre
 notes: >-
   The website's map draws the "Land areas" view from this file, simplified to about 3 percent of its points (site/geography/census-land-areas-2020.json, written by site/tools/fetch-census-land-areas.mjs). Hawaiian home lands are left out. The 2020 vintage matches the Census area codes that nation records cite in `census_areas`. The file has 704 areas; 629 are drawn.

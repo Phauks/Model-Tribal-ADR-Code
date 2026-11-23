@@ -195,6 +195,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Zuni Tribe of the Zuni Reservation, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Zuni Pueblo". Also listed under the same Area in: indian-health-service-self-governance-tribes. Service unit named for Zuni and Ramah. The Self-Governance list shows the Pueblo of Zuni entered a compact in 2025, so the current operator may now be the Pueblo. Also on the Indian Health Service Self-Governance Tribes list (Pueblo of Zuni (2025)); the list does not say which service unit or programs the compact covers.'
+- area: Albuquerque
+  service_unit: Zuni-Ramah Service Unit
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Zuni-Ramah SU (ZRSU) – IHS".'
+  operator: indian-health-service
 governance:
 - aspect: form
   value: Constitution approved under the Act of June 18, 1934 (48 Stat. 984), as amended
@@ -701,6 +718,50 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+land_establishment:
+- land_area: Zuni Pueblo Reserve, New Mexico
+  method: executive-order
+  instrument: Exec. Order of Mar. 16, 1877, 1 Kappler 880
+  date: '1877-03-16'
+  detail: First set aside
+  source: executive-order-1877-03-16-zuni-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 880
+  note: 'The instrument reads: “withdrawn from sale and set apart as a reservation for the use and occupancy of the Zuni Pueblo Indians”. Enlarged and defined by Exec. Orders of May 1, 1883 and Mar. 3, 1885 (1 Kappler 880); the Zuni Pueblo grant itself was confirmed under the Act of Dec. 22, 1858 (11 Stat. 374, not read).'
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

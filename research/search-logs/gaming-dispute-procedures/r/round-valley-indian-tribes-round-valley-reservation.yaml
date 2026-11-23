@@ -1,7 +1,7 @@
 profile: content/tribes/r/round-valley-indian-tribes-round-valley-reservation.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -45,7 +45,44 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2012-02-08 has no text layer on most pages (25 of 25 pages have no text
     layer; no OCR available).
-next_steps: Read the scanned amendment listed 2006-08-01 (https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-roundvalleyamend080106.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2009-04-13 (https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-roundvalleyordappr41309.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2012-02-08 (https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-02082012ltrtoChairwomanLoriRayRoundValIndTrbGam.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-02082012ltrtoChairwomanLoriRayRoundValIndTrbGam.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-25 of 25 of this amendment listed 2012-02-08 as page
+    images (it has no text layer) and recorded 3 procedure(s): employee-grievance, other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#round-valley-indian-tribes-amendment-2012-02-08#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#round-valley-indian-tribes-amendment-2012-02-08#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#round-valley-indian-tribes-amendment-2012-02-08#p3
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-roundvalleyordappr41309.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-4 of 4 of this amendment listed 2009-04-13 as page images
+    (it has no text layer) and found no dispute procedure (the amendment changes only the Gaming Board's
+    terms in Section 7(B); the other pages are the NIGC approval letter, transmittal and resolution).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/roundvalleyindiantribe-roundvalleyamend080106.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-26 of 26 of this amendment listed 2006-08-01 as page
+    images (it has no text layer) and recorded 3 procedure(s): employee-grievance, other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#round-valley-indian-tribes-amendment-2006-08-01#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#round-valley-indian-tribes-amendment-2006-08-01#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#round-valley-indian-tribes-amendment-2006-08-01#p3
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

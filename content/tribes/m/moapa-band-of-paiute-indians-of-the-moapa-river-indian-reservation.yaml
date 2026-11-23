@@ -169,6 +169,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Moapa Band of Paiute Indians".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Moapa Band of Paiute Indians" among organizations under constitutions approved
@@ -533,6 +541,25 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: The 1975 retrocession notice lists only the areas over which Nevada had acquired jurisdiction; Fallon, Walker River, Duck Valley, Fort McDermitt, Moapa, Las Vegas, Summit Lake, Yerington, Fort Mojave and Timbisha lands are not on it, and the notice does not say why. (40 Fed. Reg. 27,501.)
+  source: federal-register-1975-nevada-retrocession
+  confidence: low
+  verification: inferred
+  locator: 40 Fed. Reg. at 27,501
+  note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+land_establishment:
+- land_area: Moapa River (Muddy Valley) Reserve, Nevada
+  method: executive-order
+  instrument: Exec. Order of Mar. 12, 1873, 1 Kappler 866
+  date: '1873-03-12'
+  detail: First set aside
+  source: executive-order-1873-03-12-moapa-river-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 866
+  note: 'The instrument reads: “the following-described lands in the southeastern part of Nevada are hereby set apart for the use of the Indians in that locality”. Cancelled and replaced by the Exec. Order of Feb. 12, 1874 (1 Kappler 867); Kappler also cites act of Mar. 13, 1875 (18 Stat. 445).'
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

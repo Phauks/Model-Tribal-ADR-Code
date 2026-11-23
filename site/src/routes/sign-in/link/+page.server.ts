@@ -1,3 +1,4 @@
+import { deviceLabel } from '#lib/device-label.ts';
 import { fail, redirect } from '@sveltejs/kit';
 import { linkStillWorks, useLink, verifiedAccount } from '#lib/server/accounts.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
@@ -36,7 +37,7 @@ export const actions: Actions = {
 			redirect(303, '/sign-in/refused');
 		}
 		const account = await verifiedAccount(environment.database, result.email);
-		const finished = await finishSignIn(environment.database, cookies, account, 'link', returnTo, environment.LEAD_AUTHOR_EMAIL);
+		const finished = await finishSignIn(environment.database, cookies, account, 'link', returnTo, environment.LEAD_AUTHOR_EMAIL, deviceLabel(request.headers.get('user-agent')));
 		if (finished.outcome === 'refused') {
 			cookies.set(refusalCookie, finished.reason, { path: '/sign-in', maxAge: 300, httpOnly: true, sameSite: 'lax' });
 			redirect(303, '/sign-in/refused');

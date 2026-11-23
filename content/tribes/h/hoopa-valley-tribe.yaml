@@ -187,6 +187,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoopa Valley Tribe, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: 'Listed as "Hoopa Valley Tribe, California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Hoopa Valley Tribe (1994)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: form
   value: Constitution and Bylaws approved under Article IX of original constitution
@@ -725,6 +733,27 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+land_establishment:
+- land_area: Hoopa Valley Reservation, California
+  method: other
+  instrument: Proclamation of Austin Wiley, Superintendent of Indian Affairs for California, Aug. 21, 1864 (under Act of Apr. 8, 1864, 13 Stat. 39), 1 Kappler 815
+  date: '1864-08-21'
+  detail: First set aside
+  source: proclamation-1864-08-21-hoopa-valley-reservation
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 815
+  note: 'The instrument reads: “I have this day located an Indian reservation ... Settlers in Hoopa Valley are hereby notified”. Located by the California Superintendent under the Act of Apr. 8, 1864, 13 Stat. 39 (which authorized up to four reservations), "subject to the approval of the President." The day is legible in the earlier Kappler print (Fort Gaston, Aug. 21, 1864); the 1904 print''s OCR gives "August 1861" (the year is 1864). Boundaries were fixed by Exec. Order of June 23, 1876. Page 815 per the running page number.'
+- land_area: Hoopa Valley Indian Reservation, California (89,572.43 acres)
+  method: executive-order
+  instrument: Exec. Order of June 23, 1876, 1 Kappler 815-816
+  date: '1876-06-23'
+  detail: Later change
+  source: executive-order-1876-06-23-hoopa-valley-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 815
+  note: 'The instrument reads: “declared to be the exterior boundaries of Hoopa Valley Indian Reservation”. Confirms the Hoopa Valley Reservation as one of the reservations authorized by the Act of Apr. 8, 1864 (13 Stat. 39) and fixes its boundaries. Extended along the Klamath River by Exec. Order of Oct. 16, 1891.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

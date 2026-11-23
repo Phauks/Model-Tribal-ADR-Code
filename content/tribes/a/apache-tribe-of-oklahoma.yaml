@@ -173,6 +173,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Apache Tribe of Oklahoma". Also listed under the same Area in: indian-health-service-direct-service-tribes. Page lists tribal names generically ("Delaware", "Apache", "Wichita"); matched to the roster nation of that name. Operator from Direct Service Tribes list.'
+- area: Oklahoma City
+  service_unit: Lawton Service Unit (Lawton Indian Hospital)
+  source: indian-health-service-oklahoma-city-lawton-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "25,000 members of the Caddo, Comanche, Delaware, Fort Sill Apache, Kiowa, Apache, and Wichita tribes are concentrated".'
+- area: Oklahoma City
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Apache Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
 - aspect: form
   value: Organized by constitution
@@ -506,6 +530,55 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+treaties:
+- title: Treaty with the Comanche, Kiowa, and Apache, 1853
+  signed: '1853-07-27'
+  statutes_at_large: 10 Stat. 1013
+  kappler:
+    volume: 2
+    page: 600
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-kiowa-and-apache-1853-0600
+  signatory: Apache
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 600 (Treaty with the Comanche, Kiowa, and Apache, 1853; Kappler header "July 27, 1853. | 10 Stats., 1013. | Ratified Apr. 12, 1854. | Proclaimed Feb. 12, 1855 [4].")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Apache of these treaties = Kiowa-Apache (Plains Apache) to Apache Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Apache, Cheyenne, and Arapaho, 1865
+  signed: '1865-10-17'
+  statutes_at_large: 14 Stat. 713
+  kappler:
+    volume: 2
+    page: 891
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-apache-cheyenne-and-arapaho-1865-0891
+  signatory: Apache
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 891 (Treaty with the Apache, Cheyenne, and Arapaho, 1865; Kappler header "Oct. 17, 1865. | 14 Stat., 713. | Ratified May 22, 1866. | Proclaimed May 26, 1866.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Apache of these treaties = Kiowa-Apache (Plains Apache) to Apache Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kiowa, Comanche, and Apache, 1867
+  signed: '1867-10-21'
+  statutes_at_large: 15 Stat. 589
+  kappler:
+    volume: 2
+    page: 982
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-comanche-and-apache-1867-0982
+  signatory: Apache
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 982 (Treaty with the Kiowa, Comanche, and Apache, 1867; Kappler header "Oct. 21, 1867. | 15 Stats., 589. | Ratified, July 25, 1868. | Proclaimed Aug. 25 1868.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Apache of these treaties = Kiowa-Apache (Plains Apache) to Apache Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

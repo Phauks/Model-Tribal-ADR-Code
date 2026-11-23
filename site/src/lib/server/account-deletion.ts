@@ -5,18 +5,21 @@
  * to keep it.
  *
  * What goes: the account, its sessions and unused sign-in codes, and the
- * contributor profile with every confirmed version. What stays: a workspace
+ * contributor profile with every confirmed version and the profile picture. What stays: a workspace
  * member's row in `people` (reviews, drafts and the sealed activity log point
  * to it), with the email address and sign-in removed and the name kept or
  * replaced; and signed forms, which are records of consent and are changed or
- * withdrawn through the change or withdrawal request.
+ * withdrawn through the change or withdrawal request. Files the person sent
+ * are deleted unless they were filed or kept for reference (docs/uploads.md,
+ * "Deleting").
  */
-import type { D1Database, D1PreparedStatement } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { creditOf } from '#lib/contributors.ts';
 import type { SignedInAccount } from './contributor-profiles.ts';
 import { profileBySubject } from './contributor-profiles.ts';
 import { eventStatement } from './events.ts';
 import { newIdentifier, now } from './identifiers.ts';
+import { forgetAccountUploads } from './uploads.ts';
 
 /** The name shown on work by someone who deleted their account and chose to remove their name. */
 export const formerContributorName = 'Former contributor';
@@ -26,7 +29,8 @@ export type DeletionResult = { outcome: 'deleted' } | { outcome: 'last-lead-auth
 export async function deleteAccount(
 	database: D1Database,
 	account: SignedInAccount,
-	keepName: boolean
+	keepName: boolean,
+	bucket?: R2Bucket
 ): Promise<DeletionResult> {
 	const person = await database
 		.prepare(`SELECT identifier, role FROM people WHERE sign_in_subject = ? AND status != 'removed'`)
@@ -103,6 +107,9 @@ export async function deleteAccount(
 			})
 		);
 	}
+	// Before the account row goes, because uploads point to it.
+	if (bucket) await forgetAccountUploads(database, bucket, account.subject);
 	await database.batch(statements);
+	if (bucket && profile?.pictureKey) await bucket.delete(profile.pictureKey);
 	return { outcome: 'deleted' };
 }

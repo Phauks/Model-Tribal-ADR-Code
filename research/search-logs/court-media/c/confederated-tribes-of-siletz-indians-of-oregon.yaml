@@ -1,0 +1,70 @@
+profile: content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Confederated Tribes of Siletz peacemaking video
+  outcome: not-found
+  reason: Results were Oregon state files, Siletz history pages and a Siletz tribal court podcast page; no peacemaking video from the Tribe was shown.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Siletz tribal court youtube
+  outcome: found
+  reason: Search surfaced a Siletz podcast episode page on the Tribe's own site about the tribal court; no YouTube result from the Tribe appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/court-and-justice/judges
+  query: 'Court judges page: embedded video, photos, podcast'
+  outcome: not-found
+  reason: The page has no embedded video, photos or podcast; it mentions a November 7, 2020 General Council video without linking to it.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ctsi.nsn.us/
+  query: 'Home page: court links and media'
+  outcome: not-found
+  reason: The home page showed no court video, photo gallery or podcast link and no rights statement.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://ctsi.nsn.us/tribal-government/court-justice/
+  query: 'Court and Justice page: video or podcast links'
+  outcome: error
+  reason: 'Not opened: the page-fetch tool had reached its hourly limit.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Siletz Tribes youtube channel court justice video
+  outcome: not-found
+  reason: No YouTube channel for the Siletz Tribes appeared; the only court-related media result was the podcast episode page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: podcast-site
+  address: https://ctsi.nsn.us/podcast/episode-eleven-rebekah-goulet-tribal-court/
+  query: podcast episode page, rights line
+  outcome: blocked
+  reason: Fetched with curl. Returned a Cloudflare 'Just a moment' check page (HTTP 403); not bypassed.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://ctsi.nsn.us/tribal-government/court-justice/
+  query: Court and Justice page
+  outcome: blocked
+  reason: Fetched with curl. Returned the same Cloudflare check page (HTTP 403).
+next_steps: A person should open the podcast episode page and the Court and Justice page by hand in a browser (both sit behind a Cloudflare check) to read the rights line and see whether a transcript exists. The Oregon courts file of tribal court videos at https://www.courts.oregon.gov/programs/jcip/EducationMaterials/SiteAssets/Lists/ModelCourt2020/NewForm/Tribal%20%20Videos.pdf may list Siletz court videos. Ask the Tribe whether its General Council video from November 7, 2020 is public. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.
