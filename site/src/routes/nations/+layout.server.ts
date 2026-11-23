@@ -7,7 +7,8 @@ export const load: LayoutServerLoad = () => ({
 	outline: {
 		items: [
 			{ label: 'Directory', link: '/nations' },
-			{ label: 'Map', link: '/nations/map' }
+			{ label: 'Map', link: '/nations/map' },
+			{ label: 'Find recourse', link: '/nations/recourse' }
 		]
 	} satisfies PageOutline as PageOutline
 });
