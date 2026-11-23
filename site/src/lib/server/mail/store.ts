@@ -278,6 +278,10 @@ export interface MessageDetail {
 	text: string;
 	hasHtml: boolean;
 	spamReason: string | null;
+	/** Whether the message came from a mailing list that says how to unsubscribe. */
+	fromList: boolean;
+	/** Whether a copy of the whole message is kept, so it can be exported. */
+	hasCopy: boolean;
 	automatic: boolean;
 	carrier: string | null;
 	sentByName: string | null;
@@ -382,6 +386,8 @@ export async function getThread(context: MailContext, identifier: string, person
 			text: String(row.text_body ?? ''),
 			hasHtml: row.html_key !== null,
 			spamReason: (row.spam_reason as string | null) ?? null,
+			fromList: row.direction === 'in' && Boolean(row.list_unsubscribe),
+			hasCopy: row.raw_key !== null,
 			automatic: row.automatic === 1,
 			carrier: (row.carrier as string | null) ?? null,
 			sentByName: (row.sent_by_name as string | null) ?? null,

@@ -19,6 +19,7 @@ import { actionStatement, bucketKeys, currentTime, type MailContext } from './co
 import { isProjectAddress } from './settings.ts';
 import { factsFor, ruleAddressForms, runRules } from './rules.ts';
 import { storeSentFile } from '#lib/server/file-scans.ts';
+import { blockedPattern } from './senders.ts';
 import { suppress } from './suppressions.ts';
 import { readToken, unsubscribeAddressToken } from './tokens.ts';
 
@@ -269,13 +270,15 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	const ownNotice = header(email, noticeHeader.toLowerCase()) !== null;
 	const report = deliveryReport(email, arriving.from);
 	const automatic = ownNotice || report !== null || isAutomatic(email);
-	const spam = report ? null : spamReason(email);
+	// A blocked sender's mail is kept, in Spam, in a conversation of its own (src/lib/server/mail/senders.ts).
+	const blocked = report ? null : await blockedPattern(context, from.email);
+	const spam = report ? null : blocked ? `You blocked ${blocked.startsWith('@') ? `mail from ${blocked}` : 'this sender'}.` : spamReason(email);
 	const references = [...messageIds(email.references), ...messageIds(email.inReplyTo), ...(report?.originalIds ?? [])];
 	const projectAddress = cleanAddress(arriving.to) ?? settings.defaultAddress;
 	// The other side of the conversation: whoever wrote, or, for a copy of our own mail, whoever it went to.
 	const counterpart = isProjectAddress(settings, (replyTo ?? from).email) ? (to.find((item) => !isProjectAddress(settings, item.email)) ?? from) : (replyTo ?? from);
 	const normalized = normalizeSubject(subject);
-	const existing = await findConversation(context, references, normalized, report ? null : counterpart.email, at);
+	const existing = blocked ? null : await findConversation(context, references, normalized, report ? null : counterpart.email, at);
 	const threadIdentifier = existing?.identifier ?? crypto.randomUUID();
 	const nation = existing?.nation_identifier ?? (await nationForAddress(context, counterpart.email));
 	const stamp = at.toISOString();
@@ -354,8 +357,8 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 			.prepare(
 				`INSERT INTO mail_messages (identifier, thread_identifier, direction, status, message_id, in_reply_to, reference_ids,
 				 from_address, from_name, to_list, cc_list, reply_to, subject, text_body, snippet, html_key, raw_key, size, spam_reason,
-				 automatic, received_at, created_at)
-				 VALUES (?, ?, 'in', 'received', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+				 automatic, list_unsubscribe, list_unsubscribe_post, received_at, created_at)
+				 VALUES (?, ?, 'in', 'received', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 			)
 			.bind(
 				identifier,
@@ -376,6 +379,8 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 				raw.byteLength,
 				spam,
 				automatic ? 1 : 0,
+				header(email, 'list-unsubscribe')?.slice(0, 2000) ?? null,
+				header(email, 'list-unsubscribe-post')?.slice(0, 200) ?? null,
 				email.date ? new Date(email.date).toISOString() : stamp,
 				stamp
 			),
