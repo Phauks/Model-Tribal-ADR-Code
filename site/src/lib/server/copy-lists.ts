@@ -134,7 +134,13 @@ function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, Do
 	const federal: DocumentFile[] = [];
 	const byNation = new Map<string, DocumentFile[]>();
 	for (const copy of publicCopies()) {
-		const file: DocumentFile = [copyPath(copy), copy.bytes, copy.sha256.slice(0, 16)];
+		const file: DocumentFile = [
+			copyPath(copy),
+			copy.bytes,
+			copy.sha256,
+			copy.title,
+			copy.links.at(-1) ?? copy.links[0] ?? ''
+		];
 		if (copy.topic !== 'constitutions' && copy.topic !== 'tribal-law') {
 			federal.push(file);
 			continue;

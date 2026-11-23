@@ -16,7 +16,7 @@
 		This site keeps its own copy of many documents it cites, so they open quickly and stay available if the site that published them moves or goes down. They include federal statutes and Federal Register notices, which anyone may share (17 U.S.C. § 105), and Native nations’ constitutions and laws.
 	</p>
 	<p>
-		The address a document was published at is still the source cited. Each copy is byte for byte the file found there on the date shown, and its SHA-256 lets anyone check that. Journal articles, books and other works under copyright are not copied here.
+		The address a document was published at is still the source cited. Each copy is byte for byte the file found there on the date shown, and its SHA-256 lets anyone check that: <a href="/verify">Verify a file</a> does it in your browser. Journal articles, books and other works under copyright are not copied here.
 	</p>
 	<p>
 		A nation that wants one of its documents taken down, or a part of it redacted, can ask with the link beside it. The copy is taken down within seven days, before the request is decided (the same rule as any request to remove material).

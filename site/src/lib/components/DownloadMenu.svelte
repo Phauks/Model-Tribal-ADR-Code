@@ -18,6 +18,7 @@
 	import FileSpreadsheet from '@lucide/svelte/icons/file-spreadsheet';
 	import FileText from '@lucide/svelte/icons/file-text';
 	import HardDriveDownload from '@lucide/svelte/icons/hard-drive-download';
+	import FileCheck from '@lucide/svelte/icons/file-check';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import Quote from '@lucide/svelte/icons/quote';
 
@@ -189,6 +190,15 @@
 					<span class="choice">
 						<span class="choice-name">All downloads</span>
 						<span class="choice-hint">The book and the data behind the site</span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="/verify" onclick={() => close()}>
+					<FileCheck size={20} strokeWidth={1.75} />
+					<span class="choice">
+						<span class="choice-name">Verify a file</span>
+						<span class="choice-hint">Check that a downloaded file is the one published here</span>
 					</span>
 				</a>
 			</li>

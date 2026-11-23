@@ -34,6 +34,8 @@ declare global {
 	interface WorkerEnvironment {
 		database: D1Database;
 		sourceDocuments: R2Bucket;
+		/** The built site's own files, set by @sveltejs/adapter-cloudflare (the ZIP downloads read the copy lists from it). */
+		ASSETS?: { fetch(request: Request | string): Promise<Response> };
 		requestFormLimit?: RateLimit;
 		workspaceChangeLimit?: RateLimit;
 		signInLimit?: RateLimit;
