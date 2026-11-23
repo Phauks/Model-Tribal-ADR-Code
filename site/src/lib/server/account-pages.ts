@@ -134,7 +134,7 @@ export async function deleteAccountSettingsCopy(database: D1Database, accountIde
  * under This device.
  */
 export async function accountDataExport(database: D1Database, account: SignedInAccount): Promise<Record<string, unknown>> {
-	const [accountRow, person, profile, versions, follows, followSettings, settingsCopy, sessions, uploads, eventRegistrations] = await Promise.all([
+	const [accountRow, person, profile, versions, follows, followSettings, settingsCopy, sessions, uploads, eventRegistrations, sponsorships, eventRooms] = await Promise.all([
 		database
 			.prepare(
 				'SELECT email, email_verified_at, password_changed_at, created_at, last_signed_in_at, password_hash IS NOT NULL AS has_password FROM accounts WHERE identifier = ?'
@@ -182,6 +182,25 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 				 WHERE r.account_identifier = ? ORDER BY r.registered_at`
 			)
 			.bind(account.subject)
+			.all<Record<string, unknown>>(),
+		// Sponsorships the person manages (docs/sponsorship.md). The organization's own details are on its Sponsorship page.
+		database
+			.prepare(
+				`SELECT sponsors.name, sponsor_managers.added_at FROM sponsor_managers
+				 JOIN sponsors ON sponsors.identifier = sponsor_managers.sponsor_identifier
+				 WHERE sponsor_managers.account_identifier = ? ORDER BY sponsor_managers.added_at`
+			)
+			.bind(account.subject)
+			.all<{ name: string; added_at: string }>(),
+		// Event video rooms joined, and what was said about recording (migrations/20261123T0452_add_event_video_rooms.sql).
+		database
+			.prepare(
+				`SELECT e.title AS event, p.role, p.told_recording, p.told_at, p.last_joined_at
+				 FROM calendar_room_people p
+				 JOIN calendar_events e ON e.identifier = p.event_identifier
+				 WHERE p.account_identifier = ? ORDER BY p.told_at`
+			)
+			.bind(account.subject)
 			.all<Record<string, unknown>>()
 	]);
 	return {
@@ -210,6 +229,8 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 		})),
 		uploads: uploads.results,
 		eventRegistrations: eventRegistrations.results,
+		sponsorshipsYouManage: sponsorships.results.map((row) => ({ name: row.name, managerSince: row.added_at })),
+		eventRooms: eventRooms.results,
 		followedPages: follows.results,
 		emailAboutFollowedPages: followSettings ?? { email: 'daily' },
 		settingsOnEveryDevice: settingsCopy ?? null,

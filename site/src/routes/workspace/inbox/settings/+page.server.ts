@@ -16,6 +16,7 @@ import {
 	WritingError
 } from '#lib/server/mail/writing.ts';
 import { currentTime } from '#lib/server/mail/context.ts';
+import { blockSender, listBlocked, SenderError, unblockSender } from '#lib/server/mail/senders.ts';
 import { formText, requirePermission } from '#lib/server/workspace.ts';
 import { whenFromForm } from '../compose.ts';
 import type { Actions, PageServerLoad } from './$types';
@@ -29,11 +30,12 @@ export const prerender = false;
 export const load: PageServerLoad = async (event) => {
 	requirePermission(event, 'manage-mail');
 	const context = mailContext();
-	const [signatures, savedReplies, undoSeconds, away] = await Promise.all([
+	const [signatures, savedReplies, undoSeconds, away, blocked] = await Promise.all([
 		listSignatures(context),
 		listSavedReplies(context),
 		getUndoSeconds(context),
-		getAway(context)
+		getAway(context),
+		listBlocked(context)
 	]);
 	return {
 		addresses: context.settings.addresses,
@@ -43,6 +45,7 @@ export const load: PageServerLoad = async (event) => {
 		undoChoices: [...undoChoices],
 		away,
 		awayAnswering: awayAnswers(away, currentTime(context)),
+		blocked,
 		mergeFields: mergeFields.map((field) => ({ key: field.key, label: field.label }))
 	};
 };
@@ -52,7 +55,7 @@ async function attempt(section: string, work: () => Promise<string>) {
 	try {
 		return { section, done: await work() };
 	} catch (problem) {
-		if (problem instanceof WritingError) return fail(400, { section, problem: problem.message });
+		if (problem instanceof WritingError || problem instanceof SenderError) return fail(400, { section, problem: problem.message });
 		throw problem;
 	}
 }
@@ -94,6 +97,22 @@ export const actions: Actions = {
 			await setUndoSeconds(mailContext(), person.identifier, seconds);
 			return seconds ? `Mail now waits ${seconds} seconds before it goes, so it can be pulled back.` : 'Mail now goes at once, with no chance to undo.';
 		});
+	},
+	block: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const pattern = formText(form, 'pattern', 300) ?? '';
+		return attempt('blocked', async () => {
+			const blocked = await blockSender(mailContext(), person.identifier, pattern, { note: formText(form, 'note', 300) });
+			return `Blocked ${blocked}. New mail from ${blocked.startsWith('@') ? 'that domain' : 'that address'} goes straight to Spam.`;
+		});
+	},
+	unblock: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const pattern = formText(form, 'pattern', 300) ?? '';
+		await unblockSender(mailContext(), person.identifier, pattern);
+		return { section: 'blocked', done: `Unblocked ${pattern}. Mail already in Spam stays there until you move it.` };
 	},
 	away: async (event) => {
 		const person = requirePermission(event, 'manage-mail');

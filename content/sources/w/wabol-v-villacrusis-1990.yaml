@@ -30,6 +30,22 @@ citator:
   detail: >-
     No flag. Westlaw's current text is 958 F.2d 1450 (decided Feb. 20, 1990, as amended Mar. 16, 1992), which amends 908 F.2d 411. Read from the header of Trevor's Westlaw print, filed privately (bucket key westlaw/wabol-v-villacrusis-1990.pdf).
   checked: 2026-11-22
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22958%20F.2d%201450%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=958%20F.2d%201450
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=958%20F.2d%201450
 rights:
   status: no-permission-needed
   basis: us-government-work

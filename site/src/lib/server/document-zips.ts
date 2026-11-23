@@ -1,6 +1,6 @@
 /**
  * The ZIP downloads of the copies this site holds: the United States documents, or one nation's
- * constitutions and laws (site/DESIGN.md, section 10). Trevor asked on Nov. 23, 2026 for both.
+ * constitutions, laws and court opinions (site/DESIGN.md, section 10). Trevor asked on Nov. 23, 2026 for both.
  * Each ZIP holds the copies, a list of them with where each was published, and a note on what the
  * files are. Only copies on the build's list are read from the bucket; a copy the bucket lacks is
  * listed with its link instead.
@@ -30,7 +30,7 @@ export function documentsReadme(title: string, siteAddress: string, made: string
 		'',
 		`From the Model Tribal ADR Code website, ${siteAddress}, made ${made}.`,
 		'',
-		'These are the website’s own copies of documents it cites and is allowed to share: works of the United States government, and nations’ constitutions and laws the website shares until a nation asks it to remove one. documents.csv lists each file with its title, the address it was published at and its SHA-256.',
+		'These are the website’s own copies of documents it cites and is allowed to share: works of the United States government, and nations’ constitutions, laws and court opinions the website shares until a nation asks it to remove one. documents.csv lists each file with its title, the address it was published at and its SHA-256.',
 		'',
 		`To check that a file is the one the website published, unchanged, choose it at ${siteAddress}/verify, or compare its SHA-256 with documents.csv. SHA256SUMS.txt lists them in the form sha256sum -c reads (on Windows, Get-FileHash file.pdf; on a Mac, shasum -a 256 file.pdf; on Linux, sha256sum file.pdf).`,
 		'',

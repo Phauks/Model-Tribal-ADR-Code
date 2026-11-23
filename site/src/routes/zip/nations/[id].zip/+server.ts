@@ -1,5 +1,5 @@
 /**
- * One nation's constitutions and laws that this site holds, as a ZIP file, streamed from the
+ * One nation's constitutions, laws and court opinions that this site holds, as a ZIP file, streamed from the
  * private bucket (src/lib/server/document-zips.ts). Offered on the nation's page. Trevor asked for
  * it on Nov. 23, 2026.
  */
@@ -22,7 +22,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
 	if (response?.status === 404) error(404, 'This site holds no copies of that nation’s documents.');
 	if (!environment.sourceDocuments || !response?.ok) error(503, 'The documents cannot be gathered right now.');
 	const list = (await response.json()) as DocumentSetList;
-	const readme = documentsReadme(`${list.title}: constitutions and laws`, url.origin, citationDate(new Date()));
+	const readme = documentsReadme(`${list.title}: constitutions, laws and court opinions`, url.origin, citationDate(new Date()));
 	return new Response(documentsZip(list, environment.sourceDocuments, served, readme), {
 		headers: {
 			'content-type': 'application/zip',

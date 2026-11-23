@@ -2,6 +2,7 @@
 	// Settings for writing mail (site/MAIL.md, "Writing"): signatures, saved
 	// replies, the pause before mail goes, and the away message.
 	import { onMount } from 'svelte';
+	import Ban from '@lucide/svelte/icons/ban';
 	import CalendarOff from '@lucide/svelte/icons/calendar-off';
 	import MessageSquareText from '@lucide/svelte/icons/message-square-text';
 	import PenLine from '@lucide/svelte/icons/pen-line';
@@ -38,7 +39,7 @@
 </svelte:head>
 
 <h1>Inbox settings</h1>
-<p class="lead">How mail from the project inbox is written: a signature for each address, replies you give often, a pause to take a message back, and an away message. These are shared by everyone who answers the inbox.</p>
+<p class="lead">How mail from the project inbox is written: a signature for each address, replies you give often, a pause to take a message back, and an away message; and the senders whose mail goes straight to Spam. These are shared by everyone who answers the inbox.</p>
 
 {#snippet message(section: string)}
 	{@const shown = notice(section)}
@@ -173,6 +174,41 @@
 			<div><button class="button" type="submit">Save the away message</button></div>
 		</form>
 	</section>
+
+	<section class="card" id="blocked" aria-labelledby="blocked-heading">
+		<h2 id="blocked-heading"><Ban size={20} aria-hidden="true" />Blocked senders</h2>
+		<p class="small muted">Mail from these goes straight to Spam, in a conversation of its own, with no notice and no away message. Nothing tells the sender. You can also block from a conversation’s Sender card.</p>
+		{@render message('blocked')}
+		{#if data.blocked.length}
+			<ul class="blocked-list">
+				{#each data.blocked as blocked (blocked.pattern)}
+					<li>
+						<span class="what">
+							<strong class="break">{blocked.pattern}</strong>
+							<span class="small muted">{blocked.pattern.startsWith('@') ? 'Everyone at this domain' : 'This address'} · {fullDate(blocked.blockedAt)}{#if blocked.blockedByName}{' '}by {blocked.blockedByName}{/if}{#if blocked.note}{' '}· {blocked.note}{/if}</span>
+						</span>
+						<form method="post" action="?/unblock">
+							<input type="hidden" name="pattern" value={blocked.pattern} />
+							<button class="button button-quiet small" type="submit">Unblock</button>
+						</form>
+					</li>
+				{/each}
+			</ul>
+		{:else}
+			<p class="muted">Nobody is blocked.</p>
+		{/if}
+		<form method="post" action="?/block" class="stack new">
+			<div class="field">
+				<label for="block-pattern">Address or domain</label>
+				<input type="text" id="block-pattern" name="pattern" required placeholder="someone@example.com or @example.com" autocomplete="off" />
+			</div>
+			<div class="field">
+				<label for="block-note">Why <span class="hint">optional, for the team</span></label>
+				<input type="text" id="block-note" name="note" maxlength="300" />
+			</div>
+			<div><button class="button button-quiet" type="submit">Block</button></div>
+		</form>
+	</section>
 </div>
 
 <style>
@@ -292,6 +328,26 @@
 		font-weight: var(--font-weight-regular);
 		color: var(--color-ink-muted);
 		font-size: var(--font-size-small);
+	}
+	.blocked-list {
+		list-style: none;
+		margin: 0 0 var(--space-3);
+		padding: 0;
+	}
+	.blocked-list li {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding-block: var(--space-2);
+		border-bottom: 1px solid var(--color-line);
+	}
+	.blocked-list .what {
+		flex: 1;
+		min-width: 0;
+		display: grid;
+	}
+	.break {
+		overflow-wrap: anywhere;
 	}
 	.status-pill {
 		display: inline-block;

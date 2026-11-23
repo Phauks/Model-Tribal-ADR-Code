@@ -6,13 +6,20 @@ import { sourceKeys } from '../src/lib/server/source-keys.ts';
 describe('pageDownloads', () => {
 	const links = (path: string) => pageDownloads(path).files.map((file) => file.link);
 
-	it('offers a nation page its record and its sources, and the map page no file', () => {
+	it('offers a nation page its record, its sources in three formats and its contacts, and the map page its layers', () => {
 		expect(links('/nations/cherokee-nation')).toEqual([
 			'/nations/cherokee-nation/record.json',
-			'/nations/cherokee-nation/sources.json'
+			'/nations/cherokee-nation/sources.json',
+			'/nations/cherokee-nation/sources.ris',
+			'/nations/cherokee-nation/sources.bib',
+			'/nations/cherokee-nation/contacts.vcf'
 		]);
 		expect(pageDownloads('/nations/cherokee-nation').citable).toBe(true);
-		expect(links('/nations/map')).toEqual([]);
+		expect(links('/nations/map')).toEqual([
+			'/nations/map/land-areas.geojson',
+			'/nations/map/bureau-of-indian-affairs-regions.geojson',
+			'/nations/map/government-offices.geojson'
+		]);
 		expect(pageDownloads('/nations/map').citable).toBe(false);
 	});
 

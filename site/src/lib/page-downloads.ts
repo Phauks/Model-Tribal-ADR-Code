@@ -6,7 +6,46 @@
  * dialog), reading offline and the Downloads page; this file adds the files
  * a page has of its own, each built with the site, and says whether the page
  * is one record a reader may cite.
+ *
+ * This is the one list of what a page offers (Trevor asked on Nov. 23, 2026
+ * for the export functions to be consolidated): the menu shows it, and the
+ * page formats below are made from one reading of the page
+ * (src/lib/page-document.ts).
  */
+
+/** A format the browser makes from the page as shown, offered on every page. */
+export interface PageFormat {
+	id: 'markdown' | 'word' | 'opendocument';
+	/** The format as readers know it. */
+	format: string;
+	extension: string;
+	mediaType: string;
+	description: string;
+}
+
+export const pageFormats: PageFormat[] = [
+	{
+		id: 'word',
+		format: 'Word',
+		extension: 'docx',
+		mediaType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+		description: 'To edit in Microsoft Word, Google Docs or Pages'
+	},
+	{
+		id: 'opendocument',
+		format: 'ODT',
+		extension: 'odt',
+		mediaType: 'application/vnd.oasis.opendocument.text',
+		description: 'To edit in LibreOffice or another OpenDocument editor'
+	},
+	{
+		id: 'markdown',
+		format: 'Markdown',
+		extension: 'md',
+		mediaType: 'text/markdown;charset=utf-8',
+		description: 'Plain text with headings, links and sources, for notes apps and editors'
+	}
+];
 
 /** A file the page offers, built with the site. */
 export interface PageFile {
@@ -17,7 +56,7 @@ export interface PageFile {
 	/** One line on what the file is for. */
 	description: string;
 	/** Picks the icon. */
-	kind: 'data' | 'table' | 'sources';
+	kind: 'data' | 'table' | 'sources' | 'contact' | 'map';
 	link: string;
 }
 
@@ -46,6 +85,27 @@ export function pageDownloads(path: string): PageDownloads {
 					description: 'For Zotero or another citation manager',
 					kind: 'sources',
 					link: `/nations/${nation}/sources.json`
+				},
+				{
+					label: 'This page’s sources',
+					format: 'RIS',
+					description: 'For EndNote, Mendeley or another citation manager',
+					kind: 'sources',
+					link: `/nations/${nation}/sources.ris`
+				},
+				{
+					label: 'This page’s sources',
+					format: 'BibTeX',
+					description: 'For LaTeX and BibTeX-based tools',
+					kind: 'sources',
+					link: `/nations/${nation}/sources.bib`
+				},
+				{
+					label: 'Government office contacts',
+					format: 'vCard',
+					description: 'The offices’ public addresses, phones and emails, for an address book',
+					kind: 'contact',
+					link: `/nations/${nation}/contacts.vcf`
 				}
 			]
 		};
@@ -63,6 +123,9 @@ export function pageDownloads(path: string): PageDownloads {
 				}
 			]
 		};
+	}
+	if (path === '/nations/map') {
+		return { citable: false, files: mapFiles };
 	}
 	if (path === '/nations/recourse') {
 		return {
@@ -101,6 +164,31 @@ export function pageDownloads(path: string): PageDownloads {
 	}
 	return { citable: /^\/stories\/[^/]+$/.test(path), files: [] };
 }
+
+/** The map's layers as GeoJSON (RFC 7946), for mapping programs; also listed on the Downloads page. */
+export const mapFiles: PageFile[] = [
+	{
+		label: 'Land areas',
+		format: 'GeoJSON',
+		description: 'The Census Bureau’s American Indian and Alaska Native areas, simplified for a national map',
+		kind: 'map',
+		link: '/nations/map/land-areas.geojson'
+	},
+	{
+		label: 'Bureau of Indian Affairs regions',
+		format: 'GeoJSON',
+		description: 'The twelve regions’ outlines, simplified for a national map',
+		kind: 'map',
+		link: '/nations/map/bureau-of-indian-affairs-regions.geojson'
+	},
+	{
+		label: 'Offices of nations without a Census land area',
+		format: 'GeoJSON',
+		description: 'The dots on the drawn map, each placed from the office’s public address',
+		kind: 'map',
+		link: '/nations/map/government-offices.geojson'
+	}
+];
 
 /** "Nov. 22, 2026", the Indigo Book's month abbreviations. */
 export function citationDate(date: Date): string {

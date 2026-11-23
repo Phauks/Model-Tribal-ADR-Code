@@ -119,6 +119,26 @@ declare global {
 		LULU_CLIENT_SECRET?: string;
 		STRIPE_SECRET_KEY?: string;
 		STRIPE_WEBHOOK_SECRET?: string;
+		/**
+		 * Sponsor gifts (docs/sponsorship.md). Off unless SPONSOR_GIFTS is
+		 * "test" (a Stripe test key only) or "live" (a live key, and
+		 * SPONSOR_GIFTS_RECEIVER naming who receives the money).
+		 */
+		SPONSOR_GIFTS?: string;
+		/** The signing secret of the Stripe webhook endpoint at /sponsorship/payment-webhook. */
+		STRIPE_SPONSOR_WEBHOOK_SECRET?: string;
+		/** Who receives sponsors' gifts, as the gift form names them. */
+		SPONSOR_GIFTS_RECEIVER?: string;
+		/**
+		 * The events video room on Cloudflare RealtimeKit (site/COLLABORATION.md,
+		 * "The video room"). The room stays off until all three are set, as
+		 * Secrets in the dashboard so a deploy never clears them: the Cloudflare
+		 * account's id, the RealtimeKit app's id, and an API token with the
+		 * Realtime permission.
+		 */
+		VIDEO_ROOM_ACCOUNT?: string;
+		VIDEO_ROOM_APPLICATION?: string;
+		VIDEO_ROOM_TOKEN?: string;
 	}
 }
 

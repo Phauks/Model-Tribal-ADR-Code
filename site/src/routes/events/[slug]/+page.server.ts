@@ -1,5 +1,4 @@
-import { error, fail } from '@sveltejs/kit';
-import { can } from '#lib/permissions.ts';
+import { fail } from '@sveltejs/kit';
 import {
 	attendanceLabels,
 	eventKindLabels,
@@ -9,33 +8,23 @@ import {
 	recordingLabels,
 	whereLine
 } from '#lib/event-calendar.ts';
+import { durationWords } from '#lib/event-rooms.ts';
 import { confirmedCredits } from '#lib/server/contributor-profiles.ts';
-import { workerEnvironment } from '#lib/server/environment.ts';
+import { mayWatchRecordings, recordingsOf, roomOf } from '#lib/server/event-rooms.ts';
+import { fileScans, mayServe, stillScanning } from '#lib/server/file-scans.ts';
 import {
 	acceptOffer,
 	cancelRegistration,
-	eventBySlug,
 	expireOffers,
 	register,
 	registrationFor,
 	registrationOpen,
 	speakersOf,
-	ticketTypesOf,
-	type CalendarEvent
+	ticketTypesOf
 } from '#lib/server/event-calendar.ts';
 import { formText, requireAccount, storage } from '#lib/server/workspace.ts';
-import type { Actions, PageServerLoad, RequestEvent } from './$types';
-
-/** The event at this address. A draft is shown only to the people who run events, as a preview. */
-async function findEvent(event: RequestEvent | Parameters<PageServerLoad>[0]): Promise<CalendarEvent> {
-	const database = workerEnvironment().database;
-	const found = database ? await eventBySlug(database, event.params.slug) : undefined;
-	const person = event.locals.person;
-	if (!found || (found.status === 'draft' && !(person && can(person, 'manage-events')))) {
-		error(404, 'There is no event at this address.');
-	}
-	return found;
-}
+import type { Actions, PageServerLoad } from './$types';
+import { findEvent, isHost } from './find-event.ts';
 
 /**
  * An event's page: what it is, when and where, who is speaking, and the
@@ -58,11 +47,18 @@ export const load: PageServerLoad = async (event) => {
 	const own = account ? await registrationFor(database, found.identifier, account.subject) : undefined;
 	const over = new Date(found.endsAt).getTime() <= time.getTime();
 	const started = new Date(found.startsAt).getTime() <= time.getTime();
+	const room = await roomOf(database, found.identifier);
+	const host = isHost(event.locals.person);
+	// With the website's own room, the room's page is the online link: it lets in only the people allowed.
 	const showOnlineLink =
 		found.status === 'published' &&
 		!over &&
-		found.onlineLink !== null &&
+		(found.onlineLink !== null || room !== undefined) &&
 		(tickets.length === 0 || (own?.status === 'registered' && own.attendance === 'online'));
+	const roomLink = room ? `/events/${found.slug}/room` : null;
+	const mayWatch = room ? mayWatchRecordings(room, { signedIn: Boolean(account), host, registered: own?.status === 'registered' }) : false;
+	const recordings = mayWatch ? (await recordingsOf(database, found.identifier)).filter((recording) => recording.objectKey && (host || !recording.hidden)) : [];
+	const scans = await fileScans(database, recordings.map((recording) => recording.objectKey as string));
 	return {
 		event: {
 			slug: found.slug,
@@ -110,7 +106,20 @@ export const load: PageServerLoad = async (event) => {
 					offerEnds: own.offerExpiresAt ? eventMoment(own.offerExpiresAt, found.timeZone) : null
 				}
 			: null,
-		onlineLink: showOnlineLink ? found.onlineLink : null
+		onlineLink: showOnlineLink ? (roomLink ?? found.onlineLink) : null,
+		usesRoom: room !== undefined,
+		hostRoomLink: host && roomLink && found.status !== 'cancelled' && !over ? roomLink : null,
+		recordings: recordings.map((recording) => {
+			const scan = scans.get(recording.objectKey as string) ?? null;
+			return {
+				address: `/events/${found.slug}/recordings/${recording.identifier}`,
+				when: recording.startedAt ? eventMoment(recording.startedAt, found.timeZone) : '',
+				length: durationWords(recording.durationSeconds),
+				ready: mayServe(scan),
+				checking: stillScanning(scan),
+				hidden: recording.hidden
+			};
+		})
 	};
 };
 

@@ -68,6 +68,13 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "kept-not-served",
     why: "Reads a sent picture to make its copy without location details; both are put in line for the scan, and neither is served until it passes.",
   },
+  // Recordings of the events video room (site/COLLABORATION.md, "The video
+  // room"): streamed from RealtimeKit into the bucket, since a recording can
+  // be larger than a Worker's memory, then put in line by syncRoomRecordings
+  // and served by serveUploadFile.
+  "src/lib/server/event-rooms.ts storeStream put(key)": {
+    kind: "sent-file-store",
+  },
   "src/lib/server/upload-serving.ts serveUploadFile get(file.key)": {
     kind: "sent-file-open",
   },
@@ -87,6 +94,9 @@ const bucketCalls: Record<string, BucketUse> = {
       kind: "kept-not-served",
       why: "The HTML version of a message, shown only in a sandboxed frame that runs no scripts and loads nothing from outside.",
     },
+  "src/lib/server/mail/export.ts messageCopy get(row.raw_key)": {
+    kind: "sent-file-open",
+  },
   "src/lib/server/mail/outbound.ts sendMessage put(rawKey)": {
     kind: "project-file",
     why: "A copy of a message the project sent, built by the site after its attachments passed the check.",
@@ -155,7 +165,8 @@ const bucketCalls: Record<string, BucketUse> = {
   "src/routes/nations/[id]/image/+server.ts GET put(image.key)": {
     kind: "project-file",
     why: "Nation seals and images the project collected from official sources.",
-  },  "src/lib/server/document-zips.ts entries get(key)": {
+  },
+  "src/lib/server/document-zips.ts entries get(key)": {
     kind: "project-file",
     why: "The project's own copies of public documents (U.S. government works and nations' governing documents), zipped for download.",
   },
@@ -167,12 +178,15 @@ const fileIntakes: Record<string, string> = {
     "Files sent with requests and forms, proof for a nation team, and nation page pictures. Stored with storeSentFile by saveRequest, saveApplication and savePicture.",
   "src/routes/profile/+page.server.ts picture File.arrayBuffer":
     "Profile pictures. Stored with storeSentFile by savePicture (profile-pictures.ts).",
+  "src/routes/account/sponsorship/+page.server.ts save File.arrayBuffer":
+    "Sponsor logos. Stored with storeSentFile by setLogo (sponsors.ts) and served with openScannedFile by logoResponse (sponsor-logos.ts).",
   "src/routes/mail/internal/arrive/+server.ts POST Request.arrayBuffer":
     "Mail arriving from the email Worker. receiveMail stores each attachment with storeSentFile.",
   "src/routes/workspace/inbox/compose.ts readAttachments File.arrayBuffer":
     "Files the team attaches to outgoing mail. queueMessage stores them with storeSentFile, and sendMessage waits until they pass.",
   "src/routes/uploads/pieces/[reference]/[number]/+server.ts PUT Request.arrayBuffer":
-    "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",  "src/lib/sha256.ts hashFile Blob.arrayBuffer":
+    "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",
+  "src/lib/sha256.ts hashFile Blob.arrayBuffer":
     "Verify a file: hashes a file the reader picks, in their own browser. It is never sent or stored.",
   "src/lib/sha256.ts hashFile Blob.stream":
     "Verify a file: hashes a large file the reader picks, piece by piece, in their own browser. It is never sent or stored.",

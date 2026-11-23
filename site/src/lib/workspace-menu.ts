@@ -24,6 +24,7 @@ export type WorkspacePageName =
 	| 'changes'
 	| 'nonprofit'
 	| 'service-checks'
+	| 'sponsors'
 	| 'activity';
 
 export interface WorkspacePage {
@@ -57,6 +58,7 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', needs: 'hide-changes' },
 	{ name: 'nonprofit', label: 'Nonprofit', link: '/workspace/nonprofit', needs: 'manage-nonprofit' },
 	{ name: 'service-checks', label: 'Service checks', link: '/workspace/service-checks', needs: 'check-services' },
+	{ name: 'sponsors', label: 'Sponsors', link: '/workspace/sponsors', needs: 'manage-sponsors' },
 	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', needs: 'manage-people' }
 ];
 

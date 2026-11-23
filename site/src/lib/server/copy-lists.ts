@@ -51,6 +51,9 @@ function namesOf(copy: PublicCopy, names: Map<string, string>): string[] {
 	});
 }
 
+/** Topics whose copies belong to a nation's set for saving and downloading, not the United States set. */
+const nationTopics = new Set(['constitutions', 'tribal-law', 'caselaw-access-project']);
+
 /** Tribal court opinions (decision record 0047) are listed one nation at a time. */
 const opinionPrefix = 'opinions-';
 
@@ -150,10 +153,9 @@ function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, Do
 			copy.title,
 			copy.links.at(-1) ?? copy.links[0] ?? ''
 		];
-		// Tribal court opinions (decision record 0047) are neither United States documents nor yet
-		// part of a nation's saved set; they are saved as their pages are read.
-		if (copy.topic === 'caselaw-access-project') continue;
-		if (copy.topic !== 'constitutions' && copy.topic !== 'tribal-law') {
+		// A nation's set holds its constitutions, its laws and its courts' opinions (decision record
+		// 0047); everything else the site holds is a United States document.
+		if (!nationTopics.has(copy.topic)) {
 			federal.push(file);
 			continue;
 		}

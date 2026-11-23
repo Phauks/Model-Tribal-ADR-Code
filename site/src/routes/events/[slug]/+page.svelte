@@ -58,6 +58,9 @@
 
 	<section class="panel panel-filled" aria-labelledby="take-part">
 		<h2 id="take-part">Take part</h2>
+		{#if data.hostRoomLink}
+			<p><a class="button button-quiet" href={data.hostRoomLink}><Video size={20} strokeWidth={1.75} /> Open the room as a host</a></p>
+		{/if}
 
 		{#if form && 'done' in form}
 			<div class="notice" role="status"><p>{form.done}</p></div>
@@ -72,6 +75,17 @@
 			{#if event.recordingLink}
 				<p><a class="button" href={event.recordingLink}><Video size={20} strokeWidth={1.75} /> Watch the recording</a></p>
 			{/if}
+			{#each data.recordings as recording, index (recording.address)}
+				{#if recording.ready}
+					<p>
+						<a class="button" href={recording.address}><Video size={20} strokeWidth={1.75} /> Watch the recording{data.recordings.length > 1 ? ` (part ${index + 1})` : ''}</a>
+						{#if recording.length}<span class="hint">{recording.length}</span>{/if}
+						{#if recording.hidden}<span class="chip">Hidden from everyone but the hosts</span>{/if}
+					</p>
+				{:else if recording.checking}
+					<p class="hint">A recording is being saved and checked for viruses. It will be here soon.</p>
+				{/if}
+			{/each}
 		{:else if data.tickets.length === 0}
 			<p>No registration is needed. Everyone is welcome.</p>
 			{#if data.onlineLink}
@@ -81,7 +95,7 @@
 			<p><strong>You are registered:</strong> {data.mine.ticketName}.</p>
 			{#if data.onlineLink}
 				<p><a class="button" href={data.onlineLink}><Video size={20} strokeWidth={1.75} /> Join online</a></p>
-				<p class="hint">This link is for you. Please do not post it.</p>
+				{#if !data.usesRoom}<p class="hint">This link is for you. Please do not post it.</p>{/if}
 			{:else if data.mine.attendance === 'online'}
 				<p class="hint">The link to join will be here before the event starts.</p>
 			{/if}

@@ -1,7 +1,7 @@
 /**
  * Saving our copies of documents for offline reading (site/DESIGN.md, section 10). Trevor asked on
  * Nov. 23, 2026 for offline saving to follow which files the site may share: the United States
- * documents it holds are saved as one set, and each nation's constitutions and laws as a set of
+ * documents it holds are saved as one set, and each nation's constitutions, laws and court opinions as a set of
  * their own, from the nation's page, since all of them together come to several gigabytes.
  *
  * Copies keep their own cache, apart from the build's, because they do not change from one build to

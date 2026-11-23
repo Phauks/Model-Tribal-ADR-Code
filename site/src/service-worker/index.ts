@@ -115,10 +115,15 @@ const nationPicture = /^\/nations\/[^/]+\/pictures\//;
  */
 const nationLive = /^\/nations\/[^/.]+\/?(?:changes\.json)?$/;
 
+/** Mirrored in tools/write-offline-sizes.mjs. */
+const downloadOnly = /\.(ris|bib|vcf|geojson)$/;
+
 function isNeverCached(path: string): boolean {
 	return (
 		// The spelling checker's WebAssembly is large and for editors only; the browser's own cache keeps it.
 		path.endsWith('.wasm') ||
+		// Files made to be downloaded into other programs, not read on the site: citation files, contact cards, map layers.
+		downloadOnly.test(path) ||
 		nationImage.test(path) ||
 		nationPicture.test(path) ||
 		neverCached.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))

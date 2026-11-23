@@ -2,6 +2,10 @@
 	import { onMount } from 'svelte';
 	import { invalidateAll } from '$app/navigation';
 	import Archive from '@lucide/svelte/icons/archive';
+	import Ban from '@lucide/svelte/icons/ban';
+	import BookUser from '@lucide/svelte/icons/book-user';
+	import Download from '@lucide/svelte/icons/download';
+	import MailX from '@lucide/svelte/icons/mail-x';
 	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import BellRing from '@lucide/svelte/icons/bell-ring';
 	import FolderInput from '@lucide/svelte/icons/folder-input';
@@ -115,6 +119,7 @@
 	<form method="post" action="?/read" class="tools">
 		<button class="tool" type="submit" name="read" value="no"><Mail size={18} aria-hidden="true" /><span>Mark unread</span></button>
 	</form>
+	<a class="tool" href="/workspace/inbox/{thread.identifier}/export" download title="Save the whole conversation as an .mbox file, which mail programs import"><Download size={18} aria-hidden="true" /><span>Export</span></a>
 	{#if data.mailFolders.length}
 		<form method="post" action="?/move" class="tools move">
 			<label for="move-folder" class="visually-hidden">Move to a folder</label>
@@ -179,7 +184,9 @@
 {#if form && 'problem' in form}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
 {:else if form && 'done' in form}
-	<div class="notice" role="status"><p>{form.done}</p></div>
+	<div class="notice" role="status">
+		<p>{form.done}{#if 'page' in form && form.page}{' '}<a href={form.page} target="_blank" rel="noopener noreferrer nofollow">Open the list’s unsubscribe page</a>{/if}</p>
+	</div>
 {:else if data.undone}
 	<div class="notice" role="status">
 		<p>Not sent. The message is back in the reply box below as a draft.{#if data.undone === 'files'} Its attachments were not kept: attach them again.{/if}</p>
@@ -288,6 +295,15 @@
 							<a class="answer-link small" href={composeLink('reply', message.identifier)}><ReplyIcon size={16} aria-hidden="true" />Reply</a>
 							{#if many}<a class="answer-link small" href={composeLink('all', message.identifier)}><ReplyAll size={16} aria-hidden="true" />Reply all</a>{/if}
 							<a class="answer-link small" href={composeLink('forward', message.identifier)}><ForwardIcon size={16} aria-hidden="true" />Forward</a>
+							{#if message.hasCopy}
+								<a class="answer-link small" href="/workspace/inbox/messages/{message.identifier}/export" download title="Save this message as an .eml file, which any mail program opens"><Download size={16} aria-hidden="true" />Save as .eml</a>
+							{/if}
+							{#if message.fromList}
+								<form method="post" action="?/unsubscribe" class="inline-answer">
+									<input type="hidden" name="message" value={message.identifier} />
+									<button class="answer-link small" type="submit"><MailX size={16} aria-hidden="true" />Unsubscribe</button>
+								</form>
+							{/if}
 						</nav>
 					{/if}
 					{#if message.undoUntil}
@@ -357,6 +373,60 @@
 	</div>
 
 	<aside class="side" aria-label="About this conversation">
+		{#if data.sender}
+			{@const sender = data.sender}
+			<section class="card sender-card" aria-labelledby="sender-heading">
+				<h2 id="sender-heading"><BookUser size={16} aria-hidden="true" />Sender</h2>
+				{#if sender.contact}
+					<p class="sender-name"><strong>{sender.contact.name}</strong>{#if sender.contact.role}<span class="small muted">{sender.contact.role}</span>{/if}</p>
+					{#if sender.contact.organization}<p class="small">{sender.contact.organization}</p>{/if}
+					{#if sender.nation}
+						<p class="small">{#if sender.nation.page}<a href={sender.nation.page}>{sender.nation.name}</a>{:else}{sender.nation.name}{/if}</p>
+					{/if}
+					<p class="small muted break">{sender.address}</p>
+					{#if sender.contact.otherWays.length}
+						<ul class="ways small">
+							{#each sender.contact.otherWays as way (way.value)}
+								<li>{#if way.method === 'email'}<a href="/workspace/inbox/new?to={encodeURIComponent(way.value)}" class="break">{way.value}</a>{:else}<a href="tel:{way.value.replace(/[^\d+]/g, '')}">{way.value}</a>{/if}</li>
+							{/each}
+						</ul>
+					{/if}
+					<p class="small muted">From {sender.contact.source}, checked {new Date(sender.contact.verifiedOn).toLocaleDateString('en-US', { dateStyle: 'medium', timeZone: 'UTC' })}.</p>
+					{#if data.canSeeAddressBook}<p class="small"><a href="/workspace/address-book/{sender.contact.identifier}">Open in the address book</a></p>{/if}
+				{:else}
+					<p class="small"><span class="break">{sender.address}</span> is not in the address book.</p>
+					{#if data.canSeeAddressBook}<p class="small"><a href="/workspace/address-book">Go to the address book</a></p>{/if}
+				{/if}
+				{#if sender.conversations.length}
+					<h3 class="small">Earlier conversations{#if sender.conversationCount > sender.conversations.length}{' '}({sender.conversationCount}){/if}</h3>
+					<ul class="earlier small">
+						{#each sender.conversations as earlier (earlier.identifier)}
+							<li><a href="/workspace/inbox/{earlier.identifier}">{earlier.subject}</a> <span class="muted">{listDate(earlier.lastMessageAt)}</span></li>
+						{/each}
+					</ul>
+				{:else}
+					<p class="small muted">No earlier conversations.</p>
+				{/if}
+				{#if data.canManage}
+					{#if sender.blockedBy}
+						<form method="post" action="?/unblock" class="block-form small">
+							<input type="hidden" name="pattern" value={sender.blockedBy} />
+							<span class="blocked"><Ban size={14} aria-hidden="true" />Blocked ({sender.blockedBy})</span>
+							<button class="link-button" type="submit">Unblock</button>
+						</form>
+					{:else}
+						<details class="block-menu small">
+							<summary><Ban size={14} aria-hidden="true" />Block</summary>
+							<form method="post" action="?/block" class="block-choices">
+								<p class="muted">New mail goes straight to Spam, and this conversation moves there. Nothing is sent to them.</p>
+								<button class="button button-quiet" type="submit" name="whole" value="address">Block {sender.address}</button>
+								<button class="button button-quiet" type="submit" name="whole" value="domain">Block everyone at {sender.address.split('@')[1]}</button>
+							</form>
+						</details>
+					{/if}
+				{/if}
+			</section>
+		{/if}
 		<section class="card">
 			<h2>Assigned to</h2>
 			<form method="post" action="?/assign" class="inline-form">
@@ -435,6 +505,9 @@
 	}
 	.move select {
 		min-height: 2.25rem;
+	}
+	a.tool {
+		text-decoration: none;
 	}
 	.tool {
 		display: inline-flex;
@@ -810,6 +883,87 @@
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-panel);
 		background: var(--color-surface-raised);
+	}
+	.sender-card p {
+		margin: 0 0 var(--space-1);
+	}
+	.sender-name {
+		display: flex;
+		flex-direction: column;
+	}
+	.sender-card h3 {
+		margin: var(--space-3) 0 var(--space-1);
+		font-weight: var(--font-weight-semibold);
+	}
+	.break {
+		overflow-wrap: anywhere;
+	}
+	.ways,
+	.earlier {
+		list-style: none;
+		margin: 0 0 var(--space-2);
+		padding: 0;
+		display: grid;
+		gap: var(--space-1);
+	}
+	.block-menu,
+	.block-form {
+		margin-top: var(--space-3);
+		padding-top: var(--space-2);
+		border-top: 1px solid var(--color-line);
+	}
+	.block-menu {
+		display: block;
+		width: 100%;
+	}
+	.block-menu summary {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		cursor: pointer;
+		color: var(--color-ink-muted);
+	}
+	.block-choices {
+		display: grid;
+		gap: var(--space-2);
+		margin-top: var(--space-2);
+	}
+	.block-choices .button {
+		justify-content: flex-start;
+		text-align: left;
+		overflow-wrap: anywhere;
+	}
+	.block-form {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+	}
+	.blocked {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		overflow-wrap: anywhere;
+	}
+	.link-button {
+		border: 0;
+		background: none;
+		color: var(--color-link);
+		font: inherit;
+		cursor: pointer;
+		text-decoration: underline;
+		padding: var(--space-1);
+	}
+	.inline-answer {
+		display: inline;
+	}
+	button.answer-link {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		background: none;
+		font: inherit;
+		cursor: pointer;
 	}
 	.card h2 {
 		display: flex;

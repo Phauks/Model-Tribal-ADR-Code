@@ -11,7 +11,7 @@
 	import ZoomableMap from '#lib/components/ZoomableMap.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
 	import type { LandAreaRow, ShadedViewData } from '#lib/server/nations-map.ts';
-	import { isShadedMapView, shadedMapViews, type ShadedMapView } from '#lib/shaded-map-views.ts';
+	import { isShadedMapView, shadedMapViews, shadedViewDefinitions, type ShadedMapView } from '#lib/shaded-map-views.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
@@ -165,7 +165,7 @@
 		}))
 	);
 
-	/** The Public Law 280 and Violence Against Women Act tables list nations; each name goes to the nation's Jurisdiction section, which has the facts and their sources. */
+	/** Most shaded views' tables list nations; each name goes to the section of the nation's page that has the view's facts and their sources. */
 	function nationColumns(body: ShadedBody): TableColumn[] {
 		const first: TableColumn[] = [
 			{ key: 'nation', header: 'Nation', isRowHeader: true, sortable: true },
@@ -175,7 +175,7 @@
 		if (body.kindColumns.length > 0) {
 			return [...first, ...body.kindColumns.map((column) => ({ key: `kind-${column.key}`, header: column.header, sortable: true, filterable: true }))];
 		}
-		return [...first, { key: 'category', header: body.view === 'public-law-280' ? 'Summary' : 'Status', sortable: true, filterable: true }];
+		return [...first, { key: 'category', header: shadedViewDefinitions[body.view].categoryHeader ?? 'Category', sortable: true, filterable: true }];
 	}
 
 	function nationRows(body: ShadedBody): TableRow[] {
@@ -191,12 +191,15 @@
 		}));
 	}
 
-	const healthServiceColumns: TableColumn[] = [
-		{ key: 'area', header: 'Area', isRowHeader: true, sortable: true, custom: true },
-		{ key: 'count', header: 'Nations', type: 'number', sortable: true }
-	];
+	/** A shaded view whose table lists categories, as the Indian Health Service view lists its Areas: each row opens to its nations. */
+	function categoryColumns(body: ShadedBody): TableColumn[] {
+		return [
+			{ key: 'area', header: shadedViewDefinitions[body.view].categoryHeader ?? 'Category', isRowHeader: true, sortable: true, custom: true },
+			{ key: 'count', header: 'Nations', type: 'number', sortable: true }
+		];
+	}
 
-	function healthServiceRows(body: ShadedBody): TableRow[] {
+	function categoryRows(body: ShadedBody): TableRow[] {
 		return body.areaRows.map((row) => ({
 			key: row.anchor,
 			anchor: row.anchor,
@@ -402,17 +405,18 @@
 				{/if}
 			{:else if isShadedMapView(view.key)}
 				{@const body = shaded[view.key]}
+				{@const definition = shadedViewDefinitions[view.key]}
 				<p class="small muted map-note">
-					{@render shadedNote(view.key)} {@render officeNote()} {@render insetNote()}
+					{definition.note} {@render officeNote()} {@render insetNote()}
 				</p>
-				{#if body && view.key === 'indian-health-service'}
+				{#if body && definition.rows === 'categories'}
 					<DataTable
-						identifier="indian-health-service-areas"
-						download="indian-health-service-areas"
-						label="Table: Indian Health Service Areas"
-						caption="Nations each Indian Health Service Area serves, as each nation’s entry records it"
-						columns={healthServiceColumns}
-						rows={healthServiceRows(body)}
+						identifier={view.key}
+						download={view.key}
+						label="Table: {view.label}"
+						caption={definition.caption}
+						columns={categoryColumns(body)}
+						rows={categoryRows(body)}
 						defaultSort={{ key: 'area', direction: 'ascending' }}
 						{cell}
 					/>
@@ -422,15 +426,7 @@
 						download={view.key}
 						filters
 						label="Table: {view.label}"
-						caption={view.key === 'public-law-280'
-							? 'Nations with a Public Law 280 fact recorded, and a summary of what the facts say'
-							: view.key === 'courts-and-peacemaking'
-								? 'Nations with a court or forum recorded, and which kinds'
-								: view.key === 'other-jurisdiction-laws'
-									? 'Nations under another federal law on jurisdiction, and which'
-									: view.key === 'agreements-with-states'
-										? 'Nations with an agreement recorded, and which kinds'
-										: 'Nations recorded as exercising special Tribal criminal jurisdiction, or holding a grant to prepare for it'}
+						caption={definition.caption}
 						columns={nationColumns(body)}
 						rows={nationRows(body)}
 						defaultSort={{ key: 'nation', direction: 'ascending' }}
@@ -462,22 +458,6 @@
 <!-- Said under every view that draws office dots: how many nations they mark, and how many are only in the tables. -->
 {#snippet officeNote()}
 	Ringed dots mark the offices of {data.offices.placed} nations with no Census land area, where their entries give an address; {data.offices.unplaced} more have neither, so they are not on the map; the Nations by State view lists every nation.
-{/snippet}
-
-{#snippet shadedNote(key: ShadedMapView)}
-	{#if key === 'courts-and-peacemaking'}
-		Each nation’s land areas are shaded by the first of these it has: peacemaking or a traditional forum, a healing to wellness court, a tribal court, or only a Court of Indian Offenses, which the Bureau of Indian Affairs runs. The table shows every kind each nation has. A nation missing here may still have a court: the record is only as complete as its sources. Each nation’s page lists its courts and forums, with their sources. Select an area to go to its nation’s row.
-	{:else if key === 'other-jurisdiction-laws'}
-		Each nation’s land areas are shaded by the first of these that applies to it: a federal law other than Public Law 280 that gives a state criminal or civil jurisdiction, such as the Kansas Act or a land claims settlement act; jurisdiction over child custody cases reassumed under the Indian Child Welfare Act (25 U.S.C. § 1918); or longer sentences under the Tribal Law and Order Act (25 U.S.C. § 1302(b)). The table shows every one each nation has. Each nation’s page has the facts and their sources. Select an area to go to its nation’s row.
-	{:else if key === 'agreements-with-states'}
-		Each nation’s land areas are shaded by the first kind of agreement it has with a state, county, city or federal agency: cross-deputization or law enforcement, child welfare, tax, or another kind. Most sources do not say whether an agreement is still in force; each nation’s page gives the agreement, the other party, its date and its sources. Select an area to go to its nation’s row.
-	{:else if key === 'public-law-280'}
-		Each nation’s land areas are shaded by one summary of its Public Law 280 facts. The summary is only a guide: what the state may do differs by subject, by state and over time, and some nations are in more than one state. Each nation’s page has the facts, the state each applies in and their sources. Nations with no land area on the map are still in the table. Select an area to go to its nation’s row.
-	{:else if key === 'violence-against-women-act'}
-		Shaded areas belong to nations that sources record as exercising special Tribal criminal jurisdiction over non-Indians under the Violence Against Women Act (25 U.S.C. § 1304), or as holding a federal grant to prepare for it. A grant can pay for planning, so it is never counted as exercising. A nation missing here may still exercise it: the record is only as complete as its sources. Select an area to go to its nation’s row.
-	{:else}
-		Each nation’s land areas are shaded by the Indian Health Service Area its entry names, and each Area’s name is written on the map. Neighboring Areas are given different shades. Select an area to go to its Area’s row, which lists its nations.
-	{/if}
 {/snippet}
 
 {#snippet insetNote()}

@@ -92,7 +92,12 @@ export type Permission =
 	// Checking the services the site depends on (src/lib/server/service-checks.ts): the lead author only.
 	| 'check-services'
 	// Adding and running events, and seeing who registered (migrations/20261123T0450_add_event_calendar.sql).
-	| 'manage-events';
+	| 'manage-events'
+	// Seeing every sponsor, their Account page as they see it, and why gifts
+	// work or not, and taking a sponsor off the public pages (docs/sponsorship.md).
+	// The lead author only (Trevor, Nov. 23, 2026: "From admin, make it so I
+	// can see sponsorship page, that way I can fully diagnose").
+	| 'manage-sponsors';
 
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
@@ -113,7 +118,8 @@ const grants: Record<Role, readonly Permission[]> = {
 		'review-nation-pages',
 		'manage-nonprofit',
 		'check-services',
-		'manage-events'
+		'manage-events',
+		'manage-sponsors'
 	],
 	editor: ['read-contributors', 'read-requests', 'handle-requests', 'review-uploads', 'read-reviews', 'comment', 'sign-off', 'review-nation-pages', 'manage-events'],
 	'co-author': ['read-reviews', 'comment'],
