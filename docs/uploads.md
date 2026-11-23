@@ -58,7 +58,7 @@ A filed file is served at `/files/<reference>/<name>` with byte ranges, so the b
 
 A nation reviewer sees the files people sent that name their nation, as decision record 0038 set out: they comment, and only the project's reviewers file. A file shows up once it has arrived and stays while it is in review or decided. Files that were withdrawn, refused or deleted do not show. The nation reviewer sees the file, what it is, where it came from, how the project may use it, whether the sender asked that the nation see it first, and where it was filed. They do not see who sent it, the reviewers' notes, or the questions and answers between the sender and reviewers, because the sender gave those to the project and not to the nation. A picture is shown as its copy without location details.
 
-A comment from the nation appears on the reviewer's page for that upload, marked as coming from the nation, and is written to the activity log. The sender does not see it. If the lead author lowers a nation reviewer's access to their nation below comment, the page stops showing that nation's files. Comments are stored in `upload_messages` with the kind `nation-comment` (migration `0018_upload_nation_comments.sql`).
+A comment from the nation appears on the reviewer's page for that upload, marked as coming from the nation, and is written to the activity log. The sender does not see it. If the lead author lowers a nation reviewer's access to their nation below comment, the page stops showing that nation's files. Comments are stored in `upload_nation_comments`, with the nation each one speaks for (migration `0018_upload_nation_comments.sql`).
 
 ## Essay figures
 
@@ -73,7 +73,7 @@ The essay editor sends a picture, sound recording or video the same way, with `w
 
 ## Database
 
-Migration `0018_upload_nation_comments.sql` lets `upload_messages` hold comments from the nation. Migration `0010_uploads.sql` adds `uploads`, `upload_pieces` (each piece's size, hash and bucket tag, and what the checks found), `upload_links` (nations an upload is about) and `upload_messages` (questions, answers and reviewers' notes). It also rebuilds the activity log to allow entries about uploads. Every entry keeps its sequence number and fields, so its seal still matches.
+Migration `0018_upload_nation_comments.sql` adds `upload_nation_comments`, the comments from nations. Migration `0010_uploads.sql` adds `uploads`, `upload_pieces` (each piece's size, hash and bucket tag, and what the checks found), `upload_links` (nations an upload is about) and `upload_messages` (questions, answers and reviewers' notes). It also rebuilds the activity log to allow entries about uploads. Every entry keeps its sequence number and fields, so its seal still matches.
 
 ## Not built yet
 

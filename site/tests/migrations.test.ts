@@ -93,36 +93,24 @@ describe('migration 0010 on a database that already has data', () => {
 	});
 });
 
-describe('migration 0018 on a database that already has upload messages', () => {
-	it('keeps every message and allows comments from the nation', () => {
+describe('migration 0018', () => {
+	it('adds comments from the nation, which go with their upload', () => {
 		const database = new DatabaseSync(':memory:');
 		database.exec('PRAGMA foreign_keys = ON');
-		const files = readdirSync(folder).filter((name) => name.endsWith('.sql') && name < '0018').sort();
+		const files = readdirSync(folder).filter((name) => name.endsWith('.sql') && name < '0019').sort();
 		for (const file of files) {
 			database.exec('BEGIN');
 			database.exec(migration(file));
 			database.exec('COMMIT');
 		}
 		database.exec(`
-			INSERT INTO people (identifier, email, display_name, role, status, added_at) VALUES ('lead', 'lead@example.org', 'Lead', 'lead-author', 'active', '2026-11-20T00:00:00Z');
 			INSERT INTO people (identifier, email, display_name, role, nation_identifier, status, added_at) VALUES ('nr', 'nr@example.org', 'Reviewer', 'nation-reviewer', 'hopi-tribe', 'active', '2026-11-20T00:00:00Z');
 			INSERT INTO uploads (identifier, reference, group_identifier, way_in, kind, source, status, file_name, received_at)
 				VALUES ('u1', 'U-20261123-ABCDEF', 'g1', 'send-files', 'picture', 'file', 'in-review', 'a.png', '2026-11-23T00:00:00Z');
-			INSERT INTO upload_messages VALUES ('m1', 'u1', 'note', 'lead', 'A note', '2026-11-23T01:00:00Z');
-			INSERT INTO upload_messages VALUES ('m2', 'u1', 'answer', NULL, 'An answer', '2026-11-23T02:00:00Z');
+			INSERT INTO upload_nation_comments VALUES ('c1', 'u1', 'hopi-tribe', 'nr', 'The nation agrees', '2026-11-23T03:00:00Z');
 		`);
-		const before = database.prepare('SELECT * FROM upload_messages ORDER BY identifier').all().map((row) => ({ ...row }));
-
-		database.exec('BEGIN');
-		database.exec(migration('0018_upload_nation_comments.sql'));
-		database.exec('COMMIT');
-
-		expect(database.prepare('SELECT * FROM upload_messages ORDER BY identifier').all().map((row) => ({ ...row }))).toEqual(before);
-		database.exec(`INSERT INTO upload_messages VALUES ('m3', 'u1', 'nation-comment', 'nr', 'The nation agrees', '2026-11-23T03:00:00Z')`);
-		expect(() => database.exec(`INSERT INTO upload_messages VALUES ('m4', 'u1', 'nation-comment', NULL, 'No author', '2026-11-23T04:00:00Z')`)).toThrow(/CHECK/);
-		// Messages still go with their upload.
+		expect(() => database.exec(`INSERT INTO upload_nation_comments VALUES ('c2', 'u1', 'hopi-tribe', 'nobody', 'x', '2026-11-23T04:00:00Z')`)).toThrow(/FOREIGN KEY/);
 		database.exec(`DELETE FROM uploads WHERE identifier = 'u1'`);
-		expect(database.prepare('SELECT COUNT(*) AS count FROM upload_messages').get()).toEqual({ count: 0 });
-		expect(database.prepare('PRAGMA foreign_key_check').all()).toEqual([]);
+		expect(database.prepare('SELECT COUNT(*) AS count FROM upload_nation_comments').get()).toEqual({ count: 0 });
 	});
 });

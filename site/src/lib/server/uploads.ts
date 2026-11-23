@@ -918,11 +918,18 @@ export async function uploadDetail(database: D1Database, reference: string): Pro
 			.all<LinkRow>(),
 		database
 			.prepare(
-				`SELECT upload_messages.identifier, kind, body, created_at, people.display_name AS person_name
+				`SELECT upload_messages.identifier, upload_messages.kind, upload_messages.body, upload_messages.created_at,
+				        people.display_name AS person_name
 				 FROM upload_messages LEFT JOIN people ON people.identifier = upload_messages.person_identifier
-				 WHERE upload_identifier = ? ORDER BY created_at`
+				 WHERE upload_messages.upload_identifier = ?
+				 UNION ALL
+				 SELECT comments.identifier, 'nation-comment' AS kind, comments.body, comments.created_at,
+				        people.display_name AS person_name
+				 FROM upload_nation_comments AS comments LEFT JOIN people ON people.identifier = comments.person_identifier
+				 WHERE comments.upload_identifier = ?
+				 ORDER BY created_at`
 			)
-			.bind(upload.identifier)
+			.bind(upload.identifier, upload.identifier)
 			.all<MessageRow>(),
 		database
 			.prepare(
@@ -1052,12 +1059,12 @@ export async function nationUploads(database: D1Database, person: SignedInPerson
 		.prepare(
 			`SELECT uploads.reference, COALESCE(uploads.title, uploads.file_name, 'YouTube video') AS name, uploads.kind,
 			        uploads.source, uploads.size_bytes AS sizeBytes, uploads.status, uploads.received_at AS receivedAt,
-			        (SELECT COUNT(*) FROM upload_messages
-			         WHERE upload_messages.upload_identifier = uploads.identifier AND upload_messages.kind = 'nation-comment') AS comments
+			        (SELECT COUNT(*) FROM upload_nation_comments AS comments
+			         WHERE comments.upload_identifier = uploads.identifier AND comments.nation_identifier = ?) AS comments
 			 FROM uploads WHERE ${nationUploadFilter}
 			 ORDER BY uploads.received_at DESC`
 		)
-		.bind(nation)
+		.bind(nation, nation)
 		.all<NationUploadItem>();
 	return rows.results;
 }
@@ -1077,11 +1084,12 @@ export async function nationUpload(
 	if (!upload) return null;
 	const comments = await database
 		.prepare(
-			`SELECT upload_messages.identifier, kind, body, created_at, people.display_name AS person_name
-			 FROM upload_messages LEFT JOIN people ON people.identifier = upload_messages.person_identifier
-			 WHERE upload_identifier = ? AND kind = 'nation-comment' ORDER BY created_at`
+			`SELECT comments.identifier, 'nation-comment' AS kind, comments.body, comments.created_at,
+			        people.display_name AS person_name
+			 FROM upload_nation_comments AS comments LEFT JOIN people ON people.identifier = comments.person_identifier
+			 WHERE comments.upload_identifier = ? AND comments.nation_identifier = ? ORDER BY comments.created_at`
 		)
-		.bind(upload.identifier)
+		.bind(upload.identifier, nation)
 		.all<MessageRow>();
 	return { upload, nation, comments: comments.results };
 }
@@ -1093,16 +1101,15 @@ export async function addNationComment(
 	upload: UploadRow,
 	body: string
 ): Promise<void> {
-	if (!(await nationUpload(database, person, upload.reference))) {
-		throw new UploadProblem('You can comment only on files about your nation.', 403);
-	}
+	const found = await nationUpload(database, person, upload.reference);
+	if (!found) throw new UploadProblem('You can comment only on files about your nation.', 403);
 	await database.batch([
 		database
 			.prepare(
-				`INSERT INTO upload_messages (identifier, upload_identifier, kind, person_identifier, body, created_at)
-				 VALUES (?, ?, 'nation-comment', ?, ?, ?)`
+				`INSERT INTO upload_nation_comments (identifier, upload_identifier, nation_identifier, person_identifier, body, created_at)
+				 VALUES (?, ?, ?, ?, ?, ?)`
 			)
-			.bind(newIdentifier(), upload.identifier, person.identifier, body, now()),
+			.bind(newIdentifier(), upload.identifier, found.nation, person.identifier, body, now()),
 		uploadEvent(database, upload, 'Comment from the nation', person.identifier)
 	]);
 }
