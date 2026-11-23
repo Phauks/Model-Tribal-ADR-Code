@@ -151,6 +151,202 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Newhalen Village
+governance:
+- aspect: governing-body
+  value: Newhalen Tribal Council
+  quote: The governing body of the Native Village of Newhalen shall be the Newhalen Tribal Council,
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The council shall consist of seven resident members of the village who shall be elected during
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: governing-body-selection
+  value: Elected at general election
+  quote: The council shall consist of seven resident members of the village who shall be elected during
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: Council members shall serve for a term of three years.
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside at all meetings of the community and of the council and shall execute
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, Section 1
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Newhalen Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Selected by the council from its members
+  quote: Officers shall be selected by the council from
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 5
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: other-officers
+  value: Vice-president, secretary, treasurer
+  quote: The council shall include a president, a vice-president, a secretary and a treasurer.
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 5
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: elections
+  value: First Tuesday of October
+  quote: The regular election of officials shall be held on the first Tuesday of October.
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 2
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: voting-age
+  value: '18'
+  quote: who has reached the age of 18 or older on or
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: election-authority
+  value: Election committee appointed by the council
+  quote: the council shall appoint three responsible
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 5
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: judiciary
+  value: Trial court and Court of Appeals, established by ordinance
+  quote: 'The following courts shall exist upon establishment of a court system by ordinance:'
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XII, Section 2
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: judicial-selection
+  value: Trial judges elected by eligible voters; appeals judges appointed for each case
+  quote: A trial court of general civil jurisdiction consisting of three judges elected by the eligible
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XII, Section 2
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: judicial-independence
+  value: Judges not subject to dismissal by the council
+  quote: Judges are not subject to dismissal by the Village
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XII, Section 5
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: amendment
+  value: Two-thirds majority vote of qualified voters
+  quote: This constitution may be amended by a two-thirds (2/3) majority vote of the qualified voters
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XV, Section 1
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: recall-and-removal
+  value: Removal by remaining council members on felony or neglect of duty
+  quote: shall be removed from office by action of the remaining council members.
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1(A)
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of eligible voters
+  quote: Eligible voters shall have the power to remove any member of the council by recall
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 4
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
+- aspect: other
+  value: Initiative and referendum decisions binding on the council
+  quote: The decision of the majority of voters in both initiative and referendum elections shall be
+  source: constitution-newhalen-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIII, Section 3
+  document_version:
+    document: newhalen-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of adoption is partly illegible and the scan reads 1991 for the adoption date.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -167,6 +167,231 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of 1934
+  quote: Reorganization Act of 1934, 43 Stat. 984, as amended, do hereby adopt this constitution
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Preamble
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: power of the Skokomish Tribe shall be exercised by the Tribal Council.
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article IV, Section 1
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Tribal Council shall be composed of seven (7) persons elected by the General
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article IV, Section 2
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: The Tribal Council shall be composed of seven (7) persons elected by the General
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article IV, Section 2
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Each Tribal Council member shall be elected for a term of four (4) years.
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article IV, Section 4
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All tribal members 18 years old or older
+  quote: All tribal members eighteen (18) years old or older shall be members of the General
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article III, Section 1
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: elect from within its own membership a chairman, vice-chairman, and secretary and may
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article IV, Section 6
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Skokomish Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Tribal Council from its own membership
+  quote: elect from within its own membership a chairman, vice-chairman, and secretary and may
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article IV, Section 6
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-chairman, Secretary
+  quote: elect from within its own membership a chairman, vice-chairman, and secretary and may
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article IV, Section 6
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually, first work day after the June General Council meeting
+  quote: held on the first work day following the June General Council meeting. Elections shall
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article VII, Section 1
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: All tribal members eighteen (18) years old or older shall be members of the General
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article III, Section 1
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal court or courts established by Council
+  quote: (k) To establish a tribal court or courts and to provide for the courts’ jurisdiction,
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article V, Section 1(k)
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Selection of judges as provided by Council
+  quote: procedures, and the selection of judges;
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article V, Section 1(k)
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote in an election called by the Secretary of the Interior (30% turnout)
+  quote: This constitution may be amended by an election called for that purpose by the
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article XI
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: adopted in this way shall be submitted for the approval of the Secretary of the Interior.
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article XI
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by majority of total Tribal Council membership
+  quote: The Tribal Council may, by majority vote of its total membership, remove any member
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article VII, Section 3
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters, then General Council vote
+  quote: If at least one-third (1/3) of the eligible voters of the Skokomish Tribe sign a petition
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article VII, Section 4
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: President of the General Council, elected for 1 year, presides at General Council meetings
+  quote: At the annual elections in June, the voters shall elect a President of the General Council.
+  source: constitution-skokomish-indian-tribe-1980-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1980-03-17'
+  locator: Article III, Section 3
+  document_version:
+    document: skokomish-indian-tribe-constitution
+    version: 1980-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Skokomish - Tribal Codes and Ordinances

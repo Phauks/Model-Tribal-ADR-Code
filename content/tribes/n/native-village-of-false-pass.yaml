@@ -167,6 +167,183 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of False Pass
+governance:
+- aspect: governing-body
+  value: False Pass Tribal Council
+  quote: be the False Pass Tribal Council, hereinafter referred to as
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: (5) enrolled resident adult members of the tribe who shall
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of eligible voters
+  quote: be elected by a majority vote of the eligible voters at the
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: a term of three (3)_years with staggered terms.
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article IV, Section 5
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside at all
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article X, Section 1
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of False Pass
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its members
+  quote: Officers shall be selected by the Council from its members
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article IV, Section 4
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: President, a Vice-President, a Secretary and a Treasurer.
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article IV, Section 4
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: elections
+  value: Annually at the annual membership meeting
+  quote: the annual membership meeting.
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article V, Section 2
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: voting-age
+  value: '18'
+  quote: who has reached the age of eighteen (18) or older and who
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: election-authority
+  value: Election committee appointed by the Council
+  quote: the Council shall appoint responsible persons to
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article V, Section 5
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: judiciary
+  value: Council may establish permanent tribal court by ordinance
+  quote: may by ordinance establish a permanent tribal
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article XII
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: amendment
+  value: Majority vote of qualified voters in an election
+  quote: This Constitution may be amended by a majority vote of the
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article XV
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: recall-and-removal
+  value: Removal by vote of at least 3 council members
+  quote: least three (3) members of the council.
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of eligible voters
+  quote: least 20% of the eligible voters and must set forth the
+  source: constitution-native-village-of-false-pass-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-05-07'
+  locator: Article VI, Section 2
+  document_version:
+    document: native-village-of-false-pass-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (OCR errors in the Article VI and Article XVI passages); quotes copy the OCR as read.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

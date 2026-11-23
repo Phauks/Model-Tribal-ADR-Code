@@ -263,6 +263,243 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
     and Roaring Creek Rancherias)
+governance:
+- aspect: form
+  value: Election called under regulations of the Secretary of the Interior
+  quote: an election called and conducted pursuant to regulations of the Secretary of the Interior.
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article XIV
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: the Tribal Council, composed of the elected Representatives of the
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VI, Section 1
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: governing-body-size
+  value: 11 members
+  quote: Six of tne eleven elected members of the Tnoal council
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article XI, Section 1(a)
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: governing-body-selection
+  value: Elected by majority of members in attendance at the August annual meeting
+  quote: shall oe nominated from among and elected by
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VI, Section 1
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: governing-body-term
+  value: 1 year
+  quote: the term of one (1) year.
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VI, Section 1
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: Chairman shall be electee for a term, of two tb) years;
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VI, Section 2
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek, and Roaring Creek Rancherias)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the general membership
+  quote: from and elected by the general members nip at tne annual meeting in August.
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VI, Section 2
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Chairman shall be electee for a term, of two tb) years;
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VI, Section 2
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Recording Secretary, Treasurer, Sergeant-at-Arms
+  quote: Vice-Chairman, Secretary, Recording Secretary, Treasurer ana
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VI, Section 2
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: elections
+  value: Annual, at the August annual meeting
+  quote: from and elected by the general members nip at tne annual meeting in August.
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VI, Section 2
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: voting-age
+  value: '18'
+  quote: to enrolled Tribal members who are at least eignteen U8) years of age on the
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article IX, Section 4
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: election-authority
+  value: Election Committee
+  quote: establishes an Election Committee and the rules and procedures unaer which
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article IX, Section 2
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: branches
+  value: Legislative, Executive
+  quote: Section 2. Executive Department. The Executive Department of tne Trioe snail
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VI, Sections 1-2
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: judiciary
+  value: Council may establish a Tribal judicial system
+  quote: To establish a Tribal judicial system and promulgate Tribal Court
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VII, Section 1(o)
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: amendment
+  value: Majority vote of enrolled members at an election called by the Election Committee
+  quote: This Constitution may oe amended by a majority vote of the enrolled members of
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article XIII
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: recall-and-removal
+  value: Recall of Council members by petition of a majority of Band members
+  quote: signea by a majority of the enrolled/registered adult members of the Band(s)
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article IX, Section 5(b)
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: recall-and-removal
+  value: Recall of Tribal Officers by membership vote
+  quote: ballot on the recall of any elected Tribal Officer.
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article IX, Section 5(a)
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: other
+  value: Appointed advisory committee of elders
+  quote: appointed advisory committee of elders to consult with the Council on
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VII, Section 1(r)
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
+- aspect: other
+  value: Each band elects its own Council representative and an alternate
+  quote: and to elect an alternate Council person who may
+  source: constitution-pit-river-tribe-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-08-15'
+  locator: Article VII, Section 2(d)
+  document_version:
+    document: pit-river-tribe-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan opens with the 1987 Interior approval letter, then the constitution with heavy OCR errors (for example ''oe'' for ''be'' and ''Tnoal'' for ''Tribal''), and the Article VII heading is missing its number in the scan.'
 governing_documents:
 - kind: law-code
   title: Tribal code

@@ -155,6 +155,87 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the act of Congress of June 18, 1934
+  quote: By-laws, by authority of the act of Congress of June 18, 1934, as
+  source: constitution-native-village-of-tatitlek-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-12-31'
+  locator: Preamble
+  document_version:
+    document: native-village-of-tatitlek-constitution
+    version: 1946-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Governing body (kind chosen by Village membership)
+  quote: shall decide what kind of governing body it wishes to set up to speak
+  source: constitution-native-village-of-tatitlek-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-12-31'
+  locator: Article 3, Section 1
+  document_version:
+    document: native-village-of-tatitlek-constitution
+    version: 1946-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: The Village shall then choose the
+  source: constitution-native-village-of-tatitlek-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-12-31'
+  locator: Article 3, Section 2
+  document_version:
+    document: native-village-of-tatitlek-constitution
+    version: 1946-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Tatitlek
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: All members of the Village 21 years
+  source: constitution-native-village-of-tatitlek-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-12-31'
+  locator: Article 5, Section 1
+  document_version:
+    document: native-village-of-tatitlek-constitution
+    version: 1946-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Secretary approval and majority vote of Village members in election called by Secretary
+  quote: changes are approved by the Secretary of the Interior and by a ma-
+  source: constitution-native-village-of-tatitlek-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-12-31'
+  locator: Article 6
+  document_version:
+    document: native-village-of-tatitlek-constitution
+    version: 1946-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior and by a ma-
+  source: constitution-native-village-of-tatitlek-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-12-31'
+  locator: Article 6
+  document_version:
+    document: native-village-of-tatitlek-constitution
+    version: 1946-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Constitution

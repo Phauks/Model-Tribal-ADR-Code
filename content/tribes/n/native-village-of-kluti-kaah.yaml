@@ -194,6 +194,125 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kluti Kaah (aka Copper Center)
+governance:
+- aspect: governing-body
+  value: All tribal members in their entirety
+  quote: The governing (Body is it Tribal Members
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: 'The Tribal governing (Body is made up of eight (8) council members:'
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+- aspect: governing-body-selection
+  value: Elected in tribal election
+  quote: election of Tribal Officials and voting on matters that require the governing body to
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+- aspect: governing-body-term
+  value: 2 years, some 1 year, staggered
+  quote: The two (2) year terms will consist of three
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+- aspect: head-of-government
+  value: President
+  quote: President , Vice-(President and
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Kluti Kaah (aka Copper Center)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice-President, Secretary/Treasurer
+  quote: President , Vice-(President and
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+- aspect: elections
+  value: At least once a year
+  quote: A t least once a year, there will be an
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+- aspect: voting-age
+  value: '18'
+  quote: Ad Eligible Tribal Members, eighteen (18) years of age or
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 3
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+- aspect: amendment
+  value: Majority vote of eligible tribal members
+  quote: This (By-Law may be amended by a majority vote
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IX, Section 1
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
+- aspect: recall-and-removal
+  value: Removal by council for neglect of duty or more than 3 missed meetings
+  quote: 'may be removed from the council for the following reasons:'
+  source: constitution-native-village-of-kluti-kaah-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 4
+  document_version:
+    document: native-village-of-kluti-kaah-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled; facts come only from the legible passages, and several articles (officers, quorum) could not be read reliably.'
 governing_documents:
 - kind: law-code
   title: Native Village of Kluti Kaah - Tax Code Table of Contents

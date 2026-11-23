@@ -167,6 +167,291 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cherokee Nation
+governance:
+- aspect: form
+  value: Constitution of the Cherokee Nation
+  quote: do ordain and establish this Constitution for the government of the
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Preamble
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: governing-body
+  value: Council of the Cherokee Nation
+  quote: The legislature shall consist of one legislative body to be called the Council of the
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VI, Section 1
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: governing-body-size
+  value: 17 members
+  quote: The Council shall consist of seventeen (17) members, who are citizens of the Cherokee Nation.
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VI, Section 3
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: governing-body-selection
+  value: Elected by district (15 seats) and at large (2 seats)
+  quote: the remaining two shall be elected at-large by those registered
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VI, Section 3
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: elected in the general election for a term of four (4) years
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VI, Section 3
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: head-of-government
+  value: Principal Chief
+  quote: The executive power shall be vested in a Principal Chief, who shall be styled
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VII, Section 1
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: head-of-government
+  value: Principal Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cherokee Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the registered voters
+  quote: shall be elected by the registered voters on the same day and in
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VII, Section 1
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Principal Chief shall hold office for a term of four (4) years.
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VII, Section 1
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: other-officers
+  value: Deputy Principal Chief, Speaker of the Council, Attorney General, Marshal
+  quote: The registered voters shall elect a Deputy Principal Chief, who shall possess the same
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VII, Section 3
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: elections
+  value: Every 4 years, with the general election
+  quote: in the year 2003 and every four years thereafter.
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VII, Section 1
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: election-authority
+  value: Cherokee Nation Election Commission
+  quote: There is hereby created a Cherokee Nation Election Commission.
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article IX, Section 1
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: branches
+  value: Legislative, Executive and Judicial
+  quote: 'branches: Legislative, Executive and Judicial;'
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article V
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: no branch shall exercise the powers properly belonging to either of the others.
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article V
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: judiciary
+  value: Supreme Court and District Courts
+  quote: The Judicial powers of the Cherokee Nation shall be vested in a Supreme Court and such
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VIII, Section 1
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: judicial-selection
+  value: Appointed by the Principal Chief and confirmed by the Council
+  quote: Justices of the Supreme Court shall be appointed by the Principal Chief and confirmed by
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VIII, Section 2
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: judicial-term
+  value: 10 years (Supreme Court justices)
+  quote: to serve terms of ten (10) years each
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VIII, Section 2
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: judicial-term
+  value: 4 years (District Court judges)
+  quote: to serve terms of four (4) years each.
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VIII, Section 3
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: judicial-independence
+  value: Pay may not be diminished during term
+  quote: compensation which shall not be diminished during their continuance in office
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VIII, Section 7
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: judicial-independence
+  value: Removal only for listed causes
+  quote: Members of the judiciary shall be subject to removal from office only for willful neglect
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article VIII, Section 8
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: amendment
+  value: Majority of registered voters voting at the election
+  quote: If a majority of all the registered voters voting at such election shall vote in favor
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article XV, Section 2
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the Council after trial
+  quote: shall require a two-thirds (2/3) vote of the members of the Council.
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article XI, Section 3
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: recall-and-removal
+  value: Recall by petition of 15% of registered voters (Principal Chief)
+  quote: fifteen percent (15%) of the total number of registered voters in the previous general election.
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article XI, Section 4
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
+- aspect: other
+  value: Voters may initiate laws and refer Council acts
+  quote: approve or reject at the polls any act of the Council.
+  source: constitution-cherokee-nation-2003-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2003'
+  locator: Article XV, Section 1
+  document_version:
+    document: cherokee-nation-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1999 constitution as effective in 2003; the Principal Chief''s opening note is not part of the constitution.'
 governing_documents:
 - kind: law-code
   title: Tribal code

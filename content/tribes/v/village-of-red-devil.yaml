@@ -122,6 +122,163 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Village of Red Devil
+governance:
+- aspect: governing-body
+  value: Red Devil Traditional Council
+  quote: Devil shall be the Red Devil Traditional Council, hereinafter
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article V, Section 1
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: governing-body-size
+  value: 3 members
+  quote: Tito Council shall consist of three
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article V, Section 2
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of qualified members
+  quote: shall be elected by the majority vote or the qualified
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article V, Section 2
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: head-of-government
+  value: President
+  quote: The Council shall include a President,
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article V, Section 3
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: head-of-government-selection
+  value: Elected by vote of all qualified members
+  quote: Elected officials will be elected by a
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article VI, Section 1
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: other-officers
+  value: Vice-President, Secretary/Treasurer
+  quote: Vice-President , anc Secretary/Treasurer.
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article V, Section 3
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: elections
+  value: Annually
+  quote: Elections for officers shall be annually.
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article VI, Section 1
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older and meet the membership
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article VI, Section 1
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: election-authority
+  value: Election board
+  quote: conducted by the election board no later than thirty days after
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article VIII, Section 1
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: judiciary
+  value: Tribal Courts (power to establish)
+  quote: To administer Justice and establish Tribal Courts;
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article VII, Section 3(h)
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: amendment
+  value: Majority of qualified voters in an election or at the annual meeting
+  quote: This Constitution may be amended by a majority of the qualified
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article XI
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: recall-and-removal
+  value: Recall by members, by petition
+  quote: Members shall have the power to recall any
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article VIII, Section 3
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
+- aspect: other
+  value: Initiative on petition of 50% of eligible voters
+  quote: a valid petition signed by at leaset fifty percent (50%) of the
+  source: constitution-village-of-red-devil-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-02'
+  locator: Article VIII, Section 1
+  document_version:
+    document: village-of-red-devil-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR errors (for example ''Tito'' for ''The''); the certificate vote counts are partly illegible.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
