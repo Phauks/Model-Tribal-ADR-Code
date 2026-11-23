@@ -1,7 +1,7 @@
 profile: content/tribes/t/the-seminole-nation-of-oklahoma.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -34,5 +34,25 @@ searches:
   address: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances
   outcome: not-found
   reason: Script-driven code site; no section text in the served HTML.
-next_steps: The provisions this nation's profile lists by section title are still unread. A person could
-  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/seminole_nation_ok/index.html
+  query: mediation, arbitration, peacemaking, circles, elders, dispute resolution wording
+  outcome: found
+  reason: Table of contents shows an employment 'Internal Dispute Resolution Policy' and 'Deferred and
+    Alternative Adjudication'; page text truncated before the last titles.
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#the-seminole-nation-of-oklahoma-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Seminole Nation of Oklahoma tribal code OR court OR mediation OR "dispute resolution"'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
+    court lists, with no page showing dispute resolution wording for this nation.
+next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
+  (Gate 1) before any record goes into the profile.

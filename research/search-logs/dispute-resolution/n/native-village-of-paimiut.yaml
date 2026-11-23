@@ -1,7 +1,7 @@
 profile: content/tribes/n/native-village-of-paimiut.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -58,4 +58,16 @@ searches:
   reason: 1 candidate(s) kept for the lead author's review (Gate 1); none is in the profile yet.
   records:
   - research/reviews/2026-11-22-dispute-resolution-coverage.json#native-village-of-paimiut-1
-next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'this nation''s entry: types of cases heard'
+  outcome: found
+  reason: Entry "Paimiut, Native Village of" (p. 209) lists "Dispute resolution/Peacemaking" among the
+    cases heard; found while reading the directory in full for the Nov. 23 retry.
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#native-village-of-paimiut-retry-1
+next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile. Also
+  the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv.

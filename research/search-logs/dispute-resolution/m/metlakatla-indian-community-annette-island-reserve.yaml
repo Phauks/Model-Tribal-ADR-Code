@@ -1,7 +1,7 @@
 profile: content/tribes/m/metlakatla-indian-community-annette-island-reserve.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: none-found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -59,4 +59,59 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.codepublishing.com/WA/NICS/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Metlakatla Indian Community Annette Island Justice Tribunal OR court mediation
+    OR "dispute resolution"'
+  query: Metlakatla Indian Community Annette Island Justice Tribunal OR court mediation OR "dispute resolution"
+  outcome: not-found
+  reason: Nothing new; .ca results concern a different community.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: other
+  address: https://metlakatla.ca/node/90
+  query: dispute resolution wording
+  outcome: blocked
+  reason: Returned a verification challenge page (and the .ca site is the British Columbia community,
+    not this nation); not retried.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/metlakatla/
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Table of contents only; no ADR titles.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Metlakatla Indian Community Annette Island code mediation OR "dispute resolution"
+    OR peacemaking'
+  query: Metlakatla Indian Community Annette Island code mediation OR "dispute resolution" OR peacemaking
+  outcome: not-found
+  reason: Found NARF Law and Order Code index.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260802092912id_/http://www.codepublishing.com/WA/NICS/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2026-08-02) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'this nation''s entry: justice system, cases heard, diversion agreements'
+  outcome: not-found
+  reason: 'Entry (p. 491): Tribal Court active over 20 years; cases heard are alcohol, drug, firearm,
+    firework, driving, animal control and curfew matters; no dispute resolution or peacemaking listed;
+    interested in civil diversion, youth diversion and sentencing referrals.'
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.
