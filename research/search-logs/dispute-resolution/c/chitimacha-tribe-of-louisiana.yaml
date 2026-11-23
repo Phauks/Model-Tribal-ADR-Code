@@ -1,7 +1,7 @@
 profile: content/tribes/c/chitimacha-tribe-of-louisiana.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -106,4 +106,35 @@ searches:
     then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-047
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Chitimacha Tribe Peacemaker Court Charenton
+  outcome: not-found
+  reason: 'Second search: “Peacemaker Court”: Results were the Peacemaker Court title of the Tribe''s
+    code (a law text), code databases and the Tribal Courts page, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://chitimacha.gov/departments-services/tribal-courts
+  query: 'scripts/review/service_links.py second: peacemak'
+  outcome: not-found
+  reason: 'Second search: “Peacemaker Court”: Status 200; the nation''s Tribal Courts page does not mention
+    the Peacemaker Court; not used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Peacemaker Court”: Claude weighed what the second search found against the
+    lead author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-047
 next_steps: No page or official directory entry was found on 2026-11-22 for “Peacemaker Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 (web searches and state court lists) found no page or official directory
+  entry for “Peacemaker Court”; a call to the nation's office could say whether the court has a page.
