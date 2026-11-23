@@ -166,6 +166,20 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "Nation seals and images the project collected from official sources.",
   },
+  "src/lib/server/source-library.ts applyLibraryChanges get(`${changesPrefix}latest.json`)":
+    {
+      kind: "project-file",
+      why: "The source library's change files, written by scripts/library/build_library.py.",
+    },
+  "src/lib/server/source-library.ts applyLibraryChanges get(next.parts[done])": {
+    kind: "project-file",
+    why: "The source library's change files, written by scripts/library/build_library.py.",
+  },
+  "src/routes/workspace/library/[document]/original/+server.ts GET get(document.key)":
+    {
+      kind: "project-file",
+      why: "Research documents the project saved, for the writing team only. The library leaves out every file sent from outside (uploads, requests, pictures, recordings, mail), so only keys the builder indexed are served.",
+    },
   "src/lib/server/document-zips.ts entries get(key)": {
     kind: "project-file",
     why: "The project's own copies of public documents (U.S. government works and nations' governing documents), zipped for download.",

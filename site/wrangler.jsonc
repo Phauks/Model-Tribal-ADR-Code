@@ -29,6 +29,14 @@
 			"database_name": "model-tribal-adr-code",
 			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
 			"migrations_dir": "migrations"
+		},
+		{
+			// The source library (src/lib/server/source-library.ts): the text of
+			// every document in the bucket, loaded from scripts/library/ and kept
+			// up to date by the hourly run at minute 29.
+			"binding": "sourceLibrary",
+			"database_name": "model-tribal-adr-code-library",
+			"database_id": "5ee18668-8141-400f-8f90-113f631a1734"
 		}
 	],
 	// Private bucket for copies of source documents. Not public: nothing in

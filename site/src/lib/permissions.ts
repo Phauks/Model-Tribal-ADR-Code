@@ -97,7 +97,11 @@ export type Permission =
 	// work or not, and taking a sponsor off the public pages (docs/sponsorship.md).
 	// The lead author only (Trevor, Nov. 23, 2026: "From admin, make it so I
 	// can see sponsorship page, that way I can fully diagnose").
-	| 'manage-sponsors';
+	| 'manage-sponsors'
+	// Searching and reading the source library, the text of every document in
+	// the private bucket (decision record 0051). It holds private copies, so
+	// only the writing team: the lead author, editors, co-authors and advisors.
+	| 'search-source-library';
 
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
@@ -119,11 +123,23 @@ const grants: Record<Role, readonly Permission[]> = {
 		'manage-nonprofit',
 		'check-services',
 		'manage-events',
-		'manage-sponsors'
+		'manage-sponsors',
+		'search-source-library'
 	],
-	editor: ['read-contributors', 'read-requests', 'handle-requests', 'review-uploads', 'read-reviews', 'comment', 'sign-off', 'review-nation-pages', 'manage-events'],
-	'co-author': ['read-reviews', 'comment'],
-	advisor: ['read-reviews', 'comment', 'sign-off'],
+	editor: [
+		'read-contributors',
+		'read-requests',
+		'handle-requests',
+		'review-uploads',
+		'read-reviews',
+		'comment',
+		'sign-off',
+		'review-nation-pages',
+		'manage-events',
+		'search-source-library'
+	],
+	'co-author': ['read-reviews', 'comment', 'search-source-library'],
+	advisor: ['read-reviews', 'comment', 'sign-off', 'search-source-library'],
 	contributor: ['comment'],
 	'nation-reviewer': ['review-for-nation', 'comment-on-nation-uploads']
 };

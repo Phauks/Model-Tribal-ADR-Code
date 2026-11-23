@@ -6,8 +6,8 @@
 // nothing to call. This writes a small entry file beside the adapter's
 // index.js that keeps its fetch handler and adds `scheduled`, then points
 // the built Wrangler configuration at it. The scheduled handler passes the
-// run to the address scheduledPaths names for its cron trigger (the hourly
-// /following/scheduled, the weekly /address-book/scheduled, /events/scheduled every 15 minutes) inside the same copy of the Worker, with a
+// run to the addresses scheduledPaths names for its cron trigger (the hourly
+// /following/scheduled and /library/scheduled, the weekly /address-book/scheduled, /events/scheduled every 15 minutes) inside the same copy of the Worker, with a
 // random token made when that copy starts and kept only in its memory
 // (src/lib/server/scheduled-run.ts), so nothing outside can start a run.
 
@@ -22,11 +22,15 @@ const entryName = 'scheduled-entry.js';
 export const scheduledTokenKey = 'model-tribal-adr-code.scheduled-run-token';
 export const scheduledTokenHeader = 'x-scheduled-run';
 
-// Which address inside the Worker each cron trigger in wrangler.jsonc runs.
+// Which address inside the Worker each cron trigger in wrangler.jsonc runs,
+// or a list of them run one after another. A free Cloudflare account allows
+// five cron triggers in all, so new hourly work shares the hourly trigger.
+// /library/scheduled loads the source library's newest changes
+// (src/lib/server/source-library.ts).
 // The weekly one checks the private address book against the federal and
 // Alaska directories and the nation pages (src/lib/server/address-book.ts).
 export const scheduledPaths = {
-	'17 * * * *': '/following/scheduled',
+	'17 * * * *': ['/following/scheduled', '/library/scheduled'],
 	'41 9 * * 1': '/address-book/scheduled',
 	'4,19,34,49 * * * *': '/events/scheduled'
 };
@@ -51,17 +55,22 @@ export default {
 		const token = runToken();
 		const site = (env.SITE_ADDRESS || 'https://scheduled.invalid').replace(/\\/+$/, '');
 		const paths = ${JSON.stringify(scheduledPaths)};
-		const target = paths[controller.cron] ?? '/following/scheduled';
-		const request = new Request(\`\${site}\${target}\`, {
-			method: 'POST',
-			// The site's own origin and a JSON body, so SvelteKit's and the site's
-			// checks against changes sent from other sites let the run through.
-			headers: { ${JSON.stringify(scheduledTokenHeader)}: token, origin: site, 'content-type': 'application/json' },
-			body: '{}'
-		});
-		const response = await worker.fetch(request, env, context);
-		if (!response.ok) throw new Error(\`The scheduled run of \${target} failed: \${response.status} \${await response.text()}\`);
-		console.log('Scheduled run', controller.cron, target, await response.text());
+		const targets = [paths[controller.cron] ?? '/following/scheduled'].flat();
+		const failures = [];
+		// Each run goes ahead even when the one before it failed.
+		for (const target of targets) {
+			const request = new Request(\`\${site}\${target}\`, {
+				method: 'POST',
+				// The site's own origin and a JSON body, so SvelteKit's and the site's
+				// checks against changes sent from other sites let the run through.
+				headers: { ${JSON.stringify(scheduledTokenHeader)}: token, origin: site, 'content-type': 'application/json' },
+				body: '{}'
+			});
+			const response = await worker.fetch(request, env, context);
+			if (response.ok) console.log('Scheduled run', controller.cron, target, await response.text());
+			else failures.push(\`The scheduled run of \${target} failed: \${response.status} \${await response.text()}\`);
+		}
+		if (failures.length > 0) throw new Error(failures.join('\\n'));
 	}
 };
 `;

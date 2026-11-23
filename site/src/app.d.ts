@@ -48,6 +48,8 @@ declare global {
 		sourceDocuments: R2Bucket;
 		/** The built site's own files, set by @sveltejs/adapter-cloudflare (the ZIP downloads read the copy lists from it). */
 		ASSETS?: { fetch(request: Request | string): Promise<Response> };
+		/** The source library's own database (src/lib/server/source-library.ts, decision record 0051). */
+		sourceLibrary?: D1Database;
 		requestFormLimit?: RateLimit;
 		workspaceChangeLimit?: RateLimit;
 		signInLimit?: RateLimit;
