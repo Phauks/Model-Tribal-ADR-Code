@@ -9,6 +9,8 @@
  * the list (mediation or arbitration); across filters they narrow it
  * (mediation, in family disputes).
  */
+import type { BarChartData } from './bar-chart.ts';
+import { markAnchor, type CitationMark } from './citation-marks.ts';
 import { choicesFromAddress, writeChoices, type Facet, type FilterChoices } from './search-filters.ts';
 import { foldForSearch, rowsToCsv, type TableColumn, type TableRow } from './tables/table-definition.ts';
 
@@ -32,6 +34,8 @@ export interface RecourseRow {
 	outcome: string;
 	/** The provision's citation as the nation publishes its law. */
 	citation: string;
+	/** The name of the law the provision is in, when the research names it. */
+	document?: string;
 	/** One or two sentences on what the provision does, written for the project. */
 	summary: string;
 	/** The site's own copy of the law, or the original address when there is none. */
@@ -174,6 +178,111 @@ export function recourseLink(key: string, value: string): string {
 	return `/nations/recourse?${new URLSearchParams([[key, value]]).toString()}`;
 }
 
+/** The ticked answers of one filter, for the one chip that removes them all: "Kind of dispute: Family, Child welfare". */
+export interface RecourseChip {
+	key: string;
+	label: string;
+	answers: string[];
+}
+
+/** One chip for each filter in use, in the filters' order, as the approved mockup groups them (design/data-views). */
+export function recourseChips(facets: readonly Facet<RecourseRow>[], choices: FilterChoices): RecourseChip[] {
+	return facets.flatMap((facet) => {
+		const chosen = new Set(choices[facet.key] ?? []);
+		const answers = facet.options.filter((option) => chosen.has(option.value)).map((option) => option.label);
+		return answers.length > 0 ? [{ key: facet.key, label: facet.label, answers }] : [];
+	});
+}
+
+/** The parts of a provision a reader can show or hide with Columns, in the order a result shows them. The nation always shows. */
+export const recourseParts = [
+	{ key: 'states', label: 'State' },
+	{ key: 'citation', label: 'Citation' },
+	{ key: 'summary', label: 'What it does' },
+	{ key: 'method', label: 'Method' },
+	{ key: 'subject', label: 'Kind of dispute' },
+	{ key: 'setting', label: 'Where it happens' },
+	{ key: 'entry', label: 'How it starts' },
+	{ key: 'outcome', label: 'Result' }
+] as const;
+
+export type RecoursePart = (typeof recourseParts)[number]['key'];
+
+/** A law the provisions shown are cited to, numbered for the Sources list under the results. */
+export interface RecourseSource {
+	number: number;
+	/** The site's copy of the law, or where it was found. */
+	href?: string;
+	nation: string;
+	/** The law's name, or the first provision's citation when the research does not name the law. */
+	title: string;
+	/** The ids of the markers that cite it, in list order, which the Sources list links back to. */
+	backlinks: string[];
+}
+
+/**
+ * The laws behind the provisions shown, each once, numbered in the order the list first cites them, and each provision's marker, so every citation carries its source marker as the approved mockup has it (design/data-views; site/DESIGN.md, "Every count opens to its records").
+ */
+export function recourseSources(rows: readonly RecourseRow[]): { sources: RecourseSource[]; marks: Map<string, CitationMark> } {
+	const byLaw = new Map<string, RecourseSource>();
+	const marks = new Map<string, CitationMark>();
+	for (const row of rows) {
+		const law = row.original ?? row.link ?? `${row.nation.id}#${row.document ?? row.citation}`;
+		let source = byLaw.get(law);
+		if (!source) {
+			source = { number: byLaw.size + 1, href: row.link ?? row.original, nation: row.nation.name, title: row.document || row.citation, backlinks: [] };
+			byLaw.set(law, source);
+		}
+		const anchor = markAnchor(source.number, source.backlinks.length + 1);
+		source.backlinks.push(anchor);
+		marks.set(row.id, { number: source.number, anchor });
+	}
+	return { sources: [...byLaw.values()], marks };
+}
+
+/** What Show as chart can count the provisions by, in the order it tries them. */
+const chartGroupings: { key: string; title: string; header: string; partsOfWhole: boolean }[] = [
+	{ key: 'method', title: 'by method', header: 'Method', partsOfWhole: true },
+	{ key: 'subject', title: 'by kind of dispute', header: 'Kind of dispute', partsOfWhole: true },
+	{ key: 'state', title: 'by state or territory', header: 'State or territory', partsOfWhole: false },
+	{ key: 'setting', title: 'by where it happens', header: 'Where it happens', partsOfWhole: true },
+	{ key: 'entry', title: 'by how it starts', header: 'How it starts', partsOfWhole: true },
+	{ key: 'outcome', title: 'by result', header: 'Result', partsOfWhole: true }
+];
+
+/**
+ * The provisions shown, as a bar chart for Show as chart (approved mockup, design/data-views): counted by method, or, once a single method is chosen, by the first of kind of dispute, state, setting, how it starts and result that still splits them. Each bar leads to the same list narrowed to it (link gives the address).
+ */
+export function recourseChart(
+	rows: readonly RecourseRow[],
+	facets: readonly Facet<RecourseRow>[],
+	link: (key: string, value: string) => string
+): BarChartData {
+	const facetOf = new Map(facets.map((facet) => [facet.key, facet]));
+	const countsOf = (key: string) => {
+		const facet = facetOf.get(key);
+		const counts = new Map<string, number>();
+		if (facet) for (const row of rows) for (const value of new Set(facet.valuesOf(row))) counts.set(value, (counts.get(value) ?? 0) + 1);
+		return counts;
+	};
+	const grouping = chartGroupings.find((candidate) => countsOf(candidate.key).size > 1) ?? chartGroupings[0];
+	const facet = facetOf.get(grouping.key);
+	const words = new Map(facet?.options.map((option) => [option.value, option.label]) ?? []);
+	const bars = [...countsOf(grouping.key)]
+		.sort((first, second) => second[1] - first[1] || textCollator.compare(words.get(first[0]) ?? first[0], words.get(second[0]) ?? second[0]))
+		.map(([value, count]) => ({ label: words.get(value) ?? value, value: count, href: link(grouping.key, value) }));
+	return {
+		identifier: 'recourse-chart',
+		title: `Provisions ${grouping.title}`,
+		description: '',
+		labelHeader: grouping.header,
+		valueHeader: 'Provisions',
+		source: 'Dispute resolution provisions read from each nation’s published law',
+		bars,
+		partsOfWhole: grouping.partsOfWhole
+	};
+}
+
 const csvColumns: TableColumn[] = [
 	{ key: 'nation', header: 'Nation' },
 	{ key: 'states', header: 'States' },
@@ -188,9 +297,31 @@ const csvColumns: TableColumn[] = [
 	{ key: 'law', header: 'Law' }
 ];
 
+/** The columns each part shown adds to a download; the nation, the checking and the law's address always come. */
+const partColumns: Record<RecoursePart, string[]> = {
+	states: ['states'],
+	citation: ['citation'],
+	summary: ['summary'],
+	method: ['method'],
+	subject: ['subject'],
+	setting: ['setting'],
+	entry: ['entry'],
+	outcome: ['outcome']
+};
+
+/** The rows as a table, for the .csv and .xlsx downloads: the parts the reader shows (every part by default). */
+export function recourseTable(rows: RecourseRow[], shown: readonly RecoursePart[] = recourseParts.map((part) => part.key)): { columns: TableColumn[]; rows: TableRow[] } {
+	const kept = new Set(['nation', 'checked', 'law', ...shown.flatMap((part) => partColumns[part])]);
+	return { columns: csvColumns.filter((column) => kept.has(column.key)), rows: tableRowsOf(rows) };
+}
+
 /** The rows as CSV, with the nation's page and the law's address as links. */
 export function recourseCsv(rows: RecourseRow[], origin = ''): string {
-	const tableRows: TableRow[] = rows.map((row) => ({
+	return rowsToCsv(csvColumns, tableRowsOf(rows), origin);
+}
+
+function tableRowsOf(rows: RecourseRow[]): TableRow[] {
+	return rows.map((row) => ({
 		key: row.id,
 		cells: {
 			nation: { text: row.nation.name, href: `/nations/${row.nation.id}` },
@@ -206,5 +337,4 @@ export function recourseCsv(rows: RecourseRow[], origin = ''): string {
 			law: { text: row.original ?? '' }
 		}
 	}));
-	return rowsToCsv(csvColumns, tableRows, origin);
 }
