@@ -1,7 +1,7 @@
 profile: content/tribes/c/chaloklowa-chickasaw-indian-people.yaml
 topic: contacts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -27,3 +27,11 @@ searches:
   query: official website, contact page, general email
   outcome: found
   reason: The South Carolina recognized tribes directory lists the tribe's phone and address; the values were checked on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: the group's name and state, with official website, contact, or the state commission on Indian affairs
+  outcome: not-found
+  reason: No general office address on the group's own site or a state government page; addresses that name a person were not copied.

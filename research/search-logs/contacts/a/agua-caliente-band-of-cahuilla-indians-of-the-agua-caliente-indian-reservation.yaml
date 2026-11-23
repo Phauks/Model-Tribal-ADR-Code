@@ -1,7 +1,7 @@
 profile: content/tribes/a/agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation.yaml
 topic: contacts
 status: partly-searched
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -19,4 +19,20 @@ searches:
   query: links whose words or address say contact; mailto links and email addresses
   outcome: not-found
   reason: No page linked as a contact page on the nation's own site and no general office email.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.aguacaliente.org/
+  query: 'general office email on the nation''s own site: home, contact, about, government, council, office and staff pages, read in a browser'
+  outcome: blocked
+  reason: At least one page answered with a bot check, which was not worked around; no general office address on the pages that loaded.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-directory
+  address: https://www.bia.gov/service/tribal-leaders-directory
+  query: email field for the nation in the federal Tribal Leaders Directory
+  outcome: not-found
+  reason: The directory lists only a leader's own address or none; leaders' addresses are kept out of the public record (lead author's decision, Nov. 23, 2026).
 next_steps: A person could open the nation's website in a browser and look for its contact page and a general office email.

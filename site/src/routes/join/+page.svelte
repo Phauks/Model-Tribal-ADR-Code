@@ -25,7 +25,7 @@
 			choose, or none. In the book, on the website, or both.
 		</li>
 		<li><strong>Check and confirm.</strong> You see your credit exactly as it will be printed.</li>
-		<li><strong>The lead author replies</strong> and gives reviewers and writers access to drafts.</li>
+		<li><strong>You are signed up.</strong> The lead author gets in touch and gives reviewers and writers access to drafts.</li>
 	</ol>
 
 	<h2>Your information</h2>
@@ -42,7 +42,7 @@
 
 	<p><a class="button" href="/sign-in?returnTo=%2Fprofile" data-sveltekit-reload>Sign in to sign up</a></p>
 	<p class="small muted">
-		For adults. Rather not make an account?
+		For people 13 or older. Rather not make an account?
 		<a href="/requests?kind=contribute">Offer to contribute through the request form</a>. See who has
 		helped on the <a href="/contributors">Contributors</a> page.
 	</p>

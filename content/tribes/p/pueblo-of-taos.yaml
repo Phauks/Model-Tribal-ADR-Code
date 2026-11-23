@@ -172,6 +172,15 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.taospueblo.org/cms/taos-pueblo-tribal-court)
     returned HTTP 404, so it is not recorded. Link added 2026-11-22: the Tribal Court page on the nation''s
     website (fetched with status 200 on 2026-11-22).'
+- kind: healing-to-wellness-court
+  name: Taos Pueblo Tribal Court wellness court
+  link: https://taospueblo-nsn.gov/tribal-court/
+  source: naicja-2016-holistic-traditional-justice-roundtable
+  confidence: medium
+  verification: read-in-full
+  as_of: 2016-08
+  locator: at 15
+  note: The report says the Tribal court "recently drafted a memorandum of agreement with the New Mexico Magistrate Court that allows offenders in the state system to enter into the wellness court as a condition of their probation." It gives no formal name for the wellness court, so the name here describes it. The journal sweep of 2026-11-23 (research/sessions/2026/2026-11-23-indian-law-journals.md).
 gaming:
   compacts:
   - state: NM

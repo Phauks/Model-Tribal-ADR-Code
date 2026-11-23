@@ -1,4 +1,4 @@
-# 0035. Keep our own copy of every page a record directly cites
+# 0037. Keep our own copy of every page a record directly cites
 
 - **Status:** Accepted
 - **Date:** 2026-11-22
