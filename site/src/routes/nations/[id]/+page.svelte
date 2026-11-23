@@ -420,6 +420,12 @@
 {/snippet}
 
 <style>
+	/* Room before the line that follows a list, such as "All 949 opinions". */
+	.opinions,
+	.stories {
+		margin-bottom: var(--space-4);
+	}
+
 	.mentions {
 		display: block;
 		margin-top: var(--space-1);
