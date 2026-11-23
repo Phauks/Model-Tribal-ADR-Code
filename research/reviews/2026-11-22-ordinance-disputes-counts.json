@@ -78,5 +78,103 @@
    "compact-terms-recorded": 3
   },
   "decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
+ },
+ "scans_2026_11_23": {
+  "first_tier_nations": 32,
+  "nations_with_a_document_read": 31,
+  "documents_read": 53,
+  "pages_in_documents": 1791,
+  "pages_read": 1322,
+  "documents_read_in_full": 44,
+  "documents_partly_read": [
+   "navajo-nation-amendment-2019-06-24",
+   "navajo-nation-ordinance-2003-12-09",
+   "pueblo-of-isleta-amendment-2000-04-18",
+   "pueblo-of-isleta-amendment-2024-11-26",
+   "pueblo-of-nambe-amendment-2016-09-23",
+   "seneca-cayuga-tribe-of-oklahoma-amendment-2013-12-18",
+   "shinnecock-indian-nation-ordinance-2020-07-17",
+   "shoalwater-bay-tribe-amendment-2019-08-30",
+   "wilton-rancheria-amendment-2019-08-30"
+  ],
+  "documents_with_pages_dropped": [
+   "navajo-nation-amendment-2019-06-24",
+   "wilton-rancheria-amendment-2019-08-30"
+  ],
+  "documents_without_items": 15,
+  "items": 75,
+  "items_by_kind": {
+   "patron-dispute": 41,
+   "employee-grievance": 12,
+   "other": 15,
+   "licensing-hearing": 7
+  },
+  "items_by_confidence": {
+   "high": 42,
+   "low": 19,
+   "medium": 14
+  },
+  "items_by_kind_and_confidence": {
+   "employee-grievance high": 5,
+   "employee-grievance low": 5,
+   "employee-grievance medium": 2,
+   "licensing-hearing high": 4,
+   "licensing-hearing medium": 3,
+   "other high": 3,
+   "other low": 7,
+   "other medium": 5,
+   "patron-dispute high": 30,
+   "patron-dispute low": 7,
+   "patron-dispute medium": 4
+  },
+  "items_by_current_kind": {
+   "patron-dispute": 41,
+   "employee-grievance": 12,
+   "other": 15,
+   "not-a-dispute-procedure": 3,
+   "licensing-hearing": 4
+  },
+  "flags": {
+   "partly-read": 21,
+   "compact-terms": 12,
+   "no-steps": 11,
+   "not-in-force": 2
+  },
+  "nations_with_kept_items": 25,
+  "spot_check": {
+   "seed": 20261123,
+   "checked": 10,
+   "verdicts": {
+    "keep": 5,
+    "not-in-force": 2,
+    "not-a-dispute-procedure": 3
+   }
+  },
+  "second_look": {
+   "not-queued": 49,
+   "not-rechecked": 16,
+   "keep": 5,
+   "not-in-force": 2,
+   "not-a-dispute-procedure": 3
+  },
+  "search_logs_changed": {
+   "partly-searched -> none-found": 6,
+   "partly-searched -> found": 25
+  },
+  "search_logs_after": {
+   "found": 295,
+   "none-found": 19,
+   "partly-searched": 1
+  },
+  "items_after": 608,
+  "second_tier_not_read": {
+   "nations_with_scanned_documents": 137,
+   "scanned_documents": 271,
+   "scanned_pages": 7203,
+   "selected_documents": 219,
+   "selected_pages": 5956,
+   "nations_with_a_selected_document": 136,
+   "scanned_documents_without_a_profile": 2
+  }
  }
 }

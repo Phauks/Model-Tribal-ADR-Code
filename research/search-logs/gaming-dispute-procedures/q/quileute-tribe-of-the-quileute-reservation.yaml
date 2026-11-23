@@ -1,7 +1,7 @@
 profile: content/tribes/q/quileute-tribe-of-the-quileute-reservation.yaml
 topic: gaming-dispute-procedures
-status: partly-searched
-last_searched: '2026-11-22'
+status: none-found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -23,6 +23,29 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 1994-05-20 has no text layer on most pages (19 of 19 pages have no text
     layer; no OCR available).
-next_steps: Read the scanned ordinance listed 1994-03-21 (https://www.nigc.gov/wp-content/uploads/2025/03/quileuteindiantribe-quileuteord032194.pdf)
-  with OCR or by hand. Read the scanned amendment listed 1994-05-20 (https://www.nigc.gov/wp-content/uploads/2025/03/quileuteindiantribe-quileuteamend052094.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/quileuteindiantribe-quileuteamend052094.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-19 of 19 of this amendment listed 1994-05-20 as page
+    images (it has no text layer) and found no dispute procedure (the only passages are license suspension
+    and revocation (no dispute framing) and the Section 9-10 enforcement and appeal provisions, not a
+    patron, employee or other dispute procedure).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/quileuteindiantribe-quileuteord032194.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-17 of 17 of this ordinance listed 1994-03-21 as page
+    images (it has no text layer) and found no dispute procedure (the passages are background investigation
+    and license procedures, license suspension without dispute framing, and enforcement provisions; no
+    patron, employee or other dispute procedure).
+next_steps: Every chosen ordinance document on the Commission's list was read from page images; look for
+  gaming regulations or a patron dispute policy on the nation's or its gaming commission's website.
