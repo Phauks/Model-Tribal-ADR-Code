@@ -14,7 +14,7 @@ export const prerender = false;
 
 function plain(html: string): string {
 	return html
-		.replace(/<span class="source-saved">[\s\S]*$/, '')
+		.replace(/ ?<span class="reading-links">[\s\S]*$/, '')
 		.replace(/<[^>]+>/g, '')
 		.replaceAll('&amp;', '&')
 		.replaceAll('&#38;', '&')
