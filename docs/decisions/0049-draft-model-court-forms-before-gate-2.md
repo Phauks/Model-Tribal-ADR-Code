@@ -19,7 +19,7 @@ Trevor chose "Draft help forms now" on the thread's decision card.
 
 ## Consequences
 
-- Nine forms in `content/forms/` (version 0.1.0, CC0), with `court` and `nation` placeholder groups.
+- Nine forms in `content/forms/` (version 0.1.0, CC0), with `court` and `nation` placeholder groups, and a blank court form that is the base for every form (Trevor, 2026-11-23: "Create a blank template that can be used as well"). A site test checks that each form keeps the blank form's shared parts; `content/forms/README.md` says how to start a new form from it.
 - The /forms page builder now skips a form's front matter and uses its summary.
 - The copies are committed under `site/static/help/forms/`, because the site's build has no pandoc or LibreOffice. Whoever changes a form or a placeholder runs the script again; a site test fails until they do. The .docx files come out the same byte for byte; each PDF build gets a new hash, so a PDF is rebuilt only when its form changes.
 - The shared download verifier (`/verify`, from the offline downloads work) covers `/help/forms/` once it lands, so people can also check a file in the browser.

@@ -83,8 +83,10 @@ def printable_markdown(source: str, texts: dict[str, str], path: pathlib.Path) -
     body = PLACEHOLDER.sub(replace, body)
     # A tick box needs no bullet beside it: each choice becomes its own paragraph.
     body = re.sub(r"^- ☐ (.*)$", r"☐ \1\n", body, flags=re.MULTILINE)
+    # A blank alone on its line would be read as a horizontal rule: escape it, and make it a full line to write on.
+    body = re.sub(r"^((?:\d+\.|-)[ \t]+)?_{4,}[ \t]*$", lambda match: (match.group(1) or "") + "\\_" * 60, body, flags=re.MULTILINE)
     # Room to write by hand.
-    return re.sub(r"_{4,}", "_" * 22, body)
+    return re.sub(r"(?<!\\)(?<!_)_{4,}", "_" * 22, body)
 
 
 def drop_empty_row(match: re.Match) -> str:
@@ -133,7 +135,7 @@ def main() -> int:
     sources: dict[str, str] = {}
 
     with tempfile.TemporaryDirectory() as scratch:
-        for form in sorted(FORMS.glob("*.md")):
+        for form in sorted(path for path in FORMS.glob("*.md") if path.name != "README.md"):
             sources[form.stem] = sha256(form)
             markdown = printable_markdown(form.read_text(encoding="utf-8"), texts, form)
             source = pathlib.Path(scratch) / f"{form.stem}.md"

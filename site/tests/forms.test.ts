@@ -145,6 +145,26 @@ describe('form catalog', () => {
 		}
 	});
 
+	it('builds every model form on the blank court form', () => {
+		const parts = [
+			'## Before you start',
+			'Court staff can explain the steps but cannot give legal advice.',
+			'## Case information',
+			'I swear or affirm',
+			'Notary or clerk, if the court requires it:',
+			'## Notes for courts adapting this form',
+			'These notes are not part of the form.'
+		];
+		const root = path.resolve(import.meta.dirname, '../..');
+		const model = catalog.filter((template) => template.group === 'model');
+		expect(model.map((form) => form.slug)).toContain('blank-court-form');
+		for (const form of model) {
+			const text = readFileSync(path.join(root, form.file), 'utf8');
+			expect(text, form.file).toContain(`Form \`${form.slug}\`, version ${form.version}. A court may adopt or change this form`);
+			for (const part of parts) expect(text, `${form.file} lacks "${part}"`).toContain(part);
+		}
+	});
+
 	it("leaves a model form's front matter off the page, lists its summary and shows the court's settings as model text", () => {
 		const root = mkdtempSync(path.join(tmpdir(), 'forms-'));
 		mkdirSync(path.join(root, 'content/forms'), { recursive: true });
