@@ -46,7 +46,7 @@ Send files and Intake share one table (`site/src/lib/components/FileSender.svelt
 
 - Files can be dropped anywhere on the page, folders included, and the whole page shows that it will take them. The Files and Folder buttons do the same. Hidden files that folders carry (`.DS_Store`, `desktop.ini`, `Thumbs.db`) are left out.
 - There is one row per file, with its name (and its folder path), size and status. Tabs show all files, or only the ones that are ready, sending, sent or have a problem. Find narrows the rows by name, and the checkboxes let several rows be removed at once.
-- Files are sent three at a time. A sending file can be paused and carried on later. A file that stopped (for example, the connection dropped) can be tried again, alone or with every other stopped file; a refused file says why.
+- A batch starts by sending six files at once and adds one more each time the last round went faster, up to ten; being told to slow down, or a request that hears nothing back, takes two away (never fewer than two). Small files spend most of their time waiting on the server, so more at once helps them most. Starting a file does not count against the limit on workspace changes (30 a minute), only against the upload limit. A request that hears nothing back in a minute (three minutes for a piece) is given up, so a stuck file moves to Problems and frees its place. A sending file can be paused and carried on later. A file that stopped (for example, the connection dropped) can be tried again, alone or with every other stopped file; a refused file says why.
 - A total at the bottom gives how many files and bytes are sent and about how long is left. Leaving the page while files are sending asks first.
 - On a phone the table becomes a list.
 

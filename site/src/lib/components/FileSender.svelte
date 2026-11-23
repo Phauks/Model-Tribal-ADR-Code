@@ -88,7 +88,20 @@
 		aside
 	}: Props = $props();
 
-	const parallel = 3;
+	/**
+	 * Files sent at once. A small file spends most of its time waiting on the
+	 * server, so more at once is faster, until the connection is full. The
+	 * batch starts at six and adds one more each time the last round was
+	 * faster, up to ten; a refusal for going too fast, or a request that hears
+	 * nothing back, takes two away.
+	 */
+	const firstAtOnce = 6;
+	const mostAtOnce = 10;
+	const fewestAtOnce = 2;
+	let strained = false;
+	/** A request that hears nothing back in this time is given up, so a stuck file frees its place. */
+	const requestTimeout = 60_000;
+	const pieceTimeout = 180_000;
 	let rows = $state<Row[]>([]);
 	let nextKey = 0;
 	let tab = $state<'all' | 'ready' | 'sending' | 'sent' | 'problem'>('all');
@@ -285,10 +298,12 @@
 			const response = await fetch(address, {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
-				body: JSON.stringify(body)
+				body: JSON.stringify(body),
+				signal: AbortSignal.timeout(requestTimeout)
 			});
 			// The per-minute guard against runaway scripts: wait and carry on.
 			if (response.status === 429 && attempt < 20) {
+				strained = true;
 				await pause(5000);
 				continue;
 			}
@@ -297,11 +312,15 @@
 		}
 	}
 
-	/** Sends one piece, trying again twice if the connection drops. */
+	/** Sends one piece, trying again twice if the connection drops or nothing comes back. */
 	async function sendPiece(reference: string, number: number, piece: Blob): Promise<Response> {
 		for (let attempt = 1; ; attempt++) {
 			try {
-				return await fetch(`/uploads/pieces/${reference}/${number}`, { method: 'PUT', body: piece });
+				return await fetch(`/uploads/pieces/${reference}/${number}`, {
+					method: 'PUT',
+					body: piece,
+					signal: AbortSignal.timeout(pieceTimeout)
+				});
 			} catch (problem) {
 				if (attempt >= 3) throw problem;
 				await pause(2000 * attempt);
@@ -405,18 +424,62 @@
 		bytesAtStart = sentBytes;
 		let stopped = false;
 		const next = () => (stopped ? undefined : rows.find((row) => row.state === 'ready'));
+		let atOnce = firstAtOnce;
+		let active = 0;
+		let roundStart = Date.now();
+		let roundBytes = sentBytes;
+		let roundFiles = 0;
+		let lastRate = 0;
+		strained = false;
+		let allDone: () => void = () => {};
+		const done = new Promise<void>((resolve) => (allDone = resolve));
+
+		/** After each file: a full round at this many files sets the next round's number. */
+		function adjust() {
+			if (strained) {
+				strained = false;
+				atOnce = Math.max(fewestAtOnce, atOnce - 2);
+				roundFiles = 0;
+				roundStart = Date.now();
+				roundBytes = sentBytes;
+				return;
+			}
+			roundFiles += 1;
+			if (roundFiles < atOnce) return;
+			const seconds = Math.max((Date.now() - roundStart) / 1000, 0.001);
+			// Files and bytes both count, so a round of small files and a round of large ones are each judged fairly.
+			const rate = roundFiles / seconds + (sentBytes - roundBytes) / (1024 * 1024) / seconds;
+			if (rate >= lastRate && atOnce < mostAtOnce) atOnce += 1;
+			lastRate = rate;
+			roundFiles = 0;
+			roundStart = Date.now();
+			roundBytes = sentBytes;
+			while (active < atOnce && next()) start();
+		}
+
 		async function worker() {
-			for (let row = next(); row; row = next()) {
+			for (let row = next(); row; row = active > atOnce ? undefined : next()) {
 				try {
 					const carryOn = row.link ? await sendLink(row) : await sendFile(row);
 					if (!carryOn) stopped = true;
 				} catch {
+					strained = true;
 					stop(row, 'Something went wrong. Check your connection.');
 				}
+				adjust();
 			}
 		}
+		function start() {
+			active += 1;
+			void worker().finally(() => {
+				active -= 1;
+				if (active === 0) allDone();
+			});
+		}
 		try {
-			await Promise.all(Array.from({ length: parallel }, worker));
+			for (let count = 0; count < atOnce && next(); count++) start();
+			if (active === 0) allDone();
+			await done;
 		} finally {
 			running = false;
 		}
