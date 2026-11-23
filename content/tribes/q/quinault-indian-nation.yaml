@@ -482,6 +482,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.P, Washington
   note: 'The source reads: “Quinault Indian Nation”. The report says the agreements, entered into in July 2009, "remain in effect until terminated". Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: WA
+  county: Grays Harbor County
+  court: Superior Court for Grays Harbor County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Grays Harbor County holds 97% of the land of Quinault Reservation (Census GEOID 3040), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WA
+  county: Jefferson County
+  court: Superior Court for Jefferson County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Jefferson County holds 3% of the land of Quinault Reservation (Census GEOID 3040), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Quinaielt, etc., 1855
   signed: '1855-07-01'

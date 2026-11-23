@@ -482,6 +482,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Article on the program
   note: 'The source reads: “The County-Tribe Deputies will be deputized to enforce the laws of the State of Wisconsin”. Cover reads 2021; the signature pages were not checked. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: WI
+  county: Sawyer County
+  court: Circuit Court for Sawyer County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Sawyer County holds 100% of the land of Lac Courte Oreilles Reservation (Census GEOID 1815), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1842
   signed: '1842-10-04'

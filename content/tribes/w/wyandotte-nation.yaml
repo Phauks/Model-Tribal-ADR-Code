@@ -747,6 +747,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Introductory provisions, paragraphs 2 and 3
   note: 'The source reads: “Such officers shall be referred to herein as “Cross-Commissioned Officers.””. The copy is an unsigned, undated form. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: OK
+  county: Ottawa County
+  court: District Court for Ottawa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Ottawa County holds 100% of the land of Wyandotte OTSA (Census GEOID 5890), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1785
   signed: '1785-01-21'

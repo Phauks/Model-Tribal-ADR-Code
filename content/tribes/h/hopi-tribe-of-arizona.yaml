@@ -657,6 +657,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.B, Arizona
   note: 'The source reads: “The state of Arizona previously had an agreement with the Hopi Tribe that expired in 2011 and was not renewed.”. The state agency name is inferred. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: AZ
+  county: Navajo County
+  court: Superior Court for Navajo County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Navajo County holds 66% of the land of Hopi Reservation (Census GEOID 1505), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AZ
+  county: Coconino County
+  court: Superior Court for Coconino County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Coconino County holds 34% of the land of Hopi Reservation (Census GEOID 1505), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Moqui (Hopi) Reserve, Arizona
   method: executive-order

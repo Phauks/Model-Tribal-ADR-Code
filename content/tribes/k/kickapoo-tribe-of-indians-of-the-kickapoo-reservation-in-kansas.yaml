@@ -574,6 +574,34 @@ jurisdiction:
   verification: read-in-full
   locator: 18 U.S.C. § 3243; Act of June 8, 1940, ch. 276, 54 Stat. 249
   note: 'Criminal only; no civil grant. The four roster entries list KS because of reservation or trust-land presence in Kansas (Iowa Tribe and Sac and Fox of Missouri straddle KS/NE). Also cites: statutes-at-large-54-249.'
+nearby_state_courts:
+- state: KS
+  county: Brown County
+  court: District Court for Brown County
+  link: https://kscourts.gov/About-the-Courts/District-Courts
+  source: state-trial-court-directory-ks
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Brown County holds 60% of the land of Kickapoo (KS) Reservation (Census GEOID 1770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: KS
+  county: Jackson County
+  court: District Court for Jackson County
+  link: https://kscourts.gov/About-the-Courts/District-Courts
+  source: state-trial-court-directory-ks
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Jackson County holds 27% of the land of Kickapoo (KS) Reservation (Census GEOID 1770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: KS
+  county: Atchison County
+  court: District Court for Atchison County
+  link: https://kscourts.gov/About-the-Courts/District-Courts
+  source: state-trial-court-directory-ks
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Atchison County holds 13% of the land of Kickapoo (KS) Reservation (Census GEOID 1770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Wyandot, etc., 1795
   signed: '1795-08-03'

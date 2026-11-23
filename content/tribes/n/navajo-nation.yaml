@@ -863,6 +863,61 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: First recital and effective-date section
   note: 'The source reads: “issue commissions as New Mexico Peace Officers to members of the police or sheriff’s department of any New Mexico Indian tribe or pueblo”. Effective date reads "31st day of August, 1981"; the agreement and an amendment carry the same date. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: AZ
+  county: Apache County
+  court: Superior Court for Apache County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Apache County holds 28% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AZ
+  county: Coconino County
+  court: Superior Court for Coconino County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Coconino County holds 21% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: AZ
+  county: Navajo County
+  court: Superior Court for Navajo County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Navajo County holds 17% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: San Juan County
+  court: District Court for San Juan County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: San Juan County holds 14% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: McKinley County
+  court: District Court for McKinley County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: McKinley County holds 10% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: UT
+  county: San Juan County
+  court: District Court for San Juan County
+  link: https://www.utcourts.gov/en/about/miscellaneous/directory.html
+  source: state-trial-court-directory-ut
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: San Juan County holds 8% of the land of Navajo Nation Reservation (Census GEOID 2430), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Navaho, 1849
   signed: '1849-09-09'

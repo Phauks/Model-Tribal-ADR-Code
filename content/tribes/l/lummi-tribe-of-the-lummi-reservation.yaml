@@ -755,6 +755,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.P, Washington
   note: 'The source reads: “Lummi Nation”. The report says the agreements, entered into in July 2009, "remain in effect until terminated". Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: WA
+  county: Whatcom County
+  court: Superior Court for Whatcom County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Whatcom County holds 100% of the land of Lummi Reservation (Census GEOID 2070), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Dwamish, Suquamish, etc., 1855
   signed: '1855-01-22'

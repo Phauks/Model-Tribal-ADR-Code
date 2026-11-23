@@ -553,6 +553,43 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.51)
   note: Listed as "EASTERN BAND OF CHEROKEE INDIANS" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+nearby_state_courts:
+- state: NC
+  county: Swain County
+  court: Superior Court for Swain County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Swain County holds 47% of the land of Eastern Cherokee Reservation (Census GEOID 0990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NC
+  county: Jackson County
+  court: Superior Court for Jackson County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Jackson County holds 37% of the land of Eastern Cherokee Reservation (Census GEOID 0990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NC
+  county: Cherokee County
+  court: Superior Court for Cherokee County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Cherokee County holds 10% of the land of Eastern Cherokee Reservation (Census GEOID 0990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NC
+  county: Graham County
+  court: Superior Court for Graham County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Graham County holds 5% of the land of Eastern Cherokee Reservation (Census GEOID 0990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Cherokee, 1785
   signed: '1785-11-28'

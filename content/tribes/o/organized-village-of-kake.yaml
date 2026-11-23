@@ -726,6 +726,16 @@ jurisdiction:
   as_of: '2024'
   locator: Appendix D (PDF p.53)
   note: Listed as "ORGANIZED VILLAGE OF KAKE".
+nearby_state_courts:
+- state: AK
+  county: Prince of Wales-Hyder Census Area
+  court: Superior Court for Prince of Wales-Hyder Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Prince of Wales-Hyder Census Area holds 100% of the land of Kake ANVSA (Census GEOID 6670), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

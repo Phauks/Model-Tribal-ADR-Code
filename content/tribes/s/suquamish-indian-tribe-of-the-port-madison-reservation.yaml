@@ -693,6 +693,16 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.54)
   note: Listed as "SUQUAMISH INDIAN TRIBE OF THE PORT MADISON RESERVATION" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+nearby_state_courts:
+- state: WA
+  county: Kitsap County
+  court: Superior Court for Kitsap County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Kitsap County holds 100% of the land of Port Madison Reservation (Census GEOID 2925), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Dwamish, Suquamish, etc., 1855
   signed: '1855-01-22'
