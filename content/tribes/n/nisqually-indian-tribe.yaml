@@ -877,6 +877,17 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: forms
+  title: Nisqually Indian Tribe Judicial Services (court forms)
+  court: Nisqually Tribal Court
+  link: https://www.nisqually-nsn.gov/tribal-services/Judicial-Services
+  detail: Forms listed include Joint Petition for Dissolution of Marriage, Petition for Custody, Petition for Dissolution of Marriage, Petition for Guardianship (Adult), name change petitions and restraining order petitions.
+  source: nisqually-indian-tribe-judicial-services
+  confidence: high
+  verification: title-only
+  locator: form list
+  note: 'The source reads: “Petition for Custody”. Form files not opened.'
 nearby_state_courts:
 - state: WA
   county: Pierce County

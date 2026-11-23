@@ -698,6 +698,27 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+court_practice:
+- kind: forms
+  title: Links for Court Documents
+  court: Spokane Tribal Court
+  link: https://www.spokanetribe.com/government/court/
+  detail: Page lists Petition for Custody, Petition for Child Support, Petition for Dissolution of Marriage, Petition for Protection Order Harassment and Stalking, Update Motion Form and Name Change Petition.
+  source: spokane-tribe-of-indians-court
+  confidence: high
+  verification: title-only
+  locator: 'Links for Court Documents:'
+  note: 'The source reads: “Links for Court Documents:”. Form files not opened; dated 2020 in file paths.'
+- kind: filing-fees
+  title: Court Filing Fees
+  court: Spokane Tribal Court
+  link: https://www.spokanetribe.com/wp-content/uploads/2020/03/COURT-FILING-FEES.docx
+  detail: Fee schedule document linked on the court page.
+  source: spokane-tribe-of-indians-court
+  confidence: high
+  verification: title-only
+  locator: 'Links for Court Documents:'
+  note: Page not opened; word-processing file linked on the court page.
 nearby_state_courts:
 - state: WA
   county: Stevens County

@@ -508,6 +508,57 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.I, New Mexico
   note: 'The source reads: “Pojoaque Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: court-rules
+  title: Tribal Court Rules & Protocols
+  court: Pueblo of Pojoaque Tribal Courts
+  link: https://pojoaque.org/wp-content/uploads/2024/03/2024-Rules-and-Procedures-3.pdf
+  detail: File name indicates 2024 Rules and Procedures.
+  source: pueblo-of-pojoaque-pojoaque-org-courts
+  confidence: high
+  verification: title-only
+  locator: Courts page document list
+  note: Page not opened.
+- kind: forms
+  title: Courts page forms (motions and petitions)
+  court: Pueblo of Pojoaque Tribal Courts
+  link: https://pojoaque.org/courts/
+  detail: Forms listed include Motion for Continuance, Motion to Appear by Zoom, Motion to Convert court Fines to Community Service, Petition for Order of Protection, Petition for Restraining Order and Background Request Form.
+  source: pueblo-of-pojoaque-pojoaque-org-courts
+  confidence: high
+  verification: read-in-full
+  locator: Forms list
+  note: 'The source reads: “Motion to Appear by Zoom”.'
+- kind: filing-fees
+  title: Schedule of Court Fees
+  court: Pueblo of Pojoaque Tribal Court
+  link: https://pojoaque.org/wp-content/uploads/2021/04/Schedule20of20Court20Fees.pdf
+  detail: Civil petition or first pleading $132.00; domestic relations petition $137.00; administrative appeals $117.00; traffic citation hearings $75.00; appellate court appeal $100.00; admission to practice $75.00; annual renewal bar fee $25.00; certified copies $15.00 plus $0.50 per page; filing fee waiver available.
+  source: pueblo-of-pojoaque-tribal-court-fees
+  confidence: medium
+  verification: read-in-full
+  locator: I. COURT FEES
+  note: 'The source reads: “Admission to Practice”. PDF posted 2021; fee amounts may have changed.'
+- kind: bar-admission
+  title: Attorney Application for Admission to Practice
+  court: Pueblo of Pojoaque Tribal Court
+  link: https://pojoaque.org/wp-content/uploads/2021/04/Attorney20Application20for20Admission.pdf
+  detail: Application asks for licensing jurisdiction, years of practice, good standing, familiarity with federal Indian law and the Pueblo Law and Order Code; the fee schedule lists a $75.00 admission fee and $25.00 annual renewal, and exempts attorneys appointed by legal services, Pueblo employees and lay advocates.
+  source: pueblo-of-pojoaque-tribal-court-bar-admission
+  confidence: medium
+  verification: read-in-full
+  locator: Application form
+  note: Application posted 2021; exemption statement is from the fee schedule.
+- kind: legal-aid
+  title: Legal Services (Pueblo of Pojoaque Legal Aid Office)
+  court: Pueblo of Pojoaque Legal Aid Office
+  link: https://pojoaque.org/legal-services/
+  detail: Page describes a Legal Aid Office helping members of the Pueblo with legal assistance, document and case review, staffed by a Tribal Member Legal Advocate.
+  source: pueblo-of-pojoaque-legal-aid-office-legal-aid
+  confidence: high
+  verification: read-in-full
+  locator: Pueblo of Pojoaque Legal Aid Office
+  note: 'The source reads: “The mission of the Pueblo of Pojoaque Legal Aid Office is helping those judicially challenged members”. Name of advocate omitted.'
 nearby_state_courts:
 - state: NM
   county: Santa Fe County

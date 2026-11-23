@@ -523,6 +523,57 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.I, New Mexico
   note: 'The source reads: “Santa Ana Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: bar-admission
+  title: Attorney Requirements and Application
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  detail: Court page has an Attorney Requirements and Application item and says a list of licensed attorneys and advocates is available on request.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: title-only
+  locator: Court page
+  note: Linked document not opened.
+- kind: public-defender
+  title: Public Defender (Santa Ana Tribal Court personnel)
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  detail: Court personnel listed include a Public Defender; a Public Defender Feedback Survey is also linked.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: read-in-full
+  locator: Welcome to Santa Ana Tribal Court
+  note: 'The source reads: “Public Defender”.'
+- kind: court-rules
+  title: Courtroom Rules and Protocols (and Rules of Procedure for the Contemporary Court)
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-rules/
+  detail: Court page links a rules page and cites Criminal Rule 6-3-401 of the Rules of Procedure for the Contemporary Court, adopted by Resolution No. 2022-R-39.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: read-in-full
+  locator: Court page
+  note: 'The source reads: “Courtroom Rules and Protocols”. Rules page opened; it returned no readable text.'
+- kind: forms
+  title: Civil Complaint and other forms (Santa Ana)
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/wp-content/uploads/2022/12/Civil-Complaint.pdf
+  detail: Court page links Civil Complaint, Motion and Certificate of Service, Response to Motion, and Complaint for Temporary Restraining Order forms.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: title-only
+  locator: 'Court Forms:'
+  note: 'The source reads: “Civil Complaint”. Forms not opened.'
+- kind: filing-fees
+  title: Court Forms (no filing fees statement)
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  detail: Court page states no filing fees are required for forms or documents submitted to the office; a Uniform Bond Schedule is also linked.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: read-in-full
+  locator: 'Court Forms:'
+  note: 'The source reads: “No filing fees are required for any forms or documents submitted to our office.”.'
 nearby_state_courts:
 - state: NM
   county: Sandoval County

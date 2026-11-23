@@ -701,6 +701,17 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Lower Sioux Morton”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Lower Sioux", matched to the roster by name and state.'
+court_practice:
+- kind: forms
+  title: Court & Legal (Tribal Court Documents)
+  court: Lower Sioux Clerk of Court
+  link: https://lowersioux.com/departments/legal/
+  detail: Page lists Tribal Court Documents including a Petition for Protection Order and Complaint Filing instructions.
+  source: lower-sioux-clerk-of-court-forms
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Court Documents
+  note: 'The source reads: “Petition for Protection Order”.'
 nearby_state_courts:
 - state: MN
   county: Redwood County

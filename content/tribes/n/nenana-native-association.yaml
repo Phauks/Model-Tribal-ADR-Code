@@ -281,6 +281,17 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: forms
+  title: Petition to Use Nenana Tribal Court
+  court: Nenana Tribal Court
+  link: https://www.nenananativeassociation.org/uploads/1/3/9/6/139653666/petition_to_use_nenana_tribal_court_.pdf
+  detail: Court page embeds a petition to use the court (file name petition_to_use_nenana_tribal_court_.pdf).
+  source: nenana-native-association-website-nenanatribalcourt-html
+  confidence: medium
+  verification: title-only
+  locator: Court page
+  note: 'The source reads: “Nenana Tribal Court will hear cases regarding family well-being”. Link inferred from the file name seen in the page; PDF not opened.'
 nearby_state_courts:
 - state: AK
   county: Yukon-Koyukuk Census Area

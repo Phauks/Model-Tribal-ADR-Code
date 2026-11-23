@@ -562,6 +562,17 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Upper Sioux Granite Falls”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Upper Sioux", matched to the roster by name and state.'
+court_practice:
+- kind: forms
+  title: Tribal Court (civil forms and protocols)
+  court: Upper Sioux Tribal Court
+  link: https://www.uppersiouxcommunity-nsn.gov/page/tribal-court
+  detail: Page links Civil Action Complaint, Custody Protocol, Divorce general information, child support and parenting time petition instructions and name change protocols.
+  source: upper-sioux-tribal-court-forms
+  confidence: medium
+  verification: title-only
+  locator: document links
+  note: 'The source reads: “Name Change for Adult Protocol”. Files are hosted on a separate domain; not opened.'
 nearby_state_courts:
 - state: MN
   county: Yellow Medicine County

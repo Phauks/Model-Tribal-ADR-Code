@@ -494,6 +494,17 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+court_practice:
+- kind: court-rules
+  title: Rules of Court (mentioned on Tribal Court page)
+  court: Trinidad Rancheria Tribal Court
+  link: https://trinidad-rancheria.org/tribal-court/
+  detail: Court page refers readers to the Rules of Court for more information.
+  source: trinidad-rancheria-tribal-court-court-rules
+  confidence: medium
+  verification: title-only
+  locator: Court Contact Information
+  note: 'The source reads: “please see the Rules of Court”. Link target not captured; document not opened.'
 nearby_state_courts:
 - state: CA
   county: Humboldt County

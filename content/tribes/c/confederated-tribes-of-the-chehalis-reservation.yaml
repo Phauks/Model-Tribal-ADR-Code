@@ -573,6 +573,57 @@ jurisdiction:
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Confederated Tribes of the Chehalis Reservation". Also on the NCAI implementing tribes
     list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+court_practice:
+- kind: filing-fees
+  title: Court (Chehalis Tribe) filing fee schedule
+  court: Chehalis Tribal Court
+  link: https://www.chehalistribe.org/wp-content/uploads/2026/07/Filing-Fee-Schedule-02.12.2020.pdf
+  detail: Court page states a $25.00 filing fee is payable at the accounting office when court papers are filed, and links a Tribal Court Filing Fee Schedule (file name dated 02.12.2020).
+  source: chehalis-tribal-court-bar-admission-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Forms
+  note: 'The source reads: “A $25.00 filing fee must be paid when you file your court papers.”. Schedule PDF not opened.'
+- kind: forms
+  title: Court (Chehalis Tribe) forms
+  court: Chehalis Tribal Court
+  link: https://www.chehalistribe.org/department/court/
+  detail: Forms include Affidavit, Civil Complaint, Civil Motion, Motion for Reconsideration, Notice of Appeal, Petition for Order of Protection, Summons, Guardianship Petition and Motion to Modify Child Support Order.
+  source: chehalis-tribal-court-bar-admission-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Forms
+  note: 'The source reads: “Civil Complaint”. Form PDFs not opened.'
+- kind: bar-admission
+  title: Motion for Admission
+  court: Chehalis Tribal Court
+  link: https://www.chehalistribe.org/wp-content/uploads/2026/07/motion-for-admission.pdf
+  detail: Court page lists Motion for Admission, Order of Admission and a Spokesperson’s Oath.
+  source: chehalis-tribal-court-bar-admission-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Forms
+  note: 'The source reads: “Spokesperson’s Oath”. PDFs not opened.'
+- kind: filing-fees
+  title: Tribal Court Filing Fee Schedule as of April 1, 2020
+  court: Chehalis Tribal Court
+  link: https://www.chehalistribe.org/wp-content/uploads/2026/07/Filing-Fee-Schedule-02.12.2020.pdf
+  detail: 'Filing fees: adoption $0.00; uncontested custody $50.00, contested $150.00; child support without dissolution $50.00; uncontested dissolution $100.00, contested $150.00; general civil including probate $100.00; name change $50.00; paternity $50.00; unlawful detainer $100.00; protection orders $0.00; appeals $250.00; court bar admission $150.00; bar exam $50.00; annual bar dues $100.00.'
+  source: chehalis-tribal-court-bar-admission-fees
+  confidence: medium
+  verification: read-in-full
+  locator: Type of Petition / Filing Fee
+  note: 'The source reads: “Court Bar Admission”. Schedule dated April 1, 2020 on its face, more than five years old.'
+- kind: bar-admission
+  title: Court Bar Admission fees (Chehalis)
+  court: Chehalis Tribal Court
+  link: https://www.chehalistribe.org/wp-content/uploads/2026/07/Filing-Fee-Schedule-02.12.2020.pdf
+  detail: Fee schedule lists court bar admission $150.00, a court bar exam $50.00 and annual bar dues $100.00.
+  source: chehalis-tribal-court-bar-admission-fees
+  confidence: medium
+  verification: read-in-full
+  locator: Type of Petition / Filing Fee
+  note: 'The source reads: “Court Bar Exam:”. Same document as the filing fee schedule.'
 nearby_state_courts:
 - state: WA
   county: Grays Harbor County

@@ -807,6 +807,47 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.E, Michigan
   note: 'The source reads: “Grand Traverse Band of Ottawa and Chippewa Indians, executed on August 17, 1999”. Date is the execution date as reported; most were amended 2008-10-01. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: filing-fees
+  title: Tribal Judiciary Fee Schedule
+  court: Grand Traverse Band Tribal Court
+  link: https://www.gtbindians.org/fees.asp
+  detail: 'Schedule dated 03/01/2020: personal protection order no fee; civil filing (including divorce and adoption) $100.00; probate $100.00; child support $100.00; small claims $60.00; appeal $150.00; civil jury demand $100.00; motion $20.00; marriage $50.00; copies $0.25 per page; certified copy $10.00; transcripts $250.00 deposit.'
+  source: grand-traverse-band-tribal-court-fees-forms
+  confidence: medium
+  verification: read-in-full
+  locator: Tribal Judiciary Fee Schedule
+  note: 'The source reads: “Civil Filing Fee”. Schedule dated 03/01/2020, more than five years old.'
+- kind: bar-admission
+  title: Attorney Admission Process
+  court: Grand Traverse Band Tribal Court
+  link: https://www.gtbindians.org/pages5563180.asp
+  detail: Page offers an Attorney Admission Checklist PDF, the Court Rules (with index) and the statutes of the Grand Traverse Band.
+  source: grand-traverse-band-tribal-court-bar-admission-court-rules
+  confidence: high
+  verification: title-only
+  locator: Attorney Admission Process
+  note: 'The source reads: “Attorney Admission Checklist”. Checklist PDF not opened.'
+- kind: court-rules
+  title: Court Rules (with index)
+  court: Grand Traverse Band Tribal Court
+  link: https://www.gtbindians.org/downloads/court_rules_32009_1.pdf
+  detail: Court Rules PDF linked on the attorney admission page; file name suggests a 2009 version.
+  source: grand-traverse-band-tribal-court-bar-admission-court-rules
+  confidence: medium
+  verification: title-only
+  locator: Attorney Admission Process
+  note: PDF not opened.
+- kind: forms
+  title: Tribal Court Forms
+  court: Grand Traverse Band Tribal Court
+  link: https://www.gtbindians.org/court_forms.asp
+  detail: Tribal Court Forms page linked from the court menu.
+  source: grand-traverse-band-tribal-court-fees-forms
+  confidence: high
+  verification: title-only
+  locator: menu
+  note: Page not opened.
 nearby_state_courts:
 - state: MI
   county: Leelanau County

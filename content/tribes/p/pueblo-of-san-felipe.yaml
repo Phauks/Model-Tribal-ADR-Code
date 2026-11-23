@@ -505,6 +505,27 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+court_practice:
+- kind: court-rules
+  title: Tribal Court (rules of procedure statement)
+  court: Pueblo of San Felipe Contemporary Tribal Court
+  link: https://sfpueblo.com/tribal-programs/tribal-court/
+  detail: Court page states it has adopted separate rules of procedure for civil and criminal proceedings and that copies are on the website with the Judicial Code.
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Court description
+  note: 'The source reads: “has adopted two separate rules of procedure for process in Civil and Criminal proceedings”. Rules documents not opened.'
+- kind: forms
+  title: Civil Matters Forms for the Pro Se Litigant
+  court: Pueblo of San Felipe Contemporary Tribal Court
+  link: https://sfpueblo.com/wp-content/uploads/2025/11/CIVIL-PRO-SE-PACKAGE.pdf
+  detail: Court page links a civil pro se package, a Petition for Order of Protection From Domestic Abuse and Notice of Change of Name forms.
+  source: pueblo-of-san-felipe-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Forms list
+  note: PDF not opened.
 nearby_state_courts:
 - state: NM
   county: Sandoval County

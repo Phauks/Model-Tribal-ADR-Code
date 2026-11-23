@@ -1101,6 +1101,47 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.M, Oregon
   note: 'The source reads: “Confederated Tribes of the Umatilla Indian Reservation executed in May 2010”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: court-rules
+  title: Rules of the Court
+  court: Umatilla Tribal Court
+  link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/rules-of-the-court/
+  detail: Listed with Court Code, Court Rules of Evidence, Criminal Code, Family Law Code, Juvenile Code.
+  source: umatilla-tribal-court-court-rules
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page links
+  note: Page not opened.
+- kind: court-rules
+  title: Rules of Appellate Procedure
+  court: Umatilla Tribal Court
+  link: https://ctuir.org/our-government/tribal-court/tribal-rules-of-appellate-procedure/
+  detail: Linked from the Tribal Court page.
+  source: umatilla-tribal-court-court-rules
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page links
+  note: Page not opened.
+- kind: filing-fees
+  title: Tribal Court Forms (Fee Schedule)
+  court: Umatilla Tribal Court
+  link: https://ctuir.org/our-government/tribal-court/tribal-court-forms/
+  detail: 'Fee schedule: civil $50, appeal $50, adoption $50, petition to establish custody $50, dissolution of marriage $50, drivers license $25; fees are paid at the Finance Department before filing.'
+  source: umatilla-tribal-court-fees-forms
+  confidence: high
+  verification: read-in-full
+  locator: Fee Schedule
+  note: 'The source reads: “Please pay filing fees at the Finance Department prior to submitting paperwork with Tribal Court”.'
+- kind: forms
+  title: Tribal Court Forms
+  court: Umatilla Tribal Court
+  link: https://ctuir.org/our-government/tribal-court/tribal-court-forms/
+  detail: Forms page includes a custody and parenting plan, an affidavit for fee waiver, domestic abuse petition and order forms (DV 100, 110, 260, 400), petition for incapacitated adult and termination of guardianship petition; files updated 1/9/2025.
+  source: umatilla-tribal-court-fees-forms
+  confidence: high
+  verification: title-only
+  locator: File list
+  note: 'The source reads: “Umatilla Affidavit Fee Waiver Nonfill”. Form PDFs not opened.'
 nearby_state_courts:
 - state: OR
   county: Umatilla County

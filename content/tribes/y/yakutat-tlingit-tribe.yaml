@@ -284,6 +284,17 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: forms
+  title: Forms
+  court: Yakutat Tlingit Tribal Court
+  link: https://yakutattlingittribe.org/forms/
+  detail: Forms page linked from the tribal court page.
+  source: yakutat-tlingit-tribe-website-tribalcourt
+  confidence: medium
+  verification: title-only
+  locator: menu
+  note: Page not opened.
 nearby_state_courts:
 - state: AK
   county: Yakutat City and Borough
