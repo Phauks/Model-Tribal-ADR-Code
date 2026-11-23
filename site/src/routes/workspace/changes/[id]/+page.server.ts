@@ -1,6 +1,6 @@
 import { error, fail } from '@sveltejs/kit';
 import { isHideReason, parseChangeId } from '#lib/page-history.ts';
-import { changeForHiding, hideChange, showChange } from '#lib/server/page-history.ts';
+import { changeForHiding, hideChange, requestsToAnswer, showChange } from '#lib/server/page-history.ts';
 import { builtPages } from '#lib/server/page-history-run.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
@@ -11,8 +11,16 @@ export const load: PageServerLoad = async (event) => {
 	const { database } = storage(event);
 	const found = await changeForHiding(database, event.params.id, await builtPages());
 	if (!found) error(404, 'No change has this address.');
-	return found;
+	return { ...found, requests: await requestsToAnswer(database) };
 };
+
+/** The private line for the activity log: the request a hiding answers, then any note. */
+function logNote(form: FormData): string | null {
+	const reference = formText(form, 'request', 40);
+	const answers = reference && /^[A-Za-z0-9-]{1,40}$/.test(reference) ? `Answers request ${reference}` : null;
+	const note = formText(form, 'note', 500);
+	return [answers, note].filter(Boolean).join('. ') || null;
+}
 
 export const actions: Actions = {
 	hide: async (event) => {
@@ -35,7 +43,7 @@ export const actions: Actions = {
 			person.identifier,
 			event.params.id,
 			{ ...choice, reason: choice.reason as never },
-			formText(form, 'note', 500)
+			logNote(form)
 		);
 		if (!done) error(404, 'No change has this address.');
 		return { done: 'Hidden. Recent changes and the page’s history now show it with a line through what is hidden.' };
