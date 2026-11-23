@@ -1,0 +1,23 @@
+profile: content/tribes/m/middletown-rancheria-of-pomo-indians-of-california.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/california/index.cfm/tribal/laws-regs-policy/list-of-federally-recognized-tribes-in-ca/
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: California Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#middletown-rancheria-of-pomo-indians-of-california
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: not-found
+  reason: 'No ratified treaty: the 18 treaties negotiated with California tribes in 1851-52 were never ratified (the Senate rejected them in secret session in 1852).'

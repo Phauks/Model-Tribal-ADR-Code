@@ -145,6 +145,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Nation of Missouri in Kansas and Nebraska
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Sac & Fox Nation of Missouri in Kansas and Nebraska". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Sac and Fox Nation (1994)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Sac and Fox Tribe of Missouri" among organizations under constitutions approved
@@ -169,6 +177,231 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Indian Reorganization Act of June 18, 1934
+  quote: Indian Reorganization Act (IRA) of June 18, 1934 (48 Stat. 984)
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Preamble
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: the Tribal Council which shall be composed of five (5) adult members of the
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article IV, Section 1
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: governing-body
+  value: General Council
+  quote: The ultimate power of the Sac and Fox Nation of Missouri shall be the General
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article IV
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: composed of five (5) adult members of the
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article IV, Section 1
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: governing-body-selection
+  value: Elected at General Council meeting by members present
+  quote: by the eligible voting members of the Nation present at the General Council meeting.
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article IV, Section 3
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: four (4) year term of office, and shall serve until his successor shall be
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article IV, Section 2
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: general-council
+  value: All members of the Nation, 18 years of age and older
+  quote: Sac and Fox Nation of Missouri, eighteen . (.18) years of age and older.
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article IV
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Tribal Council shall
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article IX, Section 1
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sac & Fox Nation of Missouri in Kansas and Nebraska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: the Chairman, Vice-Chairman, and Council Member shall be elected to a four (4) year term of office
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article IV, Section 2
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: The Vice-Chairman shall assist the Chairman when called upon to
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article IX, Section 2
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: voting-age
+  value: '18'
+  quote: Provided, That the member is eighteen (18) years of age or older on the date a vote is
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article X, Section 5
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: Provided, That the concept of separation of executive and judicial powers is maintained.
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article V, Section 1(i)
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: judiciary
+  value: Tribal Court, established by General Council referendum
+  quote: Should it become necessary to establish a Tribal Court, it shall be empowered to decide all internal, civil disputes
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article V, Section 1(i)
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: amendment
+  value: Majority vote in an election called by the Secretary of the Interior
+  quote: This Constitution may be amended by a majority vote of the qualified voters of the Nation voting in an election called for that purpose by the Secretary of the Interior
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article XII
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article XII
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: recall-and-removal
+  value: Recall by petition of 50 qualified voters
+  quote: Upon receipt of a petition signed by at least fifty (50) of the qualified voters of the Nation asking for this recall
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article VI, Section 1
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: recall-and-removal
+  value: Removal by 3 Tribal Council members for neglect or misconduct
+  quote: least three (3) of its members* remove a Councilman for neglect of duty or
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article VI, Section 2
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
+- aspect: other
+  value: Grievance Committee of 3 members elected by General Council
+  quote: three (3) members to the Grievance Committee.
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-20'
+  locator: Article VII, Section 1
+  document_version:
+    document: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract opens with the 1990 constitution, followed by the 1980 constitution and an older amended text; only the 1990 constitution was read.'
 governing_documents:
 - kind: law-code
   title: Tribal Codes
@@ -387,6 +620,76 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Kansas is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Kansas. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Kansas by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-jurisdiction
+  detail: Congress conferred on Kansas jurisdiction over offenses committed by or against Indians on Indian reservations in Kansas, including trust or restricted allotments, to the same extent as elsewhere in the State; federal courts keep jurisdiction over federal offenses. (18 U.S.C. § 3243.)
+  source: us-code-title-18-section-3243
+  confidence: high
+  verification: read-in-full
+  locator: 18 U.S.C. § 3243; Act of June 8, 1940, ch. 276, 54 Stat. 249
+  note: 'Criminal only; no civil grant. The four roster entries list KS because of reservation or trust-land presence in Kansas (Iowa Tribe and Sac and Fox of Missouri straddle KS/NE). Also cites: statutes-at-large-54-249.'
+treaties:
+- title: Treaty with the Iowa, etc., 1836
+  signed: '1836-09-17'
+  statutes_at_large: 7 Stat. 511
+  kappler:
+    volume: 2
+    page: 468
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-iowa-etc-1836-0468
+  signatory: Sac and Fox of Missouri
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 468 (Treaty with the Iowa, etc., 1836; Kappler header "Sept. 17, 1836. | 7 Stat., 511. | Proclamation, Feb. 15, 1837.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1837
+  signed: '1837-10-21'
+  statutes_at_large: 7 Stat. 543
+  kappler:
+    volume: 2
+    page: 497
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1837-0497
+  signatory: Sac and Fox of Missouri
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 497 (Treaty with the Sauk and Foxes, 1837; Kappler header "Oct. 21, 1837. | 7 Stat., 543. | Proclamation, Feb. 21, 1838.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes of Missouri, 1854
+  signed: '1854-05-18'
+  statutes_at_large: 10 Stat. 1074
+  kappler:
+    volume: 2
+    page: 631
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-of-missouri-1854-0631
+  signatory: Sac and Fox of Missouri
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 631 (Treaty with the Sauk and Foxes of Missouri, 1854; Kappler header "May 18, 1854. | 10 Stat., 1074. | Ratified July 11, 1854. | Proclaimed July 17, 1854.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, etc., 1861
+  signed: '1861-03-06'
+  statutes_at_large: 12 Stat. 1171
+  kappler:
+    volume: 2
+    page: 811
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1861-0811
+  signatory: Sac and Fox of Missouri
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 811 (Treaty with the Sauk and Foxes, etc., 1861; Kappler header "Mar. 6, 1861 | 12 Stat., 1171. | Ratified Feb. 6, 1863. | Proclaimed Mar. 26, 1863.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

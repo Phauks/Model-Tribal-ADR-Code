@@ -112,44 +112,22 @@ limits: >-
 
 ## What already existed
 
-Earlier sessions had collected about forty peacemaking codes and rules,
-mostly from the Native American Rights Fund's Indigenous Peacemaking
-Initiative model-law pages, and recorded peacemaking forums on 37 nations'
-profiles (session `2026-11-21-dispute-resolution-practice`). Section 2 of the
-dispute resolution practice analysis counted shared structural features. The
-`peacemaking` method record, its glossary entry and three scholarly sources
-(Porter 1997, read; Yazzie 1994 and Goldberg 1997, not read in full) were in
-place. No session had looked at how programs operate, at evaluations, or at
-the scholarship as a body.
+Earlier sessions had collected about forty peacemaking codes and rules, mostly from the Native American Rights Fund's Indigenous Peacemaking Initiative model-law pages, and recorded peacemaking forums on 37 nations' profiles (session `2026-11-21-dispute-resolution-practice`). Section 2 of the dispute resolution practice analysis counted shared structural features. The `peacemaking` method record, its glossary entry and three scholarly sources (Porter 1997, read; Yazzie 1994 and Goldberg 1997, not read in full) were in place. No session had looked at how programs operate, at evaluations, or at the scholarship as a body.
 
 ## What this session did
 
-1. Program sweeps by region, starting from each nation's own court or
-   judicial pages and only then going to secondary sources.
-2. Navajo Nation in depth: the Plan of Operations, Judicial Branch reports,
-   the Gross evaluation, and the main scholarship.
-3. Scholarship and evaluations across nations, including state-court
-   programs modeled on Native peacemaking.
-4. Alaska: Kake Circle Peacemaking, Tlingit & Haida's Court of Elders, and
-   the case law on Tribal jurisdiction without Indian country.
-5. Verification by the lead session (see tools). Quotations that could not be
-   matched were dropped or marked; one helper's figure (a 45 percent survey
-   result attributed to a 2012 Center for Court Innovation paper) was not
-   found in either paper and is not used.
+1. Program sweeps by region, starting from each nation's own court or judicial pages and only then going to secondary sources.
+2. Navajo Nation in depth: the Plan of Operations, Judicial Branch reports, the Gross evaluation, and the main scholarship.
+3. Scholarship and evaluations across nations, including state-court programs modeled on Native peacemaking.
+4. Alaska: Kake Circle Peacemaking, Tlingit & Haida's Court of Elders, and the case law on Tribal jurisdiction without Indian country.
+5. Verification by the lead session (see tools). Quotations that could not be matched were dropped or marked; one helper's figure (a 45 percent survey result attributed to a 2012 Center for Court Innovation paper) was not found in either paper and is not used.
 
 ## Ruled out or corrected
 
-- The Gross evaluation is dated February 1999, not about 2001 as first
-  assumed.
-- The Seneca Nation's Peacemakers Court is an elected trial court, not a
-  peacemaking program, despite the name.
-- The Tulalip Mediation Services page describes mediation by an outside
-  provider, not peacemaking.
-- The Navajo Nation's 2012 Plan of Operations mentions a 2012 observation of
-  peacemaking convened by another nation's elders; it is not Navajo practice
-  and is not used.
-- Yakutat: the earlier training record does not name the Yakutat Tlingit
-  Tribe, so it is not treated as evidence of a Yakutat program.
+- The Gross evaluation is dated February 1999, not about 2001 as first assumed.
+- The Seneca Nation's Peacemakers Court is an elected trial court, not a peacemaking program, despite the name.
+- The Tulalip Mediation Services page describes mediation by an outside provider, not peacemaking.
+- The Navajo Nation's 2012 Plan of Operations mentions a 2012 observation of peacemaking convened by another nation's elders; it is not Navajo practice and is not used.
+- Yakutat: the earlier training record does not name the Yakutat Tlingit Tribe, so it is not treated as evidence of a Yakutat program.
 
-The findings are written up in
-[research/analyses/2026-11-21-peacemaking-programs.md](../../analyses/2026-11-21-peacemaking-programs.md).
+The findings are written up in [research/analyses/2026-11-21-peacemaking-programs.md](../../analyses/2026-11-21-peacemaking-programs.md).

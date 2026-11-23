@@ -1,0 +1,62 @@
+profile: content/tribes/n/navajo-nation.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Navajo Nation Peacemaking Program video
+  outcome: found
+  reason: Results included the NARF Videos About Peacemaking page, which lists a video by a Navajo Nation justice.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Navajo Nation peacemaking youtube Chief Justice Robert Yazzie
+  outcome: found
+  reason: The same NARF video page came up again; no YouTube link was shown in the results.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://courts.navajo-nsn.gov/?p=89304
+  query: embedded video, gallery or podcast about the Peacemaking Program
+  outcome: error
+  reason: Fetch was refused because the session's web-fetch budget was used up, so the page was not read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://peacemaking.narf.org/videos-about-peacemaking/
+  query: list of videos with presenters and rights statement
+  outcome: found
+  reason: The NARF page lists a video by Robert Yazzie, Navajo Nation Chief Justice Emeritus, and shows the copyright line.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.courts.navajo-nsn.gov/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: error
+  reason: Fetched with curl; HTTP 503 (server error or no connection); worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://courts.navajo-nsn.gov/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: error
+  reason: Fetched with curl; HTTP 000 (server error or no connection); worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=eE_0OPp6z0o
+  query: title and channel of the video
+  outcome: found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "About Peacemaking - Robert Yazzie" on the Native American Rights Fund channel, public and embeddable on 2026-11-23.'
+next_steps: The Judicial Branch site returned a server error (503) and no connection to curl; a person can check it for the Peacemaking Program's own media. Other Navajo media are in the media survey (Gloria Benally podcast). Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

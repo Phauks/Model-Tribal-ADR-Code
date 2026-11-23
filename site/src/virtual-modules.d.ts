@@ -18,6 +18,11 @@ declare module 'virtual:review-subjects' {
 	}[];
 }
 
+declare module 'virtual:public-contacts' {
+	/** The office emails and phones each published nation page shows, with their sources, listed at build time. */
+	export const publicNationContacts: import('#lib/address-book-sync.ts').PublicNationContacts[];
+}
+
 declare module 'virtual:nation-images' {
 	/** The nations' official images the Worker may serve, listed at build time. */
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];
@@ -71,4 +76,9 @@ declare module 'cloudflare:workers' {
 declare module 'virtual:followable-pages' {
 	/** The pages built with the site that readers can follow, with a fingerprint of each (src/lib/server/following.ts). */
 	export const followableBuild: import('#lib/server/following.ts').FollowableBuild;
+}
+
+declare module 'virtual:page-history' {
+	/** The pages built with the site, for Recent changes and page histories (src/lib/server/page-history-build.ts). */
+	export const historyBuild: import('#lib/page-history.ts').HistoryBuild;
 }

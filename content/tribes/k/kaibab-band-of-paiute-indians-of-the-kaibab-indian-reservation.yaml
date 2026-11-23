@@ -143,6 +143,259 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Kaibab Band of Paiute Indians". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Phoenix
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Phoenix Area
+  note: Listed as "Kaibab Band of Paiute Indians". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Constitution pursuant to the Reorganization Act of June 18, 1934
+  quote: Reorganization Act of June 18, 1934 (48 Stat. 984), as amended, which shall
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Preamble
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: governing-body
+  value: Kaibab Paiute Tribal Council
+  quote: shall he~a council known as the Kaibab Paiute Tribal CounciL
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section 1
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: governing-body-size
+  value: 5 members plus chairman and vice-chairman
+  quote: chairman, and five (5) members.
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section 2
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: shall be elected to serve a term of three (3) years.
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: head-of-government
+  value: Chairman
+  quote: 'The chairman of the tribal council shall:'
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section 5(a)
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of eligible voters
+  quote: The chairman and vice-chairman shall be elected by majority vote of the
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section 4(a)
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: shall be elected to serve a term of three (3) years.
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: other-officers
+  value: Vice-Chairman, Treasurer
+  quote: chairman and treasurer.
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section 4
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: elections
+  value: Annually on the first Saturday in October
+  quote: annually on the first Saturday in October.
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article X, Section 1
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: voting-age
+  value: '18'
+  quote: All duly enrolled members of the band who are eighteen
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VIII, Section 1
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: election-authority
+  value: Tribal Election Committee
+  quote: impartial tribal election committee composed of three (3) or more qualified
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article X, Section 5
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: judiciary
+  value: Tribal trial court and appellate court
+  quote: general jurisdiction and an appellate court.
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XIII, Section 1
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: judicial-selection
+  value: Appointed by the Council
+  quote: The tribal council shall appoint persons to
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XIII, Section 4
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: judicial-term
+  value: 2 years
+  quote: positions for a term of two (2) years for chief judge
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XIII, Section 4
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: judicial-independence
+  value: Judges removable only for good cause
+  quote: No judge shall be removed except for good cause as
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XIII, Section 6
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: amendment
+  value: Majority vote in a Secretarial election, 30% turnout
+  quote: a majority vote of the qualified voters of :he band who cast ballots in an elec
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XVII, Section 1
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it is approved bj
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XVII, Section 1
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: Upon receipt of a valid petition signed by thirty percent
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XI, Section 3
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
+- aspect: recall-and-removal
+  value: Removal by affirmative vote of other council members
+  quote: The tribal council shall, by an affirmative vote
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XI, Section 2
+  document_version:
+    document: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The approval line in Article XX reads 1967 by OCR, but the cover letter and certificate concern the June 20, 1987 election; some headings are garbled.'
 governing_documents:
 - kind: law-code
   title: Kaibab Band of Paiute Indians
@@ -325,6 +578,30 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

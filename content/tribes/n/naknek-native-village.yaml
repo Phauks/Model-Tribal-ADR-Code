@@ -179,6 +179,131 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Naknek Native Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: Listed as "Naknek Native Village". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Bristol Bay Service Area
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: 'The source''s words: "Naknek Native Village".'
+  operator: tribal
+governance:
+- aspect: governing-body
+  value: Naknek Native Village Council
+  quote: of the Naknek Native Village Council enumerated in this Constitution.
+  source: constitution-naknek-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Section 2
+  document_version:
+    document: naknek-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
+- aspect: governing-body-selection
+  value: Elected by the council's adult members
+  quote: President and four members elected i/> the acult members of the Naknek
+  source: constitution-naknek-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Section 1
+  document_version:
+    document: naknek-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
+- aspect: governing-body-term
+  value: President 2 years, Vice-President 1 year
+  quote: 'for: President - 2 year term, Vice-President - 1 year term, Secretary'
+  source: constitution-naknek-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Section 3
+  document_version:
+    document: naknek-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
+- aspect: general-council
+  value: All members meeting Article III, Section 3
+  quote: All members who conform to Article III, Section 3
+  source: constitution-naknek-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XII, Section 1
+  document_version:
+    document: naknek-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
+- aspect: head-of-government
+  value: President
+  quote: preside over all meetings of the Council and of the Executive Council,
+  source: constitution-naknek-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: naknek-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Naknek Native Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice-President, Secretary-Treasurer
+  quote: The Secretary-Treasurer of the
+  source: constitution-naknek-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 3
+  document_version:
+    document: naknek-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
+- aspect: amendment
+  value: Majority vote of adult members
+  quote: tified oy a majority vote cf adult members, provided that at least
+  source: constitution-naknek-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIII
+  document_version:
+    document: naknek-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
+- aspect: recall-and-removal
+  value: Forfeiture on felony or dishonesty conviction
+  quote: moral turpitude shall forfeit his office.
+  source: constitution-naknek-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1
+  document_version:
+    document: naknek-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
+- aspect: other
+  value: Executive Council, which exercises the Council's powers
+  quote: Section 2 - The Executive Council shall represent a Native
+  source: constitution-naknek-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Section 2
+  document_version:
+    document: naknek-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

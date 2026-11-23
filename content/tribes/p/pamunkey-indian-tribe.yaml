@@ -222,6 +222,39 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pamunkey Indian Tribe
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Nashville Area Tribes, Nations and Partners" list'
+  note: 'Listed as "Pamunkey Indian Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes, indian-health-service-self-governance-tribes. Page lists six Mid-Atlantic tribes served by the Mid-Atlantic Tribal Health Center. The Nashville Area page lists Mid-Atlantic Service Unit under Federal Direct Care; Self-Governance list shows Pamunkey Indian Tribe compacted in 2025. Also on the Indian Health Service Self-Governance Tribes list (Pamunkey Indian Tribe (2025)); the list does not say which service unit or programs the compact covers.'
+- area: Nashville
+  service_unit: Mid-Atlantic Service Unit (Mid-Atlantic Tribal Health Center)
+  source: indian-health-service-nashville-mid-atlantic-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "These Tribes include the Pamunkey Indian Tribe".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Nashville Area
+  note: Listed as "Pamunkey Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pamunkey Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -235,6 +268,15 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Virginia is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Virginia. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Virginia by the Census Bureau's land areas.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

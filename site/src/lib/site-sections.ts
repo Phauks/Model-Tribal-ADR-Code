@@ -39,7 +39,8 @@ export const siteSections: SiteSection[] = [
 	{ label: 'Nations', link: '/nations', built: true },
 	{ label: 'Library', link: '/library', built: false },
 	{ label: 'Glossary', link: '/glossary', built: true },
-	{ label: 'About', link: '/about', built: true }
+	{ label: 'About', link: '/about', built: true },
+	{ label: 'Sponsorship', link: '/sponsor', built: true }
 ];
 
 /** The section a path belongs to, if any. */

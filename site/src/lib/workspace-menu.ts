@@ -9,11 +9,13 @@ export type WorkspacePageName =
 	| 'overview'
 	| 'essays'
 	| 'requests'
+	| 'uploads'
 	| 'reviews'
 	| 'contributors'
 	| 'people'
 	| 'access'
 	| 'address-book'
+	| 'changes'
 	| 'activity';
 
 export interface WorkspacePage {
@@ -29,12 +31,14 @@ export const workspacePages: readonly WorkspacePage[] = [
 	// Everyone sees the essays they can open, by role or by grant.
 	{ name: 'essays', label: 'Essays', link: '/workspace/essays' },
 	{ name: 'requests', label: 'Requests', link: '/workspace/requests', needs: 'read-requests' },
+	{ name: 'uploads', label: 'Uploads', link: '/workspace/uploads', needs: 'review-uploads' },
 	// Everyone sees the documents they can open, by role or by grant.
 	{ name: 'reviews', label: 'Reviews', link: '/workspace/reviews' },
 	{ name: 'contributors', label: 'Contributors', link: '/workspace/contributors', needs: 'read-contributors' },
 	{ name: 'people', label: 'People', link: '/workspace/people', needs: 'manage-people' },
 	{ name: 'access', label: 'Access', link: '/workspace/access', needs: 'manage-people' },
 	{ name: 'address-book', label: 'Address book', link: '/workspace/address-book', needs: 'manage-address-book' },
+	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', needs: 'hide-changes' },
 	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', needs: 'manage-people' }
 ];
 

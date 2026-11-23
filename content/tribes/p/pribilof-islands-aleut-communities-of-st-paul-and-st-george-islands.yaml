@@ -157,6 +157,22 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pribilof Islands Aleut Communities of St. Paul & St. George Islands (St. George Island and
     Saint Paul Island)
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'Listed as "Aleut Community of St. Paul Island". Name on Indian Health Service profile differs from roster name (roster: "Pribilof Islands Aleut Communities of St. Paul & St. George Islands"); matched manually. Roster nation combines St. Paul and St. George Island communities; profile lists them separately (St. George: "Aleut Community of St. George Island"). Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).'
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Aleut Community of St. Paul Island".'
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution and Bylaws of the Aleut Community Alaska (approved 1950) states it was adopted
@@ -170,6 +186,103 @@ government_structure:
   as_of: '1950'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under Act of Congress of June 18, 1934
+  quote: Act of Congress of June 18, 1934, as amended by the
+  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-06-12'
+  locator: Preamble
+  document_version:
+    document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
+- aspect: governing-body
+  value: Governing body chosen by the membership
+  quote: what kind of governing body they wish to
+  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-06-12'
+  locator: Article III, Section 1
+  document_version:
+    document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
+- aspect: governing-body-selection
+  value: Chosen by the Community
+  quote: The Community shall then choose the
+  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-06-12'
+  locator: Article III, Section 2
+  document_version:
+    document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
+- aspect: general-council
+  value: All members; general meeting at least once a year
+  quote: A general meeting of the whole membership shall be held at
+  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-06-12'
+  locator: Article III, Section 3
+  document_version:
+    document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
+- aspect: voting-age
+  value: '18'
+  quote: of age or over shall have the right to vote in Community meetings and
+  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-06-12'
+  locator: Article V, Section 1
+  document_version:
+    document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
+- aspect: amendment
+  value: Majority vote of qualified members in election called by Secretary of the Interior
+  quote: majority vote of the qualified members of the Community voting at
+  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-06-12'
+  locator: Article VII
+  document_version:
+    document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior
+  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-06-12'
+  locator: Article VII
+  document_version:
+    document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
+- aspect: other
+  value: Records keeper and funds keeper chosen by the Community
+  quote: of keeping records of all actions of the Community and its governing
+  source: constitution-pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-1950-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-06-12'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands-constitution
+    version: 1950-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly broken in places; the text covers only the Aleut Community of St. Paul Island, with no St. George document.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution

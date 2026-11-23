@@ -150,6 +150,251 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Ely Shoshone Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Ely Shoshone Tribe (1994)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of 1934
+  quote: this constitution pursuant to the Indian Reorganization Act of 1934,
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Preamble
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Ely Shoshone Tribal Council
+  quote: the Ely Shoshone Tribal Council.
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article III, Section 1
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The tribal council shall consist of five (5) members,
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article III, Section 3
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by enrolled members, by secret ballot
+  quote: All elections shall be by secret ballot.
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article IV, Section 8
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The two candidates receiving the highest number of votes shall hold
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article IV, Section 3(a)
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The chairperson of the council
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article X, Section 1
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ely Shoshone Tribe of Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen annually by the council from its own number
+  quote: within its own number (1) a chairperson; (2) a vice-chairperson; and
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article IV, Section 3
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-chairperson, Secretary-treasurer
+  quote: (3) a secretary-treasurer.
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article IV, Section 3
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually, on the fourth Saturday of January
+  quote: council seat(s) will be called annually on the fourth Saturday of
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled member of the Tribe who is eighteen (18)
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article IV, Section 4
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election board of at least 3 members
+  quote: The council shall appoint an election board of at least
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article IV, Section 6
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal court, juvenile court and appellate court
+  quote: the Ely Shoshone Tribe shall be vested in a tribal court of general
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article XII, Section 1
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Elected
+  quote: judge(s) of the tribal and juvenile courts shall be elected and hold
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article XII, Section 1
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: 3 years
+  quote: offices for a term of three (3) years and receive for services a compensation
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article XII, Section 1
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Pay may not be diminished during term
+  quote: which shall not be diminished during the term of the office.
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article XII, Section 1
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters in a special election called by the Secretary, 30% must vote
+  quote: adopted by a majority vote of the qualified voters of the tribe voting
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article IX, Section 1
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required, so long as federal law requires it
+  quote: for his approval, and shall be effective from the date of approval,
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article IX, Section 1
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: one-third (1/3) of the eligible tribal voters demanding a recall of
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article VII, Section 3
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by three affirmative votes of the council
+  quote: The tribal council may, by three (3) affirmative votes,
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-03-23'
+  locator: Article V, Section 2
+  document_version:
+    document: ely-shoshone-tribe-of-nevada-constitution
+    version: 2002-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Ely Shoshone Tribe of Nevada
@@ -232,6 +477,36 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state
+  detail: Nevada's 1955 act assumed civil and criminal jurisdiction over Indian country in all counties, unless a county board petitioned the Governor before the effective date (90 days after July 1, 1955) and the Governor excluded that county's Indian country by proclamation. (1955 Nev. Stat. ch. 198, §§ 1-3, at 297.)
+  source: nevada-statutes-1955-chapter-198
+  confidence: high
+  verification: read-in-full
+  locator: 1955 Nev. Stat. ch. 198, §§ 1-2, at 297
+  note: 'Mapped to the nations whose lands appear in the 1975 and 1988 retrocession notices (see those facts). Odger''s Ranch and Ruby Valley Allotment, named in the 1975 notice, are not mapped because the research could not tie them to a roster entry. The 1955 act was later folded into NRS 41.430 (history line "1:198:1955"). Also cites: davis-v-warden-1972.'
+- topic: public-law-280
+  value: optional-state
+  detail: Since July 1, 1974 NRS 41.430 applies only where the tribe consented, by referendum under sections 6-14 of the 1973 act or under 25 U.S.C. § 1326; where a tribe refused, Nevada "recedes from and relinquishes" jurisdiction. The Indian affairs commission was to hold the referenda by June 4, 1974. (1973 Nev. Stat. ch. 601, §§ 1, 6, at 1051-53; Nev. Rev. Stat. § 41.430(3)-(4).)
+  source: nevada-statutes-1973-chapter-601
+  confidence: high
+  verification: read-in-full
+  locator: 1973 Nev. Stat. ch. 601, § 1, subsec. 4, at 1052; NRS 41.430(4)
+  note: 'Sections 1-5 took effect July 1, 1974 (§ 16). The current NRS text still carries this language. Goldberg (2010) says no tribe asked to continue; the 1976 AIPRC report says Ely Colony alone chose to keep state jurisdiction. Goldberg''s date for the assumption (1967) conflicts with the Statutes (1955). Also cites: nevada-revised-statutes-41-430.'
+treaties:
+- title: Treaty with the Western Shoshoni, 1863
+  signed: '1863-10-01'
+  statutes_at_large: 18 Stat. 689
+  kappler:
+    volume: 2
+    page: 851
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-western-shoshoni-1863-0851
+  signatory: Western Shoshoni
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 851 (Treaty with the Western Shoshoni, 1863; Kappler header "Oct. 1, 1863. | 18 Stats., 689. | Ratified June 26, 1866. | Proclaimed Oct. 21, 1869.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Western Shoshone bands of Nevada party to Ruby Valley 1863; these colonies/reservations carry the Western Shoshone name The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

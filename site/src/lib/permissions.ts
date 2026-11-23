@@ -39,7 +39,7 @@ export const roleDescriptions: Record<Role, string> = {
 	'lead-author':
 		'The administrator: full access to every document, and adds, changes and removes people, grants and restricts access, and sees the activity log; welcomes people who register to help. Only the lead author manages access.',
 	editor:
-		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them), reads registrations from people who want to help, and signs off on content.',
+		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them), reviews and files the files people send, reads registrations from people who want to help, and signs off on content.',
 	'co-author':
 		'Comments on every document unless the lead author grants more or less. Changes to content are still made by pull request.',
 	advisor: 'Signs off on content or asks for changes, as a project advisor, and comments.',
@@ -55,12 +55,15 @@ export type Permission =
 	| 'manage-contributors'
 	| 'read-requests'
 	| 'handle-requests'
+	| 'review-uploads'
 	| 'read-reviews'
 	| 'comment'
 	| 'sign-off'
 	| 'review-for-nation'
 	// The private address book (migrations/0012_address_book.sql): the lead author only.
-	| 'manage-address-book';
+	| 'manage-address-book'
+	// Hiding parts of a change in Recent changes (migrations/0017_page_changes.sql): the lead author only.
+	| 'hide-changes';
 
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
@@ -69,12 +72,14 @@ const grants: Record<Role, readonly Permission[]> = {
 		'manage-contributors',
 		'read-requests',
 		'handle-requests',
+		'review-uploads',
 		'read-reviews',
 		'comment',
 		'sign-off',
-		'manage-address-book'
+		'manage-address-book',
+		'hide-changes'
 	],
-	editor: ['read-contributors', 'read-requests', 'handle-requests', 'read-reviews', 'comment', 'sign-off'],
+	editor: ['read-contributors', 'read-requests', 'handle-requests', 'review-uploads', 'read-reviews', 'comment', 'sign-off'],
 	'co-author': ['read-reviews', 'comment'],
 	advisor: ['read-reviews', 'comment', 'sign-off'],
 	contributor: ['comment'],

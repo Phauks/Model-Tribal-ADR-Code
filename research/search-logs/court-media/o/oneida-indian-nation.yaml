@@ -1,0 +1,46 @@
+profile: content/tribes/o/oneida-indian-nation.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Oneida Nation healing to wellness court video
+  outcome: not-found
+  reason: Results were handbooks, law PDFs and national court pages, plus a national news podcast that is not made by the nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Oneida Indian Nation court youtube video
+  outcome: not-found
+  reason: Results were history pages, news and court pages, with no YouTube or video result from the nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.oneidaindiannation.com/court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found links to https://www.youtube.com/@TheOneidaIndianNationNY.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://oneida-nsn.gov/judiciary/courtofappeals/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: blocked
+  reason: Fetched with curl; HTTP 403 or a bot check page, which the project does not try to get past.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.oneidaindiannation.com/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found links to https://www.youtube.com/@TheOneidaIndianNationNY.
+next_steps: The Nation's YouTube channel (@TheOneidaIndianNationNY) could be browsed for court videos.

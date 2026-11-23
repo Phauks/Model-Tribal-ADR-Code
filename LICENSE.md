@@ -17,24 +17,15 @@ Different parts of this repository are licensed differently, because each part h
 
 ## Material these licenses do not cover
 
-A license can only cover material its licensor owns. The licenses above do
-**not** apply to:
+A license can only cover material its licensor owns. The licenses above do **not** apply to:
 
-- tribal codes, court rules, constitutions and other works of Native nations,
-  which remain under each nation's authority and terms;
-- quotations and excerpts from third-party works, which are used under fair use
-  or with recorded permission (see each source record's `rights` field);
+- tribal codes, court rules, constitutions and other works of Native nations, which remain under each nation's authority and terms;
+- quotations and excerpts from third-party works, which are used under fair use or with recorded permission (see each source record's `rights` field);
 - artwork, including cover art, which is used under each artist's agreement; and
-- any record marked with a Local Contexts Label or a "tribal review required"
-  status, whose community protocols apply regardless of copyright.
+- any record marked with a Local Contexts Label or a "tribal review required" status, whose community protocols apply regardless of copyright.
 
-Commitments to Indigenous data governance in the [charter](docs/charter.md)
-apply to all material, whatever its license.
+Commitments to Indigenous data governance in the [charter](docs/charter.md) apply to all material, whatever its license.
 
 ## License texts
 
-The license texts in `LICENSES/` were copied from the
-[SPDX License List data](https://github.com/spdx/license-list-data). The
-canonical versions are published by
-[Creative Commons](https://creativecommons.org/licenses/list.en) and the
-[Open Source Initiative](https://opensource.org/license/mit).
+The license texts in `LICENSES/` were copied from the [SPDX License List data](https://github.com/spdx/license-list-data). The canonical versions are published by [Creative Commons](https://creativecommons.org/licenses/list.en) and the [Open Source Initiative](https://opensource.org/license/mit).

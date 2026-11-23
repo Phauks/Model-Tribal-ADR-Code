@@ -1,0 +1,23 @@
+profile: content/tribes/n/native-village-of-marys-igloo.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/sites/alaska/themes/responsive2017/display_objects/documents/hf/ns.pdf
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Alaska Area; Norton Sound Service Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#native-village-of-marys-igloo
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: not-found
+  reason: 'No treaties: the United States made no treaties with Alaska Native villages; their claims were settled by statute (Alaska Native Claims Settlement Act, 1971).'

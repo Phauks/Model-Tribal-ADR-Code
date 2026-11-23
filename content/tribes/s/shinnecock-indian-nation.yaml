@@ -232,6 +232,239 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shinnecock Indian Nation
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Nashville Area Tribes, Nations and Partners" list'
+  note: Listed as "Shinnecock Indian Nation".
+governance:
+- aspect: form
+  value: Constitution ratified by majority vote of the General Council
+  quote: This Constitution shall become effective upon ratification by a majority vote of those eligible voters of
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article XVIII, Ratification
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: governing-body
+  value: Council of Trustees
+  quote: The governing body of The Nation shall be the Council of Trustees who shall first and foremost serve as
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article VII, Section 2
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Council of Trustees shall have seven (7) Officers, which shall consist of a Chairperson, Vice-
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article VII, Section 1
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: The General Council shall elect the Council of Trustees by majority vote of
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article X, Section 2(c)
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: Officers of the Council of Trustees shall serve 2 year staggered terms. Three
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Election Ordinance, Section 14, paragraph 2
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: general-council
+  value: All adult citizens, 21 or older, residing on the reservation
+  quote: adult citizens, at least twenty-one (21) years of age, who reside on the Shinnecock Indian Reservation
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson of the Council of Trustees shall preside over all meetings, serve as the
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article VII, Section 1(a)
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: head-of-government
+  value: Council of Trustees
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Shinnecock Indian Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Council
+  quote: The General Council shall elect the Council of Trustees by majority vote of
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article X, Section 2(c)
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Officers of the Council of Trustees shall hold office for a period of two (2)
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article X, Section 2(b)
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: other-officers
+  value: Vice-Chairperson, Treasurer, General Council Secretary, Trustee Council Secretary, Sunksqua, Sachem
+  quote: The Council of Trustees shall have seven (7) Officers, which shall consist of a Chairperson, Vice-
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article VII, Section 1
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: elections
+  value: Annually on the first Tuesday in April
+  quote: The word biennial was amended to annual.
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Amendment note following Article XVII (amending Article X, Section 2(a))
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: voting-age
+  value: '21'
+  quote: (B) Twenty-one (21) years of age or older at the date of the Election or Vote.
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Election Ordinance, Section 9(B)
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: election-authority
+  value: Election Committee
+  quote: The Election Committee of the Shinnecock Nation is hereby authorized to be established for the
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Election Ordinance, Section 2
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: judiciary
+  value: Tribal Court, within a Judiciary and Peacemaking branch
+  quote: The General Council may establish by Tribal Ordinance a Judiciary and Peacemaking branch of
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article XVI
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: amendment
+  value: Majority vote of eligible voters of General Council
+  quote: This Constitution may be amended by a majority vote of eligible voters of General Council. An election
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article XVII
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: recall-and-removal
+  value: Recall by majority vote of General Council on petition of 30%
+  quote: Any Officer(s) of the Council of Trustees may be removed from office by a majority vote of the General
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article XII, Section 1
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of General Council on Council of Trustees finding
+  quote: Trustees has been found guilty of gross neglect of duty, it shall certify its opinion, together with the
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article XII, Section 2
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
+- aspect: other
+  value: Council of Elders, traditional wisdom keepers advising the governing body
+  quote: The Council of Elders shall serve as the traditional wisdom keepers of The Nation and provide guidance,
+  source: constitution-shinnecock-indian-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-04-07'
+  locator: Article VIII
+  document_version:
+    document: shinnecock-indian-nation-constitution
+    version: 2015-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Constitution (Arts. I-XVIII) read in full; the Procedure Code, Legislative Procedure Code and Election Ordinance are subordinate texts, the Enrollment Ordinance and anything after line 2383 of the extract were not read, and Article X''s ''biennial'' election schedule was amended to ''annual'' by a 2015 note.'
 gaming:
   ordinances:
   - approved: '2020-07-17'
@@ -256,6 +489,31 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New York is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New York. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New York by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-jurisdiction
+  detail: New York has jurisdiction over offenses committed by or against Indians on Indian reservations in the State, to the same extent as elsewhere in the State; treaty hunting and fishing rights are preserved. (25 U.S.C. § 232.)
+  source: us-code-title-25-section-232
+  confidence: high
+  verification: read-in-full
+  locator: 25 U.S.C. § 232; Act of July 2, 1948, ch. 809, 62 Stat. 1224
+  note: 'Applies to "Indian reservations within the State of New York." Whether particular parcels (for example Oneida, Cayuga or Shinnecock lands) are "reservations" is a separate question the research did not research. Also cites: statutes-at-large-62-1224.'
+- topic: state-jurisdiction-statute
+  value: state-civil-jurisdiction
+  detail: 'New York courts have jurisdiction over civil actions between Indians or between Indians and others, as in other civil actions, with limits: no state taxation of reservation lands, no state licence for treaty hunting and fishing, and no alienation of tribal land. (25 U.S.C. § 233.)'
+  source: us-code-title-25-section-233
+  confidence: high
+  verification: read-in-full
+  locator: 25 U.S.C. § 233; Act of Sept. 13, 1950, ch. 947, 64 Stat. 845
+  note: Section 233 also excludes civil actions involving Indian lands or claims about events before Sept. 13, 1952; tribes could preserve their own laws and customs by enactment before Sept. 13, 1952.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

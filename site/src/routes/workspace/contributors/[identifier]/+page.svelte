@@ -42,6 +42,10 @@
 		<dd>{profile.personIdentifier ? 'Yes' : 'No'}</dd>
 	</div>
 	<div>
+		<dt>Board of directors</dt>
+		<dd>{profile.boardMember ? `Board member${profile.boardOffice ? `, ${profile.boardOffice}` : ''}` : 'No'}</dd>
+	</div>
+	<div>
 		<dt>Credit section</dt>
 		<dd>{profile.creditSection ? creditSectionLabels[profile.creditSection] : 'Not placed yet'}</dd>
 	</div>
@@ -95,6 +99,24 @@
 				</select>
 			</div>
 			<p><button class="button button-quiet" type="submit">Save the section</button></p>
+		</form>
+
+		<h2>Board of directors</h2>
+		<p>
+			Board members are listed first on the People page, when they have a contributor page. Only the lead author
+			can change this.
+		</p>
+		<form method="post" action="?/board">
+			<div class="choice">
+				<input type="checkbox" id="boardMember" name="boardMember" value="yes" checked={profile.boardMember} />
+				<label for="boardMember">On the nonprofit's board</label>
+			</div>
+			<div class="field">
+				<label for="boardOffice">Office (optional)</label>
+				<p class="hint" id="boardOffice-hint">For example President, Secretary or Treasurer. Leave it empty until offices are set.</p>
+				<input type="text" id="boardOffice" name="boardOffice" maxlength="100" value={profile.boardOffice ?? ''} aria-describedby="boardOffice-hint" />
+			</div>
+			<p><button class="button button-quiet" type="submit">Save</button></p>
 		</form>
 
 		{#if !profile.personIdentifier}

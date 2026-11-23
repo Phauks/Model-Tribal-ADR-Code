@@ -795,33 +795,12 @@ limits: 'Documents: all 1,200 compact documents were saved; 38 are scans with no
 
 ## What was done
 
-The Office of Indian Gaming list was scraped page by page and every linked
-document downloaded with `scripts/gaming/compact_list.py`; the National Indian
-Gaming Commission ordinance table was parsed and each link followed with
-`scripts/gaming/ordinance_list.py`. `pdfinfo` and `pdftotext` recorded page
-counts and text. `scripts/gaming/build_catalog.py` joined each row to the
-profile fact that already cites it, to its Federal Register notice (the
-list's link, or by rule when there is none), and wrote a source record for
-each notice in the Indigo Book form.
+The Office of Indian Gaming list was scraped page by page and every linked document downloaded with `scripts/gaming/compact_list.py`; the National Indian Gaming Commission ordinance table was parsed and each link followed with `scripts/gaming/ordinance_list.py`. `pdfinfo` and `pdftotext` recorded page counts and text. `scripts/gaming/build_catalog.py` joined each row to the profile fact that already cites it, to its Federal Register notice (the list's link, or by rule when there is none), and wrote a source record for each notice in the Indigo Book form.
 
-For context, a larger model researched good-faith litigation, Secretarial
-Procedures, the part 293 rule and revenue sharing; two small models researched
-each state's negotiating authority and current talks.
-`scripts/gaming/check_quotes.py` fetched every cited page and looked for each
-quotation; `scripts/gaming/build_context.py` set the verification level from
-that check and wrote source records for the cases, regulations and rules.
+For context, a larger model researched good-faith litigation, Secretarial Procedures, the part 293 rule and revenue sharing; two small models researched each state's negotiating authority and current talks. `scripts/gaming/check_quotes.py` fetched every cited page and looked for each quotation; `scripts/gaming/build_context.py` set the verification level from that check and wrote source records for the cases, regulations and rules.
 
-For clauses, `scripts/gaming/clause_evidence.py` chose each nation's governing
-documents for each state (the latest full compact, the amendments after it,
-and any Secretarial Procedures), cut out the sections under headings about
-dispute resolution, renegotiation, term, revenue sharing and immunity, and
-batched them for small-model reviewers. A script checked every quotation.
-A larger model then read the whole text of the 86 governing documents whose
-dispute clause the first pass could not find and audited a random 30 of the
-rest.
+For clauses, `scripts/gaming/clause_evidence.py` chose each nation's governing documents for each state (the latest full compact, the amendments after it, and any Secretarial Procedures), cut out the sections under headings about dispute resolution, renegotiation, term, revenue sharing and immunity, and batched them for small-model reviewers. A script checked every quotation. A larger model then read the whole text of the 86 governing documents whose dispute clause the first pass could not find and audited a random 30 of the rest.
 
 ## Output
 
-`research/gaming/` (see its README) and
-`research/analyses/2026-11-21-gaming-compact-negotiation.md`. Items that need
-Westlaw are in section 8 of the project's Westlaw list.
+`research/gaming/` (see its README) and `research/analyses/2026-11-21-gaming-compact-negotiation.md`. Items that need Westlaw are in section 8 of the project's Westlaw list.

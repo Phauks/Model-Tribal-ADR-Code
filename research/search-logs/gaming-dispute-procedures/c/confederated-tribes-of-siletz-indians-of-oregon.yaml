@@ -1,7 +1,7 @@
 profile: content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml
 topic: gaming-dispute-procedures
-status: partly-searched
-last_searched: '2026-11-22'
+status: none-found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -63,6 +63,29 @@ searches:
   outcome: not-found
   reason: scripts/review/ordinance_disputes.py read this amendment listed 2026-09-15 and found no candidate
     section (the text has no heading or passage on disputes, complaints, grievances, hearings or appeals).
-next_steps: Read the scanned amendment listed 2016-06-03 (https://www.nigc.gov/wp-content/uploads/2025/03/20160603SiletzTribeOrdAmend.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2024-09-24 (https://www.nigc.gov/wp-content/uploads/2025/03/20240924_Conf_Tribe_of_Siletz_Indiana_of_Oregon_Gam_Ord_Amend.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20240924_Conf_Tribe_of_Siletz_Indiana_of_Oregon_Gam_Ord_Amend.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 2-27 of 27 of this amendment listed 2024-09-24 as page
+    images (it has no text layer) and found no dispute procedure (The ordinance has no patron or employee
+    dispute section; its only hearing provision is the license suspension and revocation hearing in 6.007(m),
+    with no dispute framing).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20160603SiletzTribeOrdAmend.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-13 of 13 of this amendment listed 2016-06-03 as page
+    images (it has no text layer) and found no dispute procedure (The ordinance has no patron or employee
+    dispute section; its only hearing provision is the license suspension and revocation hearing in 6.007(l),
+    with no dispute framing).
+next_steps: Every chosen ordinance document on the Commission's list was read from page images; look for
+  gaming regulations or a patron dispute policy on the nation's or its gaming commission's website.

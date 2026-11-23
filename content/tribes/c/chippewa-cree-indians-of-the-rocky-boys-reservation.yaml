@@ -175,6 +175,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chippewa Cree Indians of the Rocky Boy's Reservation, Montana
+indian_health_service:
+- area: Billings
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Self-Governance Tribes list by Area
+  note: Listed as "Chippewa Cree Tribe of the Rocky Boy's Reservation". Also on the Indian Health Service Self-Governance Tribes list (Chippewa Cree Tribe of the Rocky Boy's Reservation (1995)); the list does not say which service unit or programs the compact covers.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Chippewa Cree Tribe of the Rocky Boy's Reservation, Montana" among organizations
@@ -200,6 +208,195 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Indian Reorganization Act of June 18, 1934, as amended
+  quote: in accordance with section 16 of the Indian Reorganization Act of
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Certification of Adoption
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: governing-body
+  value: Business Committee
+  quote: known as the Business Committee.
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article III, Section 1
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: Section 2. The Business Committee shall consist of nin4 members,
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article III, Section 2
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: governing-body-selection
+  value: Elected by district, plus one Representative at Large elected reservation-wide
+  quote: Section 6. Each district shall elect its district representatives and
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article IV, Section 6
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: The tepfn of office of each representative shall be two
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article III, Section 6
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: head-of-government
+  value: Chairman
+  quote: within its own number (1) a Chairman, and from within
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article III, Section 4
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Chippewa Cree Indians of the Rocky Boy's Reservation, Montana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Business Committee
+  quote: the Business Committee upon nomination and by secret ballot.
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Bylaws Article I, Section 1(b)
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: other-officers
+  value: Secretary, Treasurer
+  quote: (3) Treasurer, and (4) such
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article III, Section 4
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: elections
+  value: Annually, last Saturday in June
+  quote: Committee shall be held annually on the last Saturday in Jufie.
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article III, Section 7
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: voting-age
+  value: '21'
+  quote: Any resident member twenty-one years of age at the
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: election-authority
+  value: Business Committee
+  quote: and regulations laid down by the Business Committee
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article IV, Section 9
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: judiciary
+  value: Reservation court established by ordinance
+  quote: by establishing a reservation court and defining its duties and
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article VI, Section 1(l)
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: amendment
+  value: Majority vote in Secretarial election, 30% turnout
+  quote: majority vote of the qualified voters of the tribe voting at an election
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article X, Section 1
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: been approved by the Secretary of the Interior. It shall be the duty
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article X, Section 1
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
+- aspect: recall-and-removal
+  value: Expulsion by six members for neglect or misconduct
+  quote: six members expel any member for neglect
+  source: constitution-chippewa-cree-indians-of-the-rocky-boys-reservation-1935-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-23'
+  locator: Article V, Section 2
+  document_version:
+    document: chippewa-cree-indians-of-the-rocky-boys-reservation-constitution
+    version: 1935-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR garbles many words (for example nin4, Jufie, tepfn) and some passages are partial; the file sits in the Eastern Shoshone folder but its text is the Chippewa Cree constitution (adopted 2 November 1935, approved 23 November 1935), and a cleaner copy of the same text sits in the Chippewa Cree folder.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -419,6 +616,22 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Montana's 2024 legislative staff summary states that the Flathead Reservation is the only reservation in Montana under Public Law 280; no other Montana reservation is under state jurisdiction by the 1963 act. (Mont. Legis. Servs. Div., Montana & Public Law 280, at 1 (Apr. 2024).)
+  source: montana-legislative-services-division-public-law-280-2024
+  confidence: medium
+  verification: read-in-full
+  locator: Mont. Legis. Servs. Div. memo p. 1; Mont. Code Ann. § 2-1-301
+  note: 'Secondary source (legislative staff). Statutory text names only Flathead in § 2-1-301. Little Shell has no reservation in the roster data. Turtle Mountain (ND-based) has MT presence only. Fort Peck: a state court allowed divorce under a 1938 tribal enactment (State ex rel. Iron Bear v. Dist. Ct., 162 Mont. 335, 512 P.2d 1292 (1973)); that is tribal consent in a domestic-relations setting, not Public Law 280; the research read only the opening. Also cites: montana-code-annotated-2-1-301.'
+- topic: public-law-280
+  value: optional-state
+  detail: Montana law lets any other tribe request state jurisdiction by resolution to the governor, who must proclaim it within 60 days, but only after the tribe's own approval and the consent of each affected county commission. (Mont. Code Ann. § 2-1-302.)
+  source: montana-code-annotated-2-1-301
+  confidence: high
+  verification: read-in-full
+  locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
+  note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

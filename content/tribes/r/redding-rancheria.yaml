@@ -185,6 +185,203 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Redding Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: 'Listed as "Redding Rancheria, California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Redding Rancheria Tribe (1997)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: governing body of the Redding Rancheria shall be the Tribal Council
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article IV
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 7 members, plus 3 alternates
+  quote: composed of seven (7) Councilors and three (3) Alternate
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article IV
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by the membership
+  quote: Councilors elected by the Redding Rancheria membership.
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article IV
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years
+  quote: all future elections, Councilors shall be elected for a two (2)
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall preside over all meetings of the Tribal Council,
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article X
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Redding Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its own number
+  quote: electing from its own number, a Chairperson, a Secretary,
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article IV
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: The Vice-Chairperson shall assist the Chairperson when called upon
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article X
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually, first Saturday of October
+  quote: election shall be held annually on the first Saturday
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: members of the Redding Rancheria who are eighteen (18) years of age
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Three-member Election Committee independent of the Council
+  quote: Election Committee independent of Tribal Council shall be appointed
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Council may establish courts on the Rancheria
+  quote: justice by establishing appropriate courts on the Rancheria and
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article V
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election with 51% attendance
+  quote: The Constitution may be amended by a majority of the qualified voters
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article XI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of voting members
+  quote: petition signed by fifty one (51) percent of the voting members
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VII
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by five Council votes
+  quote: Tribal Council may, by vote of five (5) of its members, remove a Councilor
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VII
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Popular veto of Council action on petition of 51% of voting members
+  quote: petition by fifty-one (51) percent of the voting members of the
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article IX
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Tribal code

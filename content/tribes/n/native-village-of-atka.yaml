@@ -150,6 +150,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Atka
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Native Village of Atka". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Native Village of Atka".'
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Atka" among organizations under constitutions approved by the
@@ -177,6 +193,111 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws under the Act of June 18, 1934
+  quote: by authority of the Act of Congress of June 18, 1934, as
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-05-23'
+  locator: Preamble
+  document_version:
+    document: native-village-of-atka-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Governing body chosen by the Village membership
+  quote: shall decide what kind of governing
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-05-23'
+  locator: Article III, Section 1
+  document_version:
+    document: native-village-of-atka-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: decide how members and officers of the
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-05-23'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-atka-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: General meeting of whole membership, yearly
+  quote: be held at least once a year.
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-05-23'
+  locator: Article III, Section 3
+  document_version:
+    document: native-village-of-atka-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Atka
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: Village 21 years
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-05-23'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-atka-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Secretary of the Interior
+  quote: by the Secretary of the Interior at which at least 30 percent
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-05-23'
+  locator: Article VI
+  document_version:
+    document: native-village-of-atka-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of Village members, approved by Secretary
+  quote: changes are approved by the Secretary of the Interior and by a
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-05-23'
+  locator: Article VI
+  document_version:
+    document: native-village-of-atka-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior and by a
+  source: constitution-native-village-of-atka-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-05-23'
+  locator: Article VI
+  document_version:
+    document: native-village-of-atka-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Constitution

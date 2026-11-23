@@ -190,6 +190,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hydaburg Cooperative Association
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: Listed as "Hydaburg Cooperative Association". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Mt. Edgecumbe Service Area
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: 'The source''s words: "Hydaburg Cooperative Association".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Hydaburg Cooperative Association of Alaska" among organizations under constitutions
@@ -215,6 +232,159 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Act of Congress of June 18, 1934 (48 Stat. 984)
+  quote: the Act of Congress of June 18, 1934 (48 Stat. 984), as
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Preamble
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: governing-body
+  value: Council
+  quote: shall be a Council
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: governing-body-size
+  value: 7 members (President and six other members)
+  quote: and six other members
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: governing-body-selection
+  value: Elected by the Association
+  quote: elected by the Association.
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: for a period of two years.
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article III, Section 3(c)
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: head-of-government
+  value: President
+  quote: (6) The President of the Council shall be elected annually to serve
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Hydaburg Cooperative Association
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Association
+  quote: elected by the Association.
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: for a term of one year.
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: President, and from within or without, a Secretary, a Treasurer, and
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article III, Section 2(c)
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: elections
+  value: Annually, first Thursday after the third Monday in April
+  quote: The annual election date shall be the first Thursday after the
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article III, Section 2(b)
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: voting-age
+  value: '21'
+  quote: in good standing 21 years
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article V, Section 3
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
+- aspect: amendment
+  value: Majority vote of adult members in a Secretary-called election
+  quote: ratified by a majority vote of the adult members of the Association
+  source: constitution-hydaburg-cooperative-association-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-14'
+  locator: Article VIII
+  document_version:
+    document: hydaburg-cooperative-association-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The 1938 Library of Congress copy is badly garbled by scanning, so only clearly legible passages are used and the recall, removal and Article V-VI text is left out.'
 governing_documents:
 - kind: constitution
   title: Hydaburg Cooperative Association - Constitution and Bylaws Table of Contents

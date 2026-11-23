@@ -98,31 +98,18 @@ limits: >-
 
 ## What was done
 
-Read the four Uniform Law Commission act texts already recorded in
-`content/sources/` (downloaded and text-extracted) and checked the sections
-the essay relies on. Searched for intertribal model codes and for models
-drafted for Native nations to enact. Read UNDRIP, the American Declaration,
-and statutes and agreements from New Zealand, Canada and Australia that set up
-dispute processes involving Indigenous peoples. Read the Tenth Circuit's
-opinion on Oklahoma's model compact and summarized the project's existing
-gaming compact records by state.
+Read the four Uniform Law Commission act texts already recorded in `content/sources/` (downloaded and text-extracted) and checked the sections the essay relies on. Searched for intertribal model codes and for models drafted for Native nations to enact. Read UNDRIP, the American Declaration, and statutes and agreements from New Zealand, Canada and Australia that set up dispute processes involving Indigenous peoples. Read the Tenth Circuit's opinion on Oklahoma's model compact and summarized the project's existing gaming compact records by state.
 
 ## Results
 
 - New essay: `content/essays/i-comparative-model-codes-and-frameworks.md`.
-- Nineteen new source records (listed above), each with an annotation that
-  separates what the source says from project analysis.
-- Main finding for scope: no intertribal model ADR code was found. The
-  closest precedents are the Uniform Law Commission's Model Tribal Secured
-  Transactions Act (drafted with tribal officials) and the 1981 model judicial
-  conduct code of the National American Indian Court Judges Association.
+- Nineteen new source records (listed above), each with an annotation that separates what the source says from project analysis.
+- Main finding for scope: no intertribal model ADR code was found. The closest precedents are the Uniform Law Commission's Model Tribal Secured Transactions Act (drafted with tribal officials) and the 1981 model judicial conduct code of the National American Indian Court Judges Association.
 
 ## Items to check before the essay is cited elsewhere
 
-- Native Title Act ss 31, 35, 38(2), 39, 41, 42 and 86B in the current
-  compilation.
+- Native Title Act ss 31, 35, 38(2), 39, 41, 42 and 86B in the current compilation.
 - Nisg̱a'a Final Agreement Appendix M-5 (elders advisory council).
-- Citizen Potawatomi Nation v. Oklahoma, 881 F.3d 1226, and cert. denial
-  (added to the Westlaw list).
+- Citizen Potawatomi Nation v. Oklahoma, 881 F.3d 1226, and cert. denial (added to the Westlaw list).
 - Okla. Stat. tit. 3A, § 281, Part 12, in the official text.
 - The 2009 Australian report's findings, from the report itself.

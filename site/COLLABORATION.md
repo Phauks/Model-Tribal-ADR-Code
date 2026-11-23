@@ -1,46 +1,19 @@
 # Sign-in and co-author collaboration
 
-How co-authors sign in, who can do what, how sign-offs are recorded, and how
-requests from Native nations are handled once they arrive. The public side of
-requests is specified in [docs/requests.md](../docs/requests.md); this page
-covers how the website builds it. Everything here is project design unless a
-source is cited.
+How co-authors sign in, who can do what, how sign-offs are recorded, and how requests from Native nations are handled once they arrive. The public side of requests is specified in [docs/requests.md](../docs/requests.md); this page covers how the website builds it. Everything here is project design unless a source is cited.
 
 ## In short
 
-- **Sign-in is the site's own**
-  ([decision record 0024](../docs/decisions/0024-own-sign-in.md)). People sign
-  in with a code sent to their email address, or with a password they chose.
-  No outside sign-in service is used and nobody needs an account anywhere
-  else. The account only proves who someone is. The site's database decides
-  what they may do.
-- **Nobody reaches the workspace until the lead author adds them.** There is
-  no open access to the workspace. Anyone with a verified email address may
-  sign in to register as a contributor and keep a profile
-  ([docs/contributor-profiles.md](../docs/contributor-profiles.md),
-  [decision record 0022](../docs/decisions/0022-open-registration-for-contributors.md)).
-- **The lead author is the administrator**: full access to everything, and
-  the only person who adds people, changes roles, grants and restricts
-  access to documents, and reads the activity log
-  ([decision record 0023](../docs/decisions/0023-permission-levels-per-document.md)).
-- **Readers and requesters never need an account.** The request form at
-  `/requests` works without signing in and without JavaScript
-  (docs/requests.md, principle 5).
+- **Sign-in is the site's own** ([decision record 0024](../docs/decisions/0024-own-sign-in.md)). People sign in with a code sent to their email address, or with a password they chose. No outside sign-in service is used and nobody needs an account anywhere else. The account only proves who someone is. The site's database decides what they may do.
+- **Nobody reaches the workspace until the lead author adds them.** There is no open access to the workspace. Anyone with a verified email address may sign in to register as a contributor and keep a profile ([docs/contributor-profiles.md](../docs/contributor-profiles.md), [decision record 0022](../docs/decisions/0022-open-registration-for-contributors.md)).
+- **The lead author is the administrator**: full access to everything, and the only person who adds people, changes roles, grants and restricts access to documents, and reads the activity log ([decision record 0023](../docs/decisions/0023-permission-levels-per-document.md)).
+- **Readers and requesters never need an account.** The request form at `/requests` works without signing in and without JavaScript (docs/requests.md, principle 5).
 - **Essays are edited here; other content changes by pull request.** Essays live in the private bucket and are written, saved and published in the workspace (see [Essays](#essays) and [docs/editing.md](../docs/editing.md)). Every other record still changes only by pull request; for those the workspace records who approved which version, handles requests, and manages access.
-- **Secrets live only in Cloudflare**
-  ([decision record 0006](../docs/decisions/0006-secrets-only-in-cloudflare.md)).
+- **Secrets live only in Cloudflare** ([decision record 0006](../docs/decisions/0006-secrets-only-in-cloudflare.md)).
 
 ## Who can do what
 
-Two layers decide it
-([decision record 0023](../docs/decisions/0023-permission-levels-per-document.md)):
-a **role** for workspace-wide tasks, and a **level on each document**. Both
-are stored in the database and changed by the lead author, on the People
-page (`/workspace/people`) and the Access page (`/workspace/access`). Every
-change is recorded with who made it and when. The rules are in
-`src/lib/permissions.ts` and `src/lib/server/access.ts` and are checked on
-the server for every page and every form, reading the database each time;
-the page only hides buttons a person cannot use.
+Two layers decide it ([decision record 0023](../docs/decisions/0023-permission-levels-per-document.md)): a **role** for workspace-wide tasks, and a **level on each document**. Both are stored in the database and changed by the lead author, on the People page (`/workspace/people`) and the Access page (`/workspace/access`). Every change is recorded with who made it and when. The rules are in `src/lib/permissions.ts` and `src/lib/server/access.ts` and are checked on the server for every page and every form, reading the database each time; the page only hides buttons a person cannot use.
 
 | Role | Can do | Starts at, on every document |
 | --- | --- | --- |
@@ -53,8 +26,7 @@ the page only hides buttons a person cannot use.
 
 ### Access to each document
 
-Each person has one of four levels on each document (a nation record, a
-glossary term, a provision or an essay):
+Each person has one of four levels on each document (a nation record, a glossary term, a provision or an essay):
 
 | Level | Allows |
 | --- | --- |
@@ -63,45 +35,24 @@ glossary term, a provision or an essay):
 | Contribute | Comment, and edits the draft and saves versions of it. |
 | Full | Contribute, and restores an earlier version, resolves or hides others' comments, and submits the draft for publishing. |
 
-There is no view-only level: anyone who can open a document can comment on
-it, because the project wants their feedback. Contribute and full take effect
-in the website editor (decision record 0021); until it exists, content still
-changes by pull request.
+There is no view-only level: anyone who can open a document can comment on it, because the project wants their feedback. Contribute and full take effect in the website editor (decision record 0021); until it exists, content still changes by pull request.
 
 A person's level on a document is, most specific first:
 
 1. full, for the lead author, always;
 2. a grant for that document;
-3. a grant for every document of that kind, which also covers drafts that
-   have no file yet;
+3. a grant for every document of that kind, which also covers drafts that have no file yet;
 4. their role's default (table above).
 
-A grant of "No access" is how the lead author keeps someone out of a
-document their role would open. A grant can have an end date. Changing a
-grant ends the old one and adds a new one, so the history of who had what
-stays in the database. Only the lead author grants access; full access to a
-document does not let a person grant it to others.
+A grant of "No access" is how the lead author keeps someone out of a document their role would open. A grant can have an end date. Changing a grant ends the old one and adds a new one, so the history of who had what stays in the database. Only the lead author grants access; full access to a document does not let a person grant it to others.
 
-The Access page shows an overview (people by role and status, grants in
-force and about to end, refused attempts in the last 30 days, and whether the
-activity log is intact), each person's level on each kind of document, and
-every grant, with a form to grant, restrict or end access.
+The Access page shows an overview (people by role and status, grants in force and about to end, refused attempts in the last 30 days, and whether the activity log is intact), each person's level on each kind of document, and every grant, with a form to grant, restrict or end access.
 
-Code that shows or changes a document calls `requireDocumentLevel(event,
-database, subject, minimum)` from `src/lib/server/access.ts`, which reads the
-person's grants fresh and refuses with 403 below the minimum. The website
-editor's rooms call it before connecting someone and re-check on every saved
-version, and `onAccessChanged` lets a room disconnect someone whose access
-was lowered.
+Code that shows or changes a document calls `requireDocumentLevel(event, database, subject, minimum)` from `src/lib/server/access.ts`, which reads the person's grants fresh and refuses with 403 below the minimum. The website editor's rooms call it before connecting someone and re-check on every saved version, and `onAccessChanged` lets a room disconnect someone whose access was lowered.
 
-Requests are limited to editors and the lead author because they hold
-requesters' contact details and may describe restricted material (charter,
-commitment 6).
+Requests are limited to editors and the lead author because they hold requesters' contact details and may describe restricted material (charter, commitment 6).
 
-A nation reviewer is how a nation's own office can approve its record
-(charter, commitment 4: "sent to nation", "reviewed by nation", "approved by
-nation"). The approval is recorded in the workspace; the record's
-`review.status` is then changed by pull request, citing the approval.
+A nation reviewer is how a nation's own office can approve its record (charter, commitment 4: "sent to nation", "reviewed by nation", "approved by nation"). The approval is recorded in the workspace; the record's `review.status` is then changed by pull request, citing the approval.
 
 ## Essays
 
@@ -117,78 +68,35 @@ Essays are kept in the private `sourceDocuments` bucket and edited at `/workspac
 
 ## Reviews and sign-offs
 
-`/workspace/reviews` lists the documents the person can open: nation records
-that are not restricted (including records held back until the nation
-approves them), glossary terms and essays. Provisions join the list when
-their records exist. Anyone who can open a document can comment on it; only
-the lead author, editors and advisors sign off for the project, and only a
-nation reviewer, on their own nation's record, approves for the nation.
-The list is built with the site, so it always matches the deployed content.
+`/workspace/reviews` lists the documents the person can open: nation records that are not restricted (including records held back until the nation approves them), glossary terms and essays. Provisions join the list when their records exist. Anyone who can open a document can comment on it; only the lead author, editors and advisors sign off for the project, and only a nation reviewer, on their own nation's record, approves for the nation. The list is built with the site, so it always matches the deployed content.
 
-A review is one of **Approved**, **Changes requested** or **Comment**, with a
-note. It records:
+A review is one of **Approved**, **Changes requested** or **Comment**, with a note. It records:
 
-- the person and the capacity they reviewed in (lead author, editor,
-  advisor, co-author, or "for the nation"), kept even if their role changes
-  later;
-- the version it applies to: the content version and, when Workers Builds
-  built the site, the commit (for example `content 0.0.3, commit 1a2b3c4d5e6f`).
+- the person and the capacity they reviewed in (lead author, editor, advisor, co-author, or "for the nation"), kept even if their role changes later;
+- the version it applies to: the content version and, when Workers Builds built the site, the commit (for example `content 0.0.3, commit 1a2b3c4d5e6f`).
 
-So when the text changes later, it is clear which approvals came before the
-change.
+So when the text changes later, it is clear which approvals came before the change.
 
 ## Protection against unauthorized changes
 
-Every request that changes something in the workspace passes these checks,
-in order (`src/hooks.server.ts`):
+Every request that changes something in the workspace passes these checks, in order (`src/hooks.server.ts`):
 
-1. **From this site's own pages.** A change sent from another site is
-   refused, using the browser's `Sec-Fetch-Site` header, or `Origin` where
-   that is missing (`src/lib/server/request-guard.ts`). This is a second,
-   independent check beside SvelteKit's own check on form submissions, and
-   the session cookie is `SameSite=Lax`. (OWASP, *Cross-Site Request Forgery
-   Prevention Cheat Sheet*; Svelte, *SvelteKit configuration: csrf*.)
-2. **Not too many.** Each signed-in person may make 30 changes a minute
-   (the `workspaceChangeLimit` binding in `wrangler.jsonc`, keyed by the
-   person rather than the address, as Cloudflare recommends). Refused page
-   views count too, so they cannot flood the log. (Cloudflare, *Rate
-   Limiting*.)
-3. **Allowed.** The page or form checks the person's role or document level
-   from the database. A refusal is answered with 403 and recorded in the
-   activity log with what was tried. (OWASP, *Authorization Cheat Sheet*;
-   OWASP Top 10, *A01:2021 Broken Access Control*.)
+1. **From this site's own pages.** A change sent from another site is refused, using the browser's `Sec-Fetch-Site` header, or `Origin` where that is missing (`src/lib/server/request-guard.ts`). This is a second, independent check beside SvelteKit's own check on form submissions, and the session cookie is `SameSite=Lax`. (OWASP, *Cross-Site Request Forgery Prevention Cheat Sheet*; Svelte, *SvelteKit configuration: csrf*.)
+2. **Not too many.** Each signed-in person may make 30 changes a minute (the `workspaceChangeLimit` binding in `wrangler.jsonc`, keyed by the person rather than the address, as Cloudflare recommends). Refused page views count too, so they cannot flood the log. (Cloudflare, *Rate Limiting*.)
+3. **Allowed.** The page or form checks the person's role or document level from the database. A refusal is answered with 403 and recorded in the activity log with what was tried. (OWASP, *Authorization Cheat Sheet*; OWASP Top 10, *A01:2021 Broken Access Control*.)
 
-Content on the public site changes only by pull request, so any change can
-be reverted with git; drafts in the website editor keep named versions that
-someone with full access can restore.
+Content on the public site changes only by pull request, so any change can be reverted with git; drafts in the website editor keep named versions that someone with full access can restore.
 
 ## Activity log
 
-`/workspace/activity` (lead author only) lists everything done in the
-workspace, newest first, filtered by kind or person: invitations, role and
-access changes, reviews, requests, saved document versions, contributor
-profile changes, and refused attempts.
+`/workspace/activity` (lead author only) lists everything done in the workspace, newest first, filtered by kind or person: invitations, role and access changes, reviews, requests, saved document versions, contributor profile changes, and refused attempts.
 
-- **Entries cannot be changed or deleted.** The database refuses (triggers
-  in `migrations/0002_permission_tiers.sql`).
-- **Entries are sealed.** Each entry's seal is the SHA-256 hash of the entry
-  and the seal before it, so changing, removing or reordering an entry
-  breaks every seal after it (`src/lib/server/activity-seals.ts`; Schneier &
-  Kelsey 1999). New entries are sealed after each change, and the whole
-  chain is checked each time the Access or Activity page opens. The result
-  shows on both pages and on the Overview.
-- **What it cannot do.** Someone with full control of the Cloudflare
-  account could remove the rules and write a new, consistent chain. To catch
-  that, the Activity page shows the latest seal and offers the whole log
-  with its seals as a download; keep a copy now and then somewhere outside
-  Cloudflare. D1 Time Travel can restore the database to an earlier minute
-  (Cloudflare, *Time Travel and backups*).
-- **Personal details.** Because entries cannot be edited, do not put a
-  requester's contact details in request notes: the 12-month deletion of
-  personal details (docs/requests.md) cannot reach the log.
+- **Entries cannot be changed or deleted.** The database refuses (triggers in `migrations/0002_permission_tiers.sql`).
+- **Entries are sealed.** Each entry's seal is the SHA-256 hash of the entry and the seal before it, so changing, removing or reordering an entry breaks every seal after it (`src/lib/server/activity-seals.ts`; Schneier & Kelsey 1999). New entries are sealed after each change, and the whole chain is checked each time the Access or Activity page opens. The result shows on both pages and on the Overview.
+- **What it cannot do.** Someone with full control of the Cloudflare account could remove the rules and write a new, consistent chain. To catch that, the Activity page shows the latest seal and offers the whole log with its seals as a download; keep a copy now and then somewhere outside Cloudflare. D1 Time Travel can restore the database to an earlier minute (Cloudflare, *Time Travel and backups*).
+- **Personal details.** Because entries cannot be edited, do not put a requester's contact details in request notes: the 12-month deletion of personal details (docs/requests.md) cannot reach the log.
 
-OWASP recommends logging access-control failures and protecting logs from
-tampering (OWASP, *Logging Cheat Sheet*; NIST SP 800-92).
+OWASP recommends logging access-control failures and protecting logs from tampering (OWASP, *Logging Cheat Sheet*; NIST SP 800-92).
 
 ## Address book
 
@@ -197,47 +105,24 @@ tampering (OWASP, *Logging Cheat Sheet*; NIST SP 800-92).
 - **Tables** (`migrations/0012_address_book.sql`): `contacts` (person or organization, linked to a nation and, for a person, to the organization they act for), `contact_methods` (emails and phones), `contact_tags`, and `contact_changes`, which keeps every change with the row as it was. Leaders' own addresses live only here and in the private outreach list in project files, never in the repository (lead author's decision, Nov. 23, 2026).
 - **Where each address came from.** Every email and phone records the kind of source, such as the nation's website or the federal directory, and the page it was read on. It also records the first day it was recorded and the last day it was seen there.
 - **When an address needs checking** (`src/lib/address-book.ts`): a leader's or state-listed address after 180 days, any other after a year, and any address once the nation's next election, as the federal directory gives it, has passed since the last check. The rule is worked out when the page is read, so it can change without a migration.
-- **Checking against the directories.** "Check now" reads the federal and Alaska directories. An email still listed counts as checked that day; one no longer listed is marked replaced, and the address now listed is added to the same contact with a note naming who holds it. Addresses read on a nation's website are marked checked by hand on the contact's page.
+- **Checking against the directories.** The site rereads the federal and Alaska directories every Monday at 09:41 UTC, and whenever the lead author presses "Check now". The Monday run is a cron trigger in `wrangler.jsonc`, passed to `/address-book/scheduled` the same way as the hourly following run. An email still listed counts as checked that day; one no longer listed is marked replaced, and the address now listed is added to the same contact with a note naming who holds it. Addresses read on a nation's website are marked checked by hand on the contact's page.
+- **Keeping in step with the nation pages** (lead author's choice, Nov. 23, 2026). The nation profiles stay the published, cited record. The Differences page (`/workspace/address-book/differences`, `src/lib/address-book-sync.ts`) lists office emails and phones that only the pages show, that only the book holds, or that a page still shows after the book marked them out of use. Page-only ones are brought into the book by a button there and by "Check now"; the others are fixed by a pull request to the profile, using the page's CSV download. Leaders' addresses are never compared, since they never go on a page.
 - **Mailing list.** `mailingList()` in `src/lib/server/address-book.ts` gives one email per contact (the first choice in use, each address once), and the page offers it as a CSV download. Mail code marks a hard bounce with `editContactMethod()`, status `bounced`. Unsubscribes are kept by the mail code, not here: retiring an address is not an unsubscribe.
 - **Seeding.** `scripts/outreach/import_address_book.py` turns the private outreach list and the two directories into SQL that is loaded into D1 directly; the SQL is never committed.
 
 ## Requests from nations
 
-The form at `/requests` follows docs/requests.md step by step, with a branch
-for adding a nation that is missing. Each request gets a reference such as
-`20261121-K7QX3M` (the date, then six characters from Crockford's base 32,
-which leaves out I, L, O and U so a reference read aloud is hard to get
-wrong).
+The form at `/requests` follows docs/requests.md step by step, with a branch for adding a nation that is missing. Each request gets a reference such as `20261121-K7QX3M` (the date, then six characters from Crockford's base 32, which leaves out I, L, O and U so a reference read aloud is hard to get wrong).
 
-In the workspace, `/workspace/requests` lists requests with the project's own
-targets from docs/requests.md: acknowledge within 7 days, hide material named
-in a restrict or remove request within 7 days, decide within 30 days of
-acknowledging. A request's page shows its details, its proof and uploaded
-files, and its history, and lets an editor change its status, add notes,
-resolve it (a declined request needs the reasons given to the requester) or
-reopen it.
+In the workspace, `/workspace/requests` lists requests with the project's own targets from docs/requests.md: acknowledge within 7 days, hide material named in a restrict or remove request within 7 days, decide within 30 days of acknowledging. A request's page shows its details, its proof and uploaded files, and its history, and lets an editor change its status, add notes, resolve it (a declined request needs the reasons given to the requester) or reopen it.
 
-**Hiding material is still done by pull request.** Setting a request to
-"Hidden, pending review" records when that was done; the change itself is a
-pull request that sets `sensitivity.tribal_review_required: true` or
-`sensitivity.restricted: true`, with a commit message that does not repeat the
-material.
+**Hiding material is still done by pull request.** Setting a request to "Hidden, pending review" records when that was done; the change itself is a pull request that sets `sensitivity.tribal_review_required: true` or `sensitivity.restricted: true`, with a commit message that does not repeat the material.
 
-**Uploads** are kept in the private `sourceDocuments` bucket under
-`requests/`. The form accepts PDF, PNG, JPEG and WebP files up to 10 MB,
-checked by their first bytes rather than their names, and the workspace only
-ever offers them as downloads, so an uploaded file cannot run as a page of the
-site.
+**Uploads** are kept in the private `sourceDocuments` bucket under `requests/`. The form accepts PDF, PNG, JPEG and WebP files up to 10 MB, checked by their first bytes rather than their names, and the workspace only ever offers them as downloads, so an uploaded file cannot run as a page of the site.
 
-**Personal details** (name, role and contact) are deleted 12 months after a
-request is resolved, unless the person asked to be credited
-(docs/requests.md). This runs whenever an editor opens the request list, so
-no scheduled job is needed.
+**Personal details** (name, role and contact) are deleted 12 months after a request is resolved, unless the person asked to be credited (docs/requests.md). This runs whenever an editor opens the request list, so no scheduled job is needed.
 
-**Spam.** The form has a hidden field that people never see and bots tend to
-fill in, and Cloudflare limits each connection to five submissions a minute
-(the `requestFormLimit` binding in `wrangler.jsonc`). Neither asks the
-requester to make an account or solve a puzzle.
+**Spam.** The form has a hidden field that people never see and bots tend to fill in, and Cloudflare limits each connection to five submissions a minute (the `requestFormLimit` binding in `wrangler.jsonc`). Neither asks the requester to make an account or solve a puzzle.
 
 ## Forms
 
@@ -247,152 +132,83 @@ A contributor form sent from `/forms/<form>` opens a request (kind `contribute`,
 
 On the request's page in the workspace, editors see each form, open the filled form (while the site still has that exact version), download the stored copy, and file the forms under a filing number, which is logged.
 
+## Files people send
+
+Anyone signed in can send files on `/uploads/send` and follow them on `/uploads` (Your uploads, also in the account menu). The lead author and editors review them on `/workspace/uploads` (permission `review-uploads`). Files arrive in 10 MB pieces into the private bucket under `uploads/<identifier>/`, are checked by type and for hidden content as they arrive, and wait for a reviewer, who files them, keeps them for reference, or says why they were not used. A YouTube link can stand in for a video. Filed files are served at `/files/<reference>/<name>`. The code is in `src/lib/uploads.ts`, `src/lib/server/uploads.ts`, `src/lib/server/upload-checks.ts` and `src/lib/server/upload-serving.ts`; the design is docs/uploads.md and decision record 0038.
+
 ## How sign-in works
 
-The "Sign in" link in the masthead of every page, and "Co-author sign-in" in
-the footer, start here. The design follows the lead author's Grimbinder
-project (`worker/account/` there).
+The "Sign in" link in the masthead of every page, and "Co-author sign-in" in the footer, start here. The design follows the lead author's Grimbinder project (`worker/account/` there).
 
-1. **A code by email.** At `/sign-in` the person types their email address.
-   The site emails a six-digit code and a link through Cloudflare Email
-   Service (`src/lib/server/sign-in-email.ts`). Typing the code, or opening
-   the link and pressing "Sign in", signs them in. The first time, this also
-   makes their account (`src/lib/server/accounts.ts`), so there is no separate
-   sign-up. A code:
+1. **A code by email.** At `/sign-in` the person types their email address. The site emails a six-digit code and a link through Cloudflare Email Service (`src/lib/server/sign-in-email.ts`). Typing the code, or opening the link and pressing "Sign in", signs them in. The first time, this also makes their account (`src/lib/server/accounts.ts`), so there is no separate sign-up. A code:
    - works once, for 15 minutes, and only the newest one for an address works;
    - stops working after 5 wrong tries;
    - is kept in the database only as a SHA-256 hash, like the link.
-2. **A password, if they chose one.** Anyone signed in can choose a password
-   at `/profile/password`; it is optional. Passwords are stored only as salted
-   PBKDF2-SHA256 hashes with 100,000 iterations, the most Workers allow
-   (Cloudflare, ["Web
-   Crypto"](https://developers.cloudflare.com/workers/runtime-apis/web-crypto/)).
-   The rules follow NIST SP 800-63B: at least 12 characters, any characters,
-   no forced mixing of character types. A wrong password gets the same answer
-   whether or not the address has an account, so the form cannot be used to
-   find out who has signed up. Changing a password signs out every other
-   browser.
-3. **A link from the lead author.** On the People page the lead author gets a
-   one-time sign-in link for each person they invite, to send them
-   personally. It works once, for 7 days, only for someone who has never
-   signed in, and making one is recorded in the activity log. After using it,
-   the person is offered a password.
-4. **Limits.** Each email address may try each step 5 times a minute, and
-   each network address 30 times (`wrangler.jsonc`, `signInLimit` and
-   `signInNetworkLimit`).
-5. **Matching to a person.** After sign-in the site matches the account to a
-   person (`src/lib/server/people.ts`):
+2. **A password, if they chose one.** Anyone signed in can choose a password at `/profile/password`; it is optional. Passwords are stored only as salted PBKDF2-SHA256 hashes with 100,000 iterations, the most Workers allow (Cloudflare, ["Web Crypto"](https://developers.cloudflare.com/workers/runtime-apis/web-crypto/)). The rules follow NIST SP 800-63B: at least 12 characters, any characters, no forced mixing of character types. A wrong password gets the same answer whether or not the address has an account, so the form cannot be used to find out who has signed up. Changing a password signs out every other browser.
+3. **A link from the lead author.** On the People page the lead author gets a one-time sign-in link for each person they invite, to send them personally. It works once, for 7 days, only for someone who has never signed in, and making one is recorded in the activity log. After using it, the person is offered a password.
+4. **Limits.** Each email address may try each step 5 times a minute, and each network address 30 times (`wrangler.jsonc`, `signInLimit` and `signInNetworkLimit`).
+5. **Matching to a person.** After sign-in the site matches the account to a person (`src/lib/server/people.ts`):
    - someone who has signed in before, by their account;
-   - someone signing in for the first time, by their email address. Every
-     account has proved it receives mail at its address, so nobody can claim
-     an invitation by typing someone else's address;
+   - someone signing in for the first time, by their email address. Every account has proved it receives mail at its address, so nobody can claim an invitation by typing someone else's address;
    - the very first lead author, by the `LEAD_AUTHOR_EMAIL` setting.
 
-   Anyone else stays signed in and goes to their contributor profile
-   (`/profile`), where they can register to help. The workspace stays closed
-   to them. Someone whose access was removed is not signed in.
-6. **The session** is a random 256-bit token in an HTTP-only, SameSite=Lax,
-   Secure cookie. The database keeps only its hash (`sessions` table). It
-   lasts at most 12 hours and ends after 4 hours without use. "Sign out"
-   deletes it.
-7. On every workspace page the site checks the database again, so removing
-   someone's access takes effect at once, even if they are signed in.
-8. The masthead's link reads "Workspace" instead of "Sign in" while a
-   `signed-in-hint` cookie is present (`src/lib/signed-in-hint.ts`). It holds
-   only "1", is readable by the page's script because public pages are built
-   ahead of time and cannot ask the Worker, and grants nothing: it is set at a
-   successful sign-in and on each workspace page while the session is valid,
-   and cleared at sign-out or once the session has ended.
+   Anyone else stays signed in and goes to their contributor profile (`/profile`), where they can register to help. The workspace stays closed to them. Someone whose access was removed is not signed in.
+6. **The session** is a random 256-bit token in an HTTP-only, SameSite=Lax, Secure cookie. The database keeps only its hash (`sessions` table). It lasts at most 12 hours and ends after 4 hours without use. "Sign out" deletes it.
+7. On every workspace page the site checks the database again, so removing someone's access takes effect at once, even if they are signed in.
+8. The masthead's link reads "Workspace" instead of "Sign in" while a `signed-in-hint` cookie is present (`src/lib/signed-in-hint.ts`). It holds only "1", is readable by the page's script because public pages are built ahead of time and cannot ask the Worker, and grants nothing: it is set at a successful sign-in and on each workspace page while the session is valid, and cleared at sign-out or once the session has ended.
 
-Workspace pages, sign-in and the request form are never cached, by the
-browser or by the offline copy (`src/service-worker/index.ts`), and cannot be
-shown inside another site's frame.
+Workspace pages, sign-in and the request form are never cached, by the browser or by the offline copy (`src/service-worker/index.ts`), and cannot be shown inside another site's frame.
 
-On a copy of the site running on your own computer (`npm run preview`,
-`localhost`), no email is sent: the code and link are shown on the sign-in
-page instead.
+On a copy of the site running on your own computer (`npm run preview`, `localhost`), no email is sent: the code and link are shown on the sign-in page instead.
 
 ## Setting up sign-in
 
-Nothing secret has to be set. There are two settings, and the site works
-without the first.
+Nothing secret has to be set. There are two settings, and the site works without the first.
 
 ### 1. The address codes come from
 
-Cloudflare Email Service sends only from a domain onboarded in Email Service
-on the same Cloudflare account (Cloudflare, ["Send
-emails"](https://developers.cloudflare.com/email-service/get-started/send-emails/)).
-The workers.dev address cannot send email.
+Cloudflare Email Service sends only from a domain onboarded in Email Service on the same Cloudflare account (Cloudflare, ["Send emails"](https://developers.cloudflare.com/email-service/get-started/send-emails/)). The workers.dev address cannot send email.
 
-1. Cloudflare dashboard > **Compute > Email Service > Email Sending** >
-   **Onboard Domain**, and choose the domain. Cloudflare adds the DNS records
-   it needs (SPF, DKIM, DMARC and bounce handling).
-2. In `site/wrangler.jsonc`, set `SIGN_IN_EMAIL_FROM` under `vars` to an
-   address on that domain, such as `sign-in@example.org`, and merge the
-   change. The address is not secret.
+1. Cloudflare dashboard > **Compute > Email Service > Email Sending** > **Onboard Domain**, and choose the domain. Cloudflare adds the DNS records it needs (SPF, DKIM, DMARC and bounce handling).
+2. In `site/wrangler.jsonc`, set `SIGN_IN_EMAIL_FROM` under `vars` to an address on that domain, such as `sign-in@example.org`, and merge the change. The address is not secret.
 
-Until this is done, the site sends no email. People sign in with a password,
-or with a link from the lead author, and `/sign-in` says so.
+Until this is done, the site sends no email. People sign in with a password, or with a link from the lead author, and `/sign-in` says so.
 
 ### 2. The first lead author
 
-Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**,
-type **Secret**: `LEAD_AUTHOR_EMAIL`, the lead author's email address. It is
-set in the dashboard rather than in `wrangler.jsonc` only because that file
-is public. It must be the **Secret** type even though an email address is not
-really secret: each deploy replaces plain-text variables set in the dashboard
-with the ones in `wrangler.jsonc`, but never deletes secrets (Cloudflare,
-["Wrangler configuration: source of
-truth"](https://developers.cloudflare.com/workers/wrangler/configuration/#source-of-truth)).
+Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**, type **Secret**: `LEAD_AUTHOR_EMAIL`, the lead author's email address. It is set in the dashboard rather than in `wrangler.jsonc` only because that file is public. It must be the **Secret** type even though an email address is not really secret: each deploy replaces plain-text variables set in the dashboard with the ones in `wrangler.jsonc`, but never deletes secrets (Cloudflare, ["Wrangler configuration: source of truth"](https://developers.cloudflare.com/workers/wrangler/configuration/#source-of-truth)).
 
 ### Database
 
-The tables are created by the files in `migrations/`. Workers Builds does not
-run them, because its automatically created API token does not include D1
-permission (Cloudflare, ["Workers Builds configuration: API
-token"](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/#api-token)).
-Apply them once per new migration, from `site/` (migration 0002 adds access
-levels and the sealed activity log; apply it before deploying the code that
-uses it):
+The tables are created by the files in `migrations/`. Workers Builds does not run them, because its automatically created API token does not include D1 permission (Cloudflare, ["Workers Builds configuration: API token"](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/#api-token)). Apply them once per new migration, from `site/` (migration 0002 adds access levels and the sealed activity log; apply it before deploying the code that uses it):
 
 ```sh
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the
-copy used by `npm run preview`, use `npm run database:migrate:local`.
+Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`.
 
 ### First sign-in
 
-Open `/sign-in`, enter the `LEAD_AUTHOR_EMAIL` address and ask for a code.
-If the site cannot send email yet, someone with access to the Cloudflare
-account can make a one-time link from `site/`:
+Open `/sign-in`, enter the `LEAD_AUTHOR_EMAIL` address and ask for a code. If the site cannot send email yet, someone with access to the Cloudflare account can make a one-time link from `site/`:
 
 ```sh
 npm run sign-in-link -- lead@example.org   # works once, for one hour
 ```
 
-The same command helps anyone who has lost both their password and access to
-their email.
+The same command helps anyone who has lost both their password and access to their email.
 
 The Workspace group in the left sidebar has a People page, where co-authors, advisors, editors, contributors and nation reviewers are added by email address, and an Access page, where their level on each document is raised or lowered. Each person signs in at `/sign-in` with that address, or with the link the People page gives you for them. Their access starts at their first sign-in.
 
 ## Database
 
-The tables are created by the files in `migrations/`. Workers Builds does not
-run them, because its automatically created API token does not include D1
-permission (Cloudflare, ["Workers Builds configuration: API
-token"](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/#api-token)).
-Apply them once per new migration, from `site/` (migration 0002 adds access
-levels and the sealed activity log; apply it before deploying the code that
-uses it):
+The tables are created by the files in `migrations/`. Workers Builds does not run them, because its automatically created API token does not include D1 permission (Cloudflare, ["Workers Builds configuration: API token"](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/#api-token)). Apply them once per new migration, from `site/` (migration 0002 adds access levels and the sealed activity log; apply it before deploying the code that uses it):
 
 ```sh
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the
-copy used by `npm run preview`, use `npm run database:migrate:local`.
+Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`.
 
 ### First sign-in
 
@@ -413,14 +229,11 @@ Open `/sign-in` and sign in with the `LEAD_AUTHOR_EMAIL` address. The Workspace 
 | `events` | The activity log: who did what and when, numbered in order. Cannot be changed or deleted. |
 | `event_seals` | The seal of each activity log entry, chained to the one before. |
 | `follows`, `page_updates`, `page_fingerprints`, `following_checks`, `follow_settings` | Pages each account follows, when each followed page changed, the last fingerprint of every page that can be followed, which build was compared last, and each account's email choice (`migrations/0011_following.sql`; see Following pages). |
+| `page_changes`, `page_states`, `page_history_checks`, `hidden_changes` | Each change to a page built with the site, the last version seen of each such page, which build was compared last, and the parts of changes the lead author hid (`migrations/0017_page_changes.sql`; see Recent changes). |
 
-`migrations/0003_contributor_profiles.sql` adds contributor profiles, their
-nations, interests and confirmed versions; see
-[docs/contributor-profiles.md](../docs/contributor-profiles.md).
+`migrations/0003_contributor_profiles.sql` adds contributor profiles, their nations, interests and confirmed versions; see [docs/contributor-profiles.md](../docs/contributor-profiles.md).
 
-Status and outcome values are the words docs/requests.md uses
-(`hidden-pending-review`, `declined` and so on), so the documentation and the
-database match.
+Status and outcome values are the words docs/requests.md uses (`hidden-pending-review`, `declined` and so on), so the documentation and the database match.
 
 ## Following pages
 
@@ -436,54 +249,42 @@ Anyone signed in can follow a nation's page, the model code or one of its sectio
 
 Once the domain is onboarded in Email Service (see "Setting up sign-in"), set `UPDATE_EMAIL_FROM` in `site/wrangler.jsonc` to an address on it, such as `updates@` the domain, and `SITE_ADDRESS` to the site's address on the domain, and merge the change. Nothing else changes: summaries go out at the next hourly run to everyone whose choice is daily or weekly. Readers who followed pages before then were told on the Following page that emails would start once the site could send them.
 
+## Recent changes
+
+Every change to the site's pages is listed at `/changes`, newest first, the way a wiki's Recent changes page lists them (MediaWiki, "Help:Recent changes", https://www.mediawiki.org/wiki/Help:Recent_changes), with a history for each page and a page comparing any two versions. Trevor asked for it on 2026-11-23 and chose that nation pages show who changed them, when and which parts, never their earlier wording. The rules shared by the browser and the Worker are in `src/lib/page-history.ts`; the database side is `src/lib/server/page-history.ts`.
+
+- **Where changes come from.** Essays: every publication in `essay_publications`, read as it is, with the version's note as its summary and the person who published it. Pages built with the site (nation pages, stories, glossary entries, the acknowledgments, the charter and the licenses, and the model code once it is drafted): `src/lib/server/page-history-build.ts` lists each with a fingerprint of what it shows readers, and the merged pull requests that last touched its files (from `git log`), and bundles the list into the Worker as `virtual:page-history`. `recordBuildChanges` compares it with `page_states` and adds a row to `page_changes` for each page that is new, changed or gone, with the merged pull requests' titles as the summary and "Site release" as who made it. It runs every hour from the scheduled run and the first time a copy of the Worker opens Recent changes. The first comparison only records the pages; changes are listed from then on. A newer build is claimed with a random token, as for Following pages.
+- **What is kept.** For pages whose earlier wording may be shown, each version's text is written once to the private bucket as `page-versions/<address>/<fingerprint>.txt`, so any two versions can be compared. Nation pages and stories keep no text: their rows name the parts of the page that changed (such as "Contacts" or "Courts"), worked out from a hash of each part, and no title, which is looked up from the live site when the change is shown. A nation can ask for something to be taken off its page, and an older version would put it back in view.
+- **Filters.** Page (`?page=` shows one page's history), kind of page, who, dates, size of change in bytes, kinds of change (edits, new pages, published versions, removed pages), whether changes are grouped by page, and how many to show. A change that came with an update to more than 25 pages at once is a bulk update, hidden unless the reader asks for it, the way a wiki hides bots. The same filters give an Atom feed at `/changes/feed.xml`.
+- **Hiding.** The lead author can hide the text, the summary or the name on any change from `/workspace/changes/<change>`, with a reason readers see, the way a wiki hides a revision (MediaWiki, "Help:RevisionDelete", https://www.mediawiki.org/wiki/Help:RevisionDelete). The change stays listed with a line through what is hidden. Hidden text cannot be read or compared, including as the earlier side of the next change, and its size is not shown or filtered on. An essay publication held back in the workspace is hidden the same way. Each hiding and showing again is recorded in the activity log. Hidden changes are listed at `/workspace/changes`.
+
 ## Testing
 
-`npm test` runs the unit tests in `tests/` with Vitest, including the database
-code against the real migrations in an in-memory SQLite database. That
-includes codes, links, passwords and sessions (`tests/sign-in.test.ts`).
-Sending real email is tried by hand once `SIGN_IN_EMAIL_FROM` is set.
+`npm test` runs the unit tests in `tests/` with Vitest, including the database code against the real migrations in an in-memory SQLite database. That includes codes, links, passwords and sessions (`tests/sign-in.test.ts`). Sending real email is tried by hand once `SIGN_IN_EMAIL_FROM` is set.
 
 ## Sources
 
-- Cloudflare, *Email Sending Workers API*, Cloudflare Email Service Docs,
-  https://developers.cloudflare.com/email-service/api/send-emails/workers-api/.
-- Cloudflare, *Web Crypto*, Cloudflare Workers Docs,
-  https://developers.cloudflare.com/workers/runtime-apis/web-crypto/.
-- Paul A. Grassi et al., Nat'l Inst. of Standards & Tech., *Digital Identity
-  Guidelines: Authentication and Lifecycle Management*, NIST SP 800-63B
-  (2017), https://pages.nist.gov/800-63-3/sp800-63b.html.
-- OWASP Foundation, *Authentication Cheat Sheet*,
-  https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html.
-- OWASP Foundation, *Password Storage Cheat Sheet*,
-  https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html.
-- Cloudflare, *Rate Limiting*, Cloudflare Workers Docs,
-  https://developers.cloudflare.com/workers/runtime-apis/bindings/rate-limit/.
-- Cloudflare, *Time Travel and backups*, Cloudflare D1 Docs,
-  https://developers.cloudflare.com/d1/reference/time-travel/.
-- OWASP Foundation, *A01:2021 – Broken Access Control*,
-  https://top10.owasp.org/2021/A01_2021-Broken_Access_Control/index.html.
-- OWASP Foundation, *Authorization Cheat Sheet*,
-  https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html.
-- OWASP Foundation, *Cross-Site Request Forgery Prevention Cheat Sheet*,
-  https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html.
-- OWASP Foundation, *Logging Cheat Sheet*,
-  https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html.
-- Karen Kent & Murugiah Souppaya, Nat'l Inst. of Standards & Tech., *Guide to
-  Computer Security Log Management*, NIST SP 800-92 (2006),
-  https://csrc.nist.gov/pubs/sp/800/92/final.
-- Bruce Schneier & John Kelsey, *Secure Audit Logs to Support Computer
-  Forensics*, 2 ACM Transactions on Information & System Security 159 (1999).
-- Svelte, *Configuration: csrf*, SvelteKit Docs,
-  https://svelte.dev/docs/kit/configuration#csrf.
+- Cloudflare, *Email Sending Workers API*, Cloudflare Email Service Docs, https://developers.cloudflare.com/email-service/api/send-emails/workers-api/.
+- Cloudflare, *Web Crypto*, Cloudflare Workers Docs, https://developers.cloudflare.com/workers/runtime-apis/web-crypto/.
+- Paul A. Grassi et al., Nat'l Inst. of Standards & Tech., *Digital Identity Guidelines: Authentication and Lifecycle Management*, NIST SP 800-63B (2017), https://pages.nist.gov/800-63-3/sp800-63b.html.
+- OWASP Foundation, *Authentication Cheat Sheet*, https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html.
+- OWASP Foundation, *Password Storage Cheat Sheet*, https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html.
+- Cloudflare, *Rate Limiting*, Cloudflare Workers Docs, https://developers.cloudflare.com/workers/runtime-apis/bindings/rate-limit/.
+- Cloudflare, *Time Travel and backups*, Cloudflare D1 Docs, https://developers.cloudflare.com/d1/reference/time-travel/.
+- OWASP Foundation, *A01:2021 – Broken Access Control*, https://top10.owasp.org/2021/A01_2021-Broken_Access_Control/index.html.
+- OWASP Foundation, *Authorization Cheat Sheet*, https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html.
+- OWASP Foundation, *Cross-Site Request Forgery Prevention Cheat Sheet*, https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html.
+- OWASP Foundation, *Logging Cheat Sheet*, https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html.
+- Karen Kent & Murugiah Souppaya, Nat'l Inst. of Standards & Tech., *Guide to Computer Security Log Management*, NIST SP 800-92 (2006), https://csrc.nist.gov/pubs/sp/800/92/final.
+- Bruce Schneier & John Kelsey, *Secure Audit Logs to Support Computer Forensics*, 2 ACM Transactions on Information & System Security 159 (1999).
+- Svelte, *Configuration: csrf*, SvelteKit Docs, https://svelte.dev/docs/kit/configuration#csrf.
 
 ## Not built yet
 
-- Email to the maintainer when a request arrives (docs/requests.md,
-  "Notification"). Until then, check `/workspace/requests`; the overview shows
-  anything past a target.
+- Email to the maintainer when a request arrives (docs/requests.md, "Notification"). Until then, check `/workspace/requests`; the overview shows anything past a target.
 - The public "Requests log" page (docs/requests.md, "Public log").
 - A filings list in the workspace, and emailing a signer their copy of a form (waits on a domain).
-- Hiding material from the website directly from the workspace, before a pull
-  request; for now hiding is a pull request.
+- Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly.
+- A virus scan for files people send, and comments on them from nation reviewers (docs/uploads.md, "Not built yet").
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

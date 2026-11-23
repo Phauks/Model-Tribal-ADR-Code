@@ -171,6 +171,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Oglala Sioux Tribe
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: 'Listed as "Oglala Sioux Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes. Service unit named for the reservation; page refers to the "Lakota Nation" rather than the tribe by full name.'
+- area: Great Plains
+  service_unit: Pine Ridge Service Unit
+  source: indian-health-service-great-plains-pine-ridge-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "The Kyle Health Center located on the Pine Ridge Reservation".'
+- area: Great Plains
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Great Plains Area
+  note: Listed as "Oglala Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Oglala Sioux Tribe of the Pine Ridge Reservation, South Dakota" among organizations
@@ -196,6 +220,207 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and bylaws under the Indian Reorganization Act of June 18, 1934
+  quote: 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat.
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Certification of Adoption
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: governing-body
+  value: Oglala Sioux Tribal Council
+  quote: SEC. 10. The Oglala Sioux Tribal Council shall be the sole
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 10
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: governing-body-size
+  value: One representative per 1000 members, or a remainder of more than 500
+  quote: tative for each 1000 members, or a remainder of more than 500.
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 4
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot of qualified voters, by community representation
+  quote: chosen by secret ballot by qualified voters of the tribe
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 1
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: a term of two years.
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 8
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: head-of-government
+  value: President
+  quote: duty of the president to preside
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Oglala Sioux Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the members of the tribe, at large
+  quote: vice president, elected by the members of the Oglala
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 6
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: elections
+  value: Called by the council at least 60 days before terms expire
+  quote: shall be called by the tribal council at least sixty
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 9
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the tribe, 18 years or over, who
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VII, Section 1
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: election-authority
+  value: Tribal council, by ordinance
+  quote: shall be determined by the tribal council by appropriate
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VII, Section 2
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: judiciary
+  value: Court or courts the tribal council may establish
+  quote: shall be vested in a court or courts which the tribal council may
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article V, Section 1
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: amendment
+  value: Majority vote of qualified voters at Secretarial election, 30% turnout
+  quote: vote of the qualified voters of the tribe voting at an election
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article XI
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article XI
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: recall-and-removal
+  value: Recall from office under due process of law for cause
+  quote: be subject to recall from office under due process of law for
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VIII, Section 2
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: recall-and-removal
+  value: Impeachment by two-thirds vote of the council
+  quote: Impeached except by a two-thirds (2/3)
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VIII, Section 2
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: other
+  value: Communities elect annual presidents and other officers
+  quote: elect, annually, a president and such other officers as may be
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VI
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
 governing_documents:
 - kind: law-code
   title: 'Oglala Sioux Tribe: Law and Order Code'
@@ -505,6 +730,87 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Nebraska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil) extend state jurisdiction to all Indian country within Nebraska. Applies to the nation''s Indian country within Nebraska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  verification: inferred
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Nebraska"
+  note: Statute is primary; nation placed in Nebraska by the Census Bureau's land areas, so confidence is medium. Cited jointly with us-code-title-28-section-1360. Added on 2026-11-23 where the profile had no fact for this state (for example a band split out of a combined record).
+- topic: public-law-280
+  value: optional-state-consent-not-given
+  detail: South Dakota's 1957 act (S.D. Codified Laws §§ 1-1-12 to 1-1-16) offered to assume civil and criminal jurisdiction if the affected tribes consented; the Eighth Circuit found consent was not given, so jurisdiction was never assumed under it. (Rosebud Sioux Tribe v. South Dakota, 900 F.2d 1164, 1166 (8th Cir. 1990).)
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166; S.D. Codified Laws §§ 1-1-12, 1-1-13 (SL 1957, ch. 319)
+  note: 'Section 1-1-13 says a tribe that took no action within one year of Oct. 1, 1957 is deemed to consent; the court nevertheless held consent was not given. The sections are still printed in the code. The related 1959 highway statute (§ 1-1-17) also never took effect because its condition (roads jointly maintained by State and United States) was never met (900 F.2d at 1166). Shakopee, Northern Cheyenne and Turtle Mountain have only trust-land presence in SD in the roster and are not mapped. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-13.'
+- topic: public-law-280
+  value: not-assumed
+  detail: South Dakota's 1961 act (S.D. Codified Laws §§ 1-1-18 to 1-1-21) declared a general assumption of jurisdiction in Indian country, but it takes effect only on a gubernatorial proclamation, which was never issued; the general assumption never occurred. (S.D. Codified Laws § 1-1-21; 900 F.2d at 1167.)
+  source: south-dakota-codified-laws-1-1-18
+  confidence: high
+  verification: read-in-full
+  locator: S.D. Codified Laws § 1-1-21 (SL 1961, ch. 464, § 4); 900 F.2d at 1167
+  note: 'Quote is from Rosebud. A 1963 attempt to assume full jurisdiction (1963 S.D. Laws ch. 467) was defeated 3 to 1 in a referendum (900 F.2d at 1167). Statute text in § 1-1-21: highways are excepted from the proclamation requirement. Also cites: south-dakota-codified-laws-1-1-21, rosebud-sioux-tribe-v-south-dakota-1990.'
+- topic: public-law-280
+  value: assumption-held-invalid
+  detail: 'South Dakota''s 1961 highway-only assumption was held invalid by the South Dakota Supreme Court in 1964 (In re Hankins) and, after that court revived it in State v. Onihan (1988), by the Eighth Circuit in 1990: without tribal consent the State has no civil or criminal jurisdiction over highways through Indian lands. (Rosebud, 900 F.2d at 1166-67, 1172.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166
+  note: 'Hankins: 80 S.D. 435, 442-43, 125 N.W.2d 839, 842-43 (state cannot assume jurisdiction over highways alone; the Eighth Circuit describes this at 900 F.2d at 1167). Rosebud''s further holding (at 1170-72): the highway-only scheme does not meet Public Law 280, and the 1968 consent requirement bars later nonconsensual assumption. Cert. history not checked. Parties: Rosebud, Cheyenne River, Oglala, Standing Rock; the holding is about "Indian lands in the state" generally. Also cites: in-re-hankins-petition-1964.'
+- topic: public-law-280
+  value: not-assumed
+  detail: 'Today South Dakota holds no Public Law 280 jurisdiction over any of its reservations: the 1957 act was never consented to, the 1961 general act never took effect, and the 1961 highway piece is invalid; the statutes stay in the code. (Rosebud, 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12 to 1-1-21.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: medium
+  verification: read-in-full
+  locator: 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12, 1-1-18
+  note: 'Quote is the 1957 assumption text, § 1-1-12, shown because it is still printed in the code. Conclusion that nothing is in force is mine, drawn from Rosebud (1990) plus the statutes; the research did not find any later tribal consent election or any post-1990 South Dakota assumption. Goldberg (2010) fn. 4 reaches the same view. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-18.'
+treaties:
+- title: Treaty with the Sioune and Oglala Tribes, 1825
+  signed: '1825-07-05'
+  statutes_at_large: 7 Stat. 252
+  kappler:
+    volume: 2
+    page: 230
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioune-and-oglala-tribes-1825-0230
+  signatory: Oglala
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 230 (Treaty with the Sioune and Oglala Tribes, 1825; Kappler header "July 5, 1825. | 7 Stat., 252. | Proclamation, Feb. 6, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Oglala Band, 1865
+  signed: '1865-10-28'
+  statutes_at_large: 14 Stat. 747
+  kappler:
+    volume: 2
+    page: 906
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-oglala-band-1865-0906
+  signatory: Oglala
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 906 (Treaty with the Sioux-Oglala Band, 1865; Kappler header "Oct. 28, 1865. | 14 Stats., 747. | Ratified, Mar. 5, 1866. | Proclaimed Mar. 17, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
+  signed: '1868-04-29'
+  statutes_at_large: 15 Stat. 635
+  kappler:
+    volume: 2
+    page: 998
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998
+  signatory: Oglala
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 998 (Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868; Kappler header "Apr. 29, 1868. | 15 Stats., 635. | Ratified, Feb. 16, 1869. | Proclaimed, Feb. 24, 1869.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

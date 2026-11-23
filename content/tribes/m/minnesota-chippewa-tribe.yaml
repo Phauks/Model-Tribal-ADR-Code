@@ -175,6 +175,14 @@ federal_administration:
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: low
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band". The Minnesota Chippewa Tribe itself is not listed; Indian Health Service lists its constituent bands (Bois Forte, Fond du Lac, Grand Portage, Leech Lake, Mille Lacs, White Earth) under Bemidji Area Minnesota Tribal Health Programs. Area inferred from the constituent bands.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Minnesota Chippewa Tribe" among organizations under constitutions approved by
@@ -199,6 +207,243 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Organized under Section 16 of the Act of June 18, 1934
+  quote: The Minnesota Chippewa Tribe is hereby organized under Section 16 of the Act of June 18, 1934 (48 Stat. 984), as amended.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article I, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body
+  value: Tribal Executive Committee
+  quote: The governing bodies of the Minnesota Chippewa Tribe shall be the Tribal Executive Committee and the Reservation Business Committees of the White Earth
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body
+  value: Reservation Business Committee
+  quote: Each of the six (6) Reservations shall elect a Reservation Business Committee composed of not more than five (5) members nor less than three (3) members.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-size
+  value: Chairman and Secretary-Treasurer of each of six Reservations
+  quote: The Tribal Executive Committee shall be composed of the Chairman and Secretary-Treasurer of each of the six (6) Reservation Business Committees
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-size
+  value: 3 to 5 members
+  quote: composed of not more than five (5) members nor less than three (3) members.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-selection
+  value: Elected by each Reservation
+  quote: Each of the six (6) Reservations shall elect a Reservation Business Committee
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Thereafter, the term of office for officers and committeemen shall be four (4) years.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article IV, Section 3
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-term
+  value: 2 years for Tribal Executive Committee officers
+  quote: who shall continue in office for the period of two (2) years
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: head-of-government
+  value: President (Tribal Executive Committee)
+  quote: select from within the group a President, a Vice-President, a Secretary, and a Treasurer
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: head-of-government
+  value: Chairman (Reservation Business Committee)
+  quote: The Reservation Business Committee shall be composed of a Chairman, Secretary-Treasurer, and one (1), two (2), or three (3) Committeemen.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Selected by the Tribal Executive Committee from its members
+  quote: select from within the group a President, a Vice-President, a Secretary, and a Treasurer
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: who shall continue in office for the period of two (2) years
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer; Secretary-Treasurer and Committeemen for each Reservation
+  quote: select from within the group a President, a Vice-President, a Secretary, and a Treasurer
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the tribe, eighteen (18) years of age or over, shall have the right to vote at all elections held within the reservation of their enrollment.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: election-authority
+  value: Tribal Executive Committee (uniform election ordinance)
+  quote: 'uniform election ordinance to be adopted by the Tribal Executive Committee which shall provide that:'
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: amendment
+  value: Majority vote at Secretary-called election (30% turnout)
+  quote: amended or revoked by a majority vote of the qualified voters of the Tribe voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article XII, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: No amendment shall be effective until approved by the Secretary of the Interior.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article XII, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of Reservation Business Committee
+  quote: 'The Reservation Business Committee by a two-thirds (2/3) vote of its members shall remove any officer or member of the Committee for the following causes:'
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article X, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: recall-and-removal
+  value: Recall election after hearing on charges
+  quote: or it may schedule a recall election which shall be held within thirty (30) days after the date set for the hearing.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article X, Section 3
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
 governing_documents:
 - kind: constitution
   title: Revised Constitution and Bylaws of the Minnesota Chippewa Tribe, Minnesota
@@ -354,6 +599,111 @@ jurisdiction:
     Lake Band; Minnesota Chippewa Tribe - Mille Lacs Band; Minnesota Chippewa Tribe - White Earth Band.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Chippewa, 1842
+  signed: '1842-10-04'
+  statutes_at_large: 7 Stat. 591
+  kappler:
+    volume: 2
+    page: 542
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1842-0542
+  signatory: Chippewa of the Mississippi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Minnesota Chippewa Tribe is the successor organization of the Mississippi, Pillager, Winnibigoshish and Lake Superior bands in Minnesota (1936) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of the Mississippi and Lake Superior, 1847
+  signed: '1847-08-02'
+  statutes_at_large: 9 Stat. 904
+  kappler:
+    volume: 2
+    page: 567
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567
+  signatory: Chippewa of the Mississippi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 567 (Treaty with the Chippewa of the Mississippi and Lake Superior, 1847; Kappler header "Aug. 2. 1847. | 9 Stat., 904. | Ratified Apr. 3, 1848. | Proclaimed, Apr. 7, 1848.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Minnesota Chippewa Tribe is the successor organization of the Mississippi, Pillager, Winnibigoshish and Lake Superior bands in Minnesota (1936) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Pillager Band of Chippewa Indians, 1847
+  signed: '1847-08-21'
+  statutes_at_large: 9 Stat. 908
+  kappler:
+    volume: 2
+    page: 569
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-pillager-band-of-chippewa-indians-1847-0569
+  signatory: Pillager
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 569 (Treaty with the Pillager Band of Chippewa Indians, 1847; Kappler header "Aug. 21, 1847. | 9 Stat., 908. | Proclamation Apr. 7, 1848.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Minnesota Chippewa Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1854
+  signed: '1854-09-30'
+  statutes_at_large: 10 Stat. 1109
+  kappler:
+    volume: 2
+    page: 648
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1854-0648
+  signatory: Chippewa of the Mississippi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 648 (Treaty with the Chippewa, 1854; Kappler header "Sept. 30, 1854. | 10 Stats., 1109. | Ratified Jan. 10, 1855. | Proclaimed Jan. 29, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Minnesota Chippewa Tribe is the successor organization of the Mississippi, Pillager, Winnibigoshish and Lake Superior bands in Minnesota (1936) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1855
+  signed: '1855-02-22'
+  statutes_at_large: 10 Stat. 1165
+  kappler:
+    volume: 2
+    page: 685
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1855-0685
+  signatory: Chippewa of Lake Winnibigoshish; Chippewa of the Mississippi; Pillager
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 685 (Treaty with the Chippewa, 1855; Kappler header "Feb. 22, 1855. | 10 Stat., 1165. | Ratified Mar. 3, 1855. | Proclaimed Apr. 7, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Minnesota Chippewa Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of the Mississippi and the Pillager and Lake Winnibigoshish Bands, 1863
+  signed: '1863-03-11'
+  statutes_at_large: 12 Stat. 1249
+  kappler:
+    volume: 2
+    page: 839
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-the-pillager-and-lake-winnibigoshish-bands-1863-0839
+  signatory: Chippewa of Lake Winnibigoshish; Pillager; Chippewa of the Mississippi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 839 (Treaty with the Chippewa of the Mississippi and the Pillager and Lake Winnibigoshish Bands, 1863; Kappler header "Mar. 11, 1863. | 12 Stats., 1249. | Ratified, Mar. 13, 1863. | Proclaimed Mar. 19, 1863.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Minnesota Chippewa Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, Mississippi, and Pillager and Lake Winnibigoshish Bands, 1864
+  signed: '1864-05-07'
+  statutes_at_large: 13 Stat. 693
+  kappler:
+    volume: 2
+    page: 862
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-mississippi-and-pillager-and-lake-winnibigoshish-bands-1864-0862
+  signatory: Chippewa of the Mississippi; Pillager; Chippewa of Lake Winnibigoshish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 862 (Treaty with the Chippewa, Mississippi, and Pillager and Lake Winnibigoshish Bands, 1864; Kappler header "May 7, 1864. | 13 Stat., 693. | Ratified Feb. 9, 1865. | Proclaimed Mar. 20, 1865.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Minnesota Chippewa Tribe is the successor organization of the Mississippi, Pillager, Winnibigoshish and Lake Superior bands in Minnesota (1936) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of the Mississippi, 1867
+  signed: '1867-03-19'
+  statutes_at_large: 16 Stat. 719
+  kappler:
+    volume: 2
+    page: 974
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-1867-0974
+  signatory: Chippewa of the Mississippi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 974 (Treaty with the Chippewa of the Mississippi, 1867; Kappler header "Mar. 19, 1867. | 16 Stats., 719. | Ratified Apr. 8, 1867. | Proclaimed Apr. 18, 1867.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Minnesota Chippewa Tribe is the successor organization of the Mississippi, Pillager, Winnibigoshish and Lake Superior bands in Minnesota (1936) The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

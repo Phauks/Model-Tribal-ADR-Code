@@ -128,6 +128,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Thlopthlocco Tribal Town".
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Thlopthlocco Tribal Town" among organizations under constitutions approved by
@@ -152,6 +160,171 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under Act of June 26, 1936
+  quote: by the Act of June 26, 1936 (49 Stat. 1967), do hereby approve the
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article VI
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: governing-body
+  value: Business Committee
+  quote: The governing body shall be known
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article V, Section 4
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: governing-body-size
+  value: Town officers plus 5-member advisory council
+  quote: There shall be an advisory council
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article V, Section 3
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: governing-body-selection
+  value: Officers elected by town membership; advisory council appointed by officers
+  quote: who shall be appointed by the officers.
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article V, Section 3
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: office shall be for a period of four years, or until
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article V, Section 1
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: head-of-government
+  value: Town King
+  quote: It shall be the duty of the Town King to preside over all
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: By-laws, Article II, Section 2
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: head-of-government
+  value: Town King
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Thlopthlocco Tribal Town
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “*Town King (Subject to Tribal Leadership Dispute)”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by town membership
+  quote: At any election held by the membership of this town, both
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article V, Section 5
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: office shall be for a period of four years, or until
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article V, Section 1
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: other-officers
+  value: Two Warriors, Secretary, Treasurer
+  quote: The Secretary shall keep a full report of all proceedings
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: By-laws, Article II, Section 3
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: voting-age
+  value: '21'
+  quote: males and females 21 years of age and over
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article V, Section 5
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: amendment
+  value: Majority of Governing Body, or petition of 30% of adult members, then majority referendum
+  quote: Governing Body, or by a petition filed by thirty per
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article VIII
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by the
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article VIII
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: recall-and-removal
+  value: Removal of Business Committee member by majority of town membership after hearing
+  quote: power, by majority vote, after
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article VI
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -265,6 +438,15 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'
