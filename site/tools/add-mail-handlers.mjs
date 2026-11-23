@@ -73,9 +73,25 @@ export default {
 		// The raw stream can be read only once.
 		const raw = await new Response(message.raw).arrayBuffer();
 		const query = \`?from=\${encodeURIComponent(message.from)}&to=\${encodeURIComponent(message.to)}\`;
-		// If filing fails, the error makes Email Routing refuse the message for now, so the sender's server tries again later.
-		const result = await internal(env, context, '/mail/internal/arrive' + query, raw, 'message/rfc822');
-		if (result.outcome === 'rejected') message.setReject(result.reason);
+		if (!env.mailFiles) {
+			const result = await internal(env, context, '/mail/internal/arrive' + query, raw, 'message/rfc822');
+			if (result.outcome === 'rejected') message.setReject(result.reason);
+			return;
+		}
+		// Kept whole in the mail bucket before anything else (site/MAIL.md, "When something fails"). If even this fails, the
+		// handler fails, and Email Routing records an error for the message.
+		const key = 'mail/incoming/' + crypto.randomUUID() + '.eml';
+		await env.mailFiles.put(key, raw, {
+			httpMetadata: { contentType: 'message/rfc822' },
+			customMetadata: { from: String(message.from).slice(0, 500), to: String(message.to).slice(0, 500) }
+		});
+		try {
+			const result = await internal(env, context, '/mail/internal/arrive?key=' + encodeURIComponent(key), '', 'text/plain');
+			if (result.outcome === 'rejected') message.setReject(result.reason);
+		} catch (problem) {
+			// The message is kept; the mail run files it later.
+			console.error('Filing failed; the message is kept for the mail run', problem);
+		}
 	},
 	async scheduled(controller, env, context) {
 		if (controller.cron === ${JSON.stringify(mailCron)}) {

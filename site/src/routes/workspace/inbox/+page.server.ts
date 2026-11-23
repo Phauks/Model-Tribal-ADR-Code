@@ -5,6 +5,9 @@ import { changeMany, isBuiltInFolder, listThreads, type BulkOperation } from '#l
 import { formText } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 import { requireMail } from '#lib/server/mail/inbox-access.ts';
+import { stuckArrivals, tryStuckArrivalsAgain } from '#lib/server/mail/arrivals.ts';
+import { can } from '#lib/permissions.ts';
+import { requirePermission } from '#lib/server/workspace.ts';
 
 // The project inbox (site/MAIL.md): one page of conversations in a view, a
 // folder the lead author made, or a tag, with search, and what the
@@ -23,7 +26,9 @@ export const load: PageServerLoad = async (event) => {
 	// One inbox, when the left column chose one (the list only ever shows the person's own inboxes).
 	const inbox = event.url.searchParams.get('inbox');
 	const list = await listThreads(context, { view, personIdentifier: person.identifier, folder, tag, search, inbox, page });
-	return { view, folder, tag, search, inbox, page, ...list };
+	// Mail that could not be filed after every try (site/MAIL.md, "When something fails"), for whoever manages mail.
+	const stuck = can(person, 'manage-mail') ? await stuckArrivals(context).catch(() => []) : [];
+	return { view, folder, tag, search, inbox, page, ...list, stuck };
 };
 
 /** The bulk operation a toolbar button names: "archive", "read", "move:<folder>", "tag:<tag>" and the like. */
@@ -48,6 +53,11 @@ const doneWords: Record<string, string> = {
 };
 
 export const actions: Actions = {
+	fileAgain: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const count = await tryStuckArrivalsAgain(mailContext(), person.identifier);
+		return { done: count === 1 ? 'The message will be tried again within five minutes.' : `The ${count} messages will be tried again within five minutes.` };
+	},
 	bulk: async (event) => {
 		const person = await requireMail(event);
 		const form = await event.request.formData();

@@ -32,7 +32,7 @@ Cloudflare Email Routing receives mail for the domain and hands each message to 
 
 Auto-sort rules then run on the message (see "Folders, tags and rules" below), except on Spam and delivery reports.
 
-If a notice address is set, one short "new mail" message goes there at most every 30 minutes. It never quotes the mail, so the message stays in the project's storage. Filing that fails makes Email Routing refuse the message for now, so the sender's server tries again later; nothing is lost silently.
+If a notice address is set, one short "new mail" message goes there at most every 30 minutes. It never quotes the mail, so the message stays in the project's storage. If filing fails, the message is kept and filed later (see "When something fails").
 
 ### Attachments and the virus check
 
@@ -162,6 +162,16 @@ These steps wait for the domain (`docs/domain-to-do.md`). The DNS records are ad
 
 Start outreach slowly. A new mailbox is trusted gradually, so begin at 20 to 40 letters a day and raise it over a few weeks while bounces and spam reports stay near zero. Zoho also limits how much one mailbox sends a day.[^zoho-limits]
 
+## When something fails
+
+Mail is not lost when a step fails for a while (`src/lib/server/mail/arrivals.ts`, migration `20261123T1833_add_mail_retries.sql`).
+
+- **Mail coming in.** The email handler first writes each message whole to the mail bucket under `mail/incoming/`, with the envelope's sender and recipient, and only then files it. If filing fails (the database busy, a bug, a deploy at the wrong moment), the copy stays, the message is still accepted, and the run every five minutes tries again after 5, 15, 60, 240 and 720 minutes, about a day in all. A message still not filed after that is listed at the top of the Inbox for whoever manages mail, with "Try again now". Once filed, the copy is deleted. If the copy itself cannot be written, the handler fails and Email Routing records an error for that message in its logs.[^routing] What the sender's server does then has not been checked, so the copy is written before anything else that could fail.
+- **The same message twice.** A message whose Message-ID is already in the inbox is not filed again, so a try after a half-finished filing, or a sender's server sending twice, makes no duplicate.
+- **Mail going out.** A reply that the mail service turns down for a reason that may pass (busy, a sending limit reached, the domain still being set up, a network fault) waits and is tried again after 1, 5, 15, 30 and 60 minutes, about two hours in all, with the reason and the next try shown on the message. A reason that will not pass, such as an unverified sender, fails at once.[^send-errors] Once a reply is accepted, Email Service itself retries a receiving server that answers "try later" and reports the result as a delivery event.[^lifecycle] Outreach keeps its own pace and is not tried again this way.
+
+This uses the database and the bucket the inbox already has, rather than a separate Cloudflare Queue, so there is nothing more to create or pay for, and a stuck message is visible in the Inbox rather than in a queue's dashboard.
+
 ## Limits
 
 - Cloudflare Email Service takes at most 50 recipients and 25 MiB a message.[^limits] The compose form allows 18 MB of attachments, since encoding adds about a third; bigger files go as download links (see "Big files as links").
@@ -172,9 +182,9 @@ Start outreach slowly. A new mailbox is trusted gradually, so begin at 20 to 40 
 
 ## Files
 
-- `migrations/0013_mail.sql`: the tables; `migrations/20261123T0510_add_mail_writing.sql` adds those for signatures, saved replies, drafts, undo send and the away message; `migrations/20261123T0509_add_mail_blocked_senders.sql` adds blocked senders and keeps each message's unsubscribe headers; `migrations/20261123T1757_add_mail_inboxes.sql` adds the inboxes and who is on each; `migrations/20261123T1822_add_mail_linked_files.sql` adds big files sent as links.
+- `migrations/0013_mail.sql`: the tables; `migrations/20261123T0510_add_mail_writing.sql` adds those for signatures, saved replies, drafts, undo send and the away message; `migrations/20261123T0509_add_mail_blocked_senders.sql` adds blocked senders and keeps each message's unsubscribe headers; `migrations/20261123T1757_add_mail_inboxes.sql` adds the inboxes and who is on each; `migrations/20261123T1822_add_mail_linked_files.sql` adds big files sent as links; `migrations/20261123T1833_add_mail_retries.sql` adds retries for mail coming in and going out.
 - `src/lib/mail.ts`: names, labels and small functions the pages share, including how a rule's conditions are matched.
-- `src/lib/server/mail/`: settings, inboxes and who may open them (`inboxes.ts`, `inbox-access.ts`), message building (`mime.ts`), SMTP (`smtp.ts`), carriers, signed tokens, receiving (`inbound.ts`), sending (`outbound.ts`), conversations, folders and tags (`store.ts`), auto-sort rules (`rules.ts`), writing (`writing.ts`), the sender card, blocking and unsubscribing (`senders.ts`), big files as links (`linked-files.ts`), exporting (`export.ts`), outreach (`outreach.ts`) and the do-not-email list (`suppressions.ts`). Only `runtime.ts` and `socket-opener.ts` need the Worker; the rest is tested in Node (`tests/mail.test.ts`, `tests/mail-flow.test.ts`, `tests/mail-organize.test.ts`, `tests/mail-writing.test.ts`, `tests/mail-senders.test.ts`, `tests/mail-inboxes.test.ts`, `tests/mail-linked-files.test.ts`).
+- `src/lib/server/mail/`: settings, inboxes and who may open them (`inboxes.ts`, `inbox-access.ts`), message building (`mime.ts`), SMTP (`smtp.ts`), carriers, signed tokens, receiving (`inbound.ts`), sending (`outbound.ts`), conversations, folders and tags (`store.ts`), auto-sort rules (`rules.ts`), writing (`writing.ts`), the sender card, blocking and unsubscribing (`senders.ts`), big files as links (`linked-files.ts`), keeping arriving mail until it is filed (`arrivals.ts`), exporting (`export.ts`), outreach (`outreach.ts`) and the do-not-email list (`suppressions.ts`). Only `runtime.ts` and `socket-opener.ts` need the Worker; the rest is tested in Node (`tests/mail.test.ts`, `tests/mail-flow.test.ts`, `tests/mail-organize.test.ts`, `tests/mail-writing.test.ts`, `tests/mail-senders.test.ts`, `tests/mail-inboxes.test.ts`, `tests/mail-linked-files.test.ts`, `tests/mail-arrivals.test.ts`).
 - `tools/add-mail-handlers.mjs`: adds the email, queue and scheduled handlers after the build. It wraps whatever entry the build made, so it runs last in `npm run build`.
 - `src/routes/workspace/inbox/`, `src/routes/workspace/outreach/`: the pages. `src/routes/mail/`: the unsubscribe and acknowledgment pages, and the internal routes the handlers call.
 
@@ -185,6 +195,8 @@ Start outreach slowly. A new mailbox is trusted gradually, so begin at 20 to 40 
 [^terms]: Cloudflare, "Service-Specific Terms: Developer Platform," Email Service section, <https://www.cloudflare.com/service-specific-terms-developer-platform/>; Cloudflare, "Email Service FAQ," <https://developers.cloudflare.com/email-service/reference/faq/>.
 [^sockets]: Cloudflare, "TCP sockets," Workers documentation, <https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/> (outbound connections on port 25 are not allowed).
 [^events]: Cloudflare, "Event subscriptions," Email Service documentation, <https://developers.cloudflare.com/email-service/reference/event-subscriptions/>.
+[^send-errors]: Cloudflare, "Workers API," Email Service documentation, "Error codes," <https://developers.cloudflare.com/email-service/api/send-emails/workers-api/>.
+[^lifecycle]: Cloudflare, "Email lifecycle," Email Service documentation, <https://developers.cloudflare.com/email-service/concepts/email-lifecycle/>.
 [^limits]: Cloudflare, "Limits," Email Service documentation, <https://developers.cloudflare.com/email-service/platform/limits/>.
 [^pricing]: Cloudflare, "Pricing," Email Service documentation, <https://developers.cloudflare.com/email-service/platform/pricing/>.
 [^zoho-price]: Zoho, "Zoho Mail pricing (USD)," <https://www.zoho.com/mail/images/mail-pricing-usd.pdf>.

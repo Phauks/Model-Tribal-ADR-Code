@@ -19,6 +19,33 @@ import { openScannedFile, stillScanning, storeSentFile } from '#lib/server/file-
 import { CompositionLinkError, joinStatements, linkedFilesForMessage, linkedFilesState, linkExpiry, withLinks } from './linked-files.ts';
 import { heldForVirusCheck } from '#lib/mail.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
+import { SmtpError } from './smtp.ts';
+
+/** Minutes to wait before each new try of a reply that failed for a reason that may pass: about two hours in all. */
+export const sendRetryMinutes = [1, 5, 15, 30, 60] as const;
+
+/**
+ * Cloudflare Email Service error codes that may pass if the message waits
+ * (Email Service, "Workers API", "Error codes"): the service busy, a sending
+ * limit reached, or the domain still being set up. Every other code, such as
+ * an unverified sender or a message too large, is marked failed at once. An
+ * error without a code (a network fault) is tried again too.
+ */
+const passingSendCodes = new Set([
+	'E_RATE_LIMIT_EXCEEDED',
+	'E_DAILY_LIMIT_EXCEEDED',
+	'E_INTERNAL_SERVER_ERROR',
+	'E_EMAIL_SENDING_NOT_READY',
+	'E_TEMPORARY_AUTHENTICATION_ERROR'
+]);
+
+/** Whether a carrier's error may pass if the message is tried again later. */
+export function mayPass(problem: unknown): boolean {
+	if (problem instanceof SmtpError) return !problem.permanent;
+	if (problem instanceof TypeError) return false;
+	const code = problem && typeof problem === 'object' && 'code' in problem ? String((problem as { code: unknown }).code) : null;
+	return code === null || passingSendCodes.has(code);
+}
 
 /** Cloudflare Email Service takes at most 50 recipients and 25 MiB a message ("Limits"). */
 export const recipientLimit = 50;
@@ -260,6 +287,7 @@ interface MessageRow {
 	reply_to: string | null;
 	outreach_recipient_identifier: string | null;
 	sent_by: string | null;
+	send_attempts: number;
 }
 
 export interface SendOptions {
@@ -374,7 +402,20 @@ export async function sendMessage(
 	try {
 		sentId = await carrier.send(mail);
 	} catch (problem) {
-		return fail(problem instanceof Error ? problem.message : String(problem));
+		const reason = problem instanceof Error ? problem.message : String(problem);
+		// A reply that failed for a reason that may pass waits and is tried again by the mail run (site/MAIL.md, "When something fails").
+		// Outreach keeps its own pace and is not tried again here.
+		const attempts = (row.send_attempts ?? 0) + 1;
+		if (!outreach && mayPass(problem) && attempts <= sendRetryMinutes.length) {
+			const next = new Date(at.getTime() + sendRetryMinutes[attempts - 1] * 60_000);
+			const note = `Not sent yet: ${reason} It is tried again by itself, ${attempts === sendRetryMinutes.length ? 'one last time' : `try ${attempts + 1} of ${sendRetryMinutes.length + 1}`}, at ${next.toISOString().slice(11, 16)} UTC.`;
+			await database
+				.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, held_for_undo = 0, send_attempts = ?, error = ? WHERE identifier = ?`)
+				.bind(next.toISOString(), attempts, note, messageIdentifier)
+				.run();
+			return { sent: false, held: true, error: note };
+		}
+		return fail(attempts > 1 ? `${reason} (after ${attempts} tries)` : reason);
 	}
 
 	// Keep a copy as sent, with the Message-ID the other side sees.

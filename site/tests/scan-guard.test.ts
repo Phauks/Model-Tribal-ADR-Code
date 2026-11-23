@@ -85,6 +85,16 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "kept-not-served",
     why: "The whole message as it arrived, kept as a record. Nothing reads it back; its attachments are stored and scanned on their own.",
   },
+  // Arriving mail kept whole until it is filed (site/MAIL.md, "When something
+  // fails"); receiveMail then stores its attachments with storeSentFile.
+  "src/lib/server/mail/arrivals.ts keepArrival put(key)": {
+    kind: "kept-not-served",
+    why: "An arriving message kept whole until it is filed, so a failure loses nothing. Nothing serves it; it is deleted once filed.",
+  },
+  "src/lib/server/mail/arrivals.ts fileArrival get(key)": {
+    kind: "kept-not-served",
+    why: "Reads a kept message to file it. receiveMail stores each attachment with storeSentFile, and nothing here hands the message to anyone.",
+  },
   "src/lib/server/mail/inbound.ts receiveMail put(htmlKey)": {
     kind: "kept-not-served",
     why: 'The HTML version of a message, not a file: shown only in a sandboxed frame that runs no scripts and loads nothing from outside (site/MAIL.md, "Reading HTML mail").',
