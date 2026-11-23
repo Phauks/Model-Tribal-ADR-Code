@@ -2,6 +2,7 @@
 	import Download from '@lucide/svelte/icons/download';
 	import EventFields from '#lib/components/EventFields.svelte';
 	import { attendanceKinds, attendanceLabels } from '#lib/event-calendar.ts';
+	import { recordingWatcherLabels, recordingWatchers, roomStyleLabels, roomStyles } from '#lib/event-rooms.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -145,6 +146,105 @@
 	<button class="button" type="submit">Add the speaker</button>
 </form>
 
+<h2>Video room</h2>
+<p>
+	The website’s own video room, with recording. When it is on, people registered for an online seat join it from the
+	event’s page, after they are told whether it is recorded and who may watch the recording. It opens 30 minutes before
+	the event starts. The people who run events are its hosts and can open it any time before then to check it works.
+</p>
+{#if !data.roomReady}
+	<div class="notice" role="note">
+		<p>The video room is not switched on yet, so nobody can join it. You can still set it up here.</p>
+	</div>
+{/if}
+<form method="post" action="?/saveRoom" class="panel">
+	<fieldset>
+		<legend>How the room works</legend>
+		{#each roomStyles as style (style)}
+			<div class="choice">
+				<input
+					type="radio"
+					id="room-style-{style}"
+					name="style"
+					value={style}
+					checked={(data.room?.style ?? data.suggestedStyle) === style}
+				/>
+				<label for="room-style-{style}">{roomStyleLabels[style]}</label>
+			</div>
+		{/each}
+	</fieldset>
+	<fieldset>
+		<legend>Who may watch the recordings</legend>
+		{#each recordingWatchers as watchers (watchers)}
+			<div class="choice">
+				<input
+					type="radio"
+					id="room-watchers-{watchers}"
+					name="watchers"
+					value={watchers}
+					checked={(data.room?.watchers ?? 'hosts') === watchers}
+				/>
+				<label for="room-watchers-{watchers}">{recordingWatcherLabels[watchers]}</label>
+			</div>
+		{/each}
+		<p class="hint">Everyone is told this before they join. Whether the event is recorded at all is set under Details.</p>
+	</fieldset>
+	<button class="button" type="submit">{data.room ? 'Save the room' : 'Use the website’s video room'}</button>
+</form>
+{#if data.room}
+	<p><a href="/events/{data.event.slug}/room">Open the room</a></p>
+	{#if data.recordings.length === 0}
+		<form method="post" action="?/removeRoom">
+			<button class="button button-quiet" type="submit">Stop using the website’s video room</button>
+		</form>
+	{/if}
+	<h3>Recordings</h3>
+	{#if data.recordings.length === 0}
+		<p class="muted">No recordings yet. A recording is copied into the project’s private storage within about 15 minutes of ending, then checked for viruses before anyone can watch it.</p>
+	{:else}
+		<div class="table-scroll">
+			<table>
+				<thead>
+					<tr><th scope="col">Started</th><th scope="col">Length</th><th scope="col">Status</th><th scope="col">Shown</th></tr>
+				</thead>
+				<tbody>
+					{#each data.recordings as recording (recording.identifier)}
+						<tr>
+							<td>{#if recording.address}<a href={recording.address}>{recording.when || 'Recording'}</a>{:else}{recording.when}{/if}</td>
+							<td>{recording.length}</td>
+							<td>{recording.status}</td>
+							<td>
+								<form method="post" action={recording.hidden ? '?/showRecording' : '?/hideRecording'}>
+									<input type="hidden" name="recording" value={recording.identifier} />
+									<button class="button button-quiet" type="submit">{recording.hidden ? 'Show it' : 'Hide it'}</button>
+								</form>
+							</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
+	{/if}
+	<h3>Who was told about recording</h3>
+	{#if data.visitors.length === 0}
+		<p class="muted">Nobody has joined the room yet.</p>
+	{:else}
+		<p class="hint">Each person, and what they were told the last time they joined.</p>
+		<div class="table-scroll">
+			<table>
+				<thead>
+					<tr><th scope="col">Name</th><th scope="col">Joined as</th><th scope="col">Told</th><th scope="col">When</th></tr>
+				</thead>
+				<tbody>
+					{#each data.visitors as visitor, index (index)}
+						<tr><td>{visitor.name}</td><td>{visitor.role}</td><td>{visitor.told}</td><td>{visitor.toldAt}</td></tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
+	{/if}
+{/if}
+
 <h2>Details</h2>
 {#if problem && field}
 	<div class="notice notice-problem" role="alert"><p>{problem}</p></div>
@@ -238,5 +338,27 @@
 
 	.button {
 		gap: var(--space-2);
+	}
+
+	fieldset {
+		margin: 0 0 var(--space-4);
+		padding: 0;
+		border: 0;
+	}
+
+	legend {
+		margin-bottom: var(--space-2);
+		font-weight: 600;
+	}
+
+	.choice {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-2);
+		margin-bottom: var(--space-2);
+	}
+
+	.choice input {
+		margin-top: 0.3em;
 	}
 </style>

@@ -23,6 +23,18 @@ import {
 	type StatusChange
 } from '#lib/server/event-calendar.ts';
 import { eventEmailDelivery } from '#lib/server/event-calendar-email.ts';
+import {
+	defaultRoomStyle,
+	durationWords,
+	recordingStatusWords,
+	recordingWatchers,
+	roomStyles,
+	type RecordingWatchers,
+	type RoomStyle
+} from '#lib/event-rooms.ts';
+import { recordingsOf, removeRoom, roomOf, roomVisitors, saveRoom, setRecordingHidden } from '#lib/server/event-rooms.ts';
+import { fileScans, scanStatusWords } from '#lib/server/file-scans.ts';
+import { videoRoomSettings } from '#lib/server/realtime-kit.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import { formValuesOf, readCapacity, readEventForm } from '../event-form.ts';
 import type { Actions, PageServerLoad, RequestEvent } from './$types';
@@ -37,12 +49,19 @@ async function findEvent(event: RequestEvent | Parameters<PageServerLoad>[0]) {
 
 export const load: PageServerLoad = async (event) => {
 	const { database, found } = await findEvent(event);
-	const [tickets, speakers, registrations, credits] = await Promise.all([
+	const [tickets, speakers, registrations, credits, room, recordings, visitors] = await Promise.all([
 		ticketTypesOf(database, found.identifier),
 		speakersOf(database, found.identifier),
 		registrationsOf(database, found.identifier),
-		confirmedCredits(database)
+		confirmedCredits(database),
+		roomOf(database, found.identifier),
+		recordingsOf(database, found.identifier),
+		roomVisitors(database, found.identifier)
 	]);
+	const scans = await fileScans(
+		database,
+		recordings.flatMap((recording) => (recording.objectKey ? [recording.objectKey] : []))
+	);
 	return {
 		event: {
 			identifier: found.identifier,
@@ -73,7 +92,33 @@ export const load: PageServerLoad = async (event) => {
 			offerEnds:
 				registration.status === 'offered' && registration.offerExpiresAt ? eventMoment(registration.offerExpiresAt, found.timeZone) : null
 		})),
-		emailReady: eventEmailDelivery(workerEnvironment()).kind === 'email'
+		emailReady: eventEmailDelivery(workerEnvironment()).kind === 'email',
+		roomReady: videoRoomSettings(workerEnvironment()) !== null,
+		room: room
+			? { style: room.style, watchers: room.watchers, opened: room.meeting !== null }
+			: null,
+		suggestedStyle: defaultRoomStyle(found.kind),
+		recordings: recordings.map((recording) => {
+			const scan = recording.objectKey ? (scans.get(recording.objectKey) ?? null) : null;
+			return {
+				identifier: recording.identifier,
+				when: recording.startedAt ? eventMoment(recording.startedAt, found.timeZone) : '',
+				length: durationWords(recording.durationSeconds),
+				status: recording.objectKey
+					? scanStatusWords(scan).label
+					: recording.copyProblem
+						? `Not copied yet: ${recording.copyProblem}`
+						: (recordingStatusWords[recording.status] ?? recording.status),
+				address: recording.objectKey ? `/events/${found.slug}/recordings/${recording.identifier}` : null,
+				hidden: recording.hidden
+			};
+		}),
+		visitors: visitors.map((visitor) => ({
+			name: visitor.name,
+			role: visitor.role === 'host' ? 'Host' : 'Guest',
+			told: { recorded: 'Recorded', 'not-recorded': 'Not recorded', undecided: 'May be recorded' }[visitor.toldRecording],
+			toldAt: eventMoment(visitor.toldAt, found.timeZone)
+		}))
 	};
 };
 
@@ -86,6 +131,14 @@ function ticketInput(form: FormData) {
 	if (!attendanceKinds.includes(attendance as Attendance)) return { problem: 'Say whether the seat is in person or online.' };
 	if (capacity === 'bad') return { problem: 'Enter the number of seats as a whole number, or leave it empty for no limit.' };
 	return { input: { name, attendance: attendance as Attendance, capacity, sortOrder: Number.isFinite(sortOrder) ? sortOrder : 0 } };
+}
+
+async function recordingShown(event: RequestEvent, shown: boolean) {
+	const { database, found } = await findEvent(event);
+	const form = await event.request.formData();
+	const changed = await setRecordingHidden(database, found.identifier, String(form.get('recording') ?? ''), !shown);
+	if (!changed) return fail(404, { problem: 'There is no such recording.' });
+	return { done: shown ? 'The recording is shown again to the people allowed to watch it.' : 'The recording is hidden from everyone but the hosts.' };
 }
 
 async function status(event: RequestEvent, change: StatusChange) {
@@ -104,6 +157,29 @@ async function status(event: RequestEvent, change: StatusChange) {
 }
 
 export const actions: Actions = {
+	saveRoom: async (event) => {
+		const { database, found } = await findEvent(event);
+		const form = await event.request.formData();
+		const style = form.get('style');
+		const watchers = form.get('watchers');
+		if (!roomStyles.includes(style as RoomStyle) || !recordingWatchers.includes(watchers as RecordingWatchers)) {
+			return fail(400, { problem: 'Choose how the room works and who may watch its recordings.' });
+		}
+		const before = await roomOf(database, found.identifier);
+		await saveRoom(database, found.identifier, { style: style as RoomStyle, watchers: watchers as RecordingWatchers });
+		return { done: before ? 'Saved the room.' : 'The event now uses the website’s video room. People registered online join it from the event’s page.' };
+	},
+
+	removeRoom: async (event) => {
+		const { database, found } = await findEvent(event);
+		const removed = await removeRoom(database, found.identifier);
+		if (!removed) return fail(409, { problem: 'This room has recordings, so it stays. Hide a recording instead.' });
+		return { done: 'The event no longer uses the website’s video room.' };
+	},
+
+	hideRecording: (event) => recordingShown(event, false),
+	showRecording: (event) => recordingShown(event, true),
+
 	save: async (event) => {
 		const { database, found } = await findEvent(event);
 		const read = readEventForm(await event.request.formData());

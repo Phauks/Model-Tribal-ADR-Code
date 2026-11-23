@@ -30,12 +30,26 @@ The project's own video room, when built, must be able to record (Trevor, 2026-1
 - the host choosing who may watch each recording (people registered, the public, or nobody);
 - recorded programs offered for Nevada credit only once the project is an accredited provider.
 
+## The video room
+
+Trevor chose Cloudflare RealtimeKit for the room on 2026-11-23, over porting Magna Carta's meeting rooms, which record sound only and run to about 43,000 lines. RealtimeKit gives video, a ready-made meeting screen, and recording of the whole room to a single video file, on the same Cloudflare account as the site.[^realtimekit-recording] Each event turns the room on for itself, and the room stays off until the RealtimeKit app's settings are added. The site keeps, from Magna Carta, the parts about telling people:
+
+- before joining, a notice saying whether the event is recorded and who may watch, which people must agree to when it is or may be recorded;[^california-recording]
+- a record of what each person was told and when;
+- while a recording runs, a banner, a message for screen readers, and a tone when it starts and stops, besides RealtimeKit's own recording mark;
+- people join with camera and microphone off.
+
+Recordings are copied from RealtimeKit, which keeps them for seven days, into the private R2 bucket, then go through the same virus check as uploaded files. Hosts choose who may watch: only the people running events (the default), the people registered for the event, or anyone signed in. Showing a recording to everyone, signed in or not, is left for later, as is a transcript with each line under the speaker's name, which RealtimeKit can make.[^realtimekit-transcription] Participants are known to RealtimeKit by their account identifier and the name they registered with, never their email address.[^realtimekit-participant]
+
+RealtimeKit charges by the minute past a free allowance each month: 10,000 participant minutes of audio and video, and 100 minutes of recording, then $0.002 a participant minute and $0.010 a recorded minute (pricing as listed on Nov. 23, 2026).[^realtimekit-pricing] A two-hour talk with 50 people online uses 6,000 participant minutes and 120 recorded minutes. The browser parts are the `@cloudflare/realtimekit` package (Apache License 2.0) and `@cloudflare/realtimekit-ui`, whose package does not state a license; both are Cloudflare's and pinned to exact versions released more than a month earlier.
+
 ## Consequences
 
 - New tables `calendar_events`, `calendar_ticket_types`, `calendar_speakers`, `calendar_registrations` and `calendar_messages` (migration `20261123T0450_add_event_calendar.sql`), a `manage-events` permission for the lead author and editors, a 15-minute scheduled run, and Events in the left sidebar, the footer and search.
 - Nothing is charged. Paid tickets wait on the nonprofit and its charitable registration.
 - Continuing legal education credit (applications, attendance codes, certificates and the uniform certificate of attendance) is built when the first program is planned.
 - Until the domain exists, nobody gets event emails; the event page shows each person where they stand.
+- The video room adds `calendar_rooms`, `calendar_room_people` and `calendar_recordings` (migration `20261123T0452_add_event_video_rooms.sql`) and three settings, `VIDEO_ROOM_ACCOUNT`, `VIDEO_ROOM_APPLICATION` and `VIDEO_ROOM_TOKEN`, set as Secrets in the Cloudflare dashboard.
 
 ## Sources
 
@@ -43,3 +57,7 @@ The project's own video room, when built, must be able to record (Trevor, 2026-1
 [^rfc5545]: B. Desruisseaux, ed., *Internet Calendaring and Scheduling Core Object Specification (iCalendar)*, RFC 5545 (Internet Engineering Task Force, Sept. 2009), https://www.rfc-editor.org/rfc/rfc5545.
 [^cloudflare-email]: Cloudflare, "Email Sending Workers API," https://developers.cloudflare.com/email-service/api/send-emails/workers-api/.
 [^california-recording]: Cal. Penal Code § 632 (recording a confidential communication without the consent of all parties).
+[^realtimekit-recording]: Cloudflare, "Recording Guide" and "Monitor Recording Status," RealtimeKit documentation, https://developers.cloudflare.com/realtime/realtimekit/recording-guide/ (checked Nov. 23, 2026).
+[^realtimekit-transcription]: Cloudflare, "Transcription," RealtimeKit documentation, https://developers.cloudflare.com/realtime/realtimekit/ai/transcription/ (checked Nov. 23, 2026).
+[^realtimekit-participant]: Cloudflare, "Participant" and "FAQ," RealtimeKit documentation, https://developers.cloudflare.com/realtime/realtimekit/concepts/participant/ and https://developers.cloudflare.com/realtime/realtimekit/faq/ (checked Nov. 23, 2026).
+[^realtimekit-pricing]: Cloudflare, "Pricing," RealtimeKit documentation, https://developers.cloudflare.com/realtime/realtimekit/platform/pricing/ (checked Nov. 23, 2026).

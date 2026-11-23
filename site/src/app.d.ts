@@ -129,6 +129,16 @@ declare global {
 		STRIPE_SPONSOR_WEBHOOK_SECRET?: string;
 		/** Who receives sponsors' gifts, as the gift form names them. */
 		SPONSOR_GIFTS_RECEIVER?: string;
+		/**
+		 * The events video room on Cloudflare RealtimeKit (site/COLLABORATION.md,
+		 * "The video room"). The room stays off until all three are set, as
+		 * Secrets in the dashboard so a deploy never clears them: the Cloudflare
+		 * account's id, the RealtimeKit app's id, and an API token with the
+		 * Realtime permission.
+		 */
+		VIDEO_ROOM_ACCOUNT?: string;
+		VIDEO_ROOM_APPLICATION?: string;
+		VIDEO_ROOM_TOKEN?: string;
 	}
 }
 

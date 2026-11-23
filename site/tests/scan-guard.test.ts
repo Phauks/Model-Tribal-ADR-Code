@@ -68,6 +68,13 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "kept-not-served",
     why: "Reads a sent picture to make its copy without location details; both are put in line for the scan, and neither is served until it passes.",
   },
+  // Recordings of the events video room (site/COLLABORATION.md, "The video
+  // room"): streamed from RealtimeKit into the bucket, since a recording can
+  // be larger than a Worker's memory, then put in line by syncRoomRecordings
+  // and served by serveUploadFile.
+  "src/lib/server/event-rooms.ts storeStream put(key)": {
+    kind: "sent-file-store",
+  },
   "src/lib/server/upload-serving.ts serveUploadFile get(file.key)": {
     kind: "sent-file-open",
   },
