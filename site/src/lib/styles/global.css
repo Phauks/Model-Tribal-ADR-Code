@@ -344,6 +344,74 @@ table {
 	font-size: var(--font-size-small);
 }
 
+/*
+ * Column widths readers can change (src/lib/tables/resizable-columns.ts;
+ * Trevor, Nov. 23, 2026). The handle straddles the line between two header
+ * cells, 24 px wide for a pointer or a finger (WCAG 2.5.8), and shows as a
+ * thin rule until it is pointed at, dragged or focused.
+ */
+.resizable-header {
+	position: relative;
+}
+
+.column-resizer {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: -0.75rem;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	width: 1.5rem;
+	cursor: col-resize;
+	touch-action: none;
+}
+
+.resizable-header:last-child > .column-resizer {
+	right: 0;
+}
+
+.column-resizer::before {
+	content: '';
+	width: 1px;
+	margin: var(--space-2) 0;
+	background: var(--color-line);
+}
+
+.column-resizer:hover::before,
+.column-resizer.dragging::before,
+.column-resizer:focus-visible::before {
+	width: 3px;
+	background: var(--color-link);
+}
+
+.columns-measuring .column-resizer {
+	display: none;
+}
+
+/* Once a reader sets the widths, text wraps to fit them, even inside a word. */
+main table.columns-resized :is(th, td),
+main table.columns-resized :is(th, td) :is(a, code) {
+	overflow-wrap: anywhere;
+}
+
+.column-reset {
+	margin: var(--space-2) 0 0;
+	font-size: var(--font-size-small);
+}
+
+@media print {
+	/* Paper has its own width, so a printed table sizes itself again. */
+	table.columns-resized {
+		table-layout: auto !important;
+		width: 100% !important;
+	}
+
+	table.columns-resized > colgroup[data-column-widths] {
+		display: none;
+	}
+}
+
 th,
 td {
 	text-align: left;
