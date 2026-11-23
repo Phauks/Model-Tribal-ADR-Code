@@ -23,7 +23,7 @@ export interface MapViewEntry {
 }
 
 /** Groups in the order they are listed. */
-export const mapViewGroups = ['Where nations are', 'Courts and dispute resolution', 'Jurisdiction', 'Federal administration'] as const;
+export const mapViewGroups = ['Where nations are', 'Courts and dispute resolution', 'Jurisdiction', 'Gaming', 'Federal administration'] as const;
 
 export const mapViews: MapViewEntry[] = [
 	{
@@ -83,6 +83,14 @@ export const mapViews: MapViewEntry[] = [
 		group: 'Jurisdiction',
 		description: 'Cross-deputization, child welfare, tax and other agreements with states and local governments',
 		keywords: ['cross-deputization', 'law enforcement', 'title iv-e', 'child welfare', 'tax compact', 'tax agreement', 'intergovernmental agreement', 'compact']
+	},
+	{
+		key: 'gaming',
+		label: 'Gaming',
+		heading: 'gaming-heading',
+		group: 'Gaming',
+		description: 'Class III gaming compacts, Secretarial Procedures, gaming ordinances and nations that operate gaming',
+		keywords: ['igra', 'indian gaming regulatory act', 'casino', 'compact', 'class iii', 'class ii', 'nigc', 'national indian gaming commission', 'ordinance', 'secretarial procedures']
 	},
 	{
 		key: 'regions',

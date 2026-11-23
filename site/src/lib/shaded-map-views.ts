@@ -12,6 +12,7 @@ export type ShadedMapView =
 	| 'violence-against-women-act'
 	| 'other-jurisdiction-laws'
 	| 'agreements-with-states'
+	| 'gaming'
 	| 'indian-health-service';
 
 export const shadedMapViews: ShadedMapView[] = [
@@ -20,6 +21,7 @@ export const shadedMapViews: ShadedMapView[] = [
 	'violence-against-women-act',
 	'other-jurisdiction-laws',
 	'agreements-with-states',
+	'gaming',
 	'indian-health-service'
 ];
 
@@ -64,6 +66,21 @@ export const agreementCategories: ShadeCategory[] = [
 	{ key: 'child-welfare-agreement', label: 'Child welfare agreement', shade: 3 },
 	{ key: 'tax-agreement', label: 'Tax agreement', shade: 2 },
 	{ key: 'other', label: 'Other agreement', shade: 1 }
+];
+
+/**
+ * Gaming under the Indian Gaming Regulatory Act (each record's `gaming` facts, and the gaming compacts and Secretarial Procedures in its document histories), in order of precedence. The table shows every one each nation has.
+ *
+ * 1. compact: a Class III compact with a state that the Secretary of the Interior approved or let take effect (25 U.S.C. § 2710(d)(8)), whether or not it has since expired or been replaced. A disapproved compact does not count.
+ * 2. procedures: Class III gaming under Secretarial Procedures, issued in place of a compact (25 U.S.C. § 2710(d)(7)(B)(vii); 25 C.F.R. part 291).
+ * 3. ordinance: a gaming ordinance the National Indian Gaming Commission approved (25 U.S.C. § 2710(b), (d)(1)(A)).
+ * 4. operates: a source says the nation operates gaming, with none of the above recorded.
+ */
+export const gamingCategories: ShadeCategory[] = [
+	{ key: 'compact', label: 'Class III compact with a state', shade: 4 },
+	{ key: 'procedures', label: 'Secretarial Procedures in place of a compact', shade: 3 },
+	{ key: 'ordinance', label: 'Gaming ordinance approved', shade: 2 },
+	{ key: 'operates', label: 'Operates gaming (no ordinance or compact recorded)', shade: 1 }
 ];
 
 /**
@@ -180,6 +197,16 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 		kindHeaders: { 'cross-deputization': 'Cross-deputization', 'child-welfare-agreement': 'Child welfare', 'tax-agreement': 'Tax', other: 'Other' },
 		section: 'jurisdiction-heading',
 		sources: { section: 'Agreements with states', text: 'each nation’s agreements with a state, county, city or federal agency' }
+	},
+	gaming: {
+		categories: gamingCategories,
+		unrecorded: 'No gaming recorded yet',
+		note: 'Each nation’s land areas are shaded by the first of these it has: a Class III gaming compact with a state that the Secretary of the Interior approved or let take effect, Secretarial Procedures issued in place of a compact, a gaming ordinance the National Indian Gaming Commission approved, or a source saying it operates gaming. A compact counts even if it has since expired or been replaced; a disapproved compact does not. The table shows every one each nation has. Each nation’s page lists its compacts and their versions. Select an area to go to its nation’s row.',
+		caption: 'Nations with gaming recorded under the Indian Gaming Regulatory Act, and which kinds',
+		rows: 'nations',
+		kindHeaders: { compact: 'Class III compact', procedures: 'Secretarial Procedures', ordinance: 'Gaming ordinance', operates: 'Operates gaming' },
+		section: 'law-heading',
+		sources: { section: 'Gaming', text: 'each nation’s gaming compacts, gaming ordinances and whether it operates gaming' }
 	},
 	'indian-health-service': {
 		unrecorded: 'No Area recorded yet',
