@@ -30,6 +30,7 @@ import { offlineSets } from '#lib/server/copy-lists.ts';
 import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
+import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -199,11 +200,20 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 				? [
 						cited(sources, regionLabel, administration, {
 							text: `${administration.bureau_of_indian_affairs_region} Region`,
-							link: `/nations/map#${regionAnchor(administration.bureau_of_indian_affairs_region)}`,
-							note: administration.bureau_of_indian_affairs_agency
-								? `Agency: ${administration.bureau_of_indian_affairs_agency}`
-								: undefined
-						})
+							link: bureauRegionPage(administration.bureau_of_indian_affairs_region)
+						}),
+						...(administration.bureau_of_indian_affairs_agency
+							? [
+									cited(sources, regionLabel, administration, {
+										label: 'Agency',
+										text: administration.bureau_of_indian_affairs_agency,
+										link: bureauRegionPage(
+											administration.bureau_of_indian_affairs_region,
+											administration.bureau_of_indian_affairs_agency
+										)
+									})
+								]
+							: [])
 					]
 				: []
 		),
@@ -638,12 +648,15 @@ function healthItems(record: NationRecord, sources: SourceUses, section: string)
 	const facts = record.indian_health_service ?? [];
 	if (facts.length === 0) return [];
 	const areas = [...new Set(facts.map((fact) => fact.area))];
-	const areaCitations: CitationMark[] = [];
-	// The Area's markers are those of the facts that name only the Area; the
-	// service unit and operator lines carry their own.
-	const areaOnly = facts.filter((fact) => !fact.service_unit && !fact.operator);
-	for (const fact of areaOnly.length > 0 ? areaOnly : facts) sources.citeFact(fact, section, `${fact.area} Area`, areaCitations);
-	const items: FactItem[] = [{ text: areas.map((area) => `${area} Area`).join('; '), citations: areaCitations }];
+	// Each Area links to the page about it. Its markers are those of the facts
+	// that name only the Area; the service unit and operator lines carry their own.
+	const items: FactItem[] = areas.map((area) => {
+		const naming = facts.filter((fact) => fact.area === area);
+		const areaOnly = naming.filter((fact) => !fact.service_unit && !fact.operator);
+		const citations: CitationMark[] = [];
+		for (const fact of areaOnly.length > 0 ? areaOnly : naming) sources.citeFact(fact, section, `${area} Area`, citations);
+		return { text: `${area} Area`, link: healthAreaPage(area), citations };
+	});
 	for (const fact of facts) {
 		if (!fact.service_unit) continue;
 		const runBy =
