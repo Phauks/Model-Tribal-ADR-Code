@@ -44,7 +44,7 @@
 		mode?: 'reply' | 'all' | 'forward' | null;
 		message?: string | null;
 		/** A forwarded message's attachments, each sent along unless unticked. */
-		forwarded?: { identifier: string; filename: string; size: number }[];
+		forwarded?: { identifier: string; filename: string; size: number; held?: boolean; label?: string | null }[];
 		/** Put the cursor in the box when the page opens, after a Reply, Reply all or Forward button. */
 		focus?: boolean;
 	} = $props();
@@ -157,7 +157,11 @@
 		<fieldset class="forwarded small">
 			<legend>Attachments of the forwarded message</legend>
 			{#each forwarded as file (file.identifier)}
-				<label><input type="checkbox" name="forwardAttachment" value={file.identifier} checked /><Paperclip size={14} aria-hidden="true" />{file.filename}</label>
+				{#if file.held}
+					<span class="held"><Paperclip size={14} aria-hidden="true" />{file.filename} <span class="muted">({file.label}; it cannot go yet)</span></span>
+				{:else}
+					<label><input type="checkbox" name="forwardAttachment" value={file.identifier} checked /><Paperclip size={14} aria-hidden="true" />{file.filename}</label>
+				{/if}
 			{/each}
 		</fieldset>
 	{/if}
@@ -303,6 +307,11 @@
 	.forwarded legend {
 		padding: 0 var(--space-1);
 		color: var(--color-ink-muted);
+	}
+	.forwarded .held {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
 	.forwarded label {
 		display: inline-flex;

@@ -19,6 +19,7 @@ import {
 } from '#lib/server/mail/outreach.ts';
 import { bringBackReminders, getThread, listThreads, moveToFolder, purgeDeleted, setReminder } from '#lib/server/mail/store.ts';
 import { composeDefaults, replyAllReach, type AnsweredMessage } from '#lib/mail.ts';
+import { releaseAttachment } from '#lib/server/mail/scans.ts';
 import { isSuppressed, suppress } from '#lib/server/mail/suppressions.ts';
 import { makeToken } from '#lib/server/mail/tokens.ts';
 import { addAddressBook, addContact, rawMessage, recordingCarrier, testContext, testSettings } from './mail-fixtures.ts';
@@ -325,6 +326,25 @@ describe('reply, reply all and forward', () => {
 		await receiveMail(context, arriving(withFile));
 		const thread = await getThread(context, first.threadIdentifier, 'lead');
 		const [older, newer] = thread!.messages;
+		// A received attachment is held until the virus check passes.
+		expect(newer.attachments[0].check).toMatchObject({ held: true, label: 'Waiting for the virus check', releasable: false });
+		const held = {
+			personIdentifier: 'lead',
+			threadIdentifier: first.threadIdentifier,
+			from: 'contact@example.org',
+			to: [{ email: 'advisor@law.example' }],
+			subject: 'Fwd: x',
+			text: '',
+			forward: { message: newer.identifier, attachments: newer.attachments.map((item) => item.identifier) }
+		};
+		await expect(queueMessage(context, held)).rejects.toThrow('held until the virus check passes');
+		// One that could not be checked can be released by hand; one where something was found never can.
+		await context.database.prepare(`UPDATE file_scans SET status = 'flagged', reason = 'Eicar-Test-Signature'`).run();
+		expect(await releaseAttachment(context, 'lead', newer.attachments[0].identifier, 'from the court')).toBe(false);
+		await context.database.prepare(`UPDATE file_scans SET status = 'cannot-scan', reason = 'encrypted'`).run();
+		expect((await getThread(context, first.threadIdentifier, 'lead'))!.messages[1].attachments[0].check).toMatchObject({ held: true, releasable: true });
+		expect(await releaseAttachment(context, 'lead', newer.attachments[0].identifier, 'the court sent the password by phone')).toBe(true);
+		expect((await getThread(context, first.threadIdentifier, 'lead'))!.messages[1].attachments[0].check).toMatchObject({ held: false });
 
 		const reply = await queueMessage(context, {
 			personIdentifier: 'lead',
@@ -396,7 +416,10 @@ describe('the inbox’s views', () => {
 		await moveToFolder(context, 'lead', first.threadIdentifier, 'trash');
 		expect((await getThread(context, first.threadIdentifier, 'lead'))!.remindAt).toBeNull();
 		const keys = context.bucket.files.size;
+		await context.database.prepare(`INSERT INTO file_scans (object_key, purpose, status, requested_at) VALUES ('mail/attachments/gone', 'mail-attachment', 'clean', '2026-11-24T00:00:00Z')`).run();
+		await context.database.prepare(`INSERT INTO mail_attachments (identifier, message_identifier, filename, media_type, size, inline, bucket_key) SELECT 'gone', identifier, 'a.txt', 'text/plain', 1, 0, 'mail/attachments/gone' FROM mail_messages WHERE thread_identifier = ? LIMIT 1`).bind(first.threadIdentifier).run();
 		expect(await purgeDeleted({ ...context, now: () => new Date('2026-12-30T00:00:00Z') })).toBe(1);
+		expect(await context.database.prepare(`SELECT COUNT(*) AS count FROM file_scans WHERE object_key = 'mail/attachments/gone'`).first<{ count: number }>()).toEqual({ count: 0 });
 		expect(context.bucket.files.size).toBeLessThan(keys);
 		expect(await getThread(context, first.threadIdentifier, 'lead')).toBeNull();
 	});
