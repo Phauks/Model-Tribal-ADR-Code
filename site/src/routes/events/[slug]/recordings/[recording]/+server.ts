@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { registrationFor } from '#lib/server/event-calendar.ts';
-import { mayWatchRecordings, recordingOfEvent, roomOf } from '#lib/server/event-rooms.ts';
+import { mayWatchRecordings, recordingOfRoom, roomOfEvent } from '#lib/server/video-rooms.ts';
 import { fileScan } from '#lib/server/file-scans.ts';
 import { serveUploadFile } from '#lib/server/upload-serving.ts';
 import type { RequestHandler } from './$types';
@@ -18,8 +18,8 @@ export const GET: RequestHandler = async (event) => {
 	const database = environment.database;
 	const bucket = environment.sourceDocuments;
 	if (!database || !bucket) error(503, 'The database is not connected.');
-	const room = await roomOf(database, found.identifier);
-	const recording = room ? await recordingOfEvent(database, found.identifier, event.params.recording) : undefined;
+	const room = await roomOfEvent(database, found.identifier);
+	const recording = room ? await recordingOfRoom(database, room.identifier, event.params.recording) : undefined;
 	if (!room || !recording || !recording.objectKey) error(404, 'There is no recording at this address.');
 	const host = isHost(event.locals.person);
 	const account = event.locals.account;

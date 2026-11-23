@@ -43,6 +43,8 @@ export function isGuardedPath(path: string): boolean {
 		path === '/uploads' ||
 		path.startsWith('/uploads/') ||
 		path === '/events' ||
-		path.startsWith('/events/')
+		path.startsWith('/events/') ||
+		path === '/rooms' ||
+		path.startsWith('/rooms/')
 	);
 }

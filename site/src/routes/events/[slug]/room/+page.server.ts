@@ -1,10 +1,10 @@
 import { fail } from '@sveltejs/kit';
 import { eventMoment, eventWhen } from '#lib/event-calendar.ts';
-import { recordingNotice, roomAccess, roomClosesAt, roomOpensMinutesBefore, roomPreset, roomRefusalWords } from '#lib/event-rooms.ts';
+import { agreementLabel, eventRoomWindow, recordingNotice, roomAccess, roomOpensAt, roomRefusalWords } from '#lib/video-rooms.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { registrationFor, ticketTypesOf, type CalendarEvent } from '#lib/server/event-calendar.ts';
-import { keepMeeting, noteRoomVisit, roomOf, roomPerson } from '#lib/server/event-rooms.ts';
-import { addParticipant, createMeeting, refreshParticipantToken, videoRoomSettings } from '#lib/server/realtime-kit.ts';
+import { letIntoRoom, roomOfEvent } from '#lib/server/video-rooms.ts';
+import { videoRoomSettings } from '#lib/server/realtime-kit.ts';
 import { requireAccount, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad, RequestEvent } from './$types';
 import { findEvent, isHost } from '../find-event.ts';
@@ -40,25 +40,24 @@ export const load: PageServerLoad = async (event) => {
 	const { database } = storage(event);
 	event.setHeaders({ 'cache-control': 'private, no-store' });
 	const time = new Date();
-	const room = await roomOf(database, found.identifier);
+	const room = await roomOfEvent(database, found.identifier);
 	const { access } = await accessFor(event, found, time);
 	const ready = videoRoomSettings(workerEnvironment()) !== null;
-	const watchers = room?.watchers ?? 'hosts';
 	return {
 		event: {
 			slug: found.slug,
 			title: found.title,
 			when: eventWhen(found.startsAt, found.endsAt, found.timeZone),
-			opens: eventMoment(new Date(new Date(found.startsAt).getTime() - roomOpensMinutesBefore * 60_000).toISOString(), found.timeZone),
+			opens: eventMoment(roomOpensAt(eventRoomWindow(found)).toISOString(), found.timeZone),
 			recording: found.recording,
 			status: found.status
 		},
 		hasRoom: Boolean(room),
 		ready,
-		style: room?.style ?? 'webinar',
 		host: access.kind === 'host',
 		refusal: access.kind === 'refused' ? { reason: access.reason, words: roomRefusalWords[access.reason] } : null,
-		notice: recordingNotice(found.recording, watchers)
+		notice: recordingNotice(found.recording, room?.watchers ?? 'hosts'),
+		agreeLabel: agreementLabel(found.recording)
 	};
 };
 
@@ -68,7 +67,7 @@ export const actions: Actions = {
 		const found = await findEvent(event);
 		const { database } = storage(event);
 		const time = new Date();
-		const room = await roomOf(database, found.identifier);
+		const room = await roomOfEvent(database, found.identifier);
 		if (!room) return fail(404, { problem: 'This event does not use the website’s video room.' });
 		const { access, own } = await accessFor(event, found, time);
 		if (access.kind === 'refused') return fail(403, { problem: roomRefusalWords[access.reason] });
@@ -79,34 +78,18 @@ export const actions: Actions = {
 		}
 		const settings = videoRoomSettings(workerEnvironment());
 		if (!settings) return fail(503, { problem: 'The video room is not switched on yet.' });
-
 		const role = access.kind;
 		const person = event.locals.person;
 		const name = (role === 'host' ? person?.displayName : own?.name) ?? account.name ?? 'Guest';
 		try {
-			const meeting = room.meeting ?? (await keepMeeting(database, found.identifier, await createMeeting(settings, found.title), time));
-			const before = await roomPerson(database, found.identifier, account.subject);
-			const closes = roomClosesAt(found);
-			let token: string;
-			let participant: string | null = before?.participant ?? null;
-			if (participant && before?.role === role) {
-				token = await refreshParticipantToken(settings, { meeting, participant, closes, time });
-			} else {
-				const added = await addParticipant(settings, {
-					meeting,
-					accountIdentifier: account.subject,
-					name,
-					preset: roomPreset(room.style, role),
-					closes,
-					time
-				});
-				participant = added.participant;
-				token = added.token;
-			}
-			await noteRoomVisit(database, { eventIdentifier: found.identifier, accountIdentifier: account.subject, role, toldRecording: found.recording, participant }, time);
+			const token = await letIntoRoom(
+				{ database, settings },
+				{ room, window: eventRoomWindow(found), visitor: { kind: 'account', identifier: account.subject }, name, role, toldRecording: found.recording },
+				time
+			);
 			return { token, role };
 		} catch (problem) {
-			console.error('Could not open the video room', found.identifier, problem);
+			console.error('Could not open the video room', room.identifier, problem);
 			return fail(502, { problem: 'The video room could not be reached just now. Try again in a minute.' });
 		}
 	}

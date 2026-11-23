@@ -93,6 +93,10 @@ export type Permission =
 	| 'check-services'
 	// Adding and running events, and seeing who registered (migrations/20261123T0450_add_event_calendar.sql).
 	| 'manage-events'
+	// Starting video rooms of their own, public or private, such as for an
+	// interview, and hosting the rooms one started (decision record 0048,
+	// "Rooms of their own"). The people who manage events host every room.
+	| 'host-video-rooms'
 	// Seeing every sponsor, their Account page as they see it, and why gifts
 	// work or not, and taking a sponsor off the public pages (docs/sponsorship.md).
 	// The lead author only (Trevor, Nov. 23, 2026: "From admin, make it so I
@@ -123,6 +127,7 @@ const grants: Record<Role, readonly Permission[]> = {
 		'manage-nonprofit',
 		'check-services',
 		'manage-events',
+		'host-video-rooms',
 		'manage-sponsors',
 		'search-source-library'
 	],
@@ -136,10 +141,11 @@ const grants: Record<Role, readonly Permission[]> = {
 		'sign-off',
 		'review-nation-pages',
 		'manage-events',
+		'host-video-rooms',
 		'search-source-library'
 	],
-	'co-author': ['read-reviews', 'comment', 'search-source-library'],
-	advisor: ['read-reviews', 'comment', 'sign-off', 'search-source-library'],
+	'co-author': ['read-reviews', 'comment', 'host-video-rooms', 'search-source-library'],
+	advisor: ['read-reviews', 'comment', 'sign-off', 'host-video-rooms', 'search-source-library'],
 	contributor: ['comment'],
 	'nation-reviewer': ['review-for-nation', 'comment-on-nation-uploads']
 };

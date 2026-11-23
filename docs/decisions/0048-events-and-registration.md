@@ -43,13 +43,24 @@ Recordings are copied from RealtimeKit, which keeps them for seven days, into th
 
 RealtimeKit charges by the minute past a free allowance each month: 10,000 participant minutes of audio and video, and 100 minutes of recording, then $0.002 a participant minute and $0.010 a recorded minute (pricing as listed on Nov. 23, 2026).[^realtimekit-pricing] A two-hour talk with 50 people online uses 6,000 participant minutes and 120 recorded minutes. The browser parts are the `@cloudflare/realtimekit` package (Apache License 2.0) and `@cloudflare/realtimekit-ui`, whose package does not state a license; both are Cloudflare's and pinned to exact versions released more than a month earlier.
 
+## Rooms of their own
+
+Trevor asked on 2026-11-23 that several rooms be able to run at once, that rooms be public or private so the project can hold its interviews in them, and that a room can be started instantly. Rooms are no longer tied to events. A room belongs to an event, or stands alone, and each room has its own RealtimeKit meeting, so any number run at the same time; RealtimeKit meetings have no start or end time of their own, so the site keeps each room's times and limits every token to them.[^realtimekit-schedule]
+
+- A public room is listed on a Rooms page, and anyone signed in may join it while it is open.
+- A private room, such as an interview, lets in only its hosts and the people holding one of its invite links. A link needs no account, so a person being interviewed does not have to make one. They type the name shown in the room, and are told about recording and agree to it, like everyone else. Only a hash of a link's secret is kept, so a link is shown once, when it is made, and a host can turn it off. One link can be passed to several people; each browser is a separate person in the room.
+- An instant room is a private room started with one click. It is open for four hours, has a guest link to send, and can be kept open longer or closed. Closing a room also ends the live call, because an expired token does not remove anyone already in a meeting.[^realtimekit-session]
+- The people who manage events host every room. Co-authors and advisors may start rooms too (a new `host-video-rooms` permission), and host the rooms they started. A recording of a room of its own may be watched by its hosts only (the default, and the right choice for an interview), by the people who joined it while signed in, or by anyone signed in.
+
+RealtimeKit has no Worker binding; the Worker calls its REST API with an API token, which is the only setting the room needs.[^realtimekit-participant] The site finds the account and the RealtimeKit app with that token. The app is made once in the dashboard rather than by the site, because only an app made there comes with the default presets the room uses.[^realtimekit-preset]
+
 ## Consequences
 
 - New tables `calendar_events`, `calendar_ticket_types`, `calendar_speakers`, `calendar_registrations` and `calendar_messages` (migration `20261123T0450_add_event_calendar.sql`), a `manage-events` permission for the lead author and editors, a 15-minute scheduled run, and Events in the left sidebar, the footer and search.
 - Nothing is charged. Paid tickets wait on the nonprofit and its charitable registration.
 - Continuing legal education credit (applications, attendance codes, certificates and the uniform certificate of attendance) is built when the first program is planned.
 - Until the domain exists, nobody gets event emails; the event page shows each person where they stand.
-- The video room adds `calendar_rooms`, `calendar_room_people` and `calendar_recordings` (migration `20261123T0452_add_event_video_rooms.sql`) and three settings, `VIDEO_ROOM_ACCOUNT`, `VIDEO_ROOM_APPLICATION` and `VIDEO_ROOM_TOKEN`, set as Secrets in the Cloudflare dashboard.
+- The video room added `calendar_rooms`, `calendar_room_people` and `calendar_recordings` (migration `20261123T0452_add_event_video_rooms.sql`). Rooms of their own replace them with `video_rooms`, `video_room_invites`, `video_room_people` and `video_room_recordings` (migration `20261123T1750_add_standalone_video_rooms.sql`), which copies the old rows over. The room needs one Secret in the Cloudflare dashboard, `VIDEO_ROOM_TOKEN`; `VIDEO_ROOM_ACCOUNT` and `VIDEO_ROOM_APPLICATION` are optional, for when the token reaches several accounts or apps.
 
 ## Sources
 
@@ -60,4 +71,7 @@ RealtimeKit charges by the minute past a free allowance each month: 10,000 parti
 [^realtimekit-recording]: Cloudflare, "Recording Guide" and "Monitor Recording Status," RealtimeKit documentation, https://developers.cloudflare.com/realtime/realtimekit/recording-guide/ (checked Nov. 23, 2026).
 [^realtimekit-transcription]: Cloudflare, "Transcription," RealtimeKit documentation, https://developers.cloudflare.com/realtime/realtimekit/ai/transcription/ (checked Nov. 23, 2026).
 [^realtimekit-participant]: Cloudflare, "Participant" and "FAQ," RealtimeKit documentation, https://developers.cloudflare.com/realtime/realtimekit/concepts/participant/ and https://developers.cloudflare.com/realtime/realtimekit/faq/ (checked Nov. 23, 2026).
+[^realtimekit-schedule]: Cloudflare, "FAQ," RealtimeKit documentation, "Can I schedule meetings in advance with RealtimeKit?," https://developers.cloudflare.com/realtime/realtimekit/faq/ (checked Nov. 23, 2026).
+[^realtimekit-session]: Cloudflare, "FAQ," RealtimeKit documentation, "What happens to a participant already in a meeting when their auth token expires?," https://developers.cloudflare.com/realtime/realtimekit/faq/; Cloudflare, "End a session," https://developers.cloudflare.com/realtime/realtimekit/humans/core/end-a-session/ (both checked Nov. 23, 2026).
+[^realtimekit-preset]: Cloudflare, "Preset," RealtimeKit documentation, "Create a Preset," https://developers.cloudflare.com/realtime/realtimekit/concepts/preset/; Cloudflare, "Quickstart," https://developers.cloudflare.com/realtime/realtimekit/quickstart/ (both checked Nov. 23, 2026).
 [^realtimekit-pricing]: Cloudflare, "Pricing," RealtimeKit documentation, https://developers.cloudflare.com/realtime/realtimekit/platform/pricing/ (checked Nov. 23, 2026).

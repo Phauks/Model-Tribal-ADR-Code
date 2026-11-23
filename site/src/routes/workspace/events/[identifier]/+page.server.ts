@@ -23,17 +23,8 @@ import {
 	type StatusChange
 } from '#lib/server/event-calendar.ts';
 import { eventEmailDelivery } from '#lib/server/event-calendar-email.ts';
-import {
-	defaultRoomStyle,
-	durationWords,
-	recordingStatusWords,
-	recordingWatchers,
-	roomStyles,
-	type RecordingWatchers,
-	type RoomStyle
-} from '#lib/event-rooms.ts';
-import { recordingsOf, removeRoom, roomOf, roomVisitors, saveRoom, setRecordingHidden } from '#lib/server/event-rooms.ts';
-import { fileScans, scanStatusWords } from '#lib/server/file-scans.ts';
+import { defaultRoomStyle, eventRecordingWatchers, roomStyles, type RecordingWatchers, type RoomStyle } from '#lib/video-rooms.ts';
+import { removeRoom, roomOfEvent, roomRecordsForHosts, saveEventRoom, setRecordingHidden } from '#lib/server/video-rooms.ts';
 import { videoRoomSettings } from '#lib/server/realtime-kit.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import { formValuesOf, readCapacity, readEventForm } from '../event-form.ts';
@@ -49,19 +40,16 @@ async function findEvent(event: RequestEvent | Parameters<PageServerLoad>[0]) {
 
 export const load: PageServerLoad = async (event) => {
 	const { database, found } = await findEvent(event);
-	const [tickets, speakers, registrations, credits, room, recordings, visitors] = await Promise.all([
+	const [tickets, speakers, registrations, credits, room] = await Promise.all([
 		ticketTypesOf(database, found.identifier),
 		speakersOf(database, found.identifier),
 		registrationsOf(database, found.identifier),
 		confirmedCredits(database),
-		roomOf(database, found.identifier),
-		recordingsOf(database, found.identifier),
-		roomVisitors(database, found.identifier)
+		roomOfEvent(database, found.identifier)
 	]);
-	const scans = await fileScans(
-		database,
-		recordings.flatMap((recording) => (recording.objectKey ? [recording.objectKey] : []))
-	);
+	const records = room
+		? await roomRecordsForHosts(database, room, (recording) => `/events/${found.slug}/recordings/${recording}`)
+		: { recordings: [], visitors: [] };
 	return {
 		event: {
 			identifier: found.identifier,
@@ -98,27 +86,7 @@ export const load: PageServerLoad = async (event) => {
 			? { style: room.style, watchers: room.watchers, opened: room.meeting !== null }
 			: null,
 		suggestedStyle: defaultRoomStyle(found.kind),
-		recordings: recordings.map((recording) => {
-			const scan = recording.objectKey ? (scans.get(recording.objectKey) ?? null) : null;
-			return {
-				identifier: recording.identifier,
-				when: recording.startedAt ? eventMoment(recording.startedAt, found.timeZone) : '',
-				length: durationWords(recording.durationSeconds),
-				status: recording.objectKey
-					? scanStatusWords(scan).label
-					: recording.copyProblem
-						? `Not copied yet: ${recording.copyProblem}`
-						: (recordingStatusWords[recording.status] ?? recording.status),
-				address: recording.objectKey ? `/events/${found.slug}/recordings/${recording.identifier}` : null,
-				hidden: recording.hidden
-			};
-		}),
-		visitors: visitors.map((visitor) => ({
-			name: visitor.name,
-			role: visitor.role === 'host' ? 'Host' : 'Guest',
-			told: { recorded: 'Recorded', 'not-recorded': 'Not recorded', undecided: 'May be recorded' }[visitor.toldRecording],
-			toldAt: eventMoment(visitor.toldAt, found.timeZone)
-		}))
+		...records
 	};
 };
 
@@ -136,7 +104,8 @@ function ticketInput(form: FormData) {
 async function recordingShown(event: RequestEvent, shown: boolean) {
 	const { database, found } = await findEvent(event);
 	const form = await event.request.formData();
-	const changed = await setRecordingHidden(database, found.identifier, String(form.get('recording') ?? ''), !shown);
+	const room = await roomOfEvent(database, found.identifier);
+	const changed = room ? await setRecordingHidden(database, room.identifier, String(form.get('recording') ?? ''), !shown) : false;
 	if (!changed) return fail(404, { problem: 'There is no such recording.' });
 	return { done: shown ? 'The recording is shown again to the people allowed to watch it.' : 'The recording is hidden from everyone but the hosts.' };
 }
@@ -162,17 +131,18 @@ export const actions: Actions = {
 		const form = await event.request.formData();
 		const style = form.get('style');
 		const watchers = form.get('watchers');
-		if (!roomStyles.includes(style as RoomStyle) || !recordingWatchers.includes(watchers as RecordingWatchers)) {
+		if (!roomStyles.includes(style as RoomStyle) || !(eventRecordingWatchers as readonly string[]).includes(String(watchers))) {
 			return fail(400, { problem: 'Choose how the room works and who may watch its recordings.' });
 		}
-		const before = await roomOf(database, found.identifier);
-		await saveRoom(database, found.identifier, { style: style as RoomStyle, watchers: watchers as RecordingWatchers });
+		const before = await roomOfEvent(database, found.identifier);
+		await saveEventRoom(database, found, { style: style as RoomStyle, watchers: watchers as RecordingWatchers });
 		return { done: before ? 'Saved the room.' : 'The event now uses the website’s video room. People registered online join it from the event’s page.' };
 	},
 
 	removeRoom: async (event) => {
 		const { database, found } = await findEvent(event);
-		const removed = await removeRoom(database, found.identifier);
+		const room = await roomOfEvent(database, found.identifier);
+		const removed = room ? await removeRoom(database, room.identifier) : true;
 		if (!removed) return fail(409, { problem: 'This room has recordings, so it stays. Hide a recording instead.' });
 		return { done: 'The event no longer uses the website’s video room.' };
 	},

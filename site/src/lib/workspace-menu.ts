@@ -18,6 +18,7 @@ export type WorkspacePageName =
 	| 'library'
 	| 'contributors'
 	| 'events'
+	| 'rooms'
 	| 'people'
 	| 'nation-teams'
 	| 'nation-pages'
@@ -54,6 +55,8 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'library', label: 'Source library', link: '/workspace/library', needs: 'search-source-library' },
 	{ name: 'contributors', label: 'Contributors', link: '/workspace/contributors', needs: 'read-contributors' },
 	{ name: 'events', label: 'Events', link: '/workspace/events', needs: 'manage-events' },
+	// Video rooms of their own: instant, planned, public or private (src/lib/server/video-rooms.ts).
+	{ name: 'rooms', label: 'Video rooms', link: '/workspace/rooms', needs: 'host-video-rooms' },
 	{ name: 'people', label: 'People', link: '/workspace/people', needs: 'manage-people' },
 	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', needs: 'manage-people' },
 	// What nations published on their own pages, for the project to read afterwards.
