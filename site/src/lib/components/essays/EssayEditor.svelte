@@ -23,18 +23,21 @@
 	import { keymap } from 'prosemirror-keymap';
 	import type { MarkType, Node as EditorNode, NodeType } from 'prosemirror-model';
 	import { liftListItem, sinkListItem, splitListItem, wrapInList } from 'prosemirror-schema-list';
-	import { EditorState, Plugin, TextSelection, type Command, type Transaction } from 'prosemirror-state';
+	import { EditorState, NodeSelection, Plugin, TextSelection, type Command, type Transaction } from 'prosemirror-state';
 	import { EditorView } from 'prosemirror-view';
 	import { initProseMirrorDoc, redoCommand, undoCommand, yCursorPlugin, ySyncPlugin, yUndoPlugin } from 'y-prosemirror';
 	import { joinEssayRoom, type EssayRoom, type LiveStatus } from '#lib/essays/live.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
-	import { boxParts, casePartOrder, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
+	import { boxParts, casePartOrder, citationReferences, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
 	import type { RenderedEssay } from '#lib/essays/render.ts';
 	import { checkMarks, issueAt } from '#lib/essays/check-marks.ts';
 	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
 	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
 	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
+	import EssaySources from '#lib/components/essays/EssaySources.svelte';
+	import EssaySourceLinks from '#lib/components/essays/EssaySourceLinks.svelte';
+	import { citationWithoutAddress, type SourceDocuments } from '#lib/essays/source-documents.ts';
 	import { figurePartOrder, figureParts, figurePartsFor, type FigureKind, type FigurePart, type NewFigure } from '#lib/essays/figures.ts';
 	import { figurePlayers, watchFigureFiles } from '#lib/essays/figure-players.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
@@ -93,6 +96,7 @@
 		analysisTitle: string | null;
 		figureParts: Set<string>;
 		figureKind: FigureKind | null;
+		citationKeys: string[];
 	}>({
 		marks: new Set(),
 		block: 'paragraph',
@@ -102,7 +106,8 @@
 		boxParts: new Set(),
 		analysisTitle: null,
 		figureParts: new Set(),
-		figureKind: null
+		figureKind: null,
+		citationKeys: []
 	});
 	/** The parts the box around the cursor can take and does not have yet. */
 	const missingParts = $derived(
@@ -132,7 +137,29 @@
 	let linkAddress = $state('');
 	let shownText = $state('');
 	let editingCitationAt = $state<number | null>(null);
-	let library = $state<{ sources: [string, string][]; terms: [string, string][]; words?: string[] } | null>(null);
+	let library = $state<{
+		sources: [string, string][];
+		terms: [string, string][];
+		words?: string[];
+	} | null>(null);
+	/** Links to the documents of sources looked up so far, by key. */
+	let documents = $state<Record<string, SourceDocuments>>({});
+	const asked = new Set<string>();
+
+	/** Fetches document links for the keys not looked up yet. */
+	async function loadDocuments(keys: string[]): Promise<void> {
+		const wanted = keys.filter((key) => !asked.has(key));
+		if (wanted.length === 0) return;
+		for (const key of wanted) asked.add(key);
+		try {
+			const response = await fetch(`/workspace/essays/source-documents.json?keys=${wanted.join(',')}`);
+			if (response.ok) documents = { ...documents, ...(await response.json()) };
+		} catch {
+			for (const key of wanted) asked.delete(key);
+		}
+	}
+	const sourceLabels = $derived(new Map((library?.sources ?? []).map(([key, label]) => [key, citationWithoutAddress(label)])));
+	let showSources = $state(false);
 
 	/* Checks and Go to ------------------------------------------------------- */
 
@@ -154,7 +181,15 @@
 	}
 	let libraryProblem = $state('');
 
-	async function loadLibrary(): Promise<void> {
+	let libraryLoading: Promise<void> | null = null;
+
+	/** Loads the list of sources once, however often it is asked for. */
+	function loadLibrary(): Promise<void> {
+		libraryLoading ??= fetchLibrary();
+		return libraryLoading;
+	}
+
+	async function fetchLibrary(): Promise<void> {
 		if (library) return;
 		try {
 			const response = await fetch('/workspace/essays/sources.json');
@@ -496,6 +531,16 @@
 		return kinds;
 	}
 
+	/** The sources named by the citation the cursor is on or next to. */
+	function citationAt(state: EditorState): string[] {
+		const { selection } = state;
+		const node =
+			selection instanceof NodeSelection
+				? selection.node
+				: [selection.$from.nodeAfter, selection.$from.nodeBefore].find((candidate) => candidate?.type.name === 'citation');
+		return node?.type.name === 'citation' ? citationReferences(String(node.attrs.text)).map((reference) => reference.key) : [];
+	}
+
 	function describe(state: EditorState): void {
 		const marks = new Set<string>();
 		for (const name of ['em', 'strong', 'underline', 'code', 'link']) {
@@ -516,8 +561,13 @@
 			boxParts: partsOf(boxFound?.node),
 			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null,
 			figureParts: partsOf(enclosing(state, 'figure_block')?.node, 'figure_part'),
-			figureKind: (enclosing(state, 'figure_block')?.node.attrs.kind as FigureKind | undefined) ?? null
+			figureKind: (enclosing(state, 'figure_block')?.node.attrs.kind as FigureKind | undefined) ?? null,
+			citationKeys: citationAt(state)
 		};
+		if (active.citationKeys.length > 0 || active.boxSource) {
+			void loadLibrary();
+			void loadDocuments(active.boxSource ? [...active.citationKeys, active.boxSource] : active.citationKeys);
+		}
 	}
 
 	function createState(body: string): EditorState {
@@ -1074,6 +1124,16 @@
 					<button type="button" class="tool" aria-pressed={showChecks} onclick={toggleChecks}>Checks</button>
 				{/if}
 				<button type="button" class="tool" aria-pressed={showGoTo} title="Ctrl+G" onclick={() => (showGoTo = !showGoTo)}>Go to</button>
+				<button
+					type="button"
+					class="tool"
+					aria-pressed={showSources}
+					title="The sources this essay cites, with links to their documents"
+					onclick={() => {
+						showSources = !showSources;
+						if (showSources) void loadLibrary();
+					}}>Sources</button
+				>
 			</div>
 		{/if}
 	</div>
@@ -1085,8 +1145,22 @@
 		<EssayChecks view={() => view} {revision} {identifier} file={currentFile} {library} {canEdit} bind:selected={chosenIssue} />
 	{/if}
 
-	{#if active.boxSource && mode === 'rich'}
-		<p class="small muted context">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</p>
+	{#if showSources && mode === 'rich'}
+		<EssaySources view={() => view} {revision} {library} {documents} {loadDocuments} />
+	{/if}
+
+	{#if active.citationKeys.length > 0 && mode === 'rich'}
+		{#each active.citationKeys as key (key)}
+			<p class="small context">
+				<span class="muted">Cites {sourceLabels.get(key) ?? key}.</span>
+				{#if asked.has(key)}<EssaySourceLinks documents={documents[key]} loading={!(key in documents)} />{/if}
+			</p>
+		{/each}
+	{:else if active.boxSource && mode === 'rich'}
+		<p class="small context">
+			<span class="muted">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</span>
+			{#if asked.has(active.boxSource)}<EssaySourceLinks documents={documents[active.boxSource]} loading={!(active.boxSource in documents)} />{/if}
+		</p>
 	{/if}
 
 	{#if inRoomShown}
