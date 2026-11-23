@@ -19,3 +19,13 @@ searches:
   query: The band's own row in the designated agent table
   outcome: found
   reason: The table lists "Minnesota Chippewa Tribe - Mille Lacs Band" with its own agent (91 FR 30694).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-list
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: 'Cross-deputization, tax and child welfare agreements with states, counties and cities: state agency lists, the Justice Department''s sample agreement library, Title IV-E surveys'
+  outcome: found
+  reason: 3 agreement(s) recorded.
+  records:
+  - research/raw/2026-11-23/jurisdiction-agreements.json#mille-lacs-band

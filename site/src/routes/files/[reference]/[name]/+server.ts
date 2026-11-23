@@ -8,7 +8,7 @@
 import { error } from '@sveltejs/kit';
 import { isUploadReference } from '#lib/uploads.ts';
 import { serveUploadFile } from '#lib/server/upload-serving.ts';
-import { isPublicFile, maySeeFiledFile, uploadByReference } from '#lib/server/uploads.ts';
+import { isPublicFile, maySeeFiledFile, scanOfKey, uploadByReference } from '#lib/server/uploads.ts';
 import { storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
 
@@ -31,6 +31,10 @@ export const GET: RequestHandler = async (event) => {
 			kind: upload.kind
 		},
 		// An hour for everyone, so a file taken down stops being served soon; never cached when private.
-		{ inline: true, cacheControl: everyone ? 'public, max-age=3600' : 'private, no-store' }
+		{
+			inline: true,
+			cacheControl: everyone ? 'public, max-age=3600' : 'private, no-store',
+			scan: await scanOfKey(database, upload.filed_key)
+		}
 	);
 };

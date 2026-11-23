@@ -1,15 +1,20 @@
 import { error, fail, type ActionFailure } from '@sveltejs/kit';
 import { isUploadReference } from '#lib/uploads.ts';
 import { eventsFor } from '#lib/server/events.ts';
+import { scanStatusWords } from '#lib/server/file-scans.ts';
 import { looksLikeNation } from '#lib/server/upload-requests.ts';
 import {
 	addUploadMessage,
+	advanceCheckedUploads,
+	checkAgain,
 	claimUpload,
 	declineUpload,
 	fileUpload,
 	keepForReference,
 	readFiling,
+	releaseUnchecked,
 	reopenUpload,
+	scansOf,
 	UploadProblem,
 	uploadByReference,
 	uploadDetail,
@@ -18,18 +23,24 @@ import {
 	type UploadRow
 } from '#lib/server/uploads.ts';
 import type { SignedInPerson } from '#lib/server/people.ts';
-import type { D1Database } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad, RequestEvent } from './$types';
 
 export const load: PageServerLoad = async (event) => {
 	requirePermission(event, 'review-uploads');
-	const { database } = storage(event);
+	const { database, bucket } = storage(event);
 	if (!isUploadReference(event.params.reference)) error(404, 'There is no such upload.');
+	const found = await uploadByReference(database, event.params.reference);
+	if (found?.status === 'checking') await advanceCheckedUploads(database, bucket, { uploadIdentifier: found.identifier });
 	const detail = await uploadDetail(database, event.params.reference);
 	if (!detail) error(404, 'There is no such upload.');
 	return {
 		...detail,
+		scans: (await scansOf(database, detail.upload)).map((scan) => ({
+			status: scan?.status ?? null,
+			...scanStatusWords(scan)
+		})),
 		history: await eventsFor(database, 'upload', detail.upload.identifier)
 	};
 };
@@ -46,18 +57,19 @@ async function act(
 	event: RequestEvent,
 	step: (context: {
 		database: D1Database;
+		bucket: R2Bucket;
 		person: SignedInPerson;
 		upload: UploadRow;
 		form: FormData;
 	}) => Promise<void | ActionFailure<Refusal>>
 ): Promise<Outcome> {
 	const person = requirePermission(event, 'review-uploads');
-	const { database } = storage(event);
+	const { database, bucket } = storage(event);
 	const upload = await uploadByReference(database, event.params.reference);
 	if (!upload) error(404, 'There is no such upload.');
 	const form = await event.request.formData();
 	try {
-		const result = await step({ database, person, upload, form });
+		const result = await step({ database, bucket, person, upload, form });
 		return result ?? { done: true as const };
 	} catch (problem) {
 		if (problem instanceof UploadProblem) return fail(problem.status, { problem: problem.message });
@@ -66,6 +78,13 @@ async function act(
 }
 
 export const actions: Actions = {
+	release: (event) =>
+		act(event, async ({ database, bucket, person, upload, form }) => {
+			const note = formText(form, 'note', 1000);
+			if (!note) return fail(400, { problem: 'Say why it is safe to release this file without a virus check.' });
+			await releaseUnchecked(database, bucket, person, upload, note);
+		}),
+	'check-again': (event) => act(event, ({ database, person, upload }) => checkAgain(database, person, upload)),
 	claim: (event) => act(event, ({ database, person, upload }) => claimUpload(database, person, upload)),
 	question: (event) =>
 		act(event, async ({ database, person, upload, form }) => {

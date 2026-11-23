@@ -234,6 +234,8 @@ export interface MapGeometry {
 	/** Where the region boundaries came from and when (geography/bureau-of-indian-affairs-regions.json). */
 	regionSource: { source: string; retrieved: string };
 	landAreas: LandAreaShape[];
+	/** The offices of nations with no Census land area, where a dot marks each (geography/nation-office-points.json, written by scripts/maps/geocode_nation_offices.py). */
+	offices: { nation: string; x: number; y: number }[];
 	/** Where the land areas came from and when (geography/census-land-areas-2020.json). */
 	landAreaSource: { source: string; retrieved: string };
 	/**
@@ -358,7 +360,7 @@ const withdrawnLandAreas = new Set<string>(
  */
 const smallestVisibleArea = 6;
 
-export async function buildMapGeometry(regionsFile: string, landAreasFile: string): Promise<MapGeometry> {
+export async function buildMapGeometry(regionsFile: string, landAreasFile: string, officesFile: string): Promise<MapGeometry> {
 	const require = createRequire(import.meta.url);
 	const atlas = JSON.parse(
 		readFileSync(require.resolve('us-atlas/states-10m.json'), 'utf8')
@@ -583,6 +585,22 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 			return shape;
 		});
 
+	// Offices, each in the box of the place it is in, found by where the point lies.
+	const officeList = (JSON.parse(readFileSync(officesFile, 'utf8')) as { offices: { nation: string; point: [number, number] }[] }).offices;
+	const officePanel = ([longitude, latitude]: [number, number]): Panel => {
+		if (latitude > 51 && (longitude < -129 || longitude > 170)) return panelOf('AK');
+		if (longitude < -154 && latitude < 23 && latitude > 18) return panelOf('HI');
+		if (longitude > 140) return panelOf('GU');
+		if (latitude < -10) return panelOf('AS');
+		if (longitude > -68 && latitude < 19) return panelOf('PR');
+		return panels[0];
+	};
+	const offices = officeList.flatMap((office) => {
+		const projected = officePanel(office.point).path.centroid({ type: 'Point', coordinates: office.point });
+		if (!Number.isFinite(projected[0]) || !Number.isFinite(projected[1])) return [];
+		return [{ nation: office.nation, x: Math.round(projected[0] * 10) / 10, y: Math.round(projected[1] * 10) / 10 }];
+	});
+
 	return {
 		width: mapWidth,
 		height,
@@ -596,6 +614,7 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 			retrieved: regionsTopology.metadata.retrieved
 		},
 		landAreas,
+		offices,
 		landAreaSource: {
 			source: landTopology.metadata.source,
 			retrieved: landTopology.metadata.retrieved

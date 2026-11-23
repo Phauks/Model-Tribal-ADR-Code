@@ -1,8 +1,8 @@
 /**
  * Splits the copies this site serves (src/lib/public-copies.ts) into short
  * lists, so no page has to hold thousands of rows: federal statutes, Federal
- * Register documents, other federal documents, and nations' documents by the
- * first letter of the nation's name.
+ * Register documents, other federal documents, tribal court opinions by
+ * nation, and nations' documents by the first letter of the nation's name.
  */
 import { displayName } from '../nation-labels.ts';
 import { copyPath, fileSize, mediaLabel, removalRequestPath, type PublicCopy } from '../public-copies.ts';
@@ -51,7 +51,11 @@ function namesOf(copy: PublicCopy, names: Map<string, string>): string[] {
 	});
 }
 
+/** Tribal court opinions (decision record 0047) are listed one nation at a time. */
+const opinionPrefix = 'opinions-';
+
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
+	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
 		const letter = first?.normalize('NFD').charAt(0).toLowerCase() ?? '';
@@ -64,8 +68,12 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	return 'other-federal';
 }
 
-function groupTitle(slug: string): string {
+function groupTitle(slug: string, names = nationNames()): string {
 	if (federalGroups[slug]) return federalGroups[slug];
+	if (slug.startsWith(opinionPrefix)) {
+		const name = names.get(slug.slice(opinionPrefix.length));
+		return name ? `Tribal court opinions: ${name}` : 'Tribal court opinions';
+	}
 	if (slug === 'other-nations') return 'Nations’ documents, other names';
 	return `Nations’ documents: ${slug.toUpperCase()}`;
 }
@@ -95,10 +103,11 @@ export function copyGroups(): CopyGroup[] {
 		const slug = groupOf(copy, names);
 		counts.set(slug, (counts.get(slug) ?? 0) + 1);
 	}
-	const order = (slug: string) => (federalGroups[slug] ? Object.keys(federalGroups).indexOf(slug) : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0));
+	const order = (slug: string) =>
+		federalGroups[slug] ? Object.keys(federalGroups).indexOf(slug) : slug.startsWith(opinionPrefix) ? 5 : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0);
 	return [...counts]
-		.sort(([first], [second]) => order(first) - order(second))
-		.map(([slug, count]) => ({ slug, title: groupTitle(slug), count }));
+		.map(([slug, count]) => ({ slug, title: groupTitle(slug, names), count }))
+		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title));
 }
 
 /** The rows of one list. */
@@ -141,6 +150,9 @@ function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, Do
 			copy.title,
 			copy.links.at(-1) ?? copy.links[0] ?? ''
 		];
+		// Tribal court opinions (decision record 0047) are neither United States documents nor yet
+		// part of a nation's saved set; they are saved as their pages are read.
+		if (copy.topic === 'caselaw-access-project') continue;
 		if (copy.topic !== 'constitutions' && copy.topic !== 'tribal-law') {
 			federal.push(file);
 			continue;

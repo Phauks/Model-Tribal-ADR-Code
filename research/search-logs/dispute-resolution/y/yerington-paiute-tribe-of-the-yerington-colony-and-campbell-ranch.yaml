@@ -104,4 +104,13 @@ searches:
     peacemaking, circles, elders' courts and restorative justice
   outcome: not-found
   reason: 'Archived copy (capture of 2019-10-16) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://yeringtonpaiute.us/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: blocked
+  reason: 'Still not readable on 2026-11-23 (direct request: HTTP 403), and the Wayback Machine answered
+    202 (copy not ready).'
 next_steps: 'Try again later, or open by hand in a browser: https://web.archive.org/web/20261117043444id_/https://yeringtonpaiute.us/.'

@@ -1,7 +1,7 @@
 profile: content/tribes/c/chemehuevi-indian-tribe-of-the-chemehuevi-reservation.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -204,3 +204,38 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Search returned the nation's tribal-court URL and the state directory as leads.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260720124618/https://chemehuevi.org/tribal-court
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-07-20 ("Tribal Court") shows the nation's court and links to
+    its code.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261017060311/https://chemehuevi.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-10-17 ("Chemehuevi Indian Tribe") shows the nation's court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20251118200442/http://www.chemehuevi.net/tribal-court/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2025-11-18 is an empty page or an error page (no text).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261017120506/http://chemehuevi.net/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2026-10-17 is an empty page or an error page (no text).
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.chemehuevi.net/, http://www.chemehuevi.net/tribal-court/
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

@@ -46,6 +46,7 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0037](0037-keep-a-copy-of-every-directly-cited-page.md) | Keep our own copy of every page a record directly cites | Accepted |
 | [0038](0038-files-people-send-stored-in-the-bucket-with-youtube-links.md) | Files people send are stored in the private bucket, and a video can be a YouTube link | Accepted |
 | [0039](0039-website-map-uses-maplibre-and-our-own-tiles.md) | Draw the website's map with MapLibre and the project's own map tiles | Accepted |
+| [0040](0040-project-inbox-on-cloudflare.md) | Keep the project's email in the website, with outreach through a separate mailbox | Accepted |
 | [0041](0041-nation-teams-keep-their-own-pages.md) | Let each nation choose a team that keeps its own page, with delegation inside that nation only | Accepted |
 | [0042](0042-governance-facts-from-governing-documents.md) | Record how each nation's government is set up, as plain facts from its own documents | Accepted |
 | [0042](0042-link-to-the-national-indian-law-library-for-its-copies.md) | Link to the National Indian Law Library for copies taken from it | Accepted |
@@ -53,5 +54,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0044](0044-order-printed-copies-through-the-lulu-print-api.md) | Order printed copies on the website through the Lulu Print API | Proposed |
 | [0045](0045-separate-settings-from-account-settings.md) | Keep display settings on the device and account settings on Account pages | Accepted |
 | [0046](0046-scan-files-with-clamav-in-a-cloudflare-container.md) | Scan files for malware with ClamAV in a Cloudflare Container, and hold them until clean | Accepted |
+| [0047](0047-show-tribal-court-opinions-from-the-caselaw-access-project.md) | Show tribal court opinions from the Caselaw Access Project on the website | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

@@ -422,14 +422,13 @@ governing_documents:
   note: 'Received: 2007. Full text linked from the National Indian Law Library page.'
 - kind: law-code
   title: Tribal code
-  link: http://www.hopi-nsn.gov/judicial-branch/hopi-code-of-laws-and-rules-of-civil-procedures/
+  link: https://www.hopi-nsn.gov/wp-content/uploads/2025/03/HOPI-CODE-UPDATED.pdf
   source: national-indian-law-library-hopi-arizona
   confidence: medium
   verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
-  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website .". Link changed on 2026-11-23 from http://www.hopi-nsn.gov/judicial-branch/hopi-code-of-laws-and-rules-of-civil-procedures/, a page that leads to the text, to the text itself; the tribal law texts collection downloaded it on 2026-11-21, and it is the Hopi Code as enacted August 28, 2012 and amended through July 2020 (research/tribal-law/documents.json). See research/reviews/2026-11-22-governing-documents-full.md, section on the other document searches.'
 - kind: law-code
   title: Constitution, Code, Ordinances and Court Rules
   link: https://hopitribalcourts.com/hopi-laws/
@@ -646,6 +645,17 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Arizona Department of Economic Security
+  agreement: Title IV-E tribal-state agreement
+  state: AZ
+  status: expired
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.B, Arizona
+  note: 'The source reads: “The state of Arizona previously had an agreement with the Hopi Tribe that expired in 2011 and was not renewed.”. The state agency name is inferred. Report date is March 2014, so current status needs confirming.'
 land_establishment:
 - land_area: Moqui (Hopi) Reserve, Arizona
   method: executive-order

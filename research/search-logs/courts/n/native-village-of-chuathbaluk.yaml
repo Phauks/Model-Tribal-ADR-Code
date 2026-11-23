@@ -1,7 +1,7 @@
 profile: content/tribes/n/native-village-of-chuathbaluk.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -192,3 +192,14 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: fetch.py returns no text for the directory PDF, so the Chuathbaluk entry could not be checked.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20160622132811/http://chuathbaluktc.wix.com/chuathbaluk
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2016-06-22 is an empty page or an error page (Chuathbaluk).
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://chuathbaluktc.wix.com/chuathbaluk,
+  https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf (no readable copy on 2026-11-23,
+  directly or in the Wayback Machine).'

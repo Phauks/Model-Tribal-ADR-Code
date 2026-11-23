@@ -856,6 +856,18 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: cross-deputization
+  other_party: Clallam County Sheriff's Office
+  agreement: Interlocal agreement (county deputies deputized as tribal officers)
+  state: WA
+  date: '2010'
+  status: unknown
+  source: jamestown-sklallam-tribe-clallam-county-sheriffs-office-interlocal-agreement-2010
+  confidence: high
+  verification: read-in-full
+  locator: Section 4, Citation into Tribal Court
+  note: 'The source reads: “By adopting selected State criminal law as tribal law and deputizing CCSO deputies as tribal officers”. Year from a handwritten date and a tribal council resolution dated February 4, 2010 in the text. The posted copy is a sample in a federal resource library; current status is not confirmed.'
 treaties:
 - title: Treaty with the S'klallam, 1855
   signed: '1855-01-26'

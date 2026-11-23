@@ -13,3 +13,11 @@ searches:
   reason: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
   records:
   - research/raw/2026-11-23/violence-against-women-act-jurisdiction.json#suquamish-indian-tribe-of-the-port-madison-reservation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: statute
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: Tax agreements with the state
+  outcome: not-found
+  reason: 'A state source names the nation as one the state may make a tax agreement with, but does not say an agreement was signed: Cigarette tax contract (compact) authorized under RCW 43.06.460 (revised-code-of-washington-43-06-460-cigarette-tax-contracts).'

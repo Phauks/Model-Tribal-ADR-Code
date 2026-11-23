@@ -731,6 +731,28 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 100-89 § 206(f), 101 Stat. at 671-72
   note: Quote sentence is identical to § 105(f); it appears at the bottom of 101 Stat. 671 and top of 672. Codified (as omitted) at 25 U.S.C. § 736.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Texas Department of Family and Protective Services
+  agreement: Title IV-E Agreement Between the Alabama-Coushatta Tribe of Texas and the Texas Department of Family and Protective Services
+  state: TX
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for TX
+  note: 'The source reads: “Title IV-E Agreement Between the Alabama-Coushatta Tribe of Texas and the Texas Department of Family and Protective Services”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Texas Department of Family and Protective Services
+  agreement: Title IV-E agreement (maintenance costs only)
+  state: TX
+  date: '2012-04-12'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.O, Texas
+  note: 'The source reads: “entered into one Title IV-E agreement with the Alabama-Coushatta Tribe of Texas on April 12, 2012”. Reported to expire April 12, 2014 unless renewed. Report date is March 2014, so current status needs confirming.'
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

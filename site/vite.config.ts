@@ -54,6 +54,7 @@ const regionsPath = fileURLToPath(
 	new URL('./geography/bureau-of-indian-affairs-regions.json', import.meta.url)
 );
 const landAreasPath = fileURLToPath(new URL('./geography/census-land-areas-2020.json', import.meta.url));
+const officesPath = fileURLToPath(new URL('./geography/nation-office-points.json', import.meta.url));
 const mapGeometryModule = 'virtual:map-geometry';
 const resolvedMapGeometryModule = `\0${mapGeometryModule}`;
 
@@ -72,7 +73,8 @@ function mapGeometry(): Plugin {
 			if (identifier !== resolvedMapGeometryModule) return undefined;
 			this.addWatchFile(regionsPath);
 			this.addWatchFile(landAreasPath);
-			return `export default ${JSON.stringify(await buildMapGeometry(regionsPath, landAreasPath))};`;
+			this.addWatchFile(officesPath);
+			return `export default ${JSON.stringify(await buildMapGeometry(regionsPath, landAreasPath, officesPath))};`;
 		}
 	};
 }
@@ -171,6 +173,35 @@ function publicContactsList(): Plugin {
 					};
 				});
 			return `export const publicNationContacts = ${JSON.stringify(list)};`;
+		}
+	};
+}
+
+const mailNationsModule = 'virtual:mail-nations';
+const resolvedMailNationsModule = `\0${mailNationsModule}`;
+
+/**
+ * The nations outreach can write to, with the states each is in, so the
+ * outreach pages can fill in a nation's name and send in the nation's own
+ * time zone (src/lib/server/mail/outreach.ts). Restricted records are left
+ * out, as in the review list.
+ */
+function mailNations(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:mail-nations',
+		resolveId(identifier) {
+			return identifier === mailNationsModule ? resolvedMailNationsModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedMailNationsModule) return undefined;
+			const states = new Map(nations().map((record) => [record.id, [...new Set((record.states ?? []).map((fact) => fact.state))]]));
+			const list = nationsForReview().map((record) => ({
+				identifier: record.id,
+				name: record.name,
+				states: states.get(record.id) ?? [],
+				page: record.published ? `/nations/${record.id}` : null
+			}));
+			return `export const mailNations = ${JSON.stringify(list)};`;
 		}
 	};
 }
@@ -405,6 +436,7 @@ export default defineConfig({
 		mapGeometry(),
 		reviewSubjects(),
 		publicContactsList(),
+		mailNations(),
 		nationImages(),
 		publicCopiesList(),
 		sourceCitations(),
