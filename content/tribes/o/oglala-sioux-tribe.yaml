@@ -196,6 +196,207 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and bylaws under the Indian Reorganization Act of June 18, 1934
+  quote: 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat.
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Certification of Adoption
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: governing-body
+  value: Oglala Sioux Tribal Council
+  quote: SEC. 10. The Oglala Sioux Tribal Council shall be the sole
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 10
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: governing-body-size
+  value: One representative per 1000 members, or a remainder of more than 500
+  quote: tative for each 1000 members, or a remainder of more than 500.
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 4
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot of qualified voters, by community representation
+  quote: chosen by secret ballot by qualified voters of the tribe
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 1
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: a term of two years.
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 8
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: head-of-government
+  value: President
+  quote: duty of the president to preside
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Oglala Sioux Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the members of the tribe, at large
+  quote: vice president, elected by the members of the Oglala
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 6
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: elections
+  value: Called by the council at least 60 days before terms expire
+  quote: shall be called by the tribal council at least sixty
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article III, Section 9
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the tribe, 18 years or over, who
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VII, Section 1
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: election-authority
+  value: Tribal council, by ordinance
+  quote: shall be determined by the tribal council by appropriate
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VII, Section 2
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: judiciary
+  value: Court or courts the tribal council may establish
+  quote: shall be vested in a court or courts which the tribal council may
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article V, Section 1
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: amendment
+  value: Majority vote of qualified voters at Secretarial election, 30% turnout
+  quote: vote of the qualified voters of the tribe voting at an election
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article XI
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article XI
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: recall-and-removal
+  value: Recall from office under due process of law for cause
+  quote: be subject to recall from office under due process of law for
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VIII, Section 2
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: recall-and-removal
+  value: Impeachment by two-thirds vote of the council
+  quote: Impeached except by a two-thirds (2/3)
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VIII, Section 2
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
+- aspect: other
+  value: Communities elect annual presidents and other officers
+  quote: elect, annually, a president and such other officers as may be
+  source: constitution-oglala-sioux-tribe-1985-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1985-11-25'
+  locator: Article VI
+  document_version:
+    document: oglala-sioux-tribe-constitution
+    version: 1985-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 1985, followed by 1963-1985 correspondence and resolutions; the scan has many reading errors, and the representation formula is the one in the 1985 Amendment V.'
 governing_documents:
 - kind: law-code
   title: 'Oglala Sioux Tribe: Law and Order Code'

@@ -188,6 +188,231 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Community Council
+  quote: The Community Council shall be composed of eight (8) members, all
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IV, Section 1
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: governing-body-size
+  value: 8 members, 4 Gros Ventre and 4 Assiniboine
+  quote: Community Council shall consist of four (4) Gros Ventre and four (4) Assiniboine members,
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IV, Section 2
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: governing-body-selection
+  value: Popular vote, by district and at large
+  quote: of whom shall be chosen every second year to popular vote
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IV, Section 1
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Council seat shall be elected for a two (2) year term and may succeed themselves at will.
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IV, Section 3
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: head-of-government
+  value: President
+  quote: a President and Vice President who
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IV, Section 1
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large as a team by popular vote
+  quote: President shall be a team of one (1) Gros Ventre and one (1) Assiniboine, elected as a team
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IV, Section 2
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: President and Vice President shall be elected for a four (4) year term
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IV, Section 3
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: other-officers
+  value: Vice President, Secretary-Treasurer (appointed)
+  quote: Vice President who shall be elected at-large, and a Secretary-Treasurer, who shall be appointed
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IV, Section 4
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: elections
+  value: 'Every 2 years: primary first Tuesday in October, general first Tuesday in November'
+  quote: Primary elections for membership on the Community Council shall be held on the first
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article VII, Section 2
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the Community of either sex, eighteen (18) years of
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article VII, Section 1
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: election-authority
+  value: Election judges appointed by the Council
+  quote: The Council shall appoint three (3) election judges
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article VII, Section 3
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: judiciary
+  value: Tribal Court with an Appellate Court
+  quote: There is hereby established the Fort Belknap Indian Community Tribal
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article X
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: judicial-selection
+  value: Appointed through procedures set by Tribal Council
+  quote: appointed through procedures established by the Tribal Council, which shall guarantee an
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article X
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: judicial-independence
+  value: Appointment procedures guarantee an independent judiciary
+  quote: independent judiciary.
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article X
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: amendment
+  value: Majority vote of qualified voters at Secretary-called election, 30% turnout
+  quote: may be amended by a majority vote of the qualified voters of the
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IX
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article IX
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: recall-and-removal
+  value: Recall by petition of 40% of votes cast in district
+  quote: be initiated by a petition signed by no less than forty percent (40%) of the number of
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article VIII, Section 4(A)
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds Council vote for cause
+  quote: The Council may expel a member for cause by a two-thirds vote
+  source: constitution-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001'
+  locator: Article VIII, Section 2
+  document_version:
+    document: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Printed as amended 8/01 with a rerun dated 6/30/03; scan is clean apart from some broken words.'
 governing_documents:
 - kind: law-code
   title: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana

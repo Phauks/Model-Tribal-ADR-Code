@@ -174,6 +174,187 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Indian Reorganization Act
+  quote: of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984),
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Certification of Adoption
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: governing-body
+  value: Yomba Tribal Council
+  quote: shall be a council known as the Yomba
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article III, Section 1
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: shall consist of six councilmen
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article III, Section 2
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: governing-body-selection
+  value: Elected by district, three from each district
+  quote: Each district. shall elect three
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article III, Section 3
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: be for a period of three years
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: head-of-government
+  value: Chairman
+  quote: shall elect from among
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article III, Section 5
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: head-of-government-selection
+  value: Elected by the Council from its own members
+  quote: shall elect from among
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article III, Section 5
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: (3) a secretary, and (4) a
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article III, Section 5
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: elections
+  value: Every year
+  quote: every year and shall be called
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: voting-age
+  value: '21'
+  quote: 21 years
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article IV, Section 6
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: election-authority
+  value: Tribal Council or election board
+  quote: Council or the election
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article IV, Section 5
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary
+  quote: may be amended by
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article IX, Section 1
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: by the Secretary of the Interior.
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article IX, Section 1
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: recall-and-removal
+  value: Removal by four affirmative votes of the Council
+  quote: may by four affirmative
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article V, Section 2
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters in the district
+  quote: petition signed by one-third
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-22'
+  locator: Article V, Section 3
+  document_version:
+    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
 governing_documents:
 - kind: law-code
   title: Yomba Shoshone Tribe Law and Order Code

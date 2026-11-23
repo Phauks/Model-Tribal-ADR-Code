@@ -158,6 +158,171 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
+governance:
+- aspect: form
+  value: Constitution and Bylaws approved under Act of June 18, 1934
+  quote: June 18, 1934 (48 Stat. .984), as amended, do hereby app
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Approval
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: governing-body
+  value: Suquamish Tribal Council
+  quote: known as the Suquamish Tribal Council.
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article III, Section 1
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: governing-body-size
+  value: 4 members (Chairman, Vice-Chairman, Secretary, one member)
+  quote: and one member. All shall
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article V, Section 1
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: and votes are to be cast for their election by secret
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article V, Section 2
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: general-council
+  value: All tribal members at least 18 years of age
+  quote: The general council shall be composed of all tribal members
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article VIII, Section 3
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the tribal council shall preside over all
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article VI, Section 1
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Suquamish Indian Tribe of the Port Madison Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: The Vice-Chairman of the tribal council shall
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article VI, Sections 2-4
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: elections
+  value: Every third year, in January, at annual General Council meeting
+  quote: annual general council meeting in January every third
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article V, Section 2
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: voting-age
+  value: '18'
+  quote: Sec. 4. Any enrolled member of the tribe 18 years of
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article V, Section 4
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: amendment
+  value: Majority vote in Secretarial election, 30% turnout
+  quote: This constitution and bylaws may be amended
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article X, Section 1
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: been approved by the Secretary of the Interior.
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article X, Section 1
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: recall-and-removal
+  value: Removal by voters on petition of 23% of voters
+  quote: the tribal council, signed by at least 23 percent of
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article VII, Section 2
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
+- aspect: other
+  value: Referendum on petition of 25% of voters
+  quote: Upon receipt of a petition of at least 25 percent of th
+  source: constitution-suquamish-indian-tribe-of-the-port-madison-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-02'
+  locator: Article IX
+  document_version:
+    document: suquamish-indian-tribe-of-the-port-madison-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles V, VII and VIII; council size is inferred from the officer list in Article V, Section 1.'
 governing_documents:
 - kind: law-code
   title: Suquamish Indian Tribe of the Port Madison Reservation

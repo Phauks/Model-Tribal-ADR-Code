@@ -202,6 +202,422 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
+governance:
+- aspect: form
+  value: Constitution approved under Act of June 18, 1934
+  quote: The Constitution of the Ho-Chunk Nation is hereby approved pursuant to the authority granted to the Secretary by the Act of June 18, 1934 (48 Stat. 984), as amended
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: governing-body
+  value: Legislature
+  quote: (a) Legislative powers shall be vested in the Legislature.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: governing-body-size
+  value: Districts elect 8 (3, 3, 1, 1), plus 3 at-large
+  quote: The Legislature shall be composed of Representatives from the following Districts,
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article V, Section 1(b)
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: governing-body-selection
+  value: Elected by majority vote in their districts
+  quote: Members of the Legislature shall be elected by a majority vote of the eligible voters from their respective Districts.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article V, Section 6
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Members of the Legislature shall serve four (4) year terms
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article V, Section 6
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: general-council
+  value: All eligible voters
+  quote: grant all inherent sovereign powers to the General Council. All eligible voters of the Ho-Chunk
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article IV, Section 1
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: head-of-government
+  value: President
+  quote: The Executive power of the Ho-Chunk Nation shall be vested in the President of the
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VI, Section 1(a)
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ho-Chunk Nation of Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of eligible voters
+  quote: by a majority vote of the eligible voters of the Ho-Chunk Nation.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VI, Section 5
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The President shall serve four (4) year terms.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VI, Section 5
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: other-officers
+  value: Vice President (of the Legislature)
+  quote: The Legislature shall select from among its Members a Vice President to serve throughout such Member's term.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article V, Section 1(c)
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: other-officers
+  value: Attorney General
+  quote: of the Department of Justice shall be called the Attorney General of the Ho-Chunk Nation.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VI, Section 1(b)
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: other-officers
+  value: Treasurer
+  quote: of the Department of the Treasury shall be called the Treasurer of the Ho-Chunk Nation.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VI, Section 1(b)
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: elections
+  value: First Tuesday in June of odd-numbered years
+  quote: General Elections shall be held on the first Tuesday in
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VIII, Section 1
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years old and who meets all other requirements established by the Ho-Chunk Nation
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VIII, Section 5
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: election-authority
+  value: Election Board
+  quote: The Election Board shall conduct all General and Special Elections.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VIII, Section 4
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: branches
+  value: General Council, Legislature, Executive, and Judiciary
+  quote: 'be composed of four (4) branches: General Council, Legislature, Executive, and Judiciary.'
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article III, Section 2
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: No branch of the government shall exercise the
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article III, Section 3
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: judiciary
+  value: Supreme Court and Trial Court
+  quote: Ho-Chunk Nation, a Trial Court of the Ho-Chunk Nation, such other lower courts of special
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VII, Section 1
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: judicial-selection
+  value: Supreme Court Justices elected by the voters
+  quote: by a majority vote of the eligible voters of the Ho-Chunk Nation, in accordance with the General
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VII, Section 10
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: judicial-selection
+  value: Trial Court judges appointed by the Legislature
+  quote: The Legislature shall appoint a
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VII, Section 11
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: judicial-term
+  value: 6 years (Chief Justice)
+  quote: The Chief Justice of the Supreme Court shall be elected to serve for six (6) years
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VII, Section 9
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: judicial-term
+  value: 4 years, staggered (Associate Justices)
+  quote: Thereafter, Associate Justices shall serve for four (4) year staggered terms.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VII, Section 9
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: judicial-term
+  value: 3 years, staggered (Trial Court)
+  quote: shall be appointed by the Legislature to serve for three (3)
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VII, Section 9
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: judicial-independence
+  value: Pay changes not effective until next General Election or appointment
+  quote: reasonable compensation. No increase or decrease in compensation for Justices or Judges shall
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article VII, Section 12
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: judicial-independence
+  value: Council may not overturn constitutional decisions of the courts
+  quote: The General Council does not retain the
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article IV, Section 3(b)
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: amendment
+  value: Majority vote of qualified voters in Secretarial election (30% turnout)
+  quote: This Constitution may be amended by a majority vote of the
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article XIII, Section 1
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: the Secretary of the Interior shall approve such amendment(s) within
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article XIII, Section 1
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: recall-and-removal
+  value: General Council may remove legislators for malfeasance
+  quote: may remove any member of the Legislature for malfeasance.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article IX, Section 1
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: recall-and-removal
+  value: General Council may remove President for malfeasance
+  quote: remove the President for malfeasance.
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article IX, Section 2
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: recall-and-removal
+  value: Legislature removes members for good cause, 3/4 vote
+  quote: The Legislature may remove a member
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article IX, Section 3
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: recall-and-removal
+  value: Legislature removes judges for good cause, 3/4 vote
+  quote: The Legislature may remove a Judge for
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article IX, Section 4
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: recall-and-removal
+  value: Recall vote at Special Election requested by General Council
+  quote: Judiciary shall be removable by recall vote at a Special Election requested by the General
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article IX, Section 5
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of district voters
+  quote: removable by a recall vote called by a petition of thirty (30) percent of an eligible voters of the
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article IX, Section 6
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
+- aspect: other
+  value: General Council may review and reverse Legislature actions
+  quote: The General Council retains the power to review and reverse actions of the
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-11-01'
+  locator: Article IV, Section 3(b)
+  document_version:
+    document: ho-chunk-nation-of-wisconsin-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors; the constitution follows a 1994 Interior approval letter and Article XVI certificate, and quotes are copied as read.'
 governing_documents:
 - kind: law-code
   title: Ho-Chunk Nation Code (HCC)

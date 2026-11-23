@@ -193,6 +193,231 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws under Section 16 of the Indian Reorganization Act
+  quote: in accordance with section 16 of the Indian Reorganization
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Certification of Adoption
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Cheyenne River Sioux Tribal Council
+  quote: Sioux Tribe shall consist of a council, known as the Cheyenne River Sioux
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article III, Section 1
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 15 councilmen plus 3 officers
+  quote: also fifteen (15) councilmen and
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article III, Section 2
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Chairman, secretary, treasurer elected at large; councilmen by district
+  quote: and the tribal treasurer shall be elected at large by popular vote
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article III, Section 3
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: thereafter the term of office for these officials shall be four years.
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article III, Section 4
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Tribal chairman
+  quote: It shall be the duty of the chairman to
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large by popular vote
+  quote: The tribal chairman, the tribal secretary,
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article III, Section 3
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: thereafter the term of office for these officials shall be four years.
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article III, Section 4
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Tribal secretary, tribal treasurer, assistant chairman
+  quote: one assistant chairman from their own membership.
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article III, Section 6
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years on the first Tuesday after the first Monday in September
+  quote: general elections will be held every two years on the first Tuesday
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article III, Section 4
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: 21 years of age or over, who have maintained legal residence on
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article V, Section 1
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Tribal council
+  quote: The tribal council shall have supervision
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article III, Section 7
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Council to establish a tribal court by ordinance
+  quote: for the establishment of a tribal court upon the reservation.
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority of qualified voters voting in a Secretary-called election
+  quote: may be amended by a majority of the qualified voters of the tribe voting
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article IX, Section 1
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: have been approved by the Secretary of the Interior.
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article IX, Section 1
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the council
+  quote: by two-thirds (2/3) vote of the council.
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article VI, Section 2
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 40% of electors
+  quote: upon petition of 40% of the electors
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article VI, Section 4
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Referendum by petition of 300 qualified voters
+  quote: Upon a petition of at least three hundred
+  source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-10-29'
+  locator: Article VII, Section 1
+  document_version:
+    document: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation-constitution
+    version: 1935-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Constitution

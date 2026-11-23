@@ -177,6 +177,86 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under Act of Congress of June 18, 1934
+  quote: by authority of the act of Congress J une 18, 1934, as amended
+  source: constitution-native-village-of-kivalina-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-07'
+  document_version:
+    document: native-village-of-kivalina-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Set by the Village at general meeting
+  quote: decide how members and officers of the governing body shall be chosen
+  source: constitution-native-village-of-kivalina-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-07'
+  locator: Article 3, Section 2
+  document_version:
+    document: native-village-of-kivalina-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Kivalina
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: All members of the Village 21 years of
+  source: constitution-native-village-of-kivalina-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-07'
+  locator: Article 5, Section 1
+  document_version:
+    document: native-village-of-kivalina-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of Village members in election called by Secretary of the Interior
+  quote: jority vote of the Village members voting in an election called by the
+  source: constitution-native-village-of-kivalina-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-07'
+  locator: Article 6
+  document_version:
+    document: native-village-of-kivalina-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior and by a ma-
+  source: constitution-native-village-of-kivalina-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-07'
+  locator: Article 6
+  document_version:
+    document: native-village-of-kivalina-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Membership decides kind of governing body at general meeting
+  quote: shall decide what kind of governing body it wishes to set up to speak
+  source: constitution-native-village-of-kivalina-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-07'
+  locator: Article 3, Section 1
+  document_version:
+    document: native-village-of-kivalina-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Constitution

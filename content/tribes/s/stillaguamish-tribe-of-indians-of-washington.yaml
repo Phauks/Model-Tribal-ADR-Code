@@ -180,6 +180,267 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
+governance:
+- aspect: form
+  value: Constitution pursuant to the Indian Reorganization Act of 1934
+  quote: pursuant to the Indian Reorganization Act of 1934 (48 Stat.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article I - Preamble
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Board of Directors
+  quote: shall be a six (6) member Board
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article IV
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 6 members
+  quote: shall be a six (6) member Board
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article IV
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected at regular elections
+  quote: Regular elections to choose tribal officials
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article V, Section 4
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: tnree (3) years in length on a staggered basis.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article V, Section 1
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All qualified voters who attend a properly called meeting
+  quote: qual if iea voters o? the Sti 1 1 aguami sh Tribe who attend a General Council
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article VIII, Section 1
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Board of Oirectors shall preside
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XII, Section 1
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Board from its members
+  quote: shall elect annually from its membership a Chairman,
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article IV
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: Secretary, Treasurer, and two (2) members.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article IV
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually in August, with annual General Council meeting
+  quote: meeting held during the month of August.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article V, Section 4
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: will be eighteen (18) years of age or over by the
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article V, Section 6
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election Committee
+  quote: on-going, impartial E lection Committee composed of three (3) qualified tribal
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article V, Section 5
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Inter-tribal court system until a separate Tribal Court is maintained
+  quote: by any existing inter-tribal court system designated by a resolution of the
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XI, Section 1
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Appointed by the Board of Directors, then elected
+  quote: will be maintained, the Board of Directors shall appoint three (3) qualified
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XI, Section 5
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: 3 years, staggered
+  quote: and all terms shall be three (3) years in length.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XI, Section 5
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Judges unseated only by recall procedure
+  quote: from office only in the manner set forth in Section 2 of Article VI.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XI, Section 6
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters in Secretarial election
+  quote: This Constitution may be amended by a majority vote of the qualified voters
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XVI
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: effective when approved by the Secretary of the Interior.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XVI
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by 4 Board votes after hearing
+  quote: remaining members of the Board must vote in favor of removal to
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article VI, Section 1(b)
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by 60% of ballots cast, on petition of 30 voters
+  quote: Sixty percent (60%) of those who cast ballots at such election must
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article VI, Section 2
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Board resolution of 4 votes triggers General Council referendum
+  quote: Upon receipt of a resolution adopted by an affirmative vote of at least four
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article X
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

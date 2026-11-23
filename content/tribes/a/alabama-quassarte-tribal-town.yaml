@@ -159,6 +159,135 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Oklahoma Indian Welfare Act of June 26, 1936
+  quote: he may prescribe pursuant to Section 3 of the Oklahoma
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: Article IV
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+- aspect: governing-body
+  value: Governing Committee
+  quote: twelve members of the Governing Commit-
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: Article V
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+- aspect: governing-body-size
+  value: 12 members plus the Chairman
+  quote: twelve members of the Governing Commit-
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: Article V
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+- aspect: head-of-government
+  value: Chief
+  quote: shall preside at all meetings of the members of the town.
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: By-Laws, Article I
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Alabama-Quassarte Tribal Town
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “*Chief (Subject to Tribal Leadership Dispute)”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the town membership
+  quote: by the town membership each fourth year thereafter.
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: Article V
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: present officers shall continue in office for a period of four years from
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: Article V
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+- aspect: other-officers
+  value: Second Chief, Secretary, Floor Speaker, Solicitor, Chairman of the Governing Committee
+  quote: In the absence of the Chief, the Second Chief shall presideat all
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: By-Laws, Article I
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+- aspect: elections
+  value: Every 4 years, by the town membership
+  quote: by the town membership each fourth year thereafter.
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: Article V
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+- aspect: voting-age
+  value: 21 for men, 18 for women
+  quote: Men shall be eligible to vote
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: Article VIII
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
+- aspect: amendment
+  value: Majority vote of members in a referendum; 30 per cent must vote
+  quote: vote of the members of the town, and shall be effective if approved
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-01-10'
+  locator: Article III
+  document_version:
+    document: alabama-quassarte-tribal-town-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; several Articles (including Article VII on removal) are garbled, so only legible lines are quoted; superseded 1939 Library of Congress copy.'
 governing_documents:
 - kind: constitution
   title: Constitution

@@ -5,13 +5,13 @@
  * to keep it.
  *
  * What goes: the account, its sessions and unused sign-in codes, and the
- * contributor profile with every confirmed version. What stays: a workspace
+ * contributor profile with every confirmed version and the profile picture. What stays: a workspace
  * member's row in `people` (reviews, drafts and the sealed activity log point
  * to it), with the email address and sign-in removed and the name kept or
  * replaced; and signed forms, which are records of consent and are changed or
  * withdrawn through the change or withdrawal request.
  */
-import type { D1Database, D1PreparedStatement } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { creditOf } from '#lib/contributors.ts';
 import type { SignedInAccount } from './contributor-profiles.ts';
 import { profileBySubject } from './contributor-profiles.ts';
@@ -26,7 +26,8 @@ export type DeletionResult = { outcome: 'deleted' } | { outcome: 'last-lead-auth
 export async function deleteAccount(
 	database: D1Database,
 	account: SignedInAccount,
-	keepName: boolean
+	keepName: boolean,
+	bucket?: R2Bucket
 ): Promise<DeletionResult> {
 	const person = await database
 		.prepare(`SELECT identifier, role FROM people WHERE sign_in_subject = ? AND status != 'removed'`)
@@ -104,5 +105,6 @@ export async function deleteAccount(
 		);
 	}
 	await database.batch(statements);
+	if (bucket && profile?.pictureKey) await bucket.delete(profile.pictureKey);
 	return { outcome: 'deleted' };
 }

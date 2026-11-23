@@ -106,6 +106,207 @@ government_structure:
   as_of: '1941'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Oklahoma Indian Welfare Act of June 26, 1936
+  quote: and powers offered to us by the Oklahoma Indian Welfare Act of Congress
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Preamble
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Business Committee
+  quote: The Business Committee shall have power to
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article IV, Section 3
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: Elected officers plus Advisory Committee members
+  quote: consist of the elected officers and all members of the Advisory Committee.
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article IV, Section 2
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by majority vote of members present
+  quote: Elections shall be by standing vote, a majority
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article VI, Section 3
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years
+  quote: of officers shall be held on the second Thursday in June of each second
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article VI, Section 1
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: Adult members of the Town, 21 or older
+  quote: shall be the adult members of the Town, both male and female who are 21
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article IV, Section 1
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Town King
+  quote: The Town King shall preside at all meetings
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Town King
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kialegee Tribal Town
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of members present
+  quote: Elections shall be by standing vote, a majority
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article VI, Section 3
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: of officers shall be held on the second Thursday in June of each second
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article VI, Section 1
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: 1st Warrior, 2nd Warrior, Secretary, Treasurer
+  quote: the Town King, 1st Warrior, 2nd Warrior, Secretary and the Treasurer.
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article V
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years, second Thursday in June
+  quote: of officers shall be held on the second Thursday in June of each second
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article VI, Section 1
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: Eligible voters shall be both male and female
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article VI, Section 4
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority of votes cast in referendum, 30% turnout
+  quote: by a majority of the votes cast, provided that at least 30 percent of the
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article X
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if approved by the Secretary of Interior, shall be submitted to a referendum
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article X
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by majority vote of membership after hearing
+  quote: The Town membership shall have power, by a majority
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article VIII, Section 1
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Grievance Committee investigates officers' misconduct
+  quote: The Grievance Committee shall investigate
+  source: university-of-oklahoma-indian-reorganization-act-kiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-06-12'
+  locator: Article VIII, Section 1
+  document_version:
+    document: kialegee-tribal-town-constitution
+    version: 1941-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Constitution

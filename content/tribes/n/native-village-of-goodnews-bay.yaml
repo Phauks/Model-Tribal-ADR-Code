@@ -150,6 +150,114 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Goodnews Bay
+governance:
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Council composed of a President and
+  source: constitution-native-village-of-goodnews-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-goodnews-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan carries a 2003 fax header and has OCR errors.'
+- aspect: governing-body-size
+  value: President and 4 members
+  quote: four members elected by the adult members of the Community.
+  source: constitution-native-village-of-goodnews-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-goodnews-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan carries a 2003 fax header and has OCR errors.'
+- aspect: governing-body-selection
+  value: Elected by adult members of the Community
+  quote: four members elected by the adult members of the Community.
+  source: constitution-native-village-of-goodnews-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-goodnews-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan carries a 2003 fax header and has OCR errors.'
+- aspect: governing-body-term
+  value: 1 year
+  quote: Each member of the Council shall serve for a term of
+  source: constitution-native-village-of-goodnews-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: native-village-of-goodnews-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan carries a 2003 fax header and has OCR errors.'
+- aspect: head-of-government
+  value: President
+  quote: composed of a President and
+  source: constitution-native-village-of-goodnews-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-goodnews-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan carries a 2003 fax header and has OCR errors.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Goodnews Bay
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Secretary-Treasurer
+  quote: The Secretary-Treasurer
+  source: constitution-native-village-of-goodnews-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: By-laws, Article I
+  document_version:
+    document: native-village-of-goodnews-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan carries a 2003 fax header and has OCR errors.'
+- aspect: voting-age
+  value: '18'
+  quote: members of village 18 years of age or over
+  source: constitution-native-village-of-goodnews-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-goodnews-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan carries a 2003 fax header and has OCR errors.'
+- aspect: amendment
+  value: Majority vote of adult members
+  quote: ratified by a majority vote of adult members, provided
+  source: constitution-native-village-of-goodnews-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII
+  document_version:
+    document: native-village-of-goodnews-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan carries a 2003 fax header and has OCR errors.'
+- aspect: recall-and-removal
+  value: Forfeiture on conviction of felony or dishonesty offense
+  quote: who is convicted of a felony or any other offense involving dishonesty
+  source: constitution-native-village-of-goodnews-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: native-village-of-goodnews-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan carries a 2003 fax header and has OCR errors.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

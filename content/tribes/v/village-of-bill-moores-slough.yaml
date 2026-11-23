@@ -131,6 +131,168 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Village of Bill Moore's Slough
+governance:
+- aspect: form
+  value: Constitution of the People of the Village of Bill Moore's Slough
+  quote: CONSTITUTION OF THE PEOPLE OF THE VILLAGE OF
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: governing-body
+  value: Bill Moore's Slough Elders Council
+  quote: shall be the Bill Moore’s Slough Elders Council to
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section I
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: governing-body-size
+  value: One member per 40 members, minimum 5
+  quote: be composed of one council member for every 40 members or no less than five council
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section I
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: governing-body-selection
+  value: Elected by voters
+  quote: Elections for the Elders Council shall be held every three years
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, C
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: The council shall be elected for a term of three years.
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, E
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman shall have the right to veto any legislation passed by the council.
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, C
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Village of Bill Moore's Slough
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: elections
+  value: Every 3 years, first Tuesday after the first Monday in November
+  quote: Elections for the Elders Council shall be held every three years on the first Tuesday after
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, C
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: voting-age
+  value: '18'
+  quote: All duly enrolled members of Bill Moore's Slough who ere eighteen (18) years of age or
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, A
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: election-authority
+  value: Election Board
+  quote: The Election Bosrd shall supervise all tribal elections
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, E
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: judiciary
+  value: Elders Council performs judicial functions
+  quote: perform oil Judicial function
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: amendment
+  value: 90% majority vote of eligible members
+  quote: This Constitution msy be ammended by a 90% majority vote of al^members eligibly
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XII
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: recall-and-removal
+  value: Recall by 80% majority vote of all eligible members
+  quote: Any Council Member may to recalled by an 80% majority vote by all members of Bill
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, B
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: recall-and-removal
+  value: Recall election on petition of 30% of membership
+  quote: verification by the Election Board of a petition of at least 30% of the
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XI
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
+- aspect: other
+  value: Initiative and referendum on petition of 30% of eligible members
+  quote: Upon request and verification by the Election Board of a petition of at least 30% of the
+  source: constitution-village-of-bill-moores-slough-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XI, B
+  document_version:
+    document: village-of-bill-moores-slough-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated BIA file copy that also contains a Land Policy (not reported here); Article VI (80% recall vote) and Article XI (30% petition) are read together and the copy is OCR-damaged.'
 governing_documents:
 - kind: constitution
   title: Constituion

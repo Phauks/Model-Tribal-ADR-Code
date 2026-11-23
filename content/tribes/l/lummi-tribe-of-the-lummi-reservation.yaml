@@ -161,6 +161,195 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
+governance:
+- aspect: form
+  value: Constitution and By-laws
+  quote: organization and promote our common welfare, do hereby establish this Constitution
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Preamble
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Business Council
+  quote: shall be a Business Council of eleven members elected by popular vote of
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 1
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 11 members
+  quote: shall be a Business Council of eleven members elected by popular vote of
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 1
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by popular vote of adult members
+  quote: shall be a Business Council of eleven members elected by popular vote of
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 1
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: be three years unless otherwise provided herein.
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 2
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: General council called annually on election day
+  quote: The Chairman of the Lummi Business Council shall call a general council
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article V, Section 4
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Business Council shall preside over all meetings of
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Bylaws Article I, Section 1
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lummi Tribe of the Lummi Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Business Council from its own number
+  quote: from within its own number (1) a Chairman, (2) a Vice-Chairman, (3) a Secretary,
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 3
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: and (4) a Treasurer, and may appoint or employ such other officers or committees
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 3
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: First week of January each year
+  quote: after which three councilmen shall be elected the first week in
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 5
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: of the Lummi Reservation twenty-one (21) years of age or over who have
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 4
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Council may establish a reservation court by ordinance
+  quote: and order and the administration of justice by establishing a reservation
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article V, Section 1(k)
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters at election called for that purpose
+  quote: majority vote of the qualified voters of the Lummi Tribe voting at an election
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article VI
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by majority vote of Business Council
+  quote: vote, expel any councilmen or officer for neglect of duty and gross misconduct.
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article IV, Section 2
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Ordinances subject to Commissioner of Indian Affairs approval
+  quote: the approval of the Commissioner of Indian Affairs, governing the conduct
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article V, Section 1(k)
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Lummi Tribe of the Lummi Reservation - Constitution and Bylaws

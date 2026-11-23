@@ -177,6 +177,183 @@ government_structure:
   as_of: '1940'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution approved under the Act of June 18, 1934
+  quote: the act of June 18, 1934 (48 Stat. 984), as amended, do hereby approve
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Approval
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: governing-body
+  value: Goshute Business Council
+  quote: members,to be known as the Goshute Business Council.
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article IV, Section 1
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: shall consist of the council of five
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article IV, Section 1
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: All elections shall be by secret ballot to be held in accordance
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article V, Section 4
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: shall be three years, except as provided in
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article IV, Section 1
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: general-council
+  value: Annual meeting of the Tribes
+  quote: shall call a meeting of the Tribes annually
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Time and Place of Regular Meetings and Procedure, Section 2
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: head-of-government
+  value: Chairman
+  quote: (1) a chairman, (2) a vice-chairman, and from within
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article IV, Section 2
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its own number
+  quote: The Business Council so organized shall elect from within its
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article IV, Section 2
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: other-officers
+  value: Vice-chairman, Secretary, Treasurer
+  quote: (3) a secretary, and (4) a treasurer, and may appoint or
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article IV, Section 2
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: voting-age
+  value: '21'
+  quote: twenty-one years shall have the right to vote
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article VIII, Section 1
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: amendment
+  value: Majority of voters in election called by Secretary, on 4-member Council vote
+  quote: Whenever the Business Council shall by a vote of four or more
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article XI
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by him,
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article XI
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: recall-and-removal
+  value: Expulsion by four Council votes
+  quote: may, by four affirmative
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article VI, Section 2
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: calling for the recall of any member of the
+  source: constitution-confederated-tribes-of-the-goshute-reservation-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-11-25'
+  locator: Article VI, Section 3
+  document_version:
+    document: confederated-tribes-of-the-goshute-reservation-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled in places; quotes keep the reading errors, and the text is the 1940 original with no amendments.'
 governing_documents:
 - kind: law-code
   title: Ordinance Adopting Law and Order Code and Creating Tribal Court, Confederated Tribes of the Goshute

@@ -21,7 +21,7 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 				heading: printedSectionHeadings[section],
 				entries: credits
 					.filter((credit) => credit.section === section)
-					.map(({ line, biography }) => ({ line, biography }))
+					.map(({ line, biography, slug }) => ({ line, biography, slug }))
 			}))
 			.filter((section) => section.entries.length > 0)
 	};

@@ -159,6 +159,195 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Lake Band of Chippewa Indians, Minnesota
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: shall be the Tribal Council and shall consist of
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 1
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: governing-body-size
+  value: 8 district representatives and 3 officers
+  quote: 8 district representatives and 3 officers
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 1
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: governing-body-selection
+  value: Representatives by district; officers elected by popular vote
+  quote: shall be elected by popular vote regardless of district.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 3
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: shall hold office for 4 years.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article V, Section 7(c)
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman, He shall preside at all regular and special meetings.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: By-laws, Article II, Section 1
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Red Lake Band of Chippewa Indians, Minnesota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by popular vote, band-wide
+  quote: shall be elected by popular vote regardless of district.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 3
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: other-officers
+  value: Secretary, Treasurer
+  quote: Secretary, He shall keep the minutes at the principal
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: By-laws, Article II, Sections 2-3
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: elections
+  value: Every 2 years, in May of even-numbered years
+  quote: the governing body shall be held during the month of May in even
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article V, Section 7(d)
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: voting-age
+  value: '18'
+  quote: the band 18 y® ar s of age and over
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article V, Section 2(a), as amended by Amendment I
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: election-authority
+  value: Tribal Council, by ordinance
+  quote: under the supervision of the Tribal Council who shall enact an ordinance
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article V, Section 4
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: judiciary
+  value: Tribal court established by ordinance
+  quote: and. a tribal court
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article VI, Section 5
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called for that purpose
+  quote: a majority of the qualified voters of the Red Lake Band at an election
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article XI, Section 2(a)
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall become effective until it shall have been approved by the Secretary of the Interior,
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article XI, Section 2(a)
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: recall-and-removal
+  value: Removal or recall grounds set by ordinance
+  quote: shall prescribe regulations, charges and reasons for removal or recall
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article X, Section 2
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: other
+  value: Advisory Council of 7 hereditary chiefs
+  quote: an Advisory Council composed of 7 Hereditary Chiefs of the Band.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
 governing_documents:
 - kind: law-code
   title: Election ordinance

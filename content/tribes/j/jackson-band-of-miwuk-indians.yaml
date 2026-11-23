@@ -119,6 +119,231 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Jackson Band of Miwuk Indians
+governance:
+- aspect: form
+  value: Pursuant to the Indian Reorganization Act of June 18, 1934
+  quote: establish this Constitution pursuant to the Indian Reorganization
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Preamble
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Band shall be the
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article III, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: Tribal Council, which shall consist of five (5) tribal members
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article III, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by the qualified voters
+  quote: each elected by the qualified voters in an
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article III, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: serve a term of four (4) years, except that for the first
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article IV, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All members of the Band, 18 or older
+  quote: The General Council shall consist of all
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article III, Section 2
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  quote: preside at all meetings of the Tribal Council and of the
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article VIII, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Jackson Band of Miwuk Indians
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the qualified voters
+  quote: each elected by the qualified voters in an
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article III, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: serve a term of four (4) years, except that for the first
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article IV, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary-Treasurer
+  quote: consist of a Chairperson, Vice-Chairperson, Secretary-Treasurer,
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article III, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every other year, staggered
+  quote: be held every other year on a staggered basis
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article IV, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: least eighteen { 18 ) years of age as of the date of an election
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article IV, Section 2
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election Committee
+  quote: scheduled and conducted by the Election Committee pursuant to an
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article IV, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Council may establish a judicial system
+  quote: To establish a judicial system, law enforcement
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article VI, Section 1(s)
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters in a Secretary-called election (30% turnout)
+  quote: majority vote of the qualified voters of the Band voting in an
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article XII, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approval by the Secretary of the Interior or his authorized
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article XII, Section 1
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by Council majority vote for listed causes
+  quote: 'member by a majority vote for any of the following reasons:'
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article V, Section 2
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 40% of qualified voters
+  quote: least forty percent (40%) of the qualified voters of the Band,
+  source: constitution-jackson-band-of-miwuk-indians-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1997-01
+  locator: Article V, Section 3
+  document_version:
+    document: jackson-band-of-miwuk-indians-constitution
+    version: 1997-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 gaming:
   compacts:
   - state: CA
