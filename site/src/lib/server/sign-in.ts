@@ -11,6 +11,7 @@ import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import type { Cookies } from '@sveltejs/kit';
 import {
 	endAllSessions,
+	oldSessionCookie,
 	sessionCookie,
 	startSession,
 	type Account,
@@ -38,13 +39,19 @@ export function safeReturnPath(candidate: string | null | undefined): string {
 	}
 }
 
-/** Sets the session cookie: HTTP-only, so page scripts cannot read it; SameSite=Lax; Secure except on localhost. */
+/**
+ * Sets the session cookie: HTTP-only, so page scripts cannot read it;
+ * SameSite=Lax; and Secure, which its `__Host-` name requires. Browsers treat
+ * http://localhost as secure, so this works on a copy running on this
+ * computer too.
+ */
 export function setSessionCookie(cookies: Cookies, token: string, expiresAt: Date): void {
-	cookies.set(sessionCookie, token, { path: '/', httpOnly: true, sameSite: 'lax', expires: expiresAt });
+	cookies.set(sessionCookie, token, { path: '/', httpOnly: true, secure: true, sameSite: 'lax', expires: expiresAt });
 }
 
 export function clearSessionCookie(cookies: Cookies): void {
-	if (cookies.get(sessionCookie) !== undefined) cookies.delete(sessionCookie, { path: '/' });
+	if (cookies.get(sessionCookie) !== undefined) cookies.delete(sessionCookie, { path: '/', secure: true });
+	if (cookies.get(oldSessionCookie) !== undefined) cookies.delete(oldSessionCookie, { path: '/' });
 }
 
 export type FinishedSignIn =
