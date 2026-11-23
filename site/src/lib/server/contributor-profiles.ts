@@ -8,6 +8,7 @@
 import type { D1Database, D1PreparedStatement } from '@cloudflare/workers-types/index.ts';
 import {
 	creditOf,
+	defaultCreditSection,
 	type Availability,
 	type ContactMethod,
 	type CreditForm,
@@ -58,9 +59,10 @@ interface ProfileRow {
 	status: ProfileStatus;
 	given_name: string | null;
 	family_name: string | null;
+	native_name: string | null;
 	phone: string | null;
 	preferred_contact: ContactMethod | null;
-	adult_confirmed: number;
+	thirteen_or_older: number;
 	nation_answer: NationAnswer | null;
 	background: string | null;
 	languages: string | null;
@@ -107,9 +109,10 @@ async function completeProfile(database: D1Database, row: ProfileRow): Promise<P
 		answers: {
 			givenName: row.given_name,
 			familyName: row.family_name,
+			nativeName: row.native_name,
 			phone: row.phone,
 			preferredContact: row.preferred_contact,
-			adultConfirmed: Boolean(row.adult_confirmed),
+			thirteenOrOlder: Boolean(row.thirteen_or_older),
 			nationAnswer: row.nation_answer,
 			nations: nations.results.map((nation) => ({ ...nation, showInCredit: Boolean(nation.showInCredit) })),
 			background: row.background,
@@ -216,9 +219,10 @@ export async function saveAnswers(
 	const values = [
 		answers.givenName,
 		answers.familyName,
+		answers.nativeName,
 		answers.phone,
 		answers.preferredContact,
-		answers.adultConfirmed ? 1 : 0,
+		answers.thirteenOrOlder ? 1 : 0,
 		answers.nationAnswer,
 		answers.background,
 		answers.languages,
@@ -233,7 +237,7 @@ export async function saveAnswers(
 		answers.biography,
 		answers.biographyInCredits ? 1 : 0
 	];
-	const columns = `given_name, family_name, phone, preferred_contact, adult_confirmed, nation_answer,
+	const columns = `given_name, family_name, native_name, phone, preferred_contact, thirteen_or_older, nation_answer,
 		background, languages, organization, availability, credit_form, credit_name, credit_role,
 		credit_pseudonym, credit_in_book, credit_on_website, biography, biography_in_credits`;
 
@@ -293,14 +297,16 @@ export async function confirmProfile(database: D1Database, profile: Profile): Pr
 			.prepare(
 				`UPDATE contributor_profiles
 				 SET confirmed_version = ?, confirmed_at = ?, updated_at = ?,
-				     status = CASE WHEN status = 'draft' THEN 'submitted' ELSE status END,
-				     submitted_at = COALESCE(submitted_at, ?)
+				     status = CASE WHEN status IN ('draft', 'submitted') THEN 'welcomed' ELSE status END,
+				     submitted_at = COALESCE(submitted_at, ?),
+				     decided_at = COALESCE(decided_at, ?),
+				     credit_section = COALESCE(credit_section, ?)
 				 WHERE identifier = ?`
 			)
-			.bind(version, time, time, time, profile.identifier),
+			.bind(version, time, time, time, time, defaultCreditSection(profile.answers.interests), profile.identifier),
 		eventStatement(database, {
 			personIdentifier: profile.personIdentifier,
-			action: firstSend ? 'Confirmed the profile and sent the registration' : `Confirmed version ${version} of the profile`,
+			action: firstSend ? 'Confirmed the profile and signed up' : `Confirmed version ${version} of the profile`,
 			targetKind: 'profile',
 			targetIdentifier: profile.identifier
 		})

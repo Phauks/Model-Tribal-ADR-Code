@@ -82,24 +82,30 @@ export const creditFormLabels: Record<CreditForm, string> = {
 };
 
 /** Where the project places a credit in the book. Set by the lead author, not the person. */
-export const creditSections = ['acknowledgments', 'reviewers', 'contributors', 'advisors'] as const;
+export const creditSections = ['acknowledgments', 'reviewers', 'contributors'] as const;
 export type CreditSection = (typeof creditSections)[number];
 
 export const creditSectionLabels: Record<CreditSection, string> = {
 	acknowledgments: 'Acknowledgments',
 	reviewers: 'Reviewers',
-	contributors: 'Contributors (with biographies)',
-	advisors: 'Advisors'
+	contributors: 'Contributors (with biographies)'
 };
+
+/** Where a credit goes until the lead author moves it: writers under Contributors, reviewers under Reviewers, everyone else under Thanks. */
+export function defaultCreditSection(chosen: readonly Interest[]): CreditSection {
+	if (chosen.includes('write')) return 'contributors';
+	if (chosen.includes('review')) return 'reviewers';
+	return 'acknowledgments';
+}
 
 export const profileStatuses = ['draft', 'submitted', 'welcomed', 'declined'] as const;
 export type ProfileStatus = (typeof profileStatuses)[number];
 
 export const profileStatusLabels: Record<ProfileStatus, string> = {
 	draft: 'Not sent yet',
-	submitted: 'Sent; waiting for the lead author',
-	welcomed: 'Welcomed',
-	declined: 'Declined'
+	submitted: 'Sent',
+	welcomed: 'Signed up',
+	declined: 'Removed'
 };
 
 export interface NationAffiliation {
@@ -114,9 +120,11 @@ export interface NationAffiliation {
 export interface ProfileAnswers {
 	givenName: string | null;
 	familyName: string | null;
+	/** A Native name or another name the person goes by. Printed only if they write it in their credit. */
+	nativeName: string | null;
 	phone: string | null;
 	preferredContact: ContactMethod | null;
-	adultConfirmed: boolean;
+	thirteenOrOlder: boolean;
 	nationAnswer: NationAnswer | null;
 	nations: NationAffiliation[];
 	background: string | null;
@@ -137,9 +145,10 @@ export interface ProfileAnswers {
 export const emptyAnswers: ProfileAnswers = {
 	givenName: null,
 	familyName: null,
+	nativeName: null,
 	phone: null,
 	preferredContact: null,
-	adultConfirmed: false,
+	thirteenOrOlder: false,
 	nationAnswer: null,
 	nations: [],
 	background: null,
@@ -221,9 +230,9 @@ export function creditOf(answers: ProfileAnswers): Credit | null {
 export function missingAnswers(answers: ProfileAnswers): Record<string, string> {
 	const missing: Record<string, string> = {};
 	if (!answers.givenName) missing.givenName = 'Give the name you would like us to use.';
-	if (!answers.adultConfirmed) {
-		missing.adultConfirmed =
-			'Registration on the website is for adults. A young person can help with a parent or guardian through the request form.';
+	if (!answers.thirteenOrOlder) {
+		missing.thirteenOrOlder =
+			'Signing up on the website is for people 13 or older. Someone younger can help with a parent or guardian through the request form.';
 	}
 	if ((answers.preferredContact === 'phone' || answers.preferredContact === 'text-message') && !answers.phone) {
 		missing.phone = 'Give a phone number, or choose email as the way to reach you.';

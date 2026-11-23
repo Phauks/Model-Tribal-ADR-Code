@@ -10,7 +10,6 @@
 
 	let { data }: PageProps = $props();
 
-	const waiting = $derived(data.profiles.filter((profile) => profile.status === 'submitted').length);
 
 	function date(value: string | null): string {
 		return value ? new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' }) : '';
@@ -23,14 +22,12 @@
 
 <h1>Contributors</h1>
 <p class="lead">
-	People who registered to help. {waiting === 0
-		? 'Nobody is waiting for an answer.'
-		: `${waiting} ${waiting === 1 ? 'registration is' : 'registrations are'} waiting for an answer.`}
-	Profiles that were started but not sent stay private to the person.
+	People who signed up to help. Everyone who confirms is signed up; you can remove anyone from their
+	page. Profiles that were started but not confirmed stay private to the person.
 </p>
 
 {#if data.profiles.length === 0}
-	<p>Nobody has registered yet. People register at <a href="/join">/join</a>.</p>
+	<p>Nobody has signed up yet. People sign up at <a href="/join">/join</a>.</p>
 {:else}
 	<div class="table-scroll" role="region" aria-label="Table: contributors" {@attach keyboardScroll}>
 		<table>
@@ -63,7 +60,7 @@
 <section>
 	<h2>Credits as they would be printed today</h2>
 	<p>
-		Welcomed contributors placed in a section, from the version each person last confirmed, in order
+		Signed-up contributors placed in a section, from the version each person last confirmed, in order
 		of family name. Changes a person has not confirmed are never used. Website credits show on the
 		public <a href="/contributors">Contributors</a> page at once.
 	</p>

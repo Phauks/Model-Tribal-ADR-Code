@@ -23,6 +23,9 @@
 	import UserRound from '@lucide/svelte/icons/user-round';
 	import Upload from '@lucide/svelte/icons/upload';
 	import LayoutDashboard from '@lucide/svelte/icons/layout-dashboard';
+	import Bell from '@lucide/svelte/icons/bell';
+	import { followingState } from '#lib/following-state.svelte.ts';
+	import { unreadLabel } from '#lib/following.ts';
 	import { roleLabels, type Role } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 
@@ -56,7 +59,17 @@
 	const signedIn = $derived(hintSignedIn || fromPage !== undefined);
 	const hasWorkspace = $derived(hintHasWorkspace || page.data.person !== undefined);
 
+	// Updates to followed pages the reader has not seen: a number on the
+	// button and beside Following in the list (site/DESIGN.md, "Follow").
+	let mounted = $state(false);
+	const unread = $derived(signedIn && followingState.current.signedIn ? followingState.current.unread : 0);
+
+	$effect(() => {
+		if (mounted && signedIn) void followingState.refresh(page.url.pathname);
+	});
+
 	onMount(() => {
+		mounted = true;
 		const hint = readSignedInHint(document.cookie);
 		hintSignedIn = hint.signedIn;
 		hintHasWorkspace = hint.workspacePageNames.length > 0;
@@ -104,11 +117,12 @@
 			type="button"
 			aria-expanded={open}
 			aria-controls="account-links"
-			aria-label="Your account"
-			title="Your account"
+			aria-label={unread > 0 ? `Your account: ${unread} new ${unread === 1 ? 'update' : 'updates'} to pages you follow` : 'Your account'}
+			title={unread > 0 ? `Your account. ${unread} new ${unread === 1 ? 'update' : 'updates'} to pages you follow` : 'Your account'}
 			onclick={() => (open = !open)}
 		>
 			<UserRound size={24} />
+			{#if unread > 0}<span class="unread-badge" aria-hidden="true">{unreadLabel(unread)}</span>{/if}
 		</button>
 		<ul id="account-links" class="account-links" hidden={!open}>
 			<li class="signed-in-as">
@@ -124,6 +138,13 @@
 				<a href="/profile" data-sveltekit-reload>
 					<UserRound size={20} strokeWidth={1.75} />
 					Your profile
+				</a>
+			</li>
+			<li>
+				<a href="/following" data-sveltekit-reload>
+					<Bell size={20} strokeWidth={1.75} />
+					Following
+					{#if unread > 0}<span class="unread-count">{unreadLabel(unread)} new</span>{/if}
 				</a>
 			</li>
 			<li>
@@ -195,6 +216,35 @@
 	/* Round, like a profile picture, so it reads as the account and not as another setting. */
 	.account-button {
 		border-radius: 50%;
+	}
+
+	.account-button {
+		position: relative;
+	}
+
+	/* The number of new updates, on the button's corner, in the action color. */
+	.unread-badge {
+		position: absolute;
+		top: 2px;
+		right: 0;
+		min-width: 1.25rem;
+		padding: 0 0.3rem;
+		border-radius: 0.625rem;
+		background: var(--color-action);
+		color: var(--color-action-text);
+		font-size: 0.75rem;
+		font-weight: var(--font-weight-bold);
+		line-height: 1.25rem;
+		text-align: center;
+		pointer-events: none;
+	}
+
+	.unread-count {
+		margin-left: auto;
+		padding-left: var(--space-3);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-action);
 	}
 
 	.account-button[aria-expanded='true'] {

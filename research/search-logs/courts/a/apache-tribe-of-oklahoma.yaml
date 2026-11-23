@@ -1,7 +1,7 @@
 profile: content/tribes/a/apache-tribe-of-oklahoma.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -152,6 +152,64 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Southern Plains CFR Court page lists Apache Tribe of Oklahoma among tribes located in the court and names the Court of Indian Appeals.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Oklahoma tribal courts directory Supreme Court Oklahoma Apache Tribe Tonkawa Alabama-Quassarte
+    court
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: No Oklahoma court system list of tribal courts came up; the
+    results were maps, university lists and the Bureau of Indian Affairs'' Southern Plains Court of Indian
+    Offenses page, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://bia.gov/regional-offices/southern-plains/court-indian-offenses
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Status 200; the page tells the court''s history (the Kiowa,
+    Comanche and Apache reservation) and does not name this nation among the Tribes it serves now.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Apache Tribe of Oklahoma tribal court Anadarko
+  outcome: found
+  reason: 'Second search: “Tribal Court”: The results led to the Bureau of Indian Affairs'' Southern Plains
+    CFR Court page, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts/southern-plains-cfr-court
+  query: 'scripts/review/service_links.py second: Apache Tribe of Oklahoma'
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Bureau of Indian Affairs, Southern Plains CFR Court (status
+    200): its list of "Tribes located in the Southern Plains CFR Court" names the Apache Tribe of Oklahoma.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: The association''s site shows programs, membership and regions;
+    it publishes no directory of tribal courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): directory, https://www.bia.gov/CFRCourts/southern-plains-cfr-court.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-020
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-021,
   not-found-after-search). No page or official directory entry was found on 2026-11-22 for “Tribal Court”
+  (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23 linked “Tribal Court”
   (research/reviews/2026-11-22-service-links.json).'

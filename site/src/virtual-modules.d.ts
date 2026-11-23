@@ -65,3 +65,8 @@ declare module 'cloudflare:workers' {
 	/** The Worker's bindings and secrets (src/app.d.ts). */
 	export const env: WorkerEnvironment;
 }
+
+declare module 'virtual:followable-pages' {
+	/** The pages built with the site that readers can follow, with a fingerprint of each (src/lib/server/following.ts). */
+	export const followableBuild: import('#lib/server/following.ts').FollowableBuild;
+}

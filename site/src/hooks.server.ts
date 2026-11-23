@@ -17,10 +17,10 @@ import { permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
 
 /** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests', '/uploads'];
+const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests', '/following', '/uploads'];
 
 /** Pages that need to know who is signed in. */
-const signedInPrefixes = ['/workspace', '/profile', '/sign-in', '/uploads', '/files'];
+const signedInPrefixes = ['/workspace', '/profile', '/sign-in', '/following', '/uploads', '/files'];
 
 /**
  * Pieces of files people send (src/lib/server/uploads.ts). A large file is
