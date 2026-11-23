@@ -49,6 +49,23 @@ states:
   confidence: low
   verification: bulk-import
   as_of: '2016-12-14'
+contacts:
+- kind: website
+  value: http://mackinacbandsorg.blogspot.com/
+  label: Official website
+  source: mackinacbandsorg-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: email-general
+  value: mackbands@gmail.com
+  label: General office email shown on the nation's website
+  source: mackinacbandsorg-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as text on the page; the site was found by web search.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'
