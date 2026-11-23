@@ -153,6 +153,15 @@
 	</section>
 {/if}
 
+<section class="nation-team" aria-labelledby="nation-team-heading">
+	<h2 id="nation-team-heading">Your nation’s page</h2>
+	<p>
+		If your nation chooses you to keep its page up to date, you can ask for a place on its team. Once your
+		nation’s office confirms you, your changes go live on the page, labeled as coming from the nation.
+	</p>
+	<p><a class="button button-quiet" href="/profile/nation-team">Ask to edit your nation’s page</a></p>
+</section>
+
 <section class="leave" aria-labelledby="leave-heading">
 	<h2 id="leave-heading">Delete your account</h2>
 	<p>
@@ -163,6 +172,12 @@
 </section>
 
 <style>
+	.nation-team {
+		margin-top: var(--space-6);
+		border-top: 1px solid var(--color-line);
+		padding-top: var(--space-4);
+	}
+
 	.own-picture {
 		width: 8rem;
 		height: 8rem;

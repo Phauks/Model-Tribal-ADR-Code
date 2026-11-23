@@ -1,0 +1,38 @@
+profile: content/tribes/c/cow-creek-band-of-umpqua-tribe-of-indians.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Cow Creek Umpqua tribal court video
+  outcome: not-found
+  reason: Results were tribal announcements, NARF peacemaking training notices and a PBS listing, with no court video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Cow Creek peacemaking youtube
+  outcome: not-found
+  reason: Results were NARF peacemaking training pages and tribal news, with no YouTube channel of the nation found.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.cowcreek-nsn.gov/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=eVS-oONIUDM
+  query: title and channel of the video
+  outcome: not-found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "Cow Creek Band of Umpqua Indians: Connecting with the Land" on the Museum of Natural and Cultural History channel, public and embeddable on 2026-11-23. Checked later: what turned up is not about the nation''s court or peacemaking, so it is not a candidate.'
+next_steps: The video found in the first pass (eVS-oONIUDM) is "Connecting with the Land" from the Museum of Natural and Cultural History, not about the court.

@@ -19,6 +19,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'reviews',
 			'contributors',
 			'people',
+			'nation-teams',
 			'access',
 			'address-book',
 			'changes',

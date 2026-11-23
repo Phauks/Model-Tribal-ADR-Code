@@ -1,0 +1,46 @@
+profile: content/tribes/s/spirit-lake-tribe.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Spirit Lake Tribe Wodakota traditional court video
+  outcome: not-found
+  reason: Results were NCORJ and NARF text pages, a North Dakota court committee minutes PDF and a history PDF, with no video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Spirit Lake Nation peacemaking podcast
+  outcome: not-found
+  reason: Results were general peacemaking podcasts and NARF pages, with no Spirit Lake podcast.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.spiritlakenation.com/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+next_steps: Fetch https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/ and its civil and criminal division pages for embedded video, and check the North Dakota Indian Affairs media page at https://www.indianaffairs.nd.gov/media-and-publications.

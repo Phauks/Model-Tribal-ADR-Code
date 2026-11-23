@@ -1,0 +1,46 @@
+profile: content/tribes/t/the-choctaw-nation-of-oklahoma.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Choctaw Nation of Oklahoma tribal court video
+  outcome: found
+  reason: The results include a page titled Judicial Center Video Tour on the nation's own news and videos section; the page was not opened.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: podcast-site
+  address: Web search (the AI assistant's search tool)
+  query: Choctaw Nation peacemaker podcast
+  outcome: not-found
+  reason: Results were general podcasts and one Choctaw Nation peacemaking training item on NARF; the Native ChocTalk show was not checked for court content.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.choctawnationcourt.com/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.choctawnationcourt.com/courts/appellate-court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.choctawnation.com/news/videos/judicial-center-video-tour/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+next_steps: Open the Judicial Center Video Tour page to read its rights statement and confirm what it shows. The court site choctawnationcourt.com, including its Peacemakers page at /?p=64, was not opened because the fetch budget ran out. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.
