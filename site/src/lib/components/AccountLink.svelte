@@ -5,12 +5,11 @@
 	// (src/lib/signed-in-hint.ts). Once someone has signed in, a profile button
 	// takes its place (Trevor asked for this on Nov. 22, 2026). It opens a
 	// short list, following the WAI-ARIA disclosure pattern rather than a
-	// menu, since the items are plain links and a form: who is signed in, Your
-	// profile, Your uploads (docs/uploads.md), Following, Workspace (for people
-	// with workspace access), Account settings and Sign out. The password moved
-	// into Account settings, under Sign-in and security (site/DESIGN.md,
-	// section 6, "Settings and Account"). Trevor asked on Nov. 22, 2026 for "Signed in as" and Sign out to
-	// live here rather than across the top of the workspace and profile pages.
+	// menu: who is signed in, and Sign out. Everything else that was here,
+	// the account pages, Following and the Workspace, is in the left sidebar
+	// (Trevor, Nov. 23, 2026; src/lib/account-menu.ts). Trevor asked on Nov.
+	// 22, 2026 for "Signed in as" and Sign out to live here rather than across
+	// the top of the workspace and profile pages.
 	//
 	// The workspace and profile pages know who is signed in; they keep the name
 	// on this device (localStorage), so the pages built ahead of time can show
@@ -31,12 +30,7 @@
 	import LogIn from '@lucide/svelte/icons/log-in';
 	import LogOut from '@lucide/svelte/icons/log-out';
 	import UserRound from '@lucide/svelte/icons/user-round';
-	import UserRoundCog from '@lucide/svelte/icons/user-round-cog';
-	import Upload from '@lucide/svelte/icons/upload';
-	import LayoutDashboard from '@lucide/svelte/icons/layout-dashboard';
-	import Bell from '@lucide/svelte/icons/bell';
 	import { followingState } from '#lib/following-state.svelte.ts';
-	import { unreadLabel } from '#lib/following.ts';
 	import { roleLabels, type Role } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SignInState } from '#lib/sign-in-state.ts';
@@ -53,7 +47,6 @@
 	const nameStorageKey = 'signed-in-as';
 
 	let hintSignedIn = $state(false);
-	let hintHasWorkspace = $state(false);
 	let remembered = $state<SignedInAs | undefined>(undefined);
 	let open = $state(false);
 	let container: HTMLDivElement | undefined = $state();
@@ -73,12 +66,10 @@
 	const signedInAs = $derived(fromPage ?? remembered);
 	// The pages the Worker renders know at once; the others wait for the hint.
 	const signedIn = $derived(hintSignedIn || fromPage !== undefined);
-	const hasWorkspace = $derived(hintHasWorkspace || page.data.person !== undefined);
 
-	// Updates to followed pages the reader has not seen: a number on the
-	// button and beside Following in the list (site/DESIGN.md, "Follow").
+	// What the reader follows and how many updates they have not seen, for the
+	// Follow button and the sidebar's Following entry (site/DESIGN.md, "Follow").
 	let mounted = $state(false);
-	const unread = $derived(signedIn && followingState.current.signedIn ? followingState.current.unread : 0);
 
 	$effect(() => {
 		if (mounted && signedIn) void followingState.refresh(page.url.pathname);
@@ -138,7 +129,6 @@
 		mounted = true;
 		const hint = readSignedInHint(document.cookie);
 		hintSignedIn = hint.signedIn;
-		hintHasWorkspace = hint.workspacePageNames.length > 0;
 		try {
 			if (fromPage) localStorage.setItem(nameStorageKey, JSON.stringify(fromPage));
 			else if (!signedIn) {
@@ -189,12 +179,11 @@
 			type="button"
 			aria-expanded={open}
 			aria-controls="account-links"
-			aria-label={unread > 0 ? `Your account: ${unread} new ${unread === 1 ? 'update' : 'updates'} to pages you follow` : 'Your account'}
-			title={unread > 0 ? `Your account. ${unread} new ${unread === 1 ? 'update' : 'updates'} to pages you follow` : 'Your account'}
+			aria-label="Your account"
+			title="Your account"
 			onclick={() => (open = !open)}
 		>
 			<UserRound size={24} />
-			{#if unread > 0}<span class="unread-badge" aria-hidden="true">{unreadLabel(unread)}</span>{/if}
 		</button>
 		<ul id="account-links" class="account-links" hidden={!open}>
 			<li class="signed-in-as">
@@ -205,39 +194,6 @@
 				{:else}
 					<span>You are signed in.</span>
 				{/if}
-			</li>
-			<li>
-				<a href="/profile" data-sveltekit-reload>
-					<UserRound size={20} strokeWidth={1.75} />
-					Your profile
-				</a>
-			</li>
-			<li>
-				<a href="/following" data-sveltekit-reload>
-					<Bell size={20} strokeWidth={1.75} />
-					Following
-					{#if unread > 0}<span class="unread-count">{unreadLabel(unread)} new</span>{/if}
-				</a>
-			</li>
-			<li>
-				<a href="/uploads" data-sveltekit-reload>
-					<Upload size={20} strokeWidth={1.75} />
-					Your uploads
-				</a>
-			</li>
-			{#if hasWorkspace}
-				<li>
-					<a href="/workspace" data-sveltekit-reload>
-						<LayoutDashboard size={20} strokeWidth={1.75} />
-						Workspace
-					</a>
-				</li>
-			{/if}
-			<li>
-				<a href="/account" data-sveltekit-reload>
-					<UserRoundCog size={20} strokeWidth={1.75} />
-					Account settings
-				</a>
 			</li>
 			<li>
 				<form method="post" action="/sign-out" onsubmit={forgetName}>
@@ -397,34 +353,8 @@
 		border-radius: 50%;
 	}
 
-	.account-button {
-		position: relative;
-	}
 
-	/* The number of new updates, on the button's corner, in the action color. */
-	.unread-badge {
-		position: absolute;
-		top: 2px;
-		right: 0;
-		min-width: 1.25rem;
-		padding: 0 0.3rem;
-		border-radius: 0.625rem;
-		background: var(--color-action);
-		color: var(--color-action-text);
-		font-size: 0.75rem;
-		font-weight: var(--font-weight-bold);
-		line-height: 1.25rem;
-		text-align: center;
-		pointer-events: none;
-	}
 
-	.unread-count {
-		margin-left: auto;
-		padding-left: var(--space-3);
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-semibold);
-		color: var(--color-action);
-	}
 
 	.account-button[aria-expanded='true'] {
 		background: var(--color-band-text);
@@ -451,7 +381,6 @@
 		display: none;
 	}
 
-	.account-links a,
 	.account-links button {
 		display: flex;
 		align-items: center;
@@ -468,7 +397,6 @@
 		cursor: pointer;
 	}
 
-	.account-links a:hover,
 	.account-links button:hover {
 		text-decoration: underline;
 	}

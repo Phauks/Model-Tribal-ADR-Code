@@ -1,5 +1,7 @@
 // The Account pages, as the left sidebar lists them under "Your account"
 // (site/DESIGN.md, section 6, "Settings and Account"; decision record 0045).
+// The group shows on every page for someone signed in: the profile button in
+// the masthead holds only Sign out (Trevor, Nov. 23, 2026).
 // Account holds who someone is to the project and what it keeps about them,
 // on the server; how the site looks on one screen is in Settings, on the
 // device. A new account page is added here, in reading order.
@@ -12,8 +14,9 @@ export interface AccountPage {
 }
 
 export const accountPages: readonly AccountPage[] = [
-	{ label: 'Overview', link: '/account' },
 	{ label: 'Profile and credit', link: '/profile' },
+	// Updates to the pages the person follows (site/DESIGN.md, section 6, "Follow").
+	{ label: 'Following', link: '/following' },
 	// Files and links the person sent the project (docs/uploads.md).
 	{ label: 'Your uploads', link: '/uploads' },
 	// Asking for, and holding, a place on a nation's team that keeps its page (decision record 0041).
@@ -33,7 +36,7 @@ function matches(link: string, path: string): boolean {
 
 /** Whether a path is one of the Account pages, so the sidebar shows the group. */
 export function isAccountPath(path: string): boolean {
-	return ['/account', '/profile', '/uploads'].some((link) => matches(link, path));
+	return ['/account', '/profile', '/uploads', '/following'].some((link) => matches(link, path));
 }
 
 /** The entry for the page at this path. The longest matching address wins, so /profile/password is Sign-in and security and /profile/nation-team is Nation team. */
@@ -42,8 +45,7 @@ export function currentAccountPage(path: string): AccountPage | undefined {
 	let bestLength = -1;
 	for (const item of accountPages) {
 		for (const link of [item.link, ...(item.within ?? [])]) {
-			const hit = link === '/account' ? path === link : matches(link, path);
-			if (hit && link.length > bestLength) {
+			if (matches(link, path) && link.length > bestLength) {
 				best = item;
 				bestLength = link.length;
 			}

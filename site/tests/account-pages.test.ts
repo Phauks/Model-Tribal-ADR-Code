@@ -43,17 +43,18 @@ describe('device names', () => {
 });
 
 describe('the Your account group in the sidebar', () => {
-	it('shows on the account and profile pages only', () => {
+	it('opens on the account, profile and following pages', () => {
 		expect(isAccountPath('/account')).toBe(true);
 		expect(isAccountPath('/account/security')).toBe(true);
 		expect(isAccountPath('/profile/edit')).toBe(true);
 		expect(isAccountPath('/accounts')).toBe(false);
-		expect(isAccountPath('/following')).toBe(false);
+		expect(isAccountPath('/following')).toBe(true);
+		expect(isAccountPath('/followers')).toBe(false);
 		expect(isAccountPath('/uploads')).toBe(true);
 	});
 
 	it('marks the most specific entry as the current page', () => {
-		expect(currentAccountPage('/account')?.label).toBe('Overview');
+		expect(currentAccountPage('/account')).toBeUndefined();
 		expect(currentAccountPage('/account/email')?.label).toBe('Email and notifications');
 		expect(currentAccountPage('/profile/edit')?.label).toBe('Profile and credit');
 		expect(currentAccountPage('/profile/password')?.label).toBe('Sign-in and security');
@@ -61,7 +62,7 @@ describe('the Your account group in the sidebar', () => {
 		expect(currentAccountPage('/profile/nation-team')?.label).toBe('Nation team');
 		expect(currentAccountPage('/profile')?.label).toBe('Profile and credit');
 		expect(currentAccountPage('/account/unknown')).toBeUndefined();
-		expect(accountPages[0].link).toBe('/account');
+		expect(accountPages[0].link).toBe('/profile');
 	});
 });
 

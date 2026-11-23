@@ -7,8 +7,13 @@
  *   being read is open and the others are shut.
  * - Entries inside an outline open along the way to the page or heading being
  *   read; what the reader opens or shuts there lasts until the next page.
- * - The pages of a section the reader opens from elsewhere are fetched once,
- *   from /sidebar/<section>.json (src/lib/server/section-contents.ts).
+ * - Every section's pages come with the page (sidebarLists, from the root
+ *   layout), so nothing is loaded when a section opens. Only a page built
+ *   ahead of time lacks the essays' lists, which come from the database; it
+ *   reads them from /sidebar/<section>.json as it opens, and until they come
+ *   those sections simply have no caret (src/lib/server/section-contents.ts).
+ * - app.html opens and shuts the remembered sections before the page paints,
+ *   with a style that restore() takes away once the sidebar applies them.
  */
 import { parseSectionChoices, sectionChoicesKey } from '#lib/sidebar-outline.ts';
 import type { OutlineItem } from '#lib/site-sections.ts';
@@ -16,12 +21,15 @@ import type { OutlineItem } from '#lib/site-sections.ts';
 /** Whether the reader hid the wide sidebar; read before the page paints in app.html. */
 export const sidebarHiddenKey = 'sidebar-hidden';
 
-export type LoadedPages = OutlineItem[] | 'loading' | 'failed';
+/** The style app.html adds so remembered sections are open from the first paint. */
+export const earlyChoicesStyleId = 'sidebar-early-choices';
 
 export class SidebarState {
 	sectionChoices = $state<Record<string, boolean>>({});
 	itemChoices = $state<Record<string, boolean>>({});
-	loaded = $state<Record<string, LoadedPages>>({});
+	/** Lists read in the browser, for a page built without them. */
+	fetched = $state<Record<string, OutlineItem[]>>({});
+	#asked = new Set<string>();
 	activeHeading = $state<string | undefined>(undefined);
 
 	/** Reads the reader's choices once, when the sidebar starts. */
@@ -31,6 +39,7 @@ export class SidebarState {
 		} catch {
 			// Storage can be blocked; every section then starts as the defaults say.
 		}
+		document.getElementById(earlyChoicesStyleId)?.remove();
 	}
 
 	isOpen(key: string, byDefault: boolean): boolean {
@@ -39,10 +48,6 @@ export class SidebarState {
 
 	setOpen(key: string, open: boolean): void {
 		this.sectionChoices = { ...this.sectionChoices, [key]: open };
-		// A list that failed is tried again when the reader opens it again.
-		if (open && this.loaded[key] === 'failed') {
-			this.loaded = Object.fromEntries(Object.entries(this.loaded).filter(([link]) => link !== key));
-		}
 		try {
 			localStorage.setItem(sectionChoicesKey, JSON.stringify(this.sectionChoices));
 		} catch {
@@ -50,14 +55,16 @@ export class SidebarState {
 		}
 	}
 
-	/** Fetches a section's pages, once. */
-	load(sectionLink: string): void {
-		if (this.loaded[sectionLink]) return;
-		this.loaded = { ...this.loaded, [sectionLink]: 'loading' };
+	/** Reads a section's pages that the page came without, once. If they cannot be read, the section stays without a caret. */
+	fetchList(sectionLink: string): void {
+		if (this.#asked.has(sectionLink)) return;
+		this.#asked.add(sectionLink);
 		fetch(`/sidebar${sectionLink}.json`)
 			.then((response) => (response.ok ? (response.json() as Promise<OutlineItem[]>) : Promise.reject(response.status)))
-			.then((items) => (this.loaded = { ...this.loaded, [sectionLink]: items }))
-			.catch(() => (this.loaded = { ...this.loaded, [sectionLink]: 'failed' }));
+			.then((items) => (this.fetched = { ...this.fetched, [sectionLink]: items }))
+			.catch(() => {
+				// The section's name still links to its page.
+			});
 	}
 
 	toggleItem(link: string, nowOpen: boolean): void {
