@@ -25,6 +25,8 @@ import { DeskObject, defaultSizeLimitBytes, type DeskSetup } from '../src/lib/se
 interface ScannerEnvironment extends ProviderSettings {
 	database: D1Database;
 	sourceDocuments: R2Bucket;
+	/** The project inbox's bucket: mail and its attachments (site/MAIL.md, "Storage"). */
+	mailFiles: R2Bucket;
 	scanEngine: DurableObjectNamespace<ScanEngine>;
 	scanDesk: DurableObjectNamespace<ScanDesk>;
 	/** The largest file sent to the engine, in megabytes. Larger files are held as "could not be checked". */
@@ -59,6 +61,7 @@ function deskSetup(environment: ScannerEnvironment): DeskSetup {
 	return {
 		database: environment.database,
 		bucket: environment.sourceDocuments,
+		mailBucket: environment.mailFiles,
 		sizeLimitBytes: sizeLimitBytes(environment.SCAN_SIZE_LIMIT_MB),
 		provider: chooseProvider(environment, {
 			fetcher: engine,

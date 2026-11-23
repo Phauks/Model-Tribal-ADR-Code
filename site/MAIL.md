@@ -1,6 +1,6 @@
 # The project inbox
 
-The website has its own email: inboxes in the workspace, shared or personal, where the project team reads, replies to, forwards, assigns, tags, files, sets reminders on and archives the project's mail, and an Outreach page that writes to nations from the private address book. Nothing needs Google Workspace or another hosted mailbox for everyday mail. Mail is kept in the project's own storage: each message whole in the private bucket (R2), and what the pages list and search in the database (D1). The design and its reasons are in [decision record 0040](../docs/decisions/0040-project-inbox-on-cloudflare.md).
+The website has its own email: inboxes in the workspace, shared or personal, where the project team reads, replies to, forwards, assigns, tags, files, sets reminders on and archives the project's mail, and an Outreach page that writes to nations from the private address book. Nothing needs Google Workspace or another hosted mailbox for everyday mail. Mail is kept in the project's own storage: each message whole in a private bucket of its own (R2), and what the pages list and search in the database (D1). The design and its reasons are in [decision record 0040](../docs/decisions/0040-project-inbox-on-cloudflare.md).
 
 Email is off until the project has a domain. While `MAIL_DOMAIN` is empty, the Inbox and Outreach pages open, but nothing is received or sent.
 
@@ -21,7 +21,7 @@ Some things belong to the project's shared mail and so skip personal inboxes: au
 
 Cloudflare Email Routing receives mail for the domain and hands each message to the Worker's email handler.[^routing] The address it was sent to picks the inbox (see "Inboxes" above). The handler passes the raw message to `/mail/internal/arrive` inside the same Worker (`tools/add-mail-handlers.mjs`), which files it (`src/lib/server/mail/inbound.ts`):
 
-- The whole message is kept in the bucket at `mail/raw/<year>/<month>/<id>.eml`, its HTML at `mail/html/<id>.html`, and each attachment at `mail/attachments/<message>/<attachment>`.
+- The whole message is kept in the mail bucket (see "Storage") at `mail/raw/<year>/<month>/<id>.eml`, its HTML at `mail/html/<id>.html`, and each attachment at `mail/attachments/<message>/<attachment>`.
 - A reply joins the conversation it answers, found by its `In-Reply-To` and `References` headers, or else by the same subject (without "Re:") from the same address within 60 days.
 - An out-of-office or other automatic reply is shown, marked, and does not count as an answer for reminders (RFC 3834 headers, or the usual subjects).[^rfc3834]
 - A delivery failure report (RFC 3464) marks the message it is about as bounced and puts the address on the do-not-email list.[^rfc3464] The address book marks that email "bounced" too.
@@ -105,6 +105,14 @@ A reply to an outreach letter lands in the inbox, in the same conversation, tagg
 ### Swapping the outreach service
 
 The outreach mailbox can be changed by settings alone (lead author, Nov. 23, 2026). Any mailbox provider that offers authenticated SMTP submission on port 465 or 587 works: Zoho Mail, Fastmail, Migadu, Google Workspace and others. Change `OUTREACH_FROM`, `OUTREACH_SMTP_HOST`, `OUTREACH_SMTP_PORT` and `OUTREACH_SMTP_USERNAME` in `wrangler.jsonc`, and the `OUTREACH_SMTP_PASSWORD` secret in the dashboard. A service with only an HTTP sending API needs one more function in `carriers.ts` that returns a `MailCarrier`, and a new value for `OUTREACH_CARRIER`.
+
+## Storage
+
+Mail has a private R2 bucket of its own, `model-tribal-adr-code-mail`, bound as `mailFiles` in `wrangler.jsonc` and in the scanner's `scanner/wrangler.jsonc`. It holds each message whole, its HTML and its attachments, under `mail/`. Nothing in it is public: the Worker serves a file only to someone on the conversation's inbox, and an attachment only after the virus check (`SCANNING.md`). The scanner reads files under `mail/` from this bucket and everything else from `sourceDocuments`.
+
+Mail is kept apart from the source documents for three reasons. Access can be given to one without the other. Rules such as deleting old mail or keeping a backup copy can be set for mail alone. And a mistake in code that tidies one bucket cannot touch the other.
+
+The bucket has to exist before a deploy that binds it, or the deploy fails. Create it once in the Cloudflare dashboard (R2 > Create bucket, name `model-tribal-adr-code-mail`, no public access), or with `npx wrangler r2 bucket create model-tribal-adr-code-mail`.
 
 ## Settings
 

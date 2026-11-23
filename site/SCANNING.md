@@ -4,7 +4,7 @@ Every file people send the project, and every attachment that arrives in the pro
 
 ## In short
 
-- **Held until clean.** A file is stored in the private `sourceDocuments` bucket as before, and is put in line for a scan at the same moment. Until its scan says clean, nothing on the site serves it, opens it or files it. A file where something is found is held for good.
+- **Held until clean.** A file is stored in the private `sourceDocuments` bucket as before (mail in the inbox's own `mailFiles` bucket, site/MAIL.md, "Storage"), and is put in line for a scan at the same moment. Until its scan says clean, nothing on the site serves it, opens it or files it. A file where something is found is held for good.
 - **One table is the whole link.** The site writes a row to `file_scans` (`migrations/0021_file_scans.sql`) and reads it back. The scanner, a Worker of its own, reads the waiting rows, scans each file in the bucket, and writes the result. The site has no binding to the scanner, so it runs the same whether or not the scanner is deployed; files simply wait.
 - **The engine is ClamAV, YARA rules and structural checks**, in a Cloudflare Container with no internet access. It reports facts; the site's own policy decides clean, flagged or "could not be checked".
 - **The provider can be swapped** with one setting, like the outreach email carrier: the project's own container, any outside service that speaks the same JSON, or off.
@@ -56,7 +56,7 @@ Files from outside today: uploads (`upload`), request and form files (`request-f
 ## How a scan runs
 
 1. Every minute the scanner Worker's cron wakes the scan desk, a Durable Object (`src/lib/server/scanning/scan-desk.ts`). The desk sets an alarm and, in it, takes the oldest waiting file.
-2. It reads the object from the bucket. A file over the size limit (`SCAN_SIZE_LIMIT_MB`, 2048) is held as `too-large` without being sent.
+2. It reads the object from the bucket: from `mailFiles` for a key under `mail/`, otherwise from `sourceDocuments`. The scanner Worker has both bindings. A file over the size limit (`SCAN_SIZE_LIMIT_MB`, 2048) is held as `too-large` without being sent.
 3. It streams the file to the provider (`src/lib/server/scanning/providers.ts`). For the container provider it first wakes the engine, which takes a minute or so after sleeping, because ClamAV loads about 3.6 million signatures.
 4. The engine answers with facts: ClamAV's result, any YARA rules that matched, and what the structural checks found (a zip bomb, archives nested too deep or with too many entries, a password lock, PDF scripts or Office macros). `src/lib/server/scanning/verdict.ts` turns them into clean, flagged or "could not be checked", in a fixed order: a ClamAV signature, then a YARA rule that counts (the extended tier; suspicious rules only from a score of 75), then a structural attack, then a password lock.
 5. The desk writes the result, the object's etag and size, and the engine's version (code, YARA rules and ClamAV signatures, such as `engine/1+yara-rules/20261120+clamav-db/28191-20261122`, the ClamAV signature database number and its date) to the row, and takes the next file. An error of any kind leaves the file held and tries again later; nothing is ever marked clean unless the whole file was scanned and nothing was found.
