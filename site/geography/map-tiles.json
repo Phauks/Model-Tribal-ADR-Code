@@ -1,0 +1,50 @@
+{
+	"description": "The map tiles the website serves from the private bucket at /map-tiles/<set>/<z>/<x>/<y>.mvt. Written by tools/build-map-tiles.mjs; upload the files before merging a change here.",
+	"landAreas": {
+		"set": "land-areas-fe4ab6eac717",
+		"key": "map-tiles/land-areas-fe4ab6eac717.pmtiles",
+		"bytes": 11941119,
+		"sha256": "fe4ab6eac71728a16d4133c499c6f84a4c50038425041ce2e4f8ece4481b1150",
+		"minZoom": 0,
+		"maxZoom": 12,
+		"bounds": [
+			-179.1467,
+			-14.5487,
+			179.7785,
+			71.3878
+		],
+		"layers": [
+			"land-areas",
+			"states"
+		],
+		"sources": [
+			"https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_aiannh_500k.zip",
+			"https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_state_500k.zip"
+		],
+		"source_records": [
+			"census-cartographic-boundary-aiannh-2020",
+			"census-cartographic-boundary-states-2020"
+		],
+		"retrieved": "2026-11-23",
+		"left_out": "Hawaiian home lands; areas in geography/withdrawn-land-areas.json"
+	},
+	"basemap": {
+		"set": "basemap-20261122",
+		"key": "map-tiles/basemap-20261122.pmtiles",
+		"bytes": 2158465170,
+		"sha256": "1fcec9d3cca65d246a3f42537c76a2fcf3c63251d8f0b8f0a55f102ddb176b99",
+		"minZoom": 0,
+		"maxZoom": 12,
+		"bounds": [
+			-180,
+			-14.7,
+			180,
+			71.6
+		],
+		"source": "https://build.protomaps.com/20261122.pmtiles",
+		"license": "Open Database License produced work; OpenStreetMap attribution required",
+		"attribution": "© OpenStreetMap contributors",
+		"region": "geography/map-tile-region.json",
+		"retrieved": "2026-11-23"
+	}
+}

@@ -1,0 +1,28 @@
+key: census-cartographic-boundary-states-2020
+kind: dataset
+citation:
+  type: dataset
+  title: 2020 Cartographic Boundary File, State for United States, 1:500,000 (cb_2020_us_state_500k)
+  author:
+    - literal: U.S. Census Bureau
+  medium: Zipped shapefile
+  URL: https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_state_500k.zip
+  issued:
+    date-parts: [[2021]]
+  accessed:
+    date-parts: [[2026, 11, 23]]
+original_link: https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_state_500k.zip
+retrieved: 2026-11-23
+history:
+  status: live
+  last_checked: 2026-11-23
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: >-
+    A work of the U.S. Census Bureau, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105). The website credits the Census Bureau as the source on the map and in its Sources section.
+  redistribution: true
+found_in:
+  - 2026-11-23-map-engine-maplibre
+notes: >-
+  The 50 states, DC, Puerto Rico, the U.S. Virgin Islands, Guam, the Northern Mariana Islands and American Samoa (56 shapes). The website's map tiles carry these outlines at full detail for the "Nations by state" view (site/tools/build-map-tiles.mjs, decision record 0035).
