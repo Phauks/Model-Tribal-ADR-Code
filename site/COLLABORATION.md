@@ -202,8 +202,17 @@ The "Sign in" link in the masthead of every page, and "Co-author sign-in" in the
    - works once, for 15 minutes, and only the newest one for an address works;
    - stops working after 5 wrong tries;
    - is kept in the database only as a SHA-256 hash, like the link.
-2. **A password, if they chose one.** Anyone signed in can choose a password at `/profile/password`; it is optional. Passwords are stored only as salted PBKDF2-SHA256 hashes with 100,000 iterations, the most Workers allow (Cloudflare, ["Web Crypto"](https://developers.cloudflare.com/workers/runtime-apis/web-crypto/)). The rules follow NIST SP 800-63B: at least 12 characters, any characters, no forced mixing of character types. A wrong password gets the same answer whether or not the address has an account, so the form cannot be used to find out who has signed up. Changing a password signs out every other browser.
-3. **A link from the lead author.** On the People page the lead author gets a one-time sign-in link for each person they invite, to send them personally. It works once, for 7 days, only for someone who has never signed in, and making one is recorded in the activity log. After using it, the person is offered a password.
+2. **A password, if they chose one.** Anyone signed in can choose a password at `/profile/password`; it is optional. The rules follow NIST SP 800-63B-4, section 3.1.1.2, for a password that is the only factor:
+   - at least 15 characters and at most 256, counted as Unicode code points after NFC normalization, with any characters and no forced mixing of character types;
+   - the whole password is refused if it is the person's email address, the name part of it, or a name of this site, compared without spaces, punctuation or capitals; one or two characters repeated are refused too (`src/lib/server/password-checks.ts`);
+   - passwords seen in data breaches are refused. The check uses Have I Been Pwned's Pwned Passwords range service. Only the first five characters of the password's SHA-1 hash leave the Worker, and the answer is padded, so the service never learns the password or whether it was found (Have I Been Pwned, ["API v3: Searching by range"](https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange)). If the service cannot be reached in 4 seconds the password is allowed and the miss is logged.
+
+   Passwords are stored as salted PBKDF2-SHA256 hashes with 600,000 iterations, the number OWASP recommends (OWASP, ["Password Storage Cheat Sheet"](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)). Workers allow at most 100,000 iterations in one call (Cloudflare, ["Web Crypto"](https://developers.cloudflare.com/workers/runtime-apis/web-crypto/)), so the hash is six calls chained, each fed the last one's output. Argon2id, OWASP's first choice, would need WebAssembly compiled at build time, which this project does not have. When the `PASSWORD_KEY` secret is set, the hash then goes through HMAC-SHA256 with that key, so a copy of the database alone is not enough to start guessing (NIST SP 800-63B-4, section 3.1.1.2). Older hashes (100,000 iterations, no key) still work and are upgraded the next time their owner signs in (`password_keyed` in `accounts`).
+
+   A wrong password gets the same answer whether or not the address has an account, so the form cannot be used to find out who has signed up. Wrong passwords are counted for each address, whether or not it has an account (`password_failures`, migration 0022). After 10 in a row, password sign-in for the address pauses for 15 minutes, then twice as long each time, up to a day. After 100 in a row it stays off until the owner signs in with a code or a link and chooses a new password (NIST SP 800-63B-4, section 3.2.2). Codes and links keep working during a pause. A right password, or a new one, clears the count. Wrong current passwords on `/profile/password` count toward the same limit.
+
+   Changing or removing a password needs the current one, except within 10 minutes of signing in with a code or a link, which already proves who the person is. That is how a forgotten password is replaced: "Forgot your password?" (`/sign-in/forgot`) sends a code and then opens the password page. Changing a password signs out every other browser.
+3. **A link from the lead author.** On the People page the lead author gets a one-time sign-in link for each person they invite, to send them personally. It works once, for 7 days, only for someone who has never signed in, and making one is recorded in the activity log. After using it, the person goes straight to the password page, where they can choose one or skip to the workspace.
 4. **Limits.** Each email address may try each step 5 times a minute, and each network address 30 times (`wrangler.jsonc`, `signInLimit` and `signInNetworkLimit`).
 5. **Matching to a person.** After sign-in the site matches the account to a person (`src/lib/server/people.ts`):
    - someone who has signed in before, by their account;
@@ -211,7 +220,7 @@ The "Sign in" link in the masthead of every page, and "Co-author sign-in" in the
    - the very first lead author, by the `LEAD_AUTHOR_EMAIL` setting.
 
    Anyone else stays signed in and goes to their contributor profile (`/profile`), where they can register to help. The workspace stays closed to them. Someone whose access was removed is not signed in.
-6. **The session** is a random 256-bit token in an HTTP-only, SameSite=Lax, Secure cookie. The database keeps only its hash (`sessions` table). It lasts at most 12 hours and ends after 4 hours without use. "Sign out" deletes it.
+6. **The session** is a random 256-bit token in an HTTP-only, SameSite=Lax, Secure cookie named `__Host-session`, which browsers refuse to accept from a subdomain or over plain HTTP (NIST SP 800-63B-4, section 5.1). The database keeps only its hash (`sessions` table). It lasts at most 12 hours and ends after 4 hours without use. "Sign out" deletes it.
 7. On every workspace page the site checks the database again, so removing someone's access takes effect at once, even if they are signed in.
 8. The masthead's link reads "Workspace" instead of "Sign in" while a `signed-in-hint` cookie is present (`src/lib/signed-in-hint.ts`). It holds only "1", is readable by the page's script because public pages are built ahead of time and cannot ask the Worker, and grants nothing: it is set at a successful sign-in and on each workspace page while the session is valid, and cleared at sign-out or once the session has ended.
 
@@ -221,7 +230,7 @@ On a copy of the site running on your own computer (`npm run preview`, `localhos
 
 ## Setting up sign-in
 
-Nothing secret has to be set. There are two settings, and the site works without the first.
+Three settings. The site works without the first and the third.
 
 ### 1. The address codes come from
 
@@ -235,6 +244,10 @@ Until this is done, the site sends no email. People sign in with a password, or 
 ### 2. The first lead author
 
 Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**, type **Secret**: `LEAD_AUTHOR_EMAIL`, the lead author's email address. It is set in the dashboard rather than in `wrangler.jsonc` only because that file is public. It must be the **Secret** type even though an email address is not really secret: each deploy replaces plain-text variables set in the dashboard with the ones in `wrangler.jsonc`, but never deletes secrets (Cloudflare, ["Wrangler configuration: source of truth"](https://developers.cloudflare.com/workers/wrangler/configuration/#source-of-truth)).
+
+### 3. The password key
+
+Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**, type **Secret**: `PASSWORD_KEY`, a random value of at least 32 characters, such as the output of `openssl rand -base64 48`. Keep no copy outside Cloudflare. Once set, never change or remove it: every password hashed with it would stop working, and their owners would have to sign in with a code or a link and choose a new one. Until it is set, passwords are hashed without a key, and the site upgrades them the next time each person signs in after it is set.
 
 ### Database
 
