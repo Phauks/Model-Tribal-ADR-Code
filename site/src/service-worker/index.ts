@@ -72,14 +72,17 @@ const offlinePage = '/offline';
 const corePages = ['/', '/glossary', '/changelog', '/search', '/starred', '/starred/shared', offlinePage];
 // edition.json, the fingerprints and SvelteKit's version.json say what the server has now, so
 // they always come from the network; a saved version.json would hide a new build from open tabs.
-// Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself.
-// The zoomable map's tiles (/map-tiles/) come to over 2 GB; offline, the drawn map takes its place.
+// Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself,
+// unless the reader saved them (see copyResponse below).
+// Map tiles (/map-tiles/) are many and never change under their address, so the browser's own cache keeps them;
+// all of them come to over 2 GB, and offline the drawn map takes their place.
 const neverCached = [
 	'/workspace',
 	'/sign-in',
 	'/sign-out',
 	'/requests',
 	'/following',
+	'/account',
 	'/edition.json',
 	fingerprintsAddress,
 	'/_app/version.json',

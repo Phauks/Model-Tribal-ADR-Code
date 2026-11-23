@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Saving for offline, in Settings under "Data" (site/DESIGN.md, section 10): the space used,
+	// Saving for offline, in Settings under "This device" (site/DESIGN.md, section 10): the space used,
 	// then what can be saved grouped by kind (pages of this site; pictures, sound and video),
 	// what stays online and why, and the edition saved, with a check for updates. Trevor picked
 	// this grouped layout on Nov. 23, 2026. Used in the Settings dialog and on the /offline page.

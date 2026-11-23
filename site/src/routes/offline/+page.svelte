@@ -111,7 +111,7 @@
 		nation’s page, that nation’s constitutions and laws.
 	</p>
 	<OfflineSaving headingLevel={3} />
-	<p class="muted">The same choices are under Settings, in “Data.”</p>
+	<p class="muted">The same choices are under Settings, in “This device.”</p>
 
 	<h2 id="what-stays-online">What can be saved, and what stays online</h2>
 	<p>We save only what we are allowed to share. Everything else is a link to where it is kept.</p>

@@ -1,7 +1,7 @@
 profile: content/tribes/s/stillaguamish-tribe-of-indians-of-washington.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -67,6 +67,31 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#stillaguamish-tribe-of-indians-amendment-2024-11-13#i1
-next_steps: Read the scanned amendment listed 2008-02-04 (https://www.nigc.gov/wp-content/uploads/2025/03/stillaguamish-stillaguamishtribe020408.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2009-04-28 (https://www.nigc.gov/wp-content/uploads/2025/03/stillaguamish-Stillaguamish42809OrdAmendAppr.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/stillaguamish-Stillaguamish42809OrdAmendAppr.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-30 of 30 of this amendment listed 2009-04-28 as page
+    images (it has no text layer) and recorded 3 procedure(s): employee-grievance, other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#stillaguamish-tribe-of-indians-amendment-2009-04-28#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#stillaguamish-tribe-of-indians-amendment-2009-04-28#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#stillaguamish-tribe-of-indians-amendment-2009-04-28#p3
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/stillaguamish-stillaguamishtribe020408.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-3 of 3 of this amendment listed 2008-02-04 as page images
+    (it has no text layer) and found no dispute procedure (the only ordinance text restates Section 4.1
+    on establishing the Gaming Commission; the rest is the Commission approval letter and certification,
+    with no patron, employee or other dispute procedure).
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

@@ -1,0 +1,30 @@
+profile: content/tribes/j/jamestown-sklallam-tribe.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Jamestown S'Klallam tribal court video youtube
+  outcome: not-found
+  reason: Results were the tribe's code PDFs, newsletters and news about the justice center, with no video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://jamestowntribe.org/program-staff/public-safety-justice/
+  query: 'Public Safety and Justice page: embedded video, photos, podcast, copyright'
+  outcome: not-found
+  reason: The page embeds no videos and has no podcast, but it shows a Justice Center facility photo and a footer reading © Copyright 2026 Jamestown S'Klallam Tribe.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://jamestowntribe.org/program-staff/public-safety-justice/
+  query: justice center photos, rights line
+  outcome: found
+  reason: Fetched with curl. Public Safety and Justice page shows two Justice Center photos; footer reads '© Copyright 2026 Jamestown S'Klallam Tribe.' The only social link is Facebook.
+next_steps: Ask the Tribe for permission to use the Justice Center photos. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

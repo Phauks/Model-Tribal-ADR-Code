@@ -1,0 +1,62 @@
+profile: content/tribes/p/pueblo-of-isleta.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Pueblo of Isleta peacemaking program video
+  outcome: found
+  reason: Results included the NARF Videos About Peacemaking page, which lists a video by former Isleta chief judge Verna Teller.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Pueblo of Isleta Verna Teller peacemaking youtube
+  outcome: found
+  reason: Results included a NARF page about Verna Teller that was not opened; no YouTube link was shown.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.isletapueblo.com/tribal-court-peacemaking-program/
+  query: embedded video, gallery or podcast about the peacemaking program
+  outcome: error
+  reason: Fetch was refused because the session's web-fetch budget was used up, so the page was not read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://peacemaking.narf.org/videos-about-peacemaking/
+  query: list of videos with presenters and rights statement
+  outcome: found
+  reason: The NARF page lists a video by Verna Teller, former Isleta Pueblo chief judge, and shows the copyright line.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.isletapueblo.com/government/appellate-court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.isletapueblo.com/government/tribal-court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=r-xnDCR9uVw
+  query: title and channel of the video
+  outcome: found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "Verna Teller: Healing Community through Peacemaking" on the Native American Rights Fund channel, public and embeddable on 2026-11-23.'
+next_steps: Check https://narf.org/verna-teller-peacemaking/ for its video's host and date, and read the Isleta tribal court and peacemaking pages once the fetch budget resets, looking for the tribe's own videos. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

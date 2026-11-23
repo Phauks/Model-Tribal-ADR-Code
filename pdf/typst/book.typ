@@ -405,6 +405,17 @@
   stroke: (paint: black, thickness: 0.6pt, dash: "dashed"),
 )
 
+// An essay's picture, video or sound recording. The book prints its
+// caption, description, credit and transcript, and where to see or hear it.
+#let figure-block(label, where, body) = boxed(
+  label,
+  [#body #block(above: 0.8em, text(size: 0.85em, style: "italic", where))],
+  stroke: (paint: black, thickness: 0.6pt, dash: "dotted"),
+)
+
+// Who made a figure, in smaller type.
+#let figure-credit(body) = block(above: 0.5em, below: 0.5em, text(size: 0.85em, body))
+
 // A case named in an index, with the page its box starts on.
 #let case-ref(target, body) = [#link(target, body), #context [p. #locate(target).page()]]
 

@@ -1,0 +1,46 @@
+profile: content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Salt River Pima-Maricopa tribal court video
+  outcome: found
+  reason: Results include a nation news series titled Telling the Stories of the Salt River Pima-Maricopa Indian Community on the community's own O'odham Action News site, plus court pages and code PDFs.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.srpmic-nsn.gov/government/court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found links to https://vimeo.com/showcase, https://vimeo.com/user82149217.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.srpmic-nsn.gov/government/court/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found links to https://vimeo.com/showcase, https://vimeo.com/user82149217.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://oan.srpmic-nsn.gov/?p=56638
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; found embedded YouTube video(s) UPhto04T1Oo; links to https://www.youtube.com/@oodhamactionnews.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: youtube
+  address: https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=UPhto04T1Oo
+  query: title and channel of the video
+  outcome: found
+  reason: 'Checked with curl against YouTube''s oEmbed listing: "SRPMIC Law Day 2026 - Rooted in Tradition, Rising Together" on the O''odham Action News channel, public and embeddable on 2026-11-23.'
+next_steps: Open the O'odham Action News series page and the court's page at https://srpmic-nsn.gov/government/court/ to confirm whether any item is a video about the court or Court of Appeals. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

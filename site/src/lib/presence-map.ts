@@ -12,6 +12,7 @@
  * moves and scales whole boxes, so it runs when each page is built.
  */
 import type { StateShape } from './map-geometry.ts';
+import type { TileMapData } from '#lib/server/nations-map.ts';
 
 /** A framed box of the full map, in its map units. */
 export interface SourceFrame {
@@ -357,4 +358,6 @@ export interface NationMapData {
 	stateNames: string[];
 	region?: { name: string; link: string };
 	landAreas: { name: string; kind: string }[];
+	/** The Land Areas view drawn with MapLibre over the site's own tiles, at the Census Bureau's full detail (TileMap.svelte). */
+	tileMap?: TileMapData;
 }

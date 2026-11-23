@@ -1,0 +1,62 @@
+profile: content/tribes/e/eastern-band-of-cherokee-indians.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Eastern Band of Cherokee Indians peacemaking video
+  outcome: found
+  reason: Results included a NARF photo page from peacemaking training with the Eastern Band; a 1995 PBS program on Cherokee culture also appeared and was not counted as it is general culture.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.ebci.gov/tribal-court/
+  query: 'Cherokee Courts page: embedded video, photos, podcast'
+  outcome: found
+  reason: The page has no embedded video or podcast, but shows photos of the Clerk of Court, the Lead Assistant Clerk and the court seal, plus a captioned judicial photo.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Cherokee Courts Eastern Band youtube video tribal court
+  outcome: found
+  reason: No YouTube video from the Tribe appeared; results included a WLOS investigative photo gallery about the Cherokee court and a One Feather article on the judicial branch.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Eastern Band Cherokee Indians peacemaking podcast
+  outcome: not-found
+  reason: Only general podcasts and a NARF training document appeared; no Eastern Band peacemaking podcast was shown.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.ebci.gov/tribal-court/
+  query: images, video, rights line
+  outcome: found
+  reason: Fetched with curl. Page shows court staff photos (Keanu-Crowe.jpg, Teresa-Keffer.jpg, Letts-2024-caption.jpg), a court photo (ebci-tribal-court-1-scaled.jpg) and the court seal; the footer says 'Developed by EBCI Communications and the Office of Information Technology' with no license. The only video link is the EBCI Vimeo channel, which the site labels Livestreams.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://peacemaking.narf.org/?p=705
+  query: NARF training photo page
+  outcome: error
+  reason: Fetched with curl. The short link returned HTTP 406 and only the NARF home page, so the photo page could not be read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: https://www.ebci.gov/tribal-court/
+  query: vimeo.com/ebcicommunications
+  outcome: not-found
+  reason: Fetched with curl. Livestream channel for government meetings and proceedings; excluded unless a person checks that it has non-case program videos.
+next_steps: 'Check the NARF training photos at peacemaking.narf.org/2017/08/training-eastern-band-of-cherokee-indians-october-2017/ and the WLOS court gallery (not fetched; news station, permission needed). The One Feather article https://theonefeather.com/2025/05/07/ebci-government-explained-the-judicial-branch/ was not fetched. Dropped candidates: NARF short link p=705 (could not be read) and the WLOS gallery (not opened, covers criminal cases). Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.'

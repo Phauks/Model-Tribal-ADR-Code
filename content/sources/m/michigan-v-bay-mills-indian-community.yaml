@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Antonin Scalia", vote: minority, opinion: dissent}
   source: https://api.oyez.org/cases/2013/12-515
   checked: '2026-11-22'
+courtlistener:
+  cluster: 2675751
+  citation: "572 U.S. 782"
+  case_name: "Michigan v. Bay Mills Indian Community"
+  link: https://www.courtlistener.com/opinion/2675751/michigan-v-bay-mills-indian-community/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

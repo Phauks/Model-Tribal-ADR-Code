@@ -1,7 +1,7 @@
 profile: content/tribes/t/the-seminole-nation-of-oklahoma.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -129,12 +129,52 @@ searches:
   - research/reviews/2026-11-22-ordinance-disputes.json#seminole-nation-of-oklahoma-amendment-2017-11-09#i1
   - research/reviews/2026-11-22-ordinance-disputes.json#seminole-nation-of-oklahoma-amendment-2017-11-09#i2
   - research/reviews/2026-11-22-ordinance-disputes.json#seminole-nation-of-oklahoma-amendment-2017-11-09#i3
-next_steps: Read the scanned ordinance listed 1994-05-31 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokord053194.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2003-10-17 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend101703.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2003-12-17 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend121703.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2004-03-10 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend031004.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2004-04-13 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend041304.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2005-03-24 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend032405.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2008-06-06 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-060608SeminoleOrdAmenApproval.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2009-07-10 (https://www.nigc.gov/wp-content/uploads/2025/03/878-1.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/878-1.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-38 of 72 of this amendment listed 2009-07-10 as page
+    images (it has no text layer) and recorded 5 procedure(s): employee-grievance, patron-dispute. Not
+    read: pages 39-72 (40-page budget for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#seminole-nation-of-oklahoma-amendment-2009-07-10-2#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#seminole-nation-of-oklahoma-amendment-2009-07-10-2#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#seminole-nation-of-oklahoma-amendment-2009-07-10-2#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#seminole-nation-of-oklahoma-amendment-2009-07-10-2#p4
+  - research/reviews/2026-11-22-ordinance-disputes.json#seminole-nation-of-oklahoma-amendment-2009-07-10-2#p5
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-060608SeminoleOrdAmenApproval.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-7 of 7 of this amendment listed 2008-06-06 as page images
+    (it has no text layer) and found no dispute procedure (The amendment only changes the gaming revenue
+    accounting in Section 501. The rest is the approval letter and transmittal letter, with no dispute
+    or grievance text).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend032405.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-3 of 3 of this amendment listed 2005-03-24 as page images
+    (it has no text layer) and found no dispute procedure (The amendment limits the hours and pay of gaming
+    commissioners. It has no dispute or grievance text).
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 39-72 of the amendment
+  listed 2009-07-10 (https://www.nigc.gov/wp-content/uploads/2025/03/878-1.pdf), left by the 40-page budget
+  for long documents. Older scanned documents were not read, because the newer documents read replace
+  them: amendment listed 2004-04-13 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend041304.pdf);
+  amendment listed 2004-03-10 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend031004.pdf);
+  amendment listed 2003-12-17 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend121703.pdf);
+  amendment listed 2003-10-17 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokamend101703.pdf);
+  ordinance listed 1994-05-31 (https://www.nigc.gov/wp-content/uploads/2025/03/seminolenationok-seminoleokord053194.pdf).'

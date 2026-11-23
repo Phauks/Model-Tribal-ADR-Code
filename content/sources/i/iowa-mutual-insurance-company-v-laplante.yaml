@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Antonin Scalia", vote: majority}
   source: https://api.oyez.org/cases/1986/85-1589
   checked: '2026-11-22'
+courtlistener:
+  cluster: 111820
+  citation: "480 U.S. 9"
+  case_name: "Iowa Mutual Insurance v. LaPlante"
+  link: https://www.courtlistener.com/opinion/111820/iowa-mutual-insurance-v-laplante/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

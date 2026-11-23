@@ -153,16 +153,24 @@
 	</section>
 {/if}
 
-<section class="leave" aria-labelledby="leave-heading">
-	<h2 id="leave-heading">Delete your account</h2>
+<section class="nation-team" aria-labelledby="nation-team-heading">
+	<h2 id="nation-team-heading">Your nation’s page</h2>
 	<p>
-		This deletes your sign-in, and your profile if you have one, at once. You choose whether your name stays on work you
-		helped with.
+		If your nation chooses you to keep its page up to date, you can ask for a place on its team. Once your
+		nation’s office confirms you, your changes go live on the page, labeled as coming from the nation.
 	</p>
-	<p><a class="button button-quiet" href="/profile/delete-account">Delete your account</a></p>
+	<p><a class="button button-quiet" href="/profile/nation-team">Ask to edit your nation’s page</a></p>
 </section>
 
+<p class="small muted">To download what the project keeps about you or delete your account, go to <a href="/account/data">Your data</a>.</p>
+
 <style>
+	.nation-team {
+		margin-top: var(--space-6);
+		border-top: 1px solid var(--color-line);
+		padding-top: var(--space-4);
+	}
+
 	.own-picture {
 		width: 8rem;
 		height: 8rem;
@@ -170,9 +178,4 @@
 		object-fit: cover;
 	}
 
-	.leave {
-		margin-top: var(--space-6);
-		border-top: 1px solid var(--color-line);
-		padding-top: var(--space-4);
-	}
 </style>

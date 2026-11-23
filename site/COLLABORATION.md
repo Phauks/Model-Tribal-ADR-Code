@@ -22,7 +22,7 @@ Two layers decide it ([decision record 0023](../docs/decisions/0023-permission-l
 | Advisor | Signs off on content or asks for changes, as a project advisor; comments. Does not see requests. | Comment |
 | Co-author | Comments. Does not see requests. | Comment |
 | Contributor | Works only on what the lead author grants, for example writing one assigned essay. Cannot sign off or publish. | No access |
-| Nation reviewer | Reviews one nation's record, for that nation: approves it, asks for changes, or comments. | No access, except comment and approve on their own nation's record |
+| Nation reviewer | Reviews one nation's record, for that nation: approves it, asks for changes, or comments. Comments on files people sent about that nation. | No access, except comment and approve on their own nation's record |
 
 ### Access to each document
 
@@ -53,6 +53,30 @@ Code that shows or changes a document calls `requireDocumentLevel(event, databas
 Requests are limited to editors and the lead author because they hold requesters' contact details and may describe restricted material (charter, commitment 6).
 
 A nation reviewer is how a nation's own office can approve its record (charter, commitment 4: "sent to nation", "reviewed by nation", "approved by nation"). The approval is recorded in the workspace; the record's `review.status` is then changed by pull request, citing the approval.
+
+## Nation teams
+
+Each Native nation can choose a team of people who keep its own page up to date ([decision record 0041](../docs/decisions/0041-nation-teams-keep-their-own-pages.md)). The rules are in `src/lib/nation-teams.ts`; the database side is `src/lib/server/nation-teams.ts` (migration 0015).
+
+1. **Asking.** A signed-in person asks from `/profile/nation-team`, linked from their profile. They name the nation, their title or office, how the nation chose them (a letter, a resolution, or an office that speaks for it) and the parts of the page, and upload the letter or resolution. The file goes to the private bucket under `nation-teams/<identifier>/proof` and is only ever downloaded, never shown as a page.
+2. **Confirming.** The lead author opens the request at `/workspace/nation-teams`, writes to the nation's office using a contact the project already had for the nation (never one the person gave), records which contact, and then confirms the place the office agreed to, with how it was confirmed, or declines with a reason the person sees.
+3. **The team.** Everyone on a team sees `/workspace/nation-teams/<nation>`: who is on it, at what level and for which parts, until when, who added them, and the team's activity log.
+
+| Level | On that nation's record | Adds people |
+| --- | --- | --- |
+| Steward | Full | Yes: up to their own level and parts, for this nation only |
+| Editor | Full | No |
+| Drafter | Contribute | No |
+| Reviewer | Comment, and approves for the nation | No |
+
+- A place is for one nation. The nation comes from the page's address, and every load and form checks the person's own place on that nation, so nobody can add people to another nation's team.
+- A place counts as a grant on the nation's record (`grantsOf`), after any grant the lead author made for that person and record, so the lead author can always lower or remove someone's access.
+- Every place ends after two years at most. Anyone can leave a team. A steward can end anyone's place on the team except a person the project confirmed directly with the nation's office.
+- The lead author can suspend a person together with everyone they added, and everyone those people added.
+- Every change is written to the activity log under the target "grant", identifier `nation-team/<nation>`.
+- Someone new to the project gets a person record with the "Nation reviewer" role for that nation. If they already have an account, it is linked at once; otherwise when they first sign in with that address.
+
+Teams can edit the nation's page itself once the next stage is built (editing and publishing, then the review queue, emails to offices and the nightly copy into git). Teams open to nations once the project domain can send email.
 
 ## Essays
 
@@ -131,6 +155,10 @@ The Forms page (`/forms`) lists the contributor forms in `docs/contributor-forms
 A contributor form sent from `/forms/<form>` opens a request (kind `contribute`, or `restrict` for a change or withdrawal) with a row in `form_submissions`: the form, version, checksum, how it was signed, the typed name and the answers. Signed online, it also gets a filled copy in the bucket at `forms/<request>/<submission>.md`. Uploaded, the photos or scans are files of the request in `request_sources`, checked like any upload. Both ways use the hidden field and the `requestFormLimit` rate limit. A request with a form keeps its personal details after it is resolved.
 
 On the request's page in the workspace, editors see each form, open the filled form (while the site still has that exact version), download the stored copy, and file the forms under a filing number, which is logged.
+
+## Files people send
+
+Anyone signed in can send files on `/uploads/send` and follow them on `/uploads` (Your uploads, also in the account menu). The lead author and editors review them on `/workspace/uploads` (permission `review-uploads`). Files arrive in 10 MB pieces into the private bucket under `uploads/<identifier>/`, are checked by type and for hidden content as they arrive, and wait for a reviewer, who files them, keeps them for reference, or says why they were not used. A YouTube link can stand in for a video. Filed files are served at `/files/<reference>/<name>`. The code is in `src/lib/uploads.ts`, `src/lib/server/uploads.ts`, `src/lib/server/upload-checks.ts` and `src/lib/server/upload-serving.ts`; the design is docs/uploads.md and decision record 0038. A nation reviewer reads and comments on the files that name their nation on `/workspace/nation-uploads` (permission `comment-on-nation-uploads`); they never see who sent a file.
 
 ## How sign-in works
 
@@ -225,6 +253,7 @@ Open `/sign-in` and sign in with the `LEAD_AUTHOR_EMAIL` address. The Workspace 
 | `events` | The activity log: who did what and when, numbered in order. Cannot be changed or deleted. |
 | `event_seals` | The seal of each activity log entry, chained to the one before. |
 | `follows`, `page_updates`, `page_fingerprints`, `following_checks`, `follow_settings` | Pages each account follows, when each followed page changed, the last fingerprint of every page that can be followed, which build was compared last, and each account's email choice (`migrations/0011_following.sql`; see Following pages). |
+| `account_settings` | The copy of a person's display settings and theme, kept only while they chose "Use these settings on every device I sign in on" (`migrations/0019_account_settings.sql`; see Account pages). The same migration adds `sessions.device`, a few words such as "Firefox on Windows" for the list of places a person is signed in. |
 | `page_changes`, `page_states`, `page_history_checks`, `hidden_changes` | Each change to a page built with the site, the last version seen of each such page, which build was compared last, and the parts of changes the lead author hid (`migrations/0017_page_changes.sql`; see Recent changes). |
 
 `migrations/0003_contributor_profiles.sql` adds contributor profiles, their nations, interests and confirmed versions; see [docs/contributor-profiles.md](../docs/contributor-profiles.md).
@@ -238,12 +267,27 @@ Anyone signed in can follow a nation's page, the model code or one of its sectio
 - **Following.** The Follow button (a bell, after Star in the masthead, `src/lib/components/FollowButton.svelte`) asks `/following/state` whether the reader follows the page, and posts there to follow or stop. Pages are built ahead of time, so it asks only when the signed-in hint says someone is signed in. A signed-out reader gets a dialog that offers sign-in and comes back to the page. One account can follow up to 1,000 pages, and following counts against the same per-minute limit as workspace changes.
 - **Finding updates.** When the site is built, `src/lib/server/followable-build.ts` fingerprints each nation page from its published record (as its JSON download gives it; only the name and status for a page withdrawn at the nation's request) and its documents' version histories, and bundles the list into the Worker as `virtual:followable-pages`. An essay's fingerprint is the text of its newest listed publication. `checkForUpdates` compares both with `page_fingerprints` and adds a row to `page_updates` for each changed page that someone follows. The first comparison, and one after `fingerprintVersion` is raised, only records fingerprints. A newer build is claimed with a random token in `following_checks`, and only statements carrying that token write, so two copies of the Worker never record an update twice, and an older build still answering during a deploy is ignored.
 - **When the checks run.** Every hour at 17 minutes past (`triggers` in `wrangler.jsonc`), on the first signed-in request a new build answers, and right after an essay is published or held back in the workspace. The SvelteKit adapter makes only a fetch handler, so `tools/add-scheduled-run.mjs` (the last step of `npm run build`) adds a `scheduled` handler that passes the run to `/following/scheduled` inside the same copy of the Worker, with a token only that copy holds (`src/lib/server/scheduled-run.ts`). The address refuses every other request.
-- **Notices.** The Following page (`/following`, in the account menu, which shows the number of new updates) lists updates newest first, the pages followed, and the email choice. A notice names the page by its title on the live site and says only that it was updated, and when. The database stores no text or title, so a notice can never show words a nation asked to have removed or restricted. Essays and, once built, the model code also link to "What changed"; nation pages have no public version history.
+- **Notices.** The Following page (`/following`, in the account menu, which shows the number of new updates) lists updates newest first and the pages followed, and links to the email choice, which is on the Account pages under Email and notifications (`/account/email`). A notice names the page by its title on the live site and says only that it was updated, and when. The database stores no text or title, so a notice can never show words a nation asked to have removed or restricted. Essays and, once built, the model code also link to "What changed"; nation pages have no public version history.
 - **Email.** Each account chooses no email, a daily summary (the default) or a weekly one. The hourly run sends what is due through the `updateEmail` binding from `UPDATE_EMAIL_FROM`, with links built from `SITE_ADDRESS` (`src/lib/server/following-email.ts`). While `UPDATE_EMAIL_FROM` is empty nothing is sent, and the Following page says so. An email lists each changed page's title, kind, day and link, and ends with "Stop these emails", a link to `/following/email-off` with the account's own random token (kept as it is, since it can only turn emails off and must keep working in older emails). The page asks for a button press, so a mail program that opens links to scan them cannot turn emails off. The link is also in the `List-Unsubscribe` header.
 
 ### Turning on the emails
 
 Once the domain is onboarded in Email Service (see "Setting up sign-in"), set `UPDATE_EMAIL_FROM` in `site/wrangler.jsonc` to an address on it, such as `updates@` the domain, and `SITE_ADDRESS` to the site's address on the domain, and merge the change. Nothing else changes: summaries go out at the next hourly run to everyone whose choice is daily or weekly. Readers who followed pages before then were told on the Following page that emails would start once the site could send them.
+
+## Account pages
+
+Account settings are separate from display settings (decision record 0045; site/DESIGN.md, section 6, "Settings and Account"). Settings, under the cog, change how the site looks on one screen and are kept on the device. The Account pages hold who someone is to the project and what it keeps about them, on the server, for signed-in people only. The account menu links to them as "Account settings", and the left sidebar lists them under "Your account" while one is open (`src/lib/account-menu.ts`). The server side is `src/lib/server/account-pages.ts`.
+
+- **Overview** (`/account`): one line on where each page stands.
+- **Profile and credit** (`/profile`): the contributor profile, picture and credit, as before (docs/contributor-profiles.md).
+- **Your uploads** (`/uploads`): files and links the person sent the project (docs/uploads.md).
+- **Nation team** (`/profile/nation-team`): asking for and holding a place on a nation's team (decision record 0041).
+- **Sign-in and security** (`/account/security`): the password (`/profile/password`) and every browser signed in to the account, named by `sessions.device`, with "Sign out" for each other one and "Sign out everywhere else". A session is named only by the first 16 characters of its stored hash; the token is never shown. Two-step sign-in and backup codes go here when they are built.
+- **Email and notifications** (`/account/email`): how often to email about followed pages, moved from the Following page.
+- **Your data** (`/account/data`): "Download my data" (`/account/data/download`, one JSON file with the account, workspace role, profile and every confirmed version, files and links sent (their details, not the files), followed pages, email choice, the settings copy and the signed-in browsers; never the password or its hash) and the link to delete the account (`/profile/delete-account`). Requests are not tied to accounts, so they are not in the file.
+- **Settings on every device** (`/account/settings`): GET, PUT and DELETE of the `account_settings` copy, for the site's own script (`src/lib/settings-everywhere.ts`) only. It answers 401 instead of sending people to sign in. The account menu's script asks for the copy at most every ten minutes and applies it when it is newer than the one this device last saw, and sends each change made in Settings or with the theme button.
+
+A new account choice goes on these pages when other people see it or the project keeps it or acts on it; a choice that only changes what one screen shows goes in Settings. Settings for a workspace tool, such as the inbox, stay beside the tool.
 
 ## Recent changes
 
@@ -281,5 +325,7 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - The public "Requests log" page (docs/requests.md, "Public log").
 - A filings list in the workspace, and emailing a signer their copy of a form (waits on a domain).
 - Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
-- Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly.
+- Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) will edit their nation's page from the website in the next stage.
+- Emails to a nation's office when someone joins or leaves its team, and the weekly summary of changes (waits on a domain).
+- A virus scan for files people send (docs/uploads.md, "Not built yet").
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").
