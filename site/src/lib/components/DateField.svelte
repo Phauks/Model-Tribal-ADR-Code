@@ -9,6 +9,7 @@
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import Check from '@lucide/svelte/icons/check';
+	import CircleAlert from '@lucide/svelte/icons/circle-alert';
 	import X from '@lucide/svelte/icons/x';
 	import {
 		addDays,
@@ -64,6 +65,8 @@
 	const ownIdentifier = $props.id();
 	const exampleId = `${ownIdentifier}-example`;
 	const readBackId = `${ownIdentifier}-read-back`;
+	const problemId = `${ownIdentifier}-problem`;
+	const keysId = `${ownIdentifier}-keys`;
 	const gridLabelId = `${ownIdentifier}-month`;
 
 	let ready = $state(false);
@@ -219,6 +222,18 @@
 		focusedDay = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 	}
 
+	// On a phone a downward swipe from the sheet's handle closes it, as other bottom sheets do.
+	let swipeStart: number | undefined;
+	function beginSwipe(event: TouchEvent): void {
+		const fromTop = event.target instanceof Element && event.target.closest('.sheet-handle, .calendar-title');
+		swipeStart = fromTop ? event.touches[0]?.clientY : undefined;
+	}
+	function swipeEnd(event: TouchEvent): void {
+		const end = event.changedTouches[0]?.clientY;
+		if (swipeStart !== undefined && end !== undefined && end - swipeStart > 60) closeCalendar();
+		swipeStart = undefined;
+	}
+
 	function fullDayName(day: string): string {
 		const parts = calendarDay(day)!;
 		return `${weekdayNames[weekday(day)]}, ${monthNames[parts.month - 1]} ${parts.day}, ${parts.year}`;
@@ -236,11 +251,14 @@
 		};
 	});
 
-	const describedBy = $derived([describedby, hint ? exampleId : '', readBackId].filter(Boolean).join(' ') || undefined);
+	const showProblem = $derived(touched && !!problem);
+	const describedBy = $derived([describedby, hint ? exampleId : '', showProblem ? problemId : readBackId].filter(Boolean).join(' ') || undefined);
 </script>
 
 {#if hint}<p class="hint date-example" id={exampleId}>{hint}</p>{/if}
 <div class="date-field" class:full={size === 'full'}>
+	<!-- The message sits above the box, after the label and hint, as the site's other field errors do (DESIGN.md, "Form errors"). -->
+	{#if showProblem}<p class="date-problem" id={problemId}><CircleAlert size={16} aria-hidden="true" /><span>{problem}</span></p>{/if}
 	{#if ready}
 		<div class="date-box">
 			<input
@@ -260,7 +278,7 @@
 				}}
 				{required}
 				aria-describedby={describedBy}
-				aria-invalid={invalid || (touched && !!problem) ? 'true' : undefined}
+				aria-invalid={invalid || showProblem ? 'true' : undefined}
 			/>
 			<button
 				type="button"
@@ -279,9 +297,7 @@
 		<input {id} {name} type="date" {value} {min} {max} {required} aria-describedby={describedby} aria-invalid={invalid ? 'true' : undefined} />
 	{/if}
 	<p class="read-back" id={readBackId}>
-		{#if touched && problem}
-			<span class="date-problem">{problem}</span>
-		{:else if readBack}
+		{#if !showProblem && readBack}
 			<Check size={16} aria-hidden="true" /><span>{readBack}</span>
 		{/if}
 	</p>
@@ -296,8 +312,11 @@
 		aria-label="Choose a date"
 		onclose={() => (open = false)}
 		onclick={(event) => event.target === dialog && closeCalendar()}
+		ontouchstart={beginSwipe}
+		ontouchend={swipeEnd}
 	>
 		<div class="calendar-inner">
+			<div class="sheet-handle" aria-hidden="true"></div>
 			<div class="calendar-title">
 				<span>Choose a date</span>
 				<button type="button" class="icon-button" aria-label="Close" title="Close" onclick={closeCalendar}><X size={20} aria-hidden="true" /></button>
@@ -319,7 +338,7 @@
 				</button>
 			</div>
 			<div class="visually-hidden" id={gridLabelId} aria-live="polite">{monthNames[shown.month - 1]} {shown.year}</div>
-			<table role="grid" aria-labelledby={gridLabelId} onkeydown={onGridKey}>
+			<table role="grid" aria-labelledby={gridLabelId} aria-describedby={keysId} onkeydown={onGridKey}>
 				<thead>
 					<tr>
 						{#each weekdayNames as name (name)}<th scope="col" abbr={name}>{name.slice(0, 2)}</th>{/each}
@@ -354,11 +373,14 @@
 					{/each}
 				</tbody>
 			</table>
-			<p class="calendar-keys">Arrow keys move a day or a week. Page Up and Page Down move a month.</p>
+			<p class="visually-hidden" id={keysId}>Arrow keys move a day or a week. Page Up and Page Down move a month.</p>
+			<!-- Today and Clear are quiet text buttons beside an outlined Close; on a phone all three fill the row and Close becomes a solid Done, as in the approved mockups. -->
 			<div class="calendar-foot">
-				<button type="button" class="button button-quiet" disabled={!inRange(today)} onclick={() => pick(today)}>Today</button>
-				<button type="button" class="button button-quiet" onclick={clear}>Clear</button>
-				<button type="button" class="button button-quiet close-button" onclick={closeCalendar}>Close</button>
+				<button type="button" class="button button-quiet quiet-action" disabled={!inRange(today)} onclick={() => pick(today)}>Today</button>
+				<button type="button" class="button button-quiet quiet-action" onclick={clear}>Clear</button>
+				<button type="button" class="button button-quiet close-button" onclick={closeCalendar}
+					><span class="wide-label">Close</span><span class="phone-label">Done</span></button
+				>
 			</div>
 		</div>
 	</dialog>
@@ -418,6 +440,12 @@
 	}
 
 	.date-problem {
+		display: flex;
+		gap: var(--space-1);
+		align-items: center;
+		margin: 0 0 var(--space-1);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
 		color: var(--color-danger);
 	}
 
@@ -449,7 +477,9 @@
 		}
 	}
 
-	.calendar-title {
+	.calendar-title,
+	.sheet-handle,
+	.phone-label {
 		display: none;
 	}
 
@@ -532,15 +562,10 @@
 		font-weight: var(--font-weight-bold);
 	}
 
-	.calendar-keys {
-		margin: var(--space-2) 0 0;
-		font-size: var(--font-size-small);
-		color: var(--color-ink-muted);
-	}
-
 	.calendar-foot {
 		display: flex;
-		gap: var(--space-2);
+		align-items: center;
+		gap: var(--space-4);
 		margin-top: var(--space-2);
 		padding-top: var(--space-2);
 		border-top: 1px solid var(--color-line);
@@ -556,6 +581,20 @@
 		font-size: var(--font-size-small);
 	}
 
+	/* Today and Clear read as links until the phone sheet makes them buttons. */
+	.calendar-foot .quiet-action {
+		padding-inline: 0;
+		border-color: transparent;
+		color: var(--color-link);
+		font-weight: var(--font-weight-regular);
+		text-decoration: underline;
+	}
+
+	.calendar-foot .quiet-action:disabled {
+		color: var(--color-ink-muted);
+		cursor: not-allowed;
+	}
+
 	/* On a phone the calendar rises from the bottom of the screen, with bigger days. */
 	@media (max-width: 40rem) {
 		.calendar {
@@ -567,9 +606,19 @@
 			border-bottom: 0;
 		}
 
+		/* A gray scrim in both themes, as in the mockups. */
 		.calendar::backdrop {
-			background: var(--color-band);
-			opacity: 0.6;
+			background: var(--color-viewer-background);
+			opacity: 0.45;
+		}
+
+		.sheet-handle {
+			display: block;
+			width: 2.5rem;
+			height: 0.25rem;
+			margin: 0 auto var(--space-2);
+			border-radius: var(--radius-control);
+			background: var(--color-control-border);
 		}
 
 		.calendar-title {
@@ -583,8 +632,9 @@
 			min-height: var(--layout-target-minimum);
 		}
 
-		.calendar-keys {
-			display: none;
+		.calendar-foot {
+			gap: var(--space-2);
+			border-top: 0;
 		}
 
 		.calendar-foot .button {
@@ -593,8 +643,27 @@
 			min-height: var(--layout-target-minimum);
 		}
 
+		.calendar-foot .quiet-action {
+			padding-inline: var(--space-3);
+			border-color: var(--color-control-border);
+			color: var(--color-ink);
+			font-weight: var(--font-weight-semibold);
+			text-decoration: none;
+		}
+
 		.calendar-foot .close-button {
 			margin-inline-start: 0;
+			border-color: var(--color-action);
+			background: var(--color-action);
+			color: var(--color-action-text);
+		}
+
+		.wide-label {
+			display: none;
+		}
+
+		.phone-label {
+			display: inline;
 		}
 	}
 </style>
