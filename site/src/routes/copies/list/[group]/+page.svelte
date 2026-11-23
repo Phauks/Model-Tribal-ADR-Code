@@ -25,7 +25,7 @@
 				original: { text: new URL(copy.original).hostname, href: copy.original },
 				captured: { text: copy.capturedText, sortValue: copy.captured },
 				size: { text: copy.size, sortValue: copy.bytes },
-				verify: { text: 'Verify a download', href: verifyLink(copy.sha256, fileName(copy.path)) },
+				verify: { text: 'SHA-256', href: verifyLink(copy.sha256, fileName(copy.path)) },
 				removal: { text: 'Ask to remove', href: copy.removal }
 			}
 		}))
@@ -52,6 +52,6 @@
 >
 	{#snippet cell(row: TableRow, column: TableColumn)}
 		{#if column.key === 'removal'}<a href={row.cells.removal.href}>Ask to remove</a>{/if}
-		{#if column.key === 'verify'}<a href={row.cells.verify.href}>Verify a download</a>{/if}
+		{#if column.key === 'verify'}<a href={row.cells.verify.href}>SHA-256<span class="visually-hidden">: check a download of {row.cells.title.text}</span></a>{/if}
 	{/snippet}
 </DataTable>

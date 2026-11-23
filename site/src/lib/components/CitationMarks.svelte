@@ -3,7 +3,7 @@
 	The markers of a fact's sources: small numbers in square brackets, as
 	Wikipedia shows citations (site/DESIGN.md, section 6, "Citations"). Each
 	links to its source in the page's Sources list, which links back to it.
-	With scripts, CitationPopup shows the source in place instead. The HTML
+	With scripts, pointing at a marker also previews the source (CitationPopup). The HTML
 	matches what src/lib/citation-marks.ts writes for Markdown citations.
 
 	Put it right after the fact's words, with no space before it:

@@ -74,6 +74,8 @@
 		download?: string;
 		/** Keeps the search, sort and filters in the page address and shows "Copy link". */
 		shareable?: boolean;
+		/** False leaves out "Showing N of N rows" until a filter or search narrows the table, as beside the map, where the count is clutter (Trevor, 2026-11-23). */
+		count?: boolean;
 	}
 
 	let {
@@ -89,7 +91,8 @@
 		empty,
 		filters = false,
 		download,
-		shareable = false
+		shareable = false,
+		count: showCount = true
 	}: Props = $props();
 
 	let interactive = $state(false);
@@ -202,7 +205,7 @@
 	</div>
 	{/if}
 	<div class="table-status no-print">
-		<p class="small muted table-count" role="status">{count}</p>
+		<p class="small muted table-count" role="status">{showCount || narrowed ? count : ''}</p>
 		{#if narrowed && (filterColumns.length > 0 || searchLabel)}
 			<button type="button" class="button button-quiet small-button" onclick={clearFilters}>Show all</button>
 		{/if}

@@ -16,7 +16,14 @@
 export const checksumsAddress = '/checksums.json';
 export const checksumsTextAddress = '/checksums.txt';
 export const downloadChecksumsAddress = '/checksums/downloads.json';
-export const verifyAddress = '/verify';
+/**
+ * Where a reader checks a file: the "Checking a file" section of the Downloads page (Trevor asked on
+ * Nov. 23, 2026 that verifying be part of that page rather than a page of its own). The old /verify
+ * address sends readers there, with whatever hash its link carried.
+ */
+export const verifyPage = '/downloads';
+export const verifySection = 'checking';
+export const verifyAddress = `${verifyPage}#${verifySection}`;
 
 export interface ChecksumEntry {
 	sha256: string;
@@ -67,11 +74,11 @@ export function pathsWithHash(manifest: ChecksumManifest, sha256: string): strin
 		.map(([path]) => path);
 }
 
-/** The Verify a file page, set to check a file against this hash. */
+/** The Downloads page's file checker, set to check a file against this hash. */
 export function verifyLink(sha256: string, name?: string): string {
 	const query = new URLSearchParams({ sha256 });
 	if (name) query.set('name', name);
-	return `${verifyAddress}?${query}`;
+	return `${verifyPage}?${query}#${verifySection}`;
 }
 
 /** The name a path's file is saved under, "/copies/a/b%20c.pdf" -> "b c.pdf". */

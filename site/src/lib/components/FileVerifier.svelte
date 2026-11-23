@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Checks a file a reader downloaded against the SHA-256 this site published for it
 	// (site/DESIGN.md, section 10, "Checking a file"; src/lib/checksums.ts). The file is read in the
-	// browser and never sent anywhere. Used on /verify and beside the model court forms. With an
+	// browser and never sent anywhere. Used on the Downloads page and beside the model court forms. With an
 	// expected hash it compares the file with that hash; otherwise it looks the file up in the list of
 	// every file the site publishes.
 	import { allChecksums, fileName, pathsWithHash } from '#lib/checksums.ts';
