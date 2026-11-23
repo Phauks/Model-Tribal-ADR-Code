@@ -70,7 +70,8 @@
 			{/if}
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">
-					Listed as “{page.listedName}” on the list that recognizes it.<CitationMarks
+					Listed as “{page.listedName}”{#if page.listedIn}
+						in <cite>{page.listedIn.title}</cite>{#if page.listedIn.rest}, {page.listedIn.rest}{/if}{/if}.<CitationMarks
 						marks={data.nameCitations}
 					/>
 				</p>
