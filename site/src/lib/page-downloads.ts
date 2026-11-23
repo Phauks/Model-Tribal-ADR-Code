@@ -106,7 +106,7 @@ export interface PageDownloads {
 /** On the map page, the view on screen, whose table the menu offers first. */
 export function pageDownloads(path: string, mapTable?: { file: string; label: string }): PageDownloads {
 	const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
-	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data' && nation !== 'timeline') {
+	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices') {
 		return {
 			citable: true,
 			files: [
