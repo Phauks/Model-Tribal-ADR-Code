@@ -181,6 +181,9 @@
 					<label for="sponsor-logo">Logo (optional)</label>
 					<p class="hint">A PNG, JPEG or WebP image up to 512 KB. A square logo looks best.</p>
 					<input id="sponsor-logo" name="logo" type="file" accept="image/png,image/jpeg,image/webp" />
+					{#if sponsor.logoChecking}
+						<p class="small">Your logo is being checked for viruses. It shows here and in public once the check passes, usually within a few minutes.</p>
+					{/if}
 					{#if sponsor.hasLogo}
 						<div class="choice">
 							<input type="checkbox" id="remove-logo" name="removeLogo" value="yes" />

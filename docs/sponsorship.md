@@ -34,7 +34,7 @@ The amount is never shown in public. The sponsor's managers see their own total 
 
 While gifts are in test mode, test gifts count for the public pages, so the whole path can be tried. Otherwise only live gifts count.
 
-Logos are PNG, JPEG or WebP up to 512 KB, checked by their first bytes, stored in the private bucket and served with their own type only. SVG is refused because it can carry scripts.
+Logos are PNG, JPEG or WebP up to 512 KB, checked by their first bytes, stored in the private bucket and served with their own type only. SVG is refused because it can carry scripts. A logo is a file sent from outside, so it is held until the virus check passes (site/SCANNING.md), and the sponsor's initials show until then.
 
 ## Gifts and Stripe
 

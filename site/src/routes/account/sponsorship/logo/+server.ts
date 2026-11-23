@@ -15,5 +15,5 @@ export const GET: RequestHandler = async (event) => {
 		sponsor &&
 		((await isManager(database, sponsor.identifier, account.subject)) || Boolean(event.locals.person && can(event.locals.person, 'manage-sponsors')));
 	if (!sponsor || !allowed) error(404, 'No logo.');
-	return logoResponse(bucket, sponsor, 'private');
+	return logoResponse(database, bucket, sponsor, 'private');
 };

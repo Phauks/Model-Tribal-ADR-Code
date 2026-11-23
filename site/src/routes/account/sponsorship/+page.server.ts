@@ -11,6 +11,7 @@ import {
 	historyOf,
 	invitationDays,
 	isManager,
+	logosReady,
 	managersOf,
 	openInvitations,
 	publicMode,
@@ -76,12 +77,14 @@ export const load: PageServerLoad = async (event) => {
 	if (!sponsor) return { sponsor: null, others, gifts, viewingAs, mayDiagnose };
 
 	const shownMode = publicMode(state);
-	const [managers, invitations, history, allGifts] = await Promise.all([
+	const [managers, invitations, history, allGifts, readyLogos] = await Promise.all([
 		managersOf(database, sponsor.identifier),
 		openInvitations(database, sponsor.identifier),
 		historyOf(database, sponsor.identifier, 10),
-		giftsOf(database, sponsor.identifier)
+		giftsOf(database, sponsor.identifier),
+		logosReady(database, [sponsor])
 	]);
+	const logoReady = readyLogos.size > 0;
 	const modeGifts = allGifts.filter((gift) => gift.mode === (state.open ? state.mode : shownMode));
 	const totals = totalsOf(modeGifts);
 
@@ -111,11 +114,13 @@ export const load: PageServerLoad = async (event) => {
 			link: sponsor.link,
 			oneLine: sponsor.oneLine,
 			hasLogo: Boolean(sponsor.logoKey),
+			// A new logo waits for the virus check (site/SCANNING.md); the preview shows initials until then.
+			logoChecking: Boolean(sponsor.logoKey) && !logoReady,
 			listing: sponsor.listing,
 			earmark: sponsor.earmark,
 			createdAt: sponsor.createdAt
 		},
-		preview: publicView(sponsor, totals.firstAt ?? sponsor.createdAt),
+		preview: publicView(sponsor, totals.firstAt ?? sponsor.createdAt, logoReady),
 		status,
 		managers: managers.map((manager) => ({
 			...manager,

@@ -10,6 +10,7 @@
  */
 import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { isEarmark, isListing, slugFor, type Earmark, type Listing } from '#lib/sponsorship.ts';
+import { fileScans, forgetScan, mayServe, storeSentFile } from './file-scans.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { randomToken, sha256 } from './sign-in-secrets.ts';
 import { isTestKey, type StripeSettings } from './stripe.ts';
@@ -375,13 +376,25 @@ export async function setLogo(
 	const type = logoType(bytes);
 	if (!type) return { problem: 'The logo must be a PNG, JPEG or WebP image.' };
 	const key = `sponsors/${sponsor.identifier}/logo-${newIdentifier()}`;
-	await bucket.put(key, bytes, { httpMetadata: { contentType: type } });
+	// Held until the virus check passes (site/SCANNING.md); until then the initials show.
+	await storeSentFile(database, bucket, {
+		objectKey: key,
+		purpose: 'sponsor-logo',
+		subject: sponsor.identifier,
+		bytes,
+		httpMetadata: { contentType: type }
+	});
 	await database.batch([
 		database.prepare('UPDATE sponsors SET logo_key = ?, logo_type = ?, updated_at = ? WHERE identifier = ?').bind(key, type, now(), sponsor.identifier),
 		historyStatement(database, sponsor.identifier, actor, 'Changed the logo')
 	]);
-	if (sponsor.logoKey) await bucket.delete(sponsor.logoKey);
+	if (sponsor.logoKey) await forgetLogo(database, bucket, sponsor.logoKey);
 	return { done: true };
+}
+
+async function forgetLogo(database: D1Database, bucket: R2Bucket, key: string): Promise<void> {
+	await bucket.delete(key);
+	await forgetScan(database, key);
 }
 
 export async function removeLogo(database: D1Database, bucket: R2Bucket, sponsor: Sponsor, actor: Actor): Promise<void> {
@@ -390,7 +403,15 @@ export async function removeLogo(database: D1Database, bucket: R2Bucket, sponsor
 		database.prepare('UPDATE sponsors SET logo_key = NULL, logo_type = NULL, updated_at = ? WHERE identifier = ?').bind(now(), sponsor.identifier),
 		historyStatement(database, sponsor.identifier, actor, 'Removed the logo')
 	]);
-	await bucket.delete(sponsor.logoKey);
+	await forgetLogo(database, bucket, sponsor.logoKey);
+}
+
+/** Which of these sponsors' logos have passed the virus check, so a page shows initials instead of a logo still held. */
+export async function logosReady(database: D1Database, sponsors: readonly Sponsor[]): Promise<Set<string>> {
+	const keys = sponsors.map((sponsor) => sponsor.logoKey).filter((key): key is string => Boolean(key));
+	if (keys.length === 0) return new Set();
+	const scans = await fileScans(database, keys);
+	return new Set(keys.filter((key) => mayServe(scans.get(key) ?? null)));
 }
 
 /** How long an invitation link works. */
@@ -637,7 +658,7 @@ export interface PublicSponsor {
 }
 
 /** What the public pages may show about a sponsor: never the amount, and only what their listing allows. */
-export function publicView(sponsor: Sponsor, since: string): PublicSponsor {
+export function publicView(sponsor: Sponsor, since: string, logoReady = true): PublicSponsor {
 	const anonymous = sponsor.listing === 'anonymous';
 	const full = sponsor.listing === 'name-logo-link';
 	return {
@@ -645,7 +666,7 @@ export function publicView(sponsor: Sponsor, since: string): PublicSponsor {
 		name: anonymous ? null : sponsor.name,
 		oneLine: anonymous ? null : sponsor.oneLine,
 		link: full ? sponsor.link : null,
-		hasLogo: full && Boolean(sponsor.logoKey),
+		hasLogo: full && Boolean(sponsor.logoKey) && logoReady,
 		earmark: sponsor.earmark,
 		since
 	};
@@ -663,7 +684,9 @@ export async function publicSponsors(database: D1Database, mode: GiftMode): Prom
 		)
 		.bind(mode)
 		.all<SponsorRow & { since: string }>();
-	return results.map((row) => publicView(sponsorFrom(row), row.since));
+	const sponsors = results.map(sponsorFrom);
+	const ready = await logosReady(database, sponsors);
+	return sponsors.map((sponsor, index) => publicView(sponsor, results[index].since, Boolean(sponsor.logoKey && ready.has(sponsor.logoKey))));
 }
 
 /** One sponsor's public page, if they are shown and listed by name. */
@@ -673,10 +696,8 @@ export async function publicSponsor(database: D1Database, slug: string, mode: Gi
 	const gifts = await giftsOf(database, sponsor.identifier, mode);
 	const status = publicStatus(sponsor, gifts.length > 0);
 	if (!status.shown) return null;
-	return {
-		sponsor,
-		view: publicView(sponsor, totalsOf(gifts).firstAt as string)
-	};
+	const ready = await logosReady(database, [sponsor]);
+	return { sponsor, view: publicView(sponsor, totalsOf(gifts).firstAt as string, ready.size > 0) };
 }
 
 export interface SponsorOverview {
