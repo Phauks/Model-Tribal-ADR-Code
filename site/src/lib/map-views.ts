@@ -23,7 +23,7 @@ export interface MapViewEntry {
 }
 
 /** Groups in the order they are listed. */
-export const mapViewGroups = ['Where nations are', 'Recognition', 'Courts and dispute resolution', 'Jurisdiction', 'Gaming', 'Federal administration'] as const;
+export const mapViewGroups = ['Where nations are', 'Recognition', 'Courts and dispute resolution', 'Jurisdiction', 'Gaming', 'Treaties and land', 'Federal administration'] as const;
 
 export const mapViews: MapViewEntry[] = [
 	{
@@ -99,6 +99,22 @@ export const mapViews: MapViewEntry[] = [
 		group: 'Gaming',
 		description: 'Class III gaming compacts, Secretarial Procedures, gaming ordinances and nations that operate gaming',
 		keywords: ['igra', 'indian gaming regulatory act', 'casino', 'compact', 'class iii', 'class ii', 'nigc', 'national indian gaming commission', 'ordinance', 'secretarial procedures']
+	},
+	{
+		key: 'treaties',
+		label: 'Treaties',
+		heading: 'treaties-heading',
+		group: 'Treaties and land',
+		description: 'How many ratified treaties with the United States each nation’s entry lists',
+		keywords: ['treaty', 'kappler', 'ratified', 'cession', 'statutes at large']
+	},
+	{
+		key: 'land-set-aside',
+		label: 'How Land Was Set Aside',
+		heading: 'land-set-aside-heading',
+		group: 'Treaties and land',
+		description: 'Whether a reservation was set aside by treaty, executive order, act of Congress or other means',
+		keywords: ['reservation', 'executive order', 'act of congress', 'statute', 'established', 'land base', 'trust land']
 	},
 	{
 		key: 'regions',
