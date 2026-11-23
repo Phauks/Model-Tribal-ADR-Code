@@ -23,6 +23,9 @@
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
 	import { boxParts, casePartOrder, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
 	import type { RenderedEssay } from '#lib/essays/render.ts';
+	import { checkMarks, issueAt } from '#lib/essays/check-marks.ts';
+	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
+	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
 
 	let {
 		identifier,
@@ -96,7 +99,26 @@
 	let linkAddress = $state('');
 	let shownText = $state('');
 	let editingCitationAt = $state<number | null>(null);
-	let library = $state<{ sources: [string, string][]; terms: [string, string][] } | null>(null);
+	let library = $state<{ sources: [string, string][]; terms: [string, string][]; words?: string[] } | null>(null);
+
+	/* Checks and Go to ------------------------------------------------------- */
+
+	const checksKey = 'editor-checks';
+	/** Goes up by one each time the text changes, so the checks run again. */
+	let revision = $state(0);
+	let showChecks = $state(false);
+	let showGoTo = $state(false);
+	let chosenIssue = $state<string | null>(null);
+
+	function toggleChecks(): void {
+		showChecks = !showChecks;
+		if (showChecks) void loadLibrary();
+		try {
+			localStorage.setItem(checksKey, showChecks ? 'on' : 'off');
+		} catch {
+			// Storage can be blocked; the choice is then not remembered.
+		}
+	}
 	let libraryProblem = $state('');
 
 	async function loadLibrary(): Promise<void> {
@@ -362,7 +384,10 @@
 		const tracker = new Plugin({
 			view: () => ({
 				update: (editorView, previous) => {
-					if (!editorView.state.doc.eq(previous.doc)) markChanged();
+					if (!editorView.state.doc.eq(previous.doc)) {
+						markChanged();
+						revision += 1;
+					}
 					describe(editorView.state);
 				}
 			})
@@ -389,10 +414,15 @@
 					'Mod-s': () => {
 						void save();
 						return true;
+					},
+					'Mod-g': () => {
+						showGoTo = true;
+						return true;
 					}
 				}),
 				keymap(baseKeymap),
 				history(),
+				checkMarks(),
 				tracker
 			]
 		});
@@ -405,6 +435,11 @@
 			state: createState(body),
 			editable: () => canEdit,
 			attributes: { class: 'essay-editor-text essay-text', 'aria-label': 'Essay text', role: 'textbox', 'aria-multiline': 'true' },
+			handleClick: (editorView, position) => {
+				const issue = issueAt(editorView, position);
+				if (issue) chosenIssue = issue;
+				return false;
+			},
 			handleDoubleClickOn: (_view, _position, node, nodePosition) =>
 				node.type.name === 'citation' ? editCitation(nodePosition, node) : false,
 			dispatchTransaction(transaction: Transaction) {
@@ -559,6 +594,11 @@
 	onMount(() => {
 		mountEditor(initial.body);
 		dirty = false;
+		try {
+			if (canEdit && localStorage.getItem(checksKey) === 'on') toggleChecks();
+		} catch {
+			// As above.
+		}
 	});
 
 	onDestroy(() => {
@@ -641,7 +681,22 @@
 				<button type="button" class="tool" onclick={() => run(redo)}>Redo</button>
 			</div>
 		{/if}
+		{#if mode === 'rich'}
+			<div role="group" aria-label="Checks and Go to">
+				{#if canEdit}
+					<button type="button" class="tool" aria-pressed={showChecks} onclick={toggleChecks}>Checks</button>
+				{/if}
+				<button type="button" class="tool" aria-pressed={showGoTo} title="Ctrl+G" onclick={() => (showGoTo = !showGoTo)}>Go to</button>
+			</div>
+		{/if}
 	</div>
+
+	{#if showGoTo && mode === 'rich'}
+		<EssayGoTo view={() => view} onclose={() => (showGoTo = false)} />
+	{/if}
+	{#if showChecks && mode === 'rich'}
+		<EssayChecks view={() => view} {revision} {identifier} file={currentFile} {library} {canEdit} bind:selected={chosenIssue} />
+	{/if}
 
 	{#if active.boxSource && mode === 'rich'}
 		<p class="small muted context">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</p>
@@ -852,6 +907,30 @@
 	.editor-area :global(.ProseMirror table) {
 		display: block;
 		overflow-x: auto;
+	}
+
+	/* What the checks found (EssayChecks.svelte): wavy for spelling and grammar, dotted for definitions. */
+	.editor-area :global(.check-mark) {
+		text-decoration-line: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 3px;
+		cursor: pointer;
+	}
+
+	.editor-area :global(.check-spelling) {
+		text-decoration-style: wavy;
+		text-decoration-color: var(--color-danger);
+	}
+
+	.editor-area :global(.check-grammar) {
+		text-decoration-style: wavy;
+		text-decoration-color: var(--color-link);
+	}
+
+	.editor-area :global(.check-definition),
+	.editor-area :global(.check-repeated) {
+		text-decoration-style: dotted;
+		text-decoration-color: var(--color-action);
 	}
 
 	.editor-area :global(.ProseMirror) {

@@ -372,6 +372,17 @@ export function nationNamesAndKinds(): Map<string, { name: string; entityType: s
 	return found;
 }
 
+/** Every name of every listed nation: official, self-designations and former names. */
+export function nationNameVariants(): string[] {
+	const names: string[] = [];
+	for (const file of yamlFilesUnder('content/tribes')) {
+		const record = readYaml<NationRecord>(file);
+		if (record.sensitivity?.restricted) continue;
+		names.push(record.names.official, ...(record.names.self_designation ?? []).map((entry) => entry.name), ...(record.names.former ?? []).map((entry) => entry.name));
+	}
+	return names;
+}
+
 /** Glossary records with the file each comes from. Used by vite.config.ts. */
 export function glossaryForReview(): { id: string; term: string; file: string }[] {
 	return yamlFilesUnder('content/glossary').map((file) => {

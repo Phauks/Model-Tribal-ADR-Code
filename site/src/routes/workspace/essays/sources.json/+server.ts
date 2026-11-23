@@ -1,11 +1,12 @@
 /**
  * Every source record's key and citation as plain text, for the editor's
- * "Cite a source" search, and the glossary terms for "Link a glossary term".
+ * "Cite a source" search, the glossary terms for "Link a glossary term" and
+ * the definitions check, and the words the spelling check should know.
  * Any signed-in workspace member may read it: it holds only what the public
  * pages already show.
  */
 import { json } from '@sveltejs/kit';
-import { essayCitations, essayTerms } from 'virtual:essay-library';
+import { essayCitations, essaySpellingWords, essayTerms } from 'virtual:essay-library';
 import { requirePerson } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
 
@@ -25,13 +26,14 @@ function plain(html: string): string {
 		.trim();
 }
 
-let cached: { sources: [string, string][]; terms: [string, string][] } | undefined;
+let cached: { sources: [string, string][]; terms: [string, string][]; words: string[] } | undefined;
 
 export const GET: RequestHandler = (event) => {
 	requirePerson(event);
 	cached ??= {
 		sources: Object.entries(essayCitations).map(([key, html]) => [key, plain(html)]),
-		terms: Object.entries(essayTerms).sort((first, second) => first[1].localeCompare(second[1], 'en-US'))
+		terms: Object.entries(essayTerms).sort((first, second) => first[1].localeCompare(second[1], 'en-US')),
+		words: essaySpellingWords
 	};
 	return json(cached, { headers: { 'Cache-Control': 'private, max-age=3600' } });
 };
