@@ -1,8 +1,10 @@
+import { fail } from '@sveltejs/kit';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { allSponsors, giftSettingChecks, giftState, publicMode } from '#lib/server/sponsors.ts';
-import { requirePermission, storage } from '#lib/server/workspace.ts';
-import { dollars } from '#lib/sponsorship.ts';
-import type { PageServerLoad } from './$types';
+import { saveSponsorshipCosts, sponsorshipCosts } from '#lib/server/sponsorship-goals.ts';
+import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
+import { costedEarmarks, dollars, largestGift, type CostedEarmark } from '#lib/sponsorship.ts';
+import type { Actions, PageServerLoad } from './$types';
 
 // Every sponsor, and whether gifts work and why not (docs/sponsorship.md,
 // "Diagnosing"). The lead author only. From here each sponsor's own
@@ -12,8 +14,13 @@ export const load: PageServerLoad = async (event) => {
 	const environment = workerEnvironment();
 	const state = giftState(environment);
 	const mode = publicMode(state);
-	const sponsors = await allSponsors(storage(event).database, mode);
+	const { database } = storage(event);
+	const [sponsors, costs] = await Promise.all([allSponsors(database, mode), sponsorshipCosts(database)]);
 	return {
+		costs: Object.fromEntries(costedEarmarks.map((earmark) => [earmark, costs[earmark] ? (costs[earmark] / 100).toFixed(2) : ''])) as Record<
+			CostedEarmark,
+			string
+		>,
 		checks: giftSettingChecks(environment),
 		open: state.open,
 		mode: state.open ? state.mode : null,
@@ -40,4 +47,30 @@ export const load: PageServerLoad = async (event) => {
 			stripeLive: Boolean(overview.sponsor.stripeCustomerLive)
 		}))
 	};
+};
+
+export const actions: Actions = {
+	/**
+	 * Sets what each thing a gift can fund costs, for the Sponsorship page
+	 * (docs/sponsorship.md, "The Sponsorship page"). A blank box takes that
+	 * cost off the page.
+	 */
+	costs: async (event) => {
+		const person = requirePermission(event, 'manage-sponsors');
+		const form = await event.request.formData();
+		const costs = {} as Record<CostedEarmark, number | null>;
+		for (const earmark of costedEarmarks) {
+			const text = formText(form, earmark, 20)?.replace(/[$,\s]/g, '');
+			if (!text) {
+				costs[earmark] = null;
+				continue;
+			}
+			const amount = Number(text);
+			if (!Number.isFinite(amount) || amount <= 0 || amount > largestGift || Math.round(amount * 100) !== amount * 100)
+				return fail(400, { problem: `Write each cost in dollars and cents, up to ${dollars(largestGift * 100)}, or leave it blank.` });
+			costs[earmark] = Math.round(amount * 100);
+		}
+		await saveSponsorshipCosts(storage(event).database, costs, `The project (${person.displayName})`);
+		return { done: 'Saved. The Sponsorship page shows the new costs.' };
+	}
 };
