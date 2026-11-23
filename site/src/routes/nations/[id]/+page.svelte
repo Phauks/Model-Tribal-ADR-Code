@@ -162,7 +162,7 @@
 				<ul class="opinions">
 					{#each opinions.shown as opinion (opinion.path)}
 						<li>
-							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics} /></span>{/if}
+							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic }))} /></span>{/if}
 						</li>
 					{/each}
 				</ul>

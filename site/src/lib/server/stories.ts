@@ -109,11 +109,47 @@ export interface StorySummary {
 	review: ReviewStatus;
 }
 
+/** A method or topic a story is tagged with, linked to the page that lists every story tagged with it. */
+export interface StoryTag {
+	id: string;
+	name: string;
+	link: string;
+}
+
+export type StoryTagKind = 'methods' | 'topics';
+
+function methodName(id: string): string {
+	return methods().get(id)?.name ?? spaced(id);
+}
+
+function storyTag(kind: StoryTagKind, id: string): StoryTag {
+	return { id, name: kind === 'methods' ? methodName(id) : spaced(id), link: `/stories/${kind}/${id}` };
+}
+
+/**
+ * Every method or topic the published stories are tagged with, each with its
+ * stories, so a method's or topic's badge on a story can open a page listing
+ * the others (Trevor, Nov. 23, 2026). Ordered by name.
+ */
+export function storyTags(kind: StoryTagKind): (StoryTag & { stories: StorySummary[] })[] {
+	const date = today();
+	const tags = new Map<string, StoryTag & { stories: StorySummary[] }>();
+	for (const record of publishedStories()) {
+		const summary = summaryOf(record, date);
+		for (const id of new Set(record[kind] ?? [])) {
+			const tag = tags.get(id) ?? { ...storyTag(kind, id), stories: [] };
+			tag.stories.push(summary);
+			tags.set(id, tag);
+		}
+	}
+	return [...tags.values()].sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
+}
+
 export interface StoryView extends StorySummary {
 	titlesInLanguage: { text: string; language: string; citations: CitationMark[] }[];
 	length?: string;
-	methods: string[];
-	topics: string[];
+	methods: StoryTag[];
+	topics: StoryTag[];
 	/** The whole story in the teller's words, where it may be reproduced (decision record 0034). */
 	fullText?: FullTextView;
 	/** Excerpts from tellings other than the one shown in full. */
@@ -339,8 +375,8 @@ export function storyView(record: StoryRecord): StoryView {
 		...summaryOf(record, date),
 		titlesInLanguage,
 		length: record.length ? labelFor(lengthLabels, record.length) : undefined,
-		methods: (record.methods ?? []).map((id) => methods().get(id)?.name ?? spaced(id)),
-		topics: (record.topics ?? []).map(spaced),
+		methods: (record.methods ?? []).map((id) => storyTag('methods', id)),
+		topics: (record.topics ?? []).map((id) => storyTag('topics', id)),
 		fullText,
 		excerpts,
 		tellings: tellingViews,
