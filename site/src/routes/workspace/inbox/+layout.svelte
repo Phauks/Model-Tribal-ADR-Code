@@ -225,6 +225,8 @@
 <style>
 	.mail {
 		display: grid;
+		/* One column on a phone, no wider than the screen however long the row of chips is. */
+		grid-template-columns: minmax(0, 1fr);
 		gap: var(--space-5);
 		align-items: start;
 	}
