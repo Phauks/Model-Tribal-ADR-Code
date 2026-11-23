@@ -53,7 +53,8 @@
 			{#each data.teams as team (team.nationIdentifier)}
 				<li>
 					<a href="/workspace/nation-teams/{team.nationIdentifier}">{team.title}</a>:
-					{teamLevelLabels[team.level].toLocaleLowerCase('en-US')}
+					{teamLevelLabels[team.level].toLocaleLowerCase('en-US')}.
+					<a href="/workspace/nation-teams/{team.nationIdentifier}/edit">Edit the page</a>
 				</li>
 			{/each}
 		</ul>

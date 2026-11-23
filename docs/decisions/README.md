@@ -49,6 +49,7 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0041](0041-nation-teams-keep-their-own-pages.md) | Let each nation choose a team that keeps its own page, with delegation inside that nation only | Accepted |
 | [0042](0042-governance-facts-from-governing-documents.md) | Record how each nation's government is set up, as plain facts from its own documents | Accepted |
 | [0042](0042-link-to-the-national-indian-law-library-for-its-copies.md) | Link to the National Indian Law Library for copies taken from it | Accepted |
+| [0043](0043-link-to-the-national-indian-law-library-for-its-copies.md) | Link to the National Indian Law Library for copies taken from it | Accepted |
 | [0044](0044-order-printed-copies-through-the-lulu-print-api.md) | Order printed copies on the website through the Lulu Print API | Proposed |
 | [0045](0045-separate-settings-from-account-settings.md) | Keep display settings on the device and account settings on Account pages | Accepted |
 

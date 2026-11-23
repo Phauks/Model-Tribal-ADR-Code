@@ -1,7 +1,7 @@
 profile: content/tribes/a/anvik-village.yaml
 topic: dispute-resolution
-status: none-found
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -65,5 +65,16 @@ searches:
   reason: 'Second reading: confirm. Re-read every cached page for this nation with wider words (peace,
     circle, conflict, dispute, grievance, elders'' panel, Tribal court) and found no dispute resolution
     forum, program or provision of this nation.'
-next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
-  dispute resolution program, and check law library holdings of its code.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'this nation''s entry: types of cases heard'
+  outcome: found
+  reason: Entry "Anvik Tribal Council" (p. 105) lists "Dispute resolution/Peacemaking" among the cases
+    heard; found while reading the directory in full for the Nov. 23 retry.
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#anvik-village-retry-1
+next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
+  (Gate 1) before any record goes into the profile.

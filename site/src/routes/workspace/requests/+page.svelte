@@ -21,6 +21,7 @@
 		{ key: 'kind', header: 'Kind', sortable: true },
 		{ key: 'about', header: 'About', sortable: true },
 		{ key: 'status', header: 'Status', sortable: true },
+		{ key: 'team', header: 'Nation’s team', sortable: true },
 		{ key: 'received', header: 'Received', type: 'date', sortable: true },
 		{ key: 'target', header: 'Next target', type: 'date', sortable: true, custom: true }
 	];
@@ -39,6 +40,7 @@
 							? `${requestStatusLabels[request.status]}: ${requestOutcomeLabels[request.outcome]}`
 							: requestStatusLabels[request.status]
 					},
+					team: { text: request.team },
 					received: { text: date(request.receivedAt), sortValue: request.receivedAt },
 					target: { text: next ? `${next.label} ${date(next.due)}` : '', sortValue: next?.due }
 				}
