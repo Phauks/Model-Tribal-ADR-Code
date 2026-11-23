@@ -571,6 +571,27 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image, and the name was found word for word in the notice''s
     machine-read (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+land_establishment:
+- land_area: Northern Idaho reservation for the Coeur d'Alenes and other tribes
+  method: executive-order
+  instrument: Exec. Order of June 14, 1867, 1 Kappler 837
+  date: '1867-06-14'
+  detail: First set aside
+  source: executive-order-1867-06-14-southern-and-northern-idaho-reservations
+  confidence: low
+  verification: inferred
+  locator: 1 Kappler 837
+  note: 'The instrument reads: “Let the lands be set apart as reservations for the Indians within named, as recommended by the Acting Secretary of the Interior.”. The accompanying recommendation sets apart a northern reservation (about 20 miles square) for "the Cœur d''Alenes and other tribes of northern Idaho" (1 Kappler 836); the reservation was not actually established on the ground until the Exec. Order of Nov. 8, 1873. Low confidence that the 1867 tract is the same land.'
+- land_area: Coeur d'Alene Reserve, Idaho
+  method: executive-order
+  instrument: Exec. Order of Nov. 8, 1873, 1 Kappler 837
+  date: '1873-11-08'
+  detail: Later change
+  source: executive-order-1873-11-08-coeur-dalene-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 837
+  note: 'The instrument reads: “withdrawn from sale and set apart as a reservation for the Cœur d’Alene Indians, in said Territory”. First order naming a Coeur d''Alene reservation; enlarged by later orders and the act of Mar. 3, 1891 (26 Stat. 1027).'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

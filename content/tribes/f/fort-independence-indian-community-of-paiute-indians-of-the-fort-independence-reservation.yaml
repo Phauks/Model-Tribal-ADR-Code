@@ -418,6 +418,17 @@ jurisdiction:
     so nation names were read from images and matched to the roster. Row re-read on 2026-11-22 from the
     page image (the govinfo PDF has no text layer for the table); verification level unchanged because
     the name was not matched word for word in machine-read text.'
+land_establishment:
+- land_area: Fort Independence Reservation, California
+  method: executive-order
+  instrument: Exec. Order No. 2264
+  date: '1915-10-28'
+  detail: First set aside
+  source: executive-order-1915-10-28-2264
+  confidence: high
+  verification: read-in-full
+  locator: 4 Kappler 1012
+  note: 'The instrument reads: “reserved for the Camp or Fort Independence Indians entitled to allotments thereon”. 320.40 acres.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'
