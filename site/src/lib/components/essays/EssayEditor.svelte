@@ -518,7 +518,13 @@
 	let joinTimer: ReturnType<typeof setTimeout> | undefined;
 	/** How long to wait for the room before opening the editor on its own. */
 	const joinWaitMilliseconds = 6_000;
-	const cursorColors = ['#0f4c54', '#b4461a', '#1a6d76', '#6b3fa0', '#2e7d32', '#ad1457'];
+	/** Cursor colors come from the design tokens, read from the page so each theme gets its own. */
+	const cursorTokens = ['--color-action', '--color-link', '--color-danger', '--color-focus'];
+
+	function cursorColor(): string {
+		const token = cursorTokens[Math.floor(Math.random() * cursorTokens.length)];
+		return getComputedStyle(document.documentElement).getPropertyValue(token).trim() || 'currentColor';
+	}
 
 	function editable(): boolean {
 		if (!canEdit || joining) return false;
@@ -531,7 +537,7 @@
 		view?.setProps({});
 		const joined = joinEssayRoom(identifier, {
 			basedOn,
-			user: { name: 'Someone', color: cursorColors[Math.floor(Math.random() * cursorColors.length)] }
+			user: { name: 'Someone', color: cursorColor() }
 		});
 		room = joined;
 		joined.subscribe((next) => {
@@ -1315,11 +1321,11 @@
 		width: 0.6rem;
 		height: 0.6rem;
 		border-radius: 50%;
-		background: var(--color-action, #1a6d76);
+		background: var(--color-action);
 	}
 
 	.live-dot.offline {
-		background: var(--color-muted, #777);
+		background: var(--color-ink-muted);
 	}
 
 	/* Other people's cursors and selections in the live room (y-prosemirror). */
@@ -1340,7 +1346,7 @@
 		font-weight: 600;
 		line-height: 1.2;
 		white-space: nowrap;
-		color: #fff;
+		color: var(--color-action-text);
 		padding: 0 0.3em;
 		border-radius: 0.25em 0.25em 0.25em 0;
 		user-select: none;
