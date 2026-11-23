@@ -53,6 +53,33 @@
 		}))
 	);
 	const enforcementMarks = $derived(new Map(data.enforcement.map((action) => [action.key, action.citations])));
+
+	// The court cases that name the nation, as a party or as what the case is
+	// about (Trevor, Nov. 23, 2026). The Case column is the case's name in
+	// italics with its citation; Named as shows the name the case gives when it
+	// is not the nation's name today, such as a former name or a historical nation.
+	const caseColumns: TableColumn[] = [
+		{ key: 'decided', header: 'Decided', type: 'date', sortable: true },
+		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'court', header: 'Court', sortable: true, searchable: true, filterable: true },
+		{ key: 'role', header: 'Role', sortable: true, filterable: true },
+		{ key: 'namedAs', header: 'Named as', searchable: true, custom: true },
+		{ key: 'source', header: 'Source', custom: true }
+	];
+	const caseRows: TableRow[] = $derived(
+		data.cases.map((entry) => ({
+			key: entry.key,
+			cells: {
+				decided: { text: entry.decided ? readableDate(entry.decided) : '', sortValue: entry.decided },
+				name: { text: [entry.name, entry.citation].filter(Boolean).join(', '), sortValue: entry.name, href: entry.link },
+				court: { text: entry.court ?? '' },
+				role: { text: entry.role },
+				namedAs: { text: [entry.namedAs, entry.note].filter(Boolean).join('. ') },
+				source: { text: entry.citations.map((mark) => mark.number).join(', ') }
+			}
+		}))
+	);
+	const casesByKey = $derived(new Map(data.cases.map((entry) => [entry.key, entry])));
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
@@ -204,6 +231,35 @@
 				<p class="small muted">
 					Each opinion is a copy of the Caselaw Access Project’s text, with the publisher’s headnotes removed. A word listed means only that it appears in the opinion, not what the court decided.
 				</p>
+			</Collapsible>
+		{/if}
+
+		<!-- 5b. Cases involving the nation: court cases in the project's sources
+		     that name the nation, as a party or as what the case is about; each
+		     case's record says how (nations_in_case). -->
+		{#if data.cases.length > 0}
+			<Collapsible heading="Cases involving the nation" identifier="cases-heading">
+				<DataTable
+					identifier="nation-cases"
+					label="Table: cases involving the nation"
+					columns={caseColumns}
+					rows={caseRows}
+					defaultSort={{ key: 'decided', direction: 'ascending' }}
+					rowName={['case', 'cases']}
+					filters
+					download="{data.page.id}-cases"
+				>
+					{#snippet cell(row: TableRow, column: TableColumn)}
+						{@const entry = casesByKey.get(row.key)}
+						{#if entry && column.key === 'name'}
+							{#if entry.link}<a href={entry.link}><i>{entry.name}</i></a>{:else}<i>{entry.name}</i>{/if}{#if entry.citation}, <span class="case-citation">{entry.citation}</span>{/if}
+						{:else if entry && column.key === 'namedAs'}
+							{#if entry.namedAs}{entry.namedAs}{/if}{#if entry.note}<span class="small muted case-note">{entry.note}</span>{/if}
+						{:else if entry && column.key === 'source'}
+							<CitationMarks marks={entry.citations} />
+						{/if}
+					{/snippet}
+				</DataTable>
 			</Collapsible>
 		{/if}
 
@@ -376,6 +432,12 @@
 {/snippet}
 
 <style>
+	.case-citation {
+		white-space: nowrap;
+	}
+	.case-note {
+		display: block;
+	}
 	.opinions li + li {
 		margin-top: var(--space-2);
 	}

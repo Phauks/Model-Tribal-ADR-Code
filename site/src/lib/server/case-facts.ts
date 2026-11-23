@@ -70,11 +70,16 @@ export function decisionDate(record: CaseRecord): string | null {
 	return `${months[parts[1] - 1]} ${parts[2]}, ${parts[0]}`;
 }
 
+/**
+ * The nations or peoples a case or law names, each linking its nation page
+ * (Trevor, Nov. 23, 2026: "nations in cases should be linkable to the
+ * nation"). A nation with no page here is named without a link.
+ */
 function nationLine(record: CaseRecord, nations: Map<string, { name: string; entityType: string }>): FactLine | null {
 	if (!Array.isArray(record.tribes) || record.tribes.length === 0) return null;
 	const names = record.tribes.map((id) => {
 		const nation = nations.get(id);
-		return nation ? displayName(nation.name) : id;
+		return nation ? `<a href="/nations/${encodeURIComponent(id)}">${escapeHtml(displayName(nation.name))}</a>` : escapeHtml(id);
 	});
 	const peoples = record.tribes.filter((id) => {
 		const kind = nations.get(id)?.entityType;
@@ -83,7 +88,7 @@ function nationLine(record: CaseRecord, nations: Map<string, { name: string; ent
 	const plural = names.length > 1;
 	const label =
 		peoples === 0 ? (plural ? 'Nations' : 'Nation') : peoples === names.length ? (plural ? 'Peoples' : 'People') : 'Nations and peoples';
-	return [label, escapeHtml(names.join('; '))];
+	return [label, names.join('; ')];
 }
 
 /** The lines under a case box's heading. */

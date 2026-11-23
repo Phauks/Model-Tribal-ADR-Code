@@ -95,11 +95,21 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- cabazon-band-of-cahuilla-indians
-- morongo-band-of-mission-indians
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 480 U.S. 202 (1987). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep480/usrep480202/usrep480202.pdf.
   Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- cabazon-band-of-cahuilla-indians
+- morongo-band-of-mission-indians
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: cabazon-band-of-cahuilla-indians
+    named_as: Cabazon Band of Mission Indians
+    role: party
+    note: Named by its former name; the band is now the Cabazon Band of Cahuilla Indians.
+  - nation: morongo-band-of-mission-indians
+    named_as: Morongo Band of Mission Indians
+    role: party

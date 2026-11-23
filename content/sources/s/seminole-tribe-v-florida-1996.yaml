@@ -111,8 +111,6 @@ access:
   open: true
   pull_from: [free-web]
   note: Official U.S. Reports PDF at govinfo USREPORTS-517-44.
-tribes:
-- seminole-tribe-of-florida
 found_in:
 - 2026-11-21-united-states-dispute-resolution
 - 2026-11-21-legal-history-and-key-cases
@@ -122,3 +120,11 @@ notes: >-
   https://tile.loc.gov/storage-services/service/ll/usrep/usrep517/usrep517044/usrep517044.pdf. The
   second quote appears in the syllabus and the opinion; pinpoint is to the opinion page. Citator
   check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- seminole-tribe-of-florida
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: seminole-tribe-of-florida
+    named_as: Seminole Tribe of Florida
+    role: party

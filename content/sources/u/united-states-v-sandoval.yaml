@@ -92,12 +92,20 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- pueblo-of-santa-clara
-- ohkay-owingeh
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 231 U.S. 28 (1913). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep231/usrep231028/usrep231028.pdf.
   Nation identification (Santa Clara and Ohkay Owingeh) should be confirmed against the opinion's statement
   of facts. Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- pueblo-of-santa-clara
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: pueblo-of-santa-clara
+    named_as: Santa Clara pueblo
+    role: subject
+  not_linked:
+  - named_as: San Juan pueblo
+    reason: The record had also linked Ohkay Owingeh (San Juan Pueblo), but the opinion names only Santa Clara and the New Mexico pueblos as a group, so that link was taken off.

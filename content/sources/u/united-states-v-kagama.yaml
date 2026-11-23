@@ -98,8 +98,6 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- hoopa-valley-tribe
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
@@ -107,3 +105,13 @@ notes: >-
   Quotes transcribed from the LOC scan (OCR) and checked word for word; punctuation should be confirmed
   against a clean text. The Brackeen characterization is analysis. Citator check (KeyCite) pending; see
   research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- hoopa-valley-tribe
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: hoopa-valley-tribe
+    named_as: Hoopa Valley Reservation
+    role: subject
+    historical: true
+    note: The opinion names the reservation where the killing happened but not the nation Kagama belonged to.
