@@ -710,6 +710,28 @@ jurisdiction:
   verification: read-in-full
   locator: 25 U.S.C. § 233; Act of Sept. 13, 1950, ch. 947, 64 Stat. 845
   note: Section 233 also excludes civil actions involving Indian lands or claims about events before Sept. 13, 1952; tribes could preserve their own laws and customs by enactment before Sept. 13, 1952.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: New York State Office of Children and Family Services
+  agreement: Child Welfare Services Agreement [St. Regis Mohawk Tribe]
+  state: NY
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for NY
+  note: 'The source reads: “Child Welfare Services Agreement [St. Regis Mohawk Tribe]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: New York State Office of Children and Family Services
+  agreement: Title IV-E agreement
+  state: NY
+  date: '1994-04-01'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.J, New York
+  note: 'The source reads: “The agreement was first effective on April 1, 1994, and amended on April 22, 2005.”. Covers reimbursement of administrative and maintenance costs. Report date is March 2014, so current status needs confirming.'
 treaties:
 - title: Treaty with the Six Nations, 1784
   signed: '1784-10-22'

@@ -11,3 +11,21 @@ searches:
   query: 'scripts/jurisdiction/public_law_280_gaps.py: the nation''s states against the mandatory and optional Public Law 280 states'
   outcome: found
   reason: Public Law 280 status recorded for Oklahoma.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-list
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: 'Cross-deputization, tax and child welfare agreements with states, counties and cities: state agency lists, the Justice Department''s sample agreement library, Title IV-E surveys'
+  outcome: found
+  reason: 1 agreement(s) recorded.
+  records:
+  - research/raw/2026-11-23/jurisdiction-agreements.json#apache-tribe-of-oklahoma
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: report
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: Child welfare agreements with the state
+  outcome: not-found
+  reason: 'Not recorded: Apache Tribe (Oklahoma, Title IV-E list) (association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014). The list says only "Apache Tribe"; it is probably the Apache Tribe of Oklahoma but could be the Fort Sill Apache Tribe (listed separately).'
