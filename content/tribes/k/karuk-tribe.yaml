@@ -732,6 +732,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Karuk Tribe". Facilities as
       machine-extracted from the report text (verify): Rain Rock Casino. Name extracted from the PDF by
       the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Yreka Parcel, Siskiyou County, CA
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2004-10-12'
+    link: https://www.nigc.gov?wpdmdl=2565&ind=2566
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Karuk Tribe of California, 2004-10-12
+    note: The list names the tribe as “Karuk Tribe of California”.
+  - parcel: Yreka Parcel, Siskiyou County, CA
+    legal_theory: Restored lands
+    accepted: true
+    date: '2012-04-09'
+    link: https://www.nigc.gov?wpdmdl=2647&ind=2648
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Karuk Tribe of California, 2012-04-09
+    note: The list names the tribe as “Karuk Tribe of California”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

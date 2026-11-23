@@ -539,6 +539,37 @@ gaming:
     locator: table row 272, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 272 lists the nation
       as "St. Croix Chippewa Indians of Wisconsin".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-19-02
+    date: '2019-04-11'
+    link: https://www.nigc.gov?wpdmdl=3006&ind=3007
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-19-02
+    note: The list titles the action “St. Croix Chippewa Tribe” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-19-02
+    date: '2019-05-09'
+    link: https://www.nigc.gov?wpdmdl=3002&ind=3003
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-19-02
+    note: The list titles the action “St. Croix Chippewa Indians of Wisconsin” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-19-02
+    date: '2020-08-24'
+    link: https://www.nigc.gov?wpdmdl=2996&ind=2997
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-19-02
+    note: The list titles the action “St. Croix Chippewa Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

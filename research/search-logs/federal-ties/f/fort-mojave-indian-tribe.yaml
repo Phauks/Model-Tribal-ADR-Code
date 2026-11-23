@@ -29,3 +29,11 @@ searches:
   query: How the nation's reservation was set aside
   outcome: not-found
   reason: 'Candidate: Exec. Order of Sept. 18, 1870 (Fort Mojave Reserve) and Exec. Orders No. 1267 (Dec. 1, 1910) and No. 1296. Not entered: The 1870 order was not located in the OCR; the 1910 orders only enlarge the reservation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 2 enforcement actions.

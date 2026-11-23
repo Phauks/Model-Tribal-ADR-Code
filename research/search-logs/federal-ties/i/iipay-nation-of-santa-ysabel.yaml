@@ -29,3 +29,11 @@ searches:
   query: How the nation's reservation was set aside
   outcome: not-found
   reason: 'Candidate: Exec. Order of Dec. 27, 1875, 1 Kappler 820 ("Santa Isabel [Ysabel]. Including Mesa Grande"). Not entered: The OCR of the tract name is damaged ("Santa Tsabel"); the name is confirmed only through the Jan. 17, 1880 order (1 Kappler 822). Page image not viewed. Not entered as a fact.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 2 enforcement actions.

@@ -359,6 +359,17 @@ gaming:
     locator: table row 192, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 192 lists the nation
       as "Pinoleville Rancheria of Pomo Indians". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Kandy Parcel, Mendocino County, CA
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2015-09-28'
+    link: https://www.nigc.gov?wpdmdl=2667&ind=2668
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Pinoleville Pomo Nation, 2015-09-28
+    note: The list names the tribe as “Pinoleville Pomo Nation”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

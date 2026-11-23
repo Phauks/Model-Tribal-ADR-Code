@@ -578,6 +578,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Iowa Tribe of Kansas and Nebraska".
       Facilities as machine-extracted from the report text (verify): Casino White Cloud. Name extracted
       from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-25-01
+    date: '2025-09-24'
+    link: https://www.nigc.gov?wpdmdl=13064&ind=13065
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-25-01
+    note: The list titles the action “Iowa Tribe of Kansas and Nebraska” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-25-01
+    date: '2025-12-31'
+    link: https://www.nigc.gov?wpdmdl=13876&ind=13877
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-25-01
+    note: The list titles the action “Iowa Tribe of Kansas and Nebraska (Tribe)” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

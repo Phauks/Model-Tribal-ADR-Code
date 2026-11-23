@@ -760,6 +760,17 @@ gaming:
       Superior Chippewa Indians". Facilities as machine-extracted from the report text (verify): Lake
       of the Torches Resort Casino. Name extracted from the PDF by the page-fetch tool and matched to
       the roster.'
+  indian_lands_opinions:
+  - parcel: Riverboat gaming; undesignated water
+    legal_theory: Jurisdiction
+    accepted: false
+    date: '2002-04-01'
+    link: https://www.nigc.gov?wpdmdl=2538&ind=2539
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Lac du Flambeau Band of Lake Superior Chippewa Indians, 2002-04-01
+    note: The list names the tribe as “Lac du Flambeau Band of Lake Superior Chippewa Indians”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

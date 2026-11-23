@@ -527,6 +527,37 @@ gaming:
     locator: table row 156, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 156 lists the nation
       as "Moapa Band of Paiute Indians". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-18-01
+    date: '2018-01-18'
+    link: https://www.nigc.gov?wpdmdl=7704&ind=7715
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-18-01
+    note: The list titles the action “Moapa Band of Paiutes” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-18-01
+    date: '2018-02-15'
+    link: https://www.nigc.gov?wpdmdl=7703&ind=7714
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-18-01
+    note: The list titles the action “Moapa Band of Paiutes” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-18-01
+    date: '2018-05-10'
+    link: https://www.nigc.gov?wpdmdl=7691&ind=7712
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-18-01
+    note: The list titles the action “Moapa Band of Paiutes Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

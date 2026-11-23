@@ -476,6 +476,29 @@ gaming:
     locator: table row 218, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 218 lists the nation
       as "Quapaw Tribe of Indians". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Quapaw Strip Parcel, Cherokee County, KS
+    legal_theory: Last Recognized Reservation
+    accepted: true
+    date: '2014-11-21'
+    link: https://www.nigc.gov?wpdmdl=2665&ind=2666
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Quapaw Tribe of Indians of Oklahoma, 2014-11-21
+    note: The list names the tribe as “Quapaw Tribe of Indians of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    - settlement-agreement
+    tracking_number: NOV/SA-05-09
+    date: '2005-04-11'
+    link: https://www.nigc.gov?wpdmdl=8189&ind=8210
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/SA-05-09
+    note: The list titles the action “Quapaw Tribe of Oklahoma” and gives its type as NOV/SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

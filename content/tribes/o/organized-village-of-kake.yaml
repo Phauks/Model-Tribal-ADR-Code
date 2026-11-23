@@ -683,6 +683,27 @@ gaming:
     locator: table row 178, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 178 lists the nation
       as "Organized Village of Kake".
+  indian_lands_opinions:
+  - parcel: Harris Deed Parcel, Petersburg, AK
+    legal_theory: Indian lands
+    accepted: true
+    date: '1998-07-02'
+    link: https://www.nigc.gov?wpdmdl=2493&ind=2494
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Organized Village of Kake, 1998-07-02
+    note: The list names the tribe as “Organized Village of Kake”.
+  - parcel: Harris Deed Parcel, Petersburg, AK
+    legal_theory: Indian Lands
+    accepted: true
+    date: '2000-04-18'
+    link: https://www.nigc.gov?wpdmdl=2519&ind=2520
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Organized Village of Kake, 2000-04-18
+    note: The list names the tribe as “Organized Village of Kake”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

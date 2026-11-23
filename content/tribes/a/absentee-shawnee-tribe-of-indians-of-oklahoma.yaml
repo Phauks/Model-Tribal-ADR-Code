@@ -710,6 +710,57 @@ gaming:
       Oklahoma". Facilities as machine-extracted from the report text (verify): Thunderbird Casino - Shawnee;
       Thunderbird Entertainment Center. Name extracted from the PDF by the page-fetch tool and matched
       to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-00-1/CO-00-1
+    date: '2000-04-01'
+    link: https://www.nigc.gov?wpdmdl=2026&ind=2027
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-00-1/CO-00-1
+    note: The list titles the action “Absentee Shawnee Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-09
+    date: '2008-06-25'
+    link: https://www.nigc.gov?wpdmdl=8039&ind=8050
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-09
+    note: The list titles the action “Absentee Shawnee Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-09
+    date: '2008-07-24'
+    link: https://www.nigc.gov?wpdmdl=8022&ind=8033
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-09
+    note: The list titles the action “Absentee Shawnee Tribe of Oklahoma” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-11
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7898&ind=7909
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-11
+    note: The list titles the action “Absentee Shawnee Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-11
+    date: '2009-03-16'
+    link: https://www.nigc.gov?wpdmdl=7895&ind=7906
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-11
+    note: The list titles the action “Absentee Shawnee Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

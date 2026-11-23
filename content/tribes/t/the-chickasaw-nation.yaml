@@ -877,6 +877,27 @@ gaming:
       Washita Casino; Border Casino; Treasure Valley Casino; Texoma Casino; Chickasaw Travel Stop - Thackerville
       Gaming; Salt Creek Casino; Gold Mountain Casino - Ardmore; Riverwind Casino. Name extracted from
       the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - other-order
+    tracking_number: NOV-02-05
+    date: '2002-06-17'
+    link: https://www.nigc.gov?wpdmdl=8256&ind=8267
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-02-05
+    note: The list titles the action “Chickasaw Nation” and gives its type as ORD.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-02-01
+    date: '2002-06-17'
+    link: https://www.nigc.gov?wpdmdl=8257&ind=8280
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-02-01
+    note: The list titles the action “Chickasaw Nation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

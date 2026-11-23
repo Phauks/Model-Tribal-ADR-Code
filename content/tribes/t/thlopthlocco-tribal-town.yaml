@@ -397,6 +397,57 @@ gaming:
     locator: table row 284, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 284 lists the nation
       as "Thlopthlocco Tribal Town".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-03-03
+    date: '2003-05-30'
+    link: https://www.nigc.gov?wpdmdl=8249&ind=8260
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-03-03
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-12-01
+    date: '2012-08-22'
+    link: https://www.nigc.gov?wpdmdl=7746&ind=7753
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-12-01
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-12-1 Mar-03-13
+    date: '2013-03-20'
+    link: https://www.nigc.gov?wpdmdl=7747&ind=7752
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-12-1 Mar-03-13
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-12-1 Jun-12-13
+    date: '2013-06-12'
+    link: https://www.nigc.gov?wpdmdl=7732&ind=7750
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-12-1 Jun-12-13
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-12-1 Sep-19-13
+    date: '2013-09-19'
+    link: https://www.nigc.gov?wpdmdl=7731&ind=7742
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-12-1 Sep-19-13
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

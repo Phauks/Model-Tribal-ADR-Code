@@ -378,6 +378,17 @@ gaming:
     locator: table row 137, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 137 lists the nation
       as "Lower Elwha Klallam Tribe". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Halberg Addition, Clallam County, WA
+    legal_theory: Contiguous Lands
+    accepted: true
+    date: '2008-07-11'
+    link: https://www.nigc.gov?wpdmdl=2617&ind=2619
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Lower Elwha Klallam Tribe, 2008-07-11
+    note: The list names the tribe as “Lower Elwha Klallam Tribe”.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

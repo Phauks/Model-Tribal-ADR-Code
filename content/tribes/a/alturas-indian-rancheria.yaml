@@ -270,6 +270,58 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Alturas Indian Rancheria,
       California". Facilities as machine-extracted from the report text (verify): Desert Rose Casino.
       Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Modoc County, CA
+    legal_theory: Pre-IGRA Trust Acquisiton
+    accepted: true
+    date: '1999-09-09'
+    link: https://www.nigc.gov?wpdmdl=2504&ind=2505
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Alturas Rancheria, 1999-09-09
+    note: The list names the tribe as “Alturas Rancheria”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-01
+    date: '2009-01-27'
+    link: https://www.nigc.gov?wpdmdl=7937&ind=7948
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-01
+    note: The list titles the action “Alturas Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-01
+    date: '2009-02-26'
+    link: https://www.nigc.gov?wpdmdl=7915&ind=7926
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-01
+    note: The list titles the action “Alturas Rancheria” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-22-02
+    date: '2022-10-07'
+    link: https://www.nigc.gov?wpdmdl=2982&ind=2983
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-22-02
+    note: The list titles the action “Alturas Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-23-01
+    date: '2023-01-06'
+    link: https://www.nigc.gov?wpdmdl=2978&ind=2979
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-23-01
+    note: The list titles the action “Alturas Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

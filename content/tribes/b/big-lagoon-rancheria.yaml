@@ -398,6 +398,17 @@ gaming:
     locator: table row 15, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 15 lists the nation
       as "Big Lagoon Rancheria".
+  indian_lands_opinions:
+  - parcel: Humboldt County, CA
+    legal_theory: Indian Lands
+    accepted: true
+    date: '2018-10-04'
+    link: https://www.nigc.gov?wpdmdl=2678&ind=2679
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Big Lagoon, 2018-10-04
+    note: The list names the tribe as “Big Lagoon”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

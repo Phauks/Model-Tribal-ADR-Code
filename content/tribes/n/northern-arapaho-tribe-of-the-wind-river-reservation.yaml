@@ -737,6 +737,17 @@ gaming:
     locator: table row 170, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 170 lists the nation
       as "Northern Arapahoe Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-36
+    date: '2009-09-21'
+    link: https://www.nigc.gov?wpdmdl=7763&ind=7793
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-36
+    note: The list titles the action “Northern Arapaho Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

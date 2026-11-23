@@ -287,6 +287,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Berry Creek Rancheria of Maidu
       Indians of California". Facilities as machine-extracted from the report text (verify): Gold Country
       Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-20
+    date: '2009-04-09'
+    link: https://www.nigc.gov?wpdmdl=7874&ind=7886
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-20
+    note: The list titles the action “Berry Creek Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-20
+    date: '2009-05-14'
+    link: https://www.nigc.gov?wpdmdl=7834&ind=7857
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-20
+    note: The list titles the action “Berry Creek Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

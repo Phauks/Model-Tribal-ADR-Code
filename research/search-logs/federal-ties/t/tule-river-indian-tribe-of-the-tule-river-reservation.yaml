@@ -31,3 +31,11 @@ searches:
   reason: 2 instrument(s) recorded.
   records:
   - research/raw/2026-11-23/land-establishment.json#tule-river-indian-tribe-of-the-tule-river-reservation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: not-found
+  reason: Neither list names the nation.

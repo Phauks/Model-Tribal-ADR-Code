@@ -476,6 +476,27 @@ gaming:
     locator: table row 222, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 222 lists the nation
       as "Quinault Tribe of the Quinault Reservation". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-34
+    date: '2009-06-26'
+    link: https://www.nigc.gov?wpdmdl=7783&ind=7815
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-34
+    note: The list titles the action “Quinault Indian Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-34
+    date: '2009-08-27'
+    link: https://www.nigc.gov?wpdmdl=7780&ind=7796
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-34
+    note: The list titles the action “Quinault Indian Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

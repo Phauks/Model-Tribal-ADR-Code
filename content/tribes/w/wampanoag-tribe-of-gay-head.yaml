@@ -452,6 +452,27 @@ gaming:
     locator: table row 305, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 305 lists the nation
       as "Wampanoag Tribe of Gay Head".
+  indian_lands_opinions:
+  - parcel: Cranberry Lands, Face of the Cliff and Herring Creek Parcels, Dukes County, MA
+    legal_theory: Settlement of a Land Claim
+    accepted: true
+    date: '2013-08-23'
+    link: https://www.nigc.gov?wpdmdl=2657&ind=2658
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wampanoag Tribe of Gay Head, 2013-08-23
+    note: The list names the tribe as “Wampanoag Tribe of Gay Head”.
+  - parcel: Cranberry Lands, Face of the Cliff and Herring Creek Parcels, Dukes County, MA
+    legal_theory: Settlement of a Land Claim
+    accepted: true
+    date: '2013-10-25'
+    link: https://www.nigc.gov?wpdmdl=2659&ind=2660
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wampanoag Tribe of Gay Head, 2013-10-25
+    note: The list names the tribe as “Wampanoag Tribe of Gay Head”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

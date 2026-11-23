@@ -774,6 +774,37 @@ gaming:
       Casino - Roland; Cherokee Casino - Sallisaw; Roland Travel Plaza; Cherokee Casino - Tahlequah; Cherokee
       Casino - West Siloam Springs; Cherokee Nation Grove Casino; Cherokee Casino Ramona; Cherokee Casino
       - South Coffeyville. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV/CO-99-05
+    date: '1999-05-20'
+    link: https://www.nigc.gov?wpdmdl=1951&ind=1952
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/CO-99-05
+    note: The list titles the action “Cherokee Nation of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NDO-99-05
+    date: '2002-05-24'
+    link: https://www.nigc.gov?wpdmdl=8271&ind=8283
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NDO-99-05
+    note: The list titles the action “Cherokee Nation of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-99-05
+    date: '2002-07-16'
+    link: https://www.nigc.gov?wpdmdl=8255&ind=8266
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-99-05
+    note: The list titles the action “Cherokee Nation of Oklahoma” and gives its type as CFA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -539,6 +539,38 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Redding Rancheria". Name extracted
       from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Strawberry Fields and Adjacent 80 Acres, Shasta County, CA
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2010-12-22'
+    link: https://www.nigc.gov?wpdmdl=2643&ind=2645
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Redding Rancheria, 2010-12-22
+    note: The list names the tribe as “Redding Rancheria”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-12
+    date: '2009-03-30'
+    link: https://www.nigc.gov?wpdmdl=7892&ind=7903
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-12
+    note: The list titles the action “Redding Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-12
+    date: '2009-05-15'
+    link: https://www.nigc.gov?wpdmdl=7832&ind=7843
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-12
+    note: The list titles the action “Redding Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

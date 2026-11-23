@@ -635,6 +635,27 @@ gaming:
     locator: table row 275, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
       as "Stillaguamish Tribe of Indians".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-09
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7900&ind=7911
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-09
+    note: The list titles the action “Stillaguamish Tribe of Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-09
+    date: '2009-05-11'
+    link: https://www.nigc.gov?wpdmdl=7847&ind=7866
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-09
+    note: The list titles the action “Stillaguamish Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

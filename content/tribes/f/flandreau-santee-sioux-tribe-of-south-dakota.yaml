@@ -786,6 +786,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Flandreau Santee Sioux Tribe".
       Facilities as machine-extracted from the report text (verify): First American Mart; Royal River
       Casino and Hotel. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-11-01
+    date: '2011-05-14'
+    link: https://www.nigc.gov?wpdmdl=7757&ind=7769
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-11-01
+    note: The list titles the action “Flandreau Santee Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-11-01
+    date: '2011-07-20'
+    link: https://www.nigc.gov?wpdmdl=7749&ind=7755
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-11-01
+    note: The list titles the action “Flandreau Santee Sioux Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

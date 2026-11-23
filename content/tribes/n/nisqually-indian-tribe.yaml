@@ -830,6 +830,17 @@ gaming:
     locator: table row 167, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 167 lists the nation
       as "Nisqually Indian Tribe".
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-NIS
+    date: '2007-08-17'
+    link: https://www.nigc.gov?wpdmdl=8068&ind=8079
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-NIS
+    note: The list titles the action “Nisqually Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

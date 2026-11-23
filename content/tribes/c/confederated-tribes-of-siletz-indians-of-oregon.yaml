@@ -593,6 +593,47 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of Siletz
       Indians of Oregon". Facilities as machine-extracted from the report text (verify): Chinook Winds
       Casino Resort. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-00-09
+    date: '2000-06-15'
+    link: https://www.nigc.gov?wpdmdl=2032&ind=2033
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-00-09
+    note: The list titles the action “Siletz Indians of Oregon” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-00-09
+    date: '2000-08-09'
+    link: https://www.nigc.gov?wpdmdl=2034&ind=2035
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-00-09
+    note: The list titles the action “Siletz Indians of Oregon” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-00-09
+    date: '2001-05-30'
+    link: https://www.nigc.gov?wpdmdl=8276&ind=8288
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-00-09
+    note: The list titles the action “Siletz Indians of Oregon” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-00-09-2
+    date: '2007-05-30'
+    link: https://www.nigc.gov?wpdmdl=8085&ind=8096
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-00-09-2
+    note: The list titles the action “Confederated Indians of the Siletz Tribe of Oregon” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

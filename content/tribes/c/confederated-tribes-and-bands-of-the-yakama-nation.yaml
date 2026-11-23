@@ -501,6 +501,57 @@ gaming:
       of the Yakama Nation, Washington". Facilities as machine-extracted from the report text (verify):
       Yakama Nation Legends Casino. Name extracted from the PDF by the page-fetch tool and matched to
       the roster.'
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-YAK
+    date: '2000-02-11'
+    link: https://www.nigc.gov?wpdmdl=2024&ind=2025
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-YAK
+    note: The list titles the action “Yakama Nation” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-01
+    date: '2005-02-17'
+    link: https://www.nigc.gov?wpdmdl=8201&ind=8223
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-01
+    note: The list titles the action “Yakama Indian Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-01
+    date: '2005-04-26'
+    link: https://www.nigc.gov?wpdmdl=8188&ind=8209
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-01
+    note: The list titles the action “Yakama Indian Nation” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-37
+    date: '2009-09-01'
+    link: https://www.nigc.gov?wpdmdl=7779&ind=7795
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-37
+    note: The list titles the action “Yakama Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-37
+    date: '2009-11-09'
+    link: https://www.nigc.gov?wpdmdl=7762&ind=7774
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-37
+    note: The list titles the action “Yakama Nation” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

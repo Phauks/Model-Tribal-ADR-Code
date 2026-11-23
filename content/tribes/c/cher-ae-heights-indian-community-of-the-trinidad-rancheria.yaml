@@ -457,6 +457,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cher-Ae Heights Indian Community
       of the Trinidad Rancheria". Facilities as machine-extracted from the report text (verify): Cher-Ae-Heights
       Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-26
+    date: '2009-05-19'
+    link: https://www.nigc.gov?wpdmdl=7827&ind=7838
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-26
+    note: The list titles the action “Trinidad Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

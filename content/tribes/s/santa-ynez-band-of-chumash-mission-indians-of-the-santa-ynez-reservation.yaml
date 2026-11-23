@@ -433,6 +433,27 @@ gaming:
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Santa Ynez Band of Chumash Mission
       Indians of the Santa Ynez Reservation". Name extracted from the PDF by the page-fetch tool and matched
       to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-18
+    date: '2009-04-08'
+    link: https://www.nigc.gov?wpdmdl=7875&ind=7887
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-18
+    note: The list titles the action “Santa Ynez Band of Mission Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-18
+    date: '2009-05-05'
+    link: https://www.nigc.gov?wpdmdl=7850&ind=7863
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-18
+    note: The list titles the action “Santa Ynez Band of Mission Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

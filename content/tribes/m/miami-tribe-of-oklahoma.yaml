@@ -698,6 +698,48 @@ gaming:
     locator: table row 151, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
       as "Miami Tribe of Oklahoma".
+  indian_lands_opinions:
+  - parcel: Maria Christiana Reserve, KS
+    legal_theory: Governmental Power
+    accepted: true
+    date: '1998-11-10'
+    link: https://www.nigc.gov?wpdmdl=2498&ind=2499
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Miami Tribe of Oklahoma, 1998-11-10
+    note: The list names the tribe as “Miami Tribe of Oklahoma”.
+  - parcel: Maria Christiana Reserve, KS
+    legal_theory: Jurisdiction
+    accepted: false
+    date: '2002-10-31'
+    link: https://www.nigc.gov?wpdmdl=2542&ind=2543
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Miami Tribe of Oklahoma, 2002-10-31
+    note: The list names the tribe as “Miami Tribe of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-15
+    date: '2008-08-05'
+    link: https://www.nigc.gov?wpdmdl=8006&ind=8028
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-15
+    note: The list titles the action “Miami Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-15
+    date: '2008-08-25'
+    link: https://www.nigc.gov?wpdmdl=7997&ind=8008
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-15
+    note: The list titles the action “Miami Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

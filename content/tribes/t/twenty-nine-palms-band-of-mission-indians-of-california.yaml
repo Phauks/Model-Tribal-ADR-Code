@@ -466,6 +466,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Twenty Nine Palms Band of Mission
       Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-99-02
+    date: '1999-01-14'
+    link: https://www.nigc.gov?wpdmdl=1932&ind=1933
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-99-02
+    note: The list titles the action “Twenty-Nine Palms Band of Mission Indians” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA 99-02
+    date: '1999-02-17'
+    link: https://www.nigc.gov?wpdmdl=1934&ind=1935
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA 99-02
+    note: The list titles the action “Twenty-Nine Palms Band of Mission Indians” and gives its type as CFA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

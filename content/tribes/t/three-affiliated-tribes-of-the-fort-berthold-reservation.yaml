@@ -713,6 +713,27 @@ gaming:
     locator: table row 285, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 285 lists the nation
       as "Three Affiliated Tribes of the Fort Berthold Reservation".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-02
+    date: '2005-02-17'
+    link: https://www.nigc.gov?wpdmdl=8199&ind=8221
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-02
+    note: The list titles the action “Three Affiliated Tribes of the Fort Berthold Reservation” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-05-02
+    date: '2005-04-29'
+    link: https://www.nigc.gov?wpdmdl=8186&ind=8207
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-05-02
+    note: The list titles the action “Three Affiliated Tribes of the Fort Berthold Reservation” and gives its type as CFA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

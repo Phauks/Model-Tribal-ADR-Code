@@ -711,6 +711,48 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Pit River Tribe". Name extracted
       from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: XL Ranch, Modoc County, CA
+    legal_theory: Jurisdiction
+    accepted: true
+    date: '2026-05-18'
+    link: https://www.nigc.gov?wpdmdl=14297&ind=14298
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Pit River Tribe, 2026-05-18
+    note: The list names the tribe as “Pit River Tribe”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-98-15
+    date: '1998-09-28'
+    link: https://www.nigc.gov?wpdmdl=1910&ind=1911
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-98-15
+    note: The list titles the action “Pit River Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-25
+    date: '2009-04-21'
+    link: https://www.nigc.gov?wpdmdl=7854&ind=7859
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-25
+    note: The list titles the action “Pit River Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-25
+    date: '2009-05-26'
+    link: https://www.nigc.gov?wpdmdl=7813&ind=7835'
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-25
+    note: The list titles the action “Pit River Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

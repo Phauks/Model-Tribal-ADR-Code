@@ -703,6 +703,58 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Eastern Shawnee Tribe of Oklahoma".
       Facilities as machine-extracted from the report text (verify): Bordertown Outpost Casino; Indigo
       Sky Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    - civil-fine-assessment
+    tracking_number: NOV-CFA-07-01
+    date: '2007-02-27'
+    link: https://www.nigc.gov?wpdmdl=8087&ind=8098
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-CFA-07-01
+    note: The list titles the action “Eastern Shawnee Tribe of Oklahoma” and gives its type as NOV/CFA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-14
+    date: '2008-08-05'
+    link: https://www.nigc.gov?wpdmdl=8005&ind=8016
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-14
+    note: The list titles the action “Eastern Shawnee Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-14
+    date: '2008-08-25'
+    link: https://www.nigc.gov?wpdmdl=7985&ind=8007
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-14
+    note: The list titles the action “Eastern Shawnee Tribe of Oklahoma” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-28
+    date: '2009-05-15'
+    link: https://www.nigc.gov?wpdmdl=7830&ind=7841
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-28
+    note: The list titles the action “Eastern Shawnee Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-28
+    date: '2009-05-27'
+    link: https://www.nigc.gov?wpdmdl=7812&ind=7823
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-28
+    note: The list titles the action “Eastern Shawnee Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

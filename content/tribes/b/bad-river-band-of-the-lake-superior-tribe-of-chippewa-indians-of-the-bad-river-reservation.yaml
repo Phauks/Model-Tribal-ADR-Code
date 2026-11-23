@@ -619,6 +619,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bad River Band of Lake Superior
       Tribe of Chippewa Indians". Facilities as machine-extracted from the report text (verify): Bad River
       Lodge & Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-07
+    date: '2005-03-16'
+    link: https://www.nigc.gov?wpdmdl=8191&ind=8212
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-07
+    note: The list titles the action “Bad River Band of Lake Superior” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

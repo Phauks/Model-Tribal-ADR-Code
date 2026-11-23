@@ -729,6 +729,38 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Omaha Tribe of Nebraska". Name
       extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-24
+    date: '2008-11-04'
+    link: https://www.nigc.gov?wpdmdl=7961&ind=7972
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-24
+    note: The list titles the action “Omaha Tribe of Nebraska and Iowa” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-24
+    date: '2008-12-15'
+    link: https://www.nigc.gov?wpdmdl=7943&ind=7965
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-24
+    note: The list titles the action “Omaha Tribe of Nebraska and Iowa” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    - pre-opening-agreement
+    tracking_number: NOV/POA-09-39
+    date: '2009-10-02'
+    link: https://www.nigc.gov?wpdmdl=7765&ind=7776
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/POA-09-39
+    note: The list titles the action “Omaha Tribe of Nebraska” and gives its type as NOV/POA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

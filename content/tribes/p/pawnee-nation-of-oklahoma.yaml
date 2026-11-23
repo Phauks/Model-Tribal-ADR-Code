@@ -701,6 +701,27 @@ gaming:
     locator: table row 188, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 188 lists the nation
       as "Pawnee Nation of Oklahoma".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-07-04
+    date: '2007-07-24'
+    link: https://www.nigc.gov?wpdmdl=8069&ind=8091
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-07-04
+    note: The list titles the action “Pawnee Nation of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-07-04
+    date: '2007-08-23'
+    link: https://www.nigc.gov?wpdmdl=8067&ind=8078
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-07-04
+    note: The list titles the action “Pawnee Nation of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

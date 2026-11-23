@@ -339,6 +339,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Big Sandy Band of Western
       Mono Indians". Facilities as machine-extracted from the report text (verify): Mono Wind Casino.
       Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: McCabe Allotment, Fresno County, CA
+    legal_theory: Indian Lands
+    accepted: true
+    date: '2006-09-06'
+    link: https://www.nigc.gov?wpdmdl=2590&ind=2591
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Big Sandy Rancheria, 2006-09-06
+    note: The list names the tribe as “Big Sandy Rancheria”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

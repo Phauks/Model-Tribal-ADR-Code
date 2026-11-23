@@ -120,6 +120,17 @@ gaming:
     locator: table row 125, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 125 lists the nation
       as "Koi Nation of Northern California".
+  indian_lands_opinions:
+  - parcel: Purvis Tract, Lake County, CA
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2008-10-07'
+    link: https://www.nigc.gov?wpdmdl=2622&ind=2623
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Lower Lake Rancheria Koi Nation, 2008-10-07
+    note: The list names the tribe as “Lower Lake Rancheria Koi Nation”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

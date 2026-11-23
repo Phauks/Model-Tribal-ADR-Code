@@ -506,6 +506,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Dry Creek Rancheria Band of
       Pomo Indians, California". Facilities as machine-extracted from the report text (verify): River
       Rock Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: River Rock Casino Site, Sonoma County, CA
+    legal_theory: Within Reservaton Boundaries
+    accepted: true
+    date: '2003-04-09'
+    link: https://www.nigc.gov?wpdmdl=2550&ind=2551
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Dry Creek Rancheria Band of Pomo, 2003-04-09
+    note: The list names the tribe as “Dry Creek Rancheria Band of Pomo”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

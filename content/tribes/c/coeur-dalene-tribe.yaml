@@ -520,6 +520,27 @@ gaming:
       as machine-extracted from the report text (verify): Benewah Market; Benewah Automotive Center; Coeur
       d''Alene Casino Resort/Hotel. Name extracted from the PDF by the page-fetch tool and matched to
       the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-27
+    date: '2008-12-10'
+    link: https://www.nigc.gov?wpdmdl=7958&ind=7969
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-27
+    note: The list titles the action “Couer d’Alene Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-27
+    date: '2009-01-21'
+    link: https://www.nigc.gov?wpdmdl=7938&ind=7949
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-27
+    note: The list titles the action “Coeur d’ Alene Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

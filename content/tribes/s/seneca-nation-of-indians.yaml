@@ -705,6 +705,98 @@ gaming:
     locator: table row 252, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 252 lists the nation
       as "Seneca Nation of New York". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Buffalo parcels, Erie County, NY
+    legal_theory: Settlement of a Land Claim
+    accepted: true
+    date: '2002-11-12'
+    link: https://www.nigc.gov?wpdmdl=2544&ind=2545
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Seneca Nation of Indians, 2002-11-12
+    note: The list names the tribe as “Seneca Nation of Indians”.
+  - parcel: Buffalo parcels, Erie County, NY
+    legal_theory: Settlement of a Land Claim
+    accepted: true
+    date: '2007-07-02'
+    link: https://www.nigc.gov?wpdmdl=2596&ind=2597
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Seneca Nation of Indians, 2007-07-02
+    note: The list names the tribe as “Seneca Nation of Indians”.
+  - parcel: Buffalo parcels, Erie County, NY
+    legal_theory: After Aquired Land
+    accepted: true
+    date: '2009-01-20'
+    link: https://www.nigc.gov?wpdmdl=2631&ind=2632
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Seneca Nation of Indians, 2009-01-20
+    note: The list names the tribe as “Seneca Nation of Indians”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-02-04
+    date: '2002-05-30'
+    link: https://www.nigc.gov?wpdmdl=8270&ind=8282
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-02-04
+    note: The list titles the action “Seneca Nation of Indian” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-05
+    date: '2005-03-16'
+    link: https://www.nigc.gov?wpdmdl=8195&ind=8217
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-05
+    note: The list titles the action “Seneca Nation of Indians” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-05-05
+    date: '2005-04-29'
+    link: https://www.nigc.gov?wpdmdl=8185&ind=8206
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-05-05
+    note: The list titles the action “Seneca Nation of Indians” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-NOV-CFA-05-05
+    date: '2005-06-08'
+    link: https://www.nigc.gov?wpdmdl=12974&ind=12975
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-NOV-CFA-05-05
+    note: The list titles the action “Seneca Nation of Indian s” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-12
+    date: '2005-06-16'
+    link: https://www.nigc.gov?wpdmdl=8171&ind=8182
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-12
+    note: The list titles the action “Seneca Nation of Indians” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-20
+    date: '2008-09-03'
+    link: https://www.nigc.gov?wpdmdl=7983&ind=7994
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-20
+    note: The list titles the action “Seneca Nation of Indians” and gives its type as NOV.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

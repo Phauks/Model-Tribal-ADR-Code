@@ -577,6 +577,48 @@ gaming:
     locator: table row 196, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 196 lists the nation
       as "Ponca Tribe of Indians of Oklahoma".
+  indian_lands_opinions:
+  - parcel: Noble County, Oklahoma
+    legal_theory: Settlement of Land Claim
+    accepted: true
+    date: '2017-01-25'
+    link: https://www.nigc.gov?wpdmdl=2669&ind=2670
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ponca Tribe of Oklahoma, 2017-01-25
+    note: The list names the tribe as “Ponca Tribe of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV/CO-02-03
+    date: '2002-05-01'
+    link: https://www.nigc.gov?wpdmdl=8273&ind=8285
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/CO-02-03
+    note: The list titles the action “Ponca Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - closure-order
+    tracking_number: CO-02-03
+    date: '2002-05-08'
+    link: https://www.nigc.gov?wpdmdl=8272&ind=8284
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-02-03
+    note: The list titles the action “Ponca Tribe of Oklahoma” and gives its type as CO.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-PTO
+    date: '2013-05-13'
+    link: https://www.nigc.gov?wpdmdl=7744&ind=7751
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-PTO
+    note: The list titles the action “Ponca Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
