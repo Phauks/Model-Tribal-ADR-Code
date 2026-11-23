@@ -135,6 +135,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Las Vegas Tribe of Paiute Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Las Vegas Paiute Tribe (2001)); the list does not say which service unit or programs the compact covers.'
 governing_documents:
 - kind: law-code
   title: Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony, Nevada

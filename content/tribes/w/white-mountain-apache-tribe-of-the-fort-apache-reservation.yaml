@@ -146,6 +146,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "White Mountain Apache Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes. Operator from the Direct Service Tribes list (Phoenix Area). Service unit identified through the Fort Apache Reservation named on the page.'
+- area: Phoenix
+  service_unit: Whiteriver Service Unit
+  source: indian-health-service-phoenix-whiteriver-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Whiteriver Indian Hospital is located near Whiteriver, AZ on the Fort Apache Indian Reservation".'
+- area: Phoenix
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "White Mountain Apache Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "White Mountain Apache Tribe, Arizona" among organizations under constitutions approved

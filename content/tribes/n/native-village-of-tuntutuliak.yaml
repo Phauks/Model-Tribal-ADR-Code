@@ -141,6 +141,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Tuntutuliak
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-home
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Alaska Area page
+  note: Area is Alaska because the nation is an Alaska Native village; the village was not found on any of the nine Alaska Area Profile service-area lists, so no service unit is recorded.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

@@ -171,6 +171,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Lovelock Paiute Tribe". Page spells "Pauite".
+- area: Phoenix
+  service_unit: Schurz Service Unit
+  source: indian-health-service-phoenix-schurz-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Lovelock Pauite Tribe".'
+  operator: tribal
 governing_documents:
 - kind: constitution
   title: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada - Tribal Constitution

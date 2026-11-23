@@ -132,6 +132,14 @@ federal_administration:
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
   note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
     taken from its entry.
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Fond du Lac Band". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
 governing_documents:
 - kind: law-code
   title: Codes and ordinances
@@ -264,6 +272,46 @@ jurisdiction:
   as_of: '2026-05-26'
   locator: 91 FR 30694 (Tribe column of the designated agent table)
   note: 'Listed as: Minnesota Chippewa Tribe - Fond du Lac Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands'' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table).'
+treaties:
+- title: Treaty with the Chippewa, 1842
+  signed: '1842-10-04'
+  statutes_at_large: 7 Stat. 591
+  kappler:
+    volume: 2
+    page: 542
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1842-0542
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation's name ("Lake Superior Chippewa") The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of the Mississippi and Lake Superior, 1847
+  signed: '1847-08-02'
+  statutes_at_large: 9 Stat. 904
+  kappler:
+    volume: 2
+    page: 567
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 567 (Treaty with the Chippewa of the Mississippi and Lake Superior, 1847; Kappler header "Aug. 2. 1847. | 9 Stat., 904. | Ratified Apr. 3, 1848. | Proclaimed, Apr. 7, 1848.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation's name ("Lake Superior Chippewa") The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1854
+  signed: '1854-09-30'
+  statutes_at_large: 10 Stat. 1109
+  kappler:
+    volume: 2
+    page: 648
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1854-0648
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 648 (Treaty with the Chippewa, 1854; Kappler header "Sept. 30, 1854. | 10 Stats., 1109. | Ratified Jan. 10, 1855. | Proclaimed Jan. 29, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation's name ("Lake Superior Chippewa") The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -172,6 +172,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kaktovik Village (aka Barter Island)
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-barrow-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Barrow Service Area profile'
+  note: 'Listed as "Kaktovik Village (aka Barter Island)". Name on Indian Health Service profile differs from roster name (roster: "Kaktovik Village"); matched manually. Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.'
+- area: Alaska
+  service_unit: Barrow Service Area
+  source: indian-health-service-alaska-area-profile-barrow-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Barrow Service Area profile'
+  note: 'The source''s words: "Kaktovik Village (aka Barter Island)".'
+  operator: tribal
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

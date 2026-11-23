@@ -204,6 +204,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Santa Ana, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Santa Ana Pueblo". Also listed under the same Area in: indian-health-service-direct-service-tribes. The page names the field clinics at Zia and Santa Ana Pueblos; the Albuquerque Area page also lists a Santa Ana Health Center.'
+- area: Albuquerque
+  service_unit: Albuquerque Indian Health Center (Albuquerque Service Unit), via field clinic
+  source: indian-health-service-albuquerque-indian-health-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "AIHC also provides care in the Zia Pueblo and the Santa Ana Pueblo via two Field Clinics.".'
+- area: Albuquerque
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Albuquerque Area
+  note: Listed as "Pueblo of Santa Ana". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

@@ -160,6 +160,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Egegik Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: Listed as "Egegik Village". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Bristol Bay Service Area
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: 'The source''s words: "Egegik Village".'
+  operator: tribal
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

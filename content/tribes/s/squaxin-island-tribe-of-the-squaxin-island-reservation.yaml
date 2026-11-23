@@ -151,6 +151,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Squaxin Island Tribe of the Squaxin Island Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Squaxin Island Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Squaxin Island Indian Tribe (1995)); the list does not say which service unit or programs the compact covers.'
 governing_documents:
 - kind: law-code
   title: Squaxin Island Tribe
@@ -516,6 +524,20 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+treaties:
+- title: Treaty with the Nisqualli, Puyallup, etc., 1854
+  signed: '1854-12-26'
+  statutes_at_large: 10 Stat. 1132
+  kappler:
+    volume: 2
+    page: 661
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nisqualli-puyallup-etc-1854-0661
+  signatory: Squawskin
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 661 (Treaty with the Nisqualli, Puyallup, etc., 1854; Kappler header "Dec. 26, 1854. | 10 Stat., 1132. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Squawskin = Squaxin Island Tribe (named in preamble) The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

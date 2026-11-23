@@ -152,6 +152,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Cher-Ae Heights Indian Community of the Trinidad Rancheria, California".
 governing_documents:
 - kind: articles-of-association
   title: Cher-Ae Heights Indian Community of the Trinidad Rancheria - Articles of Association

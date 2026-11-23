@@ -160,6 +160,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Twenty-Nine Palms Band of Mission Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Twenty-Nine Palms Band of Mission Indians of California".
 governing_documents:
 - kind: articles-of-association
   title: Twenty-Nine Palms Band of Mission Indians of California- Articles of Association

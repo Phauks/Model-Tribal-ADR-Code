@@ -179,6 +179,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Cochiti, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Cochiti Pueblo". Also listed under the same Area in: indian-health-service-direct-service-tribes. Santa Fe Service Unit page names these eight constituent tribal governments.'
+- area: Albuquerque
+  service_unit: Santa Fe Service Unit
+  source: indian-health-service-albuquerque-santa-fe-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "eight constituent tribal governments: the Pueblos of Cochiti, Nambé, Ohkay Owingeh, Pojoaque, San Felipe, San Ildefonso, Santa Clara, and Tesuque".'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

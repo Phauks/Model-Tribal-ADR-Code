@@ -178,6 +178,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santo Domingo Pueblo
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: Listed as "Santo Domingo Pueblo". Facility named in a 2023 Indian Health Service vaccine distribution list under Albuquerque Area; the list does not state who operates it.
+- area: Albuquerque
+  service_unit: Kewa Pueblo Health Corporation (Santo Domingo Health Center)
+  source: indian-health-service-covid-19-vaccine-distribution-list
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Kewa Pueblo Health Corporation (Santo Domingo Health Center)".'
 justice_institutions:
 - kind: court-of-indian-offenses
   name: Albuquerque CFR Court (Court of Indian Offenses)

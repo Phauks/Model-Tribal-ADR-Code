@@ -176,6 +176,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Mescalero Apache". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Albuquerque
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Albuquerque Area
+  note: Listed as "Mescalero Apache Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Apache Tribe of the Mescalero Reservation, New Mexico" among organizations under

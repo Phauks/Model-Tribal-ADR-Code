@@ -188,7 +188,7 @@ export interface NationRecord {
 		bureau_of_indian_affairs_region?: string;
 		bureau_of_indian_affairs_agency?: string;
 	};
-	indian_health_service?: CitedFact & { area: string; service_unit?: string; operator?: string };
+	indian_health_service?: (CitedFact & { area: string; service_unit?: string; operator?: string })[];
 	governing_documents?: (CitedFact & { kind: string; title?: string; link?: string })[];
 	justice_institutions?: (CitedFact & {
 		kind: string;

@@ -196,6 +196,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: Listed as "Klamath Tribes".
 governing_documents:
 - kind: law-code
   title: Klamath Tribes
@@ -624,6 +632,20 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+treaties:
+- title: Treaty with the Klamath, etc., 1864
+  signed: '1864-10-14'
+  statutes_at_large: 16 Stat. 707
+  kappler:
+    volume: 2
+    page: 865
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-klamath-etc-1864-0865
+  signatory: Klamath; Modoc; Yahooskin
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 865 (Treaty with the Klamath, etc., 1864; Kappler header "Oct. 14, 1864. | 16 Stats., 707. | Ratified, July 2, 1866. | Proclaimed Feb. 17, 1870.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

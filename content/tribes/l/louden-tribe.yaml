@@ -220,6 +220,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Louden Tribe (previously listed as Galena Village (aka Louden Village))
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: Listed as "Galena Village (aka Louden Village)". Name on Indian Health Service profile differs from roster name; matched by name tokens. Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Interior Alaska Service Area
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: 'The source''s words: "Galena Village (aka Louden Village)".'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

@@ -152,6 +152,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Yavapai-Apache Indian Community". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Yavapai-Apache Indian Community, Arizona" among organizations under constitutions

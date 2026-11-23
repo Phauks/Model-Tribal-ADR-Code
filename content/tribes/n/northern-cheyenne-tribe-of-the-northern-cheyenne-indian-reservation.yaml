@@ -175,6 +175,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana
+indian_health_service:
+- area: Billings
+  source: indian-health-service-billings-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Montana and Wyoming" list'
+  note: 'Listed as "Northern Cheyenne". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Billings
+  service_unit: Northern Cheyenne Service Unit
+  source: indian-health-service-billings-northern-cheyenne-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "The Northern Cheyenne Indian Reservation is located in present-day southeastern Montana".'
+- area: Billings
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Billings Area
+  note: Listed as "Northern Cheyenne Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Northern Cheyenne Tribe, Montana" among organizations under constitutions approved
@@ -545,6 +569,46 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Cheyenne Tribe, 1825
+  signed: '1825-07-06'
+  statutes_at_large: 7 Stat. 255
+  kappler:
+    volume: 2
+    page: 232
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cheyenne-tribe-1825-0232
+  signatory: Cheyenne
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 232 (Treaty with the Cheyenne Tribe, 1825; Kappler header "July 6, 1825. | 7 Stat., 255. | Proclamation, Feb. 6, 1826.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Northern band The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty of Fort Laramie with Sioux, etc., 1851
+  signed: '1851-09-17'
+  statutes_at_large: 11 Stat. 749
+  kappler:
+    volume: 2
+    page: 594
+    link: https://treaties.okstate.edu/treaties/treaty-of-fort-laramie-with-sioux-etc-1851-0594
+  signatory: Cheyenne
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 594 (Treaty of Fort Laramie with Sioux, etc., 1851; Kappler header "Sept. 17, 1851. | 11 Stats., p. 749.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Northern band The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Northern Cheyenne and Northern Arapaho, 1868
+  signed: '1868-05-10'
+  statutes_at_large: 15 Stat. 655
+  kappler:
+    volume: 2
+    page: 1012
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-northern-cheyenne-and-northern-arapaho-1868-1012
+  signatory: Cheyenne; Northern Cheyenne
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 1012 (Treaty with the Northern Cheyenne and Northern Arapaho, 1868; Kappler header "May 10, 1868, | 15 Stats., 655.| Ratified July 25, 1868.| Proclaimed Aug. 25, 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty with the Northern Cheyenne and Northern Arapaho The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

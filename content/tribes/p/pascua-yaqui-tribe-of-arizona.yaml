@@ -161,6 +161,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
+indian_health_service:
+- area: Tucson
+  source: indian-health-service-tucson-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: Listed as "Pascua Yaqui Tribe". Also on the Indian Health Service Self-Governance Tribes list (Pascua Yaqui Tribe (2018)); the list does not say which service unit or programs the compact covers.
 governing_documents:
 - kind: law-code
   title: Pascua Yaqui Tribe of Arizona

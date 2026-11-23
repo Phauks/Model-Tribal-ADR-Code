@@ -184,6 +184,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Paskenta Band of Nomlaki Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Paskenta Band of Nomlaki Indians of California".
 gaming:
   compacts:
   - state: CA

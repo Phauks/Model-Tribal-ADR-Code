@@ -154,6 +154,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tonto Apache Tribe of Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Tonto Apache Tribe of Arizona". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Phoenix
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Phoenix Area
+  note: Listed as "Tonto Apache Indian Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governing_documents:
 - kind: constitution
   title: Tonto Apache Tribe of Arizona - Tribal Constitution

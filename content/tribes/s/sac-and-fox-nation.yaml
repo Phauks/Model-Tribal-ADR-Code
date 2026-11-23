@@ -211,6 +211,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Nation, Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Sac & Fox Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Sac and Fox Nation (1994)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Sac and Fox Tribe of Indians of Oklahoma" among organizations under constitutions
@@ -458,6 +466,228 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+treaties:
+- title: Treaty with the Wyandot, etc., 1789
+  signed: '1789-01-09'
+  statutes_at_large: 7 Stat. 28
+  kappler:
+    volume: 2
+    page: 18
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1789-0018
+  signatory: Sac
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 18 (Treaty with the Wyandot, etc., 1789; Kappler header "Jan. 9, 1789. | 7 Stat., 28. | Proclamation, Sept. 27, 1789.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1804
+  signed: '1804-11-03'
+  statutes_at_large: 7 Stat. 84
+  kappler:
+    volume: 2
+    page: 74
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1804-0074
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 74 (Treaty with the Sauk and Foxes, 1804; Kappler header "Nov. 3, 1804. | 7 Stat., 84. | Ratified Jan. 25, 1805. | Proclaimed Feb. 21, 1805.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk, 1815
+  signed: '1815-09-13'
+  statutes_at_large: 7 Stat. 134
+  kappler:
+    volume: 2
+    page: 120
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-1815-0120
+  signatory: Sauk
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 120 (Treaty with the Sauk, 1815; Kappler header "Sept. 13, 1815. | 7 Stat., 134. | Ratified Dec. 26, 1815.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Foxes, 1815
+  signed: '1815-09-14'
+  statutes_at_large: 7 Stat. 135
+  kappler:
+    volume: 2
+    page: 121
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-foxes-1815-0121
+  signatory: Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 121 (Treaty with the Foxes, 1815; Kappler header "Sept. 14, 1815. | 7 Stat., 135. | Ratified Dec. 26, 1815.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk, 1816
+  signed: '1816-05-13'
+  statutes_at_large: 7 Stat. 141
+  kappler:
+    volume: 2
+    page: 126
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-1816-0126
+  signatory: Sac
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 126 (Treaty with the Sauk, 1816; Kappler header "May 13, 1816. | 7 Stat., 141. | Proclamation, Dec. 30, 1816.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1822
+  signed: '1822-09-03'
+  statutes_at_large: 7 Stat. 223
+  kappler:
+    volume: 2
+    page: 202
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1822-0202
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 202 (Treaty with the Sauk and Foxes, 1822; Kappler header "Sept. 3, 1822. | 7 Stat., 223. | Proclamation, Feb. 13, 1823.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1824
+  signed: '1824-08-04'
+  statutes_at_large: 7 Stat. 229
+  kappler:
+    volume: 2
+    page: 207
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1824-0207
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 207 (Treaty with the Sauk and Foxes, 1824; Kappler header "Aug. 4, 1824. | 7 Stat., 229. | Proclamation, Jan. 18, 1825.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux, etc., 1825
+  signed: '1825-08-19'
+  statutes_at_large: 7 Stat. 272
+  kappler:
+    volume: 2
+    page: 250
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-etc-1825-0250
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 250 (Treaty with the Sioux, etc., 1825; Kappler header "Aug. 19, 1825. | 7 Stat., 272. | Proclamation. Feb. 6, 1826.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, etc., 1830
+  signed: '1830-07-15'
+  statutes_at_large: 7 Stat. 328
+  kappler:
+    volume: 2
+    page: 305
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305
+  signatory: Sac; Fox; Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1832
+  signed: '1832-09-21'
+  statutes_at_large: 7 Stat. 374
+  kappler:
+    volume: 2
+    page: 349
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1832-0349
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 349 (Treaty with the Sauk and Foxes, 1832; Kappler header "Sept. 21, 1832. | 7 Stat., 374. | Proclamation, Feb. 13, 1833.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Fox Tribe, 1836
+  signed: '1836-09-27'
+  statutes_at_large: 7 Stat. 516
+  kappler:
+    volume: 2
+    page: 473
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-fox-tribe-1836-0473
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 473 (Treaty with the Sauk and Fox Tribe, 1836; Kappler header "Sept. 27, 1836. | 7 Stat., 516. | Proclamation, Feb. 15, 1837.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1836
+  signed: '1836-09-28'
+  statutes_at_large: 7 Stat. 517
+  kappler:
+    volume: 2
+    page: 474
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1836-0474
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 474 (Treaty with the Sauk and Foxes, 1836; Kappler header "Sept. 28, 1836. | 7 Stat., 517. | Proclamation, Feb. 27, 1837.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1836
+  signed: '1836-09-28'
+  statutes_at_large: 7 Stat. 520
+  kappler:
+    volume: 2
+    page: 476
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1836-0476
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 476 (Treaty with the Sauk and Foxes, 1836; Kappler header "Sept. 28, 1836. | 7 Stat., 520. | Proclamation, Dec. 13, 1837.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1837
+  signed: '1837-10-21'
+  statutes_at_large: 7 Stat. 540
+  kappler:
+    volume: 2
+    page: 495
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1837-0495
+  signatory: Sac; Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 495 (Treaty with the Sauk and Foxes, 1837; Kappler header "Oct. 21, 1837. | 7 Stat., 540. | Proclamation, Feb. 21, 1838.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1842
+  signed: '1842-10-11'
+  statutes_at_large: 7 Stat. 596
+  kappler:
+    volume: 2
+    page: 546
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1842-0546
+  signatory: Sac; Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 546 (Treaty with the Sauk and Foxes, 1842; Kappler header "Oct.11, 1842. | 7 Stat., 596. | Proclamation, Mar. 23, 1843.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1859
+  signed: '1859-10-01'
+  statutes_at_large: 15 Stat. 467
+  kappler:
+    volume: 2
+    page: 796
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1859-0796
+  signatory: Sac and Fox of Mississippi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 796 (Treaty with the Sauk and Foxes, 1859; Kappler header "Oct. 1, 1859. | 15 Stats., 467. | Ratified, June 27, 1860. | Proclaimed, July 9, 1860.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1867
+  signed: '1867-02-18'
+  statutes_at_large: 15 Stat. 495
+  kappler:
+    volume: 2
+    page: 951
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1867-0951
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 951 (Treaty with the Sauk and Foxes, 1867; Kappler header "Feb. 18, 1867. | 15 Stat., 495. | Ratified July 25, 1868. | Proclaimed Oct. 14, 1868.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sac & Fox Nation (Oklahoma) The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

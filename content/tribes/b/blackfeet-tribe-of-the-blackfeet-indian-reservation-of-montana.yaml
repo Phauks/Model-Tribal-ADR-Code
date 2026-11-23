@@ -202,6 +202,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+indian_health_service:
+- area: Billings
+  source: indian-health-service-billings-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Montana and Wyoming" list'
+  note: 'Listed as "Blackfeet Nation". Also listed under the same Area in: indian-health-service-direct-service-tribes. Service unit named for the reservation; page does not list the nation by its full name.'
+- area: Billings
+  service_unit: Blackfeet Service Unit
+  source: indian-health-service-billings-blackfeet-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Blackfeet Indian Reservation".'
+- area: Billings
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Billings Area
+  note: Listed as "Blackfeet Tribal Business Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Blackfeet Tribe of the Blackfeet Indian Reservation" among organizations under
@@ -484,6 +508,46 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+treaties:
+- title: Treaty with the Blackfeet, 1855
+  signed: '1855-10-17'
+  statutes_at_large: 11 Stat. 657
+  kappler:
+    volume: 2
+    page: 736
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-blackfeet-1855-0736
+  signatory: Piegan; Blackfeet
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 736 (Treaty with the Blackfeet, 1855; Kappler header "Oct. 17, 1855. | 11 Stat., 657. | Ratified Apr. 15, 1856. | Proclaimed Apr. 25, 1856.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Piegan (Blackfeet Tribe of Montana) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Blackfeet Sioux, 1865
+  signed: '1865-10-19'
+  statutes_at_large: 14 Stat. 727
+  kappler:
+    volume: 2
+    page: 898
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-blackfeet-sioux-1865-0898
+  signatory: Blackfeet
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 898 (Treaty with the Blackfeet Sioux, 1865; Kappler header "Oct. 19, 1865. | 14 Stat., 727. | Ratified Mar. 5, 1866. | Proclaimed Mar. 17, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Piegan (Blackfeet Tribe of Montana) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
+  signed: '1868-04-29'
+  statutes_at_large: 15 Stat. 635
+  kappler:
+    volume: 2
+    page: 998
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998
+  signatory: Blackfeet
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 998 (Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868; Kappler header "Apr. 29, 1868. | 15 Stats., 635. | Ratified, Feb. 16, 1869. | Proclaimed, Feb. 24, 1869.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Piegan (Blackfeet Tribe of Montana) The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

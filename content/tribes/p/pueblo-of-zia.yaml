@@ -199,6 +199,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: Listed as "Zia Pueblo". The page names the field clinics at Zia and Santa Ana Pueblos; the Albuquerque Area page also lists a Santa Ana Health Center.
+- area: Albuquerque
+  service_unit: Albuquerque Indian Health Center (Albuquerque Service Unit), via field clinic
+  source: indian-health-service-albuquerque-indian-health-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "AIHC also provides care in the Zia Pueblo and the Santa Ana Pueblo via two Field Clinics.".'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

@@ -303,16 +303,19 @@
       "unevaluatedProperties": false
     },
     "indian_health_service": {
-      "type": "object",
-      "$ref": "#/$defs/citedFact",
-      "description": "The Indian Health Service Area that serves the nation and, where the Indian Health Service names it, the service unit and who runs it.",
-      "required": ["area"],
-      "properties": {
-        "area": { "type": "string", "description": "Indian Health Service Area, such as Billings or Navajo." },
-        "service_unit": { "type": "string", "description": "Service unit or health program as the source names it." },
-        "operator": { "type": "string", "enum": ["indian-health-service", "tribal", "not-stated"], "description": "Who runs the service unit: the Indian Health Service itself, the nation or a Tribal organization under the Indian Self-Determination and Education Assistance Act, or not stated." }
-      },
-      "unevaluatedProperties": false
+      "type": "array",
+      "description": "The Indian Health Service Area that serves the nation and, where the Indian Health Service names them, its service units or health programs and who runs them. Each fact comes from one source; the Area is repeated in each so that a fact stands on its own.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["area"],
+        "properties": {
+          "area": { "type": "string", "description": "Indian Health Service Area, such as Billings or Navajo." },
+          "service_unit": { "type": "string", "description": "Service unit, service area or health program as the source names it." },
+          "operator": { "type": "string", "enum": ["indian-health-service", "tribal"], "description": "Who runs the nation's health services as the source states it: the Indian Health Service itself (Direct Service Tribes list), or the nation or a Tribal organization under the Indian Self-Determination and Education Assistance Act." }
+        },
+        "unevaluatedProperties": false
+      }
     },
     "government_structure": {
       "type": "array",

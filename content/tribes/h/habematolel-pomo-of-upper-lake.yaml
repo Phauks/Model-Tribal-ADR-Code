@@ -165,6 +165,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Habematolel Pomo of Upper Lake, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Habematolel Pomo of Upper Lake, California".
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Upper Lake Band of Pomo Indians of the Upper Lake Rancheria California) (approved

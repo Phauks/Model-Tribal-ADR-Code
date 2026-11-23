@@ -159,6 +159,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kiana
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: Listed as "Native Village of Kiana". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Kotzebue Service Area
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: 'The source''s words: "Native Village of Kiana".'
+  operator: tribal
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

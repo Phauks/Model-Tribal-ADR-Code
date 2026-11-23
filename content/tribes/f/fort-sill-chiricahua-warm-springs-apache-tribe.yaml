@@ -245,6 +245,30 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Fort Sill—Chiricahua—Warm Springs—Apache Tribe (previously listed as Fort Sill Apache Tribe
     of Oklahoma)
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Fort Sill Apache Tribe of Oklahoma". Also listed under the same Area in: indian-health-service-direct-service-tribes. Page lists tribal names generically ("Delaware", "Apache", "Wichita"); matched to the roster nation of that name. Operator from Direct Service Tribes list.'
+- area: Oklahoma City
+  service_unit: Lawton Service Unit (Lawton Indian Hospital)
+  source: indian-health-service-oklahoma-city-lawton-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "25,000 members of the Caddo, Comanche, Delaware, Fort Sill Apache, Kiowa, Apache, and Wichita tribes are concentrated".'
+- area: Oklahoma City
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Fort Sill Apache Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governing_documents:
 - kind: constitution
   title: Fort Sill Apache Tribe of Oklahoma - Tribal Constitution

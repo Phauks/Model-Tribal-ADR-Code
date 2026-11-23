@@ -185,6 +185,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Chitimacha Tribe of Louisiana". Also listed under the same Area in: indian-health-service-nashville-careers-brochure, indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Chitimacha Tribe of Louisiana (1998)); the list does not say which service unit or programs the compact covers.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Chitimacha Tribe of Louisiana".
 governing_documents:
 - kind: law-code
   title: Tribal code

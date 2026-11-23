@@ -182,6 +182,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Saginaw Chippewa Indian Tribe of Michigan
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "Saginaw Chippewa Indian of Michigan".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Saginaw Chippewa Indian Tribe of Michigan" among organizations under constitutions
@@ -409,6 +417,124 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+treaties:
+- title: Treaty with the Chippewa, 1819
+  signed: '1819-09-24'
+  statutes_at_large: 7 Stat. 203
+  kappler:
+    volume: 2
+    page: 185
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1819-0185
+  signatory: Chippewa nation (Saginaw district)
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 185 (Treaty with the Chippewa, 1819; Kappler header "Sept. 24, 1819. | 7 Stat., 203. | Proclamation, Mar. 25, 1820.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty made at Saginaw with the Chippewa bands of the Saginaw district; Saginaw Chippewa Indian Tribe of Michigan The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1836
+  signed: '1836-05-09'
+  statutes_at_large: 7 Stat. 503
+  kappler:
+    volume: 2
+    page: 461
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1836-0461
+  signatory: Chippewa of Black River; Chippewa of Swan Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 461 (Treaty with the Chippewa, 1836; Kappler header "May 9, 1836. | 7 Stat., 503. | Proclamation, May 25, 1836.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1837
+  signed: '1837-01-14'
+  statutes_at_large: 7 Stat. 528
+  kappler:
+    volume: 2
+    page: 482
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1837-0482
+  signatory: Chippewa of Saginaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 482 (Treaty with the Chippewa, 1837; Kappler header "Jan. 14, 1837. | 7 Stat., 528. | Proclamation, July 2, 1838.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1837
+  signed: '1837-12-20'
+  statutes_at_large: 7 Stat. 547
+  kappler:
+    volume: 2
+    page: 501
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1837-0501
+  signatory: Chippewa of Saginaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 501 (Treaty with the Chippewa, 1837; Kappler header "Dec. 20, 1837, | 7 Stat., 547. | Proclamation, July 2, 1838.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1838
+  signed: '1838-01-23'
+  statutes_at_large: 7 Stat. 565
+  kappler:
+    volume: 2
+    page: 516
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1838-0516
+  signatory: Chippewa nation (Saginaw district)
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 516 (Treaty with the Chippewa, 1838; Kappler header "Jan. 23, 1838. | 7 Stat., 565. | Proclamation, July 2, 1838.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty made at Saginaw with the Chippewa bands of the Saginaw district; Saginaw Chippewa Indian Tribe of Michigan The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1839
+  signed: '1839-02-07'
+  statutes_at_large: 7 Stat. 578
+  kappler:
+    volume: 2
+    page: 528
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1839-0528
+  signatory: Chippewa of Saginaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 528 (Treaty with the Chippewa, 1839; Kappler header "Feb. 7, 1839. | 7 Stat., 578. | Proclamation, Mar. 2, 1839.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of Saginaw, etc., 1855
+  signed: '1855-08-02'
+  statutes_at_large: 11 Stat. 633
+  kappler:
+    volume: 2
+    page: 733
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-saginaw-etc-1855-0733
+  signatory: Chippewa of Saginaw; Chippewa of Swan Creek; Chippewa of Black River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 733 (Treaty with the Chippewa of Saginaw, etc., 1855; Kappler header "Aug. 2, 1855. | 11 Stat., 633. | Ratified Apr. 15, 1856. | Proclaimed June 21, 1856.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, etc., 1859
+  signed: '1859-07-16'
+  statutes_at_large: 12 Stat. 1105
+  kappler:
+    volume: 2
+    page: 792
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1859-0792
+  signatory: Chippewa of Black River; Chippewa of Swan Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 792 (Treaty with the Chippewa, etc., 1859; Kappler header "July 16, 1859. | 12 Stat., 1105. | Ratified Apr. 19, 1860. | Proclaimed July 9, 1860.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of Saginaw, Swan Creek, and Black River, 1864
+  signed: '1864-10-18'
+  statutes_at_large: 14 Stat. 637
+  kappler:
+    volume: 2
+    page: 868
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-saginaw-swan-creek-and-black-river-1864-0868
+  signatory: Chippewa of Saginaw; Chippewa of Black River; Chippewa of Swan Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 868 (Treaty with the Chippewa of Saginaw, Swan Creek, and Black River, 1864; Kappler header "Oct. 18, 1864. | 14 Stats., 637. | Ratified May 22, 1866. | Proclaimed Aug. 16, 1866.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

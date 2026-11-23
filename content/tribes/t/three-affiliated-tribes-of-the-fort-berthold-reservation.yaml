@@ -180,6 +180,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: Listed as "Mandan, Hidatsa, and Arikara Nation". Roster uses the Three Affiliated Tribes name; Indian Health Service lists the same nation as "Mandan, Hidatsa, and Arikara Nation".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota" among
@@ -548,6 +556,59 @@ jurisdiction:
   as_of: '2026-08-11'
   locator: Chart row 38, "Implemented VAWA STCJ" column
   note: Listed as "Mandan, Hidatsa and Arikara Nation". The chart is undated (file last modified Aug. 11, 2026) and comes from a Justice Department technical-assistance provider, not the Department itself.
+treaties:
+- title: Treaty with the Arikara Tribe, 1825
+  signed: '1825-07-18'
+  statutes_at_large: 7 Stat. 259
+  kappler:
+    volume: 2
+    page: 237
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-arikara-tribe-1825-0237
+  signatory: Arikara
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 237 (Treaty with the Arikara Tribe, 1825; Kappler header "July 18, 1825. | 7 Stat., 259. | Proclamation, Feb. 6, 1826.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three Affiliated Tribes = Mandan, Hidatsa (Minnetaree/Belantse-Etoa), Arikara The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Belantse-Etoa or Minitaree Tribe, 1825
+  signed: '1825-07-30'
+  statutes_at_large: 7 Stat. 261
+  kappler:
+    volume: 2
+    page: 239
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-belantse-etoa-or-minitaree-tribe-1825-0239
+  signatory: Belantse-Etoa; Minnetaree
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 239 (Treaty with the Belantse-Etoa or Minitaree Tribe, 1825; Kappler header "July 30, 1825. | 7 Stat., 261. | Proclamation, Feb. 6, 1826.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three Affiliated Tribes = Mandan, Hidatsa (Minnetaree/Belantse-Etoa), Arikara The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Mandan Tribe, 1825
+  signed: '1825-07-30'
+  statutes_at_large: 7 Stat. 264
+  kappler:
+    volume: 2
+    page: 242
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-mandan-tribe-1825-0242
+  signatory: Mandan
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 242 (Treaty with the Mandan Tribe, 1825; Kappler header "July 30, 1825. | 7 Stat., 264. | Proclamation, Feb. 6, 1826.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three Affiliated Tribes = Mandan, Hidatsa (Minnetaree/Belantse-Etoa), Arikara The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty of Fort Laramie with Sioux, etc., 1851
+  signed: '1851-09-17'
+  statutes_at_large: 11 Stat. 749
+  kappler:
+    volume: 2
+    page: 594
+    link: https://treaties.okstate.edu/treaties/treaty-of-fort-laramie-with-sioux-etc-1851-0594
+  signatory: Arikara; Arikara / Mandan / Gros Ventre (Hidatsa)
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 594 (Treaty of Fort Laramie with Sioux, etc., 1851; Kappler header "Sept. 17, 1851. | 11 Stats., p. 749.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three Affiliated Tribes = Mandan, Hidatsa (Minnetaree/Belantse-Etoa), Arikara The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

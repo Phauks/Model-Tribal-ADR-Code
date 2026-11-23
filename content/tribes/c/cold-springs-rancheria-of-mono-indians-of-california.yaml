@@ -145,6 +145,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cold Springs Rancheria of Mono Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Cold Springs Rancheria of Mono Indians of California".
 governing_documents:
 - kind: constitution
   title: Constitution and By-laws of the Cold Springs Rancheria, Fresno County, California

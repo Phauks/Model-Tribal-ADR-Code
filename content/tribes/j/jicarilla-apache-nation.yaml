@@ -154,6 +154,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Jicarilla Apache Nation, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Jicarilla Apache Nation". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Albuquerque
+  service_unit: Jicarilla Service Unit
+  source: indian-health-service-albuquerque-jicarilla-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "serves primarily the members of the Jicarilla Apache Nation".'
+- area: Albuquerque
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Albuquerque Area
+  note: Listed as "Jicarilla Apache Nation". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Jicarilla Apache Tribe of New Mexico" among organizations under constitutions

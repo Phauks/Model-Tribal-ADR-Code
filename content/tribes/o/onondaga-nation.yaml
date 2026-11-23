@@ -178,6 +178,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Onondaga Nation
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-direct-service-tribes
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Direct Service Tribes by IHS Area" list'
+  note: Listed as "Onondaga Nation of New York".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -200,6 +208,46 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New York by the Census Bureau's land areas.
+treaties:
+- title: Treaty with the Six Nations, 1784
+  signed: '1784-10-22'
+  statutes_at_large: 7 Stat. 15
+  kappler:
+    volume: 2
+    page: 5
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1784-0005
+  signatory: Onondaga
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 5 (Treaty with the Six Nations, 1784; Kappler header "Oct. 22, 1784. | 7 Stat., 15.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Six Nations, 1789
+  signed: '1789-01-09'
+  statutes_at_large: 7 Stat. 33
+  kappler:
+    volume: 2
+    page: 23
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1789-0023
+  signatory: Onondaga
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 23 (Treaty with the Six Nations, 1789; Kappler header "Jan. 9. 1789. | 7 Stat., 33.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Six Nations, 1794
+  signed: '1794-11-11'
+  statutes_at_large: 7 Stat. 44
+  kappler:
+    volume: 2
+    page: 34
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1794-0034
+  signatory: Onondaga
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 34 (Treaty with the Six Nations, 1794; Kappler header "Nov. 11, 1794. | 7 Stat., 44. | Proclamation, Jan. 21, 1795.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

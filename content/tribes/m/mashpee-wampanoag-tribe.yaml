@@ -199,6 +199,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Direct Service Tribes by IHS Area" list'
+  note: 'Listed as "Mashpee Wampanoag Tribe". Also listed under the same Area in: indian-health-service-nashville-careers-brochure. Service unit named for the tribe; listed as a federal direct care service facility.'
+- area: Nashville
+  service_unit: Mashpee Wampanoag Health Service Unit
+  source: indian-health-service-nashville-mashpee-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Mashpee Wampanoag Health Service Unit".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Federal Direct Care Service Facilities". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governing_documents:
 - kind: law-code
   title: Mashpee Wampanoag Indian Tribal Council, Inc. - Corporate Documents and Selected Ordinances

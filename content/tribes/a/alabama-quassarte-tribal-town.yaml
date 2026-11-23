@@ -135,6 +135,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Alabama-Quassarte Tribal Town
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Alabama-Quassarte Tribal Town".
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Alabama-Quassarte Tribal Town" among organizations under constitutions approved

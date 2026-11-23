@@ -204,6 +204,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Kiowa Indian Tribe of Oklahoma". Also listed under the same Area in: indian-health-service-direct-service-tribes. Page lists tribal names generically ("Delaware", "Apache", "Wichita"); matched to the roster nation of that name. Operator from Direct Service Tribes list.'
+- area: Oklahoma City
+  service_unit: Lawton Service Unit (Lawton Indian Hospital)
+  source: indian-health-service-oklahoma-city-lawton-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "25,000 members of the Caddo, Comanche, Delaware, Fort Sill Apache, Kiowa, Apache, and Wichita tribes are concentrated".'
+- area: Oklahoma City
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Kiowa Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governing_documents:
 - kind: constitution
   title: Kiowa Indian Tribe of Oklahoma - Tribal Constitution
@@ -486,6 +510,72 @@ jurisdiction:
   as_of: '2026-08-11'
   locator: Chart row 39, "Implemented VAWA STCJ" column
   note: Listed as "Kiowa Tribe". The chart is undated (file last modified Aug. 11, 2026) and comes from a Justice Department technical-assistance provider, not the Department itself.
+treaties:
+- title: Treaty with the Kiowa, etc., 1837
+  signed: '1837-05-26'
+  statutes_at_large: 7 Stat. 533
+  kappler:
+    volume: 2
+    page: 489
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-etc-1837-0489
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 489 (Treaty with the Kiowa, etc., 1837; Kappler header "May 26, 1837. | 7 Stat., 533. | Proclamation, Feb. 21, 1838.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche, Kiowa, and Apache, 1853
+  signed: '1853-07-27'
+  statutes_at_large: 10 Stat. 1013
+  kappler:
+    volume: 2
+    page: 600
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-kiowa-and-apache-1853-0600
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 600 (Treaty with the Comanche, Kiowa, and Apache, 1853; Kappler header "July 27, 1853. | 10 Stats., 1013. | Ratified Apr. 12, 1854. | Proclaimed Feb. 12, 1855 [4].")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche and Kiowa, 1865
+  signed: '1865-10-18'
+  statutes_at_large: 14 Stat. 717
+  kappler:
+    volume: 2
+    page: 892
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 892 (Treaty with the Comanche and Kiowa, 1865; Kappler header "Oct. 18, 1865. | 14 Stat., 717. | Ratified May 22, 1866. | Proclaimed May 26, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kiowa and Comanche, 1867
+  signed: '1867-10-21'
+  statutes_at_large: 15 Stat. 581
+  kappler:
+    volume: 2
+    page: 977
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-and-comanche-1867-0977
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 977 (Treaty with the Kiowa and Comanche, 1867; Kappler header "Oct. 21, 1867. | 15 Stats., 581. | Ratified, July 25, 1868. | Proclaimed, Aug. 25, 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kiowa, Comanche, and Apache, 1867
+  signed: '1867-10-21'
+  statutes_at_large: 15 Stat. 589
+  kappler:
+    volume: 2
+    page: 982
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-comanche-and-apache-1867-0982
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 982 (Treaty with the Kiowa, Comanche, and Apache, 1867; Kappler header "Oct. 21, 1867. | 15 Stats., 589. | Ratified, July 25, 1868. | Proclaimed Aug. 25 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

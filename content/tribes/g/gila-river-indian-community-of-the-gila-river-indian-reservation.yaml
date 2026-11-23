@@ -230,6 +230,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Gila River Indian Community". Also listed under the same Area in: indian-health-service-self-governance-tribes. Phoenix Area page tags tribal programs with (*). Also on the Indian Health Service Self-Governance Tribes list (Gila River Indian Community (2003)); the list does not say which service unit or programs the compact covers.'
+- area: Phoenix
+  service_unit: Gila River Health Care Corporation
+  source: indian-health-service-phoenix-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Gila River Health Care Corporation".'
+  operator: tribal
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Gila River Indian Community, Arizona) (approved 1960) states it was adopted under

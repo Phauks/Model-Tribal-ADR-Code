@@ -194,6 +194,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kickapoo Traditional Tribe of Texas
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Kickapoo Traditional Tribe of Texas".
 governing_documents:
 - kind: law-code
   title: Kickapoo Traditional Tribe of Texas - Tribal Codes and Ordinances

@@ -150,6 +150,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Yomba Shoshone Tribe of the Yomba Reservation".
+- area: Phoenix
+  service_unit: Schurz Service Unit
+  source: indian-health-service-phoenix-schurz-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Yomba Shoshone Tribe".'
+  operator: tribal
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Yomba Shoshone Tribe Nevada" among organizations under constitutions approved
@@ -300,6 +317,20 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+treaties:
+- title: Treaty with the Western Shoshoni, 1863
+  signed: '1863-10-01'
+  statutes_at_large: 18 Stat. 689
+  kappler:
+    volume: 2
+    page: 851
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-western-shoshoni-1863-0851
+  signatory: Western Shoshoni
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 851 (Treaty with the Western Shoshoni, 1863; Kappler header "Oct. 1, 1863. | 18 Stats., 689. | Ratified June 26, 1866. | Proclaimed Oct. 21, 1869.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Western Shoshone bands of Nevada party to Ruby Valley 1863; these colonies/reservations carry the Western Shoshone name The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

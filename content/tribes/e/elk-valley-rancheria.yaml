@@ -177,6 +177,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Elk Valley Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Elk Valley Rancheria, California".
 governing_documents:
 - kind: law-code
   title: Ordinances of the Elk Valley Rancheria, California

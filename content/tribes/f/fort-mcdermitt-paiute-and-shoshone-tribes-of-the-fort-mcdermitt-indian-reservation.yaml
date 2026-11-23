@@ -201,6 +201,14 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
     and Oregon
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Fort McDermitt Paiute-Shoshone Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Fort McDermitt Paiute and Shoshone Tribe (2017)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Fort McDermitt Pauite and Shoshone Tribe, Nevada" among organizations under constitutions

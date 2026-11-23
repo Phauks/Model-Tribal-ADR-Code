@@ -239,6 +239,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Salt River Pima-Maricopa Indian Community". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Salt River Pima-Maricopa Indian Community (2017)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Salt River Pima-Maricopa Community of the Salt River Reservation, Arizona" among

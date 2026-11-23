@@ -175,6 +175,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chippewa Cree Indians of the Rocky Boy's Reservation, Montana
+indian_health_service:
+- area: Billings
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Self-Governance Tribes list by Area
+  note: Listed as "Chippewa Cree Tribe of the Rocky Boy's Reservation". Also on the Indian Health Service Self-Governance Tribes list (Chippewa Cree Tribe of the Rocky Boy's Reservation (1995)); the list does not say which service unit or programs the compact covers.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Chippewa Cree Tribe of the Rocky Boy's Reservation, Montana" among organizations

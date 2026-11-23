@@ -169,6 +169,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Monacan Indian Nation
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-monacan-health-center
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: Listed as "Monacan Indian Nation". Listed under Federal Direct Care Service Facilities on the Nashville Area page.
+- area: Nashville
+  service_unit: Monacan Health Center
+  source: indian-health-service-nashville-monacan-health-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "serves the Monacan Indian Nation and other Federally Recognized American Indians".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Federal Direct Care Service Facilities". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governing_documents:
 - kind: constitution
   title: Constitution

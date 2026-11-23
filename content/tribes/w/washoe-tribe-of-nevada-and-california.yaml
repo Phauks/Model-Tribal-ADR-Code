@@ -250,6 +250,14 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Washoe Tribe of Nevada & California (Carson Colony, Dresslerville Colony, Woodfords Community,
     Stewart Community, & Washoe Ranches)
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Washoe Tribe of Nevada and California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Washoe Tribe of Nevada and California (2003)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Washoe Tribe, Nevada" among organizations under constitutions approved by the

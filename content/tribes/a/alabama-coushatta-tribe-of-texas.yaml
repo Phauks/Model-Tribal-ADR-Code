@@ -206,6 +206,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Alabama-Coushatta Tribe of Texas
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Alabama-Coushatta Tribe of Texas". Also listed under the same Area in: indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Alabama-Coushatta Tribe of Texas".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Alabama-Coushatta Tribe of Texas" among organizations under constitutions approved

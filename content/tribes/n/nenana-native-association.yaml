@@ -183,6 +183,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nenana Native Association
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: Listed as "Nenana Native Association". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Interior Alaska Service Area
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: 'The source''s words: "Nenana Native Association".'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

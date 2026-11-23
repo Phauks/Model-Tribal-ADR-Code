@@ -157,6 +157,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
+indian_health_service:
+- area: Navajo
+  source: indian-health-service-navajo-area-fiscal-year-2022-budget-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Demographic Information bullet
+  note: Listed as "San Juan Southern Paiute Tribe". Navajo Area budget document states the Area serves the Navajo Nation and the San Juan Southern Paiute Tribe; it also says both perform Community Health Services through ISDEAA agreements.
 governing_documents:
 - kind: law-code
   title: Tribal code

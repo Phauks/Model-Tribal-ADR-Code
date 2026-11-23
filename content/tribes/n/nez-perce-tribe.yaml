@@ -196,6 +196,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nez Perce Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Nez Perce Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Nez Perce Indian Tribe (2001)); the list does not say which service unit or programs the compact covers.'
 governing_documents:
 - kind: law-code
   title: Nez Perce Tribal Code
@@ -616,6 +624,59 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.53)
   note: Listed as "NEZ PERCE TRIBE" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+treaties:
+- title: Treaty with the Nez Perces, 1855
+  signed: '1855-06-11'
+  statutes_at_large: 12 Stat. 957
+  kappler:
+    volume: 2
+    page: 702
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nez-perces-1855-0702
+  signatory: Nez Percé
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 702 (Treaty with the Nez Perces, 1855; Kappler header "June 11, 1855. | 12 Stats., 957. | Ratified Mar. 8. 1859. | Proclaimed Apr. 29, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Blackfeet, 1855
+  signed: '1855-10-17'
+  statutes_at_large: 11 Stat. 657
+  kappler:
+    volume: 2
+    page: 736
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-blackfeet-1855-0736
+  signatory: Nez Percé
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 736 (Treaty with the Blackfeet, 1855; Kappler header "Oct. 17, 1855. | 11 Stat., 657. | Ratified Apr. 15, 1856. | Proclaimed Apr. 25, 1856.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Nez Perces, 1863
+  signed: '1863-06-09'
+  statutes_at_large: 14 Stat. 647
+  kappler:
+    volume: 2
+    page: 843
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nez-perces-1863-0843
+  signatory: Nez Percé
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 843 (Treaty with the Nez Perces, 1863; Kappler header "June 9, 1863. | 14 Stats., 647. | Ratified Apr. 17, 1867. | Proclaimed Apr. 20, 1867.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Nez Perces, 1868
+  signed: '1868-08-13'
+  statutes_at_large: 15 Stat. 693
+  kappler:
+    volume: 2
+    page: 1024
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nez-perces-1868-1024
+  signatory: Nez Percé
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 1024 (Treaty with the Nez Perces, 1868; Kappler header "Aug. 13, 1868. | 15 Stats., 693. | Ratified Feb. 16, 1869. | Proclaimed Feb. 24, 1869.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

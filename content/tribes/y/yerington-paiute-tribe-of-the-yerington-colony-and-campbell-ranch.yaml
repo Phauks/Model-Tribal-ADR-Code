@@ -154,6 +154,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Yerington Paiute Tribe (Campbell Ranch)". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Yerington Paiute Tribe, Nevada" among organizations under constitutions approved

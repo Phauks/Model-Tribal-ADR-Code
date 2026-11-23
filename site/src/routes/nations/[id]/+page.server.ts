@@ -258,7 +258,6 @@ const establishmentWords: Record<string, string> = {
 function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const section = 'Treaties and federal ties';
 	const treaties = [...(record.treaties ?? [])].sort((first, second) => first.signed.localeCompare(second.signed));
-	const health = record.indian_health_service;
 	return [
 		...group(
 			'treaties',
@@ -290,21 +289,41 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 				})
 			)
 		),
-		...group(
-			'indian_health_service',
-			'Indian Health Service',
-			health
-				? [
-						cited(sources, section, health, {
-							text: `${health.area} Area`,
-							note: health.service_unit
-								? `Service unit: ${health.service_unit}${health.operator === 'tribal' ? ' (run by the nation or a Tribal organization)' : health.operator === 'indian-health-service' ? ' (run by the Indian Health Service)' : ''}.`
-								: undefined
-						})
-					]
-				: []
-		)
+		...group('indian_health_service', 'Indian Health Service', healthItems(record, sources, section))
 	];
+}
+
+/**
+ * The Indian Health Service Area once, with the markers of every source that
+ * names it, then each service unit or health program and who runs the
+ * nation's health services, each with its own source.
+ */
+function healthItems(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	const facts = record.indian_health_service ?? [];
+	if (facts.length === 0) return [];
+	const areas = [...new Set(facts.map((fact) => fact.area))];
+	const areaCitations: CitationMark[] = [];
+	for (const fact of facts) sources.citeFact(fact, section, `${fact.area} Area`, areaCitations);
+	const items: FactItem[] = [{ text: areas.map((area) => `${area} Area`).join('; '), citations: areaCitations }];
+	for (const fact of facts) {
+		if (!fact.service_unit) continue;
+		const runBy =
+			fact.operator === 'tribal'
+				? 'run by the nation or a Tribal organization'
+				: fact.operator === 'indian-health-service'
+					? 'run by the Indian Health Service'
+					: undefined;
+		items.push(cited(sources, section, fact, { label: 'Service unit or program', text: fact.service_unit, detail: runBy }));
+	}
+	for (const fact of facts) {
+		if (!fact.operator || fact.service_unit) continue;
+		const text =
+			fact.operator === 'tribal'
+				? 'Run by the nation or a Tribal organization'
+				: 'Run by the Indian Health Service (a Direct Service Tribe)';
+		items.push(cited(sources, section, fact, { label: 'Health services', text }));
+	}
+	return items;
 }
 
 /**

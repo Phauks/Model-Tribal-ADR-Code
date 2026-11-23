@@ -212,6 +212,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Jemez, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Jemez Pueblo". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Pueblo of Jemez (2011)); the list does not say which service unit or programs the compact covers.'
+- area: Albuquerque
+  service_unit: Jemez Health Center
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Jemez Health Center – Tribal".'
+  operator: tribal
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

@@ -168,6 +168,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tohono O'odham Nation of Arizona
+indian_health_service:
+- area: Tucson
+  source: indian-health-service-tucson-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: Listed as "Tohono O'odham Nation". Also on the Indian Health Service Self-Governance Tribes list (Tohono O'odham Nation (2016)); the list does not say which service unit or programs the compact covers.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Papago Tribe, Arizona" among organizations under constitutions approved by the

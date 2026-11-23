@@ -156,6 +156,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
+indian_health_service:
+- area: Billings
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Self-Governance Tribes list by Area
+  note: Listed as "Little Shell Tribe of Chippewa Indians of Montana". Also on the Indian Health Service Self-Governance Tribes list (Little Shell Tribe of Chippewa Indians of Montana (2025)); the list does not say which service unit or programs the compact covers.
 governing_documents:
 - kind: constitution
   title: Constitution

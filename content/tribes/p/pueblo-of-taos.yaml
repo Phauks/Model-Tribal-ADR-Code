@@ -151,6 +151,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Taos, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Taos Pueblo". Also listed under the same Area in: indian-health-service-direct-service-tribes, indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Taos Pueblo (2010)); the list does not say which service unit or programs the compact covers.'
+- area: Albuquerque
+  service_unit: Taos-Picuris Service Unit
+  source: indian-health-service-albuquerque-taos-picuris-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "primary source of non-emergency, outpatient services for the members of the Picuris and Taos Pueblos".'
+- area: Albuquerque
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Albuquerque Area
+  note: Listed as "Pueblo of Taos". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

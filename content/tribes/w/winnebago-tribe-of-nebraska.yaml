@@ -225,6 +225,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Winnebago Tribe of Nebraska
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: 'Listed as "Winnebago Tribe of Nebraska". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Winnebago Tribe of Nebraska (2018)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Winnebago Tribe of Nebraska" among organizations under constitutions approved
@@ -493,6 +501,149 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Winnebago, 1816
+  signed: '1816-06-03'
+  statutes_at_large: 7 Stat. 144
+  kappler:
+    volume: 2
+    link: https://treaties.okstate.edu/treaties/treatywiththewinnebago1816
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: page not determined (Treaty with the Winnebago, 1816; Kappler header "June 3, 1816. | 7 Stat., 144. | Proclamation, Dec. 30, 1816.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux, etc., 1825
+  signed: '1825-08-19'
+  statutes_at_large: 7 Stat. 272
+  kappler:
+    volume: 2
+    page: 250
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-etc-1825-0250
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 250 (Treaty with the Sioux, etc., 1825; Kappler header "Aug. 19, 1825. | 7 Stat., 272. | Proclamation. Feb. 6, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, etc., 1827
+  signed: '1827-08-11'
+  statutes_at_large: 7 Stat. 303
+  kappler:
+    volume: 2
+    page: 281
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1827-0281
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 281 (Treaty with the Chippewa, etc., 1827; Kappler header "Aug. 11, 1827. | 7 Stat., 303. | Proclamation, Feb. 23, 1829.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Winnebago, etc., 1828
+  signed: '1828-08-25'
+  statutes_at_large: 7 Stat. 315
+  kappler:
+    volume: 2
+    page: 292
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-etc-1828-0292
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 292 (Treaty with the Winnebago, etc., 1828; Kappler header "Aug. 25, 1828. | 7 Stat., 315. | Proclamation, Jan. 7, 1829.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Winnebago, 1829
+  signed: '1829-08-01'
+  statutes_at_large: 7 Stat. 323
+  kappler:
+    volume: 2
+    page: 300
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1829-0300
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 300 (Treaty with the Winnebago, 1829; Kappler header "Aug. 1, 1829. | 7 Stat., 323. | Proclamation, Jan. 2, 1830.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Winnebago, 1832
+  signed: '1832-09-15'
+  statutes_at_large: 7 Stat. 370
+  kappler:
+    volume: 2
+    page: 345
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1832-0345
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 345 (Treaty with the Winnebago, 1832; Kappler header "Sept. 15, 1832. | 7 Stat., 370. | Proclamation, Feb. 13, 1833.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Winnebago, 1837
+  signed: '1837-11-01'
+  statutes_at_large: 7 Stat. 544
+  kappler:
+    volume: 2
+    page: 498
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1837-0498
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 498 (Treaty with the Winnebago, 1837; Kappler header "Nov. 1, 1837. | 7 Stat., 544. | Proclamation, June. 15, 1838.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Winnebago, 1846
+  signed: '1846-10-13'
+  statutes_at_large: 9 Stat. 878
+  kappler:
+    volume: 2
+    page: 565
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1846-0565
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 565 (Treaty with the Winnebago, 1846; Kappler header "Oct. 13, 1846. | 9 Stat., 878. | Proclamation, Feb. | 4, 1847.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Winnebago, 1855
+  signed: '1855-02-27'
+  statutes_at_large: 10 Stat. 1172
+  kappler:
+    volume: 2
+    page: 690
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1855-0690
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 690 (Treaty with the Winnebago, 1855; Kappler header "Feb. 27, 1855. | 10 Stat., 1172. | Ratified Mar. 3, 1855. | Proclaimed Mar. 23, 1855.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Winnebago, 1859
+  signed: '1859-04-15'
+  statutes_at_large: 12 Stat. 1101
+  kappler:
+    volume: 2
+    page: 790
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1859-0790
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 790 (Treaty with the Winnebago, 1859; Kappler header "Apr. 15, 1859. | 12 Stats., 1101. | Ratified Mar. 16, 1861. | Proclaimed Mar. 23, 1861.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Winnebago, 1865
+  signed: '1865-03-08'
+  statutes_at_large: 14 Stat. 671
+  kappler:
+    volume: 2
+    page: 874
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-1865-0874
+  signatory: Winnebago
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 874 (Treaty with the Winnebago, 1865; Kappler header "Mar. 8, 1865. | 14 Stats., 671.| Ratified Feb. 13, 1866. | Proclaimed Mar. 28, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

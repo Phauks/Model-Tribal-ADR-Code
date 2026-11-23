@@ -190,6 +190,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chickahominy Indian Tribe—Eastern Division
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Direct Service Tribes by IHS Area" list'
+  note: Listed as "Chickahominy Indian Tribe – Eastern Division".
+- area: Nashville
+  service_unit: Mid-Atlantic Service Unit (Mid-Atlantic Tribal Health Center)
+  source: indian-health-service-nashville-mid-atlantic-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Chickahominy Indian Tribe - Eastern Division".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Nashville Area
+  note: Listed as "Chickahominy Indian Tribe – Eastern Division". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

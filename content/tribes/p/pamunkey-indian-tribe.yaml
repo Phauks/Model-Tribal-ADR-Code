@@ -222,6 +222,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pamunkey Indian Tribe
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Nashville Area Tribes, Nations and Partners" list'
+  note: 'Listed as "Pamunkey Indian Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes, indian-health-service-self-governance-tribes. Page lists six Mid-Atlantic tribes served by the Mid-Atlantic Tribal Health Center. The Nashville Area page lists Mid-Atlantic Service Unit under Federal Direct Care; Self-Governance list shows Pamunkey Indian Tribe compacted in 2025. Also on the Indian Health Service Self-Governance Tribes list (Pamunkey Indian Tribe (2025)); the list does not say which service unit or programs the compact covers.'
+- area: Nashville
+  service_unit: Mid-Atlantic Service Unit (Mid-Atlantic Tribal Health Center)
+  source: indian-health-service-nashville-mid-atlantic-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "These Tribes include the Pamunkey Indian Tribe".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Nashville Area
+  note: Listed as "Pamunkey Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

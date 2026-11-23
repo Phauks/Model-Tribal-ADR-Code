@@ -203,6 +203,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Metlakatla Indian Community, Annette Island Reserve
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-annette-island-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Annette Island Service Unit profile'
+  note: 'Listed as "Metlakatla Indian Community". Name on Indian Health Service profile differs from roster name (roster: "Metlakatla Indian Community, Annette Island Reserve"); matched manually. Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.'
+- area: Alaska
+  service_unit: Annette Island Service Unit
+  source: indian-health-service-alaska-area-profile-annette-island-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Annette Island Service Unit profile'
+  note: 'The source''s words: "Metlakatla Indian Community".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Metlakata Indian Community" among organizations under constitutions approved

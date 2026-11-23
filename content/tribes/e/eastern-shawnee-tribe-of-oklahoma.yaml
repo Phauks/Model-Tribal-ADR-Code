@@ -159,6 +159,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Shawnee Tribe of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Eastern Shawnee Tribe of Oklahoma".
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Eastern Shawnee Tribe of Indians, Oklahoma" among organizations under constitutions
@@ -408,6 +416,202 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+treaties:
+- title: Treaty with the Shawnee, 1786
+  signed: '1786-01-31'
+  statutes_at_large: 7 Stat. 26
+  kappler:
+    volume: 2
+    page: 16
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1786-0016
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 16 (Treaty with the Shawnee, 1786; Kappler header "Jan. 31, 1786. | 7 Stat., 26.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Delawares, etc., 1803
+  signed: '1803-06-07'
+  statutes_at_large: 7 Stat. 74
+  kappler:
+    volume: 2
+    page: 64
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1803-0064
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 64 (Treaty with the Delawares, etc., 1803; Kappler header "June 7, 1803. | 7 Stat., 74. | Proclamation Dec. 26, 1803.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Wyandot, etc., 1805
+  signed: '1805-07-04'
+  statutes_at_large: 7 Stat. 87
+  kappler:
+    volume: 2
+    page: 77
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1805-0077
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 77 (Treaty with the Wyandot, etc., 1805; Kappler header "July 4, 1805. | 7 Stat., 87. | Proclamation, Apr. 24, 1806.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, etc., 1808
+  signed: '1808-11-25'
+  statutes_at_large: 7 Stat. 112
+  kappler:
+    volume: 2
+    page: 99
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1808-0099
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 99 (Treaty with the Chippewa, etc., 1808; Kappler header "Nov. 25, 1808. | 7 Stat., 112. | Ratified Mar. 1, 1809. | Proclaimed Mar. 3, 1809.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Wyandot, etc., 1814
+  signed: '1814-07-22'
+  statutes_at_large: 7 Stat. 118
+  kappler:
+    volume: 2
+    page: 105
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1814-0105
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 105 (Treaty with the Wyandot, etc., 1814; Kappler header "July 22, 1814. | 7 Stat., 118. | Ratified, Dec. 13, 1814. | Proclaimed Dec. 21, 1814.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Wyandot, etc., 1815
+  signed: '1815-09-08'
+  statutes_at_large: 7 Stat. 131
+  kappler:
+    volume: 2
+    page: 117
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1815-0117
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 117 (Treaty with the Wyandot, etc., 1815; Kappler header "Sept. 8, 1815. | 7 Stat., 131. | Ratified Dec. 26, 1815.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Wyandot, etc., 1818
+  signed: '1818-09-17'
+  statutes_at_large: 7 Stat. 178
+  kappler:
+    volume: 2
+    page: 162
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1818-0162
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 162 (Treaty with the Wyandot, etc., 1818; Kappler header "Sept. 17, 1818. | 7 Stat., 178. | Proclamation, Jan. 4, 1819.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Shawnee, 1825
+  signed: '1825-11-07'
+  statutes_at_large: 7 Stat. 284
+  kappler:
+    volume: 2
+    page: 262
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1825-0262
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 262 (Treaty with the Shawnee, 1825; Kappler header "Nov. 7, 1825. | 7 Stat., 284. | Proclamation, Dec. 30, 1825.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, 1831
+  signed: '1831-02-28'
+  statutes_at_large: 7 Stat. 348
+  kappler:
+    volume: 2
+    page: 325
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-1831-0325
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 325 (Treaty with the Seneca, 1831; Kappler header "Feb. 28, 1831. | 7 Stat., 348. | Proclamation, Mar 24, 1831.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Shawnee Tribe descends partly from the Lewistown (mixed Seneca and Shawnee) band The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, etc., 1831
+  signed: '1831-07-20'
+  statutes_at_large: 7 Stat. 351
+  kappler:
+    volume: 2
+    page: 327
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-etc-1831-0327
+  signatory: Seneka; Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 327 (Treaty with the Seneca, etc., 1831; Kappler header "July 20, 1831. | 7 Stat., 351. | Proclamation, Apr. 6, 1832.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Shawnee Tribe descends partly from the Lewistown (mixed Seneca and Shawnee) band The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Shawnee, 1831
+  signed: '1831-08-08'
+  statutes_at_large: 7 Stat. 355
+  kappler:
+    volume: 2
+    page: 331
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1831-0331
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 331 (Treaty with the Shawnee, 1831; Kappler header "Aug. 8, 1831. | 7 Stat., 355. | Proclamation, Apr. 6, 1832.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Shawnee, etc., 1832
+  signed: '1832-10-26'
+  statutes_at_large: 7 Stat. 397
+  kappler:
+    volume: 2
+    page: 370
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-etc-1832-0370
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 370 (Treaty with the Shawnee, etc., 1832; Kappler header "Oct. 26, 1832. | 7 Stat., 397. | Proclamation, Feb. 12, 1833.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca and Shawnee, 1832
+  signed: '1832-12-29'
+  statutes_at_large: 7 Stat. 411
+  kappler:
+    volume: 2
+    page: 383
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-and-shawnee-1832-0383
+  signatory: Seneka; Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 383 (Treaty with the Seneca and Shawnee, 1832; Kappler header "Dec. 29, 1832. | 7 Stat., 411. | Proclamation, Mar. 22, 1833.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Eastern Shawnee Tribe descends partly from the Lewistown (mixed Seneca and Shawnee) band The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Shawnee, 1854
+  signed: '1854-05-10'
+  statutes_at_large: 10 Stat. 1053
+  kappler:
+    volume: 2
+    page: 618
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1854-0618
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 618 (Treaty with the Shawnee, 1854; Kappler header "May 10, 1854. | 10 Stat., 1053. | Ratified Aug. 2, 1854. | Proclaimed Nov. 2, 1854.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, Mixed Seneca and Shawnee, Quapaw, etc., 1867
+  signed: '1867-02-23'
+  statutes_at_large: 15 Stat. 513
+  kappler:
+    volume: 2
+    page: 960
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960
+  signatory: Mixed Seneka; Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 960 (Treaty with the Seneca, Mixed Seneca and Shawnee, Quapaw, etc., 1867; Kappler header "Feb. 23, 1867. | 15 Stats., 513. | Ratified June 18, 1868. | Proclaimed Oct. 14, 1868.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Mixed Seneca and Shawnee became the Eastern Shawnee Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -1,0 +1,25 @@
+profile: content/tribes/g/grand-traverse-band-of-ottawa-and-chippewa-indians.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/bemidji/healthcarefacilities/
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Bemidji Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#grand-traverse-band-of-ottawa-and-chippewa-indians
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 2 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#grand-traverse-band-of-ottawa-and-chippewa-indians

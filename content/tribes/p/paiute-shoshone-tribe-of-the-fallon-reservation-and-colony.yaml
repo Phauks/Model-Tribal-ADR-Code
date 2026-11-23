@@ -212,6 +212,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute-Shoshone Tribe of the Fallon Reservation and Colony, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Paiute-Shoshone Indians of the Fallon Reservation". Page spells "Pauite".
+- area: Phoenix
+  service_unit: Schurz Service Unit
+  source: indian-health-service-phoenix-schurz-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Fallon Pauite-Shoshone Tribe".'
+  operator: tribal
 governing_documents:
 - kind: law-code
   title: Paiute-Shoshone Tribe of the Fallon Reservation and Colony, Nevada

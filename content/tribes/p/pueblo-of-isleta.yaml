@@ -168,6 +168,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Isleta Pueblo". Also listed under the same Area in: indian-health-service-direct-service-tribes. The Direct Service Tribes list also names Pueblo of Isleta (mixed arrangement).'
+- area: Albuquerque
+  service_unit: Isleta Health Center
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Isleta Health Center – Tribal".'
+  operator: tribal
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Isleta Pueblo New Mexico) (approved 1947) states it was adopted under Act of June

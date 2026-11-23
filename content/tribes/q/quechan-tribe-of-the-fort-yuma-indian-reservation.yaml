@@ -178,6 +178,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Quechan Tribe". Roster nation is in AZ and CA; the Indian Health Service Phoenix Area page lists it under Arizona Tribes.
+- area: Phoenix
+  service_unit: Fort Yuma Service Unit
+  source: indian-health-service-phoenix-fort-yuma-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "The Cocopah and Quechan are the two distinct tribes that are served at Fort Yuma.".'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Quechan Tribe, California" among organizations under constitutions approved by

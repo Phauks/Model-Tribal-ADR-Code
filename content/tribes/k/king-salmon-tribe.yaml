@@ -138,6 +138,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: King Salmon Tribe
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: Listed as "King Salmon Tribe". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Bristol Bay Service Area
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: 'The source''s words: "King Salmon Tribe".'
+  operator: tribal
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

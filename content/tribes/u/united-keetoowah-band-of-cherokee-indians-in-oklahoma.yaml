@@ -193,6 +193,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "United Keetoowah Band of Cherokee Indians in Oklahoma".
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Constitution (United Keetowah Band of Cherokee Indians Oklahoma) (approved 1950) states it was

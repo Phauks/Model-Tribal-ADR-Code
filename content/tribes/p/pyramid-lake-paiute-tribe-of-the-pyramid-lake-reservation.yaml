@@ -182,6 +182,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Pyramid Lake Paiute Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes. Page (sic "Pauite") says Indian Health Service provides IT, purchased/referred care and administration to the listed tribes while the tribes administer direct healthcare operations.'
+- area: Phoenix
+  service_unit: Schurz Service Unit
+  source: indian-health-service-phoenix-schurz-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Pyramid Lake Pauite Tribe".'
+  operator: tribal
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Pyramid Lake Paiute Tribe, Nevada" among organizations under constitutions approved

@@ -150,6 +150,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Village of Atmautluak
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: Listed as "Village of Atmautluak". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Yukon-Kuskokwim Delta Service Area
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'The source''s words: "Village of Atmautluak".'
+  operator: tribal
 governing_documents:
 - kind: law-code
   title: Climate change resolution

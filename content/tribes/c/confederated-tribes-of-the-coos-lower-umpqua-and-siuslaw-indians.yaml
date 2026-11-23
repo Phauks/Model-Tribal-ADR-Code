@@ -192,6 +192,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians (2005)); the list does not say which service unit or programs the compact covers.'
 governing_documents:
 - kind: law-code
   title: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians Tribal Code

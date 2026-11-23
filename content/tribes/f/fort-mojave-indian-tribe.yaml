@@ -169,6 +169,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Fort Mojave Tribe".
 governing_documents:
 - kind: law-code
   title: Fort Mojave Indian Tribe

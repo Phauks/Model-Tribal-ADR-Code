@@ -181,6 +181,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Nuiqsut (aka Nooiksut)
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-barrow-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Barrow Service Area profile'
+  note: Listed as "Native Village of Nuiqsut (aka Nooiksut)". Name on Indian Health Service profile differs from roster name; matched by name tokens. Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Barrow Service Area
+  source: indian-health-service-alaska-area-profile-barrow-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Barrow Service Area profile'
+  note: 'The source''s words: "Native Village of Nuiqsut (aka Nooiksut)".'
+  operator: tribal
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

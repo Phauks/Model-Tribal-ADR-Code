@@ -145,6 +145,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Acoma, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: Listed as "Acoma Pueblo". Service unit named for Acoma, Canoncito and Laguna; no page found that lists the nations by full name. Operator from the "– Indian Health Service" tag in the Albuquerque Area PRC program list.
+- area: Albuquerque
+  service_unit: Acoma-Canoncito-Laguna Service Unit
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Acoma-Canoncito-Laguna SU – IHS".'
+  operator: indian-health-service
 governing_documents:
 - kind: law-code
   title: Tribal code

@@ -195,6 +195,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Zuni Tribe of the Zuni Reservation, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Zuni Pueblo". Also listed under the same Area in: indian-health-service-self-governance-tribes. Service unit named for Zuni and Ramah. The Self-Governance list shows the Pueblo of Zuni entered a compact in 2025, so the current operator may now be the Pueblo. Also on the Indian Health Service Self-Governance Tribes list (Pueblo of Zuni (2025)); the list does not say which service unit or programs the compact covers.'
+- area: Albuquerque
+  service_unit: Zuni-Ramah Service Unit
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Zuni-Ramah SU (ZRSU) – IHS".'
+  operator: indian-health-service
 governing_documents:
 - kind: law-code
   title: Zuni Tribe of the Zuni Reservation, New Mexico

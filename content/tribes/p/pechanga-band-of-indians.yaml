@@ -143,6 +143,14 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of
     the Pechanga Reservation, California)
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Pechanga Band of Indians".
 dispute_resolution:
   forums:
   - kind: peacemaking

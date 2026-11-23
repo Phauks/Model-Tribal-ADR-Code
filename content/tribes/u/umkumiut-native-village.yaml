@@ -92,6 +92,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Umkumiut Native Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'Listed as "Umkumiute Native Village". Name on Indian Health Service profile differs from roster name (roster: "Umkumiut Native Village"); matched manually. Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.'
+- area: Alaska
+  service_unit: Yukon-Kuskokwim Delta Service Area
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'The source''s words: "Umkumiute Native Village".'
+  operator: tribal
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

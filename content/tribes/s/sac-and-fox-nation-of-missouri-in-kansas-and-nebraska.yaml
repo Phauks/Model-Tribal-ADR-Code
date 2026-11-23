@@ -145,6 +145,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Nation of Missouri in Kansas and Nebraska
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Sac & Fox Nation of Missouri in Kansas and Nebraska". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Sac and Fox Nation (1994)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Sac and Fox Tribe of Missouri" among organizations under constitutions approved
@@ -396,6 +404,59 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Kansas by the Census Bureau's land areas.
+treaties:
+- title: Treaty with the Iowa, etc., 1836
+  signed: '1836-09-17'
+  statutes_at_large: 7 Stat. 511
+  kappler:
+    volume: 2
+    page: 468
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-iowa-etc-1836-0468
+  signatory: Sac and Fox of Missouri
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 468 (Treaty with the Iowa, etc., 1836; Kappler header "Sept. 17, 1836. | 7 Stat., 511. | Proclamation, Feb. 15, 1837.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1837
+  signed: '1837-10-21'
+  statutes_at_large: 7 Stat. 543
+  kappler:
+    volume: 2
+    page: 497
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1837-0497
+  signatory: Sac and Fox of Missouri
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 497 (Treaty with the Sauk and Foxes, 1837; Kappler header "Oct. 21, 1837. | 7 Stat., 543. | Proclamation, Feb. 21, 1838.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes of Missouri, 1854
+  signed: '1854-05-18'
+  statutes_at_large: 10 Stat. 1074
+  kappler:
+    volume: 2
+    page: 631
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-of-missouri-1854-0631
+  signatory: Sac and Fox of Missouri
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 631 (Treaty with the Sauk and Foxes of Missouri, 1854; Kappler header "May 18, 1854. | 10 Stat., 1074. | Ratified July 11, 1854. | Proclaimed July 17, 1854.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, etc., 1861
+  signed: '1861-03-06'
+  statutes_at_large: 12 Stat. 1171
+  kappler:
+    volume: 2
+    page: 811
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1861-0811
+  signatory: Sac and Fox of Missouri
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 811 (Treaty with the Sauk and Foxes, etc., 1861; Kappler header "Mar. 6, 1861 | 12 Stat., 1171. | Ratified Feb. 6, 1863. | Proclaimed Mar. 26, 1863.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

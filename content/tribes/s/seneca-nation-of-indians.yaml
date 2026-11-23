@@ -221,6 +221,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Seneca Nation of Indians
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Seneca Nation of Indians". Also listed under the same Area in: indian-health-service-direct-service-tribes, indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Seneca Nation of Indians".
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -463,6 +479,111 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New York by the Census Bureau's land areas.
+treaties:
+- title: Treaty with the Six Nations, 1784
+  signed: '1784-10-22'
+  statutes_at_large: 7 Stat. 15
+  kappler:
+    volume: 2
+    page: 5
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1784-0005
+  signatory: Seneka; Seneka Abeal
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 5 (Treaty with the Six Nations, 1784; Kappler header "Oct. 22, 1784. | 7 Stat., 15.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca Nation of Indians The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Six Nations, 1789
+  signed: '1789-01-09'
+  statutes_at_large: 7 Stat. 33
+  kappler:
+    volume: 2
+    page: 23
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1789-0023
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 23 (Treaty with the Six Nations, 1789; Kappler header "Jan. 9. 1789. | 7 Stat., 33.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca Nation of Indians The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Six Nations, 1794
+  signed: '1794-11-11'
+  statutes_at_large: 7 Stat. 44
+  kappler:
+    volume: 2
+    page: 34
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1794-0034
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 34 (Treaty with the Six Nations, 1794; Kappler header "Nov. 11, 1794. | 7 Stat., 44. | Proclamation, Jan. 21, 1795.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca Nation of Indians The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, 1802
+  signed: '1802-06-30'
+  statutes_at_large: 7 Stat. 70
+  kappler:
+    volume: 2
+    page: 60
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-1802-0060
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 60 (Treaty with the Seneca, 1802; Kappler header "June 30, 1802. | 7 Stat., 70. | Ratified Jan. 12, 1803. | Proclaimed Jan. 12 1803.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca Nation of Indians The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, 1802
+  signed: '1802-06-30'
+  statutes_at_large: 7 Stat. 72
+  kappler:
+    volume: 2
+    page: 62
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-1802-0062
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 62 (Treaty with the Seneca, 1802; Kappler header "June 30, 1802. | 7 Stat., 72. | Ratified Feb. 7, 1803. | Proclaimed, Feb. 7, 1803.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca Nation of Indians The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the New York Indians, 1838
+  signed: '1838-01-15'
+  statutes_at_large: 7 Stat. 550
+  kappler:
+    volume: 2
+    page: 502
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-new-york-indians-1838-0502
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 502 (Treaty with the New York Indians, 1838; Kappler header "Jan. 15, 1838. | 7 Stat., 550. | Proclamation, Apr. 4, 1840.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca Nation of Indians The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, 1842
+  signed: '1842-05-20'
+  statutes_at_large: 7 Stat. 586
+  kappler:
+    volume: 2
+    page: 537
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-1842-0537
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 537 (Treaty with the Seneca, 1842; Kappler header "May 20, 1842. | 7 Stat., 586. | Proclamation. Aug 26, 1842.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca Nation of Indians The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, Tonawanda Band, 1857
+  signed: '1857-11-05'
+  statutes_at_large: 11 Stat. 735
+  kappler:
+    volume: 2
+    page: 767
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-tonawanda-band-1857-0767
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 767 (Treaty with the Seneca, Tonawanda Band, 1857; Kappler header "Nov. 5, 1857. | 11 Stat., 735. | 12 Stat, 991. | Ratified June 4, 1858. | Proclaimed Mar. 31, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca Nation of Indians The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
