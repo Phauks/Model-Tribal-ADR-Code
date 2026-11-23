@@ -40,6 +40,7 @@
 	import Trash from '@lucide/svelte/icons/trash';
 	import Upload from '@lucide/svelte/icons/upload';
 	import X from '@lucide/svelte/icons/x';
+	import { isZipName, unzipFiles, ZipProblem } from '#lib/unzip-files.ts';
 	import { readableSize } from '#lib/uploads.ts';
 	import { youtubeVideoIdentifier } from '#lib/video-links.ts';
 
@@ -189,9 +190,43 @@
 		return `about ${minutes} minute${minutes === 1 ? '' : 's'} left`;
 	}
 
-	function add(files: Iterable<File>) {
-		const added: Row[] = [];
-		for (const file of files) {
+	/** Adds files to the table. A ZIP is opened here and each file inside gets its own row. */
+	async function add(files: Iterable<File>) {
+		const picked = [...files];
+		if (fileInput) fileInput.value = '';
+		if (folderInput) folderInput.value = '';
+		const unpacked: File[] = [];
+		const refusedZips: Row[] = [];
+		for (const file of picked) {
+			if (!isZipName(file.name)) {
+				unpacked.push(file);
+				continue;
+			}
+			const where = file.webkitRelativePath || file.name;
+			try {
+				for (const inside of unzipFiles(new Uint8Array(await file.arrayBuffer()))) {
+					const opened = new File([inside.bytes as Uint8Array<ArrayBuffer>], inside.path.split('/').at(-1) ?? inside.path);
+					Object.defineProperty(opened, 'webkitRelativePath', { value: `${where}/${inside.path}` });
+					unpacked.push(opened);
+				}
+			} catch (problem) {
+				refusedZips.push({
+					key: nextKey++,
+					file,
+					link: null,
+					name: where,
+					size: file.size,
+					state: 'problem',
+					progress: 0,
+					message: problem instanceof ZipProblem ? problem.message : 'This ZIP could not be opened.',
+					retryable: false,
+					chosen: false,
+					reference: null
+				});
+			}
+		}
+		const added: Row[] = [...refusedZips];
+		for (const file of unpacked) {
 			// Folders bring their hidden files with them (.DS_Store, desktop.ini); leave those out.
 			if (file.name.startsWith('.') || file.name === 'desktop.ini' || file.name === 'Thumbs.db') continue;
 			added.push({
@@ -210,8 +245,6 @@
 		}
 		rows = [...rows, ...added];
 		problem = '';
-		if (fileInput) fileInput.value = '';
-		if (folderInput) folderInput.value = '';
 	}
 
 	function addLink() {
@@ -283,7 +316,7 @@
 			if (!hasFiles(event) || !event.dataTransfer) return;
 			event.preventDefault();
 			dragDepth = 0;
-			add(await droppedFiles(event.dataTransfer));
+			await add(await droppedFiles(event.dataTransfer));
 		};
 		window.addEventListener('dragenter', enter);
 		window.addEventListener('dragover', over);
@@ -539,7 +572,7 @@
 			<span class="strip-text"><strong>Drop files{folders ? ' or folders' : ''} anywhere on this page</strong></span>
 			<label class="button button-quiet pick">
 				<Upload size={18} aria-hidden="true" /> Files
-				<input bind:this={fileInput} class="visually-hidden" type="file" multiple onchange={(event) => add(event.currentTarget.files ?? [])} />
+				<input bind:this={fileInput} class="visually-hidden" type="file" multiple onchange={(event) => void add(event.currentTarget.files ?? [])} />
 			</label>
 			{#if folders}
 				<label class="button button-quiet pick">
@@ -549,7 +582,7 @@
 						class="visually-hidden"
 						type="file"
 						webkitdirectory
-						onchange={(event) => add(event.currentTarget.files ?? [])}
+						onchange={(event) => void add(event.currentTarget.files ?? [])}
 					/>
 				</label>
 			{/if}
