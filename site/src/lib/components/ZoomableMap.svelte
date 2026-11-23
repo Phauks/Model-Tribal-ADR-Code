@@ -31,6 +31,7 @@
 		zoomOf,
 		type MapView
 	} from '#lib/map-zoom.ts';
+	import { glide } from '#lib/motion.ts';
 
 	let {
 		label,
@@ -64,21 +65,47 @@
 		return { svg, full, view: parseViewBox(svg.getAttribute('viewBox')) ?? full };
 	}
 
-	function show(next: MapView): void {
+	/** Where a glide under way is going, and how to stop it. */
+	let heading: { view: MapView; stop: () => void } | undefined;
+
+	function draw(svg: SVGSVGElement, full: MapView, view: MapView): void {
+		svg.setAttribute('viewBox', formatViewBox(view));
+		svg.style.setProperty('--map-unzoom', String(1 / zoomOf(full, view)));
+	}
+
+	/**
+	 * Shows part of the map. A button, key or tab glides there, so the reader
+	 * sees where the map went (site/DESIGN.md, section 6, "Motion"); a drag,
+	 * pinch or scroll follows the hand at once. A new movement stops a glide
+	 * where it is.
+	 */
+	function show(next: MapView, { glides = false } = {}): void {
 		const map = drawing();
 		if (!map) return;
-		map.svg.setAttribute('viewBox', formatViewBox(next));
+		heading?.stop();
+		heading = undefined;
 		zoom = zoomOf(map.full, next);
-		map.svg.style.setProperty('--map-unzoom', String(1 / zoom));
+		if (!glides) {
+			draw(map.svg, map.full, next);
+			return;
+		}
+		const from = map.view;
+		const stop = glide(
+			[from.x, from.y, from.width, from.height],
+			[next.x, next.y, next.width, next.height],
+			([x, y, width, height]) => draw(map.svg, map.full, { x, y, width, height })
+		);
+		heading = { view: next, stop };
 	}
 
 	const zoomIn = () => change((full, view) => zoomBy(full, view, step, maximum));
 	const zoomOut = () => change((full, view) => zoomBy(full, view, 1 / step, maximum));
 	const reset = () => change((full) => full);
 
+	/** A button or key press: it starts from where any glide under way is going. */
 	function change(how: (full: MapView, view: MapView) => MapView): void {
 		const map = drawing();
-		if (map) show(how(map.full, map.view));
+		if (map) show(how(map.full, heading?.view ?? map.view), { glides: true });
 	}
 
 	function onKey(event: KeyboardEvent): void {
@@ -112,7 +139,7 @@
 			place.left >= box.left && place.right <= box.right && place.top >= box.top && place.bottom <= box.bottom;
 		if (inside) return;
 		const middle = screenToMap(map.view, box, place.left + place.width / 2, place.top + place.height / 2);
-		show(centerOn(map.full, map.view, middle));
+		show(centerOn(map.full, map.view, middle), { glides: true });
 	}
 
 	function showHint(text: string): void {

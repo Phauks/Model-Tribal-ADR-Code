@@ -8,6 +8,7 @@
 	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import NationMap from '#lib/components/NationMap.svelte';
+	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
 	import Clock from '@lucide/svelte/icons/clock';
@@ -50,6 +51,10 @@
 		<!-- 1. Name. The nation's seal or logo heads At a glance (docs/official-images.md). -->
 		<h1>{page.officialName}</h1>
 		{#if !page.withdrawn}
+			<!-- Recognition badges (Trevor, Nov. 22, 2026); the full wording and legal basis are in At a glance. -->
+			{#if page.badges.length > 0}
+				<p class="recognition-line"><RecognitionBadges badges={page.badges} /></p>
+			{/if}
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">
 					Listed as “{page.listedName}” on the list that recognizes it.<CitationMarks
@@ -194,6 +199,10 @@
 <style>
 	.review-status {
 		margin: var(--space-3) 0 var(--space-5);
+	}
+
+	.recognition-line {
+		margin: 0 0 var(--space-3);
 	}
 
 	.status-badge {

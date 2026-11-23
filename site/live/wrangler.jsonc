@@ -1,0 +1,46 @@
+// Cloudflare Worker for live editing of essays: one EssayRoom Durable Object
+// for each essay that people are editing together
+// (src/lib/server/live/essay-room.ts).
+//
+// It is a Worker of its own, apart from the website's, because a deploy
+// restarts a Worker's Durable Objects and closes their connections. The
+// website deploys many times a day; this Worker deploys only when the room's
+// code changes (the build watch paths in COLLABORATION.md, "Live editing").
+//
+// Workers Builds deploys it from the GitHub repository (root directory:
+// site, build command: npm ci, deploy command:
+// npx wrangler deploy -c live/wrangler.jsonc). No secret is stored in GitHub
+// (decision record 0006).
+{
+	"$schema": "../node_modules/wrangler/config-schema.json",
+	"name": "model-tribal-adr-code-live",
+	"main": "worker.ts",
+	"compatibility_date": "2026-11-20",
+	// No public address: only the website's binding reaches the rooms.
+	"workers_dev": false,
+	"preview_urls": false,
+	"observability": {
+		"enabled": true
+	},
+	// The room keeps each essay's changes in its own SQLite storage until it
+	// saves a version.
+	"exports": {
+		"EssayRoom": { "type": "durable-object", "storage": "sqlite" }
+	},
+	// The same database and bucket as the website, by the same binding names,
+	// so the room saves versions exactly as the editor's Save does.
+	"d1_databases": [
+		{
+			"binding": "database",
+			"database_name": "model-tribal-adr-code",
+			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
+			"migrations_dir": "../migrations"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "sourceDocuments",
+			"bucket_name": "model-tribal-adr-code-sources"
+		}
+	]
+}

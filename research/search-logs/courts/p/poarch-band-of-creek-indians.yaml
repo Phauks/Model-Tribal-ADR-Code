@@ -1,7 +1,7 @@
 profile: content/tribes/p/poarch-band-of-creek-indians.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -213,6 +213,44 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: The nation's Legal page has a 'Tribal Judicial' section naming the Tribal Court and Tribal Supreme Court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Poarch Band of Creek Indians tribal court Atmore
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Results were court filings, directories and pages of pci-nsn.gov,
+    which refused the project''s requests on Nov. 22.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://pci-nsn.gov/?p=11332
+  query: 'scripts/review/service_links.py second: court'
+  outcome: blocked
+  reason: 'Second search: “Tribal Court”: The nation''s Public Safety page refused the request (status
+    403); not worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: The association''s site shows programs, membership and regions;
+    it publishes no directory of tribal courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-293
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-238,
   cannot-tell); Poarch Band of Creek Indians Tribal Court (court-239, cannot-tell). A person could open
   in a browser the pages that refused the project''s link checker: http://pci-nsn.gov/, http://pci-nsn.gov/westminster/tribal_court.html,
@@ -220,4 +258,6 @@ next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author de
   whether it runs a court. No page or official directory entry was found on 2026-11-22 for “Tribal Court”
   (research/reviews/2026-11-22-service-links.json). A person could open in a browser the pages that refused
   the project''s link checker: http://pci-nsn.gov/, http://pci-nsn.gov/westminster/tribal_court.html,
-  https://pci-nsn.gov/.'
+  https://pci-nsn.gov/. The second search of 2026-11-23 (web searches and state court lists) found no
+  page or official directory entry for “Tribal Court”; a call to the nation''s office could say whether
+  the court has a page.'

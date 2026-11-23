@@ -1,7 +1,7 @@
 profile: content/tribes/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -93,5 +93,69 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Returned nation documents (job descriptions, codes) that were leads only and not used as evidence.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: ndcourts.gov tribal courts North Dakota list Turtle Mountain Fort Berthold Standing Rock
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The results led to the North Dakota Court System''s Tribal Courts page, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.ndcourts.gov/other-courts/tribal
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    North Dakota Court System, Other Courts, Tribal Courts page (status 200): lists the nation (Standing
+    Rock Sioux Tribe; Three Affiliated - MHA Nation; Turtle Mountain Band of Chippewa) with its website.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: MHA Nation Fort Berthold District Court tribal court New Town
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were the nation''s court code, judicial committee minutes and job descriptions for Fort Berthold
+    District Court judges on mhanation.com, and a North Dakota committee''s minutes; no court page of
+    the nation''s own came up (the court''s own site, fbdcourt.com, refused the project''s requests on
+    Nov. 22).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Tribal Court:-”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): directory, https://www.ndcourts.gov/other-courts/tribal.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-372
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Three Affiliated Tribes of the Fort Berthold Tribal Court”: Claude weighed
+    what the second search found against the lead author''s order (own page, then directory entry): directory,
+    https://www.ndcourts.gov/other-courts/tribal.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-373
 next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court:-”; “Three Affiliated
-  Tribes of the Fort Berthold Tribal Court” (research/reviews/2026-11-22-service-links.json).
+  Tribes of the Fort Berthold Tribal Court” (research/reviews/2026-11-22-service-links.json). The second
+  search of 2026-11-23 linked “Tribal Court:-”; “Three Affiliated Tribes of the Fort Berthold Tribal Court”
+  (research/reviews/2026-11-22-service-links.json).

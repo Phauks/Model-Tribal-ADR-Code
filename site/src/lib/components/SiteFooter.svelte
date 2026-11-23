@@ -10,6 +10,7 @@
 <footer class="site-footer no-print">
 	<div class="page-width">
 		<ul class="footer-links">
+			<li><a href="/about">About</a></li>
 			<li><a href="/requests">Request a correction or removal</a></li>
 			<li><a href="/forms">Forms</a></li>
 			<li><a href="/charter">Charter</a></li>

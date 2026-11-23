@@ -1,7 +1,7 @@
 /**
  * Reading settings (site/DESIGN.md, section 6, "Settings"): text size, font,
  * text spacing, text alignment, theme, contrast, how notes and source links
- * show, and glossary cards. They are kept on the reader's device in
+ * show, glossary cards and motion. They are kept on the reader's device in
  * local storage, so they work offline and are never sent to the server.
  *
  * Each setting other than the theme becomes a data attribute on the root
@@ -30,6 +30,7 @@ export const contrasts = ['standard', 'more'] as const;
 export const noteDisplays = ['popup', 'end', 'inline'] as const;
 export const sourceLinkChoices = ['both', 'original', 'archived'] as const;
 export const glossaryCardChoices = ['on', 'off'] as const;
+export const motions = ['device', 'reduce'] as const;
 export const themes = ['device', 'light', 'dark'] as const;
 
 export type TextSize = (typeof textSizes)[number];
@@ -41,6 +42,7 @@ export type Contrast = (typeof contrasts)[number];
 export type NoteDisplay = (typeof noteDisplays)[number];
 export type SourceLinks = (typeof sourceLinkChoices)[number];
 export type GlossaryCards = (typeof glossaryCardChoices)[number];
+export type Motion = (typeof motions)[number];
 export type Theme = (typeof themes)[number];
 
 /** The settings stored under settingsStorageKey. Each name is also the root element's dataset name. */
@@ -54,6 +56,7 @@ export interface ReadingSettings {
 	noteDisplay: NoteDisplay;
 	sourceLinks: SourceLinks;
 	glossaryCards: GlossaryCards;
+	motion: Motion;
 }
 
 export const settingNames = [
@@ -65,7 +68,8 @@ export const settingNames = [
 	'contrast',
 	'noteDisplay',
 	'sourceLinks',
-	'glossaryCards'
+	'glossaryCards',
+	'motion'
 ] as const;
 
 export const defaultSettings: ReadingSettings = {
@@ -77,7 +81,8 @@ export const defaultSettings: ReadingSettings = {
 	contrast: 'standard',
 	noteDisplay: 'popup',
 	sourceLinks: 'both',
-	glossaryCards: 'on'
+	glossaryCards: 'on',
+	motion: 'device'
 };
 
 const allowedValues: { [Name in keyof ReadingSettings]: readonly ReadingSettings[Name][] } = {
@@ -89,7 +94,8 @@ const allowedValues: { [Name in keyof ReadingSettings]: readonly ReadingSettings
 	contrast: contrasts,
 	noteDisplay: noteDisplays,
 	sourceLinks: sourceLinkChoices,
-	glossaryCards: glossaryCardChoices
+	glossaryCards: glossaryCardChoices,
+	motion: motions
 };
 
 export interface Choice<Value extends string> {
@@ -178,6 +184,20 @@ export const glossaryCardOptions: Choice<GlossaryCards>[] = [
 		hint: 'When you point at a defined term or a link to a nation’s page, or move to it with the keyboard'
 	},
 	{ value: 'off', label: 'Off', hint: 'Links still go to the glossary entry or the nation’s page' }
+];
+
+/**
+ * Motion (site/DESIGN.md, section 6, "Motion"; src/lib/motion.ts). Reduce
+ * stops every slide, fade and glide on this device, whatever the device's
+ * own setting says.
+ */
+export const motionChoices: Choice<Motion>[] = [
+	{
+		value: 'device',
+		label: 'Match this device',
+		hint: 'Small movements, such as a window easing in or the map gliding to a new zoom, unless your device asks for less motion'
+	},
+	{ value: 'reduce', label: 'Reduce motion', hint: 'Nothing slides, fades or glides; every change happens at once' }
 ];
 
 function isAllowed<Name extends keyof ReadingSettings>(
