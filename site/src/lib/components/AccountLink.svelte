@@ -17,7 +17,16 @@
 	// it too. Signing out forgets it. Without scripts the link stays "Sign in",
 	// which still works: a signed-in person who follows it is told so there.
 	// Nobody needs to sign in to read the site or to make a request.
-	import { onMount } from 'svelte';
+	//
+	// Signed out, the button opens a panel under it with the sign-in forms
+	// (SignInForms.svelte): email and password or a code, and Create an
+	// account, so people can sign in without leaving the page they are
+	// reading; signing in brings them back to it (Trevor, Nov. 23, 2026). The
+	// panel is a native popover, so it sits above everything, closes with
+	// Escape or a click outside, and on phones covers the More panel it was
+	// opened from. Without scripts, and on the sign-in pages themselves, the
+	// button stays a link to /sign-in.
+	import { onMount, tick } from 'svelte';
 	import { page } from '$app/state';
 	import LogIn from '@lucide/svelte/icons/log-in';
 	import LogOut from '@lucide/svelte/icons/log-out';
@@ -30,6 +39,8 @@
 	import { unreadLabel } from '#lib/following.ts';
 	import { roleLabels, type Role } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
+	import type { SignInState } from '#lib/sign-in-state.ts';
+	import SignInForms from './SignInForms.svelte';
 	import { forgetLocalDrafts } from '#lib/essays/local-draft.ts';
 	import { followSettingsEverywhere, forgetEverywhere } from '#lib/settings-everywhere.ts';
 
@@ -76,6 +87,52 @@
 	$effect(() => {
 		if (mounted && signedIn) return followSettingsEverywhere();
 	});
+
+	// The sign-in panel.
+	let signInPanel: HTMLDivElement | undefined = $state();
+	let signInButton: HTMLButtonElement | undefined = $state();
+	let signInAnswer = $state<SignInState | undefined>(undefined);
+	let codesAvailable = $state<boolean | undefined>(undefined);
+	let asking: Promise<void> | undefined;
+	const onSignInPage = $derived(page.url.pathname === '/sign-in' || page.url.pathname.startsWith('/sign-in/'));
+	const returnHere = $derived(`${page.url.pathname}${page.url.search}`);
+
+	/** Asks once whether codes can be sent, as soon as the reader heads for the button. */
+	function askForOptions() {
+		asking ??= fetch('/sign-in/options', { headers: { accept: 'application/json' } })
+			.then((response) => (response.ok ? response.json() : { codesAvailable: false }))
+			.then((options: { codesAvailable?: boolean }) => {
+				codesAvailable = Boolean(options.codesAvailable);
+			})
+			.catch(() => {
+				codesAvailable = false;
+				asking = undefined;
+			});
+	}
+
+	/** Puts the panel under the button on wider screens; phones place it with CSS. */
+	function placePanel() {
+		if (!signInPanel || !signInButton) return;
+		const button = signInButton.getBoundingClientRect();
+		if (button.width === 0) return;
+		signInPanel.style.setProperty('--panel-top', `${button.bottom + 8}px`);
+		signInPanel.style.setProperty('--panel-right', `${Math.max(8, document.documentElement.clientWidth - button.right)}px`);
+	}
+
+	async function panelToggled(event: ToggleEvent) {
+		if (event.newState !== 'open') return;
+		askForOptions();
+		await asking;
+		await tick();
+		signInPanel?.querySelector<HTMLElement>('.error-summary, input:not([type="hidden"])')?.focus();
+	}
+
+	async function panelChanged(answer: SignInState) {
+		signInAnswer = answer;
+		await tick();
+		// A new step starts at its first field; a problem is read out by the error summary, which takes focus itself.
+		if (!answer.problem) signInPanel?.querySelector<HTMLElement>('input:not([type="hidden"])')?.focus();
+	}
 
 	onMount(() => {
 		mounted = true;
@@ -192,6 +249,42 @@
 			</li>
 		</ul>
 	</div>
+{:else if mounted && !onSignInPage}
+	<button
+		bind:this={signInButton}
+		class="account-link"
+		type="button"
+		popovertarget="sign-in-panel"
+		onpointerenter={askForOptions}
+		onfocus={askForOptions}
+		onclick={placePanel}
+	>
+		<LogIn size={20} strokeWidth={1.75} />
+		Sign in
+	</button>
+	<div
+		bind:this={signInPanel}
+		id="sign-in-panel"
+		class="sign-in-panel"
+		popover="auto"
+		role="dialog"
+		aria-labelledby="sign-in-panel-heading"
+		ontoggle={panelToggled}
+	>
+		{#if codesAvailable === undefined}
+			<p class="waiting" id="sign-in-panel-heading">Sign in</p>
+		{:else}
+			<SignInForms
+				answer={signInAnswer}
+				{codesAvailable}
+				returnTo={returnHere}
+				prefix="sign-in-panel-"
+				level={2}
+				onchange={panelChanged}
+				onclose={() => signInPanel?.hidePopover()}
+			/>
+		{/if}
+	</div>
 {:else}
 	<a class="account-link" href="/sign-in" data-sveltekit-reload>
 		<LogIn size={20} strokeWidth={1.75} />
@@ -216,6 +309,77 @@
 
 	.account-link:visited {
 		color: var(--color-band-text);
+	}
+
+	button.account-link {
+		background: transparent;
+		font: inherit;
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
+	}
+
+	/* While its panel is open, the button shows in the band's colors reversed, as the account button does. */
+	button.account-link:has(+ .sign-in-panel:popover-open) {
+		background: var(--color-band-text);
+		color: var(--color-band);
+	}
+
+	.sign-in-panel {
+		position: fixed;
+		inset: var(--panel-top, 4.5rem) var(--panel-right, var(--space-2)) auto auto;
+		width: min(26rem, calc(100vw - 2 * var(--space-2)));
+		max-height: calc(100dvh - var(--panel-top, 4.5rem) - var(--space-3));
+		overflow-y: auto;
+		box-sizing: border-box;
+		margin: 0;
+		padding: var(--space-5);
+		background: var(--color-surface-raised);
+		color: var(--color-ink);
+		border: 1px solid var(--color-control-border);
+		border-radius: var(--radius-panel);
+		box-shadow: 0 var(--space-2) var(--space-5) color-mix(in srgb, var(--color-ink) 25%, transparent);
+		text-align: left;
+	}
+
+	.sign-in-panel:not(:popover-open) {
+		display: none;
+	}
+
+	/* The panel is already the box, so its forms are not drawn as boxes inside it. */
+	.sign-in-panel :global(form.panel) {
+		border: 0;
+		padding: 0;
+		margin: var(--space-4) 0;
+	}
+
+	.sign-in-panel :global(.heading) {
+		font-size: var(--font-size-lead);
+		margin: 0 0 var(--space-2);
+	}
+
+	.sign-in-panel :global(.intro) {
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+	}
+
+	.sign-in-panel :global(.switch) {
+		margin: var(--space-4) 0 0;
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--color-line);
+	}
+
+	.waiting {
+		margin: 0;
+		color: var(--color-ink-muted);
+	}
+
+	/* Phones: under the one-row masthead, across the screen, over the More panel. */
+	@media (max-width: 40rem) {
+		.sign-in-panel {
+			inset: 4.5rem var(--space-2) auto;
+			width: auto;
+			max-height: calc(100dvh - 5rem);
+		}
 	}
 
 	.account-link:hover {
