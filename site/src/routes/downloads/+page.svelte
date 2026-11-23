@@ -74,7 +74,7 @@
 					links: [{ format: 'CSV', href: '/copies/list.csv' }]
 				}
 			],
-			after: `A nation’s constitutions and laws download as a ZIP from the nation’s page, under “Laws and agreements”; we hold them for ${numbers.format(data.nationsWithDocuments)} nations. If a nation asks us to remove a document, it leaves the site and these files at the next update. A file you already downloaded cannot be changed, so check this page for the current version.`
+			after: `A nation’s constitutions, laws and court opinions download as a ZIP from the nation’s page, under “Laws and agreements”; we hold them for ${numbers.format(data.nationsWithDocuments)} nations. If a nation asks us to remove a document, it leaves the site and these files at the next update. A file you already downloaded cannot be changed, so check this page for the current version.`
 		}
 	]);
 
