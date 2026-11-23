@@ -23,6 +23,7 @@ const pages: SearchEntry[] = [
 	{ kind: 'page', title: 'Events', also: ['Calendar', 'Talks', 'Workshops', 'Register', 'Continuing legal education'], detail: 'Talks, panels, workshops and gatherings, and how to register', link: '/events' },
 	{ kind: 'page', title: 'About', also: ['About this work'], link: '/about' },
 	{ kind: 'page', title: 'Sponsorship', also: ['Sponsor', 'Funding', 'Support', 'Donate'], detail: 'How organizations can help fund this work', link: '/sponsor' },
+	{ kind: 'page', title: 'Using AI with Tribal Law', also: ['AI', 'Artificial intelligence', 'ChatGPT', 'Chatbot'], detail: 'How to use AI tools safely when learning about a nation\'s law', link: '/using-ai' },
 	{ kind: 'page', title: 'Timeline to public review', also: ['Timeline', 'Public review', 'Roadmap', 'Drafting committee', 'Where things stand'], detail: 'Where the model code stands and the steps to public review', link: '/about/timeline' },
 	{ kind: 'page', title: 'Acknowledgments', also: ['Credits', 'Land acknowledgment', 'Southern Paiute', 'Nuwuvi'], detail: 'Credits, and the land where this work was written', link: '/acknowledgments' },
 	{ kind: 'page', title: 'Changelog', also: ['Versions', 'What changed'], detail: 'What changed in each version', link: '/changelog' },

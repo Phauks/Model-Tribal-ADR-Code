@@ -14,12 +14,17 @@ tools:
 - kind: web-search
   name: Web search
   detail: "Used to look for Legal Aid Center of Southern Nevada or Nevada Legal Services work with Tribal courts and for the center's visitor figures."
-purpose: "Answer Trevor's request to research the Civil Law Self-Help Center in Clark County, Nevada, and find what the project can learn from it and do with it."
+purpose: "Answer Trevor's request to research the Civil Law Self-Help Center in Clark County, Nevada, and find what the project can learn from it and do with it; then, at his request the same day, write the site's Using AI with Tribal Law page."
 queries:
 - Legal Aid Center of Southern Nevada Native American tribal clients program
 - Nevada Legal Services Indian law unit tribal court
 - Civil Law Self-Help Center Clark County annual report visitors served
-sources_added: []
+- AALL Best Practices for Using AI in Legal Research guide for non-lawyers
+sources_added:
+- civil-law-self-help-center-using-ai
+- aall-2026-ai-best-practices-for-non-lawyers
+- rawlings-2024-nevada-legal-services-indian-law-project
+- carroll-2020-care-principles-indigenous-data-governance
 sources_updated: []
 limits: "newsfromthestates.com and the Nevada courts' tribal jurisdictions resource PDF refused the download (HTTP 403), so the center's recent visitor numbers and the state's tribal resource list were not read. The Guide and File interviews were listed, not opened. No one at the center was contacted."
 ---

@@ -127,6 +127,7 @@ describe('essays in the bucket', () => {
 		expect(essayPath('about', 'about')).toBe('/about');
 		expect(essayPath('sponsor', 'about')).toBe('/sponsor');
 		expect(identifierFromPath('about', 'sponsor')).toBe('sponsor');
+		expect(essayPath('using-ai', 'about')).toBe('/using-ai');
 		expect(startableEssayParts).not.toContain('about');
 	});
 
