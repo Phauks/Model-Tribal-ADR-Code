@@ -188,7 +188,7 @@ export interface NationRecord {
 		bureau_of_indian_affairs_region?: string;
 		bureau_of_indian_affairs_agency?: string;
 	};
-	governing_documents?: (CitedFact & { kind: string; title?: string; link?: string })[];
+	governing_documents?: (CitedFact & { kind: string; title?: string; link?: string; year?: string | number })[];
 	justice_institutions?: (CitedFact & {
 		kind: string;
 		name: string;
@@ -199,7 +199,15 @@ export interface NationRecord {
 	dispute_resolution_law?: string[];
 	jurisdiction?: (CitedFact & { topic: string; value?: string; detail?: string })[];
 	memberships?: (CitedFact & { organization: string })[];
-	dispute_resolution?: { forums?: (CitedFact & { kind: string; name?: string; link?: string })[] };
+	dispute_resolution?: {
+		forums?: (CitedFact & { kind: string; name?: string; link?: string })[];
+		provisions?: (CitedFact & { kind: string; title?: string })[];
+	};
+	gaming?: {
+		compacts?: CitedFact[];
+		ordinances?: CitedFact[];
+		operates_gaming?: CitedFact & { value: boolean };
+	};
 	review: { status: string; last_verified?: string; note?: string };
 	sensitivity?: { restricted?: boolean; tribal_review_required?: boolean };
 	/** Set by this loader, not stored in the record. */
