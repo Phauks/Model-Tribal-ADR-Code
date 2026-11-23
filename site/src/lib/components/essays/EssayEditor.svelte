@@ -24,7 +24,7 @@
 	import type { MarkType, Node as EditorNode, NodeType } from 'prosemirror-model';
 	import { liftListItem, sinkListItem, splitListItem, wrapInList } from 'prosemirror-schema-list';
 	import { EditorState, NodeSelection, Plugin, TextSelection, type Command, type Transaction } from 'prosemirror-state';
-	import { EditorView } from 'prosemirror-view';
+	import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 	import { initProseMirrorDoc, redoCommand, undoCommand, yCursorPlugin, ySyncPlugin, yUndoPlugin } from 'y-prosemirror';
 	import { joinEssayRoom, type EssayRoom, type LiveStatus } from '#lib/essays/live.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
@@ -38,6 +38,7 @@
 	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
 	import EssayAttestDialog from '#lib/components/essays/EssayAttestDialog.svelte';
 	import EssayComments from '#lib/components/essays/EssayComments.svelte';
+	import PersonAvatar from '#lib/components/essays/PersonAvatar.svelte';
 	import EssayShareDialog from '#lib/components/essays/EssayShareDialog.svelte';
 	import type { Snippet } from 'svelte';
 	import Bold from '@lucide/svelte/icons/bold';
@@ -51,7 +52,9 @@
 	import List from '@lucide/svelte/icons/list';
 	import ListOrdered from '@lucide/svelte/icons/list-ordered';
 	import MessageSquarePlus from '@lucide/svelte/icons/message-square-plus';
-	import MessagesSquare from '@lucide/svelte/icons/messages-square';
+	import LibraryBig from '@lucide/svelte/icons/library-big';
+	import PenLine from '@lucide/svelte/icons/pen-line';
+	import Plus from '@lucide/svelte/icons/plus';
 	import Redo2 from '@lucide/svelte/icons/redo-2';
 	import Share2 from '@lucide/svelte/icons/share-2';
 	import SpellCheck from '@lucide/svelte/icons/spell-check';
@@ -62,7 +65,7 @@
 	import { inReviewText, openRequestsOn, waitsOn, type ReviewRequest } from '#lib/essays/review-requests.ts';
 	import { commentAt, commentMarks, showCommentMarks, type CommentMark } from '#lib/essays/comment-marks.ts';
 	import { findQuote, quoteAt, type TextQuote } from '#lib/essays/comment-anchors.ts';
-	import type { EssayComment } from '#lib/essays/comments.ts';
+	import type { CommentAsk, CommentDraft, EssayComment } from '#lib/essays/comments.ts';
 	import { attestationLines, setAttestationLines } from '#lib/essays/attestation-lines.ts';
 	import { essaySections, sectionText, sha256Hex, type Attestation } from '#lib/essays/attestations.ts';
 	import EssaySources from '#lib/components/essays/EssaySources.svelte';
@@ -81,6 +84,7 @@
 		autoSave = false,
 		live = false,
 		startAt = null,
+		startThread = null,
 		barStart,
 		barEnd,
 		belowBar,
@@ -96,6 +100,8 @@
 		live?: boolean;
 		/** A section's heading id to open the editor at, such as one asked to be reviewed. */
 		startAt?: string | null;
+		/** A comment thread to open the editor at, from the Comments for you page. */
+		startThread?: string | null;
 		/** Shown at the start of the bar, such as the page's Reading, Commenting and Editing choice. */
 		barStart?: Snippet;
 		/** Shown at the end of the bar, such as History and Publish. */
@@ -310,18 +316,27 @@
 		}, 600);
 	}
 
-	/* Comments (comments.ts) ------------------------------------------------ */
+	/* Comments (comments.ts; EssayComments.svelte) -------------------------- */
 
-	let showComments = $state(false);
 	let comments = $state<EssayComment[]>([]);
 	let commentsLoaded = false;
 	let commentingPerson = $state<string | null>(null);
 	let mayResolveAny = $state(false);
-	let pendingComment = $state<TextQuote | null>(null);
+	let pendingComment = $state<CommentDraft | null>(null);
 	let currentThread = $state<string | null>(null);
 	let threadPositions = $state<Map<string, number | null>>(new Map());
+	/** How far down the text each thread's words are, for its card in the margin. */
+	let threadTops = $state<Map<string, number>>(new Map());
 	let commentTimer: ReturnType<typeof setTimeout> | undefined;
 	let commentPoll: ReturnType<typeof setInterval> | undefined;
+	let commentProblem = $state('');
+	/** The text and the comments beside it. */
+	let textAndMargin: HTMLDivElement | undefined = $state();
+	let marginWidth = $state(0);
+	/** The cards sit beside their words when there is room for both. */
+	const aligned = $derived(marginWidth >= 760);
+	/** Where the menu for the selected words sits, in commenting. */
+	let selectionMenu = $state<{ top: number; left: number } | null>(null);
 
 	async function loadComments(): Promise<void> {
 		const response = await fetch(`/workspace/essays/${identifier}/comments`).catch(() => null);
@@ -338,20 +353,44 @@
 		placeComments();
 	}
 
-	/** Finds each thread's words in the text as it stands, and highlights the open ones. */
+	/** How far down the text a position is, in pixels. */
+	function topOf(position: number): number {
+		if (!view || !textAndMargin) return 0;
+		try {
+			return view.coordsAtPos(position).top - textAndMargin.getBoundingClientRect().top;
+		} catch {
+			return 0;
+		}
+	}
+
+	/** Finds each thread's words in the text as it stands, highlights the open ones, and lines their cards up with them. */
 	function placeComments(): void {
-		if (!view || !commentsLoaded) return;
+		if (!view) return;
 		const doc = view.state.doc;
 		const positions = new Map<string, number | null>();
+		const tops = new Map<string, number>();
 		const marks: CommentMark[] = [];
-		for (const comment of comments) {
-			if (comment.threadIdentifier !== null || !comment.quote) continue;
-			const found = findQuote(doc, { quote: comment.quote, prefix: comment.quotePrefix ?? '', suffix: comment.quoteSuffix ?? '' });
-			positions.set(comment.identifier, found?.from ?? null);
-			if (found && !comment.resolvedAt) marks.push({ thread: comment.identifier, ...found });
+		if (commentsLoaded) {
+			for (const comment of comments) {
+				if (comment.threadIdentifier !== null || !comment.quote) continue;
+				const found = findQuote(doc, { quote: comment.quote, prefix: comment.quotePrefix ?? '', suffix: comment.quoteSuffix ?? '' });
+				positions.set(comment.identifier, found?.from ?? null);
+				if (found && !comment.resolvedAt) {
+					marks.push({ thread: comment.identifier, ...found });
+					tops.set(comment.identifier, topOf(found.from));
+				}
+			}
+		}
+		if (pendingComment) {
+			const found = findQuote(doc, pendingComment.quote);
+			if (found) {
+				marks.push({ thread: 'new', ...found });
+				tops.set('new', topOf(found.from));
+			}
 		}
 		threadPositions = positions;
-		showCommentMarks(view, marks, currentThread);
+		threadTops = tops;
+		showCommentMarks(view, marks, pendingComment ? 'new' : currentThread);
 	}
 
 	function placeCommentsSoon(): void {
@@ -359,22 +398,70 @@
 		commentTimer = setTimeout(placeComments, 400);
 	}
 
-	function startComment(): boolean {
+	/** Starts a comment on the selected words: a plain one, or Suggest with the words to rewrite. */
+	function startComment(kind: 'comment' | 'suggest' = 'comment'): boolean {
 		if (!view || view.state.selection.empty) return false;
 		const quote = quoteAt(view.state.doc, view.state.selection.from, view.state.selection.to);
 		if (!quote) return false;
-		pendingComment = quote;
-		showComments = true;
+		pendingComment = kind === 'suggest' ? { quote, asks: ['rewrite'], body: quote.quote, suggest: true } : { quote, asks: [], body: '' };
+		currentThread = null;
+		collapseSelection();
 		if (!commentsLoaded) void loadComments();
+		placeComments();
 		return true;
 	}
 
-	function toggleComments(): void {
-		showComments = !showComments;
-		if (showComments) void loadComments();
+	/** A one-click ask on the selected words, such as "Show your sources", sent at once. */
+	async function quickAsk(ask: CommentAsk): Promise<void> {
+		if (!view || view.state.selection.empty) return;
+		const quote = quoteAt(view.state.doc, view.state.selection.from, view.state.selection.to);
+		if (!quote) return;
+		collapseSelection();
+		commentProblem = '';
+		const response = await fetch(`/workspace/essays/${identifier}/comments`, {
+			method: 'POST',
+			headers: { 'content-type': 'application/json' },
+			body: JSON.stringify({ body: '', asks: [ask], quote, version })
+		}).catch(() => null);
+		const answer = (await response?.json().catch(() => null)) as { comments?: EssayComment[]; message?: string } | null;
+		if (!response?.ok || !answer?.comments) {
+			commentProblem = answer?.message || 'That did not go through. Try again.';
+			return;
+		}
+		const before = new Set(comments.map((comment) => comment.identifier));
+		const added = answer.comments.find((comment) => !before.has(comment.identifier) && comment.threadIdentifier === null);
+		if (added) currentThread = added.identifier;
+		commentsChanged(answer.comments);
 	}
 
-	/** Selects a thread's words in the editor. */
+	/** Ends the selection once its words have a comment, so the highlight shows them instead. */
+	function collapseSelection(): void {
+		selectionMenu = null;
+		if (!view || view.state.selection.empty) return;
+		view.dispatch(view.state.tr.setSelection(TextSelection.create(view.state.doc, view.state.selection.to)).setMeta('addToHistory', false));
+		window.getSelection()?.removeAllRanges();
+	}
+
+	/** Puts the menu for the selected words above them, in commenting only. */
+	function placeSelectionMenu(editorView: EditorView): void {
+		const selection = editorView.state.selection;
+		if (canEdit || selection.empty || pendingComment || !textAndMargin) {
+			selectionMenu = null;
+			return;
+		}
+		try {
+			const box = textAndMargin.getBoundingClientRect();
+			const start = editorView.coordsAtPos(selection.from);
+			const end = editorView.coordsAtPos(selection.to);
+			const area = host?.getBoundingClientRect();
+			const middle = start.top === end.top ? (start.left + end.left) / 2 : ((area?.left ?? box.left) + (area?.right ?? box.right)) / 2;
+			selectionMenu = { top: start.top - box.top, left: middle - box.left };
+		} catch {
+			selectionMenu = null;
+		}
+	}
+
+	/** Goes to a thread's words in the editor. */
 	function goToThread(thread: string): void {
 		currentThread = thread;
 		placeComments();
@@ -383,15 +470,35 @@
 		if (!comment?.quote) return;
 		const found = findQuote(view.state.doc, { quote: comment.quote, prefix: comment.quotePrefix ?? '', suffix: comment.quoteSuffix ?? '' });
 		if (!found) return;
-		view.dispatch(view.state.tr.setSelection(TextSelection.create(view.state.doc, found.from, found.to)).scrollIntoView());
-		view.focus();
+		// The highlight shows the words; the cursor goes to them without selecting, so no menu opens.
+		view.dispatch(view.state.tr.setSelection(TextSelection.create(view.state.doc, found.from)).setMeta('addToHistory', false));
+		(view.domAtPos(found.from).node as Element | null)?.parentElement?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 	}
 
+	// The comment being written, or the one chosen, moves the highlight.
+	$effect(() => {
+		void pendingComment;
+		void currentThread;
+		untrack(() => placeComments());
+	});
+
+	// Others' new comments arrive within a minute.
 	$effect(() => {
 		clearInterval(commentPoll);
-		// While the comments are open, others' new comments arrive within a minute.
-		if (showComments) commentPoll = setInterval(() => void loadComments(), 60_000);
+		if (mode === 'rich') commentPoll = setInterval(() => void loadComments(), 60_000);
 		return () => clearInterval(commentPoll);
+	});
+
+	// The cards follow the text when the window or a picture changes its height.
+	$effect(() => {
+		if (!textAndMargin) return;
+		const observer = new ResizeObserver(() => {
+			marginWidth = textAndMargin?.clientWidth ?? 0;
+			placeCommentsSoon();
+		});
+		observer.observe(textAndMargin);
+		if (host) observer.observe(host);
+		return () => observer.disconnect();
 	});
 
 	async function openAttest(slug: string): Promise<void> {
@@ -809,6 +916,7 @@
 						placeCommentsSoon();
 					}
 					describe(editorView.state);
+					placeSelectionMenu(editorView);
 				}
 			})
 		});
@@ -853,6 +961,15 @@
 					: [history()]),
 				checkMarks(),
 				commentMarks(),
+				// In commenting, the words chosen stay marked while their menu is open, even when the browser drops its own selection.
+				new Plugin({
+					props: {
+						decorations: (state) =>
+							canEdit || state.selection.empty || pendingComment
+								? null
+								: DecorationSet.create(state.doc, [Decoration.inline(state.selection.from, state.selection.to, { class: 'selected-words' })])
+					}
+				}),
 				componentFrames(),
 				attestationLines({ attest: (slug) => void openAttest(slug), finishReview: (request) => void finishReview(request) }),
 				tracker
@@ -871,11 +988,7 @@
 				const issue = issueAt(editorView, position);
 				if (issue) chosenIssue = issue;
 				const thread = commentAt(editorView, position);
-				if (thread) {
-					currentThread = thread;
-					showComments = true;
-					placeComments();
-				}
+				if (thread && thread !== 'new') currentThread = thread;
 				return false;
 			},
 			handleDoubleClickOn: (_view, _position, node, nodePosition) =>
@@ -1237,7 +1350,10 @@
 		mountEditor(initial.body);
 		dirty = false;
 		void loadAttestations();
-		void loadComments();
+		const chosenThread = untrack(() => startThread);
+		void loadComments().then(() => {
+			if (chosenThread) goToThread(chosenThread);
+		});
 		void loadReviewRequests();
 		const chosenSection = untrack(() => startAt);
 		if (chosenSection) setTimeout(() => goToSection(chosenSection), 300);
@@ -1291,7 +1407,8 @@
 	let moreMenu: HTMLDetailsElement | undefined = $state();
 	/** Whether the "Name this version" box is open. */
 	let naming = $state(false);
-	const openThreads = $derived(comments.filter((comment) => comment.threadIdentifier === null && !comment.resolvedAt).length);
+	/** The margin shows in commenting, and while editing once there is a comment. */
+	const showMargin = $derived(mode === 'rich' && (!canEdit || comments.length > 0 || pendingComment !== null));
 	const statusText = $derived(
 		status || (liveStatus && inRoomShown ? liveText(liveStatus) : joining ? 'Joining the live room…' : dirty ? 'Unsaved changes' : `Saved as version ${basedOn}`)
 	);
@@ -1305,20 +1422,29 @@
 		void action();
 	}
 
-	function initials(name: string): string {
-		return name
-			.split(/\s+/)
-			.filter(Boolean)
-			.slice(0, 2)
-			.map((part) => part[0]?.toUpperCase() ?? '')
-			.join('');
+	/**
+	 * Links in the text, the preview and the side panels (sources, opinions,
+	 * citations) open in a new tab, so the draft stays open (Trevor, Nov. 23,
+	 * 2026). The bar's own links, such as History, open in place.
+	 */
+	function openReferencesApart(event: MouseEvent): void {
+		if (event.defaultPrevented || event.button !== 0) return;
+		const link = (event.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
+		if (!link || link.closest('.editor-bar') || link.target === '_blank') return;
+		// While editing, a click in the text places the cursor; it never follows a link.
+		if (canEdit && link.closest('.ProseMirror')) return;
+		const href = link.getAttribute('href') ?? '';
+		if (href.startsWith('#') || href.startsWith('javascript:')) return;
+		event.preventDefault();
+		window.open(link.href, '_blank', 'noopener');
 	}
 </script>
 
 <svelte:window onbeforeunload={warnBeforeLeaving} />
 <svelte:document onvisibilitychange={saveWhenHidden} />
 
-<div class="essay-editor">
+<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+<div class="essay-editor" class:is-commenting={!canEdit} onclickcapture={openReferencesApart}>
 	<!--
 		One slim bar, as in the approved mockups (essay-editor-mockups/3 and v2-1):
 		the mode, then icons with tooltips, then the saved mark, who else is
@@ -1386,18 +1512,17 @@
 				</span>
 			</div>
 		{/if}
-		{#if mode === 'rich'}
+		{#if canEdit && mode === 'rich'}
 			<div class="bar-group" role="group" aria-label="Review">
-				{#if canEdit}
-					<button type="button" class="tool" aria-pressed={showChecks} title="Spelling, grammar and definitions" onclick={toggleChecks}><SpellCheck size={18} aria-hidden="true" /> Checks</button>
-				{/if}
-				<button type="button" class="tool icon-tool" disabled={!active.hasSelection} title="Comment on the selected words (Ctrl+Alt+M)" aria-label="Comment" onclick={startComment}><MessageSquarePlus size={18} aria-hidden="true" /></button>
-				<button type="button" class="tool" aria-pressed={showComments} title="Comments" aria-label="Comments ({openThreads} open)" onclick={toggleComments}><MessagesSquare size={18} aria-hidden="true" />{#if openThreads}<span class="count">{openThreads}</span>{/if}</button>
+				<button type="button" class="tool" aria-pressed={showChecks} title="Spelling, grammar and definitions" onclick={toggleChecks}><SpellCheck size={18} aria-hidden="true" /> Checks</button>
+				<button type="button" class="tool icon-tool" disabled={!active.hasSelection} title="Comment on the selected words (Ctrl+Alt+M)" aria-label="Comment" onclick={() => startComment()}><MessageSquarePlus size={18} aria-hidden="true" /></button>
 			</div>
 		{/if}
 		{#if !canEdit && mode === 'rich'}
-			<p class="bar-hint small muted">Select words to comment. The text stays as the authors wrote it.</p>
+			<!-- Commenting, as in essay-editor-mockups/4-commenting: the mode, this line, and on the right Saved, who is here and History. -->
+			<p class="bar-hint small muted">Select words to comment or suggest wording. The text stays as the authors wrote it.</p>
 		{/if}
+		{#if canEdit || mode !== 'rich'}
 		<details class="bar-menu" bind:this={moreMenu}>
 			<summary class="tool icon-tool" title="More" aria-label="More"><Ellipsis size={18} aria-hidden="true" /></summary>
 			<div class="menu" role="group" aria-label="More">
@@ -1423,6 +1548,7 @@
 				{/if}
 			</div>
 		</details>
+		{/if}
 		<div class="bar-end">
 			{#if canEdit || inRoomShown}
 				<span class="saved-mark small" role="status" aria-live="polite" title={statusText}>
@@ -1434,11 +1560,11 @@
 			{/if}
 			{#if people.length}
 				<span class="people" title="Editing now: {people.join(', ')}">
-					{#each people.slice(0, 4) as name, index (index)}<span class="avatar" aria-hidden="true">{initials(name)}</span>{/each}
+					{#each people.slice(0, 4) as name, index (index)}<PersonAvatar {name} />{/each}
 					<span class="visually-hidden">Editing now: {people.join(', ')}</span>
 				</span>
 			{/if}
-			{#if mode === 'rich'}
+			{#if mode === 'rich' && canEdit}
 				<button type="button" class="tool icon-tool" title="Share and ask for review" aria-label="Share" onclick={openShare}><Share2 size={18} aria-hidden="true" /></button>
 			{/if}
 			{#if barEnd}{@render barEnd()}{/if}
@@ -1473,20 +1599,6 @@
 		<EssayChecks view={() => view} {revision} {identifier} file={currentFile} {library} {canEdit} bind:selected={chosenIssue} />
 	{/if}
 
-	{#if showComments && mode === 'rich'}
-		<EssayComments
-			essay={identifier}
-			{version}
-			{comments}
-			you={commentingPerson}
-			{mayResolveAny}
-			positions={threadPositions}
-			bind:pending={pendingComment}
-			bind:current={currentThread}
-			onchange={commentsChanged}
-			ongo={goToThread}
-		/>
-	{/if}
 
 	{#if showSources && mode === 'rich'}
 		<EssaySources view={() => view} {revision} {library} {documents} {loadDocuments} />
@@ -1530,16 +1642,45 @@
 	{#if figureFileNotice && mode === 'rich'}
 		<div class="notice" role="note"><p>{figureFileNotice}</p></div>
 	{/if}
-	<div
-		class="editor-area"
-		hidden={mode !== 'rich'}
-		bind:this={host}
-		use:watchFigureFiles={(_media, problem) =>
-			(figureFileNotice =
-				problem === 'checking'
-					? 'A picture, video or recording here is still being checked for viruses. It shows once the check passes, usually within a few minutes.'
-					: 'A picture, video or recording here could not be loaded.')}
-	></div>
+	{#if commentProblem}<p class="field-error" role="alert">{commentProblem}</p>{/if}
+	<!-- The text, and the comments in the margin beside it (essay-editor-mockups/4-commenting). -->
+	<div class="text-and-margin" class:with-margin={showMargin} class:aligned bind:this={textAndMargin} hidden={mode !== 'rich'}>
+		<div
+			class="editor-area"
+			bind:this={host}
+			use:watchFigureFiles={(_media, problem) =>
+				(figureFileNotice =
+					problem === 'checking'
+						? 'A picture, video or recording here is still being checked for viruses. It shows once the check passes, usually within a few minutes.'
+						: 'A picture, video or recording here could not be loaded.')}
+		></div>
+		{#if showMargin}
+			<EssayComments
+				essay={identifier}
+				{version}
+				{comments}
+				you={commentingPerson}
+				{mayResolveAny}
+				positions={threadPositions}
+				tops={threadTops}
+				{aligned}
+				bind:pending={pendingComment}
+				bind:current={currentThread}
+				onchange={commentsChanged}
+				ongo={goToThread}
+			/>
+		{/if}
+		{#if selectionMenu}
+			<!-- The menu for the selected words; pressing it keeps the selection. -->
+			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+			<div class="selection-menu" role="group" aria-label="The selected words" style:top="{selectionMenu.top}px" style:left="{selectionMenu.left}px" onmousedown={(event) => event.preventDefault()}>
+				<button type="button" onclick={() => startComment()}><MessageSquarePlus size={18} aria-hidden="true" /> Comment</button>
+				<button type="button" onclick={() => startComment('suggest')}><PenLine size={18} aria-hidden="true" /> Suggest</button>
+				<button type="button" title="Ask the authors to show their sources" onclick={() => quickAsk('sources')}><LibraryBig size={18} aria-hidden="true" /> Sources?</button>
+				<button type="button" title="Ask the authors to expand on this" onclick={() => quickAsk('expand')}><Plus size={18} aria-hidden="true" /> Expand</button>
+			</div>
+		{/if}
+	</div>
 
 	{#if mode === 'markdown'}
 		<label class="visually-hidden" for="markdown-text">Essay text as Markdown</label>
@@ -1781,17 +1922,6 @@
 		padding-left: calc(var(--space-2) + 1.4rem);
 	}
 
-	.count {
-		min-width: 1.3em;
-		padding: 0 0.3em;
-		border-radius: 999px;
-		background: var(--color-action);
-		color: var(--color-paper);
-		font-size: 0.75em;
-		font-weight: var(--font-weight-semibold);
-		text-align: center;
-	}
-
 	.bar-menu {
 		position: relative;
 	}
@@ -1863,18 +1993,8 @@
 		display: inline-flex;
 	}
 
-	.avatar {
-		display: inline-grid;
-		place-items: center;
-		width: 1.9rem;
-		height: 1.9rem;
-		margin-left: -0.35rem;
-		border: 2px solid var(--color-paper);
-		border-radius: 50%;
-		background: var(--color-link);
-		color: var(--color-paper);
-		font-size: 0.7rem;
-		font-weight: var(--font-weight-semibold);
+	.people > :global(.avatar + .avatar) {
+		margin-left: -0.45rem;
 	}
 
 	.context-bar {
@@ -1913,6 +2033,75 @@
 		min-width: 0;
 	}
 
+	/* The text with the comments in the margin (essay-editor-mockups/4-commenting). */
+	.text-and-margin {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--space-4);
+	}
+
+	.text-and-margin[hidden] {
+		display: none;
+	}
+
+	.text-and-margin.with-margin.aligned {
+		grid-template-columns: minmax(0, var(--layout-measure)) minmax(15rem, 22rem);
+		align-items: start;
+	}
+
+	/* On a narrow window the comments come first, so a new one is in view. */
+	.text-and-margin.with-margin:not(.aligned) > :global(.comments) {
+		order: -1;
+	}
+
+	.selection-menu {
+		position: absolute;
+		z-index: 4;
+		display: flex;
+		transform: translate(-50%, calc(-100% - var(--space-2)));
+		padding: var(--space-1);
+		border-radius: var(--radius-control);
+		background: var(--color-band);
+		box-shadow: 0 4px 12px color-mix(in srgb, var(--color-ink) 25%, transparent);
+		white-space: nowrap;
+	}
+
+	.selection-menu button {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		min-height: var(--layout-target-minimum);
+		padding: 0 var(--space-2);
+		border: 0;
+		border-radius: var(--radius-control);
+		background: none;
+		color: var(--color-band-text);
+		font: inherit;
+		font-size: var(--font-size-small);
+		cursor: pointer;
+	}
+
+	.selection-menu button:hover {
+		background: color-mix(in srgb, var(--color-band-text) 15%, transparent);
+	}
+
+	/* Commenting shows the text as readers see it, without the component frames. */
+	.is-commenting .editor-area :global(.ProseMirror > .essay-component),
+	.is-commenting .editor-area :global(.ProseMirror > .essay-component.is-current) {
+		margin-top: var(--space-3);
+		outline: 0;
+	}
+
+	.is-commenting .editor-area :global(.ProseMirror > .essay-component[data-component]::before) {
+		content: none;
+	}
+
+	/* Attesting belongs to editing (essay-editor-mockups/v2-1); commenting shows only what is in review (4). */
+	.is-commenting .editor-area :global(.essay-attestations) {
+		display: none;
+	}
+
 	/* A wide table scrolls in its own box, as it does on the published page. */
 	.editor-area :global(.ProseMirror table) {
 		display: block;
@@ -1943,10 +2132,10 @@
 		text-decoration-color: var(--color-action);
 	}
 
+	/* The text sits on the page as readers see it, with no box around it (essay-editor-mockups/4 and v2-1). */
 	.editor-area :global(.ProseMirror) {
 		min-height: 60vh;
-		padding: var(--space-3);
-		border: 1px solid var(--color-line);
+		padding: var(--space-2) var(--space-3);
 		border-radius: var(--radius-panel);
 		outline: none;
 	}
@@ -2076,14 +2265,19 @@
 	}
 
 	/* Words someone commented on (comment-marks.ts). */
+	.editor-area :global(.selected-words) {
+		background: var(--color-comment-highlight);
+	}
+
 	.editor-area :global(.comment-mark) {
-		background: var(--color-notice-background);
-		border-bottom: 2px solid var(--color-action);
+		background: var(--color-comment-highlight);
+		border-bottom: 2px solid var(--color-comment-rule);
 		cursor: pointer;
 	}
 
 	.editor-area :global(.comment-mark.is-current) {
-		outline: 2px solid var(--color-action);
+		box-shadow: 0 0 0 2px var(--color-comment-highlight);
+		border-bottom-width: 3px;
 	}
 
 	.editor-area :global(.ProseMirror-selectednode) {
