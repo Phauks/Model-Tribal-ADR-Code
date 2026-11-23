@@ -45,20 +45,20 @@ describe('credit lines', () => {
 
 describe('answers needed before confirming', () => {
 	it('asks only for a name, adulthood, one kind of help and a credit choice', () => {
-		const ready = answers({ givenName: 'Ada', thirteenOrOlder: true, interests: ['review'], creditForm: 'none' });
+		const ready = answers({ givenName: 'Ada', ageGroup: '18-or-older', interests: ['review'], creditForm: 'none' });
 		expect(missingAnswers(ready)).toEqual({});
 		expect(Object.keys(missingAnswers(emptyAnswers)).sort()).toEqual(
-			['thirteenOrOlder', 'creditForm', 'givenName', 'interests'].sort()
+			['ageGroup', 'creditForm', 'givenName', 'interests'].sort()
 		);
 	});
 
 	it('never requires a nation, a phone number or a family name', () => {
-		const ready = answers({ givenName: 'Ada', thirteenOrOlder: true, interests: ['research'], creditForm: 'name', nationAnswer: 'not-saying' });
+		const ready = answers({ givenName: 'Ada', ageGroup: '18-or-older', interests: ['research'], creditForm: 'name', nationAnswer: 'not-saying' });
 		expect(missingAnswers(ready)).toEqual({});
 	});
 
 	it('asks for a phone number only when the person wants calls or texts', () => {
-		const ready = answers({ givenName: 'Ada', thirteenOrOlder: true, interests: ['research'], creditForm: 'none', preferredContact: 'phone' });
+		const ready = answers({ givenName: 'Ada', ageGroup: '18-or-older', interests: ['research'], creditForm: 'none', preferredContact: 'phone' });
 		expect(Object.keys(missingAnswers(ready))).toEqual(['phone']);
 	});
 });

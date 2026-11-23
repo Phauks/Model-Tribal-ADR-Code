@@ -5,6 +5,7 @@
 -->
 <script lang="ts">
 	import {
+		ageGroupLabels,
 		availabilityLabels,
 		contactMethodLabels,
 		creditFormLabels,
@@ -57,7 +58,7 @@
 		{/if}
 		<div>
 			<dt>Age</dt>
-			<dd>{answers.thirteenOrOlder ? '13 or older' : 'Not confirmed'}</dd>
+			<dd>{answers.ageGroup ? ageGroupLabels[answers.ageGroup] : 'Not answered'}</dd>
 			<dd class="action">{@render change('about', 'age')}</dd>
 		</div>
 		{#if showContact}

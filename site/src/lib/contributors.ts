@@ -98,6 +98,18 @@ export function defaultCreditSection(chosen: readonly Interest[]): CreditSection
 	return 'acknowledgments';
 }
 
+/** Age groups. Signing up is for people 13 or older; people under 18 are credited only by a description or a chosen name (docs/contributions.md, "Contributors under the age of majority"). */
+export const ageGroups = ['13-to-17', '18-or-older'] as const;
+export type AgeGroup = (typeof ageGroups)[number];
+
+export const ageGroupLabels: Record<AgeGroup, string> = {
+	'13-to-17': '13 to 17',
+	'18-or-older': '18 or older'
+};
+
+/** Credit forms open to people under 18: a description, a chosen name, or none. */
+export const minorCreditForms: readonly CreditForm[] = ['role', 'pseudonym', 'none'];
+
 export const profileStatuses = ['draft', 'submitted', 'welcomed', 'declined'] as const;
 export type ProfileStatus = (typeof profileStatuses)[number];
 
@@ -124,7 +136,8 @@ export interface ProfileAnswers {
 	nativeName: string | null;
 	phone: string | null;
 	preferredContact: ContactMethod | null;
-	thirteenOrOlder: boolean;
+	/** Empty until answered. Signing up needs 13 or older. */
+	ageGroup: AgeGroup | null;
 	nationAnswer: NationAnswer | null;
 	nations: NationAffiliation[];
 	background: string | null;
@@ -148,7 +161,7 @@ export const emptyAnswers: ProfileAnswers = {
 	nativeName: null,
 	phone: null,
 	preferredContact: null,
-	thirteenOrOlder: false,
+	ageGroup: null,
 	nationAnswer: null,
 	nations: [],
 	background: null,
@@ -215,7 +228,8 @@ export function creditOf(answers: ProfileAnswers): Credit | null {
 			break;
 	}
 	if (!line) return null;
-	const namedCredit = answers.creditForm !== 'role';
+	// People under 18 have no biography in credits, so nothing beside a chosen name can identify them.
+	const namedCredit = answers.creditForm !== 'role' && answers.ageGroup !== '13-to-17';
 	return {
 		line,
 		sortKey: sortKey.toLocaleLowerCase('en-US'),
@@ -230,9 +244,9 @@ export function creditOf(answers: ProfileAnswers): Credit | null {
 export function missingAnswers(answers: ProfileAnswers): Record<string, string> {
 	const missing: Record<string, string> = {};
 	if (!answers.givenName) missing.givenName = 'Give the name you would like us to use.';
-	if (!answers.thirteenOrOlder) {
-		missing.thirteenOrOlder =
-			'Signing up on the website is for people 13 or older. Someone younger can help with a parent or guardian through the request form.';
+	if (!answers.ageGroup) {
+		missing.ageGroup =
+			'Choose your age. Signing up on the website is for people 13 or older; someone younger can help with a parent or guardian through the request form.';
 	}
 	if ((answers.preferredContact === 'phone' || answers.preferredContact === 'text-message') && !answers.phone) {
 		missing.phone = 'Give a phone number, or choose email as the way to reach you.';
@@ -242,6 +256,9 @@ export function missingAnswers(answers: ProfileAnswers): Record<string, string> 
 	}
 	if (answers.interests.length === 0) missing.interests = 'Choose at least one way you would like to help.';
 	if (!answers.creditForm) missing.creditForm = 'Choose how you would like to be credited.';
+	if (answers.ageGroup === '13-to-17' && answers.creditForm && !minorCreditForms.includes(answers.creditForm)) {
+		missing.creditForm = 'People under 18 are credited by a description or a name they choose, not their own name.';
+	}
 	if (answers.creditForm === 'role' && !answers.creditRole) {
 		missing.creditRole = 'Write the description to print, or choose another kind of credit.';
 	}
@@ -255,4 +272,29 @@ export function missingAnswers(answers: ProfileAnswers): Record<string, string> 
 		missing.biography = 'Writers are asked for a short biography for the list of contributors.';
 	}
 	return missing;
+}
+
+/**
+ * The name a person's public page goes by, or null for no page: only for a
+ * credit shown on the website by name or by a chosen name. A description is
+ * not a name, so it gets no page.
+ */
+export function pageNameOf(answers: ProfileAnswers): string | null {
+	const credit = creditOf(answers);
+	if (!credit || !credit.onWebsite) return null;
+	if (answers.creditForm === 'pseudonym') return answers.creditPseudonym?.trim() || null;
+	if (answers.creditForm === 'name' || answers.creditForm === 'name-and-nation') return printedName(answers) || null;
+	return null;
+}
+
+/** A page address from a name: lower case letters and digits joined by hyphens, accents removed. */
+export function slugOf(name: string): string {
+	return name
+		.normalize('NFKD')
+		.replace(/[\u0300-\u036f]/g, '')
+		.toLocaleLowerCase('en-US')
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '')
+		.slice(0, 60)
+		.replace(/-+$/g, '');
 }

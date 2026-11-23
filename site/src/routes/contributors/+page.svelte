@@ -18,7 +18,7 @@
 			<h2>{section.heading}</h2>
 			{#each section.entries as entry, position (position)}
 				<div class="credit">
-					<p class="name">{entry.line}</p>
+					<p class="name">{#if entry.slug}<a href="/contributors/{entry.slug}">{entry.line}</a>{:else}{entry.line}{/if}</p>
 					{#if entry.biography}<p class="biography">{entry.biography}</p>{/if}
 				</div>
 			{/each}

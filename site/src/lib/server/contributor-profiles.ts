@@ -5,10 +5,13 @@
  * profile. A profile gives no access to the workspace: the lead author
  * decides that separately, by linking the profile to a row in `people`.
  */
-import type { D1Database, D1PreparedStatement } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import {
 	creditOf,
 	defaultCreditSection,
+	pageNameOf,
+	slugOf,
+	type AgeGroup,
 	type Availability,
 	type ContactMethod,
 	type CreditForm,
@@ -48,6 +51,11 @@ export interface Profile {
 	submittedAt: string | null;
 	decidedAt: string | null;
 	decisionNote: string | null;
+	/** The address of the person's public page, /contributors/<slug>, when they have one. */
+	publicSlug: string | null;
+	/** The person's picture in the private bucket. */
+	pictureKey: string | null;
+	pictureUpdatedAt: string | null;
 	/** Whether the person changed anything since they last confirmed. */
 	hasUnconfirmedChanges: boolean;
 }
@@ -62,7 +70,7 @@ interface ProfileRow {
 	native_name: string | null;
 	phone: string | null;
 	preferred_contact: ContactMethod | null;
-	thirteen_or_older: number;
+	age_group: AgeGroup | null;
 	nation_answer: NationAnswer | null;
 	background: string | null;
 	languages: string | null;
@@ -84,6 +92,9 @@ interface ProfileRow {
 	submitted_at: string | null;
 	decided_at: string | null;
 	decision_note: string | null;
+	public_slug: string | null;
+	picture_key: string | null;
+	picture_updated_at: string | null;
 }
 
 async function completeProfile(database: D1Database, row: ProfileRow): Promise<Profile> {
@@ -112,7 +123,7 @@ async function completeProfile(database: D1Database, row: ProfileRow): Promise<P
 			nativeName: row.native_name,
 			phone: row.phone,
 			preferredContact: row.preferred_contact,
-			thirteenOrOlder: Boolean(row.thirteen_or_older),
+			ageGroup: row.age_group,
 			nationAnswer: row.nation_answer,
 			nations: nations.results.map((nation) => ({ ...nation, showInCredit: Boolean(nation.showInCredit) })),
 			background: row.background,
@@ -137,6 +148,9 @@ async function completeProfile(database: D1Database, row: ProfileRow): Promise<P
 		submittedAt: row.submitted_at,
 		decidedAt: row.decided_at,
 		decisionNote: row.decision_note,
+		publicSlug: row.public_slug,
+		pictureKey: row.picture_key,
+		pictureUpdatedAt: row.picture_updated_at,
 		hasUnconfirmedChanges: row.confirmed_at === null || row.updated_at > row.confirmed_at
 	};
 }
@@ -222,7 +236,8 @@ export async function saveAnswers(
 		answers.nativeName,
 		answers.phone,
 		answers.preferredContact,
-		answers.thirteenOrOlder ? 1 : 0,
+		answers.ageGroup ? 1 : 0,
+		answers.ageGroup,
 		answers.nationAnswer,
 		answers.background,
 		answers.languages,
@@ -237,7 +252,7 @@ export async function saveAnswers(
 		answers.biography,
 		answers.biographyInCredits ? 1 : 0
 	];
-	const columns = `given_name, family_name, native_name, phone, preferred_contact, thirteen_or_older, nation_answer,
+	const columns = `given_name, family_name, native_name, phone, preferred_contact, thirteen_or_older, age_group, nation_answer,
 		background, languages, organization, availability, credit_form, credit_name, credit_role,
 		credit_pseudonym, credit_in_book, credit_on_website, biography, biography_in_credits`;
 
@@ -284,6 +299,7 @@ export async function confirmProfile(database: D1Database, profile: Profile): Pr
 	const version = (profile.confirmedVersion ?? 0) + 1;
 	const time = now();
 	const credit = creditOf(profile.answers);
+	const slug = await freeSlug(database, profile.identifier, pageNameOf(profile.answers));
 	const snapshot = JSON.stringify({ email: profile.email, ...profile.answers });
 	const firstSend = profile.status === 'draft';
 	await database.batch([
@@ -300,10 +316,11 @@ export async function confirmProfile(database: D1Database, profile: Profile): Pr
 				     status = CASE WHEN status IN ('draft', 'submitted') THEN 'welcomed' ELSE status END,
 				     submitted_at = COALESCE(submitted_at, ?),
 				     decided_at = COALESCE(decided_at, ?),
-				     credit_section = COALESCE(credit_section, ?)
+				     credit_section = COALESCE(credit_section, ?),
+				     public_slug = ?
 				 WHERE identifier = ?`
 			)
-			.bind(version, time, time, time, time, defaultCreditSection(profile.answers.interests), profile.identifier),
+			.bind(version, time, time, time, time, defaultCreditSection(profile.answers.interests), slug, profile.identifier),
 		eventStatement(database, {
 			personIdentifier: profile.personIdentifier,
 			action: firstSend ? 'Confirmed the profile and signed up' : `Confirmed version ${version} of the profile`,
@@ -314,12 +331,26 @@ export async function confirmProfile(database: D1Database, profile: Profile): Pr
 	return version;
 }
 
+/** The page address for a name, made unique among other people's pages with -2, -3 and so on. */
+async function freeSlug(database: D1Database, profileIdentifier: string, name: string | null): Promise<string | null> {
+	if (!name) return null;
+	// A name with no Latin letters or digits, such as one in Cherokee syllabary, gets a neutral address.
+	const base = slugOf(name) || `contributor-${profileIdentifier.slice(0, 8)}`;
+	const taken = await database
+		.prepare(`SELECT public_slug AS slug FROM contributor_profiles WHERE identifier != ? AND (public_slug = ? OR public_slug LIKE ?)`)
+		.bind(profileIdentifier, base, `${base}-%`)
+		.all<{ slug: string }>();
+	const used = new Set(taken.results.map((row) => row.slug));
+	if (!used.has(base)) return base;
+	for (let number = 2; ; number++) if (!used.has(`${base}-${number}`)) return `${base}-${number}`;
+}
+
 /**
  * Deletes a profile and everything in it, at the person's request. The
  * history keeps only that a profile was deleted, without personal details.
  * Workspace access, if any, is not changed: that is the lead author's to end.
  */
-export async function deleteProfile(database: D1Database, profile: Profile): Promise<void> {
+export async function deleteProfile(database: D1Database, profile: Profile, bucket?: R2Bucket): Promise<void> {
 	await database.batch([
 		database.prepare('DELETE FROM contributor_profiles WHERE identifier = ?').bind(profile.identifier),
 		eventStatement(database, {
@@ -329,6 +360,7 @@ export async function deleteProfile(database: D1Database, profile: Profile): Pro
 			targetIdentifier: profile.identifier
 		})
 	]);
+	if (bucket && profile.pictureKey) await bucket.delete(profile.pictureKey);
 }
 
 /** How long a declined registration is kept before it is deleted. */
@@ -340,13 +372,17 @@ export const declinedRetentionMonths = 12;
  * the lead author or an editor opens the contributors list, so no scheduled
  * job is needed. Returns how many were deleted.
  */
-export async function deleteExpiredDeclinedProfiles(database: D1Database, today: Date = new Date()): Promise<number> {
+export async function deleteExpiredDeclinedProfiles(
+	database: D1Database,
+	today: Date = new Date(),
+	bucket?: R2Bucket
+): Promise<number> {
 	const cutoff = new Date(today);
 	cutoff.setUTCMonth(cutoff.getUTCMonth() - declinedRetentionMonths);
 	const expired = await database
-		.prepare(`SELECT identifier FROM contributor_profiles WHERE status = 'declined' AND decided_at < ?`)
+		.prepare(`SELECT identifier, picture_key AS pictureKey FROM contributor_profiles WHERE status = 'declined' AND decided_at < ?`)
 		.bind(cutoff.toISOString())
-		.all<{ identifier: string }>();
+		.all<{ identifier: string; pictureKey: string | null }>();
 	if (expired.results.length === 0) return 0;
 	await database.batch(
 		expired.results.flatMap(({ identifier }) => [
@@ -359,6 +395,8 @@ export async function deleteExpiredDeclinedProfiles(database: D1Database, today:
 			})
 		])
 	);
+	const pictures = expired.results.flatMap((profile) => (profile.pictureKey ? [profile.pictureKey] : []));
+	if (bucket && pictures.length > 0) await bucket.delete(pictures);
 	return expired.results.length;
 }
 
@@ -446,6 +484,8 @@ export interface CreditEntry {
 	biography: string | null;
 	inBook: boolean;
 	onWebsite: boolean;
+	/** The person's page, /contributors/<slug>, when they have one. */
+	slug: string | null;
 }
 
 /**
@@ -456,17 +496,18 @@ export interface CreditEntry {
 export async function confirmedCredits(database: D1Database): Promise<CreditEntry[]> {
 	const rows = await database
 		.prepare(
-			`SELECT profiles.credit_section AS section, versions.snapshot
+			`SELECT profiles.credit_section AS section, profiles.public_slug AS slug, versions.snapshot
 			 FROM contributor_profiles AS profiles
 			 JOIN contributor_profile_versions AS versions
 			   ON versions.profile_identifier = profiles.identifier AND versions.version = profiles.confirmed_version
 			 WHERE profiles.status = 'welcomed' AND profiles.credit_section IS NOT NULL`
 		)
-		.all<{ section: CreditSection; snapshot: string }>();
+		.all<{ section: CreditSection; slug: string | null; snapshot: string }>();
 	const entries: CreditEntry[] = [];
 	for (const row of rows.results) {
-		const credit = creditOf(JSON.parse(row.snapshot) as ProfileAnswers);
-		if (credit) entries.push({ section: row.section, ...credit });
+		const answers = JSON.parse(row.snapshot) as ProfileAnswers;
+		const credit = creditOf(answers);
+		if (credit) entries.push({ section: row.section, ...credit, slug: pageNameOf(answers) ? row.slug : null });
 	}
 	// Credits of people who deleted their account and chose to keep their name (src/lib/server/account-deletion.ts).
 	const retained = await database
@@ -476,7 +517,8 @@ export async function confirmedCredits(database: D1Database): Promise<CreditEntr
 		)
 		.all<{ section: CreditSection; line: string; sortKey: string; biography: string | null; inBook: number; onWebsite: number }>();
 	for (const row of retained.results) {
-		entries.push({ ...row, inBook: Boolean(row.inBook), onWebsite: Boolean(row.onWebsite) });
+		// Their page went with their account.
+		entries.push({ ...row, inBook: Boolean(row.inBook), onWebsite: Boolean(row.onWebsite), slug: null });
 	}
 	return entries.sort((first, second) => first.sortKey.localeCompare(second.sortKey, 'en-US'));
 }

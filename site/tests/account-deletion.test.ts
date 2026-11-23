@@ -23,7 +23,7 @@ const ready: ProfileAnswers = {
 	givenName: 'Ada',
 	familyName: 'Lovelace',
 	phone: '+1 702 555 0100',
-	thirteenOrOlder: true,
+	ageGroup: '18-or-older',
 	interests: ['write'],
 	creditForm: 'name',
 	biography: 'Writes about mediation.',

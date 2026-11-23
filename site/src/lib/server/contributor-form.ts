@@ -5,6 +5,7 @@
  * (missingAnswers in src/lib/contributors.ts).
  */
 import {
+	ageGroups,
 	availabilities,
 	contactMethods,
 	creditForms,
@@ -96,7 +97,7 @@ export function readProfileForm(form: FormData, nations: readonly NationChoice[]
 		nativeName: text('nativeName', 200),
 		phone,
 		preferredContact: choice(contactMethods, formText(form, 'preferredContact')),
-		thirteenOrOlder: ticked('thirteenOrOlder'),
+		ageGroup: choice(ageGroups, formText(form, 'ageGroup')),
 		nationAnswer,
 		nations: listed,
 		background: text('background', 4000),
