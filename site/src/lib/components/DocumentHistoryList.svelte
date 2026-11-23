@@ -41,7 +41,7 @@
 				{/each}
 			</p>
 		{/if}
-		<ol class="version-list">
+		<ol class="version-list" class:single={document.versions.length === 1}>
 			{#each document.versions as version (version.id)}
 				<li>
 					<p class="version-heading">
@@ -65,6 +65,12 @@
 <style>
 	.version-list {
 		padding-left: var(--space-5);
+	}
+
+	/* One version needs no number (Trevor, Nov. 23, 2026: no list marks unless it is a real list). */
+	.version-list.single {
+		padding-left: 0;
+		list-style: none;
 	}
 
 	.version-list > li + li {

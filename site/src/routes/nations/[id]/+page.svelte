@@ -53,6 +53,31 @@
 		}))
 	);
 	const enforcementMarks = $derived(new Map(data.enforcement.map((action) => [action.key, action.citations])));
+
+	// The Treaties table: Signed, Treaty, Statutes at Large, Kappler and Signed
+	// as (Trevor chose "label rows", Nov. 23, 2026: records with dates and
+	// citations go in the shared data table). The treaty's markers follow its
+	// title, as in the mockup.
+	const treatyColumns: TableColumn[] = [
+		{ key: 'signed', header: 'Signed', type: 'date', sortable: true },
+		{ key: 'treaty', header: 'Treaty', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'statutes', header: 'Statutes at Large', sortable: true, searchable: true },
+		{ key: 'kappler', header: 'Kappler', sortable: true, searchable: true },
+		{ key: 'signedAs', header: 'Signed as', sortable: true, searchable: true, filterable: true }
+	];
+	const treatyRows: TableRow[] = $derived(
+		data.treaties.map((treaty) => ({
+			key: treaty.key,
+			cells: {
+				signed: { text: readableDate(treaty.signed), sortValue: treaty.signed },
+				treaty: { text: treaty.title, href: treaty.link },
+				statutes: { text: treaty.statutesAtLarge ?? '' },
+				kappler: { text: treaty.kappler ?? '' },
+				signedAs: { text: treaty.signedAs ?? '' }
+			}
+		}))
+	);
+	const treatyMarks = $derived(new Map(data.treaties.map((treaty) => [treaty.key, treaty.citations])));
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
@@ -189,7 +214,7 @@
 						{opinions.disputeResolutionCount === opinions.count ? 'All of them' : `Of these, ${opinions.disputeResolutionCount.toLocaleString('en-US')}`} mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial; they are listed first.
 					{/if}
 				</p>
-				<ul class="opinions">
+				<ul class="opinions stacked-list">
 					{#each opinions.shown as opinion (opinion.path)}
 						<li>
 							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic }))} /></span>{/if}
@@ -232,8 +257,27 @@
 		</Collapsible>
 
 		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
-		{#if data.ties.length > 0 || data.enforcement.length > 0}
+		{#if data.treaties.length > 0 || data.ties.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
+				{#if data.treaties.length > 0}
+					<h3 id="treaties-heading">Treaties</h3>
+					<DataTable
+						identifier="treaties"
+						label="Table: treaties"
+						columns={treatyColumns}
+						rows={treatyRows}
+						defaultSort={{ key: 'signed', direction: 'ascending' }}
+						rowName={['treaty', 'treaties']}
+						download="{data.page.id}-treaties"
+					>
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{#if column.key === 'treaty'}
+								{#if row.cells.treaty.href}<a href={row.cells.treaty.href}>{row.cells.treaty.text}</a
+									>{:else}{row.cells.treaty.text}{/if}<CitationMarks marks={treatyMarks.get(row.key)} />
+							{/if}
+						{/snippet}
+					</DataTable>
+				{/if}
 				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
 				{#if data.enforcement.length > 0}
 					<!-- The Gaming Commission's enforcement actions, as a table (Trevor, Nov. 23, 2026). -->
@@ -281,7 +325,7 @@
 		     restricted or withdrawn story is never listed (decision record 0029). -->
 		{#if data.stories.length > 0}
 			<Collapsible heading="Stories" identifier="stories-heading">
-				<ul class="stories">
+				<ul class="stories stacked-list">
 					{#each data.stories as story (story.id)}
 						{@const shared = story.nations.filter((nation) => nation.id !== data.page.id)}
 						<li>
@@ -377,15 +421,9 @@
 {/snippet}
 
 <style>
-	.opinions li + li {
-		margin-top: var(--space-2);
-	}
 	.mentions {
 		display: block;
 		margin-top: var(--space-1);
-	}
-	.stories li + li {
-		margin-top: var(--space-2);
 	}
 	.story-kind {
 		display: block;
@@ -433,6 +471,9 @@
 		columns: var(--layout-card-min);
 		column-gap: var(--space-5);
 		max-width: none;
+		/* Names in columns need no bullets (Trevor, Nov. 23, 2026). */
+		list-style: none;
+		padding-left: 0;
 	}
 
 	.neighbors li {

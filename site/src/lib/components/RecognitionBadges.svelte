@@ -85,7 +85,7 @@
 				>
 					<p class="recognition-explanation-heading">{explanation.label}</p>
 					{#if explanation.lines.some((line) => line.legalBasis.length > 0)}
-						<ul>
+						<ul class="stacked-list">
 							{#each explanation.lines.filter((line) => line.legalBasis.length > 0) as line, lineIndex (lineIndex)}
 								<li>
 									{#if line.how}<strong>{line.how}</strong>{line.since ? `, ${line.since}` : ''}{': '}{:else if line.since}{line.since}{': '}{/if}{#each line.legalBasis as part, partIndex (partIndex)}{#if part.link}<a
@@ -199,14 +199,6 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
-	.recognition-explanation ul {
-		margin: 0;
-		padding-left: var(--space-4);
-	}
-
-	.recognition-explanation li + li {
-		margin-top: var(--space-2);
-	}
 
 	.recognition-explanation-gap {
 		margin: var(--space-2) 0 0;
