@@ -868,6 +868,124 @@ sup.citation {
 	break-inside: avoid-page;
 }
 
+/*
+ * Essay figures (src/lib/essays/figures.ts): a picture, a video or a sound
+ * recording, with its caption and credit under it and its transcript folded
+ * below. Pictures and players never grow wider than the text.
+ */
+.essay-text > .essay-figure-block {
+	margin: var(--space-5) 0;
+	break-inside: avoid-page;
+}
+
+.essay-figure {
+	margin: 0;
+}
+
+.essay-figure :is(img, video) {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--radius-panel);
+}
+
+.essay-figure audio {
+	display: block;
+	width: 100%;
+}
+
+.essay-figure figcaption {
+	margin-top: var(--space-2);
+	font-size: var(--font-size-small);
+	color: var(--color-ink-muted);
+}
+
+.essay-figure figcaption p {
+	margin: 0 0 var(--space-1);
+	text-indent: 0;
+}
+
+.essay-figure-credit {
+	font-style: italic;
+}
+
+.essay-figure-youtube {
+	position: relative;
+	display: block;
+	color: var(--color-band-text);
+	text-decoration: none;
+}
+
+.essay-figure-youtube img {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.essay-figure-play {
+	position: absolute;
+	inset: auto var(--space-3) var(--space-3) var(--space-3);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+	padding: var(--space-2) var(--space-3);
+	background: var(--color-band);
+	border-radius: var(--radius-control);
+	font-weight: var(--font-weight-semibold);
+}
+
+.essay-figure-play-note {
+	font-size: var(--font-size-small);
+	font-weight: normal;
+}
+
+.essay-figure-youtube:focus-visible {
+	outline: 3px solid var(--color-focus-ring);
+	outline-offset: 2px;
+}
+
+.essay-figure-frame {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border: 0;
+	border-radius: var(--radius-panel);
+}
+
+.essay-figure-transcript {
+	margin-top: var(--space-3);
+	padding: var(--space-3) var(--space-4);
+	background: var(--color-surface);
+	border-radius: var(--radius-panel);
+}
+
+.essay-figure-transcript > summary {
+	cursor: pointer;
+	font-weight: var(--font-weight-semibold);
+}
+
+.essay-figure-transcript > p {
+	margin: var(--space-2) 0 0;
+}
+
+.essay-figure-missing {
+	padding: var(--space-3);
+	border: 1px dashed var(--color-line);
+	color: var(--color-ink-muted);
+}
+
+@media print {
+	.essay-figure :is(video, audio),
+	.essay-figure-removal,
+	.essay-figure-play-note {
+		display: none;
+	}
+
+	.essay-figure-transcript {
+		display: block;
+	}
+}
+
 .essay-list {
 	padding-left: var(--space-5);
 }
