@@ -14,18 +14,20 @@ export interface AccountPage {
 export const accountPages: readonly AccountPage[] = [
 	{ label: 'Overview', link: '/account' },
 	{ label: 'Profile and credit', link: '/profile' },
+	// Files and links the person sent the project (docs/uploads.md).
+	{ label: 'Your uploads', link: '/uploads' },
 	{ label: 'Sign-in and security', link: '/account/security', within: ['/profile/password'] },
 	{ label: 'Email and notifications', link: '/account/email' },
 	{ label: 'Your data', link: '/account/data', within: ['/profile/delete-account'] }
 ];
 
-/** Whether a path is one of the Account pages, so the sidebar shows the group. */
-export function isAccountPath(path: string): boolean {
-	return path === '/account' || path.startsWith('/account/') || path === '/profile' || path.startsWith('/profile/');
-}
-
 function matches(link: string, path: string): boolean {
 	return path === link || path.startsWith(`${link}/`);
+}
+
+/** Whether a path is one of the Account pages, so the sidebar shows the group. */
+export function isAccountPath(path: string): boolean {
+	return ['/account', '/profile', '/uploads'].some((link) => matches(link, path));
 }
 
 /** The entry for the page at this path. The most specific entry wins, so /profile/password is Sign-in and security. */

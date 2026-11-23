@@ -1,0 +1,38 @@
+profile: content/tribes/e/eastern-shoshone-tribe-of-the-wind-river-reservation.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Eastern Shoshone Northern Arapaho Wind River tribal court peacemaking video
+  outcome: not-found
+  reason: Results were Wyoming Public Media news stories, a court-of-appeals journal listing and NARF pages, with no video made by the tribes' court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Eastern Shoshone tribal court youtube video
+  outcome: not-found
+  reason: A result pointed to easternshoshone.org/videos/, but I did not open it, and the other results were news stories about tribal leadership disputes.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.wrtribalcourt.com/
+  query: 'Wind River tribal court site: embedded video, gallery, podcast, footer rights'
+  outcome: blocked
+  reason: The site returned a One moment, please page saying the request was being verified, so I did not read the content.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://easternshoshone.org/videos/
+  query: court or peacemaking videos
+  outcome: not-found
+  reason: Fetched with curl. Videos page has two YouTube videos, both Indian Days powwow videos by Powwow Central (checked by oEmbed); excluded as general culture. It links a YouTube channel and a Vimeo channel (vimeo.com/easternshoshonetribe) not opened.
+next_steps: Open vimeo.com/easternshoshonetribe and the tribe's YouTube channel UCgpU3ndWrttw_hnmg_n2fHA by hand. The shared Wind River court site wrtribalcourt.com was not fetched (first pass found it bot-blocked).

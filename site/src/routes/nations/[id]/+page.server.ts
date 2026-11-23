@@ -22,6 +22,7 @@ import { recognitionBadges } from '#lib/recognition-badges.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
+import { nationTileMapData } from '#lib/server/nations-map.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -711,6 +712,10 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 			text: 'land area outlines, simplified for a national map',
 			where: `retrieved ${geometry.landAreaSource.retrieved}`
 		});
+		sources.add('protomaps-basemap-openstreetmap', {
+			section: 'Map',
+			text: 'the map of places, roads and water under the land areas, where the browser can draw it'
+		});
 		const layout = layoutPresenceMap(geometry.frames, states, new Set(), zoomedPaths, {
 			focus: areas.map((area) => area.path),
 			closestZoom: landAreaClosestZoom
@@ -732,7 +737,8 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 		views: views.map((view, index) => ({ key: view.key, label: view.label, layout: shared.layouts[index], layers: view.layers })),
 		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en')),
 		region: region ? { name: `${region.name} Region`, link: `/nations/map#${regionAnchor(region.name)}` } : undefined,
-		landAreas: areas.map((area) => ({ name: area.name, kind: landAreaKindLabels[area.kind] }))
+		landAreas: areas.map((area) => ({ name: area.name, kind: landAreaKindLabels[area.kind] })),
+		tileMap: areas.length > 0 ? nationTileMapData(areas.map((area) => area.identifier)) : undefined
 	};
 }
 

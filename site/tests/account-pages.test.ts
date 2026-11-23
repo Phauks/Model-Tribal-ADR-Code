@@ -49,6 +49,7 @@ describe('the Your account group in the sidebar', () => {
 		expect(isAccountPath('/profile/edit')).toBe(true);
 		expect(isAccountPath('/accounts')).toBe(false);
 		expect(isAccountPath('/following')).toBe(false);
+		expect(isAccountPath('/uploads')).toBe(true);
 	});
 
 	it('marks the most specific entry as the current page', () => {

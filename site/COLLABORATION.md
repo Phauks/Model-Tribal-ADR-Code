@@ -132,6 +132,10 @@ A contributor form sent from `/forms/<form>` opens a request (kind `contribute`,
 
 On the request's page in the workspace, editors see each form, open the filled form (while the site still has that exact version), download the stored copy, and file the forms under a filing number, which is logged.
 
+## Files people send
+
+Anyone signed in can send files on `/uploads/send` and follow them on `/uploads` (Your uploads, also in the account menu). The lead author and editors review them on `/workspace/uploads` (permission `review-uploads`). Files arrive in 10 MB pieces into the private bucket under `uploads/<identifier>/`, are checked by type and for hidden content as they arrive, and wait for a reviewer, who files them, keeps them for reference, or says why they were not used. A YouTube link can stand in for a video. Filed files are served at `/files/<reference>/<name>`. The code is in `src/lib/uploads.ts`, `src/lib/server/uploads.ts`, `src/lib/server/upload-checks.ts` and `src/lib/server/upload-serving.ts`; the design is docs/uploads.md and decision record 0038.
+
 ## How sign-in works
 
 The "Sign in" link in the masthead of every page, and "Co-author sign-in" in the footer, start here. The design follows the lead author's Grimbinder project (`worker/account/` there).
@@ -252,9 +256,10 @@ Account settings are separate from display settings (decision record 0045; site/
 
 - **Overview** (`/account`): one line on where each page stands.
 - **Profile and credit** (`/profile`): the contributor profile, picture and credit, as before (docs/contributor-profiles.md).
+- **Your uploads** (`/uploads`): files and links the person sent the project (docs/uploads.md).
 - **Sign-in and security** (`/account/security`): the password (`/profile/password`) and every browser signed in to the account, named by `sessions.device`, with "Sign out" for each other one and "Sign out everywhere else". A session is named only by the first 16 characters of its stored hash; the token is never shown. Two-step sign-in and backup codes go here when they are built.
 - **Email and notifications** (`/account/email`): how often to email about followed pages, moved from the Following page.
-- **Your data** (`/account/data`): "Download my data" (`/account/data/download`, one JSON file with the account, workspace role, profile and every confirmed version, followed pages, email choice, the settings copy and the signed-in browsers; never the password or its hash) and the link to delete the account (`/profile/delete-account`). Requests are not tied to accounts, so they are not in the file.
+- **Your data** (`/account/data`): "Download my data" (`/account/data/download`, one JSON file with the account, workspace role, profile and every confirmed version, files and links sent (their details, not the files), followed pages, email choice, the settings copy and the signed-in browsers; never the password or its hash) and the link to delete the account (`/profile/delete-account`). Requests are not tied to accounts, so they are not in the file.
 - **Settings on every device** (`/account/settings`): GET, PUT and DELETE of the `account_settings` copy, for the site's own script (`src/lib/settings-everywhere.ts`) only. It answers 401 instead of sending people to sign in. The account menu's script asks for the copy at most every ten minutes and applies it when it is newer than the one this device last saw, and sends each change made in Settings or with the theme button.
 
 A new account choice goes on these pages when other people see it or the project keeps it or acts on it; a choice that only changes what one screen shows goes in Settings. Settings for a workspace tool, such as the inbox, stay beside the tool.
@@ -296,4 +301,5 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - A filings list in the workspace, and emailing a signer their copy of a form (waits on a domain).
 - Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly.
+- A virus scan for files people send, and comments on them from nation reviewers (docs/uploads.md, "Not built yet").
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

@@ -10,7 +10,7 @@
 <h2>Download a copy</h2>
 <p>
 	One file with your account’s email address and sign-in dates, your profile answers and every version you
-	confirmed, your credit choices, the pages you follow and your email setting, and where you are signed in. Your
+	confirmed, your credit choices, the files and links you sent, the pages you follow and your email setting, and where you are signed in. Your
 	password is never in it.
 </p>
 <p><a class="button button-quiet" href="/account/data/download" download>Download my data</a></p>

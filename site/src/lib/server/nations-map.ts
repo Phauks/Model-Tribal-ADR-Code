@@ -1,4 +1,11 @@
 import geometry from 'virtual:map-geometry';
+import type { FeatureCollection, MultiPolygon, Polygon } from 'geojson';
+import { feature } from 'topojson-client';
+import type { GeometryCollection, Topology } from 'topojson-specification';
+import regionsTopology from '../../../geography/bureau-of-indian-affairs-regions.json';
+import landAreaPoints from '../../../geography/census-land-area-points-2020.json';
+import tileManifest from '../../../geography/map-tiles.json';
+import withdrawnList from '../../../geography/withdrawn-land-areas.json';
 import { nations } from '#lib/server/content.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { displayName, regionAnchor, stateName } from '#lib/nation-labels.ts';
@@ -10,6 +17,7 @@ import {
 	type LandAreaCount,
 	type NationsMapCounts
 } from '#lib/nations-map-drawing.ts';
+import type { LandAreaKind } from '#lib/map-geometry.ts';
 
 /** A nation as a map table lists it, with its recognition badges (none for no federal recognition). */
 interface ListedNation {
@@ -164,6 +172,14 @@ function addLandAreaSources(records: ReturnType<typeof nations>, sources: Source
 		text: 'reservations, trust lands and statistical areas, simplified for a national map',
 		where: `retrieved ${geometry.landAreaSource.retrieved}`
 	});
+	sources.add('protomaps-basemap-openstreetmap', {
+		section: 'Basemap',
+		text: 'the map of places, roads and water under each view, where the browser can draw it'
+	});
+	sources.add('census-cartographic-boundary-states-2020', {
+		section: 'State and territory outlines',
+		text: 'state and territory outlines on the zoomable map'
+	});
 }
 
 /**
@@ -193,3 +209,82 @@ export function landAreasView() {
 }
 
 export type LandAreaRow = ReturnType<typeof landAreasView>['rows'][number];
+
+/** Each land area's label point, bounds and size (written by tools/build-map-tiles.mjs). */
+interface LandAreaPoint {
+	code: string;
+	name: string;
+	kind: LandAreaKind;
+	square_kilometers: number;
+	point: [number, number];
+	bounds: [number, number, number, number];
+}
+
+const withdrawnLandAreas = new Set<string>(withdrawnList.codes);
+
+/**
+ * What the map drawn with MapLibre needs besides its tiles (decision record 0039), served from /nations/map/tile-map.json: the tile sets' names, each state's shade and table row, the regions' outlines and rows, and each land area's label, dot, bounds and row. Names come from the nation records, so they are never baked into the tiles.
+ */
+export function tileMapData() {
+	const page = nationsMapPage();
+	const rowStates = new Set(page.stateRows.map((row) => row.code));
+	const states = Object.fromEntries(
+		page.counts.states.map((state) => [state.code, { countClass: state.countClass, anchor: rowStates.has(state.code) ? `state-${state.code}` : undefined }])
+	);
+	const topology = regionsTopology as unknown as Topology<{ regions: GeometryCollection<{ name: string }> }>;
+	const regions = feature(topology, topology.objects.regions) as FeatureCollection<Polygon | MultiPolygon, { name: string }>;
+	const regionAnchors = new Map(page.regionRows.map((row) => [row.name, row.anchor]));
+	const byArea = nationsByLandArea(nations());
+	return {
+		tiles: tileSetNames,
+		states,
+		regions: {
+			type: 'FeatureCollection' as const,
+			features: regions.features.map((region) => ({
+				type: 'Feature' as const,
+				properties: { name: region.properties.name, anchor: regionAnchors.get(region.properties.name) ?? regionAnchor(region.properties.name) },
+				geometry: region.geometry
+			}))
+		},
+		areas: tileMapAreas(byArea, () => true)
+	};
+}
+
+/** The tile sets' names, which change whenever their files do. */
+const tileSetNames = { landAreas: tileManifest.landAreas.set, basemap: tileManifest.basemap.set, maximumZoom: tileManifest.basemap.maxZoom };
+
+/** Each land area's dot, box and label for the tiled map, for the areas the test keeps. */
+function tileMapAreas(byArea: Map<string, ListedNation[]>, keep: (code: string) => boolean) {
+	const groups = new Map<string, string>(landAreaGroups.flatMap((group) => group.kinds.map((kind) => [kind, group.key] as [string, string])));
+	return (landAreaPoints.areas as LandAreaPoint[])
+		.filter((area) => !withdrawnLandAreas.has(area.code) && keep(area.code))
+		.map((area) => {
+			const linked = byArea.get(area.code) ?? [];
+			return {
+				code: area.code,
+				// One nation: its name, which readers know; several or none: the Census Bureau's name for the area.
+				label: linked.length === 1 ? linked[0].name : area.name,
+				group: groups.get(area.kind) ?? 'statistical',
+				squareKilometers: area.square_kilometers,
+				point: area.point,
+				bounds: area.bounds,
+				anchor: landAreaAnchor(area.code),
+				nations: linked.length
+			};
+		});
+}
+
+/**
+ * The tiled map's data for one nation's page: only the land areas its entry names, labeled with the Census Bureau's names, since the page is already about the nation. No states or regions: the page's other views stay drawn.
+ */
+export function nationTileMapData(codes: string[]): TileMapData {
+	const wanted = new Set(codes);
+	return {
+		tiles: tileSetNames,
+		states: {},
+		regions: { type: 'FeatureCollection', features: [] },
+		areas: tileMapAreas(new Map(), (code) => wanted.has(code))
+	};
+}
+
+export type TileMapData = ReturnType<typeof tileMapData>;

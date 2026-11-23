@@ -1,0 +1,38 @@
+profile: content/tribes/p/pit-river-tribe.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Pit River Tribe Peacemaker Program video
+  outcome: not-found
+  reason: Results were the tribal code chapter on the Youth Reclamation Program and NARF and NCORJ pages; a Yahoo news story on youths filmmaking about Wintu and Pit River elders appeared but I did not open it.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Pit River Tribe youtube video tribal court peacemaker
+  outcome: not-found
+  reason: Results were the same tribal code pages plus general culture and documentary items, none made by the tribe's court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://pitrivertribe.gov/
+  query: nation website for peacemaker or court video
+  outcome: error
+  reason: 'Not fetched: the WebFetch budget for this session ran out before I reached it.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://pitrivertribe.gov/
+  query: Peacemaker Program video
+  outcome: blocked
+  reason: Fetched with curl. Returned a 'One moment, please' bot-check page; not bypassed.
+next_steps: A person should open pitrivertribe.gov by hand for Youth Reclamation Program or Peacemaker Program media (check for minors).

@@ -134,7 +134,7 @@ export async function deleteAccountSettingsCopy(database: D1Database, accountIde
  * under This device.
  */
 export async function accountDataExport(database: D1Database, account: SignedInAccount): Promise<Record<string, unknown>> {
-	const [accountRow, person, profile, versions, follows, followSettings, settingsCopy, sessions] = await Promise.all([
+	const [accountRow, person, profile, versions, follows, followSettings, settingsCopy, sessions, uploads] = await Promise.all([
 		database
 			.prepare(
 				'SELECT email, email_verified_at, password_changed_at, created_at, last_signed_in_at, password_hash IS NOT NULL AS has_password FROM accounts WHERE identifier = ?'
@@ -163,7 +163,15 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 			.bind(account.subject)
 			.first<Record<string, unknown>>(),
 		accountSettingsCopy(database, account.subject),
-		signedInDevices(database, account.subject, undefined)
+		signedInDevices(database, account.subject, undefined),
+		// Files and links sent to the project (docs/uploads.md); the files themselves are on the Your uploads page.
+		database
+			.prepare(
+				`SELECT reference, kind, status, file_name, media_type, size_bytes, youtube_identifier, title, description, origin, received_at
+				 FROM uploads WHERE account_identifier = ? ORDER BY received_at`
+			)
+			.bind(account.subject)
+			.all<Record<string, unknown>>()
 	]);
 	return {
 		about:
@@ -189,6 +197,7 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 			creditLine: row.credit_line,
 			answers: JSON.parse(row.snapshot) as unknown
 		})),
+		uploads: uploads.results,
 		followedPages: follows.results,
 		emailAboutFollowedPages: followSettings ?? { email: 'daily' },
 		settingsOnEveryDevice: settingsCopy ?? null,
