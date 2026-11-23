@@ -110,6 +110,31 @@ export const ageGroupLabels: Record<AgeGroup, string> = {
 /** Credit forms open to people under 18: a description, a chosen name, or none. */
 export const minorCreditForms: readonly CreditForm[] = ['role', 'pseudonym', 'none'];
 
+/**
+ * Specialties a person may choose to show with their name on the People page
+ * and their own page (lead author, 2026-11-23). Optional; "Other" is written
+ * in the person's own words.
+ */
+export const specialties = ['peacemaking', 'mediation', 'tribal-courts', 'tribal-codes', 'language', 'research'] as const;
+export type Specialty = (typeof specialties)[number];
+
+export const specialtyLabels: Record<Specialty, string> = {
+	peacemaking: 'Peacemaking',
+	mediation: 'Mediation',
+	'tribal-courts': 'Tribal courts',
+	'tribal-codes': 'Tribal codes and constitutions',
+	language: 'Language and translation',
+	research: 'Research and sources'
+};
+
+/** The specialties to show, in list order, then the person's own words; an older version without them shows none. */
+export function specialtiesShown(answers: Pick<ProfileAnswers, 'specialties' | 'specialtyOther'>): string[] {
+	const chosen = new Set(answers.specialties ?? []);
+	const shown: string[] = specialties.filter((specialty) => chosen.has(specialty)).map((specialty) => specialtyLabels[specialty]);
+	if (answers.specialtyOther) shown.push(answers.specialtyOther);
+	return shown;
+}
+
 export const profileStatuses = ['draft', 'submitted', 'welcomed', 'declined'] as const;
 export type ProfileStatus = (typeof profileStatuses)[number];
 
@@ -144,6 +169,9 @@ export interface ProfileAnswers {
 	languages: string | null;
 	organization: string | null;
 	interests: Interest[];
+	/** Shown with the person's name on the website, when they have a contributor page. */
+	specialties: Specialty[];
+	specialtyOther: string | null;
 	availability: Availability | null;
 	creditForm: CreditForm | null;
 	creditName: string | null;
@@ -168,6 +196,8 @@ export const emptyAnswers: ProfileAnswers = {
 	languages: null,
 	organization: null,
 	interests: [],
+	specialties: [],
+	specialtyOther: null,
 	availability: null,
 	creditForm: null,
 	creditName: null,

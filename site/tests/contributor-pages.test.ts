@@ -1,15 +1,17 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { emptyAnswers, pageNameOf, slugOf, type ProfileAnswers } from '#lib/contributors.ts';
-import { contributorPage, contributorPictureKey } from '#lib/server/contributor-pages.ts';
+import { contributorPage, contributorPictureKey, peopleDirectory } from '#lib/server/contributor-pages.ts';
 import {
 	confirmProfile,
 	confirmedCredits,
 	deleteProfile,
 	profileBySubject,
 	saveAnswers,
+	setBoardMembership,
 	type SignedInAccount
 } from '#lib/server/contributor-profiles.ts';
+import { readProfileForm } from '#lib/server/contributor-form.ts';
 import { cleanJpeg, removePicture, savePicture } from '#lib/server/profile-pictures.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
 import { testDatabase } from './database.ts';
@@ -211,5 +213,43 @@ describe('profile pictures', () => {
 		await savePicture(database, bucket, (await profileBySubject(database, account.subject))!, cleaned.bytes);
 		await deleteProfile(database, (await profileBySubject(database, account.subject))!, bucket);
 		expect(bucket.files.size).toBe(0);
+	});
+});
+
+describe('the People page', () => {
+	it('lists people with a public page, with the board marked and specialties from the confirmed version', async () => {
+		const profile = await confirmed({ ...adult, specialties: ['peacemaking', 'tribal-courts'], specialtyOther: 'Gaming law' });
+		const other: SignedInAccount = { subject: 'account-other', email: 'other@example.org', name: 'Other' };
+		await saveAnswers(database, other, { ...adult, givenName: 'Grace', familyName: 'Hopper', creditForm: 'role', creditRole: 'A court clerk' });
+		await confirmProfile(database, (await profileBySubject(database, other.subject))!);
+		await setBoardMembership(database, profile, true, null, lead);
+
+		const [entry, ...rest] = await peopleDirectory(database);
+		expect(rest).toEqual([]);
+		expect(entry).toMatchObject({
+			slug: 'ada-lovelace',
+			name: 'Ada Lovelace',
+			boardMember: true,
+			boardOffice: null,
+			specialties: ['peacemaking', 'tribal-courts'],
+			specialtyOther: 'Gaming law',
+			essayCount: 0
+		});
+
+		// An unconfirmed change of specialties does not show until it is confirmed.
+		await saveAnswers(database, account, { ...adult, specialties: ['language'] });
+		expect((await peopleDirectory(database))[0].specialties).toEqual(['peacemaking', 'tribal-courts']);
+		expect((await contributorPage(database, 'ada-lovelace'))?.specialties).toEqual(['Peacemaking', 'Tribal courts', 'Gaming law']);
+	});
+
+	it('reads specialties from the form, keeping only the listed ones', () => {
+		const form = new FormData();
+		form.append('specialties', 'peacemaking');
+		form.append('specialties', 'not-a-specialty');
+		form.append('specialtyOther', '  Gaming law ');
+		const result = readProfileForm(form, []);
+		if (!result.ok) throw new Error('The form was refused.');
+		expect(result.answers.specialties).toEqual(['peacemaking']);
+		expect(result.answers.specialtyOther).toBe('Gaming law');
 	});
 });

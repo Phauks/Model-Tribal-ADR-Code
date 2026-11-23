@@ -11,6 +11,7 @@ import {
 	creditForms,
 	interests,
 	nationAnswers,
+	specialties,
 	type NationAffiliation,
 	type ProfileAnswers
 } from '#lib/contributors.ts';
@@ -108,6 +109,12 @@ export function readProfileForm(form: FormData, nations: readonly NationChoice[]
 			.filter((value): value is (typeof interests)[number] =>
 				(interests as readonly unknown[]).includes(value)
 			),
+		specialties: form
+			.getAll('specialties')
+			.filter((value): value is (typeof specialties)[number] =>
+				(specialties as readonly unknown[]).includes(value)
+			),
+		specialtyOther: text('specialtyOther', 100),
 		availability: choice(availabilities, formText(form, 'availability')),
 		creditForm: choice(creditForms, formText(form, 'creditForm')),
 		creditName: text('creditName', 200),

@@ -11,6 +11,7 @@ import {
 	defaultCreditSection,
 	pageNameOf,
 	slugOf,
+	specialties,
 	type AgeGroup,
 	type Availability,
 	type ContactMethod,
@@ -19,7 +20,8 @@ import {
 	type Interest,
 	type NationAnswer,
 	type ProfileAnswers,
-	type ProfileStatus
+	type ProfileStatus,
+	type Specialty
 } from '#lib/contributors.ts';
 import { roleLabels, type Role } from '#lib/permissions.ts';
 import { eventStatement } from './events.ts';
@@ -56,6 +58,10 @@ export interface Profile {
 	/** The person's picture in the private bucket. */
 	pictureKey: string | null;
 	pictureUpdatedAt: string | null;
+	/** On the nonprofit's board, as the lead author marks it; shown first on the People page. */
+	boardMember: boolean;
+	/** The board office, such as President, once the lead author sets it. */
+	boardOffice: string | null;
 	/** Whether the person changed anything since they last confirmed. */
 	hasUnconfirmedChanges: boolean;
 }
@@ -95,6 +101,10 @@ interface ProfileRow {
 	public_slug: string | null;
 	picture_key: string | null;
 	picture_updated_at: string | null;
+	specialties: string;
+	specialty_other: string | null;
+	board_member: number;
+	board_office: string | null;
 }
 
 async function completeProfile(database: D1Database, row: ProfileRow): Promise<Profile> {
@@ -130,6 +140,10 @@ async function completeProfile(database: D1Database, row: ProfileRow): Promise<P
 			languages: row.languages,
 			organization: row.organization,
 			interests: chosen.results.map((item) => item.interest),
+			specialties: (JSON.parse(row.specialties) as string[]).filter((value): value is Specialty =>
+				(specialties as readonly string[]).includes(value)
+			),
+			specialtyOther: row.specialty_other,
 			availability: row.availability,
 			creditForm: row.credit_form,
 			creditName: row.credit_name,
@@ -151,6 +165,8 @@ async function completeProfile(database: D1Database, row: ProfileRow): Promise<P
 		publicSlug: row.public_slug,
 		pictureKey: row.picture_key,
 		pictureUpdatedAt: row.picture_updated_at,
+		boardMember: Boolean(row.board_member),
+		boardOffice: row.board_office,
 		hasUnconfirmedChanges: row.confirmed_at === null || row.updated_at > row.confirmed_at
 	};
 }
@@ -243,6 +259,8 @@ export async function saveAnswers(
 		answers.languages,
 		answers.organization,
 		answers.availability,
+		JSON.stringify(answers.specialties),
+		answers.specialtyOther,
 		answers.creditForm,
 		answers.creditName,
 		answers.creditRole,
@@ -253,7 +271,7 @@ export async function saveAnswers(
 		answers.biographyInCredits ? 1 : 0
 	];
 	const columns = `given_name, family_name, native_name, phone, preferred_contact, thirteen_or_older, age_group, nation_answer,
-		background, languages, organization, availability, credit_form, credit_name, credit_role,
+		background, languages, organization, availability, specialties, specialty_other, credit_form, credit_name, credit_role,
 		credit_pseudonym, credit_in_book, credit_on_website, biography, biography_in_credits`;
 
 	const write = existing
@@ -564,6 +582,27 @@ export async function setCreditSection(
 		eventStatement(database, {
 			personIdentifier: changedBy.identifier,
 			action: section ? `Credit placed in ${section}` : 'Credit section cleared',
+			targetKind: 'profile',
+			targetIdentifier: profile.identifier
+		})
+	]);
+}
+
+/** Marks the person as on the nonprofit's board or not, with their office if set. Lead author only. */
+export async function setBoardMembership(
+	database: D1Database,
+	profile: Profile,
+	member: boolean,
+	office: string | null,
+	changedBy: SignedInPerson
+): Promise<void> {
+	await database.batch([
+		database
+			.prepare('UPDATE contributor_profiles SET board_member = ?, board_office = ? WHERE identifier = ?')
+			.bind(member ? 1 : 0, member ? office : null, profile.identifier),
+		eventStatement(database, {
+			personIdentifier: changedBy.identifier,
+			action: member ? `Marked as a board member${office ? ` (${office})` : ''}` : 'Marked as not on the board',
 			targetKind: 'profile',
 			targetIdentifier: profile.identifier
 		})

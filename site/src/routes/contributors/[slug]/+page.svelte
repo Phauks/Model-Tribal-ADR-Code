@@ -12,7 +12,7 @@
 </svelte:head>
 
 <div class="reading">
-	<p class="small"><a href="/contributors">Contributors</a></p>
+	<p class="small"><a href="/people">People</a></p>
 	<header class="person">
 		{#if data.picture}
 			<img class="picture" src={data.picture} alt="" width="160" height="160" />
@@ -26,6 +26,12 @@
 						{#if nation.path}<a href={nation.path}>{nation.name}</a>{:else}{nation.name}{/if}
 					{/each}
 				</p>
+			{/if}
+			{#if data.board}<p class="board">{data.board}</p>{/if}
+			{#if data.specialties.length > 0}
+				<ul class="specialties" aria-label="Specialties">
+					{#each data.specialties as specialty (specialty)}<li>{specialty}</li>{/each}
+				</ul>
 			{/if}
 			<p class="small muted">
 				Credited under {data.sectionHeading}{#if data.since}, since {data.since}{/if}.
@@ -75,6 +81,27 @@
 
 	.nations {
 		margin: var(--space-1) 0 0;
+	}
+
+	.board {
+		margin: var(--space-1) 0 0;
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.specialties {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1);
+		list-style: none;
+		margin: var(--space-2) 0 0;
+		padding: 0;
+	}
+
+	.specialties li {
+		padding: 0 var(--space-2);
+		border: 1px solid var(--color-line);
+		border-radius: 999px;
+		font-size: var(--font-size-small);
 	}
 
 	.picture {

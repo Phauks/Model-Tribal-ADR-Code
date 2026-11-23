@@ -48,6 +48,8 @@ export const load: PageServerLoad = async ({ params, setHeaders }) => {
 			path: nation.identifier ? (nationPages.get(nation.identifier) ?? null) : null
 		})),
 		biography: page.biography,
+		specialties: page.specialties,
+		board: page.boardMember ? (page.boardOffice ? `Board of directors, ${page.boardOffice}` : 'Board of directors') : null,
 		picture: page.pictureVersion ? `/contributors/${page.slug}/picture?v=${encodeURIComponent(page.pictureVersion)}` : null,
 		since: page.since,
 		essays: page.essays,

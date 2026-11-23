@@ -14,6 +14,8 @@
 		interests,
 		nationAnswerLabels,
 		nationAnswers,
+		specialties,
+		specialtyLabels,
 		type ProfileAnswers
 	} from '#lib/contributors.ts';
 	import type { PageProps } from './$types';
@@ -44,6 +46,8 @@
 		set('languages', answers.languages);
 		set('organization', answers.organization);
 		values.interests = answers.interests.join('\n');
+		values.specialties = (answers.specialties ?? []).join('\n');
+		set('specialtyOther', answers.specialtyOther);
 		set('availability', answers.availability);
 		set('creditForm', answers.creditForm);
 		set('creditName', answers.creditName);
@@ -311,6 +315,36 @@
 				value={value('organization')}
 			/>
 		</div>
+		<fieldset aria-describedby="specialties-hint">
+			<legend>Your specialties (optional)</legend>
+			<p class="hint" id="specialties-hint">
+				If you have a page on this website, these are shown with your name there and on the People page.
+			</p>
+			{#each specialties as option (option)}
+				<div class="choice">
+					<input
+						type="checkbox"
+						id="specialties-{option}"
+						name="specialties"
+						value={option}
+						checked={chosen('specialties', option)}
+					/>
+					<label for="specialties-{option}">{specialtyLabels[option]}</label>
+				</div>
+			{/each}
+			<div class="field">
+				<label for="specialtyOther">Other, in your own words</label>
+				{@render fieldError('specialtyOther')}
+				<input
+					type="text"
+					id="specialtyOther"
+					name="specialtyOther"
+					maxlength="100"
+					value={value('specialtyOther')}
+					aria-invalid={errors.specialtyOther ? 'true' : undefined}
+				/>
+			</div>
+		</fieldset>
 	</fieldset>
 
 	<fieldset id="help">
