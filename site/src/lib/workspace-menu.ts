@@ -12,6 +12,7 @@ export type WorkspacePageName =
 	| 'reviews'
 	| 'contributors'
 	| 'people'
+	| 'nation-teams'
 	| 'access'
 	| 'activity';
 
@@ -32,6 +33,7 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'reviews', label: 'Reviews', link: '/workspace/reviews' },
 	{ name: 'contributors', label: 'Contributors', link: '/workspace/contributors', needs: 'read-contributors' },
 	{ name: 'people', label: 'People', link: '/workspace/people', needs: 'manage-people' },
+	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', needs: 'manage-people' },
 	{ name: 'access', label: 'Access', link: '/workspace/access', needs: 'manage-people' },
 	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', needs: 'manage-people' }
 ];
