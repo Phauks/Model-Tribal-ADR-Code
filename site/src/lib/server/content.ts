@@ -194,6 +194,7 @@ export interface NationRecord {
 	})[];
 	official_images?: (CitedFact & OfficialImageRecord)[];
 	languages?: (CitedFact & { name?: string })[];
+	population?: (CitedFact & { count?: number; kind?: string })[];
 	federal_administration?: CitedFact & {
 		bureau_of_indian_affairs_region?: string;
 		bureau_of_indian_affairs_agency?: string;
