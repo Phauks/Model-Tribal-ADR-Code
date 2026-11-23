@@ -38,6 +38,8 @@
 	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
 	import EssayAttestDialog from '#lib/components/essays/EssayAttestDialog.svelte';
 	import EssayComments from '#lib/components/essays/EssayComments.svelte';
+	import EssayShareDialog from '#lib/components/essays/EssayShareDialog.svelte';
+	import { inReviewText, openRequestsOn, waitsOn, type ReviewRequest } from '#lib/essays/review-requests.ts';
 	import { commentAt, commentMarks, showCommentMarks, type CommentMark } from '#lib/essays/comment-marks.ts';
 	import { findQuote, quoteAt, type TextQuote } from '#lib/essays/comment-anchors.ts';
 	import type { EssayComment } from '#lib/essays/comments.ts';
@@ -58,6 +60,7 @@
 		canEdit,
 		autoSave = false,
 		live = false,
+		startAt = null,
 		onsaved
 	}: {
 		identifier: string;
@@ -68,6 +71,8 @@
 		autoSave?: boolean;
 		/** Join the essay's live editing room when it can be reached. */
 		live?: boolean;
+		/** A section's heading id to open the editor at, such as one asked to be reviewed. */
+		startAt?: string | null;
 		/** Called with the version number after each save. */
 		onsaved?: (version: number) => void;
 	} = $props();
@@ -197,6 +202,65 @@
 		attestations = updated;
 		attestationsLoaded = true;
 		if (view) setAttestationLines(view, { attestations: updated, loaded: true });
+	}
+
+	/* Sharing and review requests (review-requests.ts) ---------------------- */
+
+	let shareDialog: ReturnType<typeof EssayShareDialog> | undefined = $state();
+	let reviewRequests = $state<ReviewRequest[]>([]);
+	let reviewingPerson = $state<string | null>(null);
+	let reviewProblem = $state('');
+	const wholeDraftReviews = $derived(openRequestsOn(reviewRequests, null));
+
+	async function loadReviewRequests(): Promise<void> {
+		const response = await fetch(`/workspace/essays/${identifier}/sharing`).catch(() => null);
+		if (!response?.ok) return;
+		const body = (await response.json()) as { requests: ReviewRequest[]; you: string };
+		reviewingPerson = body.you;
+		reviewRequestsChanged(body.requests);
+	}
+
+	function reviewRequestsChanged(updated: ReviewRequest[]): void {
+		reviewRequests = updated;
+		if (view) setAttestationLines(view, { requests: updated, you: reviewingPerson });
+	}
+
+	async function finishReview(request: string): Promise<void> {
+		reviewProblem = '';
+		const response = await fetch(`/workspace/essays/${identifier}/sharing?request=${encodeURIComponent(request)}`, {
+			method: 'PATCH',
+			headers: { 'content-type': 'application/json' },
+			body: JSON.stringify({ done: true })
+		}).catch(() => null);
+		const body = (await response?.json().catch(() => null)) as { requests?: ReviewRequest[]; message?: string } | null;
+		if (!response?.ok || !body?.requests) {
+			reviewProblem = body?.message || 'That did not go through. Try again.';
+			return;
+		}
+		reviewRequestsChanged(body.requests);
+	}
+
+	function openShare(): void {
+		if (!view) return;
+		const doc = view.state.doc;
+		const sections = essaySections(doc);
+		const block = view.state.selection.$from.index(0);
+		const here = sections.filter((candidate) => candidate.index <= block).at(-1);
+		void shareDialog?.show({ sections: sections.map(({ slug, title, level }) => ({ slug, title, level })), version: basedOn, section: here?.slug });
+	}
+
+	/** Puts the cursor at a section's heading and scrolls it into view. */
+	function goToSection(slug: string): void {
+		if (!view) return;
+		const doc = view.state.doc;
+		const found = essaySections(doc).find((candidate) => candidate.slug === slug);
+		if (!found) return;
+		let start = 0;
+		doc.forEach((_node, offset, index) => {
+			if (index === found.index) start = offset;
+		});
+		view.dispatch(view.state.tr.setSelection(TextSelection.create(doc, start + 1)).scrollIntoView());
+		(view.domAtPos(start + 1).node as HTMLElement | null)?.parentElement?.scrollIntoView({ block: 'center' });
 	}
 
 	/** Each section's SHA-256 as the text stands, so the lines can say when it changed since an attestation. */
@@ -760,7 +824,7 @@
 				checkMarks(),
 				commentMarks(),
 				componentFrames(),
-				attestationLines((slug) => void openAttest(slug)),
+				attestationLines({ attest: (slug) => void openAttest(slug), finishReview: (request) => void finishReview(request) }),
 				tracker
 			]
 		});
@@ -793,6 +857,7 @@
 		});
 		describe(view.state);
 		if (attestationsLoaded) setAttestationLines(view, { attestations, loaded: true });
+		setAttestationLines(view, { requests: reviewRequests, you: reviewingPerson });
 		refreshHashesSoon();
 		placeComments();
 	}
@@ -1143,6 +1208,9 @@
 		dirty = false;
 		void loadAttestations();
 		void loadComments();
+		void loadReviewRequests();
+		const chosenSection = untrack(() => startAt);
+		if (chosenSection) setTimeout(() => goToSection(chosenSection), 300);
 		if (untrack(() => live)) void joinRoom();
 		const kept = canEdit ? localDraft(identifier) : null;
 		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
@@ -1293,6 +1361,7 @@
 		{/if}
 		{#if mode === 'rich'}
 			<div role="group" aria-label="Comments">
+				<button type="button" class="tool" onclick={openShare} title="Who can open the draft, and asking for review">Share</button>
 				<button type="button" class="tool" disabled={!active.hasSelection} title="Comment on the selected words (Ctrl+Alt+M)" onclick={startComment}>Comment</button>
 				<button type="button" class="tool" aria-pressed={showComments} onclick={toggleComments}
 					>Comments{#if comments.some((comment) => comment.threadIdentifier === null && !comment.resolvedAt)}{' '}({comments.filter((comment) => comment.threadIdentifier === null && !comment.resolvedAt).length}){/if}</button
@@ -1375,6 +1444,15 @@
 			</p>
 		</div>
 	{/if}
+	{#each wholeDraftReviews as request (request.identifier)}
+		<div class="notice in-review" role="note">
+			<p>
+				<strong>The whole draft is in review</strong>{inReviewText(request).replace(/^In review/, '')}{request.message ? `: “${request.message}”` : '.'}
+				{#if waitsOn(request, reviewingPerson)}<button type="button" class="button button-quiet" onclick={() => finishReview(request.identifier)}>Done reviewing</button>{/if}
+			</p>
+		</div>
+	{/each}
+	{#if reviewProblem}<p class="field-error" role="alert">{reviewProblem}</p>{/if}
 	{#if figureFileNotice && mode === 'rich'}
 		<div class="notice" role="note"><p>{figureFileNotice}</p></div>
 	{/if}
@@ -1465,6 +1543,7 @@
 </div>
 
 <EssayFigureDialog bind:this={figureDialog} essay={identifier} onadd={addFigure} />
+<EssayShareDialog bind:this={shareDialog} essay={identifier} onchange={reviewRequestsChanged} />
 <EssayAttestDialog bind:this={attestDialog} essay={identifier} {attestations} you={attestingPerson} yourRole={attestingRole} {canWriteOrEdit} onchange={attestationsChanged} />
 
 <dialog bind:this={pickerDialog} class="picker" onclose={() => (picker = null)} aria-labelledby="picker-heading">
@@ -1696,6 +1775,31 @@
 
 	.editor-area :global(.ProseMirror > .essay-component.is-current::before) {
 		color: var(--color-link);
+	}
+
+	/* Open requests to review a section, above who attested to it (attestation-lines.ts). */
+	.editor-area :global(.essay-in-review) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+		margin: var(--space-3) 0 0;
+		padding: var(--space-1) var(--space-2);
+		border: 1px solid var(--color-line);
+		border-left: 3px solid var(--color-link);
+		border-radius: var(--radius-panel);
+		background: var(--color-surface);
+		font-size: var(--font-size-small);
+		font-style: normal;
+		text-indent: 0;
+	}
+
+	.editor-area :global(.essay-in-review strong) {
+		color: var(--color-link);
+	}
+
+	.in-review {
+		border-left: 3px solid var(--color-link);
 	}
 
 	/* Who attested to each section, under its heading (attestation-lines.ts). */

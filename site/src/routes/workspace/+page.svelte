@@ -36,6 +36,15 @@
 	</div>
 {/if}
 
+{#if data.reviewRequestsForYou > 0}
+	<div class="notice" role="note">
+		<p>
+			{data.reviewRequestsForYou === 1 ? 'One draft or section is' : `${data.reviewRequestsForYou} drafts or sections are`} waiting for your review.
+			<a href="/workspace/review-requests">See your review requests</a>
+		</p>
+	</div>
+{/if}
+
 {#if data.ownNation}
 	<section class="panel">
 		<h2>Your nation’s record</h2>
