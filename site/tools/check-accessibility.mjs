@@ -1,6 +1,6 @@
 // Runs axe-core on every built page, in the light and the dark theme
 // (site/DESIGN.md, section 9). Run from site/ after `npm run build`:
-//   node tools/check-accessibility.mjs [--pages /,/nations/map] [--workers 2]
+//   node tools/check-accessibility.mjs [--pages /,/nations/map] [--workers 2] [--shard 1/4]
 //
 // The prerendered pages are served from the build output by a small local
 // server and opened in Chromium through Playwright. Each page is checked
@@ -17,6 +17,9 @@
 // second failure is reported as a problem. Requests to other hosts are blocked
 // so the page's load event depends only on the build. If no page finishes for
 // several minutes the check stops with the pages it was working on.
+//
+// --shard K/N (or ACCESSIBILITY_SHARD) checks every Nth page starting at the
+// Kth, so N CI jobs can split the pages between them and finish sooner.
 //
 // Set CHROMIUM_PATH to use a Chromium that is already installed. Set
 // ACCESSIBILITY_WORKERS (or pass --workers) to change how many pages are
@@ -127,7 +130,14 @@ function withLimit(promise, milliseconds, message) {
 }
 
 const pagesArgument = argument('--pages');
-const pages = pagesArgument ? pagesArgument.split(',') : pagePaths();
+const shardArgument = argument('--shard') ?? process.env.ACCESSIBILITY_SHARD;
+const [shardNumber, shardCount] = (shardArgument ?? '1/1').split('/').map(Number);
+if (!(shardCount >= 1 && shardNumber >= 1 && shardNumber <= shardCount)) {
+	throw new Error(`--shard must look like 2/4, not ${shardArgument}`);
+}
+const pages = (pagesArgument ? pagesArgument.split(',') : pagePaths()).filter(
+	(_, index) => index % shardCount === shardNumber - 1
+);
 
 const server = createServer(async (request, response) => {
 	try {
@@ -244,8 +254,10 @@ async function worker(number) {
 			page = await context.newPage();
 			pagesInTab = 0;
 		}
-		pagesInTab += 1;
+		// Another worker may have taken the last page while this one was opening a tab.
 		const pathname = queue.shift();
+		if (pathname === undefined) break;
+		pagesInTab += 1;
 		const pageStarted = Date.now();
 		inProgress.set(number, { pathname, since: pageStarted });
 		let lastError;

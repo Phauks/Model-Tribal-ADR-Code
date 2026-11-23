@@ -1,7 +1,7 @@
 profile: content/tribes/c/coushatta-tribe-of-louisiana.yaml
 topic: courts
-status: none-found
-last_searched: '2026-11-22'
+status: partly-searched
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -222,6 +222,60 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: Second search again returned only NARF code pages and Wikipedia; no official court page surfaced.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Coushatta Tribe of Louisiana tribal court Elton judicial
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were law-code copies and court cases; no court page of the nation''s own came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: site:coushatta.org court
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The search returned no pages of the nation''s site; the results were code copies and unrelated parish
+    courts.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-068
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Coushatta Tribal Court”: Claude weighed what the second search found against
+    the lead author''s order (own page, then directory entry): none-found; the link stays empty and the
+    service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-069
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-052,
   not-found-after-search); Coushatta Tribal Court (court-053, not-found-after-search). No page or official
-  directory entry was found on 2026-11-22 for “Tribal Court”; “Coushatta Tribal Court” (research/reviews/2026-11-22-service-links.json).'
+  directory entry was found on 2026-11-22 for “Tribal Court”; “Coushatta Tribal Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 (web searches and state court lists) found no page or official directory
+  entry for “Tribal Court”; “Coushatta Tribal Court”; a call to the nation''s office could say whether
+  the court has a page.'

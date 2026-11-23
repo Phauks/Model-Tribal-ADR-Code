@@ -76,3 +76,56 @@ Limits:
 ## Pages that only mention a court
 
 The lead author decided on Nov. 22, 2026 that a page on the nation's own site that only mentions a court (a news post, notice or home page) does not count as the court's link. The eight courts where that was the only page found (Cow Creek, Mescalero, Mississippi Choctaw twice, Omaha, Turtle Mountain twice and Winnemucca) stay without a link, and their rows keep the question in `for_lead_author` for the record.
+
+## Second search, Nov. 23, 2026
+
+A second, deeper search looked for the 170 services left without a link. It went beyond the nation's own website: Claude ran 76 web searches (of the 150 allowed), by court or program name and state, by nation name with "tribal court" and with `site:` the nation's domain, and read the state judicial branch, state bar and intertribal lists of tribal courts the searches turned up. It fetched 59 candidate pages, of which 8 refused the request or sent a challenge page and were logged as blocked. A link counted only where a fetched page names the service, in the lead author's order; a page that only mentions the court still did not count. The session is [`2026-11-23-service-links-second-search.md`](../sessions/2026/2026-11-23-service-links-second-search.md), and every search and page read, finds included, is in the nation's search log.
+
+It linked 29 of the 170: 8 to the service's own page and 21 to an official directory entry. 141 still have no link.
+
+| Kind | Own page | Directory entry | Still none | Searched |
+| --- | ---: | ---: | ---: | ---: |
+| `tribal-court` | 6 | 21 | 132 | 159 |
+| `peacemaking-program` | 1 | 0 | 7 | 8 |
+| `healing-to-wellness-court` | 1 | 0 | 0 | 1 |
+| `peacemaking` (forum) | 0 | 0 | 1 | 1 |
+| `circle-process` (forum) | 0 | 0 | 1 | 1 |
+| **Total** | **8** | **21** | **141** | **170** |
+
+With the first pass, the 432 services now stand at 168 own pages, 123 directory entries and 141 with no link.
+
+Own pages found:
+
+- Fort Belknap Indian Community (two entries): the nation's page headed "Courts", with the court's code and filing forms.
+- Mississippi Band of Choctaw Indians (two entries): the "Judicial System" section of the nation's Tribal Government page, which describes the Choctaw Tribal Courts.
+- Mescalero Apache Tribe: the nation's page "Mescalero Tribal Court".
+- Ely Shoshone Tribe: the Judicial Center entry on the nation's Departments page.
+- Mashpee Wampanoag Tribe, Peacemaker Court: the nation's page "About Peacemakers Court".
+- Coos, Lower Umpqua and Siuslaw, Wellness Court: the nation's Tribal Court & Peacegiving Court page, which names the Healing to Wellness Court.
+
+Directory entries found:
+
+- South Dakota Unified Judicial System, [Tribal Courts](https://ujs.sd.gov/tribal-courts/): Oglala Sioux, Lower Brule Sioux and Crow Creek Sioux (two entries each). The Oglala Sioux Judiciary entry had already been linked to the same page by the individual courts review, so only its review row changed.
+- North Dakota Court System, [Tribal Courts](https://www.ndcourts.gov/other-courts/tribal): Standing Rock Sioux, Three Affiliated Tribes (Fort Berthold) and Turtle Mountain Chippewa (two entries each).
+- Nebraska Judicial Branch, [Consortium of Tribal, State, and Federal Courts](https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/consortium-tribal-state-and-federal-courts) member list: Omaha Tribal Court and Santee Sioux Nation Tribal Court (two entries).
+- New Mexico Tribal-State Judicial Consortium, [list of tribal courts](https://tribalstate.nmcourts.gov/contact/): Pueblo of Sandia and Pueblo of San Ildefonso (two entries each).
+- Oregon Judicial Department, [Oregon Tribal Court Contact Information](https://www.courts.oregon.gov/programs/jcip/Documents/Tribal%20contact%20info.pdf): Cow Creek Band of Umpqua.
+- Bureau of Indian Affairs, [Southern Plains CFR Court](https://www.bia.gov/CFRCourts/southern-plains-cfr-court), list of the Tribes it serves: Apache Tribe of Oklahoma.
+
+Five of these settle earlier questions in `for_lead_author` about a news post or notice (Cow Creek, Mescalero, Mississippi Choctaw twice, Omaha and Turtle Mountain twice): a better page or a directory entry was found, so the question is replaced. For Fort Berthold the court's own site, https://fbdcourt.com/, still refused the request; the North Dakota list is the link until a person can open that site.
+
+What needs a decision (`for_lead_author`):
+
+- Own pages to confirm, because the court has no page of its own on the nation's site: Fort Belknap ("Courts" holds only forms), Mississippi Choctaw (a section of the Tribal Government page) and Ely Shoshone (an entry on the Departments page).
+- Directory entries to confirm: the South Dakota list gives each Tribe's own office under "South Dakota Tribal Court Contact Information", not a court office; the North Dakota list gives only the nation's name and website; the New Mexico entry for San Ildefonso sits under "Tribal Courts" and links the court handbook but is headed with the Pueblo's name.
+- Apache Tribe of Oklahoma: the link is a Court of Indian Offenses that serves the Tribe, while the entry's kind is `tribal-court`.
+- Three Alaska villages left without a link whose 2022 Alaska Tribal Court Directory entry the lead author could accept, though it does not say the court is active: Napakiak (active-court answer blank, a contact to open a case), Oscarville (blank, the Council named as the justice system) and Chitina ("Currently developing").
+
+Still no link, and why:
+
+- 101 Alaska services: most villages have no website of their own, and the 2022 Alaska Tribal Court Directory either could not reach the Tribe or answers that it has no active court. Web searches for the villages with a website found no court page.
+- Arizona (Ak-Chin, Havasupai, Tonto Apache, Yavapai-Prescott, Fort McDowell): the Arizona courts publish no tribal court list; the lists found are a state health agency's, a child-welfare agency's and an insurer's, which are not official court directories.
+- Montana (Chippewa Cree), Minnesota (Grand Portage), Nevada (Duckwater, Yerington, Winnemucca), California (Big Valley, Capitan Grande, Pulikla), Texas, Louisiana, Oklahoma (Tonkawa, Alabama-Quassarte), Rhode Island, Florida and Alabama: no court page of the nation's own and no official list came up. The Minnesota Judicial Branch site and the Nevada courts' tribal resource file refused the request; a person could open them.
+- Seven peacemaking programs and two forums: the nation's court pages do not name them (Chitimacha, Karuk, Nez Perce, Habematolel Pomo), the program has only its code chapter (Kickapoo of Texas, Pit River, Chippewa Cree circle sessions), or the site refused the request (Mashantucket Pequot, Snoqualmie).
+
+Method: `second` in [`scripts/review/service_links.py`](../../scripts/review/service_links.py) checks that each link in `SECOND_DECISIONS` was fetched with status 200, updates the review rows, rewrites the CSV and adds the searches to the search logs from the search list kept in the work folder; `apply` then set `link` and added a sentence to `note` on 28 facts in 18 profiles. No `verification` level changed and no service was removed. There was no second reader.

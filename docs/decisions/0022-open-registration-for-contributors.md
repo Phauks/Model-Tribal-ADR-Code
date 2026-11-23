@@ -30,6 +30,8 @@ are credited in the book, with a confirmation page before anything is used
 - Registration is for adults. Nation affiliation is optional, self-described
   and never verified.
 
+**Amended 2026-11-22 by the lead author:** signing up is for people 13 or older, and everyone who confirms a profile is signed up with no waiting step; the lead author can still remove anyone. Workspace access is unchanged.
+
 ## Consequences
 
 - The sentence "There is no open sign-up" in site/COLLABORATION.md becomes

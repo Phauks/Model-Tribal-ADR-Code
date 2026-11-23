@@ -1,0 +1,342 @@
+---
+id: 2026-11-23-indian-law-journals
+date: '2026-11-23'
+researchers:
+- Trevor Goldsmith
+- Claude (AI assistant)
+tools:
+- kind: ai-assistant
+  name: Claude (AI assistant)
+  detail: The lead author noticed much of the project's material comes from Indian law journals and bar publications and asked for a systematic sweep. The lead session harvested the full catalogs of three open-access journals, had four helpers on a smaller model sort every title by relevance, had a fifth helper search bar journals and organizations, and had four more read the free copies that could be downloaded. Every fact added to a profile was checked by script against the saved text.
+- kind: other
+  name: OAI-PMH catalog harvest (scripts/review/journal_oai_harvest.py)
+  detail: American Indian Law Review (University of Oklahoma Digital Commons, 782 entries), Tribal Law Journal and its tribal profiles and events (University of New Mexico Digital Repository, 121 entries), American Indian Law Journal (Seattle University Digital Commons, 187 entries), and the University of New Mexico Indian law certificate collections (201 entries, mostly trial transcripts).
+- kind: web-search
+  name: Web search
+- kind: page-fetch
+  name: Direct downloads (python-urllib) with PDF text extraction (pdftotext)
+  detail: 'The three law school repositories and the University of Nebraska-Lincoln repository answer article PDF requests with a bot check, so no PDF was downloaded from them; the project does not try to get past bot protection. Also refused or gone: tribal-institute.org (HTTP 406), the American University Tribal Court Clearinghouse pages (HTTP 503), wisbar.org (HTTP 503 on the day), the Columbia Journal of Race and Law site (bot check), the UCLA Indigenous Peoples'' Journal on eScholarship (HTTP 403), and old article addresses at nvbar.org, okbar.org, isb.idaho.gov and wellnesscourts.org (HTTP 404).'
+purpose: Sweep the Indian law journals, bar publications and Indian law organizations the project already leans on for writing about Tribal courts, peacemaking and other dispute resolution, nation-specific dispute resolution, and gaming disputes.
+queries:
+- Full catalogs of the American Indian Law Review, Tribal Law Journal and American Indian Law Journal, sorted by title, keywords and abstract
+- The Federal Lawyer Indian law issues and FBA Indian Law Section newsletters (fedbar.org)
+- 'State bar journal Indian law issues: Arizona Attorney, Oklahoma Bar Journal, Nevada Lawyer, Wisconsin Lawyer, Michigan Bar Journal, The Advocate (Idaho), Oregon State Bar Bulletin, Colorado Lawyer, Montana Lawyer, Minnesota Lawyer'
+- Court Review (American Judges Association) Indian law issues
+- NAICJA reports; NARF Indigenous Peacemaking Initiative library; Tribal Law and Policy Institute wellness court publications
+- Columbia Journal of Race and Law, California Law Review, Montana Law Review, North Dakota Law Review and Mitchell Hamline Law Review pieces on Tribal courts and restorative justice
+sources_added:
+- skibine-2015-constitutionalism-federal-common-law-inherent
+- redwine-2015-falling-off-balance-how-tenth
+- miles-2015-tale-two-statutes-zepeda-ninth
+- castillo-2015-tribal-courts-non-indians-right
+- rolnick-2016-tribal-criminal-jurisdiction-beyond-citizenship
+- mcgrew-2016-analysis-bias-based-exception-doctrine
+- deisen-2013-state-jim-new-era-washington
+- masters-2013-off-beaten-path-ninth-circuit
+- pruett-2016-nothing-personal-subject-matter-about
+- ennis-2014-federal-indian-law-tribal-criminal
+- fidell-2016-competing-visions-appellate-justice-indian
+- vance-2016-pretty-smart-answer-justifying-secretary
+- ghan-2013-federal-labor-law-mashantucket-pequot
+- minke-2016-i-christman-confederated-tribes-grand
+- fletcher-2012-tribal-membership-indian-nationhood
+- christensen-2011-creating-bright-line-rules-tribal
+- enis-2011-yours-mine-ours-renovating-antiquated
+- bedell-2017-fairness-tribal-court-juries-non
+- meek-2010-conflict-between-state-tests-tribal
+- gardina-2010-federal-preemption-roadmap-application-tribal
+- rosser-2010-displacing-judiciary-customary-law-threat
+- dabiri-2012-kiss-ring-but-never-touch
+- ross-2012-protecting-democratic-process-indian-country
+- newton-2012-reliability-that-should-be-question
+- burget-2009-bittle-bahe-drunken-mistake
+- braccio-2009-how-anti-gaming-backlash-redefining
+- painter-thorne-2009-one-step-forward-two-giant
+- furnish-2009-sorting-out-civil-jurisdiction-indian
+- mulkey-2009-texas-united-states-legality-secretarial
+- sweeney-2009-bank-began-treating-them-badly
+- sekaquaptewa-2008-key-concepts-finding-definition-consideration
+- haskins-2008-framing-concurrent-jurisdiction-issues-self
+- lemont-2003-overcoming-politics-reform-story-cherokee
+- hart-2003-cheyenne-way-peace-justice-post
+- eidson-2005-will-states-continue-provide-exclusivity
+- warren-2005-potential-passage-proposed-senate-bill
+- kannady-2005-state-cherokee-nation-same-sex
+- johnny-2002-duckwater-shoshone-drug-court-1997
+- lemont-2002-developing-effective-processes-american-indian
+- tebben-2002-trifederalism-aftermath-teague-interaction-state
+- haupt-2001-never-lay-salmon-ground-his
+- carr-2002-winner-best-appellate-brief-2002
+- jackson-iii-2003-chickasaw-nation-united-states-potential
+- melaku-2003-seeking-acceptance-are-black-seminoles
+- joh-2000-custom-tribal-court-practice-popular
+- clinefelter-2001-just-say-magic-words-advocating
+- johnny-2001-nevada-hicks-no-threat-most
+- brown-esq-2001-navajo-nation-s-peacemaker-division
+- schlosser-2001-sovereign-immunity-should-sovereign-control
+- jordan-2001-rolling-dice-cyber-reservation-confluence
+- ness-2001-exhausted-doctrine
+- cook-gambler-1999-winner-best-appellate-brief-1998
+- wilson-1999-nations-within-nation-evolution-tribal
+- laurence-1998-off-reservation-garnishment-reservation-debt
+- ragsdale-jr-1998-anasazi-jurisprudence
+- grunsted-1998-effective-smoke-screen-muscogee-creek
+- american-indian-law-review-1998-cases
+- king-1997-tribal-court-general-civil-jurisdiction
+- grant-1997-seminole-tribe-florida-extinction-new
+- white-1997-tribal-exhaustion-doctrine-just-stay
+- starna-1993-repeal-article-8-law-government
+- lowery-1993-developing-tribal-common-law-jurisprudence
+- ridgeway-1993-potawatomi-oklahoma-gaming-compact-1992
+- gross-2017-through-federal-habeas-corpus-glass
+- webb-2017-i-alvarez-lopez-i-ninth
+- laurence-1982-service-process-execution-judgement-indian
+- gillingham-1993-pathfinder-tribal-federal-state-court
+- lieder-1993-navajo-dispute-resolution-promissory-obligations
+- ransom-1993-recognizing-enforcing-state-tribal-judgements
+- hansen-esq-1991-survey-civil-jurisdiction-indian-country
+- jacobs-1991-iroquois-great-law-peace-united
+- allbaugh-1991-tribal-jurisdiction-over-indian-children
+- morris-1991-navajo-nation-council-reforms
+- american-indian-law-review-1991-federal-recent-development
+- pacheco-1991-finality-indian-tribunal-decisions-respecting
+- cubberley-1991-criminal-jurisdiction-over-nonmember-indians
+- mccool-2018-welcome-mvskoke-reservation-i-murphy
+- medders-2018-how-ninth-circuit-severed-indian
+- smith-1989-national-farmers-union-progeny-does
+- harring-1989-crow-dog-s-case-chapter
+- rusco-1989-civil-liberties-guarantees-tribal-law
+- parlow-1989-cry-sacred-ground-big-mountain
+- mouser-1999-nation-crisis-government-cherokee-nation
+- massad-1999-massad-commission-report-tribal-council
+- karr-1999-now-we-have-forgotten-old
+- american-indian-law-review-1999-cases-united-states-weaselhead-dawavendewa
+- yazzie-1999-watch-your-six-indian-nation
+- american-indian-law-review-1988-federal-recent-developments
+- johnson-1984-sovereign-immunity-indian-tribal-law
+- blurton-1984-tribal-sovereignty-alaskan-native-exercise
+- broadbent-1980-legislation-cooperation-key-effectuation-indian
+- wright-1980-sovereignty-indian-sovereighty-tribal-immunity
+- stetson-1980-conflict-laws-plurality-legal-systems
+- gover-1980-jurisdiction-conflicts-law-indian-reservation
+- american-indian-law-review-1980-recent-developments
+- blackburn-1980-blood-revenge-lighthorsemen-evolution-law
+- lytle-1980-supreme-court-tribal-sovereignty-continuing
+- stetson-1980-tribal-sovereignty-santa-clara-pueblo
+- wise-1997-matter-trust-elimination-federally-funded
+- bloxham-1980-tribal-sovereignty-analysis-montana-united
+- harte-1997-validity-state-court-s-exercise
+- kuntz-1997-nuclear-incidents-indian-reservations-who
+- conn-1978-mid-passage-navajo-tribe-first
+- burns-1978-criminal-jurisdiction-double-jeopardy-indian
+- persons-ii-1978-jurisdiction-public-law-280-local
+- pipestem-1978-journey-ex-parte-crow-dog
+- work-1978-terminated-five-tribes-oklahoma-effect
+- pearldaughter-1978-constitutional-law-equal-protection-martinez
+- lindstrom-1978-constitutional-law-santa-clara-pueblo
+- haner-1994-tribal-solutions-reservation-environmental-offenses
+- strickland-1992-address-do-right-thing-reaffirming
+- newton-1992-permanent-legislation-correct-duro-reina
+- meisner-1992-modern-problems-criminal-jurisdiction-indian
+- thompson-1990-protecting-abused-children-judge-s
+- sokolow-1990-future-gambling-indian-country
+- mcfarland-1991-bankruptcy-court-jurisdiction-over-tribal
+- vetter-1992-new-corridor-maze-tribal-criminal
+- stetson-1981-decriminalizing-tribal-codes-response-oliphant
+- traisman-1981-native-law-law-order-among
+- lafferty-1981-sovereignty-tribal-sovereign-immunity-claims
+- trentadue-1987-tribal-court-jurisdiction-over-collection
+- core-1988-tribal-sovereignty-federal-court-review
+- sommer-1983-exhaustion-tribual-remedies-required-habeas
+- johnson-1979-jurisdiction-criminal-jurisdiction-enforcement-problems
+- barsh-1977-omen-three-affiliated-tribes-moe
+- o-brien-1977-children-indian-juveniles-state-tribal
+- haught-1977-due-process-delaware-tribal-business
+- american-indian-law-review-1977-criminal-law-double-jeopardy-due
+- gurich-1977-due-process-tom-sutton-right
+- american-indian-law-review-1977-criminal-law-are-indian-tribal
+- gunter-1977-indian-lands-joint-tribal-council
+- baldassin-1973-jurisdiction-over-non-indians-opinion
+- million-1973-law-blood-primitive-law-cherokee
+- american-indian-law-review-1976-civil-rights-challenging-tribal-membership
+- salmon-1976-jurisdiction-exhaustion-remedies-status-tribal
+- green-1976-inherent-indian-sovereignty
+- american-indian-law-review-1976-administrative-law-due-process-requirements
+- american-indian-law-review-1974-jurisdiction-federal-court-federal-question
+- gibson-1974-constitutional-experiences-five-civilized-tribes
+- bigler-2018-traditional-jurisprudence-protection-our-society
+- keogh-2018-extending-tribal-criminal-jurisdiction-outside
+- irby-2019-opioid-crisis-indian-country-impact
+- blackmore-2019-internet-gaming-off-tribal-lands
+- howell-2019-overlooking-canon-how-alabama-supreme
+- low-2019-keeping-cultural-bias-out-courtroom
+- martin-2019-i-united-states-bryant-i
+- maynard-2019-what-are-odds-potential-tribal
+- treiger-2019-thickening-thin-blue-line-indian
+- smith-2020-court-indian-appeals-americas-forgotten
+- heidepriem-2020-tribal-remedies-exhaustion-state-courts
+- zug-2021-icwas-irony
+- albert-2021-i-coeur-dalene-tribe-hawks
+- riedel-2021-mirrored-harms-unintended-consequences-grant
+- snyder-2021-i-state-nobles-i-chance
+- hartsook-2021-supreme-court-washingtons-broad-interpretation
+- meacham-2022-mess-that-has-become-indian
+- goodrum-2022-meeting-i-mcgirt-i-moment
+- hager-2022-reprint-rule-law-i-mcgirt
+- slaff-2023-administration-injustice-conflict-between-federal
+- bloom-2024-split-precedent-analysis-negative-impact
+- yost-2024-indian-child-welfare-act-political
+- conroy-2024-i-oklahoma-castro-huerta-i
+- ramoutar-2024-unprincipled-preemption-why-supreme-court
+- spangler-day-2024-how-poor-poor-enough-how
+- sullivan-2024-i-oklahoma-castro-huerta-i
+- littlejohn-2024-tribal-court-blueprint-choctaw-freedmen
+- gamble-2025-jurisdictionverse-how-tangled-jurisdictional-lines
+- pumphrey-2025-arm-that-saves-you-might
+- chase-2025-tribal-authority-issue-search-warrants
+- factor-2026-cutting-gordian-knot-civil-liability
+- jaime-2026-i-tulsa-obrien-i-city
+- ogle-2026-when-tribal-sovereign-immunity-americans
+- speed-2026-tribal-civil-jurisdiction-i-lexington
+- becker-1998-profile-law-navajo-nation
+- zuni-cruz-2000-tribal-law-indigenous-social-reality
+- spruhan-2000-means-district-court-chinle-judicial
+- tallchief-skibine-2000-troublesome-aspects-western-influences-tribal
+- journal-staff-2010-sandia-pueblo-tribal-court-handbook
+- journal-staff-2022-jemez-pueblo-tribal-court-handbook
+- journal-staff-2010-kewa-pueblo-tribal-court-handbook
+- journal-staff-2000-introduction-new-mexico-tribal-court
+- journal-staff-2021-acoma-pueblo-tribal-court-handbook
+- journal-staff-2010-cochiti-pueblo-tribal-court-handbook
+- journal-staff-2019-isleta-pueblo-tribal-court-handbook
+- journal-staff-2009-jicarilla-apache-nation-tribal-court
+- journal-staff-2019-laguna-pueblo-tribal-court-handbook
+- journal-staff-2020-nambe-pueblo-tribal-court-handbook
+- journal-staff-2019-navajo-nation-tribal-court-handbook
+- journal-staff-2021-ohkay-owingeh-pueblo-tribal-court
+- journal-staff-2022-pueblo-pojoaque-tribal-court-handbook
+- journal-staff-2013-san-felipe-pueblo-tribal-court
+- journal-staff-2013-san-ildefonso-pueblo-tribal-court
+- journal-staff-2020-santa-ana-pueblo-tribal-court
+- journal-staff-2019-santa-clara-pueblo-tribal-court
+- journal-staff-2021-taos-pueblo-tribal-court-handbook
+- journal-staff-2010-tesuque-pueblo-tribal-court-handbook
+- journal-staff-2010-zia-pueblo-tribal-court-handbook
+- journal-staff-2019-zuni-pueblo-tribal-court-handbook
+- journal-staff-2012-picuris-pueblo-tribal-court-handbook
+- carroll-2002-cherokee-nation-election-1995
+- deer-2003-expanding-network-safety-tribal-protection
+- grijalva-2001-status-traditional-indian-justice
+- mueller-2001-restoring-harmony-through-nalyeeh-can
+- her-many-horses-2001-oglala-lakota-nation-profile
+- iwamoto-2001-pueblo-laguna-tribal-government-profile
+- carroll-2002-cherokee-nation-tribal-profile
+- natividad-martinez-2004-intertribal-conflicts-customary-law-regimes
+- bobroff-2004-dine-bi-beenahaz-aanii-codifying
+- haney-2014-seminole-way-path-2011-reestablishment
+- wilkinson-2014-framework-understanding-tribal-courts-application
+- todacheene-2014-she-saves-us-monsters-navajo
+- morin-2004-navajo-nation-rodriguez-traditional-navajo
+- rosser-2004-customary-law-way-things-were
+- koller-armstrong-2008-indigenous-legal-traditions-cultural-rights
+- kinyanjui-2009-restorative-justice-traditional-pre-colonial
+- garcia-2009-burrell-armijo-role-comity-federal
+- anaya-2009-southern-ute-tribal-profile
+- snyder-2011-ho-chunk-nation-tribal-law
+- megli-2017-choctaw-nation-oklahoma-history-influences
+- tsosie-de-haro-2016-federal-restrictions-tribal-customary-law
+- kimbro-chase-2011-ogalala-sioux-tribal-profile
+- fletcher-2004-restatement-common-law-grand-traverse
+- spruhan-2004-origins-current-status-future-prospects
+- bruno-2018-views-tribal-court-how-indian
+- journal-2009-cultivating-native-intellect-philosophy-community
+- wilkins-2018-battling-human-rights-indian-country
+- carver-2008-xhosa-truth-reconciliation-commission-african
+- sullivan-2012-judicial-selection-methods-tribal-politics
+- spotted-elk-2012-northern-cheyenne-tribe-traditional-law
+- tribal-elder-abuse-task-force-2008-using-your-tribal-values-develop
+- wallace-2001-tribal-voices-speech-chief-harry
+- tribal-law-journal-2018-tribal-justice-honoring-indigenous-dispute
+- sadlier-2022-case-note-federal-indian-law
+- gaines-stoner-2022-affirmed-delegated-finding-inherent-tribal
+- collins-2021-santa-clara-pueblo-martinez-evolution
+- haaland-2021-tribal-justice-honoring-indigenous-dispute
+- allaire-2023-experiments-legal-hybridity-indian-tort
+- mcneil-2023-traditional-tlingit-law-governance-contemporary
+- stark-2024-nakomidizo-anishinaabe-law-response-two
+- griffith-2025-dont-throw-book-customary-tribal
+- alexander-ii-2017-money-nothing-inherent-want-consideration
+- okulski-2017-complex-adaptive-peacemaking-how-systems
+- carroll-2016-proposals-resolving-reservation-residents-bail
+- adu-2015-protecting-victims-domestic-assault-upholding
+- smith-j-d-2015-streamlined-model-tribal-appellate-court
+- tompkins-2015-defining-indian-civil-rights-act
+- smith-2016-guide-tribal-appeals-pro-se
+- goldberg-2014-no-tribal-court-island-citation
+- miller-2014-beyond-blood-quantum-legal-political
+- guest-2017-tribal-supreme-court-project-ten
+- spruhan-2017-indians-jurisdictional-sense-tribal-citizenship
+- cox-2017-icra-habeas-corpus-relief-new
+- wood-2018-tribal-exclusion-authority-sovereign-basis
+- mulvaney-2018-tribal-franchise-expression-tribal-sovereignty
+- summers-2018-rethinking-federal-indian-status-test
+- sanchez-2020-out-new-old-re-implementing
+- fox-2020-one-person-one-vote-navajo
+- cochran-2020-rehabilitative-justice-effectiveness-healing-wellness
+- hannon-2021-beyond-sliver-full-moon-acknowledging
+- maiman-stadtmauer-2022-jurisprudential-quilt-tribal-civil-jurisdiction
+- fay-2023-tribal-role-groundwater-management
+- thypin-bermeo-2013-political-cooperation-procedural-justice-study
+- black-horse-2013-risks-benefits-tribal-payday-lending
+- ford-2017-tribal-family-law-clients-practitioners
+- smith-2012-enhancing-tribal-sovereignty-protecting-indian
+- willott-2012-justice-rehnquists-theory-indian-law
+- morote-2026-tribal-rules-evidence
+- siegel-2026-workers-compensation-codes-american-indian
+- wilbur-2026-beyond-icwa-within-family-court
+- sallas-2026-federal-trust-responsibility-special-domestic
+- callahan-2026-stability-stake-effects-overturning-chevron
+- martinez-v-santa-clara-pueblo-1974-trial-transcripts
+- finerty-2024-wisconsin-tribal-gaming-compacts-sovereign-immunity
+- stenzel-2024-indian-law-in-wisconsin-primer
+- fletcher-2022-professionalism-in-tribal-jurisdictions
+- galanda-2002-indian-law-essentials
+- skibine-2013-indian-gaming-regulatory-act-at-25
+- mcbride-2008-organized-labor-strategies-indian-gaming
+- fletcher-2017-statutory-divestiture-tribal-sovereignty
+- diamond-2018-practicing-american-indian-criminal-law
+- fba-indian-law-section-2016-federal-indian-law-newsletter-spring
+- richotte-2013-third-branch-third-sovereign
+- court-review-2009-focus-on-indian-law-issue
+- naicja-2016-holistic-traditional-justice-roundtable
+- connors-2016-exit-pursued-by-a-bear
+- van-schilfgaarde-2021-peacemaking-circles-tribal-child-welfare
+- meyer-1995-to-set-right-hooponopono
+- tlpi-2024-promising-strategies-healing-to-wellness-mentor-courts
+- brown-desmond-1991-montana-tribal-courts
+- van-schilfgaarde-2024-restorative-justice-regenerative-tribal-jurisdiction
+- nichols-2014-jurisdiction-injuries-tribal-casinos
+- staudenmaier-haake-2024-new-mexico-tribal-courts-casino-patron-claims
+sources_updated: []
+limits: 'Catalog-level for the three journals: the repositories block automated PDF downloads, so their 271 records rest on titles, keywords and abstracts, and the 51 most useful are on the pull list for the lead author to save. Of 97 bar and organization items, 20 became records (16 read in full), 10 were already records, 42 could not be reached at the addresses found, and 25 low-priority items are listed only. Several bar journals (Colorado, Montana, Minnesota, South Dakota, California) and NARF Legal Review were not covered well.'
+---
+
+## What this session added
+
+- 271 source records for articles in the American Indian Law Review, the Tribal Law Journal (including its nation profiles and the 2018 "Tribal Justice: Honoring Indigenous Dispute Resolution" symposium) and the American Indian Law Journal. Each is a catalog record: the citation from the repository's metadata, the free PDF's address, the nations named in the title or abstract, and why it was kept. 100 link to nation profiles. Where the repository's first-page field held the article's place in the issue rather than a page number, the page is left out.
+- One record for the 1974 trial transcripts in Martinez v. Santa Clara Pueblo, which the University of New Mexico posts witness by witness.
+- 20 records from bar journals, the Federal Bar Association, the American Judges Association, NAICJA, the Native American Rights Fund's peacemaking library, the Tribal Law and Policy Institute, two law reviews and two law firm alerts. 16 were read in full. Their 17 free copies are filed privately in the bucket under `articles/` (never served).
+- New wellness court entries in five profiles, each read in full and quoted in the entry's note. They are the Little Traverse Bay Bands' Waabshki-Miigwan Healing to Wellness Program, the Hoopa Valley and Yurok joint jurisdiction family wellness courts with Humboldt and Del Norte Counties, and the Sisseton-Wahpeton Oyate Wellness Court (not operating in 2024). The fifth is the Taos Pueblo Tribal Court's wellness court, which takes state probationers under an agreement with a New Mexico magistrate court. Their court search logs record the find.
+- [The candidate list](../../reviews/2026-11-23-indian-law-journals.csv): all 527 items with their status, including 184 low-priority items listed without records and 42 that could not be reached.
+- [Nation facts from the pieces read](../../reviews/2026-11-23-indian-law-journals-nation-facts.csv): 87 facts with pinpoints, 9 of them now in profiles. The supporting quotations are kept privately in project files (`research/journal-sweep/`).
+- The pull list (parts 1g, 4e and 5a) for the PDFs the repositories would not release to a script.
+
+## How the journals were sorted
+
+Keep anything that could plausibly help, drop only what is clearly unrelated (the project's "grab now, classify later" rule). High priority: directly about Tribal courts, peacemaking and other dispute resolution, customary law, or gaming dispute resolution. Medium: a nation's legal system or a closely related forum question. Low: background. Most American Indian Law Review entries before 2000 have no abstract, so they were sorted on title and keywords alone (project analysis).
+
+## What comes next
+
+- When the lead author saves the 1g PDFs, read them for nation facts the way the bar pieces were read, and add `file` fields to the records.
+- Read the Tribal Law Journal's nation profiles first: they are the richest single source for nation-specific facts. They cover the Navajo Nation, Oglala Sioux Tribe, Pueblo of Laguna, Cherokee Nation, Ho-Chunk Nation, Choctaw Nation of Oklahoma and Northern Cheyenne Tribe, and the journal also has a restatement of the Grand Traverse Band's common law.
+- Cover the bar journals the sweep reached poorly, and NARF Legal Review.

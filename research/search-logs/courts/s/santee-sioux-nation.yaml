@@ -1,7 +1,7 @@
 profile: content/tribes/s/santee-sioux-nation.yaml
 topic: courts
-status: none-found
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -194,6 +194,77 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: Results were tribal code mirrors and federal reports, with no official court page found.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: '"Santee Sioux" tribal court Nebraska Niobrara'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were law-code copies, legal aid and federal reports; no court page of the nation''s own came
+    up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Nebraska Supreme Court tribal courts list Omaha Tribe Santee Sioux Winnebago Ponca
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The results led to the Nebraska Judicial Branch''s Consortium of Tribal, State, and Federal Courts
+    page, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/consortium-tribal-state-and-federal-courts
+  query: 'scripts/review/service_links.py second: Omaha Tribal Court; Santee Sioux Nation Tribal Court'
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Nebraska Judicial Branch, Consortium of Tribal, State, and Federal Courts (status 200): its member
+    list names the "Omaha Tribal Court, Omaha Tribe of Nebraska" and the "Santee Sioux Nation Tribal Court".'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://nebraskajudicial.gov/programs-services/court-improvement-project/resources/other-resources-and-websites
+  query: 'scripts/review/service_links.py second: Omaha; Santee'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Nebraska Judicial Branch, Court Improvement Project resources (status 200): links to the courts''
+    bar admission applications and juvenile codes, not to a court page; not used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): directory, https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/consortium-tribal-state-and-federal-courts.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-341
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Santee Sioux Tribal Court”: Claude weighed what the second search found against
+    the lead author''s order (own page, then directory entry): directory, https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/consortium-tribal-state-and-federal-courts.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-342
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-262,
   not-found-after-search); Santee Sioux Tribal Court (court-263, not-found-after-search). No page or official
-  directory entry was found on 2026-11-22 for “Tribal Court”; “Santee Sioux Tribal Court” (research/reviews/2026-11-22-service-links.json).'
+  directory entry was found on 2026-11-22 for “Tribal Court”; “Santee Sioux Tribal Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 linked “Tribal Court”; “Santee Sioux Tribal Court” (research/reviews/2026-11-22-service-links.json).'

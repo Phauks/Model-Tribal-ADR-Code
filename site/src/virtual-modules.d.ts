@@ -47,6 +47,8 @@ declare module 'virtual:essay-library' {
 	export const essaysInGit: Record<string, string>;
 	/** Each court case's name and decision date, by source key. */
 	export const essayCaseNames: Record<string, { title: string; date: number[] }>;
+	/** Words the spelling check should accept: names of nations, glossary terms and court cases. */
+	export const essaySpellingWords: string[];
 }
 
 declare module 'virtual:forms' {
@@ -64,4 +66,9 @@ declare module 'virtual:build' {
 declare module 'cloudflare:workers' {
 	/** The Worker's bindings and secrets (src/app.d.ts). */
 	export const env: WorkerEnvironment;
+}
+
+declare module 'virtual:followable-pages' {
+	/** The pages built with the site that readers can follow, with a fingerprint of each (src/lib/server/following.ts). */
+	export const followableBuild: import('#lib/server/following.ts').FollowableBuild;
 }

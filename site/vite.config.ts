@@ -8,8 +8,9 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
-import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms } from './src/lib/server/essay-library.ts';
+import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
+import { followableBuild } from './src/lib/server/followable-build.ts';
 import {
 	essaysForReview,
 	glossary,
@@ -229,7 +230,8 @@ function essayLibrary(): Plugin {
 				`export const essayTerms = ${JSON.stringify(glossaryTerms())};`,
 				`export const essayBoxFacts = ${JSON.stringify(everyBoxFact())};`,
 				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`,
-				`export const essayCaseNames = ${JSON.stringify(caseNames())};`
+				`export const essayCaseNames = ${JSON.stringify(caseNames())};`,
+				`export const essaySpellingWords = ${JSON.stringify(spellingWords())};`
 			].join('\n');
 		}
 	};
@@ -282,6 +284,28 @@ function recentChanges(): Change[] {
 	}
 }
 
+const followablePagesModule = 'virtual:followable-pages';
+const resolvedFollowablePagesModule = `\0${followablePagesModule}`;
+
+/**
+ * Lists the pages built with the site that readers can follow, with a
+ * fingerprint of each, as a module bundled into the Worker. The Worker
+ * compares the fingerprints with the last build's to tell followers which
+ * pages changed (src/lib/server/following.ts).
+ */
+function followablePages(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:followable-pages',
+		resolveId(identifier) {
+			return identifier === followablePagesModule ? resolvedFollowablePagesModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedFollowablePagesModule) return undefined;
+			return `export const followableBuild = ${JSON.stringify(followableBuild())};`;
+		}
+	};
+}
+
 function buildInformation(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:build',
@@ -310,6 +334,7 @@ export default defineConfig({
 		essayLibrary(),
 		formCatalog(),
 		buildInformation(),
+		followablePages(),
 		sveltekit({
 			compilerOptions: {
 				// Runes mode for the project's own components. Can be removed in Svelte 6.

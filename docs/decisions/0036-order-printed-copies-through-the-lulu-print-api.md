@@ -18,7 +18,7 @@ The website and its downloads are free. Trevor Goldsmith asked that readers also
 ## Consequences
 
 - The project becomes the seller of record for each copy: sales tax, refunds and support are its duties (docs/book-orders.md, "Before ordering goes live").
-- New Worker secrets and variables, all in Cloudflare (decision record 0006), and a new table `book_orders` (migration 0008).
+- New Worker secrets and variables, all in Cloudflare (decision record 0006), and a new table `book_orders` (migration 0013).
 - Lulu Direct buy buttons and retail distribution stay possible for the standard editions; this does not rule them out.
 
 ## Sources
