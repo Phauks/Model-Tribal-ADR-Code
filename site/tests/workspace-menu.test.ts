@@ -83,6 +83,12 @@ describe('the signed-in hint', () => {
 		expect(readSignedInHint('theme=dark')).toEqual({ signedIn: false, workspacePageNames: [] });
 	});
 
+	it('keeps page names with hyphens, such as review-requests', () => {
+		const names = ['overview', 'review-requests', 'nation-uploads', 'address-book', 'book-orders'];
+		expect(readSignedInHint(`signed-in-hint=${signedInHintValue(names)}`).workspacePageNames).toEqual(names);
+		expect(readSignedInHint('signed-in-hint=overview.-bad.bad-.a--b').workspacePageNames).toEqual(['overview']);
+	});
+
 	it('ignores anything in it that is not a page name', () => {
 		expect(readSignedInHint('signed-in-hint=overview.<b>.essays').workspacePageNames).toEqual([
 			'overview',

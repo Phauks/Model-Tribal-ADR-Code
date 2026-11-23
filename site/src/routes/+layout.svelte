@@ -102,7 +102,8 @@
 			min-height: 100dvh;
 		}
 
-		.site-body:has(> :global(.sidebar-wide:not([open]))) {
+		.site-body:has(> :global(.sidebar-wide:not([open]))),
+		:global(:root[data-sidebar-hidden='true']) .site-body {
 			grid-template-columns: 3.5rem minmax(0, 1fr);
 		}
 	}
