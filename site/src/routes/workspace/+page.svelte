@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import { teamLevelLabels } from '#lib/nation-teams.ts';
 	import { decisionLabels, roleDescriptions, roleLabels, subjectKindLabels } from '#lib/permissions.ts';
 	import { requestKindLabels, requestStatusLabels } from '#lib/requests.ts';
 	import type { PageProps } from './$types';
@@ -42,6 +43,20 @@
 			You review the record for <strong>{data.ownNation.title}</strong> on behalf of the nation.
 		</p>
 		<p><a class="button" href="/workspace/reviews/nation/{data.ownNation.identifier}">Review the record</a></p>
+	</section>
+{/if}
+
+{#if data.teams.length > 0}
+	<section class="panel">
+		<h2>Your nations’ teams</h2>
+		<ul>
+			{#each data.teams as team (team.nationIdentifier)}
+				<li>
+					<a href="/workspace/nation-teams/{team.nationIdentifier}">{team.title}</a>:
+					{teamLevelLabels[team.level].toLocaleLowerCase('en-US')}
+				</li>
+			{/each}
+		</ul>
 	</section>
 {/if}
 
