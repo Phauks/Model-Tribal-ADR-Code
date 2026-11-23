@@ -2,8 +2,10 @@
 	// The inbox's left column (site/MAIL.md): Compose, the person's inboxes
 	// when they have more than one, the views and Drafts, the folders the lead
 	// author made, the tags, the rules and the settings. Choosing an inbox
-	// narrows the views, folders and tags to it (?inbox=). On a narrow screen
-	// it folds into "Mailboxes" above the page.
+	// narrows the views, folders and tags to it (?inbox=). On a phone the
+	// views are a row of chips above the mail and Write is a floating button,
+	// as in the approved mockup (design/email-inbox, 4-phone); the inboxes,
+	// folders, tags and tools fold away under them.
 	import { onMount } from 'svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import { page } from '$app/state';
@@ -18,6 +20,7 @@
 	import Layers from '@lucide/svelte/icons/layers';
 	import ListFilter from '@lucide/svelte/icons/list-filter';
 	import OctagonAlert from '@lucide/svelte/icons/octagon-alert';
+	import Pencil from '@lucide/svelte/icons/pencil';
 	import Plus from '@lucide/svelte/icons/plus';
 	import Send from '@lucide/svelte/icons/send';
 	import Settings from '@lucide/svelte/icons/settings';
@@ -55,6 +58,9 @@
 		return text ? `${base}?${text}` : base;
 	}
 
+	const composeLink = $derived(data.chosenInbox ? `${base}/new?inbox=${data.chosenInbox}` : `${base}/new`);
+	const foldLabel = $derived(data.inboxes.length > 1 ? 'Inboxes, folders and tags' : 'Folders and tags');
+
 	let open = $state(true);
 	onMount(() => {
 		// Folded on a phone, so the mail comes first.
@@ -63,10 +69,30 @@
 </script>
 
 <div class="mail">
+	<nav class="view-chips" aria-label="Views">
+		<ul>
+			{#each data.views as view (view.key)}
+				<li>
+					<a
+						href={view.key === 'inbox' ? listLink() : listLink({ view: view.key })}
+						aria-current={currentView === view.key ? 'page' : undefined}
+						>{view.label}{#if data.counts[view.key]}<span class="chip-count">{data.counts[view.key]}</span>{/if}</a
+					>
+				</li>
+				{#if view.key === 'scheduled'}
+					<li>
+						<a href="{base}/drafts" aria-current={page.url.pathname === `${base}/drafts` ? 'page' : undefined}
+							>Drafts{#if data.drafts}<span class="chip-count">{data.drafts}</span>{/if}</a
+						>
+					</li>
+				{/if}
+			{/each}
+		</ul>
+	</nav>
 	<details class="mail-nav" bind:open>
-		<summary><ChevronDown size={18} aria-hidden="true" class="fold" />Mailboxes</summary>
+		<summary><ChevronDown size={18} aria-hidden="true" class="fold" />{foldLabel}</summary>
 		<nav aria-label="Mailboxes">
-			<a class="button compose" href={data.chosenInbox ? `${base}/new?inbox=${data.chosenInbox}` : `${base}/new`}><SquarePen size={18} aria-hidden="true" /> Compose</a>
+			<a class="button compose" href={composeLink}><SquarePen size={18} aria-hidden="true" /> Compose</a>
 			{#if data.inboxes.length > 1}
 				<div class="section-head"><h2>Inboxes</h2></div>
 				<ul class="nav-list">
@@ -91,7 +117,7 @@
 					<div class="section-head"><h2>In {chosen?.name}</h2></div>
 				{/if}
 			{/if}
-			<ul class="nav-list">
+			<ul class="nav-list views">
 				{#each data.views as view (view.key)}
 					{@const Icon = icons[view.key]}
 					<li>
@@ -191,6 +217,9 @@
 		{/if}
 		{@render children()}
 	</div>
+	{#if onList}
+		<a class="button write" href={composeLink}><Pencil size={18} aria-hidden="true" /> Write</a>
+	{/if}
 </div>
 
 <style>
@@ -214,9 +243,75 @@
 	.mail-nav:not([open]) > summary :global(.fold) {
 		transform: rotate(-90deg);
 	}
+	/* Phones: the views as chips that scroll sideways, and Write as a floating button (design/email-inbox, 4-phone). */
+	.view-chips ul {
+		display: flex;
+		gap: var(--space-2);
+		margin: 0;
+		padding: 0 0 var(--space-1);
+		list-style: none;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+	.view-chips a {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		min-height: var(--layout-target-minimum);
+		padding: 0 var(--space-3);
+		border: 1px solid var(--color-control-border);
+		border-radius: 999px;
+		color: var(--color-ink);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	.view-chips a[aria-current='page'] {
+		background: var(--color-band);
+		border-color: var(--color-band);
+		color: var(--color-band-text);
+		font-weight: var(--font-weight-semibold);
+	}
+	.chip-count {
+		font-variant-numeric: tabular-nums;
+	}
+	.write {
+		position: fixed;
+		right: var(--space-4);
+		bottom: var(--space-4);
+		z-index: 5;
+		gap: var(--space-2);
+		border-radius: 999px;
+		padding-inline: var(--space-5);
+		box-shadow: 0 var(--space-1) var(--space-3) color-mix(in srgb, var(--color-ink) 30%, transparent);
+	}
+	@media (max-width: 49.99rem) {
+		.mail {
+			gap: var(--space-3);
+		}
+		.compose,
+		.nav-list.views {
+			display: none;
+		}
+		/* Room under the last conversation for the floating Write button. */
+		.mail-main {
+			padding-bottom: calc(var(--layout-target-minimum) + var(--space-5));
+		}
+	}
 	@media (min-width: 50rem) {
 		.mail {
 			grid-template-columns: 15rem minmax(0, 1fr);
+		}
+		.view-chips,
+		.write {
+			display: none;
+		}
+		.mail-nav {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.mail-main {
+			grid-column: 2;
+			grid-row: 1;
 		}
 		.mail-nav > summary {
 			display: none;
