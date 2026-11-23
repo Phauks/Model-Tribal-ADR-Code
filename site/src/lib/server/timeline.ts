@@ -134,9 +134,33 @@ function caseEntry(record: SourceRecord): TimelineEntry | undefined {
 		title: record.citation.title,
 		italic: true,
 		citation: caseCitation(record),
+		// The court, where the citation does not already name it: the Supreme Court's reporter says only "U.S.".
+		detail: /^Supreme Court of the United States$/.test(record.citation.authority ?? '') ? 'Supreme Court of the United States' : undefined,
 		link: caseLink(record),
 		nations: record.tribes
 	};
+}
+
+/** A land base's line: "Navajo Reservation first set aside", where the record says it was first set aside. */
+export function landTitle(area: string, detail: string | undefined): { title: string; detail?: string } {
+	if (detail && /^first set aside$/i.test(detail)) return { title: `${area.replace(/\s*\([^)]*\)$/, '')} first set aside` };
+	return { title: area, detail };
+}
+
+/**
+ * An agreement's line: who it is with in the title, and what it covers after it.
+ * "Title IV-E agreement (maintenance costs only)" with New Mexico Children, Youth and Families Department reads
+ * "Title IV-E agreement with New Mexico Children, Youth and Families Department, Maintenance costs only";
+ * "Agreement for state police commissions …" with New Mexico State Police reads "Agreement with New Mexico State Police, State police commissions …".
+ */
+export function agreementTitle(agreement: string | undefined, party: string): { title: string; citation?: string } {
+	const capital = (text: string) => text.charAt(0).toLocaleUpperCase('en-US') + text.slice(1);
+	if (!agreement) return { title: `Agreement with ${party}` };
+	const covering = /^Agreement for (.+)$/i.exec(agreement);
+	if (covering) return { title: `Agreement with ${party}`, citation: capital(covering[1]) };
+	const parenthetical = /^(.*?)\s*\(([^)]*)\)$/.exec(agreement);
+	if (parenthetical) return { title: `${parenthetical[1]} with ${party}`, citation: capital(parenthetical[2]) };
+	return { title: `${agreement} with ${party}` };
 }
 
 function lawEntry(record: SourceRecord, context: boolean): TimelineEntry | undefined {
@@ -231,13 +255,14 @@ function nationRecordEntries(
 	});
 	(record.land_establishment ?? []).forEach((fact, index) => {
 		if (!isTimelineDate(fact.date)) return;
+		const { title, detail } = landTitle(fact.land_area, fact.detail);
 		entries.push({
 			id: `land-${record.id}-${index + 1}`,
 			kind: 'treaty',
 			date: fact.date,
-			title: fact.land_area,
+			title,
 			citation: fact.instrument,
-			detail: fact.detail,
+			detail,
 			link: `${pageLink}#ties-heading`,
 			nations: [record.id],
 			citations: mark(fact.source, fact.land_area, whereInSource(fact))
@@ -256,6 +281,8 @@ function nationRecordEntries(
 				kind: 'document',
 				date: version.date,
 				title: `${heading}, ${version.label}`,
+				// The Federal Register notice of its approval, where the record gives one: "68 Fed. Reg. 5912 (Feb. 5, 2003)".
+				citation: /Fed\. Reg\./.test(source?.approval?.locator ?? '') ? source?.approval?.locator : undefined,
 				detail: version.inEffect ? 'In effect' : undefined,
 				link: version.link ?? `${pageLink}#document-${history.id}`,
 				nations: history.nations ?? [record.id],
@@ -265,13 +292,13 @@ function nationRecordEntries(
 	}
 	(record.jurisdiction_agreements ?? []).forEach((fact, index) => {
 		if (!isTimelineDate(fact.date)) return;
-		const title = fact.agreement ?? `Agreement with ${fact.other_party}`;
+		const { title, citation } = agreementTitle(fact.agreement, fact.other_party);
 		entries.push({
 			id: `agreement-${record.id}-${index + 1}`,
 			kind: 'document',
 			date: fact.date,
 			title,
-			detail: fact.agreement ? `With ${fact.other_party}` : undefined,
+			citation,
 			link: `${pageLink}#jurisdiction-heading`,
 			nations: [record.id],
 			citations: mark(fact.source, title, whereInSource(fact))
@@ -286,6 +313,7 @@ function nationRecordEntries(
 			kind: 'document',
 			date,
 			title,
+			citation: /^nigc-gaming-ordinances/.test(fact.source ?? '') ? 'National Indian Gaming Commission ordinance table' : undefined,
 			link: webLink(fact.link) ?? pageLink,
 			nations: [record.id],
 			citations: mark(fact.source, title, whereInSource(fact))

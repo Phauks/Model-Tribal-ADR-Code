@@ -271,6 +271,7 @@
 					opinionsLink={data.timeline.opinionsLink}
 					opinionCitations={data.timeline.opinionCitations}
 					fullLink="/nations/timeline?nation={page.id}"
+					besideHeading
 				/>
 			</Collapsible>
 		{/if}
