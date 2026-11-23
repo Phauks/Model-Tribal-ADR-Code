@@ -46,6 +46,11 @@ access:
   pull_from:
   - free-web
   note: Free PDF from the law school repository (https://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1037&context=tlj). The repository refused automated downloads on 2026-11-23 (bot check), so the full text has not been read; it is on the pull list, part 1g.
+file:
+  storage_key: articles/iwamoto-2001-pueblo-laguna-tribal-government-profile.pdf
+  checksum: 5d648ccf55aeb8dc3825bd73f0323e184dda674c4aa3adc781086f24e9f8eaa6
+  media_type: application/pdf
+  bytes: 226989
 found_in:
 - 2026-11-23-indian-law-journals
 notes: 'Catalog record only, from the repository''s metadata (journal sweep, 2026-11-23). Sweep priority: high. Why kept (project analysis): Laguna traditional law, governance, and dispute resolution profile. The repository''s first-page field gives the article''s place in the issue, not a page number, so the first page is left out until the PDF is read.'

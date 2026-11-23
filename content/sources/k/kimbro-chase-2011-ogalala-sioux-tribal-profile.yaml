@@ -43,6 +43,11 @@ access:
   pull_from:
   - free-web
   note: Free PDF from the law school repository (https://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1053&context=tlj). The repository refused automated downloads on 2026-11-23 (bot check), so the full text has not been read; it is on the pull list, part 1g.
+file:
+  storage_key: articles/kimbro-chase-2011-ogalala-sioux-tribal-profile.pdf
+  checksum: 9f2794e03e21efbeb77469a64cb3b19d058aec35d5244d3ea3c829005a3103ec
+  media_type: application/pdf
+  bytes: 395378
 found_in:
 - 2026-11-23-indian-law-journals
 notes: 'Catalog record only, from the repository''s metadata (journal sweep, 2026-11-23). Sweep priority: high. Why kept (project analysis): Oglala Sioux traditional and modern law profile. The repository''s first-page field gives the article''s place in the issue, not a page number, so the first page is left out until the PDF is read.'
