@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { chartTable, scaleTop } from '../src/lib/bar-chart.ts';
+import { chartTable, pieSlices, scaleTop, shareText, slicePath } from '../src/lib/bar-chart.ts';
 import { chartRecordEntries, chartRecords, dataCharts } from '../src/lib/server/data-charts.ts';
 
 describe('scaleTop', () => {
@@ -83,5 +83,47 @@ describe('chartRecords (repository data)', () => {
 	it('knows nothing of a bar that is not on the page', () => {
 		expect(chartRecords('forums-by-kind', 'no-such-kind')).toBeUndefined();
 		expect(chartRecords('no-such-chart', 'courts')).toBeUndefined();
+	});
+});
+
+describe('pieSlices', () => {
+	const bars = (values: number[]) => values.map((value, index) => ({ label: `Bar ${index + 1}`, value, href: `/x/${index + 1}` }));
+
+	it('splits the whole by share, largest first, in the fixed color order', () => {
+		const slices = pieSlices(bars([1, 3]));
+		expect(slices.map((slice) => [slice.label, slice.share, slice.series])).toEqual([
+			['Bar 2', 0.75, 1],
+			['Bar 1', 0.25, 2]
+		]);
+		expect(slices[0].start).toBe(0);
+		expect(slices[1].end).toBeCloseTo(1);
+	});
+
+	it('folds the smallest bars into one Other slice past seven, never reusing a color', () => {
+		const slices = pieSlices(bars([9, 8, 7, 6, 5, 4, 3, 2, 1]));
+		expect(slices).toHaveLength(7);
+		expect(slices[6]).toMatchObject({ label: 'Other (3)', value: 6, folded: 3, series: 7 });
+		expect(slices[6].href).toBeUndefined();
+	});
+
+	it('leaves out empty bars and draws nothing for an empty whole', () => {
+		expect(pieSlices(bars([0, 0]))).toEqual([]);
+		expect(pieSlices(bars([0, 4]))).toHaveLength(1);
+	});
+
+	it('draws a single slice as a whole circle', () => {
+		expect(slicePath({ start: 0, end: 1 }, 100)).toContain('A 100 100 0 1 1 100.00 200.00');
+	});
+
+	it('writes shares as whole percents, with a sliver as under one', () => {
+		expect(shareText(0.256)).toBe('26%');
+		expect(shareText(0.001)).toBe('<1%');
+	});
+});
+
+describe('dataCharts pies (repository data)', () => {
+	it('offers a pie only where each item counts under one bar', () => {
+		const pies = dataCharts().filter((chart) => chart.partsOfWhole).map((chart) => chart.identifier);
+		expect(pies).toEqual(['provisions-by-method', 'provisions-by-dispute', 'constitutions-by-status', 'compacts-by-arbitration']);
 	});
 });
