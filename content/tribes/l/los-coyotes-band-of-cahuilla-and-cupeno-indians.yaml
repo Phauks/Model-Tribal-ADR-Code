@@ -120,6 +120,15 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Contact | Los Coyotes Tourism". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: administration@loscoyotesband.org
+  label: General office email listed in the federal Tribal Leaders Directory
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-23'
+  locator: Los Coyotes Band of Cahuilla and Cupeno Indians, California
+  note: A general office address (not a leader's own) in the directory's email field, read on Nov. 23, 2026.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

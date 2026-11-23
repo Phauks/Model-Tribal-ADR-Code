@@ -138,6 +138,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lower Sioux Indian Community in the State of Minnesota
+- kind: email-general
+  value: council@lowersioux-nsn.gov
+  label: General office email shown on the nation's website
+  source: lowersioux-tribal-directory
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   alternative_text: Lower Sioux Indian Community Logo

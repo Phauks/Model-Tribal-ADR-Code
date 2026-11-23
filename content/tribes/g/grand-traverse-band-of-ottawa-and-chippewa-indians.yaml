@@ -130,6 +130,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+- kind: email-general
+  value: tribal.council@gtb-nsn.gov
+  label: General office email shown on the nation's website
+  source: gtbindians-tribal-council-asp
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   alternative_text: Grand Traverse Band of Ottawa and Chippewa Indians Logo

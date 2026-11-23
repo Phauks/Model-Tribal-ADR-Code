@@ -147,6 +147,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Contact – San Ildefonso Pueblo". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: receptionist@sanipueblo.org
+  label: General office email shown on the nation's website
+  source: pueblo-of-san-ildefonso-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   image_link: https://sanipueblo.org/wp-content/uploads/2021/07/SANILOGO-white-100x100.png

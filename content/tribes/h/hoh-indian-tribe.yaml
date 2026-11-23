@@ -138,6 +138,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". The page answered with a bot check, so only the link was read. Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: receptionist@hohtribe-nsn.org
+  label: General office email shown on the nation's website
+  source: hohtribe-nsn-government-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   image_link: https://hohtribe-nsn.org/wp-content/uploads/2020/04/cropped-logo-180x180.png

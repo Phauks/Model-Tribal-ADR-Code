@@ -120,6 +120,14 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chemehuevi Indian Tribe of the Chemehuevi Reservation, California
+- kind: email-general
+  value: chemehuevi@cit-nsn.gov
+  label: General office email shown on the nation's website
+  source: chemehuevi-administration-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Colorado River Agency

@@ -182,6 +182,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "CONTACT US". Its title is "CONTACT US | Shinnecock Nation". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: cotexecutiveassistant@shinnecock.org
+  label: General office email shown on the nation's website
+  source: shinnecock-nsn-cot
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: seal
   image_link: https://static.wixstatic.com/media/9f9e68_8f62436c93be4d23b0c3b8e0d5ccaa65%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/9f9e68_8f62436c93be4d23b0c3b8e0d5ccaa65%7Emv2.png

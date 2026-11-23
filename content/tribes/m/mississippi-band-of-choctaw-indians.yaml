@@ -148,6 +148,15 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "". Its title is "Contact Us - Mississippi Band of Choctaw Indians". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: info@choctaw.org
+  label: General office email listed in the federal Tribal Leaders Directory
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-23'
+  locator: Mississippi Band of Choctaw Indians
+  note: A general office address (not a leader's own) in the directory's email field, read on Nov. 23, 2026.
 official_images:
 - kind: seal
   image_link: https://www.choctaw.org/wp-content/uploads/2023/05/cropped-seal_favicon_512-180x180.png
