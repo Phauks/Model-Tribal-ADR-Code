@@ -124,6 +124,8 @@
 		padding: 0 var(--space-2) 0 calc(var(--space-2) - 2px);
 		border: 2px solid var(--color-link);
 		border-radius: 999px;
+		/* A badge that is a button would otherwise take the browser's button fill, which the link color fails contrast on in the dark theme. */
+		background: none;
 		color: var(--color-link);
 		font-size: var(--font-size-small);
 		font-weight: var(--font-weight-semibold);
