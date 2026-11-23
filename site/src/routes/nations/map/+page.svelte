@@ -289,6 +289,24 @@
 		previewHeading?.closest('aside')?.scrollIntoView({ block: 'nearest' });
 	}
 
+	/** A count in a table opens its row's list of nations, as the row's name does. */
+	function openRowNames(event: MouseEvent, anchor: string): void {
+		const names = document.getElementById(anchor)?.querySelector<HTMLDetailsElement>('details.row-names, details.count-names');
+		if (!names) return;
+		event.preventDefault();
+		names.open = true;
+		names.querySelector<HTMLElement>('summary')?.focus();
+	}
+
+	/** The nations a count in a by-state table is made of: one category's, or for the total, all the state's. */
+	function stateCountNations(body: ShadedBody, row: TableRow, column: TableColumn): { id: string; name: string }[] {
+		const state = body.stateRows.find((candidate) => candidate.anchor === row.key);
+		if (!state) return [];
+		const members = state.members as Record<string, string[]>;
+		const ids = column.key === 'total' ? [...new Set(Object.values(members).flat())] : (members[column.key.replace(/^count-/, '')] ?? []);
+		return ids.map((id) => ({ id, name: (body.stateNations as Record<string, string>)[id] ?? id })).sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
+	}
+
 	let tileHolder = $state<HTMLElement | undefined>();
 
 	/** Puts the tiled map into the view on screen. */
@@ -315,7 +333,10 @@
 {#snippet cell(row: TableRow, column: TableColumn)}
 	{@const nations = nationsByRow.get(row.key) ?? []}
 	{@const name = row.cells[column.key]?.text ?? ''}
-	{#if nations.length === 0}
+	{#if column.key === 'count'}
+		<!-- The count opens the same list of nations as the row's name. -->
+		{#if nations.length === 0}{name}{:else}<a class="count-link" href="#{row.anchor}" aria-label="{name} {nations.length === 1 ? 'nation' : 'nations'}: show {nations.length === 1 ? 'it' : 'them'}" onclick={(event) => openRowNames(event, row.anchor ?? '')}>{name}</a>{/if}
+	{:else if nations.length === 0}
 		<span class="row-name-only">{name}</span>
 	{:else}
 		<details class="row-names">
@@ -571,7 +592,25 @@
 						columns={byStateColumns(body)}
 						rows={byStateRows(body)}
 						defaultSort={{ key: 'state', direction: 'ascending' }}
-					/>
+					>
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{@const counted = stateCountNations(body, row, column)}
+							{@const number = row.cells[column.key]?.text ?? ''}
+							{#if counted.length === 0}
+								{number}
+							{:else}
+								<!-- Each count opens to the nations it is made of, each linked to the part of its page with the view's facts and their sources. -->
+								<details class="count-names">
+									<summary aria-label="{number} {counted.length === 1 ? 'nation' : 'nations'} in {row.cells.state?.text}: {column.header}">{number}</summary>
+									<ul>
+										{#each counted as nation (nation.id)}
+											<li><a href="/nations/{nation.id}#{body.section}">{nation.name}</a></li>
+										{/each}
+									</ul>
+								</details>
+							{/if}
+						{/snippet}
+					</DataTable>
 					</div>
 				{:else if body && definition.rows !== 'nations'}
 					<DataTable
@@ -929,6 +968,20 @@
 
 	.row-names ul {
 		padding-left: 1.1em;
+	}
+
+	/* A count in a by-state table opens to its nations, listed under the number and read left to right. */
+	.count-names summary {
+		cursor: pointer;
+		color: var(--color-link);
+	}
+
+	.count-names ul {
+		min-width: 12rem;
+		margin: var(--space-2) 0 var(--space-1);
+		padding-left: 1.1em;
+		text-align: left;
+		font-weight: normal;
 	}
 
 	/*

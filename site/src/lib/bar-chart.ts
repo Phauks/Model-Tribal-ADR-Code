@@ -42,12 +42,16 @@ export function scaleTop(largest: number): { top: number; step: number } {
 	return { top: Math.ceil(largest / step) * step, step };
 }
 
-/** The chart as a table definition, for the table view and its CSV download. */
+/**
+ * The chart as a table definition, for the table view and its CSV download. A bar's address
+ * links its name; on the page the number links to it too (the column is drawn by BarChart.svelte),
+ * while the CSV keeps one link column.
+ */
 export function chartTable(chart: BarChartData): { columns: TableColumn[]; rows: TableRow[] } {
 	return {
 		columns: [
 			{ key: 'label', header: chart.labelHeader, isRowHeader: true, sortable: true },
-			{ key: 'value', header: chart.valueHeader, type: 'number', sortable: true }
+			{ key: 'value', header: chart.valueHeader, type: 'number', sortable: true, custom: true }
 		],
 		rows: chart.bars.map((bar) => ({
 			key: bar.label,
