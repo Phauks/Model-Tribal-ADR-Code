@@ -17,14 +17,16 @@ Organizations, and people, can sponsor the project: give once or every month, ch
 
 ## The Sponsorship page
 
-The page leads with one goal: a printed copy for every federally recognized nation (Trevor chose this layout on Nov. 23, 2026). Below the page's own text, edited on the website like the essays, it shows:
+The page is built to match mockup A, which Trevor approved on Nov. 23, 2026, with his two changes: no amounts for one state's nations (two sponsors could pay for the same nations), and no cost fixed in the code, because printing and hosting prices are not settled. It shows:
 
-- the goal, in a band: how many nations it counts and, once the cost of a copy is set, how many copies gifts have paid for, with a Sponsor button while gifts are open;
-- three counts taken when the site is built: nations with their own page, sources recorded, and what reading costs ($0);
-- the other things a gift can fund: the website, the large-format edition, and wherever it is needed most, each with its cost once set;
-- the sponsors shown in public.
+- a band with the page's own text (edited on the website like the essays), the goal of a paperback for every federally recognized nation, and the gift form;
+- three counts taken when the site is built: nations with their own page, sources recorded and cited, and what reading costs ($0);
+- "More you can fund": the site for a year, hardcovers for every nation, and wherever it is needed most, each with a heart button to sponsor it;
+- the sponsors shown in public, a card inviting a new one, and the line "Sponsors have no say in what the code says."
 
-No cost is fixed in the code, because printing and hosting prices are not settled (Trevor, Nov. 23, 2026). The lead author sets each one under "Costs on the Sponsorship page" on the workspace Sponsors page: a paperback printed and mailed to one nation, a large-format copy the same way, and the website for a year. A blank box keeps that cost off the page. Progress counts gifts in the mode the public pages use. Copies paid for are the gifts toward copies for every nation divided by the cost of a copy, never more than the nations. The website's share is its gifts in the last 365 days over a year's cost, and the large-format edition's is its gifts over the cost of a copy for every nation. A new sponsorship's gifts go wherever they are needed most until its managers choose otherwise, so not every gift goes to the goal.
+The gift form chooses how often, where the gift goes (wherever it is needed most, unless the sponsor picks another), and an amount: amounts for 1, 10 and 100 copies once the cost of a paperback is set, or any other amount. Nothing is chosen ahead of time but how often (every month, as on the Account page) and where the gift goes. Pressing Sponsor opens the Account page's gift form with those choices filled in; a new sponsorship starts with that choice of where its gifts go. While gifts are off, the button is greyed out and a note says who receives gifts goes there once chosen.
+
+The lead author sets each cost under "Costs on the Sponsorship page" on the workspace Sponsors page: a paperback printed and mailed to one nation, a hardcover the same way, and the website for a year. A blank box keeps that figure and its progress bar off the page. Progress counts gifts in the mode the public pages use. Copies paid for are the gifts toward copies for every nation divided by the cost of a paperback, never more than the nations. The site's share is its gifts in the last 365 days over a year's cost; at the whole cost the card says "Paid for". The hardcovers' share is the gifts toward copies over a hardcover for every nation, since hardcovers take the place of paperbacks.
 
 ## Managers
 
