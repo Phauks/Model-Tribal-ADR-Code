@@ -15,6 +15,7 @@
 	// Worker renders them; the pages built ahead of time read it from the
 	// signed-in hint (src/lib/signed-in-hint.ts) once the script runs.
 	import { page } from '$app/state';
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import History from '@lucide/svelte/icons/history';
 	import Menu from '@lucide/svelte/icons/menu';
 	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
@@ -23,6 +24,7 @@
 	import { accountPages, currentAccountPage, isAccountPath } from '#lib/account-menu.ts';
 	import type { Permission } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
+	import { isUnfolded } from '#lib/outline-folding.ts';
 	import { sectionOf, siteSections, type OutlineItem, type PageOutline } from '#lib/site-sections.ts';
 	import {
 		isCurrentWorkspacePage,
@@ -172,28 +174,65 @@
 	function isActive(item: OutlineItem): boolean {
 		return item.link.startsWith('#') ? item.link.slice(1) === activeHeading : isCurrentPage(item);
 	}
+
+	// Every level of the outline folds open and shut (src/lib/outline-folding.ts).
+	// What the reader opens or shuts lasts until they go to another page.
+	let folding = $state<Record<string, boolean>>({});
+	let outlineShown = $state(true);
+	let foldedOn = '';
+	$effect(() => {
+		if (path === foldedOn) return;
+		foldedOn = path;
+		folding = {};
+		outlineShown = true;
+	});
+
+	function unfolded(item: OutlineItem): boolean {
+		return isUnfolded(item, folding, isActive);
+	}
+
+	function fold(item: OutlineItem): void {
+		folding = { ...folding, [item.link]: !unfolded(item) };
+	}
 </script>
 
-{#snippet outlineList(items: OutlineItem[], depth: number)}
-	<ul class="outline" data-depth={depth}>
-		{#each items as item (item.link)}
+{#snippet outlineList(items: OutlineItem[], depth: number, listId: string, shut = false)}
+	<ul class="outline" data-depth={depth} id={listId} hidden={shut}>
+		{#each items as item, index (item.link)}
+			{@const branch = Boolean(item.children?.length)}
+			{@const open = branch && unfolded(item)}
 			<li>
-				<a
-					href={item.link}
-					class:active={isActive(item)}
-					aria-current={isCurrentPage(item)
-						? 'page'
-						: item.link.startsWith('#') && isActive(item)
-							? 'location'
-							: undefined}
-				>
-					{#if item.number}<span class="number">{item.number}</span>{/if}
-					<span class="label"
-						>{item.label}{#if item.note}{' '}<span class="note">({item.note})</span>{/if}</span
+				<div class="entry">
+					<a
+						href={item.link}
+						class:active={isActive(item)}
+						aria-current={isCurrentPage(item)
+							? 'page'
+							: item.link.startsWith('#') && isActive(item)
+								? 'location'
+								: undefined}
 					>
-				</a>
-				{#if item.children?.length}
-					{@render outlineList(item.children, depth + 1)}
+						{#if item.number}<span class="number">{item.number}</span>{/if}
+						<span class="label"
+							>{item.label}{#if item.note}{' '}<span class="note">({item.note})</span>{/if}</span
+						>
+					</a>
+					{#if branch}
+						<button
+							type="button"
+							class="fold needs-scripts"
+							aria-expanded={open}
+							aria-controls="{listId}-{index}"
+							title={open ? 'Fold' : 'Unfold'}
+							onclick={() => fold(item)}
+						>
+							<ChevronRight size={16} aria-hidden="true" />
+							<span class="visually-hidden">{open ? 'Fold' : 'Unfold'} {item.label}</span>
+						</button>
+					{/if}
+				</div>
+				{#if branch && item.children}
+					{@render outlineList(item.children, depth + 1, `${listId}-${index}`, !open)}
 				{/if}
 			</li>
 		{/each}
@@ -205,16 +244,33 @@
 		{#each siteSections as section (section.link)}
 			{@const current = section === currentSection}
 			<li class:current>
-				{#if section.built}
-					<a href={section.link} aria-current={current && path === section.link ? 'page' : undefined}>
-						{section.label}
-					</a>
-				{:else}
-					<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
-				{/if}
+				<div class="entry">
+					{#if section.built}
+						<a href={section.link} aria-current={current && path === section.link ? 'page' : undefined}>
+							{section.label}
+						</a>
+					{:else}
+						<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
+					{/if}
+					{#if current && outline?.items.length}
+						<button
+							type="button"
+							class="fold needs-scripts"
+							aria-expanded={outlineShown}
+							aria-controls="sidebar-outline-{idSuffix}"
+							title={outlineShown ? 'Fold' : 'Unfold'}
+							onclick={() => (outlineShown = !outlineShown)}
+						>
+							<ChevronRight size={16} aria-hidden="true" />
+							<span class="visually-hidden">{outlineShown ? 'Fold' : 'Unfold'} {section.label}</span>
+						</button>
+					{/if}
+				</div>
 				{#if current && outline?.items.length}
-					{#if outline.title}<p class="outline-title">{outline.title}</p>{/if}
-					{@render outlineList(outline.items, 1)}
+					<div id="sidebar-outline-{idSuffix}" hidden={!outlineShown}>
+						{#if outline.title}<p class="outline-title">{outline.title}</p>{/if}
+						{@render outlineList(outline.items, 1, `sidebar-outline-${idSuffix}-list`)}
+					</div>
 				{/if}
 			</li>
 		{/each}
@@ -298,6 +354,57 @@
 </details>
 
 <style>
+	/* ---- Folding (src/lib/outline-folding.ts) ---- */
+	.entry {
+		display: flex;
+		align-items: flex-start;
+	}
+
+	.entry > a,
+	.entry > .unbuilt {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.fold {
+		flex: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.75rem;
+		height: 1.75rem;
+		margin: 0.2rem 0 0;
+		padding: 0;
+		border: 0;
+		border-radius: var(--radius-control);
+		background: transparent;
+		color: var(--color-ink-muted);
+		cursor: pointer;
+	}
+
+	.sections > li > .entry > .fold {
+		margin-top: 0.375rem;
+	}
+
+	.fold:hover {
+		background: var(--color-surface);
+		color: var(--color-ink);
+	}
+
+	.fold :global(svg) {
+		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
+	}
+
+	.fold[aria-expanded='true'] :global(svg) {
+		transform: rotate(90deg);
+	}
+
+	/* Without scripts nothing can be unfolded, so everything shows. */
+	:global(:root:not([data-scripts='on'])) [hidden].outline,
+	:global(:root:not([data-scripts='on'])) [hidden][id^='sidebar-outline-'] {
+		display: block;
+	}
+
 	/* ---- Shared list styles ---- */
 	nav ul {
 		list-style: none;
@@ -306,7 +413,8 @@
 	}
 
 	.sections > li > a,
-	.sections > li > .unbuilt {
+	.sections > li > .entry > a,
+	.sections > li > .entry > .unbuilt {
 		display: flex;
 		align-items: center;
 		min-height: 2.5rem;
@@ -318,18 +426,19 @@
 	}
 
 	/* Sections whose pages are not published yet: named, not linked. */
-	.sections > li > .unbuilt {
+	.sections > li > .entry > .unbuilt {
 		color: var(--color-ink-muted);
 		font-weight: var(--font-weight-regular);
 	}
 
 	.sections > li > a:hover,
+	.sections > li > .entry > a:hover,
 	.outline a:hover {
 		background: var(--color-surface);
 		text-decoration: underline;
 	}
 
-	.sections > li.current > a {
+	.sections > li.current > .entry > a {
 		color: var(--color-link);
 		font-weight: var(--font-weight-bold);
 	}
@@ -609,7 +718,8 @@
 	}
 
 	.sidebar-narrow .sections > li > a,
-	.sidebar-narrow .sections > li > .unbuilt,
+	.sidebar-narrow .sections > li > .entry > a,
+	.sidebar-narrow .sections > li > .entry > .unbuilt,
 	.sidebar-narrow .outline a {
 		min-height: var(--layout-target-minimum);
 		align-items: center;
