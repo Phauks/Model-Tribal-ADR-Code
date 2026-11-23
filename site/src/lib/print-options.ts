@@ -73,7 +73,7 @@ export const partDescriptions: PartDescription[] = [
 		label: 'Page details',
 		hint: 'A line at the top with the page’s address and the date you printed it, so a reader can find the current version'
 	},
-	{ part: 'reviewStatus', label: 'Review status', hint: 'Whether the nation has reviewed its page' },
+	{ part: 'reviewStatus', label: 'Review status', hint: 'Whether the nation has claimed or reviewed the page' },
 	{ part: 'officialImages', label: 'Seal or logo', hint: 'The nation’s image; its credit is in the Sources list' },
 	{ part: 'maps', label: 'Maps' },
 	{ part: 'tables', label: 'Tables', hint: 'The tables of nations, states and regions' },

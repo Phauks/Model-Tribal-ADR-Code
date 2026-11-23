@@ -43,7 +43,7 @@
 		These are the opinions of courts serving the nation that are published in the American Tribal Law Reporter or the Navajo Reporter, as the Caselaw Access Project at Harvard Law School Library released them in 2024. Each opens as its own page, with the publisher’s headnotes removed.
 	</p>
 	<p>
-		“Mentions” lists words the opinion uses, such as peacemaking, mediation or custom and tradition. It does not say what the court decided about them. The nation can ask to have any opinion taken down with the link beside it; it comes down within seven days.
+		“Mentions” lists words the opinion uses, such as peacemaking, mediation or custom and tradition. It does not say what the court decided about them.
 	</p>
 </div>
 

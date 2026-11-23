@@ -77,8 +77,7 @@
 	{/if}
 	<p class="notice">
 		<Lock size={16} aria-hidden="true" />
-		Earlier wording of {change.kind === 'story' ? 'stories' : 'nation pages'} is not shown on this site. A nation can ask for
-		something to be taken off, and an older version would put it back in view.
+		Earlier wording of {change.kind === 'story' ? 'stories' : 'nation pages'} is not shown on this site.
 	</p>
 {:else if data.comparison.kind === 'hidden'}
 	<p>The text of this version is hidden, so it cannot be compared.</p>

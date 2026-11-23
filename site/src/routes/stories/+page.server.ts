@@ -17,7 +17,6 @@ export const load: PageServerLoad = () => {
 	}
 	return {
 		count: stories.length,
-		awaitingReview: stories.filter((story) => story.awaitsReview).length,
 		groups: [...groups.values()].sort((first, second) =>
 			first.name.localeCompare(second.name, 'en', { sensitivity: 'base' })
 		)

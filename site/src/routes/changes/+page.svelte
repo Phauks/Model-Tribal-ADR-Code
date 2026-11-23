@@ -170,9 +170,7 @@
 	{#if !historyShowsWording}
 		<p class="notice">
 			<Lock size={16} aria-hidden="true" />
-			This page lists when the page changed, who changed it and which parts. A nation can ask for something to be taken
-			off its page, and showing earlier versions would put it back in view, so only the current page is shown on this
-			site.
+			This page lists when the page changed, who changed it and which parts. Only the current page is shown on this site.
 		</p>
 	{:else}
 		<p class="lede">Every version readers have seen. Choose two to compare, or open one to read it as it stood.</p>

@@ -22,7 +22,6 @@ import {
 	storyKindLabels
 } from '../story-labels.ts';
 import {
-	awaitsNationReview,
 	isoDate,
 	shownExcerpts,
 	shownFullText,
@@ -33,6 +32,7 @@ import {
 	type StoryRecord,
 	type StoryTelling
 } from '../story-visibility.ts';
+import { storyReviewStatus, type ReviewStatus } from '../review-status.ts';
 import { methods, nations, sources, storyRecords } from './content.ts';
 import { formatCaptureDate, formatSource } from './markdown.ts';
 import { SourceUses, whereInSource, type CitationMark, type SourceEntry } from './source-uses.ts';
@@ -71,8 +71,6 @@ export interface FullTextView {
 	credit: string;
 	/** Where in the telling the text runs. */
 	locator: string;
-	/** Why the whole text may be shown here, in a sentence. */
-	basisNote: string;
 	/** The copy it was taken from and how it was checked. */
 	transcribedFrom: string;
 	notes: string[];
@@ -107,7 +105,8 @@ export interface StorySummary {
 	community?: string;
 	/** The first excerpt the page quotes, if any. */
 	excerpt?: ExcerptView;
-	awaitsReview: boolean;
+	/** Where the story stands with the nation, for its status line (src/lib/review-status.ts). */
+	review: ReviewStatus;
 }
 
 export interface StoryView extends StorySummary {
@@ -223,7 +222,7 @@ function summaryOf(record: StoryRecord, date: string): StorySummary {
 						link: webLink(firstTelling.source)
 					}
 				: undefined,
-		awaitsReview: awaitsNationReview(record)
+		review: storyReviewStatus(record.review_status)
 	};
 }
 
@@ -261,7 +260,7 @@ export function storyView(record: StoryRecord): StoryView {
 		const telling = byId.get(shownFull.telling);
 		const citations: CitationMark[] = [];
 		if (telling?.source) {
-			uses.cite(telling.source, { section: 'The story', text: 'the full text', where: shownFull.locator }, citations);
+			uses.cite(telling.source, { section: 'Content', text: 'the full text', where: shownFull.locator }, citations);
 		}
 		fullText = {
 			paragraphs: shownFull.paragraphs.map((paragraph) =>
@@ -269,7 +268,6 @@ export function storyView(record: StoryRecord): StoryView {
 			),
 			credit: tellingCredit(telling),
 			locator: shownFull.locator,
-			basisNote: shownFull.basis_note,
 			transcribedFrom: shownFull.transcribed_from,
 			notes: shownFull.notes ?? [],
 			words: shownFull.words,

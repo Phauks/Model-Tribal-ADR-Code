@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
 	accessAllowsDisplay,
-	awaitsNationReview,
 	shownExcerpts,
 	shownFullText,
 	shownTellings,
@@ -67,14 +66,8 @@ describe('access levels on the website (decision record 0029)', () => {
 });
 
 describe('which stories are shown', () => {
-	it('shows a story awaiting the nation’s review, with the notice', () => {
-		const record = story();
-		expect(storyIsShown(record, today)).toBe(true);
-		expect(awaitsNationReview(record)).toBe(true);
-	});
-
-	it('drops the notice once the nation has reviewed it', () => {
-		expect(awaitsNationReview(story({ review_status: 'approved-by-nation' }))).toBe(false);
+	it('shows a story the nation has not reviewed yet', () => {
+		expect(storyIsShown(story(), today)).toBe(true);
 	});
 
 	it('hides restricted and withdrawn stories', () => {
