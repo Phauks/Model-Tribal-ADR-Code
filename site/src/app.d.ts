@@ -37,6 +37,8 @@ declare global {
 		workspaceChangeLimit?: RateLimit;
 		signInLimit?: RateLimit;
 		signInNetworkLimit?: RateLimit;
+		/** Files one account can start sending in a minute (src/routes/uploads/pieces). */
+		uploadLimit?: RateLimit;
 		/** Cloudflare Email Service, for sign-in codes (src/lib/server/sign-in-email.ts). */
 		signInEmail?: SignInEmailBinding;
 		/** The address sign-in codes come from, on a domain onboarded in Email Service. */

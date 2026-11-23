@@ -235,6 +235,10 @@ A contributor form sent from `/forms/<form>` opens a request (kind `contribute`,
 
 On the request's page in the workspace, editors see each form, open the filled form (while the site still has that exact version), download the stored copy, and file the forms under a filing number, which is logged.
 
+## Files people send
+
+Anyone signed in can send files on `/uploads/send` and follow them on `/uploads` (Your uploads, also in the account menu). The lead author and editors review them on `/workspace/uploads` (permission `review-uploads`). Files arrive in 10 MB pieces into the private bucket under `uploads/<identifier>/`, are checked by type and for hidden content as they arrive, and wait for a reviewer, who files them, keeps them for reference, or says why they were not used. A YouTube link can stand in for a video. Filed files are served at `/files/<reference>/<name>`. The code is in `src/lib/uploads.ts`, `src/lib/server/uploads.ts`, `src/lib/server/upload-checks.ts` and `src/lib/server/upload-serving.ts`; the design is docs/uploads.md and decision record 0038.
+
 ## How sign-in works
 
 The "Sign in" link in the masthead of every page, and "Co-author sign-in" in
@@ -459,4 +463,5 @@ Sending real email is tried by hand once `SIGN_IN_EMAIL_FROM` is set.
 - Hiding material from the website directly from the workspace, before a pull
   request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly.
+- A virus scan for files people send, and comments on them from nation reviewers (docs/uploads.md, "Not built yet").
 - Live co-editing of an essay by several people at once, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

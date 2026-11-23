@@ -7,7 +7,7 @@
 	// short list, following the WAI-ARIA disclosure pattern rather than a
 	// menu, since the items are plain links and a form: who is signed in, Your
 	// profile, Workspace (for people with workspace access), Password and Sign
-	// out. Trevor asked on Nov. 22, 2026 for "Signed in as" and Sign out to
+	// out, with Your uploads (docs/uploads.md) after Your profile. Trevor asked on Nov. 22, 2026 for "Signed in as" and Sign out to
 	// live here rather than across the top of the workspace and profile pages.
 	//
 	// The workspace and profile pages know who is signed in; they keep the name
@@ -21,6 +21,7 @@
 	import LogIn from '@lucide/svelte/icons/log-in';
 	import LogOut from '@lucide/svelte/icons/log-out';
 	import UserRound from '@lucide/svelte/icons/user-round';
+	import Upload from '@lucide/svelte/icons/upload';
 	import LayoutDashboard from '@lucide/svelte/icons/layout-dashboard';
 	import { roleLabels, type Role } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
@@ -46,7 +47,8 @@
 		const person = page.data.person as { displayName: string; role: Role } | undefined;
 		if (person) return { name: person.displayName, role: roleLabels[person.role].toLocaleLowerCase('en-US') };
 		const email = page.data.email as string | undefined;
-		if (email && page.url.pathname.startsWith('/profile')) return { name: email, role: '' };
+		if (email && (page.url.pathname.startsWith('/profile') || page.url.pathname.startsWith('/uploads')))
+			return { name: email, role: '' };
 		return undefined;
 	});
 	const signedInAs = $derived(fromPage ?? remembered);
@@ -122,6 +124,12 @@
 				<a href="/profile" data-sveltekit-reload>
 					<UserRound size={20} strokeWidth={1.75} />
 					Your profile
+				</a>
+			</li>
+			<li>
+				<a href="/uploads" data-sveltekit-reload>
+					<Upload size={20} strokeWidth={1.75} />
+					Your uploads
 				</a>
 			</li>
 			{#if hasWorkspace}
