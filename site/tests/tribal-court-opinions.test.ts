@@ -4,11 +4,13 @@ import { nationsWithOpinions, opinionsOf, tribalCourtOpinions } from '#lib/serve
 
 describe('tribal court opinions (decision record 0047)', () => {
 	const opinions = tribalCourtOpinions();
-	const served = new Set(publicCopies().map((copy) => `/copies/${copy.key}`));
+	const served = new Set(publicCopies().map((copy) => copy.key));
 
 	it('lists only opinions whose page the site serves, each with a removal link', () => {
 		for (const opinion of opinions) {
-			expect(served.has(opinion.path)).toBe(true);
+			expect(served.has(opinion.key)).toBe(true);
+			// Each opens as a page inside the site, with its masthead and sidebar (copyPagePath).
+			expect(opinion.path).toBe(`/copies/view/${opinion.key}`);
 			expect(opinion.removal).toContain('kind=remove');
 			expect(opinion.nations.length).toBeGreaterThan(0);
 		}

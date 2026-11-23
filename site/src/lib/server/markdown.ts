@@ -12,7 +12,7 @@
 import { marked } from 'marked';
 import { marksHtml, type CitationMark } from '../citation-marks.ts';
 import { verifyLink, fileName } from '../checksums.ts';
-import { copyPath, mediaLabel } from '../public-copies.ts';
+import { copyPagePath, copyPath, mediaLabel } from '../public-copies.ts';
 import { readingLinksHtml } from '../reading-links.ts';
 import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
 
@@ -82,9 +82,10 @@ export function savedCopyLink(source: SourceRecord | undefined): string {
 	const saved = copy.captured ? `, ${escapeHtml(formatCaptureDate(copy.captured))}` : '';
 	// A link to check a downloaded copy against its SHA-256 (src/lib/checksums.ts), as Trevor asked on Nov. 23, 2026.
 	// Trevor named the two links on Nov. 23, 2026: "Saved Resource" for the copy and "SHA-256" for the check.
-	const path = copyPath(copy);
-	const verify = escapeHtml(verifyLink(copy.sha256, fileName(path)));
-	return ` <span class="source-saved">(<a href="${escapeHtml(path)}">Saved Resource${saved}, ${mediaLabel(copy.mediaType)}</a>; <a class="source-verify" href="${verify}">SHA-256</a>)</span>`;
+	// The copy's link opens its page, inside the site's masthead and sidebar; the SHA-256 link names the file itself.
+	const page = copyPagePath(copy);
+	const verify = escapeHtml(verifyLink(copy.sha256, fileName(copyPath(copy))));
+	return ` <span class="source-saved">(<a href="${escapeHtml(page)}">Saved Resource${saved}, ${mediaLabel(copy.mediaType)}</a>; <a class="source-verify" href="${verify}">SHA-256</a>)</span>`;
 }
 
 function webAddress(link: string | undefined): URL | undefined {

@@ -1,0 +1,146 @@
+<script lang="ts">
+	import Download from '@lucide/svelte/icons/download';
+	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+	const details = $derived(data.details);
+	const opinion = $derived(details?.opinion);
+	const publishedAt = $derived(URL.canParse(data.original) ? new URL(data.original).hostname : data.original);
+</script>
+
+<svelte:head>
+	<title>{data.title} · Copies of documents · Model Tribal ADR Code</title>
+</svelte:head>
+
+<div class="reading">
+	<p class="small trail">
+		<a href="/copies">Copies of documents</a>{#if details}<span class="separator" aria-hidden="true">›</span><a href="/copies/list/{details.list.slug}"
+				>{details.list.title}</a
+			>{/if}
+	</p>
+	<h1>
+		{#if opinion}<i>{opinion.name}</i>{:else}{data.title}{/if}
+	</h1>
+	{#if opinion}
+		<p class="lead">
+			{opinion.citation} ({opinion.court}{data.decidedText ? `, decided ${data.decidedText}` : ''}){#if opinion.docket}<span
+					class="small muted"
+				>
+					· Docket {opinion.docket}</span
+				>{/if}
+		</p>
+	{/if}
+
+	<p class="actions">
+		<a class="button" href={data.file} download={data.fileName}><Download size={18} aria-hidden="true" />Download ({data.kind}, {data.size})</a>
+		<a class="button button-quiet" href={data.file}><ExternalLink size={18} aria-hidden="true" />Open the file alone</a>
+	</p>
+
+	<dl class="details small">
+		{#if details && details.nations.length > 0}
+			<dt>{details.nations.length === 1 ? 'Nation' : 'Nations'}</dt>
+			<dd>
+				{#each details.nations as nation, index (nation.id)}{index > 0 ? '; ' : ''}<a href="/nations/{nation.id}">{nation.name}</a>{/each}
+			</dd>
+		{/if}
+		<dt>Published at</dt>
+		<dd><a href={data.original} rel="noopener noreferrer">{publishedAt}</a></dd>
+		{#if data.capturedText}
+			<dt>Copy made</dt>
+			<dd>{data.capturedText}</dd>
+		{/if}
+		<dt>SHA-256</dt>
+		<dd><code class="hash">{data.sha256}</code> · <a href={data.verify}>Verify a download</a></dd>
+		<dt>Take it down</dt>
+		<dd><a href={data.removal}>Ask to remove or redact this copy</a></dd>
+	</dl>
+</div>
+
+<section class="document" aria-label="The document">
+	{#if data.isPdf}
+		<iframe class="frame" src={data.file} title="{data.title} ({data.kind})"></iframe>
+	{:else}
+		<!-- A saved web page runs nothing and loads nothing: its own response says so too (src/lib/server/public-copy-serving.ts). -->
+		<iframe class="frame" src={data.file} title="{data.title} ({data.kind})" sandbox="" referrerpolicy="no-referrer"></iframe>
+	{/if}
+	<p class="small muted fallback">
+		If the document does not show above, as on some phones, <a href={data.file}>open the file alone</a> or <a href={data.file} download={data.fileName}>download it</a>.
+	</p>
+	<p class="print-only">This copy is at {data.file} on this site, and was published at {data.original}.</p>
+</section>
+
+<style>
+	.trail {
+		margin-bottom: var(--space-2);
+	}
+
+	h1 {
+		overflow-wrap: anywhere;
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
+		margin: var(--space-4) 0;
+	}
+
+	.actions .button {
+		gap: var(--space-2);
+	}
+
+	.details {
+		display: grid;
+		grid-template-columns: max-content minmax(0, 1fr);
+		gap: var(--space-1) var(--space-3);
+		margin: 0 0 var(--space-4);
+		overflow-wrap: anywhere;
+	}
+
+	.details dt {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.details dd {
+		margin: 0;
+	}
+
+	.hash {
+		word-break: break-all;
+	}
+
+	.separator {
+		margin: 0 var(--space-1);
+	}
+
+	.frame {
+		display: block;
+		width: 100%;
+		height: 85vh;
+		min-height: 30rem;
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
+		background: var(--color-surface-raised);
+	}
+
+	.fallback {
+		margin-top: var(--space-2);
+	}
+
+	.print-only {
+		display: none;
+	}
+
+	@media print {
+		.actions,
+		.frame,
+		.fallback {
+			display: none;
+		}
+
+		.print-only {
+			display: block;
+		}
+	}
+</style>

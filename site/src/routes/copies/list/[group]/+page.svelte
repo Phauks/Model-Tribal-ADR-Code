@@ -20,7 +20,7 @@
 		data.copies.map((copy) => ({
 			key: copy.key,
 			cells: {
-				title: { text: `${copy.title} (${copy.kind})`, href: copy.path },
+				title: { text: `${copy.title} (${copy.kind})`, href: copy.page },
 				nations: { text: copy.nations.join('; ') },
 				original: { text: new URL(copy.original).hostname, href: copy.original },
 				captured: { text: copy.capturedText, sortValue: copy.captured },

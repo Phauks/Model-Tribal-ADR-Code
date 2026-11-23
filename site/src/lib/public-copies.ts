@@ -50,9 +50,59 @@ export function removalRequestPath(copy: Pick<PublicCopy, 'key'>): string {
 	return `/requests?${new URLSearchParams({ kind: 'remove', record: `copies/${copy.key}` }).toString().replaceAll('%2F', '/')}`;
 }
 
-/** The site's own address of a copy. */
+/**
+ * The site's own address of a copy's file: what a download, a ZIP, offline
+ * saving and the Verify page use. A reader clicking a link to read a document
+ * goes to copyPagePath instead.
+ */
 export function copyPath(copy: Pick<PublicCopy, 'key'>): string {
-	return `/copies/${copy.key.split('/').map(encodeURIComponent).join('/')}`;
+	return `/copies/${encodedKey(copy.key)}`;
+}
+
+/**
+ * The page that shows a copy inside the site, with the masthead and the left
+ * sidebar, and the file in a frame below its title, date and SHA-256 (Trevor,
+ * Nov. 23, 2026: "clicking into a document should still invoke the header and
+ * left sidebar, otherwise you completely lose navigation"). Every link that
+ * opens a document for reading goes here; the file stays at copyPath.
+ */
+export function copyPagePath(copy: Pick<PublicCopy, 'key'>): string {
+	return `${copyPagePrefix}${encodedKey(copy.key)}`;
+}
+
+/** Where the document pages live: /copies/view/<key>. */
+export const copyPagePrefix = '/copies/view/';
+
+function encodedKey(key: string): string {
+	return key.split('/').map(encodeURIComponent).join('/');
+}
+
+/**
+ * The prebuilt file that holds a copy's title, date and other details for
+ * its page (src/routes/copies/details/[shard].json): copies are split by the
+ * first two characters of their SHA-256, so the Worker reads one small file
+ * rather than carrying every title in its own code.
+ */
+export function copyDetailsShard(copy: Pick<PublicCopy, 'sha256'>): string {
+	return copy.sha256.slice(0, 2).toLowerCase();
+}
+
+export function copyDetailsPath(shard: string): string {
+	return `/copies/details/${shard}.json`;
+}
+
+/** What a copy's page shows beyond the build-time list (src/lib/server/copy-lists.ts, copyDetails). */
+export interface CopyDetails {
+	title: string;
+	/** "PDF" or "saved web page". */
+	kind: string;
+	/** YYYY-MM-DD, or empty. */
+	captured: string;
+	nations: { id: string; name: string }[];
+	/** The short list the copy is in, below /copies/list/. */
+	list: { slug: string; title: string };
+	/** For a tribal court opinion: its name, citation, court and date decided. */
+	opinion?: { name: string; citation: string; court: string; decided: string; docket: string };
 }
 
 /**

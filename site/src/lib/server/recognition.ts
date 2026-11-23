@@ -7,7 +7,7 @@
 import { citationParts, shortCitation, type CitationPart } from '../legal-citations.ts';
 import { recognitionLabel } from '../nation-labels.ts';
 import { recognitionBadge, type RecognitionBadge } from '../recognition-badges.ts';
-import { copyPath } from '../public-copies.ts';
+import { copyPagePath } from '../public-copies.ts';
 import { publicCopyFor, sources, type NationRecord } from './content.ts';
 
 export interface RecognitionView {
@@ -34,7 +34,7 @@ function sourceLink(fact: RecognitionFact): string | undefined {
  */
 function toSavedCopy(part: CitationPart): CitationPart {
 	const copy = publicCopyFor(part.link);
-	return copy ? { ...part, link: copyPath(copy) } : part;
+	return copy ? { ...part, link: copyPagePath(copy) } : part;
 }
 
 export function recognitionView(fact: RecognitionFact): RecognitionView {
