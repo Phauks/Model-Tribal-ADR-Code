@@ -22,6 +22,7 @@
 	{#if data.hasWorkspaceAccess}
 		<li>Your access to the workspace.</li>
 	{/if}
+	<li>Pages you follow, and your email setting for updates to them.</li>
 </ul>
 
 <h2>What stays</h2>
