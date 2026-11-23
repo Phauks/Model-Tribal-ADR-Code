@@ -16,8 +16,6 @@
 	import { byStateColumns, byStateRows, categoryColumns, categoryRows, landAreaColumns, landAreaRows as buildLandAreaRows, mapTableFile, nationColumns, nationRows, regionColumns, regionRows as buildRegionRows, stateColumns, stateRows as buildStateRows } from '#lib/map-tables.ts';
 	import { mapTableOnScreen } from '#lib/map-table-on-screen.svelte.ts';
 	import X from '@lucide/svelte/icons/x';
-	import List from '@lucide/svelte/icons/list';
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -35,18 +33,6 @@
 	let tileMapReady = $state(false);
 	let tileMap = $state<TileMap | undefined>();
 
-	/** Whether the map's key is open. It starts open on wide screens and closed on narrow ones, where it would cover much of the smaller map, and then keeps the reader's choice. */
-	let keyOpen = $state(true);
-	const keyStorageKey = 'map-key-open';
-
-	function toggleKey(): void {
-		keyOpen = !keyOpen;
-		try {
-			localStorage.setItem(keyStorageKey, keyOpen ? 'open' : 'closed');
-		} catch {
-			// Storage can be blocked; the choice then lasts for this page only.
-		}
-	}
 	let tileMapCamera = $state<TileMapCamera | undefined>();
 	/** The tiled map's shape: flat (Web Mercator, which stretches places far from the equator, such as Alaska) or a globe, where every place keeps its true size (Trevor, 2026-11-23). */
 	let mapShape = $state<'flat' | 'globe'>('flat');
@@ -143,13 +129,6 @@
 	}
 
 	onMount(() => {
-		let storedKey: string | null = null;
-		try {
-			storedKey = localStorage.getItem(keyStorageKey);
-		} catch {
-			// Storage can be blocked; the key then opens by the screen's width.
-		}
-		keyOpen = storedKey ? storedKey === 'open' : matchMedia('(min-width: 1100px)').matches;
 		void showAddressedView();
 		const onHashChange = () => void showAddressedView();
 		window.addEventListener('hashchange', onHashChange);
@@ -386,6 +365,7 @@
 		class="map-view"
 		id="map-view-{view.key}"
 		data-map-view={view.key}
+		data-map-full-screen
 		role="region"
 		aria-labelledby={view.heading}
 		hidden={view.key !== current}
@@ -457,35 +437,30 @@
 					{/if}
 				</ZoomableMap>
 				</div>
-				<!-- The key sits in a corner of the map, above the scale, so it stays in sight while the map is used; it closes to one button (Trevor chose this on 2026-11-23, mockup A in project files design/map-engine/key-placement/). -->
-				{#if view.key === 'states' || view.key === 'lands' || (isShadedMapView(view.key) && shaded[view.key])}
-					<div class="map-key" class:closed={!keyOpen}>
-						<button type="button" class="map-key-toggle no-print" aria-expanded={keyOpen} aria-controls="map-key-{view.key}" onclick={toggleKey}>
-							<List aria-hidden="true" size={18} />
-							<span>Key</span>
-							<ChevronDown class="map-key-chevron" aria-hidden="true" size={18} />
-						</button>
-						<ul class="legend" id="map-key-{view.key}" aria-label="Key">
-				{#if view.key === 'states'}
-					{#each data.countClasses as entry (entry.key)}
-						<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
-					{/each}
-					{#if tileMapReady}{@render officeKey()}{/if}
-				{:else if isShadedMapView(view.key) && shaded[view.key]}
-					{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
-						<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
-					{/each}
-					{#if byOf(view.key) === 'nation'}{@render officeKey()}{/if}
-				{:else if view.key === 'lands'}
-					{#each data.landAreaGroups as group (group.key)}
-						<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
-					{/each}
-					{@render officeKey()}
-				{/if}
-						</ul>
-					</div>
-				{/if}
 			</div>
+			<!-- The key sits under the map, where it never covers the map (Trevor, 2026-11-23, after trying it in the map's corner). The Go to menu above the map keeps the row of place buttons from pushing it out of sight. -->
+			{#if view.key === 'states' || view.key === 'lands' || (isShadedMapView(view.key) && shaded[view.key])}
+				<figcaption>
+					<ul class="legend" aria-label="Key">
+					{#if view.key === 'states'}
+						{#each data.countClasses as entry (entry.key)}
+							<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
+						{/each}
+						{#if tileMapReady}{@render officeKey()}{/if}
+					{:else if isShadedMapView(view.key) && shaded[view.key]}
+						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
+							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
+						{/each}
+						{#if byOf(view.key) === 'nation'}{@render officeKey()}{/if}
+					{:else if view.key === 'lands'}
+						{#each data.landAreaGroups as group (group.key)}
+							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
+						{/each}
+						{@render officeKey()}
+					{/if}
+					</ul>
+				</figcaption>
+			{/if}
 		</figure>
 		<!-- Beside the map on wide screens, under it on narrow ones. -->
 		<div class="map-side">
@@ -927,10 +902,6 @@
 		:global(html[data-scripts='on']) .map-drawing.waiting .map-loading {
 			display: block;
 		}
-
-		:global(html[data-scripts='on']) .map-drawing.waiting .map-key {
-			visibility: hidden;
-		}
 	}
 
 	/* Until the tiled map is moved into the view on screen, it is not shown. */
@@ -1264,72 +1235,53 @@
 		border: 1px solid var(--color-control-border);
 	}
 
-	/* The key, in the tiled map's bottom-left corner, above the scale and clear of the zoom and shape buttons on the right. Under the drawn map, which has its own insets along the bottom, it sits below the map. */
-	.map-key {
-		margin-top: var(--space-2);
-		font-size: var(--font-size-small);
-		line-height: 1.3;
-	}
-
-	.map-drawing.tiled .map-key {
-		position: absolute;
-		left: var(--space-2);
-		bottom: 4.25rem;
-		z-index: 3;
-		max-width: min(20rem, calc(100% - 5rem));
-		max-height: calc(100% - 6rem);
+	/*
+	 * Full screen (Trevor, 2026-11-23): the view fills the screen, the map as large as fits, with its picker and key, and the preview and table beside it on a wide screen or under it on a narrow one.
+	 */
+	.map-view:fullscreen {
+		display: grid;
+		grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
+		gap: var(--space-5);
+		align-items: start;
 		margin: 0;
+		padding: var(--space-4);
 		overflow: auto;
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
 		background: var(--color-paper);
 	}
 
-	.map-key-toggle {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
-		border: 0;
-		background: none;
-		color: var(--color-ink);
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
-		cursor: pointer;
-	}
-
-	.map-key-toggle span {
-		flex: 1;
-		text-align: start;
-	}
-
-	.map-key:not(.closed) .map-key-toggle :global(.map-key-chevron) {
-		transform: rotate(180deg);
-	}
-
-	.map-drawing.tiled .map-key-toggle {
-		width: 100%;
-	}
-
-	.map-key .legend {
+	.map-view:fullscreen .map-figure {
+		position: static;
 		margin: 0;
-		padding: 0 var(--space-3) var(--space-3);
+		padding: 0;
+		border: 0;
 	}
 
-	.map-drawing.tiled .map-key .legend {
-		display: grid;
-		gap: var(--space-1);
+	.map-view:fullscreen .map-drawing {
+		max-width: none;
 	}
 
-	.map-key.closed .legend {
-		display: none;
+	.map-view:fullscreen .map-drawing :global(.tile-map) {
+		aspect-ratio: auto;
+		height: calc(100vh - 12rem);
 	}
 
-	.map-key .swatch {
-		flex: none;
-		width: 1rem;
-		height: 1rem;
+	.map-view:fullscreen .map-side {
+		max-height: calc(100vh - 2 * var(--space-4));
+		overflow: auto;
+	}
+
+	@media (max-width: 899.98px) {
+		.map-view:fullscreen {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		.map-view:fullscreen .map-drawing :global(.tile-map) {
+			height: 70vh;
+		}
+
+		.map-view:fullscreen .map-side {
+			max-height: none;
+		}
 	}
 
 	/* The Go to menu, beside the view picker. */
@@ -1341,25 +1293,5 @@
 
 	.go-to-label {
 		font-weight: var(--font-weight-bold);
-	}
-
-	/* On paper the key is printed under the map, always open. */
-	@media print {
-		.map-key,
-		.map-drawing.tiled .map-key {
-			position: static;
-			max-width: none;
-			max-height: none;
-			overflow: visible;
-			border: 0;
-			font-size: inherit;
-		}
-
-		.map-key .legend,
-		.map-key.closed .legend {
-			display: flex;
-			padding: 0;
-			margin: var(--space-3) 0;
-		}
 	}
 </style>
