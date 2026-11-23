@@ -441,6 +441,27 @@ jurisdiction:
   as_of: '2023'
   locator: Appendix C (PDF p.50)
   note: Listed as "VILLAGE OF DOT LAKE".
+court_practice:
+- kind: court-rules
+  title: Judicial Code (draft, Title 2)
+  court: Native Village of Dot Lake Tribal Court
+  link: https://www.dotlakevillage.org/wp-content/uploads/2023/11/Title-2-Dot-Lake-Draft-Judicial-Code-linked.pdf
+  detail: Court page links a Judicial Code PDF (file name says draft) with child protection and domestic violence codes.
+  source: native-village-of-dot-lake-tribal-court-rules-legal-aid
+  confidence: medium
+  verification: title-only
+  locator: document links
+  note: 'The source reads: “Judicial Code (PDF)”. PDF not opened; file dated 2023.'
+- kind: legal-aid
+  title: Advocacy and Complaint Support
+  court: Native Village of Dot Lake Tribal Court
+  link: https://www.dotlakevillage.org/services/advocacy/
+  detail: Court page links an advocacy page and a File for Assistance form for tribal members.
+  source: native-village-of-dot-lake-tribal-court-rules-legal-aid
+  confidence: medium
+  verification: title-only
+  locator: court page
+  note: Page not opened.
 nearby_state_courts:
 - state: AK
   county: Southeast Fairbanks Census Area

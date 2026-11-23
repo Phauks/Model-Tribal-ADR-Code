@@ -840,6 +840,37 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+court_practice:
+- kind: bar-admission
+  title: Bar Admission Fees
+  court: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal Court
+  link: https://ctclusi.org/wp-content/uploads/2020/09/BAR-ADMISSION-FEES.pdf
+  detail: Court page lists a Bar Admission Fees schedule, an Attorney Application (updated 03-20-2026) and an Application for Law Student Admission to Practice or Renew.
+  source: coos-peacegiving-court-page
+  confidence: high
+  verification: title-only
+  locator: Tribal Court & Peacegiving Court
+  note: PDFs not opened.
+- kind: forms
+  title: Civil complaint and answer forms (coming soon)
+  court: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal Court
+  link: https://ctclusi.org/tribal-court-peacegiving/
+  detail: Page lists Civil 1 to Civil 6 forms (complaint instructions, complaint form, exhibits, answer instructions, answer form) with a notice they will be available after review.
+  source: coos-peacegiving-court-page
+  confidence: high
+  verification: read-in-full
+  locator: Forms notice
+  note: 'The source reads: “NOTICE: The following forms, instructions, and information will be available after review.”. Forms not yet available per the page.'
+- kind: bar-admission
+  title: BAR ADMISSION FEES - CLUSI 1-1-61(a)
+  court: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal Court
+  link: https://ctclusi.org/wp-content/uploads/2020/09/BAR-ADMISSION-FEES.pdf
+  detail: Fee due at admission $75.00; annual renewal fee $25.00 due January 15; no fee for an attorney employed by the Tribes; per Supplemental Court Rule 2011-1 dated 4/22/11.
+  source: confederated-tribes-of-coos-lower-bar-admission
+  confidence: medium
+  verification: read-in-full
+  locator: BAR ADMISSION FEES
+  note: 'The source reads: “Annual renewal fee (due January 15)”. Document based on a 2011 rule.'
 nearby_state_courts:
 - state: OR
   county: Lane County

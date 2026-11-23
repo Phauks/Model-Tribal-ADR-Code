@@ -296,6 +296,46 @@ jurisdiction:
   verification: inferred
   locator: 40 Fed. Reg. at 27,501
   note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+court_practice:
+- kind: public-defender
+  title: Judicial Officers & Personnel (Public Defender)
+  court: Las Vegas Paiute Tribal Court
+  link: https://www.lvpaiute.gov/tribal-court
+  detail: Court personnel list as of January 1, 2026 includes a Public Defender; the docket also shows the Public Defender appearing at hearings.
+  source: las-vegas-paiute-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Court Staff
+  note: 'The source reads: “Public Defender”. Individual name omitted.'
+- kind: bar-admission
+  title: Admission to Practice Form
+  court: Las Vegas Paiute Tribal Court
+  link: https://www.lvpaiute.gov/tribal-court
+  detail: Downloadable Forms section lists an Admission to Practice Form, an application for attorneys to practice before the Tribal Court.
+  source: las-vegas-paiute-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Court Documents
+  note: 'The source reads: “Application for attorneys to practice before the Tribal Court”. Form link not captured; page is a single-page site.'
+- kind: forms
+  title: Downloadable Forms
+  court: Las Vegas Paiute Tribal Court
+  link: https://www.lvpaiute.gov/tribal-court
+  detail: Forms include Order of Protection Application, Petition for Temporary Order of Protection, Indian Child Welfare Act Guide and the Tribal Code 2022.
+  source: las-vegas-paiute-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Court Documents
+- kind: legal-aid
+  title: Legal Resources (Legal Aid Center of Southern Nevada)
+  court: Las Vegas Paiute Tribal Court
+  link: https://www.lvpaiute.gov/tribal-court
+  detail: Section lists Nevada attorneys and free community legal education classes from the Legal Aid Center of Southern Nevada and the UNLV law school.
+  source: las-vegas-paiute-tribe-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Legal Assistance
+  note: 'The source reads: “The Legal Aid Center of Southern Nevada and the William S. Boyd School of Law at UNLV provide free legal information to the community.”. Not limited to tribal members.'
 nearby_state_courts:
 - state: NV
   county: Clark County

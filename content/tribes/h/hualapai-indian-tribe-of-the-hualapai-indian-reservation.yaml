@@ -749,6 +749,47 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Numbered agreements, items 5 to 7
   note: 'The source reads: “The TRIBE agrees to issue Hualapai law enforcement commissions to duly authorized DPS deputies who are assigned to work on or near the Hualapai Indian Reservation.”. Agreement text; whether it remains in force is not stated in the document.'
+court_practice:
+- kind: public-defender
+  title: Public Defenders
+  court: Hualapai Tribal Court
+  link: https://hualapai-nsn.gov/judicial_branch_of_government/tribal_court/judicial_branch_of_government/public_defenders.php
+  detail: Public Defenders page linked in the Judicial Branch menu.
+  source: hualapai-tribal-court-bar-admission-court-rules
+  confidence: high
+  verification: title-only
+  locator: menu
+  note: Page not opened.
+- kind: bar-admission
+  title: Hualapai Court Practitioner Application and Information Sheet
+  court: Hualapai Tribal Court
+  link: https://hualapai-nsn.gov/judicial_branch_of_government/tribal_court/Documents/Government/Tribal Court/ApplicationCourtPractitioner.pdf
+  detail: Court Documents tab lists the practitioner application and an Advocate and Attorney List (2025).
+  source: hualapai-tribal-court-bar-admission-court-rules
+  confidence: high
+  verification: title-only
+  locator: Court Documents
+  note: PDF not opened.
+- kind: forms
+  title: Court Documents (Tribal Court page)
+  court: Hualapai Tribal Court
+  link: https://hualapai-nsn.gov/judicial_branch_of_government/tribal_court/index.php
+  detail: Forms listed include Acceptance of Service and Waiver of Appearance, Change Your Name Application, Ex-Parte Petition, Motion for Order and Motion for Order to Show Cause.
+  source: hualapai-tribal-court-bar-admission-court-rules
+  confidence: high
+  verification: title-only
+  locator: Court Documents
+  note: 'The source reads: “Ex-Parte Petition”. PDFs not opened.'
+- kind: court-rules
+  title: Law and Order Code
+  court: Hualapai Tribal Court
+  link: https://hualapai-nsn.gov/judicial_branch_of_government/tribal_court/Documents/Government/Tribal Court/Law-and-Order-Code.pdf
+  detail: Law and Order Code PDF listed in Court Documents.
+  source: hualapai-tribal-court-bar-admission-court-rules
+  confidence: medium
+  verification: title-only
+  locator: Court Documents
+  note: Code PDF not opened; whether it holds procedure rules was not checked.
 nearby_state_courts:
 - state: AZ
   county: Coconino County

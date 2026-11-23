@@ -637,6 +637,37 @@ jurisdiction:
   verification: read-in-full
   locator: 18 U.S.C. § 3243; Act of June 8, 1940, ch. 276, 54 Stat. 249
   note: 'Criminal only; no civil grant. The four roster entries list KS because of reservation or trust-land presence in Kansas (Iowa Tribe and Sac and Fox of Missouri straddle KS/NE). Also cites: statutes-at-large-54-249.'
+court_practice:
+- kind: bar-admission
+  title: Tribal Bar Association (Tribal Court page)
+  court: Sac and Fox Nation of Missouri Tribal Court
+  link: https://www.sacandfoxks.com/entities/tribal-court
+  detail: Page says attorneys and lay advocates must submit an application for admittance with the proper fees and take an Oath of Admission.
+  source: sac-fox-nation-of-missouri-in-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Overview of the Tribal Court
+  note: 'The source reads: “In order to practice law before the Tribal Courts”.'
+- kind: court-rules
+  title: Title 6 - Civil Procedure and Title 2 - Appellate Procedure
+  court: Sac and Fox Nation of Missouri Tribal Court
+  link: https://www.sacandfoxks.com/sites/default/files/tribal_codes/Appellate%20Procedure.pdf
+  detail: Court page links Title 2 Appellate Procedure and Title 6 Civil Procedure chapters as PDFs.
+  source: sac-fox-nation-of-missouri-in-tribal-court
+  confidence: high
+  verification: title-only
+  locator: tribal codes list
+  note: 'The source reads: “Title 6 - Civil Procedure”. PDFs not opened.'
+- kind: forms
+  title: Civil Complaint Form and other forms
+  court: Sac and Fox Nation of Missouri Tribal Court
+  link: https://www.sacandfoxks.com/sites/default/files/documents/Civil%20Complaint%20Form.pdf
+  detail: Forms include Civil Complaint, Custody Visitation Support Petition, Petition for Divorce, Protection from Abuse Order and juvenile name change forms.
+  source: sac-fox-nation-of-missouri-in-tribal-court
+  confidence: high
+  verification: title-only
+  locator: forms list
+  note: 'The source reads: “Civil Complaint Form”. PDFs not opened.'
 nearby_state_courts:
 - state: NE
   county: Richardson County

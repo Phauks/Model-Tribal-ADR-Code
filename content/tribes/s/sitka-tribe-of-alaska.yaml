@@ -593,6 +593,27 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.A, Alaska
   note: 'The source reads: “Sitka Tribe of Alaska is a federally recognized tribe with an agreement executed on April”. Part of the eleven identical Alaska form agreements. The state agency is inferred. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: forms
+  title: Sitka Tribal Court forms (Tribal Court page)
+  court: Sitka Tribe of Alaska Tribal Court
+  link: https://sitkatribe.org/our-services/tribal-court/
+  detail: Page lists downloadable forms including Petition to use Tribal Court, Tribal Divorce Complaint, Tribal Youth Custody Petition, adoption petitions and consents, Petition for Adult Change of Name, Notice to the Court and Request to Modify Guardianship.
+  source: sitka-tribe-of-alaska-tribal-court-court-rules-forms
+  confidence: high
+  verification: title-only
+  locator: Adoption of a Tribal Youth and other form lists
+  note: 'The source reads: “Petition to use Tribal Court”. Form PDFs not opened.'
+- kind: court-rules
+  title: Code Governing Tribal Court Rules and Civil Procedure
+  court: Sitka Tribe of Alaska Tribal Court
+  link: https://sitkatribe.org/our-government/law-and-policy/
+  detail: Page says the Tribal Council approved a Code Governing Tribal Court Rules and Civil Procedure; the Tribal Law page is linked from the court page.
+  source: sitka-tribe-of-alaska-tribal-court-court-rules-forms
+  confidence: high
+  verification: title-only
+  locator: Tribal court history paragraph
+  note: Linked Tribal Law page not opened; the court page only mentions the code.
 nearby_state_courts:
 - state: AK
   county: Sitka City and Borough

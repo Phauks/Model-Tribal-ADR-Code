@@ -415,6 +415,17 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.I, New Mexico
   note: 'The source reads: “Nambe Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: legal-aid
+  title: Legal and Victim Advocacy
+  court: Nambe Pueblo Tribal Court
+  link: http://www.nambepueblo.org/healthy-family-services/dv-resources/
+  detail: Court page links a Legal and Victim Advocacy page.
+  source: pueblo-of-nambe-website-tribal-courts
+  confidence: low
+  verification: inferred
+  locator: menu
+  note: Page not opened; scope may be domestic violence only.
 nearby_state_courts:
 - state: NM
   county: Santa Fe County

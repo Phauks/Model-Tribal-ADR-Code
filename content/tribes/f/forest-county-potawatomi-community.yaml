@@ -788,6 +788,47 @@ jurisdiction:
   confidence: high
   verification: read-in-full
   as_of: '1997-01-10'
+court_practice:
+- kind: court-rules
+  title: Tribal Court Rules (Forest County Potawatomi)
+  court: Forest County Potawatomi Tribal Court
+  link: https://www.fcpotawatomi.com/government/tribal-court/tribal-court-rules/
+  detail: Numbered court rules include Rules for Admission to Practice (1994), Rules for Filing Documents, Schedule of Court Costs and Fees (2009), Appeals, Rules of Civil Procedure (2000), Rules of Evidence (2000) and Conduct of Counsel and Self-Represented Parties.
+  source: forest-county-potawatomi-tribal-bar-admission-court-rules-fees
+  confidence: high
+  verification: title-only
+  locator: Tribal Court Rules
+  note: 'The source reads: “Rules for Admission to Practice”. Rule PDFs not opened.'
+- kind: bar-admission
+  title: Rules for Admission to Practice (Court Rule 2)
+  court: Forest County Potawatomi Tribal Court
+  link: http://www.fcpotawatomi.com/wp-content/uploads/2014/12/FCP_Court_-Rule-2-signed.pdf
+  detail: Rule dated October 17, 1994 on the rules page; the Court Forms page also lists Tribal Court’s Admission to Practice.
+  source: forest-county-potawatomi-tribal-bar-admission-court-rules-fees
+  confidence: high
+  verification: title-only
+  locator: Tribal Court Rules
+  note: 'The source reads: “Rules for Admission to Practice”. PDF not opened.'
+- kind: filing-fees
+  title: Schedule of Court Costs and Fees
+  court: Forest County Potawatomi Tribal Court
+  link: https://www.fcpotawatomi.com/wp-content/uploads/2026/08/Schedule-of-Court-Costs-and-Fees.pdf
+  detail: Fee schedule linked from the rules page (rule dated February 26, 2009; file uploaded 2026).
+  source: forest-county-potawatomi-tribal-bar-admission-court-rules-fees
+  confidence: high
+  verification: title-only
+  locator: Tribal Court Rules
+  note: PDF not opened.
+- kind: forms
+  title: Court Forms (Forest County Potawatomi)
+  court: Forest County Potawatomi Tribal Court
+  link: https://www.fcpotawatomi.com/government/tribal-court/court-forms/
+  detail: Forms are guardianship and conservatorship petitions and motions, duties of a guardian or conservator, a funding request and a guardianship FAQ.
+  source: forest-county-potawatomi-tribal-forms
+  confidence: high
+  verification: title-only
+  locator: Court Forms
+  note: 'The source reads: “Petition for Guardianship – Minor”. Forms not opened.'
 nearby_state_courts:
 - state: WI
   county: Forest County

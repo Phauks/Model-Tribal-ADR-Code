@@ -545,6 +545,37 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
   note: 'The source reads: “Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page. Name in the list differs slightly from the roster official name.'
+court_practice:
+- kind: court-rules
+  title: Rules, Ordinances, Forms & Court Opinions (Court Rules)
+  court: Gun Lake Tribal Court
+  link: https://gunlaketribe-nsn.gov/tribal-justice/tribal-court/rules-ordinances-forms-court-opinions/
+  detail: 'Court Rules listed: Rules of Appellate Procedure, Rules of Evidence, Rules of Professional Conduct for Attorneys, Rules for Civil Infractions, Rules of Ethics for Tribal Court Personnel and Rules of Judicial Conduct.'
+  source: gun-lake-tribal-court-court-rules-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Court Rules
+  note: 'The source reads: “Court Rules of Appellate Procedure (PDF)”. Rule PDFs not opened.'
+- kind: filing-fees
+  title: Gun Lake Tribal Court’s Schedule of Court Fees
+  court: Gun Lake Tribal Court
+  link: https://gunlaketribe-nsn.gov/wp-content/uploads/2026/10/Schedule-of-Court-Fees-2026.pdf
+  detail: 2026 schedule of court fees linked from the rules page.
+  source: gun-lake-tribal-court-court-rules-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Rules, Ordinances, Forms & Court Opinions
+  note: 'The source reads: “Gun Lake Tribal Court''s Schedule of Court Fees”. PDF not opened.'
+- kind: forms
+  title: Tribal Court Forms
+  court: Gun Lake Tribal Court
+  link: https://gunlaketribe-nsn.gov/tribal-justice/tribal-court/rules-ordinances-forms-court-opinions/
+  detail: Rules page has a Tribal Court Forms section.
+  source: gun-lake-tribal-court-court-rules-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Tribal Court Forms
+  note: Forms not opened.
 nearby_state_courts:
 - state: MI
   county: Allegan County

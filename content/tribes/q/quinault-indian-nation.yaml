@@ -575,6 +575,27 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.P, Washington
   note: 'The source reads: “Quinault Indian Nation”. The report says the agreements, entered into in July 2009, "remain in effect until terminated". Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: forms
+  title: Forms & Filings
+  court: Quinault Tribal Court
+  link: https://wa-quinaultindiannation.civicplus.com/258/Forms-Filings
+  detail: Forms include protection order petition and proof of service, custody and visitation petitions and parenting plan, dissolution, annulment and separation petitions, adoption, change of name, guardianship, civil complaint, unlawful detainer, small estate and notice of appeal.
+  source: quinault-tribal-court-forms
+  confidence: high
+  verification: title-only
+  locator: Forms & Filings
+  note: 'The source reads: “Petition for Protection Order”. Form PDFs not opened.'
+- kind: legal-aid
+  title: Legal Aid for Domestic Violence Survivors
+  court: Quinault Tribal Court
+  link: https://wa-quinaultindiannation.civicplus.com/157/Tribal-Courts
+  detail: Tribal Courts page lists legal aid for domestic violence survivors among court programs.
+  source: quinault-indian-nation-tribal-court-wa
+  confidence: medium
+  verification: read-in-full
+  locator: programs list
+  note: Provider and eligibility not stated on the page.
 nearby_state_courts:
 - state: WA
   county: Grays Harbor County

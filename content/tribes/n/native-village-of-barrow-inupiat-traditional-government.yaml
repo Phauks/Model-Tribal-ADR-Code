@@ -502,6 +502,17 @@ jurisdiction:
   confidence: high
   verification: inferred
   as_of: '1999-07-06'
+court_practice:
+- kind: court-rules
+  title: Native Village of Barrow Code of Laws, Title 1 Court Procedures
+  court: Native Village of Barrow Tribal Court
+  link: https://nvb-nsn.gov/wp-content/uploads/2024/12/NVB-Code-of-Laws-Title-1-Court-Procedures5.pdf
+  detail: The court page says the court follows Title 1 (Court Procedures) of the village Code of Laws and links the PDF.
+  source: native-village-of-barrow-inupiat-traditional-tribal-courts
+  confidence: high
+  verification: title-only
+  locator: Programs and Services
+  note: 'The source reads: “Code of Laws (Title 1 – Court Procedures)”. Page not opened; PDF linked on the court page.'
 nearby_state_courts:
 - state: AK
   county: North Slope Borough

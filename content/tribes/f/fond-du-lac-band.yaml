@@ -359,6 +359,17 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Fond du Lac Carlton and Duluth”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Fond du Lac", matched to the roster by name and state.'
+court_practice:
+- kind: forms
+  title: Court Forms (Fond du Lac)
+  court: Fond du Lac Tribal Court
+  link: https://www.fdlband.org/government/tribal_court/court_forms.php
+  detail: Packets and forms for commonly filed cases, including Motion to Appear by Telephone, General Motion, Name Change Minor and Adult packets (filing fee $50.00 each) and probate packets.
+  source: fond-du-lac-tribal-court-forms
+  confidence: high
+  verification: title-only
+  locator: Document Center
+  note: 'The source reads: “Filing Fee: $50.00”. Packets not opened.'
 nearby_state_courts:
 - state: MN
   county: Carlton County

@@ -494,6 +494,37 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Massachusetts by the Census Bureau's land areas.
+court_practice:
+- kind: filing-fees
+  title: Guides, Forms, and Fees
+  court: Mashpee Wampanoag Tribal Court
+  link: https://mashpeewampanoagtribe-nsn.gov/forms-and-fees
+  detail: 'Fee schedule amended 2/01/2024: civil complaint $100.00; private criminal complaint application $85.00; foreign judgment $60.00 or $95.00; garnishment $60.00 or $95.00; Supreme Court filing fee $150.00; audio CD $100.00; attorney bar annual fee $150; photocopies $0.75 per page; fee waiver forms offered.'
+  source: mashpee-wampanoag-tribal-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Forms & Fees
+  note: 'The source reads: “$100.00 - Civil Complaint”.'
+- kind: public-defender
+  title: Public Defender
+  court: Mashpee Wampanoag Tribal Court
+  link: https://mashpeewampanoagtribe-nsn.gov/public-defender
+  detail: Under Administrative Order 36 (Interim Public Defender Program) the Tribal Court appoints an attorney for indigent persons; a defendant given a public defender pays a $200 fee to the Tribal Court before the case is disposed.
+  source: mashpee-wampanoag-tribal-court-public-defender
+  confidence: high
+  verification: read-in-full
+  locator: PUBLIC DEFENDER
+  note: 'The source reads: “the Tribal Court will appoint an attorney to meet the legal representation needs of indigent persons”. Names of current defenders omitted.'
+- kind: bar-admission
+  title: Bar Association & Membership
+  court: Mashpee Wampanoag Tribal Court
+  link: https://mashpeewampanoagtribe-nsn.gov/bar-association-membership
+  detail: Page lists an application for bar membership, an affidavit in support of admission and Administrative Order 20 on admission to the tribal court bar; attorneys must be members of the tribal court bar to appear, with pro hac vice by motion; annual bar fee $150 on the fee page.
+  source: mashpee-wampanoag-tribal-court-bar-admission
+  confidence: high
+  verification: title-only
+  locator: Bar Association and Membership
+  note: 'The source reads: “Attorneys who are not members of the Tribal Court bar may motion to appear pro hac vice.”. Documents not opened.'
 nearby_state_courts:
 - state: MA
   county: Barnstable County

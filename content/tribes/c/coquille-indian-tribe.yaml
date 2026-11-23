@@ -835,6 +835,47 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.M, Oregon
   note: 'The source reads: “The Coquille Indian Tribe executed in June 2010”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: bar-admission
+  title: Application and Order for Admission to Practice
+  court: Coquille Indian Tribal Court
+  link: https://www.coquilletribe.org/wp-content/uploads/2021/12/MicrosoftWord-APPLICATIONANDORDERFORADMISSIONTOPRACTICEORRENEWAL.pdf
+  detail: Page states the application is for use by attorneys and that there is no bar admission fee. Page also lists Order Adopting Spokesperson Standards (2024) and an application for approval as spokesperson.
+  source: coquille-indian-tribal-court-bar-admission-court-rules-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Forms and Samples
+  note: 'The source reads: “There is no bar admission fee.”. PDF not opened.'
+- kind: filing-fees
+  title: Forms and Samples (no filing fee statements)
+  court: Coquille Indian Tribal Court
+  link: https://www.coquilletribe.org/our-people/tribal-court/
+  detail: Sample complaint and answer forms are each marked as requiring no filing fee.
+  source: coquille-indian-tribal-court-bar-admission-court-rules-fees-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms and Samples
+  note: 'The source reads: “No filing fee required.”.'
+- kind: court-rules
+  title: Index of Supplemental Court Rules
+  court: Coquille Indian Tribal Court
+  link: https://www.coquilletribe.org/wp-content/uploads/2024/06/Index-of-Supplemental-Court-Rules.pdf
+  detail: Supplemental court rules (2024) include Compliance with Coquille Rules of Civil Procedure, Representation in Tribal Court Cases and Court Clerk Assistance in Drafting Documents.
+  source: coquille-indian-tribal-court-bar-admission-court-rules-fees-forms
+  confidence: high
+  verification: title-only
+  locator: court orders list
+  note: PDF not opened.
+- kind: forms
+  title: Complaint (sample form with instructions)
+  court: Coquille Indian Tribal Court
+  link: https://www.coquilletribe.org/wp-content/uploads/2017/05/complaint.pdf
+  detail: Sample complaint, answer, proof of service and attorney admission forms on the court page.
+  source: coquille-indian-tribal-court-bar-admission-court-rules-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Forms and Samples
+  note: PDF not opened.
 nearby_state_courts:
 - state: OR
   county: Coos County

@@ -694,6 +694,37 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section on commissions
   note: 'The source reads: “suspend or revoke the Tribal Commission of any”. The copy is undated. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: filing-fees
+  title: Filing Fees (Courts and Justice)
+  court: Stillaguamish Tribal Court
+  link: https://www.stillaguamish.com/departmentprogramservice/courts-and-justice/
+  detail: 'Filing fees listed: protection order (domestic violence) no fee; dissolution of marriage $120; guardianship $110; probate $110; adoption $120; civil case $110; judicial reviews $110; paternity $120; emancipation $50; writ $20.'
+  source: stillaguamish-tribe-courts-and-justice
+  confidence: high
+  verification: read-in-full
+  locator: Filing Fees
+  note: 'The source reads: “Petition for Dissolution of Marriage: $120”.'
+- kind: forms
+  title: Petition for Order for Protection and other petitions
+  court: Stillaguamish Tribal Court
+  link: https://www.stillaguamish.com/wp-content/uploads/2022/01/Stillaguamish-Tribal-Court-Petition-for-Dissolution-of-Marriage.doc
+  detail: Page links protection order petitions and instructions, petition for dissolution of marriage, petition for custody and child support guidelines.
+  source: stillaguamish-tribe-courts-and-justice
+  confidence: high
+  verification: title-only
+  locator: document links
+  note: 'The source reads: “Petition for Dissolution of Marriage”. Files not opened.'
+- kind: court-rules
+  title: Revised Law & Order Code of the Stillaguamish Tribe (4-30-2026)
+  court: Stillaguamish Tribal Court
+  link: https://www.stillaguamish.com/wp-content/uploads/2026/05/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-30-2026.pdf
+  detail: Page also links a Rules of Evidence Code.
+  source: stillaguamish-tribe-courts-and-justice
+  confidence: medium
+  verification: title-only
+  locator: document links
+  note: 'The source reads: “Revised Law & Order Code”. PDF not opened; whether it holds procedure rules was not checked.'
 nearby_state_courts:
 - state: WA
   county: Snohomish County

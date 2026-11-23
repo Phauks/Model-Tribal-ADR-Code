@@ -738,6 +738,27 @@ jurisdiction:
   as_of: '2024'
   locator: Appendix D (PDF p.53)
   note: Listed as "ORGANIZED VILLAGE OF KAKE".
+court_practice:
+- kind: legal-aid
+  title: Tribal Court (Organized Village of Kake)
+  court: Kake Tribal Court
+  link: https://kake-nsn.gov/tribal-court/
+  detail: Page states court services are provided at no cost to enrolled citizens, with grant-funded assistance for listed legal services such as custody and marriage.
+  source: organized-village-of-kake-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: intro
+  note: 'The source reads: “Kake Tribal Court services are provided at no-cost to our enrolled OVK citizens.”.'
+- kind: court-rules
+  title: Judicial Peacemaking Code
+  court: Kake Tribal Court
+  link: https://kake-nsn.gov/wp-content/uploads/2026/03/Judicial-Peacemaking-Code.pdf
+  detail: Court page links the Judicial Peacemaking Code and a Domestic Relations Code.
+  source: organized-village-of-kake-tribal-court
+  confidence: medium
+  verification: title-only
+  locator: Our Court Codes & Systems
+  note: PDF not opened; not strictly a procedure rule set.
 nearby_state_courts:
 - state: AK
   county: Prince of Wales-Hyder Census Area

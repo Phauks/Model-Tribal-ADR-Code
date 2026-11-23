@@ -727,6 +727,37 @@ jurisdiction:
   verification: read-in-full
   locator: 88 Nev. at 446
   note: The court held state courts lacked jurisdiction over Pyramid Lake members' crimes on the reservation and vacated the convictions. Nevada Supreme Court, 1972.
+court_practice:
+- kind: forms
+  title: Applications & Forms (Tribal Court page forms)
+  court: Pyramid Lake Paiute Tribal Court
+  link: https://plpt.nsn.us/tribal-court/
+  detail: Court page lists petitions including Petition for Waiver of Fees, Petition for Uncontested Divorce, Petition for Contested Divorce, Petition for Name Change, guardianship petitions and a Combined Petition to Establish Custody, Support and or Visitation.
+  source: pyramid-lake-paiute-tribal-court-bar-admission-forms
+  confidence: high
+  verification: title-only
+  locator: forms list
+  note: 'The source reads: “Petition for Uncontested Divorce”. Form PDFs not opened.'
+- kind: bar-admission
+  title: 2025 Advocate & Attorney List
+  court: Pyramid Lake Paiute Tribal Court
+  link: https://plpt.nsn.us/wp-content/uploads/2025/05/2025-Advocate-Attorney-List.pdf
+  detail: Court page links a 2025 list of admitted advocates and attorneys.
+  source: pyramid-lake-paiute-tribal-court-bar-admission-forms
+  confidence: high
+  verification: title-only
+  locator: document list
+  note: PDF not opened.
+- kind: public-defender
+  title: Pyramid Lake Tribal Court Staff (Defense Advocate)
+  court: Pyramid Lake Paiute Tribal Court
+  link: https://plpt.nsn.us/tribal-court/
+  detail: Court staff list names a Defense Advocate position alongside the Prosecutor.
+  source: pyramid-lake-paiute-tribal-court-bar-admission-forms
+  confidence: medium
+  verification: read-in-full
+  locator: Pyramid Lake Tribal Court Staff
+  note: 'The source reads: “Defense Advocate”. Position listed on staff roster; no separate defender page. Individual name omitted.'
 nearby_state_courts:
 - state: NV
   county: Washoe County

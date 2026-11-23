@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Turn the research on using each nation's courts
-(research/raw/2026-11-23/court-practice.json) into source records and a batch
+(research/raw/2026-11-23/court-practice.json and court-practice-2.json) into source records and a batch
 for apply.py.
 
 Each fact is one page or document from a court's or nation's own site:
@@ -24,7 +24,8 @@ from sources import ROOT, SESSION, write_source
 sys.path.insert(0, str(ROOT / "scripts"))
 from record_facts import source_links  # noqa: E402
 
-RAW = ROOT / "research/raw/2026-11-23/court-practice.json"
+# The first pass covered the 109 largest nations in the court list; the second the rest.
+RAWS = [ROOT / "research/raw/2026-11-23/court-practice.json", ROOT / "research/raw/2026-11-23/court-practice-2.json"]
 BY = "Claude (AI assistant)"
 TOPIC = "court-practice"
 QUERY = "Admission to practice, court rules, filing fees, court forms, public defender and legal aid on the court's or nation's site"
@@ -88,7 +89,12 @@ def failure(reason: str) -> tuple[str, str]:
 
 
 def main() -> None:
-    raw = json.loads(RAW.read_text(encoding="utf-8"))
+    raw = {"sources": [], "facts": [], "none_found": []}
+    for path in RAWS:
+        part = json.loads(path.read_text(encoding="utf-8"))
+        for key in raw:
+            raw[key] += part[key]
+    first = {fact["roster_id"] for fact in json.loads(RAWS[0].read_text(encoding="utf-8"))["facts"]}
     same = existing_keys(raw)
     for fact in raw["facts"]:
         fact["source_key"] = same.get(fact["source_key"], fact["source_key"])
@@ -121,9 +127,9 @@ def main() -> None:
     for nation, count in sorted(found.items()):
         batch["searches"].append({"profile": nation, "topic": TOPIC, "status": "found", "entry": {
             "date": "2026-11-23", "searched_by": BY, "method": "ai-review", "place_kind": "tribal-court-site",
-            "address": "research/raw/2026-11-23/court-practice.json", "query": QUERY,
+            "address": f"research/raw/2026-11-23/{'court-practice.json' if nation in first else 'court-practice-2.json'}", "query": QUERY,
             "outcome": "found", "reason": f"{count} page(s) or document(s) recorded.",
-            "records": [f"research/raw/2026-11-23/court-practice.json#{nation}"]}})
+            "records": [f"research/raw/2026-11-23/{'court-practice.json' if nation in first else 'court-practice-2.json'}#{nation}"]}})
     for empty in raw["none_found"]:
         outcome, status = failure(empty["reason"])
         if empty["roster_id"] in found:

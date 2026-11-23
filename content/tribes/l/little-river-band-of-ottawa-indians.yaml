@@ -968,6 +968,37 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
   note: 'The source reads: “Little River Band of Ottawa Indians”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page.'
+court_practice:
+- kind: filing-fees
+  title: Tribal Court Fees (Administrative Order 22-001 Fee Schedule)
+  court: Little River Band of Ottawa Indians Tribal Court
+  link: https://lrboi-nsn.gov/sites/default/files/pages/22-001-AO-Fee-Schedule.pdf
+  detail: Tribal Court page links a fee schedule PDF (file name 22-001-AO-Fee-Schedule).
+  source: little-river-band-of-ottawa-indians-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page
+  note: 'The source reads: “Tribal Court Fees”. PDF not opened.'
+- kind: legal-aid
+  title: Member Legal Assistance
+  court: Little River Band of Ottawa Indians Tribal Court
+  link: https://lrboi-nsn.gov/membership-services/legal-assistance
+  detail: Tribal Court page links a Member Legal Assistance page and notes an online intake form for Michigan Indian Legal Services.
+  source: little-river-band-of-ottawa-indians-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page
+  note: 'The source reads: “MILS now has an intake form that can be completed online.”. Linked page not opened.'
+- kind: court-rules
+  title: Rules of Civil Procedure (cited on Tribal Court page)
+  court: Little River Band of Ottawa Indians Tribal Court
+  link: https://www.lrboi-nsn.gov/government/tribal-judicial/tribal-court
+  detail: Page cites the Rules of Civil Procedure (CR 4.015) in its courtroom conduct notice.
+  source: little-river-band-of-ottawa-indians-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: Tribal Court page
+  note: 'The source reads: “Rules of Civil Procedure, CR 4.015”. Rules document not located or opened.'
 nearby_state_courts:
 - state: MI
   county: Manistee County

@@ -500,6 +500,37 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Mille Lacs Hinckley and Onamia”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Mille Lacs", matched to the roster by name and state.'
+court_practice:
+- kind: bar-admission
+  title: Mille Lacs Band Bar Application Form A
+  court: Mille Lacs Band Court of Central Jurisdiction
+  link: https://millelacsband.com/media/pages/government/judicial/08791b9d32-1643132504/mille-lacs-band-bar-application.pdf
+  detail: Judicial Branch page lists Form A (bar application), Form B (attorney status and update) and Form C (attorney information, admission to practice); both the application and the status/update form are to be completed when applying for admission.
+  source: mille-lacs-band-of-ojibwe-judicial-branch
+  confidence: high
+  verification: title-only
+  locator: Mille Lacs Band Bar/Attorney Information Forms
+  note: 'The source reads: “When applying for admission, please complete both the application and the status/update form”. Form PDFs not opened.'
+- kind: court-rules
+  title: In the Matter of the Rules of the District Court (Court Order 49)
+  court: Mille Lacs Band Court of Central Jurisdiction
+  link: https://millelacsband.com/media/pages/government/judicial/d618bbf857-1636061609/in-the-matter-of-the-rules-of-the-district-court-court-order-49.pdf
+  detail: 'Also listed: In the Matter of the Rules of the Court of Appeals (Court Order 48), Attorney and Lay Advocate Discipline (Court Order 50), and Chief Justice Order 55 adopting District Court Rule 134 on electronic filing.'
+  source: mille-lacs-band-of-ojibwe-judicial-branch
+  confidence: high
+  verification: title-only
+  locator: Court orders list
+  note: 'The source reads: “In the Matter of the Rules of the District Court”. Order PDFs not opened.'
+- kind: forms
+  title: District Court (Court Forms)
+  court: Mille Lacs Band District Court
+  link: https://millelacsband.com/government/judicial/district-court
+  detail: Court Forms section lists appeals notices, foreign judgment petitions and motions, and filing guides such as Filing for Custody and Visitation and Filing a Civil Complaint explanation of process.
+  source: mille-lacs-band-of-ojibwe-district-court
+  confidence: high
+  verification: title-only
+  locator: Court Forms
+  note: 'The source reads: “Court Forms”. Form files not opened.'
 nearby_state_courts:
 - state: MN
   county: Mille Lacs County

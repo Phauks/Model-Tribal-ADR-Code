@@ -620,6 +620,27 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Shakopee Prior Lake”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Shakopee", matched to the roster by name and state.'
+court_practice:
+- kind: forms
+  title: Resources (Court Forms/Documents)
+  court: Shakopee Mdewakanton Sioux Community Tribal Court
+  link: https://smsccourt.org/resources/
+  detail: Forms include Affidavit of Service, Application for Name Change, Complaint Form, Custody Petition, Divorce Petition and Paternity Petition.
+  source: shakopee-mdewakanton-sioux-community-bar-admission-forms
+  confidence: high
+  verification: title-only
+  locator: Court Forms/Documents
+  note: 'The source reads: “Application for Name Change”. Form files not opened.'
+- kind: bar-admission
+  title: Motion for Admission to Practice
+  court: Shakopee Mdewakanton Sioux Community Tribal Court
+  link: https://smsccourt.org/wp-content/uploads/2021/12/Motion-for-Admission-to-Practice.doc
+  detail: Listed among court forms on the resources page.
+  source: shakopee-mdewakanton-sioux-community-bar-admission-forms
+  confidence: high
+  verification: title-only
+  locator: Court Forms/Documents
+  note: File not opened; uploaded 2021.
 nearby_state_courts:
 - state: MN
   county: Scott County

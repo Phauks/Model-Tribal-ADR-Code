@@ -723,6 +723,47 @@ jurisdiction:
     images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has
     no text layer for the table); verification level unchanged because the name was not matched word for
     word in machine-read text.'
+court_practice:
+- kind: bar-admission
+  title: How to Become Licensed to Practice in Tribal Court
+  court: Prairie Island Indian Community Tribal Court
+  link: https://prairieisland.org/our-government/tribal-court
+  detail: Section describes completing and submitting an Application for Admission to Practice (2019 version) and lists currently licensed attorneys.
+  source: prairie-island-indian-community-tribal-court
+  confidence: high
+  verification: title-only
+  locator: How to Become Licensed to Practice in Tribal Court
+  note: 'The source reads: “To become licensed to practice law in our Tribal Court is easy.”. Application PDF not opened.'
+- kind: filing-fees
+  title: Prairie Island Indian Community Schedule of Civil Fees
+  court: Prairie Island Indian Community Tribal Court
+  link: https://prairieisland.org/uploads/2025.12.31-Approved-Court-Fee-Schedule.pdf
+  detail: Schedule approved 2025-12-31 listing civil fees by offense code (for example failure to comply with a lawful traffic order $100, driving with expired license $175).
+  source: prairie-island-indian-community-fees
+  confidence: high
+  verification: read-in-full
+  locator: Schedule of Civil Fees
+  note: Schedule appears to be civil violation fines; filing fees for civil cases were not seen in the text read.
+- kind: filing-fees
+  title: 2020 Tribal Court Filing Fee Schedule
+  court: Prairie Island Indian Community Tribal Court
+  link: https://prairieisland.org/uploads/2020-Tribal-Court-Filing-Fee-Schedule.pdf
+  detail: Forms page links a 2020 filing fee schedule in addition to the 2025 approved fee schedule.
+  source: prairie-island-indian-community-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Tribal Court Forms
+  note: PDF not opened.
+- kind: forms
+  title: Tribal Court Forms - Prairie Island Indian Community
+  court: Prairie Island Indian Community Tribal Court
+  link: https://prairieisland.org/our-government/tribal-court/tribal-court-forms-2
+  detail: Forms include Adoption of Indian Child, Affidavit of Default Judgment, Affidavit of Personal Service, Application and Declaration for Temporary Restraining Order, Application for Admission to Practice and Application for Marriage License.
+  source: prairie-island-indian-community-fees-forms
+  confidence: high
+  verification: title-only
+  locator: Tribal Court Forms
+  note: 'The source reads: “Affidavit of Default Judgment”. Form PDFs not opened.'
 nearby_state_courts:
 - state: MN
   county: Goodhue County

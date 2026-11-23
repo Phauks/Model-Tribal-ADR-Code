@@ -200,6 +200,47 @@ jurisdiction:
     images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has
     no text layer for the table); verification level unchanged because the name was not matched word for
     word in machine-read text.'
+court_practice:
+- kind: bar-admission
+  title: Southern California Tribal Bar Association admission application
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/attorneys
+  detail: Attorneys page offers Southern California Tribal Bar Association information, a membership directory, an admission application and a renewal application.
+  source: intertribal-court-of-southern-bar-admission
+  confidence: high
+  verification: read-in-full
+  locator: Southern California Tribal Bar Association Information
+  note: 'The source reads: “Southern California Tribal Bar Association Admission Application”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.'
+- kind: forms
+  title: Forms (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/forms
+  detail: Forms page includes an Application for Filing Fee Waiver or Deferral and a Document Assistance Form.
+  source: intertribal-court-of-southern-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms
+  note: 'The source reads: “Application for Filing Fee Waiver or Deferral”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.'
+- kind: court-rules
+  title: Code of Civil Procedure and Rules of Court
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Rules and Laws page links the Code of Civil Procedure and Rules of Court, a Fee Schedule and the Inter-Governmental Agreement.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: read-in-full
+  locator: Rules and Laws
+  note: The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.
+- kind: filing-fees
+  title: Fee Schedule (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Fee Schedule PDF linked on the Rules and Laws page.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: title-only
+  locator: Rules and Laws
+  note: 'The source reads: “Fee Schedule”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s. PDF not opened.'
 nearby_state_courts:
 - state: CA
   county: San Diego County
