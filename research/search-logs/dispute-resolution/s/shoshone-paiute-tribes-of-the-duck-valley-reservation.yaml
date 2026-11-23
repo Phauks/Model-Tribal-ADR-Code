@@ -1,7 +1,7 @@
 profile: content/tribes/s/shoshone-paiute-tribes-of-the-duck-valley-reservation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -42,3 +42,13 @@ searches:
   address: https://narf.org/nill/codes/shoshonepaiute/
   outcome: not-found
   reason: Retry found no Law and Order Code text online.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Shoshone-Paiute Duck Valley water code Informal Dispute Resolution 10.1
+  query: Shoshone-Paiute Duck Valley water code Informal Dispute Resolution 10.1
+  outcome: not-found
+  reason: Results were water-rights settlement documents, not the code.
+  records:
+  - content/tribes/s/shoshone-paiute-tribes-of-the-duck-valley-reservation.yaml#dispute_resolution.provisions

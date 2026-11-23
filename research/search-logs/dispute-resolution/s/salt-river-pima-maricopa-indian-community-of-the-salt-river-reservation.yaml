@@ -1,7 +1,7 @@
 profile: content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -42,3 +42,53 @@ searches:
   query: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
   outcome: found
   reason: 'Same division as #0, read there.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/2e17d375afe7c37a03fc.txt
+  query: Family group conferencing / extended family hearing (juvenile)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/a36db137cbdbd3425ea8.txt
+  query: Family group conferencing / extended family hearing (juvenile)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/344cd78e630e53b69d6e.txt
+  query: Family group conferencing / extended family hearing (juvenile)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Salt River Pima-Maricopa 11-31 Alternative method for resolution of cases
+  outcome: found
+  reason: community Chapter 11 PDF returned
+  records:
+  - content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://srpmic-nsn.gov/wp-content/uploads/2023/10/Chapter11.pdf
+  query: Sec 11-31
+  outcome: found
+  reason: summary read
+  records:
+  - content/tribes/s/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation.yaml#dispute_resolution.forums

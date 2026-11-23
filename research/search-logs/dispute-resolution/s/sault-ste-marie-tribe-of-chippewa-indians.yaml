@@ -1,7 +1,7 @@
 profile: content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -33,3 +33,33 @@ searches:
   reason: 'Rechecked: raw text downloaded/extracted (recheck-out-5/sault95.txt) and the section read directly.'
   records:
   - content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f479d7424762211f5694.txt
+  query: Bekaadziiwiin (Peaceful Life) peacemaking
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/sault-ste-marie-tribe-of-chippewa-indians/60c5ebe26b45f142.txt
+  query: Bekaadziiwiin (Peaceful Life) peacemaking
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/a29ea40b54c1d04c4004.txt
+  query: Bekaadziiwiin (Peaceful Life) peacemaking
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/sault-ste-marie-tribe-of-chippewa-indians.yaml#dispute_resolution.forums

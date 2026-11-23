@@ -526,9 +526,7 @@ dispute_resolution:
   forums:
   - kind: customary-dispute-resolution
     name: Traditional Tlingit law in children's cases
-    description: Tribal Court judges may apply traditional Tlingit law by referring to written or oral
-      accounts of traditional Tlingit life, interviewing Elders or Culture Bearers, or calling on the
-      Haa Dachxanx’i Yan Jeeis (For Our Grandchildren) Committee or the Tribe's Cultural Resources Committee.
+    description: Tribal Court judges may apply traditional Tlingit law by referring to written or oral accounts of traditional Tlingit life, interviewing Elders or Culture Bearers, or calling on the Haa Dachxanx’i Yan Jeeis (For Our Grandchildren) Committee or the Tribe's Cultural Resources Committee.
     own_term:
       name: Haa Dachxanx’i Yan Jeeis
       language_tag: tli
@@ -538,14 +536,14 @@ dispute_resolution:
     - child-welfare
     - family
     participation: court-referred
-    relationship_to_court: Traditional sources may give persuasive recommendations, but only the Presiding
-      Judge enters a final order or judgment.
+    relationship_to_court: Traditional sources may give persuasive recommendations, but only the Presiding Judge enters a final order or judgment.
     link: https://sitkatribe.org/our-government/governance-documents/
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
     verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/traditional-tlingit-law-in-childrens-cases/
+    note: 'Not confirmed from the nation''s own text on 2026-11-23: a copy was seen online only through a fetch-and-summarize tool, which does not count as reading; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 499.'
   provisions:
   - kind: other
     title: Problem Solving (alternative and traditional tools for dispute resolution)

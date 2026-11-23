@@ -1,7 +1,7 @@
 profile: content/tribes/w/wilton-rancheria.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -67,3 +67,63 @@ searches:
     order (own page, then directory entry): own-page, https://wiltonrancheria-nsn.gov/tribal-government/tribal-court/traditional-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-423
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/c5e989bf70bcc826454a.txt
+  query: Wilton Rancheria Traditional Court
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/w/wilton-rancheria.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/wilton-rancheria/3fb5ac0b26372375.txt
+  query: Wilton Rancheria Traditional Court
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/w/wilton-rancheria.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/e5b0f2d4f132dcccbd91.txt
+  query: Wilton Rancheria Traditional Court
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/w/wilton-rancheria.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Wilton Rancheria Traditional Court Code 1-501 peacemaking
+  query: same
+  outcome: found
+  reason: tribal.codes and nation pages returned.
+  records:
+  - content/tribes/w/wilton-rancheria.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://wiltonrancheria.tribal.codes/WRC/10-1-502
+  query: s. 1-502
+  outcome: found
+  reason: Loaded.
+  records:
+  - content/tribes/w/wilton-rancheria.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://wiltonrancheria.tribal.codes/WRC/10-1-501
+  query: s. 1-501
+  outcome: found
+  reason: Loaded.
+  records:
+  - content/tribes/w/wilton-rancheria.yaml#dispute_resolution.forums

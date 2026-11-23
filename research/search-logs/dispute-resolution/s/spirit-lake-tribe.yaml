@@ -1,7 +1,7 @@
 profile: content/tribes/s/spirit-lake-tribe.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -69,3 +69,13 @@ searches:
     (own page, then directory entry): own-page, https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-353
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/a193dd7bbd61a37b0297.pdf
+  query: 'Title 21: Wodakota: Traditional Court Ordinance'
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/s/spirit-lake-tribe.yaml#dispute_resolution.provisions

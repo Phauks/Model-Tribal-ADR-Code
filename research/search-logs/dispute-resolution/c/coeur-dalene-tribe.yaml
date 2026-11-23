@@ -81,5 +81,15 @@ searches:
   outcome: error
   reason: The Wayback Machine capture index did not answer (connection refused) in any of the three rounds;
     worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/coeur_dalene/
+  query: Tribal Arbitration Act
+  outcome: not-found
+  reason: No permission for full text
+  records:
+  - content/tribes/c/coeur-dalene-tribe.yaml#dispute_resolution.provisions
 next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
   (Gate 1) before any record goes into the profile.
