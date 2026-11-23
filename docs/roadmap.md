@@ -91,6 +91,7 @@ Gate 1 is passed when Trevor has:
 6. **Accepted or set aside the proposed method records** (32 at the merge of
    pull request #5), so every forum kind maps to a method or stays "other" for
    a stated reason.
+   *Decided Nov. 22, 2026: all 33 method records adopted as written, with no changes asked; every forum kind maps to a method, and the one forum recorded as "other" (Kalispel's Traditional Peacemakers Panel) states its reason ([review session log](../research/sessions/2026/2026-11-22-method-records-review.md)).*
 
 A review session log records what was checked and decided, as for any
 research session ([research/README.md](../research/README.md)).
