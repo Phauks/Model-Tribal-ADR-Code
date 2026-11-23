@@ -1,7 +1,7 @@
 profile: content/tribes/a/alabama-coushatta-tribe-of-texas.yaml
 topic: courts
 status: none-found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -216,7 +216,71 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: 'Not researched: the WebFetch proxy returned HTTP 403 because the session''s fetch budget was exhausted.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Alabama-Coushatta Tribe of Texas tribal court judicial system Livingston
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were news, grant pages, code databases and the constitution on the nation''s site; no court
+    page of the nation''s own came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.alabama-coushatta.com/uploads/cms/nav-18-5ef0b1897cc4a.pdf
+  query: 'scripts/review/service_links.py second: Tribal Court'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Status 200; the Tribe''s constitution, which establishes the Tribal Court system; a law text, not
+    the court''s page; not used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: site:alabama-coushatta.com tribal court
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The search returned no court page of the nation''s site; the results were code databases and directories.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Tribal Courts”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-007
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Alabama-Coushatta Tribe of Texas Tribal Judicial System”: Claude weighed what
+    the second search found against the lead author''s order (own page, then directory entry): none-found;
+    the link stays empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-008
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Courts
   (court-008, not-found-after-search); Alabama-Coushatta Tribe of Texas Tribal Judicial System (court-009,
   not-found-after-search). No page or official directory entry was found on 2026-11-22 for “Tribal Courts”;
-  “Alabama-Coushatta Tribe of Texas Tribal Judicial System” (research/reviews/2026-11-22-service-links.json).'
+  “Alabama-Coushatta Tribe of Texas Tribal Judicial System” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 (web searches and state court lists) found no page or official directory
+  entry for “Tribal Courts”; “Alabama-Coushatta Tribe of Texas Tribal Judicial System”; a call to the
+  nation''s office could say whether the court has a page.'

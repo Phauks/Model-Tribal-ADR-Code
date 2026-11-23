@@ -7,6 +7,7 @@
 	// those nations (Trevor asked for advanced search on Nov. 23, 2026).
 	// Without scripts it says so and offers the ways to browse.
 	import { onMount } from 'svelte';
+	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
@@ -101,6 +102,10 @@
 	const textResults = $derived(entries && trimmed ? searchEntries(entries, trimmed) : []);
 
 	const nationsById = $derived(new Map((records?.nations ?? []).map((row) => [row.id, row])));
+	/** Each nation's recognition badges, from the search index, by the nation's address. */
+	const badgesByLink = $derived(
+		new Map((entries ?? []).filter((entry) => entry.badges).map((entry) => [entry.link, entry.badges ?? []]))
+	);
 	/** The nations the words find, best first; every nation when no words are typed. */
 	const nationPool = $derived.by<NationSearchRow[]>(() => {
 		if (!records) return [];
@@ -246,7 +251,7 @@
 	const nationColumns: TableColumn[] = [
 		{ key: 'name', header: 'Nation or community', sortable: true, isRowHeader: true },
 		{ key: 'states', header: 'State or territory', sortable: true },
-		{ key: 'recognition', header: 'Recognition', sortable: true },
+		{ key: 'recognition', header: 'Recognition', sortable: true, custom: true },
 		{ key: 'found', header: 'Found on record' }
 	];
 
@@ -399,7 +404,13 @@
 						columns={nationColumns}
 						rows={nationRows}
 						rowName={['nation', 'nations']}
-					/>
+					>
+						{#snippet cell(row, column)}
+							{#if column.key === 'recognition'}
+								<RecognitionBadges badges={badgesByLink.get(row.cells.name?.href ?? '') ?? []} size="small" />
+							{/if}
+						{/snippet}
+					</DataTable>
 					{#if nations.length > firstNationsShown && !expanded.nation}
 						<button class="button button-quiet" type="button" onclick={() => (expanded.nation = true)}>
 							Show all {nations.length.toLocaleString('en-US')} nations and communities
@@ -651,18 +662,13 @@
 
 	.fold-mark {
 		display: inline-flex;
-		transition: transform 0.15s;
+		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
 	}
 
 	.result-group:not([open]) .fold-mark {
 		transform: rotate(-90deg);
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		.fold-mark {
-			transition: none;
-		}
-	}
 
 	.result-group summary h2 {
 		display: inline;

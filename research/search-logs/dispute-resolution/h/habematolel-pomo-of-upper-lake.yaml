@@ -1,7 +1,7 @@
 profile: content/tribes/h/habematolel-pomo-of-upper-lake.yaml
 topic: dispute-resolution
 status: none-found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -67,5 +67,46 @@ searches:
     (own page, then directory entry): none-found; the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-093
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Habematolel Pomo of Upper Lake tribal court peacemaker
+  outcome: not-found
+  reason: 'Second search: “Associate Judges as Peacemakers”: Results were the nation''s judicial code,
+    court rules, newsletters and its Judiciary and Forms pages, read below; no page about associate judges
+    serving as peacemakers came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.hpultribe-nsn.gov/government/judiciary/
+  query: 'scripts/review/service_links.py second: peacemak'
+  outcome: not-found
+  reason: 'Second search: “Associate Judges as Peacemakers”: Status 200; the nation''s Judiciary page
+    does not mention peacemakers; not used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.hpultribe-nsn.gov/government/judiciary/forms/
+  query: 'scripts/review/service_links.py second: peacemak'
+  outcome: not-found
+  reason: 'Second search: “Associate Judges as Peacemakers”: Status 200; the court''s forms page does
+    not mention peacemakers; not used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Associate Judges as Peacemakers”: Claude weighed what the second search found
+    against the lead author''s order (own page, then directory entry): none-found; the link stays empty
+    and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-093
 next_steps: No page or official directory entry was found on 2026-11-22 for “Associate Judges as Peacemakers”
-  (research/reviews/2026-11-22-service-links.json).
+  (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23 (web searches and
+  state court lists) found no page or official directory entry for “Associate Judges as Peacemakers”;
+  a call to the nation's office could say whether the court has a page.
