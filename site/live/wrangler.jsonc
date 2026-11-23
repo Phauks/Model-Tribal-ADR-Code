@@ -8,9 +8,10 @@
 // code changes (the build watch paths in COLLABORATION.md, "Live editing").
 //
 // Workers Builds deploys it from the GitHub repository (root directory:
-// site, build command: npm ci, deploy command:
-// npx wrangler deploy -c live/wrangler.jsonc). No secret is stored in GitHub
-// (decision record 0006).
+// site/live, build command: cd .. && npm ci, deploy command:
+// npx wrangler deploy). The root directory is this folder because Workers
+// Builds checks that the Worker's name matches the "name" in the Wrangler
+// file there. No secret is stored in GitHub (decision record 0006).
 {
 	"$schema": "../node_modules/wrangler/config-schema.json",
 	"name": "model-tribal-adr-code-live",
