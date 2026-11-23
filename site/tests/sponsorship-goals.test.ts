@@ -20,7 +20,7 @@ beforeEach(() => {
 const counts = { nationPages: 947, federallyRecognized: 581, sources: 7165 };
 
 function given(total: Partial<GivenToward['total']>, siteLastYear = 0): GivenToward {
-	return { total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, hosting: 0, ...total }, siteLastYear };
+	return { total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, hosting: 0, ...total }, siteLastYear, monthly: { cents: 0, sponsors: 0 } };
 }
 
 describe('the costs the lead author sets', () => {
@@ -83,5 +83,30 @@ describe('totals of gifts', () => {
 		expect(totals.total.hosting).toBe(9000);
 		expect(totals.total['needed-most']).toBe(0);
 		expect(totals.siteLastYear).toBe(2000);
+	});
+
+	it('counts each monthly sponsor once, at their latest invoice in the last month', async () => {
+		const sponsorFor = async (email: string, name: string) => {
+			const account = await verifiedAccount(database, email);
+			return createSponsor(database, { subject: account.identifier, email: account.email }, name);
+		};
+		const first = await sponsorFor('first@example.org', 'First Foundation');
+		const second = await sponsorFor('second@example.org', 'Second Foundation');
+		const ended = await sponsorFor('ended@example.org', 'Ended Foundation');
+		const gift = (sponsor: string, object: string, kind: string, cents: number, at: string) =>
+			database
+				.prepare(
+					`INSERT INTO sponsor_gifts (identifier, sponsor_identifier, mode, stripe_object, kind, amount_cents, currency, earmark, received_at)
+					 VALUES (?, ?, 'test', ?, ?, ?, 'usd', 'needed-most', ?)`
+				)
+				.bind(object, sponsor, object, kind, cents, at)
+				.run();
+		await gift(first.identifier, 'f1', 'monthly', 2500, '2026-10-20T00:00:00.000Z');
+		await gift(first.identifier, 'f2', 'monthly', 5000, '2026-11-20T00:00:00.000Z');
+		await gift(second.identifier, 's1', 'monthly', 1000, '2026-11-01T00:00:00.000Z');
+		await gift(second.identifier, 's2', 'one-time', 9900, '2026-11-02T00:00:00.000Z');
+		await gift(ended.identifier, 'e1', 'monthly', 7000, '2026-09-01T00:00:00.000Z');
+		const totals = await givenToward(database, 'test', new Date('2026-11-23T00:00:00.000Z'));
+		expect(totals.monthly).toEqual({ cents: 6000, sponsors: 2 });
 	});
 });

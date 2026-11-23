@@ -54,11 +54,23 @@ export async function saveSponsorshipCosts(database: D1Database, costs: Record<C
 export interface GivenToward {
 	total: Record<Earmark, number>;
 	siteLastYear: number;
+	/** What monthly gifts bring in each month, and how many sponsors give them. */
+	monthly: { cents: number; sponsors: number };
 }
 
+/**
+ * A monthly gift still running has had an invoice paid within a month; 35
+ * days leaves room for the longest month and a late retry. Each sponsor
+ * counts once, at their latest invoice, so a changed amount is not added
+ * twice. A gift cancelled drops out a month after its last invoice.
+ */
+const monthlyWindowDays = 35;
+
 export async function givenToward(database: D1Database, mode: GiftMode, at = new Date()): Promise<GivenToward> {
-	const yearAgo = new Date(at.getTime() - 365 * 24 * 60 * 60 * 1000).toISOString();
-	const [byEarmark, site] = await Promise.all([
+	const day = 24 * 60 * 60 * 1000;
+	const yearAgo = new Date(at.getTime() - 365 * day).toISOString();
+	const monthAgo = new Date(at.getTime() - monthlyWindowDays * day).toISOString();
+	const [byEarmark, site, monthly] = await Promise.all([
 		database
 			.prepare('SELECT earmark, SUM(amount_cents) AS cents FROM sponsor_gifts WHERE mode = ? GROUP BY earmark')
 			.bind(mode)
@@ -66,11 +78,20 @@ export async function givenToward(database: D1Database, mode: GiftMode, at = new
 		database
 			.prepare(`SELECT COALESCE(SUM(amount_cents), 0) AS cents FROM sponsor_gifts WHERE mode = ? AND earmark = 'hosting' AND received_at >= ?`)
 			.bind(mode, yearAgo)
-			.first<{ cents: number }>()
+			.first<{ cents: number }>(),
+		database
+			.prepare(
+				`SELECT COUNT(*) AS sponsors, COALESCE(SUM(amount_cents), 0) AS cents FROM (
+					SELECT amount_cents, ROW_NUMBER() OVER (PARTITION BY sponsor_identifier ORDER BY received_at DESC) AS latest
+					FROM sponsor_gifts WHERE mode = ? AND kind = 'monthly' AND received_at >= ?
+				) WHERE latest = 1`
+			)
+			.bind(mode, monthAgo)
+			.first<{ sponsors: number; cents: number }>()
 	]);
 	const total = Object.fromEntries(earmarks.map((earmark) => [earmark, 0])) as Record<Earmark, number>;
 	for (const row of byEarmark.results) if (isEarmark(row.earmark)) total[row.earmark] = row.cents;
-	return { total, siteLastYear: site?.cents ?? 0 };
+	return { total, siteLastYear: site?.cents ?? 0, monthly: { cents: monthly?.cents ?? 0, sponsors: monthly?.sponsors ?? 0 } };
 }
 
 /** The paperback goal, once the cost of a paperback is set. */
