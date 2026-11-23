@@ -80,6 +80,31 @@ federal_administration:
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
   note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
     taken from its entry.
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Leech Lake Band". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Bemidji
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Bemidji Area
+  note: Listed as "Leech Lake Reservation Business Committee". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Minnesota Chippewa Tribe - Leech Lake Band
@@ -301,6 +326,78 @@ gaming:
       as "Leech Lake Band of Ojibwe (Formally called – Leech Lake Band of Minnesota Chippewa Tribe)".
       Name matched to roster by spelling variant. Ordinance of the Leech Lake Band, a component reservation
       of the Minnesota Chippewa Tribe; the roster lists only the Minnesota Chippewa Tribe.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Minnesota is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil) extend state jurisdiction to all Indian country within Minnesota. Applies to the nation''s Indian country within Minnesota; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  verification: inferred
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Minnesota"
+  note: Statute is primary; nation placed in Minnesota by the Census Bureau's land areas, so confidence is medium. Cited jointly with us-code-title-28-section-1360. Added on 2026-11-23 where the profile had no fact for this state (for example a band split out of a combined record).
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-05-26'
+  locator: 91 FR 30694 (Tribe column of the designated agent table)
+  note: 'Listed as: Minnesota Chippewa Tribe - Leech Lake Band. Carried over on 2026-11-23 from the Minnesota Chippewa Tribe record, where the six bands'' rows were first recorded; row read from the page image (the govinfo PDF has no text layer for the table).'
+treaties:
+- title: Treaty with the Pillager Band of Chippewa Indians, 1847
+  signed: '1847-08-21'
+  statutes_at_large: 9 Stat. 908
+  kappler:
+    volume: 2
+    page: 569
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-pillager-band-of-chippewa-indians-1847-0569
+  signatory: Pillager
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 569 (Treaty with the Pillager Band of Chippewa Indians, 1847; Kappler header "Aug. 21, 1847. | 9 Stat., 908. | Proclamation Apr. 7, 1848.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Pillager and Lake Winnibigoshish bands to Leech Lake Band. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1855
+  signed: '1855-02-22'
+  statutes_at_large: 10 Stat. 1165
+  kappler:
+    volume: 2
+    page: 685
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1855-0685
+  signatory: Chippewa of Lake Winnibigoshish; Pillager; Pillager / Winnibigoshish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 685 (Treaty with the Chippewa, 1855; Kappler header "Feb. 22, 1855. | 10 Stat., 1165. | Ratified Mar. 3, 1855. | Proclaimed Apr. 7, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Leech Lake Reservation was created for the Pillager and Winnibigoshish bands The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of the Mississippi and the Pillager and Lake Winnibigoshish Bands, 1863
+  signed: '1863-03-11'
+  statutes_at_large: 12 Stat. 1249
+  kappler:
+    volume: 2
+    page: 839
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-the-pillager-and-lake-winnibigoshish-bands-1863-0839
+  signatory: Chippewa of Lake Winnibigoshish; Pillager; Pillager / Winnibigoshish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 839 (Treaty with the Chippewa of the Mississippi and the Pillager and Lake Winnibigoshish Bands, 1863; Kappler header "Mar. 11, 1863. | 12 Stats., 1249. | Ratified, Mar. 13, 1863. | Proclaimed Mar. 19, 1863.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Leech Lake Reservation was created for the Pillager and Winnibigoshish bands The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, Mississippi, and Pillager and Lake Winnibigoshish Bands, 1864
+  signed: '1864-05-07'
+  statutes_at_large: 13 Stat. 693
+  kappler:
+    volume: 2
+    page: 862
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-mississippi-and-pillager-and-lake-winnibigoshish-bands-1864-0862
+  signatory: Pillager; Chippewa of Lake Winnibigoshish; Pillager / Winnibigoshish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 862 (Treaty with the Chippewa, Mississippi, and Pillager and Lake Winnibigoshish Bands, 1864; Kappler header "May 7, 1864. | 13 Stat., 693. | Ratified Feb. 9, 1865. | Proclaimed Mar. 20, 1865.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Leech Lake Reservation was created for the Pillager and Winnibigoshish bands The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -208,6 +208,227 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Shingle Springs Band of Miwok Indians of California, Shingle Springs Rancheria (Verona Tract), California".
+governance:
+- aspect: form
+  value: Articles of Association
+  quote: do hereby adopt the following Articles of
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Preamble
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: governing-body
+  value: Shingle Springs Tribal Council
+  quote: governing body of the Shingle Springs Band shall be a
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article III
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Tribal Council shall consist of seven (7) members elected
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article III
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: governing-body-selection
+  value: Elected at annual General Meeting of Band
+  quote: during the annual General Meeting of the Band.
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article III
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: a period of three years and elections shall be held each year
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article IV
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall preside at all meetings of the Band
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article VII
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by Tribal Council from its membership
+  quote: shall elect from within its own membership a Chair
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article III
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: a period of three years and elections shall be held each year
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article IV
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary-Treasurer
+  quote: a Vice-Chairperson and from within or without
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article III
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: elections
+  value: Annually, in January
+  quote: during the month of January. Members shall hold office
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article IV
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: voting-age
+  value: '18'
+  quote: Any certified member of the band eighteen (18) years of age
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article IV
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: election-authority
+  value: Election Committee
+  quote: The Election Committee shall administer elections to consider
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article X
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: amendment
+  value: Majority vote of all registered voters
+  quote: effective if approved by a majority vote of all registered voters
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article X
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: secretarial-approval
+  value: Requirement removed
+  quote: amended the Articles to remove Secretary approval and
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Resolution 94-15
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: recall-and-removal
+  value: Recall by petition of 50% of certified voters
+  quote: certified voters requesting the recall of an officer, the Tribal
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article V
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of members after hearing
+  quote: majority vote is for removal of the accused official, his/her office
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article V
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
+- aspect: other
+  value: Referendum by 4 Council members or petition of 1/3 of voters
+  quote: Upon vote of at least four (4) members of the Tribal Council
+  source: constitution-shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-12-19'
+  locator: Article XI
+  document_version:
+    document: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds several versions (the lead text is the September 9, 2000 amended Articles, followed by 1997 and 1994 texts and resolutions 94-15, 2000-58, 2000-65 and 2000-66), not the 1976 original; facts are from the September 9, 2000 text.'
 governing_documents:
 - kind: law-code
   title: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California -

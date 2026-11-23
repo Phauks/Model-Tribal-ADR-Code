@@ -1,0 +1,26 @@
+profile: content/tribes/e/eastern-shoshone-tribe-of-the-wind-river-reservation.yaml
+topic: governance
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/captures/constitutions/eastern-shoshone-tribe-of-the-wind-river-reservation/80aca9f3e0b4b742.txt
+  query: 'Governance: governing body, head of government, elections, branches, courts, amendment (scripts/governance/reader-brief.md)'
+  outcome: found
+  reason: Read the 1938 constitution and bylaws (text 2) (constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2); kept 13 facts whose quoted words were found in the text.
+  records:
+  - constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: found
+  reason: The directory lists the title of the leader's office.
+  records:
+  - bia-tribal-leaders-directory-2026
+next_steps: 'The nation''s own website: a government, council or constitution page. Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.'

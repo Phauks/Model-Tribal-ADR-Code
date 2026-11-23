@@ -164,6 +164,31 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Narragansett Indian Tribe". Also listed under the same Area in: indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Narragansett Indian Tribe".
+governance:
+- aspect: head-of-government
+  value: Chief Sachem
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Narragansett Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -228,6 +253,23 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Rhode Island is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Rhode Island. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Rhode Island by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: Settlement lands of the Narragansett Indian Tribe are subject to the civil and criminal laws and jurisdiction of Rhode Island; the First Circuit held this grant valid and covers civil regulatory jurisdiction. (Pub. L. No. 95-395, § 9, 92 Stat. at 817; Rhode Island v. Narragansett Indian Tribe, 19 F.3d 685, 694 (1st Cir. 1994).)
+  source: public-law-95-395
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 95-395 § 9, 92 Stat. at 817
+  note: 'Applies to "settlement lands"; the research did not research later trust acquisitions. The 1996 amendment (Pub. L. 104-208, § 330, 110 Stat. 3009-227) kept the sentence as § 9(a) and added § 9(b), settlement lands are not "Indian lands" for the Indian Gaming Regulatory Act. 25 U.S.C. § 1708 is "omitted" from the Code. Whether Narragansett''s "civil regulatory" reach holds today was not rechecked beyond the 1994 opinion. Also cites: rhode-island-v-narragansett-indian-tribe-1994, public-law-104-208-section-330.'
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

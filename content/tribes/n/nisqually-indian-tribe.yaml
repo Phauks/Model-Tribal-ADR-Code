@@ -180,6 +180,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nisqually Indian Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Nisqually Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Nisqually Indian Tribe (1997)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Nisqually Indian Community, Washington" among organizations under constitutions
@@ -204,6 +212,231 @@ government_structure:
   as_of: '1946'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws under the Indian Reorganization Act
+  quote: secure certain privileges and powers offered to us by the Indian Reorganization Act
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Preamble
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: General Council
+  quote: The governing body of the Nisqually Indian Tribe shall be the Nisqually *General Council, which shall be composed of all qualified voters
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article III, Section 1
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members (listed officers)
+  quote: The Nisqually *Tribal Council shall consist of the Chairman, Vice Chairman, Secretary,
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article III, Section 6
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by General Council from its own members by secret ballot
+  quote: The General Council shall elect from its own members by secret ballot
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article III, Section 2
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years
+  quote: the elections for these officers shall be held every three (3) years.
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article IV, Section 4
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All qualified voters
+  quote: composed of all qualified voters of the Nisqually Indians.
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article III, Section 1
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: It shall be the duty of the Chairman to preside over all meetings of the Nisqually *General Council
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Bylaws, Article I
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Nisqually Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by General Council by secret ballot
+  quote: The General Council shall elect from its own members by secret ballot
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article III, Section 2
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: the elections for these officers shall be held every three (3) years.
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article IV, Section 4
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice Chairman, Secretary, Treasurer, Fifth, Sixth and Seventh Council Members
+  quote: (b) a Vice Chairman, (c) a Secretary, (d) a Treasurer, (e) a Fifth Council Member, (f) a Sixth Council Member, (g) a Seventh Council Member,
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article III, Section 2
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: First Saturday in May, every 3 years
+  quote: shall serve until the first Saturday in May 1997, at which time their successors shall be chosen.
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article IV, Section 4
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: who are of the age eighteen (18) years or older as of the date of a tribal election
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article VII, Section 1
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Tribal Council (under election ordinance)
+  quote: shall be conducted in accordance with an election ordinance enacted by the Tribal Council.
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article IV, Section 5
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote in a Secretarial election
+  quote: may be amended by a majority vote of the qualified voters of the *General Council
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article VIII, Section 1
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: no amendment shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article VIII, Section 1
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon receipt of a petition signed by one-third (1/3) of the eligible voters demanding the recall of any officer
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article V, Section 2
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of General Council
+  quote: The General Council may by affirmative vote of two-thirds (2/3) of its members expel any officer
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article V, Section 3
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Tribal Council of General Council officers
+  quote: The Nisqually *Tribal Council shall consist of the Chairman, Vice Chairman, Secretary,
+  source: constitution-nisqually-indian-tribe-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-10-28'
+  locator: Article III, Section 6
+  document_version:
+    document: nisqually-indian-tribe-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Nisqually Indian Tribe
@@ -636,6 +869,20 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Nisqualli, Puyallup, etc., 1854
+  signed: '1854-12-26'
+  statutes_at_large: 10 Stat. 1132
+  kappler:
+    volume: 2
+    page: 661
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nisqualli-puyallup-etc-1854-0661
+  signatory: Nisqually
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 661 (Treaty with the Nisqualli, Puyallup, etc., 1854; Kappler header "Dec. 26, 1854. | 10 Stat., 1132. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty of Medicine Creek; named in preamble The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

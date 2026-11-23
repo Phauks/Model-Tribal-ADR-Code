@@ -41,6 +41,13 @@ supreme_court:
   - {name: "William H. Rehnquist", vote: majority}
   source: https://api.oyez.org/cases/1973/73-362
   checked: '2026-11-22'
+courtlistener:
+  cluster: 109067
+  citation: "417 U.S. 535"
+  case_name: "Morton v. Mancari"
+  link: https://www.courtlistener.com/opinion/109067/morton-v-mancari/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

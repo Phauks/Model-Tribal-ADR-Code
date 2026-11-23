@@ -44,6 +44,13 @@ supreme_court:
   - {name: "William H. Rehnquist", vote: majority}
   source: https://api.oyez.org/cases/1972/71-834
   checked: '2026-11-22'
+courtlistener:
+  cluster: 108755
+  citation: "411 U.S. 164"
+  case_name: "McClanahan v. Arizona State Tax Commission"
+  link: https://www.courtlistener.com/opinion/108755/mcclanahan-v-arizona-state-tax-commission/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

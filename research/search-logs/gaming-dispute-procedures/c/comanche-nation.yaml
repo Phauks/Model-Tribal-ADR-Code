@@ -1,7 +1,7 @@
 profile: content/tribes/c/comanche-nation.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -169,11 +169,57 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2024-12-10 has no text layer on most pages (92 of 93 pages have no text
     layer (only the approval letter has text); no OCR available).
-next_steps: Read the scanned amendment listed 2007-07-30 (https://www.nigc.gov/wp-content/uploads/2025/03/comanchenation-ord07302007.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2009-09-21 (https://www.nigc.gov/wp-content/uploads/2025/03/comanchenation-comanchenation092109.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2017-10-05 (https://www.nigc.gov/wp-content/uploads/2025/03/20171005OrdAmendApp.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2018-10-19 (https://www.nigc.gov/wp-content/uploads/2025/03/20181019OrdAmendAppr.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2019-05-07 (https://www.nigc.gov/wp-content/uploads/2025/03/352220180508OrdApprovalAmendment.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2019-10-16 (https://www.nigc.gov/wp-content/uploads/2025/03/20191016ComancheOrdAmendApproval.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2024-12-10 (https://www.nigc.gov/wp-content/uploads/2025/12/2024.12.10-Comanche-Nation-Amend-Gam-Ord.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/12/2024.12.10-Comanche-Nation-Amend-Gam-Ord.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-41 of 93 of this amendment listed 2024-12-10 as page
+    images (it has no text layer) and recorded 2 procedure(s): patron-dispute. Not read: pages 42, 44,
+    46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92 (40-page
+    budget for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2024-12-10#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2024-12-10#p2
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20191016ComancheOrdAmendApproval.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-33 of 33 of this amendment listed 2019-10-16 as page
+    images (it has no text layer) and recorded 4 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2019-10-16#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2019-10-16#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2019-10-16#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2019-10-16#p4
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/352220180508OrdApprovalAmendment.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-34 of 34 of this amendment listed 2019-05-07 as page
+    images (it has no text layer) and recorded 4 procedure(s): employee-grievance, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2019-05-07#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2019-05-07#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2019-05-07#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#comanche-nation-amendment-2019-05-07#p4
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 42, 44, 46, 48,
+  50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92 of the amendment
+  listed 2024-12-10 (https://www.nigc.gov/wp-content/uploads/2025/12/2024.12.10-Comanche-Nation-Amend-Gam-Ord.pdf),
+  left by the 40-page budget for long documents. Older scanned documents were not read, because the newer
+  documents read replace them: amendment listed 2018-10-19 (https://www.nigc.gov/wp-content/uploads/2025/03/20181019OrdAmendAppr.pdf);
+  amendment listed 2017-10-05 (https://www.nigc.gov/wp-content/uploads/2025/03/20171005OrdAmendApp.pdf);
+  amendment listed 2009-09-21 (https://www.nigc.gov/wp-content/uploads/2025/03/comanchenation-comanchenation092109.pdf);
+  amendment listed 2007-07-30 (https://www.nigc.gov/wp-content/uploads/2025/03/comanchenation-ord07302007.pdf).'

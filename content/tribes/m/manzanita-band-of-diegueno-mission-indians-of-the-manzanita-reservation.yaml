@@ -121,6 +121,191 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Manzanita Band of Diegueno Mission Indians of the Manzanita Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Manzanita Band of Diegueno Mission Indians of the Manzanita Reservation, California".
+governance:
+- aspect: form
+  value: Constitution and Bylaws under Section 16 of the Indian Reorganization Act
+  quote: order to establish a tribal organization under the provisions of Section 16
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Preamble
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: governing-body
+  value: Council
+  quote: The Manzanita Band shall be governed by the Council which shall
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article III, Section 1
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: governing-body-size
+  value: 3 members (Chairman and 2 Committee Members), Tribal Committee
+  quote: Tribal Committee consisting of a Chairman and two (2) Committee Members,
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article III, Section 2
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: governing-body-selection
+  value: Elected (Tribal Committee)
+  quote: Section 2 - In addition to the Council there shall be elected a Manzanita
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article III, Section 2
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: governing-body-term
+  value: 2 years (Tribal Committee)
+  quote: whose terms of office shall be for two (2) years.
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article III, Section 2
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: general-council
+  value: All members 18 years of age or older
+  quote: consist of all 18 years of age or older. Each member of the Council shall
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article III, Section 1
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Section 1 - The Chairman shall preside at all meetings of the Council and
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Manzanita Band of Diegueno Mission Indians of the Manzanita Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Secretary-Treasurer
+  quote: Members, shall select a Secretary-Treasurer to assist them in the adminis-
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article III, Section 2
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: elections
+  value: First Saturday in December
+  quote: All elections will be held on the first Saturday in December
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article V, Section 2
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: election-authority
+  value: Tribal Committee
+  quote: and shall be conducted by the Committee.
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article V, Section 2
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: amendment
+  value: Proposed by majority of voting members present; election under Secretary of the Interior's regulations
+  quote: Amendments to this Constitution and Bylaws may be proposed by a majority of
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article IX
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: recall-and-removal
+  value: Removal by recall election after petition of 20% of eligible voters
+  quote: The members of the Manzanita Band shall have the power to remove
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article V, Section 3
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: recall-and-removal
+  value: Forfeiture of Committee office after missing three meetings in succession
+  quote: his or her office shall be considered forfeited immediately and
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article V, Section 2
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
+- aspect: other
+  value: Committee promulgates all ordinances, resolutions and enactments
+  quote: To promulgate all ordinances, resolutions or other enactments
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: Article VI, Section 3
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Tribal Committee facts describe a second body beside the Council, which is the governing body; several passages of Article V are garbled in the scan.'
 justice_institutions:
 - kind: tribal-court
   name: Manzanita Tribal Court - Intertribal Court of Southern California

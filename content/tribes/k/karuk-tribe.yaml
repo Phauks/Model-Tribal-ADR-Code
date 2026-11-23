@@ -195,6 +195,203 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: 'Listed as "Karuk Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Karuk Tribe of California (1998)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Karuk Tribe shall be the Tribal Council, which shall consist of nine (9) member selected at large from the Tribe
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: governing-body-size
+  value: '9 members: 6 council members and 3 officers'
+  quote: which shall consist of nine (9) member selected at large from the Tribe
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: governing-body-selection
+  value: Council members elected by district; officers elected at large
+  quote: consisting of two (2)representatives elected from each of the three (3) Council Districts
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: All terms of office shall be for four (4) years.
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall preside at all meetings of the Tribal Council.
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VIII, Section 2
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large, within 100 road miles of territory
+  quote: three(3) officers (the Chairperson, Vice-Chairperson and Secretary/Treasurer),elected from anywhere within 100 road miles
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: All terms of office shall be for four (4) years.
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary/Treasurer
+  quote: (the Chairperson, Vice-Chairperson and Secretary/Treasurer)
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: elections
+  value: Every year on the first Tuesday in November
+  quote: Annual elections shall be held on the first Tuesday in November.
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VII, Section 5
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the Tribe who are eighteen years of age and older
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VII, Section 1
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: election-authority
+  value: Election Committee
+  quote: It shall be the duty of the Election Committee to post the names of all qualified candidates
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VII, Section 3
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: judiciary
+  value: Council may establish Tribal courts and administrative bodies
+  quote: To establish Tribal courts and administrative bodies
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VI
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: amendment
+  value: Majority vote of voters in special election; 50% of registered voters must vote
+  quote: The amendment(s) shall take effect if adopted by the majority of those voting in the election held for that purpose
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article XII
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: recall-and-removal
+  value: Recall by petition of two-thirds of registered voters
+  quote: Upon a petition of at least two thirds (2/3)of the registered voters of the Tribe
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article IX, Section 4
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: recall-and-removal
+  value: Expulsion or suspension by two-thirds Council vote
+  quote: The Council may by an affirmative vote of two-thirds (at least six Council Members) expel
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article IX, Section 3
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
 governing_documents:
 - kind: law-code
   title: Karuk Tribe

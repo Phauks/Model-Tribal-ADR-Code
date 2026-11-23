@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Clarence Thomas", vote: minority}
   source: https://api.oyez.org/cases/2020/20-543
   checked: '2026-11-22'
+courtlistener:
+  cluster: 4894911
+  citation: "594 U.S. 338"
+  case_name: "Yellen v. Confederated Tribes of Chehalis Reservation"
+  link: https://www.courtlistener.com/opinion/4894911/yellen-v-confederated-tribes-of-chehalis-reservation/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

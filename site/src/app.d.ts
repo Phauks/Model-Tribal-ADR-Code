@@ -39,6 +39,8 @@ declare global {
 		workspaceChangeLimit?: RateLimit;
 		signInLimit?: RateLimit;
 		signInNetworkLimit?: RateLimit;
+		/** Files one account can start sending in a minute (src/routes/uploads/pieces). */
+		uploadLimit?: RateLimit;
 		/** The live editing rooms, one per essay, in the model-tribal-adr-code-live Worker (src/lib/server/live-editing.ts). */
 		essayRooms?: DurableObjectNamespace;
 		/** Cloudflare Email Service, for sign-in codes (src/lib/server/sign-in-email.ts). */
@@ -78,6 +80,24 @@ declare global {
 		OUTREACH_SMTP_USERNAME?: string;
 		/** Secret: the mailbox's app password. Set as a Secret in the dashboard. */
 		OUTREACH_SMTP_PASSWORD?: string;
+		/**
+		 * Printed copies (docs/book-orders.md). Ordering stays off unless
+		 * BOOK_ORDERS is "test" (Stripe test keys and Lulu's sandbox only) or
+		 * "live"; the keys and secrets are set in the Cloudflare dashboard.
+		 */
+		BOOK_ORDERS?: string;
+		/** Where Lulu sends questions about a print job: the project's own address, never the reader's. */
+		BOOK_ORDERS_CONTACT_EMAIL?: string;
+		/** Added to each copy's price, in cents, toward copies sent to nations. */
+		BOOK_MARGIN_CENTS?: string;
+		/** Signs the links Lulu uses to download a book's files. */
+		BOOK_FILE_LINK_SECRET?: string;
+		/** "sandbox" or "production". */
+		LULU_ENVIRONMENT?: string;
+		LULU_CLIENT_KEY?: string;
+		LULU_CLIENT_SECRET?: string;
+		STRIPE_SECRET_KEY?: string;
+		STRIPE_WEBHOOK_SECRET?: string;
 	}
 }
 

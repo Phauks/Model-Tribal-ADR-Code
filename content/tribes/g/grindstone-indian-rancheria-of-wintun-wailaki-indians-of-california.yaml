@@ -132,6 +132,179 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Grindstone Indian Rancheria of Wintun-Wailaki Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Grindstone Indian Rancheria of Wintun-Wailaki Indians of California".
+governance:
+- aspect: form
+  value: Adopted under the Indian Reorganization Act of June 18, 1934
+  quote: Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Certificate of Results of Election
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: governing-body
+  value: General Council
+  quote: shall be the general council which shall consist of all members
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article IV, Section 1 (Amendment III)
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: general-council
+  value: All members 18 or older
+  quote: who are eighteen (10) years of age or older. Each member of the
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article IV, Section 1 (Amendment III)
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: head-of-government
+  value: Chairman (of Business Committee)
+  quote: The chairman of the business committee shall preside at
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Bylaws, Article I, Sec. 2
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Grindstone Indian Rancheria of Wintun-Wailaki Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the General Council by secret ballot
+  quote: The general council shall elect by secret ballot a business
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article IV, Section 2
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: office shall be for two years and until a successor is elected and
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article V, Section 1
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: other-officers
+  value: Vice chairman, Secretary-treasurer
+  quote: committee consisting of a chairman, a vice chairman and a secretary-
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article IV, Section 2
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: elections
+  value: Every 2 years on the first Monday in February
+  quote: two years on the first Monday in February, beginning in February
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article V, Section 1
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: voting-age
+  value: '18'
+  quote: who are eighteen (10) years of age or older. Each member of the
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article IV, Section 1 (Amendment III)
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: election-authority
+  value: Business Committee
+  quote: All elections of officers shall be conducted by the business
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article V, Section 3
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: amendment
+  value: Majority vote of General Council in an election called by the Secretary of the Interior
+  quote: This constitution and bylaws may be amended by
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article IX, Section 1 (Amendment II)
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: recall-and-removal
+  value: Removal by General Council vote after 51% voter petition
+  quote: requesting the removal from office of an elected official, which
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article VI, Section 2
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
+- aspect: other
+  value: Business Committee elected by secret ballot of General Council
+  quote: The general council shall elect by secret ballot a business
+  source: constitution-grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-1974-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: 1974-06
+  locator: Article IV, Section 2
+  document_version:
+    document: grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california-constitution
+    version: 1974-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate dates and vote counts are partly illegible; Amendment III replaces Article IV, Section 1 and Amendment II replaces Article IX, Section 1, and both amended provisions are given here.'
 governing_documents:
 - kind: constitution
   title: Grindstone Indian Rancheria of Wintun- Wailaki Indians of California - Tribal Constitution

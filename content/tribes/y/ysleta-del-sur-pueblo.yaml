@@ -167,6 +167,32 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Ysleta del Sur Pueblo". Also listed under the same Area in: indian-health-service-self-governance-tribes. The Self-Governance list shows the Pueblo entered a compact in 2023, so the current operator may now be the Pueblo. Also on the Indian Health Service Self-Governance Tribes list (Ysleta del Sur Pueblo (2023)); the list does not say which service unit or programs the compact covers.'
+- area: Albuquerque
+  service_unit: Ysleta del Sur Service Unit
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Ysleta De Sur (YDS) – IHS".'
+  operator: indian-health-service
+governance:
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ysleta del Sur Pueblo
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Ysleta del Sur Pueblo Code of Laws
@@ -253,6 +279,23 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Texas is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Texas. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Texas by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: Texas exercises civil and criminal jurisdiction within the Ysleta del Sur Pueblo reservation as if it had assumed that jurisdiction with the tribe's consent under 25 U.S.C. §§ 1321 and 1322. (Pub. L. No. 100-89, § 105(f), 101 Stat. 666, 668.)
+  source: public-law-100-89
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 100-89 § 105(f), 101 Stat. at 668
+  note: 25 U.S.C. § 1300g-4 is "omitted" from the Code. Gaming provisions (§ 107) and Ysleta del Sur Pueblo v. Texas, 596 U.S. 685 (2022), were not analyzed.
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

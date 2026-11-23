@@ -90,3 +90,8 @@ declare module 'cloudflare:sockets' {
 		options?: { secureTransport?: 'off' | 'on' | 'starttls'; allowHalfOpen?: boolean }
 	): unknown;
 }
+
+declare module 'virtual:page-history' {
+	/** The pages built with the site, for Recent changes and page histories (src/lib/server/page-history-build.ts). */
+	export const historyBuild: import('#lib/page-history.ts').HistoryBuild;
+}

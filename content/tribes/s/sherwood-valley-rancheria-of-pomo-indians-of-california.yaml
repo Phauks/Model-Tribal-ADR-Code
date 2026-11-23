@@ -153,6 +153,226 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sherwood Valley Rancheria of Pomo Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Sherwood Valley Rancheria of Pomo Indians of California".
+governance:
+- aspect: form
+  value: Constitution and Bylaws approved by Secretary of the Interior
+  quote: APPROVED BY SECRETARY OF THE INTERIOR
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: governing-body
+  value: General council
+  quote: be the general council which shall consist of all members who are 18 years of
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article III, Section 1
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: council consisting of a Chairman, Vice-Chairman, Secretary, Treasurer,
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article III, Section 2
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: Parliamentarian, and two members.
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article III, Section 2
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot by general membership
+  quote: The general membership shall elect by secret ballot
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article III, Section 2
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: elections and all terms of office shall be for two (2) years on a staggered
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article IV, Section 5
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: general-council
+  value: All members 18 or older, qualified voters
+  quote: Each member of the general council is also a qualified voter
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article III, Section 1
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Tribal Council shall preside at all meetings of
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sherwood Valley Rancheria of Pomo Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: Nominations and elections of officers of the tribal council
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article IV, Section 2
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two (2) year term; while the Vice-Chairman, Parliamentarian, and two council-
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article IV, Section 5
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer, Parliamentarian
+  quote: council consisting of a Chairman, Vice-Chairman, Secretary, Treasurer,
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article III, Section 2
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: elections
+  value: Annual elections, second Saturday of March
+  quote: Hereafter, there shall be annual
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article IV, Section 5
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the governing body eighteen (18) years of age or
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article IV, Section 3
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: amendment
+  value: Majority vote of general council at a meeting
+  quote: This constitution and bylaws may be amended by a majority vote of
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article VIII, Section 1
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: in effect upon the approval of the Secretary of the Interior
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article VIII, Section 1
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: recall-and-removal
+  value: Removal by petition of 51% of voters, then general council vote
+  quote: less than fifty-one percent (51%) of the voters, the tribal council shall
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Article V, Section 2
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
+- aspect: other
+  value: Ordinance delegates General Council powers to Tribal Council
+  quote: delegated the following powers of the General council which it is
+  source: constitution-sherwood-valley-rancheria-of-pomo-indians-of-california-1974-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1974-07-25'
+  locator: Ordinance, Section Two
+  document_version:
+    document: sherwood-valley-rancheria-of-pomo-indians-of-california-constitution
+    version: 1974-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract also contains a 1991 General Council ordinance delegating powers to the Tribal Council and a 1995 amendment approval notice, but not the 1995 amendment text; facts are from the 1974 constitution.'
 gaming:
   compacts:
   - state: CA

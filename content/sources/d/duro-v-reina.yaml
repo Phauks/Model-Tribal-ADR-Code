@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Anthony M. Kennedy", vote: majority, opinion: majority}
   source: https://api.oyez.org/cases/1989/88-6546
   checked: '2026-11-22'
+courtlistener:
+  cluster: 112439
+  citation: "495 U.S. 676"
+  case_name: "Duro v. Reina"
+  link: https://www.courtlistener.com/opinion/112439/duro-v-reina/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

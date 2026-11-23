@@ -128,6 +128,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of Siletz Indians of Oregon
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Confederated Tribes of Siletz Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Siletz Indians of Oregon (1994)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of Siletz Indians of Oregon
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Confederated Tribes of Siletz Indians of Oregon
@@ -605,6 +622,72 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+treaties:
+- title: Treaty with the Rogue River, 1853
+  signed: '1853-09-10'
+  statutes_at_large: 10 Stat. 1018
+  kappler:
+    volume: 2
+    page: 603
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-rogue-river-1853-0603
+  signatory: Rogue River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 603 (Treaty with the Rogue River, 1853; Kappler header "Sept. 10, 1853. | 10 Stats., 1018. Ratified Apr. 12, 1854. | Proclaimed Feb. 5, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Rogue River peoples removed to Grand Ronde and Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Rogue River, 1854
+  signed: '1854-11-15'
+  statutes_at_large: 10 Stat. 1119
+  kappler:
+    volume: 2
+    page: 654
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-rogue-river-1854-0654
+  signatory: Rogue River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 654 (Treaty with the Rogue River, 1854; Kappler header "Nov. 15, 1854. | 10 Stats., 1119. | Ratified Mar. 3, 1855. | Proclaimed Apr. 7, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Rogue River peoples removed to Grand Ronde and Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chasta, etc., 1854
+  signed: '1854-11-18'
+  statutes_at_large: 10 Stat. 1122
+  kappler:
+    volume: 2
+    page: 655
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chasta-etc-1854-0655
+  signatory: Umpqua; Shasta; Scoton; Grave Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 655 (Treaty with the Chasta, etc., 1854; Kappler header "Nov. 18, 1854. | 10 Stats., 1122. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umpqua peoples also at Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Umpqua and Kalapuya, 1854
+  signed: '1854-11-29'
+  statutes_at_large: 10 Stat. 1125
+  kappler:
+    volume: 2
+    page: 657
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-umpqua-and-kalapuya-1854-0657
+  signatory: Umpqua
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 657 (Treaty with the Umpqua and Kalapuya, 1854; Kappler header "Nov. 29, 1854. | 10 stats., 1125. | Ratified Mar. 3, 1855. | Proclaimed Mar. 30, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umpqua peoples also at Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Molala, 1855
+  signed: '1855-12-21'
+  statutes_at_large: 12 Stat. 981
+  kappler:
+    volume: 2
+    page: 740
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-molala-1855-0740
+  signatory: Umpqua
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 740 (Treaty with the Molala, 1855; Kappler header "Dec. 21, 1855. | 12 Stat., 981. | Ratified Mar. 8, 1859. | Proclaimed Apr. 27, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umpqua peoples also at Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

@@ -63,16 +63,19 @@ const corePages = ['/', '/glossary', '/changelog', '/search', '/starred', '/star
 // edition.json, the fingerprints and SvelteKit's version.json say what the server has now, so
 // they always come from the network; a saved version.json would hide a new build from open tabs.
 // Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself.
+// Map tiles (/map-tiles/) are many and never change under their address, so the browser's own cache keeps them.
 const neverCached = [
 	'/workspace',
 	'/sign-in',
 	'/sign-out',
 	'/requests',
 	'/following',
+	'/account',
 	'/edition.json',
 	fingerprintsAddress,
 	'/_app/version.json',
-	'/copies'
+	'/copies',
+	'/map-tiles'
 ];
 /** Not a real address: the list of collections the reader keeps, stored in the cache. */
 const keptCollectionsKey = '/__kept-collections';

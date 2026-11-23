@@ -238,6 +238,8 @@ jobs:
       - run: npm test
       - if: needs.changes.outputs.every_size == 'true'
         run: npm run build:every-size
+      # Covers for one size, both bindings, checked against Lulu's cover rules.
+      - run: npm run build:editions -- --specimen --trim us-trade
       - run: npm run build
       - uses: actions/upload-artifact@v4
         if: always()
@@ -247,6 +249,7 @@ jobs:
             pdf/output/**/interior.pdf
             pdf/output/**/report.json
             pdf/output/every-size/summary.md
+            pdf/output/editions/**/cover.pdf
           if-no-files-found: ignore
 
   prose:

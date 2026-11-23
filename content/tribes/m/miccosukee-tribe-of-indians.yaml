@@ -148,6 +148,247 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Miccosukee Tribe of Indians
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Miccosukee Tribe of Indians of Florida". Also listed under the same Area in: indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Miccosukee Tribe of Indians of Florida".
+governance:
+- aspect: form
+  value: Constitution and Bylaws under Section 16 of the Indian Reorganization Act
+  quote: ballots in accordance with Section 16 of the Indian Reorganization
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Certification of Adoption
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: governing-body
+  value: Miccosukee General Council
+  quote: he vested in the Miceosukee General Council, The Miceosukee
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article XXI, Section 1
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: governing-body
+  value: Miccosukee Business Council
+  quote: shall be the Miceosukee Business Council when the
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article XXI, Section 3
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: governing-body-size
+  value: 5 members (the elected officers)
+  quote: consist of a Chairman, Assistant Chairman, Secretary, Treasurer
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article XXI, Section 2
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot at General Council election
+  quote: General Council which shall provide for secret ballot elections
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article VII, Section 2
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: shall hold office for a term of four years
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Amendment III (Art. III, Sec. 2)
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: general-council
+  value: All adult members 18 years of age or over
+  quote: composed of all adult members 18 years
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article XXI, Section 1
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: head-of-government
+  value: Chairman
+  quote: (a) He shall preside at all regular and special meetings of
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article XI, Section 1
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Miccosukee Tribe of Indians
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the General Council
+  quote: Officers shall be elected and seated, except in the first
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article XXI, Section 2
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: shall hold office for a term of four years
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Amendment III (Art. III, Sec. 2)
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: other-officers
+  value: Assistant Chairman, Secretary, Treasurer, Lawmaker
+  quote: consist of a Chairman, Assistant Chairman, Secretary, Treasurer
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article XXI, Section 2
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: elections
+  value: Officers elected in November
+  quote: during 1 the month of November
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Amendment III
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: voting-age
+  value: '18'
+  quote: composed of all adult members 18 years
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article XXI, Section 1
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: election-authority
+  value: Election board (under General Council ordinance)
+  quote: prescribe the duties of the election board
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article VII, Section 2
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: amendment
+  value: Majority vote at Secretary-called election (30% turnout), then Secretary approval
+  quote: majority vote of the qualified voters of the tribe voting at an
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article IX, Section 1
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: effective until it shall have been approved by the Secretary
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article IX, Section 1
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: recall-and-removal
+  value: Removal by General Council
+  quote: remove from office any officer of the tribe who fails or refuses
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Article XXI, Section 4
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
+- aspect: other
+  value: General Council quorum of 25, with three clans represented
+  quote: twenty-five eligible adult members are present, provided at least
+  source: constitution-miccosukee-tribe-of-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-31'
+  locator: Bylaws, Article I, Section 3
+  document_version:
+    document: miccosukee-tribe-of-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1961 constitution and bylaws with Amendments I to VI (last approved March 31, 1977), not a 1977 constitution; the OCR is garbled in places.'
 governing_documents:
 - kind: constitution
   title: Constitution

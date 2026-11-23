@@ -12,6 +12,8 @@
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
 	import Clock from '@lucide/svelte/icons/clock';
+	import { afterNavigate } from '$app/navigation';
+	import { fillNationSlots } from '#lib/nation-page-slots.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -21,6 +23,13 @@
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
 	const hasContacts = $derived(data.contacts.websites.length > 0 || data.contacts.offices.length > 0);
+
+	// The Worker fills the nation's own changes into the page before it is
+	// sent. After a move within the site the page came from the build, so it
+	// asks for them itself (src/lib/nation-page-slots.ts).
+	afterNavigate((navigation) => {
+		if (navigation.type !== 'enter') void fillNationSlots(data.page.id);
+	});
 </script>
 
 <svelte:head>
@@ -83,31 +92,54 @@
 			{/each}
 		{/if}
 
-		<!-- 2. Review status: a small badge and one line, not a panel (Trevor, Nov. 22, 2026).
-		     Report a problem in the masthead takes requests, so the line has no link of its own. -->
-		<p class="review-status small" id="review-status" data-print-part="reviewStatus">
-			<span class="visually-hidden">Review status:</span>
-			<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />{page.review.label}</span>
-			<span class="muted">
-				{page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
-			</span>
+		<!-- 2. Who keeps the page, like a map listing: "Unclaimed" until people the
+		     nation chose keep it (Trevor, Nov. 23, 2026). The build always says
+		     "Unclaimed"; for a claimed page the Worker hides this line and puts the
+		     claimed one in the top place below (src/lib/server/nation-page-overlay.ts). -->
+		<p class="review-status small" id="review-status" data-print-part="reviewStatus" data-build-status>
+			<span class="visually-hidden">Who keeps this page:</span>
+			{#if page.withdrawn}
+				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />{page.review.label}</span>
+				<span class="muted">{page.review.meaning}</span>
+			{:else}
+				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unclaimed</span>
+				<span class="muted">
+					No one from the nation keeps this page yet. {page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
+				</span>
+				<a class="no-print" href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a>
+			{/if}
+			<a class="no-print" href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a>
 		</p>
+		<!-- The nation's own words and pictures, filled in by the Worker from what its team published (decision record 0041). -->
+		{#if !page.withdrawn}<div class="nation-slot" data-nation-slot="top"></div>{/if}
 	{/snippet}
 
 	{#if !page.withdrawn}
-		<!-- 4-6. The legal sections always show, and say plainly when nothing was
+		<!-- 4-7. The legal sections always show, and say plainly when nothing was
 		     found, so a reader can see whether recourse may be available (Trevor,
 		     Nov. 22, 2026; src/lib/search-status.ts). -->
-		<!-- 4. Courts and dispute resolution -->
+		<!-- 4. Government: how the government is set up, one plain fact per line,
+		     each from the nation's governing document, its website or an official
+		     directory; never a summary of a constitution (decision record 0042). -->
+		<Collapsible heading="Government" identifier="government-heading">
+			{#if data.empty.government}
+				{@render emptySection(data.empty.government)}
+			{:else}
+				<FactGroups groups={data.government} />
+			{/if}
+		</Collapsible>
+
+		<!-- 5. Courts and dispute resolution -->
 		<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
 			{#if data.empty.courts}
 				{@render emptySection(data.empty.courts)}
 			{:else}
 				<NationServices categories={data.courts} />
 			{/if}
+			<div class="nation-slot" data-nation-slot="courts"></div>
 		</Collapsible>
 
-		<!-- 5. Laws and agreements: where the nation publishes its laws, linked, not
+		<!-- 6. Laws and agreements: where the nation publishes its laws, linked, not
 		     reproduced, and each document with recorded versions, oldest first
 		     (decision record 0018). -->
 		<div data-print-part="documentHistory">
@@ -116,19 +148,28 @@
 					<FactGroups groups={data.law} />
 				{/if}
 				<DocumentHistoryList documents={data.documents} />
+				<div class="nation-slot" data-nation-slot="law"></div>
 			</Collapsible>
 		</div>
 
-		<!-- 6. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
+		<!-- 7. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
 		<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
 			{#if data.empty.jurisdiction}
 				{@render emptySection(data.empty.jurisdiction)}
 			{:else}
 				<FactGroups groups={data.jurisdiction} />
 			{/if}
+			<div class="nation-slot" data-nation-slot="jurisdiction"></div>
 		</Collapsible>
 
-		<!-- 7. Other nations in the same states: plain lists, never a ranking -->
+		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
+		{#if data.ties.length > 0}
+			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
+				<FactGroups groups={data.ties} />
+			</Collapsible>
+		{/if}
+
+		<!-- 8. Other nations in the same states: plain lists, never a ranking -->
 		{#if data.neighbors.length > 0}
 			<div class="no-print">
 				<Collapsible heading="Other nations in the same states" identifier="neighbors-heading">
@@ -152,7 +193,7 @@
 	{/if}
 
 	{#snippet sources()}
-		<!-- 8. Sources -->
+		<!-- 9. Sources -->
 		{#if !page.withdrawn}
 			<SourceList sources={data.sources} />
 		{/if}
@@ -182,6 +223,7 @@
 				{/if}
 			{/snippet}
 			<FactGroups groups={data.glance} />
+			<div class="nation-slot" data-nation-slot="glance"></div>
 			{#if data.map}
 				<div class="glance-map">
 					<NationMap map={data.map} nationName={page.officialName} />
@@ -194,6 +236,7 @@
 			<ContactCard cards={data.contacts} headingLevel={3} />
 		</Collapsible>
 	{/if}
+	<div class="nation-slot" data-nation-slot="contacts"></div>
 {/snippet}
 
 <style>

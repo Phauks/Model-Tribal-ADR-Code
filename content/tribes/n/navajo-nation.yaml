@@ -182,6 +182,31 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
+indian_health_service:
+- area: Navajo
+  source: indian-health-service-navajo-area-fiscal-year-2022-budget-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Demographic Information bullet
+  note: Listed as "The Navajo Nation". Area covers the Navajo Nation; the Navajo Area home page describes five federal service units plus several tribal 638 health corporations, so no single service unit is recorded.
+- area: Navajo
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Navajo Area
+  note: Listed as "Navajo Nation". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Navajo Nation Code
@@ -752,6 +777,66 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+treaties:
+- title: Treaty with the Navaho, 1849
+  signed: '1849-09-09'
+  statutes_at_large: 9 Stat. 974
+  kappler:
+    volume: 2
+    page: 583
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-navaho-1849-0583
+  signatory: Navajo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 583 (Treaty with the Navaho, 1849; Kappler header "Sept. 9, 1849. | 9 Stat., 974. | Ratified Sept. 9, 1850. | Proclaimed Sept. 24, 1850.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Navajo Nation (Navaho in Kappler title) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Navaho, 1868
+  signed: '1868-06-01'
+  statutes_at_large: 15 Stat. 667
+  kappler:
+    volume: 2
+    page: 1015
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-navaho-1868-1015
+  signatory: Navajo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 1015 (Treaty with the Navaho, 1868; Kappler header "June 1, 1868. | 15 Stats., p. 667. | Ratified July 25, 1868. | Proclaimed Aug. 12, 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Navajo Nation (Navaho in Kappler title) The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Coalition of Large Tribes
   source: coalition-of-large-tribes-home

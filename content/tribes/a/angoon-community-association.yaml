@@ -142,6 +142,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Angoon Community Association
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: Listed as "Angoon Community Association". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Mt. Edgecumbe Service Area
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: 'The source''s words: "Angoon Community Association".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Angoon Community Association" among organizations under constitutions approved
@@ -167,6 +184,159 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under Acts of Congress of June 18, 1934, and May 1, 1936
+  quote: Acts of Congress of June 18, 1934 (48 Stat. 984), and May 1, 1936
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Preamble
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: governing-body
+  value: Council
+  quote: The governing body of this Community shall be a Coun
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Article III, Section 1
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: composedof seven members elected by the adult membership of the
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Article III, Section 1
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: governing-body-selection
+  value: Elected by the adult membership
+  quote: composedof seven members elected by the adult membership of the
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Article III, Section 1
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: and shall serve for a period of two years or until-their
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Article III, Sec. 3
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: general-council
+  value: Community membership, meets twice a year
+  quote: the Community shall meet on the first
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Article III, Sec. 2
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the Council shall preside over all
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: By-Laws, Article I, Section 1
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Angoon Community Association
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Council from within its membership
+  quote: date by electing from within
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Article III, Section 5
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: elect a Vice-President, who shall act
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: By-Laws, Article I, Section 2
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an Interior-called election
+  quote: Provided, That at least 30 percent of those entitled to vote
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Article IX
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: until it shall have been approved by the Secretary of the Interior.
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Article IX
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
+- aspect: recall-and-removal
+  value: Seat declared vacant after three months' absence without cause
+  quote: Meetings of the Council for a period of three months without cause
+  source: constitution-angoon-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-15'
+  locator: Article VII, Section 1(b)
+  document_version:
+    document: angoon-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR errors in the scan; facts drawn from legible lines only, and the 1939 ratified text is used.'
 governing_documents:
 - kind: constitution
   title: Constitution

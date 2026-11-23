@@ -11,6 +11,7 @@ Never copied or served:
 
 - Westlaw prints and journal articles (always `no`, decision record 0030), books, and anything else under copyright.
 - Tribal codes copied from commercial code publishers (eCode360, Municode, Code Publishing Company, American Legal Publishing), whose compilations can carry their own copyright and terms.
+- Constitutions and laws whose only published address is the National Indian Law Library's. NILL says a nation's permission to NILL is not consent to use its laws elsewhere, so the copies stay in the bucket and pages link to NILL until the nation agrees (decision record [0043](decisions/0043-link-to-the-national-indian-law-library-for-its-copies.md)).
 - State court documents marked `government-edict`, for now. Some, such as the Alaska restorative justice plans, were written with tribes, so each needs a look first.
 - Web pages that change, such as the eCFR or the Legal Information Institute. A saved web page is served only when it is itself the document, such as a constitution published as a page.
 - Files over 64 MB, such as whole Statutes at Large volumes scanned by the Library of Congress. Pages link to the original for those.
@@ -24,7 +25,7 @@ Every file in the private bucket, copies included, has one row in the capture in
 - `key`: `govinfo/<package>/<file>.pdf` for GovInfo files (for example `govinfo/STATUTE-108/STATUTE-108-Pg4791.pdf`), or `<host>/<path>` for other government sites.
 - `link`: every address the document was published at, separated by spaces, with the address that serves the PDF directly first. The site matches a page's link against all of them.
 - `sha256`, `bytes`, `media_type`, `captured`, `title`, `records` (the source or nation records that cite it) and `rights` (a note on why it may be shared).
-- `redistribution: yes`. This column alone decides what the website serves. A row marked `no` or `unknown` is never served, whatever the bucket holds. `mirror_captures.py` sets `yes` for U.S. government works and for the `constitutions` and `tribal-law` topics (except copies from code publishers), and `no` for any key that `research/capture-index-overrides.json` marks `"redistribution": "no"`, which is how a removal request is carried out.
+- `redistribution: yes`. This column alone decides what the website serves. A row marked `no` or `unknown` is never served, whatever the bucket holds. `mirror_captures.py` sets `yes` for U.S. government works and for the `constitutions` and `tribal-law` topics (except copies from code publishers and copies whose only address is the National Indian Law Library's), and `no` for any key that `research/capture-index-overrides.json` marks `"redistribution": "no"`, which is how a removal request is carried out.
 
 ## Making copies
 

@@ -150,6 +150,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kwethluk
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: Listed as "Organized Village of Kwethluk". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Yukon-Kuskokwim Delta Service Area
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'The source''s words: "Organized Village of Kwethluk".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Kwethluk" among organizations under constitutions approved
@@ -177,6 +194,99 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the Act of Congress of June 18, 1934
+  quote: by authority of the Act of Congress of June 18, 1934,
+  source: constitution-organized-village-of-kwethluk-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-11'
+  locator: Preamble
+  document_version:
+    document: organized-village-of-kwethluk-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Article VI sentence on changes is scrambled in the scan; facts are taken from the words that can be read.'
+- aspect: governing-body
+  value: Governing body chosen by the Village membership (type not named)
+  quote: shall decide what kind of governing body it wishes to set up to speak
+  source: constitution-organized-village-of-kwethluk-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-11'
+  locator: Article III, Section 1
+  document_version:
+    document: organized-village-of-kwethluk-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Article VI sentence on changes is scrambled in the scan; facts are taken from the words that can be read.'
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: The Village shall then choose the
+  source: constitution-organized-village-of-kwethluk-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-11'
+  locator: Article III, Section 2
+  document_version:
+    document: organized-village-of-kwethluk-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Article VI sentence on changes is scrambled in the scan; facts are taken from the words that can be read.'
+- aspect: governing-body-term
+  value: Length set by the Village membership
+  quote: and how long they shall serve.
+  source: constitution-organized-village-of-kwethluk-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-11'
+  locator: Article III, Section 2
+  document_version:
+    document: organized-village-of-kwethluk-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Article VI sentence on changes is scrambled in the scan; facts are taken from the words that can be read.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Organized Village of Kwethluk
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: of the Village 21 years of
+  source: constitution-organized-village-of-kwethluk-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-11'
+  locator: Article V, Section 1
+  document_version:
+    document: organized-village-of-kwethluk-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Article VI sentence on changes is scrambled in the scan; facts are taken from the words that can be read.'
+- aspect: amendment
+  value: Majority vote of Village members in election called by the Secretary, 30% turnout
+  quote: 30 percent of the voting membership take part
+  source: constitution-organized-village-of-kwethluk-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-11'
+  locator: Article VI
+  document_version:
+    document: organized-village-of-kwethluk-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Article VI sentence on changes is scrambled in the scan; facts are taken from the words that can be read.'
+- aspect: other
+  value: General meeting of the whole membership at least once a year
+  quote: A general meeting of the whole membership shall be held
+  source: constitution-organized-village-of-kwethluk-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-11'
+  locator: Article III, Section 3
+  document_version:
+    document: organized-village-of-kwethluk-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Article VI sentence on changes is scrambled in the scan; facts are taken from the words that can be read.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution

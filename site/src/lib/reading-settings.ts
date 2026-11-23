@@ -18,6 +18,12 @@
  */
 
 export const settingsStorageKey = 'reading-settings';
+/**
+ * Sent on window after Settings or the theme button saves a change, so the
+ * copy kept with a signed-in person's account can follow
+ * (src/lib/settings-everywhere.ts).
+ */
+export const settingsSavedEvent = 'reading-settings-saved';
 export const themeStorageKey = 'theme';
 
 /** Text size as a percentage of the standard size; the slider in Settings steps through these. */
@@ -31,6 +37,8 @@ export const noteDisplays = ['popup', 'end', 'inline'] as const;
 export const sourceLinkChoices = ['both', 'original', 'archived'] as const;
 export const glossaryCardChoices = ['on', 'off'] as const;
 export const motions = ['device', 'reduce'] as const;
+export const sourceGroupChoices = ['folded', 'open'] as const;
+export const otherCursorChoices = ['names', 'lines', 'off'] as const;
 export const themes = ['device', 'light', 'dark'] as const;
 
 export type TextSize = (typeof textSizes)[number];
@@ -43,6 +51,8 @@ export type NoteDisplay = (typeof noteDisplays)[number];
 export type SourceLinks = (typeof sourceLinkChoices)[number];
 export type GlossaryCards = (typeof glossaryCardChoices)[number];
 export type Motion = (typeof motions)[number];
+export type SourceGroups = (typeof sourceGroupChoices)[number];
+export type OtherCursors = (typeof otherCursorChoices)[number];
 export type Theme = (typeof themes)[number];
 
 /** The settings stored under settingsStorageKey. Each name is also the root element's dataset name. */
@@ -57,6 +67,8 @@ export interface ReadingSettings {
 	sourceLinks: SourceLinks;
 	glossaryCards: GlossaryCards;
 	motion: Motion;
+	sourceGroups: SourceGroups;
+	otherCursors: OtherCursors;
 }
 
 export const settingNames = [
@@ -69,7 +81,9 @@ export const settingNames = [
 	'noteDisplay',
 	'sourceLinks',
 	'glossaryCards',
-	'motion'
+	'motion',
+	'sourceGroups',
+	'otherCursors'
 ] as const;
 
 export const defaultSettings: ReadingSettings = {
@@ -82,7 +96,9 @@ export const defaultSettings: ReadingSettings = {
 	noteDisplay: 'popup',
 	sourceLinks: 'both',
 	glossaryCards: 'on',
-	motion: 'device'
+	motion: 'device',
+	sourceGroups: 'folded',
+	otherCursors: 'names'
 };
 
 const allowedValues: { [Name in keyof ReadingSettings]: readonly ReadingSettings[Name][] } = {
@@ -95,7 +111,9 @@ const allowedValues: { [Name in keyof ReadingSettings]: readonly ReadingSettings
 	noteDisplay: noteDisplays,
 	sourceLinks: sourceLinkChoices,
 	glossaryCards: glossaryCardChoices,
-	motion: motions
+	motion: motions,
+	sourceGroups: sourceGroupChoices,
+	otherCursors: otherCursorChoices
 };
 
 export interface Choice<Value extends string> {
@@ -200,6 +218,27 @@ export const motionChoices: Choice<Motion>[] = [
 	{ value: 'reduce', label: 'Reduce motion', hint: 'Nothing slides, fades or glides; every change happens at once' }
 ];
 
+/**
+ * Long Sources lists are folded into groups by the part of the page that
+ * cites them (SourceList.svelte). Open shows every group open when the page
+ * loads; the reader can still fold each one.
+ */
+export const sourceGroupOptions: Choice<SourceGroups>[] = [
+	{ value: 'folded', label: 'Folded', hint: 'Each group shows its name and how many sources it holds; select it to open it' },
+	{ value: 'open', label: 'Open', hint: 'Every group starts open, so the whole list shows at once' }
+];
+
+/**
+ * Other people's cursors while editing an essay together (EssayEditor.svelte).
+ * Only what this reader sees changes; others still see this reader's cursor.
+ * The color others see is chosen in Account, because other people see it.
+ */
+export const otherCursorOptions: Choice<OtherCursors>[] = [
+	{ value: 'names', label: 'Show cursors with names' },
+	{ value: 'lines', label: 'Show cursors without names', hint: 'A colored line and highlight, with no name tag' },
+	{ value: 'off', label: 'Hide other people’s cursors', hint: 'A quieter page while you write. Their changes still appear' }
+];
+
 function isAllowed<Name extends keyof ReadingSettings>(
 	name: Name,
 	value: unknown
@@ -287,6 +326,11 @@ export function saveSettings(settings: ReadingSettings): void {
 	} catch {
 		// Storage blocked or full: the settings still apply to this page.
 	}
+	announceSaved();
+}
+
+function announceSaved(): void {
+	if (typeof window !== 'undefined') window.dispatchEvent(new Event(settingsSavedEvent));
 }
 
 const fontFamilyNames: Partial<Record<Font, string>> = {
@@ -321,4 +365,5 @@ export function saveTheme(theme: Theme): void {
 	} catch {
 		// Storage blocked or full: the theme still applies to this page.
 	}
+	announceSaved();
 }

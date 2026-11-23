@@ -170,6 +170,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quinault Indian Nation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Quinault Indian Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Quinault Indian Nation (1995)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Quinault Indian Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Quinault Indian Nation
@@ -443,6 +460,20 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Quinault Nation". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+treaties:
+- title: Treaty with the Quinaielt, etc., 1855
+  signed: '1855-07-01'
+  statutes_at_large: 12 Stat. 971
+  kappler:
+    volume: 2
+    page: 719
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-quinaielt-etc-1855-0719
+  signatory: Quinault
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 719 (Treaty with the Quinaielt, etc., 1855; Kappler header "July 1, 1855. Jan. 25, 1856. | 12 Stats., 971. | Ratified Mar. 8, 1859. | Proclaimed, Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

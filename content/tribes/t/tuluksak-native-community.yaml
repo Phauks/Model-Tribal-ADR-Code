@@ -150,6 +150,116 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tuluksak Native Community
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: Listed as "Tuluksak Native Community". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Yukon-Kuskokwim Delta Service Area
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'The source''s words: "Tuluksak Native Community".'
+  operator: tribal
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Act of June 18, 1934
+  quote: aid, as set forth in the Act of June 18, 1934.
+  source: constitution-tuluksak-native-community-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-05-11'
+  locator: Article IV, Section 1
+  document_version:
+    document: tuluksak-native-community-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article III, which sets up the governing body and its selection, is largely illegible in the scan, so those facts are omitted.'
+- aspect: governing-body
+  value: Governing body (form set by the Community)
+  quote: Meetings of Membership and Governing Body
+  source: constitution-tuluksak-native-community-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-05-11'
+  locator: Article III, Section 3
+  document_version:
+    document: tuluksak-native-community-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article III, which sets up the governing body and its selection, is largely illegible in the scan, so those facts are omitted.'
+- aspect: general-council
+  value: All Community members 21 or older, at Community meetings
+  quote: over shall have the right to vote in Community meetings
+  source: constitution-tuluksak-native-community-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-05-11'
+  locator: Article V, Section 1
+  document_version:
+    document: tuluksak-native-community-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article III, which sets up the governing body and its selection, is largely illegible in the scan, so those facts are omitted.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tuluksak Native Community
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Officers and agents as the Community or governing body chooses
+  quote: may choose as many officers and agents as it may need to carry out its
+  source: constitution-tuluksak-native-community-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-05-11'
+  locator: By-laws, Article I, Section 3
+  document_version:
+    document: tuluksak-native-community-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article III, which sets up the governing body and its selection, is largely illegible in the scan, so those facts are omitted.'
+- aspect: voting-age
+  value: '21'
+  quote: to Vote - All members of the Community twenty-one
+  source: constitution-tuluksak-native-community-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-05-11'
+  locator: Article V, Section 1
+  document_version:
+    document: tuluksak-native-community-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article III, which sets up the governing body and its selection, is largely illegible in the scan, so those facts are omitted.'
+- aspect: amendment
+  value: Majority vote of Community members in an election called by the Secretary
+  quote: are approved by the Secretary of the Interior and by a majority vote of
+  source: constitution-tuluksak-native-community-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-05-11'
+  locator: Article VI
+  document_version:
+    document: tuluksak-native-community-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article III, which sets up the governing body and its selection, is largely illegible in the scan, so those facts are omitted.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: are approved by the Secretary of the Interior and by a majority vote of
+  source: constitution-tuluksak-native-community-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-05-11'
+  locator: Article VI
+  document_version:
+    document: tuluksak-native-community-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article III, which sets up the governing body and its selection, is largely illegible in the scan, so those facts are omitted.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution

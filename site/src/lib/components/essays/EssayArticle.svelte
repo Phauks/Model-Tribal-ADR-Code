@@ -10,6 +10,7 @@
 	// above the text (EssayAccessBar.svelte), the draft with its changes
 	// marked, and the editor in place of the text, loaded only then.
 	import { onMount } from 'svelte';
+	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
@@ -131,12 +132,12 @@
 		{#await import('#lib/components/essays/EssayEditor.svelte')}
 			<p class="small muted">Opening the editor…</p>
 		{:then { default: EssayEditor }}
-			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave onsaved={saved} />
+			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave live onsaved={saved} />
 		{:catch}
 			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
 		{/await}
 	{:else}
-		<div class="essay-text">
+		<div class="essay-text" use:figurePlayers>
 			{@html shown.html}
 		</div>
 		<SourceList sources={shown.sources} />

@@ -149,6 +149,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Point Hope
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: Listed as "Native Village of Point Hope". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Kotzebue Service Area
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: 'The source''s words: "Native Village of Point Hope".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Point Hope" among organizations under constitutions approved
@@ -176,6 +193,87 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the act of Congress of June 18, 1934
+  quote: by authority of the act of Congress of June 18,
+  source: constitution-native-village-of-point-hope-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-29'
+  locator: Preamble
+  document_version:
+    document: native-village-of-point-hope-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Layout is broken in the scan; the text does not name the governing body or state its size, term or officers.'
+- aspect: governing-body
+  value: Governing body (kind chosen by Village membership)
+  quote: If there is a governing body already set up in the Village, at the
+  source: constitution-native-village-of-point-hope-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-29'
+  locator: Article III, Section 1
+  document_version:
+    document: native-village-of-point-hope-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Layout is broken in the scan; the text does not name the governing body or state its size, term or officers.'
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: The Village shall then choose the mem-
+  source: constitution-native-village-of-point-hope-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-29'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-point-hope-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Layout is broken in the scan; the text does not name the governing body or state its size, term or officers.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Point Hope
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: Village 21 years
+  source: constitution-native-village-of-point-hope-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-29'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-point-hope-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Layout is broken in the scan; the text does not name the governing body or state its size, term or officers.'
+- aspect: amendment
+  value: Majority vote of Village members in election called by Secretary
+  quote: majority vote of the Village members voting
+  source: constitution-native-village-of-point-hope-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-29'
+  locator: Article VI
+  document_version:
+    document: native-village-of-point-hope-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Layout is broken in the scan; the text does not name the governing body or state its size, term or officers.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior
+  source: constitution-native-village-of-point-hope-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-02-29'
+  locator: Article VI
+  document_version:
+    document: native-village-of-point-hope-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Layout is broken in the scan; the text does not name the governing body or state its size, term or officers.'
 governing_documents:
 - kind: constitution
   title: Constitution

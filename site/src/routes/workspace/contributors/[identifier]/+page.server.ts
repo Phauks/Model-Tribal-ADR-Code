@@ -7,6 +7,7 @@ import {
 	giveWorkspaceAccess,
 	profileByIdentifier,
 	profileVersions,
+	setBoardMembership,
 	setCreditSection,
 	type Decision
 } from '#lib/server/contributor-profiles.ts';
@@ -66,6 +67,14 @@ export const actions: Actions = {
 		const section = value && (creditSections as readonly string[]).includes(value) ? (value as CreditSection) : null;
 		await setCreditSection(database, profile, section, person);
 		return { done: 'Credit section saved.' };
+	},
+
+	board: async (event) => {
+		const { person, database, profile } = await loadProfile(event);
+		const form = await event.request.formData();
+		const member = form.get('boardMember') === 'yes';
+		await setBoardMembership(database, profile, member, member ? formText(form, 'boardOffice', 100) : null, person);
+		return { done: member ? 'Saved as a board member.' : 'Saved as not on the board.' };
 	},
 
 	access: async (event) => {

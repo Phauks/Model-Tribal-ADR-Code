@@ -11,6 +11,7 @@ import { fullCitations } from './src/lib/server/citations.ts';
 import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { followableBuild } from './src/lib/server/followable-build.ts';
+import { historyBuild } from './src/lib/server/page-history-build.ts';
 import {
 	essaysForReview,
 	glossary,
@@ -388,6 +389,28 @@ function followablePages(): Plugin {
 	};
 }
 
+const pageHistoryModule = 'virtual:page-history';
+const resolvedPageHistoryModule = `\0${pageHistoryModule}`;
+
+/**
+ * Lists the pages built with the site for Recent changes, with a fingerprint
+ * of each and, for pages whose earlier wording may be shown, their text. The
+ * Worker compares the list with the last build's and records each change
+ * (src/lib/server/page-history.ts).
+ */
+function pageHistory(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:page-history',
+		resolveId(identifier) {
+			return identifier === pageHistoryModule ? resolvedPageHistoryModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedPageHistoryModule) return undefined;
+			return `export const historyBuild = ${JSON.stringify(historyBuild())};`;
+		}
+	};
+}
+
 function buildInformation(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:build',
@@ -419,6 +442,7 @@ export default defineConfig({
 		formCatalog(),
 		buildInformation(),
 		followablePages(),
+		pageHistory(),
 		sveltekit({
 			compilerOptions: {
 				// Runes mode for the project's own components. Can be removed in Svelte 6.

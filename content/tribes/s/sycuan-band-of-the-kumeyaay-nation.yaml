@@ -154,6 +154,167 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sycuan Band of the Kumeyaay Nation
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Sycuan Band of Kumeyaay Nation".
+governance:
+- aspect: form
+  value: Articles of Association
+  quote: Articles of Association to establish rules of procedure to govern our
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: Preamble
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: governing-body
+  value: General Council
+  quote: The governing body of the Band shall be the General
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: governing-body-term
+  value: Business Committee 2 years
+  quote: a term Of two (2) years or until their successors are duly elected and
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: general-council
+  value: All adult members 18 or older
+  quote: which shall consist of all adult members eighteen (1G) years of
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: head-of-government
+  value: Spokesman
+  quote: a Business Committee consisting of Spokesman, Secretary and three (3)
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sycuan Band of the Kumeyaay Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected from the General Council
+  quote: In addition there shall be elected from the General Council
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: other-officers
+  value: Spokesman, Secretary
+  quote: a Business Committee consisting of Spokesman, Secretary and three (3)
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: voting-age
+  value: '18'
+  quote: of age or older, shall have the right to vote and, if duly elected to hold
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 4. Elections
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: amendment
+  value: Majority vote of General Council
+  quote: These Articles of Association may be amended by a
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 10. Amendment
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of General Council
+  quote: The General Council may, by majority vote
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 5. Vacancies and Recall
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: recall-and-removal
+  value: Recall election on petition of 30% of voters
+  quote: Upon receipt of a petition signed by at least 30 per cent of the
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 5. Vacancies and Recall
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: other
+  value: Business Committee has administrative powers
+  quote: The Business Committee shall have the administrative powers and
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
 governing_documents:
 - kind: law-code
   title: Tribal code

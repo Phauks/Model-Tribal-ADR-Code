@@ -39,14 +39,14 @@ export const roleDescriptions: Record<Role, string> = {
 	'lead-author':
 		'The administrator: full access to every document, and adds, changes and removes people, grants and restricts access, and sees the activity log; welcomes people who register to help. Only the lead author manages access.',
 	editor:
-		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them), reads registrations from people who want to help, and signs off on content.',
+		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them), reviews and files the files people send, reads registrations from people who want to help, and signs off on content.',
 	'co-author':
 		'Comments on every document unless the lead author grants more or less. Changes to content are still made by pull request.',
 	advisor: 'Signs off on content or asks for changes, as a project advisor, and comments.',
 	contributor:
 		'Sees only the documents the lead author grants them, at the level granted: for example, writes and edits an assigned essay draft. Cannot sign off or publish.',
 	'nation-reviewer':
-		'Reviews the record of one nation, for that nation: approves it, asks for changes or comments. Sees nothing else.'
+		'Reviews the record of one nation, for that nation: approves it, asks for changes or comments, and comments on files people sent about that nation. Sees nothing else.'
 };
 
 export type Permission =
@@ -55,10 +55,13 @@ export type Permission =
 	| 'manage-contributors'
 	| 'read-requests'
 	| 'handle-requests'
+	| 'review-uploads'
 	| 'read-reviews'
 	| 'comment'
 	| 'sign-off'
 	| 'review-for-nation'
+	// Reading and commenting on files people sent about one's own nation (docs/uploads.md).
+	| 'comment-on-nation-uploads'
 	// The private address book (migrations/0012_address_book.sql): the lead author only.
 	| 'manage-address-book'
 	// The project inbox (site/MAIL.md): reading and answering mail, sending
@@ -67,7 +70,9 @@ export type Permission =
 	// 2026: an admin-only inbox).
 	| 'read-mail'
 	| 'send-outreach'
-	| 'manage-mail';
+	| 'manage-mail'
+	// Hiding parts of a change in Recent changes (migrations/0017_page_changes.sql): the lead author only.
+	| 'hide-changes';
 
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
@@ -76,19 +81,21 @@ const grants: Record<Role, readonly Permission[]> = {
 		'manage-contributors',
 		'read-requests',
 		'handle-requests',
+		'review-uploads',
 		'read-reviews',
 		'comment',
 		'sign-off',
 		'manage-address-book',
 		'read-mail',
 		'send-outreach',
-		'manage-mail'
+		'manage-mail',
+		'hide-changes'
 	],
-	editor: ['read-contributors', 'read-requests', 'handle-requests', 'read-reviews', 'comment', 'sign-off'],
+	editor: ['read-contributors', 'read-requests', 'handle-requests', 'review-uploads', 'read-reviews', 'comment', 'sign-off'],
 	'co-author': ['read-reviews', 'comment'],
 	advisor: ['read-reviews', 'comment', 'sign-off'],
 	contributor: ['comment'],
-	'nation-reviewer': ['review-for-nation']
+	'nation-reviewer': ['review-for-nation', 'comment-on-nation-uploads']
 };
 
 export interface Grantee {
@@ -189,9 +196,14 @@ export interface AccessGrant {
 	level: AccessLevel;
 	/** ISO 8601 time after which the grant no longer counts, or null. */
 	expiresAt: string | null;
+	/**
+	 * Set when the level comes from a place on a nation's team
+	 * (src/lib/nation-teams.ts), not from a grant the lead author made.
+	 */
+	from?: 'nation-team';
 }
 
-export type AccessSource = 'administrator' | 'document-grant' | 'kind-grant' | 'role';
+export type AccessSource = 'administrator' | 'document-grant' | 'nation-team' | 'kind-grant' | 'role';
 
 export interface DocumentAccess {
 	level: AccessLevel;
@@ -204,9 +216,13 @@ export interface DocumentAccess {
  *
  * 1. the lead author always has full access (it cannot be restricted, so the
  *    project can never be locked out of its own work);
- * 2. a current grant for this document;
- * 3. a current grant for every document of its kind;
- * 4. the role's default (a nation reviewer comments on their own nation).
+ * 2. a current grant for this document, made by the lead author;
+ * 3. a current place on the nation's team, for a nation's record;
+ * 4. a current grant for every document of its kind;
+ * 5. the role's default (a nation reviewer comments on their own nation).
+ *
+ * Because the lead author's own grant comes before a team place, the lead
+ * author can always lower or remove anyone's access to a nation's page.
  *
  * A grant of "no access" is how access is restricted; it beats the role's
  * default, and a document grant beats a kind grant either way. Expired grants
@@ -224,8 +240,14 @@ export function documentAccess(
 			grant.subjectKind === subject.kind &&
 			(grant.expiresAt === null || new Date(grant.expiresAt) > time)
 	);
-	const forDocument = current.find((grant) => grant.subjectIdentifier === subject.identifier);
+	const forDocument = current.find(
+		(grant) => grant.subjectIdentifier === subject.identifier && grant.from !== 'nation-team'
+	);
 	if (forDocument) return { level: forDocument.level, source: 'document-grant' };
+	const fromTeam = current.find(
+		(grant) => grant.subjectIdentifier === subject.identifier && grant.from === 'nation-team'
+	);
+	if (fromTeam) return { level: fromTeam.level, source: 'nation-team' };
 	const forKind = current.find((grant) => grant.subjectIdentifier === everyDocument);
 	if (forKind) return { level: forKind.level, source: 'kind-grant' };
 	if (
@@ -263,6 +285,18 @@ export function allowedDecisions(
 	grants: readonly AccessGrant[] = []
 ): { capacity: Capacity; decisions: readonly Decision[] } | undefined {
 	if (!canSeeSubject(person, subject, grants)) return undefined;
+	// Anyone on a nation's team approves that nation's record for the nation,
+	// whatever their role in the project.
+	const onTeam =
+		subject.kind === 'nation' &&
+		grants.some(
+			(grant) =>
+				grant.from === 'nation-team' &&
+				grant.subjectKind === 'nation' &&
+				grant.subjectIdentifier === subject.identifier &&
+				(grant.expiresAt === null || new Date(grant.expiresAt) > new Date())
+		);
+	if (onTeam) return { capacity: 'nation', decisions };
 	if (person.role === 'nation-reviewer') {
 		const ownNation = subject.kind === 'nation' && subject.identifier === person.nationIdentifier;
 		return { capacity: 'nation', decisions: ownNation ? decisions : ['comment'] };
