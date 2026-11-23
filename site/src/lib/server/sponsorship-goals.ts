@@ -1,12 +1,14 @@
 /**
  * What the Sponsorship page shows about each thing a gift can fund
- * (docs/sponsorship.md, "The Sponsorship page"): its cost, which the lead
- * author sets on the workspace Sponsors page once it is known, and how much
- * of it gifts have paid. Only totals across every sponsor are used; no
- * sponsor's own amount is ever shown.
+ * (docs/sponsorship.md, "The Sponsorship page"), as in mockup A, which
+ * Trevor approved on Nov. 23, 2026: a paperback for every nation, the site
+ * for a year, hardcovers for every nation, and wherever it is needed most.
+ * Each cost is set by the lead author on the workspace Sponsors page once it
+ * is known, and only totals across every sponsor are used; no sponsor's own
+ * amount is ever shown.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { costedEarmarks, earmarkCostUnits, earmarks, isEarmark, type CostedEarmark, type Earmark } from '#lib/sponsorship.ts';
+import { costItems, earmarks, isEarmark, type CostItem, type Earmark } from '#lib/sponsorship.ts';
 import { now } from './identifiers.ts';
 import type { GiftMode } from './sponsors.ts';
 
@@ -21,34 +23,29 @@ export interface SponsorshipCounts {
 }
 
 /** Each cost the lead author has set, in cents. A cost not set is left out. */
-export type SponsorshipCosts = Partial<Record<CostedEarmark, number>>;
+export type SponsorshipCosts = Partial<Record<CostItem, number>>;
 
 export async function sponsorshipCosts(database: D1Database): Promise<SponsorshipCosts> {
 	const { results } = await database
-		.prepare('SELECT earmark, cost_cents AS cents FROM sponsorship_costs WHERE cost_cents IS NOT NULL')
-		.all<{ earmark: string; cents: number }>();
+		.prepare('SELECT item, cost_cents AS cents FROM sponsorship_costs WHERE cost_cents IS NOT NULL')
+		.all<{ item: string; cents: number }>();
 	const costs: SponsorshipCosts = {};
 	for (const row of results) {
-		if ((costedEarmarks as readonly string[]).includes(row.earmark)) costs[row.earmark as CostedEarmark] = row.cents;
+		if ((costItems as readonly string[]).includes(row.item)) costs[row.item as CostItem] = row.cents;
 	}
 	return costs;
 }
 
 /** Sets every cost at once, from the workspace form; null takes a cost off the page. */
-export async function saveSponsorshipCosts(
-	database: D1Database,
-	costs: Record<CostedEarmark, number | null>,
-	by: string,
-	at = now()
-): Promise<void> {
+export async function saveSponsorshipCosts(database: D1Database, costs: Record<CostItem, number | null>, by: string, at = now()): Promise<void> {
 	await database.batch(
-		costedEarmarks.map((earmark) =>
+		costItems.map((item) =>
 			database
 				.prepare(
-					`INSERT INTO sponsorship_costs (earmark, cost_cents, updated_at, updated_by) VALUES (?, ?, ?, ?)
-					 ON CONFLICT (earmark) DO UPDATE SET cost_cents = excluded.cost_cents, updated_at = excluded.updated_at, updated_by = excluded.updated_by`
+					`INSERT INTO sponsorship_costs (item, cost_cents, updated_at, updated_by) VALUES (?, ?, ?, ?)
+					 ON CONFLICT (item) DO UPDATE SET cost_cents = excluded.cost_cents, updated_at = excluded.updated_at, updated_by = excluded.updated_by`
 				)
-				.bind(earmark, costs[earmark], at, by)
+				.bind(item, costs[item], at, by)
 		)
 	);
 }
@@ -76,19 +73,20 @@ export async function givenToward(database: D1Database, mode: GiftMode, at = new
 	return { total, siteLastYear: site?.cents ?? 0 };
 }
 
-/** The printed-copy goal, once the cost of a copy is set. */
+/** The paperback goal, once the cost of a paperback is set. */
 export interface CopyGoal {
 	costCents: number;
 	paid: number;
 }
 
-/** One of the other things a gift can fund. */
+/** One of the cards under "More you can fund". */
 export interface FundingCard {
-	earmark: Exclude<Earmark, 'books-for-nations'>;
-	/** The cost of one copy or one year, or null when not set (or when the purpose has none). */
+	key: 'site' | 'hardcovers' | 'needed-most';
+	/** What a gift from this card goes toward. */
+	earmark: Earmark;
+	/** The figure on the card in cents (a year of the site, or hardcovers for every nation), or null when not set or when there is none. */
 	costCents: number | null;
-	unit: 'copy' | 'year' | null;
-	/** How much of the whole is paid, from 0 to 1: this year's site, or a copy for every nation. Null with no cost. */
+	/** How much of it gifts have paid, from 0 to 1, or null with no cost. */
 	share: number | null;
 }
 
@@ -100,30 +98,19 @@ export interface SponsorshipGoals {
 
 export function sponsorshipGoals(counts: SponsorshipCounts, costs: SponsorshipCosts, given: GivenToward): SponsorshipGoals {
 	const nations = counts.federallyRecognized;
-	const copyCost = costs['books-for-nations'];
-	const copies =
-		copyCost && nations > 0
-			? { costCents: copyCost, paid: Math.min(nations, Math.floor(given.total['books-for-nations'] / copyCost)) }
-			: null;
-	const site = costs.hosting ?? null;
-	const largeFormat = costs['large-format'] ?? null;
+	const books = given.total['books-for-nations'];
+	const paperback = costs.paperback;
+	const copies = paperback && nations > 0 ? { costCents: paperback, paid: Math.min(nations, Math.floor(books / paperback)) } : null;
+	const site = costs.website ?? null;
+	const hardcovers = costs.hardcover && nations > 0 ? costs.hardcover * nations : null;
 	return {
 		nations,
 		copies,
 		cards: [
-			{
-				earmark: 'hosting',
-				costCents: site,
-				unit: earmarkCostUnits.hosting,
-				share: site ? Math.min(1, given.siteLastYear / site) : null
-			},
-			{
-				earmark: 'large-format',
-				costCents: largeFormat,
-				unit: earmarkCostUnits['large-format'],
-				share: largeFormat && nations > 0 ? Math.min(1, given.total['large-format'] / (largeFormat * nations)) : null
-			},
-			{ earmark: 'needed-most', costCents: null, unit: null, share: null }
+			{ key: 'site', earmark: 'hosting', costCents: site, share: site ? Math.min(1, given.siteLastYear / site) : null },
+			// Hardcovers take the place of paperbacks, so every gift toward copies counts toward them.
+			{ key: 'hardcovers', earmark: 'books-for-nations', costCents: hardcovers, share: hardcovers ? Math.min(1, books / hardcovers) : null },
+			{ key: 'needed-most', earmark: 'needed-most', costCents: null, share: null }
 		]
 	};
 }

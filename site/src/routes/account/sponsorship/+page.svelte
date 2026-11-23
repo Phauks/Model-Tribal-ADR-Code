@@ -68,6 +68,9 @@
 			shown in public.
 		</p>
 		<form method="post" action="?/start">
+			{#if data.asked.amount}<input type="hidden" name="amount" value={data.asked.amount} />{/if}
+			{#if data.asked.frequency}<input type="hidden" name="frequency" value={data.asked.frequency} />{/if}
+			{#if data.asked.toward}<input type="hidden" name="toward" value={data.asked.toward} />{/if}
 			<div class="field">
 				<label for="start-name">Name of the organization</label>
 				<p class="hint">Or your own name, if you give as a person. You can change it later.</p>
@@ -125,13 +128,21 @@
 					<div class="field">
 						<label for="gift-amount">Amount in US dollars</label>
 						<p class="hint">From ${data.gifts.smallest} to ${data.gifts.largest.toLocaleString('en-US')}.</p>
-						<input id="gift-amount" name="amount" type="text" inputmode="decimal" required class="amount" />
+						<input id="gift-amount" name="amount" type="text" inputmode="decimal" required class="amount" value={data.asked.amount} />
+					</div>
+					<div class="field">
+						<label for="gift-earmark">Toward</label>
+						<select id="gift-earmark" name="earmark">
+							{#each earmarks as earmark (earmark)}
+								<option value={earmark} selected={earmark === (data.asked.toward ?? sponsor.earmark)}>{earmarkLabels[earmark]}</option>
+							{/each}
+						</select>
 					</div>
 					<fieldset class="choices">
 						<legend>How often</legend>
 						{#each giftFrequencies as frequency (frequency)}
 							<div class="choice">
-								<input type="radio" id="frequency-{frequency}" name="frequency" value={frequency} checked={frequency === 'monthly'} />
+								<input type="radio" id="frequency-{frequency}" name="frequency" value={frequency} checked={frequency === (data.asked.frequency ?? 'monthly')} />
 								<label for="frequency-{frequency}">{giftFrequencyLabels[frequency]}</label>
 							</div>
 						{/each}
