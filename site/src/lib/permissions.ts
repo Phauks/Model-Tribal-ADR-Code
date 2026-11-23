@@ -59,9 +59,12 @@ export type Permission =
 	| 'comment'
 	| 'sign-off'
 	| 'review-for-nation'
+	// The private address book (migrations/0012_address_book.sql): the lead author only.
+	| 'manage-address-book'
 	// The project inbox (site/MAIL.md): reading and answering mail, sending
-	// outreach batches, and changing labels and the do-not-email list. Only
-	// the lead author for now (Trevor, Nov. 23, 2026: an admin-only inbox).
+	// outreach batches, and changing tags, folders, rules and the
+	// do-not-email list. Only the lead author for now (Trevor, Nov. 23,
+	// 2026: an admin-only inbox).
 	| 'read-mail'
 	| 'send-outreach'
 	| 'manage-mail';
@@ -76,6 +79,7 @@ const grants: Record<Role, readonly Permission[]> = {
 		'read-reviews',
 		'comment',
 		'sign-off',
+		'manage-address-book',
 		'read-mail',
 		'send-outreach',
 		'manage-mail'

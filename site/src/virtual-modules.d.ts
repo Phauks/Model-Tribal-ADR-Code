@@ -71,6 +71,11 @@ declare module 'cloudflare:workers' {
 	export const env: WorkerEnvironment;
 }
 
+declare module 'virtual:followable-pages' {
+	/** The pages built with the site that readers can follow, with a fingerprint of each (src/lib/server/following.ts). */
+	export const followableBuild: import('#lib/server/following.ts').FollowableBuild;
+}
+
 declare module 'cloudflare:sockets' {
 	/** Opens a TCP connection from the Worker (Cloudflare, "TCP sockets"); used for outreach over SMTP (src/lib/server/mail/socket-opener.ts). */
 	export function connect(

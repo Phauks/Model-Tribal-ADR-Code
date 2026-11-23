@@ -1,7 +1,7 @@
 profile: content/tribes/o/omaha-tribe-of-nebraska.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -216,4 +216,53 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: Proxy returned 502 and the host later failed to resolve, so the page could not be read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Nebraska Supreme Court tribal courts list Omaha Tribe Santee Sioux Winnebago Ponca
+  outcome: found
+  reason: 'Second search: “Tribal Court”: The results led to the Nebraska Judicial Branch''s Consortium
+    of Tribal, State, and Federal Courts page, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/consortium-tribal-state-and-federal-courts
+  query: 'scripts/review/service_links.py second: Omaha Tribal Court; Santee Sioux Nation Tribal Court'
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Nebraska Judicial Branch, Consortium of Tribal, State, and Federal
+    Courts (status 200): its member list names the "Omaha Tribal Court, Omaha Tribe of Nebraska" and the
+    "Santee Sioux Nation Tribal Court".'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://nebraskajudicial.gov/programs-services/court-improvement-project/resources/other-resources-and-websites
+  query: 'scripts/review/service_links.py second: Omaha; Santee'
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Nebraska Judicial Branch, Court Improvement Project resources
+    (status 200): links to the courts'' bar admission applications and juvenile codes, not to a court
+    page; not used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: The association''s site shows programs, membership and regions;
+    it publishes no directory of tribal courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): directory, https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/consortium-tribal-state-and-federal-courts.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-274
 next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 linked “Tribal Court” (research/reviews/2026-11-22-service-links.json).

@@ -10,6 +10,7 @@ import { workerEnvironment } from '#lib/server/environment.ts';
 import { eventStatement, refusedAction } from '#lib/server/events.ts';
 import { sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
+import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
@@ -17,10 +18,10 @@ import { permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
 
 /** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests'];
+const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests', '/following'];
 
 /** Pages that need to know who is signed in. */
-const signedInPrefixes = ['/workspace', '/profile', '/sign-in'];
+const signedInPrefixes = ['/workspace', '/profile', '/sign-in', '/following'];
 
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.person = undefined;
@@ -81,6 +82,11 @@ export const handle: Handle = async ({ event, resolve }) => {
 			}
 		}
 	}
+
+	// A live editing connection goes to the essay's room before SvelteKit
+	// routes it: its answer is a WebSocket, which takes no added headers
+	// (src/lib/server/live-editing.ts).
+	if (!building && isLiveEditingRequest(event.request, event.url)) return openLiveEditing(event);
 
 	const response = await resolve(event);
 

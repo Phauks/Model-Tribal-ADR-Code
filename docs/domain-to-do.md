@@ -53,6 +53,7 @@ name the pull request.
   `site/wrangler.jsonc` to an address such as `sign-in@` the domain. Steps:
   `site/COLLABORATION.md`, "Setting up sign-in". Until then people sign in
   with a password or a link from the lead author.
+- [ ] **Summaries of followed pages.** Built and waiting: set `UPDATE_EMAIL_FROM` in `site/wrangler.jsonc` to an address such as `updates@` the domain, and `SITE_ADDRESS` to the site's address on the domain. Readers' daily or weekly summaries then start at the next hourly run. Steps: `site/COLLABORATION.md`, "Turning on the emails".
 - [ ] **Request notices.** Email the maintainer a link to each new request,
   never its contents (`docs/requests.md`, "How it is built"). Not built.
 - [ ] **Contributor notices.** Email the lead author when a registration

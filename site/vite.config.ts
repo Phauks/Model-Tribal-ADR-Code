@@ -10,6 +10,7 @@ import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
 import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms } from './src/lib/server/essay-library.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
+import { followableBuild } from './src/lib/server/followable-build.ts';
 import {
 	essaysForReview,
 	glossary,
@@ -312,6 +313,28 @@ function recentChanges(): Change[] {
 	}
 }
 
+const followablePagesModule = 'virtual:followable-pages';
+const resolvedFollowablePagesModule = `\0${followablePagesModule}`;
+
+/**
+ * Lists the pages built with the site that readers can follow, with a
+ * fingerprint of each, as a module bundled into the Worker. The Worker
+ * compares the fingerprints with the last build's to tell followers which
+ * pages changed (src/lib/server/following.ts).
+ */
+function followablePages(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:followable-pages',
+		resolveId(identifier) {
+			return identifier === followablePagesModule ? resolvedFollowablePagesModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedFollowablePagesModule) return undefined;
+			return `export const followableBuild = ${JSON.stringify(followableBuild())};`;
+		}
+	};
+}
+
 function buildInformation(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:build',
@@ -341,6 +364,7 @@ export default defineConfig({
 		essayLibrary(),
 		formCatalog(),
 		buildInformation(),
+		followablePages(),
 		sveltekit({
 			compilerOptions: {
 				// Runes mode for the project's own components. Can be removed in Svelte 6.
