@@ -311,7 +311,7 @@
 			{/if}
 			<li class="collection">
 				<div class="collection-text">
-					<svelte:element this={subheading} class="collection-name">Nations’ constitutions and laws</svelte:element>
+					<svelte:element this={subheading} class="collection-name">Nations’ constitutions, laws and court opinions</svelte:element>
 					<p class="hint">
 						Saved one nation at a time, from the nation’s page{#if allNations.length > 0}, because all {numbers.format(allNations.length)} nations together take about {formatBytes(allNations.reduce((total, item) => total + item.bytes, 0))}{/if}.
 					</p>

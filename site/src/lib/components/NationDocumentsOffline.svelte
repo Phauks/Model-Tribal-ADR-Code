@@ -1,6 +1,6 @@
 <script lang="ts">
 	// On a nation's page, under "Laws and agreements": the copies this site holds of the nation's
-	// constitutions and laws, to download as a ZIP or to save for offline reading and remove again
+	// constitutions, laws and court opinions, to download as a ZIP or to save for offline reading and remove again
 	// (site/DESIGN.md, section 10; src/lib/offline-documents.ts). Shows nothing when the site holds
 	// no copies for the nation. Saving shows only while offline saving is running.
 	import { onMount } from 'svelte';
