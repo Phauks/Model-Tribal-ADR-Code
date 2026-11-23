@@ -20,4 +20,4 @@ limits: >-
   The facts are AI readings, not yet checked by the lead author; the quote check proves only that the words are in the text. Most texts are library or archive copies of unknown currency, so a later version may be in effect. Nations without a captured constitution text, including every state-recognized and petitioning group, have no facts yet; their own websites are the next place to look. See research/governance/README.md.
 ---
 
-Output: 5,396 facts from constitutions for 361 nations and the title of the leader's office for 572 nations, 5,968 facts on 576 profiles in all (`governance` in each profile); a governance search log for all 954 profiles; the readings with every quote in `research/governance/readings.json`; the Government section on each nation's page (decision record 0035).
+Output: 5,396 facts from constitutions for 361 nations and the title of the leader's office for 572 nations, 5,968 facts on 576 profiles in all (`governance` in each profile); a governance search log for all 947 profiles; the readings with every quote in `research/governance/readings.json`; the Government section on each nation's page (decision record 0035).

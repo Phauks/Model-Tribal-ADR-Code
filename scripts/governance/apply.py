@@ -320,6 +320,11 @@ def write():
             counts["with facts"] += 1
             counts["facts"] += len(facts)
         write_log(identifier, path, record, row, titles.get(identifier, []), coverage.get(identifier), facts)
+    # A log whose profile is gone (for example merged into another record) goes too.
+    known = set(profiles())
+    for stale in LOGS.glob("*/*.yaml"):
+        if stale.stem not in known:
+            stale.unlink()
     print(counts)
 
 

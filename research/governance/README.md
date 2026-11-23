@@ -10,9 +10,9 @@ Plain facts about each nation's government, gathered on Nov. 23, 2026 for the `g
 | From the nation's own constitution or other governing document | 361 | 5,396 |
 | of which from a text marked in effect on the nation's own site (`high` confidence) | 80 | |
 | Title of the leader's office from the Tribal Leaders Directory | 572 | 572 |
-| Profiles with none yet (search log `partly-searched`) | 378 | |
+| Profiles with none yet (search log `partly-searched`) | 371 | |
 
-All 576 profiles with facts are federally recognized nations (5 of the 581 federal profiles have none). None of the 373 state-recognized, petitioning and other profiles has a governance fact yet: the constitution catalog covers federally recognized nations only, and the directory lists only them. Their nation pages say "None found yet" with how far the search went.
+All 576 profiles with facts are federally recognized nations (5 of the 581 federal profiles have none). None of the 366 state-recognized, petitioning and other profiles has a governance fact yet: the constitution catalog covers federally recognized nations only, and the directory lists only them. Their nation pages say "None found yet" with how far the search went.
 
 The most common aspects: recall and removal (511 facts), governing body (379), amendment (352), voting age (332), how the governing body is chosen (326), head of government (310). The fewest: judges' term (74), branches (44) and a stated separation of powers (33), since most constitutions here are 1930s to 1980s texts that set up a council without separate branches.
 
