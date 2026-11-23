@@ -8,8 +8,9 @@
 	 *
 	 * Recording is never silent: while one runs, a banner says so and screen
 	 * readers are told; a short rising tone plays when it starts and a falling
-	 * one when it stops, as in Magna Carta's meetings. Hosts get a start and
-	 * stop button when everyone was told the room is, or may be, recorded.
+	 * one when it stops, as in Magna Carta's meetings. Hosts start and stop
+	 * recording here, in the call; nobody decides beforehand. Only an event
+	 * announced as not recorded has no button.
 	 */
 	import { onMount } from 'svelte';
 	import Circle from '@lucide/svelte/icons/circle';
@@ -143,15 +144,9 @@
 					{#if recording}<Square size={18} strokeWidth={1.75} /> Stop recording{:else}<Circle size={18} strokeWidth={1.75} /> Start recording{/if}
 				</button>
 			{/if}
-			<p class="hint">
-				{#if told === 'recorded'}
-					Everyone was told this room is recorded. Start recording when you begin.
-				{:else if told === 'undecided'}
-					Everyone was told this room may be recorded. If you record, say so out loud when you start.
-				{:else}
-					Everyone was told this room is not recorded, so do not record it.
-				{/if}
-			</p>
+			{#if told === 'not-recorded'}
+				<p class="hint">This event was announced as not recorded, so do not record it.</p>
+			{/if}
 		</div>
 	{/if}
 	{#if loading}
@@ -164,10 +159,13 @@
 </div>
 
 <style>
+	/* The call takes the rest of its page, which has the whole window (src/routes/+layout.svelte). */
 	.room {
 		display: flex;
+		flex: 1 1 auto;
 		flex-direction: column;
-		gap: var(--space-3);
+		gap: var(--space-2);
+		min-height: 0;
 	}
 
 	.recording-banner {
@@ -198,8 +196,8 @@
 	}
 
 	.stage {
-		height: min(80vh, 48rem);
-		min-height: 24rem;
+		flex: 1 1 auto;
+		min-height: 20rem;
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-panel);
 		overflow: hidden;

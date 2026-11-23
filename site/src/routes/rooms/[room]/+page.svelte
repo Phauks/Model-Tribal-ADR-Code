@@ -2,6 +2,7 @@
 	import Video from '@lucide/svelte/icons/video';
 	import RoomJoinPanel from '#lib/components/RoomJoinPanel.svelte';
 	import VideoRoom from '#lib/components/VideoRoom.svelte';
+	import CallBar from '#lib/components/CallBar.svelte';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -16,19 +17,16 @@
 	<title>{data.room ? `${data.room.title} · ` : ''}Video rooms · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/rooms">Video rooms</a></p>
 {#if !data.room}
-	<h1>Video room</h1>
+	<CallBar title="Video room" />
 	<div class="notice" role="note"><p>{data.refusal.words}</p></div>
 	{#if data.refusal.reason === 'sign-in'}
 		<p><a class="button" href="/sign-in?returnTo={encodeURIComponent(returnTo)}">Sign in</a></p>
 	{/if}
 {:else}
-	<h1>{data.room.title}</h1>
-	<p>{data.room.when}</p>
-	{#if data.host}
-		<p class="small"><a href="/workspace/rooms/{data.room.identifier}">Manage this room</a> (invite links, recordings, who was told)</p>
-	{/if}
+	<CallBar title={data.room.title} when={data.room.when}>
+		{#if data.host}<a href="/workspace/rooms/{data.room.identifier}" target="_blank" rel="noopener">Manage this room<span class="visually-hidden"> (opens in a new tab)</span></a>{/if}
+	</CallBar>
 
 	{#if token}
 		<VideoRoom {token} host={data.host} told={data.room.recording} />

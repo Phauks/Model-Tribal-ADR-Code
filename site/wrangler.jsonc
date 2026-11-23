@@ -161,7 +161,14 @@
 		"OUTREACH_REPLY_TO": "",
 		"OUTREACH_SMTP_HOST": "",
 		"OUTREACH_SMTP_PORT": "465",
-		"OUTREACH_SMTP_USERNAME": ""
+		"OUTREACH_SMTP_USERNAME": "",
+		// The video rooms' Cloudflare account and RealtimeKit app (COLLABORATION.md,
+		// "The video room"). Neither is a secret. Naming them here means the room
+		// needs no lookup with its token, which can only reach RealtimeKit and so
+		// cannot list the account (the live room failed that way on Nov. 23, 2026).
+		// The token itself, VIDEO_ROOM_TOKEN, is a Secret set in the dashboard.
+		"VIDEO_ROOM_ACCOUNT": "b7902f2098c6d8cd1ac5910fc5373fee",
+		"VIDEO_ROOM_APPLICATION": "97ccdd98-f20c-46c8-b0cd-c34aa6934c50"
 	},
 	// Every hour, at 17 minutes past: find updates to followed pages and send
 	// the summary emails that are due. Mondays at 09:41 UTC: check the private

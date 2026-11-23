@@ -194,7 +194,7 @@
 	<button class="button" type="submit">{data.room ? 'Save the room' : 'Use the website’s video room'}</button>
 </form>
 {#if data.room}
-	<p><a href="/events/{data.event.slug}/room">Open the room</a></p>
+	<p><a href="/events/{data.event.slug}/room" target="_blank" rel="noopener">Open the room<span class="visually-hidden"> (opens in a new tab)</span></a></p>
 	{#if data.recordings.length === 0}
 		<form method="post" action="?/removeRoom">
 			<button class="button button-quiet" type="submit">Stop using the website’s video room</button>

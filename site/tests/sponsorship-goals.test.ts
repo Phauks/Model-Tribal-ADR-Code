@@ -29,10 +29,10 @@ describe('the costs the lead author sets', () => {
 	});
 
 	it('keeps the costs set and drops one set blank', async () => {
-		await saveSponsorshipCosts(database, { 'books-for-nations': 1600, 'large-format': null, hosting: 7000 }, 'The project (Trevor)');
-		expect(await sponsorshipCosts(database)).toEqual({ 'books-for-nations': 1600, hosting: 7000 });
-		await saveSponsorshipCosts(database, { 'books-for-nations': null, 'large-format': 1900, hosting: 7000 }, 'The project (Trevor)');
-		expect(await sponsorshipCosts(database)).toEqual({ 'large-format': 1900, hosting: 7000 });
+		await saveSponsorshipCosts(database, { paperback: 1600, hardcover: null, website: 7000 }, 'The project (Trevor)');
+		expect(await sponsorshipCosts(database)).toEqual({ paperback: 1600, website: 7000 });
+		await saveSponsorshipCosts(database, { paperback: null, hardcover: 2500, website: 7000 }, 'The project (Trevor)');
+		expect(await sponsorshipCosts(database)).toEqual({ hardcover: 2500, website: 7000 });
 	});
 });
 
@@ -45,19 +45,19 @@ describe('what the Sponsorship page shows', () => {
 	});
 
 	it('counts whole copies paid for, never more than the nations', () => {
-		expect(sponsorshipGoals(counts, { 'books-for-nations': 1600 }, given({ 'books-for-nations': 102_500 })).copies).toEqual({
+		expect(sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': 102_500 })).copies).toEqual({
 			costCents: 1600,
 			paid: 64
 		});
-		expect(sponsorshipGoals(counts, { 'books-for-nations': 1600 }, given({ 'books-for-nations': 5_000_000 })).copies?.paid).toBe(581);
+		expect(sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': 5_000_000 })).copies?.paid).toBe(581);
 	});
 
-	it('measures the site against this year and the large-format edition against every nation', () => {
-		const goals = sponsorshipGoals(counts, { hosting: 7000, 'large-format': 1000 }, given({ 'large-format': 58_100, hosting: 99_999 }, 3500));
-		const site = goals.cards.find((card) => card.earmark === 'hosting');
-		const largeFormat = goals.cards.find((card) => card.earmark === 'large-format');
-		expect(site).toMatchObject({ costCents: 7000, unit: 'year', share: 0.5 });
-		expect(largeFormat).toMatchObject({ costCents: 1000, unit: 'copy', share: 0.1 });
+	it('measures the site against this year and hardcovers against every nation', () => {
+		const goals = sponsorshipGoals(counts, { website: 7000, hardcover: 2500 }, given({ 'books-for-nations': 145_250, hosting: 99_999 }, 3500));
+		expect(goals.cards.map((card) => card.key)).toEqual(['site', 'hardcovers', 'needed-most']);
+		expect(goals.cards[0]).toMatchObject({ earmark: 'hosting', costCents: 7000, share: 0.5 });
+		expect(goals.cards[1]).toMatchObject({ earmark: 'books-for-nations', costCents: 2500 * 581, share: 0.1 });
+		expect(goals.cards[2]).toMatchObject({ earmark: 'needed-most', costCents: null, share: null });
 	});
 });
 

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import RoomJoinPanel from '#lib/components/RoomJoinPanel.svelte';
 	import VideoRoom from '#lib/components/VideoRoom.svelte';
+	import CallBar from '#lib/components/CallBar.svelte';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -14,9 +15,9 @@
 	<title>Room · {data.event.title} · Events · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/events/{data.event.slug}">{data.event.title}</a></p>
-<h1>Video room</h1>
-<p>{data.event.when}</p>
+<CallBar title={data.event.title} when={data.event.when}>
+	<a href="/events/{data.event.slug}" target="_blank" rel="noopener">The event’s page<span class="visually-hidden"> (opens in a new tab)</span></a>
+</CallBar>
 
 {#if token}
 	<VideoRoom {token} host={data.host} told={data.event.recording} />

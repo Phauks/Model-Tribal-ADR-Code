@@ -75,7 +75,7 @@ export const actions: Actions = {
 		const read = readRoomForm(await event.request.formData());
 		if ('problem' in read) return fail(400, { problem: read.problem, field: read.field, values: read.values });
 		await updateRoom(database, room.identifier, read.input);
-		return { done: 'Saved the room. People who join from now on are told the new recording choice.' };
+		return { done: 'Saved the room.' };
 	},
 
 	invite: async (event) => {
