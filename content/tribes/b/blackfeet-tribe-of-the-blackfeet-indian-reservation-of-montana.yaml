@@ -227,6 +227,207 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under Section 16 of the Act of June 18, 1934
+  quote: vested in us by Section 16 of the Act of June 18, 1934 (48 Statutes
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Preamble
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: governing-body
+  value: Blackfeet Tribal Business Council
+  quote: of a council known as the Blackfeet Tribal Business Council.
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article III, Section 1
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: Business Council shall be elected to specifically enumerated positions
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 2
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: governing-body-selection
+  value: Elected by eligible tribal voters, by district position
+  quote: by the eligible voters of the Blackfeet Tribe.
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 1
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Tribal Business Council shall be elected for a term of four (4) years
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 1
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: head-of-government
+  value: Chairman
+  quote: 'its membership: (1) A chairman; (2) A vice chairman.'
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article III, Section 4(a)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the tribal council from its membership
+  quote: The tribal council so organized shall elect from
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article III, Section 4(a)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: other-officers
+  value: Vice chairman, secretary, sergeant-at-arms
+  quote: (1) A secretary; (2) A sergeant-at-arms
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article III, Section 4(b)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: elections
+  value: Every 2 years, last Tuesday of June in even-numbered years
+  quote: shall be held on the last Tuesday of June in
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 4(a)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: voting-age
+  value: '18'
+  quote: (18) years of age or older shall be eligible to vote when he or she
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 10
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: election-authority
+  value: Election Board appointed by the Tribal Council
+  quote: or by an Election Board appointed by the Tribal Council.
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 7
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: judiciary
+  value: Minor courts, established by the council
+  quote: establish minor courts for the adjudication of claims or disputes
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article VI, Section 1(k)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This constitution and by-laws may be amended by a majority vote of the
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article X
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: no amendment shall become effective until it shall have been approved
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article X
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds of the entire Council
+  quote: member for cause by two-thirds (2/3) or more members of the entire Blackfeet
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article V, Section 2
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of eligible voters
+  quote: Tribal Business Council by at least twenty percent (20%) of the total
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article V, Section 4
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
 governing_documents:
 - kind: law-code
   title: Code

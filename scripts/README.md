@@ -160,3 +160,12 @@ between steps) go in a scratch folder.
 | `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers. The summaries stay in the private work files: no AI summaries of constitutions are published | `scripts/requirements.txt` and `requests` |
 | `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, a history record for every nation with a text, and source records | `scripts/requirements.txt` and `requests` |
 | `constitutions/name_versions_in_profiles.py` | Adds `document_version` beside profile facts that cite a superseded or undated version | `scripts/requirements.txt` |
+
+## Governance
+
+Run by hand, in this order, never in continuous integration. They write the `governance` facts in the profiles and the logs in `research/search-logs/governance/` ([decision record 0035](../docs/decisions/0035-governance-facts-from-governing-documents.md); [readings](../research/governance/README.md)). The constitution texts are the private captures' text extracts.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `governance/prepare_batches.py` | Picks each nation's constitution version to read and splits the texts into batches for AI readers, who follow `governance/reader-brief.md` | `scripts/requirements.txt` |
+| `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |

@@ -191,6 +191,63 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Indian Reorganization Act of June 18, 1934
+  quote: Indian Reorganization Act of June 18, 1934
+  source: constitution-native-village-of-tyonek-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-27'
+  locator: Certification of Adoption
+  document_version:
+    document: native-village-of-tyonek-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Garbled scan; governing-body name, size and selection clauses are unreadable, so those facts are omitted.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Tyonek
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: All members of the Village 21 years of
+  source: constitution-native-village-of-tyonek-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-27'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-tyonek-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Garbled scan; governing-body name, size and selection clauses are unreadable, so those facts are omitted.'
+- aspect: amendment
+  value: Secretary approval and majority vote of Village members
+  quote: changes are approved by the Secretary of the Interior and by a
+  source: constitution-native-village-of-tyonek-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-27'
+  locator: Article VI
+  document_version:
+    document: native-village-of-tyonek-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Garbled scan; governing-body name, size and selection clauses are unreadable, so those facts are omitted.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior and by a
+  source: constitution-native-village-of-tyonek-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-27'
+  locator: Article VI
+  document_version:
+    document: native-village-of-tyonek-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Garbled scan; governing-body name, size and selection clauses are unreadable, so those facts are omitted.'
 governing_documents:
 - kind: constitution
   title: Constitution

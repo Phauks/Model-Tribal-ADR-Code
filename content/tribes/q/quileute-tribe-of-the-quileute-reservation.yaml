@@ -182,6 +182,207 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Act of Congress of June 18, 1934
+  quote: to the Act of Congress of June 18, 1934, do hereby establish this Constitution of the Quileute
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Preamble
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: governing-body
+  value: Quileute Tribal Council
+  quote: The governing body of the Quileute Tribe shall consist of a council known
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article III, Section 1
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: This Council shall consist of five (5) members each of whom shall serve three
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article III, Section 2
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: All elections shall be by secret ballot and shall be held in accordance with the
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article IV, Section 2
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: each of whom shall serve three
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article III, Section 2
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Council so organized shall elect from within its own number (1) a Chairman
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article III, Section 3
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Quileute Tribe of the Quileute Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from within its own number
+  quote: The Council so organized shall elect from within its own number
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article III, Section 3
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: a Vice-Chairman; and from within or without, (3) a Secretary, and (4) a Treasurer
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article III, Section 3
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: elections
+  value: Annually, third Friday in January
+  quote: Two (2) members shall be elected each year on the third Friday in January
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article III, Section 2
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the Quileute Indian Tribe eighteen (18) years of age or over
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article IV, Section 1
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: election-authority
+  value: Tribal Council, or an election board it appoints
+  quote: rules and regulations prescribed by the Tribal Council or by an election board appointed by the
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article IV, Section 2
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: judiciary
+  value: Council may establish a Tribal Court
+  quote: justice by establishing a Tribal Court, and defining its duties, powers and limitations.
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article VI, Section 1(i)
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Tribal Council
+  quote: This Constitution and By-laws may be amended by a majority vote of the qualified voters
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article X
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: secretarial-approval
+  value: Requirement removed
+  quote: “Tribal Council”; also delete “but no amendment shall become effective until it shall
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Amendment II, item 15
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon a petition of at least one-third (1/3) of the eligible voters of the Quileute
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article V, Section 3
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
+- aspect: recall-and-removal
+  value: Expulsion by four-fifths vote of the Council
+  quote: by a four-fifths (4/5) vote of its total membership, expel
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-09-17'
+  locator: Article V, Section 2
+  document_version:
+    document: quileute-tribe-of-the-quileute-reservation-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Compiled 2026 text: the 1936 constitution with Amendments I to VI; facts are read from the amended text, and Amendments V and VI are certified as adopted September 17, 2026.'
 governing_documents:
 - kind: law-code
   title: Tribal code

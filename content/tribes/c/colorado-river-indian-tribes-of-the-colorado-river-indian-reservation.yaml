@@ -153,6 +153,195 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws adopted under the Indian Reorganization Act
+  quote: the Indian Reorganization Act, to establish justice, promote the general
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Preamble
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Colorado River Tribal Council
+  quote: Indian Tribes shall be known as the Colorado River Tribal Council.
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article III, Section 1
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 9 members
+  quote: The Tribal Council shall consist of nine
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article III, Section 2
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: councilmen elected by secret ballot.
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article III, Section 2
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: Council for a term of four years from the date of installation in office
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article III, Section 4
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of. the Council shall preside
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its own number
+  quote: The Tribal Council shall elect from within
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article III, Section 3
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: a Treasurer, and such other officers and committees as may be deemed necessary.
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article III, Section 3
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years on the first Saturday in December
+  quote: alternate year, on the first Saturday in December.
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article III, Section 6
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: years of age and over and who have maintained a legal residence for a period
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Council may establish courts by ordinance
+  quote: of courts for the adjudication of claims or disputes arising among members
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article VI, Section 1(k)
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority of qualified voters in election, on call of 6 council members
+  quote: at such election the amendment is adopted by a majority vote of the qualified
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article X
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by him, shall thereupon
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article X
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds Council vote
+  quote: of two-thirds of its numbers expel any member for neglect of duty or gross
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article V, Section 2
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon a petition of at least one-third
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-07-09'
+  locator: Article V, Section 3
+  document_version:
+    document: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Colorado River Indian Tribes

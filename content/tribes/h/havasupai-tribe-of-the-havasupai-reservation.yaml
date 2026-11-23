@@ -212,6 +212,195 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted under the Indian Reorganization Act of June 18, 1934
+  quote: Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by the Act of June
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Certification of Adoption
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: governing-body
+  value: Havasupai Tribal Council
+  quote: shall be known as the Havasupai Tribal Council and shall consist of four regular
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 1
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: governing-body-size
+  value: 7 members (4 councilmen, 3 chiefs)
+  quote: councilman, and three recognized hereditary chiefs of the tribe who shall be selected by
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 1
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: governing-body-selection
+  value: 4 councilmen elected at large
+  quote: the four councilmen elected at large for the reservation shall
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 4
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: governing-body-selection
+  value: 3 chiefs selected by the subchiefs
+  quote: three recognized hereditary chiefs of the tribe who shall be selected by
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 1
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: elected to serve for two years.
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 4
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Tribal Council shall meet and organize by electing from their own membership, a chairman
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 3
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Havasupai Tribe of the Havasupai Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its members
+  quote: Tribal Council shall meet and organize by electing from their own membership, a chairman
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 3
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: other-officers
+  value: Vice-chairman, Secretary, Treasurer
+  quote: and vice-chairman, and from within or without their own membership, a secretary and a
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 3
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: elections
+  value: Every year in December
+  quote: Beginning with 1939, elections shall be held annually in
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article IV, Section 4
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: voting-age
+  value: '21'
+  quote: Enrolled members of the Tribe who are 21 years of age or over
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article IV, Section 3
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: election-authority
+  value: Tribal Council or an election board it appoints
+  quote: The Havasupai Tribal Council, or an election board appointed by
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article IV, Section 2
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: amendment
+  value: Proposed by Council majority; ratified like the constitution
+  quote: majority vote of the Havasupai Tribal Council and may be ratified and approved in the same
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article VIII
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: recall-and-removal
+  value: Recall by petition of 50% of qualified voters (non-chief members)
+  quote: of the Council, not a chief, by filing a petition with the Council, signed by at least 50
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article IV, Section 7
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: other
+  value: Hereditary chiefs serve on Council until death or resignation
+  quote: shall continue his duties as councilman until death or resignation, at which time
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 1
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
 governing_documents:
 - kind: corporate-charter
   title: Corporate charter (Havasupai Tribe of the Havasupai Reservation, Arizona)

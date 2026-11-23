@@ -185,6 +185,171 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nooksack Indian Tribe
+governance:
+- aspect: form
+  value: Constitution and bylaws under Section 16 of the Indian Reorganization Act
+  quote: and establish this constitution and bylaws under the provisions of Section 16 of the Indian
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Preamble
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Nooksack Indian Tribal Council
+  quote: The governing body of the Nooksack Indian Tribe shall be known as the Nooksack
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article III, Section 1
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 8 members
+  quote: and four (4) councilmen.
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article III, Section 2
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the qualified voters
+  quote: shall be elected by the qualified voters of the tribe.
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article III, Section 1
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: After the first election, all members of council shall run for four-year terms.
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article III, Section 4
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Nooksack Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: elections
+  value: Called within 90 days before terms expire
+  quote: called within 90 days prior to the expiration of the terms of office of its members.
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article III, Section 4
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: over, shall have the right to vote.
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article IV, Section 1
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election board (superintendent and 2 ballot clerks)
+  quote: The superintendent and the clerks he may appoint shall constitute
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article IV, Section 4
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Council to establish tribal court by ordinance
+  quote: It shall be the duty of the tribal council to provide, through ordinance, for the
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article VI, Section 2(a)(1)
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote in an election called by Secretary of the Interior
+  quote: This constitution and bylaws may be amended by a majority vote of the qualified voters of the
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article X
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article X
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal for 3 consecutive absences by 4/7 council vote
+  quote: the council position vacant by a four-seventh (4/7) vote of the tribal council
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article V, Section 1
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of last council election turnout
+  quote: eligible to vote equal to at least thirty (30) percent of the number of the tribal members
+  source: constitution-nooksack-indian-tribe-2013-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2013-08-02'
+  locator: Article V, Section 4(a)
+  document_version:
+    document: nooksack-indian-tribe-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code

@@ -221,6 +221,243 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under Section 16 of Indian Reorganization Act of June 18, 1934
+  quote: accordance with Section 16 of the Indian Reorganization Act of June 18,
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Certificate of Results of Election
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council shall have all of the legislative powers vested
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article V
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: general-council
+  value: All voters of the Tribe (general meetings)
+  quote: The Tribal Council may from time to time call general meetings of all Vojtt
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article XII
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: Chairperson, Vice Chairperson, Secretary and Treasurer of the Tribal
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VII, Section 1
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by popular vote
+  quote: Chairperson and Vice Chairperson shall be by popular vote in accordance
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VIII, Section 9
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: other-officers
+  value: Vice Chairperson, Secretary, Treasurer
+  quote: choose a Secretary and a Treasurer from within or without the Tribal
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Section 4
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: elections
+  value: Even-numbered years, first Saturday in June
+  quote: shall be held in even numbered years on the first Saturday in June
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VIII, Section 1
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: voting-age
+  value: '18'
+  quote: All tribal members who are eighteen (18)
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VIII, Section 6
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: election-authority
+  value: Election Board
+  quote: the Tribal Council shall appoint an Election Board.
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VIII, Section 3
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: judiciary
+  value: Tribal Court and Court of Appeals
+  quote: and a Court of Appeals and such other lower courts as deemed necessary by the
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VI, Section 1
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: shall be appointed by the Tribal Council.
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VI, Section 5
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: judicial-term
+  value: 2 years
+  quote: Each Judge shall hold office for a period of
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VI, Section 6
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: The Tribal Council shall not diminish
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VI, Section 9
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: amendment
+  value: Majority vote in election called by Secretary of the Interior
+  quote: This constitution iray be amended by a majority vote of the qualified vj
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article XV
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: until approved by the Secretary of the Interior or until
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article XV
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: recall-and-removal
+  value: Judges removed by Tribal Council for listed causes
+  quote: Any Judge of the Tribal Court may be suspended, dismissed
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article VI, Section 11(a)
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: recall-and-removal
+  value: Removal by Tribal Council for listed offenses
+  quote: 'The Tribal Council shall remove a council member for:'
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Section 10(a)
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of eligible voters
+  quote: (20) percent of the eligible voters of the Tribe;
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Section 12(b)
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
+- aspect: other
+  value: Initiative or referendum on petition of 25% of eligible voters
+  quote: Upon petition of at least twenty-five (25) percent of the eligible vot
+  source: constitution-hualapai-indian-tribe-of-the-hualapai-indian-reservation-1991-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1991-02-14'
+  locator: Article XIII
+  document_version:
+    document: hualapai-indian-tribe-of-the-hualapai-indian-reservation-constitution
+    version: 1991-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article IV (council size, selection and term) is missing from the extract, which jumps from Article I to Section 4, and many passages are garbled.'
 governing_documents:
 - kind: law-code
   title: Law and Order Code

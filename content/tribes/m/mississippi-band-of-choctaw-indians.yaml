@@ -217,6 +217,242 @@ government_structure:
   as_of: '1945'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Revised Constitution and Bylaws
+  quote: REVISED CONSTITUTION AND BYLAWS
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: Indians is vested in the tribal council and shall be exercised in
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article VIII, Section 1
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 16 members, seats by community population (3, 3, 3, 2, 2, 2, 1)
+  quote: The tribal council shall consist of elected representatives
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IV, Section 2
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected from seven Choctaw communities
+  quote: The tribal council shall consist of elected representatives
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IV, Section 2
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: be four (4) years and until their successors are duly elected and seated,
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 6
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Tribal Chief
+  quote: Sec. 1. The tribal chief of the Mississippi Band of Choctaw Indians
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IX, Section 1
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large by the Choctaw people
+  quote: Sec. 3. The tribal chief shall be elected by the Choctaw people
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IV, Section 3
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Sec. 9. The term of office for the tribal chief shall be four
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 9
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chief, Secretary-Treasurer
+  quote: a vice-chief and a secretary-treasurer with such powers and duties as
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 10
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every odd-numbered year in June
+  quote: elections shall be held in June of odd-numbered years.
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 3
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: who is eighteen (18) years of age or more and
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 1
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Tribal Council
+  quote: The tribal council shall prescribe rules and regulations
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article V, Section 2
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: branches
+  value: Legislative (tribal council) and executive (tribal chief)
+  quote: as head of the executive branch of the tribal government.
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article IX, Section 1(a)
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal court
+  quote: establishing a tribal court; and defining the powers and
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article VIII, Section 1(m)
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote at Secretary-called election (40% turnout), then Secretary approval
+  quote: the qualified voters of the tribe voting at an election called for that
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article XIII
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: effective until it shall have been approved by
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article XIII
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal of council officers by two-thirds Council vote for cause
+  quote: for cause by two-thirds vote of the council members at a meeting at which
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article VI, Section 8
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 40% of community's eligible voters
+  quote: a petition signed by at least forty per-
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article VI, Section 7
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Initiative and referendum by 30% of registered voters
+  quote: the initiative. Thirty percent (30%) of the registered voters shall
+  source: constitution-mississippi-band-of-choctaw-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-03-28'
+  locator: Article XI, Section 2
+  document_version:
+    document: mississippi-band-of-choctaw-indians-constitution
+    version: 1975-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Mississippi Band of Choctaw Indians Tribal Code

@@ -188,6 +188,9 @@ export interface NationRecord {
 		bureau_of_indian_affairs_region?: string;
 		bureau_of_indian_affairs_agency?: string;
 	};
+	government_structure?: (CitedFact & { kind: string; detail?: string })[];
+	/** How the government is set up, one plain fact per item (decision record 0035). */
+	governance?: (CitedFact & { aspect: string; value: string; quote?: string })[];
 	governing_documents?: (CitedFact & { kind: string; title?: string; link?: string })[];
 	justice_institutions?: (CitedFact & {
 		kind: string;

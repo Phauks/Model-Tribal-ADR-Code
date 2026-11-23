@@ -104,6 +104,63 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Unga
+governance:
+- aspect: governing-body
+  value: Village council
+  quote: The village council shall establish an enrollment committee to develop the Base Roll and process
+  source: constitution-native-village-of-unga-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-09-30'
+  locator: Article III, Section 6
+  document_version:
+    document: native-village-of-unga-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan heavily garbled in Articles VIII-XX; the Council''s size, selection and terms and the amendment vote cannot be read, and the Vice-President and Treasurer headings are garbled.'
+- aspect: head-of-government
+  value: President
+  quote: Section 1. President
+  source: constitution-native-village-of-unga-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-09-30'
+  locator: Article XV, Section 1
+  document_version:
+    document: native-village-of-unga-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan heavily garbled in Articles VIII-XX; the Council''s size, selection and terms and the amendment vote cannot be read, and the Vice-President and Treasurer headings are garbled.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Unga
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: Section 3. Secretary
+  source: constitution-native-village-of-unga-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-09-30'
+  locator: Article XV, Sections 2-4
+  document_version:
+    document: native-village-of-unga-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan heavily garbled in Articles VIII-XX; the Council''s size, selection and terms and the amendment vote cannot be read, and the Vice-President and Treasurer headings are garbled.'
+- aspect: other
+  value: Initiative binding if 30% of eligible voters vote
+  quote: At least 30% of the eligible voters must vote for the election to be binding.
+  source: constitution-native-village-of-unga-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-09-30'
+  locator: Article XIII, Section 1
+  document_version:
+    document: native-village-of-unga-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan heavily garbled in Articles VIII-XX; the Council''s size, selection and terms and the amendment vote cannot be read, and the Vice-President and Treasurer headings are garbled.'
 justice_institutions:
 - kind: tribal-court
   name: Unga Tribal Court

@@ -202,6 +202,159 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws under the Indian Reorganization Act
+  quote: by the Indian Reorganization Act, do hereby ordain and establish this
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Preamble
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: governing-body
+  value: Community Council
+  quote: shall be the Conraunlty Council Tihich shall be composed of all the Qualified
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Article III, Section 1
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: general-council
+  value: All qualified voters of the band
+  quote: shall be the Conraunlty Council Tihich shall be composed of all the Qualified
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Article III, Section 1
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: head-of-government
+  value: Chairman
+  quote: It shall be the duty of the chairman to preside over
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: By-laws, Article I, Section 3
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected from the Council's members by secret ballot
+  quote: ballot, (a) chairman; (b) vice-chairman; (c) secretary; (d) treasurer;
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Article III, Section 5
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: other-officers
+  value: Vice-chairman, Secretary, Treasurer
+  quote: ballot, (a) chairman; (b) vice-chairman; (c) secretary; (d) treasurer;
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Article III, Section 5
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: elections
+  value: Officials chosen at the November meeting (as amended 1940)
+  quote: Thereafter, officials shall be chosen at the November
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Amendment No. 1, item 4
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: voting-age
+  value: '21'
+  quote: who are 21 years of age or over, and who have maintained legal residence in
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Article III, Section 2
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary
+  quote: This constitution and by-laws may be amended by a majority
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Article V, Section 1
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: amendment shall become effective until it ahall nave been approved by the
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Article V, Section 1
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: recall-and-removal
+  value: Expulsion by majority vote of eligible voters for neglect of duty or gross misconduct
+  quote: eligible voters expel any officer of the Council for neglect of duty or
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Amendment No. 2, Article VI, Section 3
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
+- aspect: other
+  value: Business committee of chairman, secretary and treasurer
+  quote: The business committee shall consist of the chairman,
+  source: constitution-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-04-10'
+  locator: Article III, Section 7
+  document_version:
+    document: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text includes the 1936 base constitution, 1940 amendments and 2001 amendments; the 1940 amendment changes the election month, so the later value is given; several passages are OCR-garbled.'
 governing_documents:
 - kind: law-code
   title: 'From GPO: Federal Register : Alcoholic Beverage Control Ordinance'

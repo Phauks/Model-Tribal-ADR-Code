@@ -12,7 +12,7 @@ searched, searched and nothing found, or blocked at certain places.
   letter).
 - Fields: [`schemas/search-log.schema.json`](../../schemas/search-log.schema.json);
   example: [`schemas/examples/search-log.example.yaml`](../../schemas/examples/search-log.example.yaml).
-- Topics in use: `dispute-resolution`, `courts`, `gaming-dispute-procedures` (dispute procedures in Tribal gaming ordinances, [review of Nov. 22, 2026](../reviews/2026-11-22-ordinance-disputes.md)), `contacts` (the nation's contact page, general email and, where none was on file, website, phone and address; [session of Nov. 22, 2026](../sessions/2026/2026-11-22-nation-contacts.md)). A new topic is a new folder; the schema does not change.
+- Topics in use: `dispute-resolution`, `courts`, `gaming-dispute-procedures` (dispute procedures in Tribal gaming ordinances, [review of Nov. 22, 2026](../reviews/2026-11-22-ordinance-disputes.md)), `contacts` (the nation's contact page, general email and, where none was on file, website, phone and address; [session of Nov. 22, 2026](../sessions/2026/2026-11-22-nation-contacts.md)). `governance` (how the government is set up: the nation's governing document, the federal Tribal Leaders Directory and, in a later pass, the nation's website; [decision record 0035](../../docs/decisions/0035-governance-facts-from-governing-documents.md)). A new topic is a new folder; the schema does not change.
 
 ## Adding a search
 

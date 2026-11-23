@@ -233,6 +233,87 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the Act of Congress of June 18, 1934
+  quote: by authority of the Act of Congress of June 18, 1934, as amended
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Preamble
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Governing body (kind chosen by Village membership)
+  quote: membership shall decide what kind of governing body it wishes to set up
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Article 3, Section 1
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: shall be chosen and how long they shall serve. The Village shall then choose
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Article 3, Section 2
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Unalakleet
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: Village 21 years of age or over shall have the right to vote in Village
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Article 5, Section 1
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Secretary approval and majority vote of Village members in election called by the Secretary
+  quote: if the changes are approved by the Secretary of the Interior and by a majority
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Article 6
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if the changes are approved by the Secretary of the Interior and by a majority
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Article 6
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Climate change resolution

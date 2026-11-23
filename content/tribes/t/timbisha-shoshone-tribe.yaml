@@ -172,6 +172,267 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Timbisha Shoshone Tribe
+governance:
+- aspect: form
+  value: Adopted in accordance with Indian Reorganization Act of June 18, 1934, as amended
+  quote: Reorganization Act of June 18, 1934 (48 Stat. 984) as amended
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Preamble
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: governing-body
+  value: General Council
+  quote: All powers of the Tribe shall be vested in the
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: governing-body-size
+  value: 5 members (Tribal Council)
+  quote: shall be composed of five (5) persons elected by the
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article IV, Section 3
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: shall be composed of five (5) persons elected by the
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article IV, Section 3
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: two year terms of office.
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article VI, Section 3
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: general-council
+  value: All tribal members 16 years of age or older
+  quote: The General Council shall consist of all tribal members
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article IV, Section 2
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: 'The Chairperson shall have the following duties:'
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article VII, Section 1(a)
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Timbisha Shoshone Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by Tribal Council from its members
+  quote: Council members shall elect the following officers from the
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article VI, Section 6
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The officers shall be elected by a majority vote and shall serve
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article VI, Section 6
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary/Treasurer
+  quote: 2. Vice-Chairperson; and
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article VI, Section 6
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: elections
+  value: Annually, second Tuesday of November
+  quote: shall be held annually on the second Tuesday of the month of
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article VI, Section 4(b)
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: voting-age
+  value: 16 (General Council members)
+  quote: sixteen (16) years of age or older.
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article IV, Section 2
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: election-authority
+  value: Election board appointed by chairperson, approved by Tribal Council
+  quote: An election board, appointed by the chairperson and approved
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article VI, Section 1
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: branches
+  value: General Council, Tribal Council, Tribal Judiciary
+  quote: into three distinct branches; the General Council, the Tribal
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article IV, Section 1
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: these branches shall exercise any powers belonging to one of the
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article IV, Section 1
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: judiciary
+  value: Supreme Court and inferior courts
+  quote: The judicial power of the Tribe shall be vested in a Supreme
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XIII, Section 1
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: judicial-selection
+  value: Chief judge appointed by Tribal Council, confirmed by General Council
+  quote: by the Tribal Council and confirmed by a majority vote of the
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XIII, Section 2
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: judicial-term
+  value: Set by Tribal Council statute
+  quote: The tenure and salary of Tribal judges shall be established
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XIII, Section 4
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: amendment
+  value: Majority vote of eligible voters (50% turnout)
+  quote: This document may be amended by a majority vote of the
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XVI
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of Tribal Council after hearing on written charges
+  quote: the Tribal Council vote to, remove the accused Council member, his
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XI, Section 1
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: recall-and-removal
+  value: Recall by General Council election on petition of one-third of eligible voters
+  quote: one-third (1/3) of the eligible voters of the General Council
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XI, Section 2(a)
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
 governing_documents:
 - kind: law-code
   title: Timbisha Shoshone Tribe - Tribal Code - Table of Contents

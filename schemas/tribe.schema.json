@@ -320,6 +320,58 @@
         "unevaluatedProperties": false
       }
     },
+    "governance": {
+      "type": "array",
+      "description": "How the nation's government is set up, one plain fact per item, as the nation's constitution or other governing document, its own website or an official directory states it: its governing body, head of government, elections, branches, courts and how its governing document is changed. Never a summary of a document; an aspect the sources do not state is left out, and the search for it is logged under research/search-logs/governance/ (decision record 0035).",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["aspect", "value"],
+        "properties": {
+          "aspect": {
+            "type": "string",
+            "enum": [
+              "form",
+              "governing-body",
+              "governing-body-size",
+              "governing-body-selection",
+              "governing-body-term",
+              "general-council",
+              "head-of-government",
+              "head-of-government-selection",
+              "head-of-government-term",
+              "other-officers",
+              "elections",
+              "voting-age",
+              "election-authority",
+              "branches",
+              "separation-of-powers",
+              "judiciary",
+              "judicial-selection",
+              "judicial-term",
+              "judicial-independence",
+              "amendment",
+              "secretarial-approval",
+              "recall-and-removal",
+              "other"
+            ],
+            "description": "Which part of the government the fact describes. form: the form of government or the authority the document is adopted under, in the source's words. governing-body: the name of the body holding lawmaking or governing power; -size, -selection and -term: its number of members, how they are chosen and their term. general-council: a body of all voting citizens and who sits in it. head-of-government: the title of the office that leads the government or presides over the governing body; -selection and -term likewise. other-officers: the titles of the other officers. elections: when regular elections are held. voting-age: the minimum age to vote. election-authority: the body that runs elections. branches: the branches the source names. separation-of-powers: the source states that the branches' powers are separate (value \"Stated\"). judiciary: the courts the source sets up or the power to set them up; judicial-selection and judicial-term: how judges are chosen and their term; judicial-independence: one protection the source gives judges or courts. amendment: how the governing document is changed. secretarial-approval: whether amendments or laws need the Secretary of the Interior's approval. recall-and-removal: how officials are removed or recalled."
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The fact in a few plain words, with bodies and offices named as the source names them (\"Business Committee\", \"Chairman\") and numbers as digits (\"7 members\", \"4 years\")."
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400,
+            "description": "The words of the source that state the fact, copied exactly, reading errors of a scanned text included. Required when the fact comes from a document's text; scripts/governance/apply_answers.py checks that the quote is in the text before the fact is kept."
+          }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "governing_documents": {
       "type": "array",
       "description": "Where the nation's constitution, codes and court rules are published. Linked, not reproduced (see data-model.md on tribal legal texts).",

@@ -90,10 +90,21 @@
 	{/snippet}
 
 	{#if !page.withdrawn}
-		<!-- 4-6. The legal sections always show, and say plainly when nothing was
+		<!-- 4-7. The legal sections always show, and say plainly when nothing was
 		     found, so a reader can see whether recourse may be available (Trevor,
 		     Nov. 22, 2026; src/lib/search-status.ts). -->
-		<!-- 4. Courts and dispute resolution -->
+		<!-- 4. Government: how the government is set up, one plain fact per line,
+		     each from the nation's governing document, its website or an official
+		     directory; never a summary of a constitution (decision record 0035). -->
+		<Collapsible heading="Government" identifier="government-heading">
+			{#if data.empty.government}
+				{@render emptySection(data.empty.government)}
+			{:else}
+				<FactGroups groups={data.government} />
+			{/if}
+		</Collapsible>
+
+		<!-- 5. Courts and dispute resolution -->
 		<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
 			{#if data.empty.courts}
 				{@render emptySection(data.empty.courts)}
@@ -102,7 +113,7 @@
 			{/if}
 		</Collapsible>
 
-		<!-- 5. Laws and agreements: where the nation publishes its laws, linked, not
+		<!-- 6. Laws and agreements: where the nation publishes its laws, linked, not
 		     reproduced, and each document with recorded versions, oldest first
 		     (decision record 0018). -->
 		<div data-print-part="documentHistory">
@@ -114,7 +125,7 @@
 			</Collapsible>
 		</div>
 
-		<!-- 6. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
+		<!-- 7. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
 		<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
 			{#if data.empty.jurisdiction}
 				{@render emptySection(data.empty.jurisdiction)}
@@ -123,7 +134,7 @@
 			{/if}
 		</Collapsible>
 
-		<!-- 7. Other nations in the same states: plain lists, never a ranking -->
+		<!-- 8. Other nations in the same states: plain lists, never a ranking -->
 		{#if data.neighbors.length > 0}
 			<div class="no-print">
 				<Collapsible heading="Other nations in the same states" identifier="neighbors-heading">
@@ -147,7 +158,7 @@
 	{/if}
 
 	{#snippet sources()}
-		<!-- 8. Sources -->
+		<!-- 9. Sources -->
 		{#if !page.withdrawn}
 			<SourceList sources={data.sources} />
 		{/if}

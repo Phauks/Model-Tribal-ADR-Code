@@ -155,6 +155,183 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: shall be the Tl'lbal CouncIl.
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article III, Section 1
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: composed of SIX members
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article III, Section 2
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: governing-body-selection
+  value: Elected by district
+  quote: elected from the three dic:trids
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article III, Section 2
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: shall be two years
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article IV, Section 2
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: head-of-government
+  value: Chairman
+  quote: a Chairman, Vice-chairman, Treasurer, Sergeant-at-arms, and
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article III, Section 4
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by Tribal Council from its own number
+  quote: a Chairman, Vice-chairman, Treasurer, Sergeant-at-arms, and
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article III, Section 4
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: other-officers
+  value: Vice-chairman, Treasurer, Sergeant-at-arms, Secretary
+  quote: a Chairman, Vice-chairman, Treasurer, Sergeant-at-arms, and
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article III, Section 4
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: elections
+  value: Annually, third Thursday in April
+  quote: Elections shall be held on the third Thursday in April in a
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article IV, Section 4
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: voting-age
+  value: '18'
+  quote: Any resident member of the tribe eighteen years of age
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article IV, Section 5
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: election-authority
+  value: Tribal Council
+  quote: determine rulc's and regulations
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article IV, Section 3
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: judiciary
+  value: Reservation court, created by ordinance
+  quote: the establishment of a reservation court
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article VI, Section 1(i)
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: amendment
+  value: Two-thirds Council vote to propose; majority of adult members in election
+  quote: by a vote of two-thirds of its members
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article IX
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: recall-and-removal
+  value: Recall by petition of qualified voters, then special election
+  quote: Procedures for the recall of a
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article V (as amended), Section 3
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
+- aspect: recall-and-removal
+  value: Automatic forfeiture on felony conviction
+  quote: he shall automatically forfeit
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-04-26'
+  locator: Article V (as amended), Section 4
+  document_version:
+    document: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavy OCR damage on most pages, so facts rest only on legible passages; the text includes 1985-86 amendments that replace original Article V, and amendments are approved by the Commissioner of Indian Affairs, not the Secretary of the Interior.'
 governing_documents:
 - kind: law-code
   title: Crow Creek Sioux Tribe - Tribal Code - Table of Contents

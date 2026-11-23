@@ -46,6 +46,7 @@ interface FactItem {
 
 /** What the courts and jurisdiction sections say when they have nothing to show. */
 interface EmptySections {
+	government?: EmptyNote;
 	courts?: EmptyNote;
 	jurisdiction?: EmptyNote;
 }
@@ -128,6 +129,7 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 	return [
 		...group('recognition', recognitionLabel, recognitionItems(record, sources, recognitionLabel)),
 		...group('states', statesLabel, statesItem(record, sources, statesLabel)),
+		...governmentAtAGlance(record, sources),
 		...group(
 			'federal_administration',
 			regionLabel,
@@ -202,6 +204,154 @@ function recognitionItems(record: NationRecord, sources: SourceUses, label: stri
 		...item,
 		detailParts: item.detailParts.length > 0 ? item.detailParts : undefined
 	}));
+}
+
+/** The section that shows how the nation's government is set up. */
+const governmentHeading = 'Government';
+
+/**
+ * The groups of the Government section, in the order the page shows them,
+ * and the label each aspect of `governance` gets in its group
+ * (schemas/tribe.schema.json; decision record 0035).
+ */
+const governanceGroups: { field: string; label: string; aspects: Record<string, string | undefined> }[] = [
+	{ field: 'governance-form', label: 'Form of government', aspects: { form: undefined } },
+	{
+		field: 'governance-body',
+		label: 'Governing body',
+		aspects: {
+			'governing-body': 'Name',
+			'governing-body-size': 'Members',
+			'governing-body-selection': 'How chosen',
+			'governing-body-term': 'Term'
+		}
+	},
+	{ field: 'governance-general-council', label: 'General council', aspects: { 'general-council': undefined } },
+	{
+		field: 'governance-head',
+		label: 'Head of government',
+		aspects: {
+			'head-of-government': 'Title',
+			'head-of-government-selection': 'How chosen',
+			'head-of-government-term': 'Term',
+			'other-officers': 'Other officers'
+		}
+	},
+	{
+		field: 'governance-elections',
+		label: 'Elections',
+		aspects: { elections: 'When', 'voting-age': 'Voting age', 'election-authority': 'Run by' }
+	},
+	{
+		field: 'governance-branches',
+		label: 'Branches of government',
+		aspects: { branches: undefined, 'separation-of-powers': 'Separation of powers' }
+	},
+	{
+		field: 'governance-judiciary',
+		label: 'Courts and judges',
+		aspects: {
+			judiciary: 'Courts',
+			'judicial-selection': 'How judges are chosen',
+			'judicial-term': 'Judges’ term',
+			'judicial-independence': 'Protection'
+		}
+	},
+	{
+		field: 'governance-amendment',
+		label: 'Changing the governing document',
+		aspects: { amendment: 'How', 'secretarial-approval': 'Secretary of the Interior’s approval' }
+	},
+	{ field: 'governance-removal', label: 'Recall and removal', aspects: { 'recall-and-removal': undefined } },
+	{ field: 'governance-other', label: 'Other', aspects: { other: undefined } }
+];
+
+/** The legal form a federal source records, in the page's words. */
+const governmentStructureKinds: Record<string, string> = {
+	'indian-reorganization-act': 'Organized under the Indian Reorganization Act',
+	'oklahoma-indian-welfare-act': 'Organized under the Oklahoma Indian Welfare Act',
+	'alaska-indian-reorganization-act': 'Organized under the Indian Reorganization Act as amended for Alaska',
+	'written-constitution-other': 'Written constitution adopted outside those Acts',
+	traditional: 'Traditional government'
+};
+
+/**
+ * Government: how the nation's government is set up, as its own governing
+ * document, its website or an official directory states it. Each line is one
+ * plain fact with its source; the words of the source that state it go in the
+ * Sources list beside the fact, so a reader can check it. Never a summary of
+ * a constitution (decision record 0035). The last line names the version of
+ * each governing document the facts were read from, linked to its history in
+ * "Laws and agreements".
+ */
+function governmentFacts(
+	record: NationRecord,
+	sources: SourceUses,
+	documents: { id: string; heading: string; versions?: { id: string; label?: string }[] }[]
+): FactGroup[] {
+	const facts = record.governance ?? [];
+	const groups: FactGroup[] = [];
+	const read = new Map<string, FactItem>();
+	for (const definition of governanceGroups) {
+		const items: FactItem[] = [];
+		if (definition.field === 'governance-form') {
+			for (const fact of record.government_structure ?? []) {
+				const text = governmentStructureKinds[fact.kind] ?? humanize(fact.kind);
+				const note = fact.as_of ? `As of ${fact.as_of}` : undefined;
+				if (items.some((item) => item.text === text)) {
+					sources.citeFact(fact, `${governmentHeading}: ${definition.label}`, text, items.find((item) => item.text === text)!.citations);
+					continue;
+				}
+				items.push(cited(sources, `${governmentHeading}: ${definition.label}`, fact, { text, note }));
+			}
+		}
+		for (const [aspect, label] of Object.entries(definition.aspects)) {
+			for (const fact of facts.filter((candidate) => candidate.aspect === aspect)) {
+				const fromDirectory = !fact.document_version && !fact.quote;
+				const itemLabel = fromDirectory && label ? `${label} in the federal directory` : label;
+				const shown = [itemLabel, fact.value].filter(Boolean).join(': ');
+				const citations: CitationMark[] = [];
+				const sourceText = fact.quote ? `${shown}. “${fact.quote}”` : shown;
+				sources.citeFact(fact, `${governmentHeading}: ${definition.label}`, sourceText, citations);
+				items.push({ label: itemLabel, text: fact.value, citations });
+				const version = fact.document_version as { document: string; version: string } | undefined;
+				if (version && !read.has(`${version.document}/${version.version}`)) {
+					const document = documents.find((candidate) => candidate.id === version.document);
+					const label = document?.versions?.find((candidate) => candidate.id === version.version)?.label;
+					if (document) {
+						read.set(`${version.document}/${version.version}`, {
+							text: label ? `${document.heading}: ${label}` : document.heading,
+							link: `#document-${document.id}`
+						});
+					}
+				}
+			}
+		}
+		groups.push(...group(definition.field, definition.label, items));
+	}
+	if (read.size > 0) groups.push(...group('governance-read', 'Read from', [...read.values()]));
+	return groups;
+}
+
+/**
+ * At a glance: the name of the governing body and the title of the head of
+ * government. The title the federal directory lists comes first, being the
+ * newest; otherwise the governing document's.
+ */
+function governmentAtAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const facts = record.governance ?? [];
+	const pick = (aspect: string) => {
+		const matching = facts.filter((fact) => fact.aspect === aspect);
+		return matching.find((fact) => !fact.document_version) ?? matching[0];
+	};
+	const body = pick('governing-body');
+	const head = pick('head-of-government');
+	const bodyLabel = 'Governing body';
+	const headLabel = 'Head of government';
+	return [
+		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value, link: '#government-heading' })] : []),
+		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value, link: '#government-heading' })] : [])
+	];
 }
 
 /** The names the page gives each jurisdiction topic a record can hold. */
@@ -516,6 +666,7 @@ export const load: PageServerLoad = ({ params }) => {
 			pronunciations: [],
 			glance: [],
 			contacts: { websites: [], offices: [] },
+			government: [],
 			courts: [],
 			law: [],
 			documents: [],
@@ -602,16 +753,25 @@ export const load: PageServerLoad = ({ params }) => {
 	const glance = atAGlance(record, sources);
 	const contacts = contactCard(record, sources);
 	const map = nationMap(record, sources);
-	const courts = courtsAndDisputeResolution(record, sources);
 	const documents = documentHistoriesFor(record.id, sources).map((document) => ({
 		...document,
 		heading: documentHeading(document.title, names)
 	}));
+	const government = governmentFacts(record, sources, documents);
+	const courts = courtsAndDisputeResolution(record, sources);
 	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
 	const jurisdiction = jurisdictionFacts(record, sources);
 	// The legal sections always show, and say plainly when nothing was found,
 	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
 	const empty: EmptySections = {
+		government:
+			government.length > 0
+				? undefined
+				: emptySectionNote(
+						'how the nation’s government is set up',
+						'A nation can govern itself under a constitution or by tradition that is not published online; its government office can say.',
+						searchSummary('governance', record.id)
+					),
 		courts:
 			courts.length > 0
 				? undefined
@@ -638,6 +798,7 @@ export const load: PageServerLoad = ({ params }) => {
 		glance,
 		contacts,
 		map,
+		government,
 		courts,
 		law,
 		documents,
@@ -652,6 +813,7 @@ export const load: PageServerLoad = ({ params }) => {
 	const hasContacts = contacts.websites.length > 0 || contacts.offices.length > 0;
 	if (glance.length > 0 || map) items.push({ label: 'At a glance', link: '#glance-heading' });
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
+	items.push({ label: governmentHeading, link: '#government-heading' });
 	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
 	items.push({
 		label: lawHeading,

@@ -184,6 +184,171 @@ government_structure:
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
     is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
     Welfare Act; Alaska table: Alaska amendment).'
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Indian Reorganization Act
+  quote: Indian Reorganization Act; and promote the welfare of ourselves
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Preamble
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council, composed of a Chairman, a Vice-
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: governing-body-size
+  value: '5 members: Chairman, Vice-Chairman, Treasurer and two councilmen'
+  quote: Chairman, a Treasurer, and two councilman, to be elected by popular
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: governing-body-selection
+  value: Elected by popular referendum
+  quote: Chairman, a Treasurer, and two councilman, to be elected by popular
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: governing-body-term
+  value: 2 years for chairman, vice-chairman and treasurer; 1 year for councilmen
+  quote: two years ; the two councilmen shall be elected for a term of one year.
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 3
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Duties of the Chairman
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sokaogon Chippewa Community, Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice-Chairman, Treasurer, Secretary
+  quote: Duties of the Vice-Chairman
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: By-laws, Article I, Sections 2-4
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: elections
+  value: Every 2 years for chairman, vice-chairman and treasurer; every year for councilmen
+  quote: two years ; the two councilmen shall be elected for a term of one year.
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 3
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: voting-age
+  value: '21'
+  quote: jvhtfis 21 years of age or
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 5
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: election-authority
+  value: Tribal Council provides the date and manner of future elections
+  quote: The Tribal Council sh
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 6
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This Constitution and By-laws may be amended by a majority vote
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article VIII
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: by the Secretary of the Interior.
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article VIII
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: recall-and-removal
+  value: Expulsion of a Council member by an affirmative vote of three
+  quote: The Tribal Council may by an affirmative vote of three,
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article V, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
 governing_documents:
 - kind: law-code
   title: Tribal code

@@ -198,6 +198,183 @@ government_structure:
   as_of: '1950'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-Laws under the Oklahoma Indian Welfare Act of June 26, 1936
+  quote: leges authorized and offered by the Oklahoma Indian Welfare Act
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Preamble
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: governing-body
+  value: Council of the United Keetoowah Band of Cherokee Indians in Oklahoma
+  quote: governing body of the
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article V, Section 1
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: (9) members, male
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article V, Section 2
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: governing-body-selection
+  value: Elected by district
+  quote: ing in, or affiliated with, the district to be represented
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article VII, Section 2
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: two years, or until
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article V, Section 3
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: head-of-government
+  value: Chief
+  quote: The chief shall preside at all meetings of the
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: United Keetoowah Band of Cherokee Indians in Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large by the eligible voters
+  quote: officers shall be elected at large by the eligible voters
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article VI
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The officers shall serve for a period of four
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article VI
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: other-officers
+  value: Assistant Chief, Secretary, Treasurer
+  quote: officers of the Band shall be a chief, assistant chief, a secretary
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article VI
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: elections
+  value: Regular elections on the first Monday of the same month
+  quote: thereafter on the first Monday of the same
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article VII, Section 1
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: voting-age
+  value: '21'
+  quote: All members of the Band, twenty-one (21) years of
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article VII, Section 2
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: amendment
+  value: Majority vote of the Council or 30% petition, then referendum by majority of eligible voters
+  quote: proposed by a majority vote of the Council or by a petition of thirty
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article XIII
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary,
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article XIII
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the Council
+  quote: shall be necessary to remove
+  source: constitution-united-keetoowah-band-of-cherokee-indians-in-oklahoma-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-10-03'
+  locator: Article IX
+  document_version:
+    document: united-keetoowah-band-of-cherokee-indians-in-oklahoma-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned 1950 text with heavy OCR damage; the Article V passages are jumbled, so quotes are copied as read.'
 governing_documents:
 - kind: law-code
   title: Criminal Codes

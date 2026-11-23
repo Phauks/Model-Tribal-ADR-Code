@@ -191,6 +191,291 @@ government_structure:
   as_of: '1941'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution for sovereign self-government
+  quote: privileges and powers of a sovereign self-government;
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Preamble
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: governing-body
+  value: Executive Council
+  quote: The governing body of the Tribe shall be known as the Executive Council.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: shall consist of seven (7) members elected at large from the eligible voters of the Tribe.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: members elected at large from the eligible voters of the Tribe.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article IV, Section 1
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: of the Executive Council shall be elected for four-year terms.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article IV, Section 1(C)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall be the Chief Administrative Officer of the Executive Council,
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article V, Section 1(A)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Habematolel Pomo of Upper Lake, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of voters, 51% turnout required
+  quote: each elected by a majority vote of the
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article IV, Section 1(B)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: of the Executive Council shall be elected for four-year terms.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article IV, Section 1(C)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: shall consist of a Chairperson, Vice-Chairperson, Secretary,
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article IV, Section 1(B)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: elections
+  value: Every 2 years
+  quote: Elections shall be every two years
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article VI, Section 5(A)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled member of the Tribe who will be eighteen (18) by or on Election Day shall be an
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article VI, Section 1
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: election-authority
+  value: Election Committee
+  quote: The Executive Council shall appoint an Election Committee of no less than (4) persons
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article VI, Section 6
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: judiciary
+  value: Tribal Court and Tribal Court of Appeals
+  quote: The judicial power of the Tribe shall be vested in the Judiciary, which shall consist of a Tribal
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article XII, Section 1
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: judicial-selection
+  value: Chief Judge appointed by Executive Council
+  quote: The Executive Council shall appoint one Chief Judge to the Tribal Court.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article XII, Section 6(A)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: judicial-selection
+  value: Associate Judges elected by General Membership
+  quote: The General Membership shall elect the three (3) Associate Judges of the Tribal Court
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article XII, Section 6(C)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: judicial-term
+  value: 3 years (Chief Judge)
+  quote: Judge shall serve for a period of three (3) years.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article XII, Section 6(A)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: judicial-term
+  value: 4 years (Chief Justice)
+  quote: The Chief Justice shall serve for a period of four (4) years.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article XII, Section 6(B)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: judicial-independence
+  value: Pay may not be diminished during term
+  quote: The Executive Council shall not diminish the
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article XII, Section 8
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: judicial-independence
+  value: Judge removal for cause only by 6 Council votes
+  quote: only by a vote of at least six (6) members of the Executive Council.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article XII, Section 10(B)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: amendment
+  value: Two-thirds vote in an election called by the Election Board, 30% turnout
+  quote: This Constitution may be amended in an election called specifically for that purpose by the
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article XIX, Section 1
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of eligible voters
+  quote: Upon receipt of a petition signed by at least 51 % of the eligible voters of the
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article VIII, Section 3(A)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: recall-and-removal
+  value: Removal by Executive Council after hearing
+  quote: shall be removed by the Executive Council.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article VIII, Section 1(B)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
+- aspect: other
+  value: General Membership meets quarterly with Executive Council
+  quote: General Membership shall meet quarterly with the Executive Council.
+  source: constitution-habematolel-pomo-of-upper-lake-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-06-13'
+  locator: Article IX, Section 2(C)(1)
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article X pages carry a Second Amended header (effective 6/8/2024) while the rest of the text is the Third Amended Constitution effective 6/13/2026; facts are taken as printed.'
 governing_documents:
 - kind: law-code
   title: Habematolel Pomo of Upper Lake, California
