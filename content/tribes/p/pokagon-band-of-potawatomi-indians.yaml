@@ -13,15 +13,23 @@ names:
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
-  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
-    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  legal_basis: Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 Fed. Reg. 4102, 4104 (Jan. 30, 2026)
   source: bia-recognized-entities-2026
   confidence: high
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
-  legal_basis: Legislatively acknowledged (as stated in the Office of Federal Acknowledgment list)
+  legal_basis: Act of Sept. 21, 1994, Pub. L. No. 103-323, § 2, 108 Stat. 2152, 2153
+  since: '1994-09-21'
+  source: public-law-103-323
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-09-21'
+  locator: § 2, 108 Stat. 2153
+  note: Section 2 affirms the Band's federal recognition.
+- type: federal
+  legal_basis: Act of Sept. 21, 1994, Pub. L. No. 103-323, § 2, 108 Stat. 2152, 2153
   petition_number: '75'
   petition_stage: Letter of Intent to Petition 05/03/1981; Legislatively acknowledged 9/21/1994
   since: '1994-09-21'
@@ -30,10 +38,9 @@ recognition:
   verification: bulk-import
   as_of: '1994-09-21'
   locator: 'Petitioner #75'
-  note: 'Petitioners #75 (Potawatomi Indians of Indiana and Michigan, Inc.) and #78 (Pokagon Band of Potawatomi
-    Indians) were combined and legislatively acknowledged as a single group.'
+  note: 'Petitioners #75 (Potawatomi Indians of Indiana and Michigan, Inc.) and #78 (Pokagon Band of Potawatomi Indians) were combined and legislatively acknowledged as a single group.'
 - type: federal
-  legal_basis: Legislatively acknowledged (as stated in the Office of Federal Acknowledgment list)
+  legal_basis: Act of Sept. 21, 1994, Pub. L. No. 103-323, § 2, 108 Stat. 2152, 2153
   petition_number: '78'
   petition_stage: Letter of Intent to Petition 11/23/1981; Legislatively acknowledged 09/21/1994
   since: '1994-09-21'

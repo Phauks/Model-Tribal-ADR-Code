@@ -14,23 +14,29 @@ names:
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
-  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
-    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  legal_basis: Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 Fed. Reg. 4102, 4103 (Jan. 30, 2026)
   source: bia-recognized-entities-2026
   confidence: high
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  legal_basis: Catawba Indian Tribe of South Carolina Land Claims Settlement Act of 1993, Pub. L. No. 103-116, § 4(a), 107 Stat. 1118, 1121 (1993)
+  since: '1993-10-27'
+  source: public-law-103-116
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-10-27'
+  locator: § 4(a), 107 Stat. 1121
+  note: Section 4(a) restores the federal trust relationship with the Tribe.
 - type: state
   state: NC
-  legal_basis: State recognition granted through the North Carolina Commission of Indian Affairs (June
-    2026)
+  legal_basis: State recognition granted through the North Carolina Commission of Indian Affairs (June 2026)
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   verification: bulk-import
   as_of: '2026'
-  note: 'Source: the Catawba Nation ''was granted state recognition with the North Carolina Commission
-    of Indian Affairs in June 2026''. Federally recognized; headquartered in South Carolina.'
+  note: 'Source: the Catawba Nation ''was granted state recognition with the North Carolina Commission of Indian Affairs in June 2026''. Federally recognized; headquartered in South Carolina.'
 states:
 - state: SC
   presence: government-office

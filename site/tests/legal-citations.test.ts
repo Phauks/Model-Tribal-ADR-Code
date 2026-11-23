@@ -22,6 +22,15 @@ describe('citationParts', () => {
 		expect(parts.filter((part) => part.link).map((part) => part.text)).toEqual(['108 Stat. 4791', '25 U.S.C. § 5131']);
 	});
 
+	it("keeps a Federal Register pinpoint page in the linked text and links the notice's first page", () => {
+		const parts = citationParts('Indian Entities Recognized, 91 Fed. Reg. 4102, 4104 (Jan. 30, 2026)');
+		expect(parts.filter((part) => part.link)).toEqual([
+			{ text: '91 Fed. Reg. 4102, 4104', link: 'https://www.govinfo.gov/link/fr/91/4102?link-type=pdf' }
+		]);
+		const two = citationParts('50 FR 39047, 26 Fed. Reg. 3073');
+		expect(two.filter((part) => part.link).map((part) => part.text)).toEqual(['50 FR 39047', '26 Fed. Reg. 3073']);
+	});
+
 	it('does not link a Statutes at Large volume older than GovInfo holds', () => {
 		expect(citationParts('48 Stat. 984')).toEqual([{ text: '48 Stat. 984' }]);
 	});
@@ -47,6 +56,14 @@ describe('shortCitation', () => {
 		expect(shortCitation('Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat. 4791')).toEqual({
 			text: 'Pub. L. No. 103-454',
 			link: 'https://www.govinfo.gov/link/statute/108/4791?link-type=pdf'
+		});
+	});
+
+	it("gives a nation's entry on the federal list, and an Act's Public Law number", () => {
+		expect(shortCitation('Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 Fed. Reg. 4102, 4105 (Jan. 30, 2026)')?.text).toBe('91 Fed. Reg. 4102, 4105');
+		expect(shortCitation('Menominee Restoration Act, Pub. L. No. 93-197, § 3(a), 87 Stat. 770, 770 (1973)')).toEqual({
+			text: 'Pub. L. No. 93-197',
+			link: 'https://www.govinfo.gov/link/statute/87/770?link-type=pdf'
 		});
 	});
 

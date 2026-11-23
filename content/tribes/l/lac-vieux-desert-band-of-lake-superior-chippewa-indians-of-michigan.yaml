@@ -5,18 +5,25 @@ names:
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
-  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
-    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  legal_basis: Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 Fed. Reg. 4102, 4104 (Jan. 30, 2026)
   source: bia-recognized-entities-2026
   confidence: high
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
-  legal_basis: Legislative clarification of recognition, P.L. 100-420
+  legal_basis: Lac Vieux Desert Band of Lake Superior Chippewa Indians Act, Pub. L. No. 100-420, § 4(a), 102 Stat. 1577, 1577 (1988)
+  since: '1988-09-08'
+  source: public-law-100-420
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-09-08'
+  locator: § 4(a), 102 Stat. 1577
+  note: Section 4(a) reaffirms the Band's federal recognition and recognizes it as an independent tribal entity.
+- type: federal
+  legal_basis: Lac Vieux Desert Band of Lake Superior Chippewa Indians Act, Pub. L. No. 100-420, § 4(a), 102 Stat. 1577, 1577 (1988)
   petition_number: '6'
-  petition_stage: Letter of Intent to Petition 06/01/1971; Legislative Clarification of Recognition 09/08/1988
-    P.L.100-420
+  petition_stage: Letter of Intent to Petition 06/01/1971; Legislative Clarification of Recognition 09/08/1988 P.L.100-420
   since: '1988-09-08'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium

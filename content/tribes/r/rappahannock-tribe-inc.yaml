@@ -5,15 +5,14 @@ names:
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
-  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
-    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  legal_basis: Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 Fed. Reg. 4102, 4104 (Jan. 30, 2026)
   source: bia-recognized-entities-2026
   confidence: high
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
-  legal_basis: Public Law 115-121, title IV
+  legal_basis: Thomasina E. Jordan Indian Tribes of Virginia Federal Recognition Act of 2017, Pub. L. No. 115-121, tit. IV, § 403(a), 132 Stat. 40, 55 (2018)
   petition_number: '61'
   petition_stage: Letter of Intent to Petition 11/16/1979
   since: '2018-01-29'
@@ -22,10 +21,9 @@ recognition:
   verification: inferred
   as_of: '2018-01-29'
   locator: 'Petitioner #61'
-  note: 'Petitioner name: Rappahannock Indian Tribe (formerly United Rappahannock Tribe, Inc.); matched
-    to the roster by name. Also see source(s): ofa-list-of-petitioners-by-state-2008.'
+  note: 'Petitioner name: Rappahannock Indian Tribe (formerly United Rappahannock Tribe, Inc.); matched to the roster by name. Also see source(s): ofa-list-of-petitioners-by-state-2008.'
 - type: federal
-  legal_basis: Public Law 115-121, title IV
+  legal_basis: Thomasina E. Jordan Indian Tribes of Virginia Federal Recognition Act of 2017, Pub. L. No. 115-121, tit. IV, § 403(a), 132 Stat. 40, 55 (2018)
   petition_number: '234'
   petition_stage: Letter of Intent to Petition 1/31/2001
   since: '2018-01-29'
@@ -34,12 +32,10 @@ recognition:
   verification: inferred
   as_of: '2018-01-29'
   locator: 'Petitioner #234'
-  note: 'Petitioner name: Rappahannock Indian Tribe, Inc.; matched to the roster by name. Also see source(s):
-    ofa-list-of-petitioners-by-state-2008.'
+  note: 'Petitioner name: Rappahannock Indian Tribe, Inc.; matched to the roster by name. Also see source(s): ofa-list-of-petitioners-by-state-2008.'
 - type: state
   state: VA
-  legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth
-    recognizes (also federally recognized)
+  legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth recognizes (also federally recognized)
   source: virginia-report-status-of-indian-tribes-2025
   confidence: high
   verification: bulk-import
@@ -51,8 +47,7 @@ recognition:
   confidence: medium
   verification: inferred
   as_of: '1983'
-  note: Year from a secondary source; resolution number not confirmed from the legislature's own record
-    except where stated.
+  note: Year from a secondary source; resolution number not confirmed from the legislature's own record except where stated.
 states:
 - state: VA
   presence: government-office

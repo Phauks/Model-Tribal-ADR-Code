@@ -1,0 +1,22 @@
+profile: content/tribes/t/the-seminole-nation-of-oklahoma.yaml
+topic: recognition-basis
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: united-states-code
+  address: https://www.law.cornell.edu/uscode/text/25/chapter-14
+  query: 'Title 25, chapters 14 and 19 of the United States Code (Legal Information Institute tables of contents and section notes): Acts that recognize, restore or reaffirm a named tribe'
+  outcome: not-found
+  reason: No Act of Congress or final determination naming this nation in the places searched.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: federal-register
+  address: https://www.federalregister.gov/api/v1/documents.json
+  query: Final determinations for federal acknowledgment already cited in the nation's profile from the Office of Federal Acknowledgment lists; their Federal Register dates and titles
+  outcome: not-found
+  reason: No Act of Congress or final determination naming this nation in the places searched.
+next_steps: 'Not searched yet: court judgments that restored terminated California rancherias (for example Tillie Hardwick v. United States, N.D. Cal. 1983, and Scotts Valley Band v. United States, N.D. Cal. 1991), administrative recognitions before the 1978 acknowledgment regulations, Acts outside Title 25 chapters 14 and 19, and, for nations recognized through treaties or the Indian Reorganization Act, the instrument that first organized the government. Until then the Bureau of Indian Affairs list is the document cited.'

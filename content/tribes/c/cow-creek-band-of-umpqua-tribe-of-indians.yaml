@@ -5,15 +5,22 @@ names:
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
-  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
-    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  legal_basis: Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 Fed. Reg. 4102, 4103 (Jan. 30, 2026)
   source: bia-recognized-entities-2026
   confidence: high
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 - type: federal
-  legal_basis: Legislative recognition, P.L. 97-391
+  legal_basis: Cow Creek Band of Umpqua Tribe of Indians Recognition Act, Pub. L. No. 97-391, § 3(a), 96 Stat. 1960, 1960 (1982)
+  since: '1982-12-29'
+  source: public-law-97-391
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-12-29'
+  locator: § 3(a), 96 Stat. 1960
+- type: federal
+  legal_basis: Cow Creek Band of Umpqua Tribe of Indians Recognition Act, Pub. L. No. 97-391, § 3(a), 96 Stat. 1960, 1960 (1982)
   petition_number: '72'
   petition_stage: Letter of Intent to Petition 06/25/1980; Legislative Recognition 12/29/1982 P.L. 97-391
   since: '1982-12-29'

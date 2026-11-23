@@ -5,44 +5,44 @@ names:
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
-  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
-    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a); National Defense Authorization Act for Fiscal
-    Year 2026, Pub. L. No. 119-60, § 8803
+  legal_basis: Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 Fed. Reg. 4102, 4104 (Jan. 30, 2026)
   since: '2025-12-18'
   source: bia-recognized-entities-2026
   confidence: high
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
-  note: The notice states that the Act sets conditions on eligibility for federal services, including
-    verification of the roll and a delay in services until the third fiscal year after enactment.
+  note: The notice states that the Lumbee Fairness Act sets conditions on eligibility for federal services, including verification of the roll and a delay in services until the third fiscal year after enactment.
 - type: federal
-  legal_basis: Public Law 119-60, section 8803 (National Defense Authorization Act for Fiscal Year 2026),
-    as stated in 91 FR 4102
+  legal_basis: Lumbee Fairness Act, Pub. L. No. 119-60, § 8803(b), 139 Stat. 718, 1971–72 (2025)
+  since: '2025-12-18'
+  source: public-law-119-60
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-12-18'
+  locator: § 8803(b), 139 Stat. 1971–72
+  note: Section 8803(b) adds a section 4 to the Act of June 7, 1956, extending federal recognition to the Lumbee Tribe of North Carolina. The list notice states that the Act sets conditions on eligibility for federal services.
+- type: federal
+  legal_basis: Lumbee Fairness Act, Pub. L. No. 119-60, § 8803(b), 139 Stat. 718, 1971–72 (2025)
   petition_number: '65'
-  petition_stage: Letter of Intent to Petition 01/07/1980; determined ineligible to petition (Solicitor
-    opinion of 10/23/1989)
+  petition_stage: Letter of Intent to Petition 01/07/1980; determined ineligible to petition (Solicitor opinion of 10/23/1989)
   since: '2025-12-18'
   source: bia-recognized-entities-2026
   confidence: medium
   verification: inferred
   as_of: '2025-12-18'
   locator: 'Petitioner #65'
-  note: 'Petitioner names on the 2013 list: Lumbee Regional Development Association Inc. / Lumbee Tribe
-    of Cheraw Indians; matched to the roster Lumbee Tribe of North Carolina by name. Also see source(s):
-    ofa-list-of-petitioners-by-state-2013.'
+  note: 'Petitioner names on the 2013 list: Lumbee Regional Development Association Inc. / Lumbee Tribe of Cheraw Indians; matched to the roster Lumbee Tribe of North Carolina by name. Also see source(s): ofa-list-of-petitioners-by-state-2013.'
 - type: state
   state: NC
-  legal_basis: North Carolina General Statutes Section 71A-3 (1953, c. 874; 1977, 2nd Sess., c. 1193;
-    2003-54; 2019-162)
+  legal_basis: North Carolina General Statutes Section 71A-3 (1953, c. 874; 1977, 2nd Sess., c. 1193; 2003-54; 2019-162)
   since: '1953-04-20'
   source: north-carolina-general-statutes-chapter-71a
   confidence: high
   verification: inferred
   as_of: '2026'
   locator: Section 71A-3
-  note: State recognition predates federal recognition; the Commission page says the Lumbee became federally
-    recognized with the Lumbee Fairness Act in 2025.
+  note: State recognition predates federal recognition; the Commission page says the Lumbee became federally recognized with the Lumbee Fairness Act in 2025.
 states:
 - state: NC
   presence: government-office

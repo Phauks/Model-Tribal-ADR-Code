@@ -24,8 +24,17 @@ LIST_SOURCE = "bia-recognized-entities-2026"
 DIRECTORY_SOURCE = "bia-tribal-leaders-directory-2026"
 LIST_DATE = "2026-01-30"
 DIRECTORY_DATE = "2026-11-20"  # dataLastEditDate reported by the feature service
-LEGAL_BASIS = ("Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, "
-               "§ 104, 108 Stat. 4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)")
+# The list itself is the document that shows a nation is recognized; the
+# Federally Recognized Indian Tribe List Act of 1994 only requires the
+# Secretary to publish it (Trevor, Nov. 23, 2026). Each nation's citation is
+# pinpointed to the page with its entry. A nation's own basis (an Act, a final
+# determination) is added by scripts/tribes/recognition_basis.py.
+LIST_TITLE = ("Indian Entities Recognized by and Eligible To Receive Services From the United States "
+              "Bureau of Indian Affairs")
+
+
+def legal_basis(page) -> str:
+    return f"{LIST_TITLE}, 91 Fed. Reg. 4102, {page} (Jan. 30, 2026)"
 
 STATES = {
     "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR", "California": "CA",
@@ -194,13 +203,12 @@ def main(list_path, directory_path, out_path):
         locator = f"91 Fed. Reg. {record['page']}"
         entities.append({"id": nation, "official_name": record["official"], "entity_type": "native-nation",
                          "list": record["group"]})
-        recognition = {"type": "federal", "legal_basis": LEGAL_BASIS}
+        recognition = {"type": "federal", "legal_basis": legal_basis(record["page"])}
         note = None
         if record["official"].startswith("Lumbee"):
-            recognition["legal_basis"] += "; National Defense Authorization Act for Fiscal Year 2026, Pub. L. No. 119-60, § 8803"
             recognition["since"] = "2025-12-18"
-            note = ("The notice states that the Act sets conditions on eligibility for federal services, including "
-                    "verification of the roll and a delay in services until the third fiscal year after enactment.")
+            note = ("The notice states that the Lumbee Fairness Act sets conditions on eligibility for federal services, "
+                    "including verification of the roll and a delay in services until the third fiscal year after enactment.")
         if record.get("component_of"):
             note = f"Listed as a group within the entry for {record['component_of']}."
         fact(nation, "recognition", recognition, LIST_SOURCE, "high", LIST_DATE, locator, note)
