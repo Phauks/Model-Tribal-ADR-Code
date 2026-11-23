@@ -31,6 +31,7 @@ import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { issuedDate, nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
 import { casePreviewList } from '#lib/server/case-previews.ts';
+import { courtAbbreviation } from '#lib/server/case-citations.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -474,9 +475,23 @@ const reporterShortNames: Record<string, string> = { 'United States Reports': 'U
 /** What the nation was in a case, as the table's Role column says it (schemas/source.schema.json). */
 const caseRoles: Record<string, string> = {
 	party: 'Party',
-	government: 'Government a party',
-	subject: 'About the nation'
+	government: 'Its government',
+	subject: 'Subject'
 };
+
+/**
+ * A court's name short enough for a table column: "U.S. Supreme Court", and
+ * the Indigo Book abbreviation for a federal court of appeals, district court
+ * or claims court ("9th Cir.", "W.D. Okla.", "Fed. Cl."). Other courts keep
+ * the name the record gives, since a state's abbreviation alone ("Alaska")
+ * would not say it is a court.
+ */
+function shortCourtName(authority: string | undefined): string | undefined {
+	if (!authority) return undefined;
+	if (/^Supreme Court of the United States$/.test(authority.trim())) return 'U.S. Supreme Court';
+	const short = courtAbbreviation(authority);
+	return typeof short === 'string' && /Cir\.|\bD\. |\.D\. |Cl\.$/.test(short) ? short : authority;
+}
 
 /** One court case that names the nation, a row of the nation page's cases table. */
 export interface NationCase {
@@ -523,7 +538,7 @@ function nationCases(record: NationRecord, sources: SourceUses): NationCase[] {
 				decided: issuedDate(source),
 				name: source.citation.title ?? source.key,
 				citation: volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number,
-				court: authority,
+				court: shortCourtName(authority),
 				role: caseRoles[named?.role ?? 'subject'],
 				namedAs: namedAs && namedAs.toLocaleLowerCase('en-US') !== ownName ? namedAs : undefined,
 				note: named?.note,

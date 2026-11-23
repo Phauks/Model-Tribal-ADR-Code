@@ -55,27 +55,23 @@
 	const enforcementMarks = $derived(new Map(data.enforcement.map((action) => [action.key, action.citations])));
 
 	// The court cases that name the nation, as a party or as what the case is
-	// about (Trevor, Nov. 23, 2026). The Case column is the case's name in
-	// italics with its citation; Named as shows the name the case gives when it
-	// is not the nation's name today, such as a former name or a historical nation.
+	// about (Trevor, Nov. 23, 2026). Four short columns; under the case's name,
+	// its citation and source marker, then the name the case gives the nation
+	// when it is not today's name, such as a former name or a historical nation.
 	const caseColumns: TableColumn[] = [
-		{ key: 'decided', header: 'Decided', type: 'date', sortable: true },
+		{ key: 'year', header: 'Year', type: 'date', sortable: true },
 		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, searchable: true, custom: true },
-		{ key: 'court', header: 'Court', sortable: true, searchable: true, filterable: true },
-		{ key: 'role', header: 'Role', sortable: true, filterable: true },
-		{ key: 'namedAs', header: 'Named as', searchable: true, custom: true },
-		{ key: 'source', header: 'Source', custom: true }
+		{ key: 'court', header: 'Court', sortable: true },
+		{ key: 'role', header: 'Role', sortable: true }
 	];
 	const caseRows: TableRow[] = $derived(
 		data.cases.map((entry) => ({
 			key: entry.key,
 			cells: {
-				decided: { text: entry.decided ? readableDate(entry.decided) : '', sortValue: entry.decided },
+				year: { text: entry.decided?.slice(0, 4) ?? '', sortValue: entry.decided },
 				name: { text: [entry.name, entry.citation].filter(Boolean).join(', '), sortValue: entry.name, href: entry.link },
 				court: { text: entry.court ?? '' },
-				role: { text: entry.role },
-				namedAs: { text: [entry.namedAs, entry.note].filter(Boolean).join('. ') },
-				source: { text: entry.citations.map((mark) => mark.number).join(', ') }
+				role: { text: entry.role }
 			}
 		}))
 	);
@@ -244,19 +240,20 @@
 					label="Table: cases involving the nation"
 					columns={caseColumns}
 					rows={caseRows}
-					defaultSort={{ key: 'decided', direction: 'ascending' }}
+					defaultSort={{ key: 'year', direction: 'ascending' }}
 					rowName={['case', 'cases']}
-					filters
+					count={false}
 					download="{data.page.id}-cases"
 				>
 					{#snippet cell(row: TableRow, column: TableColumn)}
 						{@const entry = casesByKey.get(row.key)}
 						{#if entry && column.key === 'name'}
-							{#if entry.link}<a href={entry.link}><i>{entry.name}</i></a>{:else}<i>{entry.name}</i>{/if}{#if entry.citation}, <span class="case-citation">{entry.citation}</span>{/if}
-						{:else if entry && column.key === 'namedAs'}
-							{#if entry.namedAs}{entry.namedAs}{/if}{#if entry.note}<span class="small muted case-note">{entry.note}</span>{/if}
-						{:else if entry && column.key === 'source'}
-							<CitationMarks marks={entry.citations} />
+							<span class="case-name">{#if entry.link}<a href={entry.link}><i>{entry.name}</i></a>{:else}<i>{entry.name}</i>{/if}</span>
+							<span class="case-detail small muted">{#if entry.citation}{entry.citation}{/if}<CitationMarks marks={entry.citations} /></span>
+							<span class="case-detail case-phone small muted">{[entry.court, entry.role].filter(Boolean).join(' · ')}</span>
+							{#if entry.namedAs || entry.note}
+								<span class="case-detail small muted">{#if entry.namedAs}Named as “{entry.namedAs}.”{/if}{#if entry.namedAs && entry.note}{' '}{/if}{#if entry.note}{entry.note}{/if}</span>
+							{/if}
 						{/if}
 					{/snippet}
 				</DataTable>
@@ -432,11 +429,26 @@
 {/snippet}
 
 <style>
-	.case-citation {
-		white-space: nowrap;
-	}
-	.case-note {
+	.case-name,
+	.case-detail {
 		display: block;
+	}
+	.case-detail {
+		font-weight: normal;
+	}
+	/* On a phone the Court and Role columns fold into a line under the case's
+	   name, so the name keeps the width it needs. */
+	.case-detail.case-phone {
+		display: none;
+	}
+	@media (max-width: 40rem) {
+		.case-detail.case-phone {
+			display: block;
+		}
+		:global(#nation-cases th:nth-child(n + 3)),
+		:global(#nation-cases td:nth-child(n + 3)) {
+			display: none;
+		}
 	}
 	.opinions li + li {
 		margin-top: var(--space-2);
