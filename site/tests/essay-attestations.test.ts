@@ -1,7 +1,7 @@
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { parseEssay } from '../src/lib/essays/document.ts';
-import { currentAttestations, essaySectionHashes, essaySections, readerCredits, sectionText, sha256Hex, withReaderCredits, type Attestation } from '../src/lib/essays/attestations.ts';
+import { currentAttestations, essaySectionHashes, namesShownByDefault, essaySections, readerCredits, sectionText, sha256Hex, withReaderCredits, type Attestation } from '../src/lib/essays/attestations.ts';
 import { attest, essayAttestations, showToReaders, withdrawAttestation } from '#lib/server/essay-attestations.ts';
 import { testDatabase } from './database.ts';
 
@@ -39,13 +39,13 @@ describe('essay sections', () => {
 			shownToReaders: true
 		});
 		const shown = currentAttestations(
-			[make('reviewed', 'patrick', '2026-11-20'), make('wrote', 'trevor', '2026-11-19'), make('wrote', 'trevor', '2026-11-21'), make('edited', 'danielle', '2026-11-21')],
+			[make('reviewed', 'cal', '2026-11-20'), make('wrote', 'ann', '2026-11-19'), make('wrote', 'ann', '2026-11-21'), make('edited', 'ben', '2026-11-21')],
 			'worcester'
 		);
 		expect(shown.map((attestation) => `${attestation.role} ${attestation.personIdentifier} ${attestation.createdAt}`)).toEqual([
-			'wrote trevor 2026-11-21',
-			'edited danielle 2026-11-21',
-			'reviewed patrick 2026-11-20'
+			'wrote ann 2026-11-21',
+			'edited ben 2026-11-21',
+			'reviewed cal 2026-11-20'
 		]);
 	});
 });
@@ -55,8 +55,8 @@ describe('attestations in the database', () => {
 	beforeEach(async () => {
 		database = testDatabase();
 		await database.batch([
-			database.prepare(`INSERT INTO people (identifier, email, display_name, role, status, added_at) VALUES ('lead', 'l@example.org', 'Trevor', 'lead-author', 'active', '2026-11-22T00:00:00Z')`),
-			database.prepare(`INSERT INTO people (identifier, email, display_name, role, status, added_at) VALUES ('advisor', 'a@example.org', 'Patrick', 'advisor', 'active', '2026-11-22T00:00:00Z')`),
+			database.prepare(`INSERT INTO people (identifier, email, display_name, role, status, added_at) VALUES ('lead', 'l@example.org', 'Ann', 'lead-author', 'active', '2026-11-22T00:00:00Z')`),
+			database.prepare(`INSERT INTO people (identifier, email, display_name, role, status, added_at) VALUES ('advisor', 'a@example.org', 'Cal', 'advisor', 'active', '2026-11-22T00:00:00Z')`),
 			database.prepare(`INSERT INTO essays (identifier, part, created_at) VALUES ('i-timeline', 'foundations', '2026-11-22T00:00:00Z')`)
 		]);
 	});
@@ -67,7 +67,7 @@ describe('attestations in the database', () => {
 		const saved = await attest(database, { ...input, personIdentifier: 'lead' });
 		expect(saved.sha256).toBe(await sha256Hex('### Worcester\n\nMarshall wrote.'));
 		const [row] = await essayAttestations(database, 'i-timeline');
-		expect(row).toMatchObject({ sectionSlug: 'worcester', role: 'wrote', personName: 'Trevor', sectionSha256: saved.sha256 });
+		expect(row).toMatchObject({ sectionSlug: 'worcester', role: 'wrote', personName: 'Ann', sectionSha256: saved.sha256 });
 		const logged = await database.prepare(`SELECT action FROM events WHERE target_identifier = 'essay:i-timeline'`).all<{ action: string }>();
 		expect(logged.results.map((entry) => entry.action)).toEqual(['Attested "Written by" for the subsection "Worcester"']);
 	});
@@ -88,6 +88,14 @@ describe('attestations in the database', () => {
 		expect(await showToReaders(database, { essay: 'i-timeline', identifier: saved.identifier, personIdentifier: 'advisor', shown: true })).toBe(false);
 		expect(await showToReaders(database, { essay: 'i-timeline', identifier: saved.identifier, personIdentifier: 'lead', shown: true })).toBe(true);
 		expect((await essayAttestations(database, 'i-timeline'))[0].shownToReaders).toBe(true);
+	});
+
+	it('starts the reader-name box off for advisors, and for reviewing', () => {
+		expect(namesShownByDefault('lead-author', 'wrote')).toBe(true);
+		expect(namesShownByDefault('editor', 'edited')).toBe(true);
+		expect(namesShownByDefault('editor', 'reviewed')).toBe(false);
+		expect(namesShownByDefault('advisor', 'wrote')).toBe(false);
+		expect(namesShownByDefault('advisor', 'reviewed')).toBe(false);
 	});
 
 	it('refuses an empty section', async () => {
@@ -114,17 +122,17 @@ describe('credits for readers', () => {
 		const hashes = await essaySectionHashes(doc);
 		const credits = readerCredits(
 			[
-				make('wrote', 'Trevor', hashes.worcester),
 				make('wrote', 'Ann', hashes.worcester),
-				make('edited', 'Danielle', 'f'.repeat(64)),
-				make('reviewed', 'Patrick', hashes.worcester, false)
+				make('wrote', 'Dee', hashes.worcester),
+				make('edited', 'Ben', 'f'.repeat(64)),
+				make('reviewed', 'Cal', hashes.worcester, false)
 			],
 			hashes
 		);
-		expect(credits).toEqual({ worcester: [{ role: 'wrote', names: ['Trevor', 'Ann'] }] });
+		expect(credits).toEqual({ worcester: [{ role: 'wrote', names: ['Ann', 'Dee'] }] });
 		const html = withReaderCredits('<h2 id="the-cherokee-cases">The Cherokee Cases</h2>\n<h3 id="worcester">Worcester</h3>\n<p>Marshall wrote.</p>', credits);
 		expect(html).toBe(
-			'<h2 id="the-cherokee-cases">The Cherokee Cases</h2>\n<h3 id="worcester">Worcester</h3>\n<p class="essay-section-credit">Written by Trevor and Ann.</p>\n<p>Marshall wrote.</p>'
+			'<h2 id="the-cherokee-cases">The Cherokee Cases</h2>\n<h3 id="worcester">Worcester</h3>\n<p class="essay-section-credit">Written by Ann and Dee.</p>\n<p>Marshall wrote.</p>'
 		);
 	});
 });

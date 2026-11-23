@@ -1,7 +1,8 @@
 /**
  * Attestations to an essay's sections (src/lib/server/essay-attestations.ts).
- * GET lists them (comment access or above), with who is asking and
- * whether they may attest to writing or editing. POST attests: writing or
+ * GET lists them (comment access or above), with who is asking, their
+ * role (for the reader-name default) and whether they may attest to
+ * writing or editing. POST attests: writing or
  * editing a section needs contribute access, reviewing it comment access.
  * PATCH ?attestation= {shownToReaders} shows or hides one's own
  * attestation to readers. DELETE ?attestation= withdraws one's own
@@ -21,7 +22,7 @@ const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 export const GET: RequestHandler = async (event) => {
 	const { identifier, database, person, level } = await essayAccess(event, 'comment', { forData: true });
 	return json(
-		{ attestations: await essayAttestations(database, identifier), you: person.identifier, canWriteOrEdit: atLeast(level, 'contribute') },
+		{ attestations: await essayAttestations(database, identifier), you: person.identifier, yourRole: person.role, canWriteOrEdit: atLeast(level, 'contribute') },
 		{ headers: { 'Cache-Control': 'private, no-store' } }
 	);
 };

@@ -120,6 +120,16 @@ export function currentAttestations(attestations: Attestation[], slug: string): 
 	);
 }
 
+/**
+ * Whether the "Show my name to readers" box starts checked. Advisors stay
+ * unnamed on the public site until the lead author says otherwise, so it
+ * starts off for them in every role; for everyone else it starts on for
+ * writing and editing and off for reviewing.
+ */
+export function namesShownByDefault(personRole: string, role: AttestationRole): boolean {
+	return personRole !== 'advisor' && role !== 'reviewed';
+}
+
 /** Each section's SHA-256 as the text stands, by heading id. */
 export async function essaySectionHashes(doc: EditorNode): Promise<Record<string, string>> {
 	const hashes: Record<string, string> = {};

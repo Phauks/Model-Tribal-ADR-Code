@@ -10,6 +10,7 @@
 		attestationRoleLabels,
 		attestationRoles,
 		currentAttestations,
+		namesShownByDefault,
 		type Attestation,
 		type AttestationRole,
 		type AttestSection
@@ -20,12 +21,15 @@
 		essay,
 		attestations,
 		you,
+		yourRole,
 		canWriteOrEdit,
 		onchange
 	}: {
 		essay: string;
 		attestations: Attestation[];
 		you: string | null;
+		/** The person's role on the project, for whether the reader-name box starts checked. */
+		yourRole: string;
 		canWriteOrEdit: boolean;
 		onchange: (attestations: Attestation[]) => void;
 	} = $props();
@@ -46,7 +50,7 @@
 	export async function show(chosen: AttestSection): Promise<void> {
 		section = chosen;
 		role = canWriteOrEdit ? 'wrote' : 'reviewed';
-		shownToReaders = role !== 'reviewed';
+		shownToReaders = namesShownByDefault(yourRole, role);
 		note = '';
 		problem = '';
 		sending = false;
@@ -129,7 +133,7 @@
 			<fieldset class="field">
 				<legend>Your part</legend>
 				{#each roles as choice (choice)}
-					<label><input type="radio" name="attest-role" value={choice} bind:group={role} disabled={sending} /> {attestationRoleChoices[choice]}</label>
+					<label><input type="radio" name="attest-role" value={choice} bind:group={role} disabled={sending} onchange={() => (shownToReaders = namesShownByDefault(yourRole, choice))} /> {attestationRoleChoices[choice]}</label>
 				{/each}
 				{#if !canWriteOrEdit}<p class="small muted">You can attest that you reviewed it. Writing and editing are attested by people who can edit this essay.</p>{/if}
 			</fieldset>
