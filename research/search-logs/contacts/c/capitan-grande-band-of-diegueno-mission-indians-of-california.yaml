@@ -1,7 +1,7 @@
 profile: content/tribes/c/capitan-grande-band-of-diegueno-mission-indians-of-california.yaml
 topic: contacts
 status: none-found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -27,3 +27,11 @@ searches:
   query: kumeyaay.com Capitan Grande Band page (fetched)
   outcome: not-found
   reason: Third-party site run by a web design firm; not the tribe's government; personal-looking email; not used.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-directory
+  address: https://www.bia.gov/service/tribal-leaders-directory
+  query: email field for the nation in the federal Tribal Leaders Directory
+  outcome: not-found
+  reason: The directory lists only a leader's own address or none; leaders' addresses are kept out of the public record (lead author's decision, Nov. 23, 2026).
