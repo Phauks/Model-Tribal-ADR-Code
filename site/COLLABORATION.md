@@ -220,13 +220,33 @@ The "Sign in" link in the masthead of every page, and "Co-author sign-in" in the
    - the very first lead author, by the `LEAD_AUTHOR_EMAIL` setting.
 
    Anyone else stays signed in and goes to their contributor profile (`/profile`), where they can register to help. The workspace stays closed to them. Someone whose access was removed is not signed in.
-6. **The session** is a random 256-bit token in an HTTP-only, SameSite=Lax, Secure cookie named `__Host-session`, which browsers refuse to accept from a subdomain or over plain HTTP (NIST SP 800-63B-4, section 5.1). The database keeps only its hash (`sessions` table). It lasts at most 12 hours and ends after 4 hours without use. "Sign out" deletes it.
+6. **The session** is a random 256-bit token in an HTTP-only, SameSite=Lax, Secure cookie named `__Host-session`, which browsers refuse to accept from a subdomain or over plain HTTP (NIST SP 800-63B-4, section 5.1). The database keeps only its hash (`sessions` table). It lasts at most 12 hours and ends after 4 hours without use. Someone without workspace access may tick "Keep me signed in for 30 days" when they sign in. Their session then lasts 30 days, unused or not, the longest NIST SP 800-63B-4 allows between sign-ins at its first level. Workspace sessions never get this, and a 30-day session from before someone was given workspace access ends at the 12-hour and 4-hour limits. "Sign out" deletes it.
 7. On every workspace page the site checks the database again, so removing someone's access takes effect at once, even if they are signed in.
 8. The masthead's link reads "Workspace" instead of "Sign in" while a `signed-in-hint` cookie is present (`src/lib/signed-in-hint.ts`). It holds only "1", is readable by the page's script because public pages are built ahead of time and cannot ask the Worker, and grants nothing: it is set at a successful sign-in and on each workspace page while the session is valid, and cleared at sign-out or once the session has ended.
 
 Workspace pages, sign-in and the request form are never cached, by the browser or by the offline copy (`src/service-worker/index.ts`), and cannot be shown inside another site's frame.
 
 On a copy of the site running on your own computer (`npm run preview`, `localhost`), no email is sent: the code and link are shown on the sign-in page instead.
+
+
+## Two-step sign-in
+
+Anyone may turn on two-step sign-in at Account > Sign-in and security > Two-step sign-in (`/account/security/two-step`). The lead author, editors, advisors and nation reviewers must: until they set it up the workspace sends them to that page and stays closed (`rolesNeedingTwoStep` in `src/lib/permissions.ts`; `requirePerson` in `src/lib/server/workspace.ts`). Co-authors and contributors may choose it.
+
+1. **The authenticator app.** Setting up shows a QR code and the same key as text. Any authenticator app that reads the usual "otpauth" QR code works, such as Google Authenticator, Microsoft Authenticator or a password manager. The app makes a six-digit code every 30 seconds (RFC 6238 with SHA-1; `src/lib/server/two-step.ts`). Typing one code confirms the app works; the site then turns two-step sign-in on and signs out every other browser.
+2. **Signing in.** After the password, or the code or link from an email, the site asks "Confirm it is you" (`/sign-in/two-step`). Until a right code is typed, the session reaches nothing else. A code works for the 30 seconds before and after its own, so a phone clock a little off still works, and never twice (NIST SP 800-63B-4, section 3.1.4.1). After 5 wrong codes that sign-in ends and the person starts again; each account may also try 5 times a minute (`signInLimit`).
+3. **Backup codes.** Turning it on gives 10 backup codes, shown once, kept only as SHA-256 hashes. Each works once in place of an app code. Someone who signs in with a backup code and has 3 or fewer left is sent to make new ones. Making new ones stops the old ones working.
+4. **The app's secret** has to be kept, not hashed, because the site makes the same codes as the app. It is encrypted with AES-GCM under a key derived (HKDF) from `PASSWORD_KEY`. Until `PASSWORD_KEY` is set, the app's secret is kept as it is, and encrypted the next time it is used after the key is set.
+5. **Changes need a fresh sign-in.** Turning it on, making new backup codes, moving to a new phone and turning it off all need a sign-in from the last 10 minutes. That way someone who finds a browser left signed in cannot add their own app or take the owner's away. Those whose role needs it cannot turn it off, only move it to a new app.
+
+**Lost phone and backup codes.** The lead author turns two-step sign-in off for that account from the database, which leaves its password and email sign-in as they were. The person then sets it up again at their next sign-in. For the lead author's own account, someone with access to the Cloudflare account runs the same command:
+
+```sql
+UPDATE accounts SET authenticator_secret = NULL, authenticator_new_secret = NULL, authenticator_added_at = NULL, authenticator_last_step = NULL WHERE email = 'person@example.org';
+DELETE FROM backup_codes WHERE account_identifier = (SELECT identifier FROM accounts WHERE email = 'person@example.org');
+```
+
+Passkeys, which resist phishing better than any code (NIST SP 800-63B-4, section 3.2.5), come once the site has its own domain, because a passkey is tied to the domain it was made on.
 
 ## Setting up sign-in
 
@@ -247,7 +267,7 @@ Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**,
 
 ### 3. The password key
 
-Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**, type **Secret**: `PASSWORD_KEY`, a random value of at least 32 characters, such as the output of `openssl rand -base64 48`. Keep no copy outside Cloudflare. Once set, never change or remove it: every password hashed with it would stop working, and their owners would have to sign in with a code or a link and choose a new one. Until it is set, passwords are hashed without a key, and the site upgrades them the next time each person signs in after it is set.
+Worker `model-tribal-adr-code` > **Settings > Variables and Secrets** > **Add**, type **Secret**: `PASSWORD_KEY`, a random value of at least 32 characters, such as the output of `openssl rand -base64 48`. Keep no copy outside Cloudflare. Once set, never change or remove it: every password hashed with it, and every authenticator app set up after it, would stop working, and their owners would have to sign in with a code or a link and choose a new one. Until it is set, passwords are hashed without a key, and the site upgrades them the next time each person signs in after it is set.
 
 ### Database
 

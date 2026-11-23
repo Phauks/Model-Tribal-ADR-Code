@@ -122,6 +122,14 @@
       "scrollbar-track": {
         "$value": "#F6EEE6",
         "$description": "Scrollbar track, the strip the thumb moves along. Same as surface, like the side rails."
+      },
+      "scan-code-dark": {
+        "$value": "#22201E",
+        "$description": "Dark squares of a QR code, the same in both themes so phone cameras can read it. 20:1 on scan-code-light."
+      },
+      "scan-code-light": {
+        "$value": "#FFFFFF",
+        "$description": "Light squares and quiet zone of a QR code, the same in both themes."
       }
     },
     "dark": {
@@ -244,6 +252,14 @@
       "scrollbar-track": {
         "$value": "#16292D",
         "$description": "Scrollbar track, the strip the thumb moves along. Same as surface, like the side rails."
+      },
+      "scan-code-dark": {
+        "$value": "#22201E",
+        "$description": "Dark squares of a QR code, the same in both themes so phone cameras can read it. 20:1 on scan-code-light."
+      },
+      "scan-code-light": {
+        "$value": "#FFFFFF",
+        "$description": "Light squares and quiet zone of a QR code, the same in both themes."
       }
     }
   },

@@ -8,13 +8,13 @@ import type { Handle } from '@sveltejs/kit/hooks';
 import { sealNewEntries } from '#lib/server/activity-seals.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { eventStatement, refusedAction } from '#lib/server/events.ts';
-import { sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
+import { endSession, pastWorkspaceLimits, sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
 import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
-import { permissionsOf } from '#lib/permissions.ts';
+import { needsTwoStep, permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
 
 /** Pages that show private information and must never be cached or framed. */
@@ -35,6 +35,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.account = undefined;
 	event.locals.refused = undefined;
 	event.locals.session = undefined;
+	event.locals.waitingSession = undefined;
+	event.locals.twoStepNeeded = false;
 	const path = event.url.pathname;
 	const changing = changesSomething(event.request.method);
 
@@ -59,10 +61,27 @@ export const handle: Handle = async ({ event, resolve }) => {
 					return undefined;
 				}
 			);
-			if (session) {
-				event.locals.session = session;
-				event.locals.account = { subject: session.account.identifier, email: session.account.email, name: null };
-				event.locals.person = await activePersonBySubject(environment.database, session.account.identifier);
+			if (session?.secondStep === 'waiting') {
+				// Half signed in: only the second-step page may use it.
+				event.locals.waitingSession = session;
+			} else if (session) {
+				const person = await activePersonBySubject(environment.database, session.account.identifier);
+				if (person && session.lasting && pastWorkspaceLimits(session)) {
+					// A "Keep me signed in" session from before the person was given
+					// workspace access ends at the workspace's limits.
+					await endSession(environment.database, event.cookies.get(sessionCookie));
+					clearSessionCookie(event.cookies);
+				} else {
+					event.locals.session = session;
+					event.locals.account = { subject: session.account.identifier, email: session.account.email, name: null };
+					if (person && needsTwoStep(person.role) && session.secondStep !== 'done') {
+						// The role needs two-step sign-in and it is not set up yet:
+						// signed in, but without workspace access until it is.
+						event.locals.twoStepNeeded = true;
+					} else {
+						event.locals.person = person;
+					}
+				}
 			} else {
 				clearSessionCookie(event.cookies);
 			}
