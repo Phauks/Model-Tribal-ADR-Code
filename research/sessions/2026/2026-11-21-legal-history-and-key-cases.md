@@ -236,69 +236,29 @@ limits: >-
 
 ## What was done
 
-The work was split between two research assistants running in parallel. One
-covered eras, federal statutes and regulations, Tribal court history, state
-rules for recognizing Tribal judgments and secondary sources (85 items). The
-other covered cases (65 decisions: 54 of the Supreme Court of the United
-States and 11 of federal courts of appeals and state courts). Each returned
-structured notes with quotations, pinpoints and the URL where each quotation
-was read. The source records were generated from those notes and then
-checked against the schema.
+The work was split between two research assistants running in parallel. One covered eras, federal statutes and regulations, Tribal court history, state rules for recognizing Tribal judgments and secondary sources (85 items). The other covered cases (65 decisions: 54 of the Supreme Court of the United States and 11 of federal courts of appeals and state courts). Each returned structured notes with quotations, pinpoints and the URL where each quotation was read. The source records were generated from those notes and then checked against the schema.
 
 ## How quotations were checked
 
-Supreme Court quotations were matched letter for letter against the Legal
-Information Institute text and the official U.S. Reports scans at the
-Library of Congress, or against supremecourt.gov slip opinions for recent
-cases. Pinpoint pages come from the official page on which each quotation
-appears. Where the Legal Information Institute text differed from the
-official report (for example in Winans, Elk, Menominee, Bryan and Talton),
-the official wording was used. Kagama and Lone Wolf have no Legal
-Information Institute text and were checked only against the scans.
+Supreme Court quotations were matched letter for letter against the Legal Information Institute text and the official U.S. Reports scans at the Library of Congress, or against supremecourt.gov slip opinions for recent cases. Pinpoint pages come from the official page on which each quotation appears. Where the Legal Information Institute text differed from the official report (for example in Winans, Elk, Menominee, Bryan and Talton), the official wording was used. Kagama and Lone Wolf have no Legal Information Institute text and were checked only against the scans.
 
-Statutory quotations were read on govinfo.gov (Statutes at Large), the
-Legal Information Institute (U.S. Code) and eCFR. State rules were read on
-the state court or legislature site where possible.
+Statutory quotations were read on govinfo.gov (Statutes at Large), the Legal Information Institute (U.S. Code) and eCFR. State rules were read on the state court or legislature site where possible.
 
 ## Choices made
 
-- **Eras.** The National Congress of American Indians' period names were
-  used, with boundaries moved where related laws belong together. The
-  timeline shows each difference, and says the boundaries are editorial.
-- **Keys.** Abbreviations in proposed keys were spelled out (for example
-  `iowa-mutual-insurance-company-v-laplante`, `usc-25-5331`). Case keys keep
-  "v," the courts' own form for case names. Records already on main were
-  reused (`ncai-tribal-nations-and-the-united-states`, `narf-ipi-home`).
-- **Overlap with the Native nation profiles pull request.** The 1993 Apology
-  Resolution was left out because that pull request already has a record for
-  it (`apology-resolution-1993`). Source records name the nations they
-  concern with the tribe profile ids used there, so each nation's page can
-  list its cases.
-- **Unverified material.** Items that could not be opened are kept, marked
-  "Not yet verified" or "NOT FULLY VERIFIED" in their notes, and listed first
-  in the Westlaw pull list.
-- **Peacemaking.** The Native American Rights Fund's Indigenous Peacemaking
-  Initiative states that peacemaking is not alternative dispute resolution.
-  The timeline records that position and flags it for the code's design.
+- **Eras.** The National Congress of American Indians' period names were used, with boundaries moved where related laws belong together. The timeline shows each difference, and says the boundaries are editorial.
+- **Keys.** Abbreviations in proposed keys were spelled out (for example `iowa-mutual-insurance-company-v-laplante`, `usc-25-5331`). Case keys keep "v," the courts' own form for case names. Records already on main were reused (`ncai-tribal-nations-and-the-united-states`, `narf-ipi-home`).
+- **Overlap with the Native nation profiles pull request.** The 1993 Apology Resolution was left out because that pull request already has a record for it (`apology-resolution-1993`). Source records name the nations they concern with the tribe profile ids used there, so each nation's page can list its cases.
+- **Unverified material.** Items that could not be opened are kept, marked "Not yet verified" or "NOT FULLY VERIFIED" in their notes, and listed first in the Westlaw pull list.
+- **Peacemaking.** The Native American Rights Fund's Indigenous Peacemaking Initiative states that peacemaking is not alternative dispute resolution. The timeline records that position and flags it for the code's design.
 
 ## Supreme Court decisions from October Term 2023 through Nov. 21, 2026
 
-Becerra v. San Carlos Apache Tribe (2024) is the only Indian law merits
-decision found. The Native American Rights Fund's Tribal Supreme Court
-Project reports no Indian law grants in October Term 2024. In October Term
-2025 the Court granted, vacated and remanded Turtle Mountain Band of
-Chippewa Indians v. Howe (No. 25-253) on May 18, 2026; the order itself was
-not opened. A petition in Department of the Interior v. Shoshone-Bannock
-Tribes of the Fort Hall Reservation (No. 26-96) is set for the Dec. 4, 2026
-conference.
+Becerra v. San Carlos Apache Tribe (2024) is the only Indian law merits decision found. The Native American Rights Fund's Tribal Supreme Court Project reports no Indian law grants in October Term 2024. In October Term 2025 the Court granted, vacated and remanded Turtle Mountain Band of Chippewa Indians v. Howe (No. 25-253) on May 18, 2026; the order itself was not opened. A petition in Department of the Interior v. Shoshone-Bannock Tribes of the Fort Hall Reservation (No. 26-96) is set for the Dec. 4, 2026 conference.
 
 ## Open questions carried forward
 
 - Whether Cohen's Handbook (2024 ed., LexisNexis) is on Westlaw at all.
-- Current text and history of Wis. Stat. § 806.245, the Arizona recognition
-  rules, Mich. Ct. R. 2.615's adoption date and California's sunset clause.
-- Treaty provisions on dispute resolution, sources for Hawaiʻi and the
-  territories, and dispute clauses in gaming and self-governance compacts.
-- Other 2025 and 2026 statutes seen but not recorded: Pub. L. Nos. 119-22,
-  119-23, 119-61, 119-88 and others; the Miccosukee Reserved Area Amendments
-  Act was vetoed on Dec. 29, 2025, and the override failed on Jan. 8, 2026.
+- Current text and history of Wis. Stat. § 806.245, the Arizona recognition rules, Mich. Ct. R. 2.615's adoption date and California's sunset clause.
+- Treaty provisions on dispute resolution, sources for Hawaiʻi and the territories, and dispute clauses in gaming and self-governance compacts.
+- Other 2025 and 2026 statutes seen but not recorded: Pub. L. Nos. 119-22, 119-23, 119-61, 119-88 and others; the Miccosukee Reserved Area Amendments Act was vetoed on Dec. 29, 2025, and the override failed on Jan. 8, 2026.

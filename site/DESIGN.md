@@ -1,28 +1,14 @@
 # Website design
 
-**Status:** design exploration, Nov. 21, 2026. Nothing here is built yet. This
-document records the direction the website will follow: who it serves, how it
-is organized, how it looks and behaves, and why. Mockups of the key pages, in
-light and dark themes, are in a design canvas shared through the project
-thread. Changes to this document are made by pull request.
+**Status:** design exploration, Nov. 21, 2026. Nothing here is built yet. This document records the direction the website will follow: who it serves, how it is organized, how it looks and behaves, and why. Mockups of the key pages, in light and dark themes, are in a design canvas shared through the project thread. Changes to this document are made by pull request.
 
-Where a choice rests on a published source, a footnote cites it. Where it is
-the project's own judgment, it says "project choice" or "project analysis."
-The reference sites were reviewed in the research session
-[2026-11-21-website-design-references](../research/sessions/2026/2026-11-21-website-design-references.md).
+Where a choice rests on a published source, a footnote cites it. Where it is the project's own judgment, it says "project choice" or "project analysis." The reference sites were reviewed in the research session [2026-11-21-website-design-references](../research/sessions/2026/2026-11-21-website-design-references.md).
 
 ## 1. What the website is for
 
-The website publishes the model code, its commentary, the profiles of Native
-nations, the glossary and the sources, and it is the place where a nation asks
-the project to correct, restrict or remove material about it
-([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
-The style guide names the audience: "Tribal lawmakers, judges, peacemakers,
-court staff, advocates and students, not only lawyers"
-([style guide, section 2](../docs/style-guide.md#2-plain-language)).
+The website publishes the model code, its commentary, the profiles of Native nations, the glossary and the sources, and it is the place where a nation asks the project to correct, restrict or remove material about it ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)). The style guide names the audience: "Tribal lawmakers, judges, peacemakers, court staff, advocates and students, not only lawyers" ([style guide, section 2](../docs/style-guide.md#2-plain-language)).
 
-The design serves four jobs. They are composites drawn from that audience,
-not findings from user research, which has not been done (project analysis).
+The design serves four jobs. They are composites drawn from that audience, not findings from user research, which has not been done (project analysis).
 
 | Person | Job | The site succeeds when |
 | --- | --- | --- |
@@ -31,54 +17,30 @@ not findings from user research, which has not been done (project analysis).
 | Nation representative: staff of a nation's court, legal department or cultural office | Check what the project says about the nation, and correct, restrict or remove it; or, if the nation is missing, ask to add it with proof from a government source | A request takes minutes, needs no account, and protects first |
 | Contributor: a peacemaker, Indigenous author, reviewer or co-author | Offer sources, review, preferred terms or text, and be credited as they choose | They contribute without a GitHub account |
 
-User research with people in each role is the most important next step for
-the design; see [section 13](#13-open-questions-and-next-steps).
+User research with people in each role is the most important next step for the design; see [section 13](#13-open-questions-and-next-steps).
 
 ## 2. The feel: a drafting desk
 
-The site should read as a careful legal reference, the way the style guide
-asks the writing to: "precise, calm and specific"
-([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)). The
-design spends its boldness in one place, the marks a drafter works with, and
-keeps everything else quiet (project choice):
+The site should read as a careful legal reference, the way the style guide asks the writing to: "precise, calm and specific" ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)). The design spends its boldness in one place, the marks a drafter works with, and keeps everything else quiet (project choice):
 
-- **Hanging section numbers.** "§ 2-104" is set large, in the track's color,
-  above the section title, so a reader always knows where they are in the code.
-- **Lettered alternatives.** Alternative A and Alternative B are tabs a reader
-  switches between, with a "Compare side by side" view.
-- **Fill-in placeholders.** Template variables such as `{{nation.name}}`
-  appear as highlighted fill-ins, "[Name of Nation]", the way the book prints
-  them ([data model, built for templates](../docs/data-model.md#built-for-templates)).
-  A future template builder fills them in.
-- **Dotted glossary links.** Defined terms have a dotted underline and open a
-  short card; ordinary links have a solid underline.
-- **Track color.** The ADR track and the peacemaking track each have a color,
-  always paired with the words "ADR track" or "Peacemaking track."
+- **Hanging section numbers.** "§ 2-104" is set large, in the track's color, above the section title, so a reader always knows where they are in the code.
+- **Lettered alternatives.** Alternative A and Alternative B are tabs a reader switches between, with a "Compare side by side" view.
+- **Fill-in placeholders.** Template variables such as `{{nation.name}}` appear as highlighted fill-ins, "[Name of Nation]", the way the book prints them ([data model, built for templates](../docs/data-model.md#built-for-templates)). A future template builder fills them in.
+- **Dotted glossary links.** Defined terms have a dotted underline and open a short card; ordinary links have a solid underline.
+- **Track color.** The ADR track and the peacemaking track each have a color, always paired with the words "ADR track" or "Peacemaking track."
 
 Each mark encodes something about the text; none is decoration.
 
 ### What the design avoids
 
-- **Borrowed Native motifs.** No patterns, borders, colors or icons that
-  imitate Native art. The IllumiNative industry guide advises against
-  pan-Indian visuals and sacred objects and asks whether a project has "the
-  blessing and consent of the community";[^illuminative] the project's art
-  will come only from Native artists, chosen through a contest
-  ([charter, commitment 7](../docs/charter.md#7-credit-authorship-and-art)).
-  Until then, the spaces for art are left visibly empty and labeled.
-- **A single "Native" look.** "There is no single American Indian culture or
-  language,"[^nk360] so no part of the interface suggests one.
-- **Official or governmental styling.** The site is not a government site.
-  The U.S. Web Design System itself says not to use its official banner on
-  non-government domains.[^uswds-banner] The site borrows government design
-  patterns, not their look (project choice).
-- **Custom icons.** The site and the book draw only from Lucide (see
-  [section 6, Icons](#6-components)). No icons are drawn for the project.
+- **Borrowed Native motifs.** No patterns, borders, colors or icons that imitate Native art. The IllumiNative industry guide advises against pan-Indian visuals and sacred objects and asks whether a project has "the blessing and consent of the community";[^illuminative] the project's art will come only from Native artists, chosen through a contest ([charter, commitment 7](../docs/charter.md#7-credit-authorship-and-art)). Until then, the spaces for art are left visibly empty and labeled.
+- **A single "Native" look.** "There is no single American Indian culture or language,"[^nk360] so no part of the interface suggests one.
+- **Official or governmental styling.** The site is not a government site. The U.S. Web Design System itself says not to use its official banner on non-government domains.[^uswds-banner] The site borrows government design patterns, not their look (project choice).
+- **Custom icons.** The site and the book draw only from Lucide (see [section 6, Icons](#6-components)). No icons are drawn for the project.
 
 ## 3. What the design borrows
 
-Observations below come from the pages listed in the research session.
-"Borrow" and "avoid" are project analysis.
+Observations below come from the pages listed in the research session. "Borrow" and "avoid" are project analysis.
 
 | Reference | What the project borrows | What it avoids |
 | --- | --- | --- |
@@ -94,9 +56,7 @@ Observations below come from the pages listed in the research session.
 | [Tufte CSS](https://edwardtufte.github.io/tufte-css/), [The Rust Programming Language](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html), [R for Data Science](https://r4ds.hadley.nz/) | Notes in the margin on wide screens, inline on phones; automatic, light and dark themes; keyboard paging between sections; a print view; a "report an issue" link on every page, routed here to the private request form | Tufte's checkbox trick for notes, which is not documented for assistive technology |
 | [Wikipedia Page Previews](https://www.mediawiki.org/wiki/Page_Previews) | Hover cards for glossary terms, with a setting to turn them off | Previews that screen readers skip; here, the card's link leads to the same content |
 
-The earlier design notes also drew on the Federal Register's "not an
-official legal edition" notice and the DC Code's clean section pages; those
-fed the "Model text, not law in force" notice in section 6.
+The earlier design notes also drew on the Federal Register's "not an official legal edition" notice and the DC Code's clean section pages; those fed the "Model text, not law in force" notice in section 6.
 
 ## 4. Information architecture
 
@@ -104,14 +64,11 @@ fed the "Model text, not law in force" notice in section 6.
 
 The site's sections sit in a sidebar on the left of every page, in the order of the working outline's main menu: Model code, Peacemaking, Foundations, Essays, Methods and stories, Nations, Library, Glossary and About ([outline, The website](../docs/outline.md#the-website)). A section whose pages are not published yet is named but not linked. The sidebar opens the current section into the outline of the page being read (see [Sidebar](#6-components)); Trevor asked for it on every page on Nov. 22, 2026, so the layout never changes from page to page. The masthead keeps one row: the site's name, then "Report a problem" and Contribute, then the search control, Print and Download as icons, the theme button, the Settings button and, at the far right, a "Sign in" link that becomes a profile button once someone has signed in (Trevor asked for these on Nov. 22, 2026). Downloads and the changelog are linked from the footer (see [Masthead](#6-components)). Nobody needs to sign in to read the site or to make a request. The footer of every page carries "Request a correction or removal," the requests log, the licenses and the three version numbers ([requests.md](../docs/requests.md#where-the-request-starts)).
 
-Peacemaking has its own menu item and landing page, because the project
-treats it as its own track, not a variant of ADR
-([charter, commitment 3](../docs/charter.md#3-peacemaking-as-its-own-track)).
+Peacemaking has its own menu item and landing page, because the project treats it as its own track, not a variant of ADR ([charter, commitment 3](../docs/charter.md#3-peacemaking-as-its-own-track)).
 
 ### Addresses
 
-Addresses reuse the identifiers in the repository, which never change once
-published ([repository layout, identifiers](../docs/repository-layout.md#identifiers)).
+Addresses reuse the identifiers in the repository, which never change once published ([repository layout, identifiers](../docs/repository-layout.md#identifiers)).
 
 | Page | Address |
 | --- | --- |
@@ -162,12 +119,7 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 
 ### Nation pages
 
-Every nation and community with a record in `content/tribes/` gets its own
-page, built from that record at build time: 575 federally recognized nations
-today, plus the Native Hawaiian community and territorial Indigenous peoples
-in their own groups, never described as tribes. Trevor asked for this so that
-each page makes it easy to report information and to show what is
-distinctive about each nation.
+Every nation and community with a record in `content/tribes/` gets its own page, built from that record at build time: 575 federally recognized nations today, plus the Native Hawaiian community and territorial Indigenous peoples in their own groups, never described as tribes. Trevor asked for this so that each page makes it easy to report information and to show what is distinctive about each nation.
 
 **Order of sections.** Every page uses the same order, so readers and the nation's staff always know where to look, as the Tribal Law Gateway does with its fixed sections on each nation's page. Trevor chose this layout, the "reference page", from three mockups on Nov. 22, 2026:
 
@@ -221,13 +173,9 @@ State outlines are written into the page once and shared by the views (`NationMa
 
 **Missing information.** Empty fields are left out rather than shown as "unknown," so a page never suggests a nation lacks something it may simply not have published. The page has no "Add it" line for missed sources (Trevor, Nov. 22, 2026); readers offer them through Contribute or Report a problem in the masthead.
 
-**Restricted and withdrawn records.** A record marked restricted gets no page
-at all. A withdrawn record's page says only that the material was withdrawn
-at the nation's request ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
+**Restricted and withdrawn records.** A record marked restricted gets no page at all. A withdrawn record's page says only that the material was withdrawn at the nation's request ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
 
-**In print.** The book's profiles follow the same order, so the website and
-Part III read alike. The page template uses relative units and no fixed page
-size, because the book's trim size is not yet decided (project choice).
+**In print.** The book's profiles follow the same order, so the website and Part III read alike. The page template uses relative units and no fixed page size, because the book's trim size is not yet decided (project choice).
 
 ## 6. Components
 
@@ -245,10 +193,8 @@ size, because the book's trim size is not yet decided (project choice).
 
 - An icon sits beside words. The only icon-only controls are the search icon, the theme button, the Settings cog, the profile button (Trevor asked for the search icon, the cog and the profile icon on Nov. 22, 2026), the Star button, the Follow button, the X that closes the search panel and the Modal's close button (an X, asked for by Trevor the same day). They share the `icon-button` class: no box around them, since the icon shows it is a control (Trevor, Nov. 22, 2026), with a 44px target, a faint fill on hover and the usual focus ring. Each carries an `aria-label` that names it and a matching `title` tooltip, because Lucide hides icons from screen readers by default.[^lucide-a11y] The text alignment choice in Settings also shows only symbols, as Trevor asked on Nov. 22, 2026; each symbol is a radio button with a hidden name that screen readers read, and the picked choice's name and hint show in words just below it.
 - Beside body text, icons are 20 px with `strokeWidth` 1.75, which matches the stem of Atkinson Hyperlegible Next Regular (about 1.5 px; project measurement). Standalone controls use 24 px and the default 2 px stroke.
-- Never use icons that read as Native imagery, even where Lucide offers them:
-  `feather`, `tent`, `tent-tree` and `bow-arrow`.
-- In print, Typst draws `currentColor` as black, which suits the black-and-white
-  interior.
+- Never use icons that read as Native imagery, even where Lucide offers them: `feather`, `tent`, `tent-tree` and `bow-arrow`.
+- In print, Typst draws `currentColor` as black, which suits the black-and-white interior.
 - The one exception is the GitHub mark (`GithubMark.svelte`), GitHub's own logo from Primer Octicons (MIT License, `LICENSES/Octicons.txt`), because Lucide no longer ships brand icons. It appears only beside the word "GitHub" on a link that goes there (see Links stay on the site, below).
 
 **Links stay on the site.** Three standing rules from Trevor, Nov. 22, 2026:
@@ -259,7 +205,7 @@ size, because the book's trim size is not yet decided (project choice).
 
 `tools/check-built-site.mjs` enforces the first two: it fails when a link to github.com names GitHub neither in its words nor just before them, and when a page's text says "decision record" with a number or names a `.md` file.
 
-**Password fields.** Every password field is `src/lib/components/PasswordInput.svelte`: the field with a "Show" button beside it, carrying Lucide's `eye` icon (`eye-off` and "Hide" while the password shows), as Trevor asked on Nov. 22, 2026. It follows the GOV.UK password input: the button names its action for screen readers ("Show password", "Hide password"), a polite announcement says "Your password is visible" or "hidden", and the field goes back to hidden when the form is sent so the browser does not store the password as ordinary text.[^govuk-password] Without scripts the button does not appear.
+**Password fields.** Every password field is `src/lib/components/PasswordInput.svelte`: a borderless icon button inside the field's right edge, Lucide's `eye` (`eye-off` while the password shows), with no word beside it, as Trevor asked on Nov. 22, 2026. It follows the GOV.UK password input: the button names its action for screen readers ("Show password", "Hide password"), a polite announcement says "Your password is visible" or "hidden", and the field goes back to hidden when the form is sent so the browser does not store the password as ordinary text.[^govuk-password] Without scripts the button does not appear.
 
 **Modal.** One shared modal dialog, `src/lib/components/Modal.svelte`, for every dialog on the site. It is the browser's own `<dialog>` opened as a modal: focus moves into it, stays in it, Escape closes it, and the page behind is inert.[^mdn-dialog] With sections it has two panels, as Trevor asked on Nov. 21, 2026: a list of sections on the left and the chosen section on the right. The list follows the WAI-ARIA tabs pattern, so arrow keys move between sections and Home and End jump to the first and last.[^apg-tabs] The chosen section is marked by a bar and bold type as well as a fill. On narrow screens the list wraps above the section. A dialog may have buttons along the bottom, as Print does; Settings has none, because the X at the top closes it (Trevor, Nov. 22, 2026).
 
@@ -321,17 +267,11 @@ When the model code's provision pages are built, their parts join the list in `s
 
 **Notices.** One style for status: "This is a working draft" on the home page; "Model text, not law in force" with the version and last change on every section, following legislation.gov.uk's status box; "You are offline; showing content as of [date]" when offline. A notice is a `role="note"` block, not an alert.
 
-**Section heading.** Track label, then the section number at display size in
-the track color, then the title as the page's `h1`.
+**Section heading.** Track label, then the section number at display size in the track color, then the title as the page's `h1`.
 
-**Alternatives.** A tab list: one tab per alternative plus "Compare side by
-side." Arrow keys move between tabs (WAI-ARIA tabs pattern). With scripts
-off, all alternatives are shown in order, each under its own heading.
+**Alternatives.** A tab list: one tab per alternative plus "Compare side by side." Arrow keys move between tabs (WAI-ARIA tabs pattern). With scripts off, all alternatives are shown in order, each under its own heading.
 
-**Placeholder.** `{{nation.name}}` renders as "[Name of Nation]" with the
-placeholder fill and rule. The variable's identifier is available to assistive
-technology through a visually hidden label such as "placeholder: name of the
-nation."
+**Placeholder.** `{{nation.name}}` renders as "[Name of Nation]" with the placeholder fill and rule. The variable's identifier is available to assistive technology through a visually hidden label such as "placeholder: name of the nation."
 
 **Glossary link and hover card.** A dotted underline marks a defined term. The card opens on hover after a short delay and on keyboard focus, stays open while the pointer is over it, and closes with Escape, as WCAG 1.4.13 requires for content on hover or focus.[^wcag-1413] The link itself goes to the full entry, so the card is never the only way to the content. The card shows the term, its expansion and a one-line summary, holds no links of its own (`role="tooltip"`, tied to the link with `aria-describedby`), and appears for a mouse pointer or keyboard focus, not a touch, since a tap follows the link. Summaries come from `/glossary/terms.json`, which the glossary pages are built with, fetched once when first needed. The Previews setting turns cards off.
 
@@ -347,11 +287,9 @@ nation."
 
 Each note links to the original page and, where the source record has one, its archived copy with the capture date, for example "archived copy, Nov. 21, 2026"; the Citations setting can hide either link. The margin layout planned for wide screens (the note beside the line) is not built; the window beside the marker does its work.
 
-**Panels.** Outlined (`line`) or filled (`surface`). One panel per purpose;
-the design does not chop pages into rows of identical cards (project choice).
+**Panels.** Outlined (`line`) or filled (`surface`). One panel per purpose; the design does not chop pages into rows of identical cards (project choice).
 
-**Summary list.** A `<dl>` of label and value pairs for nation facts and for
-"Check your request," following the GOV.UK summary list.
+**Summary list.** A `<dl>` of label and value pairs for nation facts and for "Check your request," following the GOV.UK summary list.
 
 **Contact card.** A nation's government contacts are shown as cards in `src/lib/components/ContactCard.svelte`, approved by Trevor on Nov. 22, 2026, from a mockup (project files, `design/contact-card/`). The websites come first, in a card of their own, because a website is not part of an office's address (Trevor, Nov. 22, 2026); a website listed for an agency rather than the nation names that agency under it. Then each office is one card, named once in its header in title case ("Tribal Government Office"), so the office is not repeated on every line. Inside, each contact is a row with a Lucide icon and a label (Physical address, Mailing address, Phone, Fax, Email) beside its value; in a narrow card the value moves under its label. An address shows its street and its town on two lines, and a street address is itself the link to a Google Maps search, with no separate "Open in Google Maps" link (Trevor, Nov. 22, 2026); a post office box is not linked, since a map cannot find it. A mailing address is always written out, even when it repeats the physical address, so each row can be read or copied on its own (Trevor, Nov. 22, 2026). A website shows without `https://www.`, and an old directory address that now leads to the nation's site is shown as a note on that site rather than as a second website. Links that leave the site (websites and map searches) open in a new tab, with an external-link icon and hidden words for screen readers ("opens in a new tab," or "opens in Google Maps in a new tab"). The rules that read the office from each contact's label are in `src/lib/contact-card.ts`: a label such as "Arctic Village council office: …" or "Office of Hawaiian Affairs (state agency)" makes its own card; labels that only name the list a contact came from are dropped, because the Sources section already lists it. Each row ends with the marker of its source (see Citations below); a marker standing outside a sentence gets a 24 pixel target, as WCAG 2.2, 2.5.8 asks.
 
@@ -359,7 +297,7 @@ the design does not chop pages into rows of identical cards (project choice).
 
 **Tables.** For data a reader compares across rows. Wide tables scroll inside their own box, so the page never scrolls sideways. Data tables use the `DataTable` component, the project's own, not a data grid library (`spikes/tables/REPORT.md`; Trevor chose this on 2026-11-20). The page is built with every row in order, as a plain table that reads the same without scripts. Once scripts run, sortable column headers become buttons, following the WAI-ARIA Authoring Practices sortable table example (the sorted header carries `aria-sort`), and a table can get a search box with a live count, though public lists now leave finding to the site search. Trevor chose filterable, downloadable tables on Nov. 23, 2026, so a page can also turn on three tools. Filters give each column marked filterable a menu of its values, with how many rows each leaves; a cell may list several values, such as a nation's states. "Download CSV" saves the rows as shown, after search, filters and sort, with each link's address in a column of its own. A shareable table writes the search, sort and filters into the page address as the reader changes them and adds "Copy link"; each parameter starts with the table's identifier, such as `nations-c-native-nation.states=Alaska`. The nations index pages use all three; the map's tables offer the download. Sorting and search follow one set of rules in `src/lib/tables/table-definition.ts`: case and accents are ignored, numbers inside text sort as numbers, and empty cells stay last. A long list is split into short pages rather than drawn as one long table or a virtual-scrolling one: the table spike measured that a virtual-scrolling grid left most rows out of the page, so find-in-page, printing and reading without scripts could not reach them (`spikes/tables/REPORT.md`, "SVAR Svelte DataGrid: rejected").
 
-**Find recourse.** `/nations/recourse` lists the dispute resolution provisions read from Native nations' own law codes, court rules and ordinances (`research/tribal-law/provisions.csv`), the first of the data views Trevor chose on Nov. 23, 2026. It lists only provisions about dispute resolution, each once, and never one the second reader marked to drop (`src/lib/server/recourse.ts`). Each result shows the nation, its states and the citation, linked to the site's own copy of the law or, when there is none, the original address. Under them come a one or two sentence summary and tags for the method, the kind of dispute, where it happens, how it starts and the result. A result no second reader has checked carries a "Read once" tag, and a notice above the list says so and that no nation has reviewed it. Filters sit in a column on the left: method, kind of dispute, where it happens, how it starts, result, state or territory, recognition and checking. Each is a fieldset of checkboxes with how many rows each choice would leave given the other filters. Choices widen the list within a filter and narrow it across filters (`src/lib/recourse.ts`). Long filters show eight choices and "Show all". Picked choices show as chips above the results, each removable. The choices go into the page address (`?method=Mediation&subject=Family`), and "Copy link" and "Download CSV" sit beside the count. On a phone the filters fold behind a "Filters" button. The page is built with the first 25 rows; the browser loads every row from `/nations/recourse/provisions.json` and shows 25 more at a time. Without scripts the first 25 rows show, with links to the whole list as CSV and JSON, which the Download menu offers too. The recognition filter never offers "No federal recognition" (Trevor, Nov. 23, 2026). The site search thread's shared filter panel will replace this page's own filter code once it is merged.
+**Find recourse.** `/nations/recourse` lists the dispute resolution provisions read from Native nations' own law codes, court rules and ordinances (`research/tribal-law/provisions.csv`), the first of the data views Trevor chose on Nov. 23, 2026. It lists only provisions about dispute resolution, each once, and never one the second reader marked to drop (`src/lib/server/recourse.ts`). Each result shows the nation, its states and the citation, linked to the site's own copy of the law or, when there is none, the original address. Under them come a one or two sentence summary and tags for the method, the kind of dispute, where it happens, how it starts and the result. A result no second reader has checked carries a "Read once" tag, and a notice above the list says so and that no nation has reviewed it. Filters sit in a column on the left, under a box for searching the text: method, kind of dispute, where it happens, how it starts, result, state or territory, recognition and checking. They are the site's shared filter panel, the same as the advanced search's (`FilterPanel.svelte`, `src/lib/search-filters.ts`). Each filter folds, and each answer shows how many rows it would leave given the other filters. Answers that would leave none are hidden unless ticked. Choices widen the list within a filter and narrow it across filters. The answers come from the rows, largest first, with the states in reading order in a box of their own with a field for finding one (`src/lib/recourse.ts`). Ticked choices show as chips above the results, each removable. The choices go into the page address (`?method=Mediation&subject=Family`), and "Copy link" and "Download CSV" sit beside the count. On a phone the filters fold behind a "Filters" button. The page is built with the first 25 rows; the browser loads every row from `/nations/recourse/provisions.json` and shows 25 more at a time. Without scripts the first 25 rows show, with links to the whole list as CSV and JSON, which the Download menu offers too. The recognition filter never offers "No federal recognition" (Trevor, Nov. 23, 2026).
 
 **Bar charts.** Trevor chose bar charts on Nov. 23, 2026. `BarChart.svelte` draws horizontal bars, so long names read on one line, as plain HTML built ahead of time: it reads without scripts and prints. Each bar is a list item holding its name and number, which is what a screen reader reads; the drawn bar is decoration, in the link color, with gridlines on round numbers (`src/lib/bar-chart.ts`). A bar with an address is a link, and the bar turns the action color when its link is hovered or focused. A chart may draw only its first bars and offer "Show all". Under every chart, "Show as a table" opens the same numbers in a sortable table with a CSV download. A source line closes the figure. The Data and charts page, `/nations/data`, holds the first six: provisions by method, by kind of dispute and by state (each bar opens Find recourse with that filter), courts and forums by kind, constitutions found, and full gaming compacts by whether a dispute with the state goes to binding arbitration. The essay editor's planned Chart block is meant to use the same data shape.
 
@@ -369,41 +307,23 @@ the design does not chop pages into rows of identical cards (project choice).
 
 **Recognition badges.** Trevor chose these on Nov. 22, 2026, from the mockups in project files `design/recognition-markers/` (wording set 2). They appear under a nation's name, in the nations lists, in search results (the masthead panel and the search page) and in the map's lists. Each recognition status a nation holds is a badge with a Lucide icon and a short label. "Federal" is filled (`landmark`). "State: Massachusetts" is outlined (`map-pin`), one badge for each state. "Petitioning" has a dashed outline (`file-clock`). "Territorial: Guam" (`scroll-text`) and "Congress" for the Native Hawaiian community (`scale`) are outlined on the panel color. Fill, border style, icon and words tell them apart, so color is never the only cue. No federal recognition gets no badge (Trevor: "if no federal, just don't say anything"). A nation that is only state recognized shows one state badge, and a nation with no recognized status shows none. The federal answer comes first, then each state in alphabetical order. Each badge's tooltip and screen-reader text is the full wording, such as "State recognized (Massachusetts)". In the nations lists each badge keeps its short legal basis beside it. Search results and the map's lists show the badges alone, since the legal basis is one step away on the nation's page. The nation page's At a glance box keeps the full wording of every status, "No federal recognition" included, with its legal basis and sources. On paper a filled badge prints as an outline. Code: `src/lib/recognition-badges.ts` and `RecognitionBadges.svelte`.
 
-**Forms.** Labels above fields; hints under labels; "(optional)" in the label;
-large choice buttons for single choices; errors stated in words beside the
-field and in a summary at the top.
+**Forms.** Labels above fields; hints under labels; "(optional)" in the label; large choice buttons for single choices; errors stated in words beside the field and in a summary at the top.
 
-**Buttons.** Primary (filled `action`) for the one main action on a page;
-quiet (outlined `control-border`) for the rest. Labels say what happens, and
-an action keeps its name through a flow: "Make a request" leads to "Send
-request" and "Request sent" (project choice).
+**Buttons.** Primary (filled `action`) for the one main action on a page; quiet (outlined `control-border`) for the rest. Labels say what happens, and an action keeps its name through a flow: "Make a request" leads to "Send request" and "Request sent" (project choice).
 
-**Art reserved.** A dashed box in `art-reserved` with a line saying what will
-go there. When art arrives, the box becomes a figure with a credit line naming
-the artist and nation, as the artist chooses.
+**Art reserved.** A dashed box in `art-reserved` with a line saying what will go there. When art arrives, the box becomes a figure with a credit line naming the artist and nation, as the artist chooses.
 
 **Footer.** Request a correction or removal; requests log; charter; changelog; downloads; licenses by material; GitHub (with the GitHub mark, in place of "Source files", as Trevor asked on Nov. 22, 2026); the three version numbers. Trevor asked on Nov. 22, 2026 that it carry no notes beyond the version line: the "model text, not law in force" note and the colophon about colors, fonts and icons were removed. The font and icon licenses stay listed under Licenses by material (LICENSE.md).
 
 ## 7. Design tokens
 
-Tokens live in [design-tokens.json](design-tokens.json) in the Design Tokens
-Community Group format.[^dtcg] The build turns each into a CSS custom
-property, for example `--color-paper`, so a theme changes in one file. Token
-names are spelled out, like every identifier in the project
-([style guide, section 7](../docs/style-guide.md#7-files-encoding-and-code)).
+Tokens live in [design-tokens.json](design-tokens.json) in the Design Tokens Community Group format.[^dtcg] The build turns each into a CSS custom property, for example `--color-paper`, so a theme changes in one file. Token names are spelled out, like every identifier in the project ([style guide, section 7](../docs/style-guide.md#7-files-encoding-and-code)).
 
 ### Color
 
-The palette is deep teal and burnt orange on warm paper. Trevor chose the two
-hues on Nov. 20, 2026, after finding the first pass (white, near-black and
-blue) stale and somewhat sad. It is still a placeholder: the commissioned
-Native art may change it (see [Color and Native design](#color-and-native-design)
-below and [section 13](#13-open-questions-and-next-steps), item 5).
+The palette is deep teal and burnt orange on warm paper. Trevor chose the two hues on Nov. 20, 2026, after finding the first pass (white, near-black and blue) stale and somewhat sad. It is still a placeholder: the commissioned Native art may change it (see [Color and Native design](#color-and-native-design) below and [section 13](#13-open-questions-and-next-steps), item 5).
 
-Every text color passes WCAG's 4.5:1 minimum for text[^wcag-143] on the
-backgrounds it is used on, and control borders pass the 3:1 minimum for
-non-text contrast.[^wcag-1411] Ratios were computed with the WCAG relative
-luminance formula (project calculation).
+Every text color passes WCAG's 4.5:1 minimum for text[^wcag-143] on the backgrounds it is used on, and control borders pass the 3:1 minimum for non-text contrast.[^wcag-1411] Ratios were computed with the WCAG relative luminance formula (project calculation).
 
 | Token | Light | Ratio | Dark | Ratio |
 | --- | --- | --- | --- | --- |
@@ -427,48 +347,18 @@ Visited links keep the link color: Trevor asked on Nov. 22, 2026, that links not
 
 Rules (project choice):
 
-- Color marks meaning and structure: the masthead band, links, the two
-  tracks, the main action, placeholders, focus, errors and the map classes.
-  Reading text stays dark ink on warm paper.
-- Color is never the only cue. Links are underlined; tracks are named;
-  compared text is struck through or underlined as well as highlighted;
-  map tiles print their counts.
-- The track colors are close in lightness, so they rely on hue and on their
-  labels. Orange and teal remain distinct for the common red-green color
-  vision differences, which is why the pair suits the tracks (project
-  analysis), but the words "ADR track" and "Peacemaking track" always appear.
+- Color marks meaning and structure: the masthead band, links, the two tracks, the main action, placeholders, focus, errors and the map classes. Reading text stays dark ink on warm paper.
+- Color is never the only cue. Links are underlined; tracks are named; compared text is struck through or underlined as well as highlighted; map tiles print their counts.
+- The track colors are close in lightness, so they rely on hue and on their labels. Orange and teal remain distinct for the common red-green color vision differences, which is why the pair suits the tracks (project analysis), but the words "ADR track" and "Peacemaking track" always appear.
 
 ### Color and Native design
 
-The lead author asked the project to look into "Native American color
-theory." The research session
-[2026-11-21-color-research](../research/sessions/2026/2026-11-21-color-research.md)
-found that there is no single one, and that some color sets are sacred:
+The lead author asked the project to look into "Native American color theory." The research session [2026-11-21-color-research](../research/sessions/2026/2026-11-21-color-research.md) found that there is no single one, and that some color sets are sacred:
 
-- "There is no single American Indian culture or language."[^nk360] Color
-  meanings belong to each nation. In the Arizona Department of Education's
-  *Tribal Seals and Flags*, the same color means different things for
-  different nations, and its entry for the White Mountain Apache Tribe
-  describes "the four Sacred colors, black, blue, yellow and white."[^arizona-seals] The Navajo
-  Nation describes its flag's colors as those of "the four sacred mountains
-  that define balance and order in Diné life," inspired by "the sacred
-  practice of sandpainting."[^navajo-flag]
-- The International Indigenous Design Charter, written "for both
-  non-Indigenous and Indigenous designers," asks for design that is
-  Indigenous led and community specific, and warns that "secret and sacred
-  material is often restricted under customary law and therefore unsuitable
-  for publication."[^design-charter]
-- Sadie Red Wing (Lakota, Spirit Lake Nation): "If you do not know what you
-  are communicating by using Native American symbols, don't use them," and
-  "You cannot represent the tribes of California with New Mexican
-  anything."[^red-wing]
-- Native-led organizations use saturated, contemporary color. The live
-  stylesheets of the Native Governance Center and the National Congress of
-  American Indians, for example, pair deep teals with warm reds, clay or
-  marigold (observed in each site's CSS, not in a published brand
-  guide).[^org-palettes] The artist Jeffrey Gibson, who represented the
-  United States at the 2024 Venice Biennale, has said, "We've been dismissed
-  as garish and too much because of our use of color."[^gibson]
+- "There is no single American Indian culture or language."[^nk360] Color meanings belong to each nation. In the Arizona Department of Education's *Tribal Seals and Flags*, the same color means different things for different nations, and its entry for the White Mountain Apache Tribe describes "the four Sacred colors, black, blue, yellow and white."[^arizona-seals] The Navajo Nation describes its flag's colors as those of "the four sacred mountains that define balance and order in Diné life," inspired by "the sacred practice of sandpainting."[^navajo-flag]
+- The International Indigenous Design Charter, written "for both non-Indigenous and Indigenous designers," asks for design that is Indigenous led and community specific, and warns that "secret and sacred material is often restricted under customary law and therefore unsuitable for publication."[^design-charter]
+- Sadie Red Wing (Lakota, Spirit Lake Nation): "If you do not know what you are communicating by using Native American symbols, don't use them," and "You cannot represent the tribes of California with New Mexican anything."[^red-wing]
+- Native-led organizations use saturated, contemporary color. The live stylesheets of the Native Governance Center and the National Congress of American Indians, for example, pair deep teals with warm reds, clay or marigold (observed in each site's CSS, not in a published brand guide).[^org-palettes] The artist Jeffrey Gibson, who represented the United States at the 2024 Venice Biennale, has said, "We've been dismissed as garish and too much because of our use of color."[^gibson]
 
 What the project does (project analysis):
 
@@ -480,72 +370,31 @@ What the project does (project analysis):
 
 ### Type
 
-One family, Atkinson Hyperlegible Next, from the Braille Institute, which
-offers it in seven weights with italics and says it covers more than 150
-languages.[^atkinson] Its letterforms are built to be told apart, which suits
-an accessibility-first reference (project analysis). The site
-uses 400, 600 and 700 only.
+One family, Atkinson Hyperlegible Next, from the Braille Institute, which offers it in seven weights with italics and says it covers more than 150 languages.[^atkinson] Its letterforms are built to be told apart, which suits an accessibility-first reference (project analysis). The site uses 400, 600 and 700 only.
 
 - **Scale:** 1.25 from a 16 px body (12 points, the browser default): 14, 16, 20, 25, 31.2 and 39.2 px. Trevor asked on Nov. 22, 2026 for a smaller standard size than the earlier 18 px, which read large on a laptop; readers can still change it with the text size setting.
 - **Line height:** 1.6 for reading, 1.25 for headings.
-- **Measure:** at most 58ch, inside the 45 to 90 character range Practical
-  Typography recommends.[^butterick] A `ch` is the width of the digit zero,
-  which in Atkinson Hyperlegible Next is about 1.5 times an average letter, so
-  58ch holds about 86 characters of English text (measured in Chromium at
-  18 px, Nov. 21, 2026). The earlier 68ch held about 101, past the range.
-- **Case:** sentence case for every heading and label
-  ([style guide, section 6](../docs/style-guide.md#6-mechanics)); no text in
-  all capitals.
-- **Fallbacks:** Noto Sans, Noto Sans Cherokee, Noto Sans Osage and Noto Sans
-  Canadian Aboriginal, loaded with `unicode-range` only when a page contains
-  characters Atkinson Hyperlegible Next lacks. Names are written exactly as
-  each nation writes them, including the ʻokina in Hawaiʻi
-  ([style guide, section 3](../docs/style-guide.md#3-writing-about-native-nations-and-people)).
-  Text in a Native language carries a `lang` attribute where the language is
-  known.
+- **Measure:** at most 58ch, inside the 45 to 90 character range Practical Typography recommends.[^butterick] A `ch` is the width of the digit zero, which in Atkinson Hyperlegible Next is about 1.5 times an average letter, so 58ch holds about 86 characters of English text (measured in Chromium at 18 px, Nov. 21, 2026). The earlier 68ch held about 101, past the range.
+- **Case:** sentence case for every heading and label ([style guide, section 6](../docs/style-guide.md#6-mechanics)); no text in all capitals.
+- **Fallbacks:** Noto Sans, Noto Sans Cherokee, Noto Sans Osage and Noto Sans Canadian Aboriginal, loaded with `unicode-range` only when a page contains characters Atkinson Hyperlegible Next lacks. Names are written exactly as each nation writes them, including the ʻokina in Hawaiʻi ([style guide, section 3](../docs/style-guide.md#3-writing-about-native-nations-and-people)). Text in a Native language carries a `lang` attribute where the language is known.
 - **Reader's choice:** in Settings a reader can switch to Noto Serif or OpenDyslexic. Noto Serif was picked over Literata and Source Serif 4 because it covers ʻ, ō, ʷ and ʔ and matches the Noto fallbacks. OpenDyslexic was asked for by Trevor; a study found it did not improve reading rate or accuracy for students with dyslexia,[^wery] so the site makes no claim about it. Both are under the SIL Open Font License; OpenDyslexic reserves its name, and the site serves its files whole and unchanged, which the license FAQ says keeps the name usable.[^ofl-faq] Details are in the research session [2026-11-21-reading-settings-fonts](../research/sessions/2026/2026-11-21-reading-settings-fonts.md). Each choice points the `--font-family-reading` custom property at another font token, so the map labels follow too.
-- **Hosting:** the font files are served by the site itself, not by a
-  third-party font service, so offline reading works and no reader's address
-  goes to another company (project choice). Its license is the SIL Open Font
-  License, kept beside the files.
+- **Hosting:** the font files are served by the site itself, not by a third-party font service, so offline reading works and no reader's address goes to another company (project choice). Its license is the SIL Open Font License, kept beside the files.
 
 ### Space, radius and layout
 
-An eight-step space scale from 4 px to 72 px; 6 px corners on controls and
-10 px on panels; a 44 px minimum target. All values are in
-[design-tokens.json](design-tokens.json).
+An eight-step space scale from 4 px to 72 px; 6 px corners on controls and 10 px on panels; a 44 px minimum target. All values are in [design-tokens.json](design-tokens.json).
 
-The page uses the whole width of the screen, with a gutter that grows from
-16 px on a phone to 48 px on a wide screen. Until Nov. 21, 2026 it was held
-to 1,240 px and centered, which left wide empty margins on large screens;
-Trevor asked for them to go. The trade-off (project choice): running text
-stays at the reading measure, because long lines are harder to read and to
-track back to the start of the next line,[^butterick] while tables, maps,
-panels of contents, the masthead and the footer use the full width. Where a
-page has more than text, such as a nation's page, a second column beside the
-text uses the space; the `side-column` token (40 rem) caps it.
+The page uses the whole width of the screen, with a gutter that grows from 16 px on a phone to 48 px on a wide screen. Until Nov. 21, 2026 it was held to 1,240 px and centered, which left wide empty margins on large screens; Trevor asked for them to go. The trade-off (project choice): running text stays at the reading measure, because long lines are harder to read and to track back to the start of the next line,[^butterick] while tables, maps, panels of contents, the masthead and the footer use the full width. Where a page has more than text, such as a nation's page, a second column beside the text uses the space; the `side-column` token (40 rem) caps it.
 
 ## 8. Themes
 
-- **Choices:** Light and Dark, switched by one button in the masthead that
-  shows a sun in the light theme and a moon in the dark theme (Trevor, Nov. 21,
-  2026). Until the reader presses it, the device's `prefers-color-scheme`
-  setting decides.[^mdn-color-scheme] Once pressed, the choice stays on that
-  device. "Match this device" in Settings, or clearing the site's data,
-  returns to the device's setting.
-- **How:** the root element carries `data-theme="light"` or `"dark"` when the
-  reader picks one; otherwise the `prefers-color-scheme` media query decides.
-  A small inline script sets the attribute before the page paints, so there is
-  no flash of the wrong theme. The choice is stored on the device only.
-- **Print:** a print stylesheet uses the light theme, drops the navigation and
-  margin tools, and prints each note's full citation and each link's address.
-  Readers choose which parts print in the Print dialog (section 6, "Print").
+- **Choices:** Light and Dark, switched by one button in the masthead that shows a sun in the light theme and a moon in the dark theme (Trevor, Nov. 21, 2026). Until the reader presses it, the device's `prefers-color-scheme` setting decides.[^mdn-color-scheme] Once pressed, the choice stays on that device. "Match this device" in Settings, or clearing the site's data, returns to the device's setting.
+- **How:** the root element carries `data-theme="light"` or `"dark"` when the reader picks one; otherwise the `prefers-color-scheme` media query decides. A small inline script sets the attribute before the page paints, so there is no flash of the wrong theme. The choice is stored on the device only.
+- **Print:** a print stylesheet uses the light theme, drops the navigation and margin tools, and prints each note's full citation and each link's address. Readers choose which parts print in the Print dialog (section 6, "Print").
 
 ## 9. Accessibility
 
-The floor is WCAG 2.2 level AA (project choice). The GOV.UK Design System,
-whose patterns the request flow borrows, states that it is "fully compliant"
-with WCAG 2.2 AA.[^govuk-a11y] Criteria the design leans on:
+The floor is WCAG 2.2 level AA (project choice). The GOV.UK Design System, whose patterns the request flow borrows, states that it is "fully compliant" with WCAG 2.2 AA.[^govuk-a11y] Criteria the design leans on:
 
 | Criterion | What the design does |
 | --- | --- |
@@ -559,57 +408,34 @@ with WCAG 2.2 AA.[^govuk-a11y] Criteria the design leans on:
 
 Also: a "Skip to main content" link; one `h1` per page and headings in order; landmarks (`header`, `nav` with labels, `main`, `aside`, `footer`); a visible yellow focus with an ink ring; motion only in answer to an action, and none when `prefers-reduced-motion` is set or the reader picks Reduce motion (see Motion in section 6);[^mdn-reduced-motion] every page readable and every form usable without scripts.
 
-**Testing.** Automated checks with axe-core run on every built page in
-continuous integration, in both themes. Automated tools find only part of the
-problems, so each template is also checked by hand with a keyboard, with
-screen readers (NVDA with Firefox, VoiceOver with Safari), at 200 percent and
-400 percent zoom, and in Windows high contrast mode (project choice). An
-accessibility statement is published at `/about/accessibility`.
+**Testing.** Automated checks with axe-core run on every built page in continuous integration, in both themes. Automated tools find only part of the problems, so each template is also checked by hand with a keyboard, with screen readers (NVDA with Firefox, VoiceOver with Safari), at 200 percent and 400 percent zoom, and in Windows high contrast mode (project choice). An accessibility statement is published at `/about/accessibility`.
 
 ## 10. Offline and installable
 
-- **Install:** a web app manifest and a service worker make the site
-  installable.
+- **Install:** a web app manifest and a service worker make the site installable.
 - **Caching:** the app shell and Atkinson Hyperlegible Next are cached first; Noto fallbacks and the fonts picked in Settings are cached the first time they are used, and picking a font downloads all its weights at once so it also works on pages read later offline. A new build keeps saved font files whose names (which carry a hash of the content) have not changed. Sections, profiles, the glossary and sources use stale-while-revalidate, following web.dev's and MDN's caching guidance.[^webdev-caching][^mdn-caching] Cache names carry the build version, so each build replaces the old copy once the reader updates (see Updates below). Saved files that did not change are carried into the new copy rather than downloaded again.
 - **What is saved:** every page a reader opens is saved as they read it. In Settings, under Data (also on `/offline`), the site lists each collection, how many of its pages are saved, the space they take, and about how much saving the rest would take (asked for by Trevor on Nov. 22, 2026), with a button to save the rest and one to remove them. The collections are Nation profiles, Glossary and Other pages; the model code joins them when its pages are built. A collection the reader saves is "kept": it is saved again from each new version. The section shows the space the whole site uses, from the Storage API's estimate, and offers "Keep saved pages when space runs low," which asks the browser for persistent storage, since otherwise the browser may clear the site's data under storage pressure.[^mdn-storage] Saving runs six files at a time inside the service worker, with a progress bar. The sizes come from `/offline-sizes.json`, which `tools/write-offline-sizes.mjs` writes after each build by adding up the built pages and data files of each collection; offline, or without the file, the sizes are left out.
-- **Never cached:** any record with `sensitivity.restricted: true`, which is
-  never published, exported, cached offline or served by any API
-  ([data model, sensitivity flags](../docs/data-model.md#sensitivity-flags)).
-  When a record is withdrawn, the next service worker update deletes it from
-  every saved copy.
+- **Never cached:** any record with `sensitivity.restricted: true`, which is never published, exported, cached offline or served by any API ([data model, sensitivity flags](../docs/data-model.md#sensitivity-flags)). When a record is withdrawn, the next service worker update deletes it from every saved copy.
 - **Offline notice:** "You are offline. Showing content as of [version, date]."
 
 ### Updates
 
-How a reader who keeps the site on a device gets a new edition (project
-design, asked for by Trevor on Nov. 21, 2026). Each build has its own build
-version, the website version plus the build time, and the service worker
-names its cache after it. The three track versions come from release-please
-(`content/version.txt`, `site/version.txt`, `pdf/version.txt`), so a build can
-change the website without changing the content.
+How a reader who keeps the site on a device gets a new edition (project design, asked for by Trevor on Nov. 21, 2026). Each build has its own build version, the website version plus the build time, and the service worker names its cache after it. The three track versions come from release-please (`content/version.txt`, `site/version.txt`, `pdf/version.txt`), so a build can change the website without changing the content.
 
 1. **Detect.** The browser checks the service worker script on every navigation, and a new build always changes it, because the script contains the build version.[^webdev-lifecycle] SvelteKit also checks the build version when the tab regains focus, on data responses and on a timer; when it sees a new build, the page asks the browser to check the worker at once.[^sveltekit-updated] The worker never saves SvelteKit's version file (`/_app/version.json`), so that check always reaches the server; a saved copy would hide a new build from an open tab until the next check. "Check for updates" in Settings does both on demand.
 2. **Install in the background.** The new worker saves the new build's scripts, styles and core pages into its own cache and then waits. It downloads only what changed, as Trevor asked on Nov. 22, 2026. Every page carries its build version, so every page differs from the last build's copy even when nothing on it changed: in a test, two builds of the same files differed in all 1,108 pages, and only there. So each build publishes `/offline-fingerprints.json`, a fingerprint of every file a reader may save, taken with the build version blanked out (`tools/write-offline-sizes.mjs`, `src/lib/offline-fingerprints.ts`). The new worker takes the same fingerprint of each saved file in the old cache. When the two match, it writes the new version into the old copy and saves that instead of downloading it; the result is exactly the file the server holds. Script, style and font files carry a hash of their content in their names, so one with the same name is copied as it is. Saved pages that changed are listed and downloaded on the next page load. This covers every saved page, not only kept collections, so a page the reader opened still opens offline after an update. In a test of a one-line change to one nation's page, a reader keeping Nation profiles made 8 requests (about 1 MB) instead of 3,155 (121 MB). It does not take over on its own: taking over mid-visit would mix two versions in one page.[^webdev-lifecycle] While it waits, the old worker keeps saving pages it reads only if they come from its own build (each built page names its build), so saved copies never point at scripts they lack.
-3. **Withdrawals first.** As soon as the new worker installs, every saved
-   page that is not in the new build is deleted from the saved copies, without
-   waiting for the reader. A nation's request to withdraw material therefore
-   reaches every device on its next visit online
-   ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
+3. **Withdrawals first.** As soon as the new worker installs, every saved page that is not in the new build is deleted from the saved copies, without waiting for the reader. A nation's request to withdraw material therefore reaches every device on its next visit online ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
 4. **Ask.** A small card fixed at the bottom left of the window (not a block in the page, as Trevor asked on Nov. 22, 2026) says what the update brings, read from `/edition.json` on the network: "It brings content version 0.3.0; you are reading 0.2.0," or that only the website changed. Below that it lists the pull requests merged since the build the reader is running ("#91 Rework Settings controls…"), up to eight and then "and N more," as Trevor asked on Nov. 22, 2026: each build reads its recent merges from git (`vite.config.ts`, `src/lib/recent-changes.ts`) and serves them in `/edition.json`. A build from a shallow clone may list fewer. When both builds' fingerprints can be read, it also says whether the update changes, keeps or removes the page being read. That comparison leaves out the names of the page's script files, so a change to the scripts alone does not count. It offers "Update now," "What changed" (the changelog) and "Later." It is a notice, not an alert, so it does not take focus.
 5. **Apply.** "Update now" tells the waiting worker to take over (`skipWaiting`), and the page reloads once it has.[^mdn-skip-waiting] "Later" hides the notice for the visit; the browser applies the update by itself once every tab of the site has closed.[^webdev-lifecycle] The card appears only once the new worker has finished installing, so nothing is left to download when the reader presses the button. Taking over is kept to the bare minimum, because the browser holds back the reload until the new worker has taken over. Trevor asked on Nov. 22, 2026 for the button to apply at once. In a test with Nation profiles saved, tidying the old cache while taking over held the reload for about 20 seconds; with the tidying moved after it, the new page loaded in about 1.3 seconds. Once it has taken over, the new worker carries forward, as in step 2, any page the reader opened while it waited, then deletes the old cache, keeping font files that have not changed and the list of kept collections. Requests from the page to the worker (saving, the Data tab) wait for that tidying; loading a page does not, except offline, when a page not yet carried forward is looked for again once it ends.
 6. **Save again.** On the next page load, the page asks the new worker to save the saved pages that changed and whatever the kept collections still lack from the new build, and a status line shows the progress. If the connection drops, it continues on a later visit.
-7. **What the reader sees offline.** The offline notice names the content
-   version of the copy being read, and Settings shows the content and website
-   versions and the build date, so a stale copy is always labeled.
+7. **What the reader sees offline.** The offline notice names the content version of the copy being read, and Settings shows the content and website versions and the build date, so a stale copy is always labeled.
 
 **Downloaded books.** A PDF or EPUB on the reader's device cannot be updated by the site. Each edition will print its edition number and the address `/downloads?edition=<number>`; that page compares the number with the current print version and says whether a newer edition is out, with a link to what changed. The print templates do not print the address yet.
 
 ## 11. Performance and hosting
 
 - **Stack:** SvelteKit and TypeScript with `@sveltejs/adapter-cloudflare`, deployed to Cloudflare Workers with static assets, as Cloudflare's SvelteKit guide describes.[^cloudflare-sveltekit] Content pages are prerendered at build time; only the request form, and later sign-in and review, run on the server.
-- **Budgets (project choice):** under 100 KB of JavaScript compressed on a
-  section page; no map library in the browser (the map is a static SVG, per
-  the map spike); fonts subset to the characters used.
+- **Budgets (project choice):** under 100 KB of JavaScript compressed on a section page; no map library in the browser (the map is a static SVG, per the map spike); fonts subset to the characters used.
 - **Map:** drawn at build time with d3-geo, with a table holding the same data (map tool spike, project files `spikes/map/REPORT.md`). The site has one map, at `/nations/map`, with buttons above it that switch between views; Trevor asked on 2026-11-22 for one map with views rather than separate maps, so that more views can be added over time. The buttons are a tab list, the chosen view's address carries `?view=`, and a link to a row in a hidden view's table (such as a region linked from a nation's page) opens that view. Without scripts every view is shown, one after another, and print shows them all.
   - **Nations by state** shades states by how many nations have a recorded presence there, and draws no nation's land ([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)).
   - **Bureau of Indian Affairs regions** draws the twelve regions from the Bureau's own boundary file (`geography/`), with a note that they are the Bureau's administrative areas, not nations' lands. Trevor chose on 2026-11-21 to draw the official outlines even though the Navajo Region's follows the Navajo Nation's land.
@@ -627,27 +453,17 @@ The interface follows the style guide's voice: plain verbs, sentence case, "they
 
 - Name things by what readers know: "Make a request," not "Submit a ticket."
 - Errors say what went wrong and how to fix it, in the interface's voice.
-- Empty states say what will appear and how to add it, for example "No
-  requests yet."
-- The project never writes in a nation's voice. Profile pages say what a
-  source records ("The nation's code provides"), and the review panel says
-  plainly when the nation has not yet reviewed the page.
+- Empty states say what will appear and how to add it, for example "No requests yet."
+- The project never writes in a nation's voice. Profile pages say what a source records ("The nation's code provides"), and the review panel says plainly when the nation has not yet reviewed the page.
 
 ## 13. Open questions and next steps
 
-1. **Research with real readers.** Short interviews or usability sessions with
-   a few people in each role, especially Tribal court staff and peacemakers,
-   before the templates are built. Nothing here has been tested with them.
+1. **Research with real readers.** Short interviews or usability sessions with a few people in each role, especially Tribal court staff and peacemakers, before the templates are built. Nothing here has been tested with them.
 2. **Advisor review** of the request flow and the nation profile wording.
 3. **Icon set:** settled: Lucide ([section 6, Icons](#6-components)).
-4. **Art:** sizes for the cover, part openers and the home page space, to
-   give to the art contest.
-5. **Color, second pass.** Trevor's review on Nov. 20, 2026 found the first
-   palette stale and somewhat sad; he chose teal and burnt orange, now in the
-   tokens. Judge it again once the site is built, and set the final palette
-   with the commissioned Native artist ([Color and Native design](#color-and-native-design)).
-6. **Template builder:** how placeholders and alternatives become a nation's
-   draft ordinance.
+4. **Art:** sizes for the cover, part openers and the home page space, to give to the art contest.
+5. **Color, second pass.** Trevor's review on Nov. 20, 2026 found the first palette stale and somewhat sad; he chose teal and burnt orange, now in the tokens. Judge it again once the site is built, and set the final palette with the commissioned Native artist ([Color and Native design](#color-and-native-design)).
+6. **Template builder:** how placeholders and alternatives become a nation's draft ordinance.
 
 ## References
 

@@ -630,58 +630,19 @@ limits: >-
   "None found" for 160 nations is not a finding that a nation has no written constitution.
 ---
 
-Output: the catalog in [`research/constitutions/`](../../constitutions/README.md)
-(coverage by nation, documents and articles), 219 version histories in
-`content/documents/` (391 after the Nov. 22 change below), 571 source records
-(617 after it), and a `document_version` on 330
-profile facts that cite a text a later version replaced, naming the version
-they describe. The scripts are in `scripts/constitutions/`.
+Output: the catalog in [`research/constitutions/`](../../constitutions/README.md) (coverage by nation, documents and articles), 219 version histories in `content/documents/` (391 after the Nov. 22 change below), 571 source records (617 after it), and a `document_version` on 330 profile facts that cite a text a later version replaced, naming the version they describe. The scripts are in `scripts/constitutions/`.
 
-Method: governing-document links already in the profiles were the starting
-point; each nation's own site was then crawled for constitution links, and the
-National Indian Law Library, the Tribal Law and Policy Institute list, the
-Bureau of Indian Affairs files on the Internet Archive and (on Nov. 22) the
-Library of Congress copies the profiles cite were added. Each
-document was read (text layer, page text, or optical character recognition)
-and split into articles; a word match tied articles to tracked topics. The
-University of Oklahoma pages were classified and dated by rule; every other
-document was classified by an AI reviewer from its opening, closing and
-headings. Copies of one text were grouped, versions ordered by date, and the
-articles of each nation's newest text summarized by AI reviewers.
+Method: governing-document links already in the profiles were the starting point; each nation's own site was then crawled for constitution links, and the National Indian Law Library, the Tribal Law and Policy Institute list, the Bureau of Indian Affairs files on the Internet Archive and (on Nov. 22) the Library of Congress copies the profiles cite were added. Each document was read (text layer, page text, or optical character recognition) and split into articles; a word match tied articles to tracked topics. The University of Oklahoma pages were classified and dated by rule; every other document was classified by an AI reviewer from its opening, closing and headings. Copies of one text were grouped, versions ordered by date, and the articles of each nation's newest text summarized by AI reviewers.
 
 Findings:
 
-- 128 nations have a current text on their own site; 48 more have a dated
-  text whose currency is not known; 174 have only the University of Oklahoma
-  pages, the Library of Congress copies or the Bureau's files, which are often
-  decades old.
-- 219 nations have two or more dated versions, 630 versions in all. The
-  Bureau's files hold many texts no other source had, especially for Alaska
-  villages and California rancherias.
-- In the newest texts, the AI reviewers confirmed 134 articles on judicial
-  power, 99 on dispute resolution, 75 on election disputes, 58 on sovereign
-  immunity and 11 on peacemaking or traditional dispute resolution.
-- 212 distinct texts say amendments need the Secretary of the Interior's approval; 3
-  say that requirement was removed.
-- The Native Village of Eek's council wrote in 2013 that it has no written
-  constitution; it is recorded as the nation's statement.
-- Many documents were filed under the wrong nation by the sources (Tanana
-  Chiefs Conference articles under several villages; Montana and Wyoming
-  scans under one nation); 83 were moved to the nation the text names. The
-  Lumbee Tribe's profile cites two Library of Congress items that are the
-  Native Village of Buckland's constitution and charter.
+- 128 nations have a current text on their own site; 48 more have a dated text whose currency is not known; 174 have only the University of Oklahoma pages, the Library of Congress copies or the Bureau's files, which are often decades old.
+- 219 nations have two or more dated versions, 630 versions in all. The Bureau's files hold many texts no other source had, especially for Alaska villages and California rancherias.
+- In the newest texts, the AI reviewers confirmed 134 articles on judicial power, 99 on dispute resolution, 75 on election disputes, 58 on sovereign immunity and 11 on peacemaking or traditional dispute resolution.
+- 212 distinct texts say amendments need the Secretary of the Interior's approval; 3 say that requirement was removed.
+- The Native Village of Eek's council wrote in 2013 that it has no written constitution; it is recorded as the nation's statement.
+- Many documents were filed under the wrong nation by the sources (Tanana Chiefs Conference articles under several villages; Montana and Wyoming scans under one nation); 83 were moved to the nation the text names. The Lumbee Tribe's profile cites two Library of Congress items that are the Native Village of Buckland's constitution and charter.
 
 Ruled out: the Federal Register (few constitution notices).
 
-Nov. 22, 2026, after review on the website: the lead author asked that every
-nation with a constitution found show it on its page, including nations with
-a single version, that version names be cleaned up, and that no AI summaries
-of constitutions be kept ("No reason for it"). The build now writes a history
-record for every nation with a text (391; undated texts get versions without
-dates), names versions by year and kind, puts printed titles in title case in
-the source records, and keeps only each clause's article and heading. The
-three Blackfeet files the lead author pulled by hand that day are copies of
-texts already in the catalog: the 1935 constitution and the 1936 charter match
-the University of Oklahoma pages captured on Nov. 21, and the "last amended
-1978" print is a near copy (three-word-run overlap 0.88 to 0.94) of the 1978
-and 1998 texts already recorded, so no version was added.
+Nov. 22, 2026, after review on the website: the lead author asked that every nation with a constitution found show it on its page, including nations with a single version, that version names be cleaned up, and that no AI summaries of constitutions be kept ("No reason for it"). The build now writes a history record for every nation with a text (391; undated texts get versions without dates), names versions by year and kind, puts printed titles in title case in the source records, and keeps only each clause's article and heading. The three Blackfeet files the lead author pulled by hand that day are copies of texts already in the catalog: the 1935 constitution and the 1936 charter match the University of Oklahoma pages captured on Nov. 21, and the "last amended 1978" print is a near copy (three-word-run overlap 0.88 to 0.94) of the 1978 and 1998 texts already recorded, so no version was added.

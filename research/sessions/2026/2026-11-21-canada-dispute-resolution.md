@@ -111,30 +111,19 @@ limits: >-
 
 # Dispute resolution among First Nations, Inuit and Métis in Canada
 
-Findings are in
-[research/analyses/2026-11-21-canada-dispute-resolution.md](../../analyses/2026-11-21-canada-dispute-resolution.md).
+Findings are in [research/analyses/2026-11-21-canada-dispute-resolution.md](../../analyses/2026-11-21-canada-dispute-resolution.md).
 
 ## How the search ran
 
-Four helpers each took one slice and wrote their findings, with the exact
-quotation, address and saved file, to a private scratch folder. Every helper
-quotation was checked by script against the saved file; quotations that did
-not match were dropped.
+Four helpers each took one slice and wrote their findings, with the exact quotation, address and saved file, to a private scratch folder. Every helper quotation was checked by script against the saved file; quotations that did not match were dropped.
 
 The lead session corrected three things in the helper results:
 
-- A helper read the repeal of Criminal Code s. 717 as moving alternative
-  measures to Part XXII.1. Part XXII.1 is remediation agreements; the new
-  provisions are Part XXII.2 (ss. 715.44-715.56), added by S.C. 2026, c. 19.
-- Ipeelee quotations were first pinned to headnote pages. The note quotes
-  the reasons (paras. 59-60) instead.
-- A helper summarized band membership as decided only by the Registrar. The
-  Indian Act separates registration (Registrar, s. 14.2) from band membership,
-  which a band may control with its own review mechanism (s. 10).
+- A helper read the repeal of Criminal Code s. 717 as moving alternative measures to Part XXII.1. Part XXII.1 is remediation agreements; the new provisions are Part XXII.2 (ss. 715.44-715.56), added by S.C. 2026, c. 19.
+- Ipeelee quotations were first pinned to headnote pages. The note quotes the reasons (paras. 59-60) instead.
+- A helper summarized band membership as decided only by the Registrar. The Indian Act separates registration (Registrar, s. 14.2) from band membership, which a band may control with its own review mechanism (s. 10).
 
 ## What was ruled out
 
-- Secondary summaries of Mitchell v. M.N.R. were found but not used; the note
-  relies on Desautel's description of it until the decision itself is read.
-- No law review article comparing United States and Canadian Indigenous
-  legal status was read in this session.
+- Secondary summaries of Mitchell v. M.N.R. were found but not used; the note relies on Desautel's description of it until the decision itself is read.
+- No law review article comparing United States and Canadian Indigenous legal status was read in this session.
