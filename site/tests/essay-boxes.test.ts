@@ -75,7 +75,8 @@ describe('case and law boxes', () => {
 
 	it('marks a citation-only paragraph, or the older dash form, as the attribution', () => {
 		const html = renderEssay(body, library).html;
-		expect(html).toContain('<p class="essay-attribution">');
+		// An attribution that cites one source names it, for "Show the paragraph" (quote-context-view.ts).
+		expect(html).toContain('<p class="essay-attribution" data-quote-source="worcester-v-georgia"');
 		expect(html.match(/essay-attribution/g)).toHaveLength(2);
 		const older = renderEssay('> It is so.\n\n— [@worcester-v-georgia]\n', library).html;
 		expect(older).toContain('essay-attribution');

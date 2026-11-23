@@ -6,7 +6,7 @@
 	import { isSha256 } from '#lib/sha256.ts';
 	import Download from '@lucide/svelte/icons/download';
 	import { buildTime, formatBytes } from '#lib/offline-collections.ts';
-	import { citationDate, mapFiles, pageFormats } from '#lib/page-downloads.ts';
+	import { citationDate, fileExtension, mapFiles, pageFormats } from '#lib/page-downloads.ts';
 	import { checksumsAddress, checksumsTextAddress, downloadChecksums, fileName, verifyLink, verifySection, type ChecksumEntry } from '#lib/checksums.ts';
 	import type { PageProps } from './$types';
 
@@ -97,17 +97,17 @@
 	const fromPages = $derived([
 		{
 			page: 'Any page',
-			offers: [{ what: 'The page itself, to print, edit or keep as plain text', formats: ['PDF', ...pageFormats.map((format) => format.format)] }]
+			offers: [{ what: 'The page itself, to print, edit or keep as plain text', formats: ['.pdf', ...pageFormats.map((format) => `.${format.extension}`)] }]
 		},
 		{
 			page: 'A nation’s page',
 			offers: [
-				{ what: 'The nation’s record, every fact with its source', formats: ['JSON'] },
-				{ what: 'The page’s sources, for a citation manager', formats: ['CSL JSON', 'RIS', 'BibTeX'] },
-				{ what: 'The government offices’ contacts, for an address book', formats: ['vCard'] },
+				{ what: 'The nation’s record, every fact with its source', formats: ['.json'] },
+				{ what: 'The page’s sources, for a citation manager: Citation Style Language JSON, RIS and BibTeX', formats: ['.json', '.ris', '.bib'] },
+				{ what: 'The government offices’ contacts, for an address book', formats: ['.vcf'] },
 				{
 					what: `Under “Laws and agreements”: the nation’s constitutions, laws and court opinions we hold, for ${numbers.format(data.nationsWithDocuments)} nations`,
-					formats: ['ZIP']
+					formats: ['.zip']
 				}
 			]
 		}
@@ -203,7 +203,7 @@
 						{#each file.links as link (link.href)}
 							<a class="button button-quiet" href={link.href} download>
 								<Download size={18} aria-hidden="true" />
-								{link.format}<span class="visually-hidden">, {file.label}</span>
+								{fileExtension(link.href)}<span class="visually-hidden"> ({link.format}), {file.label}</span>
 							</a>
 						{/each}
 					</p>
@@ -214,8 +214,8 @@
 							{#each file.links as link (link.href)}
 								{#if hashes[link.href]}
 									<li>
-										<span class="hint">SHA-256{file.links.length > 1 ? ` (${link.format})` : ''}</span>
-										<a href={verifyLink(hashes[link.href].sha256, fileName(link.href))}>Check your copy<span class="visually-hidden"> of the {link.format} file, {file.label}</span></a>
+										<span class="hint">SHA-256{file.links.length > 1 ? ` (${fileExtension(link.href)})` : ''}</span>
+										<a href={verifyLink(hashes[link.href].sha256, fileName(link.href))}>Check your copy<span class="visually-hidden"> of the {fileExtension(link.href)} file, {file.label}</span></a>
 										<code>{hashes[link.href].sha256}</code>
 									</li>
 								{/if}
@@ -280,7 +280,7 @@
 		Compare the result with the SHA-256 shown beside the download, or with the full lists: <a href={checksumsTextAddress} download>checksums.txt</a>, in the form <code>sha256sum -c</code> reads, and <a href={checksumsAddress} download>checksums.json</a>. Both list every download and every copy of a document this site holds today.
 	</p>
 	<p class="hint">
-		A match shows the file is the one published here. It does not show that what the file says is current: a nation may have amended a law since its copy was made. <a href="/copies">Copies of documents</a> gives the date each copy was made and where it was published. If a nation asks us to remove a document, it leaves the site and these files at the next update; a file you already downloaded cannot be changed, so check this page for the current version.
+		A match shows the file is the one published here. It does not show that what the file says is current: a nation may have amended a law since its copy was made. <a href="/copies">Copies of documents</a> gives the date each copy was made and where it was published. A file you already downloaded does not change, so check this page for the current version.
 	</p>
 
 	<h2 id="never" class="group-heading">Never in a download</h2>

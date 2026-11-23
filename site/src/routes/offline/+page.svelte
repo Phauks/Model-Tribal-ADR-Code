@@ -44,7 +44,7 @@
 			what: 'Nations’ constitutions, laws and court opinions we hold',
 			where: 'Saved, one nation at a time',
 			saved: true,
-			why: 'Shared until a nation asks us to remove one. A removed document also leaves your device the next time you are online. All of them together come to several gigabytes, so each nation’s page has its own button.'
+			why: 'A removed document also leaves your device the next time you are online. All of them together come to several gigabytes, so each nation’s page has its own button.'
 		},
 		{
 			what: 'Documents held by the National Indian Law Library',

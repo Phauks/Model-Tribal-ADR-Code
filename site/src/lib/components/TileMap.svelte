@@ -11,7 +11,7 @@
 	}
 
 	/**
-	 * Places the map can go to by name. The states and territories are where they really are on the map, so each has a button rather than a box drawn at its own scale (Trevor, 2026-11-22: every territory shown and named on its own). Bounds are west, south, east, north in degrees.
+	 * Places the map can go to by name. The states and territories are where they really are on the map, so the map page's Go to menu names each rather than drawing a box at its own scale (Trevor, 2026-11-22: every territory shown and named on its own). Bounds are west, south, east, north in degrees.
 	 */
 	export const tileMapPlaces: { name: string; bounds: [number, number, number, number] }[] = [
 		{ name: 'The 48 contiguous states', bounds: [-125, 24.4, -66.9, 49.4] },
@@ -44,7 +44,7 @@
 		data: given,
 		camera = $bindable(),
 		by = 'nation',
-		shape = 'flat',
+		shape = $bindable('flat'),
 		onready,
 		onfail,
 		onselect
@@ -56,7 +56,7 @@
 		shape?: 'flat' | 'globe';
 		/** What the map shows, for screen readers, such as "Nations by State". */
 		label: string;
-		/** One nation's land areas, for its page: the map shows only those, fitted to them, with no place buttons or table to go to. Without it the map shows every nation and fetches its data from /nations/map/tile-map.json. */
+		/** One nation's land areas, for its page: the map shows only those, fitted to them, with no table to go to. Without it the map shows every nation and fetches its data from /nations/map/tile-map.json. */
 		data?: TileMapData;
 		camera?: TileMapCamera;
 		onready?: () => void;
@@ -67,6 +67,23 @@
 
 	const oneNation = $derived(given !== undefined);
 
+	/** Lucide's map and globe icons, drawn in the text color so they follow the theme. */
+	const lucide = (body: string) => `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${body}</svg>`;
+	const shapeIcons = {
+		flat: lucide('<path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/>'),
+		globe: lucide('<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>')
+	};
+
+	// Changing the view, or showing it by state, swaps the layers on the same map, so it does not reload (Trevor, 2026-11-23).
+	$effect(() => {
+		void view;
+		void by;
+		const words = `Map: ${label}. Use the arrow keys to move and the plus and minus keys to zoom.`;
+		if (!ready || !map) return;
+		void restyleMap?.();
+		map.getCanvas().setAttribute('aria-label', `${words} ${oneNation ? 'The list under the map names the same areas.' : 'The table beside the map lists the same places.'}`);
+	});
+
 	// The shape can change while the map is open; the style built for each theme carries it too.
 	$effect(() => {
 		const type = shape === 'globe' ? 'globe' : 'mercator';
@@ -75,6 +92,8 @@
 
 	let container: HTMLDivElement | undefined = $state();
 	let map: MapLibreMap | undefined;
+	/** Redraws the map's layers for the view, the theme and the shape, keeping the map, its place and its tiles. */
+	let restyleMap: (() => Promise<void>) | undefined;
 	let ready = $state(false);
 
 	let dataLoading: Promise<TileMapData> | undefined;
@@ -426,9 +445,11 @@
 		else location.hash = anchor;
 	}
 
-	function showPlace(bounds: [number, number, number, number]): void {
+	/** Moves the map to one of the places in tileMapPlaces, by name; the map page's Go to menu calls it. */
+	export function showPlace(name: string): void {
+		const place = tileMapPlaces.find((entry) => entry.name === name);
 		// The move takes its time from the motion tokens, so Reduce motion makes it a jump (src/lib/motion.ts).
-		map?.fitBounds(bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+		if (place) map?.fitBounds(place.bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
 	}
 
 	/** The box around a nation's areas. An area across the 180th meridian (west greater than east) is boxed by its dot alone. */
@@ -480,8 +501,36 @@
 				map.touchZoomRotate.disableRotation();
 				map.keyboard.disableRotation();
 				map.addControl(new maplibre.NavigationControl({ showCompass: false }), 'top-right');
+				// Flat or globe, as two buttons under the zoom buttons, inside the map (Trevor, 2026-11-23).
+				const shapeButtons = document.createElement('div');
+				shapeButtons.className = 'maplibregl-ctrl maplibregl-ctrl-group map-shape';
+				shapeButtons.setAttribute('role', 'group');
+				shapeButtons.setAttribute('aria-label', 'Map shape');
+				const shapeChoices: { value: 'flat' | 'globe'; label: string; icon: string }[] = [
+					{ value: 'flat', label: 'Flat map', icon: shapeIcons.flat },
+					{ value: 'globe', label: 'Globe, every place at its true size', icon: shapeIcons.globe }
+				];
+				const pressed = () => {
+					for (const button of shapeButtons.querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.shape === shape));
+				};
+				for (const choice of shapeChoices) {
+					const button = document.createElement('button');
+					button.type = 'button';
+					button.dataset.shape = choice.value;
+					button.title = choice.label;
+					button.setAttribute('aria-label', choice.label);
+					button.innerHTML = choice.icon;
+					button.addEventListener('click', () => {
+						shape = choice.value;
+						pressed();
+					});
+					shapeButtons.append(button);
+				}
+				pressed();
+				map.addControl({ onAdd: () => shapeButtons, onRemove: () => shapeButtons.remove() }, 'top-right');
 				map.addControl(new maplibre.AttributionControl({ compact: false }), 'bottom-right');
-				map.addControl(new maplibre.ScaleControl({ unit: 'imperial' }), 'top-left');
+				// The distance scale sits at the bottom of the map (Trevor, 2026-11-23).
+				map.addControl(new maplibre.ScaleControl({ unit: 'imperial' }), 'bottom-left');
 				const sameInWords = oneNation ? 'The list under the map names the same areas.' : 'The table beside the map lists the same places.';
 				map.getCanvas().setAttribute('aria-label', `Map: ${label}. Use the arrow keys to move and the plus and minus keys to zoom. ${sameInWords}`);
 
@@ -522,7 +571,7 @@
 				};
 				// A nation's page has no table to go to, so its map has nothing to select.
 				for (const entry of oneNation ? [] : interactive) {
-					if (!map.getLayer(entry.layer) && !style.layers.some((layer) => layer.id === entry.layer)) continue;
+					// Every layer a view may have is listened to, since changing the view swaps the layers on the same map.
 					map.on('click', entry.layer, (event) => {
 						const found = event.features?.[0];
 						if (found) openRow(entry.anchor(found.properties ?? {}));
@@ -553,6 +602,7 @@
 				const restyle = async () => {
 					if (map) map.setStyle(await styleFor(data));
 				};
+				restyleMap = restyle;
 				const themeWatcher = new MutationObserver(() => void restyle());
 				themeWatcher.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 				const scheme = matchMedia('(prefers-color-scheme: dark)');
@@ -574,13 +624,6 @@
 </script>
 
 <div class="tile-map" class:ready bind:this={container} role="region" aria-label="Map: {label}"></div>
-{#if ready && !oneNation}
-	<nav class="places" aria-label="Go to a part of the map">
-		{#each tileMapPlaces as place (place.name)}
-			<button type="button" onclick={() => showPlace(place.bounds)}>{place.name}</button>
-		{/each}
-	</nav>
-{/if}
 
 <style>
 	.tile-map {
@@ -604,6 +647,23 @@
 
 	.tile-map :global(.maplibregl-ctrl-group button + button) {
 		border-top: 1px solid var(--color-control-border);
+	}
+
+	/* The distance scale sits above the credit line, which runs along the bottom. */
+	.tile-map :global(.maplibregl-ctrl-bottom-left) {
+		bottom: 2.25rem;
+	}
+
+	.tile-map :global(.map-shape button) {
+		display: grid;
+		place-items: center;
+		color: var(--color-ink);
+	}
+
+	/* The shape on screen is marked as the site marks a chosen option. */
+	.tile-map :global(.map-shape button[aria-pressed='true']) {
+		background: var(--color-action);
+		color: var(--color-action-text);
 	}
 
 	.tile-map :global(.maplibregl-ctrl-attrib),
@@ -642,32 +702,8 @@
 		}
 	}
 
-	.places {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-1);
-		margin-top: var(--space-2);
-	}
-
-	.places button {
-		min-height: var(--layout-target-minimum);
-		padding: var(--space-1) var(--space-3);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-		color: var(--color-ink);
-		font: inherit;
-		font-size: var(--font-size-small);
-		cursor: pointer;
-	}
-
-	.places button:hover {
-		text-decoration: underline;
-	}
-
 	@media print {
-		.tile-map,
-		.places {
+		.tile-map {
 			display: none;
 		}
 	}

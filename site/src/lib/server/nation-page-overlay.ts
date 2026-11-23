@@ -22,6 +22,7 @@ import {
 } from '../nation-page-changes.ts';
 import { imageViewerAttributeText } from '../image-viewer.ts';
 import { readableDate } from '../readable-date.ts';
+import { claimedPage } from '../review-status.ts';
 import type { ChangeRow, LiveChanges } from './nation-page-changes.ts';
 
 /** The empty places on a nation's page that changes can fill. */
@@ -98,11 +99,17 @@ export interface PageClaim {
 	claimedSince: string;
 }
 
-/** The claimed line, in place of the build's "Unclaimed" line (data-build-status). */
+/**
+ * The claimed line, in place of the build's "Unclaimed" line (data-build-status).
+ * The same markup as src/lib/components/ReviewStatus.svelte: the badge with a
+ * check, then the link. The date the project confirmed the team is in the
+ * badge's tooltip, not in a sentence under it (Trevor, Nov. 23, 2026).
+ */
 function claimedLine(nationIdentifier: string, claim: PageClaim): string {
 	const check =
 		'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
-	return `<style>[data-build-status]{display:none!important}</style><p class="nation-claim small" data-print-part="reviewStatus"><span class="visually-hidden">Who keeps this page:</span><span class="nation-claim-badge">${check}Claimed by the nation</span> <span class="muted">People the nation chose keep this page. The project confirmed them with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}. Problems you report go to them and to the project.</span> <a class="no-print" href="/changes?page=${encodeURIComponent(`/nations/${nationIdentifier}`)}">Changes to this page</a></p>`;
+	const confirmed = `Confirmed with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}`;
+	return `<style>[data-build-status]{display:none!important}</style><p class="review-status small" data-print-part="reviewStatus"><span class="visually-hidden">Who keeps this page:</span><span class="review-badge review-badge-verified" title="${confirmed}">${check}${claimedPage.label}</span> <a class="no-print" href="/changes?page=${encodeURIComponent(`/nations/${nationIdentifier}`)}">Changes to this page</a></p>`;
 }
 
 function slotsFor(nationIdentifier: string, live: LiveChanges, claim: PageClaim | undefined): Partial<Record<PageSlot, string>> {

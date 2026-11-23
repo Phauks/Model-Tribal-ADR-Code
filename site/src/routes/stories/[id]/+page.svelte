@@ -5,6 +5,7 @@
 	import FactGroups from '#lib/components/FactGroups.svelte';
 	import GlancePanel from '#lib/components/GlancePanel.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
+	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import type { PageProps } from './$types';
 
@@ -17,6 +18,10 @@
 	);
 	const quoted = $derived(story.excerpts.filter((excerpt) => excerpt.text));
 	const cited = $derived(story.excerpts.filter((excerpt) => !excerpt.text));
+	/** The word count of the text shown in full, else the length the record gives (Trevor, Nov. 23, 2026). */
+	const length = $derived(
+		story.fullText ? `${story.fullText.words.toLocaleString('en-US')} ${story.fullText.words === 1 ? 'word' : 'words'}` : story.length
+	);
 	const nationNames = $derived(story.nations.map((nation) => nation.name).join(', '));
 	/** The story's key facts, for At a glance (site/DESIGN.md, "Record pages"). */
 	const glanceFacts = $derived(
@@ -28,13 +33,13 @@
 			},
 			{ field: 'community', label: 'Community', items: story.community ? [{ text: story.community }] : [] },
 			{ field: 'kind', label: 'Kind', items: [{ text: story.kind }] },
-			{ field: 'length', label: 'Length of the telling', items: story.length ? [{ text: story.length }] : [] },
+			{ field: 'length', label: 'Length', items: length ? [{ text: length }] : [] },
 			{
 				field: 'methods',
-				label: 'Ways of resolving disputes',
-				items: story.methods.length > 0 ? [{ text: story.methods.join(', ') }] : []
+				label: 'Methods',
+				items: story.methods.length > 0 ? [{ text: story.methods.join(', '), badges: story.methods }] : []
 			},
-			{ field: 'topics', label: 'Topics', items: story.topics.length > 0 ? [{ text: story.topics.join(', ') }] : [] }
+			{ field: 'topics', label: 'Topics', items: story.topics.length > 0 ? [{ text: story.topics.join(', '), badges: story.topics }] : [] }
 		].filter((group) => group.items.length > 0)
 	);
 </script>
@@ -64,21 +69,16 @@
 			<p class="lead"><span lang={title.language}>{title.text}</span><CitationMarks marks={title.citations} /></p>
 		{/each}
 
-		{#if story.awaitsReview}
-			<div class="notice" role="note">
-				<p>
-					<strong>Not yet reviewed by the nation.</strong> {nationNames} {story.nations.length === 1 ? 'has' : 'have'} not reviewed this page. It is shown while the nation is asked to review it. If this story should not be here, <a href={removal}>ask for it to be removed</a>. It is taken out of public view before the request is reviewed.
-				</p>
-			</div>
-		{:else}
-			<p class="small no-print">Should this story not be here? <a href={removal}>Ask for it to be removed</a>.</p>
-		{/if}
+		<!-- Where the story stands with the nation: the same status line as a nation's page (src/lib/review-status.ts). -->
+		<ReviewStatus status={story.review} description="Review by the nation:" data-print-part="reviewStatus">
+			<a class="no-print" href={removal}>Request removal</a>
+		</ReviewStatus>
 	{/snippet}
 
 	{#if story.fullText}
-		<Collapsible heading="The story" identifier="story-heading">
+		<Collapsible heading="Content" identifier="story-heading">
 			<p class="small muted">
-				{story.fullText.credit} ({story.fullText.locator})<CitationMarks marks={story.fullText.citations} />. {story.fullText.basisNote}
+				{story.fullText.credit} ({story.fullText.locator})<CitationMarks marks={story.fullText.citations} />.
 			</p>
 			<blockquote class="full-text">
 				{#each story.fullText.paragraphs as paragraph, index (index)}
@@ -119,7 +119,7 @@
 		</Collapsible>
 	{/if}
 
-	<Collapsible heading="Where it is told" identifier="tellings-heading">
+	<Collapsible heading="Source" identifier="tellings-heading">
 		{#if story.tellings.length > 1}
 			<p>The nation’s own telling is listed first, where there is one.</p>
 		{/if}
@@ -137,12 +137,12 @@
 							</div>
 						{/if}
 						<div>
-							<dt>Whose voice</dt>
+							<dt>Medium</dt>
 							<dd>{telling.authority}</dd>
 						</div>
 						{#if telling.locator}
 							<div>
-								<dt>Where in it</dt>
+								<dt>Pin cite</dt>
 								<dd>{telling.locator}</dd>
 							</div>
 						{/if}

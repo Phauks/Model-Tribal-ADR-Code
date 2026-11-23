@@ -103,7 +103,12 @@
 			rows={table.rows}
 			defaultSort={{ key: 'value', direction: 'descending' }}
 			download={chart.identifier}
-		/>
+		>
+			{#snippet cell(row)}
+				{@const href = row.cells.label?.href}
+				{#if href}<a {href}>{row.cells.value?.text}</a>{:else}{row.cells.value?.text}{/if}
+			{/snippet}
+		</DataTable>
 	</div>
 	<figcaption class="small muted">Source: {chart.source}</figcaption>
 </figure>

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { displayName } from '../src/lib/nation-labels.ts';
-import { citationDate, pageCitation, pageDownloads } from '../src/lib/page-downloads.ts';
+import { citationDate, fileExtension, pageCitation, pageDownloads } from '../src/lib/page-downloads.ts';
 import { sourceKeys } from '../src/lib/server/source-keys.ts';
 
 describe('pageDownloads', () => {
@@ -25,6 +25,22 @@ describe('pageDownloads', () => {
 		const onScreen = pageDownloads('/nations/map', { file: 'gaming-by-state', label: 'Gaming by State' }).files[0];
 		expect(onScreen.label).toBe('The Gaming by State table');
 		expect(onScreen.links.map((link) => link.link)).toEqual(['/nations/map/tables/gaming-by-state.csv']);
+	});
+
+	it('offers every Data and charts table on its own, as CSV and JSON', () => {
+		const files = pageDownloads('/nations/data').files;
+		expect(files).toHaveLength(6);
+		expect(files[0].label).toBe('Provisions by method');
+		expect(files[0].links.map((link) => link.link)).toEqual([
+			'/nations/data/tables/provisions-by-method.csv',
+			'/nations/data/tables/provisions-by-method.json'
+		]);
+	});
+
+	it('names a file by its extension, as the format buttons show it', () => {
+		expect(fileExtension('/nations/cherokee-nation/sources.bib')).toBe('.bib');
+		expect(fileExtension('/help/forms/notice.DOCX?x=1#y')).toBe('.docx');
+		expect(fileExtension('/downloads')).toBe('');
 	});
 
 	it('offers the index pages the list, and the glossary its terms', () => {

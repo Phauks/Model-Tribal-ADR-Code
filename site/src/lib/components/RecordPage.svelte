@@ -77,10 +77,21 @@
 		border-top: 0;
 	}
 
-	.record-introduction,
-	.record-details,
-	.record-sources {
+	/*
+	 * Running text is held to the reading measure; headings, tables, lists
+	 * set in columns and other wide blocks are not, so they can use the room
+	 * under the glance column once the text passes it (Trevor, Nov. 23,
+	 * 2026). A label and value list keeps its label column plus the measure
+	 * for the values. :where() keeps these at no specificity, so a block's
+	 * own width wins.
+	 */
+	:global(:where(.record-introduction) > :where(:not(h1, h2))),
+	:global(:where(.record-details, .record-sources) :where(p, ul, ol, dl, blockquote)) {
 		max-width: var(--layout-measure);
+	}
+
+	:global(:where(.record-details, .record-sources) :where(.summary-list)) {
+		max-width: calc(14rem + var(--layout-measure));
 	}
 
 	/*
@@ -93,51 +104,41 @@
 	}
 
 	/*
-	 * Two columns whenever the page's own column has room for the text at a
-	 * readable width beside a glance column at least 17 rem wide. The page
+	 * Beside the text whenever the page's own column has room for the text at
+	 * a readable width and a glance column at least 17 rem wide. The page
 	 * follows the width of <main> (a size container), not the window, so it
 	 * changes when the sidebar is shown or hidden. At the threshold the text
-	 * column gives up width first, down to about 45 characters, and the
-	 * glance column never drops below 17 rem; on a 1,280 pixel laptop with the
+	 * gives up width first, down to about 45 characters, and the glance
+	 * column never drops below 17 rem; on a 1,280 pixel laptop with the
 	 * sidebar open the text keeps its full measure (measured Nov. 22, 2026).
+	 *
+	 * The glance column floats on the right under the title, as an infobox
+	 * does, so the sections run beside it and, once they pass its bottom, use
+	 * the whole width under it instead of leaving an empty column (Trevor,
+	 * Nov. 23, 2026). Blocks that draw a box or a rule keep clear of it, so
+	 * nothing runs underneath; grids, flex rows, lists set in columns and
+	 * scrolling tables do this by themselves.
 	 */
 	@container page (min-width: 52rem) {
 		.record-page.has-glance {
-			display: grid;
-			grid-template-columns: minmax(0, var(--layout-measure)) minmax(17rem, 1fr);
-			/* The last row takes any height the right-hand column needs beyond the text's. */
-			grid-template-rows: auto auto 1fr;
-			column-gap: var(--space-6);
-			align-items: start;
+			display: flow-root;
 		}
 
-		.has-glance .record-introduction {
-			grid-column: 1;
-			grid-row: 1;
-		}
-
-		.has-glance .record-details {
-			grid-column: 1;
-			grid-row: 2;
-		}
-
-		.has-glance .record-sources {
-			grid-column: 1;
-			grid-row: 3;
-		}
-
-		/* The glance column fills the room beside the text, up to the side-column width. */
 		.record-glance {
-			grid-column: 2;
-			grid-row: 1 / span 3;
+			float: right;
+			clear: right;
+			width: clamp(17rem, 100% - var(--layout-measure) - var(--space-6), var(--layout-side-column));
 			max-width: var(--layout-side-column);
-			/* Lines up with the page's title. */
-			margin-top: var(--space-4);
+			margin: var(--space-4) 0 var(--space-5) var(--space-6);
 			container: glance / inline-size;
 		}
 
 		.record-glance > :global(.collapsible:first-child) {
 			margin-top: 0;
+		}
+
+		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure, hr)) {
+			display: flow-root;
 		}
 	}
 

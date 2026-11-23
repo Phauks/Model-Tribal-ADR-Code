@@ -12,7 +12,7 @@ describe('scaleTop', () => {
 });
 
 describe('chartTable', () => {
-	it('links both the name and the number to what the bar counts, and sorts numbers as numbers', () => {
+	it('links the name to what the bar counts, draws the number on the page, and sorts numbers as numbers', () => {
 		const table = chartTable({
 			identifier: 'x',
 			title: 'X',
@@ -23,7 +23,8 @@ describe('chartTable', () => {
 			bars: [{ label: 'Mediation', value: 1200, href: '/nations/recourse?method=Mediation' }]
 		});
 		expect(table.columns.map((column) => column.header)).toEqual(['Method', 'Provisions']);
-		expect(table.rows[0].cells.value).toEqual({ text: '1,200', sortValue: 1200, href: '/nations/recourse?method=Mediation' });
+		expect(table.rows[0].cells.value).toEqual({ text: '1,200', sortValue: 1200 });
+		expect(table.columns[1].custom).toBe(true);
 		expect(table.rows[0].cells.label.href).toBe('/nations/recourse?method=Mediation');
 	});
 });

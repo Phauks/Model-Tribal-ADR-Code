@@ -45,6 +45,8 @@ h2,
 h3,
 h4 {
 	line-height: var(--font-line-height-heading);
+	/* A heading that must wrap never leaves one word alone on its last line. */
+	text-wrap: pretty;
 	font-weight: var(--font-weight-bold);
 	margin: var(--space-6) 0 var(--space-3);
 }
@@ -91,6 +93,17 @@ a:visited {
 main a:not(.button),
 main code {
 	overflow-wrap: anywhere;
+}
+
+/*
+ * In a table, a link breaks only where a word is longer than its column. A
+ * table sizes each column from the shortest width its text can take, so
+ * "anywhere" let it squeeze a column of links down to a few letters and split
+ * words such as "static.case.law" (Trevor, Nov. 23, 2026). A table wider than
+ * the screen scrolls in its own box instead (.table-scroll).
+ */
+main :is(td, th) :is(a:not(.button), code) {
+	overflow-wrap: break-word;
 }
 
 a:hover {
@@ -173,7 +186,23 @@ a:visited:focus-visible {
 	padding: 0 clamp(var(--space-4), 3vw, var(--space-7));
 }
 
-.reading {
+/*
+ * .reading holds what is inside it to the measure, except headings and
+ * tables, which use the width of the column. The measure is in ch of body
+ * text, so a heading held to it broke after a few words, as in "Tribal court
+ * opinions: Mohegan / Tribe of Indians of Connecticut" (Trevor, Nov. 23,
+ * 2026). The rule looks through sections and headers, so a heading inside a
+ * section breaks out too. :where() keeps it at no specificity, so any
+ * component's own width wins. A panel or a lead paragraph marked .reading
+ * keeps the measure as a whole, and so does an essay's text, whose boxes and
+ * indents line up with it.
+ */
+:where(.reading, .reading :is(section, article, header, hgroup):not(.essay-text))
+	> :where(:not(h1, h2, h3, h4, h5, h6, section, article, header, hgroup, table, .table-scroll)) {
+	max-width: var(--layout-measure);
+}
+
+:where(.reading):where(p, ul, ol, dl, blockquote, .panel, .lead) {
 	max-width: var(--layout-measure);
 }
 
@@ -888,6 +917,148 @@ sup.citation {
 	margin-top: 0 !important;
 }
 
+/*
+ * A quotation in its paragraph (src/lib/essays/quote-context-view.ts): the
+ * "Show the paragraph" button sits on the attribution's line, at the left,
+ * and opens a filled panel under it with the quoted words highlighted. The
+ * panel's own text is upright, since only the quotation above is set in
+ * italics; the highlight is italic and underlined as well as colored, so
+ * color is never the only cue. Mockup: design/quote-context in the project
+ * files (Trevor approved it Nov. 23, 2026).
+ */
+.quote-context-bar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-1) var(--space-3);
+	margin-top: calc(-1 * var(--space-3));
+	margin-bottom: var(--space-4);
+}
+
+.essay-quote > .quote-context-bar {
+	margin-top: 0;
+	margin-bottom: var(--space-2);
+}
+
+.quote-context-bar > .essay-attribution {
+	margin: 0 0 0 auto !important;
+}
+
+.quote-context-button {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	min-height: 2.75rem;
+	padding: 0 var(--space-2) 0 var(--space-1);
+	margin-left: calc(-1 * var(--space-1));
+	border: 0;
+	border-radius: var(--radius-control);
+	background: transparent;
+	color: var(--color-link);
+	font: inherit;
+	font-size: var(--font-size-small);
+	font-style: normal;
+	font-weight: var(--font-weight-semibold);
+	text-indent: 0;
+	cursor: pointer;
+}
+
+.quote-context-button span {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+
+.quote-context-button:hover {
+	background: color-mix(in srgb, var(--color-link) 12%, transparent);
+}
+
+.quote-context-icon {
+	flex: none;
+	width: 1.125rem;
+	height: 1.125rem;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.quote-context {
+	margin: 0 0 var(--space-4);
+	padding: var(--space-1) var(--space-4) var(--space-3);
+	border-radius: var(--radius-panel);
+	background: var(--color-surface);
+	font-size: var(--font-size-small);
+	font-style: normal;
+	text-indent: 0;
+}
+
+.quote-context-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: var(--space-3);
+	padding: var(--space-2) 0 var(--space-1);
+	margin-bottom: var(--space-2);
+	border-bottom: 1px solid var(--color-line);
+	color: var(--color-ink-muted);
+}
+
+.quote-context-title {
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.quote-context p {
+	margin: 0 0 var(--space-2);
+	font-style: normal;
+	text-indent: 0;
+}
+
+.quote-context .quote-context-near {
+	color: var(--color-ink-muted);
+}
+
+.quote-context .quote-context-heading {
+	font-weight: var(--font-weight-semibold);
+}
+
+.quote-context mark {
+	padding: 1px 0;
+	background: var(--color-placeholder-background);
+	box-shadow: inset 0 -2px 0 var(--color-placeholder-rule);
+	color: inherit;
+	font-style: italic;
+}
+
+.quote-context .quote-context-more {
+	display: flex;
+	margin: 0 auto var(--space-1);
+}
+
+.quote-context-status,
+.quote-context-note {
+	color: var(--color-ink-muted);
+}
+
+.quote-context-foot {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: var(--space-1) var(--space-4);
+	margin-top: var(--space-2);
+	padding-top: var(--space-2);
+	border-top: 1px solid var(--color-line);
+	color: var(--color-ink-muted);
+}
+
+.quote-context-foot a {
+	color: var(--color-link);
+}
+
 .essay-analysis {
 	background: var(--color-surface);
 	border-radius: var(--radius-panel);
@@ -1524,20 +1695,55 @@ sup.citation {
 	color: var(--color-ink-muted);
 }
 
-/* "Claimed by the nation", in place of the build's "Unclaimed" line (Trevor, Nov. 23, 2026). */
-.nation-claim {
+/*
+ * The status line on a page about a nation: "Unclaimed" or "Claimed by the
+ * nation" on its page, "Unreviewed" or "Reviewed by the nation" on a story
+ * (src/lib/review-status.ts; Trevor, Nov. 23, 2026).
+ */
+.review-status {
 	margin: var(--space-3) 0 var(--space-5);
 }
 
-.nation-claim-badge {
+.review-status a + a {
+	margin-left: var(--space-2);
+}
+
+.review-badge {
 	display: inline-flex;
 	align-items: center;
 	gap: var(--space-1);
 	margin-right: var(--space-2);
 	padding: 0 var(--space-2);
-	border: 1px solid var(--color-link);
+	border: 1px solid var(--color-control-border);
 	border-radius: 999px;
 	background: var(--color-surface);
-	color: var(--color-link);
 	font-weight: var(--font-weight-semibold);
+}
+
+.review-badge-verified {
+	border-color: var(--color-link);
+	color: var(--color-link);
+}
+
+/* Topics, methods and other short tags as badges (src/lib/components/TopicBadges.svelte; Trevor, Nov. 23, 2026). */
+.topic-badges,
+.summary-list dd > ul.topic-badges {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: var(--space-1);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	vertical-align: baseline;
+}
+
+.topic-badge {
+	display: inline-block;
+	padding: 0 var(--space-2);
+	border: 1px solid var(--color-line);
+	border-radius: 999px;
+	background: var(--color-surface);
+	font-size: 0.875em;
+	line-height: 1.6;
+	overflow-wrap: normal;
 }

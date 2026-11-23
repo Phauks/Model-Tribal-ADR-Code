@@ -67,8 +67,7 @@
 	<h2 id="for-nations-heading">For Native nations</h2>
 	<p>
 		A nation can ask us to correct, restrict or remove material about it, or offer to
-		contribute. Requests are private and need no account. Material named in a request to restrict or
-		remove it is taken out of public view before the request is reviewed.
+		contribute. Requests are private and need no account.
 	</p>
 	<p><a class="button" href="/requests">Make a request</a></p>
 </section>

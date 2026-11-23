@@ -7,7 +7,7 @@
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { mapViewChoices, mapViews } from '#lib/map-views.ts';
-	import TileMap, { type TileMapCamera } from '#lib/components/TileMap.svelte';
+	import TileMap, { tileMapPlaces, type TileMapCamera } from '#lib/components/TileMap.svelte';
 	import ZoomableMap from '#lib/components/ZoomableMap.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
 	import type { LandAreaRow, ShadedViewData } from '#lib/server/nations-map.ts';
@@ -16,6 +16,8 @@
 	import { byStateColumns, byStateRows, categoryColumns, categoryRows, landAreaColumns, landAreaRows as buildLandAreaRows, mapTableFile, nationColumns, nationRows, regionColumns, regionRows as buildRegionRows, stateColumns, stateRows as buildStateRows } from '#lib/map-tables.ts';
 	import { mapTableOnScreen } from '#lib/map-table-on-screen.svelte.ts';
 	import X from '@lucide/svelte/icons/x';
+	import List from '@lucide/svelte/icons/list';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -31,6 +33,20 @@
 	 */
 	let tileMapWanted = $state(true);
 	let tileMapReady = $state(false);
+	let tileMap = $state<TileMap | undefined>();
+
+	/** Whether the map's key is open. It starts open on wide screens and closed on narrow ones, where it would cover much of the smaller map, and then keeps the reader's choice. */
+	let keyOpen = $state(true);
+	const keyStorageKey = 'map-key-open';
+
+	function toggleKey(): void {
+		keyOpen = !keyOpen;
+		try {
+			localStorage.setItem(keyStorageKey, keyOpen ? 'open' : 'closed');
+		} catch {
+			// Storage can be blocked; the choice then lasts for this page only.
+		}
+	}
 	let tileMapCamera = $state<TileMapCamera | undefined>();
 	/** The tiled map's shape: flat (Web Mercator, which stretches places far from the equator, such as Alaska) or a globe, where every place keeps its true size (Trevor, 2026-11-23). */
 	let mapShape = $state<'flat' | 'globe'>('flat');
@@ -127,6 +143,13 @@
 	}
 
 	onMount(() => {
+		let storedKey: string | null = null;
+		try {
+			storedKey = localStorage.getItem(keyStorageKey);
+		} catch {
+			// Storage can be blocked; the key then opens by the screen's width.
+		}
+		keyOpen = storedKey ? storedKey === 'open' : matchMedia('(min-width: 1100px)').matches;
 		void showAddressedView();
 		const onHashChange = () => void showAddressedView();
 		window.addEventListener('hashchange', onHashChange);
@@ -166,7 +189,23 @@
 	let previewHeading = $state<HTMLElement | undefined>();
 
 	type PreviewLine = { label: string; value: string };
-	type Preview = { kind: string; title: string; badges?: RecognitionBadge[]; lines: PreviewLine[]; nations?: ListedNation[]; page?: { href: string; label: string }; row?: string };
+	type Preview = { kind: string; title: string; nation?: string; badges?: RecognitionBadge[]; lines: PreviewLine[]; nations?: ListedNation[]; page?: { href: string; label: string } };
+
+	/** A nation's seal, website and contact, from its own small file (/nations/<id>/preview.json), fetched when its preview first opens. */
+	type ContactLine = { label: string; lines: string[]; link?: string; external?: boolean };
+	type NationDetail = { image?: { src: string; kind: string }; website?: ContactLine; office?: string; address?: ContactLine; phone?: ContactLine; email?: ContactLine };
+	let nationDetails = $state<Record<string, NationDetail | null>>({});
+	let hiddenImages = $state<Record<string, boolean>>({});
+	function loadNationDetail(id: string): void {
+		if (id in nationDetails) return;
+		nationDetails[id] = null;
+		fetch(`/nations/${id}/preview.json`)
+			.then((response) => (response.ok ? (response.json() as Promise<NationDetail>) : undefined))
+			.then((detail) => {
+				if (detail) nationDetails[id] = detail;
+			})
+			.catch(() => {});
+	}
 
 	/** Every nation the page knows, with its states, from the table of nations by state. */
 	const nationIndex = $derived.by(() => {
@@ -198,14 +237,14 @@
 			if (states.length > 0) lines.push({ label: states.length === 1 ? 'State' : 'States', value: states.join(', ') });
 			const name = row?.name ?? nation?.name;
 			if (!name) return undefined;
-			return { kind: 'Nation', title: name, badges: nation?.badges, lines, page: { href: `/nations/${id}${body && row ? `#${body.section}` : ''}`, label: 'Open the nation’s page' }, row: row?.anchor };
+			return { kind: 'Nation', title: name, nation: id, badges: nation?.badges, lines, page: { href: `/nations/${id}`, label: 'Open the nation’s page' } };
 		}
 		const state = data.stateRows.find((row) => `state-${row.code}` === key);
-		if (state) return { kind: 'State or territory', title: state.name, lines: [], nations: state.nations, page: { href: `/nations/state/${state.code.toLowerCase()}`, label: 'Open the state’s page' }, row: key };
+		if (state) return { kind: 'State or territory', title: state.name, lines: [], nations: state.nations, page: { href: `/nations/state/${state.code.toLowerCase()}`, label: 'Open the state’s page' } };
 		const region = data.regionRows.find((row) => row.anchor === key);
-		if (region) return { kind: 'Bureau of Indian Affairs region', title: region.name, lines: region.states.length > 0 ? [{ label: 'States', value: region.states.join(', ') }] : [], nations: region.nations, row: key };
+		if (region) return { kind: 'Bureau of Indian Affairs region', title: region.name, lines: region.states.length > 0 ? [{ label: 'States', value: region.states.join(', ') }] : [], nations: region.nations };
 		const area = lands?.rows.find((row) => row.anchor === key);
-		if (area) return { kind: area.kindLabel, title: area.name, lines: [], nations: area.nations, row: key };
+		if (area) return onlyNation({ kind: area.kindLabel, title: area.name, lines: [], nations: area.nations });
 		for (const body of Object.values(shaded)) {
 			const nationRow = body.nationRows.find((row) => row.anchor === key);
 			if (nationRow) return previewOf(`nation:${nationRow.id}`);
@@ -215,19 +254,30 @@
 				const lines: PreviewLine[] = [];
 				if (definition.valueHeader && areaRow.value !== undefined) lines.push({ label: definition.valueHeader, value: areaRow.value.toLocaleString('en-US') });
 				if (areaRow.states.length > 0) lines.push({ label: 'States', value: areaRow.states.join(', ') });
-				return { kind: definition.categoryHeader ?? 'Category', title: areaRow.name, lines, nations: areaRow.nations, row: key };
+				return onlyNation({ kind: definition.categoryHeader ?? 'Category', title: areaRow.name, lines, nations: areaRow.nations });
 			}
 			const stateRow = body.stateRows.find((row) => row.anchor === key);
 			if (stateRow) {
 				const counts = stateRow.counts as Record<string, number>;
 				const lines = [{ label: 'Nations', value: stateRow.total.toLocaleString('en-US') }, ...body.stateColumns.filter((column) => (counts[column.key] ?? 0) > 0).map((column) => ({ label: column.header, value: (counts[column.key] ?? 0).toLocaleString('en-US') }))];
-				return { kind: 'State or territory', title: stateRow.name, lines, page: { href: `/nations/state/${stateRow.code.toLowerCase()}`, label: 'Open the state’s page' }, row: key };
+				return { kind: 'State or territory', title: stateRow.name, lines, page: { href: `/nations/state/${stateRow.code.toLowerCase()}`, label: 'Open the state’s page' } };
 			}
 		}
 		return undefined;
 	}
 
+	/** A place that only one nation's entry names opens that nation's preview, which names the place. */
+	function onlyNation(place: Preview): Preview {
+		const only = place.nations?.length === 1 ? place.nations[0] : undefined;
+		const nation = only ? previewOf(`nation:${only.id}`) : undefined;
+		if (!nation) return place;
+		return { ...nation, lines: [{ label: place.kind, value: place.title }, ...place.lines.filter((line) => line.label !== 'States'), ...nation.lines] };
+	}
+
 	const shownPreview = $derived(preview ? previewOf(preview) : undefined);
+	$effect(() => {
+		if (shownPreview?.nation) loadNationDetail(shownPreview.nation);
+	});
 
 	/** Opens a place's or nation's preview, keeping its row's id in the address so the link can be shared. */
 	async function select(key: string): Promise<void> {
@@ -239,7 +289,6 @@
 		previewHeading?.closest('aside')?.scrollIntoView({ block: 'nearest' });
 	}
 
-	/** Goes from a preview to the place's row in the table, opened to show its nations. */
 	/** A count in a table opens its row's list of nations, as the row's name does. */
 	function openRowNames(event: MouseEvent, anchor: string): void {
 		const names = document.getElementById(anchor)?.querySelector<HTMLDetailsElement>('details.row-names, details.count-names');
@@ -258,10 +307,13 @@
 		return ids.map((id) => ({ id, name: (body.stateNations as Record<string, string>)[id] ?? id })).sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
 	}
 
-	function showRow(anchor: string): void {
-		const target = document.getElementById(anchor);
-		target?.querySelector('details.row-names')?.setAttribute('open', '');
-		target?.scrollIntoView({ block: 'center' });
+	let tileHolder = $state<HTMLElement | undefined>();
+
+	/** Puts the tiled map into the view on screen. */
+	function placeTileMap(key: NationsMapView) {
+		return (node: HTMLElement) => {
+			if (key === current && tileHolder && tileHolder.parentElement !== node) node.prepend(tileHolder);
+		};
 	}
 
 	/** A place on the drawn map is a link to its row; it opens the preview instead. */
@@ -347,6 +399,18 @@
 				<SearchableDropdown label="Map view" choices={mapViewChoices} value={current} onchange={choose} />
 			</div>
 		{/if}
+		{#if view.key === current && tileMapReady}
+			<!-- The states and territories are where they really are on the map, so the map goes to each by name (Trevor, 2026-11-22: every territory shown and named on its own). A menu rather than a row of buttons, so the row does not push the key out of sight (Trevor, 2026-11-23). -->
+			<label class="go-to">
+				<span class="go-to-label">Go to</span>
+				<select onchange={(event) => tileMap?.showPlace(event.currentTarget.value)}>
+					<option value="" disabled selected>Choose a place</option>
+					{#each tileMapPlaces as place (place.name)}
+						<option value={place.name}>{place.name}</option>
+					{/each}
+				</select>
+			</label>
+		{/if}
 		{#if isShadedMapView(view.key) && (shaded[view.key]?.stateRows.length ?? 0) > 0}
 			{@const key = view.key}
 			<fieldset class="shown-by">
@@ -361,39 +425,8 @@
 				</div>
 			</fieldset>
 		{/if}
-		{#if tileMapReady}
-			<!-- Only the tiled map can be drawn as a globe; the drawn map keeps its boxes. -->
-			<fieldset class="shown-by">
-				<legend class="small">Shape</legend>
-				<div class="shown-by-choices">
-					{#each [{ value: 'flat', label: 'Flat' }, { value: 'globe', label: 'Globe' }] as choice (choice.value)}
-						<label class="shown-by-choice">
-							<input class="visually-hidden" type="radio" name="map-shape-{view.key}" value={choice.value} checked={mapShape === choice.value} onchange={() => (mapShape = choice.value as 'flat' | 'globe')} />
-							{choice.label}
-						</label>
-					{/each}
-				</div>
-			</fieldset>
-		{/if}
 		</div>
-			<div class="map-drawing" class:tiled={tileMapReady && view.key === current} class:waiting={tileMapWanted && !tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
-				{#if tileMapWanted && view.key === current}
-					{#key `${view.key}-${byOf(view.key)}`}
-						<TileMap
-							view={view.key}
-							by={byOf(view.key)}
-							shape={mapShape}
-							label={byOf(view.key) === 'state' ? `${view.label}, by state` : view.label}
-							bind:camera={tileMapCamera}
-							onselect={(anchor) => void select(anchor)}
-							onready={() => (tileMapReady = true)}
-							onfail={() => {
-								tileMapWanted = false;
-								tileMapReady = false;
-							}}
-						/>
-					{/key}
-				{/if}
+			<div class="map-drawing" {@attach placeTileMap(view.key)} class:tiled={tileMapReady && view.key === current} class:waiting={tileMapWanted && !tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
 				<p class="map-loading small muted" aria-hidden="true">Loading the map…</p>
 				<div class="drawn-map">
 				<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
@@ -424,51 +457,78 @@
 					{/if}
 				</ZoomableMap>
 				</div>
+				<!-- The key sits in a corner of the map, above the scale, so it stays in sight while the map is used; it closes to one button (Trevor chose this on 2026-11-23, mockup A in project files design/map-engine/key-placement/). -->
+				{#if view.key === 'states' || view.key === 'lands' || (isShadedMapView(view.key) && shaded[view.key])}
+					<div class="map-key" class:closed={!keyOpen}>
+						<button type="button" class="map-key-toggle no-print" aria-expanded={keyOpen} aria-controls="map-key-{view.key}" onclick={toggleKey}>
+							<List aria-hidden="true" size={18} />
+							<span>Key</span>
+							<ChevronDown class="map-key-chevron" aria-hidden="true" size={18} />
+						</button>
+						<ul class="legend" id="map-key-{view.key}" aria-label="Key">
+				{#if view.key === 'states'}
+					{#each data.countClasses as entry (entry.key)}
+						<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
+					{/each}
+					{#if tileMapReady}{@render officeKey()}{/if}
+				{:else if isShadedMapView(view.key) && shaded[view.key]}
+					{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
+						<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
+					{/each}
+					{#if byOf(view.key) === 'nation'}{@render officeKey()}{/if}
+				{:else if view.key === 'lands'}
+					{#each data.landAreaGroups as group (group.key)}
+						<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
+					{/each}
+					{@render officeKey()}
+				{/if}
+						</ul>
+					</div>
+				{/if}
 			</div>
-			{#if view.key === 'states'}
-				<figcaption>
-					<ul class="legend" aria-label="Key">
-						{#each data.countClasses as entry (entry.key)}
-							<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
-						{/each}
-						{#if tileMapReady}{@render officeKey()}{/if}
-					</ul>
-				</figcaption>
-			{:else if isShadedMapView(view.key) && shaded[view.key]}
-				<figcaption>
-					<ul class="legend" aria-label="Key">
-						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
-							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
-						{/each}
-						{#if byOf(view.key) === 'nation'}{@render officeKey()}{/if}
-					</ul>
-				</figcaption>
-			{:else if view.key === 'lands'}
-				<figcaption>
-					<ul class="legend" aria-label="Key">
-						{#each data.landAreaGroups as group (group.key)}
-							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
-						{/each}
-						{@render officeKey()}
-					</ul>
-				</figcaption>
-			{/if}
 		</figure>
 		<!-- Beside the map on wide screens, under it on narrow ones. -->
 		<div class="map-side">
 			{#if view.key === current && shownPreview}
+				{@const detail = shownPreview.nation ? nationDetails[shownPreview.nation] : undefined}
 				<aside class="map-preview" aria-labelledby="map-preview-title">
-					<button type="button" class="button button-quiet preview-close" aria-label="Close the preview" onclick={() => (preview = undefined)}>
-						<X aria-hidden="true" size="1.25em" strokeWidth={1.75} />
-					</button>
-					<p class="small muted preview-kind">{shownPreview.kind}</p>
-					<h3 id="map-preview-title" tabindex="-1" bind:this={previewHeading}>
-						{shownPreview.title}{#if shownPreview.badges}{' '}<RecognitionBadges badges={shownPreview.badges} size="small" />{/if}
-					</h3>
+					<div class="preview-top">
+						<p class="small muted preview-kind">{shownPreview.kind}</p>
+						<button type="button" class="icon-button preview-close" aria-label="Close the preview" title="Close" onclick={() => (preview = undefined)}>
+							<X aria-hidden="true" size={20} />
+						</button>
+					</div>
+					<div class="preview-head">
+						{#if detail?.image && shownPreview.nation && !hiddenImages[shownPreview.nation]}
+							{@const id = shownPreview.nation}
+							<img class="preview-image" src={detail.image.src} alt="{detail.image.kind} of {shownPreview.title}" width="64" height="64" onerror={() => (hiddenImages[id] = true)} />
+						{/if}
+						<h3 id="map-preview-title" tabindex="-1" bind:this={previewHeading}>
+							{shownPreview.title}{#if shownPreview.badges}{' '}<RecognitionBadges badges={shownPreview.badges} size="small" />{/if}
+						</h3>
+					</div>
 					{#if shownPreview.lines.length > 0}
 						<dl class="preview-facts">
 							{#each shownPreview.lines as line (line.label)}
 								<div><dt>{line.label}</dt><dd>{line.value}</dd></div>
+							{/each}
+						</dl>
+					{/if}
+					{#if detail && (detail.website || detail.address || detail.phone || detail.email)}
+						<dl class="preview-facts preview-contact">
+							{#each [detail.website, detail.address, detail.phone, detail.email] as contact, index (index)}
+								{#if contact}
+									<div>
+										<dt>{contact.label}</dt>
+										<dd>
+											{#if contact.link}
+												<a href={contact.link} target={contact.external ? '_blank' : undefined} rel={contact.external ? 'noopener noreferrer' : undefined}>{#each contact.lines as line, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{line}{/each}</a>
+											{:else}
+												{#each contact.lines as line, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{line}{/each}
+											{/if}
+										</dd>
+									</div>
+								{/if}
 							{/each}
 						</dl>
 					{/if}
@@ -480,12 +540,9 @@
 							{/each}
 						</ul>
 					{/if}
-					<p class="preview-actions">
-						{#if shownPreview.page}<a class="button" href={shownPreview.page.href}>{shownPreview.page.label}</a>{/if}
-						{#if shownPreview.row && typeof document !== 'undefined' && document.getElementById(shownPreview.row)}
-							<button type="button" class="button button-quiet" onclick={() => showRow(shownPreview.row ?? '')}>Show in the table</button>
-						{/if}
-					</p>
+					{#if shownPreview.page}
+						<p class="preview-actions"><a class="button" href={shownPreview.page.href}>{shownPreview.page.label}</a></p>
+					{/if}
 				</aside>
 			{/if}
 			{#if view.key === 'states'}
@@ -594,6 +651,28 @@
 	</div>
 {/each}
 
+<!-- The one tiled map, moved into the view on screen, so changing the view keeps the map, its place and its tiles (Trevor, 2026-11-23). -->
+<div class="tile-map-home">
+	{#if tileMapWanted}
+		<div class="tile-holder" bind:this={tileHolder}>
+			<TileMap
+				bind:this={tileMap}
+				view={current}
+				by={byOf(current)}
+				label={byOf(current) === 'state' ? `${views.find((entry) => entry.key === current)?.label ?? ''}, by state` : (views.find((entry) => entry.key === current)?.label ?? '')}
+				bind:shape={mapShape}
+				bind:camera={tileMapCamera}
+				onselect={(anchor) => void select(anchor)}
+				onready={() => (tileMapReady = true)}
+				onfail={() => {
+					tileMapWanted = false;
+					tileMapReady = false;
+				}}
+			/>
+		</div>
+	{/if}
+</div>
+
 {#snippet officeKey()}
 	<li><span class="swatch office" aria-hidden="true"></span>Office of a nation with no Census land area</li>
 {/snippet}
@@ -630,21 +709,44 @@
 		background: var(--color-paper);
 	}
 
-	.preview-close {
-		position: absolute;
-		top: var(--space-2);
-		right: var(--space-2);
-		min-width: var(--layout-target-minimum);
-		min-height: var(--layout-target-minimum);
-		padding: 0;
+	.preview-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-2);
+		margin: calc(-1 * var(--space-2)) calc(-1 * var(--space-2)) 0 0;
 	}
 
 	.preview-kind {
-		margin: 0 var(--space-6) var(--space-1) 0;
+		margin: 0;
+	}
+
+	.preview-head {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		margin: 0 0 var(--space-3);
+	}
+
+	/* The nation's seal or logo, where it may be shown. */
+	.preview-image {
+		flex: none;
+		width: 64px;
+		height: 64px;
+		object-fit: contain;
 	}
 
 	.map-preview h3 {
-		margin: 0 var(--space-6) var(--space-3) 0;
+		margin: 0;
+	}
+
+	.preview-contact {
+		padding-top: var(--space-3);
+		border-top: 1px solid var(--color-line);
+	}
+
+	.preview-contact a {
+		overflow-wrap: anywhere;
 	}
 
 	.preview-facts {
@@ -825,6 +927,15 @@
 		:global(html[data-scripts='on']) .map-drawing.waiting .map-loading {
 			display: block;
 		}
+
+		:global(html[data-scripts='on']) .map-drawing.waiting .map-key {
+			visibility: hidden;
+		}
+	}
+
+	/* Until the tiled map is moved into the view on screen, it is not shown. */
+	.tile-map-home {
+		display: none;
 	}
 
 	.map-loading {
@@ -915,12 +1026,6 @@
 		.map-drawing {
 			max-width: min(975px, calc(42vh * 975 / 883));
 			margin-inline: auto;
-		}
-
-		.map-figure .legend {
-			justify-content: center;
-			margin: var(--space-1) 0;
-			font-size: var(--font-size-small);
 		}
 	}
 
@@ -1157,5 +1262,104 @@
 		width: 1.25rem;
 		height: 1.25rem;
 		border: 1px solid var(--color-control-border);
+	}
+
+	/* The key, in the tiled map's bottom-left corner, above the scale and clear of the zoom and shape buttons on the right. Under the drawn map, which has its own insets along the bottom, it sits below the map. */
+	.map-key {
+		margin-top: var(--space-2);
+		font-size: var(--font-size-small);
+		line-height: 1.3;
+	}
+
+	.map-drawing.tiled .map-key {
+		position: absolute;
+		left: var(--space-2);
+		bottom: 4.25rem;
+		z-index: 3;
+		max-width: min(20rem, calc(100% - 5rem));
+		max-height: calc(100% - 6rem);
+		margin: 0;
+		overflow: auto;
+		border: 1px solid var(--color-control-border);
+		border-radius: var(--radius-control);
+		background: var(--color-paper);
+	}
+
+	.map-key-toggle {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		min-height: var(--layout-target-minimum);
+		padding: 0 var(--space-3);
+		border: 0;
+		background: none;
+		color: var(--color-ink);
+		font: inherit;
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
+	}
+
+	.map-key-toggle span {
+		flex: 1;
+		text-align: start;
+	}
+
+	.map-key:not(.closed) .map-key-toggle :global(.map-key-chevron) {
+		transform: rotate(180deg);
+	}
+
+	.map-drawing.tiled .map-key-toggle {
+		width: 100%;
+	}
+
+	.map-key .legend {
+		margin: 0;
+		padding: 0 var(--space-3) var(--space-3);
+	}
+
+	.map-drawing.tiled .map-key .legend {
+		display: grid;
+		gap: var(--space-1);
+	}
+
+	.map-key.closed .legend {
+		display: none;
+	}
+
+	.map-key .swatch {
+		flex: none;
+		width: 1rem;
+		height: 1rem;
+	}
+
+	/* The Go to menu, beside the view picker. */
+	.go-to {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+	}
+
+	.go-to-label {
+		font-weight: var(--font-weight-bold);
+	}
+
+	/* On paper the key is printed under the map, always open. */
+	@media print {
+		.map-key,
+		.map-drawing.tiled .map-key {
+			position: static;
+			max-width: none;
+			max-height: none;
+			overflow: visible;
+			border: 0;
+			font-size: inherit;
+		}
+
+		.map-key .legend,
+		.map-key.closed .legend {
+			display: flex;
+			padding: 0;
+			margin: var(--space-3) 0;
+		}
 	}
 </style>

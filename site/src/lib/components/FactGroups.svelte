@@ -5,6 +5,7 @@
 	// legal basis or note sits on its own line under it, in smaller type.
 	import type { CitationMark } from '#lib/citation-marks.ts';
 	import CitationMarks from './CitationMarks.svelte';
+	import TopicBadges from './TopicBadges.svelte';
 
 	interface FactItem {
 		label?: string;
@@ -16,6 +17,8 @@
 		/** A short line under the value, such as what sources record in each state. */
 		note?: string;
 		citations?: CitationMark[];
+		/** Short tags, such as topics, shown as badges in place of the text. */
+		badges?: string[];
 	}
 
 	interface FactGroup {
@@ -28,7 +31,7 @@
 </script>
 
 {#snippet fact(item: FactItem)}
-	{#if item.label}{item.label}:{' '}{/if}{#if item.link}<a href={item.link}>{item.text}</a>{:else}{item.text}{/if}<CitationMarks
+	{#if item.label}{item.label}:{' '}{/if}{#if item.badges}<TopicBadges topics={item.badges} />{:else if item.link}<a href={item.link}>{item.text}</a>{:else}{item.text}{/if}<CitationMarks
 		marks={item.citations}
 	/>
 	{#if item.detailParts}

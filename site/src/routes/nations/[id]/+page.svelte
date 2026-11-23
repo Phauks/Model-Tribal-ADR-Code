@@ -12,7 +12,9 @@
 	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
-	import Clock from '@lucide/svelte/icons/clock';
+	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
+	import TopicBadges from '#lib/components/TopicBadges.svelte';
+	import { unclaimedPage } from '#lib/review-status.ts';
 	import { afterNavigate } from '$app/navigation';
 	import { fillNationSlots } from '#lib/nation-page-slots.ts';
 	import { imageViewerAttributes } from '#lib/image-viewer.ts';
@@ -98,18 +100,20 @@
 		     nation chose keep it (Trevor, Nov. 23, 2026). The build always says
 		     "Unclaimed"; for a claimed page the Worker hides this line and puts the
 		     claimed one in the top place below (src/lib/server/nation-page-overlay.ts). -->
-		<p class="review-status small" id="review-status" data-print-part="reviewStatus" data-build-status>
-			<span class="visually-hidden">Who keeps this page:</span>
+		<ReviewStatus
+			status={page.withdrawn ? { label: page.review.label, verified: false } : unclaimedPage}
+			description="Who keeps this page:"
+			id="review-status"
+			data-print-part="reviewStatus"
+			data-build-status
+		>
 			{#if page.withdrawn}
-				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />{page.review.label}</span>
 				<span class="muted">{page.review.meaning}</span>
 			{:else}
-				<!-- Just the status: the longer notice under it was taken off (Trevor, Nov. 23, 2026). -->
-				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unclaimed</span>
 				<a class="no-print" href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a>
 			{/if}
 			<a class="no-print" href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a>
-		</p>
+		</ReviewStatus>
 		<!-- The nation's own words and pictures, filled in by the Worker from what its team published (decision record 0041). -->
 		{#if !page.withdrawn}<div class="nation-slot" data-nation-slot="top"></div>{/if}
 	{/snippet}
@@ -157,7 +161,7 @@
 				<ul class="opinions">
 					{#each opinions.shown as opinion (opinion.path)}
 						<li>
-							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small muted mentions">Mentions {opinion.topics.join(', ')}.</span>{/if}
+							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics} /></span>{/if}
 						</li>
 					{/each}
 				</ul>
@@ -167,7 +171,7 @@
 					<p><a href={opinions.link}>The opinions as a table</a>, with their courts, dates and the words they mention.</p>
 				{/if}
 				<p class="small muted">
-					Each opinion is a copy of the Caselaw Access Project’s text, with the publisher’s headnotes removed. A word listed means only that it appears in the opinion, not what the court decided. The nation can ask to have any opinion taken down.
+					Each opinion is a copy of the Caselaw Access Project’s text, with the publisher’s headnotes removed. A word listed means only that it appears in the opinion, not what the court decided.
 				</p>
 			</Collapsible>
 		{/if}
@@ -217,11 +221,6 @@
 						</li>
 					{/each}
 				</ul>
-				{#if data.stories.some((story) => story.awaitsReview)}
-					<p class="small muted">
-						The nation has not reviewed {data.stories.length === 1 ? 'this story' : data.stories.every((story) => story.awaitsReview) ? 'these stories' : 'some of these stories'} yet. Each story page has a link to ask for the story to be corrected or removed.
-					</p>
-				{/if}
 			</Collapsible>
 		{/if}
 
@@ -314,6 +313,7 @@
 	}
 	.mentions {
 		display: block;
+		margin-top: var(--space-1);
 	}
 	.stories li + li {
 		margin-top: var(--space-2);
@@ -321,25 +321,10 @@
 	.story-kind {
 		display: block;
 	}
-	.review-status {
-		margin: var(--space-3) 0 var(--space-5);
-	}
-
 	.recognition-line {
 		margin: 0 0 var(--space-3);
 	}
 
-	.status-badge {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		margin-right: var(--space-2);
-		padding: 0 var(--space-2);
-		border: 1px solid var(--color-control-border);
-		border-radius: 999px;
-		background: var(--color-surface);
-		font-weight: var(--font-weight-semibold);
-	}
 
 	.empty-section {
 		margin: 0 0 var(--space-5);
@@ -378,9 +363,11 @@
 		font-size: var(--font-size-body);
 	}
 
+	/* As many columns as fit, so the list spreads out under At a glance. */
 	.neighbors {
-		columns: 2 14rem;
+		columns: 14rem;
 		column-gap: var(--space-5);
+		max-width: none;
 	}
 
 	.neighbors li {

@@ -82,17 +82,24 @@
 	 * glance") follows the width it actually has, whether the sidebar is shown
 	 * or hidden.
 	 */
+	/* The space before the footer is inside the page, so the sidebar's column
+	   reaches the footer and its Hide sidebar button sits just above it at the
+	   end of a page, not over empty space (Trevor, Nov. 23, 2026). */
 	main {
 		container: page / inline-size;
 		min-width: 0;
 		padding-top: var(--space-3);
+		padding-bottom: var(--space-8);
 	}
 
 	@media (min-width: 64rem) {
+		/* At least one screen tall, so on a short page the footer starts below the
+		   first screen and the Hide sidebar button keeps its place at the bottom. */
 		.site-body {
 			display: grid;
 			grid-template-columns: 18rem minmax(0, 1fr);
 			align-items: start;
+			min-height: 100dvh;
 		}
 
 		.site-body:has(> :global(.sidebar-wide:not([open]))) {

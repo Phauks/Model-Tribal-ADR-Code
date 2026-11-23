@@ -30,7 +30,7 @@ export function documentsReadme(title: string, siteAddress: string, made: string
 		'',
 		`From the Model Tribal ADR Code website, ${siteAddress}, made ${made}.`,
 		'',
-		'These are the website’s own copies of documents it cites and is allowed to share: works of the United States government, and nations’ constitutions, laws and court opinions the website shares until a nation asks it to remove one. documents.csv lists each file with its title, the address it was published at and its SHA-256.',
+		'These are the website’s own copies of documents it cites and is allowed to share: works of the United States government, and nations’ constitutions, laws and court opinions. documents.csv lists each file with its title, the address it was published at and its SHA-256.',
 		'',
 		`To check that a file is the one the website published, unchanged, choose it under Checking a file at ${siteAddress}/downloads, or compare its SHA-256 with documents.csv. SHA256SUMS.txt lists them in the form sha256sum -c reads (on Windows, Get-FileHash file.pdf; on a Mac, shasum -a 256 file.pdf; on Linux, sha256sum file.pdf).`,
 		'',

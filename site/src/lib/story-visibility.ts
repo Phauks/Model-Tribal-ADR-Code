@@ -158,14 +158,6 @@ export function storiesOfNation<T extends StoryRecord>(records: T[], nationId: s
 	return records.filter((record) => record.nations.includes(nationId) && storyIsShown(record, today));
 }
 
-/** Whether the nation has yet to review the story, so the page says so. */
-export function awaitsNationReview(record: StoryRecord): boolean {
-	if (record.review_status === 'reviewed-by-nation' || record.review_status === 'approved-by-nation') {
-		return false;
-	}
-	return record.access.level !== 'public' || record.sensitivity?.tribal_review_required === true;
-}
-
 /** The excerpts that may be shown, quoted or as a pinpoint only. */
 export function shownExcerpts(
 	record: StoryRecord,

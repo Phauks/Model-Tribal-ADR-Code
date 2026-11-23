@@ -18,15 +18,6 @@
 		Stories, accounts and teachings about resolving disputes, making peace and restoring relationships, as Native nations and their people tell them. They are never retold or summarized here. Each page gives the whole story in the teller’s own words wherever it can be found, with credit and a link to where the nation or teller published it.
 	</p>
 
-	{#if data.awaitingReview > 0}
-		<div class="notice" role="note">
-			<p>
-				<strong>Not yet reviewed by the nations.</strong>
-				{data.awaitingReview === data.count ? 'None' : `${data.awaitingReview} of the ${data.count}`} of these stories {data.awaitingReview === data.count ? 'has' : 'have'} been reviewed by the nation{data.awaitingReview === 1 ? '' : 's'} they come from yet. They are shown while each nation is asked to review them. Each story page has a link to ask for it to be removed.
-			</p>
-		</div>
-	{/if}
-
 	{#if data.count === 0}
 		<p>No stories are published yet.</p>
 	{:else}
@@ -72,7 +63,7 @@
 	{/if}
 
 	<p class="small muted">
-		More stories are being gathered. A nation or teller can <a href="/requests?kind=contribute&record=stories">offer a story</a>, or ask for one to be corrected or removed.
+		More stories are being gathered. A nation or teller can <a href="/requests?kind=contribute&record=stories">offer a story</a>.
 	</p>
 </div>
 

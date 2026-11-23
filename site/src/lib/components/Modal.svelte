@@ -24,6 +24,8 @@
 		section,
 		children,
 		actions,
+		topButtons,
+		actionsAtEnd = false,
 		fitContent = false,
 		onclose
 	}: {
@@ -35,6 +37,10 @@
 		children?: Snippet;
 		/** Buttons along the bottom, such as "Done". */
 		actions?: Snippet;
+		/** Icon-only buttons beside Close in the top bar, such as Reset (Trevor, Nov. 23, 2026). */
+		topButtons?: Snippet;
+		/** Puts the bottom buttons at the right, as the Print dialog's Print button (Trevor, Nov. 23, 2026). */
+		actionsAtEnd?: boolean;
 		/** Sizes the dialog to what it holds, for a short form, instead of a fixed height. */
 		fitContent?: boolean;
 		onclose?: () => void;
@@ -78,9 +84,12 @@
 <dialog bind:this={dialog} class="modal" class:fit-content={fitContent} aria-labelledby="{identifier}-title" {onclose}>
 	<div class="modal-top">
 		<h2 id="{identifier}-title">{title}</h2>
-		<button class="icon-button close-button" type="button" aria-label="Close" title="Close" onclick={close}>
-			<X size={24} />
-		</button>
+		<div class="top-buttons">
+			{@render topButtons?.()}
+			<button class="icon-button close-button" type="button" aria-label="Close" title="Close" onclick={close}>
+				<X size={24} />
+			</button>
+		</div>
 	</div>
 
 	{#if sections.length > 0 && section && current}
@@ -119,7 +128,7 @@
 	{/if}
 
 	{#if actions}
-		<div class="modal-actions">{@render actions()}</div>
+		<div class="modal-actions" class:at-end={actionsAtEnd}>{@render actions()}</div>
 	{/if}
 </dialog>
 
@@ -188,6 +197,16 @@
 
 	.modal-top h2 {
 		margin: 0;
+	}
+
+	.top-buttons {
+		display: flex;
+		flex-shrink: 0;
+		gap: var(--space-1);
+	}
+
+	.modal-actions.at-end {
+		justify-content: flex-end;
 	}
 
 	.modal-actions :global(.button) {
