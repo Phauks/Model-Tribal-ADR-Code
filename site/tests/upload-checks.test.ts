@@ -57,6 +57,7 @@ describe('checkFileType', () => {
 	it('accepts Word and Excel files that are not macro files', () => {
 		expect(checkFileType(zipWith('[Content_Types].xml word/document.xml'), 'rules.docx')).toMatchObject({ accepted: true, label: 'Word document' });
 		expect(checkFileType(zipWith('[Content_Types].xml xl/workbook.xml'), 'list.xlsx')).toMatchObject({ accepted: true, label: 'Excel spreadsheet' });
+		expect(checkFileType(zipWith('mimetypeapplication/epub+zip'), 'casebook.epub')).toMatchObject({ accepted: true, label: 'EPUB book', mediaType: 'application/epub+zip' });
 	});
 });
 
