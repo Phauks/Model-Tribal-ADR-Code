@@ -102,10 +102,10 @@ export type Permission =
 	// The lead author only (Trevor, Nov. 23, 2026: "From admin, make it so I
 	// can see sponsorship page, that way I can fully diagnose").
 	| 'manage-sponsors'
-	// Every printed-copy order, the problems buyers report about them, and
+	// Every order from the Store, the problems buyers report about them, and
 	// recording refunds (docs/book-orders.md, "Your orders and problems"). The
 	// lead author only: orders hold names and addresses.
-	| 'manage-book-orders'
+	| 'manage-orders'
 	// Searching and reading the source library, the text of every document in
 	// the private bucket (decision record 0051). It holds private copies, so
 	// only the writing team: the lead author, editors, co-authors and advisors.
@@ -133,7 +133,7 @@ const grants: Record<Role, readonly Permission[]> = {
 		'manage-events',
 		'host-video-rooms',
 		'manage-sponsors',
-		'manage-book-orders',
+		'manage-orders',
 		'search-source-library'
 	],
 	editor: [

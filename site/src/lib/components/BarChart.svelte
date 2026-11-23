@@ -244,6 +244,7 @@
 			columns={fullTable.columns}
 			rows={fullTable.rows}
 			bind:leftOut={left}
+			leaveOut
 			defaultSort={{ key: 'value', direction: 'descending' }}
 			count={false}
 			tools={false}

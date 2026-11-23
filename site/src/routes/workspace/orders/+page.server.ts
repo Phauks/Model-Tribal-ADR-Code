@@ -7,20 +7,20 @@ import { now } from '#lib/server/identifiers.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
-// Every printed-copy order, the problems buyers report, and refunds
-// (docs/book-orders.md, "Your orders and problems"). The lead author only.
+// Every order from the Store, the problems buyers report, and refunds
+// (docs/store.md; docs/book-orders.md, "Your orders and problems"). The lead author only.
 export const load: PageServerLoad = async (event) => {
-	requirePermission(event, 'manage-book-orders');
+	requirePermission(event, 'manage-orders');
 	const { database } = storage(event);
 	const state = orderingState(workerEnvironment());
 	const [orders, problems] = await Promise.all([allOrders(database), unsettledProblems(database)]);
-	const titles = new Map(orders.map((order) => [order.identifier, order]));
+	const byIdentifier = new Map(orders.map((order) => [order.identifier, order]));
 	return {
 		ordering: state.open ? { open: true as const, mode: state.settings.mode } : { open: false as const, reason: state.reason },
 		orders,
 		problems: problems.map((problem) => {
-			const order = titles.get(problem.orderIdentifier);
-			return { ...problem, orderPlacedAt: order?.placedAt ?? null, orderStatus: order?.status ?? null, orderMode: order?.mode ?? null };
+			const order = byIdentifier.get(problem.orderIdentifier);
+			return { ...problem, orderLines: order?.lines ?? [], orderMode: order?.mode ?? null };
 		})
 	};
 };
@@ -34,7 +34,7 @@ function centsOf(text: string): number {
 
 export const actions: Actions = {
 	answer: async (event) => {
-		requirePermission(event, 'manage-book-orders');
+		requirePermission(event, 'manage-orders');
 		const form = await event.request.formData();
 		const problem = formText(form, 'problem') ?? '';
 		const answer = formText(form, 'answer', longestProblemText + 1) ?? '';
@@ -46,7 +46,7 @@ export const actions: Actions = {
 		return { answered: problem };
 	},
 	refund: async (event) => {
-		requirePermission(event, 'manage-book-orders');
+		requirePermission(event, 'manage-orders');
 		const form = await event.request.formData();
 		const order = formText(form, 'order') ?? '';
 		const cents = centsOf(formText(form, 'amount') ?? '');

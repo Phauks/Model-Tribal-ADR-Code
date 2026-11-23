@@ -14,7 +14,8 @@ describe('site sections for the sidebar', () => {
 			'Glossary',
 			'Events',
 			'About',
-			'Sponsorship'
+			'Sponsorship',
+			'Store'
 		]);
 	});
 
@@ -25,6 +26,12 @@ describe('site sections for the sidebar', () => {
 		expect(sectionOf('/stories/some-story')?.label).toBe('Methods and stories');
 		expect(sectionOf('/')).toBeUndefined();
 		expect(sectionOf('/nationsx')).toBeUndefined();
+	});
+
+	it('counts the special-order page as part of the Store', () => {
+		expect(sectionOf('/store')?.label).toBe('Store');
+		expect(sectionOf('/book')?.label).toBe('Store');
+		expect(sectionOf('/bookx')).toBeUndefined();
 	});
 
 	it('counts the pages the Library gathers as part of it', () => {
@@ -41,6 +48,6 @@ describe('site sections for the sidebar', () => {
 
 	it('links only sections whose pages exist', () => {
 		const built = siteSections.filter((section) => section.built).map((section) => section.link);
-		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/library', '/glossary', '/events', '/about', '/sponsor']);
+		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/library', '/glossary', '/events', '/about', '/sponsor', '/store']);
 	});
 });
