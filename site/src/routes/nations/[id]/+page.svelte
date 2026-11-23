@@ -119,6 +119,38 @@
 			{/if}
 		</Collapsible>
 
+		<!-- 5a. Court opinions: the nation's opinions in the Caselaw Access Project's
+		     tribal reporters, each served as its own page with a removal link
+		     (decision record 0046). -->
+		{#if data.opinions}
+			{@const opinions = data.opinions}
+			<Collapsible heading="Court opinions" identifier="opinions-heading">
+				<p>
+					{opinions.count === 1 ? 'One opinion' : `${opinions.count.toLocaleString('en-US')} opinions`} of courts serving the nation {opinions.count === 1 ? 'is' : 'are'} published in the American Tribal Law Reporter or the Navajo Reporter{opinions.from === opinions.to ? `, from ${opinions.from}` : `, from ${opinions.from} to ${opinions.to}`}.<CitationMarks
+						marks={opinions.citations}
+					/>
+					{#if opinions.disputeResolutionCount > 0}
+						{opinions.disputeResolutionCount === opinions.count ? 'All of them' : opinions.disputeResolutionCount.toLocaleString('en-US')} mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial; they are listed first.
+					{/if}
+				</p>
+				<ul class="opinions">
+					{#each opinions.shown as opinion (opinion.path)}
+						<li>
+							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small muted"> Mentions {opinion.topics.join(', ')}.</span>{/if}
+						</li>
+					{/each}
+				</ul>
+				{#if opinions.count > opinions.shown.length}
+					<p><a href={opinions.link}>All {opinions.count.toLocaleString('en-US')} opinions</a>, with their courts, dates and the words they mention.</p>
+				{:else}
+					<p><a href={opinions.link}>The opinions as a table</a>, with their courts, dates and the words they mention.</p>
+				{/if}
+				<p class="small muted">
+					Each opinion is a copy of the Caselaw Access Project’s text, with the publisher’s headnotes removed. A word listed means only that it appears in the opinion, not what the court decided. The nation can ask to have any opinion taken down.
+				</p>
+			</Collapsible>
+		{/if}
+
 		<!-- 6. Laws and agreements: where the nation publishes its laws, linked, not
 		     reproduced, and each document with recorded versions, oldest first
 		     (decision record 0018). -->
@@ -216,6 +248,9 @@
 {/snippet}
 
 <style>
+	.opinions li + li {
+		margin-top: var(--space-2);
+	}
 	.review-status {
 		margin: var(--space-3) 0 var(--space-5);
 	}
