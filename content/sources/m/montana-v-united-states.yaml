@@ -44,6 +44,13 @@ supreme_court:
   - {name: "John Paul Stevens", vote: majority, opinion: concurrence}
   source: https://api.oyez.org/cases/1980/79-1128
   checked: '2026-11-22'
+courtlistener:
+  cluster: 110436
+  citation: "450 U.S. 544"
+  case_name: "Montana v. United States"
+  link: https://www.courtlistener.com/opinion/110436/montana-v-united-states/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

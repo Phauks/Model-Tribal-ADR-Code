@@ -48,6 +48,10 @@ saying where the project looked for that nation's information and what each
 search found or why it failed, so gaps can be told apart from places no one
 has looked ([decision record 0025](../docs/decisions/0025-search-logs.md)).
 
+## Tribal court opinions
+
+[`tribal-court-opinions/`](tribal-court-opinions/README.md) indexes the 2,368 tribal court opinions in the Caselaw Access Project's free files (1969 to 2017), with each court's nation, topic tags and the case records each opinion cites. The opinions' text stays private until the lead author decides whether the website shows it.
+
 ## Tribal law texts
 
 [`tribal-law/`](tribal-law/README.md) lists the dispute resolution provisions

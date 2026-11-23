@@ -44,6 +44,13 @@ supreme_court:
   - {name: "John Paul Stevens", vote: majority}
   source: https://api.oyez.org/cases/1975/75-5027
   checked: '2026-11-22'
+courtlistener:
+  cluster: 109478
+  citation: "426 U.S. 373"
+  case_name: "Bryan v. Itasca County"
+  link: https://www.courtlistener.com/opinion/109478/bryan-v-itasca-county/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

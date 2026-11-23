@@ -1,0 +1,89 @@
+# Settings for scripts/caselaw/tribal_court_opinions.py. Edit this file, not
+# the script, to add a reporter, a court or a topic; then re-run the script.
+
+# Caselaw Access Project reporters to read (folder names on static.case.law).
+# Decisions of federal and state courts reprinted in these reporters are left
+# out; only tribal courts' opinions are indexed.
+reporters:
+- slug: am-tribal-law
+  name: West's American Tribal Law Reporter
+- slug: navajo-rptr
+  name: Navajo Reporter
+
+# Which Native nation each court belongs to, by the court's name as the
+# Caselaw Access Project spells it (a regular expression, matched from the
+# start, ignoring case). The first rule that matches wins. Nations are profile
+# keys in content/tribes/. A court that matches no rule is reported, and its
+# opinions are indexed with no nation until a rule is added.
+courts:
+- court: "(navajo nation|window rock|chinle|crownpoint|shiprock|kayenta|tuba city|ramah|aneth|dilkon|alamo|tohajiilee)"
+  nations: [navajo-nation]
+- court: "(appellate court of the )?hopi"
+  nations: [hopi-tribe-of-arizona]
+- court: "cherokee nation"
+  nations: [cherokee-nation]
+- court: "(cherokee indian|eastern band of cherokee)"
+  nations: [eastern-band-of-cherokee-indians]
+- court: "cheyenne river sioux"
+  nations: [cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation]
+- court: "colville"
+  nations: [confederated-tribes-of-the-colville-reservation]
+- court: "coquille"
+  nations: [coquille-indian-tribe]
+- court: "(council of elders of the mohegan|mohegan)"
+  nations: [mohegan-tribe-of-indians-of-connecticut]
+- court: "(court of appeals of the confederated salish|confederated salish)"
+  nations: [confederated-salish-and-kootenai-tribes-of-the-flathead-reservation]
+- court: "fort mcdowell"
+  nations: [fort-mcdowell-yavapai-nation]
+- court: "fort peck"
+  nations: [assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation]
+- court: "grand traverse"
+  nations: [grand-traverse-band-of-ottawa-and-chippewa-indians]
+- court: "ho-chunk"
+  nations: [ho-chunk-nation-of-wisconsin]
+- court: "leech lake"
+  nations: [leech-lake-band]
+- court: "little river band of ottawa"
+  nations: [little-river-band-of-ottawa-indians]
+- court: "(tribal appellate court of the )?little traverse"
+  nations: [little-traverse-bay-bands-of-odawa-indians]
+- court: "oneida tribal judicial system"
+  nations: [oneida-nation]
+- court: "sac and fox nation"
+  nations: [sac-and-fox-nation]
+- court: "shoshone and arapaho"
+  nations: [eastern-shoshone-tribe-of-the-wind-river-reservation, northern-arapaho-tribe-of-the-wind-river-reservation]
+- court: "swinomish"
+  nations: [swinomish-indian-tribal-community]
+- court: "(tribal court of the |court of appeals of the )?confederated tribes of the grand ronde"
+  nations: [confederated-tribes-of-the-grand-ronde-community-of-oregon]
+- court: "tulalip"
+  nations: [tulalip-tribes-of-washington]
+- court: "white earth"
+  nations: [white-earth-band]
+
+# Topics tagged by keyword. A tag means the words appear in the opinion, not
+# that the opinion is about the topic: read before relying on one. Patterns are
+# regular expressions, matched ignoring case.
+topics:
+- tag: peacemaking
+  pattern: "peacemak"
+- tag: mediation
+  pattern: "\\bmediat(e|ed|es|ing|ion|or|ors)\\b"
+- tag: arbitration
+  pattern: "\\barbitra(l|te|ted|tes|ting|tion|tor|tors)\\b"
+- tag: alternative-dispute-resolution
+  pattern: "alternative dispute resolution"
+- tag: talking-things-out
+  pattern: "(naat.aanii|ho.zh.\\w*ji naat|talking things out)"
+- tag: restorative-justice
+  pattern: "restorative justice"
+- tag: custom-and-tradition
+  pattern: "(customary law|tribal custom|traditional law|common law of the navajo|din(e|é) bi beenahaz)"
+- tag: sovereign-immunity
+  pattern: "sovereign immunity"
+- tag: indian-civil-rights-act
+  pattern: "indian civil rights act"
+- tag: gaming
+  pattern: "\\bgaming\\b"

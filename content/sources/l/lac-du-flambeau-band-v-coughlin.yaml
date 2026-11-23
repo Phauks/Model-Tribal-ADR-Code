@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Amy Coney Barrett", vote: majority}
   source: https://api.oyez.org/cases/2022/22-227
   checked: '2026-11-22'
+courtlistener:
+  cluster: 9406659
+  citation: "599 U.S. 382"
+  case_name: "Lac du Flambeau Band of Lake Superior Chippewa Indians v. Coughlin"
+  link: https://www.courtlistener.com/opinion/9406659/lac-du-flambeau-band-of-lake-superior-chippewa-indians-v-coughlin/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work
