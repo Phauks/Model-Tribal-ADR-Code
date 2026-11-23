@@ -5,10 +5,13 @@ import { CompositionError, queueMessage, sendMessage, sendWhenPauseEnds } from '
 import { addressBookRecipients } from '#lib/server/mail/outreach.ts';
 import { mailCarriers, mailContext } from '#lib/server/mail/runtime.ts';
 import { deleteDraft, getDraft, getUndoSeconds } from '#lib/server/mail/writing.ts';
-import { formText, requirePermission } from '#lib/server/workspace.ts';
+import { formText } from '#lib/server/workspace.ts';
 import { readAttachments, whenFromForm } from '../compose.ts';
 import { composerData } from '../composer-data.server.ts';
 import type { Actions, PageServerLoad } from './$types';
+import { can } from '#lib/permissions.ts';
+import { requireMail } from '#lib/server/mail/inbox-access.ts';
+import { replyAddresses } from '#lib/server/mail/inboxes.ts';
 
 // A new message from the project inbox. It goes through Cloudflare Email
 // Service, which may carry only mail people started or expect, so a first
@@ -17,7 +20,7 @@ import type { Actions, PageServerLoad } from './$types';
 export const prerender = false;
 
 export const load: PageServerLoad = async (event) => {
-	const person = requirePermission(event, 'read-mail');
+	const person = await requireMail(event);
 	const context = mailContext();
 	const draftIdentifier = event.url.searchParams.get('draft');
 	const draft = draftIdentifier ? await getDraft(context, person.identifier, draftIdentifier) : null;
@@ -25,11 +28,14 @@ export const load: PageServerLoad = async (event) => {
 		if (draft?.threadIdentifier) redirect(303, `/workspace/inbox/${draft.threadIdentifier}#reply`);
 		error(404, 'That draft is gone. It may have been sent or discarded.');
 	}
-	const contacts = await addressBookRecipients(context);
+	// Suggestions come from the private address book, so only for whoever may read it.
+	const contacts = can(person, 'manage-address-book') ? await addressBookRecipients(context) : [];
+	// From one of the writer's inboxes: the one they were looking at (?inbox=), or else their first (src/lib/server/mail/inboxes.ts).
+	const addresses = await replyAddresses(context, person.identifier, event.url.searchParams.get('inbox'));
 	return {
-		addresses: context.settings.addresses,
+		addresses: addresses.sendable,
 		suggestions: contacts.map((contact) => ({ email: contact.email, label: contact.organizationName ? `${contact.name}, ${contact.organizationName}` : contact.name })),
-		defaultAddress: context.settings.defaultAddress ?? '',
+		defaultAddress: addresses.from,
 		to: event.url.searchParams.get('to') ?? '',
 		draft,
 		undone: event.url.searchParams.get('undone'),
@@ -39,7 +45,7 @@ export const load: PageServerLoad = async (event) => {
 
 export const actions: Actions = {
 	default: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireMail(event);
 		const context = mailContext();
 		const form = await event.request.formData();
 		const to = parseAddressList(formText(form, 'to', 4000) ?? '');

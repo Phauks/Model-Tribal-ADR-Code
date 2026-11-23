@@ -18,6 +18,7 @@ import {
 	type RuleFacts
 } from '#lib/mail.ts';
 import { actionStatement, currentTime, type MailContext } from './context.ts';
+import { reachableCondition } from './inboxes.ts';
 
 export interface MailRule {
 	identifier: string;
@@ -343,8 +344,12 @@ export function factsFor(message: {
 /** How far back "test" and "apply to the inbox" look: the latest received messages in the inbox. */
 const existingLimit = 1000;
 
-/** Conversations now in the inbox whose received messages a rule would match, newest first. */
-async function matchingInInbox(context: MailContext, rule: { matchAll: boolean; conditions: RuleCondition[] }) {
+/**
+ * Conversations now in the inbox whose received messages a rule would match,
+ * newest first: in shared inboxes only (rules never sort a personal inbox),
+ * and only those the person is on.
+ */
+async function matchingInInbox(context: MailContext, rule: { matchAll: boolean; conditions: RuleCondition[] }, personIdentifier: string) {
 	const { results } = await context.database
 		.prepare(
 			`SELECT m.thread_identifier AS thread, m.subject, t.subject AS thread_subject, t.counterpart_name, t.counterpart_address,
@@ -352,8 +357,10 @@ async function matchingInInbox(context: MailContext, rule: { matchAll: boolean; 
 			 EXISTS (SELECT 1 FROM mail_attachments a WHERE a.message_identifier = m.identifier AND a.inline = 0) AS attachment
 			 FROM mail_messages m JOIN mail_threads t ON t.identifier = m.thread_identifier
 			 WHERE m.direction = 'in' AND t.folder = 'inbox' AND m.spam_reason IS NULL
+			 AND t.inbox_identifier IN (SELECT identifier FROM mail_inboxes WHERE kind = 'shared') AND ${reachableCondition}
 			 ORDER BY m.created_at DESC LIMIT ${existingLimit}`
 		)
+		.bind(personIdentifier)
 		.all<ExistingMessage>();
 	const found = new Map<string, { identifier: string; subject: string; counterpart: string }>();
 	for (const row of results) {
@@ -380,9 +387,9 @@ async function matchingInInbox(context: MailContext, rule: { matchAll: boolean; 
 }
 
 /** What a rule would catch in the inbox now: how many conversations, and the first few. Changes nothing. */
-export async function previewRule(context: MailContext, input: RuleInput) {
+export async function previewRule(context: MailContext, input: RuleInput, personIdentifier: string) {
 	const rule = cleanRule(input);
-	const matches = await matchingInInbox(context, rule);
+	const matches = await matchingInInbox(context, rule, personIdentifier);
 	return { count: matches.length, examples: matches.slice(0, 8) };
 }
 
@@ -390,7 +397,7 @@ export async function previewRule(context: MailContext, input: RuleInput) {
 export async function applyRuleToInbox(context: MailContext, personIdentifier: string, identifier: string): Promise<number> {
 	const rule = await getRule(context, identifier);
 	if (!rule) throw new RuleError('That rule is gone.');
-	const matches = await matchingInInbox(context, rule);
+	const matches = await matchingInInbox(context, rule, personIdentifier);
 	const at = currentTime(context).toISOString();
 	for (const match of matches) {
 		await context.database.batch([

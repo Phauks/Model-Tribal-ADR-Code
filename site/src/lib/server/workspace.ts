@@ -11,7 +11,7 @@ import { workerEnvironment } from './environment.ts';
 import type { SignedInAccount } from './contributor-profiles.ts';
 import type { SignedInPerson } from './people.ts';
 
-interface WorkspaceEvent {
+export interface WorkspaceEvent {
 	locals: App.Locals;
 	url: URL;
 }

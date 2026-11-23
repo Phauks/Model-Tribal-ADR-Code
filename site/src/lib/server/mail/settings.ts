@@ -7,10 +7,6 @@
 export interface MailSettings {
 	/** The project's mail domain, such as example.org, or null while email is off. */
 	domain: string | null;
-	/** The project's own addresses, such as contact@example.org. */
-	addresses: string[];
-	/** The address replies come from when a message reached the catch-all. */
-	defaultAddress: string | null;
 	/** Where the "new mail" notice goes: a verified address in Email Routing, or null for none. */
 	noticeAddress: string | null;
 	/** The website's address, for links in notices and unsubscribe links. */
@@ -42,15 +38,8 @@ function text(value: unknown): string | null {
 
 export function mailSettings(environment: WorkerEnvironment): MailSettings {
 	const domain = text(environment.MAIL_DOMAIN)?.toLowerCase() ?? null;
-	const localParts = (text(environment.MAIL_ADDRESSES) ?? 'contact')
-		.split(',')
-		.map((part) => part.trim().toLowerCase())
-		.filter((part) => /^[a-z0-9._-]+$/.test(part));
-	const addresses = domain ? localParts.map((part) => `${part}@${domain}`) : [];
 	return {
 		domain,
-		addresses,
-		defaultAddress: addresses[0] ?? null,
 		noticeAddress: text(environment.MAIL_NOTICE_ADDRESS),
 		siteAddress: text(environment.SITE_ADDRESS)?.replace(/\/+$/, '') ?? null,
 		senderName: text(environment.MAIL_SENDER_NAME) ?? 'Model Tribal ADR Code',
@@ -79,8 +68,7 @@ function outreachSettings(environment: WorkerEnvironment): OutreachSettings | nu
 	};
 }
 
-/** Whether an address is one of the project's own. */
+/** Whether an address is one of the project's own: any address on the mail domain (each inbox's, and the catch-all's). */
 export function isProjectAddress(settings: MailSettings, address: string): boolean {
-	const lower = address.toLowerCase();
-	return settings.domain !== null && (lower.endsWith(`@${settings.domain}`) || settings.addresses.includes(lower));
+	return settings.domain !== null && address.toLowerCase().endsWith(`@${settings.domain}`);
 }

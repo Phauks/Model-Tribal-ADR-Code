@@ -1,12 +1,25 @@
 # The project inbox
 
-The website has its own email: a shared inbox in the workspace where the lead author reads, replies to, forwards, assigns, tags, files, sets reminders on and archives the project's mail, and an Outreach page that writes to nations from the private address book. Nothing needs Google Workspace or another hosted mailbox for everyday mail. Mail is kept in the project's own storage: each message whole in the private bucket (R2), and what the pages list and search in the database (D1). The design and its reasons are in [decision record 0040](../docs/decisions/0040-project-inbox-on-cloudflare.md).
+The website has its own email: inboxes in the workspace, shared or personal, where the project team reads, replies to, forwards, assigns, tags, files, sets reminders on and archives the project's mail, and an Outreach page that writes to nations from the private address book. Nothing needs Google Workspace or another hosted mailbox for everyday mail. Mail is kept in the project's own storage: each message whole in the private bucket (R2), and what the pages list and search in the database (D1). The design and its reasons are in [decision record 0040](../docs/decisions/0040-project-inbox-on-cloudflare.md).
 
 Email is off until the project has a domain. While `MAIL_DOMAIN` is empty, the Inbox and Outreach pages open, but nothing is received or sent.
 
+## Inboxes
+
+Each address on the domain that the project uses has its own inbox (`src/lib/server/mail/inboxes.ts`, migration `20261123T1757_add_mail_inboxes.sql`). There are two kinds:
+
+- **Shared**, such as `contact@`: read and answered by everyone on its list. Whoever manages mail adds and takes off people on the Inbox settings page; an inbox always keeps at least one person. Someone taken off loses sight of its conversations at once, and those assigned to them there become unassigned.
+- **Personal**, such as `trevor@`: read only by the one person it belongs to. Nobody else is ever put on it, and whoever manages mail sees only that it exists, not what is in it or how much. Deleting the person's account deletes the inbox, and the run every five minutes then removes its conversations and their files, unseen by anyone.
+
+One shared inbox is marked "Gets other mail": mail to an address no inbox has goes there, so a mistyped or old address is not lost. It starts as `contact@`, the inbox the site had before there were several, read by the lead author. A `+tag` after the local part (`contact+forms@`) goes to the inbox without it. An inbox can be deleted once it has no conversations (Deleted is emptied after 30 days); mail to its address then goes to the catch-all. `unsubscribe@` is kept for the inbox's own use.
+
+Everything is by inbox. The list, counts, search, a conversation, its files and HTML, the sender card's other conversations and its export open only for someone on that conversation's inbox; anyone else gets "not found", as if it were not there. The same message sent to two addresses lands in both inboxes as separate conversations, because Email Routing gives the Worker each message with a single recipient address (`message.to`), so a message to two of the project's addresses is filed once for each.[^routing] A person sends only from the addresses of inboxes they are on, and a reply starts from the address of the conversation's inbox. When someone is on more than one inbox, the sidebar lists each with its unread count, and "All inboxes" shows them together.
+
+Some things belong to the project's shared mail and so skip personal inboxes: auto-sort rules, the "new mail" notice and the away message. Folders, tags and saved replies are shared across inboxes, and a folder or tag shows each person only the conversations they can open. Settings, rules and the private address book (contact details on the sender card, address suggestions while writing) stay with whoever holds `manage-mail` and `manage-address-book`.
+
 ## How mail comes in
 
-Cloudflare Email Routing receives mail for the domain and hands each message to the Worker's email handler.[^routing] The handler passes the raw message to `/mail/internal/arrive` inside the same Worker (`tools/add-mail-handlers.mjs`), which files it (`src/lib/server/mail/inbound.ts`):
+Cloudflare Email Routing receives mail for the domain and hands each message to the Worker's email handler.[^routing] The address it was sent to picks the inbox (see "Inboxes" above). The handler passes the raw message to `/mail/internal/arrive` inside the same Worker (`tools/add-mail-handlers.mjs`), which files it (`src/lib/server/mail/inbound.ts`):
 
 - The whole message is kept in the bucket at `mail/raw/<year>/<month>/<id>.eml`, its HTML at `mail/html/<id>.html`, and each attachment at `mail/attachments/<message>/<attachment>`.
 - A reply joins the conversation it answers, found by its `In-Reply-To` and `References` headers, or else by the same subject (without "Re:") from the same address within 60 days.
@@ -100,7 +113,6 @@ Plain settings are in `site/wrangler.jsonc` under `vars`, because plain-text var
 | Setting | What it holds |
 | --- | --- |
 | `MAIL_DOMAIN` | The project's domain. Empty while email is off. |
-| `MAIL_ADDRESSES` | The inbox's own addresses, as local parts separated by commas, such as `contact,requests`. The first is the one replies come from by default. |
 | `MAIL_NOTICE_ADDRESS` | Where the "new mail" notice goes, if anywhere. Not one of the project's own addresses. |
 | `MAIL_SENDER_NAME` | The sender's name on the project's mail. |
 | `SITE_ADDRESS` | The website's address, such as `https://example.org`, for links in mail. |
@@ -111,7 +123,7 @@ Plain settings are in `site/wrangler.jsonc` under `vars`, because plain-text var
 | `OUTREACH_SMTP_HOST`, `OUTREACH_SMTP_PORT`, `OUTREACH_SMTP_USERNAME` | The mailbox's SMTP server, port (465 or 587) and user name (the From address when empty). |
 | `OUTREACH_SMTP_PASSWORD` | Secret. The mailbox's app password. |
 
-Who can use the pages is set in `src/lib/permissions.ts`: `read-mail`, `send-outreach` and `manage-mail`, all held only by the lead author for now.
+The addresses are not a setting: they are the inboxes, made on the Inbox settings page. Who can use the pages is set by inbox membership (see "Inboxes") and in `src/lib/permissions.ts`: `manage-mail` (the settings, the inboxes and who is on them, and rules) and `send-outreach`, both held only by the lead author for now. Anyone on at least one inbox sees Inbox in the workspace menu.
 
 ## Switching email on
 
@@ -119,7 +131,7 @@ These steps wait for the domain (`docs/domain-to-do.md`). The DNS records are ad
 
 1. **Receiving.** In the dashboard, open the domain's Email > Email Routing and enable it; Cloudflare adds its MX records (`route1`, `route2` and `route3.mx.cloudflare.net`), an SPF record with `include:_spf.mx.cloudflare.net`, and a DKIM record.[^routing] Under Routing rules, set the catch-all to "Send to a Worker" and choose `model-tribal-adr-code`. A catch-all is needed for the `unsubscribe+` addresses and lets the inbox see mail to any address on the domain.
 2. **Sending replies.** In Email Service > Email Sending, onboard the domain. Cloudflare adds the sending SPF and DKIM records on the `cf-bounce` subdomain and a DMARC record (`p=reject`) if the domain has none.[^send] The same step serves sign-in codes (`SIGN_IN_EMAIL_FROM`).
-3. **Settings.** In `wrangler.jsonc`, set `MAIL_DOMAIN`, `MAIL_ADDRESSES`, `SITE_ADDRESS` and, if wanted, `MAIL_NOTICE_ADDRESS`, and merge that change. In the dashboard, add `MAIL_SIGNING_KEY` as a Secret (for example the output of `openssl rand -hex 32`).
+3. **Settings.** In `wrangler.jsonc`, set `MAIL_DOMAIN`, `SITE_ADDRESS` and, if wanted, `MAIL_NOTICE_ADDRESS`, and merge that change. In the dashboard, add `MAIL_SIGNING_KEY` as a Secret (for example the output of `openssl rand -hex 32`).
 4. **The database.** Run `npm run database:migrate:remote` from `site/` (or let the next deploy's migration step do it) so migration 0013 is applied.
 5. **The outreach mailbox.** Sign up for Zoho Mail Lite with the subdomain `outreach.<domain>`, add the MX, SPF and DKIM records Zoho gives (under the subdomain, so they do not touch the root domain's Cloudflare records), and add a DMARC record for the subdomain. Turn on two-factor sign-in and make an app-specific password.[^zoho-smtp] In Zoho, forward everything that reaches the mailbox to `OUTREACH_REPLY_TO`, so a reply sent to the wrong address still lands in the inbox. Then set `OUTREACH_CARRIER` to `smtp`, the other `OUTREACH_` settings in `wrangler.jsonc`, and `OUTREACH_SMTP_PASSWORD` as a Secret.
 6. **Delivery reports.** Create a queue named `mail-delivery-events`, subscribe it to Email Sending events for the domain (all six types), and add the consumer to `wrangler.jsonc`:[^events]
@@ -142,9 +154,9 @@ Start outreach slowly. A new mailbox is trusted gradually, so begin at 20 to 40 
 
 ## Files
 
-- `migrations/0013_mail.sql`: the tables; `migrations/20261123T0510_add_mail_writing.sql` adds those for signatures, saved replies, drafts, undo send and the away message; `migrations/20261123T0509_add_mail_blocked_senders.sql` adds blocked senders and keeps each message's unsubscribe headers.
+- `migrations/0013_mail.sql`: the tables; `migrations/20261123T0510_add_mail_writing.sql` adds those for signatures, saved replies, drafts, undo send and the away message; `migrations/20261123T0509_add_mail_blocked_senders.sql` adds blocked senders and keeps each message's unsubscribe headers; `migrations/20261123T1757_add_mail_inboxes.sql` adds the inboxes and who is on each.
 - `src/lib/mail.ts`: names, labels and small functions the pages share, including how a rule's conditions are matched.
-- `src/lib/server/mail/`: settings, message building (`mime.ts`), SMTP (`smtp.ts`), carriers, signed tokens, receiving (`inbound.ts`), sending (`outbound.ts`), conversations, folders and tags (`store.ts`), auto-sort rules (`rules.ts`), writing (`writing.ts`), the sender card, blocking and unsubscribing (`senders.ts`), exporting (`export.ts`), outreach (`outreach.ts`) and the do-not-email list (`suppressions.ts`). Only `runtime.ts` and `socket-opener.ts` need the Worker; the rest is tested in Node (`tests/mail.test.ts`, `tests/mail-flow.test.ts`, `tests/mail-organize.test.ts`, `tests/mail-writing.test.ts`, `tests/mail-senders.test.ts`).
+- `src/lib/server/mail/`: settings, inboxes and who may open them (`inboxes.ts`, `inbox-access.ts`), message building (`mime.ts`), SMTP (`smtp.ts`), carriers, signed tokens, receiving (`inbound.ts`), sending (`outbound.ts`), conversations, folders and tags (`store.ts`), auto-sort rules (`rules.ts`), writing (`writing.ts`), the sender card, blocking and unsubscribing (`senders.ts`), exporting (`export.ts`), outreach (`outreach.ts`) and the do-not-email list (`suppressions.ts`). Only `runtime.ts` and `socket-opener.ts` need the Worker; the rest is tested in Node (`tests/mail.test.ts`, `tests/mail-flow.test.ts`, `tests/mail-organize.test.ts`, `tests/mail-writing.test.ts`, `tests/mail-senders.test.ts`, `tests/mail-inboxes.test.ts`).
 - `tools/add-mail-handlers.mjs`: adds the email, queue and scheduled handlers after the build. It wraps whatever entry the build made, so it runs last in `npm run build`.
 - `src/routes/workspace/inbox/`, `src/routes/workspace/outreach/`: the pages. `src/routes/mail/`: the unsubscribe and acknowledgment pages, and the internal routes the handlers call.
 

@@ -14,6 +14,7 @@ import { snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/
 import { buildRawMessage, newMessageId, type OutgoingAttachment, type OutgoingMail } from './mime.ts';
 import { actionStatement, bucketKeys, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { noticeHeader } from './inbound.ts';
+import { catchAllInbox, inboxForAddress, mayOpenThread, sendingAddresses } from './inboxes.ts';
 import { openScannedFile, stillScanning, storeSentFile } from '#lib/server/file-scans.ts';
 import { heldForVirusCheck } from '#lib/mail.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
@@ -72,7 +73,14 @@ export async function queueMessage(context: MailContext, composition: Compositio
 	const recipients = [...composition.to, ...(composition.cc ?? []), ...(composition.bcc ?? [])];
 	if (composition.to.length === 0) throw new CompositionError('Add at least one address in To.');
 	if (recipients.length > recipientLimit) throw new CompositionError(`A message can go to at most ${recipientLimit} addresses.`);
-	if (!context.settings.addresses.includes(composition.from.toLowerCase())) throw new CompositionError('Choose one of the project’s addresses to send from.');
+	// From one of the sender's own inboxes (src/lib/server/mail/inboxes.ts), and only in a conversation they may open.
+	const fromInbox = await inboxForAddress(context, composition.from);
+	if (!fromInbox || !(await sendingAddresses(context, composition.personIdentifier)).includes(composition.from.toLowerCase())) {
+		throw new CompositionError('Choose one of your inboxes’ addresses to send from.');
+	}
+	if (composition.threadIdentifier && composition.personIdentifier && !(await mayOpenThread(context, composition.personIdentifier, composition.threadIdentifier))) {
+		throw new CompositionError('That conversation is in an inbox you are not on.');
+	}
 	const forward = composition.threadIdentifier ? (composition.forward ?? null) : null;
 	const attachments = [...(composition.attachments ?? []), ...(forward ? await forwardedAttachments(context, composition.threadIdentifier!, forward) : [])];
 	const size = attachments.reduce((total, item) => total + item.content.byteLength, 0);
@@ -112,10 +120,19 @@ export async function queueMessage(context: MailContext, composition: Compositio
 			database
 				.prepare(
 					`INSERT INTO mail_threads (identifier, subject, normalized_subject, folder, unread, project_address, counterpart_address,
-					 counterpart_name, message_count, last_message_at, created_at, updated_at)
-					 VALUES (?1, ?2, ?3, 'archive', 0, ?4, ?5, ?6, 0, ?7, ?7, ?7)`
+					 counterpart_name, message_count, last_message_at, created_at, updated_at, inbox_identifier)
+					 VALUES (?1, ?2, ?3, 'archive', 0, ?4, ?5, ?6, 0, ?7, ?7, ?7, ?8)`
 				)
-				.bind(threadIdentifier, composition.subject, normalizeSubject(composition.subject), composition.from.toLowerCase(), counterpart.email, counterpart.name ?? null, stamp)
+				.bind(
+					threadIdentifier,
+					composition.subject,
+					normalizeSubject(composition.subject),
+					composition.from.toLowerCase(),
+					counterpart.email,
+					counterpart.name ?? null,
+					stamp,
+					fromInbox.identifier
+				)
 		);
 	}
 	statements.push(
@@ -491,10 +508,11 @@ export async function recordDeliveryEvent(context: MailContext, event: unknown):
  */
 export async function sendNewMailNotice(context: MailContext, carriers: MailCarriers): Promise<boolean> {
 	const { settings } = context;
-	if (!carriers.replies || !settings.noticeAddress || !settings.defaultAddress) return false;
+	const from = (await catchAllInbox(context))?.address;
+	if (!carriers.replies || !settings.noticeAddress || !from) return false;
 	const link = settings.siteAddress ? `${settings.siteAddress}/workspace/inbox` : 'the workspace inbox on the website';
 	await carriers.replies.send({
-		from: { email: settings.defaultAddress, name: `${settings.senderName} inbox` },
+		from: { email: from, name: `${settings.senderName} inbox` },
 		to: [{ email: settings.noticeAddress }],
 		subject: 'New mail in the project inbox',
 		text: `New mail has arrived in the project inbox. Read it at ${link}.\n\nThis notice does not quote the message, so it stays in the project's own storage. At most one notice is sent every 30 minutes.`,

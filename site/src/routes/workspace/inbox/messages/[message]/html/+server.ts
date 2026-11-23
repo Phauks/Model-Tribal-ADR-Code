@@ -1,8 +1,8 @@
 import { error } from '@sveltejs/kit';
 import { mailContext } from '#lib/server/mail/runtime.ts';
 import { getMessageHtmlKey } from '#lib/server/mail/store.ts';
-import { requirePermission } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
+import { requireMessage } from '#lib/server/mail/inbox-access.ts';
 
 // A message's HTML version, shown in a sandboxed frame on the conversation
 // page. Scripts, forms and plug-ins never run, and nothing outside the
@@ -11,9 +11,9 @@ import type { RequestHandler } from './$types';
 export const prerender = false;
 
 export const GET: RequestHandler = async (event) => {
-	requirePermission(event, 'read-mail');
+	const person = await requireMessage(event, event.params.message);
 	const context = mailContext();
-	const key = await getMessageHtmlKey(context, event.params.message);
+	const key = await getMessageHtmlKey(context, event.params.message, person.identifier);
 	if (!key) error(404, 'This message has no HTML version.');
 	const object = await context.bucket.get(key);
 	if (!object) error(404, 'The HTML version is missing from storage.');

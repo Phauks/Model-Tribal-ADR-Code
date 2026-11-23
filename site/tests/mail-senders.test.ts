@@ -7,6 +7,7 @@ import { addAddressBook, addContact, rawMessage, recordingCarrier, testContext }
 
 const clock = { now: new Date('2026-11-24T17:00:00Z') };
 const encoder = new TextEncoder();
+const lead = { personIdentifier: 'lead', seesAddressBook: true };
 
 function arriving(headers: Record<string, string>, body = 'Hello') {
 	return { from: headers.From.replace(/.*<|>.*/g, ''), to: 'contact@example.org', raw: encoder.encode(rawMessage({ To: 'contact@example.org', ...headers }, body)) };
@@ -31,7 +32,7 @@ describe('the sender card', () => {
 			.run();
 		const first = await filed(context, { From: 'Office <office@nation.example>', Subject: 'First question' });
 		const second = await filed(context, { From: 'Office <office@nation.example>', Subject: 'Another matter' });
-		const card = await senderCard(context, 'Office@Nation.example', second.threadIdentifier);
+		const card = await senderCard(context, 'Office@Nation.example', second.threadIdentifier, lead);
 		expect(card).toMatchObject({
 			address: 'office@nation.example',
 			contact: { name: 'Tribal Secretary’s Office', nationIdentifier: 'hopi-tribe', otherWays: [{ method: 'phone', value: '(928) 555-0100' }], source: 'Tribal Leaders Directory' },
@@ -44,7 +45,7 @@ describe('the sender card', () => {
 	it('says when someone is not in the address book, even before the address book exists', async () => {
 		const context = await testContext(clock);
 		const arrived = await filed(context, { From: 'stranger@else.example', Subject: 'Hi' });
-		expect(await senderCard(context, 'stranger@else.example', arrived.threadIdentifier)).toMatchObject({ contact: null, conversations: [] });
+		expect(await senderCard(context, 'stranger@else.example', arrived.threadIdentifier, lead)).toMatchObject({ contact: null, conversations: [] });
 	});
 });
 

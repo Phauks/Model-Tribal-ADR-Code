@@ -16,6 +16,7 @@
 import PostalMime, { type Email } from 'postal-mime';
 import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type MailAddress } from '#lib/mail.ts';
 import { actionStatement, bucketKeys, currentTime, type MailContext } from './context.ts';
+import { inboxForArrival } from './inboxes.ts';
 import { isProjectAddress } from './settings.ts';
 import { factsFor, ruleAddressForms, runRules } from './rules.ts';
 import { storeSentFile } from '#lib/server/file-scans.ts';
@@ -45,7 +46,8 @@ export type ArrivalResult =
 			/**
 			 * Whether a person wrote it to the project, so the away message may
 			 * answer it: not Spam, not an automatic reply or delivery report, not
-			 * from a mailing list, and not from the project's own addresses.
+			 * from a mailing list, not to a personal inbox, and not from the
+			 * project's own addresses.
 			 */
 			answerable: boolean;
 			/** The names of the auto-sort rules that matched, in the order they ran. */
@@ -165,9 +167,14 @@ interface ThreadRow {
 	nation_identifier: string | null;
 }
 
-/** The conversation a message answers, by its Message-ID references, or else by subject and sender. */
+/**
+ * The conversation a message answers, by its Message-ID references, or else
+ * by subject and sender, within the inbox it arrived in: the same message
+ * sent to two of the project's addresses is kept in each inbox.
+ */
 export async function findConversation(
 	context: MailContext,
+	inboxIdentifier: string,
 	references: string[],
 	normalized: string,
 	counterpart: string | null,
@@ -178,9 +185,9 @@ export async function findConversation(
 			.prepare(
 				`SELECT t.identifier, t.folder, t.remind_set_at, t.nation_identifier FROM mail_messages m
 				 JOIN mail_threads t ON t.identifier = m.thread_identifier
-				 WHERE m.message_id = ?1 OR m.provider_message_id = ?1 LIMIT 1`
+				 WHERE (m.message_id = ?1 OR m.provider_message_id = ?1) AND t.inbox_identifier = ?2 LIMIT 1`
 			)
-			.bind(id)
+			.bind(id, inboxIdentifier)
 			.first<ThreadRow>();
 		if (row) return row;
 	}
@@ -189,10 +196,10 @@ export async function findConversation(
 	return context.database
 		.prepare(
 			`SELECT identifier, folder, remind_set_at, nation_identifier FROM mail_threads
-			 WHERE normalized_subject = ? AND counterpart_address = ? AND last_message_at >= ?
+			 WHERE normalized_subject = ? AND counterpart_address = ? AND last_message_at >= ? AND inbox_identifier = ?
 			 ORDER BY last_message_at DESC LIMIT 1`
 		)
-		.bind(normalized, counterpart, since)
+		.bind(normalized, counterpart, since, inboxIdentifier)
 		.first<ThreadRow>();
 }
 
@@ -260,6 +267,9 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 		return { outcome: 'unsubscribed', email: address };
 	}
 
+	// The inbox it goes to: the one for the address it was sent to, or else the catch-all (src/lib/server/mail/inboxes.ts).
+	const inbox = await inboxForArrival(context, cleanAddress(arriving.to));
+	if (!inbox) return { outcome: 'rejected', reason: 'No inbox takes this mail.' };
 	const identifier = crypto.randomUUID();
 	const from = addressOf(email.from) ?? addressOf(email.sender) ?? { email: cleanAddress(arriving.from) ?? 'unknown@invalid', name: null };
 	const to = addressList(email.to);
@@ -274,11 +284,11 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	const blocked = report ? null : await blockedPattern(context, from.email);
 	const spam = report ? null : blocked ? `You blocked ${blocked.startsWith('@') ? `mail from ${blocked}` : 'this sender'}.` : spamReason(email);
 	const references = [...messageIds(email.references), ...messageIds(email.inReplyTo), ...(report?.originalIds ?? [])];
-	const projectAddress = cleanAddress(arriving.to) ?? settings.defaultAddress;
+	const projectAddress = cleanAddress(arriving.to) ?? inbox.address;
 	// The other side of the conversation: whoever wrote, or, for a copy of our own mail, whoever it went to.
 	const counterpart = isProjectAddress(settings, (replyTo ?? from).email) ? (to.find((item) => !isProjectAddress(settings, item.email)) ?? from) : (replyTo ?? from);
 	const normalized = normalizeSubject(subject);
-	const existing = blocked ? null : await findConversation(context, references, normalized, report ? null : counterpart.email, at);
+	const existing = blocked ? null : await findConversation(context, inbox.identifier, references, normalized, report ? null : counterpart.email, at);
 	const threadIdentifier = existing?.identifier ?? crypto.randomUUID();
 	const nation = existing?.nation_identifier ?? (await nationForAddress(context, counterpart.email));
 	const stamp = at.toISOString();
@@ -335,8 +345,8 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 			database
 				.prepare(
 					`INSERT INTO mail_threads (identifier, subject, normalized_subject, folder, unread, project_address, counterpart_address,
-					 counterpart_name, nation_identifier, message_count, last_message_at, last_inbound_at, stop_requested, created_at, updated_at)
-					 VALUES (?1, ?2, ?3, ?4, 1, ?5, ?6, ?7, ?8, 1, ?9, ?9, ?10, ?9, ?9)`
+					 counterpart_name, nation_identifier, message_count, last_message_at, last_inbound_at, stop_requested, created_at, updated_at, inbox_identifier)
+					 VALUES (?1, ?2, ?3, ?4, 1, ?5, ?6, ?7, ?8, 1, ?9, ?9, ?10, ?9, ?9, ?11)`
 				)
 				.bind(
 					threadIdentifier,
@@ -348,7 +358,8 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 					counterpart.name ?? null,
 					nation,
 					stamp,
-					!automatic && asksToStop(text) ? 1 : 0
+					!automatic && asksToStop(text) ? 1 : 0,
+					inbox.identifier
 				)
 		);
 	}
@@ -417,8 +428,10 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	if (report) await applyDeliveryReport(context, report, identifier);
 
 	// Auto-sort rules (src/lib/server/mail/rules.ts), for mail a person wrote or a machine sent, not for Spam or delivery reports.
+	// They are the team's, so they sort shared inboxes only; nobody else's rules touch a personal inbox.
+	const personal = inbox.kind === 'personal';
 	const sortedBy =
-		spam || report
+		spam || report || personal
 			? []
 			: await runRules(
 					context,
@@ -442,9 +455,11 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 			.prepare(`SELECT 1 AS found FROM mail_threads WHERE identifier = ? AND (unread = 0 OR folder IN ('archive', 'trash', 'spam'))`)
 			.bind(threadIdentifier)
 			.first()) !== null;
-	const notify = !spam && !automatic && !quietened && (await noticeDue(context, at));
+	// The "new mail" notice is about the team's mail, so a personal inbox's mail does not send it.
+	const notify = !spam && !automatic && !quietened && !personal && (await noticeDue(context, at));
 	const fromList = header(email, 'list-id') !== null || header(email, 'list-unsubscribe') !== null;
-	const answerable = !spam && !automatic && !fromList && !isProjectAddress(settings, from.email);
+	// The away message is the team's, so it answers mail to shared inboxes only.
+	const answerable = !spam && !automatic && !fromList && !personal && !isProjectAddress(settings, from.email);
 	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify, answerable, sortedBy };
 }
 

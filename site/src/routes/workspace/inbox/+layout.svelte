@@ -1,7 +1,9 @@
 <script lang="ts">
-	// The inbox's left column (site/MAIL.md): Compose, the views and Drafts,
-	// the folders the lead author made, the tags, the rules and the settings. On a narrow screen it folds
-	// into "Mailboxes" above the page.
+	// The inbox's left column (site/MAIL.md): Compose, the person's inboxes
+	// when they have more than one, the views and Drafts, the folders the lead
+	// author made, the tags, the rules and the settings. Choosing an inbox
+	// narrows the views, folders and tags to it (?inbox=). On a narrow screen
+	// it folds into "Mailboxes" above the page.
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import Archive from '@lucide/svelte/icons/archive';
@@ -12,6 +14,7 @@
 	import FolderIcon from '@lucide/svelte/icons/folder';
 	import FolderCog from '@lucide/svelte/icons/folder-cog';
 	import InboxIcon from '@lucide/svelte/icons/inbox';
+	import Layers from '@lucide/svelte/icons/layers';
 	import ListFilter from '@lucide/svelte/icons/list-filter';
 	import OctagonAlert from '@lucide/svelte/icons/octagon-alert';
 	import Plus from '@lucide/svelte/icons/plus';
@@ -20,6 +23,7 @@
 	import SquarePen from '@lucide/svelte/icons/square-pen';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import UserCheck from '@lucide/svelte/icons/user-check';
+	import UserRound from '@lucide/svelte/icons/user-round';
 	import type { Component } from 'svelte';
 	import type { LayoutProps } from './$types';
 
@@ -42,6 +46,14 @@
 	const currentFolder = $derived(onList ? page.url.searchParams.get('folder') : null);
 	const currentTag = $derived(onList ? page.url.searchParams.get('tag') : null);
 
+	/** A list link, keeping the chosen inbox. */
+	function listLink(query: Record<string, string> = {}): string {
+		const parameters = new URLSearchParams(query);
+		if (data.chosenInbox) parameters.set('inbox', data.chosenInbox);
+		const text = parameters.toString();
+		return text ? `${base}?${text}` : base;
+	}
+
 	let open = $state(true);
 	onMount(() => {
 		// Folded on a phone, so the mail comes first.
@@ -53,12 +65,36 @@
 	<details class="mail-nav" bind:open>
 		<summary><ChevronDown size={18} aria-hidden="true" class="fold" />Mailboxes</summary>
 		<nav aria-label="Mailboxes">
-			<a class="button compose" href="{base}/new"><SquarePen size={18} aria-hidden="true" /> Compose</a>
+			<a class="button compose" href={data.chosenInbox ? `${base}/new?inbox=${data.chosenInbox}` : `${base}/new`}><SquarePen size={18} aria-hidden="true" /> Compose</a>
+			{#if data.inboxes.length > 1}
+				<div class="section-head"><h2>Inboxes</h2></div>
+				<ul class="nav-list">
+					<li>
+						<a href={base} aria-current={onList && !data.chosenInbox && currentView === 'inbox' ? 'page' : undefined}>
+							<Layers size={18} aria-hidden="true" />
+							<span class="name">All inboxes</span>
+						</a>
+					</li>
+					{#each data.inboxes as inbox (inbox.identifier)}
+						<li>
+							<a href="{base}?inbox={inbox.identifier}" aria-current={onList && data.chosenInbox === inbox.identifier && currentView === 'inbox' ? 'page' : undefined} title={inbox.address}>
+								{#if inbox.kind === 'personal'}<UserRound size={18} aria-hidden="true" />{:else}<InboxIcon size={18} aria-hidden="true" />{/if}
+								<span class="name">{inbox.name}<span class="visually-hidden">, {inbox.kind === 'personal' ? 'your own inbox' : 'shared'}, {inbox.address}</span></span>
+								{#if inbox.unread}<span class="count" aria-label="{inbox.unread} unread">{inbox.unread}</span>{/if}
+							</a>
+						</li>
+					{/each}
+				</ul>
+				{#if data.chosenInbox}
+					{@const chosen = data.inboxes.find((inbox) => inbox.identifier === data.chosenInbox)}
+					<div class="section-head"><h2>In {chosen?.name}</h2></div>
+				{/if}
+			{/if}
 			<ul class="nav-list">
 				{#each data.views as view (view.key)}
 					{@const Icon = icons[view.key]}
 					<li>
-						<a href={view.key === 'inbox' ? base : `${base}?view=${view.key}`} aria-current={currentView === view.key ? 'page' : undefined}>
+						<a href={view.key === 'inbox' ? listLink() : listLink({ view: view.key })} aria-current={currentView === view.key && (data.inboxes.length <= 1 || view.key !== 'inbox') ? 'page' : undefined}>
 							<Icon size={18} aria-hidden="true" />
 							<span class="name">{view.label}</span>
 							{#if data.counts[view.key]}<span class="count" aria-label="{data.counts[view.key]} {view.key === 'reminders' || view.key === 'scheduled' ? 'waiting' : 'unread'}">{data.counts[view.key]}</span>{/if}
@@ -87,7 +123,7 @@
 					{#each data.mailFolders as folder (folder.identifier)}
 						<li>
 							<a
-								href="{base}?folder={folder.identifier}"
+								href={listLink({ folder: folder.identifier })}
 								aria-current={currentFolder === folder.identifier ? 'page' : undefined}
 								style="padding-left: calc(var(--space-2) + {folder.depth} * var(--space-4))"
 								title={folder.path}
@@ -113,7 +149,7 @@
 				<ul class="nav-list">
 					{#each data.tags as tag (tag.identifier)}
 						<li>
-							<a href="{base}?tag={tag.identifier}" aria-current={currentTag === tag.identifier ? 'page' : undefined}>
+							<a href={listLink({ tag: tag.identifier })} aria-current={currentTag === tag.identifier ? 'page' : undefined}>
 								<span class="dot dot-{tag.color}" aria-hidden="true"></span>
 								<span class="name">{tag.name}</span>
 							</a>

@@ -11,6 +11,7 @@
  */
 import { replySubject, signatureBlock, unknownFields, type MailAddress } from '#lib/mail.ts';
 import { actionStatement, currentTime, type MailCarriers, type MailContext } from './context.ts';
+import { listInboxes, mayOpenThread, threadInboxAddress } from './inboxes.ts';
 import { queueMessage, sendMessage } from './outbound.ts';
 import { isProjectAddress } from './settings.ts';
 import { isSuppressed } from './suppressions.ts';
@@ -26,15 +27,16 @@ export const signatureLimit = 2000;
 /** The signature of each of the inbox's addresses that has one. */
 export async function listSignatures(context: MailContext): Promise<Record<string, string>> {
 	const { results } = await context.database.prepare('SELECT address, body FROM mail_signatures').all<{ address: string; body: string }>();
+	const addresses = new Set((await listInboxes(context)).map((inbox) => inbox.address));
 	const signatures: Record<string, string> = {};
-	for (const row of results) if (context.settings.addresses.includes(row.address)) signatures[row.address] = row.body;
+	for (const row of results) if (addresses.has(row.address)) signatures[row.address] = row.body;
 	return signatures;
 }
 
 /** Saves the signature of one address; an empty one takes it away. */
 export async function saveSignature(context: MailContext, personIdentifier: string, address: string, body: string): Promise<void> {
 	const lower = address.toLowerCase();
-	if (!context.settings.addresses.includes(lower)) throw new WritingError('Choose one of the inbox’s addresses.');
+	if (!(await listInboxes(context)).some((inbox) => inbox.address === lower)) throw new WritingError('Choose one of the inboxes’ addresses.');
 	const text = cleanBody(body).replace(/^-- ?\n/, '');
 	if (text.length > signatureLimit) throw new WritingError(`A signature can be at most ${signatureLimit} characters.`);
 	const at = currentTime(context).toISOString();
@@ -232,8 +234,7 @@ export async function saveDraft(
 	const at = currentTime(context).toISOString();
 	const fields = JSON.stringify(draft.fields);
 	if (draft.threadIdentifier) {
-		const thread = await context.database.prepare('SELECT 1 AS found FROM mail_threads WHERE identifier = ?').bind(draft.threadIdentifier).first();
-		if (!thread) throw new WritingError('This conversation is no longer in the inbox.');
+		if (!(await mayOpenThread(context, personIdentifier, draft.threadIdentifier))) throw new WritingError('This conversation is no longer in your inbox.');
 		const identifier = crypto.randomUUID();
 		const row = await context.database
 			.prepare(
@@ -492,8 +493,8 @@ export async function sendAwayReply(
 		.run();
 	if ((recorded.meta.changes ?? 0) === 0) return false;
 
-	const from =
-		message.project_address && context.settings.addresses.includes(message.project_address) ? message.project_address : context.settings.defaultAddress;
+	// From the address of the inbox the mail is in.
+	const from = (await threadInboxAddress(context, arrival.threadIdentifier))?.address;
 	if (!from) return false;
 	const signatures = await listSignatures(context);
 	const queued = await queueMessage(context, {

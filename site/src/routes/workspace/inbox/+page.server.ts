@@ -2,8 +2,9 @@ import { fail } from '@sveltejs/kit';
 import { isInboxView } from '#lib/mail.ts';
 import { mailContext } from '#lib/server/mail/runtime.ts';
 import { changeMany, isBuiltInFolder, listThreads, type BulkOperation } from '#lib/server/mail/store.ts';
-import { formText, requirePermission } from '#lib/server/workspace.ts';
+import { formText } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
+import { requireMail } from '#lib/server/mail/inbox-access.ts';
 
 // The project inbox (site/MAIL.md): one page of conversations in a view, a
 // folder the lead author made, or a tag, with search, and what the
@@ -11,7 +12,7 @@ import type { Actions, PageServerLoad } from './$types';
 export const prerender = false;
 
 export const load: PageServerLoad = async (event) => {
-	const person = requirePermission(event, 'read-mail');
+	const person = await requireMail(event);
 	const context = mailContext();
 	const requested = event.url.searchParams.get('view');
 	const view = isInboxView(requested) ? requested : 'inbox';
@@ -19,8 +20,10 @@ export const load: PageServerLoad = async (event) => {
 	const tag = event.url.searchParams.get('tag');
 	const search = event.url.searchParams.get('q')?.trim().slice(0, 200) || null;
 	const page = Math.max(0, Number(event.url.searchParams.get('page') ?? '0') || 0);
-	const list = await listThreads(context, { view, personIdentifier: person.identifier, folder, tag, search, page });
-	return { view, folder, tag, search, page, ...list };
+	// One inbox, when the left column chose one (the list only ever shows the person's own inboxes).
+	const inbox = event.url.searchParams.get('inbox');
+	const list = await listThreads(context, { view, personIdentifier: person.identifier, folder, tag, search, inbox, page });
+	return { view, folder, tag, search, inbox, page, ...list };
 };
 
 /** The bulk operation a toolbar button names: "archive", "read", "move:<folder>", "tag:<tag>" and the like. */
@@ -46,7 +49,7 @@ const doneWords: Record<string, string> = {
 
 export const actions: Actions = {
 	bulk: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireMail(event);
 		const form = await event.request.formData();
 		const threads = form.getAll('thread').filter((value): value is string => typeof value === 'string');
 		// The "Move to" and "Tag" menus send their choice in their own field, so one form can hold every button.

@@ -9,7 +9,6 @@ import { currentTime } from '#lib/server/mail/context.ts';
 import {
 	addNote,
 	assign,
-	assignablePeople,
 	clearStopRequest,
 	getThread,
 	isBuiltInFolder,
@@ -23,16 +22,15 @@ import { releaseAttachment } from '#lib/server/mail/scans.ts';
 import { blockSender, domainPattern, senderCard, SenderError, unblockSender, unsubscribe } from '#lib/server/mail/senders.ts';
 import { suppress } from '#lib/server/mail/suppressions.ts';
 import { deleteDraft, draftForThread, getUndoSeconds, undoSend } from '#lib/server/mail/writing.ts';
-import { formText, requirePermission } from '#lib/server/workspace.ts';
+import { formText } from '#lib/server/workspace.ts';
 import { readAttachments, whenFromForm } from '../compose.ts';
 import { composerData } from '../composer-data.server.ts';
 import type { Actions, PageServerLoad } from './$types';
+import { requireThread } from '#lib/server/mail/inbox-access.ts';
+import { replyAddresses, threadPeople } from '#lib/server/mail/inboxes.ts';
 
 // One conversation: its messages, notes and history, and the reply box.
 export const prerender = false;
-
-/** Roles that can read the inbox, and so can be assigned a conversation (src/lib/permissions.ts). */
-const assignableRoles = ['lead-author'];
 
 /** A message as the composer's defaults need it. */
 function answered(message: MessageDetail): AnsweredMessage {
@@ -49,7 +47,7 @@ function answered(message: MessageDetail): AnsweredMessage {
 }
 
 export const load: PageServerLoad = async (event) => {
-	const person = requirePermission(event, 'read-mail');
+	const person = await requireThread(event, event.params.thread);
 	const context = mailContext();
 	const thread = await getThread(context, event.params.thread, person.identifier);
 	if (!thread) error(404, 'This conversation is not in the inbox.');
@@ -61,7 +59,15 @@ export const load: PageServerLoad = async (event) => {
 	const asked = event.url.searchParams.get('compose');
 	const draft = await draftForThread(context, person.identifier, thread.identifier);
 	const writing = await composerData(context, person.displayName, [thread.counterpartAddress]);
-	const card = thread.counterpartAddress ? await senderCard(context, thread.counterpartAddress, thread.identifier) : null;
+	const card = thread.counterpartAddress
+		? await senderCard(context, thread.counterpartAddress, thread.identifier, {
+				personIdentifier: person.identifier,
+				seesAddressBook: can(person, 'manage-address-book')
+			})
+		: null;
+	// From the conversation's own inbox's address, unless the writer picks another of theirs (src/lib/server/mail/inboxes.ts).
+	const addresses = await replyAddresses(context, person.identifier, thread.inboxIdentifier);
+	const people = await threadPeople(context, thread.identifier);
 	const nation = card?.contact?.nationIdentifier ? mailNations.find((item) => item.identifier === card.contact!.nationIdentifier) : undefined;
 	const sender = card ? { ...card, nation: nation ? { name: nation.name, page: nation.page } : null } : null;
 	if (draft && !isComposeMode(asked)) {
@@ -69,8 +75,8 @@ export const load: PageServerLoad = async (event) => {
 		const target = finished.find((message) => message.identifier === fields.message) ?? null;
 		return {
 			thread,
-			people: await assignablePeople(context, assignableRoles),
-			addresses: context.settings.addresses,
+			people,
+			addresses: addresses.sendable,
 			compose: {
 				mode: fields.mode ?? ('reply' as ComposeMode),
 				message: target?.identifier ?? null,
@@ -103,18 +109,18 @@ export const load: PageServerLoad = async (event) => {
 	const named = finished.find((message) => message.identifier === event.url.searchParams.get('message'));
 	const target = named ?? [...finished].reverse().find((message) => message.direction === 'in') ?? finished.at(-1) ?? null;
 	const defaults = target
-		? composeDefaults(mode, answered(target), context.settings.addresses)
+		? composeDefaults(mode, answered(target), addresses.projectAddresses)
 		: { to: thread.counterpartAddress ?? '', cc: '', subject: thread.subject, quote: '' };
 	return {
 		thread,
-		people: await assignablePeople(context, assignableRoles),
-		addresses: context.settings.addresses,
+		people,
+		addresses: addresses.sendable,
 		compose: {
 			mode,
 			message: target?.identifier ?? null,
 			/** Whether a button asked for this, so the page can take the writer to the box. */
 			asked: named !== undefined || isComposeMode(asked),
-			from: thread.projectAddress && context.settings.addresses.includes(thread.projectAddress) ? thread.projectAddress : (context.settings.defaultAddress ?? ''),
+			from: addresses.from,
 			...defaults,
 			bcc: '',
 			text: '',
@@ -143,7 +149,7 @@ function threadOf(event: { params: { thread: string } }): string {
 
 export const actions: Actions = {
 	reply: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const context = mailContext();
 		const form = await event.request.formData();
 		const to = parseAddressList(formText(form, 'to', 4000) ?? '');
@@ -191,14 +197,14 @@ export const actions: Actions = {
 		}
 	},
 	read: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const form = await event.request.formData();
 		await markRead(mailContext(), person.identifier, threadOf(event), form.get('read') === 'yes');
 		if (form.get('read') !== 'yes') redirect(303, '/workspace/inbox');
 		return { done: 'Marked read.' };
 	},
 	move: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const form = await event.request.formData();
 		const folder = formText(form, 'folder', 100);
 		if (!folder || !(await moveToFolder(mailContext(), person.identifier, threadOf(event), folder))) return fail(400, { problem: 'Choose a folder.' });
@@ -206,18 +212,18 @@ export const actions: Actions = {
 		return { done: isBuiltInFolder(folder) ? 'Moved to the inbox.' : 'Moved.' };
 	},
 	assign: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const context = mailContext();
 		const form = await event.request.formData();
 		const assignee = formText(form, 'assignee', 100);
-		const people = await assignablePeople(context, assignableRoles);
+		const people = await threadPeople(context, threadOf(event));
 		const chosen = assignee ? people.find((item) => item.identifier === assignee) : null;
-		if (assignee && !chosen) return fail(400, { problem: 'That person cannot read the inbox.' });
+		if (assignee && !chosen) return fail(400, { problem: 'That person is not on this conversation’s inbox.' });
 		await assign(context, person.identifier, threadOf(event), chosen?.identifier ?? null, chosen?.name ?? null);
 		return { done: chosen ? `Assigned to ${chosen.name}.` : 'Unassigned.' };
 	},
 	tag: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const form = await event.request.formData();
 		const tag = formText(form, 'tag', 100);
 		if (!tag) return fail(400, { problem: 'Choose a tag.' });
@@ -225,7 +231,7 @@ export const actions: Actions = {
 		return { done: form.get('on') === 'yes' ? 'Tagged.' : 'Tag taken off.' };
 	},
 	remind: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const context = mailContext();
 		const form = await event.request.formData();
 		const at = form.get('clear') === 'yes' ? null : whenFromForm(form, 'at');
@@ -235,7 +241,7 @@ export const actions: Actions = {
 		return { done: at ? 'Reminder set. It leaves the inbox until then, and comes back sooner if they reply.' : 'Reminder ended.' };
 	},
 	note: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const form = await event.request.formData();
 		const body = formText(form, 'body', 8000);
 		if (!body) return fail(400, { problem: 'Write the note first.' });
@@ -243,7 +249,7 @@ export const actions: Actions = {
 		return { done: 'Note added. Only the project team sees notes.' };
 	},
 	stop: async (event) => {
-		const person = requirePermission(event, 'manage-mail');
+		const person = await requireThread(event, event.params.thread, 'manage-mail');
 		const context = mailContext();
 		const form = await event.request.formData();
 		const confirmed = form.get('confirm') === 'yes';
@@ -256,7 +262,7 @@ export const actions: Actions = {
 		return { done: confirmed ? `${thread.counterpartAddress} is on the do-not-email list.` : 'Dismissed.' };
 	},
 	release: async (event) => {
-		const person = requirePermission(event, 'manage-mail');
+		const person = await requireThread(event, event.params.thread, 'manage-mail');
 		const form = await event.request.formData();
 		const attachment = formText(form, 'attachment', 100);
 		const note = formText(form, 'note', 500) ?? '';
@@ -266,7 +272,7 @@ export const actions: Actions = {
 		return { done: 'Released. The file can now be downloaded and forwarded.' };
 	},
 	block: async (event) => {
-		const person = requirePermission(event, 'manage-mail');
+		const person = await requireThread(event, event.params.thread, 'manage-mail');
 		const context = mailContext();
 		const form = await event.request.formData();
 		const thread = await getThread(context, threadOf(event), person.identifier);
@@ -281,14 +287,14 @@ export const actions: Actions = {
 		return { done: `Blocked ${pattern}. This conversation is in Spam, and new mail from ${pattern.startsWith('@') ? 'that domain' : 'this sender'} goes there too. Unblock in Inbox settings.` };
 	},
 	unblock: async (event) => {
-		const person = requirePermission(event, 'manage-mail');
+		const person = await requireThread(event, event.params.thread, 'manage-mail');
 		const form = await event.request.formData();
 		const pattern = formText(form, 'pattern', 300);
 		if (!pattern || !(await unblockSender(mailContext(), person.identifier, pattern))) return fail(400, { problem: 'That sender is not blocked.' });
 		return { done: `Unblocked ${pattern}. Move this conversation back to the inbox if you want it there.` };
 	},
 	unsubscribe: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const context = mailContext();
 		const form = await event.request.formData();
 		const message = formText(form, 'message', 100);
@@ -303,7 +309,7 @@ export const actions: Actions = {
 		}
 	},
 	undo: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const form = await event.request.formData();
 		const message = formText(form, 'message', 100);
 		const undone = message ? await undoSend(mailContext(), person.identifier, message) : null;
@@ -313,14 +319,14 @@ export const actions: Actions = {
 		redirect(303, `/workspace/inbox/${undone.threadIdentifier}?draft&undone=${files}#reply`);
 	},
 	cancel: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const form = await event.request.formData();
 		const message = formText(form, 'message', 100);
 		if (!message || !(await cancelScheduled(mailContext(), person.identifier, message))) return fail(400, { problem: 'That message can no longer be cancelled.' });
 		return { done: 'Cancelled. It will not be sent.' };
 	},
 	again: async (event) => {
-		const person = requirePermission(event, 'read-mail');
+		const person = await requireThread(event, event.params.thread);
 		const context = mailContext();
 		const form = await event.request.formData();
 		const message = formText(form, 'message', 100);

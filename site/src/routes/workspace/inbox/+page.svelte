@@ -27,6 +27,7 @@
 	/** The address of this list with other search words or another page. */
 	function listLink(changes: { page?: number; q?: string | null }): string {
 		const query = new URLSearchParams();
+		if (data.inbox) query.set('inbox', data.inbox);
 		if (data.folder) query.set('folder', data.folder);
 		else if (data.tag) query.set('tag', data.tag);
 		else if (data.view !== 'inbox') query.set('view', data.view);
@@ -48,6 +49,8 @@
 				: (data.views.find((item) => item.key === data.view)?.label ?? 'Inbox')
 	);
 	const place = $derived(data.folder ? 'folder' : data.view);
+	// The inbox the left column chose, named above the list when the person has more than one.
+	const chosenInbox = $derived(data.inbox ? data.inboxes.find((item) => item.identifier === data.inbox) : undefined);
 
 	// Which rows are ticked. The buttons work without scripts too; with them, they wait for a tick.
 	let selected = $state<string[]>([]);
@@ -68,8 +71,10 @@
 <header class="list-head">
 	<h1>
 		{#if currentTag}<span class="visually-hidden">Tag: </span>{/if}{heading}
+		{#if chosenInbox}<span class="inbox-name">{chosenInbox.name}</span>{/if}
 	</h1>
 	<form method="get" action={base} role="search" class="search">
+		{#if data.inbox}<input type="hidden" name="inbox" value={data.inbox} />{/if}
 		{#if data.folder}<input type="hidden" name="folder" value={data.folder} />
 		{:else if data.tag}<input type="hidden" name="tag" value={data.tag} />
 		{:else if data.view !== 'inbox'}<input type="hidden" name="view" value={data.view} />{/if}
@@ -205,6 +210,12 @@
 {/if}
 
 <style>
+	.inbox-name {
+		display: block;
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-regular);
+		color: var(--color-ink-muted);
+	}
 	.list-head {
 		display: flex;
 		flex-wrap: wrap;

@@ -267,7 +267,7 @@ describe('auto-sort rules', () => {
 		await filed(context, 'office@navajo-nsn.gov', 'Before the rule');
 		await filed(context, 'someone@else.example', 'Not this one');
 		const input = rule({ conditions: [{ field: 'from', operator: 'contains', value: 'navajo-nsn.gov' }], actions: [{ action: 'move', value: 'archive' }] });
-		const preview = await previewRule(context, input);
+		const preview = await previewRule(context, input, 'lead');
 		expect(preview).toMatchObject({ count: 1, examples: [{ subject: 'Before the rule' }] });
 		// Testing changes nothing.
 		expect((await listThreads(context, { view: 'inbox', personIdentifier: 'lead' })).threads).toHaveLength(2);

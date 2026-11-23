@@ -2,8 +2,8 @@ import { error } from '@sveltejs/kit';
 import { mailContext } from '#lib/server/mail/runtime.ts';
 import { openScannedFile } from '#lib/server/file-scans.ts';
 import { getAttachment } from '#lib/server/mail/store.ts';
-import { requirePermission } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
+import { requireMail } from '#lib/server/mail/inbox-access.ts';
 
 // An attachment, always downloaded rather than shown, because a file someone
 // sent could hold anything. Every attachment is held until the virus check
@@ -11,9 +11,9 @@ import type { RequestHandler } from './$types';
 export const prerender = false;
 
 export const GET: RequestHandler = async (event) => {
-	requirePermission(event, 'read-mail');
+	const person = await requireMail(event);
 	const context = mailContext();
-	const attachment = await getAttachment(context, event.params.attachment);
+	const attachment = await getAttachment(context, event.params.attachment, person.identifier);
 	if (!attachment) error(404, 'Not found.');
 	const opened = await openScannedFile(context.database, context.bucket, attachment.bucketKey);
 	if (opened.state === 'missing') error(404, 'The file is missing from storage.');
