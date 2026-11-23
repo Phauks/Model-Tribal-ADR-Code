@@ -15,10 +15,15 @@ describe('the status line on pages about a nation', () => {
 		expect(storyReviewStatus('approved-by-nation')).toEqual({ label: 'Approved by the nation', verified: true });
 	});
 
-	it('draws a claimed page’s badge like the build’s, with the date in its tooltip, not a sentence', () => {
-		const top = pageOverlay('navajo-nation', {}, { claimedSince: '2026-11-23T12:00:00.000Z' })?.slots.top ?? '';
-		expect(top).toContain('class="review-badge review-badge-verified"');
-		expect(top).toContain('Confirmed with the nation’s office on');
-		expect(top).not.toContain('Problems you report');
+	it('draws a claimed page’s badge with a panel naming the offices that keep it, never people', () => {
+		const status =
+			pageOverlay('navajo-nation', {}, { claimedSince: '2026-11-23T12:00:00.000Z', offices: ['Office of the President <b>'] })?.slots
+				.status ?? '';
+		expect(status).toContain('<details class="status-popover">');
+		expect(status).toContain('class="review-badge review-badge-verified"');
+		expect(status).toContain('<li>Office of the President &lt;b&gt;</li>');
+		expect(status).toContain('Confirmed with the nation’s office on');
+		expect(status).toContain('/profile/nation-team?nation=navajo-nation');
+		expect(status).toContain('[data-build-status]{display:none!important}');
 	});
 });
