@@ -1,10 +1,14 @@
 <script lang="ts">
-	// The left sidebar, on every page, in two columns (Trevor, Nov. 23, 2026).
-	// The first lists only the site's sections. In a section, the second lists
-	// its pages and its long list with a filter, with the page being read opened
-	// into its own outline: the headings of an essay, the parts of a nation's
-	// page (sidebar/SectionColumn.svelte, src/lib/sidebar-outline.ts). On phones
-	// the menu shows the same two lists, one at a time.
+	// The left sidebar, on every page, one column wide (Trevor, Nov. 23, 2026).
+	// Outside the sections it lists the site's sections. In a section the
+	// section's own panel lies over that list in the same space: its pages and
+	// its long list with a filter, with the page being read opened into its own
+	// outline, such as the headings of an essay or the parts of a nation's page
+	// (sidebar/SectionColumn.svelte, src/lib/sidebar-outline.ts). "All sections"
+	// at the top of the panel goes back out to the list of sections, and a caret
+	// beside the section there goes back in. The column keeps one width on every
+	// page, so the page beside it never moves (Trevor asked why clicking in the
+	// sidebar made the page jump, Nov. 23, 2026). The phone menu works the same way.
 	//
 	// It works without JavaScript: the wide-screen sidebar and the phone menu are
 	// each a <details> element, and the current page is marked when the page is
@@ -27,9 +31,9 @@
 	import { building } from '$app/env';
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
+	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import Menu from '@lucide/svelte/icons/menu';
-	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
-	import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
 	import { accountPages, currentAccountPage, isAccountPath } from '#lib/account-menu.ts';
 	import { followActiveHeading, headingIds } from '#lib/active-heading.ts';
 	import { isUnfolded } from '#lib/outline-folding.ts';
@@ -48,7 +52,8 @@
 	import FoldButton from './sidebar/FoldButton.svelte';
 	import SectionColumn from './sidebar/SectionColumn.svelte';
 	import SidebarGroups from './sidebar/SidebarGroups.svelte';
-	import { SidebarState, sectionsKey, sidebarHiddenKey } from './sidebar/sidebar-state.svelte.ts';
+	import { SidebarState, sectionsKey } from './sidebar/sidebar-state.svelte.ts';
+	import { isSidebarShortcut, restoreSidebarVisibility, sidebarVisibility, toggleSidebar } from './sidebar/sidebar-visibility.svelte.ts';
 
 	const sidebar = new SidebarState();
 
@@ -69,7 +74,7 @@
 		composeSectionContents(currentSection?.opens ? sectionContents : undefined, pageOutline, path, pageTitle)
 	);
 	const allItems = $derived([...composed.pages, ...(composed.entries?.items ?? [])]);
-	// The second column shows in a published section with something to list.
+	// A published section with something to list has its own panel.
 	const hasColumn = $derived(Boolean(currentSection?.built && allItems.length > 0));
 	// A section without a list of pages keeps its outline's title above it.
 	const outlineTitle = $derived(currentSection?.opens && sectionContents ? undefined : pageOutline?.title);
@@ -157,6 +162,7 @@
 	afterNavigate(() => {
 		sidebar.resetItems();
 		phoneView = 'section';
+		wideView = 'section';
 		if (narrowMenu) narrowMenu.open = false;
 		pageTitle = document.title.replace(/\s·\s[^·]*$/, '') || undefined;
 	});
@@ -168,8 +174,22 @@
 	});
 
 	// ---- The wide column ----
-	let open = $state(true);
-	let wideSidebar: HTMLDetailsElement | undefined = $state();
+	// Inside a section the column shows the section's panel; "All sections" shows the list of sections.
+	let wideView = $state<'section' | 'sections'>('section');
+	// Which way the column last moved, so the panel slides in from the side it comes from.
+	let wideMove = $state<'in' | 'out' | undefined>(undefined);
+
+	function showSections(): void {
+		wideView = 'sections';
+		wideMove = 'out';
+	}
+
+	function showSection(): void {
+		wideView = 'section';
+		wideMove = 'in';
+		placedPath = undefined;
+	}
+	let wideSidebar: HTMLElement | undefined = $state();
 	let wideColumn: HTMLElement | undefined = $state();
 
 	// On wide screens the sidebar scrolls on its own, separately from the page
@@ -207,25 +227,17 @@
 		};
 	});
 
-	// Whether the reader hid the column. app.html reads the same setting before
-	// the page paints and marks the page, so a hidden column never flashes open.
+	// Whether the reader hid the sidebar, with the masthead's button or Ctrl+\
+	// (sidebar/sidebar-visibility.svelte.ts). app.html reads the same setting
+	// before the page paints and marks the page, so a hidden sidebar never flashes open.
 	$effect(() => {
-		try {
-			open = localStorage.getItem(sidebarHiddenKey) !== 'true';
-		} catch {
-			// Storage can be blocked; the sidebar then simply starts open.
-		}
+		untrack(() => restoreSidebarVisibility());
 	});
 
-	function remember(event: Event) {
-		open = (event.currentTarget as HTMLDetailsElement).open;
-		if (open) delete document.documentElement.dataset.sidebarHidden;
-		else document.documentElement.dataset.sidebarHidden = 'true';
-		try {
-			localStorage.setItem(sidebarHiddenKey, String(!open));
-		} catch {
-			// Nothing to remember with; the choice lasts for this page only.
-		}
+	function toggleFromKey(event: KeyboardEvent): void {
+		if (!isSidebarShortcut(event) || event.defaultPrevented) return;
+		event.preventDefault();
+		toggleSidebar();
 	}
 
 	// Keep the entry being read in sight in the second column, scrolling only
@@ -237,7 +249,7 @@
 		void sidebar.activeHeading;
 		const here = path;
 		const nav = wideColumn;
-		if (!nav || !open) return;
+		if (!nav || !sidebarVisibility.shown) return;
 		tick().then(() => {
 			const marked = [...nav.querySelectorAll<HTMLElement>('.entry.active, [aria-current="page"]')].at(-1);
 			if (!marked) return;
@@ -303,6 +315,12 @@
 					<a href={section.link} aria-current={current && currentLink === section.link ? 'page' : undefined}>
 						{section.label}
 					</a>
+					{#if current && hasColumn && idSuffix === 'wide'}
+						<button type="button" class="drill needs-scripts" title="Pages in {section.label}" onclick={showSection}>
+							<ChevronRight size={18} aria-hidden="true" />
+							<span class="visually-hidden">Pages in {section.label}</span>
+						</button>
+					{/if}
 				{:else}
 					<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
 				{/if}
@@ -313,7 +331,7 @@
 		{idSuffix}
 		{path}
 		{sidebar}
-		accountPages={onAccountPage ? [...accountPages] : []}
+		accountPages={signedIn || onAccountPage ? [...accountPages] : []}
 		{currentAccount}
 		{workspaceMenu}
 		{currentWorkspacePage}
@@ -337,32 +355,48 @@
 	{/if}
 {/snippet}
 
-<!-- Wide screens: a column beside the page that the reader can hide. The
-     button that hides it is pinned to the bottom of the column (Trevor, Nov. 23,
-     2026); it stays the <summary>, and so the first thing in the column for a
-     keyboard or screen reader, because a <summary> must come first. -->
-<details class="sidebar-wide no-print" class:two-columns={hasColumn} bind:this={wideSidebar} {open} ontoggle={remember}>
-	<summary title={open ? undefined : 'Show sidebar'}>
-		<span class="toggle">
-			<span class="when-open"><PanelLeftClose size={20} aria-hidden="true" /> Hide sidebar</span>
-			<span class="when-closed"
-				><PanelLeftOpen size={20} aria-hidden="true" /><span class="visually-hidden">Show sidebar</span></span
-			>
-		</span>
-	</summary>
-	<nav aria-label="Site" class="sections-column">
+<!-- Wide screens: a column beside the page. The reader hides and shows it with
+     the button at the top left of the masthead, beside the site's name, or with
+     Ctrl+\ (Trevor, Nov. 23, 2026); hidden, it is gone and the page takes the
+     whole width. Without scripts it always shows. -->
+<div class="sidebar-wide no-print" id="site-sidebar" bind:this={wideSidebar}>
+	<div class="panes">
+	<nav
+		aria-label="Site"
+		class="sections-column"
+		class:slide-back={wideMove === 'out'}
+		hidden={hasColumn && wideView === 'section'}
+	>
 		{@render sections('wide')}
 	</nav>
 	{#if hasColumn}
-		<nav aria-label="Pages in {currentSection?.label}" class="pages-column" bind:this={wideColumn}>
-			{@render column('wide')}
+		<nav
+			aria-label="Pages in {currentSection?.label}"
+			class="pages-column"
+			class:slide-in={wideMove === 'in'}
+			hidden={wideView !== 'section'}
+		>
+			<button type="button" class="back needs-scripts" onclick={showSections}>
+				<ChevronLeft size={18} aria-hidden="true" />
+				All sections
+			</button>
+			<!-- Only the list scrolls, so "All sections" stays at the top and nothing slides under it. -->
+			<div class="pages-scroll" bind:this={wideColumn}>
+				{@render column('wide')}
+			</div>
 		</nav>
 	{/if}
-</details>
+	</div>
+</div>
 
 <!-- Phones and narrow windows: a menu bar under the masthead that opens the same list.
      Choosing a link or pressing Escape closes it. -->
-<svelte:window onkeydown={closeOnEscape} />
+<svelte:window
+	onkeydown={(event) => {
+		toggleFromKey(event);
+		closeOnEscape(event);
+	}}
+/>
 <details class="sidebar-narrow no-print" bind:this={narrowMenu} ontoggle={() => (menuOpened ||= Boolean(narrowMenu?.open))}>
 	<summary>
 		<Menu size={20} aria-hidden="true" />
@@ -443,6 +477,51 @@
 		text-decoration: none;
 	}
 
+	.sections > li {
+		display: flex;
+		align-items: center;
+	}
+
+	.sections > li > a,
+	.sections > li > .unbuilt {
+		flex: 1;
+	}
+
+	/* Back into the section's panel, from the list of sections, and back out of it. */
+	.drill,
+	.back {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: var(--layout-target-minimum);
+		border: 0;
+		border-radius: var(--radius-control);
+		background: none;
+		color: var(--color-ink-muted);
+		font: inherit;
+		cursor: pointer;
+	}
+
+	.drill {
+		min-width: var(--layout-target-minimum);
+	}
+
+	.back {
+		flex: none;
+		justify-content: flex-start;
+		gap: var(--space-1);
+		margin: 0 0 var(--space-2);
+		padding: 0 var(--space-3) 0 var(--space-1);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.drill:hover,
+	.back:hover {
+		background: var(--color-surface);
+		color: var(--color-ink);
+	}
+
 	/* Sections whose pages are not published yet: named, not linked. */
 	.sections > li > .unbuilt {
 		color: var(--color-ink-muted);
@@ -479,16 +558,10 @@
 
 	@media (min-width: 64rem) {
 		/*
-		 * The column itself does not scroll. Its links scroll in the space above
-		 * a footer row pinned to the bottom of the column, which holds the
-		 * button that hides the sidebar, so the button is always in the same
-		 * place, however long the outline is. Hidden, the column is a narrow
-		 * strip with only the button that shows it again, in the same place, so
-		 * the pointer is already on it to undo.
+		 * The column stays in view as the page scrolls, and its lists scroll on
+		 * their own. Its button is in the masthead (SiteHeader.svelte).
 		 */
 		.sidebar-wide {
-			--sidebar-footer-height: calc(var(--layout-target-minimum) + 2 * var(--space-2) + 1px);
-			--sidebar-sections-width: 15rem;
 			display: block;
 			position: sticky;
 			top: 0;
@@ -499,124 +572,80 @@
 			box-sizing: border-box;
 		}
 
-		/* Two columns that scroll on their own: the sections, and the pages of the section being read. */
-		.sidebar-wide > nav {
+		/* The list of sections, or the section's panel over it, in the same space; each scrolls on its own. */
+		.panes {
 			position: absolute;
-			inset: 0 0 var(--sidebar-footer-height);
+			inset: 0;
+			overflow: hidden;
+		}
+
+		.panes > nav {
+			position: absolute;
+			inset: 0;
 			overflow-y: auto;
 			overscroll-behavior: contain;
 			padding: var(--space-4) var(--space-3) var(--space-4);
 			box-sizing: border-box;
 		}
 
-		.sidebar-wide.two-columns > .sections-column {
-			right: auto;
-			width: var(--sidebar-sections-width);
+		/* In the section's panel only the list under "All sections" scrolls. */
+		.panes > .pages-column {
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+			padding-bottom: 0;
 		}
 
-		.sidebar-wide > .pages-column {
-			left: var(--sidebar-sections-width);
-			border-left: 1px solid var(--color-line);
-		}
-
-		/* A column the reader hid stays hidden from the first paint (app.html). */
-		:global(:root[data-sidebar-hidden='true']) .sidebar-wide > nav {
+		.pages-column[hidden] {
 			display: none;
 		}
 
-		.sidebar-wide > summary {
-			position: absolute;
-			inset: auto 0 0;
-			height: var(--sidebar-footer-height);
-			display: flex;
-			align-items: center;
-			padding: 0 var(--space-3);
-			border-top: 1px solid var(--color-line);
-			background: var(--color-paper);
-			box-sizing: border-box;
-		}
-
-		/* The summary is the control; focus shows on the button inside it, in the site's focus colors. */
-		.sidebar-wide > summary:focus-visible {
-			outline: none;
-			background-color: var(--color-paper);
-			box-shadow: none;
-		}
-
-		.sidebar-wide .toggle {
-			display: flex;
+		.pages-scroll {
 			flex: 1;
-			align-items: center;
-			min-height: var(--layout-target-minimum);
-			padding: 0 var(--space-3);
-			border-radius: var(--radius-control);
-			color: var(--color-ink-muted);
-			font-size: var(--font-size-small);
-			font-weight: var(--font-weight-semibold);
-			transition:
-				background-color var(--motion-duration-short) var(--motion-easing-standard),
-				color var(--motion-duration-short) var(--motion-easing-standard);
+			min-height: 0;
+			overflow-y: auto;
+			overscroll-behavior: contain;
+			margin: 0 calc(-1 * var(--space-3));
+			padding: 0 var(--space-3) var(--space-4);
 		}
 
-		.sidebar-wide .toggle > span {
-			display: inline-flex;
-			align-items: center;
-			gap: var(--space-3);
+		/* Going in, the panel slides over the sections from the right; going out, the sections come back from the left. */
+		.panes > .slide-in {
+			animation: sidebar-slide-in var(--motion-duration-medium) var(--motion-easing-standard);
 		}
 
-		.sidebar-wide .toggle :global(svg) {
-			flex: none;
-			transition: transform var(--motion-duration-short) var(--motion-easing-standard);
+		.panes > .slide-back {
+			animation: sidebar-slide-back var(--motion-duration-medium) var(--motion-easing-standard);
 		}
 
-		.sidebar-wide > summary:hover .toggle {
-			background: var(--color-surface);
-			color: var(--color-ink);
+		@keyframes sidebar-slide-in {
+			from {
+				transform: translateX(100%);
+			}
 		}
 
-		/* A nudge toward where the column goes: left to hide, right to show. */
-		:global(:root:not([data-sidebar-hidden='true'])) .sidebar-wide[open] > summary:hover .toggle :global(svg) {
-			transform: translateX(-2px);
+		@keyframes sidebar-slide-back {
+			from {
+				transform: translateX(-30%);
+				opacity: 0;
+			}
 		}
 
-		.sidebar-wide:not([open]) > summary:hover .toggle :global(svg),
-		:global(:root[data-sidebar-hidden='true']) .sidebar-wide > summary:hover .toggle :global(svg) {
-			transform: translateX(2px);
+		/* Without scripts nothing can go in or out, so the sections and the section's panel show one after the other. */
+		:global(:root:not([data-scripts='on'])) .panes {
+			overflow-y: auto;
 		}
 
-		.sidebar-wide > summary:focus-visible .toggle {
-			outline: 3px solid var(--color-focus-ring);
-			background-color: var(--color-focus);
-			color: var(--focus-text);
-			box-shadow: 0 0 0 3px var(--color-focus);
+		:global(:root:not([data-scripts='on'])) .panes > nav,
+		:global(:root:not([data-scripts='on'])) .pages-scroll {
+			position: static;
+			display: block;
+			overflow: visible;
 		}
 
-		.sidebar-wide .when-closed {
-			display: none !important;
-		}
-
-		.sidebar-wide:not([open]) > summary,
-		:global(:root[data-sidebar-hidden='true']) .sidebar-wide > summary {
-			padding: 0 var(--space-1);
-			justify-content: center;
-		}
-
-		.sidebar-wide:not([open]) .toggle,
-		:global(:root[data-sidebar-hidden='true']) .sidebar-wide .toggle {
-			flex: none;
-			justify-content: center;
-			min-width: var(--layout-target-minimum);
-			padding: 0;
-		}
-
-		.sidebar-wide:not([open]) .when-open,
-		:global(:root[data-sidebar-hidden='true']) .sidebar-wide .when-open {
-			display: none !important;
-		}
-
-		.sidebar-wide:not([open]) .when-closed,
-		:global(:root[data-sidebar-hidden='true']) .sidebar-wide .when-closed {
-			display: inline-flex !important;
+		/* A sidebar the reader hid stays hidden from the first paint (app.html). */
+		:global(:root[data-sidebar-hidden='true']) .sidebar-wide {
+			display: none;
 		}
 	}
 
