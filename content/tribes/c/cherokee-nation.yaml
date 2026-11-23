@@ -589,7 +589,7 @@ justice_institutions:
   verification: read-in-full
   as_of: '2026-11-22'
   note: 'The page names the court: “the Supreme Court hears cases of appeals”. No page found saying where Supreme Court decisions go. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cherokee-nation#2).'
-- kind: other
+- kind: treatment-court
   name: Veterans’ Treatment Court
   link: https://www.cherokeecourts.org/District-Court/Alternative-Courts
   part_of: Alternative Courts
@@ -597,8 +597,8 @@ justice_institutions:
   confidence: high
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “Veterans’ Treatment Court”. Under the District Court''s ''Alternative Courts'' page; has Track I and Track II. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cherokee-nation#3).'
-- kind: other
+  note: 'The page names the court: “Veterans’ Treatment Court”. Under the District Court''s ''Alternative Courts'' page; has Track I and Track II. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cherokee-nation#3). Kind changed from other on 2026-11-23: The page lists it among the District Court’s Alternative Courts, which are treatment courts.'
+- kind: treatment-court
   name: Veterans’ Treatment Court Track II
   link: https://www.cherokeecourts.org/District-Court/Alternative-Courts
   part_of: Alternative Courts
@@ -606,8 +606,8 @@ justice_institutions:
   confidence: medium
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “Veterans’ Treatment Court Track II”. A lower-risk track of the Veterans'' Treatment Court rather than a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cherokee-nation#4).'
-- kind: other
+  note: 'The page names the court: “Veterans’ Treatment Court Track II”. A lower-risk track of the Veterans'' Treatment Court rather than a separate court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cherokee-nation#4). Kind changed from other on 2026-11-23: A track of the Veterans’ Treatment Court, one of the District Court’s Alternative Courts.'
+- kind: treatment-court
   name: Mental Health Treatment Court
   link: https://www.cherokeecourts.org/District-Court/Alternative-Courts
   part_of: Alternative Courts
@@ -615,15 +615,15 @@ justice_institutions:
   confidence: high
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “Mental Health Treatment Court”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cherokee-nation#5).'
-- kind: other
+  note: 'The page names the court: “Mental Health Treatment Court”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cherokee-nation#5). Kind changed from other on 2026-11-23: The page lists it among the District Court’s Alternative Courts, which are treatment courts.'
+- kind: treatment-court
   name: Alternative Courts
   link: https://www.cherokeecourts.org/District-Court/Alternative-Courts
   source: cherokee-nation-judicial-branch-alternative-courts
   confidence: high
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “Cherokee Nation Alternative Courts”. Group heading for the treatment courts of the District Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cherokee-nation#6).'
+  note: 'The page names the court: “Cherokee Nation Alternative Courts”. Group heading for the treatment courts of the District Court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cherokee-nation#6). Kind changed from other on 2026-11-23: The page’s heading for the District Court’s treatment courts (Veterans’ and Mental Health).'
 dispute_resolution:
   provisions:
   - kind: arbitration

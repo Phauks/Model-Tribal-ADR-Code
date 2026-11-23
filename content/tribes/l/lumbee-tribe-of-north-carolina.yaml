@@ -361,14 +361,14 @@ justice_institutions:
   verification: read-in-full
   as_of: '2026-11-22'
   note: 'The page names the court: “The Supreme Court of the Lumbee Tribe of North Carolina will hear all cases dealing”. The government page is undated. The Supreme Court Decisions page (lumbeetribe.com/supreme-court-decisions) lists a 2026 request for judicial interpretation, so the court appears active. The batch''s ''Tribal Court'' entry is not named on the page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lumbee-tribe-of-north-carolina#1).'
-- kind: other
+- kind: administrative-adjudication
   name: Tribal Administrative Court of the Lumbee Tribe of North Carolina
   link: https://www.lumbeetribe.com/government
   source: lumbee-tribe-of-north-carolina-lumbeetribe-government-nc
   confidence: medium
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “The Tribal Administrative Court of the Lumbee Tribe of North Carolina is established”. Hears administrative matters such as housing, enrollment and energy assistance. The page does not say where its appeals go. Also named ''Administrative Court'' in case captions on supreme-court-decisions. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lumbee-tribe-of-north-carolina#2).'
+  note: 'The page names the court: “The Tribal Administrative Court of the Lumbee Tribe of North Carolina is established”. Hears administrative matters such as housing, enrollment and energy assistance. The page does not say where its appeals go. Also named ''Administrative Court'' in case captions on supreme-court-decisions. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, lumbee-tribe-of-north-carolina#2). Kind changed from other on 2026-11-23: The page says it hears administrative matters such as housing, enrollment and energy assistance.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

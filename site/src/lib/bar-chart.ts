@@ -24,6 +24,8 @@ export interface BarChartData {
 	valueHeader: string;
 	/** Where the numbers come from, shown under the chart. */
 	source: string;
+	/** The page that shows the source: the one word "Source" under the chart links there (Trevor, Nov. 23, 2026). */
+	sourceHref?: string;
 	/** The bars, in the order drawn. */
 	bars: ChartBar[];
 	/** Draws only this many bars, largest first, with the rest in the table view. */
@@ -37,6 +39,8 @@ export interface BarChartData {
 	partsOfWhole?: boolean;
 	/** Where the chart's table is published as a CSV file; without it the browser makes the file. */
 	csvHref?: string;
+	/** Where the chart's table is published as an Excel workbook (.xlsx). */
+	xlsxHref?: string;
 }
 
 /** The most slices a pie draws: one per color of the chart palette (chart-series-1 to 7). */
@@ -55,6 +59,8 @@ export interface PieSlice {
 	series: number;
 	/** How many bars an "Other" slice folds together; 1 for a plain slice. */
 	folded: number;
+	/** The names of the bars the slice stands for: its own, or each one an "Other" slice folds. */
+	members: string[];
 }
 
 /**
@@ -68,8 +74,8 @@ export function pieSlices(bars: ChartBar[], limit = pieSliceLimit): PieSlice[] {
 	if (total === 0) return [];
 	const kept = sorted.length > limit ? sorted.slice(0, limit - 1) : sorted;
 	const rest = sorted.slice(kept.length);
-	const parts: Omit<PieSlice, 'share' | 'start' | 'end' | 'series'>[] = kept.map((bar) => ({ label: bar.label, value: bar.value, href: bar.href, folded: 1 }));
-	if (rest.length > 0) parts.push({ label: `Other (${rest.length})`, value: rest.reduce((sum, bar) => sum + bar.value, 0), folded: rest.length });
+	const parts: Omit<PieSlice, 'share' | 'start' | 'end' | 'series'>[] = kept.map((bar) => ({ label: bar.label, value: bar.value, href: bar.href, folded: 1, members: [bar.label] }));
+	if (rest.length > 0) parts.push({ label: `Other (${rest.length})`, value: rest.reduce((sum, bar) => sum + bar.value, 0), folded: rest.length, members: rest.map((bar) => bar.label) });
 	let start = 0;
 	return parts.map((part, index) => {
 		const share = part.value / total;

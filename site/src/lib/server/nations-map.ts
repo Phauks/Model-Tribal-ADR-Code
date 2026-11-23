@@ -354,7 +354,7 @@ function courtsOf(record: NationRecord) {
 	const peacemaking = kinds.has('peacemaking-program') || kinds.has('traditional-forum') || forums.some((forum) => traditionalForumKinds.has(forum.kind));
 	const wellness = kinds.has('healing-to-wellness-court');
 	const federal = kinds.has('court-of-indian-offenses');
-	const tribal = institutions.some((institution) => !['peacemaking-program', 'traditional-forum', 'healing-to-wellness-court', 'court-of-indian-offenses', 'other'].includes(institution.kind));
+	const tribal = institutions.some((institution) => !['peacemaking-program', 'traditional-forum', 'healing-to-wellness-court', 'court-of-indian-offenses', 'council-hearing', 'administrative-adjudication', 'other'].includes(institution.kind));
 	return { peacemaking, wellness, federal, tribal, count: institutions.length + forums.length };
 }
 

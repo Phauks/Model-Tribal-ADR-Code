@@ -534,7 +534,7 @@ justice_institutions:
   verification: read-in-full
   as_of: '2026-11-22'
   note: 'The page names the court: “The Appellate Court reviews decisions made by the Trial Court”. The page does not say where appeals from this court go. Its judges also serve as Constitutional Court judges, per the home page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation#3).'
-- kind: other
+- kind: supreme-court
   name: Constitutional Court
   link: https://www.nctribalcourts.com/constitutional-court-1
   part_of: Northern Cheyenne Judicial Branch
@@ -542,7 +542,7 @@ justice_institutions:
   confidence: high
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “The Constitutional Court serves as the highest judicial authority within the Tribal Court system”. Described as the highest judicial authority, but the page does not use the words supreme court, so kind is other. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation#4).'
+  note: 'The page names the court: “The Constitutional Court serves as the highest judicial authority within the Tribal Court system”. Described as the highest judicial authority, but the page does not use the words supreme court. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation#4). Kind changed from other on 2026-11-23: The page calls it the highest judicial authority within the Tribal Court system, which is what supreme-court records.'
 dispute_resolution:
   database_listings:
   - title: Disposition Permitted at Informal Conference

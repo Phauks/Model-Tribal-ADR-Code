@@ -30,12 +30,13 @@ describe('pageDownloads', () => {
 		expect(onScreen.links.map((link) => link.link)).toEqual(['/nations/map/tables/gaming-by-state.csv']);
 	});
 
-	it('offers every Data and charts table on its own, as CSV and JSON', () => {
+	it('offers every Data and charts table on its own, as CSV, Excel and JSON', () => {
 		const files = pageDownloads('/nations/data').files;
 		expect(files).toHaveLength(6);
 		expect(files[0].label).toBe('Provisions by method');
 		expect(files[0].links.map((link) => link.link)).toEqual([
 			'/nations/data/tables/provisions-by-method.csv',
+			'/nations/data/tables/provisions-by-method.xlsx',
 			'/nations/data/tables/provisions-by-method.json'
 		]);
 	});

@@ -537,7 +537,7 @@ justice_institutions:
   note: 'Link check 2026-11-21: the site did not respond. The listed link (https://www.c-a-tribes.org/staff/judicial-branch)
     no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
     found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
-- kind: other
+- kind: judicial-branch
   name: Judicial Branch
   link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
   location:
@@ -548,7 +548,7 @@ justice_institutions:
   confidence: high
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “The Tribal Justice Center, located on 100 W. Black Kettle Boulevard, in Concho, OK is the permanent home of the Judicial Branch.”. Group record for the court system. The batch''s ''judicial-branch'' tribal-court entry points to this same page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cheyenne-and-arapaho-tribes#1).'
+  note: 'The page names the court: “The Tribal Justice Center, located on 100 W. Black Kettle Boulevard, in Concho, OK is the permanent home of the Judicial Branch.”. Group record for the court system. The batch''s ''judicial-branch'' tribal-court entry points to this same page. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, cheyenne-and-arapaho-tribes#1). Kind changed from other on 2026-11-23: The page names the Judicial Branch, the court system as a whole.'
 - kind: tribal-court
   name: Trial Court
   link: https://www.cheyenneandarapaho-nsn.gov/government/judicial

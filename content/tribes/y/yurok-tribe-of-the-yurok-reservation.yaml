@@ -486,7 +486,7 @@ governing_documents:
     2026-11-21: the link the source gives (http://www.yuroktribe.org/government/councilsupport/YurokTribeOrdinances.htm)
     returned HTTP 404, so it is not recorded.'
 justice_institutions:
-- kind: other
+- kind: tribal-court
   name: Yurok Justice Center
   link: https://yuroktribalcourt.org/
   source: national-indian-law-library-yurok
@@ -494,10 +494,7 @@ justice_institutions:
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: 'Link check 2026-11-21: the link the source gives (http://www.yuroktribe.org/tribalcourt/) returned
-    HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the court''s own website,
-    fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
-    see research/reviews/2026-11-22-service-links.json, service-430.'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.yuroktribe.org/tribalcourt/) returned HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the court''s own website, fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json, service-430. Kind changed from other on 2026-11-23: The source lists it under the Tribal Court, and its link is the court’s own website.'
 - kind: tribal-court
   name: Yurok Tribal Court
   link: https://yuroktribalcourt.org/
@@ -510,7 +507,7 @@ justice_institutions:
     HTTP 404, so it is not recorded. Link added 2026-11-22: the court''s page on the court''s own website,
     fetched with status 200 on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json);
     see research/reviews/2026-11-22-service-links.json, service-431.'
-- kind: other
+- kind: tribal-court
   name: Yurok Justice Center
   link: https://yuroktribalcourt.org/
   source: tribal-law-policy-institute-justice-systems
@@ -520,7 +517,7 @@ justice_institutions:
   locator: California section, entry 'Yurok Tribe'
   note: 'Link added 2026-11-22: the court''s page on the court''s own website, fetched with status 200
     on 2026-11-22 by the court review (research/reviews/2026-11-21-court-listings.json); see research/reviews/2026-11-22-service-links.json,
-    service-432.'
+    service-432. Kind changed from other on 2026-11-23: The source lists it under the Tribal Court, and its link is the court''s own website.'
 - kind: healing-to-wellness-court
   name: Yurok Wellness Court
   link: https://yuroktribalcourt.org/

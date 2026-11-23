@@ -292,14 +292,14 @@ justice_institutions:
     verification: read-in-full
     as_of: '2026-11-22'
     note: 'The page says: “The Court of Appeals resolves any appeals from the District Court.”. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, mille-lacs-band#2).'
-- kind: other
+- kind: judicial-branch
   name: Mille Lacs Band Court of Central Jurisdiction
   link: https://millelacsband.com/government/judicial
   source: mille-lacs-band-of-ojibwe-judicial-branch
   confidence: high
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “The Court of Central Jurisdiction is comprised of the Mille Lacs Band District Court and the Mille Lacs Band Court of Appeals.”. Group name the Judicial Branch page gives for the District Court and Court of Appeals together. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, mille-lacs-band#1).'
+  note: 'The page names the court: “The Court of Central Jurisdiction is comprised of the Mille Lacs Band District Court and the Mille Lacs Band Court of Appeals.”. Group name the Judicial Branch page gives for the District Court and Court of Appeals together. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, mille-lacs-band#1). Kind changed from other on 2026-11-23: The page says it is comprised of the District Court and the Court of Appeals, so it is the court system as a whole.'
 - kind: court-of-appeals
   name: Mille Lacs Band Court of Appeals
   link: https://millelacsband.com/government/judicial

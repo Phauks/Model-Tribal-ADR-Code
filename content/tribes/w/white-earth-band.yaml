@@ -310,7 +310,7 @@ justice_institutions:
   verification: read-in-full
   as_of: '2026-11-22'
   note: 'The page names the court: “White Earth/Mahnomen County Healing to Wellness Drug Court”. A joint program with Mahnomen County, per the page heading. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, white-earth-band#5).'
-- kind: other
+- kind: treatment-court
   name: White Earth/Becker & Mahnomen Counties DWI Court
   link: https://www.whiteearth.com/divisions/judicial-services
   part_of: White Earth Nation Tribal Court
@@ -318,7 +318,7 @@ justice_institutions:
   confidence: medium
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “White Earth/Becker & Mahnomen Counties DWI Court”. Joint DWI court program named in the page heading; it is not a Healing to Wellness court by its own name, so kind is ''other''. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, white-earth-band#6).'
+  note: 'The page names the court: “White Earth/Becker & Mahnomen Counties DWI Court”. Joint DWI court program named in the page heading; it is not a Healing to Wellness court by its own name. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, white-earth-band#6). Kind changed from other on 2026-11-23: A DWI court, a treatment court the nation runs jointly with two counties.'
 dispute_resolution:
   forums:
   - kind: restorative-justice
