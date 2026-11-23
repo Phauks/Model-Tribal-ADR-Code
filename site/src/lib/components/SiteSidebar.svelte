@@ -25,7 +25,7 @@
 	import type { Permission } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { isUnfolded } from '#lib/outline-folding.ts';
-	import { sectionOf, siteSections, type OutlineItem, type PageOutline } from '#lib/site-sections.ts';
+	import { sectionOf, siteSections, type OutlineItem, type PageOutline, type SiteSection } from '#lib/site-sections.ts';
 	import {
 		isCurrentWorkspacePage,
 		workspacePagesFor,
@@ -198,6 +198,57 @@
 	function fold(item: OutlineItem): void {
 		folding = { ...folding, [item.link]: !unfolded(item) };
 	}
+
+	// Any section can be opened from any page to list the pages inside it, so a
+	// reader need not go to its home page first (Trevor, Nov. 23, 2026). The
+	// list is fetched when the section is first opened
+	// (src/lib/server/section-contents.ts). Which sections the reader opened
+	// is remembered from page to page. The section being read shows its page's
+	// own outline instead, when the page gives one.
+	const openSectionsKey = 'sidebar-open-sections';
+	let openSections = $state<Record<string, boolean>>({});
+	let sectionPages = $state<Record<string, OutlineItem[] | 'loading' | 'failed'>>({});
+
+	$effect(() => {
+		try {
+			const saved: unknown = JSON.parse(localStorage.getItem(openSectionsKey) ?? '[]');
+			if (Array.isArray(saved)) {
+				for (const link of saved) {
+					const section = siteSections.find((candidate) => candidate.link === link && candidate.opens);
+					if (section) openSection(section);
+				}
+			}
+		} catch {
+			// Storage can be blocked or hold something else; every section then starts shut.
+		}
+	});
+
+	/** Whether the section shows its page's own outline, rather than the list of its pages. */
+	function showsPageOutline(section: SiteSection): boolean {
+		return section === currentSection && Boolean(outline?.items.length);
+	}
+
+	function openSection(section: SiteSection): void {
+		openSections = { ...openSections, [section.link]: true };
+		const loaded = sectionPages[section.link];
+		if (loaded && loaded !== 'failed') return;
+		sectionPages = { ...sectionPages, [section.link]: 'loading' };
+		fetch(`/sidebar${section.link}.json`)
+			.then((response) => (response.ok ? (response.json() as Promise<OutlineItem[]>) : Promise.reject(response.status)))
+			.then((items) => (sectionPages = { ...sectionPages, [section.link]: items }))
+			.catch(() => (sectionPages = { ...sectionPages, [section.link]: 'failed' }));
+	}
+
+	function toggleSection(section: SiteSection): void {
+		if (openSections[section.link]) openSections = { ...openSections, [section.link]: false };
+		else openSection(section);
+		try {
+			const links = Object.keys(openSections).filter((link) => openSections[link]);
+			localStorage.setItem(openSectionsKey, JSON.stringify(links));
+		} catch {
+			// Nothing to remember with; the choice lasts for this page only.
+		}
+	}
 </script>
 
 {#snippet outlineList(items: OutlineItem[], depth: number, listId: string, shut = false)}
@@ -245,7 +296,7 @@
 
 {#snippet sections(idSuffix: string)}
 	<ul class="sections">
-		{#each siteSections as section (section.link)}
+		{#each siteSections as section, index (section.link)}
 			{@const current = section === currentSection}
 			<li class:current>
 				<div class="entry">
@@ -256,7 +307,7 @@
 					{:else}
 						<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
 					{/if}
-					{#if current && outline?.items.length}
+					{#if showsPageOutline(section)}
 						<button
 							type="button"
 							class="fold needs-scripts"
@@ -268,12 +319,38 @@
 							<ChevronRight size={16} aria-hidden="true" />
 							<span class="visually-hidden">{outlineShown ? 'Fold' : 'Unfold'} {section.label}</span>
 						</button>
+					{:else if section.built && section.opens}
+						{@const sectionOpen = Boolean(openSections[section.link])}
+						<button
+							type="button"
+							class="fold needs-scripts"
+							aria-expanded={sectionOpen}
+							aria-controls="sidebar-pages-{idSuffix}-{index}"
+							title={sectionOpen ? 'Fold' : 'Unfold'}
+							onclick={() => toggleSection(section)}
+						>
+							<ChevronRight size={16} aria-hidden="true" />
+							<span class="visually-hidden">{sectionOpen ? 'Fold' : 'Unfold'} {section.label}</span>
+						</button>
 					{/if}
 				</div>
-				{#if current && outline?.items.length}
+				{#if outline && showsPageOutline(section)}
 					<div id="sidebar-outline-{idSuffix}" hidden={!outlineShown}>
 						{#if outline.title}<p class="outline-title">{outline.title}</p>{/if}
 						{@render outlineList(outline.items, 1, `sidebar-outline-${idSuffix}-list`)}
+					</div>
+				{:else if section.built && section.opens}
+					{@const pages = sectionPages[section.link]}
+					<div id="sidebar-pages-{idSuffix}-{index}" class="section-pages" hidden={!openSections[section.link]}>
+						{#if pages === 'loading'}
+							<p class="pages-note">Loading…</p>
+						{:else if pages === 'failed'}
+							<p class="pages-note">Could not load the list. <a href={section.link}>Go to {section.label}</a></p>
+						{:else if pages && pages.length > 0}
+							{@render outlineList(pages, 1, `sidebar-pages-${idSuffix}-${index}-list`)}
+						{:else if pages}
+							<p class="pages-note">Nothing published yet.</p>
+						{/if}
 					</div>
 				{/if}
 			</li>
@@ -490,6 +567,12 @@
 
 	.sections > li.current {
 		margin: var(--space-1) 0 var(--space-3);
+	}
+
+	.pages-note {
+		margin: var(--space-1) var(--space-3) var(--space-2);
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
 	}
 
 	.outline-title {
