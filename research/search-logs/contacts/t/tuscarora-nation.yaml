@@ -1,7 +1,7 @@
 profile: content/tribes/t/tuscarora-nation.yaml
 topic: contacts
-status: none-found
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -19,3 +19,11 @@ searches:
   query: Tuscarora Nation Lewiston NY tribal council contact phone 716-264
   outcome: not-found
   reason: no official tribal website in results; only directory and aggregator listings (NARF, Native Ministries directory, BIA, NCAI)
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-directory
+  address: https://www.bia.gov/service/tribal-leaders-directory
+  query: email field for the nation in the federal Tribal Leaders Directory
+  outcome: found
+  reason: Lists the general office address info@tuscaroranation.org.

@@ -148,6 +148,15 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact the SMSC". Its title is "Contact the SMSC - Shakopee Mdewakanton Sioux Community in Scott County, MN". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: businesscouncil@shakopeedakota.org
+  label: General office email listed in the federal Tribal Leaders Directory
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-23'
+  locator: Shakopee Mdewakanton Sioux Community of Minnesota
+  note: A general office address (not a leader's own) in the directory's email field, read on Nov. 23, 2026.
 official_images:
 - kind: logo
   image_link: https://shakopeedakota.org/wp-content/uploads/2024/06/SMSC-LOGO_COLOR-300x300.png
