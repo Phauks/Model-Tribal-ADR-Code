@@ -13,13 +13,20 @@
  * file_scans table (migrations/0021_file_scans.sql), so nothing here needs
  * the scanner to be running. Until it is, files simply wait.
  */
-import type { D1Database } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, R2Bucket, R2HTTPMetadata, R2ObjectBody } from '@cloudflare/workers-types/index.ts';
 
 export const scanStatuses = ['waiting', 'scanning', 'retrying', 'clean', 'flagged', 'cannot-scan', 'failed', 'released-by-hand'] as const;
 export type ScanStatus = (typeof scanStatuses)[number];
 
 /** What a file is, so each part of the site can find its own scans. */
-export type ScanPurpose = 'upload' | 'mail-attachment';
+export type ScanPurpose =
+	| 'upload'
+	| 'mail-attachment'
+	| 'mail-outgoing'
+	| 'request-file'
+	| 'nation-picture'
+	| 'nation-team-proof'
+	| 'profile-picture';
 
 export interface FileScan {
 	objectKey: string;
@@ -143,6 +150,70 @@ export function mayServe(scan: FileScan | null, object?: { etag: string } | null
 	if (scan.status !== 'clean' && scan.status !== 'released-by-hand') return false;
 	if (object && scan.objectEtag !== null && scan.objectEtag !== object.etag) return false;
 	return true;
+}
+
+/**
+ * Stores bytes a person sent and holds them for the scanner in one step. Use
+ * this, not the bucket's put, for any file that came from outside the
+ * project: tests/scan-guard.test.ts fails if site code writes a sent file any
+ * other way. If the file cannot be put in line, it is deleted again, so no
+ * unscanned file is left behind.
+ */
+export async function storeSentFile(
+	database: D1Database,
+	bucket: R2Bucket,
+	file: {
+		objectKey: string;
+		purpose: ScanPurpose;
+		subject?: string | null;
+		bytes: Uint8Array | ArrayBuffer;
+		httpMetadata?: R2HTTPMetadata;
+		customMetadata?: Record<string, string>;
+	},
+	now: Date = new Date()
+): Promise<void> {
+	await bucket.put(file.objectKey, file.bytes, {
+		httpMetadata: file.httpMetadata,
+		customMetadata: file.customMetadata
+	});
+	try {
+		await requestScan(database, { objectKey: file.objectKey, purpose: file.purpose, subject: file.subject }, now);
+	} catch (problem) {
+		await bucket.delete(file.objectKey).catch(() => undefined);
+		throw problem;
+	}
+}
+
+/** A sent file, opened only if its scan lets it out. */
+export type OpenedFile =
+	| { state: 'ready'; object: R2ObjectBody; scan: FileScan }
+	| { state: 'held'; scan: FileScan | null }
+	| { state: 'missing'; scan: FileScan | null };
+
+/**
+ * Opens a sent file for serving, or says why not. The bucket is not even
+ * read unless the scan is clean or a reviewer released the file, and the
+ * object read must be the one that was scanned (its etag). Use this, not the
+ * bucket's get, to serve or open any file that came from outside the
+ * project (tests/scan-guard.test.ts).
+ */
+export async function openScannedFile(database: D1Database, bucket: R2Bucket, objectKey: string): Promise<OpenedFile> {
+	const scan = await fileScan(database, objectKey);
+	if (!mayServe(scan)) return { state: 'held', scan };
+	const object = await bucket.get(objectKey);
+	if (!object) return { state: 'missing', scan };
+	if (!mayServe(scan, object)) {
+		await object.body.cancel().catch(() => undefined);
+		return { state: 'held', scan };
+	}
+	return { state: 'ready', object, scan: scan! };
+}
+
+/** The status and message a route answers with when a sent file cannot be served. */
+export function heldFileAnswer(opened: Exclude<OpenedFile, { state: 'ready' }>): { status: number; message: string } {
+	if (opened.state === 'missing') return { status: 404, message: 'The file is no longer stored.' };
+	const words = scanStatusWords(opened.scan);
+	return { status: 403, message: `${words.label}. ${words.explanation}` };
 }
 
 /** Whether the file is still in line or being scanned, so a page can say "checking" and look again later. */

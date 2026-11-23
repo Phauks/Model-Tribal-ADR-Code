@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { approvalProblem, changeProblem, liveAt, readContent } from '#lib/nation-page-changes.ts';
+import { approvalProblem, changeProblem, liveAt, pictureKey, readContent } from '#lib/nation-page-changes.ts';
 import { termEnd } from '#lib/nation-teams.ts';
 import { checkSeals, sealNewEntries } from '#lib/server/activity-seals.ts';
 import {
@@ -12,8 +12,10 @@ import {
 	publishChange,
 	publishDraft,
 	saveDraft,
+	savePicture,
 	waitingChanges
 } from '#lib/server/nation-page-changes.ts';
+import { fileScan } from '#lib/server/file-scans.ts';
 import { escapeHtml, pageOverlay } from '#lib/server/nation-page-overlay.ts';
 import { teamReportState } from '#lib/nation-team-reports.ts';
 import { answerReport, reportsForTeam, teamAnswersFor } from '#lib/server/nation-team-reports.ts';
@@ -80,6 +82,22 @@ describe('what a change may hold', () => {
 		expect(readContent('pictures', { pictures: [picture] }).problem).toMatch(/Describe/);
 		expect(readContent('pictures', { pictures: [{ ...picture, type: 'image/svg+xml', alt: 'x' }] }).content.pictures).toEqual([]);
 		expect(readContent('hidden', { sections: ['law', 'everything', 'map'] }).content.sections).toEqual(['law', 'map']);
+	});
+});
+
+describe('a nation’s pictures', () => {
+	it('are held for the virus check from the moment they are stored', async () => {
+		const database = testDatabase();
+		const stored = new Map<string, unknown>();
+		const bucket = { put: async (key: string, bytes: unknown) => void stored.set(key, bytes), delete: async () => undefined } as never;
+		const identifier = await savePicture(database, bucket, 'navajo-nation', {
+			name: 'council.jpg',
+			type: 'image/jpeg',
+			bytes: new Uint8Array([0xff, 0xd8, 0xff])
+		});
+		const key = pictureKey('navajo-nation', identifier);
+		expect(stored.has(key)).toBe(true);
+		expect(await fileScan(database, key)).toMatchObject({ status: 'waiting', purpose: 'nation-picture', subject: 'navajo-nation' });
 	});
 });
 

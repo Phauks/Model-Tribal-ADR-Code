@@ -11,9 +11,14 @@ Every file people send the project, and every attachment that arrives in the pro
 
 ## Using it from site code
 
-`src/lib/server/file-scans.ts` is the whole interface:
+`src/lib/server/file-scans.ts` is the whole interface. For most files, two calls do everything:
 
-1. After storing a file, call `requestScan(database, { objectKey, purpose, subject })`. `purpose` is `'upload'` or `'mail-attachment'` (add a new name to `ScanPurpose` for a new kind of file); `subject` is your own name for it, such as an upload reference or an attachment identifier. Asking again for the same key starts the scan over, so a replaced file is never covered by an old result.
+- `storeSentFile(database, bucket, { objectKey, purpose, subject, bytes, httpMetadata })` stores a file someone sent and puts it in line in one step. If it cannot be put in line, the file is deleted again.
+- `openScannedFile(database, bucket, objectKey)` opens it for serving only if its scan lets it out, and otherwise says it is `held` or `missing`; `heldFileAnswer` turns that into a status and a sentence for the route. A held file is not even read from the bucket.
+
+Underneath, and for files written in pieces (uploads):
+
+1. After storing a file, call `requestScan(database, { objectKey, purpose, subject })`. `purpose` is one of `ScanPurpose` (`'upload'`, `'mail-attachment'`, `'mail-outgoing'`, `'request-file'`, `'nation-picture'`, `'nation-team-proof'`, `'profile-picture'`; add a new name for a new kind of file); `subject` is your own name for it, such as an upload reference or an attachment identifier. Asking again for the same key starts the scan over, so a replaced file is never covered by an old result.
 2. Before serving, opening or filing the file, read its scan with `fileScan` (one) or `fileScans` (many, by key) and go ahead only if `mayServe(scan, object)` is true. Pass the bucket object when you have it: a result counts only for the bytes that were scanned (the object's etag), so a file replaced after its scan is held again. A file with no scan row is held too.
 3. Show where it stands with `scanStatusWords(scan)`, which gives a short label and a sentence for senders and reviewers. `stillScanning(scan)` says whether to look again later.
 4. A reviewer can release a file that could not be checked (locked with a password, too large, or the scan gave up) with `releaseByHand`, giving a reason; the caller checks the person's permission and writes the activity log entry. A file where something was found can never be released. `scanAgain` puts a file back in line, and `forgetScan` removes the row when the file itself is deleted.
@@ -30,6 +35,19 @@ What each status means:
 | `cannot-scan` | Locked (`encrypted`), larger than the scanner takes (`too-large`), ClamAV stopped at its limits (`limits-exceeded`), or not in the bucket (`missing`). | No, until a reviewer releases it |
 | `failed` | Eight tries without an answer. | No, until scanned again or released |
 | `released-by-hand` | A reviewer released a file that could not be checked. | Yes |
+
+## The scan guard
+
+`tests/scan-guard.test.ts` makes sure no file from outside the project gets around the scanner. It reads the code of every Worker in `site/` (each `wrangler.jsonc` "main", plus the website) with the TypeScript checker and finds, by type rather than by name:
+
+- every place that reads the bytes of a `File`, a `Blob` or a `Request` body, which is how a file arrives; and
+- every `get`, `put` and multipart call on an `R2Bucket`.
+
+Each one must be listed in the test with what it is. A bucket call that stores a file from outside must be `storeSentFile` (or sit in a module that calls `requestScan`, as uploads do); one that serves such a file must be `openScannedFile` (or check `mayServe` in the same function); only the scanner may read a file to scan it; and anything else must say why it is the project's own file. A new call or a new way in that is not listed fails the test, so it is looked at before it ships. The test also fails if a bucket loses its type (so the checker cannot see it) or a migration adds a `BLOB` column (so files cannot hide in the database).
+
+What it does not cover: code outside `site/` (the project's own Python scripts, which never take files from people), and the inbound mail's HTML body, which is shown only in a sandboxed frame that runs no scripts and loads nothing (a listed exception). The raw message is kept but never served.
+
+Files from outside today: uploads (`upload`), request and form files (`request-file`), nation page pictures (`nation-picture`), proof sent to join a nation's team (`nation-team-proof`), profile pictures (`profile-picture`), email attachments (`mail-attachment`) and files attached to outgoing email (`mail-outgoing`; the message waits until they pass).
 
 ## How a scan runs
 

@@ -18,7 +18,7 @@ import {
 	unsubscribeWithToken
 } from '#lib/server/mail/outreach.ts';
 import { bringBackReminders, getThread, listThreads, moveToFolder, purgeDeleted, setReminder } from '#lib/server/mail/store.ts';
-import { composeDefaults, replyAllReach, type AnsweredMessage } from '#lib/mail.ts';
+import { composeDefaults, heldForVirusCheck, replyAllReach, type AnsweredMessage } from '#lib/mail.ts';
 import { releaseAttachment } from '#lib/server/mail/scans.ts';
 import { isSuppressed, suppress } from '#lib/server/mail/suppressions.ts';
 import { makeToken } from '#lib/server/mail/tokens.ts';
@@ -368,10 +368,36 @@ describe('reply, reply all and forward', () => {
 			forward: { message: newer.identifier, attachments: newer.attachments.map((item) => item.identifier) }
 		});
 		expect(forward.threadIdentifier).toBe(first.threadIdentifier);
+		// The forwarded copy is a file going out: the message waits until it passes the virus check.
+		expect(await sendMessage(context, { replies: carrier, outreach: null }, forward.messageIdentifier)).toMatchObject({ sent: false, held: true });
+		expect(carrier.sent).toHaveLength(1);
+		const waiting = (await getThread(context, first.threadIdentifier, 'lead'))!.messages.find((item) => item.identifier === forward.messageIdentifier)!;
+		expect(waiting).toMatchObject({ status: 'scheduled', error: heldForVirusCheck });
+		await context.database.prepare(`UPDATE file_scans SET status = 'clean' WHERE purpose = 'mail-outgoing'`).run();
 		await sendMessage(context, { replies: carrier, outreach: null }, forward.messageIdentifier);
 		expect(carrier.sent[1].headers?.['In-Reply-To']).toBeUndefined();
 		expect(carrier.sent[1].attachments?.map((item) => [item.filename, new TextDecoder().decode(item.content)])).toEqual([['ordinance.pdf', '%PDF-1.7 pretend']]);
 		expect((await getThread(context, first.threadIdentifier, 'lead'))!.actions.map((item) => item.action)).toContain('Forwarded');
+
+		// A file the team attaches where the check finds something is never sent.
+		const attached = await queueMessage(context, {
+			personIdentifier: 'lead',
+			threadIdentifier: first.threadIdentifier,
+			from: 'contact@example.org',
+			to: [{ email: 'office@nation.example' }],
+			subject: 'Re: A question about the model code',
+			text: 'The draft is attached.',
+			attachments: [{ filename: 'draft.docx', mediaType: 'application/octet-stream', content: new TextEncoder().encode('pretend') }]
+		});
+		await context.database
+			.prepare(`UPDATE file_scans SET status = 'flagged', reason = 'Eicar-Test-Signature' WHERE subject = ?`)
+			.bind(attached.messageIdentifier)
+			.run();
+		expect(await sendMessage(context, { replies: carrier, outreach: null }, attached.messageIdentifier)).toMatchObject({
+			sent: false,
+			error: expect.stringContaining('Eicar-Test-Signature')
+		});
+		expect(carrier.sent).toHaveLength(2);
 
 		await suppress(context, 'gone@law.example', 'asked');
 		await expect(

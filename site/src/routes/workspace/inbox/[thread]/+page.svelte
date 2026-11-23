@@ -17,7 +17,7 @@
 	import StickyNote from '@lucide/svelte/icons/sticky-note';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import X from '@lucide/svelte/icons/x';
-	import { deliveryLabels, formatAddress, messageStatusLabels, replyAllReach } from '#lib/mail.ts';
+	import { deliveryLabels, formatAddress, heldForVirusCheck, messageStatusLabels, replyAllReach } from '#lib/mail.ts';
 	import Avatar from '../Avatar.svelte';
 	import Composer from '../Composer.svelte';
 	import TagChip from '../TagChip.svelte';
@@ -186,6 +186,7 @@
 						{#if message.attachments.some((item) => !item.inline)}<Paperclip size={14} aria-label="Has attachments" />{/if}
 						{#if message.direction === 'in'}{listDate(message.receivedAt ?? message.createdAt)}
 						{:else if message.status === 'sent'}{listDate(message.sentAt ?? message.createdAt)}
+						{:else if message.status === 'scheduled' && message.error === heldForVirusCheck}<span class="status">Waiting for the virus check</span>
 						{:else if message.status === 'scheduled'}<span class="status">Goes {listDate(message.scheduledFor ?? message.createdAt)}</span>
 						{:else}<span class="status">{messageStatusLabels[message.status] ?? message.status}</span>{/if}
 					</span>
@@ -200,7 +201,8 @@
 					{/if}
 					{#if message.automatic}<p class="small status-line">Automatic reply</p>{/if}
 					{#if message.spamReason}<p class="small warning">In Spam because: {message.spamReason}</p>{/if}
-					{#if message.error}<p class="small warning">Not sent: {message.error}</p>{/if}
+					{#if message.error === heldForVirusCheck}<p class="small status-line">{message.error}</p>
+					{:else if message.error}<p class="small warning">Not sent: {message.error}</p>{/if}
 					<div class="text">{message.text}</div>
 					{#if message.hasHtml}
 						<details class="formatted">
