@@ -132,8 +132,9 @@
 						{#if allOpen}<ChevronsDownUp size={20} aria-hidden="true" />{:else}<ChevronsUpDown size={20} aria-hidden="true" />{/if}
 					</button>
 				{/if}
-				<button class="text-button" type="button" aria-pressed={showFacts} onclick={() => (showFacts = !showFacts)}
-					>Show what each source supports</button
+				<!-- "Expand" (Trevor, Nov. 23, 2026); the hidden words tell screen readers what it opens. -->
+				<button class="text-button" type="button" aria-expanded={showFacts} onclick={() => (showFacts = !showFacts)}
+					>{showFacts ? 'Collapse' : 'Expand'}<span class="visually-hidden"> what each source supports</span></button
 				>
 			</div>
 			{#if groups}
@@ -187,12 +188,6 @@
 		font: inherit;
 		text-decoration: underline;
 		cursor: pointer;
-	}
-
-	/* The pressed state shows by more than color: the line under the words thickens. */
-	.text-button[aria-pressed='true'] {
-		text-decoration-thickness: 3px;
-		font-weight: var(--font-weight-semibold);
 	}
 
 	.source-group {
