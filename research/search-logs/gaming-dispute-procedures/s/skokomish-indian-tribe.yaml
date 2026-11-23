@@ -1,7 +1,7 @@
 profile: content/tribes/s/skokomish-indian-tribe.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -137,10 +137,56 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#skokomish-indian-tribe-amendment-2021-01-07#i1
-next_steps: Read the scanned ordinance listed 1996-04-30 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomishord043096.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2001-07-03 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomishamend070301.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2004-10-26 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomishamend102604.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2005-05-25 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomishamend052505.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2008-02-26 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomordamend020608.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2009-09-25 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-2009.09.25-Skokomish-Amdmt-Appr-Ltr.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-2009.09.25-Skokomish-Amdmt-Appr-Ltr.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-20, 22-33, 63-70 of 70 of this amendment listed 2009-09-25
+    as page images (it has no text layer) and recorded 4 procedure(s): other, patron-dispute. Not read:
+    pages 21, 34-62 (40-page budget for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#skokomish-indian-tribe-amendment-2009-09-25#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#skokomish-indian-tribe-amendment-2009-09-25#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#skokomish-indian-tribe-amendment-2009-09-25#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#skokomish-indian-tribe-amendment-2009-09-25#p4
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomordamend020608.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-8, 22-31, 61-65 of 65 of this amendment listed 2008-02-26
+    as page images (it has no text layer) and recorded 4 procedure(s): other, patron-dispute. Not read:
+    pages 9-21, 32-60 (40-page budget for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#skokomish-indian-tribe-amendment-2008-02-26#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#skokomish-indian-tribe-amendment-2008-02-26#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#skokomish-indian-tribe-amendment-2008-02-26#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#skokomish-indian-tribe-amendment-2008-02-26#p4
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomishamend052505.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 2-3 of 3 of this amendment listed 2005-05-25 as page images
+    (it has no text layer) and found no dispute procedure (the resolution only reduces the Tribal Gaming
+    Commission from five to three commissioners; the approval letter (page 1) is left out per the batch
+    plan).
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 21, 34-62 of the
+  amendment listed 2009-09-25 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-2009.09.25-Skokomish-Amdmt-Appr-Ltr.pdf),
+  left by the 40-page budget for long documents. Not read: pages 9-21, 32-60 of the amendment listed 2008-02-26
+  (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomordamend020608.pdf), left
+  by the 40-page budget for long documents. Older scanned documents were not read, because the newer documents
+  read replace them: amendment listed 2004-10-26 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomishamend102604.pdf);
+  amendment listed 2001-07-03 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomishamend070301.pdf);
+  ordinance listed 1996-04-30 (https://www.nigc.gov/wp-content/uploads/2025/03/skokomishindiantribe-skokomishord043096.pdf).'

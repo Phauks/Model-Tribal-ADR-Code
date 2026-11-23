@@ -1,7 +1,7 @@
 profile: content/tribes/p/prairie-island-indian-community-in-the-state-of-minnesota.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -95,10 +95,44 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#prairie-island-indian-community-amendment-2025-01-03#i1
-next_steps: Read the scanned ordinance listed 1994-01-21 (https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-prairieislord012194.pdf)
-  with OCR or by hand. Read the scanned amendment listed 1996-10-08 (https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-prairieislandord100896.pdf)
-  with OCR or by hand. Read the scanned amendment listed 1998-06-12 (https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-prairieislandord061298.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2005-01-04 (https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-prairieislamend010405.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2010-11-03 (https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-Amdappr11032010.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2015-02-24 (https://www.nigc.gov/wp-content/uploads/2025/03/20150224_Prairie_Island_Indian_Community_Gam_Ord_Approval.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20150224_Prairie_Island_Indian_Community_Gam_Ord_Approval.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-38 of 38 of this amendment listed 2015-02-24 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#prairie-island-indian-community-amendment-2015-02-24#p1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-Amdappr11032010.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-35 of 35 of this amendment listed 2010-11-03 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#prairie-island-indian-community-amendment-2010-11-03#p1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-prairieislamend010405.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-29 of 29 of this amendment listed 2005-01-04 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#prairie-island-indian-community-amendment-2005-01-04#p1
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Older scanned documents were not
+  read, because the newer documents read replace them: amendment listed 1998-06-12 (https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-prairieislandord061298.pdf);
+  amendment listed 1996-10-08 (https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-prairieislandord100896.pdf);
+  ordinance listed 1994-01-21 (https://www.nigc.gov/wp-content/uploads/2025/03/prairieisland-prairieislord012194.pdf).'
