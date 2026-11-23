@@ -1,7 +1,7 @@
 profile: content/tribes/t/tonto-apache-tribe-of-arizona.yaml
 topic: contacts
 status: none-found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -11,3 +11,11 @@ searches:
   query: contact page and general email
   outcome: not-found
   reason: The website on file is shared with other nations or is a social media page, so its contact page is not this nation's own.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-directory
+  address: https://www.bia.gov/service/tribal-leaders-directory
+  query: email field for the nation in the federal Tribal Leaders Directory
+  outcome: not-found
+  reason: The directory lists only a leader's own address or none; leaders' addresses are kept out of the public record (lead author's decision, Nov. 23, 2026).
