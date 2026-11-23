@@ -1,18 +1,12 @@
 # Model Tribal ADR Code
 
-Model provisions, commentary, and a collection of "methods and manners" of
-dispute resolution for Native nations in the United States, including Alaska,
-Hawaiʻi and the territories. The project offers an optional framework that a
-nation may adapt through its own processes; it does not speak for any nation.
+Model provisions, commentary, and a collection of "methods and manners" of dispute resolution for Native nations in the United States, including Alaska, Hawaiʻi and the territories. The project offers an optional framework that a nation may adapt through its own processes; it does not speak for any nation.
 
-The work is planned as a website and a printed book (1st Edition), both built
-from the plain-text sources in this repository.
+The work is planned as a website and a printed book (1st Edition), both built from the plain-text sources in this repository.
 
 ## Status
 
-Pre-release (0.0.x). The project charter, data model and citation rules come
-first. A first version of the website is in [site/](site/README.md); the model
-provisions themselves are not written yet.
+Pre-release (0.0.x). The project charter, data model and citation rules come first. A first version of the website is in [site/](site/README.md); the model provisions themselves are not written yet.
 
 ## Start here
 
@@ -32,9 +26,7 @@ provisions themselves are not written yet.
 
 ## Versions and changelogs
 
-Content, website and print edition are versioned separately with
-[Semantic Versioning](https://semver.org/), each starting at 0.0.1, and each
-keeps its own changelog:
+Content, website and print edition are versioned separately with [Semantic Versioning](https://semver.org/), each starting at 0.0.1, and each keeps its own changelog:
 
 - [Content changelog](content/CHANGELOG.md)
 - [Website changelog](site/CHANGELOG.md)
@@ -42,7 +34,4 @@ keeps its own changelog:
 
 ## Authorship
 
-The lead author is Trevor Goldsmith, a law student who is not Native American. The
-[charter](docs/charter.md) explains how that shapes the project's methods,
-including consultation with Native nations and credit for Indigenous authors
-and artists.
+The lead author is Trevor Goldsmith, a law student who is not Native American. The [charter](docs/charter.md) explains how that shapes the project's methods, including consultation with Native nations and credit for Indigenous authors and artists.

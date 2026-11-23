@@ -93,9 +93,10 @@ export function readProfileForm(form: FormData, nations: readonly NationChoice[]
 	const answers: ProfileAnswers = {
 		givenName: text('givenName', 200),
 		familyName: text('familyName', 200),
+		nativeName: text('nativeName', 200),
 		phone,
 		preferredContact: choice(contactMethods, formText(form, 'preferredContact')),
-		adultConfirmed: ticked('adultConfirmed'),
+		thirteenOrOlder: ticked('thirteenOrOlder'),
 		nationAnswer,
 		nations: listed,
 		background: text('background', 4000),

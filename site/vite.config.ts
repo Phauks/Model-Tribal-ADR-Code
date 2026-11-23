@@ -8,7 +8,7 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
-import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms } from './src/lib/server/essay-library.ts';
+import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { followableBuild } from './src/lib/server/followable-build.ts';
 import {
@@ -230,7 +230,8 @@ function essayLibrary(): Plugin {
 				`export const essayTerms = ${JSON.stringify(glossaryTerms())};`,
 				`export const essayBoxFacts = ${JSON.stringify(everyBoxFact())};`,
 				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`,
-				`export const essayCaseNames = ${JSON.stringify(caseNames())};`
+				`export const essayCaseNames = ${JSON.stringify(caseNames())};`,
+				`export const essaySpellingWords = ${JSON.stringify(spellingWords())};`
 			].join('\n');
 		}
 	};

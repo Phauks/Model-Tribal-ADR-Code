@@ -1,13 +1,8 @@
 # Decision records
 
-Short, numbered records of why key choices were made, in the style Michael
-Nygard described as "architecture decision records"
-([Cognitect, 2011](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions)).
-They are called decision records here because "ADR" in this project means
-alternative dispute resolution.
+Short, numbered records of why key choices were made, in the style Michael Nygard described as "architecture decision records" ([Cognitect, 2011](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions)). They are called decision records here because "ADR" in this project means alternative dispute resolution.
 
-A record is never rewritten after it is accepted. A later record supersedes it
-and says so.
+A record is never rewritten after it is accepted. A later record supersedes it and says so.
 
 | No. | Decision | Status |
 | --- | --- | --- |
@@ -48,5 +43,6 @@ and says so.
 | [0034](0034-show-stories-in-full-where-rights-allow.md) | Show the whole story on its page where the rights allow | Accepted; amended by 0036 |
 | [0035](0035-follow-pages-with-notices-that-never-quote.md) | Following pages, with notices that never say what changed | Accepted |
 | [0036](0036-show-every-story-in-full.md) | Show every story in full on the website | Accepted |
+| [0037](0037-keep-a-copy-of-every-directly-cited-page.md) | Keep our own copy of every page a record directly cites | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

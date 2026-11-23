@@ -1120,19 +1120,10 @@ limits: 'Order and events: the order of versions, the kind of each event and whi
 
 # Compact version histories and Secretarial Procedures
 
-Follow-up to [the gaming compacts session](2026-11-21-gaming-compacts-and-ordinances.md), asked for
-by the lead author on Nov. 21, 2026 ("Noting this difference between different versions is
-important. Perhaps we should also log historic compacts and changes. We may have to investigate
-federal secretarial procedures.").
+Follow-up to [the gaming compacts session](2026-11-21-gaming-compacts-and-ordinances.md), asked for by the lead author on Nov. 21, 2026 ("Noting this difference between different versions is important. Perhaps we should also log historic compacts and changes. We may have to investigate federal secretarial procedures.").
 
-- Built a document history record (decision record 0018) for each nation's compact with each state,
-  with a source record of its own file for every version (`content/documents/`).
-- Extracted dispute resolution and renegotiation clauses from every older version not read before,
-  compared every amendment, replacement and set of procedures with the version before it, audited a
-  sample and rechecked every reported change in dispute resolution on the full text.
-- Researched every set of Secretarial Procedures on the list and the rulemaking and court history of
-  25 C.F.R. part 291 (`research/gaming/secretarial-procedures.csv`, `part-291-history.csv`).
+- Built a document history record (decision record 0018) for each nation's compact with each state, with a source record of its own file for every version (`content/documents/`).
+- Extracted dispute resolution and renegotiation clauses from every older version not read before, compared every amendment, replacement and set of procedures with the version before it, audited a sample and rechecked every reported change in dispute resolution on the full text.
+- Researched every set of Secretarial Procedures on the list and the rulemaking and court history of 25 C.F.R. part 291 (`research/gaming/secretarial-procedures.csv`, `part-291-history.csv`).
 
-Results are summarized in
-[the gaming compact analysis](../../analyses/2026-11-21-gaming-compact-negotiation.md#how-dispute-clauses-changed-between-versions).
-Reviewer briefs are in `research/gaming/briefs/`.
+Results are summarized in [the gaming compact analysis](../../analyses/2026-11-21-gaming-compact-negotiation.md#how-dispute-clauses-changed-between-versions). Reviewer briefs are in `research/gaming/briefs/`.

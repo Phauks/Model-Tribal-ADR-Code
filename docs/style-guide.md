@@ -1,110 +1,57 @@
 # Style guide
 
-This guide sets the tone and writing standards for everything the project
-publishes: provisions, commentary, essays, the website and project documents.
-Its aim is a professional, clean and consistent voice across many contributors
-and editions. Word choice is governed by the project dictionary; see
-[terminology.md](terminology.md) and the entries in
-[`content/glossary/`](../content/glossary/). Citation form is governed by
-[citation-style.md](citation-style.md).
+This guide sets the tone and writing standards for everything the project publishes: provisions, commentary, essays, the website and project documents. Its aim is a professional, clean and consistent voice across many contributors and editions. Word choice is governed by the project dictionary; see [terminology.md](terminology.md) and the entries in [`content/glossary/`](../content/glossary/). Citation form is governed by [citation-style.md](citation-style.md).
 
-Where a rule rests on a published source, a footnote cites it. Where it is the
-project's own choice, it says so.
+Where a rule rests on a published source, a footnote cites it. Where it is the project's own choice, it says so.
 
 ## 1. Voice and tone
 
-- **Professional and measured.** Write as a careful legal reference: precise,
-  calm and specific. Avoid praise, alarm, slogans and rhetorical questions
-  (project choice).
-- **Descriptive, not ranking.** Describe what a nation's published law or
-  practice provides. Do not rank nations' systems or present one nation's
-  practice as the standard for others
-  ([charter, commitment 2](charter.md#2-respect-for-each-nations-own-institutions)).
-- **Not an Indigenous voice.** The project presents published practice and
-  credits Indigenous sources; it does not speak for any nation
-  ([charter, commitment 10](charter.md#10-positionality-and-transparency)).
-  Write "the Navajo Nation's code provides" rather than "Navajo people
-  believe."
-- **Not legal advice.** Model provisions and commentary are options for a
-  nation's own law-making process. Avoid "should" when addressing a nation;
-  prefer "a nation may" or "Alternative A suits a nation that" (project
-  choice).
+- **Professional and measured.** Write as a careful legal reference: precise, calm and specific. Avoid praise, alarm, slogans and rhetorical questions (project choice).
+- **Descriptive, not ranking.** Describe what a nation's published law or practice provides. Do not rank nations' systems or present one nation's practice as the standard for others ([charter, commitment 2](charter.md#2-respect-for-each-nations-own-institutions)).
+- **Not an Indigenous voice.** The project presents published practice and credits Indigenous sources; it does not speak for any nation ([charter, commitment 10](charter.md#10-positionality-and-transparency)). Write "the Navajo Nation's code provides" rather than "Navajo people believe."
+- **Not legal advice.** Model provisions and commentary are options for a nation's own law-making process. Avoid "should" when addressing a nation; prefer "a nation may" or "Alternative A suits a nation that" (project choice).
 - **Source and analysis kept apart.** Say what a source says, then label the project's own view, for example "(project analysis)" or "in the project's view" ([citation-style.md](citation-style.md#rules-the-project-adds)). In essays and other text readers see in the book or on the website, put that view in an Analysis box instead (section 5), and never call the authors "the project" (Trevor, Nov. 22, 2026).
 
 ## 2. Plain language
 
-The project follows the federal plain language guidance as a model, though it
-does not bind the project.[^plain]
+The project follows the federal plain language guidance as a model, though it does not bind the project.[^plain]
 
-- "The first rule of plain language is: write for your audience."[^plain] The audience is Tribal lawmakers, judges,
-  peacemakers, court staff, advocates and students, not only lawyers.
+- "The first rule of plain language is: write for your audience."[^plain] The audience is Tribal lawmakers, judges, peacemakers, court staff, advocates and students, not only lawyers.
 - "Express only one idea in each sentence."[^plain-short]
-- Keep paragraphs short. The federal guide reports that "writing experts
-  recommend paragraphs of no more than 150 words in three to eight
-  sentences."[^plain-short]
-- Use the active voice: it "makes it clear who should do what."[^plain-writing]
-  Write "The peacemaker must give notice," not "Notice must be given."
-- Avoid jargon. "When you have no way to express an idea except to use
-  technical language, make sure to define your terms,"[^plain-jargon] which in
-  this project means linking the term to its glossary entry.
+- Keep paragraphs short. The federal guide reports that "writing experts recommend paragraphs of no more than 150 words in three to eight sentences."[^plain-short]
+- Use the active voice: it "makes it clear who should do what."[^plain-writing] Write "The peacemaker must give notice," not "Notice must be given."
+- Avoid jargon. "When you have no way to express an idea except to use technical language, make sure to define your terms,"[^plain-jargon] which in this project means linking the term to its glossary entry.
 
 ## 3. Writing about Native nations and people
 
-- **Use the dictionary.** Use the preferred terms in
-  [terminology.md](terminology.md), and link the first use of each defined
-  term with `[[id]]`.
-- **Name the nation.** Use a nation's own name, as it writes it, whenever one
-  nation is meant. Use collective terms only for several nations.
-- **Present tense for living nations and practices.** "Only using the past
-  tense reinforces the myth of the 'Vanishing Indian.'"[^nmai] Use the past
-  tense for historical events, with dates.
-- **No generalizations.** "Avoid generalization,"[^nmai] such as "all Native
-  Americans" or "Native cultures value." Say which nation, which source and
-  which time.
-- **No possessive framing.** Write "Native nations in Nevada," not "Nevada's
-  Native nations."[^ngc-guide]
-- **Do not conflate** a nation with its reservation or its businesses: "Don't
-  conflate Native nations with reservations or casinos."[^ngc-guide]
-- **No stereotypes or borrowed sacred terms.** Avoid stock phrases the
-  Smithsonian lists as stereotypes, such as "Indian Princess," "Low man on the
-  totem pole" and "sitting Indian style."[^nmai]
-- **Restricted knowledge stays out.** Do not describe ceremonial, restricted
-  or community-held knowledge without the community's written approval
-  ([charter, commitment 5](charter.md#5-cultural-knowledge-and-restricted-material)).
-- **Diacritics and spelling.** Reproduce names and words in Native languages
-  exactly as the nation writes them, including diacritics such as the ʻokina
-  in Hawaiʻi (project choice).
+- **Use the dictionary.** Use the preferred terms in [terminology.md](terminology.md), and link the first use of each defined term with `[[id]]`.
+- **Name the nation.** Use a nation's own name, as it writes it, whenever one nation is meant. Use collective terms only for several nations.
+- **Present tense for living nations and practices.** "Only using the past tense reinforces the myth of the 'Vanishing Indian.'"[^nmai] Use the past tense for historical events, with dates.
+- **No generalizations.** "Avoid generalization,"[^nmai] such as "all Native Americans" or "Native cultures value." Say which nation, which source and which time.
+- **No possessive framing.** Write "Native nations in Nevada," not "Nevada's Native nations."[^ngc-guide]
+- **Do not conflate** a nation with its reservation or its businesses: "Don't conflate Native nations with reservations or casinos."[^ngc-guide]
+- **No stereotypes or borrowed sacred terms.** Avoid stock phrases the Smithsonian lists as stereotypes, such as "Indian Princess," "Low man on the totem pole" and "sitting Indian style."[^nmai]
+- **Restricted knowledge stays out.** Do not describe ceremonial, restricted or community-held knowledge without the community's written approval ([charter, commitment 5](charter.md#5-cultural-knowledge-and-restricted-material)).
+- **Diacritics and spelling.** Reproduce names and words in Native languages exactly as the nation writes them, including diacritics such as the ʻokina in Hawaiʻi (project choice).
 
 ## 4. Model provisions
 
-The rules below are the project's drafting conventions (project choice),
-chosen for clarity and consistency in text a nation may enact.
+The rules below are the project's drafting conventions (project choice), chosen for clarity and consistency in text a nation may enact.
 
-- **Duties and permissions.** Use "must" for a duty, "must not" for a
-  prohibition, and "may" for a permission or discretion. Do not use "shall."
-- **Who acts.** Name the actor in every operative sentence: the court, the
-  peacemaker, a party, or the council written as `{{nation.council}}`.
-- **Nation-specific words** are template variables such as `{{nation.name}}`,
-  never a real nation's name ([data-model.md](data-model.md#built-for-templates)).
-- **Alternatives** are lettered (Alternative A, Alternative B) and each must
-  work on its own when the others are deleted.
+- **Duties and permissions.** Use "must" for a duty, "must not" for a prohibition, and "may" for a permission or discretion. Do not use "shall."
+- **Who acts.** Name the actor in every operative sentence: the court, the peacemaker, a party, or the council written as `{{nation.council}}`.
+- **Nation-specific words** are template variables such as `{{nation.name}}`, never a real nation's name ([data-model.md](data-model.md#built-for-templates)).
+- **Alternatives** are lettered (Alternative A, Alternative B) and each must work on its own when the others are deleted.
 - **Definitions.** A term defined for the whole code is defined in the general division, because a definition a nation enacts must sit in the code itself. A term used in only one division is defined there, written "In this division, 'party' means ...". The glossary explains words used in essays and other prose; where a word is also defined in the code, its glossary entry points to the code's definition so the two say the same thing ([outline, scope question 12](outline.md#open-scope-questions)).
-- **Numbering** follows [repository-layout.md](repository-layout.md#identifiers).
-  Never renumber a published section; insert § 2-104A.
+- **Numbering** follows [repository-layout.md](repository-layout.md#identifiers). Never renumber a published section; insert § 2-104A.
 
 ## 5. Commentary, illustrations and essays
 
-- **Commentary** follows the Restatement pattern: Comment, Illustrations,
-  Source Note.
-- **Illustrations** use fictitious parties and a fictitious nation unless a
-  nation has approved its use as an example
-  ([charter, commitment 4](charter.md#4-consultation-before-publication)).
-  Label them "Illustration 1," and so on.
-- **Source Notes** cite every Tribal law, case, statute and secondary source
-  the comment relies on, by `[@key]`.
+- **Commentary** follows the Restatement pattern: Comment, Illustrations, Source Note.
+- **Illustrations** use fictitious parties and a fictitious nation unless a nation has approved its use as an example ([charter, commitment 4](charter.md#4-consultation-before-publication)). Label them "Illustration 1," and so on.
+- **Source Notes** cite every Tribal law, case, statute and secondary source the comment relies on, by `[@key]`.
 - **Citations on the website** sit beside what they support, as Wikipedia's do (Trevor, Nov. 22, 2026). Put `[@key]` right after the claim it supports, for example `the project treats peacemaking as its own track [@narf-ipi-tribal-peacemaking-laws].` The website shows a small numbered marker there, right against the last word, and the page's Sources list links back to each one. On nation pages and other data pages every fact gets a marker from its own source, so nothing needs to be written by hand. This replaces the rule of Nov. 21, 2026, that kept citations out of the text and listed them only at the end of the page.
-- **Essays** may use a more discursive voice, but the same terminology,
-  citation and labeling rules apply.
+- **Essays** may use a more discursive voice, but the same terminology, citation and labeling rules apply.
 
 ### 5.1 How essays look in the book and on the website
 
@@ -147,114 +94,46 @@ Trevor set these rules on Nov. 22, 2026, after reading the first print draft of 
 
 These rules apply to every file in the repository, not only to published text.
 
-- **Encoding.** Every text file is UTF-8 without a byte order mark, in Unicode
-  Normalization Form C (NFC), with LF line endings and a final newline. The
-  same visible letter, such as an accented or diacritic letter in a Native
-  language name, can be stored as different sequences of code points;
-  normalizing to one form makes searching, sorting, linking and comparing text
-  reliable.[^uax15] The `Text encoding` check
-  ([scripts/check_text.py](../scripts/check_text.py)) enforces this on every
-  pull request, and [.editorconfig](../.editorconfig) sets it in most editors.
+- **Encoding.** Every text file is UTF-8 without a byte order mark, in Unicode Normalization Form C (NFC), with LF line endings and a final newline. The same visible letter, such as an accented or diacritic letter in a Native language name, can be stored as different sequences of code points; normalizing to one form makes searching, sorting, linking and comparing text reliable.[^uax15] The `Text encoding` check ([scripts/check_text.py](../scripts/check_text.py)) enforces this on every pull request, and [.editorconfig](../.editorconfig) sets it in most editors.
 - **Never hard-wrap text.** A paragraph, list item, footnote, quotation, code comment or piece of page text is one line, however long; editors, GitHub and browsers wrap it to fit the reader's screen (Trevor's rule, Nov. 22, 2026). Breaking lines by hand at 80 or 100 characters splits sentences in the source, and every later edit reflows the whole paragraph in the diff. A deliberate line break, such as in an address, ends the line with two spaces or a backslash. The `Text encoding` job runs [scripts/check_wrapping.py](../scripts/check_wrapping.py), which refuses Markdown paragraphs that a pull request wraps; files wrapped before the rule will be unwrapped in one pass.
-- **The ʻokina** is written with the letter U+02BB (ʻ), not an apostrophe or
-  quotation mark (project choice).
-- **Names in code are spelled out.** Variables, functions, files, schema
-  fields and other identifiers use whole words: `organizationName`, not
-  `orgNm`; `configuration`, not `cfg`; `index`, not `i` (project rule).
-- **Acronyms that name things are fine**, in code and in prose, such as URL,
-  PDF, HTML, R2 or NARF. In code, write them as ordinary words in the case
-  style of the name around them: `sourceUrl`, `pdfPath`.
-- **External names stay as defined.** Names that come from a library, a
-  standard or a service keep their own spelling, such as the `URL` field in
-  Citation Style Language data.
-- **Case styles.** File and folder names, record ids and keys: lowercase words
-  joined by hyphens. Record fields: lowercase words joined by underscores
-  (`found_in`). TypeScript and JavaScript: camelCase for values and functions,
-  PascalCase for types and components (project choice).
+- **The ʻokina** is written with the letter U+02BB (ʻ), not an apostrophe or quotation mark (project choice).
+- **Names in code are spelled out.** Variables, functions, files, schema fields and other identifiers use whole words: `organizationName`, not `orgNm`; `configuration`, not `cfg`; `index`, not `i` (project rule).
+- **Acronyms that name things are fine**, in code and in prose, such as URL, PDF, HTML, R2 or NARF. In code, write them as ordinary words in the case style of the name around them: `sourceUrl`, `pdfPath`.
+- **External names stay as defined.** Names that come from a library, a standard or a service keep their own spelling, such as the `URL` field in Citation Style Language data.
+- **Case styles.** File and folder names, record ids and keys: lowercase words joined by hyphens. Record fields: lowercase words joined by underscores (`found_in`). TypeScript and JavaScript: camelCase for values and functions, PascalCase for types and components (project choice).
 
 ## 8. Sound and rhythm
 
-Much of the project is drafted with help from AI tools. Readers have learned
-the habits of machine-written prose, and text that shows them reads as
-unchecked, whoever wrote it (project analysis). The rules below aim at clear,
-specific writing, not at beating detection tools, which have "non-trivial error
-rates."[^aisigns] Most of them describe weak prose in any case. The research
-behind them is in the
-[research session](../research/sessions/2026/2026-11-22-ai-and-human-prose.md).
+Much of the project is drafted with help from AI tools. Readers have learned the habits of machine-written prose, and text that shows them reads as unchecked, whoever wrote it (project analysis). The rules below aim at clear, specific writing, not at beating detection tools, which have "non-trivial error rates."[^aisigns] Most of them describe weak prose in any case. The research behind them is in the [research session](../research/sessions/2026/2026-11-22-ai-and-human-prose.md).
 
-- **Say the specific thing.** Language models tend to "omit specific, unusual,
-  nuanced facts" and put in "more generic, positive descriptions."[^aisigns]
-  Name the nation, the section, the year and the source. If a sentence brings
-  no fact or picture to mind, it needs another pass.[^robbins]
-- **Use "is" and "has."** Write "The court is the forum of first resort," not
-  "The court serves as the forum of first resort." Machine text swaps "is" and
-  "are" for "serves as," "stands as" or "boasts," and human writing uses plain
-  verbs ("wrote," "used," "tried") more often than stiff ones ("authored,"
-  "utilized," "attempted").[^aisigns]
-- **Justify watch-list words.** Language models overuse words such as delve,
-  pivotal, crucial, underscore, showcase, foster, tapestry, testament, vibrant,
-  landscape and intricate.[^aisigns][^cmu] They are not banned. Use one only
-  when it is the most exact word. The list shifts as models change, so this
-  guide does not try to be complete.
-- **Claim significance only with a source.** Avoid trailing phrases such as
-  "highlighting its importance" or "reflecting broader trends" and labels such
-  as "a pivotal moment."[^aisigns] If a source says something mattered, cite
-  the source.
-- **Vary sentence length.** A run of sentences of one length drones; varying
-  the length creates "music."[^provost] Read important passages aloud. After a
-  long sentence, a short one lands a point.
-- **Put the point last.** English stresses the end of a sentence, and long,
-  heavy elements read best there.[^haisley] End on the new fact, the duty or
-  the exception, not on a qualifier.
-- **Save emphasis for what needs it.** When every sentence is pitched as
-  important, none stands out (project analysis). Let most sentences state facts
-  plainly.
-- **Avoid stock shapes.** Use "not X but Y" only to correct a view a reader
-  actually holds; used by reflex, the frame "can sound comprehensive without
-  committing to anything."[^robbins] List as many items as there are, not three
-  by habit, and do not close a section with a formula about "challenges" and
-  "future prospects."[^aisigns]
-- **Use all the punctuation.** Current models write longer sentences with
-  fewer commas and semicolons than human writers, and "hardly any
-  parentheses."[^economist] Use the full range, within the dash rule in
-  section 6.
-- **Commit where the sources allow.** Essays written by ChatGPT use fewer
-  hedges, boosters and attitude markers than students' essays, which gives them
-  "a more impersonal and expository tone."[^jiang-hyland] In commentary, say
-  which alternative suits which situation and label it as project analysis.
-  Hedge once, where doubt is real, and say what is uncertain: "the 1998 code is
-  the latest version found," not "may potentially apply."
-- **Name who holds a view.** Write who said it, not "experts argue" or
-  "observers note."[^aisigns]
-- **Check AI drafts against the sources.** Verify every fact, quotation and
-  citation in AI-assisted text against the source itself before review. Garner
-  calls "confident, well-formed fabrication" AI's "signature failure," and
-  polished prose can hide it.[^garner]
+- **Say the specific thing.** Language models tend to "omit specific, unusual, nuanced facts" and put in "more generic, positive descriptions."[^aisigns] Name the nation, the section, the year and the source. If a sentence brings no fact or picture to mind, it needs another pass.[^robbins]
+- **Use "is" and "has."** Write "The court is the forum of first resort," not "The court serves as the forum of first resort." Machine text swaps "is" and "are" for "serves as," "stands as" or "boasts," and human writing uses plain verbs ("wrote," "used," "tried") more often than stiff ones ("authored," "utilized," "attempted").[^aisigns]
+- **Justify watch-list words.** Language models overuse words such as delve, pivotal, crucial, underscore, showcase, foster, tapestry, testament, vibrant, landscape and intricate.[^aisigns][^cmu] They are not banned. Use one only when it is the most exact word. The list shifts as models change, so this guide does not try to be complete.
+- **Claim significance only with a source.** Avoid trailing phrases such as "highlighting its importance" or "reflecting broader trends" and labels such as "a pivotal moment."[^aisigns] If a source says something mattered, cite the source.
+- **Vary sentence length.** A run of sentences of one length drones; varying the length creates "music."[^provost] Read important passages aloud. After a long sentence, a short one lands a point.
+- **Put the point last.** English stresses the end of a sentence, and long, heavy elements read best there.[^haisley] End on the new fact, the duty or the exception, not on a qualifier.
+- **Save emphasis for what needs it.** When every sentence is pitched as important, none stands out (project analysis). Let most sentences state facts plainly.
+- **Avoid stock shapes.** Use "not X but Y" only to correct a view a reader actually holds; used by reflex, the frame "can sound comprehensive without committing to anything."[^robbins] List as many items as there are, not three by habit, and do not close a section with a formula about "challenges" and "future prospects."[^aisigns]
+- **Use all the punctuation.** Current models write longer sentences with fewer commas and semicolons than human writers, and "hardly any parentheses."[^economist] Use the full range, within the dash rule in section 6.
+- **Commit where the sources allow.** Essays written by ChatGPT use fewer hedges, boosters and attitude markers than students' essays, which gives them "a more impersonal and expository tone."[^jiang-hyland] In commentary, say which alternative suits which situation and label it as project analysis. Hedge once, where doubt is real, and say what is uncertain: "the 1998 code is the latest version found," not "may potentially apply."
+- **Name who holds a view.** Write who said it, not "experts argue" or "observers note."[^aisigns]
+- **Check AI drafts against the sources.** Verify every fact, quotation and citation in AI-assisted text against the source itself before review. Garner calls "confident, well-formed fabrication" AI's "signature failure," and polished prose can hide it.[^garner]
 
-The `Prose flags` check ([scripts/check_prose.py](../scripts/check_prose.py))
-flags several of these habits on the lines a pull request adds. It only warns:
-each flag is a prompt to reread the sentence, not a ruling.
+The `Prose flags` check ([scripts/check_prose.py](../scripts/check_prose.py)) flags several of these habits on the lines a pull request adds. It only warns: each flag is a prompt to reread the sentence, not a ruling.
 
 ## 9. Review checklist
 
 Before opening a pull request with written content, check that:
 
-- [ ] each defined term's first use is linked with `[[id]]`, and no "avoid"
-      term appears outside a quotation;
+- [ ] each defined term's first use is linked with `[[id]]`, and no "avoid" term appears outside a quotation;
 - [ ] each factual claim cites a source, and project analysis is labeled (in reader-facing essays, in an Analysis box, with cases in case boxes as section 5.1 sets out);
-- [ ] nations are named as they name themselves, in the present tense for
-      living practice;
-- [ ] provisions use must, must not and may, name the actor, and use template
-      variables for nation-specific words;
-- [ ] nothing restricted or community-held is included without written
-      approval;
+- [ ] nations are named as they name themselves, in the present tense for living practice;
+- [ ] provisions use must, must not and may, name the actor, and use template variables for nation-specific words;
+- [ ] nothing restricted or community-held is included without written approval;
 - [ ] sentence lengths vary, and sentences end on their point;
-- [ ] no watch-list word, unsourced claim of significance, vague attribution or
-      reflexive "not X but Y" remains without a reason;
-- [ ] every fact, quotation and citation in AI-assisted text was checked
-      against the source itself;
-- [ ] identifiers in code and data are spelled out, and the automated checks
-      pass.
+- [ ] no watch-list word, unsourced claim of significance, vague attribution or reflexive "not X but Y" remains without a reason;
+- [ ] every fact, quotation and citation in AI-assisted text was checked against the source itself;
+- [ ] identifiers in code and data are spelled out, and the automated checks pass.
 
 ## References
 
