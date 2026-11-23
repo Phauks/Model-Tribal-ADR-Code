@@ -44,7 +44,7 @@ the page only hides buttons a person cannot use.
 
 | Role | Can do | Starts at, on every document |
 | --- | --- | --- |
-| Lead author | The administrator. Everything below, and adds, changes and removes people, grants and restricts access, reads the activity log, and welcomes or declines contributor registrations. The project always keeps at least one. | Full, always; cannot be restricted |
+| Lead author | The administrator. Everything below, and adds, changes and removes people, grants and restricts access, reads the activity log, and can remove contributors who signed up. The project always keeps at least one. | Full, always; cannot be restricted |
 | Editor | Reads requests and their uploaded files, changes their status, decides them; reads contributor registrations; signs off on content or asks for changes. | Contribute |
 | Advisor | Signs off on content or asks for changes, as a project advisor; comments. Does not see requests. | Comment |
 | Co-author | Comments. Does not see requests. | Comment |

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { creditOf, emptyAnswers, missingAnswers, type ProfileAnswers } from '#lib/contributors.ts';
+import { creditOf, defaultCreditSection, emptyAnswers, missingAnswers, type ProfileAnswers } from '#lib/contributors.ts';
 import { isPlausiblePhone, readProfileForm } from '#lib/server/contributor-form.ts';
 
 const answers = (changes: Partial<ProfileAnswers>): ProfileAnswers => ({ ...emptyAnswers, ...changes });
@@ -45,20 +45,20 @@ describe('credit lines', () => {
 
 describe('answers needed before confirming', () => {
 	it('asks only for a name, adulthood, one kind of help and a credit choice', () => {
-		const ready = answers({ givenName: 'Ada', adultConfirmed: true, interests: ['review'], creditForm: 'none' });
+		const ready = answers({ givenName: 'Ada', thirteenOrOlder: true, interests: ['review'], creditForm: 'none' });
 		expect(missingAnswers(ready)).toEqual({});
 		expect(Object.keys(missingAnswers(emptyAnswers)).sort()).toEqual(
-			['adultConfirmed', 'creditForm', 'givenName', 'interests'].sort()
+			['thirteenOrOlder', 'creditForm', 'givenName', 'interests'].sort()
 		);
 	});
 
 	it('never requires a nation, a phone number or a family name', () => {
-		const ready = answers({ givenName: 'Ada', adultConfirmed: true, interests: ['research'], creditForm: 'name', nationAnswer: 'not-saying' });
+		const ready = answers({ givenName: 'Ada', thirteenOrOlder: true, interests: ['research'], creditForm: 'name', nationAnswer: 'not-saying' });
 		expect(missingAnswers(ready)).toEqual({});
 	});
 
 	it('asks for a phone number only when the person wants calls or texts', () => {
-		const ready = answers({ givenName: 'Ada', adultConfirmed: true, interests: ['research'], creditForm: 'none', preferredContact: 'phone' });
+		const ready = answers({ givenName: 'Ada', thirteenOrOlder: true, interests: ['research'], creditForm: 'none', preferredContact: 'phone' });
 		expect(Object.keys(missingAnswers(ready))).toEqual(['phone']);
 	});
 });
@@ -108,5 +108,13 @@ describe('the profile form', () => {
 		}
 		const result = readProfileForm(form([['phone', 'call me']]), nations);
 		expect(result.ok).toBe(false);
+	});
+});
+
+describe('where a new credit goes', () => {
+	it('puts writers under Contributors, reviewers under Reviewers, and everyone else under Thanks', () => {
+		expect(defaultCreditSection(['review', 'write'])).toBe('contributors');
+		expect(defaultCreditSection(['review'])).toBe('reviewers');
+		expect(defaultCreditSection(['research'])).toBe('acknowledgments');
 	});
 });

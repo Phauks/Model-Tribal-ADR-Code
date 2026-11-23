@@ -28,9 +28,10 @@
 		};
 		set('givenName', answers.givenName);
 		set('familyName', answers.familyName);
+		set('nativeName', answers.nativeName);
 		set('phone', answers.phone);
 		set('preferredContact', answers.preferredContact);
-		set('adultConfirmed', answers.adultConfirmed);
+		set('thirteenOrOlder', answers.thirteenOrOlder);
 		set('nationAnswer', answers.nationAnswer);
 		answers.nations.forEach((nation, index) => {
 			set(`nation${index + 1}Name`, nation.nationName);
@@ -108,13 +109,12 @@
 	<fieldset id="about">
 		<legend><h2>About you</h2></legend>
 		<p class="hint">
-			Not everyone’s name has a given name and a family name. If yours does not, put your whole name in
-			the first box and leave the second empty. The family name is used only to put the list of credits
-			in order.
+			If your name does not have a first and last name, put your whole name in the first box. The last
+			name is used only to sort the list of credits.
 		</p>
 		<div class="field-row">
 			<div class="field">
-				<label for="givenName">Given name or names</label>
+				<label for="givenName">First name</label>
 				{@render fieldError('givenName')}
 				<input
 					type="text"
@@ -127,7 +127,7 @@
 				/>
 			</div>
 			<div class="field">
-				<label for="familyName">Family name (optional)</label>
+				<label for="familyName">Last name (optional)</label>
 				{@render fieldError('familyName')}
 				<input
 					type="text"
@@ -138,19 +138,33 @@
 				/>
 			</div>
 		</div>
+		<div class="field">
+			<label for="nativeName">A Native name, or another name you go by (optional)</label>
+			<p class="hint" id="nativeName-hint">
+				For example, a name in your nation’s language. It is printed only if you write it in your credit
+				below.
+			</p>
+			<input
+				type="text"
+				id="nativeName"
+				name="nativeName"
+				value={value('nativeName')}
+				aria-describedby="nativeName-hint"
+			/>
+		</div>
 		<div class="choice">
 			<input
 				type="checkbox"
-				id="adultConfirmed"
-				name="adultConfirmed"
+				id="thirteenOrOlder"
+				name="thirteenOrOlder"
 				value="yes"
-				checked={value('adultConfirmed') === 'yes'}
-				aria-describedby="adultConfirmed-hint"
+				checked={value('thirteenOrOlder') === 'yes'}
+				aria-describedby="thirteenOrOlder-hint"
 			/>
-			<label for="adultConfirmed">
-				I am an adult (past the age of majority) where I live
-				<span class="hint" id="adultConfirmed-hint">
-					A young person can still help, with a parent or guardian, through the
+			<label for="thirteenOrOlder">
+				I am 13 or older
+				<span class="hint" id="thirteenOrOlder-hint">
+					Someone younger can still help, with a parent or guardian, through the
 					<a href="/requests?kind=contribute">request form</a>.
 				</span>
 			</label>
@@ -160,8 +174,8 @@
 	<fieldset id="contact">
 		<legend><h2>How to reach you</h2></legend>
 		<p class="hint">
-			We use the email address you signed in with. Add a phone number only if you would like us to call
-			or text you. Neither is ever printed or published.
+			Your email address is <strong>{data.email}</strong>, the one you signed in with. Add a phone number
+			only if you would like us to call or text you. Neither is ever printed or published.
 		</p>
 		<div class="field">
 			<label for="phone">Phone number (optional)</label>
@@ -361,8 +375,8 @@
 		<div class="field">
 			<label for="creditName">Your name as it should be printed, if different (optional)</label>
 			<p class="hint" id="creditName-hint">
-				For example with a middle initial, a name in your language, or diacritics. Left empty, we print
-				your given and family names.
+				For example with your Native name, a middle initial, or diacritics. Left empty, we print your
+				first and last names.
 			</p>
 			<input
 				type="text"

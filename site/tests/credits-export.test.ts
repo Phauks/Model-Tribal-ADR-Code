@@ -8,7 +8,7 @@ describe('the book’s Credits page', () => {
 				{ section: 'reviewers', line: 'Zoe Adams', sortKey: 'adams', biography: null, inBook: true },
 				{ section: 'contributors', line: 'Ada Example (Sample Nation)', sortKey: 'example', biography: 'Writes about mediation.', inBook: true },
 				{ section: 'reviewers', line: 'Bo Brown', sortKey: 'brown', biography: null, inBook: false },
-				{ section: 'advisors', line: 'Al Zed', sortKey: 'zed', biography: null, inBook: true },
+				{ section: 'acknowledgments', line: 'Al Zed', sortKey: 'zed', biography: null, inBook: true },
 				{ section: 'reviewers', line: 'Cy Able', sortKey: 'able', biography: null, inBook: true }
 			],
 			'2026-11-22'
@@ -22,10 +22,6 @@ describe('the book’s Credits page', () => {
 				'sources: []',
 				'---',
 				'',
-				'## Advisors',
-				'',
-				'Al Zed',
-				'',
 				'## Contributors',
 				'',
 				'**Ada Example \\(Sample Nation\\).** Writes about mediation\\.',
@@ -35,6 +31,10 @@ describe('the book’s Credits page', () => {
 				'Cy Able',
 				'',
 				'Zoe Adams',
+				'',
+				'## Thanks',
+				'',
+				'Al Zed',
 				''
 			].join('\n')
 		);
