@@ -1,5 +1,4 @@
-import { error, fail, redirect } from '@sveltejs/kit';
-import { reviewSubjects } from 'virtual:review-subjects';
+import { fail, redirect } from '@sveltejs/kit';
 import {
 	canManageTeam,
 	dateAsTermEnd,
@@ -19,33 +18,14 @@ import { isAdministrator } from '#lib/permissions.ts';
 import {
 	addPlace,
 	endPlace,
-	granterOn,
 	placeByIdentifier,
 	suspendWithEveryoneAdded,
 	teamActivity,
 	teamOf
 } from '#lib/server/nation-teams.ts';
-import { formText, refuse, requirePerson, storage } from '#lib/server/workspace.ts';
-import type { Actions, PageServerLoad, RequestEvent } from './$types';
-
-/**
- * The nation comes only from the page's address, and every load and action
- * checks the signed-in person's own place on that nation's team, so nobody
- * can reach another nation's team from here (decision record 0041).
- */
-async function nationAndGranter(event: RequestEvent | Parameters<PageServerLoad>[0]) {
-	const person = requirePerson(event);
-	const nation = reviewSubjects.find(
-		(subject) => subject.kind === 'nation' && subject.identifier === event.params.nation
-	);
-	if (!nation) error(404, 'No such nation.');
-	const { database } = storage(event);
-	const granter = await granterOn(database, person, nation.identifier);
-	if (!granter.isAdministrator && !granter.level) {
-		refuse(event, `not on the team of nation ${nation.identifier}`);
-	}
-	return { person, nation, granter, database };
-}
+import { nationAndGranter } from '#lib/server/nation-team-access.ts';
+import { formText, refuse } from '#lib/server/workspace.ts';
+import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
 	const { nation, granter, database, person } = await nationAndGranter(event);

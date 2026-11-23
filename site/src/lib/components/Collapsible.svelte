@@ -28,7 +28,7 @@
 	let { heading, identifier, class: extraClass = '', count, children }: Props = $props();
 </script>
 
-<details class="collapsible {extraClass}" open>
+<details class="collapsible {extraClass}" data-section={identifier} open>
 	<summary>
 		<span class="fold-mark no-print"><ChevronDown size={24} /></span>
 		<h2 id={identifier}>{heading}{#if count !== undefined}<span class="heading-count"><span class="visually-hidden">, </span>{count}</span>{/if}</h2>

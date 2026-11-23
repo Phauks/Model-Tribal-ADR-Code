@@ -68,7 +68,8 @@
 			{#each data.places as place (place.identifier)}
 				<li>
 					<a href="/workspace/nation-teams/{place.nationIdentifier}">{nationTitle(place.nationIdentifier)}</a>:
-					{teamLevelLabels[place.level]}, {describeParts(place.parts)}, until {date(place.expiresAt)}
+					{teamLevelLabels[place.level]}, {describeParts(place.parts)}, until {date(place.expiresAt)}.
+					<a href="/workspace/nation-teams/{place.nationIdentifier}/edit">Edit the page</a>
 				</li>
 			{/each}
 		</ul>
