@@ -33,7 +33,7 @@ export function readSignedInHint(cookieText: string): SignedInHint {
 		if (name !== signedInHintCookie) continue;
 		const value = rest.join('=');
 		if (value === '') break;
-		const workspacePageNames = value === '1' ? [] : value.split('.').filter((part) => /^[a-z]+$/.test(part));
+		const workspacePageNames = value === '1' ? [] : value.split('.').filter((part) => /^[a-z]+(-[a-z]+)*$/.test(part));
 		return { signedIn: true, workspacePageNames };
 	}
 	return { signedIn: false, workspacePageNames: [] };

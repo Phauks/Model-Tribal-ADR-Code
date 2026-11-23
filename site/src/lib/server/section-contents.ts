@@ -1,8 +1,8 @@
 /**
  * The pages inside each section of the site, for the sidebar (SiteSidebar.svelte).
  * Trevor asked on Nov. 23, 2026 for every section to open from any page, so a
- * reader can reach its pages without first going to its home page. A section's
- * own layout uses the same list as its outline, so the two never differ.
+ * reader can reach its pages without first going to its home page. The section
+ * being read gets the same list from the root layout, so the two never differ.
  *
  * Most lists are known when the site is built; the essays are published from
  * the database, so their lists are read on request (/sidebar/[section].json).
@@ -20,19 +20,6 @@ export const nationsPages: OutlineItem[] = [
 	{ label: 'Find recourse', link: '/nations/recourse' },
 	{ label: 'Data and charts', link: '/nations/data' }
 ];
-
-/**
- * The Nations outline on a nation's own page: the section's pages stay, so the
- * reader can still reach the directory, map and data views from there (Trevor,
- * Nov. 23, 2026), with the nation and its page's headings under Directory.
- */
-export function nationOutline(nation: { name: string; link: string; headings: OutlineItem[] }): OutlineItem[] {
-	return nationsPages.map((item) =>
-		item.link === '/nations'
-			? { ...item, children: [{ label: nation.name, link: nation.link, current: true, children: nation.headings }] }
-			: item
-	);
-}
 
 export function storiesPages(): OutlineItem[] {
 	return [

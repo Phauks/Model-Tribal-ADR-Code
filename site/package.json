@@ -24,6 +24,7 @@
 		"check:motion": "node tools/check-motion-comes-from-tokens.mjs",
 		"check:built-site": "node tools/check-built-site.mjs",
 		"check:accessibility": "node tools/check-accessibility.mjs",
+		"check:sidebar": "node tools/check-sidebar.mjs",
 		"database:migrate:local": "wrangler d1 migrations apply database --local",
 		"database:migrate:remote": "wrangler d1 migrations apply database --remote",
 		"database:new-migration": "node tools/new-migration.mjs",
