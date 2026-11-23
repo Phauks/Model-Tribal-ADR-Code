@@ -1,10 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import {
 	recourseAddress,
+	recourseChart,
+	recourseChips,
 	recourseCsv,
 	recourseFacets,
 	recourseLink,
 	recourseQueryFromAddress,
+	recourseSources,
+	recourseTable,
 	recognitionFacetValues,
 	rowsWithWords,
 	type RecourseRow
@@ -120,6 +124,48 @@ describe('recourseCsv', () => {
 		);
 		expect(lines[1]).toContain('a Nation,https://example.org/nations/a-nation,Arizona; New Mexico');
 		expect(lines[1]).toContain('The court refers the case,Voluntary,Binding once both sides agree');
+	});
+});
+
+describe('the toolbar and the results (approved mockup, design/data-views)', () => {
+	it('groups the chips by filter, with every answer ticked in it', () => {
+		expect(recourseChips(facets, { method: ['Mediation', 'Arbitration'], subject: ['Family'] })).toEqual([
+			{ key: 'method', label: 'Method', answers: ['Mediation', 'Arbitration'] },
+			{ key: 'subject', label: 'Kind of dispute', answers: ['Family'] }
+		]);
+	});
+
+	it('numbers each law once, in the order the list first cites it, with a marker for every provision', () => {
+		const cited = [
+			{ ...rows[0], original: 'https://example.org/code.pdf', document: 'A Code' },
+			{ ...rows[1], original: 'https://example.org/other.pdf' },
+			{ ...rows[2], original: 'https://example.org/code.pdf', document: 'A Code' }
+		];
+		const { sources, marks } = recourseSources(cited);
+		expect(sources.map((source) => [source.number, source.title, source.backlinks])).toEqual([
+			[1, 'A Code', ['cite-1-1', 'cite-1-2']],
+			[2, 'b Code § 1', ['cite-2-1']]
+		]);
+		expect(marks.get('c')).toEqual({ number: 1, anchor: 'cite-1-2' });
+	});
+
+	it('charts the provisions by method, or by the next filter that still splits them', () => {
+		const link = (key: string, value: string) => `${key}=${value}`;
+		const byMethod = recourseChart(rows, facets, link);
+		expect(byMethod.title).toBe('Provisions by method');
+		expect(byMethod.bars.map((bar) => [bar.label, bar.value, bar.href])).toEqual([
+			['Mediation', 2, 'method=Mediation'],
+			['Arbitration', 1, 'method=Arbitration'],
+			['Peacemaking', 1, 'method=Peacemaking']
+		]);
+		const mediation = recourseChart(rows.slice(0, 2), facets, link);
+		expect(mediation.title).toBe('Provisions by kind of dispute');
+		expect(mediation.partsOfWhole).toBe(true);
+	});
+
+	it('downloads the columns shown, always with the nation and the law', () => {
+		const { columns } = recourseTable(rows, ['citation', 'method']);
+		expect(columns.map((column) => column.key)).toEqual(['nation', 'citation', 'method', 'checked', 'law']);
 	});
 });
 
