@@ -1,0 +1,22 @@
+profile: content/tribes/l/lenape-indian-tribe-of-delaware.yaml
+topic: representatives
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: not-found
+  reason: The directory lists federally recognized nations only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: research/representatives/state-listings.json
+  query: The office the state's list of Tribes names as the nation's leader
+  outcome: not-found
+  reason: No Delaware commission or office list of the tribes and their leaders was found; recognition rests on the Delaware Code.
+next_steps: Ask the nation's office which office speaks for it; a state's list that names Tribes' leaders, where one is published later.

@@ -189,6 +189,17 @@ governance:
   verification: read-in-full
   as_of: '2026-11-23'
   note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+representatives:
+- office: Principal Chief
+  listed_by: Alabama Indian Affairs Commission, Tribes Recognized by the State of Alabama
+  link: https://aiac.alabama.gov/wp-content/uploads/2026/10/AIAC-Tribes-List.pdf
+  listed_as: Echota Cherokee Tribe of AL
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: high
+  verification: read-in-full
+  as_of: 2026-10
+  locator: Entry for Echota Cherokee Tribe of AL
+  note: The title of the office as the state's list gives it; the holder's name is not recorded.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

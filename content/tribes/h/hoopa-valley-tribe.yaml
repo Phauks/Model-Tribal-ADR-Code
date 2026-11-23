@@ -411,6 +411,17 @@ governance:
     document: hoopa-valley-tribe-constitution
     version: 2008-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract holds the 1972 revised text, the original 1952 text, a 1963 amendment and a 2008 approval letter for an Article IV blood-quantum change, with no consolidated 2008 text, so facts come from the 1972 text, which the 2008 amendment changed only in Article IV.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Hoopa Valley Tribe, California
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Hoopa Valley Tribe, California
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: law-code
   title: Hoopa Valley Tribe

@@ -132,7 +132,9 @@ const resolvedPublicContactsModule = `\0${publicContactsModule}`;
 /**
  * Lists the office emails and phones each published nation page shows, with
  * their sources, as a small module bundled into the Worker, so the private
- * address book can compare itself with the pages (src/lib/address-book-sync.ts).
+ * address book can compare itself with the pages (src/lib/address-book-sync.ts),
+ * and the offices official lists name as each nation's leader, so a request to
+ * join a nation's team is confirmed with one of them (decision record 0041).
  * Everything listed is already public on the nation pages.
  */
 function publicContactsList(): Plugin {
@@ -169,7 +171,13 @@ function publicContactsList(): Plugin {
 									directoryName: directoryNameOf(sourceKind, fact.locator),
 									sourceKind
 								};
-							})
+							}),
+						representatives: (record.representatives ?? []).map((fact) => ({
+							office: fact.office,
+							listedBy: fact.listed_by,
+							link: fact.link,
+							listedAs: fact.listed_as ?? null
+						}))
 					};
 				});
 			return `export const publicNationContacts = ${JSON.stringify(list)};`;

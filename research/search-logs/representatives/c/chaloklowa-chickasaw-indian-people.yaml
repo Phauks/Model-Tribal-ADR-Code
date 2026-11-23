@@ -1,0 +1,23 @@
+profile: content/tribes/c/chaloklowa-chickasaw-indian-people.yaml
+topic: representatives
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: not-found
+  reason: The directory lists federally recognized nations only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-list
+  address: https://advance.sc.gov/community-resources/native-american-affairs/sc-recognized-tribes
+  query: The office the state's list of Tribes names as the nation's leader
+  outcome: found
+  reason: The state's list names the leader's office.
+  records:
+  - south-carolina-recognized-tribes-advance-sc

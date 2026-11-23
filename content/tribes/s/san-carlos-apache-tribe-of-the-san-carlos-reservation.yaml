@@ -390,6 +390,17 @@ governance:
     document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
     version: 1954-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: constitution
   title: Constitution

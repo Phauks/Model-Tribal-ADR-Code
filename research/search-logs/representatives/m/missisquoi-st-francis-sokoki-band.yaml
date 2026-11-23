@@ -1,0 +1,22 @@
+profile: content/tribes/m/missisquoi-st-francis-sokoki-band.yaml
+topic: representatives
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: not-found
+  reason: The directory lists federally recognized nations only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-list
+  address: https://vcnaa.vermont.gov/
+  query: The office the state's list of Tribes names as the nation's leader
+  outcome: blocked
+  reason: The home page says four tribes are recognized by the state; the page that lists them refused the project's page fetch (HTTP 403).
+next_steps: Ask the nation's office which office speaks for it; a state's list that names Tribes' leaders, where one is published later.

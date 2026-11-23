@@ -319,6 +319,17 @@ governance:
     document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
     version: 1981-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Manchester Band of Pomo Indians of the Manchester Rancheria, California
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Manchester Band of Pomo Indians of the Manchester Rancheria, California
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairwoman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: constitution
   title: Constitution

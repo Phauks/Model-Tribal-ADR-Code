@@ -77,10 +77,46 @@
 	<form method="post" action="?/confirming" class="panel">
 		<h2>1. Write to the nation’s office</h2>
 		<p>
-			Use a contact the project already had for the nation: its own website, or the Tribal Leaders Directory
-			of the Bureau of Indian Affairs, as listed on the nation’s page. Never use an address or phone number the
-			person gave. Ask the office to confirm the person, their title and the parts asked for.
+			Use a contact the project already had for the nation: its own website, the Tribal Leaders Directory of
+			the Bureau of Indian Affairs, or a state’s list of the Tribes it recognizes, as listed on the nation’s
+			page. Never use an address or phone number the person gave. Ask the office to confirm the person, their
+			title and the parts asked for.
 		</p>
+		{#if data.representatives.length > 0 || data.officeContacts.length > 0}
+			<dl class="summary-list">
+				{#if data.representatives.length > 0}
+					<div>
+						<dt>Offices official lists name</dt>
+						<dd>
+							<ul>
+								{#each data.representatives as representative, index (index)}
+									<li>
+										{representative.office}, listed by
+										<a href={representative.link} target="_blank" rel="noopener noreferrer"
+											>{representative.listedBy}<span class="visually-hidden"> (opens in a new tab)</span></a
+										>{#if representative.listedAs}{' '}under “{representative.listedAs}”{/if}
+									</li>
+								{/each}
+							</ul>
+						</dd>
+					</div>
+				{/if}
+				{#if data.officeContacts.length > 0}
+					<div>
+						<dt>Office email and phone on the nation’s page</dt>
+						<dd>
+							<ul>
+								{#each data.officeContacts as contact, index (index)}
+									<li>{contact.value} <span class="small muted">({contact.sourceTitle})</span></li>
+								{/each}
+							</ul>
+						</dd>
+					</div>
+				{/if}
+			</dl>
+		{:else}
+			<p class="small muted">No official list names an office for this nation, and its page shows no office email or phone. Use its own website.</p>
+		{/if}
 		<div class="field">
 			<label for="contact">Which contact you wrote to</label>
 			<input type="text" id="contact" name="contact" required value={application.officeContact ?? ''} />

@@ -113,6 +113,17 @@ governance:
   verification: read-in-full
   as_of: '2026-11-23'
   note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council and officers appear only as names with titles, so the page gives no council size, selection or term.'
+representatives:
+- office: Chief
+  listed_by: Virginia Secretary of the Commonwealth, State Recognized Tribes
+  link: https://www.commonwealth.virginia.gov/virginia-indians/state-recognized-tribes/
+  listed_as: Patawomeck
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Entry for Patawomeck
+  note: The title of the office as the state's list gives it; the holder's name is not recorded.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

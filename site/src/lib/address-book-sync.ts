@@ -23,11 +23,21 @@ export interface PublicContact {
 	sourceKind: SourceKind;
 }
 
-/** A nation page's office emails and phones, listed when the site is built. */
+/** An office an official list names as the nation's leader, as the nation page shows it (decision record 0052). */
+export interface PublicRepresentative {
+	office: string;
+	listedBy: string;
+	link: string;
+	/** The name the list uses for the nation, to look it up there. */
+	listedAs: string | null;
+}
+
+/** A nation page's office emails and phones, and the offices official lists name, listed when the site is built. */
 export interface PublicNationContacts {
 	identifier: string;
 	name: string;
 	contacts: PublicContact[];
+	representatives: PublicRepresentative[];
 }
 
 export type DifferenceKind = 'page-only' | 'book-only' | 'page-shows-old';

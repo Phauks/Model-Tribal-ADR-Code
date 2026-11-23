@@ -261,6 +261,17 @@ governance:
   as_of: '2026-11-23'
   locator: Article III
   note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The constitution and bylaws pages show article headings with only some article text, so the board size, term and selection facts come from a drafting manual and a board page.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: law-code
   title: Tribal code

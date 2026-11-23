@@ -199,6 +199,17 @@ governance:
   verification: read-in-full
   as_of: '2026-11-23'
   note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s summary table of the constitution on the Resolution Appendix page, not from the constitution text, which is not saved.'
+representatives:
+- office: Chief
+  listed_by: South Carolina Commission for Community Advancement and Engagement, SC Recognized Tribes
+  link: https://advance.sc.gov/community-resources/native-american-affairs/sc-recognized-tribes
+  listed_as: The Waccamaw Indian People
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Entry for The Waccamaw Indian People
+  note: The title of the office as the state's list gives it; the holder's name is not recorded.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

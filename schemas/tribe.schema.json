@@ -387,6 +387,35 @@
         "unevaluatedProperties": false
       }
     },
+    "representatives": {
+      "type": "array",
+      "description": "The offices that an official government list names as the nation's leader or representative: the Tribal Leaders Directory of the Bureau of Indian Affairs, or a state's Indian affairs commission or office. Only the title of the office is recorded, never the name of the person who holds it; the list itself names the person (charter, commitment 1). The project confirms a request to join a nation's team with an office listed here (decision record 0041). Lists that were searched and name no office for the nation are logged under research/search-logs/representatives/.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["office", "listed_by", "link"],
+        "properties": {
+          "office": {
+            "type": "string",
+            "description": "The title of the office as the list gives it, without the holder's own form: Chairman and Chairwoman are recorded as Chairperson, and words about the holder (acting, interim) are dropped."
+          },
+          "listed_by": {
+            "type": "string",
+            "description": "The government body that keeps the list, and the list's name, as the page shows them, such as \"Bureau of Indian Affairs, Tribal Leaders Directory\"."
+          },
+          "link": {
+            "type": "string",
+            "format": "uri",
+            "description": "The page where a reader can find the nation's entry on the list and see who holds the office now."
+          },
+          "listed_as": {
+            "type": "string",
+            "description": "The name the list uses for the nation, so a reader can find the entry."
+          }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "governing_documents": {
       "type": "array",
       "description": "Where the nation's constitution, codes and court rules are published. Linked, not reproduced (see data-model.md on tribal legal texts).",

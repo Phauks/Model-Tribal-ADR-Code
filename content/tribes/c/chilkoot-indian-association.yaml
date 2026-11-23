@@ -414,6 +414,17 @@ governance:
     document: chilkoot-indian-association-constitution
     version: 1941-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Printed BIA edition with some OCR errors; the text matches the constitution ratified 5 December 1941.'
+representatives:
+- office: President
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Chilkoot Indian Association (Haines)
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Chilkoot Indian Association (Haines)
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: constitution
   title: Constitution

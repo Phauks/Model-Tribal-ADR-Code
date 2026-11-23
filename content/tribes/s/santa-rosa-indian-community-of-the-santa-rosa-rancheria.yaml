@@ -329,6 +329,17 @@ governance:
     document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
     version: 1963-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Santa Rosa Indian Community of the Santa Rosa Rancheria, California
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Santa Rosa Indian Community of the Santa Rosa Rancheria, California
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 gaming:
   compacts:
   - state: CA

@@ -379,6 +379,17 @@ governance:
     document: pueblo-of-santa-clara-constitution
     version: 1939-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+representatives:
+- office: Governor
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Pueblo of Santa Clara, New Mexico
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pueblo of Santa Clara, New Mexico
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: law-code
   title: Pueblo of Santa Clara, New Mexico

@@ -233,6 +233,17 @@ governance:
   verification: read-in-full
   as_of: '2026-11-23'
   note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page links to a constitution that is not among the saved pages.'
+representatives:
+- office: Principal Chief
+  listed_by: Louisiana Governor's Office of Indian Affairs, Federally and State-Recognized Tribes
+  link: https://gov.louisiana.gov/federal-and-state-recognized-tribes
+  listed_as: United Houma Nation
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Entry for United Houma Nation
+  note: The title of the office as the state's list gives it; the holder's name is not recorded.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

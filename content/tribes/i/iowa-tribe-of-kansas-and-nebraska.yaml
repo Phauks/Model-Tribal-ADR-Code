@@ -404,6 +404,17 @@ governance:
   verification: read-in-full
   as_of: '2026-11-23'
   note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 9 lists candidate names only and page 10 is a login page, so the facts come from the Government Structure (2) and Leadership Overview (5) pages.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Iowa Tribe of Kansas and Nebraska
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Kansas and Nebraska
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairwoman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: constitution
   title: Constitution

@@ -473,6 +473,17 @@ governance:
     document: zuni-tribe-of-the-zuni-reservation-constitution
     version: 2014-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+representatives:
+- office: Governor
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Zuni Tribe of the Zuni Reservation, New Mexico
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Zuni Tribe of the Zuni Reservation, New Mexico
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
 governing_documents:
 - kind: law-code
   title: Zuni Tribe of the Zuni Reservation, New Mexico

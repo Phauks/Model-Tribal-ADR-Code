@@ -346,6 +346,27 @@ governance:
   as_of: '2026-11-23'
   locator: Article 5, Section 1, J
   note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+representatives:
+- office: Chief
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Monacan Indian Nation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Monacan Indian Nation
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here.'
+- office: Chief
+  listed_by: Virginia Secretary of the Commonwealth, State Recognized Tribes
+  link: https://www.commonwealth.virginia.gov/virginia-indians/state-recognized-tribes/
+  listed_as: Monacan
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Entry for Monacan
+  note: The title of the office as the state's list gives it; the holder's name is not recorded.
 governing_documents:
 - kind: constitution
   title: Constitution

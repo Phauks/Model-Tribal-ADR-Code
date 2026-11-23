@@ -117,6 +117,17 @@ census_areas:
   locator: AIANNHCE 9550, GEOID 9550R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
     by name comparison with the state-recognized helper list.
+representatives:
+- office: Principal Chief
+  listed_by: Alabama Indian Affairs Commission, Tribes Recognized by the State of Alabama
+  link: https://aiac.alabama.gov/wp-content/uploads/2026/10/AIAC-Tribes-List.pdf
+  listed_as: Cher-O-Creek Intratribal Indians
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: high
+  verification: read-in-full
+  as_of: 2026-10
+  locator: Entry for Cher-O-Creek Intratribal Indians
+  note: The title of the office as the state's list gives it; the holder's name is not recorded.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

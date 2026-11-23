@@ -194,6 +194,14 @@ The text of every document in the private bucket, page by page, in one SQLite fi
 | `library/library.py` | Searches the library: `search` (FTS5 queries with phrases, `NEAR`, `OR`, prefixes; filters by nation, topic, format, citing record or served copies), `titles`, `read` (a page, star page or passage, with `--around`), `document`, `nation`, `record`, `original` (download the file itself), `stats` and read-only `sql`. Downloads the library on first use to `~/.cache/model-tribal-library/` | `boto3`; bucket credentials in the environment |
 | `library/build_library.py` | Builds the library. `update` is the usual command after files land in the bucket: it lists the bucket, downloads and reads only the files the published library has not read (`--ocr` reads their scanned pages with Tesseract), rebuilds and publishes. A nightly scheduled task runs it. The steps can also be run one at a time: `sync` downloads every text-bearing file to a work folder, `extract` reads each file once by SHA-256 (PDF text layer, OCR with `--ocr`, saved web pages with menus left out, opinions split at their star pages; `--seed` reuses the published library's text), `index` writes the SQLite file with the capture index's metadata, keeping each document's number from the last build, and `publish` uploads it with a manifest and writes the website's change files under `_library/d1/` (`--d1-whole` writes the whole library from an empty database, to reload the website's copy). `d1-sql` writes the whole library as one SQL file for D1's import. The website's own files (request proofs, uploads, essay drafts, page versions) are never read | `boto3`, `pymupdf`, `lxml`; `tesseract` for `--ocr` |
 
+## Official representatives
+
+Run by hand after `governance/apply.py directory` or after re-reading a state list into `research/representatives/state-listings.json`. Records only the office each list names, never the person ([decision record 0052](../docs/decisions/0052-show-the-offices-official-lists-name-as-representatives.md)).
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `representatives/apply.py` | Writes `representatives` in each profile from the Tribal Leaders Directory titles (`research/governance/directory-titles.json`) and the state lists, and writes one search log per profile in `research/search-logs/representatives/` | `scripts/requirements.txt` |
+
 ## Printed book
 
 | Script | Does | Needs |

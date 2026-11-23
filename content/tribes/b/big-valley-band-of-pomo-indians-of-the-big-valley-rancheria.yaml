@@ -352,6 +352,17 @@ governance:
     document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
     version: 1940-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+representatives:
+- office: Chairperson
+  listed_by: Bureau of Indian Affairs, Tribal Leaders Directory
+  link: https://www.bia.gov/service/tribal-leaders-directory
+  listed_as: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+  note: 'The title of the leader''s office as the federal directory lists it; the holder''s name is not recorded. The directory has no page for a single nation: open it and look up the name given here. Listed as “Chairman”; recorded without the holder''s own form of the title.'
 governing_documents:
 - kind: law-code
   title: Tribal code
