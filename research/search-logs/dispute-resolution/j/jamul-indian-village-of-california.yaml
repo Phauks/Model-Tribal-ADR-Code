@@ -1,7 +1,7 @@
 profile: content/tribes/j/jamul-indian-village-of-california.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -69,4 +69,12 @@ searches:
   reason: The listed court is the Intertribal Court of Southern California, a court consortium whose site
     describes a forum to resolve disputes in general terms; no peacemaking, mediation or other dispute
     resolution program is described.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.jamulindianvillage.com/tribal-law/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20180912101804/http://www.jamulindianvillage.com:80/tribal-law/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2018-09-12 ("Tribal Law &#8211; Jamul Indian Village") shows codes
+    or ordinances.

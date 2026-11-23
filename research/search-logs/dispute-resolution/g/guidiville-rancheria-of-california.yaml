@@ -1,7 +1,7 @@
 profile: content/tribes/g/guidiville-rancheria-of-california.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -46,4 +46,12 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://caltribalfamilies.org/places/guidiville-rancheria/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20250723005339/https://caltribalfamilies.org/places/guidiville-rancheria/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2025-07-23 lists the nation's Tribal court as Intertribal Court
+    of Southern California (https://www.intertribalcourt.org/rules-and-laws).

@@ -1,7 +1,7 @@
 profile: content/tribes/m/mcgrath-native-village.yaml
 topic: courts
 status: none-found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -165,6 +165,14 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: fetch.py returns no text for the directory PDF. An earlier partial read showed a McGrath entry with no court type, which could not be re-checked.
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): McGrath Tribal
-  Court (court-109, not-found-after-search). No page or official directory entry was found on 2026-11-22
-  for “McGrath Tribal Court” (research/reviews/2026-11-22-service-links.json).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://mnvcdev.muniweb.com/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The site has no sitemap at this address (404 on 2026-11-23); the sitemap was only a way to find
+    pages, so nothing on the topic is missing because of it.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

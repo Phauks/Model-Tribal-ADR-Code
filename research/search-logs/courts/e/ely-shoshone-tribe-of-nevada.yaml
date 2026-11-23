@@ -1,7 +1,7 @@
 profile: content/tribes/e/ely-shoshone-tribe-of-nevada.yaml
 topic: courts
-status: none-found
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -201,6 +201,21 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: Results were narf.org code and court rule PDFs and a Shoshone-Paiute page for a different tribe; none is an official Ely page.
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-063,
-  not-found-after-search); Ely Shoshone Judicial Center (court-064, not-found-after-search). No page or
-  official directory entry was found on 2026-11-22 for “Tribal Court” (research/reviews/2026-11-22-service-links.json).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20150215040513/http://elyshoshonetribe-nsn.gov/departments.html
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2015-02-15 ("Ely Shoshone Tribe") shows the nation's court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20150416225628/http://www.elyshoshonetribe-nsn.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2015-04-16 ("Ely Shoshone Tribe"); it shows no court.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: web search: Ely Shoshone Judicial
+  Center tribal court (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

@@ -1,7 +1,7 @@
 profile: content/tribes/s/standing-rock-sioux-tribe-of-north-and-south-dakota.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -186,10 +186,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: fetch.py got a proxy connection error.
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-273,
-  cannot-tell); Standing Rock Sioux Tribal Court (court-274, cannot-tell). A person could open in a browser
-  the pages that refused the project''s link checker: https://www.standingrock.org/. No website of the
-  nation''s own could be read; the Tribe''s office could be asked whether it runs a court. No page or
-  official directory entry was found on 2026-11-22 for “Tribal Court”; “Standing Rock Sioux Tribal Court”
-  (research/reviews/2026-11-22-service-links.json). A person could open in a browser the pages that refused
-  the project''s link checker: https://www.standingrock.org/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261031123111/https://www.standingrock.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-10-31 ("Homepage - Standing Rock Sioux Tribe"); it shows
+    no court.

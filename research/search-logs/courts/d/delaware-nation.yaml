@@ -1,7 +1,7 @@
 profile: content/tribes/d/delaware-nation.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -197,3 +197,21 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Official Delaware Nation Court page names the court and its judges.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260512085758/https://www.delawarenation-nsn.gov/delaware-nation-court/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-05-12 ("Delaware Nation Court | Delaware Nation") shows the
+    nation's court and links to its code.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261020235851/https://www.delawarenation-nsn.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-10-20 ("Delaware Nation | Official Website") shows the nation's
+    court and links to its code.

@@ -1,7 +1,7 @@
 profile: content/tribes/c/chemehuevi-indian-tribe-of-the-chemehuevi-reservation.yaml
 topic: dispute-resolution
 status: partly-searched
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -58,4 +58,13 @@ searches:
   outcome: not-found
   reason: The only match is a page titled 'Talking Circle' with no text beyond the site menu and event
     downloads.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.chemehuevi.net/tribal-court/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20251118200442/http://www.chemehuevi.net/tribal-court/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2025-11-18 is an empty page or an error page (no text).
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.chemehuevi.net/tribal-court/
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

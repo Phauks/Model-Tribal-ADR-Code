@@ -1,7 +1,7 @@
 profile: content/tribes/q/qawalangin-tribe-of-unalaska.yaml
 topic: dispute-resolution
 status: partly-searched
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -67,4 +67,14 @@ searches:
   outcome: not-found
   reason: The constitution's leads are membership, removal and election procedures; no dispute resolution
     forum found.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.qawalangintribe.com.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240223165640/http://qawalangintribe.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2024-02-23 is an empty page or an error page (404 Not Found 404
+    Not Found nginx).
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.qawalangintribe.com
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

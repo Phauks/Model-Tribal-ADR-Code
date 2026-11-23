@@ -1,7 +1,7 @@
 profile: content/tribes/g/grand-portage-band.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -56,4 +56,13 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://water.epa.gov/scitech/swguidance/standards/upload/2006_11_06_standards_wqslibrary_tribes_grand-portage-band.pdf.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20110514094935/http://water.epa.gov/scitech/swguidance/standards/upload/2006_11_06_standards_wqslibrary_tribes_grand-portage-band.pdf
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of the Grand Portage Reservation Water Quality Standards (2005, revised
+    2006) was read; § 5 sends appeals from the Tribal Water Resources Board to the Grand Portage Band
+    Tribal Court (filed as tribal-law/grand-portage-water-quality-standards-epa-copy.pdf).

@@ -1,7 +1,7 @@
 profile: content/tribes/a/alabama-coushatta-tribe-of-texas.yaml
 topic: courts
-status: none-found
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -216,7 +216,14 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: 'Not researched: the WebFetch proxy returned HTTP 403 because the session''s fetch budget was exhausted.'
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Courts
-  (court-008, not-found-after-search); Alabama-Coushatta Tribe of Texas Tribal Judicial System (court-009,
-  not-found-after-search). No page or official directory entry was found on 2026-11-22 for “Tribal Courts”;
-  “Alabama-Coushatta Tribe of Texas Tribal Judicial System” (research/reviews/2026-11-22-service-links.json).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20230616131329/https://www.alabama-coushatta.com/tribal-courts/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2023-06-16 ("Tribal Courts | Alabama-Coushatta Tribe of Texas")
+    shows the nation's court.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://www.alabama-coushatta.com/
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

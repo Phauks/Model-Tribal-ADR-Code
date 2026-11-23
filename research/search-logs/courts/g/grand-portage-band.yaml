@@ -1,7 +1,7 @@
 profile: content/tribes/g/grand-portage-band.yaml
 topic: courts
-status: none-found
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -177,7 +177,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: Returned only general tribal pages (NARF, mn.gov Indian Affairs, Minnesota court-committee documents); no nation court page surfaced.
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-117,
-  not-found-after-search); Grand Portage Band of Chippewa Tribal Court (court-122, not-found-after-search).
-  No page or official directory entry was found on 2026-11-22 for “Tribal Court”; “Grand Portage Band
-  of Chippewa Tribal Court” (research/reviews/2026-11-22-service-links.json).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240707202055/https://www.mncourts.gov/mncourtsgov/media/scao_library/CJI/TCSCF-Members-Tribal-Court-Judges-(website-December-2022).pdf
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Minnesota Tribal Court/State Court Forum members list (Wayback Machine copy of 2024-07-07)
+    names judges of the nation's court under "Grand Portage Band of Lake Superior Chippewa".

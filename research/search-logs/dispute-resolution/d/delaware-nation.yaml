@@ -1,7 +1,7 @@
 profile: content/tribes/d/delaware-nation.yaml
 topic: dispute-resolution
 status: partly-searched
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -65,5 +65,14 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://delawarenation.com/wp-content/uploads/2019/01/2018-219-Appr-Elect-Ord-Rev-Reso-at-back.pdf;
-  http://delawarenation.com/wp-content/uploads/2019/01/CitizenshipEnrollment-Ordinance.pdf.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: http://delawarenation.com/wp-content/uploads/2019/01/2018-219-Appr-Elect-Ord-Rev-Reso-at-back.pdf
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: 'Still not readable on 2026-11-23 (direct request: HTTP 404), and the Wayback Machine had no
+    copy.'
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://delawarenation.com/wp-content/uploads/2019/01/2018-219-Appr-Elect-Ord-Rev-Reso-at-back.pdf
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

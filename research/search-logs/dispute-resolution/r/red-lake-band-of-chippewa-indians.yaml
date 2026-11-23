@@ -1,7 +1,7 @@
 profile: content/tribes/r/red-lake-band-of-chippewa-indians.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -66,5 +66,12 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.rlnn.org/MinorSponsors/RLCourtsMain.html;
-  https://www.redlakenation.org/wp-content/uploads/2022/01/TITLE-XVIII-CHAPTER-1800-ELECTION-CODE-.pdf.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20220330080449/http://www.rlnn.org/MinorSponsors/RLCourtsMain.html
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2022-03-30 ("WiiJiiWaagan Path of life Main Page") shows mediation,
+    codes or ordinances, a court.

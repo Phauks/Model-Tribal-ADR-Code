@@ -1,7 +1,7 @@
 profile: content/tribes/p/pauloff-harbor-village.yaml
 topic: dispute-resolution
 status: partly-searched
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -63,4 +63,14 @@ searches:
   reason: 'Second reading: confirm. Re-read every cached page for this nation with wider words (peace,
     circle, conflict, dispute, grievance, elders'' panel, Tribal court) and found no dispute resolution
     forum, program or provision of this nation.'
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.pauloffharbortribe.org.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20230129032431/http://www.pauloffharbortribe.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The domain now hosts an unrelated site (Wayback Machine copy of 2023-01-29); it is no longer
+    the nation's site.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.pauloffharbortribe.org
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

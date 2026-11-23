@@ -1,7 +1,7 @@
 profile: content/tribes/n/native-village-of-barrow-inupiat-traditional-government.yaml
 topic: dispute-resolution
 status: partly-searched
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -68,4 +68,14 @@ searches:
   reason: The Court Procedures Code's preamble says the Iñupiat have long resolved disputes through customary
     law and traditional practices, but the code read sets up court procedure and names no peacemaking,
     circle, mediation or elders' process.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.nvbarrow.net.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20201024031703/http://www.nvbarrow.net/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2020-10-24 is an empty page or an error page (Error. Page cannot
+    be displayed. Please contact your service).
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.nvbarrow.net (no readable
+  copy on 2026-11-23, directly or in the Wayback Machine).'

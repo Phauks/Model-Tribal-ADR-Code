@@ -1,7 +1,7 @@
 profile: content/tribes/h/holy-cross-tribe.yaml
 topic: dispute-resolution
 status: partly-searched
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -65,4 +65,14 @@ searches:
   outcome: not-found
   reason: The listed website is the Tanana Chiefs Conference's; its passages concern a regional healing
     gathering and the Conference's circle peacemaking training, not a forum of this Tribe.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.holycrosstribe.org.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20200923144626/http://www.holycrosstribe.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The domain now hosts an unrelated site (Wayback Machine copy of 2020-09-23); it is no longer
+    the nation's site.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.holycrosstribe.org
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

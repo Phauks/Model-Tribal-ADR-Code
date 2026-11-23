@@ -1,7 +1,7 @@
 profile: content/tribes/t/turtle-mountain-band-of-chippewa-indians-of-north-dakota.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -203,5 +203,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Nation's tribal code section names the Turtle Mountain Appellate Court as the court of last resort.
-next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court”; “Turtle Mountain
-  Chippewa Tribal Court” (research/reviews/2026-11-22-service-links.json).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260501080538/https://tmchippewa.com/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The Wayback Machine copy of the sitemap (2026-05-01) lists no court, code or dispute resolution
+    page.

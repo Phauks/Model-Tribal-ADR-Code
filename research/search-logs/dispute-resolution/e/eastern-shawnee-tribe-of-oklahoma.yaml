@@ -1,7 +1,7 @@
 profile: content/tribes/e/eastern-shawnee-tribe-of-oklahoma.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -58,4 +58,21 @@ searches:
   outcome: not-found
   reason: The only lead is a constitution article on court jurisdiction; the website shows no dispute
     resolution forum.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://www.estoo-nsn.gov/; https://www.estoo-nsn.gov/ordinances-and-resolutions.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261014162540/https://www.estoo-nsn.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-10-14 ("Home Page | Eastern Shawnee Tribe of Oklahoma") shows
+    codes or ordinances.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20250218124431/http://www.estoo-nsn.gov/ordinances-and-resolutions
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2025-02-18 ("Ordinances and Resolutions | Eastern Shawnee Tribe
+    of Oklahoma") shows codes or ordinances.

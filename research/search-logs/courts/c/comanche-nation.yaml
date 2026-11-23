@@ -1,7 +1,7 @@
 profile: content/tribes/c/comanche-nation.yaml
 topic: courts
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -310,6 +310,51 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: Search lead titled 'Tribal Court'; fetch failed through the proxy.
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-045,
-  cannot-tell); Comanche Nation Judiciary (court-046, cannot-tell); Comanche Nation Children’s Court (court-047,
-  cannot-tell). A person could open in a browser the pages that refused the project''s link checker: http://www.comanchenation.com/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240718024345/https://comanchenation.com/departments/family-services/tribal-court
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2024-07-18 ("Tribal Court | Comanche Nation") shows the nation's
+    court and links to its code.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261109215720/https://www.comanchenation.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-11-09 ("Comanche Nation, Oklahoma Home Page | Comanche Nation,
+    Oklahoma") shows the nation's court and links to its code.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261109215720/https://www.comanchenation.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-11-09 ("Comanche Nation, Oklahoma Home Page | Comanche Nation,
+    Oklahoma") shows the nation's court and links to its code.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://www.comanchenation.com/index.php?option=com_k2&amp;view=itemlist&amp;layout=category&amp;task=category&amp;id=82&amp;Itemid=194
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: blocked
+  reason: 'Still not readable on 2026-11-23 (direct request: HTTP 403), and the Wayback Machine had no
+    copy.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261109215720/https://www.comanchenation.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-11-09 ("Comanche Nation, Oklahoma Home Page | Comanche Nation,
+    Oklahoma") shows the nation's court and links to its code.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.comanchenation.com/index.php?option=com_k2&amp;view=itemlist&amp;layout=category&amp;task=category&amp;id=82&amp;Itemid=194,
+  https://comanchenation.com/node/4451, https://www.comanchenation.com/node/414 (no readable copy on 2026-11-23,
+  directly or in the Wayback Machine).'

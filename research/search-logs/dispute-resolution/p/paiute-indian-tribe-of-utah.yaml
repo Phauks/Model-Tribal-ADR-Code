@@ -1,7 +1,7 @@
 profile: content/tribes/p/paiute-indian-tribe-of-utah.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -57,5 +57,20 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.utahpaiutes.org/about/government/documents.aspx;
-  https://pitu.gov/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261021014954/https://pitu.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-10-21 ("Paiute Indian Tribe of Utah | pitu.gov") shows codes
+    or ordinances.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20181023092913/http://www.utahpaiutes.org:80/about/government/documents.aspx
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2018-10-23 ("Paiute Indian Tribe of Utah") shows codes or ordinances.

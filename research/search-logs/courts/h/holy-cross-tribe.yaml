@@ -1,7 +1,7 @@
 profile: content/tribes/h/holy-cross-tribe.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -280,6 +280,14 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: Fetched with fetch.py (200); only a state 'Judicial District 4' geography label, no tribal court text.
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Holy Cross Tribal
-  Court (court-074, cannot-tell). No page or official directory entry was found on 2026-11-22 for “Holy
-  Cross Tribal Court” (research/reviews/2026-11-22-service-links.json).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20200923144626/http://www.holycrosstribe.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The domain now hosts an unrelated site (Wayback Machine copy of 2020-09-23); it is no longer
+    the nation's site.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.holycrosstribe.org
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'
