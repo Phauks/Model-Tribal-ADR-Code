@@ -24,7 +24,8 @@ export const recipientLimit = 50;
 export const attachmentLimitBytes = 18 * 1024 * 1024;
 
 export interface Composition {
-	personIdentifier: string;
+	/** Who wrote it; null for the away message, which the inbox sends by itself. */
+	personIdentifier: string | null;
 	/** The conversation this replies in, or null for a new one. */
 	threadIdentifier: string | null;
 	/** One of the project's addresses. */
@@ -47,6 +48,14 @@ export interface Composition {
 	forward?: { message: string; attachments: string[] } | null;
 	/** "Remind me": the conversation comes back to the inbox at this time unless a reply comes first. */
 	remindAt?: string | null;
+	/**
+	 * The pause before a message sent now goes, in seconds, so it can be
+	 * pulled back (undo send, src/lib/server/mail/writing.ts). The message
+	 * waits as scheduled, marked held_for_undo, and goes when the pause ends.
+	 */
+	holdForUndo?: number;
+	/** The away message: recorded as an automatic reply. */
+	automatic?: boolean;
 }
 
 export class CompositionError extends Error {}
@@ -56,7 +65,7 @@ export class CompositionError extends Error {}
  * when it is not a reply. A new message (not a reply) is refused when a
  * recipient is on the do-not-email list.
  */
-export async function queueMessage(context: MailContext, composition: Composition): Promise<{ messageIdentifier: string; threadIdentifier: string; scheduled: boolean }> {
+export async function queueMessage(context: MailContext, composition: Composition): Promise<{ messageIdentifier: string; threadIdentifier: string; scheduled: boolean; pause: number }> {
 	const database = context.database;
 	const at = currentTime(context);
 	const stamp = at.toISOString();
@@ -91,7 +100,9 @@ export async function queueMessage(context: MailContext, composition: Compositio
 		}
 	}
 
-	const sendAt = composition.sendAt && new Date(composition.sendAt).getTime() > at.getTime() + 30_000 ? new Date(composition.sendAt).toISOString() : null;
+	const later = composition.sendAt && new Date(composition.sendAt).getTime() > at.getTime() + 30_000 ? new Date(composition.sendAt).toISOString() : null;
+	const pause = !later && composition.holdForUndo && composition.holdForUndo > 0 ? Math.min(composition.holdForUndo, 30) : 0;
+	const sendAt = later ?? (pause ? new Date(at.getTime() + pause * 1000).toISOString() : null);
 	const messageIdentifier = crypto.randomUUID();
 	const statements = [];
 	if (!threadIdentifier) {
@@ -111,8 +122,8 @@ export async function queueMessage(context: MailContext, composition: Compositio
 		database
 			.prepare(
 				`INSERT INTO mail_messages (identifier, thread_identifier, direction, status, in_reply_to, reference_ids, from_address,
-				 to_list, cc_list, bcc_list, subject, text_body, snippet, sent_by, scheduled_for, carrier, created_at)
-				 VALUES (?, ?, 'out', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'cloudflare', ?)`
+				 to_list, cc_list, bcc_list, subject, text_body, snippet, sent_by, scheduled_for, held_for_undo, automatic, carrier, created_at)
+				 VALUES (?, ?, 'out', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'cloudflare', ?)`
 			)
 			.bind(
 				messageIdentifier,
@@ -129,6 +140,8 @@ export async function queueMessage(context: MailContext, composition: Compositio
 				snippetOf(composition.text),
 				composition.personIdentifier,
 				sendAt,
+				pause ? 1 : 0,
+				composition.automatic ? 1 : 0,
 				stamp
 			)
 	);
@@ -160,13 +173,21 @@ export async function queueMessage(context: MailContext, composition: Compositio
 	statements.push(
 		actionStatement(context, {
 			personIdentifier: composition.personIdentifier,
-			action: sendAt ? 'Scheduled a message' : forward ? 'Forwarded' : composition.threadIdentifier ? 'Replied' : 'Wrote a new message',
+			action: composition.automatic
+				? 'Sent the away message'
+				: later
+					? 'Scheduled a message'
+					: forward
+						? 'Forwarded'
+						: composition.threadIdentifier
+							? 'Replied'
+							: 'Wrote a new message',
 			threadIdentifier,
-			note: sendAt
+			note: later
 		})
 	);
 	await database.batch(statements);
-	return { messageIdentifier, threadIdentifier, scheduled: sendAt !== null };
+	return { messageIdentifier, threadIdentifier, scheduled: later !== null, pause };
 }
 
 /** The chosen attachments of a message in this conversation, read back from the bucket to forward. */
@@ -236,11 +257,13 @@ export async function sendMessage(
 ): Promise<{ sent: boolean; held?: boolean; error?: string }> {
 	const database = context.database;
 	const at = currentTime(context);
+	// A message another run started sending is left to it, unless that run stopped partway (ten minutes on).
 	const claim = await database
 		.prepare(
-			`UPDATE mail_messages SET status = 'sending', error = NULL WHERE identifier = ? AND (status = 'scheduled' OR (status = 'sending' AND sent_at IS NULL))`
+			`UPDATE mail_messages SET status = 'sending', error = NULL, claimed_at = ?1 WHERE identifier = ?2
+			 AND (status = 'scheduled' OR (status = 'sending' AND sent_at IS NULL AND (claimed_at IS NULL OR claimed_at < ?3)))`
 		)
-		.bind(messageIdentifier)
+		.bind(at.toISOString(), messageIdentifier, new Date(at.getTime() - 10 * 60_000).toISOString())
 		.run();
 	if ((claim.meta.changes ?? 0) === 0) return { sent: false, error: 'The message was already sent or cancelled.' };
 	const row = await database.prepare('SELECT * FROM mail_messages WHERE identifier = ?').bind(messageIdentifier).first<MessageRow>();
@@ -273,7 +296,7 @@ export async function sendMessage(
 			const scan = opened.scan;
 			if (stillScanning(scan)) {
 				await database
-					.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, error = ? WHERE identifier = ?`)
+					.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, held_for_undo = 0, error = ? WHERE identifier = ?`)
 					.bind(new Date(at.getTime() + 60_000).toISOString(), heldForVirusCheck, messageIdentifier)
 					.run();
 				return { sent: false, held: true, error: heldForVirusCheck };
@@ -342,6 +365,21 @@ export async function sendMessage(
 	return { sent: true };
 }
 
+/**
+ * Sends a message when the pause before it goes has ended, unless it was
+ * pulled back or sent at once meanwhile. Run after the page has answered
+ * (src/lib/server/environment.ts, afterResponse); the mail tick sends it if
+ * this never runs.
+ */
+export async function sendWhenPauseEnds(context: MailContext, carriers: MailCarriers, messageIdentifier: string, seconds: number): Promise<void> {
+	await new Promise((resolve) => setTimeout(resolve, seconds * 1000 + 200));
+	const row = await context.database
+		.prepare(`SELECT 1 AS waiting FROM mail_messages WHERE identifier = ? AND status = 'scheduled' AND held_for_undo = 1`)
+		.bind(messageIdentifier)
+		.first();
+	if (row) await sendMessage(context, carriers, messageIdentifier);
+}
+
 /** Sends scheduled messages whose time has come (not outreach, which paces itself). Run by the mail tick. */
 export async function sendDueMessages(context: MailContext, carriers: MailCarriers, limit = 20): Promise<number> {
 	const { results } = await context.database
@@ -373,7 +411,7 @@ export async function cancelScheduled(context: MailContext, personIdentifier: st
 export async function sendAgain(context: MailContext, personIdentifier: string, messageIdentifier: string): Promise<boolean> {
 	const at = currentTime(context).toISOString();
 	const result = await context.database
-		.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, error = NULL WHERE identifier = ? AND status IN ('scheduled', 'failed')
+		.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, held_for_undo = 0, error = NULL WHERE identifier = ? AND status IN ('scheduled', 'failed')
 			 AND outreach_recipient_identifier IS NULL`)
 		.bind(at, messageIdentifier)
 		.run();
