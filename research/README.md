@@ -19,6 +19,10 @@ The website will generate a browsable index of sessions by month, tool and topic
 
 `analyses/` holds dated analyses of the records, each with the script output it quotes, for example [`2026-11-21-dispute-resolution-practice.md`](analyses/2026-11-21-dispute-resolution-practice.md). An analysis describes what the sources document, never what a nation practices, and labels its own reasoning as project analysis. Re-run the script named in the analysis to reproduce its counts.
 
+## Media
+
+[`media/`](media/README.md) holds research on videos, sound recordings and pictures the website could use, with each source's reuse terms and cultural-sensitivity concerns.
+
 ## Quotations
 
 `quotes/` holds checked quotations for epigraphs and pull quotes, each matched word for word against a published source and cited with a pinpoint, with a list of popular quotations that are misattributed or untraced: [2026-11-23-quotations-on-peacemaking-and-self-government](quotes/2026-11-23-quotations-on-peacemaking-and-self-government.md).
