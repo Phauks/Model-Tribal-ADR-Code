@@ -1,14 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import {
-	facetChoices,
-	matchRecourse,
+	recourseAddress,
 	recourseCsv,
 	recourseFacets,
-	recourseQueryFromParameters,
-	recourseQueryToParameters,
+	recourseLink,
+	recourseQueryFromAddress,
 	recognitionFacetValues,
+	rowsWithWords,
 	type RecourseRow
 } from '../src/lib/recourse.ts';
+import { facetCounts, filterRows, type FilterChoices } from '../src/lib/search-filters.ts';
 import { recourseRows } from '../src/lib/server/recourse.ts';
 
 function row(id: string, method: string, subject: string, states: string[], checked = false): RecourseRow {
@@ -34,60 +35,74 @@ const rows = [
 	row('c', 'Arbitration', 'Family', ['Arizona']),
 	row('d', 'Peacemaking', 'Family', ['Oklahoma'])
 ];
-const facet = (key: string) => recourseFacets.find((entry) => entry.key === key)!;
+const facets = recourseFacets(rows);
 const ids = (list: RecourseRow[]) => list.map((entry) => entry.id);
+const match = (text: string, choices: FilterChoices) => ids(filterRows(rowsWithWords(rows, text), facets, choices));
 
-describe('matchRecourse', () => {
+describe('finding provisions', () => {
 	it('widens within a filter and narrows across filters', () => {
-		expect(ids(matchRecourse(rows, { text: '', picked: { method: ['Mediation', 'Arbitration'] } }))).toEqual(['a', 'b', 'c']);
-		expect(ids(matchRecourse(rows, { text: '', picked: { method: ['Mediation'], subject: ['Family'] } }))).toEqual(['a']);
+		expect(match('', { method: ['Mediation', 'Arbitration'] })).toEqual(['a', 'b', 'c']);
+		expect(match('', { method: ['Mediation'], subject: ['Family'] })).toEqual(['a']);
 	});
 
 	it('matches every search word, ignoring case and accents', () => {
-		expect(ids(matchRecourse(rows, { text: 'FAMILY médiation', picked: {} }))).toEqual(['a']);
+		expect(match('FAMILY médiation', {})).toEqual(['a']);
 	});
 
 	it('matches a row with several states on any of them', () => {
-		expect(ids(matchRecourse(rows, { text: '', picked: { state: ['New Mexico'] } }))).toEqual(['a']);
+		expect(match('', { state: ['New Mexico'] })).toEqual(['a']);
 	});
 });
 
-describe('facetChoices', () => {
-	it('counts each choice with the other filters applied, largest first', () => {
-		const choices = facetChoices(rows, { text: '', picked: { subject: ['Family'], method: ['Mediation'] } }, facet('method'));
-		expect(choices.map((choice) => [choice.value, choice.count, choice.picked])).toEqual([
-			['Arbitration', 1, false],
-			['Mediation', 1, true],
-			['Peacemaking', 1, false]
+describe('recourseFacets', () => {
+	const options = (key: string) => facets.find((facet) => facet.key === key)!.options;
+
+	it('lists answers by how many provisions have them, then in reading order', () => {
+		expect(options('method').map((option) => option.value)).toEqual(['Mediation', 'Arbitration', 'Peacemaking']);
+	});
+
+	it('lists states in reading order', () => {
+		expect(options('state').map((option) => option.value)).toEqual(['Arizona', 'New Mexico', 'Oklahoma', 'Oregon']);
+	});
+
+	it('names the tags and the checking state in words', () => {
+		expect(options('setting')).toEqual([{ value: 'court-referral', label: 'The court refers the case' }]);
+		expect(options('checked')).toEqual([
+			{ value: 'once', label: 'Read once' },
+			{ value: 'checked', label: 'Checked by a second reader' }
 		]);
 	});
 
-	it('keeps a picked choice that leaves no rows', () => {
-		const choices = facetChoices(rows, { text: '', picked: { subject: ['Civil'], state: ['Oklahoma'] } }, facet('state'));
-		expect(choices).toContainEqual({ value: 'Oklahoma', words: 'Oklahoma', count: 0, picked: true });
-	});
-
-	it('names the checking state in words', () => {
-		expect(facetChoices(rows, { text: '', picked: {} }, facet('checked')).map((choice) => choice.words)).toEqual([
-			'Checked by a second reader',
-			'Read once'
+	it('counts each answer with the other filters applied', () => {
+		const counts = facetCounts(rows, facets, { subject: ['Family'], method: ['Mediation'] });
+		expect([...counts.method]).toEqual([
+			['Mediation', 1],
+			['Arbitration', 1],
+			['Peacemaking', 1]
 		]);
 	});
 });
 
 describe('page address', () => {
 	it('writes the choices and reads them back', () => {
-		const query = { text: ' custody ', picked: { method: ['Mediation', 'Peacemaking'], state: ['Arizona'] } };
-		const parameters = recourseQueryToParameters(query);
+		const choices = { method: ['Peacemaking', 'Mediation'], state: ['Arizona'] };
+		const parameters = recourseAddress({ text: ' custody ', choices }, facets);
 		expect(parameters.toString()).toBe('q=custody&method=Mediation&method=Peacemaking&state=Arizona');
-		expect(recourseQueryFromParameters(parameters)).toEqual({ text: 'custody', picked: query.picked });
+		expect(recourseQueryFromAddress(parameters, facets)).toEqual({
+			text: 'custody',
+			choices: { method: ['Mediation', 'Peacemaking'], state: ['Arizona'] }
+		});
 	});
 
-	it('ignores unknown parameters and repeated values', () => {
-		expect(recourseQueryFromParameters(new URLSearchParams('nope=1&method=Mediation&method=Mediation'))).toEqual({
+	it('ignores unknown parameters, unknown answers and repeated values', () => {
+		expect(recourseQueryFromAddress(new URLSearchParams('nope=1&method=Mediation&method=Mediation&method=Nothing'), facets)).toEqual({
 			text: '',
-			picked: { method: ['Mediation'] }
+			choices: { method: ['Mediation'] }
 		});
+	});
+
+	it('links to one answer, as the charts do', () => {
+		expect(recourseLink('state', 'New Mexico')).toBe('/nations/recourse?state=New+Mexico');
 	});
 });
 
