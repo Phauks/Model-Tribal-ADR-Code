@@ -137,7 +137,8 @@ Run by hand, never in continuous integration. Both use free public data with no 
 | --- | --- | --- |
 | `caselaw/check_case_citations.py` | Looks up every case source record's citations in CourtListener's newest quarterly bulk files and compares the case name and year; writes `research/reviews/<date>-case-citations-courtlistener.csv`, and with `--apply` (or later `--apply-report`) a `courtlistener` block (cluster number and link) in each record that matches. About 2.6 GB of downloads, cached for re-runs | `scripts/requirements.txt`, `curl` |
 | `caselaw/tribal_court_opinions.py` | Indexes the tribal court opinions in the Caselaw Access Project reporters named in `research/tribal-court-opinions/sources.yaml`: nations, topics and the case records each opinion cites; with `--file-captures` files each volume as a private capture and each opinion as a page the website serves (decision record 0047) ([README](../research/tribal-court-opinions/README.md)) | `scripts/requirements.txt`, `curl`; R2 keys for `--file-captures` |
-| `caselaw/caselaw_sources.py` | Shared helpers for both: downloads, the newest CourtListener release, citation parsing and case name comparison | |
+| `caselaw/reading_links.py` | Builds and checks the other places to read each case and law record (official texts, free sites, Westlaw and Lexis, Wikipedia) from `research/reading-links/sites.yaml`; writes `research/reviews/<date>-reading-links.csv`, and with `--apply` a `reading_links` block in each record that the website prints after the citation ([README](../research/reading-links/README.md)) | `scripts/requirements.txt`, `curl` |
+| `caselaw/caselaw_sources.py` | Shared helpers for these: downloads, the newest CourtListener release, citation parsing and case name comparison | |
 
 ## Constitutions
 

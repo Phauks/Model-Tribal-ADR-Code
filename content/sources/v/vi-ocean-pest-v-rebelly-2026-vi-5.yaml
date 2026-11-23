@@ -23,6 +23,22 @@ archives:
 history:
   status: live
   last_checked: 2026-11-21
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%222026%20VI%205%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=2026%20VI%205
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=2026%20VI%205
 rights:
   status: no-permission-needed
   basis: government-edict

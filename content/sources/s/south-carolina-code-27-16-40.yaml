@@ -17,6 +17,17 @@ archives: []
 history:
   status: live
   last_checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=S.C.%20Code%20Ann.%20%C2%A7%2027-16-40
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=S.C.%20Code%20Ann.%20%C2%A7%2027-16-40
 rights:
   status: no-permission-needed
   basis: government-edict

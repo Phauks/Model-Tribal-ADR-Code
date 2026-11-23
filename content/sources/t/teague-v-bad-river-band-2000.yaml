@@ -31,6 +31,26 @@ courtlistener:
   link: https://www.courtlistener.com/opinion/1862459/teague-v-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians/
   release: '2026-09-30'
   checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/1862459/teague-v-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22236%20Wis.%202d%20384%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=236%20Wis.%202d%20384
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=236%20Wis.%202d%20384
 rights:
   status: no-permission-needed
   basis: government-edict

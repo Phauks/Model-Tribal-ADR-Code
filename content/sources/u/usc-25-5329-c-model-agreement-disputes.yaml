@@ -22,6 +22,25 @@ archives:
 history:
   status: live
   last_checked: 2026-11-21
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: govinfo
+    label: "GovInfo"
+    access: official
+    link: https://www.govinfo.gov/link/uscode/25/5329?link-type=html
+  - site: uscode-house
+    label: "uscode.house.gov"
+    access: official
+    link: https://uscode.house.gov/us/usc/t25/s5329/
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=25%20U.S.C.%20%C2%A7%205329
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=25%20U.S.C.%20%C2%A7%205329
 rights:
   status: no-permission-needed
   basis: us-government-work

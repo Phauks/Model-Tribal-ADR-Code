@@ -30,6 +30,39 @@ courtlistener:
   link: https://www.courtlistener.com/opinion/145821/hall-street-associates-l-l-c-v-mattel-inc/
   release: '2026-09-30'
   checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/145821/hall-street-associates-l-l-c-v-mattel-inc/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/552/576/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/2007/06-989
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22552%20U.S.%20576%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=552%20U.S.%20576
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=552%20U.S.%20576
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Hall_Street_Associates,_L.L.C._v._Mattel,_Inc.
 rights:
   status: no-permission-needed
   basis: us-government-work

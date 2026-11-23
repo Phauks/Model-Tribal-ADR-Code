@@ -1034,6 +1034,21 @@ sup.citation {
 	display: none;
 }
 
+/*
+ * Other places to read a cited case or law, after its citation
+ * (src/lib/reading-links.ts). Left out of print, where the citation alone is
+ * the reference.
+ */
+.reading-links {
+	font-size: 0.9em;
+}
+
+@media print {
+	.reading-links {
+		display: none;
+	}
+}
+
 /* A note shown under its paragraph (the "Show the note under the paragraph" setting). */
 .inline-note {
 	margin: 0 0 var(--space-4);
