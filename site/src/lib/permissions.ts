@@ -17,107 +17,123 @@
  */
 
 export const roles = [
-	'lead-author',
-	'editor',
-	'co-author',
-	'advisor',
-	'contributor',
-	'nation-reviewer'
+  "lead-author",
+  "editor",
+  "co-author",
+  "advisor",
+  "contributor",
+  "nation-reviewer",
 ] as const;
 export type Role = (typeof roles)[number];
 
 export const roleLabels: Record<Role, string> = {
-	'lead-author': 'Lead author',
-	editor: 'Editor',
-	'co-author': 'Co-author',
-	advisor: 'Advisor',
-	contributor: 'Contributor',
-	'nation-reviewer': 'Nation reviewer'
+  "lead-author": "Lead author",
+  editor: "Editor",
+  "co-author": "Co-author",
+  advisor: "Advisor",
+  contributor: "Contributor",
+  "nation-reviewer": "Nation reviewer",
 };
 
 export const roleDescriptions: Record<Role, string> = {
-	'lead-author':
-		'The administrator: full access to every document, and adds, changes and removes people, grants and restricts access, and sees the activity log; welcomes people who register to help. Only the lead author manages access.',
-	editor:
-		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them), reads registrations from people who want to help, and signs off on content.',
-	'co-author':
-		'Comments on every document unless the lead author grants more or less. Changes to content are still made by pull request.',
-	advisor: 'Signs off on content or asks for changes, as a project advisor, and comments.',
-	contributor:
-		'Sees only the documents the lead author grants them, at the level granted: for example, writes and edits an assigned essay draft. Cannot sign off or publish.',
-	'nation-reviewer':
-		'Reviews the record of one nation, for that nation: approves it, asks for changes or comments. Sees nothing else.'
+  "lead-author":
+    "The administrator: full access to every document, and adds, changes and removes people, grants and restricts access, and sees the activity log; welcomes people who register to help. Only the lead author manages access.",
+  editor:
+    "Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them), reads registrations from people who want to help, and signs off on content.",
+  "co-author":
+    "Comments on every document unless the lead author grants more or less. Changes to content are still made by pull request.",
+  advisor:
+    "Signs off on content or asks for changes, as a project advisor, and comments.",
+  contributor:
+    "Sees only the documents the lead author grants them, at the level granted: for example, writes and edits an assigned essay draft. Cannot sign off or publish.",
+  "nation-reviewer":
+    "Reviews the record of one nation, for that nation: approves it, asks for changes or comments. Sees nothing else.",
 };
 
 export type Permission =
-	| 'manage-people'
-	| 'read-contributors'
-	| 'manage-contributors'
-	| 'read-requests'
-	| 'handle-requests'
-	| 'read-reviews'
-	| 'comment'
-	| 'sign-off'
-	| 'review-for-nation';
+  | "manage-people"
+  | "read-contributors"
+  | "manage-contributors"
+  | "read-requests"
+  | "handle-requests"
+  | "read-reviews"
+  | "comment"
+  | "sign-off"
+  | "review-for-nation"
+  // The private address book (migrations/0012_address_book.sql): the lead author only.
+  | "manage-address-book";
 
 const grants: Record<Role, readonly Permission[]> = {
-	'lead-author': [
-		'manage-people',
-		'read-contributors',
-		'manage-contributors',
-		'read-requests',
-		'handle-requests',
-		'read-reviews',
-		'comment',
-		'sign-off'
-	],
-	editor: ['read-contributors', 'read-requests', 'handle-requests', 'read-reviews', 'comment', 'sign-off'],
-	'co-author': ['read-reviews', 'comment'],
-	advisor: ['read-reviews', 'comment', 'sign-off'],
-	contributor: ['comment'],
-	'nation-reviewer': ['review-for-nation']
+  "lead-author": [
+    "manage-people",
+    "read-contributors",
+    "manage-contributors",
+    "read-requests",
+    "handle-requests",
+    "read-reviews",
+    "comment",
+    "sign-off",
+    "manage-address-book",
+  ],
+  editor: [
+    "read-contributors",
+    "read-requests",
+    "handle-requests",
+    "read-reviews",
+    "comment",
+    "sign-off",
+  ],
+  "co-author": ["read-reviews", "comment"],
+  advisor: ["read-reviews", "comment", "sign-off"],
+  contributor: ["comment"],
+  "nation-reviewer": ["review-for-nation"],
 };
 
 export interface Grantee {
-	role: Role;
-	/** Set only for a nation reviewer. */
-	nationIdentifier: string | null;
+  role: Role;
+  /** Set only for a nation reviewer. */
+  nationIdentifier: string | null;
 }
 
 /** The administrator tier: the lead author. Cannot be restricted by a grant. */
 export function isAdministrator(person: Grantee): boolean {
-	return person.role === 'lead-author';
+  return person.role === "lead-author";
 }
 
 export function permissionsOf(role: Role): readonly Permission[] {
-	return grants[role];
+  return grants[role];
 }
 
 export function can(person: Grantee, permission: Permission): boolean {
-	return grants[person.role].includes(permission);
+  return grants[person.role].includes(permission);
 }
 
-export const subjectKinds = ['nation', 'glossary-term', 'provision', 'essay'] as const;
+export const subjectKinds = [
+  "nation",
+  "glossary-term",
+  "provision",
+  "essay",
+] as const;
 export type SubjectKind = (typeof subjectKinds)[number];
 
 export const subjectKindLabels: Record<SubjectKind, string> = {
-	nation: 'Nation record',
-	'glossary-term': 'Glossary term',
-	provision: 'Provision',
-	essay: 'Essay'
+  nation: "Nation record",
+  "glossary-term": "Glossary term",
+  provision: "Provision",
+  essay: "Essay",
 };
 
-export const decisions = ['approved', 'changes-requested', 'comment'] as const;
+export const decisions = ["approved", "changes-requested", "comment"] as const;
 export type Decision = (typeof decisions)[number];
 
 export const decisionLabels: Record<Decision, string> = {
-	approved: 'Approved',
-	'changes-requested': 'Changes requested',
-	comment: 'Comment'
+  approved: "Approved",
+  "changes-requested": "Changes requested",
+  comment: "Comment",
 };
 
 /** The capacity a review is recorded in: the person's role, or "nation" for a nation reviewer. */
-export type Capacity = Exclude<Role, 'nation-reviewer'> | 'nation';
+export type Capacity = Exclude<Role, "nation-reviewer"> | "nation";
 
 // ---------------------------------------------------------------------------
 // Access to each document (decision record 0023)
@@ -128,62 +144,69 @@ export type Capacity = Exclude<Role, 'nation-reviewer'> | 'nation';
  * can open a document can comment on it, because the project wants their
  * feedback (Trevor, 2026-11-21).
  */
-export const accessLevels = ['no-access', 'comment', 'contribute', 'full'] as const;
+export const accessLevels = [
+  "no-access",
+  "comment",
+  "contribute",
+  "full",
+] as const;
 export type AccessLevel = (typeof accessLevels)[number];
 
 export const accessLevelLabels: Record<AccessLevel, string> = {
-	'no-access': 'No access',
-	comment: 'Comment',
-	contribute: 'Contribute',
-	full: 'Full'
+  "no-access": "No access",
+  comment: "Comment",
+  contribute: "Contribute",
+  full: "Full",
 };
 
 export const accessLevelDescriptions: Record<AccessLevel, string> = {
-	'no-access': 'Cannot open the document or see that it is being worked on.',
-	comment: 'Reads the document and its drafts, and comments.',
-	contribute: 'Everything in Comment, and edits the draft and saves versions of it.',
-	full: 'Everything in Contribute, and restores an earlier version, resolves or hides others’ comments, and submits the draft for publishing.'
+  "no-access": "Cannot open the document or see that it is being worked on.",
+  comment: "Reads the document and its drafts, and comments.",
+  contribute:
+    "Everything in Comment, and edits the draft and saves versions of it.",
+  full: "Everything in Contribute, and restores an earlier version, resolves or hides others’ comments, and submits the draft for publishing.",
 };
 
 /** Whether a level is at least another. */
 export function atLeast(level: AccessLevel, minimum: AccessLevel): boolean {
-	return accessLevels.indexOf(level) >= accessLevels.indexOf(minimum);
+  return accessLevels.indexOf(level) >= accessLevels.indexOf(minimum);
 }
 
 /** The level each role starts with on every document, before any grant. */
 export const roleDefaultLevels: Record<Role, AccessLevel> = {
-	'lead-author': 'full',
-	editor: 'contribute',
-	advisor: 'comment',
-	'co-author': 'comment',
-	contributor: 'no-access',
-	// Except their own nation's record, which they comment on and approve.
-	'nation-reviewer': 'no-access'
+  "lead-author": "full",
+  editor: "contribute",
+  advisor: "comment",
+  "co-author": "comment",
+  contributor: "no-access",
+  // Except their own nation's record, which they comment on and approve.
+  "nation-reviewer": "no-access",
 };
 
 /** A grant for "every document of this kind" uses this in place of an identifier. */
-export const everyDocument = '*';
+export const everyDocument = "*";
 
 export interface Subject {
-	kind: SubjectKind;
-	identifier: string;
+  kind: SubjectKind;
+  identifier: string;
 }
 
 export interface AccessGrant {
-	subjectKind: SubjectKind;
-	/** A document's identifier, or everyDocument. */
-	subjectIdentifier: string;
-	level: AccessLevel;
-	/** ISO 8601 time after which the grant no longer counts, or null. */
-	expiresAt: string | null;
+  subjectKind: SubjectKind;
+  /** A document's identifier, or everyDocument. */
+  subjectIdentifier: string;
+  level: AccessLevel;
+  /** ISO 8601 time after which the grant no longer counts, or null. */
+  expiresAt: string | null;
 }
 
-export type AccessSource = 'administrator' | 'document-grant' | 'kind-grant' | 'role';
+export type AccessSource =
+  "administrator" | "document-grant" | "kind-grant" | "role";
 
 export interface DocumentAccess {
-	level: AccessLevel;
-	/** Where the level comes from, shown to the lead author on the Access page. */
-	source: AccessSource;
+  level: AccessLevel;
+  /** Where the level comes from, shown to the lead author on the Access page. */
+  source: AccessSource;
 }
 
 /**
@@ -200,29 +223,35 @@ export interface DocumentAccess {
  * do not count. The grants passed in must be the person's own, current ones.
  */
 export function documentAccess(
-	person: Grantee,
-	subject: Subject,
-	grants: readonly AccessGrant[],
-	time: Date = new Date()
+  person: Grantee,
+  subject: Subject,
+  grants: readonly AccessGrant[],
+  time: Date = new Date(),
 ): DocumentAccess {
-	if (isAdministrator(person)) return { level: 'full', source: 'administrator' };
-	const current = grants.filter(
-		(grant) =>
-			grant.subjectKind === subject.kind &&
-			(grant.expiresAt === null || new Date(grant.expiresAt) > time)
-	);
-	const forDocument = current.find((grant) => grant.subjectIdentifier === subject.identifier);
-	if (forDocument) return { level: forDocument.level, source: 'document-grant' };
-	const forKind = current.find((grant) => grant.subjectIdentifier === everyDocument);
-	if (forKind) return { level: forKind.level, source: 'kind-grant' };
-	if (
-		person.role === 'nation-reviewer' &&
-		subject.kind === 'nation' &&
-		subject.identifier === person.nationIdentifier
-	) {
-		return { level: 'comment', source: 'role' };
-	}
-	return { level: roleDefaultLevels[person.role], source: 'role' };
+  if (isAdministrator(person))
+    return { level: "full", source: "administrator" };
+  const current = grants.filter(
+    (grant) =>
+      grant.subjectKind === subject.kind &&
+      (grant.expiresAt === null || new Date(grant.expiresAt) > time),
+  );
+  const forDocument = current.find(
+    (grant) => grant.subjectIdentifier === subject.identifier,
+  );
+  if (forDocument)
+    return { level: forDocument.level, source: "document-grant" };
+  const forKind = current.find(
+    (grant) => grant.subjectIdentifier === everyDocument,
+  );
+  if (forKind) return { level: forKind.level, source: "kind-grant" };
+  if (
+    person.role === "nation-reviewer" &&
+    subject.kind === "nation" &&
+    subject.identifier === person.nationIdentifier
+  ) {
+    return { level: "comment", source: "role" };
+  }
+  return { level: roleDefaultLevels[person.role], source: "role" };
 }
 
 /**
@@ -230,11 +259,11 @@ export function documentAccess(
  * review history: anyone with at least comment access.
  */
 export function canSeeSubject(
-	person: Grantee,
-	subject: Subject,
-	grants: readonly AccessGrant[] = []
+  person: Grantee,
+  subject: Subject,
+  grants: readonly AccessGrant[] = [],
 ): boolean {
-	return atLeast(documentAccess(person, subject, grants).level, 'comment');
+  return atLeast(documentAccess(person, subject, grants).level, "comment");
 }
 
 /**
@@ -245,15 +274,20 @@ export function canSeeSubject(
  * editors and advisors can sign off for the project.
  */
 export function allowedDecisions(
-	person: Grantee,
-	subject: Subject,
-	grants: readonly AccessGrant[] = []
+  person: Grantee,
+  subject: Subject,
+  grants: readonly AccessGrant[] = [],
 ): { capacity: Capacity; decisions: readonly Decision[] } | undefined {
-	if (!canSeeSubject(person, subject, grants)) return undefined;
-	if (person.role === 'nation-reviewer') {
-		const ownNation = subject.kind === 'nation' && subject.identifier === person.nationIdentifier;
-		return { capacity: 'nation', decisions: ownNation ? decisions : ['comment'] };
-	}
-	if (can(person, 'sign-off')) return { capacity: person.role, decisions };
-	return { capacity: person.role, decisions: ['comment'] };
+  if (!canSeeSubject(person, subject, grants)) return undefined;
+  if (person.role === "nation-reviewer") {
+    const ownNation =
+      subject.kind === "nation" &&
+      subject.identifier === person.nationIdentifier;
+    return {
+      capacity: "nation",
+      decisions: ownNation ? decisions : ["comment"],
+    };
+  }
+  if (can(person, "sign-off")) return { capacity: person.role, decisions };
+  return { capacity: person.role, decisions: ["comment"] };
 }
