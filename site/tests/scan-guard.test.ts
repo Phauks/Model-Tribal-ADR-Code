@@ -155,6 +155,9 @@ const bucketCalls: Record<string, BucketUse> = {
   "src/routes/nations/[id]/image/+server.ts GET put(image.key)": {
     kind: "project-file",
     why: "Nation seals and images the project collected from official sources.",
+  },  "src/lib/server/document-zips.ts entries get(key)": {
+    kind: "project-file",
+    why: "The project's own copies of public documents (U.S. government works and nations' governing documents), zipped for download.",
   },
 };
 
@@ -169,7 +172,10 @@ const fileIntakes: Record<string, string> = {
   "src/routes/workspace/inbox/compose.ts readAttachments File.arrayBuffer":
     "Files the team attaches to outgoing mail. queueMessage stores them with storeSentFile, and sendMessage waits until they pass.",
   "src/routes/uploads/pieces/[reference]/[number]/+server.ts PUT Request.arrayBuffer":
-    "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",
+    "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",  "src/lib/sha256.ts hashFile Blob.arrayBuffer":
+    "Verify a file: hashes a file the reader picks, in their own browser. It is never sent or stored.",
+  "src/lib/sha256.ts hashFile Blob.stream":
+    "Verify a file: hashes a large file the reader picks, piece by piece, in their own browser. It is never sent or stored.",
 };
 
 interface Found {
