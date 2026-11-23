@@ -7,7 +7,7 @@ import { newIdentifier, now } from './identifiers.ts';
  * entries from contributor profiles. Entries are never changed or deleted,
  * and are sealed into a hash chain (activity-seals.ts).
  */
-export const eventTargets = ['person', 'request', 'review', 'grant', 'document', 'profile'] as const;
+export const eventTargets = ['person', 'request', 'review', 'grant', 'document', 'profile', 'upload'] as const;
 export type EventTarget = (typeof eventTargets)[number];
 
 export interface EventInput {

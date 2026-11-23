@@ -54,6 +54,30 @@ Requests are limited to editors and the lead author because they hold requesters
 
 A nation reviewer is how a nation's own office can approve its record (charter, commitment 4: "sent to nation", "reviewed by nation", "approved by nation"). The approval is recorded in the workspace; the record's `review.status` is then changed by pull request, citing the approval.
 
+## Nation teams
+
+Each Native nation can choose a team of people who keep its own page up to date ([decision record 0041](../docs/decisions/0041-nation-teams-keep-their-own-pages.md)). The rules are in `src/lib/nation-teams.ts`; the database side is `src/lib/server/nation-teams.ts` (migration 0015).
+
+1. **Asking.** A signed-in person asks from `/profile/nation-team`, linked from their profile. They name the nation, their title or office, how the nation chose them (a letter, a resolution, or an office that speaks for it) and the parts of the page, and upload the letter or resolution. The file goes to the private bucket under `nation-teams/<identifier>/proof` and is only ever downloaded, never shown as a page.
+2. **Confirming.** The lead author opens the request at `/workspace/nation-teams`, writes to the nation's office using a contact the project already had for the nation (never one the person gave), records which contact, and then confirms the place the office agreed to, with how it was confirmed, or declines with a reason the person sees.
+3. **The team.** Everyone on a team sees `/workspace/nation-teams/<nation>`: who is on it, at what level and for which parts, until when, who added them, and the team's activity log.
+
+| Level | On that nation's record | Adds people |
+| --- | --- | --- |
+| Steward | Full | Yes: up to their own level and parts, for this nation only |
+| Editor | Full | No |
+| Drafter | Contribute | No |
+| Reviewer | Comment, and approves for the nation | No |
+
+- A place is for one nation. The nation comes from the page's address, and every load and form checks the person's own place on that nation, so nobody can add people to another nation's team.
+- A place counts as a grant on the nation's record (`grantsOf`), after any grant the lead author made for that person and record, so the lead author can always lower or remove someone's access.
+- Every place ends after two years at most. Anyone can leave a team. A steward can end anyone's place on the team except a person the project confirmed directly with the nation's office.
+- The lead author can suspend a person together with everyone they added, and everyone those people added.
+- Every change is written to the activity log under the target "grant", identifier `nation-team/<nation>`.
+- Someone new to the project gets a person record with the "Nation reviewer" role for that nation. If they already have an account, it is linked at once; otherwise when they first sign in with that address.
+
+Teams can edit the nation's page itself once the next stage is built (editing and publishing, then the review queue, emails to offices and the nightly copy into git). Teams open to nations once the project domain can send email.
+
 ## Essays
 
 Essays are kept in the private `sourceDocuments` bucket and edited at `/workspace/essays` ([decision record 0021](../docs/decisions/0021-edit-drafts-in-the-browser-keep-essays-in-the-bucket.md), [docs/editing.md](../docs/editing.md)).
@@ -131,6 +155,10 @@ The Forms page (`/forms`) lists the contributor forms in `docs/contributor-forms
 A contributor form sent from `/forms/<form>` opens a request (kind `contribute`, or `restrict` for a change or withdrawal) with a row in `form_submissions`: the form, version, checksum, how it was signed, the typed name and the answers. Signed online, it also gets a filled copy in the bucket at `forms/<request>/<submission>.md`. Uploaded, the photos or scans are files of the request in `request_sources`, checked like any upload. Both ways use the hidden field and the `requestFormLimit` rate limit. A request with a form keeps its personal details after it is resolved.
 
 On the request's page in the workspace, editors see each form, open the filled form (while the site still has that exact version), download the stored copy, and file the forms under a filing number, which is logged.
+
+## Files people send
+
+Anyone signed in can send files on `/uploads/send` and follow them on `/uploads` (Your uploads, also in the account menu). The lead author and editors review them on `/workspace/uploads` (permission `review-uploads`). Files arrive in 10 MB pieces into the private bucket under `uploads/<identifier>/`, are checked by type and for hidden content as they arrive, and wait for a reviewer, who files them, keeps them for reference, or says why they were not used. A YouTube link can stand in for a video. Filed files are served at `/files/<reference>/<name>`. The code is in `src/lib/uploads.ts`, `src/lib/server/uploads.ts`, `src/lib/server/upload-checks.ts` and `src/lib/server/upload-serving.ts`; the design is docs/uploads.md and decision record 0038.
 
 ## How sign-in works
 
@@ -281,5 +309,7 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - The public "Requests log" page (docs/requests.md, "Public log").
 - A filings list in the workspace, and emailing a signer their copy of a form (waits on a domain).
 - Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
-- Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly.
+- Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) will edit their nation's page from the website in the next stage.
+- Emails to a nation's office when someone joins or leaves its team, and the weekly summary of changes (waits on a domain).
+- A virus scan for files people send, and comments on them from nation reviewers (docs/uploads.md, "Not built yet").
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

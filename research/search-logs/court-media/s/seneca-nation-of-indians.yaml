@@ -1,0 +1,38 @@
+profile: content/tribes/s/seneca-nation-of-indians.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Seneca Nation Peacemaker's Court video youtube
+  outcome: not-found
+  reason: Results were sni.org pages and NARF pages, with no Seneca Peacemaker's Court video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Seneca Nation peacemaking podcast
+  outcome: not-found
+  reason: Results were history and spirituality podcasts that are not made by the Seneca Nation's court, so I did not count them.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://sni.org/government/peacemakers-court/
+  query: 'Peacemaker''s Court page: video, photos, podcast, copyright'
+  outcome: error
+  reason: 'Not fetched: the WebFetch budget for this session ran out before I reached it.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://sni.org/government/peacemakers-court/
+  query: Peacemaker's Court media
+  outcome: not-found
+  reason: Fetched with curl. Redirected to the Judicial page (sni.org/about-our-government/judicial/), which describes the Peacemakers Court, Surrogate's Court and Court of Appeals as text only; footer '2026 © Seneca Nation of Indians. All Rights Reserved.'
+next_steps: Check the Seneca Nation's social channels by hand for Peacemaker's Court video.

@@ -1,0 +1,30 @@
+profile: content/tribes/k/klamath-tribes.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Klamath Tribes tribal court peacemaking video
+  outcome: not-found
+  reason: Results were NARF and NCORJ peacemaking law pages, with no Klamath-made video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://klamathtribalcourts.com/
+  query: 'Klamath judiciary homepage: embedded video, photos, podcast, copyright'
+  outcome: not-found
+  reason: The judiciary homepage has no YouTube or Vimeo videos and no podcast, but it has a 1886 historical photo of Treaty of 1864 signers and an online-forms screenshot, with a footer reading @2022 Klamath Tribes Judiciary - All rights reserved.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://klamathtribes.org/
+  query: home page
+  outcome: blocked
+  reason: Fetched with curl. Returned a 'One moment, please... verifying your request' bot-check page; not bypassed.
+next_steps: A person should open klamathtribes.org and klamathtribalcourts.com by hand for peacemaking or court video.

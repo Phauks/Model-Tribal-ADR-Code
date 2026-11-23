@@ -1,0 +1,38 @@
+profile: content/tribes/c/confederated-tribes-of-the-colville-reservation.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Confederated Tribes of the Colville Reservation peacemaking video
+  outcome: not-found
+  reason: Results were peacemaking explainers from NARF, the Center for Justice Innovation and other outside groups, and none was a Colville-made video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Colville tribal court youtube
+  outcome: not-found
+  reason: Results were court rule PDFs and Washington state court directories, with no YouTube channel or video for the Colville court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.cct-crt.com/
+  query: 'court site: embedded video, photo gallery, podcast, footer rights, peacemaking mentions'
+  outcome: not-found
+  reason: The court site has no embedded video or podcast and mentions no peacemaking program, but it shows building and courthouse photos and a footer reading All rights reserved, Colville Tribes.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.cct-crt.com/
+  query: courthouse photos, rights line
+  outcome: found
+  reason: Fetched with curl. Squarespace court site with courthouse photos Building.jpg and view.jpg; footer reads 'All rights reserved, Colville Tribes. Copyright ©'. No video seen.
+next_steps: Ask the Colville Tribal Court for permission to use the building photos. Check colvilletribes.com for any program video (not fetched). Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

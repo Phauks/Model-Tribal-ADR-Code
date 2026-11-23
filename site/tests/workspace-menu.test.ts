@@ -15,9 +15,11 @@ describe('the workspace pages in the left sidebar', () => {
 			'overview',
 			'essays',
 			'requests',
+			'uploads',
 			'reviews',
 			'contributors',
 			'people',
+			'nation-teams',
 			'access',
 			'address-book',
 			'changes',
@@ -30,6 +32,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'overview',
 			'essays',
 			'requests',
+			'uploads',
 			'reviews',
 			'contributors'
 		]);

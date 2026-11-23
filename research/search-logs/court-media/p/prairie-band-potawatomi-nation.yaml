@@ -1,0 +1,46 @@
+profile: content/tribes/p/prairie-band-potawatomi-nation.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Prairie Band Potawatomi Peacemakers Circle video
+  outcome: not-found
+  reason: Results were NARF video lists, nation swearing-in and event pages, with no video from the nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Prairie Band Potawatomi tribal court youtube video
+  outcome: not-found
+  reason: Results were the tribal court contact page, NARF pages and sealed juvenile dockets, with no video or channel.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.pbpindiantribe.com/tribal-court
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: blocked
+  reason: Fetched with curl; HTTP 403 or a bot check page, which the project does not try to get past.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.pbpindiantribe.com/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: blocked
+  reason: Fetched with curl; HTTP 403 or a bot check page, which the project does not try to get past.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://peacemaking.narf.org/2016/12/video-peacemaking-in-the-courts-and-community/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 406) and read the page for embedded video, audio, galleries and the rights line; found embedded YouTube video(s) boITcYbtp-8; links to https://www.youtube.com/c/NativeAmericanRightsFund.
+next_steps: 'The Nation''s site answered curl with a bot check (HTTP 403); a person can open the tribal court page in a browser. The NARF 2016 "Peacemaking: In the Courts and Community" page embeds "DRC Peacemaking" from The Dispute Resolution Center, which is not about this Nation.'
