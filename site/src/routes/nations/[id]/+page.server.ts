@@ -24,6 +24,7 @@ import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
+import { offlineSets } from '#lib/server/copy-lists.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -876,6 +877,11 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 	};
 }
 
+function heldCopies(id: string): { count: number; bytes: number } {
+	const files = offlineSets().nations.get(id)?.files ?? [];
+	return { count: files.length, bytes: files.reduce((total, [, bytes]) => total + bytes, 0) };
+}
+
 export const load: PageServerLoad = ({ params }) => {
 	const record = nations().find((candidate) => candidate.id === params.id);
 	if (!record) error(404, 'No nation page has this address.');
@@ -895,7 +901,9 @@ export const load: PageServerLoad = ({ params }) => {
 			...status,
 			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined
 		},
-		withdrawn: record.review?.status === 'withdrawn-at-request'
+		withdrawn: record.review?.status === 'withdrawn-at-request',
+		// The copies of the nation's documents this site holds, to save offline or download as a ZIP.
+		heldCopies: heldCopies(record.id)
 	};
 
 	if (page.withdrawn) {

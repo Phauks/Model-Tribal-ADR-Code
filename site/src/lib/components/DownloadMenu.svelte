@@ -18,6 +18,8 @@
 	import FileSpreadsheet from '@lucide/svelte/icons/file-spreadsheet';
 	import FileText from '@lucide/svelte/icons/file-text';
 	import HardDriveDownload from '@lucide/svelte/icons/hard-drive-download';
+	import FileCheck from '@lucide/svelte/icons/file-check';
+	import FileCode from '@lucide/svelte/icons/file-code';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import Quote from '@lucide/svelte/icons/quote';
 
@@ -90,6 +92,35 @@
 		onpdf();
 	}
 
+	// The page as Markdown, made in the browser from what is shown (src/lib/page-markdown.ts), which
+	// is loaded only when asked for. Trevor asked for it on Nov. 23, 2026.
+	async function saveMarkdown() {
+		const main = document.querySelector('#main-content');
+		if (!main) return;
+		try {
+			const { markdownFileName, pageMarkdown } = await import('#lib/page-markdown.ts');
+			const versions = page.data.versions as { content?: string } | undefined;
+			const text = pageMarkdown(main, {
+				title: pageTitle(),
+				address: location.href.split('#')[0],
+				siteName,
+				contentVersion: versions?.content,
+				made: new Date()
+			});
+			const link = document.createElement('a');
+			link.href = URL.createObjectURL(new Blob([text], { type: 'text/markdown;charset=utf-8' }));
+			link.download = markdownFileName(location.pathname);
+			document.body.append(link);
+			link.click();
+			link.remove();
+			setTimeout(() => URL.revokeObjectURL(link.href), 10_000);
+			close(true);
+			message = `Saved ${link.download}.`;
+		} catch {
+			message = 'The page could not be saved as Markdown. Please try again.';
+		}
+	}
+
 	function pageTitle(): string {
 		const heading = document.querySelector('#main-content h1')?.textContent?.replace(/\s+/g, ' ').trim();
 		return heading || document.title.split(' · ')[0];
@@ -151,6 +182,15 @@
 					</span>
 				</button>
 			</li>
+			<li>
+				<button type="button" onclick={saveMarkdown}>
+					<FileCode size={20} strokeWidth={1.75} />
+					<span class="choice">
+						<span class="choice-name"><span class="choice-label">This page</span> <span class="format">Markdown</span></span>
+						<span class="choice-hint">Plain text with headings, links and sources, for notes apps and editors</span>
+					</span>
+				</button>
+			</li>
 			{#each offers.files as file (file.link)}
 				{@const Icon = fileIcons[file.kind]}
 				<li>
@@ -189,6 +229,15 @@
 					<span class="choice">
 						<span class="choice-name">All downloads</span>
 						<span class="choice-hint">The book and the data behind the site</span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="/verify" onclick={() => close()}>
+					<FileCheck size={20} strokeWidth={1.75} />
+					<span class="choice">
+						<span class="choice-name">Verify a file</span>
+						<span class="choice-hint">Check that a downloaded file is the one published here</span>
 					</span>
 				</a>
 			</li>

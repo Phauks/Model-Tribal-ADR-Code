@@ -182,7 +182,7 @@
 				{/if}
 				<DocumentHistoryList documents={data.documents} />
 				<div class="nation-slot" data-nation-slot="law"></div>
-				<NationDocumentsOffline nation={data.page.id} />
+				<NationDocumentsOffline nation={data.page.id} held={data.page.heldCopies} />
 			</Collapsible>
 		</div>
 
