@@ -11,6 +11,7 @@ import {
 	useCode,
 	verifiedAccount,
 	waitingPassword,
+	waitingPasswordFor,
 	type WaitingPassword
 } from '#lib/server/accounts.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
@@ -69,7 +70,7 @@ async function sendCode(
 	request: Request,
 	url: URL,
 	from: { step: 'email' | 'create'; email: string; returnTo: string; keep: boolean },
-	newPassword?: string
+	newPassword?: string | WaitingPassword
 ) {
 	const { step, email, returnTo, keep } = from;
 	const environment = workerEnvironment();
@@ -86,7 +87,8 @@ async function sendCode(
 	if (!(await withinLimit(request, email, 'send'))) return fail(429, { step, email, returnTo, keep, problem: tooMany });
 
 	let waiting: WaitingPassword | undefined;
-	if (newPassword !== undefined) waiting = await waitingPassword(newPassword, usablePasswordKey(environment.PASSWORD_KEY));
+	if (typeof newPassword === 'string') waiting = await waitingPassword(newPassword, usablePasswordKey(environment.PASSWORD_KEY));
+	else waiting = newPassword;
 	const issued = await issueCode(environment.database, email, 'email', null, waiting);
 	const link = new URL('/sign-in/link', url.origin);
 	link.searchParams.set('token', issued.linkToken);
@@ -127,6 +129,30 @@ export const actions: Actions = {
 			});
 		}
 		return sendCode(request, url, { step: 'email', email, returnTo, keep });
+	},
+
+	/**
+	 * "Send a new code" on the confirm step of Create an account. The new code
+	 * carries the password that waited with the old one, so it still makes the
+	 * account; if the old code has run out, the person chooses the password
+	 * again.
+	 */
+	resend: async ({ request, url }) => {
+		const form = await request.formData();
+		const email = cleanEmail(formText(form, 'email'));
+		const returnTo = safeReturnPath(formText(form, 'returnTo'));
+		const keep = form.get('keep') === 'yes';
+		const environment = workerEnvironment();
+		const waiting = environment.database && looksLikeEmail(email) ? await waitingPasswordFor(environment.database, email) : undefined;
+		if (!waiting) {
+			return fail(400, {
+				step: 'create' as const,
+				email, returnTo, keep,
+				problem: 'That code has run out. Choose your password again and we will send a new code.',
+				field: 'new-password' as const
+			});
+		}
+		return sendCode(request, url, { step: 'create', email, returnTo, keep }, waiting);
 	},
 
 	/**
@@ -210,8 +236,8 @@ export const actions: Actions = {
 		const password = formText(form, 'password');
 		const returnTo = safeReturnPath(formText(form, 'returnTo'));
 		const environment = workerEnvironment();
-		const again = (problem: string, field: 'email' | 'password' | undefined, status = 400) =>
-			fail(status, { step: 'email' as const, email, returnTo, problem, field });
+		const again = (problem: string, field: 'email' | 'password' | undefined, status = 400, reason?: 'no-match') =>
+			fail(status, { step: 'email' as const, email, returnTo, problem, field, reason });
 		if (!environment.database) return again('Sign-in is not available right now.', undefined, 503);
 		if (!looksLikeEmail(email)) return again('Enter your email address, for example name@example.com.', 'email');
 		if (password === '') return again('Enter your password.', 'password');
@@ -232,7 +258,7 @@ export const actions: Actions = {
 		// The same answer whether or not the address has an account, so this
 		// form cannot be used to find out who has signed up.
 		if (result.outcome !== 'accepted') {
-			return again('The email address or password is not right. Check both, or sign in with a code instead.', 'password');
+			return again('The email address or password is not right. Check both, or sign in with a code instead.', 'password', 400, 'no-match');
 		}
 		const finished = await finishSignIn(environment.database, cookies, result.account, 'password', returnTo, environment.LEAD_AUTHOR_EMAIL, {
 			device: deviceLabel(request.headers.get('user-agent')),
