@@ -380,6 +380,14 @@ function gamingHistoryKinds(): Map<string, Set<string>> {
 	return gamingHistoryCache;
 }
 
+let constitutionCache: Set<string> | undefined;
+
+/** The nations named by a constitution's document history (content/documents/). */
+function constitutionHistories(): Set<string> {
+	constitutionCache ??= new Set(documentHistories().filter((history) => history.kind === 'constitution').flatMap((history) => history.nations ?? []));
+	return constitutionCache;
+}
+
 const healthServiceArea = (record: NationRecord): string | undefined => record.indian_health_service?.find((fact) => fact.area)?.area;
 
 /**
@@ -461,6 +469,15 @@ const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
 			return { treaty: methods.has('treaty'), 'executive-order': methods.has('executive-order'), statute: methods.has('statute'), other: [...methods].some((method) => !['treaty', 'executive-order', 'statute'].includes(method)) };
 		},
 		facts: (record) => record.land_establishment ?? []
+	},
+	'governing-documents': {
+		has: (record) => {
+			const kinds = new Set((record.governing_documents ?? []).map((fact) => fact.kind));
+			const constitution = kinds.has('constitution') || kinds.has('articles-of-association') || (constitutionHistories().has(record.id));
+			const laws = ['law-code', 'court-rules'].some((kind) => kinds.has(kind)) || (record.dispute_resolution_law ?? []).length > 0;
+			return { constitution, laws, charter: kinds.has('corporate-charter') };
+		},
+		facts: (record) => record.governing_documents ?? []
 	},
 	'indian-health-service': {
 		categoryOf: healthServiceArea,

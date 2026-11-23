@@ -16,6 +16,7 @@ export type ShadedMapView =
 	| 'gaming'
 	| 'treaties'
 	| 'land-set-aside'
+	| 'governing-documents'
 	| 'indian-health-service';
 
 export const shadedMapViews: ShadedMapView[] = [
@@ -28,6 +29,7 @@ export const shadedMapViews: ShadedMapView[] = [
 	'gaming',
 	'treaties',
 	'land-set-aside',
+	'governing-documents',
 	'indian-health-service'
 ];
 
@@ -98,6 +100,15 @@ export const landSetAsideCategories: ShadeCategory[] = [
 	{ key: 'executive-order', label: 'By executive order', shade: 3 },
 	{ key: 'statute', label: 'By act of Congress', shade: 2 },
 	{ key: 'other', label: 'By agreement or another means', shade: 1 }
+];
+
+/**
+ * The governing documents and published laws on record for each nation (each record's `governing_documents` and `dispute_resolution_law`, and the constitutions in its document histories), in order of precedence. Articles of association count with constitutions, since they are some nations' governing document in place of one; a corporate charter governs a business, so it comes last (the nation page's "Laws and agreements" says the same). The table shows every kind each nation has.
+ */
+export const governingDocumentCategories: ShadeCategory[] = [
+	{ key: 'constitution', label: 'Constitution or articles of association on record', shade: 4 },
+	{ key: 'laws', label: 'Published law code, court rules or dispute resolution law', shade: 3 },
+	{ key: 'charter', label: 'Corporate charter only', shade: 1 }
 ];
 
 /**
@@ -269,6 +280,16 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 		kindHeaders: { treaty: 'Treaty', 'executive-order': 'Executive order', statute: 'Act of Congress', other: 'Agreement or other' },
 		section: 'ties-heading',
 		sources: { section: 'How land was set aside', text: 'how each nation’s reservation or other land base was set aside' }
+	},
+	'governing-documents': {
+		categories: governingDocumentCategories,
+		unrecorded: 'None on record yet',
+		note: 'Each nation’s land areas are shaded by the first of these on record: a constitution or articles of association, a published law code, court rules or law on dispute resolution, or only a corporate charter, which governs a business rather than the nation. The table shows every kind each nation has. A nation missing here may still have them: the record is only as complete as its sources, and some nations govern by unwritten law and custom. Each nation’s page links to its documents and their versions. Select an area to go to its nation’s row.',
+		caption: 'Nations with a governing document or published law on record, and which kinds',
+		rows: 'nations',
+		kindHeaders: { constitution: 'Constitution or articles', laws: 'Published laws', charter: 'Corporate charter' },
+		section: 'law-heading',
+		sources: { section: 'Governing documents', text: 'each nation’s constitution, published laws and charters on record' }
 	},
 	'indian-health-service': {
 		unrecorded: 'No Area recorded yet',
