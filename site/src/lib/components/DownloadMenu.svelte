@@ -18,6 +18,7 @@
 	// mistaken for a different file.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
+	import { mapTableOnScreen } from '#lib/map-table-on-screen.svelte.ts';
 	import { groupedFiles, pageCitation, pageDownloads, pageFormats, type PageFile, type PageFormat } from '#lib/page-downloads.ts';
 	import Check from '@lucide/svelte/icons/check';
 	import Download from '@lucide/svelte/icons/download';
@@ -33,7 +34,7 @@
 
 	let { onpdf }: { onpdf: () => void } = $props();
 
-	const offers = $derived(pageDownloads(page.url.pathname));
+	const offers = $derived(pageDownloads(page.url.pathname, mapTableOnScreen));
 	const groups = $derived(groupedFiles(offers.files));
 	const fileIcons: Record<PageFile['kind'], typeof FileBraces> = {
 		data: FileBraces,
@@ -261,7 +262,7 @@
 				</a>
 			</li>
 			<li>
-				<a class="row" href="/verify" onclick={() => close()}>
+				<a class="row" href="/downloads#checking" onclick={() => close()}>
 					<FileCheck size={20} strokeWidth={1.75} />
 					<span class="choice">
 						<span class="choice-name">Verify a file</span>

@@ -2,12 +2,12 @@
  * Citation markers: the small numbers in square brackets after a fact or a
  * sentence, as Wikipedia shows them (site/DESIGN.md, section 6, "Citations").
  * Each marker links to its source's entry in the page's Sources list, and
- * each entry links back to every marker that cites it. With scripts, selecting
- * a marker shows the source in place instead of jumping
+ * each entry links back to every marker that cites it. With scripts, pointing
+ * at a marker also previews the source beside it
  * (src/lib/components/CitationPopup.svelte).
  *
  * Markdown citations (src/lib/server/markdown.ts) and the CitationMarks
- * component write the same HTML, so the popup, the print options and the
+ * component write the same HTML, so the preview, the print options and the
  * "show the note under the paragraph" setting treat every marker alike.
  *
  * This module must work in the browser and in Node (for tests).

@@ -103,10 +103,8 @@
 				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />{page.review.label}</span>
 				<span class="muted">{page.review.meaning}</span>
 			{:else}
+				<!-- Just the status: the longer notice under it was taken off (Trevor, Nov. 23, 2026). -->
 				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unclaimed</span>
-				<span class="muted">
-					No one from the nation keeps this page yet. {page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
-				</span>
 				<a class="no-print" href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a>
 			{/if}
 			<a class="no-print" href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a>
@@ -204,6 +202,28 @@
 			</Collapsible>
 		{/if}
 
+		<!-- 7b. Stories: the nation's stories about disputes and peace, each linked
+		     to its own page, which quotes the teller and cites the source. A
+		     restricted or withdrawn story is never listed (decision record 0029). -->
+		{#if data.stories.length > 0}
+			<Collapsible heading="Stories" identifier="stories-heading">
+				<ul class="stories">
+					{#each data.stories as story (story.id)}
+						{@const shared = story.nations.filter((nation) => nation.id !== data.page.id)}
+						<li>
+							<a href="/stories/{story.id}">{story.title}</a>
+							<span class="small muted story-kind">{story.kind}{#if story.community}{' · '}{story.community}{/if}{#if shared.length > 0}{' · '}Shared with {shared.map((nation) => nation.name).join(', ')}{/if}</span>
+						</li>
+					{/each}
+				</ul>
+				{#if data.stories.some((story) => story.awaitsReview)}
+					<p class="small muted">
+						The nation has not reviewed {data.stories.length === 1 ? 'this story' : data.stories.every((story) => story.awaitsReview) ? 'these stories' : 'some of these stories'} yet. Each story page has a link to ask for the story to be corrected or removed.
+					</p>
+				{/if}
+			</Collapsible>
+		{/if}
+
 		<!-- 8. Other nations in the same states: plain lists, never a ranking -->
 		{#if data.neighbors.length > 0}
 			<div class="no-print">
@@ -279,6 +299,12 @@
 		margin-top: var(--space-2);
 	}
 	.mentions {
+		display: block;
+	}
+	.stories li + li {
+		margin-top: var(--space-2);
+	}
+	.story-kind {
 		display: block;
 	}
 	.review-status {

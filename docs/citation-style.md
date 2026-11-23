@@ -66,7 +66,7 @@ In the text, cite a code section's subdivision as `[@key, (2)]` and an act's sec
 - Done 2026-11-21: statute source records. U.S. Code, C.F.R., Nevada and Hawaii records carry the printed abbreviation in `container-title-short`; Guam, Northern Mariana Islands and American Samoa records use each code's own form ("7 GCA § 42101", "8 CMC § 2904", "A.S.C.A. § 43.0302"), following the rule above for citing a jurisdiction's law as it cites it (project choice). Current U.S. Code sections carry no year (Indigo Book R16.1.2).
 - Done 2026-11-21: statute citations. `bluebook-law-review.csl` dropped a "§ 4" pinpoint from a statute and printed nothing for its short form (citeproc-js reported "reference with no printed form"); `project-law-review.csl` fixes both.
 - Confirm how the *Indigo Book* treats tribal codes, tribal court decisions and web-published tribal materials.
-- Done 2026-11-22: the website's footnote display. Markers in square brackets follow the claim, as Wikipedia shows them. The citation opens in a small window beside the marker on wide screens and in a drawer from the bottom on phones. The Sources list at the end links back to each marker (Trevor; [site/DESIGN.md, "Citations"](../site/DESIGN.md#6-components)).
+- Done 2026-11-22: the website's footnote display. Markers in square brackets follow the claim, as Wikipedia shows them. The citation opens in a small window beside the marker on wide screens and in a drawer from the bottom on phones. Changed 2026-11-23: pointing at a marker previews the citation, with a Copy button, and selecting the marker goes to the source in the Sources list (Trevor). The Sources list at the end links back to each marker (Trevor; [site/DESIGN.md, "Citations"](../site/DESIGN.md#6-components)).
 
 ## References
 

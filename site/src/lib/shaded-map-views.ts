@@ -187,7 +187,7 @@ export interface ShadedViewDefinition {
 	categories?: ShadeCategory[];
 	/** What the legend and tooltips call land areas the view has no fact for. */
 	unrecorded: string;
-	/** The note beside the map, before the notes on offices and insets. Plain text. */
+	/** The note beside the map: what the shades mean. Plain text. */
 	note: string;
 	/** The table's caption. */
 	caption: string;
@@ -217,7 +217,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	recognition: {
 		categories: recognitionCategories,
 		unrecorded: 'No federal or state status recorded',
-		note: 'Each nation’s land areas are shaded by the first status it holds: federal recognition, recognition by a state, a petition for federal acknowledgment, or a relationship recognized by Congress or under territorial law. The table shows every status each nation holds. A status is a legal fact, not a judgment of a nation’s standing as a people. Each nation’s page gives the status, its legal basis and its sources. Select an area to go to its nation’s row.',
+		note: 'Each nation’s land areas are shaded by the first status it holds: federal recognition, recognition by a state, a petition for federal acknowledgment, or a relationship recognized by Congress or under territorial law. The table shows every status each nation holds. A status is a legal fact, not a judgment of a nation’s standing as a people. Each nation’s page gives the status, its legal basis and its sources.',
 		caption: 'Nations with a federal, state or other status recorded, and which',
 		rows: 'nations',
 		kindHeaders: { federal: 'Federal', state: 'State', petitioning: 'Petitioning', other: 'Congress or territorial law' },
@@ -227,7 +227,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	'courts-and-peacemaking': {
 		categories: courtCategories,
 		unrecorded: 'No court or forum recorded yet',
-		note: 'Each nation’s land areas are shaded by the first of these it has: peacemaking or a traditional forum, a healing to wellness court, a tribal court, or only a Court of Indian Offenses, which the Bureau of Indian Affairs runs. The table shows every kind each nation has. A nation missing here may still have a court: the record is only as complete as its sources. Each nation’s page lists its courts and forums, with their sources. Select an area to go to its nation’s row.',
+		note: 'Each nation’s land areas are shaded by the first of these it has: peacemaking or a traditional forum, a healing to wellness court, a tribal court, or only a Court of Indian Offenses, which the Bureau of Indian Affairs runs. The table shows every kind each nation has. A nation missing here may still have a court: the record is only as complete as its sources. Each nation’s page lists its courts and forums, with their sources.',
 		caption: 'Nations with a court or forum recorded, and which kinds',
 		rows: 'nations',
 		kindHeaders: { peacemaking: 'Peacemaking or traditional forum', wellness: 'Wellness court', court: 'Tribal court', federal: 'Court of Indian Offenses' },
@@ -236,7 +236,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	'public-law-280': {
 		categories: publicLaw280Categories,
 		unrecorded: 'No Public Law 280 fact recorded yet',
-		note: 'Each nation’s land areas are shaded by one summary of its Public Law 280 facts. The summary is only a guide: what the state may do differs by subject, by state and over time, and some nations are in more than one state. Each nation’s page has the facts, the state each applies in and their sources. Nations with no land area on the map are still in the table. Select an area to go to its nation’s row.',
+		note: 'Each nation’s land areas are shaded by one summary of its Public Law 280 facts. The summary is only a guide: what the state may do differs by subject, by state and over time, and some nations are in more than one state. Each nation’s page has the facts, the state each applies in and their sources. Nations with no land area on the map are still in the table.',
 		caption: 'Nations with a Public Law 280 fact recorded, and a summary of what the facts say',
 		rows: 'nations',
 		categoryHeader: 'Summary',
@@ -246,7 +246,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	'violence-against-women-act': {
 		categories: violenceAgainstWomenActCategories,
 		unrecorded: 'Not recorded as exercising it',
-		note: 'Shaded areas belong to nations that sources record as exercising special Tribal criminal jurisdiction over non-Indians under the Violence Against Women Act (25 U.S.C. § 1304), or as holding a federal grant to prepare for it. A grant can pay for planning, so it is never counted as exercising. A nation missing here may still exercise it: the record is only as complete as its sources. Select an area to go to its nation’s row.',
+		note: 'Shaded areas belong to nations that sources record as exercising special Tribal criminal jurisdiction over non-Indians under the Violence Against Women Act (25 U.S.C. § 1304), or as holding a federal grant to prepare for it. A grant can pay for planning, so it is never counted as exercising. A nation missing here may still exercise it: the record is only as complete as its sources.',
 		caption: 'Nations recorded as exercising special Tribal criminal jurisdiction, or holding a grant to prepare for it',
 		rows: 'nations',
 		categoryHeader: 'Status',
@@ -256,7 +256,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	'other-jurisdiction-laws': {
 		categories: otherJurisdictionLawCategories,
 		unrecorded: 'None of these recorded',
-		note: 'Each nation’s land areas are shaded by the first of these that applies to it: a federal law other than Public Law 280 that gives a state criminal or civil jurisdiction, such as the Kansas Act or a land claims settlement act; jurisdiction over child custody cases reassumed under the Indian Child Welfare Act (25 U.S.C. § 1918); or longer sentences under the Tribal Law and Order Act (25 U.S.C. § 1302(b)). The table shows every one each nation has. Each nation’s page has the facts and their sources. Select an area to go to its nation’s row.',
+		note: 'Each nation’s land areas are shaded by the first of these that applies to it: a federal law other than Public Law 280 that gives a state criminal or civil jurisdiction, such as the Kansas Act or a land claims settlement act; jurisdiction over child custody cases reassumed under the Indian Child Welfare Act (25 U.S.C. § 1918); or longer sentences under the Tribal Law and Order Act (25 U.S.C. § 1302(b)). The table shows every one each nation has. Each nation’s page has the facts and their sources.',
 		caption: 'Nations under another federal law on jurisdiction, and which',
 		rows: 'nations',
 		kindHeaders: { 'state-statute': 'State jurisdiction under another law', 'child-welfare-reassumed': 'Child welfare jurisdiction reassumed', 'enhanced-sentencing': 'Enhanced sentencing' },
@@ -266,7 +266,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	'agreements-with-states': {
 		categories: agreementCategories,
 		unrecorded: 'No agreement recorded yet',
-		note: 'Each nation’s land areas are shaded by the first kind of agreement it has with a state, county, city or federal agency: cross-deputization or law enforcement, child welfare, tax, or another kind. Most sources do not say whether an agreement is still in force; each nation’s page gives the agreement, the other party, its date and its sources. Select an area to go to its nation’s row.',
+		note: 'Each nation’s land areas are shaded by the first kind of agreement it has with a state, county, city or federal agency: cross-deputization or law enforcement, child welfare, tax, or another kind. Most sources do not say whether an agreement is still in force; each nation’s page gives the agreement, the other party, its date and its sources.',
 		caption: 'Nations with an agreement recorded, and which kinds',
 		rows: 'nations',
 		kindHeaders: { 'cross-deputization': 'Cross-deputization', 'child-welfare-agreement': 'Child welfare', 'tax-agreement': 'Tax', other: 'Other' },
@@ -276,7 +276,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	gaming: {
 		categories: gamingCategories,
 		unrecorded: 'No gaming recorded yet',
-		note: 'Each nation’s land areas are shaded by the first of these it has: a Class III gaming compact with a state that the Secretary of the Interior approved or let take effect, Secretarial Procedures issued in place of a compact, a gaming ordinance the National Indian Gaming Commission approved, or a source saying it operates gaming. A compact counts even if it has since expired or been replaced; a disapproved compact does not. The table shows every one each nation has. Each nation’s page lists its compacts and their versions. Select an area to go to its nation’s row.',
+		note: 'Each nation’s land areas are shaded by the first of these it has: a Class III gaming compact with a state that the Secretary of the Interior approved or let take effect, Secretarial Procedures issued in place of a compact, a gaming ordinance the National Indian Gaming Commission approved, or a source saying it operates gaming. A compact counts even if it has since expired or been replaced; a disapproved compact does not. The table shows every one each nation has. Each nation’s page lists its compacts and their versions.',
 		caption: 'Nations with gaming recorded under the Indian Gaming Regulatory Act, and which kinds',
 		rows: 'nations',
 		kindHeaders: { compact: 'Class III compact', procedures: 'Secretarial Procedures', ordinance: 'Gaming ordinance', operates: 'Operates gaming' },
@@ -286,7 +286,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	treaties: {
 		categories: treatyCategories,
 		unrecorded: 'No treaty recorded yet',
-		note: 'Each nation’s land areas are shaded by how many ratified treaties with the United States its entry lists, counting treaties signed by the tribes and bands it descends from. Today’s lands are often far from the lands a treaty named, and many treaties ceded land rather than set it aside. A nation missing here may still have treaties: the record is only as complete as its sources. Each nation’s page lists its treaties, each linked to its text in Kappler’s Indian Affairs: Laws and Treaties. Select an area to go to its nation’s row.',
+		note: 'Each nation’s land areas are shaded by how many ratified treaties with the United States its entry lists, counting treaties signed by the tribes and bands it descends from. Today’s lands are often far from the lands a treaty named, and many treaties ceded land rather than set it aside. A nation missing here may still have treaties: the record is only as complete as its sources. Each nation’s page lists its treaties, each linked to its text in Kappler’s Indian Affairs: Laws and Treaties.',
 		caption: 'Nations with a ratified treaty recorded, and how many',
 		rows: 'nations',
 		categoryHeader: 'Treaties',
@@ -296,7 +296,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	'land-set-aside': {
 		categories: landSetAsideCategories,
 		unrecorded: 'Not recorded yet',
-		note: 'Each nation’s land areas are shaded by the first of these ways its reservation or other land base was set aside: by treaty, by executive order, by act of Congress, or by an agreement, purchase or other means. The table shows every way each nation’s land was set aside. Few entries record this yet, so most areas are unshaded. Each nation’s page names the instrument and its date, with their sources. Select an area to go to its nation’s row.',
+		note: 'Each nation’s land areas are shaded by the first of these ways its reservation or other land base was set aside: by treaty, by executive order, by act of Congress, or by an agreement, purchase or other means. The table shows every way each nation’s land was set aside. Few entries record this yet, so most areas are unshaded. Each nation’s page names the instrument and its date, with their sources.',
 		caption: 'Nations whose entry records how their land was set aside, and how',
 		rows: 'nations',
 		kindHeaders: { treaty: 'Treaty', 'executive-order': 'Executive order', statute: 'Act of Congress', other: 'Agreement or other' },
@@ -306,7 +306,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	'governing-documents': {
 		categories: governingDocumentCategories,
 		unrecorded: 'None on record yet',
-		note: 'Each nation’s land areas are shaded by the first of these on record: a constitution or articles of association, a published law code, court rules or law on dispute resolution, or only a corporate charter, which governs a business rather than the nation. The table shows every kind each nation has. A nation missing here may still have them: the record is only as complete as its sources, and some nations govern by unwritten law and custom. Each nation’s page links to its documents and their versions. Select an area to go to its nation’s row.',
+		note: 'Each nation’s land areas are shaded by the first of these on record: a constitution or articles of association, a published law code, court rules or law on dispute resolution, or only a corporate charter, which governs a business rather than the nation. The table shows every kind each nation has. A nation missing here may still have them: the record is only as complete as its sources, and some nations govern by unwritten law and custom. Each nation’s page links to its documents and their versions.',
 		caption: 'Nations with a governing document or published law on record, and which kinds',
 		rows: 'nations',
 		kindHeaders: { constitution: 'Constitution or articles', laws: 'Published laws', charter: 'Corporate charter' },
@@ -316,7 +316,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	'census-residents': {
 		categories: censusResidentCategories,
 		unrecorded: 'No count recorded yet',
-		note: 'Each land area is shaded by how many people the 2020 Census counted living there, of any race or tribal affiliation. This is not a count of any nation’s citizens: many citizens live elsewhere, and many residents are not citizens. Select an area to go to its row, which gives the count and the nations whose entries name the area.',
+		note: 'Each land area is shaded by how many people the 2020 Census counted living there, of any race or tribal affiliation. This is not a count of any nation’s citizens: many citizens live elsewhere, and many residents are not citizens.',
 		caption: 'People counted living in each land area in the 2020 Census',
 		rows: 'areas',
 		categoryHeader: 'Area',
@@ -326,7 +326,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	},
 	'heritage-languages': {
 		unrecorded: 'No language recorded yet',
-		note: 'Each land area is shaded where a nation whose entry names it records a heritage language, and each language’s name is written on the tiled map near the middle of its nations’ lands. Zoom in to see more names. Each language is listed under the name the nations’ entries give it, so one language can appear under more than one name, such as Anishinaabemowin and Ojibwe. Many nations share a language, and some record more than one. Select an area to go to its language’s row, which lists the nations that record it.',
+		note: 'Each land area is shaded where a nation whose entry names it records a heritage language, and each language’s name is written on the tiled map near the middle of its nations’ lands. Zoom in to see more names. Each language is listed under the name the nations’ entries give it, so one language can appear under more than one name, such as Anishinaabemowin and Ojibwe. Many nations share a language, and some record more than one.',
 		caption: 'Heritage languages each nation’s entry records, and the nations that record them',
 		rows: 'categories',
 		categoryHeader: 'Language',
@@ -339,7 +339,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 	},
 	'indian-health-service': {
 		unrecorded: 'No Area recorded yet',
-		note: 'Each nation’s land areas are shaded by the Indian Health Service Area its entry names, and each Area’s name is written on the map. Neighboring Areas are given different shades. Select an area to go to its Area’s row, which lists its nations.',
+		note: 'Each nation’s land areas are shaded by the Indian Health Service Area its entry names, and each Area’s name is written on the map. Neighboring Areas are given different shades.',
 		caption: 'Nations each Indian Health Service Area serves, as each nation’s entry records it',
 		rows: 'categories',
 		categoryHeader: 'Area',

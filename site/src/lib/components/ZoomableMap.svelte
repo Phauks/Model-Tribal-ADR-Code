@@ -9,8 +9,9 @@
 	// - the zoom in, zoom out and reset buttons;
 	// - the keys + and - to zoom, the arrow keys to move, 0 to reset, whenever
 	//   focus is anywhere in the map;
-	// - Ctrl or ⌘ with the scroll wheel, or a trackpad pinch, to zoom around the
-	//   pointer (a plain scroll still scrolls the page, and a short hint says so);
+	// - the scroll wheel over the map, or a trackpad pinch, to zoom around the
+	//   pointer (Trevor, 2026-11-23: the wheel over the map zooms the map; once
+	//   the map is back at its whole size, the wheel scrolls the page again);
 	// - a two-finger pinch on a touch screen, and dragging once zoomed in.
 	//
 	// The drawing's text, dots and lines are sized with --map-unzoom, so they
@@ -51,8 +52,6 @@
 	let surface: HTMLDivElement | undefined = $state();
 	let hasMap = $state(false);
 	let zoom = $state(1);
-	let hint = $state('');
-	let hintTimer: ReturnType<typeof setTimeout> | undefined;
 	const hintId = `map-keys-${Math.random().toString(36).slice(2, 8)}`;
 
 	/** The drawing, and the whole of it as it was built, read once from its viewBox. */
@@ -142,24 +141,14 @@
 		show(centerOn(map.full, map.view, middle), { glides: true });
 	}
 
-	function showHint(text: string): void {
-		hint = text;
-		clearTimeout(hintTimer);
-		hintTimer = setTimeout(() => (hint = ''), 1600);
-	}
-
 	function onWheel(event: WheelEvent): void {
 		const map = drawing();
 		if (!map) return;
-		// A plain scroll scrolls the page, so a reader moving down the page is
-		// never caught by the map. Trackpad pinches arrive with ctrlKey set.
-		if (!event.ctrlKey && !event.metaKey) {
-			showHint(/Mac|iPhone|iPad/.test(navigator.platform) ? 'Hold ⌘ and scroll to zoom the map' : 'Hold Ctrl and scroll to zoom the map');
-			return;
-		}
-		event.preventDefault();
 		const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? 400 : 1;
 		const delta = event.deltaY * unit;
+		// Scrolling out of a map already at its whole size scrolls the page, so the map never traps a reader moving down the page.
+		if (delta > 0 && map.view.width >= map.full.width - 0.001 && !event.ctrlKey) return;
+		event.preventDefault();
 		// A wheel click is about 100 units; a pinch sends many small steps.
 		const amount = Math.max(-0.5, Math.min(0.5, delta * (Math.abs(delta) >= 40 ? 0.002 : 0.01)));
 		const point = screenToMap(map.view, map.svg.getBoundingClientRect(), event.clientX, event.clientY);
@@ -281,7 +270,6 @@
 			for (const type of ['gesturestart', 'gesturechange', 'gestureend']) element.removeEventListener(type, onGesture);
 			window.removeEventListener('beforeprint', beforePrint);
 			window.removeEventListener('afterprint', afterPrint);
-			clearTimeout(hintTimer);
 		};
 	});
 </script>
@@ -322,9 +310,6 @@
 		onclickcapture={onClickCapture}
 	>
 		{@render children()}
-		{#if hint}
-			<p class="map-zoom-hint" aria-hidden="true">{hint}</p>
-		{/if}
 	</div>
 </div>
 
@@ -375,17 +360,6 @@
 		outline-offset: 2px;
 	}
 
-	.map-zoom-hint {
-		position: absolute;
-		inset: 0;
-		display: grid;
-		place-items: center;
-		margin: 0;
-		background: color-mix(in srgb, var(--color-paper) 70%, transparent);
-		color: var(--color-ink);
-		font-weight: var(--font-weight-semibold);
-		pointer-events: none;
-	}
 
 	@media print {
 		.map-surface {
