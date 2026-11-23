@@ -58,6 +58,9 @@ describe('the Your account group in the sidebar', () => {
 		expect(currentAccountPage('/profile/edit')?.label).toBe('Profile and credit');
 		expect(currentAccountPage('/profile/password')?.label).toBe('Sign-in and security');
 		expect(currentAccountPage('/profile/delete-account')?.label).toBe('Your data');
+		expect(currentAccountPage('/profile/nation-team')?.label).toBe('Nation team');
+		expect(currentAccountPage('/profile')?.label).toBe('Profile and credit');
+		expect(currentAccountPage('/account/unknown')).toBeUndefined();
 		expect(accountPages[0].link).toBe('/account');
 	});
 });

@@ -267,13 +267,18 @@
 	</ul>
 {/snippet}
 
-<!-- Wide screens: a column beside the page that the reader can hide. -->
+<!-- Wide screens: a column beside the page that the reader can hide. The
+     button that hides it is pinned to the bottom of the column (Trevor, Nov. 23,
+     2026); it stays the <summary>, and so the first thing in the column for a
+     keyboard or screen reader, because a <summary> must come first. -->
 <details class="sidebar-wide no-print" bind:this={wideSidebar} {open} ontoggle={remember}>
-	<summary>
-		<span class="when-open"><PanelLeftClose size={20} aria-hidden="true" /> Hide sidebar</span>
-		<span class="when-closed" title="Show sidebar"
-			><PanelLeftOpen size={20} aria-hidden="true" /><span class="visually-hidden">Show sidebar</span></span
-		>
+	<summary title={open ? undefined : 'Show sidebar'}>
+		<span class="toggle">
+			<span class="when-open"><PanelLeftClose size={20} aria-hidden="true" /> Hide sidebar</span>
+			<span class="when-closed"
+				><PanelLeftOpen size={20} aria-hidden="true" /><span class="visually-hidden">Show sidebar</span></span
+			>
+		</span>
 	</summary>
 	<nav aria-label="Site">
 		{@render sections('wide')}
@@ -442,51 +447,114 @@
 	}
 
 	@media (min-width: 64rem) {
+		/*
+		 * The column itself does not scroll. Its links scroll in the space above
+		 * a footer row pinned to the bottom of the column, which holds the
+		 * button that hides the sidebar, so the button is always in the same
+		 * place, however long the outline is. Hidden, the column is a narrow
+		 * strip with only the button that shows it again, in the same place, so
+		 * the pointer is already on it to undo.
+		 */
 		.sidebar-wide {
+			--sidebar-footer-height: calc(var(--layout-target-minimum) + 2 * var(--space-2) + 1px);
 			display: block;
 			position: sticky;
 			top: 0;
 			align-self: start;
 			height: 100dvh;
-			overflow-y: auto;
-			overscroll-behavior: contain;
+			overflow: hidden;
 			border-right: 1px solid var(--color-line);
-			padding: var(--space-3) var(--space-3) var(--space-6);
 			box-sizing: border-box;
 		}
 
-		.sidebar-wide > summary {
-			display: flex;
-			justify-content: flex-end;
-			margin-bottom: var(--space-2);
+		.sidebar-wide > nav {
+			position: absolute;
+			inset: 0 0 var(--sidebar-footer-height);
+			overflow-y: auto;
+			overscroll-behavior: contain;
+			padding: var(--space-4) var(--space-3) var(--space-4);
 		}
 
-		.sidebar-wide > summary > span {
+		.sidebar-wide > summary {
+			position: absolute;
+			inset: auto 0 0;
+			height: var(--sidebar-footer-height);
+			display: flex;
+			align-items: center;
+			padding: 0 var(--space-3);
+			border-top: 1px solid var(--color-line);
+			background: var(--color-paper);
+			box-sizing: border-box;
+		}
+
+		/* The summary is the control; focus shows on the button inside it, in the site's focus colors. */
+		.sidebar-wide > summary:focus-visible {
+			outline: none;
+			background-color: var(--color-paper);
+			box-shadow: none;
+		}
+
+		.sidebar-wide .toggle {
+			display: flex;
+			flex: 1;
+			align-items: center;
+			min-height: var(--layout-target-minimum);
+			padding: 0 var(--space-3);
+			border-radius: var(--radius-control);
+			color: var(--color-ink-muted);
+			font-size: var(--font-size-small);
+			font-weight: var(--font-weight-semibold);
+			transition:
+				background-color var(--motion-duration-short) var(--motion-easing-standard),
+				color var(--motion-duration-short) var(--motion-easing-standard);
+		}
+
+		.sidebar-wide .toggle > span {
 			display: inline-flex;
 			align-items: center;
-			gap: var(--space-2);
-			min-height: 2.25rem;
-			padding: 0 var(--space-2);
-			border-radius: var(--radius-control);
-			font-size: var(--font-size-small);
-			color: var(--color-ink-muted);
+			gap: var(--space-3);
 		}
 
-		.sidebar-wide > summary:hover > span {
+		.sidebar-wide .toggle :global(svg) {
+			flex: none;
+			transition: transform var(--motion-duration-short) var(--motion-easing-standard);
+		}
+
+		.sidebar-wide > summary:hover .toggle {
 			background: var(--color-surface);
 			color: var(--color-ink);
+		}
+
+		/* A nudge toward where the column goes: left to hide, right to show. */
+		.sidebar-wide[open] > summary:hover .toggle :global(svg) {
+			transform: translateX(-2px);
+		}
+
+		.sidebar-wide:not([open]) > summary:hover .toggle :global(svg) {
+			transform: translateX(2px);
+		}
+
+		.sidebar-wide > summary:focus-visible .toggle {
+			outline: 3px solid var(--color-focus-ring);
+			background-color: var(--color-focus);
+			color: var(--focus-text);
+			box-shadow: 0 0 0 3px var(--color-focus);
 		}
 
 		.sidebar-wide .when-closed {
 			display: none !important;
 		}
 
-		.sidebar-wide:not([open]) {
-			padding: var(--space-3) var(--space-1);
+		.sidebar-wide:not([open]) > summary {
+			padding: 0 var(--space-1);
+			justify-content: center;
 		}
 
-		.sidebar-wide:not([open]) > summary {
+		.sidebar-wide:not([open]) .toggle {
+			flex: none;
 			justify-content: center;
+			min-width: var(--layout-target-minimum);
+			padding: 0;
 		}
 
 		.sidebar-wide:not([open]) .when-open {

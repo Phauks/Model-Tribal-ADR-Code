@@ -162,3 +162,9 @@ Run by hand, in this order, never in continuous integration. They write the `gov
 | --- | --- | --- |
 | `governance/prepare_batches.py` | Picks each nation's constitution version to read and splits the texts into batches for AI readers, who follow `governance/reader-brief.md` | `scripts/requirements.txt` |
 | `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |
+
+## Printed book
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `books/publish_file_sets.py` | Uploads the editions that `npm run build:editions` writes in `pdf/output/editions/` to the bucket under `books/`, where the website's order routes read them; skips files already there and sends `details.json` last ([docs/book-orders.md](../docs/book-orders.md)). Lists the plan unless given `--confirm` | `boto3` and the R2 keys in the environment |

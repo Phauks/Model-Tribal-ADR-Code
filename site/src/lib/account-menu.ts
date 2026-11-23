@@ -16,6 +16,8 @@ export const accountPages: readonly AccountPage[] = [
 	{ label: 'Profile and credit', link: '/profile' },
 	// Files and links the person sent the project (docs/uploads.md).
 	{ label: 'Your uploads', link: '/uploads' },
+	// Asking for, and holding, a place on a nation's team that keeps its page (decision record 0041).
+	{ label: 'Nation team', link: '/profile/nation-team' },
 	{ label: 'Sign-in and security', link: '/account/security', within: ['/profile/password'] },
 	{ label: 'Email and notifications', link: '/account/email' },
 	{ label: 'Your data', link: '/account/data', within: ['/profile/delete-account'] }
@@ -30,10 +32,18 @@ export function isAccountPath(path: string): boolean {
 	return ['/account', '/profile', '/uploads'].some((link) => matches(link, path));
 }
 
-/** The entry for the page at this path. The most specific entry wins, so /profile/password is Sign-in and security. */
+/** The entry for the page at this path. The longest matching address wins, so /profile/password is Sign-in and security and /profile/nation-team is Nation team. */
 export function currentAccountPage(path: string): AccountPage | undefined {
-	const exact = accountPages.find((item) => item.within?.some((link) => matches(link, path)));
-	if (exact) return exact;
-	if (path === '/account') return accountPages[0];
-	return accountPages.find((item) => item.link !== '/account' && matches(item.link, path));
+	let best: AccountPage | undefined;
+	let bestLength = -1;
+	for (const item of accountPages) {
+		for (const link of [item.link, ...(item.within ?? [])]) {
+			const hit = link === '/account' ? path === link : matches(link, path);
+			if (hit && link.length > bestLength) {
+				best = item;
+				bestLength = link.length;
+			}
+		}
+	}
+	return best;
 }
