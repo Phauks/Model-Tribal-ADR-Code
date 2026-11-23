@@ -15,6 +15,7 @@ import {
 	fileUpload,
 	finishUpload,
 	forgetAccountUploads,
+	maySeeFiledFile,
 	isPublicFile,
 	readAnswers,
 	receivePiece,
@@ -357,5 +358,32 @@ describe('essay figures', () => {
 		expect(figure).toMatchObject({ status: 'filed', kind: 'sound', destination: 'essay-figure' });
 		expect(await isPublicFile(database, figure)).toBe(false);
 		expect(await uploadQueue(database, 'all')).toEqual([]);
+	});
+
+	it('are shown before publishing to people with comment access to the essay, and no one else', async () => {
+		await database
+			.prepare(`INSERT INTO essays (identifier, part, created_at) VALUES ('why-peacemaking', 'essays', '2026-11-23T00:00:00Z')`)
+			.run();
+		const bytes = png();
+		const started = await startUpload(
+			database,
+			fake.bucket,
+			{ accountIdentifier: sender, groupIdentifier: crypto.randomUUID(), fileName: 'circle.png', sizeBytes: bytes.length, wayIn: 'essay-figure', essayIdentifier: 'why-peacemaking' },
+			allowances.unlimited
+		);
+		await receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, 1, bytes);
+		await finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
+		const figure = (await uploadByReference(database, started.reference))!;
+		const person = (role: SignedInPerson['role']): SignedInPerson => ({
+			identifier: `person-${role}`,
+			displayName: role,
+			email: `${role}@example.org`,
+			role,
+			nationIdentifier: null
+		});
+		expect(await maySeeFiledFile(database, person('co-author'), figure)).toBe(true);
+		expect(await maySeeFiledFile(database, person('contributor'), figure)).toBe(false);
+		expect(await maySeeFiledFile(database, undefined, figure)).toBe(false);
+		expect(await maySeeFiledFile(database, reviewer, figure)).toBe(true);
 	});
 });

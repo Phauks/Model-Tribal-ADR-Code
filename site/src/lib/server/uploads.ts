@@ -17,7 +17,7 @@
  * in the activity log, in the same batch as the change.
  */
 import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
-import { can } from '#lib/permissions.ts';
+import { atLeast, can } from '#lib/permissions.ts';
 import {
 	allowances,
 	decidedStatuses,
@@ -44,6 +44,7 @@ import {
 	type WayIn
 } from '#lib/uploads.ts';
 import { youtubeVideoIdentifier } from '#lib/video-links.ts';
+import { accessTo } from './access.ts';
 import { eventStatement } from './events.ts';
 import { newIdentifier, newRequestReference, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
@@ -1264,6 +1265,23 @@ export async function forgetAccountUploads(
 	}
 	if (statements.length > 0) await database.batch(statements);
 	return { deleted: remove.length, kept: keep.length };
+}
+
+/**
+ * Whether a signed-in person may see a filed file that is not yet public:
+ * reviewers always, and, for an essay figure, anyone with at least comment
+ * access to its essay, so co-authors see figures while drafting.
+ */
+export async function maySeeFiledFile(
+	database: D1Database,
+	person: SignedInPerson | undefined,
+	upload: UploadRow
+): Promise<boolean> {
+	if (!person) return false;
+	if (can(person, 'review-uploads')) return true;
+	if (upload.way_in !== 'essay-figure' || !upload.essay_identifier) return false;
+	const access = await accessTo(database, person, { kind: 'essay', identifier: upload.essay_identifier });
+	return atLeast(access.level, 'comment');
 }
 
 /** Whether anyone may see a filed file: public, or embargoed and past its date, or a figure of a published essay. */
