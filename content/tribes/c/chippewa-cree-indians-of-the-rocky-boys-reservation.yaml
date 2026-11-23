@@ -632,6 +632,38 @@ jurisdiction:
   verification: read-in-full
   locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
   note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Montana Department of Public Health and Human Services
+  agreement: Title IV-E tribal-state agreement (2011 template, terms no longer than seven years)
+  state: MT
+  date: '2011'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.G, Montana
+  note: 'The source reads: “Chippewa-Cree Tribe of Rocky Boy Montana,”. Template agreement negotiated in 2011. A seven-year maximum term would end about 2018. Report date is March 2014, so current status needs confirming.'
+- kind: tax-agreement
+  other_party: Montana Department of Revenue
+  agreement: Tobacco tax agreement (with Amendments 1 to 4)
+  state: MT
+  status: in-effect
+  source: montana-department-of-revenue-state-and-tribal-tax-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table "State and Tribal Tax Agreements"
+  note: 'The source reads: “Chippewa Cree Tribe Tobacco Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+- kind: tax-agreement
+  other_party: Montana Department of Revenue
+  agreement: Alcoholic beverage tax agreement
+  state: MT
+  status: in-effect
+  source: montana-department-of-revenue-state-and-tribal-tax-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table "State and Tribal Tax Agreements"
+  note: 'The source reads: “Chippewa Cree Tribe Alcoholic Beverage Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
 land_establishment:
 - land_area: Rocky Boy's Reservation (about 56,035 acres of the former Fort Assinniboine Military Reservation), Montana
   method: statute

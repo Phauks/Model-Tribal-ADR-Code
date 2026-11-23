@@ -319,6 +319,17 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.51)
   note: Listed as "BOIS FORTE RESERVATION TRIBAL COUNCIL" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: Minnesota Department of Revenue
+  agreement: Tribal government tax agreement (collection assistance and audits for sales and use, cigarette and tobacco, liquor and motor fuel excise taxes)
+  state: MN
+  status: in-effect
+  source: minnesota-department-of-revenue-tribal-government-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table of tribal governments with tax agreements
+  note: 'The source reads: “Bois Forte Lake Vermillion and Nett Lake”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Bois Forte", matched to the roster by name and state.'
 treaties:
 - title: Treaty with the Chippewa, 1826
   signed: '1826-08-05'

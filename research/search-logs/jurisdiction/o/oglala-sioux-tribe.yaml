@@ -19,3 +19,21 @@ searches:
   query: State jurisdiction under optional Public Law 280 statutes and other federal laws (session laws, codes, Federal Register notices, opinions)
   outcome: found
   reason: '4 facts recorded: assumption-held-invalid, not-assumed, optional-state-consent-not-given.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-list
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: 'Cross-deputization, tax and child welfare agreements with states, counties and cities: state agency lists, the Justice Department''s sample agreement library, Title IV-E surveys'
+  outcome: found
+  reason: 1 agreement(s) recorded.
+  records:
+  - research/raw/2026-11-23/jurisdiction-agreements.json#oglala-sioux-tribe
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: report
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: Child welfare agreements with the state
+  outcome: not-found
+  reason: 'Not recorded: Lakota Oyate Wakanyeja Owicakiyapi (LOWO) (association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014). The report says LOWO is a privately chartered tribal child welfare agency organized under Oglala Sioux law, so the agreement party is an agency, not the nation itself.'

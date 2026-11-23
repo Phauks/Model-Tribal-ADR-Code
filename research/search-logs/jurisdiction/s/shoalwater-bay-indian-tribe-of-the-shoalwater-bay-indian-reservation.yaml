@@ -1,0 +1,23 @@
+profile: content/tribes/s/shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation.yaml
+topic: jurisdiction
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-list
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: 'Cross-deputization, tax and child welfare agreements with states, counties and cities: state agency lists, the Justice Department''s sample agreement library, Title IV-E surveys'
+  outcome: found
+  reason: 1 agreement(s) recorded.
+  records:
+  - research/raw/2026-11-23/jurisdiction-agreements.json#shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: statute
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: Tax agreements with the state
+  outcome: not-found
+  reason: 'A state source names the nation as one the state may make a tax agreement with, but does not say an agreement was signed: Cigarette tax contract (compact) authorized under RCW 43.06.460 (revised-code-of-washington-43-06-460-cigarette-tax-contracts).'

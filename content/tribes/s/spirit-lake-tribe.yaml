@@ -729,6 +729,28 @@ jurisdiction:
   verification: read-in-full
   locator: S. Rep. 116-130, Legislative History (p. 2)
   note: '"Not repealed" rests on absence: the Congress.gov API list of enacted laws for the 116th-119th Congresses (checked 2026-11-23; 119th list showed 144 laws) contains no repeal; govinfo BILLSTATUS for S. 2159 ends 2019-10-16 (placed on calendar) and for H.R. 3831 at 2019-08-02 (committee referral). The research did not find a 117th-119th Congress repeal bill. Verify before publishing. Also cites: statutes-at-large-60-229.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: North Dakota Department of Human Services
+  agreement: '[Spirit Lake Sioux Tribe] Tribal - State Foster Care Agreement'
+  state: ND
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for ND
+  note: 'The source reads: “[Spirit Lake Sioux Tribe] Tribal - State Foster Care Agreement”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: North Dakota Department of Human Services
+  agreement: Title IV-E agreement with addenda
+  state: ND
+  date: '1983-09-30'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.K, North Dakota
+  note: 'The source reads: “Devils Lake Sioux Tribe/Spirit Lake Sioux Tribe original agreement dated September 30, 1983”. Original 1983 agreement with later addenda; a 2022 state presentation (not used as a source here) says an enhanced agreement was signed in September 2019. Report date is March 2014, so current status needs confirming.'
 treaties:
 - title: Treaty with the Sauk and Foxes, etc., 1830
   signed: '1830-07-15'

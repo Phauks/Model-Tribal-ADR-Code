@@ -6,6 +6,7 @@
  */
 import { folderDepthLimit, folders, type Folder, type InboxView, type MailAddress, type TagColor, type ThreadFolder } from '#lib/mail.ts';
 import { actionStatement, currentTime, type MailContext } from './context.ts';
+import { attachmentChecks, forgetAttachmentScans, type AttachmentCheck } from './scans.ts';
 
 export interface ThreadSummary {
 	identifier: string;
@@ -290,7 +291,8 @@ export interface MessageDetail {
 	error: string | null;
 	createdAt: string;
 	messageId: string | null;
-	attachments: { identifier: string; filename: string; mediaType: string; size: number; inline: boolean }[];
+	/** check is the virus check of a received attachment, null for one the project sent. */
+	attachments: { identifier: string; filename: string; mediaType: string; size: number; inline: boolean; check: AttachmentCheck | null }[];
 }
 
 export interface ThreadDetail extends ThreadSummary {
@@ -329,11 +331,15 @@ export async function getThread(context: MailContext, identifier: string, person
 		.all<Record<string, string | number | null>>();
 	const { results: attachments } = await database
 		.prepare(
-			`SELECT a.identifier, a.message_identifier, a.filename, a.media_type, a.size, a.inline FROM mail_attachments a
+			`SELECT a.identifier, a.message_identifier, a.filename, a.media_type, a.size, a.inline, a.bucket_key, m.direction FROM mail_attachments a
 			 JOIN mail_messages m ON m.identifier = a.message_identifier WHERE m.thread_identifier = ? ORDER BY a.filename`
 		)
 		.bind(identifier)
-		.all<{ identifier: string; message_identifier: string; filename: string; media_type: string; size: number; inline: number }>();
+		.all<{ identifier: string; message_identifier: string; filename: string; media_type: string; size: number; inline: number; bucket_key: string; direction: string }>();
+	const checks = await attachmentChecks(
+		context,
+		attachments.map((item) => ({ identifier: item.identifier, key: item.bucket_key, received: item.direction === 'in' }))
+	);
 	const { results: notes } = await database
 		.prepare(
 			`SELECT n.identifier, n.body, p.display_name AS personName, n.created_at AS createdAt FROM mail_notes n
@@ -389,7 +395,14 @@ export async function getThread(context: MailContext, identifier: string, person
 			messageId: (row.message_id as string | null) ?? null,
 			attachments: attachments
 				.filter((item) => item.message_identifier === row.identifier)
-				.map((item) => ({ identifier: item.identifier, filename: item.filename, mediaType: item.media_type, size: item.size, inline: item.inline === 1 }))
+				.map((item) => ({
+					identifier: item.identifier,
+					filename: item.filename,
+					mediaType: item.media_type,
+					size: item.size,
+					inline: item.inline === 1,
+					check: checks.get(item.identifier) ?? null
+				}))
 		})),
 		notes,
 		actions,
@@ -742,6 +755,7 @@ export async function purgeDeleted(context: MailContext): Promise<number> {
 			.bind(identifier)
 			.all<{ key: string }>();
 		if (keys.length) await context.bucket.delete(keys.map((row) => row.key));
+		await forgetAttachmentScans(context, keys.map((row) => row.key));
 		await context.database.batch([
 			context.database.prepare('DELETE FROM mail_search WHERE thread_identifier = ?').bind(identifier),
 			context.database.prepare('UPDATE outreach_recipients SET thread_identifier = NULL, message_identifier = NULL WHERE thread_identifier = ?').bind(identifier),
@@ -755,9 +769,12 @@ export async function purgeDeleted(context: MailContext): Promise<number> {
 /** One attachment's row, for the download route. */
 export async function getAttachment(context: MailContext, identifier: string) {
 	return context.database
-		.prepare('SELECT filename, media_type AS mediaType, size, bucket_key AS bucketKey FROM mail_attachments WHERE identifier = ?')
+		.prepare(
+			`SELECT a.filename, a.media_type AS mediaType, a.size, a.bucket_key AS bucketKey, m.direction = 'in' AS received FROM mail_attachments a
+			 JOIN mail_messages m ON m.identifier = a.message_identifier WHERE a.identifier = ?`
+		)
 		.bind(identifier)
-		.first<{ filename: string; mediaType: string; size: number; bucketKey: string }>();
+		.first<{ filename: string; mediaType: string; size: number; bucketKey: string; received: number }>();
 }
 
 /** The bucket key of a message's HTML, for the sandboxed view. */

@@ -689,6 +689,38 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: California Department of Social Services
+  agreement: Title IV-E Intergovernmental Agreement between the California Department of Social Services and the Yurok Tribe of California
+  state: CA
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for CA
+  note: 'The source reads: “Title IV-E Intergovernmental Agreement between the California Department of Social Services and the Yurok Tribe of California”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: California Department of Social Services
+  agreement: Title IV-E intergovernmental agreement
+  state: CA
+  date: '2007-05-28'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.C, California
+  note: 'The source reads: “one with the Yurok Tribe on May 28, 2007”. The report says neither the Karuk nor the Yurok agreement was "currently effective" because no tribal plan had been developed. Report date is March 2014, so current status needs confirming.'
+- kind: cross-deputization
+  other_party: County of Del Norte and Del Norte County Sheriff, California
+  agreement: Memorandum of understanding (deputization of tribal public safety officers)
+  state: CA
+  status: unknown
+  source: yurok-tribe-del-norte-county-sheriff-memorandum-of-understanding
+  confidence: high
+  verification: read-in-full
+  locator: Findings and deputization provisions
+  note: 'The source reads: “agrees to deputize qualified Yurok Tribe Department of Public Safety Officers who”. The copy is undated. The posted copy is a sample in a federal resource library; current status is not confirmed.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'
