@@ -154,7 +154,8 @@ const order = [
 	'administrative-hearings'
 ];
 
-function categoryOf(kind: string): { id: string; heading: string } {
+/** The heading a kind of court or service is listed under on nation pages. */
+export function categoryOf(kind: string): { id: string; heading: string } {
 	if (courtKinds.has(kind)) return categories.courts;
 	if (kind.includes('peacemaking')) return categories.peacemaking;
 	const known = categories[kind];
