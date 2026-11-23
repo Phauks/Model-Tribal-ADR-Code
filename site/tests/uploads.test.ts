@@ -32,6 +32,8 @@ import {
 	nationUploads,
 	nationSpokenFor,
 	uploadDetail,
+	settlePulledFiles,
+	isCaptureKey,
 	type Filing,
 	type SenderAnswers
 } from '#lib/server/uploads.ts';
@@ -76,12 +78,22 @@ function fakeBucket() {
 			return handle(key, uploadId);
 		},
 		resumeMultipartUpload: (key: string, uploadId: string) => handle(key, uploadId),
-		async put(key: string, value: Uint8Array) {
-			stored.set(key, new Uint8Array(value));
+		async put(key: string, value: Uint8Array | string) {
+			stored.set(key, typeof value === 'string' ? new TextEncoder().encode(value) : new Uint8Array(value));
 		},
 		async get(key: string) {
 			const value = stored.get(key);
-			return value ? { size: value.length, arrayBuffer: async () => value.slice().buffer } : null;
+			return value
+				? { size: value.length, arrayBuffer: async () => value.slice().buffer, text: async () => new TextDecoder().decode(value) }
+				: null;
+		},
+		async head(key: string) {
+			const value = stored.get(key);
+			return value ? { key, size: value.length } : null;
+		},
+		async list(options: { prefix?: string; limit?: number }) {
+			const keys = [...stored.keys()].filter((key) => key.startsWith(options.prefix ?? '')).sort();
+			return { objects: keys.slice(0, options.limit ?? 1000).map((key) => ({ key, size: stored.get(key)!.length })), truncated: false };
 		},
 		async delete(keys: string[]) {
 			for (const key of keys) stored.delete(key);
@@ -151,7 +163,7 @@ async function sendWhole(bytes: Uint8Array, fileName: string, extra: Partial<Sen
 		database,
 		fake.bucket,
 		{ accountIdentifier: sender, groupIdentifier: crypto.randomUUID(), fileName, sizeBytes: bytes.length, wayIn: 'send-files', answers: { ...answers, ...extra } },
-		allowances.signedIn
+		allowances.unlimited
 	);
 	for (let number = 1; number <= started.pieceCount; number++) {
 		const piece = bytes.subarray((number - 1) * pieceBytes, Math.min(number * pieceBytes, bytes.length));
@@ -192,12 +204,12 @@ describe('sending files', () => {
 		const bytes = new Uint8Array(pieceBytes + 1000);
 		bytes.set([0, 0, 0, 0x20, ...new TextEncoder().encode('ftypisom')]);
 		const input = { accountIdentifier: sender, groupIdentifier: crypto.randomUUID(), fileName: 'talk.mp4', sizeBytes: bytes.length, wayIn: 'send-files' as const, answers };
-		const started = await startUpload(database, fake.bucket, input, allowances.signedIn);
+		const started = await startUpload(database, fake.bucket, input, allowances.unlimited);
 		expect(started.pieceCount).toBe(2);
 		await receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, 1, bytes.subarray(0, pieceBytes));
 
 		// The page was closed; choosing the same file again picks up at piece 2.
-		const again = await startUpload(database, fake.bucket, input, allowances.signedIn);
+		const again = await startUpload(database, fake.bucket, input, allowances.unlimited);
 		expect(again).toMatchObject({ reference: started.reference, received: [1] });
 		await receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, 2, bytes.subarray(pieceBytes));
 		await finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
@@ -215,7 +227,7 @@ describe('sending files', () => {
 			database,
 			fake.bucket,
 			{ accountIdentifier: sender, groupIdentifier: crypto.randomUUID(), fileName: 'a.txt', sizeBytes: 10, wayIn: 'send-files', answers },
-			allowances.signedIn
+			allowances.unlimited
 		);
 		await expect(
 			receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, 1, new Uint8Array(9))
@@ -256,7 +268,7 @@ describe('sending files', () => {
 		const added = await addYoutubeLink(
 			database,
 			{ accountIdentifier: sender, link: 'https://youtu.be/dQw4w9WgXcQ', wayIn: 'send-files', answers },
-			allowances.signedIn
+			allowances.unlimited
 		);
 		expect(await uploadByReference(database, added.reference)).toMatchObject({
 			source: 'youtube',
@@ -265,7 +277,7 @@ describe('sending files', () => {
 			status: 'waiting-for-review'
 		});
 		await expect(
-			addYoutubeLink(database, { accountIdentifier: sender, link: 'https://vimeo.com/1', wayIn: 'send-files', answers }, allowances.signedIn)
+			addYoutubeLink(database, { accountIdentifier: sender, link: 'https://vimeo.com/1', wayIn: 'send-files', answers }, allowances.unlimited)
 		).rejects.toThrow(/YouTube/);
 	});
 });
@@ -511,5 +523,82 @@ describe('essay figures', () => {
 		expect(await maySeeFiledFile(database, person('contributor'), figure)).toBe(false);
 		expect(await maySeeFiledFile(database, undefined, figure)).toBe(false);
 		expect(await maySeeFiledFile(database, reviewer, figure)).toBe(true);
+	});
+});
+
+describe('pulled files', () => {
+	const pdf = new TextEncoder().encode('%PDF-1.4\n1 0 obj << /Type /Catalog >> endobj\ntrailer << /Root 1 0 R >>\n%%EOF\n');
+
+	async function sendPulled(note: string | null = 'Sealaska page was spam') {
+		const started = await startUpload(
+			database,
+			fake.bucket,
+			{
+				accountIdentifier: sender,
+				groupIdentifier: crypto.randomUUID(),
+				fileName: 'viewcontent.pdf',
+				sizeBytes: pdf.length,
+				wayIn: 'send-files',
+				fromPullList: true,
+				note
+			},
+			allowances.unlimited
+		);
+		await receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, 1, pdf);
+		await finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
+		await scanned(started.reference, 'clean');
+		return (await uploadByReference(database, started.reference))!;
+	}
+
+	it('need no answers, stay out of the review queue and are offered for intake once clean', async () => {
+		const upload = await sendPulled();
+		expect(upload.status).toBe('waiting-for-review');
+		expect(upload.from_pull_list).toBe(1);
+		expect(upload.description).toBe('Sealaska page was spam');
+		expect(await uploadQueue(database, 'open')).toEqual([]);
+		const offer = JSON.parse(new TextDecoder().decode(fake.stored.get(`intake/waiting/${upload.reference}.json`)!));
+		expect(offer).toMatchObject({ reference: upload.reference, key: upload.original_key, fileName: 'viewcontent.pdf', sizeBytes: pdf.length });
+		const mine = await uploadsOfAccount(database, sender);
+		expect(mine[0]).toMatchObject({ reference: upload.reference, pulled: true });
+	});
+
+	it('are filed when the intake answers, and the upload’s own copy is deleted', async () => {
+		const upload = await sendPulled();
+		fake.stored.set('articles/vance-2016.pdf', pdf);
+		await fake.bucket.put(`intake/filed/${upload.reference}.json`, JSON.stringify({ captureKey: 'articles/vance-2016.pdf' }));
+		expect(await settlePulledFiles(database, fake.bucket)).toBe(1);
+		const filed = (await uploadByReference(database, upload.reference))!;
+		expect(filed).toMatchObject({ status: 'filed', destination: 'research-library', access_level: 'restricted', filed_key: 'articles/vance-2016.pdf' });
+		expect(filed.deleted_at).not.toBeNull();
+		expect(fake.stored.has(upload.original_key!)).toBe(false);
+		expect(fake.stored.has('articles/vance-2016.pdf')).toBe(true);
+		expect([...fake.stored.keys()].filter((key) => key.startsWith('intake/'))).toEqual([]);
+	});
+
+	it('are marked not used when the intake declines them', async () => {
+		const upload = await sendPulled(null);
+		await fake.bucket.put(`intake/declined/${upload.reference}.json`, JSON.stringify({ reason: 'A sign-in page, not the code.' }));
+		expect(await settlePulledFiles(database, fake.bucket)).toBe(1);
+		expect(await uploadByReference(database, upload.reference)).toMatchObject({ status: 'not-used', decision_reason: 'A sign-in page, not the code.' });
+	});
+
+	it('wait when the filed copy is missing or the note names a key outside the captures', async () => {
+		const upload = await sendPulled();
+		await fake.bucket.put(`intake/filed/${upload.reference}.json`, JSON.stringify({ captureKey: 'articles/missing.pdf' }));
+		expect(await settlePulledFiles(database, fake.bucket)).toBe(0);
+		expect((await uploadByReference(database, upload.reference))!.status).toBe('waiting-for-review');
+		expect(fake.stored.has(upload.original_key!)).toBe(true);
+		expect(isCaptureKey('uploads/x/original')).toBe(false);
+		expect(isCaptureKey('articles/../uploads/x')).toBe(false);
+		expect(isCaptureKey('westlaw/usc-8-1359.pdf')).toBe(true);
+	});
+
+	it('are offered again when the note went missing, and withdrawing drops the note', async () => {
+		const upload = await sendPulled();
+		fake.stored.delete(`intake/waiting/${upload.reference}.json`);
+		await settlePulledFiles(database, fake.bucket);
+		expect(fake.stored.has(`intake/waiting/${upload.reference}.json`)).toBe(true);
+		await withdrawUpload(database, fake.bucket, upload);
+		expect(fake.stored.has(`intake/waiting/${upload.reference}.json`)).toBe(false);
 	});
 });

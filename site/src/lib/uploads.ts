@@ -31,8 +31,6 @@ export const largestFileBytes: Record<UploadKind, number> = {
 /** The largest file of any kind, checked before the first piece arrives. */
 export const largestAnyFileBytes = Math.max(...Object.values(largestFileBytes));
 
-/** Files one person can choose at a time on the Send files page. */
-export const filesAtOnce = 20;
 
 /** Where an upload's bytes are: a file in the private bucket, or a YouTube video it links to. */
 export const uploadSources = ['file', 'youtube'] as const;
@@ -84,6 +82,13 @@ export const uploadStatusExplanations: Record<UploadStatus, string> = {
 	'kept-for-reference': 'Used privately as background for research. It is not shown on the site.',
 	'not-used': 'We did not use it.',
 	withdrawn: 'You withdrew it, and its file was deleted.'
+};
+
+/** The line under an intake file's status, where it differs: these are filed by the intake script, not reviewed. */
+export const pulledStatusExplanations: Partial<Record<UploadStatus, string>> = {
+	'waiting-for-review': 'Waiting to be filed.',
+	filed: 'Filed in the research library.',
+	'not-used': 'Not filed.'
 };
 
 /** The sender's own label in the workspace, where "your" would be wrong. */
@@ -199,15 +204,17 @@ export const destinationLabels: Record<Destination, string> = {
 	'research-library': 'Research library (private)'
 };
 
-/** Per-account limits (decision record 0038). Workspace editors have none. */
+/**
+ * Per-account limits. None since Nov. 23, 2026 (decision record 0038,
+ * "Limits"): Trevor, "Assume if they have access to this page they have been
+ * vetted." The shape stays so a limit can come back for one kind of account.
+ */
 export interface UploadAllowance {
 	filesPerDay: number;
 	waitingBytes: number;
 }
 
 export const allowances = {
-	signedIn: { filesPerDay: 20, waitingBytes: 5 * 1024 * megabyte },
-	confirmedContributor: { filesPerDay: 50, waitingBytes: 20 * 1024 * megabyte },
 	unlimited: { filesPerDay: Number.POSITIVE_INFINITY, waitingBytes: Number.POSITIVE_INFINITY }
 } as const satisfies Record<string, UploadAllowance>;
 
