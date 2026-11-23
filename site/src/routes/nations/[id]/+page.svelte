@@ -67,7 +67,7 @@
 		{#if !page.withdrawn}
 			<!-- Recognition badges (Trevor, Nov. 22, 2026); the full wording and legal basis are in At a glance. -->
 			{#if page.badges.length > 0}
-				<p class="recognition-line"><RecognitionBadges badges={page.badges} /></p>
+				<p class="recognition-line"><RecognitionBadges badges={page.badges} explanations={page.badgeExplanations} /></p>
 			{/if}
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">

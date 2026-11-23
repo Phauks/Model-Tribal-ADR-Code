@@ -9,6 +9,7 @@ import { recognitionLabel } from '../nation-labels.ts';
 import { recognitionBadge, type RecognitionBadge } from '../recognition-badges.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { publicCopyFor, sources, type NationRecord } from './content.ts';
+import { explainStatus, type BadgeExplanation, type ExplainedFact } from '../recognition-explanation.ts';
 
 export interface RecognitionView {
 	/** The status in words, such as "Federally recognized". */
@@ -66,4 +67,26 @@ export function recognitionViews(record: NationRecord): RecognitionView[] {
 		else if (!existing.short && view.short) byLabel.set(view.label, { ...existing, short: view.short });
 	}
 	return [...byLabel.values()];
+}
+
+/**
+ * What each badge on a nation's page opens, by badge label: how the nation
+ * came to hold the status, with linked citations (src/lib/recognition-explanation.ts).
+ */
+export function recognitionExplanations(record: NationRecord): Record<string, BadgeExplanation> {
+	const byLabel = new Map<string, { label: string; facts: RecognitionFact[] }>();
+	for (const fact of record.recognition ?? []) {
+		const view = recognitionView(fact);
+		if (!view.badge) continue;
+		const group = byLabel.get(view.badge.label) ?? { label: view.label, facts: [] };
+		group.facts.push(fact);
+		byLabel.set(view.badge.label, group);
+	}
+	const explanations: Record<string, BadgeExplanation> = {};
+	for (const [badge, group] of byLabel) {
+		explanations[badge] = explainStatus(group.label, group.facts as ExplainedFact[], (fact: ExplainedFact) =>
+			recognitionView(fact as RecognitionFact).legalBasis
+		);
+	}
+	return explanations;
 }

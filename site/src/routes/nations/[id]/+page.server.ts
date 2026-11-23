@@ -21,7 +21,7 @@ import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, whereInSource, type CitationMark } from '#lib/server/source-uses.ts';
 import { sourceAnchor } from '#lib/citation-marks.ts';
 import { recognitionBadges } from '#lib/recognition-badges.ts';
-import { recognitionView } from '#lib/server/recognition.ts';
+import { recognitionExplanations, recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
@@ -983,6 +983,8 @@ export const load: PageServerLoad = ({ params }) => {
 		listedName: record.names.official,
 		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
 		badges: recognitionBadges(record.recognition ?? []),
+		// What each badge opens: how the nation got the status (Trevor, Nov. 23, 2026).
+		badgeExplanations: recognitionExplanations(record),
 		review: status,
 		withdrawn: record.review?.status === 'withdrawn-at-request',
 		// The copies of the nation's documents this site holds, to save offline or download as a ZIP.
