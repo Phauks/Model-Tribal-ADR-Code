@@ -134,7 +134,7 @@ export async function deleteAccountSettingsCopy(database: D1Database, accountIde
  * under This device.
  */
 export async function accountDataExport(database: D1Database, account: SignedInAccount): Promise<Record<string, unknown>> {
-	const [accountRow, person, profile, versions, follows, followSettings, settingsCopy, sessions, uploads, sponsorships] = await Promise.all([
+	const [accountRow, person, profile, versions, follows, followSettings, settingsCopy, sessions, uploads, eventRegistrations, sponsorships] = await Promise.all([
 		database
 			.prepare(
 				'SELECT email, email_verified_at, password_changed_at, created_at, last_signed_in_at, password_hash IS NOT NULL AS has_password FROM accounts WHERE identifier = ?'
@@ -169,6 +169,17 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 			.prepare(
 				`SELECT reference, kind, status, file_name, media_type, size_bytes, youtube_identifier, title, description, origin, received_at
 				 FROM uploads WHERE account_identifier = ? ORDER BY received_at`
+			)
+			.bind(account.subject)
+			.all<Record<string, unknown>>(),
+		// Events registered for (migrations/20261123T0450_add_event_calendar.sql), with the access needs given.
+		database
+			.prepare(
+				`SELECT e.title AS event, e.starts_at, t.name AS seat, r.name, r.status, r.access_needs, r.wants_reminders, r.registered_at, r.cancelled_at
+				 FROM calendar_registrations r
+				 JOIN calendar_events e ON e.identifier = r.event_identifier
+				 JOIN calendar_ticket_types t ON t.identifier = r.ticket_identifier
+				 WHERE r.account_identifier = ? ORDER BY r.registered_at`
 			)
 			.bind(account.subject)
 			.all<Record<string, unknown>>(),
@@ -207,6 +218,7 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 			answers: JSON.parse(row.snapshot) as unknown
 		})),
 		uploads: uploads.results,
+		eventRegistrations: eventRegistrations.results,
 		sponsorshipsYouManage: sponsorships.results.map((row) => ({ name: row.name, managerSince: row.added_at })),
 		followedPages: follows.results,
 		emailAboutFollowedPages: followSettings ?? { email: 'daily' },

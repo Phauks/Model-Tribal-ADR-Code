@@ -12,6 +12,7 @@
 		<ul class="footer-links">
 			<li><a href="/about">About</a></li>
 			<li><a href="/sponsor">Sponsorship</a></li>
+			<li><a href="/events">Events</a></li>
 			<li><a href="/people">People</a></li>
 			<li><a href="/about/timeline">Timeline to public review</a></li>
 			<li><a href="/requests">Request a correction or removal</a></li>

@@ -31,6 +31,8 @@ describe('guarding changes', () => {
 		expect(isGuardedPath('/workspace')).toBe(true);
 		expect(isGuardedPath('/workspace/access')).toBe(true);
 		expect(isGuardedPath('/sign-out')).toBe(true);
+		expect(isGuardedPath('/events/peacemaking-in-practice')).toBe(true);
+		expect(isGuardedPath('/eventsx')).toBe(false);
 		expect(isGuardedPath('/workspaces')).toBe(false);
 		expect(isGuardedPath('/requests')).toBe(false);
 	});

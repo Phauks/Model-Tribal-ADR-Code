@@ -55,6 +55,7 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0045](0045-separate-settings-from-account-settings.md) | Keep display settings on the device and account settings on Account pages | Accepted |
 | [0046](0046-scan-files-with-clamav-in-a-cloudflare-container.md) | Scan files for malware with ClamAV in a Cloudflare Container, and hold them until clean | Accepted |
 | [0047](0047-show-tribal-court-opinions-from-the-caselaw-access-project.md) | Show tribal court opinions from the Caselaw Access Project on the website | Accepted |
+| [0048](0048-events-and-registration.md) | List events on the website and take registrations, with continuing legal education later | Accepted |
 | [0049](0049-draft-model-court-forms-before-gate-2.md) | Draft model court forms for people using Tribal courts before Gate 2 | Accepted |
 | [0050](0050-sponsor-accounts-on-the-account-pages.md) | Give sponsors an account page, with billing on Stripe's own pages | Proposed |
 
