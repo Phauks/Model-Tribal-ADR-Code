@@ -825,7 +825,7 @@ interface StateNeighbors {
 const neighborListLimit = 30;
 
 /**
- * "Other nations in the same states": for each state where sources record
+ * "Nearby Nations" (Trevor's heading, Nov. 23, 2026): for each state where sources record
  * the nation, the other nations recorded there, in alphabetical order. A
  * plain list, never a ranking or a comparison (site/DESIGN.md, "Nation
  * pages"). Long lists give way to a link to the state's page.
@@ -1179,7 +1179,7 @@ export const load: PageServerLoad = ({ params }) => {
 	if (ties.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {
-		items.push({ label: 'Other nations in the same states', link: '#neighbors-heading' });
+		items.push({ label: 'Nearby Nations', link: '#neighbors-heading' });
 	}
 	items.push({ label: 'Sources', link: '#sources-heading' });
 

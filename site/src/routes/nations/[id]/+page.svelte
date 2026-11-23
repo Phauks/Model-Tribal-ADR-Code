@@ -224,10 +224,10 @@
 			</Collapsible>
 		{/if}
 
-		<!-- 8. Other nations in the same states: plain lists, never a ranking -->
+		<!-- 8. Nearby Nations, the other nations in the same states: plain lists, never a ranking -->
 		{#if data.neighbors.length > 0}
 			<div class="no-print">
-				<Collapsible heading="Other nations in the same states" identifier="neighbors-heading">
+				<Collapsible heading="Nearby Nations" identifier="neighbors-heading">
 					{#each data.neighbors as entry (entry.state)}
 						<h3 class="neighbors-state">{entry.stateName}</h3>
 						{#if entry.nations.length > 0}
@@ -255,9 +255,9 @@
 	{/snippet}
 </RecordPage>
 
-<!-- A legal section with nothing to show: the short answer, then how far the search went. -->
+<!-- A legal section with nothing to show: the short answer, then how far the search went once one is finished. -->
 {#snippet emptySection(empty: { text: string; note: string })}
-	<p class="empty-section"><strong>{empty.text}.</strong> {empty.note}</p>
+	<p class="empty-section"><strong>{empty.text}.</strong>{#if empty.note}{' '}{empty.note}{/if}</p>
 {/snippet}
 
 <!-- 3. At a glance, with the seal and the map, then the contacts. -->

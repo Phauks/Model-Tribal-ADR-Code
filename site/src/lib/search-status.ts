@@ -5,9 +5,10 @@
  * found, so a reader can see whether recourse may be available.
  *
  * The page never says that a court or a law does not exist: a nation can hear
- * disputes through its council, or publish its laws only on paper. It says
- * what was found and how far the search went, from the nation's search log
- * where there is one (research/search-logs/, decision record 0025).
+ * disputes through its council, or publish its laws only on paper. Until a
+ * search is finished it says only "None Identified" (Trevor, Nov. 23, 2026).
+ * Once the nation's search log records a finished search, it says what was
+ * found and how far the search went (research/search-logs/, decision record 0025).
  */
 import { readableDate } from './readable-date.ts';
 
@@ -24,7 +25,7 @@ export interface SearchSummary {
 export interface EmptyNote {
 	/** The short answer, such as "None found". */
 	text: string;
-	/** How far the search went, in a sentence or two. */
+	/** How far the search went, in a sentence or two; empty when no search is finished. */
 	note: string;
 }
 
@@ -66,20 +67,13 @@ export function emptySectionNote(
 				text: 'None found',
 				note: `The project searched ${places} for ${what}${where}${when}, and found none. ${mayStillExist}`
 			};
-		case 'partly-searched':
-			return {
-				text: 'None found yet',
-				note: `The project has searched ${places} for ${what} so far${where}${when}. The search is not finished.`
-			};
 		case 'found':
 			return {
 				text: 'None shown yet',
 				note: `A search${summary.lastSearched ? ` on ${readableDate(summary.lastSearched)}` : ''} found a lead on ${what}, which is being checked before it is shown here.`
 			};
 		default:
-			return {
-				text: 'None found yet',
-				note: `None of the sources checked so far name ${what}, and a full search has not been made yet.`
-			};
+			// Until a search is finished, just the short answer (Trevor, Nov. 23, 2026).
+			return { text: 'None Identified', note: '' };
 	}
 }
