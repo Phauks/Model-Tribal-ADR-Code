@@ -160,6 +160,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Shishmaref
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: Listed as "Native Village of Shishmaref". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Norton Sound Service Area
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: 'The source''s words: "Native Village of Shishmaref".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Shismaref" among organizations under constitutions approved
@@ -187,6 +204,75 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the Act of Congress of June 18, 1934
+  quote: by authority of the Act of Congress of June 18,
+  source: constitution-native-village-of-shishmaref-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-02'
+  locator: Preamble
+  document_version:
+    document: native-village-of-shishmaref-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan badly garbled in Article III (membership choice and governing body) and Article V, so the governing-body name is omitted.'
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: The Village shall then choose the
+  source: constitution-native-village-of-shishmaref-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-02'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-shishmaref-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan badly garbled in Article III (membership choice and governing body) and Article V, so the governing-body name is omitted.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Shishmaref
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: of the Village 21 years of
+  source: constitution-native-village-of-shishmaref-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-02'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-shishmaref-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan badly garbled in Article III (membership choice and governing body) and Article V, so the governing-body name is omitted.'
+- aspect: amendment
+  value: Secretary approval and majority vote of Village members in election called by the Secretary
+  quote: changes are approved by the Secretary of the Interior
+  source: constitution-native-village-of-shishmaref-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-02'
+  locator: Article VI
+  document_version:
+    document: native-village-of-shishmaref-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan badly garbled in Article III (membership choice and governing body) and Article V, so the governing-body name is omitted.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior
+  source: constitution-native-village-of-shishmaref-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-02'
+  locator: Article VI
+  document_version:
+    document: native-village-of-shishmaref-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan badly garbled in Article III (membership choice and governing body) and Article V, so the governing-body name is omitted.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -259,6 +345,16 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Nome Census Area
+  court: Superior Court for Nome Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Nome Census Area holds 100% of the land of Shishmaref ANVSA (Census GEOID 7465), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bering Straits Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

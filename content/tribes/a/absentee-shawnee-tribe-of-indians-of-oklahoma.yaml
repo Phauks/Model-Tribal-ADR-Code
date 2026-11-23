@@ -160,6 +160,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Absentee-Shawnee Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Absentee Shawnee Tribe of Oklahoma (1994)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Absentee-Shawnee Tribe of Indians of Oklahoma" among organizations under constitutions
@@ -184,6 +192,275 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution
+  quote: The Absentee Shawnee Tribe of Oklahoma is governed by a constitution.
+  source: absentee-shawnee-tribe-of-indians-of-oklahoma-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Executive Committee
+  quote: There shall be an Executive Committee consisting of five (5)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: There shall be an Executive Committee consisting of five (5)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: governing-body-selection
+  value: Elected by referendum
+  quote: All members of the Executive Committee shall be elected by referendum
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: The term of office for Executive Committee members shall be four (4)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2(b)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: general-council
+  value: All tribal members 18 or older
+  quote: SECTION 1. The General Council of the Absentee Shawnee Tribe shall consist of all members of
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: head-of-government
+  value: Governor
+  quote: The Governor shall call and preside over all meetings of the General Council and
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XIII, Section 1
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by referendum
+  quote: All members of the Executive Committee shall be elected by referendum
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The term of office for Executive Committee members shall be four (4)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2(b)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: other-officers
+  value: Lt. Governor, Secretary, Treasurer, Representative
+  quote: representatives including Governor, Lt. Governor, Secretary, Treasurer and a
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: elections
+  value: Annual, third Saturday in June
+  quote: 'Annual Election: Held on the third Saturday in June primarily for the purpose of electing'
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 7(a)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older who are duly registered to vote
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-08-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
+- aspect: election-authority
+  value: Election Commission
+  quote: There shall be an Election Commission consisting of five (5)
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 2
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: branches
+  value: Legislative/Executive and Judicial
+  quote: The tribal government, as described in this Article, is composed of two (2) separate branches, i.e.,
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: judiciary
+  value: Supreme Court and inferior courts
+  quote: hereby vested in one Supreme Court consisting of seven (7) Justices and such inferior courts as
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 3
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: judicial-selection
+  value: Selected by the Executive Committee
+  quote: The Supreme Court Justices and Tribal Court Judges shall be selected by the Executive
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 3(c)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: judicial-term
+  value: 6 years
+  quote: shall serve six (6) year terms and until their successor be duly installed.
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 3(c)
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: amendment
+  value: Majority of ballots cast in referendum, 20% turnout required
+  quote: ratified by a majority of those who cast ballots, provided at least twenty percent (20%) of
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XII
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: secretarial-approval
+  value: Requirement removed
+  quote: eliminated the authority of the Secretary of Interior over the
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article XII
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: Upon receipt of a valid petition signed by at least thirty percent (30%) of the
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VII, Section 2
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: recall-and-removal
+  value: Removal by affirmative vote of 3 members of the body
+  quote: of its members for a justifiable cause by an affirmative vote of three (3) members.
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VII, Section 1
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1977-text
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation's website posts it; the page does not say whether it is the version now in effect.
+- aspect: other
+  value: Initiative by petition of 20 percent of registered voters
+  quote: signed by at least twenty percent (20%) of the registered voters, it
+  source: constitution-absentee-shawnee-tribe-of-indians-of-oklahoma-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-08-09'
+  locator: Article IX, Section 1
+  document_version:
+    document: absentee-shawnee-tribe-of-indians-of-oklahoma-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File bundles 1988 Amendments A-E, the 1977 ratified constitution, and the 1938 original; facts use the 1977 text with Amendment B applied where it changes the text (judicial selection and term), and the 1938 original is not used.'
 governing_documents:
 - kind: law-code
   title: AST Code of Laws
@@ -433,6 +710,57 @@ gaming:
       Oklahoma". Facilities as machine-extracted from the report text (verify): Thunderbird Casino - Shawnee;
       Thunderbird Entertainment Center. Name extracted from the PDF by the page-fetch tool and matched
       to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-00-1/CO-00-1
+    date: '2000-04-01'
+    link: https://www.nigc.gov?wpdmdl=2026&ind=2027
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-00-1/CO-00-1
+    note: The list titles the action “Absentee Shawnee Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-09
+    date: '2008-06-25'
+    link: https://www.nigc.gov?wpdmdl=8039&ind=8050
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-09
+    note: The list titles the action “Absentee Shawnee Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-09
+    date: '2008-07-24'
+    link: https://www.nigc.gov?wpdmdl=8022&ind=8033
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-09
+    note: The list titles the action “Absentee Shawnee Tribe of Oklahoma” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-11
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7898&ind=7909
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-11
+    note: The list titles the action “Absentee Shawnee Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-11
+    date: '2009-03-16'
+    link: https://www.nigc.gov?wpdmdl=7895&ind=7906
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-11
+    note: The list titles the action “Absentee Shawnee Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -447,6 +775,287 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Absentee Shawnee Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: forms
+  title: Court (sample forms for pro se litigants)
+  court: Absentee Shawnee Tribal Court
+  link: https://www.astribe.com/court
+  detail: Court provides a limited selection of sample forms for pro se litigants (divorce, guardianship, custody, judgments, grandparents rights, protective order, contact sheet).
+  source: absentee-shawnee-tribe-court
+  confidence: high
+  verification: read-in-full
+  locator: Page introduction
+  note: 'The source reads: “The Court provides a limited selection of sample forms to assist pro se litigants”.'
+- kind: filing-fees
+  title: Court Fees (fee schedule revised 2.3.21)
+  court: Absentee Shawnee Tribal Court
+  link: https://www.astribe.com/sites/default/files/fee_schedule_revised_2.3.21.doc
+  detail: Court fee schedule document linked from the Court page under Court Fees Schedule; file name indicates revised 2021-02-03.
+  source: absentee-shawnee-tribe-court
+  confidence: high
+  verification: read-in-full
+  locator: Court Fees Schedule
+  note: 'The source reads: “Court Fees Schedule”.'
+- kind: bar-admission
+  title: Attorney Bar Guidelines
+  court: Absentee Shawnee Tribal Court
+  link: https://www.astribe.com/sites/default/files/ast_code_to_enter_bar.docx
+  detail: Guidelines for attorneys to enter the Tribal Court bar, linked from the Court page; an Application for Admission form is also linked.
+  source: absentee-shawnee-tribe-court
+  confidence: high
+  verification: read-in-full
+  locator: Documents list
+- kind: bar-admission
+  title: Application for Admission
+  court: Absentee Shawnee Tribal Court
+  link: https://www.astribe.com/sites/default/files/application_for_admission.pdf
+  detail: Application for admission form linked from the Court page.
+  source: absentee-shawnee-tribe-court
+  confidence: high
+  verification: read-in-full
+  locator: Documents list
+- kind: legal-aid
+  title: Court (referral to Legal Aid and Oklahoma Indian Legal Services)
+  court: Absentee Shawnee Tribal Court
+  link: https://www.astribe.com/court
+  detail: The Court Clerk tells litigants they can contact Legal Aid or Oklahoma Indian Legal Services, subject to those programs' criteria.
+  source: absentee-shawnee-tribe-court
+  confidence: medium
+  verification: read-in-full
+  locator: Page introduction
+  note: 'The source reads: “You can contact Legal Aid or Oklahoma Indian Legal Services for assistance”. Referral only; program not matched to a Legal Services Corporation grantee area here.'
+nearby_state_courts:
+- state: OK
+  county: Pottawatomie County
+  court: District Court for Pottawatomie County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pottawatomie County holds 57% of the land of Citizen Potawatomi Nation-Absentee Shawnee OTSA (Census GEOID 5600), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Cleveland County
+  court: District Court for Cleveland County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Cleveland County holds 30% of the land of Citizen Potawatomi Nation-Absentee Shawnee OTSA (Census GEOID 5600), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Oklahoma County
+  court: District Court for Oklahoma County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Oklahoma County holds 12% of the land of Citizen Potawatomi Nation-Absentee Shawnee OTSA (Census GEOID 5600), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Shawnee, 1786
+  signed: '1786-01-31'
+  statutes_at_large: 7 Stat. 26
+  kappler:
+    volume: 2
+    page: 16
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1786-0016
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 16 (Treaty with the Shawnee, 1786; Kappler header "Jan. 31, 1786. | 7 Stat., 26.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Delawares, etc., 1803
+  signed: '1803-06-07'
+  statutes_at_large: 7 Stat. 74
+  kappler:
+    volume: 2
+    page: 64
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1803-0064
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 64 (Treaty with the Delawares, etc., 1803; Kappler header "June 7, 1803. | 7 Stat., 74. | Proclamation Dec. 26, 1803.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1805
+  signed: '1805-07-04'
+  statutes_at_large: 7 Stat. 87
+  kappler:
+    volume: 2
+    page: 77
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1805-0077
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 77 (Treaty with the Wyandot, etc., 1805; Kappler header "July 4, 1805. | 7 Stat., 87. | Proclamation, Apr. 24, 1806.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, etc., 1808
+  signed: '1808-11-25'
+  statutes_at_large: 7 Stat. 112
+  kappler:
+    volume: 2
+    page: 99
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1808-0099
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 99 (Treaty with the Chippewa, etc., 1808; Kappler header "Nov. 25, 1808. | 7 Stat., 112. | Ratified Mar. 1, 1809. | Proclaimed Mar. 3, 1809.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1814
+  signed: '1814-07-22'
+  statutes_at_large: 7 Stat. 118
+  kappler:
+    volume: 2
+    page: 105
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1814-0105
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 105 (Treaty with the Wyandot, etc., 1814; Kappler header "July 22, 1814. | 7 Stat., 118. | Ratified, Dec. 13, 1814. | Proclaimed Dec. 21, 1814.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1815
+  signed: '1815-09-08'
+  statutes_at_large: 7 Stat. 131
+  kappler:
+    volume: 2
+    page: 117
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1815-0117
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 117 (Treaty with the Wyandot, etc., 1815; Kappler header "Sept. 8, 1815. | 7 Stat., 131. | Ratified Dec. 26, 1815.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1818
+  signed: '1818-09-17'
+  statutes_at_large: 7 Stat. 178
+  kappler:
+    volume: 2
+    page: 162
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1818-0162
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 162 (Treaty with the Wyandot, etc., 1818; Kappler header "Sept. 17, 1818. | 7 Stat., 178. | Proclamation, Jan. 4, 1819.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Shawnee, 1825
+  signed: '1825-11-07'
+  statutes_at_large: 7 Stat. 284
+  kappler:
+    volume: 2
+    page: 262
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1825-0262
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 262 (Treaty with the Shawnee, 1825; Kappler header "Nov. 7, 1825. | 7 Stat., 284. | Proclamation, Dec. 30, 1825.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Seneca, etc., 1831
+  signed: '1831-07-20'
+  statutes_at_large: 7 Stat. 351
+  kappler:
+    volume: 2
+    page: 327
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-etc-1831-0327
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 327 (Treaty with the Seneca, etc., 1831; Kappler header "July 20, 1831. | 7 Stat., 351. | Proclamation, Apr. 6, 1832.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Shawnee, 1831
+  signed: '1831-08-08'
+  statutes_at_large: 7 Stat. 355
+  kappler:
+    volume: 2
+    page: 331
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1831-0331
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 331 (Treaty with the Shawnee, 1831; Kappler header "Aug. 8, 1831. | 7 Stat., 355. | Proclamation, Apr. 6, 1832.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Shawnee, etc., 1832
+  signed: '1832-10-26'
+  statutes_at_large: 7 Stat. 397
+  kappler:
+    volume: 2
+    page: 370
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-etc-1832-0370
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 370 (Treaty with the Shawnee, etc., 1832; Kappler header "Oct. 26, 1832. | 7 Stat., 397. | Proclamation, Feb. 12, 1833.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Seneca and Shawnee, 1832
+  signed: '1832-12-29'
+  statutes_at_large: 7 Stat. 411
+  kappler:
+    volume: 2
+    page: 383
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-and-shawnee-1832-0383
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 383 (Treaty with the Seneca and Shawnee, 1832; Kappler header "Dec. 29, 1832. | 7 Stat., 411. | Proclamation, Mar. 22, 1833.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Shawnee, 1854
+  signed: '1854-05-10'
+  statutes_at_large: 10 Stat. 1053
+  kappler:
+    volume: 2
+    page: 618
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-shawnee-1854-0618
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 618 (Treaty with the Shawnee, 1854; Kappler header "May 10, 1854. | 10 Stat., 1053. | Ratified Aug. 2, 1854. | Proclaimed Nov. 2, 1854.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Seneca, Mixed Seneca and Shawnee, Quapaw, etc., 1867
+  signed: '1867-02-23'
+  statutes_at_large: 15 Stat. 513
+  kappler:
+    volume: 2
+    page: 960
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960
+  signatory: Shawnee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 960 (Treaty with the Seneca, Mixed Seneca and Shawnee, Quapaw, etc., 1867; Kappler header "Feb. 23, 1867. | 15 Stats., 513. | Ratified June 18, 1868. | Proclaimed Oct. 14, 1868.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Three federally recognized Shawnee nations (Absentee, Eastern, Shawnee Tribe) each descend in part from the Shawnee party; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

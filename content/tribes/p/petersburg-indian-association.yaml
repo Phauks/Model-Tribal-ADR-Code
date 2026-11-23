@@ -198,6 +198,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Petersburg Indian Association
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: Listed as "Petersburg Indian Association". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Mt. Edgecumbe Service Area
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: 'The source''s words: "Petersburg Indian Association".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution (Petersburg Indian Association Alaska) (approved 1948) states it was adopted under
@@ -211,6 +228,183 @@ government_structure:
   as_of: '1948'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Act of Congress of June 18, 1934
+  quote: by authority of, the Act of Congress of June 18, 1934
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Preamble
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: governing-body
+  value: Council
+  quote: governing body of this
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article III, Section 1
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: governing-body-size
+  value: President and 6 members
+  quote: and six members, elected by the adult
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article III, Section 1
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: governing-body-selection
+  value: Elected by the adult members of the Association
+  quote: and six members, elected by the adult
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article III, Section 1
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: a period of two years except as provided in Section
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article III, Section 3
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: head-of-government
+  value: President
+  quote: meetings of the Association and shall be chairman of the Council,
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Petersburg Indian Association
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected annually
+  quote: shall be elected annually to serve
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article III, Section 4
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: The Vice-President shall act as President in the absence or
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: By-laws, Article I, Sections 2-4
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: elections
+  value: Annual, first Monday in January
+  quote: January.
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article IV, Section 1
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: election-authority
+  value: Agency in charge of Indian Affairs in Alaska
+  quote: Agency in charge of Indian Affairs in Alaska
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article IV, Section 2
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: amendment
+  value: Majority vote in an election called by the Secretary of the Interior
+  quote: may be amended by a majority vote
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article IX
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: proved by the Secretary of the Interior.
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article IX
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of adult members
+  quote: one-third of the adult members of the
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article VII, Section 1(c)
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
+- aspect: recall-and-removal
+  value: Council may declare seat vacant after 3 months absence
+  quote: meetings of the Council for a period of three months without
+  source: constitution-petersburg-indian-association-1948-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-05-21'
+  locator: Article VII, Section 1(b)
+  document_version:
+    document: petersburg-indian-association-constitution
+    version: 1948-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of a 1950 printing with heavy reading errors and garbled article headings, so locators follow the readable labels.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution
@@ -331,6 +525,16 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Petersburg Borough
+  court: Superior Court for Petersburg Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Petersburg Borough holds 100% of the land of Petersburg ANVSA (Census GEOID 7220), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

@@ -172,6 +172,171 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santa Ynez Band of Chumash Mission Indians of the Santa Ynez Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: 'Listed as "Santa Ynez Band of Chumash Mission Indians of the Santa Ynez Reservation, California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Santa Ynez Band of Chumash Mission Indians – Santa Ynez Tribal Health Clinic (2015)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Articles of Organization
+  quote: hereby adopt the following Articles of Organization
+  source: constitution-santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-1964-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1964-02-07'
+  locator: Preamble
+  document_version:
+    document: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-constitution
+    version: 1964-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has many OCR errors (for example Bind for Band, Tnez for Ynez), so quotes keep the errors; the Article IV section labels are unreadable.'
+- aspect: governing-body
+  value: Business Committee
+  quote: Members of our Business Committee — including four elected members and myself, the elected Tribal Chairman — are our government leaders.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Members of our Business Committee — including four elected members and myself, the elected Tribal Chairman — are our government leaders.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: governing-body-selection
+  value: Elected by tribal members
+  quote: The tribal members also conduct elections every two years to select these leadership positions.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Members of the Chumash Business Committee are elected to their office for two years to serve in non-paid positions.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: general-council
+  value: All adult members 21 years of age or older
+  quote: which shall consist of all adult members twenty- one years of
+  source: constitution-santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-1964-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1964-02-07'
+  locator: Article IV, Section 1
+  document_version:
+    document: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-constitution
+    version: 1964-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has many OCR errors (for example Bind for Band, Tnez for Ynez), so quotes keep the errors; the Article IV section labels are unreadable.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: Members of our Business Committee — including four elected members and myself, the elected Tribal Chairman — are our government leaders.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Santa Ynez Band of Chumash Mission Indians of the Santa Ynez Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by tribal members
+  quote: The tribal members also conduct elections every two years to select these leadership positions.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Members of the Chumash Business Committee are elected to their office for two years to serve in non-paid positions.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: other-officers
+  value: Vice Chairman, Secretary-Treasurer
+  quote: As Vice Chairman of the Santa Ynez Band of Chumash Indians’ Business Committee,
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: elections
+  value: Every 2 years
+  quote: The tribal members also conduct elections every two years to select these leadership positions.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: voting-age
+  value: Over 21
+  quote: All tribal members over the age of 21 are designated as voting members of the general population and are encouraged to vote in the elections.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
+- aspect: election-authority
+  value: Election committees set under ordinance
+  quote: election committees and their duties, absentee balloting and
+  source: constitution-santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-1964-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1964-02-07'
+  locator: Article IV, Section 1
+  document_version:
+    document: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-constitution
+    version: 1964-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has many OCR errors (for example Bind for Band, Tnez for Ynez), so quotes keep the errors; the Article IV section labels are unreadable.'
+- aspect: amendment
+  value: Majority vote of the General Council, then same ratification as the Articles
+  quote: These Articles of Organization may be amended by a majority
+  source: constitution-santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-1964-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1964-02-07'
+  locator: Article VII
+  document_version:
+    document: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-constitution
+    version: 1964-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has many OCR errors (for example Bind for Band, Tnez for Ynez), so quotes keep the errors; the Article IV section labels are unreadable.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of voters, then majority vote
+  quote: Upon receipt of a petition signed by twenty (20) percent of
+  source: constitution-santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-1964-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1964-02-07'
+  locator: Article V
+  document_version:
+    document: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-constitution
+    version: 1964-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has many OCR errors (for example Bind for Band, Tnez for Ynez), so quotes keep the errors; the Article IV section labels are unreadable.'
+- aspect: other
+  value: 'Elders Council: enrolled members aged 50 or older'
+  quote: The Tribal Elders Council consists of enrolled members who are 50 years of age or older.
+  source: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservati-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 6 duplicates page 2 (Government); no governing document text was saved.'
 gaming:
   compacts:
   - state: CA
@@ -268,6 +433,27 @@ gaming:
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Santa Ynez Band of Chumash Mission
       Indians of the Santa Ynez Reservation". Name extracted from the PDF by the page-fetch tool and matched
       to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-18
+    date: '2009-04-08'
+    link: https://www.nigc.gov?wpdmdl=7875&ind=7887
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-18
+    note: The list titles the action “Santa Ynez Band of Mission Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-18
+    date: '2009-05-05'
+    link: https://www.nigc.gov?wpdmdl=7850&ind=7863
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-18
+    note: The list titles the action “Santa Ynez Band of Mission Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -294,6 +480,16 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Santa Barbara County
+  court: Superior Court for Santa Barbara County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Santa Barbara County holds 100% of the land of Santa Ynez Reservation (Census GEOID 3540), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

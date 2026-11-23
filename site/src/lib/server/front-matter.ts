@@ -23,9 +23,8 @@ function citationOf(key: string): string {
  * sentences are found in the order renderMarkdown resolves citations: one
  * entry per key, in the order the keys appear in the text.
  */
-function citedSentences(body: string): { section: string; text: string }[] {
+function citedSentences(body: string, section = ''): { section: string; text: string }[] {
 	const uses: { section: string; text: string }[] = [];
-	let section = '';
 	for (const block of body.split(/\n{2,}/)) {
 		const heading = /^#{2,6}\s+(.+)$/.exec(block.trim());
 		if (heading) {
@@ -44,12 +43,19 @@ function citedSentences(body: string): { section: string; text: string }[] {
 	return uses;
 }
 
-class FrontMatterCitations implements CitationCollector {
+/**
+ * Renders Markdown with citations, numbering the sources across every piece
+ * rendered with it, so a page built from several pieces of Markdown, such as
+ * the review timeline (src/lib/review-timeline.ts), has one Sources section.
+ */
+export class PageCitations implements CitationCollector {
 	readonly uses = new SourceUses(citationOf);
-	readonly #queue: { section: string; text: string }[];
+	readonly #queue: { section: string; text: string }[] = [];
 
-	constructor(body: string) {
-		this.#queue = citedSentences(body);
+	/** Renders one piece of Markdown; `section` names the part of the page it sits in, for the Sources section. */
+	render(body: string, section = ''): string {
+		this.#queue.push(...citedSentences(body, section));
+		return renderMarkdown(body, this);
 	}
 
 	cite(key: string, locator?: string): CitationMark {
@@ -61,7 +67,7 @@ class FrontMatterCitations implements CitationCollector {
 /** A front matter page, rendered, with its Sources section. */
 export function frontMatterView(id: string): { title: string; html: string; sources: SourceEntry[] } {
 	const page = readFrontMatterPage(id);
-	const citations = new FrontMatterCitations(page.body);
-	const html = renderMarkdown(page.body, citations);
+	const citations = new PageCitations();
+	const html = citations.render(page.body);
 	return { title: page.title, html, sources: citations.uses.list };
 }

@@ -47,6 +47,62 @@ spine:
   # Book Creation Guide, p. 17, says 80 pages; the stricter rule is used.
   text_minimum_pages: 100
 
+# The cover: one single-page spread, back cover, spine and front cover, with
+# every font embedded (Book Creation Guide, p. 25). The hardcover values are
+# read from the cover templates Lulu's pricing calculator gives for a case
+# wrap book (US Trade at 177 pages, Pocket Book at 309 and US Letter at 500,
+# downloaded Nov. 23, 2026), cited "cover template"; the build's sizes match
+# those templates exactly.
+cover:
+  # Paperback: nothing important within 0.5 in of the trim edge, on the
+  # spine side too (Book Creation Guide, pp. 19 and 25; cover template).
+  safety_margin: 0.5
+  # Spine text keeps 0.125 in clear of both spine edges (Book Creation Guide,
+  # p. 18).
+  spine_safety: 0.125
+  hardcover:
+    # Each board is 0.25 in wider and 0.5 in taller than the pages (a US
+    # Trade board is 6.25 x 9.5 in), and the printed artwork wraps 0.625 in
+    # around every edge of the board (cover template).
+    board_extra_width: 0.25
+    board_extra_height: 0.5
+    wrap: 0.625
+    # Text stays 0.625 in inside the board's edges and the spine (cover
+    # template), which also clears the hinge, the fold about 0.25 in from
+    # the spine (Lulu, "Casewrap Books: The Basics").
+    safety_margin: 0.625
+    minimum_pages: 24
+    # Spine width by page count (Book Creation Guide, p. 15). Each row is the
+    # most pages it covers and the spine width in inches.
+    spine_by_page_count:
+      - { most_pages: 84, inches: 0.25 }
+      - { most_pages: 140, inches: 0.5 }
+      - { most_pages: 168, inches: 0.625 }
+      - { most_pages: 194, inches: 0.688 }
+      - { most_pages: 222, inches: 0.75 }
+      - { most_pages: 250, inches: 0.813 }
+      - { most_pages: 278, inches: 0.875 }
+      - { most_pages: 306, inches: 0.938 }
+      - { most_pages: 334, inches: 1 }
+      - { most_pages: 360, inches: 1.063 }
+      - { most_pages: 388, inches: 1.125 }
+      - { most_pages: 416, inches: 1.188 }
+      - { most_pages: 444, inches: 1.25 }
+      - { most_pages: 472, inches: 1.313 }
+      - { most_pages: 500, inches: 1.375 }
+      - { most_pages: 528, inches: 1.438 }
+      - { most_pages: 556, inches: 1.5 }
+      - { most_pages: 582, inches: 1.563 }
+      - { most_pages: 610, inches: 1.625 }
+      - { most_pages: 638, inches: 1.688 }
+      - { most_pages: 666, inches: 1.75 }
+      - { most_pages: 694, inches: 1.813 }
+      - { most_pages: 722, inches: 1.875 }
+      - { most_pages: 750, inches: 1.938 }
+      - { most_pages: 778, inches: 2 }
+      - { most_pages: 799, inches: 2.063 }
+      - { most_pages: 800, inches: 2.125 }
+
 # Paperback, perfect bound, standard black-and-white ink: 32 to 800 pages for
 # every size below (Eligible Products, pp. 3-9).
 page_count:

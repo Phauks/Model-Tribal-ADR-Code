@@ -174,6 +174,87 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Houlton Band of Maliseet Indians
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Houlton Band of Maliseet Indians". Also listed under the same Area in: indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Houlton Band of Maliseet Indians".
+governance:
+- aspect: governing-body-size
+  value: 6 members
+  quote: The governmental structure of the Tribe consists of a six (6) member Council
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: governing-body-selection
+  value: Elected by membership
+  quote: The leaders are chosen by the membership through an election process.
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: the Tribal Council members serve four (4) year, staggered terms
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: head-of-government
+  value: Tribal Chief
+  quote: plus one (1) elected as Tribal Chief.
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: head-of-government
+  value: Tribal Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Houlton Band of Maliseet Indians
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by membership
+  quote: The leaders are chosen by the membership through an election process.
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Tribal Chief serves a four (4) year term
+  source: houlton-band-of-maliseet-indians-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Tribal Court is a court of general jurisdiction with authority to hear a wide range of criminal, civil, juvenile and probate matters.
+  source: houlton-band-of-maliseet-indians-nation-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Governing document text is not among the saved pages; facts come from the government and court pages.'
 governing_documents:
 - kind: law-code
   title: Enrollment Ordinance
@@ -218,6 +299,63 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Maine is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Maine. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Maine by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: implementation-grant
+  detail: Received a Justice Department Tribal Jurisdiction Program grant (fiscal year 2024) for special Tribal criminal jurisdiction. These grants also fund planning, so the grant alone does not show that the nation exercises the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Appendix D (PDF p.52)
+  note: Listed as "HOULTON BAND OF MALISEET INDIANS".
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: Indians and tribes in Maine other than the Passamaquoddy and Penobscot, including the Houlton Band of Maliseets, and their lands are subject to state civil and criminal jurisdiction and state courts as any other person or land, except where the Act provides otherwise. (Pub. L. No. 96-420, § 6(a), 94 Stat. at 1793.)
+  source: public-law-96-420
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 96-420 § 6(a), 94 Stat. at 1793
+  note: Section 6(e)(2) (94 Stat. at 1794) lets the State and the Band agree on state jurisdiction over Band lands. Section 6(a) is "except as provided in section 8(e) and section 5(d)(4)." Houlton Band is not named in 6(a); it falls in "all other Indians." Section 6(b)(1) names only the two tribes.
+court_practice:
+- kind: court-rules
+  title: Rules of Court
+  court: Maliseet Nation Tribal Court
+  link: https://maliseets.net/files/2026/02/Rules_of_Court.pdf
+  detail: PDF of Rules of Court listed on the Tribal Court page under Maliseet Nation Codes.
+  source: houlton-band-of-maliseet-indians-nation-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Maliseet Nation Codes
+  note: 'The source reads: “Maliseet Nation Codes”. PDF not opened.'
+- kind: forms
+  title: Divorce with Minor Children (and related forms)
+  court: Maliseet Nation Tribal Court
+  link: https://maliseets.net/files/2026/02/Divorce_with_minor_children_FM-080.pdf
+  detail: Forms listed include Complaint for Divorce, Divorce with and without Minor Children and Acknowledgement of Receipt of Summons.
+  source: houlton-band-of-maliseet-indians-nation-tribal-court
+  confidence: high
+  verification: title-only
+  locator: forms list
+  note: 'The source reads: “Complaint for Divorce”. PDFs not opened.'
+nearby_state_courts:
+- state: ME
+  county: Aroostook County
+  court: Superior Court for Aroostook County
+  link: https://www.courts.maine.gov/courts/superior/index.html
+  source: state-trial-court-directory-me
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Aroostook County holds 100% of the land of Houlton Maliseet Reservation (Census GEOID 1530), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

@@ -44,6 +44,50 @@ supreme_court:
   - {name: "John Paul Stevens", vote: majority}
   source: https://api.oyez.org/cases/1977/76-682
   checked: '2026-11-22'
+courtlistener:
+  cluster: 109857
+  citation: "436 U.S. 49"
+  case_name: "Santa Clara Pueblo v. Martinez"
+  link: https://www.courtlistener.com/opinion/109857/santa-clara-pueblo-v-martinez/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep436049/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/109857/santa-clara-pueblo-v-martinez/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/436/49/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/1977/76-682
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22436%20U.S.%2049%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=436%20U.S.%2049
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=436%20U.S.%2049
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Santa_Clara_Pueblo_v._Martinez
 rights:
   status: no-permission-needed
   basis: us-government-work

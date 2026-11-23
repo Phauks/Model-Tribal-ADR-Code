@@ -127,6 +127,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cabazon Band of Cahuilla Indians (previously listed as Cabazon Band of Mission Indians, California)
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Cabazon Band of Cahuilla Indians, California".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cabazon Band of Cahuilla Indians (previously listed as Cabazon Band of Mission Indians, California)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Cabazon Band of Cahuilla Indians
@@ -265,6 +282,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Riverside County
+  court: Superior Court for Riverside County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Riverside County holds 100% of the land of Cabazon Reservation (Census GEOID 0415), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -232,6 +232,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Umatilla Indian Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Confederated Tribes of the Umatilla Indian Reservation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Umatilla Indian Reservation (2005)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Constitution (Umatilla Reservation in Oregon) (approved 1949) states it was adopted under Act
@@ -245,6 +253,291 @@ government_structure:
   as_of: '1949'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Not adopted under the Indian Reorganization Act
+  quote: This Constitution and Bylaws is not adopted under the Indian Reorganization Act, also known as
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article III
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Board of Trustees
+  quote: The governing body of the Confederated Tribes shall be a Board of Trustees.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 1
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 8 members plus ex officio Chair of General Council
+  quote: officio member with the right to vote, and eight (8) members of the General Council elected by
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 2
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: officio member with the right to vote, and eight (8) members of the General Council elected by
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 2
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: Members of the Board of Trustees shall each hold office for a period of two (2) years, or
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 5(c)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All members 18 or over
+  quote: The General Council shall consist of all members of the Confederated Tribes of the age of
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 1
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chair of the Board of Trustees
+  quote: The Chair of the Board of Trustees shall preside over all meetings of the Board of
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 3(a)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chair of the General Council
+  quote: The Chair shall preside at the meetings of the General Council
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Board of Trustees Chair
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Umatilla Indian Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Council
+  quote: The General Council shall elect its own officers, and shall also elect the members and officers of
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 2
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Officers of the General Council shall hold office for a period of two (2) years, or until
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 5(b)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chair, Secretary, Interpreter (General Council)
+  quote: The officers of the General Council shall be a Chair, a Vice-Chair, a Secretary, and Interpreter,
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 3
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chair, Treasurer, Secretary (Board of Trustees)
+  quote: The officers of the Board of Trustees shall be a Chair, a Vice-Chair, a Treasurer and a Secretary.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 3
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: November of odd-numbered years
+  quote: held in November in odd numbered years.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 5(a)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years or over.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 1
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The judicial power of the Confederated Tribes is vested in the Tribal Court
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 1
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Chief Judge appointed by the Board of Trustees
+  quote: The Board shall appoint a Chief Judge
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: Chief Judge at least 10 years; Associate Judges at least 4 years
+  quote: than ten years, and may appoint one or more Associate Judges for terms of not less than four
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: The Board shall not reduce the pay of a judge during his or her term of appointment.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Judges removable only for good cause after probationary year
+  quote: of the Tribal Court for good cause upon due notice and an opportunity for a hearing open
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Court interpretations of Constitution not alterable by statute
+  quote: shall not be subject to alteration by later statutory amendment or enactment of the Board of
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 2
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of General Council members at election
+  quote: may be amended by a majority vote of the members of the General
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VIII
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by General Council after Board certification
+  quote: the power to remove said member from office and to elect a successor
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 5
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by General Council vote on 10% petition
+  quote: a recall petition signed by at least ten percent (10%) of the members of the General Council
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Statutes of the Confederated Tribes of the Umatilla Indian Reservation
@@ -357,28 +650,25 @@ dispute_resolution:
       is binding or court-enforced.
   - kind: mediation
     title: Section 4.03. Mediation
-    citation: Section 4.03. Mediation
-    link: https://www.narf.org/nill/codes/confederated_umatilla/index.html
-    source: national-indian-law-library-code-codes-confederated-umatilla
+    citation: Family Law Code, Section 4.03 (Mediation), as amended through Res. 24-017 (Mar. 4, 2024)
+    link: https://ctuir.org/media/wr1pk2jm/family-law-code-thru-res-24-017-3-4-2024.pdf
+    source: ctuir-family-law-code-2024
     confidence: medium
-    verification: title-only
-    as_of: 2014-10
-    note: 'Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title. Searched for the
-      text on 2026-11-22 and not read. Places searched: research/search-logs/dispute-resolution/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml.'
+    verification: read-in-full
+    as_of: '2024-03-04'
+    note: Read in full on 2026-11-23 (Statutes of the Confederated Tribes of the Umatilla Indian Reservation, Family Law Code, as amended through Resolution No. 24-017 (March 4, 2024)). Kind assigned from words in the title. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 86.
+    summary: In any Family Law Code proceeding the court may set contested issues for mediation before or concurrent with hearing, or order it on its own motion. Mediation aims to reduce acrimony and resolve property, parenting-contact and child-support issues; the court keeps the list of qualified mediators, may assign the costs, and the mediator reports any agreement to the court. If no agreement results within 90 days the court may decide the remaining issues. A party who objects must petition the court, which decides whether to compel mediation, and the court must waive it if participation is likely to cause severe emotional distress (a recent act of domestic violence can support that finding).
   - kind: other
     title: Section 7.06. Dispute Resolution Included in Plan
-    citation: Section 7.06. Dispute Resolution Included in Plan
-    link: https://narf.org/nill/codes/confederated_umatilla/index.html
-    source: national-indian-law-library-code-codes-confederated-umatilla
+    citation: Family Law Code, Section 7.06 (Dispute Resolution Included in Plan), Chapter 7 (Child Custody and Parenting Plans), as amended through Res. 24-017 (Mar. 4, 2024)
+    link: https://ctuir.org/media/wr1pk2jm/family-law-code-thru-res-24-017-3-4-2024.pdf
+    source: ctuir-family-law-code-2024
     confidence: medium
-    verification: title-only
-    as_of: '2014'
+    verification: read-in-full
+    as_of: '2024-03-04'
     locator: Table of Contents, under 'Chapter 7. Child Custody and Parenting Plans'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not
-      read. Places searched: research/search-logs/dispute-resolution/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml.'
+    note: Read in full on 2026-11-23 (Statutes of the Confederated Tribes of the Umatilla Indian Reservation, Family Law Code, as amended through Resolution No. 24-017 (March 4, 2024)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 87.
+    summary: In a parenting plan the court must include a process for resolving future parental disputes that serves the child's best interests, unless the parents have otherwise resolved it by agreement or a process is inappropriate because of domestic violence or child abuse. The court weighs the parents' present wishes, their circumstances (including financial), and any limiting factor under Section 7.07; the section does not name a particular process.
   - kind: other
     title: Chapter 6. Dispute Resolution
     citation: Gaming Code, Chapter 6 (6.01 to 6.04); dispute resolution is 6.01
@@ -394,17 +684,15 @@ dispute_resolution:
       for a hearing before the Tribal Gaming Commission, whose decision is final.
   - kind: arbitration
     title: Section 9.03. Claimant Attorney's Fees and Other Related Arbitration Costs
-    citation: Section 9.03. Claimant Attorney's Fees and Other Related Arbitration Costs
-    link: https://narf.org/nill/codes/confederated_umatilla/index.html
-    source: national-indian-law-library-code-codes-confederated-umatilla
+    citation: Umatilla Workers Benefit Code, ch. 9 (Adjudication of Disputes), sec. 9.03, as amended through Res. No. 20-065 (June 15, 2020)
+    link: https://ctuir.org/media/jexpngt5/workers-benefit-code-thru-res-no-20-065-6-15-2020-lh-ref-cur.pdf
+    source: ctuir-workers-benefit-code-2020
     confidence: medium
-    verification: title-only
-    as_of: '2014'
-    locator: Table of Contents, under 'Chapter 9. Adjudication of Disputes'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not
-      read. Places searched: research/search-logs/dispute-resolution/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml.'
+    verification: read-in-full
+    as_of: '2020-06-15'
+    locator: Workers Benefit Code, ch. 9, sec. 9.03 (p. 19)
+    note: Read in full on 2026-11-23 (Confederated Tribes of the Umatilla Indian Reservation, Workers Benefit Code, as amended through Resolution No. 20-065 (June 15, 2020)). Read in the tribe's own Workers Benefit Code (as amended through Res. No. 20-065, June 15, 2020). This is a section of the Workers Benefit Code, not a general arbitration code. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 89.
+    summary: In the Umatilla workers' benefit system, where an arbitrator appointed under sec. 9.01 hears a claimant's appeal from the Administrator's decision and awards more than the Administrator originally determined, the claimant's attorney fees are approved up to the lesser of 10% of the total award or $5,000, on top of the benefits; fee disputes go to the arbitrator under TEBC rules. Each side pays for its own physicians or experts for the hearing, whatever the outcome. The arbitrator's decision is final and binding except for appeal to the Umatilla Tribal Court (sec. 9.01).
   database_listings:
   - title: Community Accountability Board Diversion
     citation: Juvenile Code § 4.05; § 8.04
@@ -791,6 +1079,104 @@ jurisdiction:
   verification: read-in-full
   as_of: '2011'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Tribal Agreement [Confederated Tribes of the Umatilla Indian Reservation]
+  state: OR
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for OR
+  note: 'The source reads: “Tribal Agreement [Confederated Tribes of the Umatilla Indian Reservation]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Title IV-E agreement (administration, training and maintenance)
+  state: OR
+  date: 2010-05
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.M, Oregon
+  note: 'The source reads: “Confederated Tribes of the Umatilla Indian Reservation executed in May 2010”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: court-rules
+  title: Rules of the Court
+  court: Umatilla Tribal Court
+  link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/rules-of-the-court/
+  detail: Listed with Court Code, Court Rules of Evidence, Criminal Code, Family Law Code, Juvenile Code.
+  source: umatilla-tribal-court-court-rules
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page links
+  note: Page not opened.
+- kind: court-rules
+  title: Rules of Appellate Procedure
+  court: Umatilla Tribal Court
+  link: https://ctuir.org/our-government/tribal-court/tribal-rules-of-appellate-procedure/
+  detail: Linked from the Tribal Court page.
+  source: umatilla-tribal-court-court-rules
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page links
+  note: Page not opened.
+- kind: filing-fees
+  title: Tribal Court Forms (Fee Schedule)
+  court: Umatilla Tribal Court
+  link: https://ctuir.org/our-government/tribal-court/tribal-court-forms/
+  detail: 'Fee schedule: civil $50, appeal $50, adoption $50, petition to establish custody $50, dissolution of marriage $50, drivers license $25; fees are paid at the Finance Department before filing.'
+  source: umatilla-tribal-court-fees-forms
+  confidence: high
+  verification: read-in-full
+  locator: Fee Schedule
+  note: 'The source reads: “Please pay filing fees at the Finance Department prior to submitting paperwork with Tribal Court”.'
+- kind: forms
+  title: Tribal Court Forms
+  court: Umatilla Tribal Court
+  link: https://ctuir.org/our-government/tribal-court/tribal-court-forms/
+  detail: Forms page includes a custody and parenting plan, an affidavit for fee waiver, domestic abuse petition and order forms (DV 100, 110, 260, 400), petition for incapacitated adult and termination of guardianship petition; files updated 1/9/2025.
+  source: umatilla-tribal-court-fees-forms
+  confidence: high
+  verification: title-only
+  locator: File list
+  note: 'The source reads: “Umatilla Affidavit Fee Waiver Nonfill”. Form PDFs not opened.'
+nearby_state_courts:
+- state: OR
+  county: Umatilla County
+  court: Circuit Court for Umatilla County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Umatilla County holds 99% of the land of Umatilla Reservation (Census GEOID 4405), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Wallawalla, Cayuse, etc., 1855
+  signed: '1855-06-09'
+  statutes_at_large: 12 Stat. 945
+  kappler:
+    volume: 2
+    page: 694
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wallawalla-cayuse-etc-1855-0694
+  signatory: Walla Walla; Cayuse; Umatilla
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 694 (Treaty with the Wallawalla, Cayuse, etc., 1855; Kappler header "June 9, 1855. | 12 Stats., 945. | Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Confederated Tribes of the Umatilla Indian Reservation (Umatilla, Cayuse, Walla Walla) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Umatilla Indian Reservation, Oregon
+  method: treaty
+  instrument: Treaty with the Walla-Wallas, Cayuses, and Umatilla, June 9, 1855, art. I, 12 Stat. 945, 946
+  date: '1855-06-09'
+  detail: First set aside
+  source: treaty-with-the-wallawalla-cayuse-etc-1855
+  confidence: high
+  verification: read-in-full
+  locator: 12 Stat. 946
+  note: 'The instrument reads: “shall be set apart as a residence for said Indians”. Article I cedes the country and sets apart the described tract "shall be held and regarded as an Indian reservation" beginning on the Umatilla River.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

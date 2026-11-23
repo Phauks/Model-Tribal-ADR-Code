@@ -159,6 +159,211 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Lake Band of Chippewa Indians, Minnesota
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Red Lake Band of Chippewa Indians, Minnesota". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Bemidji
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Bemidji Area
+  note: Listed as "Red Lake Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: shall be the Tribal Council and shall consist of
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 1
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: governing-body-size
+  value: 8 district representatives and 3 officers
+  quote: 8 district representatives and 3 officers
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 1
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: governing-body-selection
+  value: Representatives by district; officers elected by popular vote
+  quote: shall be elected by popular vote regardless of district.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 3
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: shall hold office for 4 years.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article V, Section 7(c)
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman, He shall preside at all regular and special meetings.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: By-laws, Article II, Section 1
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Red Lake Band of Chippewa Indians, Minnesota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by popular vote, band-wide
+  quote: shall be elected by popular vote regardless of district.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 3
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: other-officers
+  value: Secretary, Treasurer
+  quote: Secretary, He shall keep the minutes at the principal
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: By-laws, Article II, Sections 2-3
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: elections
+  value: Every 2 years, in May of even-numbered years
+  quote: the governing body shall be held during the month of May in even
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article V, Section 7(d)
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: voting-age
+  value: '18'
+  quote: the band 18 y® ar s of age and over
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article V, Section 2(a), as amended by Amendment I
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: election-authority
+  value: Tribal Council, by ordinance
+  quote: under the supervision of the Tribal Council who shall enact an ordinance
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article V, Section 4
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: judiciary
+  value: Tribal court established by ordinance
+  quote: and. a tribal court
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article VI, Section 5
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called for that purpose
+  quote: a majority of the qualified voters of the Red Lake Band at an election
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article XI, Section 2(a)
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall become effective until it shall have been approved by the Secretary of the Interior,
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article XI, Section 2(a)
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: recall-and-removal
+  value: Removal or recall grounds set by ordinance
+  quote: shall prescribe regulations, charges and reasons for removal or recall
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article X, Section 2
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
+- aspect: other
+  value: Advisory Council of 7 hereditary chiefs
+  quote: an Advisory Council composed of 7 Hereditary Chiefs of the Band.
+  source: constitution-red-lake-band-of-chippewa-indians-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979-02-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: red-lake-band-of-chippewa-indians-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1958 revised constitution with later amendments (the 1979 amendments are the version label); OCR is heavily garbled in Article V and the amendment pages.'
 governing_documents:
 - kind: law-code
   title: Election ordinance
@@ -239,20 +444,14 @@ gaming:
       Tribe column: "Red Lake Band of Chippewa Indians, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.09.16_red_lake_tribal_state_gaming_compact.pdf.'
   - state: MN
     status: approved
-    dispute_resolution_summary: The video games of chance compact has no general arbitration or mediation
-      clause; when the State designates a machine as non-compliant, the nation may accept the finding,
-      submit the device to an independent gaming test laboratory, or contest the finding in federal district
-      court (or before the National Indian Gaming Commission or another court if jurisdiction is declined).
+    dispute_resolution_summary: The video games of chance compact has no general arbitration or mediation clause; when the State designates a machine as non-compliant, the nation may accept the finding, submit the device to an independent gaming test laboratory, or contest the finding in federal district court (or before the National Indian Gaming Commission or another court if jurisdiction is declined).
     dispute_resolution_locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
     source: compact-mn-prairie-island-indian-community-in-the-s-1990
     confidence: medium
     verification: inferred
     as_of: '1990-04-02'
     locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
-    note: state model compact; nation-specific text not checked. Read from the 1990 Prairie Island Indian
-      Community video games of chance compact; Minnesota nations also hold separate blackjack compacts,
-      which were not summarized. Status copied from this nation's most recent approved or deemed-approved
-      entry for this state in the Office of Indian Gaming list (2009-04-22).
+    note: 'state model compact; nation-specific text not checked. Read from the 1990 Prairie Island Indian Community video games of chance compact; Minnesota nations also hold separate blackjack compacts, which were not summarized. Status copied from this nation''s most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2009-04-22). Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 449.'
   ordinances:
   - approved: '1994-01-25'
     link: https://www.nigc.gov?wpdmdl=10884&ind=10899
@@ -290,6 +489,27 @@ gaming:
     locator: table row 225, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 225 lists the nation
       as "Red Lake Band of Chippewa Indians".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-04
+    date: '2006-01-31'
+    link: https://www.nigc.gov?wpdmdl=8154&ind=8174
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-04
+    note: The list titles the action “Red Lake Band of Chippewa Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-04
+    date: '2006-03-20'
+    link: https://www.nigc.gov?wpdmdl=8147&ind=8157
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-04
+    note: The list titles the action “Red Lake Band of Chippewa Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: excepted
@@ -314,6 +534,111 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Minnesota Department of Human Services
+  agreement: Red Lake Nation and Minnesota Department of Human Services Title IV-E Foster Care Agreement
+  state: MN
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for MN
+  note: 'The source reads: “Red Lake Nation and Minnesota Department of Human Services Title IV-E Foster Care Agreement”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Minnesota Department of Human Services
+  agreement: Title IV-E agreement
+  state: MN
+  date: '2008-01-03'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.F, Minnesota
+  note: 'The source reads: “The Red Lake Nation’s agreement with the state covers administration and training costs and was executed on January 3, 2008”. Report date is March 2014, so current status needs confirming.'
+- kind: tax-agreement
+  other_party: Minnesota Department of Revenue
+  agreement: Tribal government tax agreement (collection assistance and audits for sales and use, cigarette and tobacco, liquor and motor fuel excise taxes)
+  state: MN
+  status: in-effect
+  source: minnesota-department-of-revenue-tribal-government-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table of tribal governments with tax agreements
+  note: 'The source reads: “Red Lake Red Lakes, Thief River Falls, and Warroad”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Red Lake", matched to the roster by name and state.'
+nearby_state_courts:
+- state: MN
+  county: Beltrami County
+  court: District Court for Beltrami County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Beltrami County holds 54% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Clearwater County
+  court: District Court for Clearwater County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Clearwater County holds 21% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Lake of the Woods County
+  court: District Court for Lake of the Woods County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Lake of the Woods County holds 19% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Koochiching County
+  court: District Court for Koochiching County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Koochiching County holds 4% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Roseau County
+  court: District Court for Roseau County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Roseau County holds 1% of the land of Red Lake Reservation (Census GEOID 3100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Chippewa-Red Lake and Pembina Bands, 1863
+  signed: '1863-10-02'
+  statutes_at_large: 13 Stat. 667
+  kappler:
+    volume: 2
+    page: 853
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-red-lake-and-pembina-bands-1863-0853
+  signatory: Red Lake
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 853 (Treaty with the Chippewa-Red Lake and Pembina Bands, 1863; Kappler header "Oct. 2, 1863.| 13 Stats., 667.| Ratified Mar. 1, 1864.| Proclaimed May 5, 1864.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa - Red Lake and Pembina Bands, 1864
+  signed: '1864-04-12'
+  statutes_at_large: 13 Stat. 689
+  kappler:
+    volume: 2
+    page: 861
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-red-lake-and-pembina-bands-1864-0861
+  signatory: Red Lake
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 861 (Treaty with the Chippewa - Red Lake and Pembina Bands, 1864; Kappler header "Apr. 12, 1864. | 13 Stat., 689. | Ratified Apr. 21, 1864. | Proclaimed Apr. 25, 1864.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

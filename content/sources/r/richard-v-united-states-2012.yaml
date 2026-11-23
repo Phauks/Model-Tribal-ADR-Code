@@ -33,6 +33,33 @@ citator:
   detail: >-
     Yellow flag: declined to extend by Jones v. United States (Fed. Cir. 2017). Read from the header of Trevor's Westlaw print, filed privately (bucket key westlaw/richard-v-united-states-2012.pdf).
   checked: 2026-11-22
+courtlistener:
+  cluster: 627223
+  citation: "677 F.3d 1141"
+  case_name: "Richard v. United States"
+  link: https://www.courtlistener.com/opinion/627223/richard-v-united-states/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/627223/richard-v-united-states/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22677%20F.3d%201141%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=677%20F.3d%201141
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=677%20F.3d%201141
 rights:
   status: no-permission-needed
   basis: us-government-work

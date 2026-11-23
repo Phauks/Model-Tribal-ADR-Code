@@ -204,6 +204,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Miami Tribe of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Miami Tribe of Oklahoma".
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Miami Tribe of Oklahoma" among organizations under constitutions approved by
@@ -228,6 +236,209 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-Laws approved 1996
+  quote: Laws approved by the U.S. Secretary of the Interior on February 22, 1996.
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 1.1 P
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: governing-body
+  value: Tribal Business Committee
+  quote: Since that constitution our Nation has been governed by an elected leadership consisting of a Chief, Second Chief, Secretary-Treasurer, and two Councilpersons; known collectively as the Tribal Business Committee.
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The General Council is the governing body of the Nation and that Council, under authority of the Miami Constitution, elects five Tribal members to serve as the Tribe’s Business Committee
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: governing-body-selection
+  value: Chosen by the General Council
+  quote: The General Council is the governing body of the Nation and that Council, under authority of the Miami Constitution, elects five Tribal members to serve as the Tribe’s Business Committee
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: The term of office shall be for three years
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article VI, Section 2
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  quote: elected leadership consisting of a Chief, Second Chief, Secretary-Treasurer, and two Councilpersons
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Miami Tribe of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of members present at open Council meeting
+  quote: an open Council meeting by a majority vote of the membership present
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article IV
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: The term of office shall be for three years
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article VI, Section 2
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Second Chief, Secretary-Treasurer, two Councilpersons
+  quote: elected leadership consisting of a Chief, Second Chief, Secretary-Treasurer, and two Councilpersons
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: elections
+  value: Every 3 years on the first Tuesday of September
+  quote: held by the Council on the first Tuesday of September 1939, and each third
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article VI, Section 1
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: Miami Indians residing in Oklahoma; Males, 21 years of age; and females,
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article III
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Council
+  quote: held by the Council on the first Tuesday of September 1939
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article VI, Section 1
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: District Court and Court of Appeals
+  quote: The Tribal Court is comprised of a District Court and a Court of Appeals.
+  source: miami-tribe-of-oklahoma-court-miamination-com
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: judicial-selection
+  value: Chosen by majority vote of the Business Committee
+  quote: majority vote of the Business Committee to serve a term of four (4) years, subject to the
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 2.7 A
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: judicial-term
+  value: 4 years
+  quote: majority vote of the Business Committee to serve a term of four (4) years, subject to the
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 2.7 A
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: judicial-independence
+  value: Pay may not be lowered during term
+  quote: Business Committee, and a Judge’s pay shall not be lowered during his or her term as a
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 2.12 A
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: amendment
+  value: Ordinances adopted by the Business Committee
+  quote: This Code may be amended by the adoption of ordinances by the Business Committee.
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 1.6
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by the Secretary of the Interior shall be submitted to
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article IX
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by majority vote of Business Committee
+  quote: Business Committee at a validly called meeting for abuse of office, neglect of duty, or
+  source: miami-tribe-of-oklahoma-website-wp-content-uploads-2023-02-amended-judicial-code-8-26-19-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Section 2.10 B
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
+- aspect: other
+  value: General Council is governing body of the Nation
+  quote: The General Council is the governing body of the Nation and that Council, under authority of the Miami Constitution, elects five Tribal members to serve as the Tribe’s Business Committee
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The About page says the first constitution was adopted in 1939, while the Judicial Code gives the constitution approval date as February 22, 1996; the Code''s date is used, and the constitution text itself is not on the pages.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -487,6 +698,48 @@ gaming:
     locator: table row 151, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
       as "Miami Tribe of Oklahoma".
+  indian_lands_opinions:
+  - parcel: Maria Christiana Reserve, KS
+    legal_theory: Governmental Power
+    accepted: true
+    date: '1998-11-10'
+    link: https://www.nigc.gov?wpdmdl=2498&ind=2499
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Miami Tribe of Oklahoma, 1998-11-10
+    note: The list names the tribe as “Miami Tribe of Oklahoma”.
+  - parcel: Maria Christiana Reserve, KS
+    legal_theory: Jurisdiction
+    accepted: false
+    date: '2002-10-31'
+    link: https://www.nigc.gov?wpdmdl=2542&ind=2543
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Miami Tribe of Oklahoma, 2002-10-31
+    note: The list names the tribe as “Miami Tribe of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-15
+    date: '2008-08-05'
+    link: https://www.nigc.gov?wpdmdl=8006&ind=8028
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-15
+    note: The list titles the action “Miami Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-15
+    date: '2008-08-25'
+    link: https://www.nigc.gov?wpdmdl=7997&ind=8008
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-15
+    note: The list titles the action “Miami Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -500,6 +753,305 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Miami Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: court-rules
+  title: Civil Procedure Code
+  court: Miami Tribe of Oklahoma Court
+  link: http://miamination.com/wp-content/uploads/2026/01/Civil-Procedure-Code-Enacted-Dec.-202561.pdf
+  detail: Civil Procedure Code, enacted December 2025 per file name; criminal procedure code and rules of evidence also linked.
+  source: miami-tribe-of-oklahoma-court-miamination-com
+  confidence: high
+  verification: read-in-full
+  locator: Court page
+- kind: public-defender
+  title: Miami Tribe of Oklahoma Court (Public Defender and Conflicts Public Defender)
+  court: Miami Tribe of Oklahoma Court
+  link: https://www.miamination.com/miami-tribe-of-oklahoma-court/
+  detail: Page lists a Public Defender and a Conflicts Public Defender; details not read.
+  source: miami-tribe-of-oklahoma-court-miamination-com
+  confidence: high
+  verification: read-in-full
+  locator: Court page
+  note: 'The source reads: “Public Defender”. Names omitted.'
+nearby_state_courts:
+- state: OK
+  county: Ottawa County
+  court: District Court for Ottawa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Ottawa County holds 100% of the land of Miami OTSA (Census GEOID 5730), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Wyandot, etc., 1795
+  signed: '1795-08-03'
+  statutes_at_large: 7 Stat. 49
+  kappler:
+    volume: 2
+    page: 39
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1795-0039
+  signatory: Eel River; Miami; Piankishaw; Wea
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 39 (Treaty with the Wyandot, etc., 1795; Kappler header "Aug. 3, 1795. | 7 Stat., 49. | Proclamation, Dec. 2, 1795.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Delawares, etc., 1803
+  signed: '1803-06-07'
+  statutes_at_large: 7 Stat. 74
+  kappler:
+    volume: 2
+    page: 64
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1803-0064
+  signatory: Miami; Eel River; Wea; Piankishaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 64 (Treaty with the Delawares, etc., 1803; Kappler header "June 7, 1803. | 7 Stat., 74. | Proclamation Dec. 26, 1803.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Eel River, etc., 1803
+  signed: '1803-08-07'
+  statutes_at_large: 7 Stat. 77
+  kappler:
+    volume: 2
+    page: 66
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-eel-river-etc-1803-0066
+  signatory: Eel River; Piankishaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 66 (Treaty with the Eel River, etc., 1803; Kappler header "Aug. 7, 1803. | 7 Stat., 77. | Proclamation, Dec. 23, 1803.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Delawares, 1804
+  signed: '1804-08-18'
+  statutes_at_large: 7 Stat. 81
+  kappler:
+    volume: 2
+    page: 70
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-1804-0070
+  signatory: Miami; Piankishaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 70 (Treaty with the Delawares, 1804; Kappler header "Aug. 18, 1804. | 7 Stat., 81. | Ratified Jan. 21, 1805. | Proclaimed Feb. 14, 1805.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Delawares, etc., 1805
+  signed: '1805-08-21'
+  statutes_at_large: 7 Stat. 91
+  kappler:
+    volume: 2
+    page: 80
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1805-0080
+  signatory: Miami; Eel River; Wea
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 80 (Treaty with the Delawares, etc., 1805; Kappler header "Aug. 21, 1805. | 7 Stat., 91. | Proclamation, Apr. 24. 1806.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Delawares, etc., 1809
+  signed: '1809-09-30'
+  statutes_at_large: 7 Stat. 113
+  kappler:
+    volume: 2
+    page: 101
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1809-0101
+  signatory: Miami; Eel River Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 101 (Treaty with the Delawares, etc., 1809; Kappler header "Sept. 30, 1809. | 7 Stat., 113. | Proclamation, Jan. 16, 1810.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Supplementary Treaty with the Miami, etc., 1809
+  signed: '1809-09-30'
+  statutes_at_large: 7 Stat. 115
+  kappler:
+    volume: 2
+    page: 103
+    link: https://treaties.okstate.edu/treaties/supplementary-treaty-with-the-miami-etc-1809-0103
+  signatory: Miami; Eel River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 103 (Supplementary Treaty with the Miami, etc., 1809; Kappler header "Sept. 30, 1809. | 7 Stat., 115. | Proclamation Jan. 16, 1810.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Wea, 1809
+  signed: '1809-10-26'
+  statutes_at_large: 7 Stat. 116
+  kappler:
+    volume: 2
+    page: 103
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wea-1809-0103
+  signatory: Wea; Miami; Eel River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 103 (Treaty with the Wea, 1809; Kappler header "Oct. 26, 1809. | 7 Stat., 116. | Ratified Jan. 2, 1810. | Proclaimed Jan. 25, 1810.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Wyandot, etc., 1814
+  signed: '1814-07-22'
+  statutes_at_large: 7 Stat. 118
+  kappler:
+    volume: 2
+    page: 105
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1814-0105
+  signatory: Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 105 (Treaty with the Wyandot, etc., 1814; Kappler header "July 22, 1814. | 7 Stat., 118. | Ratified, Dec. 13, 1814. | Proclaimed Dec. 21, 1814.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Piankashaw, 1815
+  signed: '1815-07-18'
+  statutes_at_large: 7 Stat. 124
+  kappler:
+    volume: 2
+    page: 111
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-piankashaw-1815-0111
+  signatory: Piankishaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 111 (Treaty with the Piankashaw, 1815; Kappler header "July 18, 1815. | 7 Stat., 124. | Ratified, Dec. 26, 1815.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Wea and Piankeshaw are Miami-affiliated peoples; Miami Tribe of Oklahoma also includes their descendants. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1815
+  signed: '1815-09-08'
+  statutes_at_large: 7 Stat. 131
+  kappler:
+    volume: 2
+    page: 117
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1815-0117
+  signatory: Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 117 (Treaty with the Wyandot, etc., 1815; Kappler header "Sept. 8, 1815. | 7 Stat., 131. | Ratified Dec. 26, 1815.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Miami, 1818
+  signed: '1818-10-06'
+  statutes_at_large: 7 Stat. 189
+  kappler:
+    volume: 2
+    page: 171
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-miami-1818-0171
+  signatory: Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 171 (Treaty with the Miami, 1818; Kappler header "Oct. 6, 1818. | 7 Stats., 189. | Proclamation Jan. 15, 1319 [1819].")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Miami, 1826
+  signed: '1826-10-23'
+  statutes_at_large: 7 Stat. 300
+  kappler:
+    volume: 2
+    page: 278
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-miami-1826-0278
+  signatory: Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 278 (Treaty with the Miami, 1826; Kappler header "Oct. 23, 1826. | 7 Stat., 300. | Proclamation, Jan. 24, 1827.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Miami, 1828
+  signed: '1828-02-11'
+  statutes_at_large: 7 Stat. 309
+  kappler:
+    volume: 2
+    page: 286
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-miami-1828-0286
+  signatory: Eel River Miami; Thorntown party of Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 286 (Treaty with the Miami, 1828; Kappler header "Feb. 11 1828. | 7 Stat., 309. | Proclamation, May 7, 1828.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Miami, 1834
+  signed: '1834-10-23'
+  statutes_at_large: 7 Stat. 458
+  kappler:
+    volume: 2
+    page: 425
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-miami-1834-0425
+  signatory: Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 425 (Treaty with the Miami, 1834; Kappler header "Oct. 23, 1834. | 7 Stat., 458. | 7 Stat., 463. | Proclamation, Dec. 22, 1837.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Miami, 1838
+  signed: '1838-11-06'
+  statutes_at_large: 7 Stat. 569
+  kappler:
+    volume: 2
+    page: 519
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-miami-1838-0519
+  signatory: Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 519 (Treaty with the Miami, 1838; Kappler header "Nov. 6, 1838. | 7 Stat., 569. | Proclamation, Feb. 8, 1839.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Miami, 1840
+  signed: '1840-11-28'
+  statutes_at_large: 7 Stat. 582
+  kappler:
+    volume: 2
+    page: 531
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-miami-1840-0531
+  signatory: Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 531 (Treaty with the Miami, 1840; Kappler header "Nov. 28, 1840. | 7 Stat., 582. | Proclamation, June 7, 1841.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Miami, 1854
+  signed: '1854-06-05'
+  statutes_at_large: 10 Stat. 1093
+  kappler:
+    volume: 2
+    page: 641
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-miami-1854-0641
+  signatory: Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 641 (Treaty with the Miami, 1854; Kappler header "June 5, 1854. | 10 Stats., 1093. | Ratified Aug. 4, 1854. | Proclaimed Aug. 4, 1854.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, Mixed Seneca and Shawnee, Quapaw, etc., 1867
+  signed: '1867-02-23'
+  statutes_at_large: 15 Stat. 513
+  kappler:
+    volume: 2
+    page: 960
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960
+  signatory: Piankishaw; Wea; Miami
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 960 (Treaty with the Seneca, Mixed Seneca and Shawnee, Quapaw, etc., 1867; Kappler header "Feb. 23, 1867. | 15 Stats., 513. | Ratified June 18, 1868. | Proclaimed Oct. 14, 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

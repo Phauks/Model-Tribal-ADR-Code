@@ -1,7 +1,7 @@
 profile: content/tribes/a/assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -35,6 +35,19 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#assiniboine-sioux-tribes-of-the-fort-peck-indian-reservation-amendment-2025-12-02#i1
-next_steps: Read the scanned ordinance listed 1994-02-07 (https://www.nigc.gov/wp-content/uploads/2025/01/assbsxtbftpkindnrtn-ordappr020794.pdf)
-  with OCR or by hand. Some pages of the amendment listed 2025-12-02 (https://www.nigc.gov/wp-content/uploads/2025/12/2025.12.02-Assiniboine-Sioux-Tribes-of-the-Ft-Peck-Gam-Ord-Amend.pdf)
-  have no text layer; read them with OCR.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/01/assbsxtbftpkindnrtn-ordappr020794.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: 'Small-model reviewers read PDF pages 1-40 of 54 of this ordinance listed 1994-02-07 as page
+    images (it has no text layer) and found no dispute procedure (the table of contents and the read sections
+    show only license hearings and cancellation with no patron, employee or other dispute, complaint or
+    grievance procedure). Not read: pages 41-54 (40-page budget for long documents).'
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 41-54 of the ordinance
+  listed 1994-02-07 (https://www.nigc.gov/wp-content/uploads/2025/01/assbsxtbftpkindnrtn-ordappr020794.pdf),
+  left by the 40-page budget for long documents.'

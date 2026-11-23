@@ -141,6 +141,122 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Tuntutuliak
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-home
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Alaska Area page
+  note: Area is Alaska because the nation is an Alaska Native village; the village was not found on any of the nine Alaska Area Profile service-area lists, so no service unit is recorded.
+governance:
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Council Composed of a President and four
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tuntutuliak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; scan has OCR errors and the voting-age clause is numbered ''Section X''.'
+- aspect: governing-body-size
+  value: President and 4 members
+  quote: members elected by the Adult members of the Community.
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tuntutuliak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; scan has OCR errors and the voting-age clause is numbered ''Section X''.'
+- aspect: governing-body-selection
+  value: Elected by the adult members
+  quote: members elected by the Adult members of the Community.
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tuntutuliak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; scan has OCR errors and the voting-age clause is numbered ''Section X''.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: Each member of the Council shall serve for a term of 2 yrs.
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: native-village-of-tuntutuliak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; scan has OCR errors and the voting-age clause is numbered ''Section X''.'
+- aspect: head-of-government
+  value: President
+  quote: There shall be a Council Composed of a President and four
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tuntutuliak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; scan has OCR errors and the voting-age clause is numbered ''Section X''.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Tuntutuliak
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President, Secretary-Treasurer
+  quote: Section 2 - The Vice President. The duties of the Vice President,
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Section 2
+  document_version:
+    document: native-village-of-tuntutuliak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; scan has OCR errors and the voting-age clause is numbered ''Section X''.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the village 18 year of age or over shall have
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section X
+  document_version:
+    document: native-village-of-tuntutuliak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; scan has OCR errors and the voting-age clause is numbered ''Section X''.'
+- aspect: amendment
+  value: Council or Community resolution; majority vote of adult members, 25% turnout
+  quote: ive when ratified by a marjority vote of Adult members, provided that at
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII
+  document_version:
+    document: native-village-of-tuntutuliak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; scan has OCR errors and the voting-age clause is numbered ''Section X''.'
+- aspect: recall-and-removal
+  value: Forfeit office on felony or dishonesty conviction
+  quote: who is convicted of a felony or any other offense involving dishonesty or
+  source: constitution-native-village-of-tuntutuliak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section I
+  document_version:
+    document: native-village-of-tuntutuliak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; scan has OCR errors and the voting-age clause is numbered ''Section X''.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -190,6 +306,16 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Bethel Census Area
+  court: Superior Court for Bethel Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Bethel Census Area holds 100% of the land of Tuntutuliak ANVSA (Census GEOID 7640), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Association of Village Council Presidents
   source: association-of-village-council-presidents-tribal-office-directory

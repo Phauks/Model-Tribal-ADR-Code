@@ -44,6 +44,50 @@ supreme_court:
   - {name: "Ketanji Brown Jackson", vote: minority}
   source: https://www.supremecourt.gov/opinions/22pdf/599us1r44_54l8.pdf
   checked: '2026-11-22'
+courtlistener:
+  cluster: 9408684
+  citation: "599 U.S. 555"
+  case_name: "Arizona v. Navajo Nation"
+  link: https://www.courtlistener.com/opinion/9408684/arizona-v-navajo-nation/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: supremecourt
+    label: "supremecourt.gov"
+    access: official
+    link: https://www.supremecourt.gov/opinions/22pdf/599us1r44_54l8.pdf
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/9408684/arizona-v-navajo-nation/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/599/555/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/2022/21-1484
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22599%20U.S.%20555%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=599%20U.S.%20555
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=599%20U.S.%20555
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Arizona_v._Navajo_Nation
 rights:
   status: no-permission-needed
   basis: us-government-work

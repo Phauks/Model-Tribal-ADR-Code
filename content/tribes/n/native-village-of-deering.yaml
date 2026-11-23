@@ -150,6 +150,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Deering
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: Listed as "Native Village of Deering". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Kotzebue Service Area
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: 'The source''s words: "Native Village of Deering".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Deering" among organizations under constitutions approved by
@@ -177,6 +194,99 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Governing body chosen by the Village
+  quote: The Village shall then choose the
+  source: constitution-native-village-of-deering-1945-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-10-26'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-deering-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly garbled in the Governing Body and Powers articles; quotes are limited to legible lines.'
+- aspect: governing-body-selection
+  value: Chosen by the Village
+  quote: The Village shall then choose the
+  source: constitution-native-village-of-deering-1945-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-10-26'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-deering-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly garbled in the Governing Body and Powers articles; quotes are limited to legible lines.'
+- aspect: general-council
+  value: General meeting of whole membership, yearly
+  quote: at least once a year.
+  source: constitution-native-village-of-deering-1945-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-10-26'
+  locator: Article III, Section 3
+  document_version:
+    document: native-village-of-deering-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly garbled in the Governing Body and Powers articles; quotes are limited to legible lines.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Deering
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '18'
+  quote: of age or over shall have the right to vote in Village meetings and
+  source: constitution-native-village-of-deering-1945-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-10-26'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-deering-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly garbled in the Governing Body and Powers articles; quotes are limited to legible lines.'
+- aspect: election-authority
+  value: Secretary of the Interior
+  quote: for the purpose by the Secretary of the Interior, provided that at least
+  source: constitution-native-village-of-deering-1945-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-10-26'
+  locator: Article II
+  document_version:
+    document: native-village-of-deering-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly garbled in the Governing Body and Powers articles; quotes are limited to legible lines.'
+- aspect: amendment
+  value: Majority vote, approved by Secretary of the Interior
+  quote: changes are approved by the Secretary of the Interior and by a
+  source: constitution-native-village-of-deering-1945-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-10-26'
+  locator: Article VI
+  document_version:
+    document: native-village-of-deering-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly garbled in the Governing Body and Powers articles; quotes are limited to legible lines.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior and by a
+  source: constitution-native-village-of-deering-1945-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1945-10-26'
+  locator: Article VI
+  document_version:
+    document: native-village-of-deering-constitution
+    version: 1945-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is badly garbled in the Governing Body and Powers articles; quotes are limited to legible lines.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -261,6 +371,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Northwest Arctic Borough
+  court: Superior Court for Northwest Arctic Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Northwest Arctic Borough holds 100% of the land of Deering ANVSA (Census GEOID 6400), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: NANA Regional Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

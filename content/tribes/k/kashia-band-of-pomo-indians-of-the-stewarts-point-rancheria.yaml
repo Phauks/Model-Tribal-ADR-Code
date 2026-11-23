@@ -160,6 +160,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California Kletsel Dehe Band of Wintun Indians".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Kashia Band of Pomo Indians of the Stewart's Point Rancheria, California" among
@@ -185,6 +193,159 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws under the Indian Reorganization Act
+  quote: offered to us by the Indian Reorganization Act
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Preamble
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: governing-body
+  value: Community council
+  quote: dians shall be the community council which shall be composed of all
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Article III, Section 1
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: governing-body-size
+  value: All qualified voters of the band
+  quote: dians shall be the community council which shall be composed of all
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Article III, Section 1
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: head-of-government
+  value: Chairman
+  quote: 'by secret ballot, (a) chairman:'
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Article III, Section 3
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the community council from its members
+  quote: The community council shall elect from its own members,
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Article III, Section 3
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: other-officers
+  value: Vice chairman, secretary, treasurer
+  quote: (b) vice chairman; (c) secretary;
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Article III, Section 3
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: elections
+  value: Officials chosen at the November meeting
+  quote: Thereafter, officials shall be chosen at the November meeting.
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Amendment I, item 4
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: voting-age
+  value: '21'
+  quote: 21 years of nr-c or over are
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Amendment III (Article III, Section 2)
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: amendment
+  value: Majority vote of qualified voters in election called by Secretary of the Interior, 30% turnout
+  quote: This constitution and by-laws may be amended by a
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Article V, Section 1
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Article V, Section 1
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of eligible voters after felony or dishonesty conviction
+  quote: Any officer convicted of a felony or misdemeanor in
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Article VI, Section 2 (Amendment II)
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
+- aspect: recall-and-removal
+  value: Expulsion by majority vote of eligible voters for neglect or misconduct
+  quote: The Community Council may, by a majority vote of the
+  source: constitution-kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-1967-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1967'
+  locator: Article VI, Section 3 (Amendment II)
+  document_version:
+    document: kashia-band-of-pomo-indians-of-the-stewarts-point-rancheria-constitution
+    version: 1967-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments through 1967 (Amendments I to IV); several sections are garbled by OCR.'
 governing_documents:
 - kind: law-code
   title: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California - Tribal Ordinances
@@ -276,6 +437,16 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Sonoma County
+  court: Superior Court for Sonoma County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Sonoma County holds 100% of the land of Stewarts Point Rancheria (Census GEOID 3985), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

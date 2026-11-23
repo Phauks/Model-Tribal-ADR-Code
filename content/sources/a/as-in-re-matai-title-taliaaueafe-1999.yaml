@@ -23,6 +23,33 @@ archives:
 history:
   status: live
   last_checked: 2026-11-21
+courtlistener:
+  cluster: 8514196
+  citation: "3 Am. Samoa 3d 225"
+  case_name: "Taulapapa v. Alaipalelei"
+  link: https://www.courtlistener.com/opinion/8514196/taulapapa-v-alaipalelei/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/8514196/taulapapa-v-alaipalelei/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%223%20Am.%20Samoa%203d%20225%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=3%20Am.%20Samoa%203d%20225
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=3%20Am.%20Samoa%203d%20225
 rights:
   status: no-permission-needed
   basis: government-edict

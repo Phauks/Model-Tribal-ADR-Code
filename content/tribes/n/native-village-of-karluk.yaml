@@ -142,6 +142,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Karluk
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Native Village of Karluk". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Native Village of Karluk".'
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Karluk" among organizations under constitutions approved by
@@ -166,6 +182,74 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under Act of Congress of June 18, 1934
+  quote: authority of the Act of Congress of June 18, 1934, as
+  source: constitution-native-village-of-karluk-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-23'
+  document_version:
+    document: native-village-of-karluk-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is partly garbled; quotes are taken from the legible lines only.'
+- aspect: governing-body-selection
+  value: Chosen by the Village
+  quote: The Village shall then choose the
+  source: constitution-native-village-of-karluk-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-23'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-karluk-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is partly garbled; quotes are taken from the legible lines only.'
+- aspect: head-of-government
+  value: Tribal Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Karluk
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: Village 21 years of
+  source: constitution-native-village-of-karluk-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-23'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-karluk-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is partly garbled; quotes are taken from the legible lines only.'
+- aspect: amendment
+  value: Majority vote of Village members in election called by Secretary of the Interior
+  quote: majority vote of the Village members voting in an election called by
+  source: constitution-native-village-of-karluk-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-23'
+  locator: Article VI
+  document_version:
+    document: native-village-of-karluk-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is partly garbled; quotes are taken from the legible lines only.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior
+  source: constitution-native-village-of-karluk-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-08-23'
+  locator: Article VI
+  document_version:
+    document: native-village-of-karluk-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is partly garbled; quotes are taken from the legible lines only.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -262,6 +346,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Kodiak Island Borough
+  court: Superior Court for Kodiak Island Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Kodiak Island Borough holds 100% of the land of Karluk ANVSA (Census GEOID 6700), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Koniag Inc.
   relation: alaska-native-claims-settlement-act-regional-corporation

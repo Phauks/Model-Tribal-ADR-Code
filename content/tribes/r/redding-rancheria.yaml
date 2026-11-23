@@ -185,6 +185,195 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Redding Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: 'Listed as "Redding Rancheria, California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Redding Rancheria Tribe (1997)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Tribal Constitution (adopted 1987)
+  quote: In 1987 the restored Redding Rancheria tribe formally adopted its Constitution.
+  source: redding-rancheria-website-tribal-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: Our Tribal Council has sworn that they will uphold and defend the Tribal Constitution, sovereignty and traditions of the Redding Rancheria Tribe
+  source: reddingrancheria-nsn-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members, plus 3 alternates
+  quote: composed of seven (7) Councilors and three (3) Alternate
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article IV
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by the membership
+  quote: Councilors elected by the Redding Rancheria membership.
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article IV
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years
+  quote: all future elections, Councilors shall be elected for a two (2)
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: reddingrancheria-nsn-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Redding Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its own number
+  quote: electing from its own number, a Chairperson, a Secretary,
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article IV
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice Chairperson, Secretary, Treasurer
+  quote: Vice Chairperson
+  source: reddingrancheria-nsn-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually, first Saturday of October
+  quote: election shall be held annually on the first Saturday
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: members of the Redding Rancheria who are eighteen (18) years of age
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Three-member Election Committee independent of the Council
+  quote: Election Committee independent of Tribal Council shall be appointed
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court
+  quote: Established with the assistance of a BIA grant, the Redding Rancheria Tribal Court convened in 2006.
+  source: redding-rancheria-website-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election with 51% attendance
+  quote: The Constitution may be amended by a majority of the qualified voters
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article XI
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of voting members
+  quote: petition signed by fifty one (51) percent of the voting members
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VII
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by five Council votes
+  quote: Tribal Council may, by vote of five (5) of its members, remove a Councilor
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article VII
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Popular veto of Council action on petition of 51% of voting members
+  quote: petition by fifty-one (51) percent of the voting members of the
+  source: constitution-redding-rancheria-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-12-30'
+  locator: Article IX
+  document_version:
+    document: redding-rancheria-constitution
+    version: 1989-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -350,6 +539,38 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Redding Rancheria". Name extracted
       from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Strawberry Fields and Adjacent 80 Acres, Shasta County, CA
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2010-12-22'
+    link: https://www.nigc.gov?wpdmdl=2643&ind=2645
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Redding Rancheria, 2010-12-22
+    note: The list names the tribe as “Redding Rancheria”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-12
+    date: '2009-03-30'
+    link: https://www.nigc.gov?wpdmdl=7892&ind=7903
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-12
+    note: The list titles the action “Redding Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-12
+    date: '2009-05-15'
+    link: https://www.nigc.gov?wpdmdl=7832&ind=7843
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-12
+    note: The list titles the action “Redding Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -375,6 +596,16 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Shasta County
+  court: Superior Court for Shasta County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Shasta County holds 100% of the land of Redding Rancheria (Census GEOID 3095), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

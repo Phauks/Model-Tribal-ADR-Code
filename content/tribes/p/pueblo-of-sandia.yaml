@@ -169,6 +169,79 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Sandia, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Sandia Pueblo". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Pueblo of Sandia (2010)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: There is a Tribal Council that serves a function similar to a state's house or senate.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: The Governor oversees day to day government operations, while the Lt. Governor is the Tribal Court Judge.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pueblo of Sandia, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Appointed according to cultural tradition
+  quote: A Governor, Lt. Governor, Warchief, and Lt. Warchief are appointed for annual terms according to Sandia's cultural tradition.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: A Governor, Lt. Governor, Warchief, and Lt. Warchief are appointed for annual terms according to Sandia's cultural tradition.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Lt. Governor, Warchief, Lt. Warchief
+  quote: A Governor, Lt. Governor, Warchief, and Lt. Warchief are appointed for annual terms according to Sandia's cultural tradition.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Governor oversees day to day government operations, while the Lt. Governor is the Tribal Court Judge.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Governor and Warchief sit on Tribal Council for life
+  quote: The Governor and Warchief will become Tribal Council members for life.
+  source: pueblo-of-sandia-website-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -346,6 +419,45 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+nearby_state_courts:
+- state: NM
+  county: Sandoval County
+  court: District Court for Sandoval County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Sandoval County holds 78% of the land of Sandia Pueblo (Census GEOID 3370), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Bernalillo County
+  court: District Court for Bernalillo County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Bernalillo County holds 22% of the land of Sandia Pueblo (Census GEOID 3370), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Pueblo of Sandia land grant, New Mexico
+  method: statute
+  instrument: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  date: '1858-12-22'
+  detail: First set aside
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  locator: 11 Stat. 374
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... P, Pueblo of Sandia in the county of Bernalillo ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

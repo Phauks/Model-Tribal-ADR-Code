@@ -172,6 +172,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "Sokaogon Chippewa Community, Wisconsin".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Sokoagon Chippewa Community, Wisconsin" among organizations under constitutions
@@ -184,6 +192,171 @@ government_structure:
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
     is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
     Welfare Act; Alaska table: Alaska amendment).'
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Indian Reorganization Act
+  quote: Indian Reorganization Act; and promote the welfare of ourselves
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Preamble
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council, composed of a Chairman, a Vice-
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: governing-body-size
+  value: '5 members: Chairman, Vice-Chairman, Treasurer and two councilmen'
+  quote: Chairman, a Treasurer, and two councilman, to be elected by popular
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: governing-body-selection
+  value: Elected by popular referendum
+  quote: Chairman, a Treasurer, and two councilman, to be elected by popular
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: governing-body-term
+  value: 2 years for chairman, vice-chairman and treasurer; 1 year for councilmen
+  quote: two years ; the two councilmen shall be elected for a term of one year.
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 3
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Duties of the Chairman
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sokaogon Chippewa Community, Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice-Chairman, Treasurer, Secretary
+  quote: Duties of the Vice-Chairman
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: By-laws, Article I, Sections 2-4
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: elections
+  value: Every 2 years for chairman, vice-chairman and treasurer; every year for councilmen
+  quote: two years ; the two councilmen shall be elected for a term of one year.
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 3
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: voting-age
+  value: '21'
+  quote: jvhtfis 21 years of age or
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 5
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: election-authority
+  value: Tribal Council provides the date and manner of future elections
+  quote: The Tribal Council sh
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article IV, Section 6
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This Constitution and By-laws may be amended by a majority vote
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article VIII
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: by the Secretary of the Interior.
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article VIII
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
+- aspect: recall-and-removal
+  value: Expulsion of a Council member by an affirmative vote of three
+  quote: The Tribal Council may by an affirmative vote of three,
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-09'
+  locator: Article V, Section 1
+  document_version:
+    document: sokaogon-chippewa-community-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged in Article IV and parts of the By-laws, so the officer and term readings rest on the legible fragments.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -258,17 +431,16 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2011-08-30'
   - kind: peacemaking
-    title: Ch. 1 – Tribal Governance
-    citation: Ch. 1 – Tribal Governance
+    title: Sokaogon Chippewa Community Code, Ch. 1 Sections 1.1.8-1.1.11 - Traditional Peacemaking Court
+    citation: Sokaogon Chippewa Community Codes, Chapter 1 (Tribal Governance), Sections 1.1.8 to 1.1.11
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Sokaogon-Chippewa-Community-Chapter-1-Tribal-Governance-Final-8-30-2011.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: sokaogon-chapter-1-tribal-governance-2011
     confidence: medium
     verification: read-in-full
-    as_of: '2025-09-29'
-    locator: Sokaogon Chippewa Community of Wisconsin
-    note: 'Native American Rights Fund description (provision itself not read): Provides purpose, authorization,
-      procedures, subject matter and original jurisdiction, confidentiality, payment of $25.00 from each
-      party, referral guidelines, and jurisdiction over juvenile matters.'
+    as_of: 2011-08
+    locator: Chapter 1, Sections 1.1.8 to 1.1.11
+    note: Read in full on 2026-11-23 (Sokaogon Chippewa Community Codes, Chapter 1 Tribal Governance (table of contents August 2011; chapter dated 8-30-2011)). Read from the Sokaogon Chippewa Community Codes, Chapter 1, Sections 1.1.8 to 1.1.11 (August 2011). The earlier NARF-based description is supported by the text. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 514.
+    summary: Creates the Traditional Peacemaking Court as a branch of the Tribal Court, staffed by Tribal Judges who serve as peacemakers. A case gets there when a Tribal Court judge refers it with all parties' written consent (not hunting, fishing, traffic or child-protection cases), when all parties jointly ask the Tribal Court Clerk, when a statute provides (including juvenile delinquency and educational neglect), or, in a civil case, when the trial judge orders at least one hour of peacemaking even without consent. The court cannot compel anyone to take part unless another law says so, and peacemakers mediate and cannot decide unless all parties agree in writing. Each party pays $25; sessions are confidential, and results go to the Tribal Court in writing when it referred the case. An agreement has the effect of a court judgment when the Tribal Court enters it, which it does only if the conditions in Section 1.1.11 are met; if there is no agreement or it is breached, Tribal Court proceedings continue.
 gaming:
   compacts:
   - state: WI
@@ -410,6 +582,67 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: bar-admission
+  title: Welcome to Sokaogon Tribal Court
+  court: Sokaogon Tribal Court
+  link: http://www.wtja.org/tribal-courts/Sokaogon/index.php
+  detail: 'Admissions requirements shown: must be admitted to the Wisconsin bar and pay a $75 fee.'
+  source: sokaogon-tribal-court-bar-admission
+  confidence: low
+  verification: inferred
+  locator: Admissions Requirements
+  note: 'The source reads: “Must Be Admitted to the Wisconsin Bar”. Page is hosted by the Wisconsin Tribal Judges Association, a third party, not the nation.'
+nearby_state_courts:
+- state: WI
+  county: Forest County
+  court: Circuit Court for Forest County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Forest County holds 100% of the land of Sokaogon Chippewa Community (Census GEOID 3885), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Chippewa, 1842
+  signed: '1842-10-04'
+  statutes_at_large: 7 Stat. 591
+  kappler:
+    volume: 2
+    page: 542
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1842-0542
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa of the Mississippi and Lake Superior, 1847
+  signed: '1847-08-02'
+  statutes_at_large: 9 Stat. 904
+  kappler:
+    volume: 2
+    page: 567
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 567 (Treaty with the Chippewa of the Mississippi and Lake Superior, 1847; Kappler header "Aug. 2. 1847. | 9 Stat., 904. | Ratified Apr. 3, 1848. | Proclaimed, Apr. 7, 1848.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1854
+  signed: '1854-09-30'
+  statutes_at_large: 10 Stat. 1109
+  kappler:
+    volume: 2
+    page: 648
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1854-0648
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 648 (Treaty with the Chippewa, 1854; Kappler header "Sept. 30, 1854. | 10 Stats., 1109. | Ratified Jan. 10, 1855. | Proclaimed Jan. 29, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

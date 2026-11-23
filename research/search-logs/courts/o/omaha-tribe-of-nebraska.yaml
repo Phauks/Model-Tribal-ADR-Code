@@ -264,5 +264,22 @@ searches:
     author''s order (own page, then directory entry): directory, https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/consortium-tribal-state-and-federal-courts.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-274
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20160828130822/http://omaha-nsn.gov:80/tribe/government/tribal-court
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2016-08-28 ("Tribal Court | Omaha Tribe of Nebraska | Native Sovereign
+    Nation") shows the nation's court and links to its code.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20220321023945/http://omaha-nsn.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2022-03-21 is an empty page or an error page (no text).
 next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court” (research/reviews/2026-11-22-service-links.json).
   The second search of 2026-11-23 linked “Tribal Court” (research/reviews/2026-11-22-service-links.json).

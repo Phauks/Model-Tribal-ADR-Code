@@ -1,6 +1,6 @@
 # 0031. Serve the project's copies of cited documents, including nations' constitutions and laws
 
-- **Status:** Accepted
+- **Status:** Accepted; amended by [0043](0043-link-to-the-national-indian-law-library-for-its-copies.md) for copies taken from the National Indian Law Library
 - **Date:** 2026-11-22
 
 ## Context

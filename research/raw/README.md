@@ -1,12 +1,8 @@
 # Raw research data
 
-Cited facts gathered during research sessions, before they become records in
-`content/`. Each dated folder holds one JSON file per session or research
-assistant. They are kept so every value in a profile can be traced back to the
-step that found it, and so facts that did not fit the schema are not lost.
+Cited facts gathered during research sessions, before they become records in `content/`. Each dated folder holds one JSON file per session or research assistant. They are kept so every value in a profile can be traced back to the step that found it, and so facts that did not fit the schema are not lost.
 
-Licensed like the rest of `research/` (CC BY 4.0). Facts were taken from public
-sources; office contact points only, never personal contact details.
+Licensed like the rest of `research/` (CC BY 4.0). Facts were taken from public sources; office contact points only, never personal contact details.
 
 ## File shape
 
@@ -25,8 +21,7 @@ sources; office contact points only, never personal contact details.
 }
 ```
 
-`field` names map to profile fields in `scripts/tribes/build_profiles.py`.
-Each folder's `build-report.json` lists what the build merged, dropped and why.
+`field` names map to profile fields in `scripts/tribes/build_profiles.py`. Each folder's `build-report.json` lists what the build merged, dropped and why.
 
 ## Folders
 

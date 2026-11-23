@@ -204,6 +204,95 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Santa Ana, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Santa Ana Pueblo". Also listed under the same Area in: indian-health-service-direct-service-tribes. The page names the field clinics at Zia and Santa Ana Pueblos; the Albuquerque Area page also lists a Santa Ana Health Center.'
+- area: Albuquerque
+  service_unit: Albuquerque Indian Health Center (Albuquerque Service Unit), via field clinic
+  source: indian-health-service-albuquerque-indian-health-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "AIHC also provides care in the Zia Pueblo and the Santa Ana Pueblo via two Field Clinics.".'
+- area: Albuquerque
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Albuquerque Area
+  note: Listed as "Pueblo of Santa Ana". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council is comprised of all the pueblo’s head of households.
+  source: pueblo-of-santa-ana-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: All head of households
+  quote: Tribal Council is comprised of all the pueblo’s head of households.
+  source: pueblo-of-santa-ana-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: The Governor and Lt. Governor are appointed every year.
+  source: pueblo-of-santa-ana-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pueblo of Santa Ana, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Appointed
+  quote: The Governor and Lt. Governor are appointed every year.
+  source: pueblo-of-santa-ana-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: The Governor and Lt. Governor are appointed every year.
+  source: pueblo-of-santa-ana-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Lt. Governor
+  quote: The Governor and Lt. Governor are appointed every year.
+  source: pueblo-of-santa-ana-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Cacique (appoints other key officials)
+  quote: The cacique, essentially a priest, is charged with assuring that order, authorizing communal rituals, and appointing other key officials.
+  source: pueblo-of-santa-ana-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -394,6 +483,107 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Listed by the Tribal Law and Policy Institute among the Tribes that have implemented special Tribal criminal jurisdiction under the Violence Against Women Act Reauthorization Act of 2022 (25 U.S.C. § 1304).
+  source: tribal-law-and-policy-institute-special-tribal-criminal-jurisdiction-chart
+  confidence: medium
+  verification: inferred
+  as_of: '2026-08-11'
+  locator: Chart row 35, "Implemented VAWA STCJ" column
+  note: Listed as "Pueblo of Santa Ana". The chart is undated (file last modified Aug. 11, 2026) and comes from a Justice Department technical-assistance provider, not the Department itself.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: New Mexico Children, Youth and Families Department
+  agreement: '[Santa Ana Pueblo] Tribal-State Joint Powers Agreement for Foster Care and Adoption Assistance Payments Under Title IV-E of the Social Security Act'
+  state: NM
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for NM
+  note: 'The source reads: “[Santa Ana Pueblo] Tribal-State Joint Powers Agreement for Foster Care and Adoption Assistance Payments Under Title IV-E of the Social Security Act”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: New Mexico Children, Youth and Families Department
+  agreement: Title IV-E agreement (maintenance costs only)
+  state: NM
+  date: '1997'
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.I, New Mexico
+  note: 'The source reads: “Santa Ana Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: bar-admission
+  title: Attorney Requirements and Application
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  detail: Court page has an Attorney Requirements and Application item and says a list of licensed attorneys and advocates is available on request.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: title-only
+  locator: Court page
+  note: Linked document not opened.
+- kind: public-defender
+  title: Public Defender (Santa Ana Tribal Court personnel)
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  detail: Court personnel listed include a Public Defender; a Public Defender Feedback Survey is also linked.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: read-in-full
+  locator: Welcome to Santa Ana Tribal Court
+  note: 'The source reads: “Public Defender”.'
+- kind: court-rules
+  title: Courtroom Rules and Protocols (and Rules of Procedure for the Contemporary Court)
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-rules/
+  detail: Court page links a rules page and cites Criminal Rule 6-3-401 of the Rules of Procedure for the Contemporary Court, adopted by Resolution No. 2022-R-39.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: read-in-full
+  locator: Court page
+  note: 'The source reads: “Courtroom Rules and Protocols”. Rules page opened; it returned no readable text.'
+- kind: forms
+  title: Civil Complaint and other forms (Santa Ana)
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/wp-content/uploads/2022/12/Civil-Complaint.pdf
+  detail: Court page links Civil Complaint, Motion and Certificate of Service, Response to Motion, and Complaint for Temporary Restraining Order forms.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: title-only
+  locator: 'Court Forms:'
+  note: 'The source reads: “Civil Complaint”. Forms not opened.'
+- kind: filing-fees
+  title: Court Forms (no filing fees statement)
+  court: Santa Ana Tribal Court
+  link: https://santaana-nsn.gov/tribalcourt-front-page/
+  detail: Court page states no filing fees are required for forms or documents submitted to the office; a Uniform Bond Schedule is also linked.
+  source: pueblo-of-santa-ana-tribalcourt-front-page
+  confidence: high
+  verification: read-in-full
+  locator: 'Court Forms:'
+  note: 'The source reads: “No filing fees are required for any forms or documents submitted to our office.”.'
+nearby_state_courts:
+- state: NM
+  county: Sandoval County
+  court: District Court for Sandoval County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Sandoval County holds 100% of the land of Santa Ana Pueblo (Census GEOID 3480), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

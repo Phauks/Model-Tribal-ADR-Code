@@ -175,6 +175,14 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
     Wisconsin
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "Bad River Band of Lake Superior Chippewa of the Bad River Reservation, Wisconsin".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Bad River Band of the Lake Superior Tribe of Chippewa Indians Wisconsin" among
@@ -200,6 +208,219 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Act of Congress of June 18, 1934
+  quote: do ordain and establish this Constitution according to the Act of Congress, dated June 18, 1934
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Preamble
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body under this Constitution and Bylaws shall be known as the Tribal Council.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: composed of seven (7) members to be elected by the people.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the people
+  quote: composed of seven (7) members to be elected by the people.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: The Tribal Chairperson, Treasurer, and the two Senior Council Members shall serve two (2) year terms beginning with the first election.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: The office of Tribal Chairperson shall be a full time occupation and shall pay a livable salary.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the voters
+  quote: Of the candidates nominated for office, the one receiving the largest number of votes for each specific office shall be deemed elected
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The Tribal Chairperson, Treasurer, and the two Senior Council Members shall serve two (2) year terms beginning with the first election.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: The Tribal Vice-Chairperson, Secretary, and one Junior Council Member shall serve a one-year term beginning with the first election.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually, first Tuesday after the first Monday in November
+  quote: the Tribal Council election shall be held on the first Tuesday following the first Monday of the month of November.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 2
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: Qualified voters shall be all members of the Bad River Band of Chippewa Indians 18 years of age or older, on the day of the election.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article IV, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Ad hoc election committee
+  quote: The incumbent Tribal Council shall establish by resolution an ad hoc election committee, composed of three Tribal members.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 2(b)
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Indian court, established by ordinance
+  quote: for the administration of justice by establishing an Indian court and defining its duties and powers.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article VI, Section 1(q)
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This Constitution and Bylaws may be amended by a majority vote of the qualified voters of the Bad River Band of the Lake Superior Tribe of Chippewa Indians voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article IX
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article IX
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible resident voters
+  quote: Upon receipt of a petition signed by thirty (30) percent of the eligible resident voters calling for the recall of any member of the Council
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article V, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Expulsion by 4 affirmative Council votes
+  quote: The Tribal Council may by an affirmative vote of four (4) members expel any member for neglect of duty or gross misconduct
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article V, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -398,6 +619,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bad River Band of Lake Superior
       Tribe of Chippewa Indians". Facilities as machine-extracted from the report text (verify): Bad River
       Lodge & Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-07
+    date: '2005-03-16'
+    link: https://www.nigc.gov?wpdmdl=8191&ind=8212
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-07
+    note: The list titles the action “Bad River Band of Lake Superior” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -424,6 +656,99 @@ jurisdiction:
     so nation names were read from images and matched to the roster. Row re-read on 2026-11-22 from the
     page image (the govinfo PDF has no text layer for the table); verification level unchanged because
     the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: filing-fees
+  title: Schedule of Court Costs and Fees
+  court: Bad River Tribal Court
+  link: https://www.badriver-nsn.gov/tribal-court-legal/
+  detail: Revised fee schedule adopted under Sec. 5.11 of the Tribal Court Code, with appellate fees; amounts on the page (not transcribed).
+  source: bad-river-band-of-lake-superior-tribe-of-chippewa-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Court & Legal page
+nearby_state_courts:
+- state: WI
+  county: Ashland County
+  court: Circuit Court for Ashland County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Ashland County holds 95% of the land of Bad River Reservation (Census GEOID 0140), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WI
+  county: Iron County
+  court: Circuit Court for Iron County
+  link: https://www.wicourts.gov/courts/circuit/index.htm
+  source: state-trial-court-directory-wi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Iron County holds 5% of the land of Bad River Reservation (Census GEOID 0140), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Chippewa, 1826
+  signed: '1826-08-05'
+  statutes_at_large: 7 Stat. 290
+  kappler:
+    volume: 2
+    page: 268
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1826-0268
+  signatory: La Pointe
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 268 (Treaty with the Chippewa, 1826; Kappler header "Aug. 5, 1826. | 7 Stat., 290. | Proclamation, Feb. 7, 1827.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. La Pointe (Madeline Island) band to Bad River and Red Cliff. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1842
+  signed: '1842-10-04'
+  statutes_at_large: 7 Stat. 591
+  kappler:
+    volume: 2
+    page: 542
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1842-0542
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa of the Mississippi and Lake Superior, 1847
+  signed: '1847-08-02'
+  statutes_at_large: 9 Stat. 904
+  kappler:
+    volume: 2
+    page: 567
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 567 (Treaty with the Chippewa of the Mississippi and Lake Superior, 1847; Kappler header "Aug. 2. 1847. | 9 Stat., 904. | Ratified Apr. 3, 1848. | Proclaimed, Apr. 7, 1848.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1854
+  signed: '1854-09-30'
+  statutes_at_large: 10 Stat. 1109
+  kappler:
+    volume: 2
+    page: 648
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1854-0648
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 648 (Treaty with the Chippewa, 1854; Kappler header "Sept. 30, 1854. | 10 Stats., 1109. | Ratified Jan. 10, 1855. | Proclaimed Jan. 29, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+land_establishment:
+- land_area: La Pointe band tract (Bad River), Wisconsin
+  method: treaty
+  instrument: Treaty of La Pointe, Sept. 30, 1854, art. II, 10 Stat. 1109
+  date: '1854-09-30'
+  detail: First set aside
+  source: treaty-with-the-chippewa-1854
+  confidence: medium
+  verification: read-in-full
+  locator: 10 Stat. 1109
+  note: 'The instrument reads: “2d. For the La Pointe band, and such other Indians as may see fit to settle with them, a tract of land bounded as follows”. Tract runs from near the Montreal River to Chequamegon (Shag-waw-me-quon) Point; Bad River Reservation as identified by modern boundaries. Buffalo''s subdivision (Red Cliff) is covered by clause 6.'
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

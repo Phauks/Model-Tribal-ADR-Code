@@ -121,6 +121,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cloverdale Rancheria of Pomo Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Cloverdale Rancheria of Pomo Indians of California".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cloverdale Rancheria of Pomo Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
 gaming:
   ordinances:
   - approved: '2002-06-24'
@@ -141,6 +158,17 @@ gaming:
     locator: table row 47, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 47 lists the nation
       as "Cloverdale Rancheria of Pomo Indians of California".
+  indian_lands_opinions:
+  - parcel: Cloverdale Parcels, Sonoma City CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2008-12-12'
+    link: https://www.nigc.gov?wpdmdl=2624&ind=2626
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Cloverdale Rancheria of Pomo Indians, 2008-12-12
+    note: The list names the tribe as “Cloverdale Rancheria of Pomo Indians”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

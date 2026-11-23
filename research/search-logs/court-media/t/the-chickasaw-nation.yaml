@@ -1,0 +1,46 @@
+profile: content/tribes/t/the-chickasaw-nation.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Chickasaw Nation Peacemaking Court video
+  outcome: found
+  reason: Results included chickasaw.tv episodes and a video list from the nation's media service, the NARF and NCORJ peacemaking court profiles, and the nation's Peacemaking Court page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://judicial.chickasaw.net/Courts/Peacemaking-Court.aspx
+  query: peacemaking court page media
+  outcome: blocked
+  reason: 'Not read: the WebFetch budget for this session ran out (proxy HTTP 403), so this page was not opened.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://judicial.chickasaw.net/Courts/Peacemaking-Court.aspx
+  query: video, photos, rights
+  outcome: found
+  reason: Fetched with curl. Peacemaking Court page has text and six unlabeled images (no alt text), no video; footer says 'the Chickasaw Nation. All rights reserved.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.chickasaw.tv/episodes/profiles-of-a-nation-season-2-episode-3-william-paul
+  query: episode subject, video ID, rights
+  outcome: found
+  reason: 'Fetched with curl. Description: ''William Paul explains the Chickasaw court system, with special emphasis on the Peacemaking Court''; the page''s YouTube ID n3CaVaWJriU is on the Chickasaw TV channel (oEmbed); footer ''© 2026 CHICKASAW NATION''; the page also holds an MP4 file link.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://chickasaw.tv/lists/william-g-paul-videos
+  query: list contents
+  outcome: not-found
+  reason: Fetched with curl. List page loads but its videos are not readable from the static page, so it was dropped as unverified.
+next_steps: Open the Peacemaking Court page images by hand to see if any are usable photos. The Chickasaw TV William G. Paul list was dropped as unverified. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

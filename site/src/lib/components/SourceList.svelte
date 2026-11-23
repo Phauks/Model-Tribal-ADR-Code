@@ -59,6 +59,11 @@
 	}
 
 	onMount(() => {
+		// "Sources groups: Open" in Settings, under Citations (src/lib/reading-settings.ts).
+		if (document.documentElement.dataset.sourceGroups === 'open') {
+			for (const group of groupElements()) group.open = true;
+			countOpen();
+		}
 		const fromHash = () => reveal(decodeURIComponent(location.hash.slice(1)));
 		const onClick = (event: MouseEvent) => {
 			const link = (event.target as Element | null)?.closest?.('a[href^="#"]');
@@ -215,7 +220,7 @@
 	.fold-mark {
 		display: inline-flex;
 		flex: none;
-		transition: transform 0.15s;
+		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
 	}
 
 	.source-group:not([open]) .fold-mark {

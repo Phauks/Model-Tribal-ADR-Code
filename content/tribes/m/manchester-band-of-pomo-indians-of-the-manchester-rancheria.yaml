@@ -158,6 +158,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Manchester Band of Pomo Indians of the Manchester Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Manchester Band of Pomo Indians of the Manchester Rancheria, California".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Manchester Band of Pomo Indians of the Manchcester Rancherai, California" among
@@ -183,6 +191,134 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws under the Indian Reorganization Act
+  quote: powers offered to us by the Indian Reorganization Act*
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+- aspect: governing-body
+  value: Community council
+  quote: Indians shall be the community council which shall be composed
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  locator: Article III, Section 1
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Manchester Band of Pomo Indians of the Manchester Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Community Council from its own members
+  quote: Sec. 3. The Community Council shall elect from its own members,
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  locator: Article III, Section 3
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+- aspect: other-officers
+  value: Vice chairman, secretary, treasurer
+  quote: '(a) chairman; (b) vice chairman: (c) secretary;'
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  locator: Article III, Section 3
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+- aspect: elections
+  value: Every 2 years at the November meeting
+  quote: Thereafter, officials shall be chosen every two (2) years
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  locator: Amendment IV, Article III, Section 5
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+- aspect: voting-age
+  value: '18'
+  quote: Section 2. All enrolled members who are 18 years of age
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  locator: Amendment V, Article III, Section 2
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+- aspect: amendment
+  value: Majority vote in an election called by the Secretary of the Interior
+  quote: called for that purpose by the Secretary of the Interior,
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  locator: Article X, Section 3
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall have been approved by the Secretary of the Interior.
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  locator: Article X, Section 3
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Community Council
+  quote: from office by a majorin' vote of ilm t'nnuimnhv Council.
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  locator: Amendment VI, Section 2
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
+- aspect: other
+  value: Business committee of chairman, secretary and treasurer
+  quote: Sec. 7. The business committee shall consist of the chairman, sec-
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981'
+  locator: Article III, Section 7
+  document_version:
+    document: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution with amendments dated 1939 to 1981 (Amendments III to V refer to the Manchester-Point Arena band), and OCR is garbled in Article IV and Amendment VI, so some values are read with difficulty.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -367,6 +503,16 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Mendocino County
+  court: Superior Court for Mendocino County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Mendocino County holds 100% of the land of Manchester-Point Arena Rancheria (Census GEOID 2100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

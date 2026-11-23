@@ -1,0 +1,39 @@
+profile: content/tribes/w/wilton-rancheria.yaml
+topic: governance
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/captures/constitutions/wilton-rancheria/3fb5ac0b26372375.txt
+  query: 'Governance: governing body, head of government, elections, branches, courts, amendment (scripts/governance/reader-brief.md)'
+  outcome: found
+  reason: Read the 2011 constitution, as amended (constitution-wilton-rancheria-2011-text); kept 10 facts whose quoted words were found in the text.
+  records:
+  - constitution-wilton-rancheria-2011-text
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: found
+  reason: The directory lists the title of the leader's office.
+  records:
+  - bia-tribal-leaders-directory-2026
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://wiltonrancheria-nsn.gov/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: found
+  reason: Read 10 pages (home, government, council, election, court and constitution pages); kept 12 facts whose quoted words were found on the page.
+  records:
+  - wilton-rancheria-tribal-court-page
+  - wilton-rancheria-website-about-us
+  - wilton-rancheria-website-tribal-council
+  - wilton-rancheria-website-tribal-government-tribal-court-traditional-court
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

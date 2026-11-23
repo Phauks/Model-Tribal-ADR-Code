@@ -166,6 +166,227 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: 'Listed as "Spirit Lake Dakota Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Spirit Lake Tribe (2016)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution and Bylaws
+  quote: reorganize our Tribal Council, and we do ordain and establish this Constitution and set of
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Preamble
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: Section 1. The governing body of the Spirit Lake Tribe shall be the Tribal Council
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article IV, Section 1
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: '6 members: four district representatives and two officers'
+  quote: and shall consist of four district (councilmen) representatives and two
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article IV, Section 1
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Four elected by district; chairman and secretary-treasurer elected by popular vote
+  quote: Votes for candidates for District Representatives shall be confined to the eligible
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article V, Section 2(b)
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: The terms of office of each officer and each district representative elected after the 1991
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article V, Section 3(d)
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: 'Section 1. CHAIRMAN: He shall preside at all meetings, regular and special.'
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Bylaws, Article II, Section 1
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Spirit Lake Tribe, North Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by popular vote
+  quote: a Chairman and a Secretary-Treasurer who shall be elected by a popular vote
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article IV, Section 2
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The terms of office of each officer and each district representative elected after the 1991
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article V, Section 3(d)
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairman (appointed by Council), Secretary-Treasurer
+  quote: appoint a Vice-Chairman to act in the absence of the Chairman, to appoint
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article IV, Section 3
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually, first Tuesday after the first Monday in May
+  quote: The annual election of the governing body shall be held on the first Tuesday after the first
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article V, Section 3(e)
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: Every enrolled member of the Spirit Lake Tribe of the age of 18 years or more,
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article V, Section 1(b)
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Tribal Council
+  quote: Council shall set the date for the general election so as to provide candidates an appropriate
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article V, Section 3(f)
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: the duty of the Tribal Court to call such a meeting.
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article IX, Section 4
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority of qualified voters at an election called for that purpose (20% turnout)
+  quote: This Constitution and Bylaws may be amended by a majority of the qualified
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article X, Section 2(a)
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior or his delegated representative.
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article X, Section 2(a)
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of district voters
+  quote: The members of the Tribe shall have the power to recall or reinstate any member of
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article IX, Section 4
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal grounds and procedure set by Council ordinance
+  quote: The Tribal Council shall enact an ordinance which shall prescribe regulations, charges
+  source: constitution-spirit-lake-tribe-1996-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1996'
+  locator: Article IX, Section 2
+  document_version:
+    document: spirit-lake-tribe-constitution
+    version: 1996-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Spirit Lake Tribe, North Dakota
@@ -344,14 +565,13 @@ dispute_resolution:
     title: 'Title 21: Wodakota: Traditional Court Ordinance'
     citation: 'Title 21: Wodakota: Traditional Court Ordinance'
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: spirit-lake-title-21-wodakota
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Spirit Lake Tribe of North Dakota
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      philosophy, values, and tribal prayer, standards of conduct, authority to use traditional ways and
-      instruct on tribal teachings, referral standards, and procedures.'
+    locator: Title 21, sections 21-1-101 to 21-1-119
+    note: 'Read in full on 2026-11-23 (Spirit Lake Law and Order Code, Title 21: Wodakota: Traditional Court Ordinance. Enacted March 24, 2014 by Resolution No. A05-14-151). Read from the Spirit Lake Law and Order Code, Title 21 (enacted March 24, 2014, Resolution No. A05-14-151), the nation''s own text. Participation is voluntary and requires every party''s written consent (21-1-109, 21-1-113(7)). Peacemakers have no power to decide a dispute unless all parties agree in writing (21-1-110(8), (10)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 520.'
+    summary: 'Establishes the Wodakota: Traditional Court inside the Tribal Court system, where Spirit Lake peacemakers use traditional methods and circles to mediate civil disputes and juvenile matters. A tribal member may file a request (or the Juvenile Intake Officer may refer a case with the judge''s signature), the panel of Peacemakers grants or denies it, and all parties must consent in writing; peacemakers cannot decide fault or force an agreement, and the resulting written peacemaking compact can be adopted as an enforceable Tribal Court order and judgment, with unresolved matters sent back to the Tribal Court.'
   - kind: peacemaking
     title: '§21-1-110 Peacemakers: Qualifications, Appointment, Authorities.'
     citation: 'Spirit Lake Law and Order Code, Title 21: Wodakota: Traditional Court Ordinance, 21-1-110
@@ -484,6 +704,148 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state-consent-not-given
+  detail: North Dakota's ch. 27-19 extends state civil jurisdiction over a reservation only on acceptance by its Indian citizens, and the Legislative Council staff reported in 2004 that no tribe had voted to consent after 1968. (N.D. Legis. Council Memo. 59215, at 3 (2004).)
+  source: north-dakota-legislative-council-indian-jurisdictional-issues-2004
+  confidence: medium
+  verification: read-in-full
+  locator: N.D. Legis. Council Memo. 59215, Conclusion (p. 3)
+  note: 'Secondary source (legislative staff memo, 2004); the research has no later source. "This amendment" is the 1968 consent amendment. The 1946 Devils Lake act (separate fact) is a separate criminal grant. Also cites: three-affiliated-tribes-v-wold-engineering-1984.'
+- topic: state-jurisdiction-statute
+  value: state-criminal-jurisdiction
+  detail: A 1946 act conferred on North Dakota jurisdiction over offenses by or against Indians on the Devils Lake (now Spirit Lake) Reservation to the same extent as elsewhere in the State, without ousting federal courts. (Act of May 31, 1946, ch. 279, 60 Stat. 229.)
+  source: statutes-at-large-60-229
+  confidence: high
+  verification: read-in-full
+  locator: 60 Stat. 229 (Pub. L. No. 79-394)
+  note: 'Criminal only. The Senate report (S. Rep. 116-130 at 2) identifies the Devils Lake Reservation as the Spirit Lake Reservation. Not codified in the U.S. Code. Also cites: senate-report-116-130.'
+- topic: state-jurisdiction-statute
+  value: state-criminal-jurisdiction
+  detail: Congress has not repealed the 1946 act. Repeal bills in the 115th (S. 2788) and 116th (S. 2159, H.R. 3831) Congresses were reported by the Senate committee or referred, and not enacted; the research found no public law repealing it through the 119th Congress listing. (S. Rep. No. 116-130, at 2 (2019).)
+  source: senate-report-116-130
+  confidence: medium
+  verification: read-in-full
+  locator: S. Rep. 116-130, Legislative History (p. 2)
+  note: '"Not repealed" rests on absence: the Congress.gov API list of enacted laws for the 116th-119th Congresses (checked 2026-11-23; 119th list showed 144 laws) contains no repeal; govinfo BILLSTATUS for S. 2159 ends 2019-10-16 (placed on calendar) and for H.R. 3831 at 2019-08-02 (committee referral). The research did not find a 117th-119th Congress repeal bill. Verify before publishing. Also cites: statutes-at-large-60-229.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: North Dakota Department of Human Services
+  agreement: '[Spirit Lake Sioux Tribe] Tribal - State Foster Care Agreement'
+  state: ND
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for ND
+  note: 'The source reads: “[Spirit Lake Sioux Tribe] Tribal - State Foster Care Agreement”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: North Dakota Department of Human Services
+  agreement: Title IV-E agreement with addenda
+  state: ND
+  date: '1983-09-30'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.K, North Dakota
+  note: 'The source reads: “Devils Lake Sioux Tribe/Spirit Lake Sioux Tribe original agreement dated September 30, 1983”. Original 1983 agreement with later addenda; a 2022 state presentation (not used as a source here) says an enhanced agreement was signed in September 2019. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: court-rules
+  title: Court Rules and Procedures
+  court: Spirit Lake Tribal Court
+  link: https://www.spiritlakenation.com/linkgen?media_id=4072
+  detail: Document link on the Spirit Lake Tribal Court program page; not opened.
+  source: spirit-lake-nation-programs-spirit-lake-nation
+  confidence: high
+  verification: title-only
+  locator: Programs page
+  note: Document not opened.
+nearby_state_courts:
+- state: ND
+  county: Benson County
+  court: District Court for Benson County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Benson County holds 79% of the land of Spirit Lake Reservation (Census GEOID 3935), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: Eddy County
+  court: District Court for Eddy County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Eddy County holds 20% of the land of Spirit Lake Reservation (Census GEOID 3935), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Sauk and Foxes, etc., 1830
+  signed: '1830-07-15'
+  statutes_at_large: 7 Stat. 328
+  kappler:
+    volume: 2
+    page: 305
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305
+  signatory: Sisseton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton of Devils Lake to Spirit Lake Tribe. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, 1836
+  signed: '1836-11-30'
+  statutes_at_large: 7 Stat. 527
+  kappler:
+    volume: 2
+    page: 481
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1836-0481
+  signatory: Sisseton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 481 (Treaty with the Sioux, 1836; Kappler header "Nov. 30, 1836. | 7 Stat., 527. | Proclamation, Feb 18, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton of Devils Lake to Spirit Lake Tribe. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Sisseton and Wahpeton Bands, 1851
+  signed: '1851-07-23'
+  statutes_at_large: 10 Stat. 949
+  kappler:
+    volume: 2
+    page: 588
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-sisseton-and-wahpeton-bands-1851-0588
+  signatory: Sisseton; Wahpeton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 588 (Treaty with the Sioux-Sisseton and Wahpeton Bands, 1851; Kappler header "July 23, 1851. | 10 Stats., 949. | Proclamation, Feb. 24. 1853.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton of Devils Lake to Spirit Lake Tribe. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, 1858
+  signed: '1858-06-19'
+  statutes_at_large: 12 Stat. 1037
+  kappler:
+    volume: 2
+    page: 785
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1858-0785
+  signatory: Sisseton; Wahpeton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 785 (Treaty with the Sioux, 1858; Kappler header "June 19, 1858. | 12 Stats., p. 1037, | Ratified Mar. 9, 1859. | Proclaimed Mar. 31, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton of Devils Lake to Spirit Lake Tribe. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Sisseton and Wahpeton Bands, 1867
+  signed: '1867-02-19'
+  statutes_at_large: 15 Stat. 505
+  kappler:
+    volume: 2
+    page: 956
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-sisseton-and-wahpeton-bands-1867-0956
+  signatory: Sisseton; Wahpeton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 956 (Treaty with the Sioux-Sisseton and Wahpeton Bands, 1867; Kappler header "Feb. 19, 1867. | 15 Stat., 505. | Ratified April 15, | 1867. | Proclaimed May 2, | 1867.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton of Devils Lake to Spirit Lake Tribe. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

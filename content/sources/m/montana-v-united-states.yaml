@@ -44,6 +44,50 @@ supreme_court:
   - {name: "John Paul Stevens", vote: majority, opinion: concurrence}
   source: https://api.oyez.org/cases/1980/79-1128
   checked: '2026-11-22'
+courtlistener:
+  cluster: 110436
+  citation: "450 U.S. 544"
+  case_name: "Montana v. United States"
+  link: https://www.courtlistener.com/opinion/110436/montana-v-united-states/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep450544/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/110436/montana-v-united-states/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/450/544/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/1980/79-1128
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22450%20U.S.%20544%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=450%20U.S.%20544
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=450%20U.S.%20544
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Montana_v._United_States
 rights:
   status: no-permission-needed
   basis: us-government-work

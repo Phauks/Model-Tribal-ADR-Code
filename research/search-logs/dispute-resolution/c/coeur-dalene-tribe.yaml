@@ -1,7 +1,7 @@
 profile: content/tribes/c/coeur-dalene-tribe.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -34,5 +34,62 @@ searches:
   outcome: not-public
   reason: NILL notes the nation has not permitted full text online (or the nation has not put it online);
     not worked around.
-next_steps: The provisions this nation's profile lists by section title are still unread. A person could
-  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/coeur_dalene/
+  query: dispute resolution wording
+  outcome: found
+  reason: Table of contents lists Chapter 4 section 4-28 Tribal Arbitration Act with arbitrator and arbitration
+    process sections.
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#coeur-dalene-tribe-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Coeur d''Alene Tribe tribal code mediation OR peacemaking OR "dispute resolution"'
+  query: Coeur d'Alene Tribe tribal code mediation OR peacemaking OR "dispute resolution"
+  outcome: not-found
+  reason: NARF code index shows an arbitration act.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260528192202id_/https://narf.org/nill/codes/coeur_dalene/index.html
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: found
+  reason: The archived index of the Coeur d'Alene Tribal Code lists Chapter 4-28, the Coeur d'Alene Tribal
+    Arbitration Act (4-28.01 to 4-28.14 and on); section titles only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260202010022id_/https://nill.narf.org/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2026-02-02) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=narf.org/nill/codes/coeur_dalene/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=2000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: error
+  reason: The Wayback Machine capture index did not answer (connection refused) in any of the three rounds;
+    worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/coeur_dalene/
+  query: Tribal Arbitration Act
+  outcome: not-found
+  reason: No permission for full text
+  records:
+  - content/tribes/c/coeur-dalene-tribe.yaml#dispute_resolution.provisions
+next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
+  (Gate 1) before any record goes into the profile.

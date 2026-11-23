@@ -1,7 +1,7 @@
 profile: content/tribes/w/wichita-and-affiliated-tribes.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -136,3 +136,12 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: 'Fetch failed: the proxy closed the connection before a response.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261016202000/https://wichitatribe.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-10-16 ("Home - Wichita and Affiliated Tribes"); it shows
+    no court.

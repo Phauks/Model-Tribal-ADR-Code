@@ -173,6 +173,203 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Apache Tribe of Oklahoma". Also listed under the same Area in: indian-health-service-direct-service-tribes. Page lists tribal names generically ("Delaware", "Apache", "Wichita"); matched to the roster nation of that name. Operator from Direct Service Tribes list.'
+- area: Oklahoma City
+  service_unit: Lawton Service Unit (Lawton Indian Hospital)
+  source: indian-health-service-oklahoma-city-lawton-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "25,000 members of the Caddo, Comanche, Delaware, Fort Sill Apache, Kiowa, Apache, and Wichita tribes are concentrated".'
+- area: Oklahoma City
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Apache Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Organized by constitution
+  quote: The historic Ka-ta-kas are organized by constitution as the Apache Tribe of Oklahoma.
+  source: apache-tribe-of-oklahoma-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is a linked PDF whose text is not among the saved pages, and the Business Committee page lists officers with names.'
+- aspect: governing-body
+  value: Business Committee
+  quote: Apache Tribe Business Committee
+  source: apache-tribe-of-oklahoma-website-tribal-departments-abc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is a linked PDF whose text is not among the saved pages, and the Business Committee page lists officers with names.'
+- aspect: governing-body-size
+  value: All members 18 and older
+  quote: The tribal council shall consist of all members of the
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article III
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: governing-body-size
+  value: 5 members on the Business Committee
+  quote: provided in Article IV and two (2) members.
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Elections shall be by secret ballot and absentee voting shall
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VII, Section 2
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: officer and business committee member shall be for a period of two (2)
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: general-council
+  value: All members 18 and older
+  quote: The tribal council shall consist of all members of the
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article III
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: apache-tribe-of-oklahoma-website-tribal-departments-abc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is a linked PDF whose text is not among the saved pages, and the Business Committee page lists officers with names.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Apache Tribe of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: Elections shall be by secret ballot and absentee voting shall
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VII, Section 2
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: officer and business committee member shall be for a period of two (2)
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary/Treasurer
+  quote: Secretary/Treasurer
+  source: apache-tribe-of-oklahoma-website-tribal-departments-abc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is a linked PDF whose text is not among the saved pages, and the Business Committee page lists officers with names.'
+- aspect: elections
+  value: Every 2 years, on the 3rd Saturday of the month of the initial election
+  quote: Thereafter, the general election shall be held at two (2)
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VII, Section 1
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: election-authority
+  value: Business Committee (by ordinance)
+  quote: duly adopted by the business committee, provided that the initial one held
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VII, Section 3
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: recall-and-removal
+  value: Removal of business committee members by Council majority after petition of 50 members
+  quote: Upon the signed petition of fifty (50) members of the Apache Tribal
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article IX
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: other
+  value: Quorum of 50 Tribal Council members
+  quote: Fifty (50) members of the Apache Tribal Council shall
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XV, Section 1
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -320,6 +517,47 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Apache Tribe of Oklahoma".
       Facilities as machine-extracted from the report text (verify): Golden Eagle Casino; Apache Lonestar
       Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV/CO-99-01
+    date: '1999-01-06'
+    link: https://www.nigc.gov?wpdmdl=1929&ind=1931
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/CO-99-01
+    note: The list titles the action “Apache Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - pre-opening-agreement
+    tracking_number: POA-99-01
+    date: '2006-01-05'
+    link: https://www.nigc.gov?wpdmdl=8167&ind=8178
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA-99-01
+    note: The list titles the action “Apache Tribe of Oklahoma” and gives its type as POA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-23-02
+    date: '2023-04-24'
+    link: https://www.nigc.gov?wpdmdl=2974&ind=2975
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-23-02
+    note: The list titles the action “Apache Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-23-03
+    date: '2023-10-31'
+    link: https://www.nigc.gov?wpdmdl=2969&ind=2970
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-23-03
+    note: The list titles the action “Apache Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -333,6 +571,167 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: State of Oklahoma, Office of the Governor
+  agreement: Tobacco tax compact (10-year term, 50/50 split on trust-land smoke shop sales)
+  state: OK
+  date: 2024-01
+  status: in-effect
+  source: oklahoma-governor-finalizes-compacts-2024
+  confidence: medium
+  verification: bulk-import
+  locator: Press release of January 22, 2024
+  note: 'The source reads: “We now have fully executed tobacco compacts with both the Chickasaw and the Apache tribes”. Ten-year compact; the release says the Apache compact text is filed with the Oklahoma Secretary of State. The Apache Tribe of Oklahoma is the roster match for "the Apache tribes" in a release about Oklahoma compacts; the release does not give the full name.'
+nearby_state_courts:
+- state: OK
+  county: Comanche County
+  court: District Court for Comanche County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Comanche County holds 17% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Kiowa County
+  court: District Court for Kiowa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Kiowa County holds 16% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Tillman County
+  court: District Court for Tillman County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Tillman County holds 14% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Jackson County
+  court: District Court for Jackson County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Jackson County holds 13% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Greer County
+  court: District Court for Greer County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Greer County holds 10% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Cotton County
+  court: District Court for Cotton County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Cotton County holds 10% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Harmon County
+  court: District Court for Harmon County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Harmon County holds 8% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Caddo County
+  court: District Court for Caddo County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Caddo County holds 5% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Stephens County
+  court: District Court for Stephens County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Stephens County holds 3% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Jefferson County
+  court: District Court for Jefferson County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Jefferson County holds 2% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Grady County
+  court: District Court for Grady County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Grady County holds 2% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Comanche, Kiowa, and Apache, 1853
+  signed: '1853-07-27'
+  statutes_at_large: 10 Stat. 1013
+  kappler:
+    volume: 2
+    page: 600
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-kiowa-and-apache-1853-0600
+  signatory: Apache
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 600 (Treaty with the Comanche, Kiowa, and Apache, 1853; Kappler header "July 27, 1853. | 10 Stats., 1013. | Ratified Apr. 12, 1854. | Proclaimed Feb. 12, 1855 [4].")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Apache of these treaties = Kiowa-Apache (Plains Apache) to Apache Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Apache, Cheyenne, and Arapaho, 1865
+  signed: '1865-10-17'
+  statutes_at_large: 14 Stat. 713
+  kappler:
+    volume: 2
+    page: 891
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-apache-cheyenne-and-arapaho-1865-0891
+  signatory: Apache
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 891 (Treaty with the Apache, Cheyenne, and Arapaho, 1865; Kappler header "Oct. 17, 1865. | 14 Stat., 713. | Ratified May 22, 1866. | Proclaimed May 26, 1866.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Apache of these treaties = Kiowa-Apache (Plains Apache) to Apache Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kiowa, Comanche, and Apache, 1867
+  signed: '1867-10-21'
+  statutes_at_large: 15 Stat. 589
+  kappler:
+    volume: 2
+    page: 982
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-comanche-and-apache-1867-0982
+  signatory: Apache
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 982 (Treaty with the Kiowa, Comanche, and Apache, 1867; Kappler header "Oct. 21, 1867. | 15 Stats., 589. | Ratified, July 25, 1868. | Proclaimed Aug. 25 1868.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Apache of these treaties = Kiowa-Apache (Plains Apache) to Apache Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

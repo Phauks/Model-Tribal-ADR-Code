@@ -189,6 +189,218 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chickaloon Native Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Chickaloon Native Village". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Chickaloon Native Village".'
+governance:
+- aspect: form
+  value: Adopted pursuant to Traditional Government consent
+  quote: This Constitution and Bylaws is adopted pursuant to
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XVII
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council, shall be vested with all executive
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 1
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: be composed of five (5) Members of the Trice eiecrec at large
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1(a)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: governing-body-selection
+  value: Elected at large by eligible voters
+  quote: by the eligible voters or the Tribe.
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1(a)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: of three (3) years.
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1(b)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: (1) Preside at all meeting of the Tribal Council and
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws Article I, Section 1(f)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Chickaloon Native Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Tribal Council
+  quote: elected by the Tribal Council in accordance with ru*es anc
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws Article I, Section 1(b)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: other-officers
+  value: Vice-Chairperson, Treasurer, Secretary
+  quote: the Vice-Chairperson, Treasurer, and the Secretary sna-_ be
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws Article I, Section 1(b)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: voting-age
+  value: '18'
+  quote: is eighteen (18) years of age or older on the date of the
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: branches
+  value: Tribal Council (executive and legislative), Tribal Judiciary (judicial)
+  quote: The Tribal Judiciary, shall be vested with all
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 2
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: judiciary
+  value: Supreme Court and lower trial courts
+  quote: (a) The Tribal Judiciary shall be composed of one
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1(a)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: judicial-selection
+  value: Appointed by 4/5 vote of the Tribal Council
+  quote: Tribal Judges shall be appointed by the vote ox xcur
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 2
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: Tribal Council. The Tribal Council shall not diminish the
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 3
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: amendment
+  value: Election on two-thirds Council vote or 25% voter petition
+  quote: thirds (2/3) of the entire Tribal Council or by a petition
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XVII
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: recall-and-removal
+  value: Judges removed by 4/5 Council vote, only for cause
+  quote: fifths (4/5) of the entire Council, but only upon grounds of
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 5(a)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: recall-and-removal
+  value: Recall by 60% of those voting in recall election
+  quote: (3) The affirmative vote of sixty percent (60%) of
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1(3)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of the entire Council
+  quote: thirds (2/3) of the entire Council expel a Memoer ox the
+  source: constitution-chickaloon-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 2(a)
+  document_version:
+    document: chickaloon-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text heavily garbled by OCR, so article headings are read from the table of contents (Article XVII, Article V and so on) and the bylaws signature date is unreadable.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -238,6 +450,25 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: implementation-grant
+  detail: Received a Justice Department Tribal Jurisdiction Program grant (fiscal year 2023) for special Tribal criminal jurisdiction. These grants also fund planning, so the grant alone does not show that the nation exercises the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Appendix C (PDF p.47)
+  note: Listed as "CHICKALOON NATIVE VILLAGE".
+nearby_state_courts:
+- state: AK
+  county: Matanuska-Susitna Borough
+  court: Superior Court for Matanuska-Susitna Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Matanuska-Susitna Borough holds 100% of the land of Chickaloon ANVSA (Census GEOID 6290), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Cook Inlet Region Inc.
   relation: alaska-native-claims-settlement-act-regional-corporation

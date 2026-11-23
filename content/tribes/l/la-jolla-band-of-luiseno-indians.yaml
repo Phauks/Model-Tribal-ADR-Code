@@ -151,6 +151,183 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: La Jolla Band of Luiseno Indians, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "La Jolla Band of Luiseno Indians, California".
+governance:
+- aspect: form
+  value: Articles of Association adopted in 1962
+  quote: The tribe is governed by Articles of Association adopted in 1962
+  source: lajolla-nsn-reservation-info
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council
+  source: la-jolla-band-of-luiseno-indians-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Tribal governance is based in Pauma Valley, California, where the tribe operates under a five-member council elected to two-year terms.
+  source: lajolla-nsn-reservation-info
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: Tribal governance is based in Pauma Valley, California, where the tribe operates under a five-member council elected to two-year terms.
+  source: lajolla-nsn-reservation-info
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Tribal governance is based in Pauma Valley, California, where the tribe operates under a five-member council elected to two-year terms.
+  source: lajolla-nsn-reservation-info
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer names on the Tribal Council and Reservation Info pages are left out of the facts.'
+- aspect: general-council
+  value: All adult members, 21 or older
+  quote: years of age or elder. In addition, there shall be elected a Tribal Council
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 3
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+- aspect: head-of-government
+  value: Chairman
+  quote: He shall preside at all meetings of the General
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 8A
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: La Jolla Band of Luiseno Indians, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected with the Tribal Council
+  quote: In addition, there shall be elected a Tribal Council
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 3
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two (2) years or until their successors are duly elected and installed.
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 3
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: consisting of a Chairman, a Vice-Chairman, a Secretary -Treasurer, and two
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 3
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+- aspect: voting-age
+  value: '21'
+  quote: Any member of the Band twenty-one (21) years of age or
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 4
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+- aspect: amendment
+  value: Majority vote of General Council
+  quote: a majority vote of the General Council and such amendment shall be in
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 10
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+- aspect: recall-and-removal
+  value: Vacancy after 3 successive unexcused absences
+  quote: or refuses to attend three (3) meetings in succession, unless excused due
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 5
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of voters
+  quote: Upon receipt of e petition signed by 20 per cent of the voters
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 5
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
+- aspect: other
+  value: General Council holds legislative powers
+  quote: General Council shall have the following legislative powers but their
+  source: constitution-la-jolla-band-of-luiseno-indians-1962-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1962-11-15'
+  locator: Sec. 6A
+  document_version:
+    document: la-jolla-band-of-luiseno-indians-constitution
+    version: 1962-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan mixes the 1962 Articles of Association with a 1963 membership ordinance and a federal letter disapproving an amendment; facts come from the Articles.'
 governing_documents:
 - kind: law-code
   title: La Jolla Band of Luiseno Indians - Enrollment Ordinance (#1)
@@ -278,6 +455,57 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+court_practice:
+- kind: bar-admission
+  title: Southern California Tribal Bar Association admission application
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/attorneys
+  detail: Attorneys page offers Southern California Tribal Bar Association information, a membership directory, an admission application and a renewal application.
+  source: intertribal-court-of-southern-bar-admission
+  confidence: high
+  verification: read-in-full
+  locator: Southern California Tribal Bar Association Information
+  note: 'The source reads: “Southern California Tribal Bar Association Admission Application”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.'
+- kind: forms
+  title: Forms (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/forms
+  detail: Forms page includes an Application for Filing Fee Waiver or Deferral and a Document Assistance Form.
+  source: intertribal-court-of-southern-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms
+  note: 'The source reads: “Application for Filing Fee Waiver or Deferral”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.'
+- kind: court-rules
+  title: Code of Civil Procedure and Rules of Court
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Rules and Laws page links the Code of Civil Procedure and Rules of Court, a Fee Schedule and the Inter-Governmental Agreement.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: read-in-full
+  locator: Rules and Laws
+  note: The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.
+- kind: filing-fees
+  title: Fee Schedule (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Fee Schedule PDF linked on the Rules and Laws page.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: title-only
+  locator: Rules and Laws
+  note: 'The source reads: “Fee Schedule”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s. PDF not opened.'
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of La Jolla Reservation (Census GEOID 1850), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

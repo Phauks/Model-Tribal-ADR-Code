@@ -18,6 +18,16 @@ declare module 'virtual:review-subjects' {
 	}[];
 }
 
+declare module 'virtual:public-contacts' {
+	/** The office emails and phones each published nation page shows, with their sources, listed at build time. */
+	export const publicNationContacts: import('#lib/address-book-sync.ts').PublicNationContacts[];
+}
+
+declare module 'virtual:mail-nations' {
+	/** The nations outreach can write to, with their state codes (src/lib/server/mail/outreach.ts). */
+	export const mailNations: { identifier: string; name: string; states: string[]; page: string | null }[];
+}
+
 declare module 'virtual:nation-images' {
 	/** The nations' official images the Worker may serve, listed at build time. */
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];
@@ -43,10 +53,12 @@ declare module 'virtual:essay-library' {
 	export const essayTerms: Record<string, string>;
 	/** The lines under each case or law box's heading, as [label, HTML] pairs. */
 	export const essayBoxFacts: { cases: Record<string, [string, string][]>; laws: Record<string, [string, string][]> };
-	/** The essays in content/essays/ and the back matter in content/back-matter/ as git held them when the site was built, by id. */
+	/** The essays in content/essays/, the back matter in content/back-matter/ and the pages about the site in content/about/ as git held them when the site was built, by id. */
 	export const essaysInGit: Record<string, string>;
 	/** Each court case's name and decision date, by source key. */
 	export const essayCaseNames: Record<string, { title: string; date: number[] }>;
+	/** Words the spelling check should accept: names of nations, glossary terms and court cases. */
+	export const essaySpellingWords: string[];
 }
 
 declare module 'virtual:forms' {
@@ -64,9 +76,24 @@ declare module 'virtual:build' {
 declare module 'cloudflare:workers' {
 	/** The Worker's bindings and secrets (src/app.d.ts). */
 	export const env: WorkerEnvironment;
+	/** Keeps the Worker running until the promise settles, after the response has gone (at most 30 seconds). */
+	export function waitUntil(promise: Promise<unknown>): void;
 }
 
 declare module 'virtual:followable-pages' {
 	/** The pages built with the site that readers can follow, with a fingerprint of each (src/lib/server/following.ts). */
 	export const followableBuild: import('#lib/server/following.ts').FollowableBuild;
+}
+
+declare module 'cloudflare:sockets' {
+	/** Opens a TCP connection from the Worker (Cloudflare, "TCP sockets"); used for outreach over SMTP (src/lib/server/mail/socket-opener.ts). */
+	export function connect(
+		address: { hostname: string; port: number },
+		options?: { secureTransport?: 'off' | 'on' | 'starttls'; allowHalfOpen?: boolean }
+	): unknown;
+}
+
+declare module 'virtual:page-history' {
+	/** The pages built with the site, for Recent changes and page histories (src/lib/server/page-history-build.ts). */
+	export const historyBuild: import('#lib/page-history.ts').HistoryBuild;
 }

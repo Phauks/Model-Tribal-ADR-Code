@@ -158,6 +158,239 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Shoalwater Bay Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Shoalwater Bay Indian Tribe (1999)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution approved by Secretary of the Interior and ratified by voters
+  quote: This Constitution shall take effect after it has been approved by the Secretary of the
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article VIII
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Section 1. Composition of the Tribal Council. The Shoalwater Bay Tribal Council
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: shall consist of five (5) members duly elected to serve staggered terms of two (2)
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: governing-body-selection
+  value: Elected in Tribal elections
+  quote: shall consist of five (5) members duly elected to serve staggered terms of two (2)
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: years each as provided in Article V, Section 1 (g). The Tribal Council shall include a
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: general-council
+  value: All Tribal members (voters 18 or older)
+  quote: All Tribal members shall be members of the General
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article III, Section 1
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: Chairperson, a Vice-Chairperson, a Secretary, a Treasurer, and a Member-at-Large.
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected in Tribal elections
+  quote: Treasurer, and a Secretary shall be elected for a two (2) year period
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article V, Section 1(g)(3)
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Treasurer, and a Secretary shall be elected for a two (2) year period
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article V, Section 1(g)(3)
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer, Member-at-Large
+  quote: Chairperson, a Vice-Chairperson, a Secretary, a Treasurer, and a Member-at-Large.
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: elections
+  value: Annually on the second Saturday of January
+  quote: General elections shall be held annually on the second
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article V, Section 1(c)
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: voting-age
+  value: '18'
+  quote: least eighteen (18) years of age on the date of the election shall be
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: election-authority
+  value: Election Board
+  quote: There shall be an Election Board appointed by the Tribal
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article V, Section 1(d)
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: judiciary
+  value: Tribal Court or Courts, established by the Tribal Council
+  quote: To establish and maintain a Tribal Court or Courts;
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article VI, Section 1(g)
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: amendment
+  value: Majority vote of voters casting ballots in the election
+  quote: Adoption of an amendment shall require a majority vote of the eligible voters who cast ballots in the election; provided
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article IX
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of eligible voters
+  quote: twenty-five percent (25%) of the eligible voters, setting forth reasons for
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: recall-and-removal
+  value: Removal by Tribal Council resolution
+  quote: Tribal Council Member, the remaining members of the Tribal Council shall, by
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article V, Section 2
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
+- aspect: other
+  value: General Council approval required for listed powers
+  quote: The General Council shall have the powers enumerated in this subsection,
+  source: constitution-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-22'
+  locator: Article III, Section 6(a)
+  document_version:
+    document: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Attachment pages 14-20 contain only page footers in the extract, and the page 21 voter registration form is a blank BIA form.'
 governing_documents:
 - kind: law-code
   title: Shoalwater Bay Indian Tribe
@@ -386,6 +619,27 @@ gaming:
     locator: table row 259, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 259 lists the nation
       as "Shoalwater Bay Tribe". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-99-10
+    date: '1999-08-05'
+    link: https://www.nigc.gov?wpdmdl=1955&ind=1956
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-99-10
+    note: The list titles the action “Shoalwater Bay Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: SA/NOV/CO-99-10
+    date: '2003-11-12'
+    link: https://www.nigc.gov?wpdmdl=8235&ind=8246
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA/NOV/CO-99-10
+    note: The list titles the action “Shoalwater Bay Indian Tribe” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -413,6 +667,50 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: cross-deputization
+  other_party: Pacific County Sheriff, Washington
+  agreement: Cross commission law enforcement agreement
+  state: WA
+  date: '2011'
+  status: expired
+  source: shoalwater-bay-tribe-pacific-county-cross-commission-agreement
+  confidence: high
+  verification: read-in-full
+  locator: Title
+  note: 'The source reads: “CROSS COMMISSION LAW ENFORCEMENT AGREEMENT BETWEEN THE SHOALWATER BAY TRIBAL COMMUNITY AND PACI FIC COUNTY”. Effective date reads "___ day of ___ 2011" and the term runs to December 31, 2014 unless terminated, so it may have lapsed. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: court-rules
+  title: Title 1 Court Procedures (04-01-25)
+  court: Shoalwater Bay Tribal Court
+  link: https://www.shoalwaterbay-nsn.gov/assets/Tribal-Codes/Title-1/Title-01-Court-Procedures-04-01-25.pdf
+  detail: Code of Laws list on the court page includes Title 1 Court Procedures and Title 3 Evidence Code.
+  source: shoalwater-bay-indian-tribe-tribal-court
+  confidence: high
+  verification: title-only
+  locator: The Code of Laws consists of
+  note: 'The source reads: “Court Procedures”. PDF not opened.'
+nearby_state_courts:
+- state: WA
+  county: Pacific County
+  court: Superior Court for Pacific County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Pacific County holds 100% of the land of Shoalwater Bay Indian Reservation (Census GEOID 3780), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Shoalwater Reserve, Washington Territory
+  method: executive-order
+  instrument: Exec. Order of Sept. 22, 1866, 1 Kappler 924
+  date: '1866-09-22'
+  detail: First set aside
+  source: executive-order-1866-09-shoalwater-reservation
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 924
+  note: 'The instrument reads: “reserved from sale and set apart for Indian purposes”. Order does not itself name the Shoalwater; Kappler''s heading "Shoalwater Reserve" (and OSU) identify it, and Kappler records it as occupied by Shoalwater and Chehalis. Date Sept. 22, 1866 per OSU; Kappler prints "September 1866".'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

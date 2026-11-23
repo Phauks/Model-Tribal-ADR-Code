@@ -178,6 +178,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Santa Clara, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Santa Clara Pueblo". Also listed under the same Area in: indian-health-service-direct-service-tribes. Santa Fe Service Unit page names these eight constituent tribal governments.'
+- area: Albuquerque
+  service_unit: Santa Fe Service Unit
+  source: indian-health-service-albuquerque-santa-fe-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "eight constituent tribal governments: the Pueblos of Cochiti, Nambé, Ohkay Owingeh, Pojoaque, San Felipe, San Ildefonso, Santa Clara, and Tesuque".'
+- area: Albuquerque
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Albuquerque Area
+  note: Listed as "Pueblo of Santa Clara". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Pueblo of Santa Clara, New Mexico" among organizations under constitutions approved
@@ -202,6 +226,159 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is generally responsible for adopting, amending, and repealing tribal ordinances/codes.
+  source: pueblo-of-santa-clara-website-programs-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
+- aspect: governing-body-size
+  value: 8 representatives, plus officers
+  quote: elections eight representatives shall be
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article IV, Section 5
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: governing-body-selection
+  value: Appointed
+  quote: Santa Clara Pueblo’s Tribal Council members are appointed for a one-year term.
+  source: pueblo-of-santa-clara-website-programs-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
+- aspect: governing-body-term
+  value: 1 year
+  quote: Santa Clara Pueblo’s Tribal Council members are appointed for a one-year term.
+  source: pueblo-of-santa-clara-website-programs-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
+- aspect: head-of-government
+  value: Governor
+  quote: Accomplish project assignments from Governor or Lt. Governor in behalf of the Pueblo.
+  source: pueblo-of-santa-clara-website-programs-support-services-intergovernmental-pr
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pueblo of Santa Clara, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: and sheriff shall be elected by secret ballot to serve
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article III, Section 2
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: by secret ballot to serve for the ensuing year.
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Amendment I
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: other-officers
+  value: Lt. Governor
+  quote: Accomplish project assignments from Governor or Lt. Governor in behalf of the Pueblo.
+  source: pueblo-of-santa-clara-website-programs-support-services-intergovernmental-pr
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
+- aspect: elections
+  value: Within the first five days of each year
+  quote: the first five days of each year an election
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Amendment I
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: voting-age
+  value: '18'
+  quote: 18 years of age, may vote at any
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article III, Section 3
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: branches
+  value: Council legislative and judicial; Governor executive
+  quote: The pueblo council shall also adjudicate
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article IV, Section 2
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Santa Clara Pueblo Tribal Court is a court of general jurisdiction that handles a variety of cases including traffic, civil, and criminal matters.
+  source: santa-clara-pueblo-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 10 links to a 1935 Tribal Constitution that is not among the saved pages.'
+- aspect: amendment
+  value: Decision of the general pueblo, then majority vote of voters 21 or older
+  quote: except by a decision of the general pueblo.
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article VIII
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if he shall approve the same it shall become effective.
+  source: constitution-pueblo-of-santa-clara-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-19'
+  locator: Article VIII
+  document_version:
+    document: pueblo-of-santa-clara-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1935 constitution and bylaws (approved December 20, 1935) with the 1939 Amendment I attached; the version label says 1939.'
 governing_documents:
 - kind: law-code
   title: Pueblo of Santa Clara, New Mexico
@@ -464,6 +641,87 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Santa Clara Pueblo". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: New Mexico Children, Youth and Families Department
+  agreement: Title IV-E agreement (maintenance costs only)
+  state: NM
+  date: '1997'
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.I, New Mexico
+  note: 'The source reads: “Santa Clara Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: bar-admission
+  title: Attorney Admission and Practice Before the Courts
+  court: Santa Clara Pueblo Tribal Court
+  link: https://www.santaclarapueblo.org/tribal-court/attorney-admission-and-practice-before-the-courts/
+  detail: Attorneys must be in good standing of the New Mexico State Bar or eligible elsewhere, abide by Court rules, know Pueblo traditions, pay the admission fee of $100.00, and take an oath; application PDF (2025 upload).
+  source: pueblo-of-santa-clara-attorney-admission-and-practice-before-the-court
+  confidence: high
+  verification: read-in-full
+  locator: Attorney Admission page
+  note: 'The source reads: “Pay the admission fee of $100.00”.'
+- kind: bar-admission
+  title: Attorneys and Lay Counsel Admitted to Practice
+  court: Santa Clara Pueblo Tribal Court
+  link: https://www.santaclarapueblo.org/tribal-court/attorneys-and-lay-counsel-admitted-to-practice/
+  detail: List page of admitted attorneys and lay counsel, linked from the Tribal Court page; not opened.
+  source: santa-clara-pueblo-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page links
+  note: Page not opened.
+nearby_state_courts:
+- state: NM
+  county: Rio Arriba County
+  court: District Court for Rio Arriba County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Rio Arriba County holds 61% of the land of Santa Clara Pueblo (Census GEOID 3495), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Sandoval County
+  court: District Court for Sandoval County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Sandoval County holds 34% of the land of Santa Clara Pueblo (Census GEOID 3495), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Santa Fe County
+  court: District Court for Santa Fe County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Santa Fe County holds 5% of the land of Santa Clara Pueblo (Census GEOID 3495), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Pueblo of Santa Clara land grant, New Mexico
+  method: statute
+  instrument: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  date: '1858-12-22'
+  detail: First set aside
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  locator: 11 Stat. 374
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... K, Pueblo of Santa Clara in the county of Rio Ariba ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

@@ -45,6 +45,46 @@ supreme_court:
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep112/usrep112094/usrep112094.pdf
   note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating."
   checked: '2026-11-22'
+courtlistener:
+  cluster: 91182
+  citation: "112 U.S. 94"
+  case_name: "Elk v. Wilkins"
+  link: https://www.courtlistener.com/opinion/91182/elk-v-wilkins/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep112094/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/91182/elk-v-wilkins/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/112/94/
+    unchecked: true
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22112%20U.S.%2094%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=112%20U.S.%2094
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=112%20U.S.%2094
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Elk_v._Wilkins
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -186,6 +186,199 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Yocha Dehe Wintun Nation, California".
+governance:
+- aspect: form
+  value: Constitution and bylaws
+  quote: Operating under the Tribe’s constitution and bylaws, the Tribal Council oversees all areas of the tribal government
+  source: yocha-dehe-wintun-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: An elected Tribal Council is the governing body of the Tribe.
+  source: yocha-dehe-wintun-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: This Tribal Council consists of five Tribal Citizens, each elected for three-year terms by the Tribe’s Community Council, comprised by all qualified voters 18 years of age and older.
+  source: yocha-dehe-wintun-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the Community Council
+  quote: This Tribal Council consists of five Tribal Citizens, each elected for three-year terms by the Tribe’s Community Council, comprised by all qualified voters 18 years of age and older.
+  source: yocha-dehe-wintun-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years
+  quote: each elected for three-year terms
+  source: yocha-dehe-wintun-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: 'Community Council: all qualified voters 18 and older'
+  quote: the Tribe’s Community Council, comprised by all qualified voters 18 years of age and older
+  source: yocha-dehe-wintun-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman shall preside at all meetings of the
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yocha Dehe Wintun Nation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the community council from its members
+  quote: The community council shall elect from its members, by
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article IV, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: who shall hold office for three
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article IV, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: other-officers
+  value: Secretary, Treasurer
+  quote: a secretary and a treasurer, who shall hold office for three
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article IV, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: elections
+  value: Every 3 years at the January meetings of the community council
+  quote: meetings of the community council each third year in accordance
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article VI, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: voting-age
+  value: '18'
+  quote: comprised by all qualified voters 18 years of age and older
+  source: yocha-dehe-wintun-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Executive committee (sets election ordinance)
+  quote: in accordance with an election ordinance adopted by the executive committee.
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article VI, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: amendment
+  value: Majority vote of the community council at a Secretarial election
+  quote: majority vote of the community council at an election authorized
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article X, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and approved by him.
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article X, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters
+  quote: Upon receipt of a petition signed by thirty percent (30%) of the qualified voters requesting the recall
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article VII, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: recall-and-removal
+  value: Office vacated automatically on felony conviction while in office
+  quote: the office shall be automatically vacated.
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article VII, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
 gaming:
   compacts:
   - state: CA
@@ -332,6 +525,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Yolo County
+  court: Superior Court for Yolo County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Yolo County holds 100% of the land of Rumsey Indian Rancheria (Census GEOID 3265), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

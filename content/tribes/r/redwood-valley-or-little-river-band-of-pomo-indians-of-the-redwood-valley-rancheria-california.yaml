@@ -160,6 +160,211 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Redwood Valley or Little River Band of Pomo Indians of the Redwood Valley Rancheria California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Redwood Valley or Little River Band of Pomo Indians".
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of June 18, 1934
+  quote: the Indian Reorganization Act of June 18, 1934 (48 Stat. 984) as amended, do hereby establish this organization and adopt this constitution pursuant to that act.
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Preamble
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Its tribal members elect a Tribal Council which acts as the governing body.
+  source: rvrpomo-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Tribal Council shall consist of seven (7) members elected at-large from the Tribe.
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article IV, Section 1
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: governing-body-selection
+  value: Elected by tribal members
+  quote: Its tribal members elect a Tribal Council which acts as the governing body.
+  source: rvrpomo-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: All terms of office shall be for two (2) years
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section A
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: general-council
+  value: All enrolled members of the Tribe, 18 years of age or older
+  quote: The general council shall consist of all enrolled members of the Tribe, eighteen (18) years of age or older.
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article IV, Section 2
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: head-of-government
+  value: Council Chairperson
+  quote: Council Chairperson
+  source: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-val-website-about-us-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Redwood Valley or Little River Band of Pomo Indians of the Redwood Valley Rancheria California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large
+  quote: The Tribal Council shall consist of seven (7) members elected at-large from the Tribe.
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article IV, Section 1
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: All terms of office shall be for two (2) years
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section A
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: other-officers
+  value: Council Vice Chairperson, Council Secretary, Council Treasurer
+  quote: Council Vice Chairperson
+  source: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-val-website-about-us-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually on the second Sunday in July
+  quote: elections shall be held annually on the second Sunday in July.
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section A
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: voting-age
+  value: '18'
+  quote: All enrolled members of the Tribe who are eighteen (18) years of age or older, regardless of residence, are qualified voters.
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V, Section 1
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: judiciary
+  value: Tribal Council may establish or join courts
+  quote: To establish or join such courts or other dispute resolving bodies as it deems necessary or appropriate.
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VIII, Section 1(l)
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: amendment
+  value: Majority vote in an election called by the Secretary of the Interior
+  quote: may be amended by a majority vote of the qualified voters of the Tribe voting in an election called for that
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XVI, Section 1
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: secretarial-approval
+  value: Required for some ordinances
+  quote: Any resolution or ordinance which by the terms of this constitution or Federal law requires the approval of the Secretary of the Interior must be received by the local Bureau Superintendent
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article IX, Section 5
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of qualified voters
+  quote: Upon receipt of a petition signed by at least fifty-one percent (517=) of the qualified voters of the Tribe
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VI, Section 2
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
+- aspect: recall-and-removal
+  value: Removal by majority of a quorum of the General Council
+  quote: a majority of a quorum of the members of the General Member Council vote in favor of such removal
+  source: constitution-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-1987-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VI, Section 1
+  document_version:
+    document: redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california-constitution
+    version: 1987-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract includes the 1987 voter adoption and the Secretary''s 1988 Certificate of Disapproval, so the document was not approved as written; several percentages are OCR-garbled.'
 gaming:
   ordinances:
   - approved: '1995-07-31'
@@ -197,6 +402,16 @@ jurisdiction:
     so nation names were read from images and matched to the roster. Row re-read on 2026-11-22 from the
     page image (the govinfo PDF has no text layer for the table); verification level unchanged because
     the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Mendocino County
+  court: Superior Court for Mendocino County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Mendocino County holds 100% of the land of Redwood Valley Rancheria (Census GEOID 3115), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -120,6 +120,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Bidwell Indian Community of the Fort Bidwell Reservation of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Fort Bidwell Indian Community of the Fort Bidwell Indian Community of the Fort Bidwell Reservation of California".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Fort Bidwell Indian Community, California" among organizations under constitutions
@@ -144,6 +152,171 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws adopted under section 16 of the Indian Reorganization Act
+  quote: 16 of the Indian Reorganization Act of June 18. 1934 (48 Stat. 984),
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Certification of Adoption
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: governing-body
+  value: Fort Bidwell Indian Community Council
+  quote: shall consist of a council known as die Fort Bid well Indian
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment IV, Art. III, Sec. 1
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: composed of nine roimrilnicn elected by secret ballot at the regular
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment IV, Art. III, Sec. 2
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot at the regular November meeting
+  quote: composed of nine roimrilnicn elected by secret ballot at the regular
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment IV, Art. III, Sec. 2
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: term of two years or
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment IV, Art. III, Sec. 4
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: head-of-government
+  value: Chairman
+  quote: shall also be the chief executive officer of the community.
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: By-laws, Art. II
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Fort Bidwell Indian Community of the Fort Bidwell Reservation of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its own membership
+  quote: elect from its own membership a chairman, vice-chairman,
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment VI, Art. III, Sec. 3
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: other-officers
+  value: Vice-chairman, Secretary, Treasurer
+  quote: elect from its own membership a chairman, vice-chairman,
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment VI, Art. III, Sec. 3
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: elections
+  value: Annually at the regular November meeting
+  quote: regular November genera) meeting of the Community
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment IV, Art. VIII, Sec. 1
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: voting-age
+  value: '21'
+  quote: who is twenty-one (21) years of age or over and is
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment X
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: amendment
+  value: Council majority vote, then election called by Secretary of the Interior
+  quote: meeting the proposed amendment shall be submitted to
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment IV, Art. VI, Sec. 2
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of eligible voters for felony or dishonesty conviction
+  quote: from office by a majority vote of the eligible voters of the
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment II, Art. VII, Sec. 2
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
+- aspect: recall-and-removal
+  value: Expulsion by majority vote of eligible voters for neglect or misconduct
+  quote: the eligible voters, expel any officer of the Council for neglect of duty
+  source: constitution-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1971-07
+  locator: Amendment II, Art. VII, Sec. 3
+  document_version:
+    document: fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1936 constitution and by-laws with Amendments IV through XII (1940-1971); Amendment IV (1942) replaces the original council structure, so amended values are reported; scan is heavily garbled and some amendment certificates are illegible.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -207,6 +380,16 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Modoc County
+  court: Superior Court for Modoc County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Modoc County holds 100% of the land of Fort Bidwell Reservation (Census GEOID 1170), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

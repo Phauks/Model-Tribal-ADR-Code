@@ -98,6 +98,16 @@ NATION_LAW_TOPICS = {"constitutions", "tribal-law"}
 CODE_PUBLISHERS = ("ecode360.com", "municode.com", "codepublishing.com", "amlegal.com")
 PUBLISHER_RIGHTS = ("Tribal law as compiled by a commercial code publisher: private research copy; "
                     "the publisher's compilation and terms apply (decision record 0031).")
+# Decision record 0043 (Trevor Goldsmith, 2026-11-22): copies taken from the
+# National Indian Law Library stay in the bucket but are not served. NILL says a
+# nation's permission to NILL "does not serve as implied consent" to use the
+# materials elsewhere, so pages link to NILL's copy until the nation itself
+# agrees; that consent is recorded with "redistribution": "yes" in
+# research/capture-index-overrides.json. A copy also published at an address
+# that is not NILL's (such as the nation's own site) is not affected.
+NATIONAL_INDIAN_LAW_LIBRARY = ("narf.org/nill/", "nill.narf.org/")
+LIBRARY_RIGHTS = ("Copy taken from the National Indian Law Library: private research copy, "
+                  "not served until the nation consents; pages link to NILL (decision record 0043).")
 
 
 # Files under govinfo/ come from GovInfo, the Government Publishing Office's
@@ -116,6 +126,9 @@ def nation_law_policy(topic: str, link: str) -> tuple[str, str] | None:
         return None
     if any(publisher in link for publisher in CODE_PUBLISHERS):
         return "no", PUBLISHER_RIGHTS
+    addresses = link.split()
+    if addresses and all(any(library in address for library in NATIONAL_INDIAN_LAW_LIBRARY) for address in addresses):
+        return "no", LIBRARY_RIGHTS
     return "yes", TOPIC_RIGHTS[topic]
 
 

@@ -44,6 +44,50 @@ supreme_court:
   - {name: "Anthony M. Kennedy", vote: minority}
   source: https://api.oyez.org/cases/1988/87-980
   checked: '2026-11-22'
+courtlistener:
+  cluster: 112241
+  citation: "490 U.S. 30"
+  case_name: "Mississippi Band of Choctaw Indians v. Holyfield"
+  link: https://www.courtlistener.com/opinion/112241/mississippi-band-of-choctaw-indians-v-holyfield/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep490030/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/112241/mississippi-band-of-choctaw-indians-v-holyfield/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/490/30/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/1988/87-980
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22490%20U.S.%2030%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=490%20U.S.%2030
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=490%20U.S.%2030
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Mississippi_Band_of_Choctaw_Indians_v._Holyfield
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -181,6 +181,195 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kokhanok Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'Listed as "Kokhanok Village". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements). Also listed under: Bristol Bay Service Area (profile lists the village in more than one service area; first-listed match recorded).'
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Kokhanok Village".'
+governance:
+- aspect: governing-body
+  value: Kokhanok Village Council
+  quote: Kokhanok Village Council Members
+  source: kokhanok-village-website-about-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 4 is a U.S. Department of Energy fact sheet saved from the village site and gives no governance facts; officer names are left out.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Our Council is comprised of five dedicated members, each serving a three-year term.
+  source: kokhanok-village-website-about-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 4 is a U.S. Department of Energy fact sheet saved from the village site and gives no governance facts; officer names are left out.'
+- aspect: governing-body-selection
+  value: Elected directly by the qualified voters of the Village
+  quote: The Council shall consist of five members elected directly by the
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IV, Section 2
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Our Council is comprised of five dedicated members, each serving a three-year term. To ensure continuity and fresh perspectives, these terms are staggered, meaning that we hold a tribal election every year.
+  source: kokhanok-village-website-about-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 4 is a U.S. Department of Energy fact sheet saved from the village site and gives no governance facts; officer names are left out.'
+- aspect: head-of-government
+  value: President
+  quote: Section 2 President. The president shall preside at all meetings of the community and of
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article XI, Section 2
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kokhanok Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by Council members from among themselves
+  quote: Tribal Council members shall elect from among its members a
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IV, Section 4
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: President, Vice-President, Secretary-Treasurer
+  quote: president, vice-president, and secretary-treasurer. Officers shall be selected immediately
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IV, Section 4
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Tribal election every year
+  quote: these terms are staggered, meaning that we hold a tribal election every year.
+  source: kokhanok-village-website-about-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 4 is a U.S. Department of Energy fact sheet saved from the village site and gives no governance facts; officer names are left out.'
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled Tribal member 1 8 years or older on tire
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article V, Section 1
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Tribal Council, by ordinance
+  quote: The Council may by ordinance set forth procedures for
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article V, Section 6
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Council may establish a court by ordinance
+  quote: The Council may, by ordinance, establish a court of general or limited jurisdiction.
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IX
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters, 20% of eligible voting
+  quote: Proposed amendments will be adopted upon a majority vote of the
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article XV, Section 2
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by at least 3 Council members' votes
+  quote: if at least three members of the Council vote in favor of removal.
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article VI, Section 1
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of qualified voters
+  quote: Tribal members shall have the power to recall any member of the
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article VI, Section 2
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Judicial power vested in Tribal Council until a separate judiciary is established
+  quote: the judicial power of the tribe is vested in
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IX
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -206,6 +395,16 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+nearby_state_courts:
+- state: AK
+  county: Lake and Peninsula Borough
+  court: Superior Court for Lake and Peninsula Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Lake and Peninsula Borough holds 100% of the land of Kokhanok ANVSA (Census GEOID 6800), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bristol Bay Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

@@ -4,27 +4,31 @@
 	import type { RecognitionBadge } from '#lib/recognition-badges.ts';
 	import { replaceState } from '$app/navigation';
 	import DataTable from '#lib/components/DataTable.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
+	import { mapViewChoices, mapViews } from '#lib/map-views.ts';
+	import TileMap, { type TileMapCamera } from '#lib/components/TileMap.svelte';
 	import ZoomableMap from '#lib/components/ZoomableMap.svelte';
 	import type { NationsMapView } from '#lib/nations-map-drawing.ts';
-	import type { LandAreaRow } from '#lib/server/nations-map.ts';
+	import type { LandAreaRow, ShadedViewData } from '#lib/server/nations-map.ts';
+	import { isShadedMapView, shadedMapViews, shadedViewDefinitions, type ShadedMapView } from '#lib/shaded-map-views.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
 	/**
-	 * The views of the one map, in the order of their buttons. Map titles are
-	 * in title case (Trevor, 2026-11-22). A new view needs
-	 * an entry here, a drawing in src/lib/nations-map-drawing.ts and a snippet
-	 * below for what goes under the map.
+	 * The views of the one map, picked from a searchable dropdown (Trevor, 2026-11-23) and listed in src/lib/map-views.ts. A new view needs an entry there, a drawing in src/lib/nations-map-drawing.ts and a snippet below for what goes under the map.
 	 */
-	const views: { key: NationsMapView; label: string; heading: string }[] = [
-		{ key: 'states', label: 'Nations by State', heading: 'by-state-heading' },
-		{ key: 'regions', label: 'Bureau of Indian Affairs Regions', heading: 'bureau-of-indian-affairs-regions' },
-		{ key: 'lands', label: 'Land Areas', heading: 'land-areas' }
-	];
+	const views = mapViews;
 	let current = $state<NationsMapView>('states');
+
+	/**
+	 * The map is drawn with MapLibre from the project's own tiles where the device can (decision record 0039). The drawn map underneath stays for printing, and takes over if MapLibre cannot start, so a reader always has a map. Changing views keeps the reader's place.
+	 */
+	let tileMapWanted = $state(true);
+	let tileMapReady = $state(false);
+	let tileMapCamera = $state<TileMapCamera | undefined>();
 
 	/**
 	 * The "Land areas" view is fetched the first time it is shown, because its
@@ -50,29 +54,42 @@
 		return landsLoading;
 	}
 
-	$effect(() => {
-		if (current === 'lands' && !lands) void loadLands();
-	});
-	let tabs: HTMLButtonElement[] = $state([]);
+	/**
+	 * The views that shade the land areas by a fact about their nations, such as Public Law 280 (src/lib/shaded-map-views.ts), are fetched the same way, each the first time it is shown.
+	 */
+	type ShadedBody = Omit<ShadedViewData, 'drawn' | 'labels'> & { drawing: string };
+	let shaded = $state<Partial<Record<ShadedMapView, ShadedBody>>>({});
+	let shadedFailed = $state<Partial<Record<ShadedMapView, boolean>>>({});
+	const shadedLoading = new Map<ShadedMapView, Promise<void>>();
 
-	function choose(index: number, remember = true): void {
-		const view = views[(index + views.length) % views.length];
-		current = view.key;
-		tabs[views.indexOf(view)]?.focus();
-		if (remember) replaceState(view.key === views[0].key ? '' : `?view=${view.key}`, {});
+	function loadShaded(view: ShadedMapView): Promise<void> {
+		let loading = shadedLoading.get(view);
+		if (!loading) {
+			shadedFailed[view] = false;
+			loading = fetch(`/nations/map/views/${view}.json`)
+				.then((response) => {
+					if (!response.ok) throw new Error(String(response.status));
+					return response.json();
+				})
+				.then((body: ShadedBody) => {
+					shaded[view] = body;
+				})
+				.catch(() => {
+					shadedFailed[view] = true;
+					shadedLoading.delete(view);
+				});
+			shadedLoading.set(view, loading);
+		}
+		return loading;
 	}
 
-	function onTabKey(event: KeyboardEvent, index: number): void {
-		const moves: Record<string, number> = {
-			ArrowRight: index + 1,
-			ArrowLeft: index - 1,
-			Home: 0,
-			End: views.length - 1
-		};
-		if (event.key in moves) {
-			event.preventDefault();
-			choose(moves[event.key]);
-		}
+	$effect(() => {
+		if (current === 'lands' && !lands) void loadLands();
+		if (isShadedMapView(current) && !shaded[current]) void loadShaded(current);
+	});
+	function choose(key: NationsMapView): void {
+		current = key;
+		replaceState(key === views[0].key ? location.pathname : `?view=${key}`, {});
 	}
 
 	/**
@@ -85,11 +102,13 @@
 		let target = anchor ? document.getElementById(anchor) : null;
 		const panel = target?.closest<HTMLElement>('[data-map-view]');
 		const named = new URLSearchParams(location.search).get('view');
-		// A land area's row exists only once the view has been fetched.
-		const view = anchor.startsWith('land-area-') ? 'lands' : (panel?.dataset.mapView ?? named);
+		// A land area's row, and a shaded view's row, exist only once the view has been fetched; their ids start with the view's key.
+		const shadedView = shadedMapViews.find((key) => anchor.startsWith(`${key}-`));
+		const view = anchor.startsWith('land-area-') ? 'lands' : (shadedView ?? panel?.dataset.mapView ?? named);
 		if (!view || !views.some((entry) => entry.key === view)) return;
 		current = view as NationsMapView;
 		if (view === 'lands') await loadLands();
+		if (isShadedMapView(view)) await loadShaded(view);
 		await tick();
 		target ??= anchor ? document.getElementById(anchor) : null;
 		// A row reached from the map opens to show its nations.
@@ -109,7 +128,8 @@
 		new Map<string, ListedNation[]>([
 			...data.stateRows.map((row) => [`state-${row.code}`, row.nations] as const),
 			...data.regionRows.map((row) => [row.anchor, row.nations] as const),
-			...(lands?.rows ?? []).map((row) => [row.anchor, row.nations] as const)
+			...(lands?.rows ?? []).map((row) => [row.anchor, row.nations] as const),
+			...Object.values(shaded).flatMap((body) => body.areaRows.map((row) => [row.anchor, row.nations] as const))
 		])
 	);
 
@@ -144,6 +164,53 @@
 			}
 		}))
 	);
+
+	/** Most shaded views' tables list nations; each name goes to the section of the nation's page that has the view's facts and their sources. */
+	function nationColumns(body: ShadedBody): TableColumn[] {
+		const first: TableColumn[] = [
+			{ key: 'nation', header: 'Nation', isRowHeader: true, sortable: true },
+			{ key: 'states', header: 'States', sortable: true, filterable: true }
+		];
+		// Some tables say which kinds each nation has, one Yes column each, since the map can shade only one.
+		if (body.kindColumns.length > 0) {
+			return [...first, ...body.kindColumns.map((column) => ({ key: `kind-${column.key}`, header: column.header, sortable: true, filterable: true }))];
+		}
+		return [...first, { key: 'category', header: shadedViewDefinitions[body.view].categoryHeader ?? 'Category', sortable: true, filterable: true }];
+	}
+
+	function nationRows(body: ShadedBody): TableRow[] {
+		return body.nationRows.map((row) => ({
+			key: row.anchor,
+			anchor: row.anchor,
+			cells: {
+				nation: { text: row.name, href: `/nations/${row.id}#${body.section}` },
+				states: { text: row.states.join(', '), values: row.states },
+				category: { text: row.category },
+				...Object.fromEntries(body.kindColumns.map((column) => [`kind-${column.key}`, { text: (row.kinds as Record<string, boolean>)[column.key] ? 'Yes' : '' }]))
+			}
+		}));
+	}
+
+	/** A shaded view whose table lists categories, as the Indian Health Service view lists its Areas: each row opens to its nations. */
+	function categoryColumns(body: ShadedBody): TableColumn[] {
+		return [
+			{ key: 'area', header: shadedViewDefinitions[body.view].categoryHeader ?? 'Category', isRowHeader: true, sortable: true, custom: true },
+			{ key: 'count', header: 'Nations', type: 'number', sortable: true }
+		];
+	}
+
+	function categoryRows(body: ShadedBody): TableRow[] {
+		return body.areaRows.map((row) => ({
+			key: row.anchor,
+			anchor: row.anchor,
+			cells: {
+				area: { text: row.name },
+				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length },
+				// Not a column: shown when the Area's row is opened.
+				states: { text: row.states.join(', ') }
+			}
+		}));
+	}
 
 	const landAreaColumns: TableColumn[] = [
 		{ key: 'area', header: 'Area', isRowHeader: true, sortable: true, custom: true },
@@ -201,7 +268,7 @@
 			.map-view[hidden] {
 				display: block !important;
 			}
-			.map-view-tabs {
+			.map-view-picker {
 				display: none !important;
 			}
 		</style>
@@ -216,23 +283,8 @@
 	<h1>Map of Native Nations</h1>
 </div>
 
-<div class="map-view-tabs" role="tablist" aria-label="Map views">
-	{#each views as view, index (view.key)}
-		{@const isCurrent = view.key === current}
-		<button
-			bind:this={tabs[index]}
-			type="button"
-			role="tab"
-			id="map-tab-{view.key}"
-			aria-selected={isCurrent}
-			aria-controls="map-view-{view.key}"
-			tabindex={isCurrent ? 0 : -1}
-			onclick={() => choose(index)}
-			onkeydown={(event) => onTabKey(event, index)}
-		>
-			{view.label}
-		</button>
-	{/each}
+<div class="map-view-picker">
+	<SearchableDropdown label="Map view" choices={mapViewChoices} value={current} onchange={choose} />
 </div>
 
 {#each views as view (view.key)}
@@ -240,15 +292,40 @@
 		class="map-view"
 		id="map-view-{view.key}"
 		data-map-view={view.key}
-		role="tabpanel"
-		aria-labelledby="map-tab-{view.key}"
+		role="region"
+		aria-labelledby={view.heading}
 		hidden={view.key !== current}
 	>
 		<h2 id={view.heading} class="view-heading">{view.label}</h2>
 		<figure class="map-figure" data-print-part="maps">
-			<div class="map-drawing" data-nations-map={view.key === 'states' ? '' : undefined}>
+			<div class="map-drawing" class:tiled={tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
+				{#if tileMapWanted && view.key === current}
+					{#key view.key}
+						<TileMap
+							view={view.key}
+							label={view.label}
+							bind:camera={tileMapCamera}
+							onready={() => (tileMapReady = true)}
+							onfail={() => {
+								tileMapWanted = false;
+								tileMapReady = false;
+							}}
+						/>
+					{/key}
+				{/if}
+				<div class="drawn-map">
 				<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
-					{#if view.key === 'lands'}
+					{#if isShadedMapView(view.key)}
+						{@const body = shaded[view.key]}
+						{#if body}
+							{@html body.drawing}
+						{:else if shadedFailed[view.key]}
+							<p class="map-status">This view could not be loaded. Check your connection and choose the view again.</p>
+						{:else}
+							<p class="map-status">Loading the view…</p>
+							<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
+						{/if}
+					{:else if view.key === 'lands'}
 						{#if lands}
 							{@html lands.drawing}
 						{:else if landsFailed}
@@ -262,6 +339,7 @@
 						{@html data.drawings[view.key]}
 					{/if}
 				</ZoomableMap>
+				</div>
 			</div>
 			{#if view.key === 'states'}
 				<figcaption>
@@ -269,6 +347,16 @@
 						{#each data.countClasses as entry (entry.key)}
 							<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
+						{#if tileMapReady}{@render officeKey()}{/if}
+					</ul>
+				</figcaption>
+			{:else if isShadedMapView(view.key) && shaded[view.key]}
+				<figcaption>
+					<ul class="legend" aria-label="Key">
+						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
+							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
+						{/each}
+						{@render officeKey()}
 					</ul>
 				</figcaption>
 			{:else if view.key === 'lands'}
@@ -277,6 +365,7 @@
 						{#each data.landAreaGroups as group (group.key)}
 							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
 						{/each}
+						{@render officeKey()}
 					</ul>
 				</figcaption>
 			{/if}
@@ -299,7 +388,7 @@
 				/>
 			{:else if view.key === 'lands'}
 				<p class="small muted map-note">
-					Select an area to go to its row in the table, which lists the nations whose entries name it. Areas too small to see at this scale are marked with a dot. Outlines are from the Census Bureau’s 2020 cartographic boundary file, simplified for a national map. {@render insetNote()}
+					Select an area to go to its row in the table, which lists the nations whose entries name it. Areas too small to see at this scale are marked with a dot{tileMapReady ? ', and nearby dots are grouped into numbered circles until you zoom in' : ''}. Outlines are from the Census Bureau’s 2020 cartographic boundary file{tileMapReady ? '' : ', simplified for a national map'}. {@render officeNote()} Selecting one goes to the nation’s page. {@render insetNote()}
 				</p>
 				{#if lands}
 					<DataTable
@@ -312,6 +401,35 @@
 						rows={landAreaRows}
 						defaultSort={{ key: 'area', direction: 'ascending' }}
 						{cell}
+					/>
+				{/if}
+			{:else if isShadedMapView(view.key)}
+				{@const body = shaded[view.key]}
+				{@const definition = shadedViewDefinitions[view.key]}
+				<p class="small muted map-note">
+					{definition.note} {@render officeNote()} {@render insetNote()}
+				</p>
+				{#if body && definition.rows === 'categories'}
+					<DataTable
+						identifier={view.key}
+						download={view.key}
+						label="Table: {view.label}"
+						caption={definition.caption}
+						columns={categoryColumns(body)}
+						rows={categoryRows(body)}
+						defaultSort={{ key: 'area', direction: 'ascending' }}
+						{cell}
+					/>
+				{:else if body}
+					<DataTable
+						identifier={view.key}
+						download={view.key}
+						filters
+						label="Table: {view.label}"
+						caption={definition.caption}
+						columns={nationColumns(body)}
+						rows={nationRows(body)}
+						defaultSort={{ key: 'nation', direction: 'ascending' }}
 					/>
 				{/if}
 			{:else if view.key === 'regions'}
@@ -333,8 +451,21 @@
 	</div>
 {/each}
 
+{#snippet officeKey()}
+	<li><span class="swatch office" aria-hidden="true"></span>Office of a nation with no Census land area</li>
+{/snippet}
+
+<!-- Said under every view that draws office dots: how many nations they mark, and how many are only in the tables. -->
+{#snippet officeNote()}
+	Ringed dots mark the offices of {data.offices.placed} nations with no Census land area, where their entries give an address; {data.offices.unplaced} more have neither, so they are not on the map; the Nations by State view lists every nation.
+{/snippet}
+
 {#snippet insetNote()}
-	Alaska, Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands are in the boxes below, each drawn at its own scale and not in its true place.
+	{#if tileMapReady}
+		Alaska, Hawaiʻi, Puerto Rico, the U.S. Virgin Islands, Guam, the Northern Mariana Islands and American Samoa are in their true places; the buttons under the map go to each. Hold Ctrl or ⌘ and scroll, or pinch, to zoom.
+	{:else}
+		Alaska, Hawaiʻi, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico and the U.S. Virgin Islands are in the boxes below, each drawn at its own scale and not in its true place.
+	{/if}
 {/snippet}
 
 <div class="reading">
@@ -342,36 +473,11 @@
 </div>
 
 <style>
-	.map-view-tabs {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-		margin: var(--space-5) 0 var(--space-3);
-		border-bottom: 1px solid var(--color-line);
+	.map-view-picker {
+		margin: var(--space-5) 0 var(--space-4);
 	}
 
-	.map-view-tabs button {
-		min-height: var(--layout-target-minimum);
-		padding: var(--space-2) var(--space-4);
-		border: 0;
-		border-bottom: 4px solid transparent;
-		background: transparent;
-		color: var(--color-ink);
-		font: inherit;
-		cursor: pointer;
-	}
-
-	.map-view-tabs button:hover {
-		text-decoration: underline;
-	}
-
-	/* The chosen view is marked by weight and a bar, not color alone. */
-	.map-view-tabs button[aria-selected='true'] {
-		border-bottom-color: var(--color-action);
-		font-weight: var(--font-weight-bold);
-	}
-
-	/* The buttons already name the view; the heading stays for screen readers, outlines and print. */
+	/* The dropdown already names the view; the heading stays for screen readers, outlines and print. */
 	.view-heading {
 		position: absolute;
 		width: 1px;
@@ -383,7 +489,7 @@
 	}
 
 	@media print {
-		.map-view-tabs {
+		.map-view-picker {
 			display: none;
 		}
 
@@ -412,7 +518,23 @@
 	}
 
 	.map-drawing {
+		position: relative;
 		max-width: 975px;
+	}
+
+	/*
+	 * The MapLibre map (src/lib/components/TileMap.svelte) starts hidden on top of the drawn map, the same size, and replaces it on screen once its first view has loaded. Print always uses the drawn map.
+	 */
+	.map-drawing:not(.tiled) :global(.tile-map) {
+		position: absolute;
+		inset: 0 0 auto;
+		visibility: hidden;
+	}
+
+	@media screen {
+		.map-drawing.tiled .drawn-map {
+			display: none;
+		}
 	}
 
 	.map-note {
@@ -569,6 +691,22 @@
 		stroke: var(--color-ink-muted);
 		stroke-width: calc(0.4px * var(--map-unzoom, 1));
 	}
+	/* An office of a nation with no Census land area: a dot with a dark ring, as on the tiled map. */
+	.map-drawing :global(.office) {
+		r: calc(4px * var(--map-unzoom, 1));
+		stroke: var(--color-ink);
+		stroke-width: calc(1.5px * var(--map-unzoom, 1));
+	}
+	.map-drawing :global(a:hover .office),
+	.map-drawing :global(a:focus .office) {
+		fill: var(--color-focus);
+	}
+	.swatch.office {
+		border: 2px solid var(--color-ink);
+		border-radius: 50%;
+		background: var(--color-map-class-0);
+	}
+
 	.map-drawing :global(.land-area.dot) {
 		stroke: var(--color-paper);
 		stroke-width: calc(0.8px * var(--map-unzoom, 1));

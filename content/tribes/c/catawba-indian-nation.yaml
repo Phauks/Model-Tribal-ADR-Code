@@ -225,6 +225,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Catawba Indian Nation
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Catawba Indian Nation". Also listed under the same Area in: indian-health-service-direct-service-tribes, indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Catawba Indian Nation".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Catawba Tribe of Indians South Carolina" among organizations under constitutions
@@ -249,6 +265,141 @@ government_structure:
   as_of: '1944'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: General Council style government
+  quote: The Catawba Nation has a General Council style government.
+  source: catawba-indian-nation-website-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: governing-body
+  value: General Tribal Council
+  quote: of South Carolina shall be the General Tribal Council which shall be composed
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 1
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: Enrolled members 18 or older
+  quote: To be a qualified voter you must be an enrolled member of the Nation who is 18 years of age or over.
+  source: catawba-indian-nation-website-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: head-of-government
+  value: Chief
+  quote: The General Council also elects from its own members a Chief, an Assistant Chief, a Secretary Treasurer, and two Committee men who shall serve as the Executive Committee of the Nation
+  source: catawba-indian-nation-website-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Catawba Indian Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Council from its own members
+  quote: The General Council also elects from its own members a Chief
+  source: catawba-indian-nation-website-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: There are five elected officials that serve four year terms.
+  source: catawba-indian-nation-website-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: other-officers
+  value: Assistant Chief, Secretary Treasurer, two Committee men
+  quote: an Assistant Chief, a Secretary Treasurer, and two Committee men
+  source: catawba-indian-nation-website-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: elections
+  value: Every 4 years at the July meeting
+  quote: shall be chosen at the July meeting of every four years.
+  source: catawba-indian-nation-website-storage-app-media-1975-cin-constitution-pdf
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article III, Section 4
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: voting-age
+  value: '18'
+  quote: To be a qualified voter you must be an enrolled member of the Nation who is 18 years of age or over.
+  source: catawba-indian-nation-website-general-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: election-authority
+  value: Election Committee
+  quote: The Election Committee oversees all elections and official votes for the Nation.
+  source: catawba-indian-nation-website-election-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: amendment
+  value: Majority vote of the General Tribal Council
+  quote: proposed by a majority vote of the Catawba General Tribal Council and may
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article VI
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for ordinances
+  quote: be subject to the approval of the Secretary of the Interior, providing
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article IV, Section 1(e)
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by majority vote of all eligible voters
+  quote: A majority vote of all eligible voters shall be necessary to remove an official from
+  source: catawba-indian-nation-website-storage-app-media-1975-cin-constitution-pdf
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
+- aspect: other
+  value: Five-member Executive Committee elected by General Council
+  quote: The five-member Executive Committee is elected by the General Council to oversee the routine daily operations of the Nation government.
+  source: catawba-indian-nation-website-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution text on page 8 is dated 1975 and the Executive Committee page cites a 2019 election, so the pages may not all be current.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -362,6 +513,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Catawba Indian Nation". Facilities
       as machine-extracted from the report text (verify): Catawba Two Kings Casino. Name extracted from
       the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV 22-03
+    date: '2022-12-06'
+    link: https://www.nigc.gov?wpdmdl=2980&ind=2981
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV 22-03
+    note: The list titles the action “Catawba Indian Nation” and gives its type as NOV.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -375,6 +537,33 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: South Carolina is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in South Carolina. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in South Carolina by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: South Carolina has civil, criminal and regulatory jurisdiction over the Catawba Tribe, its members and lands as over any other person or land, except where the State Act or federal implementing law says otherwise; federal law adopts the Settlement Agreement and State Act for these questions. (S.C. Code Ann. § 27-16-40; Pub. L. No. 103-116, § 10(1), 107 Stat. at 1126.)
+  source: south-carolina-code-27-16-40
+  confidence: high
+  verification: read-in-full
+  locator: S.C. Code Ann. § 27-16-40
+  note: 'Federal side: § 10(1), "All matters involving tribal powers, immunities, and jurisdiction, whether criminal, civil, or regulatory, shall be governed by the terms and provisions of the Settlement Agreement and the State Act." Section 5(e)(?) of the federal Act (107 Stat. at 1122): the Act does not "deprive the State of jurisdiction other than as expressly provided." The State Act also lets the Tribe create tribal courts (S.C. Code Ann. §§ 27-16-110 to -120 not fully read). Also cites: public-law-103-116.'
+nearby_state_courts:
+- state: SC
+  county: York County
+  court: Circuit Court for York County
+  link: https://www.sccourts.org/courts/courthouse-search/
+  source: state-trial-court-directory-sc
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: York County holds 100% of the land of Catawba Reservation (Census GEOID 0525), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

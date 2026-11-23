@@ -1,7 +1,7 @@
 profile: content/tribes/e/eastern-shawnee-tribe-of-oklahoma.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -58,4 +58,90 @@ searches:
   outcome: not-found
   reason: The only lead is a constitution article on court jurisdiction; the website shows no dispute
     resolution forum.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://www.estoo-nsn.gov/; https://www.estoo-nsn.gov/ordinances-and-resolutions.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://estoo-nsn.gov/wp-content/uploads/bsk-pdf-manager/2022/07/2.100-Codification-Ordinance.pdf
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Code listing shows Tribal Court Rules and Community Law Court as reserved, no ADR titles.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://estoo-nsn.gov/wp-content/uploads/bsk-pdf-manager/2022/09/20.300-Contracts-with-the-Tribe-and-its-Business-Entities.pdf
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Contracts ordinance has no arbitration or mediation wording.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Eastern Shawnee Tribe of Oklahoma tribal court estoo-nsn.gov code of laws'
+  query: Eastern Shawnee Tribe of Oklahoma tribal court estoo-nsn.gov code of laws
+  outcome: not-found
+  reason: Found codification ordinance and contract ordinance PDFs.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Eastern Shawnee Tribe of Oklahoma tribal code mediation OR "dispute resolution"
+    OR peacemaking'
+  query: Eastern Shawnee Tribe of Oklahoma tribal code mediation OR "dispute resolution" OR peacemaking
+  outcome: not-found
+  reason: Results were Absentee-Shawnee (different nation) and the nation's ordinance PDFs.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=estoo-nsn.gov/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 5000 archived addresses for estoo-nsn.gov/*; those whose address names
+    a code, law, court or dispute resolution page were fetched in this retry or are listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261014162540id_/https://www.estoo-nsn.gov/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2026-10-14) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20250218124431id_/https://www.estoo-nsn.gov/ordinances-and-resolutions
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2025-02-18) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/https://estoo-nsn.gov/government/business-committee/ordinances/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: blocked
+  reason: The Wayback Machine refused this capture (403); the project does not try to get past it.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261014162540/https://www.estoo-nsn.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-10-14 ("Home Page | Eastern Shawnee Tribe of Oklahoma") shows
+    codes or ordinances.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20250218124431/http://www.estoo-nsn.gov/ordinances-and-resolutions
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2025-02-18 ("Ordinances and Resolutions | Eastern Shawnee Tribe
+    of Oklahoma") shows codes or ordinances.

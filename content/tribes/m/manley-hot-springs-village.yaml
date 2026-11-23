@@ -143,6 +143,31 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Manley Hot Springs Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: Listed as "Manley Hot Springs Village". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Interior Alaska Service Area
+  source: indian-health-service-alaska-area-profile-interior-alaska-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
+  note: 'The source''s words: "Manley Hot Springs Village".'
+governance:
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Manley Hot Springs Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 justice_institutions:
 - kind: tribal-court
   name: Manley Hot Springs Tribal Court
@@ -176,6 +201,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Yukon-Koyukuk Census Area
+  court: Superior Court for Yukon-Koyukuk Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Yukon-Koyukuk Census Area holds 100% of the land of Manley Hot Springs ANVSA (Census GEOID 6900), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Doyon Ltd.
   relation: alaska-native-claims-settlement-act-regional-corporation

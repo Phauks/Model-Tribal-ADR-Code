@@ -1,0 +1,36 @@
+profile: content/tribes/p/paskenta-band-of-nomlaki-indians-of-california.yaml
+topic: governance
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/captures/constitutions/paskenta-band-of-nomlaki-indians-of-california/86a6865b7b444186.txt
+  query: 'Governance: governing body, head of government, elections, branches, courts, amendment (scripts/governance/reader-brief.md)'
+  outcome: found
+  reason: Read the 1998 constitution (constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text); kept 13 facts whose quoted words were found in the text.
+  records:
+  - constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: found
+  reason: The directory lists the title of the leader's office.
+  records:
+  - bia-tribal-leaders-directory-2026
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://paskenta-nsn.gov/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: found
+  reason: Read 5 pages (home, government, council, election, court and constitution pages); kept 7 facts whose quoted words were found on the page.
+  records:
+  - paskenta-band-of-nomlaki-indians-of-california-website-about-the-nation-our-government
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

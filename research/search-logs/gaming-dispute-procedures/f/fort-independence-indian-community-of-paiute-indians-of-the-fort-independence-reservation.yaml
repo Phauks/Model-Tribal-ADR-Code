@@ -1,7 +1,7 @@
 profile: content/tribes/f/fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -26,5 +26,19 @@ searches:
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#fort-independence-indian-reservation-amendment-2016-11-22#i1
   - research/reviews/2026-11-22-ordinance-disputes.json#fort-independence-indian-reservation-amendment-2016-11-22#i2
-next_steps: Read the scanned ordinance listed 2008-01-11 (https://www.nigc.gov/wp-content/uploads/2025/03/fortindepenamend011108.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/fortindepenamend011108.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-33 of 33 of this ordinance listed 2008-01-11 as page
+    images (it has no text layer) and recorded 3 procedure(s): employee-grievance, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#fort-independence-indian-reservation-ordinance-2008-01-11#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#fort-independence-indian-reservation-ordinance-2008-01-11#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#fort-independence-indian-reservation-ordinance-2008-01-11#p3
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

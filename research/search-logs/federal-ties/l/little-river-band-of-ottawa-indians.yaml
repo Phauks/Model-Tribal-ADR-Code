@@ -1,0 +1,33 @@
+profile: content/tribes/l/little-river-band-of-ottawa-indians.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/bemidji/healthcarefacilities/
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Bemidji Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#little-river-band-of-ottawa-indians
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 2 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#little-river-band-of-ottawa-indians
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 1 indian lands opinions.

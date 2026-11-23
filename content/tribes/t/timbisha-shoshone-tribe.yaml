@@ -181,6 +181,236 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Timbisha Shoshone Tribe
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Timbisha Shoshone Tribe".
+governance:
+- aspect: form
+  value: Adopted in accordance with Indian Reorganization Act of June 18, 1934, as amended
+  quote: Reorganization Act of June 18, 1934 (48 Stat. 984) as amended
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Preamble
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: governing-body
+  value: General Council
+  quote: The governing body of the Tribe shall be the General Council.
+  source: timbisha-shoshone-tribe-website-newsite-tribal-government-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Tribal Council shall be composed of five (5) persons elected by the General Council.
+  source: timbisha-shoshone-tribe-website-newsite-tribal-government-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: In addition to the General Council, there shall be elected from the General Council, a Tribal Council.
+  source: timbisha-shoshone-tribe-website-newsite-tribal-government-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: two year terms of office.
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article VI, Section 3
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: general-council
+  value: All tribal members 16 years or older
+  quote: The General Council shall consist of all tribal members sixteen (16) years of age or older.
+  source: timbisha-shoshone-tribe-website-newsite-tribal-government-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: Chairperson;
+  source: timbisha-shoshone-tribe-website-newsite-election-committee
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Timbisha Shoshone Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by Tribal Council members
+  quote: 'Tribal Council members shall elect the following officers from the Tribal Council:'
+  source: timbisha-shoshone-tribe-website-newsite-election-committee
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The officers shall be elected by a majority vote and shall serve two year terms.
+  source: timbisha-shoshone-tribe-website-newsite-election-committee
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: other-officers
+  value: Vice Chairperson, Secretary/Treasurer
+  quote: Secretary/Treasurer.
+  source: timbisha-shoshone-tribe-website-newsite-election-committee
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: elections
+  value: Annually, second Tuesday of November
+  quote: shall be held annually on the second Tuesday of the month of
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article VI, Section 4(b)
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: voting-age
+  value: '16'
+  quote: The General Council shall consist of all tribal members sixteen (16) years of age or older.
+  source: timbisha-shoshone-tribe-website-newsite-tribal-government-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: election-authority
+  value: Election board
+  quote: An election board, appointed by the chairperson and approved by the Tribal Council, shall supervise and administer all elections
+  source: timbisha-shoshone-tribe-website-newsite-election-committee
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: branches
+  value: General Council, Tribal Council, Tribal Judiciary
+  quote: The powers of the government of the Tribe shall be divided into three distinct branches; the General Council, the Tribal Council and the Tribal Judiciary.
+  source: timbisha-shoshone-tribe-website-newsite-tribal-government-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: No branch, group or person charged with the exercise of powers properly belonging to one of these branches shall exercise any powers belonging to one of the other branches
+  source: timbisha-shoshone-tribe-website-newsite-tribal-government-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: judiciary
+  value: Tribal Judiciary
+  quote: the General Council, the Tribal Council and the Tribal Judiciary.
+  source: timbisha-shoshone-tribe-website-newsite-tribal-government-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Pages 4 and 6 quote Articles IV and VI of the constitution without naming it or giving a date, and page 3 calls the Tribal Council the elected governing body; facts follow the constitution text, and other-officers quotes only the Secretary/Treasurer.'
+- aspect: judicial-selection
+  value: Chief judge appointed by Tribal Council, confirmed by General Council
+  quote: by the Tribal Council and confirmed by a majority vote of the
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XIII, Section 2
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: judicial-term
+  value: Set by Tribal Council statute
+  quote: The tenure and salary of Tribal judges shall be established
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XIII, Section 4
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: amendment
+  value: Majority vote of eligible voters (50% turnout)
+  quote: This document may be amended by a majority vote of the
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XVI
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of Tribal Council after hearing on written charges
+  quote: the Tribal Council vote to, remove the accused Council member, his
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XI, Section 1
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
+- aspect: recall-and-removal
+  value: Recall by General Council election on petition of one-third of eligible voters
+  quote: one-third (1/3) of the eligible voters of the General Council
+  source: constitution-timbisha-shoshone-tribe-1986-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-01-25'
+  locator: Article XI, Section 2(a)
+  document_version:
+    document: timbisha-shoshone-tribe-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract includes a 1999 fax cover sheet and 1986 Bureau correspondence stating the document is a Non-IRA constitution that the Bureau has not approved.'
 governing_documents:
 - kind: law-code
   title: Timbisha Shoshone Tribe - Tribal Code - Table of Contents
@@ -319,6 +549,42 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: The 1975 retrocession notice lists only the areas over which Nevada had acquired jurisdiction; Fallon, Walker River, Duck Valley, Fort McDermitt, Moapa, Las Vegas, Summit Lake, Yerington, Fort Mojave and Timbisha lands are not on it, and the notice does not say why. (40 Fed. Reg. 27,501.)
+  source: federal-register-1975-nevada-retrocession
+  confidence: low
+  verification: inferred
+  locator: 40 Fed. Reg. at 27,501
+  note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+nearby_state_courts:
+- state: NV
+  county: Esmeralda County
+  court: District Court for Esmeralda County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Esmeralda County holds 39% of the land of Timbi-Sha Shoshone Reservation (Census GEOID 4180), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NV
+  county: Nye County
+  court: District Court for Nye County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Nye County holds 36% of the land of Timbi-Sha Shoshone Reservation (Census GEOID 4180), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: CA
+  county: Inyo County
+  court: Superior Court for Inyo County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Inyo County holds 25% of the land of Timbi-Sha Shoshone Reservation (Census GEOID 4180), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

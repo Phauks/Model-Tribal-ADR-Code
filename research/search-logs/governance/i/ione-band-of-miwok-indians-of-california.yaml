@@ -1,0 +1,37 @@
+profile: content/tribes/i/ione-band-of-miwok-indians-of-california.yaml
+topic: governance
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/captures/constitutions/ione-band-of-miwok-indians-of-california/814a0d8e8bac2b78.txt
+  query: 'Governance: governing body, head of government, elections, branches, courts, amendment (scripts/governance/reader-brief.md)'
+  outcome: found
+  reason: Read the 2002 constitution (constitution-ione-band-of-miwok-indians-of-california-2002-text); kept 20 facts whose quoted words were found in the text.
+  records:
+  - constitution-ione-band-of-miwok-indians-of-california-2002-text
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: found
+  reason: The directory lists the title of the leader's office.
+  records:
+  - bia-tribal-leaders-directory-2026
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://ionemiwok.net/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: found
+  reason: Read 4 pages (home, government, council, election, court and constitution pages); kept 2 facts whose quoted words were found on the page.
+  records:
+  - ione-band-of-miwok-indians-of-california-website-about-ibmi
+  - ione-band-of-miwok-indians-of-california-website-tribal-council
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

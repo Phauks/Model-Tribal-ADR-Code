@@ -43,6 +43,46 @@ supreme_court:
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep031/usrep031515/usrep031515.pdf
   note: "The report names Marshall, McLean (concurring) and Baldwin (dissenting). Duvall, Story and Thompson are counted in the majority from Oyez; Johnson's vote is not recorded in the report or Oyez."
   checked: '2026-11-22'
+courtlistener:
+  cluster: 85797
+  citation: "31 U.S. 515"
+  case_name: "Worcester v. Georgia"
+  link: https://www.courtlistener.com/opinion/85797/worcester-v-georgia/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep031515/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/85797/worcester-v-georgia/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/31/515/
+    unchecked: true
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2231%20U.S.%20515%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=31%20U.S.%20515
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=31%20U.S.%20515
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Worcester_v._Georgia
 rights:
   status: no-permission-needed
   basis: us-government-work

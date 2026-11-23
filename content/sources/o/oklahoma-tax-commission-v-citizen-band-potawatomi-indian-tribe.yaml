@@ -44,6 +44,46 @@ supreme_court:
   - {name: "David H. Souter", vote: majority}
   source: https://api.oyez.org/cases/1990/89-1322
   checked: '2026-11-22'
+courtlistener:
+  cluster: 112537
+  citation: "498 U.S. 505"
+  case_name: "Oklahoma Tax Comm'n v. Citizen Band of Potawatomi Tribe of Okla."
+  link: https://www.courtlistener.com/opinion/112537/oklahoma-tax-commn-v-citizen-band-of-potawatomi-tribe-of-okla/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep498505/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/112537/oklahoma-tax-commn-v-citizen-band-of-potawatomi-tribe-of-okla/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/498/505/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/1990/89-1322
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22498%20U.S.%20505%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=498%20U.S.%20505
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=498%20U.S.%20505
 rights:
   status: no-permission-needed
   basis: us-government-work

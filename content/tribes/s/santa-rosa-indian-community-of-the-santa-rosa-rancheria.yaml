@@ -168,6 +168,167 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santa Rosa Indian Community of the Santa Rosa Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Santa Rosa Indian Community of the Santa Rosa Rancheria, California".
+governance:
+- aspect: form
+  value: Articles of Community Organization
+  quote: ARTICLES OF COMMUNITY ORGANIZATION
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Preamble
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+- aspect: governing-body
+  value: Tachi Yokut Tribal Council
+  quote: Meet the governing body of our mighty sovereign nation, the Tachi Yokut Tribal Council.
+  source: tachi-yokut-nsn-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council membership is listed by title with names, so no seat count is given; the Tribal Council page is the tribe''s own site.'
+- aspect: governing-body-selection
+  value: Chosen by the General Council from its membership by secret ballot
+  quote: The General Council shall elect from its member-
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Article IV, Section 2
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+- aspect: general-council
+  value: All members 21 years of age or over
+  quote: members twenty-one (21) years of age or over.
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Article IV, Section 1
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+- aspect: head-of-government
+  value: Tribal Council Chairman
+  quote: Tribal Council Chairman
+  source: santa-rosa-indian-community-of-the-santa-rosa-rancheria-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council membership is listed by title with names, so no seat count is given; the Tribal Council page is the tribe''s own site.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Santa Rosa Indian Community of the Santa Rosa Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the General Council by secret ballot
+  quote: The General Council shall elect from its member-
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Article IV, Section 2
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: shall be for two years or until successors are
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Article IV, Section 5
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+- aspect: other-officers
+  value: Vice-Chairman
+  quote: Our Vice- Chairman provides leadership and direction for the tribe, overseeing the implementation of tribal policies, programs, and initiatives
+  source: santa-rosa-indian-community-of-the-santa-rosa-rancheria-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council membership is listed by title with names, so no seat count is given; the Tribal Council page is the tribe''s own site.'
+- aspect: elections
+  value: April meeting of each odd-numbered year
+  quote: meeting of each odd-numbered year. Any mem-
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Article IV, Section 3
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+- aspect: voting-age
+  value: '21'
+  quote: members twenty-one (21) years of age or over.
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Article IV, Section 1
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+- aspect: election-authority
+  value: Election board of 2 Business Committee and 2 General Council members
+  quote: board to be composed of two members of the
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Article IV, Section 4
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+- aspect: amendment
+  value: Majority vote of the Community, then same ratification as the Articles
+  quote: by a majority vote of the Community and may be ratified and
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Article VII
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of qualified voters, then majority vote
+  quote: percent (25%) of the qualified voters calling for
+  source: constitution-santa-rosa-indian-community-of-the-santa-rosa-rancheria-1963-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1963-05-08'
+  locator: Article V, Section 3
+  document_version:
+    document: santa-rosa-indian-community-of-the-santa-rosa-rancheria-constitution
+    version: 1963-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Labelled 1963 articles as amended, but the text also includes 1984 amendments and 1983-1996 resolutions; facts come from the Articles and Bylaws as printed.'
 gaming:
   compacts:
   - state: CA
@@ -307,6 +468,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Santa Rosa Rancheria Tachi Yokut
       Tribe". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-15
+    date: '2006-07-20'
+    link: https://www.nigc.gov?wpdmdl=8111&ind=8122
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-15
+    note: The list titles the action “Santa Rosa Rancheria Tachi-Yokut Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-15
+    date: '2006-09-06'
+    link: https://www.nigc.gov?wpdmdl=8105&ind=8116
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-15
+    note: The list titles the action “Santa Rosa Rancheria Tachi-Yokut Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -333,6 +515,16 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Kings County
+  court: Superior Court for Kings County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Kings County holds 100% of the land of Santa Rosa Rancheria (Census GEOID 3520), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

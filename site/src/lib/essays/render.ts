@@ -17,6 +17,9 @@ import Token from 'markdown-it/lib/token.mjs';
 import type { LineChange } from './merge.ts';
 import { markAnchor, marksHtml, type CitationMark } from '../citation-marks.ts';
 import type { SourceEntry } from '../server/source-uses.ts';
+import { chartFromRows, figureKindLabels, figureRemovalLink, figureSource, readFigureInfo, type FigureKind } from './figures.ts';
+import { scaleTop } from '../bar-chart.ts';
+import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
 import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 
 export interface EssayLibrary {
@@ -119,6 +122,7 @@ interface RenderState {
 	sources: EssaySources;
 	library: EssayLibrary;
 	problems: string[];
+	warnings: string[];
 	slugs: Set<string>;
 }
 
@@ -165,6 +169,176 @@ function markTopics(tokens: Token[]): void {
 			token.children = [];
 		}
 	}
+}
+
+/** A block token's matching close: the next token of the closing type at the same level. */
+function closingIndex(tokens: Token[], open: number, type: string): number {
+	for (let index = open + 1; index < tokens.length; index += 1) {
+		if (tokens[index].type === type && tokens[index].level === tokens[open].level) return index;
+	}
+	return tokens.length - 1;
+}
+
+function htmlToken(content: string): Token {
+	const token = new Token('html_block', '', 0);
+	token.content = content;
+	return token;
+}
+
+/** Markdown text as plain words, for an attribute: emphasis marks, link targets and citations dropped. */
+function plainText(inline: Token | undefined): string {
+	const parts: string[] = [];
+	for (const child of inline?.children ?? []) {
+		if (child.type === 'text' || child.type === 'code_inline') parts.push(child.content);
+		else if (child.type === 'softbreak' || child.type === 'hardbreak') parts.push(' ');
+		else if (child.type === 'term_link') parts.push(String(child.meta.text ?? child.meta.id));
+	}
+	return parts.join('').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Arranges each figure for the page: its description moves onto the
+ * picture or player (as alternative text and a label), its caption and
+ * credit go into a <figcaption>, and its transcript follows the figure,
+ * folded, since a <figcaption> must be the figure's first or last child.
+ */
+function arrangeFigures(tokens: Token[]): Token[] {
+	const arranged: Token[] = [];
+	let index = 0;
+	while (index < tokens.length) {
+		const open = tokens[index];
+		if (open.type !== 'container_figure_open') {
+			arranged.push(open);
+			index += 1;
+			continue;
+		}
+		const close = closingIndex(tokens, index, 'container_figure_close');
+		const inside = tokens.slice(index + 1, close);
+		const caption: Token[] = [];
+		const transcript: Token[] = [];
+		const descriptions: string[] = [];
+		for (let at = 0; at < inside.length; at += 1) {
+			const token = inside[at];
+			const partType = /^container_(description|transcript)_open$/.exec(token.type)?.[1];
+			if (partType && token.level === open.level + 1) {
+				const end = closingIndex(inside, at, `container_${partType}_close`);
+				const part = inside.slice(at, end + 1);
+				if (partType === 'description') {
+					descriptions.push(...part.filter((child) => child.type === 'inline').map(plainText));
+				} else {
+					transcript.push(...part);
+				}
+				at = end;
+			} else {
+				caption.push(token);
+			}
+		}
+		open.meta = { description: descriptions.filter(Boolean).join(' ') };
+		// A chart's table gives its bars, and stays under them as "Show as a table".
+		if (figureInfo(open).kind === 'chart') {
+			const start = caption.findIndex((token) => token.type === 'table_open' && token.level === open.level + 1);
+			if (start >= 0) {
+				const end = closingIndex(caption, start, 'table_close');
+				const table = caption.splice(start, end - start + 1);
+				open.meta.rows = tableRows(table);
+				open.meta.table = [htmlToken('<details class="essay-chart-table">\n<summary>Show as a table</summary>\n'), ...table, htmlToken('</details>\n')];
+			}
+		}
+		const removal = figureRemoval(open);
+		if (caption.length > 0 || removal) {
+			arranged.push(open, ...(open.meta.table ?? []), htmlToken('<figcaption>\n'), ...caption, htmlToken(`${removal}</figcaption>\n</figure>\n`));
+		} else {
+			arranged.push(open, ...(open.meta.table ?? []), htmlToken('</figure>\n'));
+		}
+		arranged.push(...transcript, tokens[close]);
+		index = close + 1;
+	}
+	return arranged;
+}
+
+function figureInfo(token: Token): { kind: FigureKind; address: string } {
+	return readFigureInfo(token.info);
+}
+
+/** A Markdown table's cells as plain text, row by row, the header row first. */
+function tableRows(tokens: Token[]): string[][] {
+	const rows: string[][] = [];
+	for (const token of tokens) {
+		if (token.type === 'tr_open') rows.push([]);
+		else if (token.type === 'inline') rows.at(-1)?.push(plainText(token));
+	}
+	return rows;
+}
+
+/**
+ * A chart's bars, drawn as the Data and charts page draws them
+ * (BarChart.svelte): each bar is a list item holding its name and number,
+ * which is what a screen reader reads; the drawn bar is decoration.
+ */
+function chartHtml(token: Token, state: RenderState): string {
+	const chart = chartFromRows((token.meta?.rows as string[][] | undefined) ?? []);
+	if ('problem' in chart) {
+		state.problems.push(chart.problem);
+		return '<p class="essay-figure-missing">This chart cannot be drawn until its table is fixed.</p>\n';
+	}
+	const scale = scaleTop(Math.max(0, ...chart.bars.map((bar) => bar.value)));
+	const percent = (value: number) => `${Number(((value / scale.top) * 100).toFixed(3))}%`;
+	const ticks = Array.from({ length: Math.round(scale.top / scale.step) + 1 }, (_, index) => index * scale.step);
+	const bars = chart.bars
+		.map(
+			(bar) =>
+				`<li><span class="essay-chart-label">${escapeHtml(bar.label)}</span>` +
+				`<span class="essay-chart-track" aria-hidden="true"><span class="essay-chart-fill" style="width: ${percent(bar.value)}"></span></span>` +
+				`<span class="essay-chart-value">${escapeHtml(bar.shown)}</span></li>`
+		)
+		.join('\n');
+	const axis = ticks.map((tick) => `<span style="left: ${percent(tick)}">${tick.toLocaleString('en-US')}</span>`).join('');
+	return (
+		`<div class="essay-chart" style="--grid-step: ${percent(scale.step)}">\n` +
+		`<ol class="essay-chart-bars" aria-label="${escapeHtml(`${chart.valueHeader} by ${chart.labelHeader.toLowerCase()}`)}">\n${bars}\n</ol>\n` +
+		`<div class="essay-chart-axis" aria-hidden="true"><span></span><span class="essay-chart-ticks">${axis}</span><span></span></div>\n</div>\n`
+	);
+}
+
+function figureRemoval(token: Token): string {
+	const { kind, address } = figureInfo(token);
+	const source = figureSource(kind, address);
+	return source ? `<p class="essay-figure-removal"><a href="${escapeHtml(figureRemovalLink(source))}">Ask to have this ${kind === 'sound' ? 'recording' : kind} removed</a></p>\n` : '';
+}
+
+/**
+ * The picture or player at the top of a figure. A YouTube video shows its
+ * still frame and loads YouTube's player only when the reader presses play
+ * (EssayArticle.svelte), so no YouTube page loads for people who only read;
+ * without scripts the button is a link to the video on YouTube.
+ */
+function figureMedia(token: Token, state: RenderState): string {
+	const { kind, address } = figureInfo(token);
+	if (kind === 'chart') return chartHtml(token, state);
+	const source = figureSource(kind, address);
+	const description = String(token.meta?.description ?? '');
+	if (!source) {
+		state.problems.push(`A ${figureKindLabels[kind].toLowerCase()} has an address the site cannot show: "${address}". Send the file again from the editor${kind === 'video' ? ', or use a YouTube link' : ''}.`);
+		return `<p class="essay-figure-missing">This ${figureKindLabels[kind].toLowerCase()} cannot be shown.</p>\n`;
+	}
+	if (!description && kind !== 'sound') {
+		state.warnings.push(`A ${kind} has no description. Add one so people who cannot see it know what it shows.`);
+	}
+	const named = description ? ` aria-label="${escapeHtml(description)}"` : '';
+	if (source.kind === 'youtube') {
+		const title = description ? `Play the video: ${description}` : 'Play the video';
+		return (
+			`<a class="essay-figure-youtube" href="${escapeHtml(source.address)}" data-embed="${escapeHtml(youtubeEmbedAddress(source.identifier))}" data-title="${escapeHtml(description || 'Video')}">` +
+			`<img src="${escapeHtml(youtubePosterAddress(source.identifier))}" alt="" loading="lazy" decoding="async" width="480" height="360">` +
+			`<span class="essay-figure-play">${escapeHtml(title)}<span class="essay-figure-play-note">Plays from YouTube</span></span></a>\n`
+		);
+	}
+	const file = escapeHtml(source.address);
+	if (kind === 'picture') return `<img src="${file}" alt="${escapeHtml(description)}" loading="lazy" decoding="async">\n`;
+	const fallback = `<a href="${file}">Download the ${kind === 'video' ? 'video' : 'recording'}</a>`;
+	return kind === 'video'
+		? `<video controls preload="metadata" src="${file}"${named}>${fallback}</video>\n`
+		: `<audio controls preload="metadata" src="${file}"${named}>${fallback}</audio>\n`;
 }
 
 function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
@@ -233,6 +407,19 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 		return `<aside class="essay-analysis">\n${label(shown ? `Analysis: ${shown}` : 'Analysis')}`;
 	};
 	rules.container_analysis_close = () => '</aside>\n';
+	// A figure (arrangeFigures): the wrapper holds the <figure> and, after it, the transcript.
+	rules.container_figure_open = (tokens, index) => {
+		const { kind } = figureInfo(tokens[index]);
+		return `<div class="essay-figure-block">\n<figure class="essay-figure essay-figure-${kind}">\n${figureMedia(tokens[index], state)}`;
+	};
+	rules.container_figure_close = () => '</div>\n';
+	rules.container_credit_open = () => '<div class="essay-figure-credit">\n';
+	rules.container_credit_close = () => '</div>\n';
+	rules.container_transcript_open = () => '<details class="essay-figure-transcript">\n<summary>Transcript</summary>\n';
+	rules.container_transcript_close = () => '</details>\n';
+	// A description outside a figure has nothing to describe; it shows as plain text.
+	rules.container_description_open = () => '<div>\n';
+	rules.container_description_close = () => '</div>\n';
 	return markdown;
 }
 
@@ -330,7 +517,7 @@ function markChangedBlocks(tokens: Token[], lines: LineChange[]): Token[] {
 export function renderEssay(text: string, library: EssayLibrary, { lines }: { lines?: LineChange[] } = {}): RenderedEssay {
 	const { frontMatter, body } = splitFrontMatter(text.normalize('NFC'));
 	const sources = new EssaySources(library);
-	const state: RenderState = { sources, library, problems: [], slugs: new Set(['sources-heading']) };
+	const state: RenderState = { sources, library, problems: [], warnings: [], slugs: new Set(['sources-heading']) };
 	const markdown = configure(essayMarkdown(), state);
 	const environment = {};
 	let tokens = markdown.parse(body, environment);
@@ -342,6 +529,7 @@ export function renderEssay(text: string, library: EssayLibrary, { lines }: { li
 	}
 	markAttributions(tokens);
 	markTopics(tokens);
+	tokens = arrangeFigures(tokens);
 	const shown = lines ? markChangedBlocks(tokens, lines) : tokens;
 	// A link to a case or law box that is not on this page goes to the page that holds it.
 	const html = markdown.renderer
@@ -357,6 +545,6 @@ export function renderEssay(text: string, library: EssayLibrary, { lines }: { li
 		headings: headingsOf(tokens),
 		sources: sources.list,
 		problems: [...new Set([...state.problems, ...sources.problems])],
-		warnings: quotationWarnings(tokens)
+		warnings: [...quotationWarnings(tokens), ...state.warnings]
 	};
 }

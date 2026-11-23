@@ -192,6 +192,215 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians (2005)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act
+  quote: Indian Reorganization Act of June 18, 1934, 48 Stat. 984, as amended
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Preamble
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The tribal council shall have the authority to exercise all
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article VI, Section 2
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: governing-body-size
+  value: Tribal chief and 6 members
+  quote: council for a term of 10 years and six (6) members elected by the general
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article VI, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: governing-body-selection
+  value: Elected by the general council
+  quote: council for a term of 10 years and six (6) members elected by the general
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article VI, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: governing-body-term
+  value: 4 years (tribal chief 10 years)
+  quote: four (4) years each.
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article VI, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: general-council
+  value: All enrolled members 18 or older
+  quote: Lower Umpqua and Siuslaw Indians who are eighteen (18) years of age or older shall constitute the
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article V, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The tribal council shall elect chairperson and vice-chairperson from within its
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article VI, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the tribal council from its membership
+  quote: The tribal council shall elect chairperson and vice-chairperson from within its
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article VI, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: other-officers
+  value: Tribal chief, Vice-chairperson
+  quote: The position of tribal chief of the Confederated Tribes of Coos, Lower
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article XI, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: elections
+  value: Annually in April at general council meeting
+  quote: for a four (4) year term at the appropriate annual general council meeting in April,
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article VIII, Section 3
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: voting-age
+  value: '18'
+  quote: who are eighteen (18) years or older on the date of an
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article VIII, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: judiciary
+  value: Tribal court may be established by ordinance
+  quote: A tribal court may be established by ordinance, which shall set forth the
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article VII, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: amendment
+  value: Two-thirds of voters voting, 30% turnout
+  quote: 'The affirmative vote of two-thirds (2/3) of those actually voting shall be conclusive:'
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article XIII, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: recall-and-removal
+  value: Removal by 5 council votes
+  quote: A member of the tribal council may be removed from office by a vote of at least
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article X, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of voting membership
+  quote: Upon written petition of at least one third (1/3) of the voting membership of the
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article X, Section 2
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
+- aspect: other
+  value: General council holds initiative power
+  quote: The general council shall exercise the power of initiative.
+  source: constitution-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026'
+  locator: Article XII, Section 1
+  document_version:
+    document: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-constitution
+    version: 2026-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1987 constitution with the 2026 Amendment I noted only in the legislative history; the text of Amendment I itself is not included.'
 governing_documents:
 - kind: law-code
   title: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians Tribal Code
@@ -574,6 +783,37 @@ gaming:
       Lower Umpqua & Siuslaw Indians of Oregon". Facilities as machine-extracted from the report text
       (verify): Three Rivers Casino - Coos Bay; Three Rivers Casino - Florence. Name extracted from the
       PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Hatch Tract, Lane City, OR
+    legal_theory: Restored Lands
+    accepted: false
+    date: '1999-10-21'
+    link: https://www.nigc.gov?wpdmdl=2506&ind=2507
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians, 1999-10-21
+    note: The list names the tribe as “Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians”.
+  - parcel: Hatch Tract, Lane City, OR
+    legal_theory: Contiguous to Reservation
+    accepted: false
+    date: '1999-10-21'
+    link: https://www.nigc.gov?wpdmdl=2508&ind=2509
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians, 1999-10-21
+    note: The list names the tribe as “Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians”.
+  - parcel: Hatch Tract, Lane City, OR
+    legal_theory: Restored lands
+    accepted: true
+    date: '2001-12-05'
+    link: https://www.nigc.gov?wpdmdl=2534&ind=2535
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians, 2001-12-05
+    note: The list names the tribe as “Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -600,6 +840,65 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+court_practice:
+- kind: bar-admission
+  title: Bar Admission Fees
+  court: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal Court
+  link: https://ctclusi.org/wp-content/uploads/2020/09/BAR-ADMISSION-FEES.pdf
+  detail: Court page lists a Bar Admission Fees schedule, an Attorney Application (updated 03-20-2026) and an Application for Law Student Admission to Practice or Renew.
+  source: coos-peacegiving-court-page
+  confidence: high
+  verification: title-only
+  locator: Tribal Court & Peacegiving Court
+  note: PDFs not opened.
+- kind: forms
+  title: Civil complaint and answer forms (coming soon)
+  court: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal Court
+  link: https://ctclusi.org/tribal-court-peacegiving/
+  detail: Page lists Civil 1 to Civil 6 forms (complaint instructions, complaint form, exhibits, answer instructions, answer form) with a notice they will be available after review.
+  source: coos-peacegiving-court-page
+  confidence: high
+  verification: read-in-full
+  locator: Forms notice
+  note: 'The source reads: “NOTICE: The following forms, instructions, and information will be available after review.”. Forms not yet available per the page.'
+- kind: bar-admission
+  title: BAR ADMISSION FEES - CLUSI 1-1-61(a)
+  court: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal Court
+  link: https://ctclusi.org/wp-content/uploads/2020/09/BAR-ADMISSION-FEES.pdf
+  detail: Fee due at admission $75.00; annual renewal fee $25.00 due January 15; no fee for an attorney employed by the Tribes; per Supplemental Court Rule 2011-1 dated 4/22/11.
+  source: confederated-tribes-of-coos-lower-bar-admission
+  confidence: medium
+  verification: read-in-full
+  locator: BAR ADMISSION FEES
+  note: 'The source reads: “Annual renewal fee (due January 15)”. Document based on a 2011 rule.'
+nearby_state_courts:
+- state: OR
+  county: Lane County
+  court: Circuit Court for Lane County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Lane County holds 65% of the land of Coos, Lower Umpqua, and Siuslaw Reservation (Census GEOID 0770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Coos County
+  court: Circuit Court for Coos County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Coos County holds 27% of the land of Coos, Lower Umpqua, and Siuslaw Reservation (Census GEOID 0770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Curry County
+  court: Circuit Court for Curry County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Curry County holds 8% of the land of Coos, Lower Umpqua, and Siuslaw Reservation (Census GEOID 0770), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

@@ -192,6 +192,291 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Little River Band of Ottawa Indians, Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Little River Band of Ottawa Indians (2009)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution adopted in accordance with the Indian Reorganization Act of June 18, 1934
+  quote: constitution, in accordance with the Indian Reorganization Act of June 18, 1934, as
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Preamble
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Legislative powers of the Little River Band shall be invested in the Tribal Council (Legislative Branch);
+  source: little-river-band-of-ottawa-indians-website-government-executive-branch-tribal-ogema
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: The Tribal Council shall consist of nine (9) persons, elected by popular vote of the
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: governing-body-selection
+  value: Elected by district and at large
+  quote: Tribal Council positions shall be elected by the membership from the following
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IV, Section 2(b)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Council member's term of office shall be four (4) years.
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IV, Section 4(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: general-council
+  value: Adult members of the Tribe; meets twice a year
+  quote: (a) Meetings of the General Membership of the Little River Band shall be held twice a
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VII, Section 1(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: head-of-government
+  value: Tribal Ogema
+  quote: the Executive powers of the Little River Band shall be invested in the Tribal Ogema (Executive Branch)
+  source: little-river-band-of-ottawa-indians-website-government-executive-branch-tribal-ogema
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
+- aspect: head-of-government
+  value: Ogema
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Little River Band of Ottawa Indians, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority of tribal vote
+  quote: seeking the office who receives a majority of the tribal vote cast for that position. If no one
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article V, Section 4
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Tribal Ogema’s term of office shall be four (4) years.
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: other-officers
+  value: Speaker, Recorder
+  quote: 'to serve as Council Officers: Speaker and Recorder, Officers terms shall be two'
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IV, Section 2(c)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: elections
+  value: Regular elections in April, date set by Election Board
+  quote: (a) Regular Elections. After the first election, members of the Tribal Council and the
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IX, Section 2(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years old, and is registered to vote on the date of any given tribal
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IX, Section 3(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: election-authority
+  value: Election Board
+  quote: Special elections shall be called by the Election Board, when
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article IX, Section 2(b)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: branches
+  value: Legislative, executive and judicial
+  quote: The Tribal Government of the Little River Band of Ottawa Indians is a tripartite government consisting of three coequal branches of governance.
+  source: little-river-band-of-ottawa-indians-website-government-executive-branch-tribal-ogema
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: As an independent branch of the government, it makes sure that the separation of powers is respected and provides a system of checks and balances that is vital for any sovereign nation.
+  source: little-river-band-of-ottawa-indians-website-government-tribal-judicial
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
+- aspect: judiciary
+  value: Tribal Court and Court of Appeals
+  quote: the Judicial power of the Little River Band shall be invested in a Tribal judiciary, which shall consist of the Tribal Court, a Court of Appeals, and such inferior courts as the Tribal Council may from time to time ordain and establish.
+  source: little-river-band-of-ottawa-indians-website-government-executive-branch-tribal-ogema
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution is linked but not saved; judge and officer names on the court and government pages are left out.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Ogema, confirmed by the Tribal Council
+  quote: the Tribal Ogema, provided such appointment must be confirmed by the Tribal
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 4(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: judicial-term
+  value: 6 years
+  quote: term of office for any Tribal Judge appointed under this Section 6 shall be six (6) years
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 7
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: judicial-independence
+  value: Judiciary independent of legislative and executive functions
+  quote: Section 9. Judicial Independence. The Tribal Judiciary shall be independent from the
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 9
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: individual judge shall not be diminished during the term of his/her appointment.
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 4(b)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of registered voters
+  quote: The petition must be signed by at least twenty-five percent (25%) of the
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article X, Section 2
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: recall-and-removal
+  value: Removal by 7 of 9 Council votes
+  quote: subject to removal by a resolution in favor of removal supported by seven (7) of the nine
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article X, Section 3
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: recall-and-removal
+  value: Judge removed by 7 of 9 Council votes
+  quote: A Tribal Judge may only be removed by a vote of seven (7) of the nine (9)
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article VI, Section 6(b)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
+- aspect: other
+  value: Ogema veto over Council budget actions
+  quote: To have veto power over actions of the Tribal Council modifying the Tribal
+  source: constitution-little-river-band-of-ottawa-indians-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-07-10'
+  locator: Article V, Section 5(a)
+  document_version:
+    document: little-river-band-of-ottawa-indians-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The covering letter dates the constitution May 27, 1997 though the election was May 27, 1998; the extract has no amendment article and the Section 5 term line of Article VI is garbled.'
 governing_documents:
 - kind: law-code
   title: Little River Band of Ottawa Indians - Ordinances / Tribal Code
@@ -323,59 +608,44 @@ dispute_resolution:
       name: Odenaang Enjinoojimoying
       language_tag: otw
       translation: A Place of Healing Many Hearts (title of the Peacemaking Guidelines)
-    description: Peacemaking created in the Juvenile Code to provide a traditional conflict resolution
-      process to children, youth and families, with a vision of resolution and healing.
-    legal_basis: 'Little River Band Juvenile Code (Ordinance #99-900-02), Sections 4.01(b), 4.02, 6, 7.01,
-      8'
+    description: Peacemaking created in the Juvenile Code to provide a traditional conflict resolution process to children, youth and families, with a vision of resolution and healing.
+    legal_basis: 'Little River Band Juvenile Code (Ordinance #99-900-02), Sections 4.01(b), 4.02, 6, 7.01, 8'
     case_types:
     - juvenile
     - family
-    participation: court-referred
-    relationship_to_court: A juvenile's first status offense before the Children's Court is referred to
-      the Peacemakers immediately; other cases come through the Case Intake Team (which includes a Peacemaker)
-      or by Tribal Court referral, and cases go to court for adjudication if rejected or after nine months.
+    participation: voluntary-or-court-referred
+    relationship_to_court: A juvenile's first status offense before the Children's Court is referred to the Peacemakers immediately; other cases come through the Case Intake Team (which includes a Peacemaker) or by Tribal Court referral, including at the preliminary hearing, and people may also ask to use Peacemaking voluntarily (Section 8.02). Cases go to court for adjudication if the Case Intake Team rejects them or after nine months; Peacemakers may refuse a case after written denial by two Peacemaking groups.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Title-900-02-Juvenile-Code-2011.pdf
     source: little-river-900-02-juvenile-code-2011
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '2011-07-27'
-    locator: Sections 4.01(b), 4.02(a)-(f), 6.01, 7.01, 8.01-8.02
-    note: Language tag otw assigned because the Band is Odawa (Ottawa); the code does not name the language.
-      Participation recorded as court-referred because first status offenses are referred automatically
-      by the code.
+    locator: Sections 4.01(b), 4.02(a)-(f), 6.01, 7.01, 8.01-8.03
+    note: 'Read in full on 2026-11-23 (Juvenile Code, Ordinance # 99-900-02, Adopted - July 27, 2011 (Little River Band of Ottawa Indians)). Language tag otw assigned because the Band is Odawa (Ottawa); the code does not name the language. Participation: first status offenses are referred automatically (Section 4.02(b)), but Section 8.02(d) also lets persons voluntarily request Peacemaking. The Juvenile Code does not say how agreements are enforced; procedures are in the Odenaang Enjinoojimoying Peacemaking Guidelines. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 231.'
   - kind: peacemaking
     name: Peacemaking program of the Tribal Court (guidelines)
     own_term:
       name: Odenaang Enjinoojimoying
       language_tag: otw
       translation: A Place of Healing Many Hearts
-    description: Tribal Court peacemaking program for children, youth, adult tribal members and tribal
-      employees; peacemakers guide the process, and participants develop and sign an agreement. A request
-      may be made in the traditional way, by offering tobacco or another of the medicines named in the
-      guidelines, or formally by court order or personal request.
-    legal_basis: Peacemaking Guidelines (rules and procedures of Odenaang Enjinoojimoying), adopted by
-      the signatures of the Chief Judge and Associate Judge (Certification of Adoption, effective May
-      29, 2008)
+    description: Tribal Court peacemaking program for children, youth, adult tribal members and tribal employees; peacemakers guide the process, and participants develop and sign an agreement. A request may be made in the traditional way, by offering tobacco or another of the medicines named in the guidelines, or formally by court order or personal request.
+    legal_basis: Peacemaking Guidelines (rules and procedures of Odenaang Enjinoojimoying), adopted by the signatures of the Chief Judge and Associate Judge (Certification of Adoption, effective May 29, 2008)
     case_types:
     - juvenile
     - family
     - civil
     - employment
+    - criminal
     participation: voluntary-or-court-referred
-    relationship_to_court: Cases may be referred by tribal courts, state courts, other federally recognized
-      or historic tribes, or agencies, or come by personal request; cases the program declines go back
-      to the Case Intake Team.
-    enforcement: The agreement is described as a binding contract; if participants do not follow it, the
-      Tribal Court enforces it by court order.
+    relationship_to_court: Cases may be referred by tribal courts, state courts, other federally recognized or historic tribes, or agencies, or come by personal request; cases the program declines go back to the Case Intake Team.
+    enforcement: The agreement is described as a binding contract; if participants do not follow it, the Tribal Court enforces it by court order.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
     source: little-river-peacemaking-guidelines-2008
     confidence: medium
     verification: read-in-full
     as_of: '2008-05-29'
     locator: Certification of Adoption; Sections 1.01, 4, 6.01-6.10, 8.01(c)(2g), 8.05
-    note: Read from OCR of a scanned document. 'employment' reflects the guidelines' eligibility of tribal
-      employees; 'civil' reflects adult civil cases pending before the court. Language tag otw assigned
-      because the Band is Odawa; the guidelines do not name the language.
+    note: Read in full on 2026-11-23 from page images (Little River Band of Ottawa Indians Peacemaking Guidelines (Odenaang Enjinoojimoying); Certification of Adoption, effective May 29, 2008, signed Chief Judge Daniel Bailey and Associate Judge Angela Sherigan). Read from OCR of a scanned document. 'employment' reflects the guidelines' eligibility of tribal employees; 'civil' reflects adult civil cases pending before the court. Language tag otw assigned because the Band is Odawa; the guidelines do not name the language. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 232.
   provisions:
   - kind: peacemaking
     title: Juvenile Code – Peacemaking
@@ -402,49 +672,45 @@ dispute_resolution:
       appeal from its orders enforcing an agreement or award.
     locator: Sections 1-10 (ordinance)
   - kind: peacemaking
-    title: Appendix 1 – Peacemaking Guidelines
-    citation: Appendix 1 – Peacemaking Guidelines
+    title: Odenaang Enjinoojimoying (A Place of Healing Many Hearts) Peacemaking Guidelines
+    citation: Little River Band of Ottawa Indians Peacemaking Guidelines (Odenaang Enjinoojimoying), Certification of Adoption, effective May 29, 2008
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: little-river-peacemaking-guidelines-2008
     confidence: medium
     verification: read-in-full
-    as_of: '2025-09-29'
-    locator: Little River Band of Ottawa Indians, Michigan
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      philosophical background, referral standards (including option for traditional request), procedure,
-      qualifications, standards of conduct, and forms.'
+    as_of: '2008-05-29'
+    locator: Guidelines Sections 1-12 (printed pp. 2-9); Sections 13-15 and appended forms not read
+    note: 'Read in full on 2026-11-23 from page images (Odenaang Enjinoojimoying, Little River Band of Ottawa Indians Peacemaking Guidelines; Certification of Adoption signed by Chief Judge Daniel Bailey and Associate Judge Angela Sherigan, effective May 29, 2008 (handwritten)). Read in the nation''s own Peacemaking Guidelines (scanned): Certification of Adoption, table of contents and Sections 1-12. Sections 13-15 and the forms were not read. ''Appendix 1'' in the earlier citation comes from NARF''s list and is not printed on the pages read. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 235.'
+    summary: The Tribal Court's Peacemaking program (Odenaang Enjinoojimoying) works alongside the court system for minors and adults. Cases may come from the Tribal Court, other tribal or state courts, agencies or a person's own request, in juvenile status and non-status matters and adult civil disputes; a request may be made by offering tobacco or another medicine, or by court order or personal request, and Peacemakers may deny a case in writing. Sessions are voluntary, led by two Peacemakers (one man, one woman) who direct the process but not the content, and are confidential except for child-abuse reporting. The signed agreement is a legally binding contract, and the Tribal Court enforces it by court order if participants do not follow it. Peacemakers must be at least 21, volunteers, and tribal members or tribal employees, and are certified after training.
   - kind: peacemaking
-    title: Chapter 900 – Family, Title 2 – Juvenile Code
-    citation: Chapter 900 – Family, Title 2 – Juvenile Code
+    title: 'Juvenile Code (Ordinance #99-900-02), Peacemaking provisions'
+    citation: 'Little River Band Juvenile Code, Ordinance #99-900-02 (adopted July 27, 2011), Sections 4.01(b), 4.02, 6.01, 8.01-8.03'
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Title-900-02-Juvenile-Code-2011.pdf
-    source: narf-ipi-youth-family-peacemaking-laws
+    source: little-river-900-02-juvenile-code-2011
     confidence: medium
     verification: read-in-full
-    as_of: '2025-08-25'
+    as_of: '2011-07-27'
     locator: Little River Band of Ottawa Indians, Michigan
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      philosophical background, procedures, and referral standards.'
+    note: 'Read in full on 2026-11-23 (Juvenile Code, Ordinance # 99-900-02, Adopted - July 27, 2011 (Little River Band of Ottawa Indians)). Peacemaking provisions read in the Juvenile Code text: Sec. 4.01(b) (creation and vision), 4.02 (referral), 6.01 (Case Intake Team), 8.01-8.03 (guidelines, authority, case denial). Procedures are in the Odenaang Enjinoojimoying Peacemaking Guidelines. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 236.'
+    summary: The Juvenile Code creates Peacemaking as a traditional conflict resolution process for children, youth and families. A juvenile's first status offense in the Children's Court is referred to the Peacemakers at once; other cases go through the Case Intake Team, which includes a Peacemaker and may refer to Peacemaking, and the Tribal Court may refer a case at the preliminary hearing. Peacemakers also hear cases brought by people who ask to use Peacemaking voluntarily, and may refuse a case after written denial by two Peacemaking groups. A case goes to court for adjudication if the Case Intake Team rejects it or after nine months. The code leaves procedure to the Tribal Judiciary's Peacemaking Guidelines and does not say how agreements are enforced.
   published_materials:
   - kind: guide
     title: Appendix 1 – Peacemaking Guidelines (Odenaang Enjinoojimoying), 2008
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: little-river-peacemaking-guidelines-2008
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2008'
-    note: NARF says the guidelines provide authorization, philosophical background, referral standards
-      (including an option for traditional request), procedure, qualifications, standards of conduct,
-      and forms.
+    note: Read in full on 2026-11-23 from page images (Little River Band of Ottawa Indians Peacemaking Guidelines, Odenaang Enjinoojimoying; effective May 29, 2008). Read from the Tribe's own adopted guidelines (certification signed by the Chief Judge and Associate Judge, effective May 29, 2008); the NARF listing describes the same document. Sections 8, 9-14 not read closely; sections 1-7 and 15 read. Peacemaking guidelines adopted by the Tribal Court judges (effective May 29, 2008) for Odenaang Enjinoojimoying, the Tribe's peacemaking program used alongside the court for minors, adults and tribal employees. Cases come by referral from tribal or state courts or agencies, by court order, or by a person's own request (including a traditional request by offering tobacco or other medicines); the supervisor accepts or denies in writing within set times, two peacemakers (one man, one woman) run sessions, and the guidelines also set peacemaker qualifications, ethics and dismissal rules. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 239.
   - kind: forms
-    title: 'Odenaang Enjinoojimoying forms: intake (adult and youth), notice, peacemaking agreement, compliance,
-      confidentiality agreement, follow-up questionnaire, community service log, contact log (appendices
-      to the 2008 Guidelines)'
+    title: 'Odenaang Enjinoojimoying forms: intake (adult and youth), notice of peacemaking session, peacemaking agreement, program compliance, confidentiality agreement, follow-up questionnaire, contact log (appended to the 2008 Guidelines; the table of contents also lists a community service log that is not in the captured copy)'
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
     source: little-river-peacemaking-guidelines-2008
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: '2008'
-    locator: Table of contents, appendices
+    locator: Table of contents (PDF p.2) and forms following Section 15 (PDF pp.14-29)
+    note: Read in full on 2026-11-23 from page images (Odenaang Enjinoojimoying Peacemaking Guidelines forms; forms approved 10/01/03, revised 1/25/08 and 3/10/08). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 240.
   training_programs:
   - name: Peacemaker certification (program operation, introduction to Anishinaabe culture, dispute resolution
       techniques; observation and a training session)
@@ -657,6 +923,17 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little River Band of Ottawa Indians".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Manistee Orchard, Manistee County, MI
+    legal_theory: Restored Lands
+    accepted: true
+    date: '1998-03-16'
+    link: https://www.nigc.gov?wpdmdl=2491&ind=2492
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Little River Band of Ottawa Indians, 1998-03-16
+    note: The list names the tribe as “Little River Band of Ottawa Indians”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -671,6 +948,103 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Michigan is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Michigan. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: Michigan Department of Treasury
+  agreement: Tax agreement between the tribe and the State of Michigan (sales and use tax exemptions and related taxes)
+  state: MI
+  status: in-effect
+  source: michigan-department-of-treasury-sales-to-federally-recognized-indian-tribes
+  confidence: high
+  verification: bulk-import
+  locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
+  note: 'The source reads: “Little River Band of Ottawa Indians”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page.'
+court_practice:
+- kind: filing-fees
+  title: Tribal Court Fees (Administrative Order 22-001 Fee Schedule)
+  court: Little River Band of Ottawa Indians Tribal Court
+  link: https://lrboi-nsn.gov/sites/default/files/pages/22-001-AO-Fee-Schedule.pdf
+  detail: Tribal Court page links a fee schedule PDF (file name 22-001-AO-Fee-Schedule).
+  source: little-river-band-of-ottawa-indians-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page
+  note: 'The source reads: “Tribal Court Fees”. PDF not opened.'
+- kind: legal-aid
+  title: Member Legal Assistance
+  court: Little River Band of Ottawa Indians Tribal Court
+  link: https://lrboi-nsn.gov/membership-services/legal-assistance
+  detail: Tribal Court page links a Member Legal Assistance page and notes an online intake form for Michigan Indian Legal Services.
+  source: little-river-band-of-ottawa-indians-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page
+  note: 'The source reads: “MILS now has an intake form that can be completed online.”. Linked page not opened.'
+- kind: court-rules
+  title: Rules of Civil Procedure (cited on Tribal Court page)
+  court: Little River Band of Ottawa Indians Tribal Court
+  link: https://www.lrboi-nsn.gov/government/tribal-judicial/tribal-court
+  detail: Page cites the Rules of Civil Procedure (CR 4.015) in its courtroom conduct notice.
+  source: little-river-band-of-ottawa-indians-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: Tribal Court page
+  note: 'The source reads: “Rules of Civil Procedure, CR 4.015”. Rules document not located or opened.'
+nearby_state_courts:
+- state: MI
+  county: Manistee County
+  court: Circuit Court for Manistee County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Manistee County holds 72% of the land of Little River Reservation (Census GEOID 1960), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Mason County
+  court: Circuit Court for Mason County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Mason County holds 28% of the land of Little River Reservation (Census GEOID 1960), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Ottawa, etc., 1836
+  signed: '1836-03-28'
+  statutes_at_large: 7 Stat. 491
+  kappler:
+    volume: 2
+    page: 450
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1836-0450
+  signatory: Ottawa, Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 450 (Treaty with the Ottawa, etc., 1836; Kappler header "Mar. 28, 1836. | 7 Stat., 491. | Proclamation, May 27, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Treaties of Washington (1836) and Detroit (1855) with the Ottawa and Chippewa of Michigan; Grand Traverse, Little River and Little Traverse Bay are the Ottawa/Odawa successors. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Ottawa and Chippewa, 1855
+  signed: '1855-07-31'
+  statutes_at_large: 11 Stat. 621
+  kappler:
+    volume: 2
+    page: 725
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-and-chippewa-1855-0725
+  signatory: Ottawa, Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 725 (Treaty with the Ottawa and Chippewa, 1855; Kappler header "July 31, 1855. | 11 Stat., 621. | Ratified April 15, 1856. | Proclaimed Sept. 10, 1856.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaties of Washington (1836) and Detroit (1855) with the Ottawa and Chippewa of Michigan; Grand Traverse, Little River and Little Traverse Bay are the Ottawa/Odawa successors The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

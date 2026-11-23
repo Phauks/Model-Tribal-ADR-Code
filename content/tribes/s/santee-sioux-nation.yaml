@@ -128,6 +128,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santee Sioux Nation, Nebraska
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: Listed as "Santee Sioux Nation".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Santee Sioux Tribe of Nebraska" among organizations under constitutions approved
@@ -152,6 +160,111 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Indian Reorganization Act of 1934
+  quote: The Santee Sioux Nation is federally recognized tribe organized pursuant to the Indian Reorganization Act of 1934 as amended in 1935.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council governs under the authority of the Santee Sioux Nation constitution with the powers authorized.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: In 2002 the constitution was amended and the council was reduced to eight members consisting of a Chairman, Vice Chairman, Secretary and Treasurer.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: governing-body-selection
+  value: Officers elected at large; one member per district
+  quote: Each of the 4 districts has one member. The officers run at large.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Annually one officer and one district representative are elected for four years. The council terms are staggered in order to maintain stability.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: head-of-government
+  value: Chairman
+  quote: In 2002 the constitution was amended and the council was reduced to eight members consisting of a Chairman, Vice Chairman, Secretary and Treasurer.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Santee Sioux Nation, Nebraska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large
+  quote: The officers run at large.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: other-officers
+  value: Vice Chairman, Secretary, Treasurer
+  quote: In 2002 the constitution was amended and the council was reduced to eight members consisting of a Chairman, Vice Chairman, Secretary and Treasurer.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: elections
+  value: Annually
+  quote: Annually one officer and one district representative are elected for four years.
+  source: santee-sioux-nation-website-government-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 2002 amendment reduced the council to eight members; the earlier four-district council of three members each is superseded.'
+- aspect: amendment
+  value: Majority vote of qualified voters in an election called by the Secretary
+  quote: may be amended by a majority vote
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article IX
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: other
+  value: Referendum on petition of 25% of voters
+  quote: subject to a referendum vqte of the people
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article VII, Section 1
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
 governing_documents:
 - kind: law-code
   title: Santee Sioux Nation, Nebraska
@@ -226,21 +339,18 @@ dispute_resolution:
   forums:
   - kind: elders-council
     name: Forum for Traditional Dispute Resolution
-    description: The Court Administrator is directed to seek the assistance of Santee Sioux Nation elders
-      to establish a traditional forum to provide guidance and assist the Judiciary with cases involving
-      members.
-    legal_basis: Santee Sioux Nation Code, Title I, Chapter 1, Section 19
+    description: The Court Administrator is directed to seek the assistance of Santee Sioux Nation elders to establish a traditional forum to provide guidance and assist the Judiciary with cases involving members.
+    legal_basis: Santee Sioux Nation Judiciary Act of 2000, Title I, Chapter 1, Section 19
     case_types:
     - other
-    relationship_to_court: Assists the Judiciary whenever possible; a written report on its formation
-      was due to the Tribal Council within twelve months of the Act.
-    link: https://www.narf.org/nill/codes/santee_sioux_nation/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: Assists the Judiciary whenever possible; a written report on its formation was due to the Tribal Council within twelve months of the Act.
+    link: https://nill.narf.org/codes/santee_sioux_nation/title1.PDF
+    source: santee-sioux-judiciary-act-2000
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/forum-for-traditional-dispute-resolution-with-elders/
-    note: The provision directs establishment of the forum; whether it is operating was not verified.
+    note: Read in full on 2026-11-23 (Santee Sioux Nation Judiciary Act of 2000, Title I, Chapter 1 (Santee Sioux Nation Tribal Court)). The provision directs establishment of the forum; whether it is operating was not verified. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 476.
   database_listings:
   - title: Forum for Traditional Dispute Resolution with Elders
     citation: Title I, Chapter 1, Section 19
@@ -297,6 +407,37 @@ gaming:
     locator: table row 246, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 246 lists the nation
       as "Santee Sioux Nation".
+  enforcement_actions:
+  - kinds:
+    - closure-order
+    tracking_number: CO-96-01
+    date: '1996-04-25'
+    link: https://www.nigc.gov?wpdmdl=1863&ind=1864
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-96-01
+    note: The list titles the action “Santee Sioux – Dissolution of Closure Order” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-33
+    date: '2009-06-16'
+    link: https://www.nigc.gov?wpdmdl=7805&ind=7816
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-33
+    note: The list titles the action “Santee Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-33
+    date: '2009-07-15'
+    link: https://www.nigc.gov?wpdmdl=7784&ind=7799
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-33
+    note: The list titles the action “Santee Sioux Nation” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: retroceded
@@ -318,6 +459,116 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: Nebraska Department of Revenue
+  agreement: Cigarette tax compact
+  state: NE
+  date: '2023-02-24'
+  status: unknown
+  source: nebraska-department-of-revenue-agreements-with-native-american-tribes
+  confidence: high
+  verification: bulk-import
+  locator: List "Agreements with Native American Tribes"
+  note: 'The source reads: “Santee Sioux Nation and State of Nebraska Cigarette Tax Compact (February 24, 2023)”. Date is the one printed in the list entry. The page does not say whether the agreement has been renewed or replaced.'
+- kind: tax-agreement
+  other_party: Nebraska Department of Revenue
+  agreement: Motor fuel tax collection agreement
+  state: NE
+  date: '2002-10-07'
+  status: unknown
+  source: nebraska-department-of-revenue-agreements-with-native-american-tribes
+  confidence: high
+  verification: bulk-import
+  locator: List "Agreements with Native American Tribes"
+  note: 'The source reads: “Agreement for the Collection and Dissemination of Motor Fuel Taxes Between the State of Nebraska and the Santee Sioux Tribe of Nebraska (October 7, 2002)”. Date is the one printed in the list entry. The page does not say whether the agreement has been renewed or replaced.'
+- kind: child-welfare-agreement
+  other_party: Nebraska Department of Health and Human Services, Division of Children and Family Services
+  agreement: Title IV-E agreement (maintenance funding only)
+  state: NE
+  date: '2010-07-01'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.H, Nebraska
+  note: 'The source reads: “the Santee Sioux Nation,”. Effective July 1, 2010 through June 30, 2013 per the report, so the term had ended by the report date unless renewed. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: NE
+  county: Knox County
+  court: District Court for Knox County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Knox County holds 100% of the land of Santee Reservation (Census GEOID 3565), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Sauk and Foxes, etc., 1830
+  signed: '1830-07-15'
+  statutes_at_large: 7 Stat. 328
+  kappler:
+    volume: 2
+    page: 305
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305
+  signatory: Wahpekuta; Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Wahpekute among Santee Sioux Nation ancestors. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, 1836
+  signed: '1836-11-30'
+  statutes_at_large: 7 Stat. 527
+  kappler:
+    volume: 2
+    page: 481
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1836-0481
+  signatory: Wahpekuta; Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 481 (Treaty with the Sioux, 1836; Kappler header "Nov. 30, 1836. | 7 Stat., 527. | Proclamation, Feb 18, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Wahpekute among Santee Sioux Nation ancestors. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Mdewakanton and Wahpakoota Bands, 1851
+  signed: '1851-08-05'
+  statutes_at_large: 10 Stat. 954
+  kappler:
+    volume: 2
+    page: 591
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-mdewakanton-and-wahpakoota-bands-1851-0591
+  signatory: Mdewakanton; Wahpekuta
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 591 (Treaty with the Sioux-Mdewakanton and Wahpakoota Bands, 1851; Kappler header "Aug. 5. 1851. | 10 Stats., 954. | Proclamation Feb. 24, 1853.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Santee Sioux Nation (Nebraska) includes Mdewakanton descendants. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, 1858
+  signed: '1858-06-19'
+  statutes_at_large: 12 Stat. 1031
+  kappler:
+    volume: 2
+    page: 781
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1858-0781
+  signatory: Wahpekute; Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 781 (Treaty with the Sioux, 1858; Kappler header "June 19, 1858. | 12 Stats., 1031. | Ratified Mar. 9, 1859. | Proclaimed Mar. 31, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Wahpekute among Santee Sioux Nation ancestors. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
+  signed: '1868-04-29'
+  statutes_at_large: 15 Stat. 635
+  kappler:
+    volume: 2
+    page: 998
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998
+  signatory: Santee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 998 (Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868; Kappler header "Apr. 29, 1868. | 15 Stats., 635. | Ratified, Feb. 16, 1869. | Proclaimed, Feb. 24, 1869.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Fort Laramie Treaty 1868 (Great Sioux Reservation); band-to-nation attribution from historical band names. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

@@ -1,7 +1,7 @@
 profile: content/tribes/m/minnesota-chippewa-tribe.yaml
 topic: dispute-resolution
-status: none-found
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -69,5 +69,23 @@ searches:
   outcome: not-found
   reason: Every lead concerns a component band's own law, which decision record 0016 places on the band's
     profile; nothing found for the Tribe as a whole.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/minnesota/508_compliant_1990.04.02_prairie_island_sopix_community_tribal_state_gaming_compact.txt
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/m/minnesota-chippewa-tribe.yaml#gaming.compacts
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/minnesota/
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/m/minnesota-chippewa-tribe.yaml#gaming.compacts
 next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
   dispute resolution program, and check law library holdings of its code.

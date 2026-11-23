@@ -165,6 +165,39 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Village of Iliamna
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Village of Iliamna". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Village of Iliamna".'
+governance:
+- aspect: governing-body
+  value: Iliamna Village Council
+  quote: The Iliamna Village Council is a governing body that represents the interests of the Iliamna Native community in Alaska.
+  source: village-of-iliamna-website-general-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages are general descriptions and give no constitution or election rules.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Village of Iliamna
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -190,6 +223,16 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Lake and Peninsula Borough
+  court: Superior Court for Lake and Peninsula Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Lake and Peninsula Borough holds 100% of the land of Iliamna ANVSA (Census GEOID 6625), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bristol Bay Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

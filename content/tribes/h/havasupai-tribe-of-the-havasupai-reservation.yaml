@@ -195,6 +195,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Havasupai Tribe of the Havasupai Reservation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Havasupai Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Phoenix
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Phoenix Area
+  note: Listed as "Havasupai Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Havasupai Tribe of the Havasupai Reservation, Arizona" among organizations under
@@ -220,6 +236,163 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted under the Indian Reorganization Act of June 18, 1934
+  quote: Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by the Act of June
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Certification of Adoption
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The reservation is governed by a Tribal Council elected by tribal members
+  source: havasupai-tribe-of-the-havasupai-reservation-website-havasupai-government-havasupai-government-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members (4 councilmen, 3 chiefs)
+  quote: councilman, and three recognized hereditary chiefs of the tribe who shall be selected by
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 1
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: governing-body-selection
+  value: Elected by tribal members
+  quote: The reservation is governed by a Tribal Council elected by tribal members
+  source: havasupai-tribe-of-the-havasupai-reservation-website-havasupai-government-havasupai-government-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: elected to serve for two years.
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 4
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: head-of-government
+  value: Chairwoman
+  quote: Chairwoman
+  source: havasupai-tribe-of-the-havasupai-reservation-website-havasupai-government-havasupai-government-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Havasupai Tribe of the Havasupai Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its members
+  quote: Tribal Council shall meet and organize by electing from their own membership, a chairman
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 3
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: other-officers
+  value: Vice Chair
+  quote: Vice Chair
+  source: havasupai-tribe-of-the-havasupai-reservation-website-havasupai-government-havasupai-government-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every year in December
+  quote: Beginning with 1939, elections shall be held annually in
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article IV, Section 4
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: voting-age
+  value: '21'
+  quote: Enrolled members of the Tribe who are 21 years of age or over
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article IV, Section 3
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: election-authority
+  value: Election Board
+  quote: A seven-member committee, the Election Board, is tasked with organizing and overseeing the election of the Tribal Council.
+  source: havasupai-tribe-of-the-havasupai-reservation-website-havasupai-government-havasupai-government-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Proposed by Council majority; ratified like the constitution
+  quote: majority vote of the Havasupai Tribal Council and may be ratified and approved in the same
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article VIII
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: recall-and-removal
+  value: Recall by petition of 50% of qualified voters (non-chief members)
+  quote: of the Council, not a chief, by filing a petition with the Council, signed by at least 50
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article IV, Section 7
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
+- aspect: other
+  value: Hereditary chiefs serve on Council until death or resignation
+  quote: shall continue his duties as councilman until death or resignation, at which time
+  source: university-of-oklahoma-indian-reorganization-act-havacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-11-15'
+  locator: Article III, Section 1
+  document_version:
+    document: havasupai-tribe-of-the-havasupai-reservation-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate dates the adoption vote January 13, 1939 and the approval March 27, 1939, while the version label says 1938; some OCR errors.'
 governing_documents:
 - kind: corporate-charter
   title: Corporate charter (Havasupai Tribe of the Havasupai Reservation, Arizona)
@@ -348,6 +521,51 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+nearby_state_courts:
+- state: AZ
+  county: Coconino County
+  court: Superior Court for Coconino County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Coconino County holds 100% of the land of Havasupai Reservation (Census GEOID 1440), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Suppai (Havasupai) Reserve, Arizona
+  method: executive-order
+  instrument: Exec. Order of June 8, 1880, 1 Kappler 809
+  date: '1880-06-08'
+  detail: First set aside
+  source: executive-order-1880-06-08-havasupai-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 809
+  note: 'The instrument reads: “withdrawn from sale and settlement, and set apart for the use and occupancy of said Suppai Indians”. Replaced by the order of Nov. 23, 1880 (same page), which redefined the boundaries; Suppai = Havasupai (Kappler heading "Suppai (Havasupai) Reserve").'
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

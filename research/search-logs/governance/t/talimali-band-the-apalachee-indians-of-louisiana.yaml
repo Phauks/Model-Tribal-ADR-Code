@@ -1,0 +1,32 @@
+profile: content/tribes/t/talimali-band-the-apalachee-indians-of-louisiana.yaml
+topic: governance
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/constitutions/coverage.csv
+  query: A captured text of the nation's constitution or other governing document
+  outcome: not-found
+  reason: The project's constitution catalog has no text of this nation's constitution or other governing document; the catalog covers federally recognized nations only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: not-found
+  reason: The directory lists federally recognized nations only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://talimaliband.com/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: found
+  reason: Read 3 pages (home, government, council, election, court and constitution pages); kept 1 facts whose quoted words were found on the page.
+  records:
+  - talimali-band-the-apalachee-indians-of-louisiana-website-apalachee-indians
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

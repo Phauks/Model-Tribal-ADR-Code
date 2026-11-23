@@ -161,6 +161,183 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Lummi Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Lummi Nation (1994)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution and By-laws
+  quote: organization and promote our common welfare, do hereby establish this Constitution
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Preamble
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Lummi Indian Business Council
+  quote: Lummi Indian Business Council (LIBC) is the elected governing body of the Lummi Nation
+  source: lummi-tribe-of-the-lummi-reservation-website-node-website-php-pageid-763
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
+- aspect: governing-body-size
+  value: 11 members
+  quote: 'LIBC consists of eleven members duly elected to serve for a three-year term and held by the following:'
+  source: lummi-tribe-of-the-lummi-reservation-website-node-website-php-pageid-763
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: 'LIBC consists of eleven members duly elected to serve for a three-year term and held by the following:'
+  source: lummi-tribe-of-the-lummi-reservation-website-node-website-php-pageid-763
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: 'LIBC consists of eleven members duly elected to serve for a three-year term and held by the following:'
+  source: lummi-tribe-of-the-lummi-reservation-website-node-website-php-pageid-763
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
+- aspect: general-council
+  value: General council called annually on election day
+  quote: The Chairman of the Lummi Business Council shall call a general council
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article V, Section 4
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Business Council shall preside over all meetings of
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Bylaws Article I, Section 1
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lummi Tribe of the Lummi Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Business Council from its own number
+  quote: from within its own number (1) a Chairman, (2) a Vice-Chairman, (3) a Secretary,
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 3
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: and (4) a Treasurer, and may appoint or employ such other officers or committees
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 3
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: First week of January each year
+  quote: after which three councilmen shall be elected the first week in
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 5
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: of the Lummi Reservation twenty-one (21) years of age or over who have
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article III, Section 4
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Lummi Tribal Court
+  quote: Welcome to the Lummi Tribal Court
+  source: lummi-nation-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Officer titles appear only in a list interleaved with names, so no officer facts are given; no governing document text is on the pages.'
+- aspect: amendment
+  value: Majority vote of qualified voters at election called for that purpose
+  quote: majority vote of the qualified voters of the Lummi Tribe voting at an election
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article VI
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by majority vote of Business Council
+  quote: vote, expel any councilmen or officer for neglect of duty and gross misconduct.
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article IV, Section 2
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Ordinances subject to Commissioner of Indian Affairs approval
+  quote: the approval of the Commissioner of Indian Affairs, governing the conduct
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1948-01-02'
+  locator: Article V, Section 1(k)
+  document_version:
+    document: lummi-tribe-of-the-lummi-reservation-constitution
+    version: 1948-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Lummi Tribe of the Lummi Reservation - Constitution and Bylaws
@@ -501,6 +678,27 @@ gaming:
     locator: table row 139, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 139 lists the nation
       as "Lummi Tribe of the Lummi Reservation".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-29
+    date: '2008-12-12'
+    link: https://www.nigc.gov?wpdmdl=7956&ind=7967
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-29
+    note: The list titles the action “Lummi Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-29
+    date: '2009-01-21'
+    link: https://www.nigc.gov?wpdmdl=7939&ind=7950
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-29
+    note: The list titles the action “Lummi Indian Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -527,6 +725,72 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: implementation-grant
+  detail: Received a Justice Department Tribal Jurisdiction Program grant (fiscal year 2024) for special Tribal criminal jurisdiction. These grants also fund planning, so the grant alone does not show that the nation exercises the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Appendix D (PDF p.52)
+  note: Listed as "LUMMI INDIAN BUSINESS COUNCIL".
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Washington Department of Social and Health Services
+  agreement: 'Indian Nation Program Agreement: Operational Agreement to Provide Foster Care and Adoption Services under Title IV-E Funding Program [Lummi Nation]'
+  state: WA
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for WA
+  note: 'The source reads: “Indian Nation Program Agreement: Operational Agreement to Provide Foster Care and Adoption Services under Title IV-E Funding Program [Lummi Nation]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Washington Department of Social and Health Services, Children's Administration
+  agreement: Title IV-E agreement (program and operational agreements)
+  state: WA
+  date: 2009-07
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.P, Washington
+  note: 'The source reads: “Lummi Nation”. The report says the agreements, entered into in July 2009, "remain in effect until terminated". Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: WA
+  county: Whatcom County
+  court: Superior Court for Whatcom County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Whatcom County holds 100% of the land of Lummi Reservation (Census GEOID 2070), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Lummi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty of Point Elliott; Lummi signers in text The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Lummi (Chah-choo-sen) tract, Washington
+  method: treaty
+  instrument: Treaty of Point Elliott, Jan. 22, 1855, art. II, 12 Stat. 927, 928
+  date: '1855-01-22'
+  detail: First set aside
+  source: treaty-with-the-dwamish-suquamish-etc-1855
+  confidence: medium
+  verification: read-in-full
+  locator: 12 Stat. 928
+  note: 'The instrument reads: “the island called Chah-choo-sen, situated in the Lummi River”. Lummi Reservation enlarged by Exec. Order of Nov. 22, 1873.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

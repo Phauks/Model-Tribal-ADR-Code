@@ -114,6 +114,48 @@
         "checked": { "$ref": "common.schema.json#/$defs/calendarDate" }
       }
     },
+    "courtlistener": {
+      "type": "object",
+      "description": "The case as CourtListener (Free Law Project) files it, matched by citation, case name and year from CourtListener's quarterly bulk data by scripts/caselaw/check_case_citations.py. Later uses (links, the citation graph, parentheticals) start from the cluster number.",
+      "additionalProperties": false,
+      "required": ["cluster", "citation", "case_name", "link", "release", "checked"],
+      "properties": {
+        "cluster": { "type": "integer", "description": "CourtListener's opinion cluster number." },
+        "citation": { "type": "string", "description": "The citation that matched, such as \"436 U.S. 49\"." },
+        "case_name": { "type": "string", "description": "The case name as CourtListener gives it." },
+        "link": { "type": "string", "format": "uri" },
+        "release": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "Date of the bulk data release checked." },
+        "checked": { "$ref": "common.schema.json#/$defs/calendarDate" }
+      }
+    },
+    "reading_links": {
+      "type": "object",
+      "description": "Other places a reader can read this case or law, found and checked by scripts/caselaw/reading_links.py from the settings in research/reading-links/sites.yaml. The website shows them beside the citation.",
+      "additionalProperties": false,
+      "required": ["checked", "links"],
+      "properties": {
+        "checked": { "$ref": "common.schema.json#/$defs/calendarDate" },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["site", "label", "access", "link"],
+            "properties": {
+              "site": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "The site's key in research/reading-links/sites.yaml." },
+              "label": { "type": "string", "description": "The name the website shows." },
+              "access": {
+                "enum": ["official", "free", "subscription", "background"],
+                "description": "official: the government's own text; free; subscription: needs an account, such as Westlaw or Lexis; background: not legal authority, such as Wikipedia."
+              },
+              "link": { "type": "string", "format": "uri" },
+              "unchecked": { "type": "boolean", "description": "The site turns away automated checks, so the link follows the site's own stable address pattern without a check." }
+            }
+          }
+        }
+      }
+    },
     "supreme_court": {
       "type": "object",
       "description": "Who decided a Supreme Court case: the Court (named for the Chief Justice), the bench, the vote and each justice's part. From Oyez's public case data (scripts/law/supreme_court_benches.py), or from the official report where Oyez has none.",

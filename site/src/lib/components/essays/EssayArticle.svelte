@@ -9,10 +9,14 @@
 	// this person may do with the essay; a person with access gets the bar
 	// above the text (EssayAccessBar.svelte), the draft with its changes
 	// marked, and the editor in place of the text, loaded only then.
+	//
+	// A page about the site, such as the About page (src/lib/server/about-pages.ts),
+	// has no section, and shows the text from git until it is first published.
 	import { onMount } from 'svelte';
+	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
-	import { signedInHintCookie } from '#lib/signed-in-hint.ts';
+	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
 
@@ -36,14 +40,14 @@
 		path
 	}: {
 		identifier: string;
-		section: string;
-		sectionLink: string;
+		section?: string;
+		sectionLink?: string;
 		title: string;
 		html: string;
 		sources: SourceEntry[];
-		publication: Publication;
+		publication?: Publication;
 		isNewest: boolean;
-		newest: Publication;
+		newest?: Publication;
 		publicationCount: number;
 		path: string;
 	} = $props();
@@ -51,7 +55,7 @@
 	const viewKey = 'essay-view';
 	let access = $state<EssayPageState | null>(null);
 	let view = $state<'published' | 'drafts'>('drafts');
-	let mode = $state<'reading' | 'editing'>('reading');
+	let mode = $state<'reading' | 'commenting' | 'editing'>('reading');
 
 	const shown = $derived(
 		access?.draft && view === 'drafts' ? { html: access.draft.html, sources: access.draft.sources } : { html, sources }
@@ -63,18 +67,39 @@
 			redirect: 'manual'
 		}).catch(() => null);
 		if (!response?.ok || !response.headers.get('Content-Type')?.includes('application/json')) return;
-		access = (await response.json()) as EssayPageState;
+		const answer = (await response.json()) as EssayPageState;
+		// Two loads can cross; never step back to an older version.
+		if (access && answer.latest.number < access.latest.number) return;
+		access = answer;
+	}
+
+	// The editor's last save lands after it closes: show that text, and open the editor on it next time.
+	function saved(): void {
+		if (mode === 'reading') void loadAccess();
 	}
 
 	onMount(() => {
 		if (!isNewest) return;
-		if (!document.cookie.split(';').some((entry) => entry.trim() === `${signedInHintCookie}=1`)) return;
+		if (!readSignedInHint(document.cookie).signedIn) return;
 		try {
 			if (localStorage.getItem(viewKey) === 'published') view = 'published';
 		} catch {
 			// Storage can be blocked; the choice is then not remembered.
 		}
+		// A review request's link opens the draft for commenting at its section: ?review=<section>, or ?review for the whole draft.
+		const asked = new URL(location.href).searchParams;
+		if (asked.has('review')) reviewAt = asked.get('review') || null;
 		void loadAccess();
+	});
+
+	let reviewAt = $state<string | null | undefined>(undefined);
+	let openedForReview = false;
+	$effect(() => {
+		if (access && reviewAt !== undefined && !openedForReview) {
+			openedForReview = true;
+			view = 'drafts';
+			mode = 'commenting';
+		}
 	});
 
 	function rememberView(): void {
@@ -92,18 +117,20 @@
 	// Back to reading: show what was just saved.
 	let previousMode: typeof mode = 'reading';
 	$effect(() => {
-		if (mode === 'reading' && previousMode === 'editing') void loadAccess();
+		if (mode === 'reading' && previousMode !== 'reading') void loadAccess();
 		previousMode = mode;
 	});
 </script>
 
 <svelte:head>
-	<title>{title} · {section} · Model Tribal ADR Code</title>
+	<title>{[title, section, 'Model Tribal ADR Code'].filter(Boolean).join(' · ')}</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small no-print">
-	<a href={sectionLink}>{section}</a> › {title}
-</nav>
+{#if section}
+	<nav aria-label="Breadcrumb" class="small no-print">
+		<a href={sectionLink}>{section}</a> › {title}
+	</nav>
+{/if}
 
 {#if access}
 	<EssayAccessBar state={access} bind:view bind:mode />
@@ -111,32 +138,37 @@
 
 <article class="reading essay">
 	<!-- The editor shows the title as the essay's own first heading, to edit there. -->
-	<h1 class:visually-hidden={mode === 'editing'}>{title}</h1>
-	{#if !isNewest}
+	<h1 class:visually-hidden={mode !== 'reading'}>{title}</h1>
+	{#if !isNewest && publication && newest}
 		<div class="notice" role="note">
 			<p>
 				This is an earlier version, published {publication.publishedAtText}. <a href={newest.link}>Read the current version</a>, published {newest.publishedAtText}.
 			</p>
 		</div>
 	{/if}
-	{#if access && mode === 'editing'}
+	{#if access && mode !== 'reading'}
 		{#await import('#lib/components/essays/EssayEditor.svelte')}
 			<p class="small muted">Opening the editor…</p>
 		{:then { default: EssayEditor }}
-			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave />
+			{#key mode}
+				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} onsaved={saved} />
+			{/key}
 		{:catch}
 			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
 		{/await}
 	{:else}
-		<div class="essay-text">
+		<div class="essay-text" use:figurePlayers>
 			{@html shown.html}
 		</div>
 		<SourceList sources={shown.sources} />
 	{/if}
-	<p class="small muted essay-dateline" data-print-part="pageDetails">
-		Published {publication.publishedAtText}.
-		{#if publicationCount > 1}<a class="no-print" href="{path}/history">Earlier versions</a>{/if}
-	</p>
+	{#if publication}
+		<p class="small muted essay-dateline" data-print-part="pageDetails">
+			Published {publication.publishedAtText}.
+			{#if publicationCount > 1 && section}<a class="no-print" href="{path}/history">Earlier versions</a>{/if}
+		</p>
+	{/if}
 </article>
 
 <style>

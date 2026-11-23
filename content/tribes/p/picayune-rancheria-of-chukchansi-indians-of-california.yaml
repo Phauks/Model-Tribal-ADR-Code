@@ -160,6 +160,215 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Picayune Rancheria of Chukchansi Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Picayune Rancheria of Chukchansi Indians of California".
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Governing Body of the Tribe shall be known as the Tribal Council.
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article IV, Section 2
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: a Tribal Council consisting of seven members
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article IV, Section 2
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: governing-body-selection
+  value: Elected by the General Council from its own members, by secret ballot
+  quote: its own members by secret ballot a Tribal Council
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article IV, Section 2
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Thereafter, all terms of office shall be for two years,
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article VII, Section 4(b)
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: general-council
+  value: All enrolled members of the Tribe
+  quote: The General Council shall consist of all enrolled members of the Tribe
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Tribal Council shall elect from its membership a Chairperson, a Vice-Chairperson, a Secretary and a
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article VIII, Section 1
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Picayune Rancheria of Chukchansi Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its membership
+  quote: The Tribal Council shall elect from its membership a Chairperson, a Vice-Chairperson, a Secretary and a
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article VIII, Section 1
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: The Tribal Council shall elect from its membership a Chairperson, a Vice-Chairperson, a Secretary and a
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article VIII, Section 1
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: elections
+  value: Annual, date set by Tribal Council
+  quote: The date of the annual elections shall be determined by the Tribal Council
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article VII, Section 4(c)
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: voting-age
+  value: '18'
+  quote: who are 18 years of age or older are qualified voters
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article VII, Section 2
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: election-authority
+  value: Tribal Council, under an Election Ordinance
+  quote: The governing body is to conduct elections
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article VII, Section 6(b)
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: judiciary
+  value: Tribal Courts
+  quote: to provide for the establishment of Tribal Courts for all purposes allowed by law
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article V, (w)
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: amendment
+  value: Majority vote of qualified voters, 35% turnout
+  quote: This Constitution may be amended by a majority vote of the qualified voters of the Tribe voting at an election
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article XII
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of Tribal Council
+  quote: The Tribal Council may, by a majority vote, remove any member of the Tribal Council for neglect of duty or
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article X, Section 1
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of qualified voters
+  quote: a petition signed by at least 51% of the qualified voters demanding the recall of any
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article X, Section 2
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
+- aspect: other
+  value: Referendum on petition of 30% of qualified voters
+  quote: Upon presentation to the Tribal Council of a petition signed by 30% of tlie qualified voters
+  source: constitution-picayune-rancheria-of-chukchansi-indians-of-california-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988-10-22'
+  locator: Article XI
+  document_version:
+    document: picayune-rancheria-of-chukchansi-indians-of-california-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has reading errors (for example ''IS'' for 18 and ''tlie'' for ''the''), and the text is the 1988 constitution as the version label says.'
 gaming:
   compacts:
   - state: CA
@@ -264,28 +473,14 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: CA
     status: approved
-    dispute_resolution_summary: After written notice the parties meet and confer within 10 days of receipt;
-      if the dispute is not resolved within 30 calendar days after the first meeting either party may
-      seek arbitration under the American Arbitration Association Commercial Arbitration Rules before
-      one neutral arbitrator (three if either side objects), though neither must agree to it, and disputes
-      not otherwise resolved may go to the United States District Court or a state court under a limited
-      waiver of sovereign immunity for injunctive, specific-performance or declaratory relief, with mediation
-      or other methods by mutual agreement.
-    dispute_resolution_locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS. (Sec. 9.1 Voluntary Resolution;
-      Reference to Other Means of Resolution; Sec. 9.2 Arbitration Rules)
+    dispute_resolution_summary: After written notice the parties meet and confer within 10 days of receipt; if the dispute is not resolved within 30 calendar days after the first meeting either party may seek arbitration under the American Arbitration Association Commercial Arbitration Rules before one neutral arbitrator (three if either side objects), though neither must agree to it, and disputes not otherwise resolved may go to the United States District Court or a state court under a limited waiver of sovereign immunity for injunctive, specific-performance or declaratory relief, with mediation or other methods by mutual agreement.
+    dispute_resolution_locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS. (Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution; Sec. 9.2 Arbitration Rules)
     source: compact-ca-picayune-rancheria-of-chukchansi-indians-of-california-2000-05-16
     confidence: high
     verification: read-in-full
     as_of: '2000-05-16'
-    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS. (Sec. 9.1 Voluntary Resolution; Reference to Other
-      Means of Resolution; Sec. 9.2 Arbitration Rules)
-    note: Rewritten on 2026-11-22 from this nation's own compact (data gap review item 142, research/reviews/2026-11-22-compact-clauses-recheck.json);
-      the summary had been copied from compact-ca-cher-ae-heights-indian-community-of-the-2026 without
-      reading, and it gave the newer compacts' written-response and meeting deadlines and left out the
-      arbitration step. The 2026 Fourth Amendment's text is a scan without a text layer and was not read;
-      its approval letter describes a term extension and an off-track wagering appendix. Status copied
-      from this nation's most recent approved or deemed-approved entry for this state in the Office of
-      Indian Gaming list (2026-11-18).
+    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS. (Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution; Sec. 9.2 Arbitration Rules)
+    note: Read in full on 2026-11-23 from page images (Tribal-State Gaming Compact, State of California and Picayune Rancheria of Chukchansi Indians, 2000-05-16 (date from record; title page not viewed)). Rewritten on 2026-11-22 from this nation's own compact (data gap review item 142, research/reviews/2026-11-22-compact-clauses-recheck.json); the summary had been copied from compact-ca-cher-ae-heights-indian-community-of-the-2026 without reading, and it gave the newer compacts' written-response and meeting deadlines and left out the arbitration step. Status copied from this nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2026-11-18). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 391.
   ordinances:
   - approved: '1996-06-27'
     link: https://www.nigc.gov?wpdmdl=10624&ind=10640
@@ -394,6 +589,79 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Picayune Rancheria of Chukchansi
       Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Madera, CA
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2000-03-02'
+    link: https://www.nigc.gov?wpdmdl=2517&ind=2518
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Picayune Rancheria of Chukchansi Indians, 2000-03-02
+    note: The list names the tribe as “Picayune Rancheria of Chukchansi Indians”.
+  - parcel: Madera, CA
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2001-12-03'
+    link: https://www.nigc.gov?wpdmdl=2532&ind=2533
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Picayune Rancheria of Chukchansi Indians, 2001-12-03
+    note: The list names the tribe as “Picayune Rancheria of Chukchansi Indians”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-14-01
+    date: '2014-09-09'
+    link: https://www.nigc.gov?wpdmdl=7729&ind=7740
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-14-01
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-14-02
+    date: '2014-09-09'
+    link: https://www.nigc.gov?wpdmdl=7730&ind=7741
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-14-02
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as NOV.
+  - kinds:
+    - temporary-closure-order
+    tracking_number: TCO-14-01
+    date: '2014-10-07'
+    link: https://www.nigc.gov?wpdmdl=7728&ind=7739
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row TCO-14-01
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as TCO.
+  - kinds:
+    - notice-of-violation
+    - temporary-closure-order
+    tracking_number: NOV-14-03/TCO-14-02
+    date: '2014-10-10'
+    link: https://www.nigc.gov?wpdmdl=7727&ind=7738
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-14-03/TCO-14-02
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as NOV/TCO.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-15-01
+    date: '2015-12-21'
+    link: https://www.nigc.gov?wpdmdl=7725&ind=7736
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-15-01
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -420,6 +688,16 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Madera County
+  court: Superior Court for Madera County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Madera County holds 100% of the land of Picayune Rancheria (Census GEOID 2775), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

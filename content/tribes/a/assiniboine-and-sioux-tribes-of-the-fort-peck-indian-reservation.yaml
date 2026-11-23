@@ -186,6 +186,39 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
+indian_health_service:
+- area: Billings
+  source: indian-health-service-billings-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: Listed as "Fort Peck Service Unit". Listed as a Billings Area service unit named for the reservation; also appears on the Direct Service Tribes list as "Fort Peck Tribal Executive Board" under Billings Area. Page says the Fort Peck Tribes run dental and public health nursing programs at the clinics (mixed Indian Health Service and tribal). DST list names the governing body ("Fort Peck Tribal Executive Board"), not the nation; mixed arrangements possible.
+- area: Billings
+  service_unit: Fort Peck Service Unit
+  source: indian-health-service-billings-fort-peck-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "The Fort Peck Reservation is located in the northeastern part of Montana".'
+- area: Billings
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Billings Area
+  note: Listed as "Fort Peck Tribal Executive Board". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -517,6 +550,57 @@ gaming:
       of the Fort Peck Reservation". Facilities as machine-extracted from the report text (verify): Fred''s
       Grill and Casino fka B & S Laundry; Tavern Casino; Tribal Express Casino; T.J.''s Quick Stop; Silver
       Wolf Casino; Git-N-Go. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-08
+    date: '2005-03-16'
+    link: https://www.nigc.gov?wpdmdl=8192&ind=8213
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-08
+    note: The list titles the action “Fort Peck Reservation” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-08
+    date: '2005-03-16'
+    link: https://www.nigc.gov?wpdmdl=8193&ind=8214
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-08
+    note: The list titles the action “Fort Peck Reservation” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-12
+    date: '2006-07-19'
+    link: https://www.nigc.gov?wpdmdl=8112&ind=8134
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-12
+    note: The list titles the action “Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-10
+    date: '2008-06-27'
+    link: https://www.nigc.gov?wpdmdl=8026&ind=8037
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-10
+    note: The list titles the action “Assiniboine and Sioux Tribes of Fort Peck” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-10
+    date: '2008-08-21'
+    link: https://www.nigc.gov?wpdmdl=7999&ind=8010
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-10
+    note: The list titles the action “Assiniboine and Sioux Tribes of the Fort Peck Reservation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -571,6 +655,228 @@ jurisdiction:
   verification: read-in-full
   as_of: '2012'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+- topic: public-law-280
+  value: not-assumed
+  detail: Montana's 2024 legislative staff summary states that the Flathead Reservation is the only reservation in Montana under Public Law 280; no other Montana reservation is under state jurisdiction by the 1963 act. (Mont. Legis. Servs. Div., Montana & Public Law 280, at 1 (Apr. 2024).)
+  source: montana-legislative-services-division-public-law-280-2024
+  confidence: medium
+  verification: read-in-full
+  locator: Mont. Legis. Servs. Div. memo p. 1; Mont. Code Ann. § 2-1-301
+  note: 'Secondary source (legislative staff). Statutory text names only Flathead in § 2-1-301. Little Shell has no reservation in the roster data. Turtle Mountain (ND-based) has MT presence only. Fort Peck: a state court allowed divorce under a 1938 tribal enactment (State ex rel. Iron Bear v. Dist. Ct., 162 Mont. 335, 512 P.2d 1292 (1973)); that is tribal consent in a domestic-relations setting, not Public Law 280; the research read only the opening. Also cites: montana-code-annotated-2-1-301.'
+- topic: public-law-280
+  value: optional-state
+  detail: Montana law lets any other tribe request state jurisdiction by resolution to the governor, who must proclaim it within 60 days, but only after the tribe's own approval and the consent of each affected county commission. (Mont. Code Ann. § 2-1-302.)
+  source: montana-code-annotated-2-1-301
+  confidence: high
+  verification: read-in-full
+  locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
+  note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Montana Department of Public Health and Human Services
+  agreement: Title IV-E agreement (in negotiation in 2013)
+  state: MT
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: low
+  verification: inferred
+  locator: Section I.G, Montana, footnote 11
+  note: 'The source reads: “the State of Montana is in the process of entering into an agreement with Fort Peck Assiniboine & Sioux Tribes”. Only a negotiation in process in August 2013 is reported; no signed agreement is confirmed. Report date is March 2014, so current status needs confirming.'
+- kind: tax-agreement
+  other_party: Montana Department of Revenue
+  agreement: Tobacco tax agreement (with Amendments 1 to 3)
+  state: MT
+  status: in-effect
+  source: montana-department-of-revenue-state-and-tribal-tax-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table "State and Tribal Tax Agreements"
+  note: 'The source reads: “Fort Peck Tribes Tobacco Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+- kind: tax-agreement
+  other_party: Montana Department of Revenue
+  agreement: Alcoholic beverages tax agreement (with Amendments 1 to 4)
+  state: MT
+  status: in-effect
+  source: montana-department-of-revenue-state-and-tribal-tax-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table "State and Tribal Tax Agreements"
+  note: 'The source reads: “Fort Peck Tribes Alcoholic Beverages Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+- kind: tax-agreement
+  other_party: Montana Department of Revenue
+  agreement: Oil and natural gas production tax agreement
+  state: MT
+  status: in-effect
+  source: montana-department-of-revenue-state-and-tribal-tax-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table "State and Tribal Tax Agreements"
+  note: 'The source reads: “Fort Peck Tribes Oil and Natural Gas Production Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+- kind: cross-deputization
+  other_party: City of Wolf Point; City of Poplar; Montana Highway Patrol; Roosevelt County
+  agreement: Cooperative agreement providing for cross-deputization
+  state: MT
+  status: unknown
+  source: fort-peck-tribes-cross-deputization-cooperative-agreement
+  confidence: high
+  verification: read-in-full
+  locator: Title and recitals
+  note: 'The source reads: “COOPERATIVE AGREEMENT PROVIDING FOR CROSS-DEPUTIZATION OF LAW ENFORCEMENT OFFICERS OF THE ASSINIBOINE AND SIOUX TRIBES OF THE FORT PECK RESERVATION”. The copy is undated; it cites a 1997 Bureau of Indian Affairs manual. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: filing-fees
+  title: Filing Fees — Fort Peck Tribal Court
+  court: Fort Peck Tribal Court
+  link: https://fptc.org/filing-fees
+  detail: 'Fee schedule: civil complaint $25, family court petition $25, adoption $100, traditional adoption $50, divorce $75, marriage license $30, guardianship $25, name change $25. Fee waivers are generally not allowed (waiver policy and Administrative Order 2023-5.0 cited).'
+  source: fort-peck-tribal-court-filing-fees-fort-peck-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Filing Fees page
+  note: 'The source reads: “FILING FEE SCHEDULE:”.'
+- kind: public-defender
+  title: Public Defender Program — Fort Peck Tribal Court
+  court: Fort Peck Tribal Court
+  link: https://fptc.org/public-defender-program
+  detail: Public Defender Program page states income guidelines for indigent representation at 125% of the Federal Poverty Level Guidelines.
+  source: fort-peck-tribal-court-public-defender-program-fort-peck-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Public Defender Program page
+  note: 'The source reads: “INCOME GUIDELINES FOR INDIGENT REPRESENTATION”.'
+- kind: bar-admission
+  title: Licensed Advocates — Fort Peck Tribal Court
+  court: Fort Peck Tribal Court
+  link: https://fptc.org/licensed-advocates-1
+  detail: Page provides a PDF of licensed advocates for 2026 ("AttorneyPractice"); the home page also links a Tribal Bar Exam page and a Montana Tribal Advocate Incubator Project flyer.
+  source: fort-peck-tribal-court-licensed-advocates-fort-peck-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Licensed Advocates page
+  note: 'The source reads: “Licensed Advocates PDF”. Admission requirements not read; Tribal Bar Exam page (http://www.fptc.org/tribal-bar-exam) not opened.'
+- kind: forms
+  title: Court Forms
+  court: Fort Peck Tribal Court
+  link: https://fptc.org/court-forms
+  detail: Court Forms page linked from home page; not opened.
+  source: fort-peck-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
+nearby_state_courts:
+- state: MT
+  county: Roosevelt County
+  court: District Court for Roosevelt County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Roosevelt County holds 53% of the land of Fort Peck Indian Reservation (Census GEOID 1250), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Valley County
+  court: District Court for Valley County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Valley County holds 34% of the land of Fort Peck Indian Reservation (Census GEOID 1250), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Daniels County
+  court: District Court for Daniels County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Daniels County holds 7% of the land of Fort Peck Indian Reservation (Census GEOID 1250), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Sheridan County
+  court: District Court for Sheridan County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Sheridan County holds 6% of the land of Fort Peck Indian Reservation (Census GEOID 1250), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Teton, etc., Sioux, 1825
+  signed: '1825-06-22'
+  statutes_at_large: 7 Stat. 250
+  kappler:
+    volume: 2
+    page: 227
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-teton-etc-sioux-1825-0227
+  signatory: Yanktonai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 227 (Treaty with the Teton, etc., Sioux, 1825; Kappler header "June 22, 1825. | 7 Stat., 250. | Proclamation, Feb. 6, 1826.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Yanktonai to Fort Peck. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty of Fort Laramie with Sioux, etc., 1851
+  signed: '1851-09-17'
+  statutes_at_large: 11 Stat. 749
+  kappler:
+    volume: 2
+    page: 594
+    link: https://treaties.okstate.edu/treaties/treaty-of-fort-laramie-with-sioux-etc-1851-0594
+  signatory: Assiniboine
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 594 (Treaty of Fort Laramie with Sioux, etc., 1851; Kappler header "Sept. 17, 1851. | 11 Stats., p. 749.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Assiniboine of Fort Peck. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Yanktonai Band, 1865
+  signed: '1865-10-20'
+  statutes_at_large: 14 Stat. 735
+  kappler:
+    volume: 2
+    page: 903
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-yanktonai-band-1865-0903
+  signatory: Yanktonai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 903 (Treaty with the Sioux-Yanktonai Band, 1865; Kappler header "Oct. 20, 1865. | 14 Stat., 735. | Ratified, Mar. 5, 1866. | Proclaimed, Mar. 17, 1866.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Yanktonai to Fort Peck. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Upper Yanktonai Band, 1865
+  signed: '1865-10-28'
+  statutes_at_large: 14 Stat. 743
+  kappler:
+    volume: 2
+    page: 905
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-upper-yanktonai-band-1865-0905
+  signatory: Upper Yanktonai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 905 (Treaty with the Sioux-Upper Yanktonai Band, 1865; Kappler header "Oct. 28, 1865. | 14 Stats., 743. | Ratified Mar. 5, 1866. | Proclaimed, Mar. 17, 1866.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Yanktonai to Fort Peck. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
+  signed: '1868-04-29'
+  statutes_at_large: 15 Stat. 635
+  kappler:
+    volume: 2
+    page: 998
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998
+  signatory: Yanktonai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 998 (Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868; Kappler header "Apr. 29, 1868. | 15 Stats., 635. | Ratified, Feb. 16, 1869. | Proclaimed, Feb. 24, 1869.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Yanktonai to Fort Peck. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+land_establishment:
+- land_area: Fort Peck Reservation, Montana
+  method: agreement
+  instrument: Agreement of Dec. 28, 1886, ratified by Act of May 1, 1888, ch. 213, 25 Stat. 113
+  date: '1888-05-01'
+  detail: First set aside
+  source: act-1888-05-01-fort-peck-fort-belknap-blackfeet-agreement
+  confidence: medium
+  verification: read-in-full
+  locator: 25 Stat. 113, art. (Fort Peck Reservation boundary)
+  note: 'The instrument reads: “the separate reservation for the Indians now attached to and receiving rations at the, Fort Peck Agency, Montana, shall be bounded as follows”. Agreement (Dec. 28, 1886) ratified by Congress; it carves the separate Fort Peck reservation out of the larger Gros Ventre, Piegan, Blood, Blackfeet and River Crow reservation created by Exec. Order of July 5, 1873 (1 Kappler 855-856), which does not name the Assiniboine or Sioux. The act names "Indians now attached to ... Fort Peck Agency," not the Assiniboine and Sioux Tribes by name.'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

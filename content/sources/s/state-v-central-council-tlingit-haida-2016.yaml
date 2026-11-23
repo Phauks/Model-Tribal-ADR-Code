@@ -27,6 +27,33 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+courtlistener:
+  cluster: 3189032
+  citation: "371 P.3d 255"
+  case_name: "State v. Central Council of Tlingit and Haida Indian Tribes of Alaska"
+  link: https://www.courtlistener.com/opinion/3189032/state-v-central-council-of-tlingit-and-haida-indian-tribes-of-alaska/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/3189032/state-v-central-council-of-tlingit-and-haida-indian-tribes-of-alaska/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22371%20P.3d%20255%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=371%20P.3d%20255
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=371%20P.3d%20255
 rights:
   status: no-permission-needed
   basis: government-edict

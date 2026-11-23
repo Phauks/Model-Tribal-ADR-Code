@@ -1,0 +1,33 @@
+profile: content/tribes/w/wichita-and-affiliated-tribes.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/sites/careeropps/themes/responsive2017/display_objects/documents/18IHS-OHR604_BRO_OKCity_Word_508C_M.pdf
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Oklahoma City Area; Lawton Service Unit (Lawton Indian Hospital).
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#wichita-and-affiliated-tribes
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 3 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#wichita-and-affiliated-tribes
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: not-found
+  reason: Neither list names the nation.

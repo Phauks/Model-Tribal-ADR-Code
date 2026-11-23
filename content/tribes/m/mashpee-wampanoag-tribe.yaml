@@ -199,6 +199,47 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Direct Service Tribes by IHS Area" list'
+  note: 'Listed as "Mashpee Wampanoag Tribe". Also listed under the same Area in: indian-health-service-nashville-careers-brochure. Service unit named for the tribe; listed as a federal direct care service facility.'
+- area: Nashville
+  service_unit: Mashpee Wampanoag Health Service Unit
+  source: indian-health-service-nashville-mashpee-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Mashpee Wampanoag Health Service Unit".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Federal Direct Care Service Facilities". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mashpee Wampanoag Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Supreme, District and Peacemaker courts
+  quote: There are three types of courts, Supreme Court, District Court, and Peacemaker Court.
+  source: mashpee-wampanoag-tribe-website-about-the-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Mashpee Wampanoag Indian Tribal Council, Inc. - Corporate Documents and Selected Ordinances
@@ -316,11 +357,7 @@ dispute_resolution:
       name: Wunahtyâhe8âôk
       language_tag: wam
       translation: Peacemaking (as glossed in the brochure)
-    description: The brochure lists ideal cases as family disputes (spouses, parents and children, extended
-      families), community disputes (nuisance, trespass, disorderly conduct, disturbing the peace), financial
-      disputes (personal debts, breach of contract) and individual land-use and access disputes. Sessions
-      include one male and one female peacemaker, no lawyers, voluntary participation, and a binding resolution
-      agreed by all parties. Guiding principles are given in English and Wampanoag.
+    description: The brochure lists ideal cases as family disputes (spouses, parents and children, extended families), community disputes (nuisance, trespass, disorderly conduct, disturbing the peace), financial disputes (personal debts, breach of contract) and individual land-use and access disputes. Sessions include one male and one female peacemaker, no lawyers, voluntary participation, and a binding resolution agreed by all parties. Guiding principles are given in English and Wampanoag.
     case_types:
     - family
     - civil
@@ -328,26 +365,23 @@ dispute_resolution:
     - property-or-land
     - other
     participation: voluntary
-    relationship_to_court: Part of the Tribal Judiciary; the Chief Judge of the Supreme Court supervises
-      the Peacemakers Court and the appointed peacemakers.
-    enforcement: The final decision is agreed upon by all parties and described as binding.
+    relationship_to_court: Part of the Tribal Judiciary. A person may ask the Court Clerk for peacemaking before filing a lawsuit, or a party to a pending District Court civil case may ask the judge to send it to peacemaking; the other party may decline, in which case the case stays in court, and criminal matters are excluded. The Chief Judge appoints one male and one female peacemaker from a roll certified by the Judiciary Committee and appointed by the Tribal Council; peacemakers serve under the Chief Judge's direction and supervision and report results to the District Court or Chief Judge (Chapter 3, Secs. 2-4).
+    enforcement: The brochure calls the final decision binding and agreed by all parties; Chapter 3 Sec. 2(f) says an agreement reached is a final decision without appeal, and Sec. 2(b) says the Peacemaker Court cannot compel anyone to take part. The texts read do not describe a separate enforcement mechanism.
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/PM-Brochure-updated1.pdf
     source: mashpee-peacemakers-court-brochure
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '2015'
-    note: The numeral 8 is part of the Wampanoag spelling as printed and is kept exactly. Language tag
-      wam (Wampanoag) assigned because the brochure gives Wampanoag terms beside English; the brochure
-      does not name the language. Supervision detail from the Tribe's About Peacemakers Court page. Peacemaker
-      names printed in the brochure are not recorded.
+    note: 'Read in full on 2026-11-23 (Mashpee Wampanoag Tribe, Chapter 3: Operation of Peacemaker Court (no enactment date printed); Peacemakers Court brochure (no date printed)). The numeral 8 is part of the Wampanoag spelling as printed and is kept exactly. Language tag wam (Wampanoag) assigned because the brochure gives Wampanoag terms beside English; the brochure does not name the language. Supervision and appointment detail from Chapter 3 Operation of Peacemaker Court (read in full). Peacemaker names printed in the brochure are not recorded. Date: undated (no date printed on the brochure). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 273.'
   published_materials:
   - kind: brochure
     title: Peacemakers Court Brochure
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/PM-Brochure-updated1.pdf
     source: mashpee-peacemakers-court-brochure
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: '2015'
+    note: 'Read in full on 2026-11-23 (Mashpee Wampanoag Peacemakers Court brochure (Wunahtyahe8ahok / Peacemaking); no date printed). Brochure read in full (2 pages); no date printed. Printed title ''Mashpee Wampanoag Peacemakers Court''. Says peacemaking is voluntary, with no lawyers, a resolution agreed by both parties, one male and one female peacemaker per session; a session is requested through the Court Clerk or a Peacemaking Intake Form. Date: undated (no date printed on the brochure). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 275.'
   - kind: guide
     title: A Participant's Guide to Peacemaking
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/Participants-Guide-to-Peacemaking-final.pdf
@@ -375,14 +409,13 @@ dispute_resolution:
     title: 'Chapter 3: Operation of Peacemaker Court'
     citation: 'Chapter 3: Operation of Peacemaker Court'
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashpee-Chapter-3-OPERATION-OF-PEACEMAKER-COURT.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: mashpee-chapter-3-peacemaker-court
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Mashpee Wampanoag Tribe of Massachusetts
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      guiding principles, qualifications, and procedures. See also the Peacemaking Court Brochure and
-      A Participant’s Guide to Peacemaking.'
+    locator: Chapter 3, Secs. 1-4 (Guiding Principles; Scope and Jurisdiction; Peacemakers; Peacemaking Procedure)
+    note: 'Read in full on 2026-11-23 (Mashpee Wampanoag Tribe, Chapter 3: Operation of Peacemaker Court (no enactment date printed in the capture)). Read in full from the Chapter 3 text (Mashpee Wampanoag Peacemaker Court ordinance). Provides authorization, guiding principles, qualifications, and procedures. No enactment date is printed in the text read. See also the Peacemakers Court brochure. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 274.'
+    summary: 'Sets up the Mashpee Wampanoag Peacemaker Court: voluntary, non-adversarial peacemaking in civil matters (not criminal), where two peacemakers, one male and one female, appointed by the Chief Judge, help the parties reach a consensus agreement. A case enters on a written request to the Court Clerk before filing, or on a party''s request to the District Court judge after filing; the other party may decline. The Court cannot compel anyone, and an agreement reached is a final decision without appeal.'
 gaming:
   compacts:
   - state: MA
@@ -452,6 +485,65 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Massachusetts is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Massachusetts. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Massachusetts by the Census Bureau's land areas.
+court_practice:
+- kind: filing-fees
+  title: Guides, Forms, and Fees
+  court: Mashpee Wampanoag Tribal Court
+  link: https://mashpeewampanoagtribe-nsn.gov/forms-and-fees
+  detail: 'Fee schedule amended 2/01/2024: civil complaint $100.00; private criminal complaint application $85.00; foreign judgment $60.00 or $95.00; garnishment $60.00 or $95.00; Supreme Court filing fee $150.00; audio CD $100.00; attorney bar annual fee $150; photocopies $0.75 per page; fee waiver forms offered.'
+  source: mashpee-wampanoag-tribal-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Forms & Fees
+  note: 'The source reads: “$100.00 - Civil Complaint”.'
+- kind: public-defender
+  title: Public Defender
+  court: Mashpee Wampanoag Tribal Court
+  link: https://mashpeewampanoagtribe-nsn.gov/public-defender
+  detail: Under Administrative Order 36 (Interim Public Defender Program) the Tribal Court appoints an attorney for indigent persons; a defendant given a public defender pays a $200 fee to the Tribal Court before the case is disposed.
+  source: mashpee-wampanoag-tribal-court-public-defender
+  confidence: high
+  verification: read-in-full
+  locator: PUBLIC DEFENDER
+  note: 'The source reads: “the Tribal Court will appoint an attorney to meet the legal representation needs of indigent persons”. Names of current defenders omitted.'
+- kind: bar-admission
+  title: Bar Association & Membership
+  court: Mashpee Wampanoag Tribal Court
+  link: https://mashpeewampanoagtribe-nsn.gov/bar-association-membership
+  detail: Page lists an application for bar membership, an affidavit in support of admission and Administrative Order 20 on admission to the tribal court bar; attorneys must be members of the tribal court bar to appear, with pro hac vice by motion; annual bar fee $150 on the fee page.
+  source: mashpee-wampanoag-tribal-court-bar-admission
+  confidence: high
+  verification: title-only
+  locator: Bar Association and Membership
+  note: 'The source reads: “Attorneys who are not members of the Tribal Court bar may motion to appear pro hac vice.”. Documents not opened.'
+nearby_state_courts:
+- state: MA
+  county: Barnstable County
+  court: Superior Court for Barnstable County
+  link: https://www.mass.gov/orgs/superior-court
+  source: state-trial-court-directory-ma
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Barnstable County holds 55% of the land of Mashpee Wampanoag Trust Land (Census GEOID 2147), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MA
+  county: Bristol County
+  court: Superior Court for Bristol County
+  link: https://www.mass.gov/orgs/superior-court
+  source: state-trial-court-directory-ma
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Bristol County holds 45% of the land of Mashpee Wampanoag Trust Land (Census GEOID 2147), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

@@ -198,6 +198,95 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Pojoaque, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Pojoaque Pueblo". Also listed under the same Area in: indian-health-service-direct-service-tribes. Santa Fe Service Unit page names these eight constituent tribal governments.'
+- area: Albuquerque
+  service_unit: Santa Fe Service Unit
+  source: indian-health-service-albuquerque-santa-fe-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "eight constituent tribal governments: the Pueblos of Cochiti, Nambé, Ohkay Owingeh, Pojoaque, San Felipe, San Ildefonso, Santa Clara, and Tesuque".'
+- area: Albuquerque
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Albuquerque Area
+  note: Listed as "Pueblo of Pojoaque". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Indian Reorganization Act (1934)
+  quote: The Pojoaque Tribal Government conforms with the provisions of the 1934 Indian Reorganization Act.
+  source: pueblo-of-pojoaque-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Regular Tribal Council
+  quote: It consists of a General Council comprised of all enrolled adult members and a Regular Tribal Council comprised of elected officials.
+  source: pueblo-of-pojoaque-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: a Regular Tribal Council comprised of elected officials
+  source: pueblo-of-pojoaque-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: The officials are elected for two-year terms.
+  source: pueblo-of-pojoaque-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All enrolled adult members
+  quote: It consists of a General Council comprised of all enrolled adult members and a Regular Tribal Council comprised of elected officials.
+  source: pueblo-of-pojoaque-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: The Governor and their staff are responsible for the administration of civil and Tribal law enforcement, social services, Tribal health, education, welfare and economic development programs.
+  source: pueblo-of-pojoaque-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pueblo of Pojoaque, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Pueblo of Pojoaque Tribal Courts handles a wide range of matters within the Traffic, Civil, Criminal and Children’s court.
+  source: pueblo-of-pojoaque-pojoaque-org-courts
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -379,6 +468,118 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Listed by the Tribal Law and Policy Institute among the Tribes that have implemented special Tribal criminal jurisdiction under the Violence Against Women Act Reauthorization Act of 2022 (25 U.S.C. § 1304).
+  source: tribal-law-and-policy-institute-special-tribal-criminal-jurisdiction-chart
+  confidence: medium
+  verification: inferred
+  as_of: '2026-08-11'
+  locator: Chart row 36, "Implemented VAWA STCJ" column
+  note: Listed as "Pueblo of Pojoaque". The chart is undated (file last modified Aug. 11, 2026) and comes from a Justice Department technical-assistance provider, not the Department itself.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: New Mexico Children, Youth and Families Department
+  agreement: '[Pojoaque Publo] Tribal-State Joint Powers Agreement for Foster Care and Adoption Assistance Payments Under Title IV-E of the Social Security Act'
+  state: NM
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for NM
+  note: 'The source reads: “[Pojoaque Publo] Tribal-State Joint Powers Agreement for Foster Care and Adoption Assistance Payments Under Title IV-E of the Social Security Act”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: New Mexico Children, Youth and Families Department
+  agreement: Title IV-E agreement (maintenance costs only)
+  state: NM
+  date: '1997'
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.I, New Mexico
+  note: 'The source reads: “Pojoaque Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: court-rules
+  title: Tribal Court Rules & Protocols
+  court: Pueblo of Pojoaque Tribal Courts
+  link: https://pojoaque.org/wp-content/uploads/2024/03/2024-Rules-and-Procedures-3.pdf
+  detail: File name indicates 2024 Rules and Procedures.
+  source: pueblo-of-pojoaque-pojoaque-org-courts
+  confidence: high
+  verification: title-only
+  locator: Courts page document list
+  note: Page not opened.
+- kind: forms
+  title: Courts page forms (motions and petitions)
+  court: Pueblo of Pojoaque Tribal Courts
+  link: https://pojoaque.org/courts/
+  detail: Forms listed include Motion for Continuance, Motion to Appear by Zoom, Motion to Convert court Fines to Community Service, Petition for Order of Protection, Petition for Restraining Order and Background Request Form.
+  source: pueblo-of-pojoaque-pojoaque-org-courts
+  confidence: high
+  verification: read-in-full
+  locator: Forms list
+  note: 'The source reads: “Motion to Appear by Zoom”.'
+- kind: filing-fees
+  title: Schedule of Court Fees
+  court: Pueblo of Pojoaque Tribal Court
+  link: https://pojoaque.org/wp-content/uploads/2021/04/Schedule20of20Court20Fees.pdf
+  detail: Civil petition or first pleading $132.00; domestic relations petition $137.00; administrative appeals $117.00; traffic citation hearings $75.00; appellate court appeal $100.00; admission to practice $75.00; annual renewal bar fee $25.00; certified copies $15.00 plus $0.50 per page; filing fee waiver available.
+  source: pueblo-of-pojoaque-tribal-court-fees
+  confidence: medium
+  verification: read-in-full
+  locator: I. COURT FEES
+  note: 'The source reads: “Admission to Practice”. PDF posted 2021; fee amounts may have changed.'
+- kind: bar-admission
+  title: Attorney Application for Admission to Practice
+  court: Pueblo of Pojoaque Tribal Court
+  link: https://pojoaque.org/wp-content/uploads/2021/04/Attorney20Application20for20Admission.pdf
+  detail: Application asks for licensing jurisdiction, years of practice, good standing, familiarity with federal Indian law and the Pueblo Law and Order Code; the fee schedule lists a $75.00 admission fee and $25.00 annual renewal, and exempts attorneys appointed by legal services, Pueblo employees and lay advocates.
+  source: pueblo-of-pojoaque-tribal-court-bar-admission
+  confidence: medium
+  verification: read-in-full
+  locator: Application form
+  note: Application posted 2021; exemption statement is from the fee schedule.
+- kind: legal-aid
+  title: Legal Services (Pueblo of Pojoaque Legal Aid Office)
+  court: Pueblo of Pojoaque Legal Aid Office
+  link: https://pojoaque.org/legal-services/
+  detail: Page describes a Legal Aid Office helping members of the Pueblo with legal assistance, document and case review, staffed by a Tribal Member Legal Advocate.
+  source: pueblo-of-pojoaque-legal-aid-office-legal-aid
+  confidence: high
+  verification: read-in-full
+  locator: Pueblo of Pojoaque Legal Aid Office
+  note: 'The source reads: “The mission of the Pueblo of Pojoaque Legal Aid Office is helping those judicially challenged members”. Name of advocate omitted.'
+nearby_state_courts:
+- state: NM
+  county: Santa Fe County
+  court: District Court for Santa Fe County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Santa Fe County holds 100% of the land of Pueblo of Pojoaque (Census GEOID 2990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Pueblo of Pojoaque (spelled "Pojuaque" in the act) land grant, New Mexico
+  method: statute
+  instrument: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  date: '1858-12-22'
+  detail: First set aside
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  locator: 11 Stat. 374
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... N, Pueblo of Pojuaque in the county of Santa Fe ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

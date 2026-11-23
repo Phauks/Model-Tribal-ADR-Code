@@ -1,31 +1,12 @@
 # Documented dispute resolution practice: provisional analysis
 
-**Status:** provisional, written Nov. 21, 2026. It describes the Native nation
-profiles merged in pull request #2 before the lead author, Trevor Goldsmith,
-has reviewed that data. Nothing here is a finding about any nation's law or
-practice. It describes what the project's sources document, flags where the
-data is weak, and lists patterns to test once the data is reviewed. Every
-count comes from
-[`scripts/analysis/dispute_resolution_practice.py`](../../scripts/analysis/dispute_resolution_practice.py),
-whose output is
-[`2026-11-21-dispute-resolution-practice.json`](2026-11-21-dispute-resolution-practice.json).
-Counts, groupings and interpretations are project analysis unless a footnote
-cites a source.
+**Status:** provisional, written Nov. 21, 2026. It describes the Native nation profiles merged in pull request #2 before the lead author, Trevor Goldsmith, has reviewed that data. Nothing here is a finding about any nation's law or practice. It describes what the project's sources document, flags where the data is weak, and lists patterns to test once the data is reviewed. Every count comes from [`scripts/analysis/dispute_resolution_practice.py`](../../scripts/analysis/dispute_resolution_practice.py), whose output is [`2026-11-21-dispute-resolution-practice.json`](2026-11-21-dispute-resolution-practice.json). Counts, groupings and interpretations are project analysis unless a footnote cites a source.
 
-Following the charter, peacemaking is discussed as its own track, not as a form
-of alternative dispute resolution.[^charter-3][^narf-ipi-home]
+Following the charter, peacemaking is discussed as its own track, not as a form of alternative dispute resolution.[^charter-3][^narf-ipi-home]
 
 ## Update after the first review steps
 
-The sections below describe the data as first analyzed. Since then, review
-queue items 3, 4, 6 and 10 were applied (pull requests #15 and #29) and the
-lead author decided items 1 and 7. Bulk database entries now live in a
-separate field, `dispute_resolution.database_listings`, and are no longer
-counted as provisions.[^decision-0015] The six component bands of the
-Minnesota Chippewa Tribe have their own profiles, linked to the Tribe by
-`part_of`, and their records moved to them; the Tribe's own profile now has
-no dispute resolution record.[^decision-0016] Re-running the script gives these counts; the rest
-of this analysis still quotes the first run.[^rerun]
+The sections below describe the data as first analyzed. Since then, review queue items 3, 4, 6 and 10 were applied (pull requests #15 and #29) and the lead author decided items 1 and 7. Bulk database entries now live in a separate field, `dispute_resolution.database_listings`, and are no longer counted as provisions.[^decision-0015] The six component bands of the Minnesota Chippewa Tribe have their own profiles, linked to the Tribe by `part_of`, and their records moved to them; the Tribe's own profile now has no dispute resolution record.[^decision-0016] Re-running the script gives these counts; the rest of this analysis still quotes the first run.[^rerun]
 
 | Count | First run | Re-run |
 | --- | --- | --- |
@@ -42,55 +23,26 @@ of this analysis still quotes the first run.[^rerun]
 | Forums | 77, in 54 nations | 72, in 56 profiles |
 | Source records without an archived copy | 1,966 of 1,970 | 5,110 of 5,344 |
 
-The Yakutat Tlingit Tribe lost its only record, a training event, which
-cited a page that does not name the Tribe (pull request #29). The Minnesota
-Chippewa Tribe's records now sit on the White Earth, Leech Lake and Mille
-Lacs band profiles. Five forums recorded twice (review queue item 5) were
-folded into the main forum record on Nov. 22, 2026, and the bands are now
-counted as separate profiles, so forums fall to 72 while the profiles with a
-forum rise to 56. The 66 fewer section-title provisions are repeats removed
-in pull request #15. The archive workflow was started on Nov. 21, 2026 for
-the sources still without a copy (review queue item 9).
+The Yakutat Tlingit Tribe lost its only record, a training event, which cited a page that does not name the Tribe (pull request #29). The Minnesota Chippewa Tribe's records now sit on the White Earth, Leech Lake and Mille Lacs band profiles. Five forums recorded twice (review queue item 5) were folded into the main forum record on Nov. 22, 2026, and the bands are now counted as separate profiles, so forums fall to 72 while the profiles with a forum rise to 56. The 66 fewer section-title provisions are repeats removed in pull request #15. The archive workflow was started on Nov. 21, 2026 for the sources still without a copy (review queue item 9).
 
 Two later steps changed the provision counts most. The lead author's decisions on the provision pre-review removed records that are not dispute resolution, and duplicates, and cut the database listings to 258 (pull request #98, decision record 0027). Then the provisions known only by a section title (review queue item 2) were read from the nations' own texts on Nov. 22, 2026: of the 225, 108 were read and summarized, 60 had already been removed by the pre-review decisions, 2 more were removed as repeats or out of scope, and 55 are still unread because no text was found online or the code site refused automated requests.[^title-only] Source records grew because other work added constitutions, codes and compacts.
 
+On Nov. 23, 2026 the text-read tier was checked (Gate 1, item 3; review queue item 10). Of the 627 forums, provisions, clauses, materials, training programs and compact dispute clauses, 575 now rest on the nation's own text, read; all 30 records read by OCR were re-read from page images (24 confirmed, 6 corrected); 22 records labeled as read but resting on a description or dead link were read or relabeled; and the provisions known only by a section title fall from 55 to 40.[^text-read-tier]
+
 ## Summary
 
-- **185 of 948 profiles** have any dispute resolution record. All 185 are
-  federally recognized nations, which is 185 of 575 federally recognized
-  profiles (32 percent).[^output] No state-recognized, petitioning or
-  unrecognized community, Native Hawaiian or territorial profile has one; the
-  research session searched for state-recognized nations' practice and found
-  none, which means "not found," not "none."[^session-practice]
-- **Most of the record was not read closely.** Of 1,327 provision records,
-  938 (71 percent) are bulk records from the National Center on Restorative
-  Justice database, 291 (22 percent) rest on section titles alone, and 98
-  (7 percent) come from text the research session read. Only 47 provisions
-  have a summary.[^output][^session-practice]
-- **125 of the 185 nations** rest only on bulk or title-only records. Sixty
-  nations have at least one record drawn from read text or a curated forum,
-  clause, training or material record.[^output]
-- **Seventy-seven forum records about 54 nations** carry the detail that
-  matters for drafting. Forty describe peacemaking forums of 37 nations.[^output]
-- **Coverage follows the sources, not necessarily practice.** For example, 9
-  of 224 federally recognized nations in the Bureau of Indian Affairs Alaska
-  Region have a record, compared with 26 of 30 in the Midwest Region.[^output]
-- **Gaming compact clauses are mostly state templates.** Of 286 compact
-  dispute resolution summaries, 256 were taken from a state's model compact and
-  only 30 were read from the nation's own compact; there are only 28 distinct
-  texts.[^output][^session-gaming]
+- **185 of 948 profiles** have any dispute resolution record. All 185 are federally recognized nations, which is 185 of 575 federally recognized profiles (32 percent).[^output] No state-recognized, petitioning or unrecognized community, Native Hawaiian or territorial profile has one; the research session searched for state-recognized nations' practice and found none, which means "not found," not "none."[^session-practice]
+- **Most of the record was not read closely.** Of 1,327 provision records, 938 (71 percent) are bulk records from the National Center on Restorative Justice database, 291 (22 percent) rest on section titles alone, and 98 (7 percent) come from text the research session read. Only 47 provisions have a summary.[^output][^session-practice]
+- **125 of the 185 nations** rest only on bulk or title-only records. Sixty nations have at least one record drawn from read text or a curated forum, clause, training or material record.[^output]
+- **Seventy-seven forum records about 54 nations** carry the detail that matters for drafting. Forty describe peacemaking forums of 37 nations.[^output]
+- **Coverage follows the sources, not necessarily practice.** For example, 9 of 224 federally recognized nations in the Bureau of Indian Affairs Alaska Region have a record, compared with 26 of 30 in the Midwest Region.[^output]
+- **Gaming compact clauses are mostly state templates.** Of 286 compact dispute resolution summaries, 256 were taken from a state's model compact and only 30 were read from the nation's own compact; there are only 28 distinct texts.[^output][^session-gaming]
 
 ## What was analyzed
 
-The script reads every profile in `content/tribes/` (as merged at commit
-`34a68e6`) and every source record in `content/sources/`. It counts the five
-lists in each profile's `dispute_resolution` field (forums, provisions,
-clauses, training programs and published materials) and the
-`dispute_resolution_summary` of each gaming compact.[^schema]
+The script reads every profile in `content/tribes/` (as merged at commit `34a68e6`) and every source record in `content/sources/`. It counts the five lists in each profile's `dispute_resolution` field (forums, provisions, clauses, training programs and published materials) and the `dispute_resolution_summary` of each gaming compact.[^schema]
 
-Each provision is placed in one of three **evidence tiers** from its own note,
-because confidence levels alone do not separate them (1,317 of 1,327
-provisions are marked "medium"):[^output]
+Each provision is placed in one of three **evidence tiers** from its own note, because confidence levels alone do not separate them (1,317 of 1,327 provisions are marked "medium"):[^output]
 
 | Tier | Meaning | Provisions |
 | --- | --- | --- |
@@ -98,8 +50,7 @@ provisions are marked "medium"):[^output]
 | Section title only | Taken from a National Indian Law Library table of contents; the provision text was not read and its kind comes from words in the title | 291 |
 | Bulk database record | Imported from the Restorative Justice Tribal Laws Database; not reviewed one by one, kind assigned from the database's own tags | 938 |
 
-Sources for the tiers: the research session's limits and the notes on each
-record.[^session-practice][^ncorj][^nill-example]
+Sources for the tiers: the research session's limits and the notes on each record.[^session-practice][^ncorj][^nill-example]
 
 ## 1. Coverage: what the sources reach
 
@@ -118,59 +69,23 @@ record.[^session-practice][^ncorj][^nill-example]
 | Southwest | 24 | 10 | 1 |
 | Western | 42 | 21 | 3 |
 
-Source: script output, region as recorded from the Tribal Leaders
-Directory.[^output][^bia-directory]
+Source: script output, region as recorded from the Tribal Leaders Directory.[^output][^bia-directory]
 
-In the project's view, these differences say more about which nations publish
-codes online, and which codes the National Indian Law Library and the
-restorative justice database hold, than about where dispute resolution is
-practiced. Alaska is the clearest case: 215 of the 224 Alaska profiles have no
-record, and the session's queries searched Alaska nations directly only for a
-few named nations, such as Tlingit & Haida.[^output][^session-practice] The map rule
-(state presence only) also means region and state are the only geographic
-lenses the data should be read through.[^decision-0007]
+In the project's view, these differences say more about which nations publish codes online, and which codes the National Indian Law Library and the restorative justice database hold, than about where dispute resolution is practiced. Alaska is the clearest case: 215 of the 224 Alaska profiles have no record, and the session's queries searched Alaska nations directly only for a few named nations, such as Tlingit & Haida.[^output][^session-practice] The map rule (state presence only) also means region and state are the only geographic lenses the data should be read through.[^decision-0007]
 
 ## 2. Peacemaking (its own track)
 
-Forty forum records describe peacemaking forums of 37 nations, and 176
-provision records are labeled peacemaking.[^output] Seventeen forum records give
-the nation's own name for the forum or its peacemakers, as the nation writes
-it, for example Itti-kāna-ikbi in the Mississippi Band of Choctaw Indians'
-code and Gwe-shvt-naga in the Siletz code.[^choctaw-24][^siletz]
+Forty forum records describe peacemaking forums of 37 nations, and 176 provision records are labeled peacemaking.[^output] Seventeen forum records give the nation's own name for the forum or its peacemakers, as the nation writes it, for example Itti-kāna-ikbi in the Mississippi Band of Choctaw Indians' code and Gwe-shvt-naga in the Siletz code.[^choctaw-24][^siletz]
 
-Structural features recur across the forum records. The counts below cover
-all 77 forum records, of which 40 are peacemaking forums, because the other
-kinds often share the same court connection. Each feature is a pattern in the
-recorded summaries, coded by keyword (project analysis), and needs checking
-against the codes themselves:
+Structural features recur across the forum records. The counts below cover all 77 forum records, of which 40 are peacemaking forums, because the other kinds often share the same court connection. Each feature is a pattern in the recorded summaries, coded by keyword (project analysis), and needs checking against the codes themselves:
 
-- **A forum inside the Tribal court system.** Several codes place peacemaking in
-  the judiciary, as a division of the court or under a judge's supervision.
-  The Chickasaw Nation's Peacemaking Court is "a division of the District
-  Court" in its record, and the Mississippi Band of Choctaw Indians' court is a
-  division of the Tribal Court.[^chickasaw][^choctaw-24]
-- **Consent to enter.** Forty-five of 77 forum records mention party consent
-  or agreement for referral or transfer (36 nations). This keyword count also
-  catches unrelated uses of "agree," so it is an upper bound.[^output]
-- **Return to court.** Nineteen forum records say an unresolved matter goes
-  back to court or the parties may continue there (18 nations). The Chickasaw
-  Nation's code, for example, returns unresolved matters to the District
-  Court.[^output][^chickasaw]
-- **Agreements entered as judgments.** Thirty-three forum records describe an
-  agreement or decision entered, endorsed or enforced by the court (28
-  nations). Under the Siletz code as recorded, a Community Law Court judgment
-  is enforced like any Tribal Court judgment and cannot be appealed, though a
-  party may move to modify it.[^output][^siletz]
-- **A decision by the peacemaker only with everyone's consent.** Seven nations'
-  records describe a peacemaker who may decide a matter only if all parties
-  agree, which a Siletz section heading calls "Agreed Arbitration."[^output][^siletz][^chitimacha][^arapaho]
+- **A forum inside the Tribal court system.** Several codes place peacemaking in the judiciary, as a division of the court or under a judge's supervision. The Chickasaw Nation's Peacemaking Court is "a division of the District Court" in its record, and the Mississippi Band of Choctaw Indians' court is a division of the Tribal Court.[^chickasaw][^choctaw-24]
+- **Consent to enter.** Forty-five of 77 forum records mention party consent or agreement for referral or transfer (36 nations). This keyword count also catches unrelated uses of "agree," so it is an upper bound.[^output]
+- **Return to court.** Nineteen forum records say an unresolved matter goes back to court or the parties may continue there (18 nations). The Chickasaw Nation's code, for example, returns unresolved matters to the District Court.[^output][^chickasaw]
+- **Agreements entered as judgments.** Thirty-three forum records describe an agreement or decision entered, endorsed or enforced by the court (28 nations). Under the Siletz code as recorded, a Community Law Court judgment is enforced like any Tribal Court judgment and cannot be appealed, though a party may move to modify it.[^output][^siletz]
+- **A decision by the peacemaker only with everyone's consent.** Seven nations' records describe a peacemaker who may decide a matter only if all parties agree, which a Siletz section heading calls "Agreed Arbitration."[^output][^siletz][^chitimacha][^arapaho]
 
-These features describe the codified, court-connected peacemaking that the
-sources collect. The Native American Rights Fund's model law pages, the main
-source for this section, collect enacted codes and rules.[^narf-laws][^narf-youth]
-Community peacemaking that is not codified is unlikely to appear in this data,
-and the charter keeps ceremonial or community-held knowledge out unless the
-community approves in writing.[^charter-5]
+These features describe the codified, court-connected peacemaking that the sources collect. The Native American Rights Fund's model law pages, the main source for this section, collect enacted codes and rules.[^narf-laws][^narf-youth] Community peacemaking that is not codified is unlikely to appear in this data, and the charter keeps ceremonial or community-held knowledge out unless the community approves in writing.[^charter-5]
 
 ## 3. Other forums
 
@@ -186,100 +101,46 @@ community approves in writing.[^charter-5]
 | employment-tribunal | 1 | 1 | Prairie Band Potawatomi Nation's Employment Disputes Tribunal[^prairie-band] |
 | settlement-conference | 1 | 1 | Chickasaw Nation pretrial settlement conference[^chickasaw] |
 
-Source for counts: script output.[^output] Fifteen of the 77 forum records were
-written up from the restorative justice database rather than from the
-nation's own text, so their detail is secondhand.[^output][^ncorj]
+Source for counts: script output.[^output] Fifteen of the 77 forum records were written up from the restorative justice database rather than from the nation's own text, so their detail is secondhand.[^output][^ncorj]
 
-Case types recorded for forums: civil (46 records), other (45), juvenile (27),
-family (24), criminal diversion (15), child welfare (11), criminal sentencing
-(11), commercial (6), employment (4), probate (3), property or land (2) and
-intergovernmental (1). Participation: voluntary or court-referred (30),
-voluntary (24), court-referred (10), required (7) and not recorded
-(6).[^output]
+Case types recorded for forums: civil (46 records), other (45), juvenile (27), family (24), criminal diversion (15), child welfare (11), criminal sentencing (11), commercial (6), employment (4), probate (3), property or land (2) and intergovernmental (1). Participation: voluntary or court-referred (30), voluntary (24), court-referred (10), required (7) and not recorded (6).[^output]
 
 ## 4. Arbitration ordinances and immunity
 
-Eighteen clause records describe nine nations.[^output] Four commercial
-arbitration ordinances the session read share a structure: written agreements
-to arbitrate are enforceable, the Tribal court confirms awards with limited or
-no appeal, and claims against the nation proceed only where a separate
-instrument or resolution waives immunity. The Ho-Chunk Nation, Pascua Yaqui
-Tribe, Little River Band of Ottawa Indians and Jamestown S'Klallam Tribe
-ordinances each follow this shape in their records.[^ho-chunk][^pascua][^little-river][^jamestown]
-Turtle Mountain's code bars officials from signing a waiver without a separate
-authorizing resolution.[^turtle-mountain]
+Eighteen clause records describe nine nations.[^output] Four commercial arbitration ordinances the session read share a structure: written agreements to arbitrate are enforceable, the Tribal court confirms awards with limited or no appeal, and claims against the nation proceed only where a separate instrument or resolution waives immunity. The Ho-Chunk Nation, Pascua Yaqui Tribe, Little River Band of Ottawa Indians and Jamestown S'Klallam Tribe ordinances each follow this shape in their records.[^ho-chunk][^pascua][^little-river][^jamestown] Turtle Mountain's code bars officials from signing a waiver without a separate authorizing resolution.[^turtle-mountain]
 
-Whether these ordinances share a common model, such as a uniform arbitration
-act, is a question for review, not a conclusion (project analysis). Six of the
-18 clause records are Little Traverse Bay Bands statute titles that were not
-read.[^output]
+Whether these ordinances share a common model, such as a uniform arbitration act, is a question for review, not a conclusion (project analysis). Six of the 18 clause records are Little Traverse Bay Bands statute titles that were not read.[^output]
 
 ## 5. The restorative justice database records
 
-The 938 bulk records describe the database's own subject matter. By the
-database's tags (a record can carry more than one), 409 fall under Tribal
-justice, 358 under juvenile or youth justice and 285 under child welfare or
-family; one is tagged civil justice. By phase, 454 are pre-adjudication and
-375 post-adjudication.[^output][^ncorj]
+The 938 bulk records describe the database's own subject matter. By the database's tags (a record can carry more than one), 409 fall under Tribal justice, 358 under juvenile or youth justice and 285 under child welfare or family; one is tagged civil justice. By phase, 454 are pre-adjudication and 375 post-adjudication.[^output][^ncorj]
 
-So the two lenses give different pictures. The curated forum records are
-mostly civil and family; the bulk records are mostly diversion, treatment and
-restorative sentencing in criminal, juvenile and child welfare matters. In the
-project's view this reflects what each source collects. Whether diversion and
-sentencing provisions belong in a dispute resolution code at all is a scope
-question for the review (see the roadmap).
+So the two lenses give different pictures. The curated forum records are mostly civil and family; the bulk records are mostly diversion, treatment and restorative sentencing in criminal, juvenile and child welfare matters. In the project's view this reflects what each source collects. Whether diversion and sentencing provisions belong in a dispute resolution code at all is a scope question for the review (see the roadmap).
 
 ## 6. Gaming compacts
 
-Of 1,468 compact records, 286 carry a dispute resolution summary, for 276
-nations in 28 states. Only 28 distinct summary texts exist: 256 summaries
-were taken from a state's model compact with the nation's own text unchecked,
-and 30 were read from the nation's own compact.[^output][^session-gaming]
-Across the 28 distinct texts, 26 mention arbitration, 20 a notice and meeting
-or negotiation step, 16 mediation, 14 American Arbitration Association rules,
-12 federal court and 6 sovereign immunity or a waiver.[^output]
+Of 1,468 compact records, 286 carry a dispute resolution summary, for 276 nations in 28 states. Only 28 distinct summary texts exist: 256 summaries were taken from a state's model compact with the nation's own text unchecked, and 30 were read from the nation's own compact.[^output][^session-gaming] Across the 28 distinct texts, 26 mention arbitration, 20 a notice and meeting or negotiation step, 16 mediation, 14 American Arbitration Association rules, 12 federal court and 6 sovereign immunity or a waiver.[^output]
 
-These clauses govern disputes between a nation and a state under the Indian
-Gaming Regulatory Act's compact process,[^igra] so they describe
-intergovernmental dispute resolution shaped by each state's template. They are
-better read as state-level data than as evidence of an individual nation's
-choices (project analysis).
+These clauses govern disputes between a nation and a state under the Indian Gaming Regulatory Act's compact process,[^igra] so they describe intergovernmental dispute resolution shaped by each state's template. They are better read as state-level data than as evidence of an individual nation's choices (project analysis).
 
 ## 7. Training and published materials
 
-Ten training records (nine nations) and 14 published materials (eight
-nations) were found. Seven of the training records come from news posts of
-the Native American Rights Fund's Indigenous Peacemaking Initiative;
-the Pueblo of Isleta's rules require training before a peacemaker joins the
-roster.[^output][^isleta] Five of the 14 materials are low confidence, chiefly
-items found through search results or on undated web pages.[^output][^session-practice]
+Ten training records (nine nations) and 14 published materials (eight nations) were found. Seven of the training records come from news posts of the Native American Rights Fund's Indigenous Peacemaking Initiative; the Pueblo of Isleta's rules require training before a peacemaker joins the roster.[^output][^isleta] Five of the 14 materials are low confidence, chiefly items found through search results or on undated web pages.[^output][^session-practice]
 
 ## 8. Patterns to test after review
 
-These are hypotheses from the data above (project analysis). Each could change
-once the bulk and title-only records are reviewed.
+These are hypotheses from the data above (project analysis). Each could change once the bulk and title-only records are reviewed.
 
-1. **Court-connected design.** Documented forums sit inside or beside the
-   Tribal court and use referral, transfer and entry of agreements as
-   judgments. Test: does this hold in the text-read tier alone, and how much is
-   it produced by sources that collect codes?
-2. **Consent as the gate.** Consent governs entry and, where a neutral may
-   decide, the decision itself. Test: count consent rules by reading each
-   code, not by keyword.
-3. **A return path to court.** Codes that say what happens when a process
-   fails tend to send the matter back. Test: how many codes are silent?
-4. **Two pictures from two sources.** Civil and family matters dominate the
-   curated forums; juvenile, child welfare and criminal matters dominate the
-   bulk records. Test: re-run after the bulk records are triaged.
-5. **A shared arbitration ordinance shape.** Test: compare the four ordinances
-   section by section with the uniform arbitration acts.
-6. **Compact clauses follow the state.** Test: read the 256 template-based
-   summaries against each nation's own compact or amendments.
+1. **Court-connected design.** Documented forums sit inside or beside the Tribal court and use referral, transfer and entry of agreements as judgments. Test: does this hold in the text-read tier alone, and how much is it produced by sources that collect codes?
+2. **Consent as the gate.** Consent governs entry and, where a neutral may decide, the decision itself. Test: count consent rules by reading each code, not by keyword.
+3. **A return path to court.** Codes that say what happens when a process fails tend to send the matter back. Test: how many codes are silent?
+4. **Two pictures from two sources.** Civil and family matters dominate the curated forums; juvenile, child welfare and criminal matters dominate the bulk records. Test: re-run after the bulk records are triaged.
+5. **A shared arbitration ordinance shape.** Test: compare the four ordinances section by section with the uniform arbitration acts.
+6. **Compact clauses follow the state.** Test: read the 256 template-based summaries against each nation's own compact or amendments.
 
 ## 9. Review queue
 
-Each item is a data question for the review of pull request #2. Counts are
-from the script output unless cited otherwise.[^output]
+Each item is a data question for the review of pull request #2. Counts are from the script output unless cited otherwise.[^output]
 
 | # | Flag | Scale | Suggested review action |
 | --- | --- | --- | --- |
@@ -298,15 +159,10 @@ from the script output unless cited otherwise.[^output]
 
 ## CARE and terminology notes
 
-- The data describes published law. Restricted, ceremonial or community-held
-  knowledge was not sought and must not be added without written
-  approval.[^charter-5]
-- No nation is ranked or held up as a standard. Examples are named only to
-  show what a recorded code provides.[^style-guide]
-- Native-language names are copied as the nation writes them, from the
-  nation's own published text.[^style-guide]
-- Each nation may correct, restrict or remove what is recorded about it, and
-  the request wins.[^charter-6]
+- The data describes published law. Restricted, ceremonial or community-held knowledge was not sought and must not be added without written approval.[^charter-5]
+- No nation is ranked or held up as a standard. Examples are named only to show what a recorded code provides.[^style-guide]
+- Native-language names are copied as the nation writes them, from the nation's own published text.[^style-guide]
+- Each nation may correct, restrict or remove what is recorded about it, and the request wins.[^charter-6]
 
 ## References
 
@@ -316,6 +172,7 @@ from the script output unless cited otherwise.[^output]
 [^rerun]: Script output, [`2026-11-21-dispute-resolution-practice-rerun.json`](2026-11-21-dispute-resolution-practice-rerun.json), generated by the same script after pull request #29, the move of bulk entries to `database_listings`, the band profiles, the lead author's decisions on the provision pre-review (pull request #98) and the reading of section-title provisions (review queue item 2); the evidence tier now follows each record's `verification` level where one is set (project analysis).
 [^decision-0015]: [Decision record 0015](../../docs/decisions/0015-database-listings-apart-from-provisions.md).
 [^decision-0016]: [Decision record 0016](../../docs/decisions/0016-component-bands-own-profiles.md).
+[^text-read-tier]: Research session `2026-11-23-text-read-tier`, [research/sessions/2026/2026-11-23-text-read-tier.md](../sessions/2026/2026-11-23-text-read-tier.md), with the record file [`research/reviews/2026-11-23-text-read-tier.json`](../reviews/2026-11-23-text-read-tier.json).
 [^schema]: [schemas/tribe.schema.json](../../schemas/tribe.schema.json), `dispute_resolution` and `gaming.compacts`.
 [^charter-3]: [Charter, commitment 3](../../docs/charter.md#3-peacemaking-as-its-own-track).
 [^charter-4]: [Charter, commitment 4](../../docs/charter.md#4-consultation-before-publication).

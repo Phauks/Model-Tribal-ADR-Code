@@ -1,0 +1,32 @@
+profile: content/tribes/c/chickahominy-indian-tribe.yaml
+topic: governance
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/constitutions/coverage.csv
+  query: A captured text of the nation's constitution or other governing document
+  outcome: not-found
+  reason: 'The project''s constitution catalog has no text of this nation''s constitution or other governing document (catalog status: listed-but-not-retrieved).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: found
+  reason: The directory lists the title of the leader's office.
+  records:
+  - bia-tribal-leaders-directory-2026
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://www.chickahominytribe.org/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: blocked
+  reason: 'The website could not be read: only a short home page (a bot check or an empty page).'
+next_steps: The nation's website refused an automated reader; read its government pages by hand.

@@ -197,6 +197,170 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Mechoopda Indian Tribe of Chico Rancheria, California".
+governance:
+- aspect: form
+  value: Constitution adopted by Secretarial election
+  quote: On February 1, 1998 a Secretarial election was held where the qualified voters of the Mechoopda approved and adopted the Constitution of the Mechoopda Indian Tribe of Chico Rancheria, California.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Mechoopda Indian Tribe is the Tribal Council.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Tribal Council is comprised of seven (7) members elected by the General Membership.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
+- aspect: governing-body-selection
+  value: Elected by the General Membership
+  quote: The Tribal Council is comprised of seven (7) members elected by the General Membership.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: Ail terms of office will be for two (2) years, except that terms shall be
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 4
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: general-council
+  value: Tribal Members, about 721
+  quote: The General Membership is comprised of approximately 721 Tribal Members.
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: Section 3. Chairperson. The Chairperson shall preside at ail meetings of the Tribal
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIV, Section 3
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mechoopda Indian Tribe of Chico Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret or absentee ballot
+  quote: Section 3. Elections. AD elections of Tribal Officials will be by secret or absentee ballot
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 3
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: other-officers
+  value: Chairperson, Vice-Chairperson, Secretary, Treasurer, Members-At-Large
+  quote: 'There are four officers: Chairperson, Vice-Chairperson, Secretary, Treasurer, and three Members-At-Large.'
+  source: mechoopda-indian-tribe-of-chico-rancheria-website-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The home page gives 560 tribal members while the government page gives about 721 for the General Membership, and the council page has malformed term dates; facts come from the government pages.'
+- aspect: elections
+  value: Every 2 years, staggered
+  quote: The Chairperson, Secretary and two Member-at-large Council positions will be
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 4
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: voting-age
+  value: '18'
+  quote: Ail enrolled members of the Tribe who are eighteen (18)
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: amendment
+  value: Proposed by Tribal Council or 30% petition; ratified in Secretarial election
+  quote: Amendments may be proposed by the Tribal Coundl on its own initiative or upon receipt and
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XVI
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior or his duly authorized representative in the same
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XVI
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of a quorum of the Tribal Council
+  quote: shall be removed from office by a majority vote of
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: recall-and-removal
+  value: Recall by election after petition of 30% of qualified voters
+  quote: Upon receipt of a verified petition from the Election Committee signed by at least thirty percent (30%) of the qualified voters,
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
 gaming:
   compacts:
   - state: CA
@@ -278,6 +442,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Mechoopda Indian Tribe of Chico
       Rancheria". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Chico Parcels, Butte County, CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2003-03-14'
+    link: https://www.nigc.gov?wpdmdl=2548&ind=2549
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Mechoopda Indian Tribe of the Chico Rancheria, 2003-03-14
+    note: The list names the tribe as “Mechoopda Indian Tribe of the Chico Rancheria”.
+  - parcel: Chico Parcels, Butte County, CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2014-01-24'
+    link: https://www.nigc.gov?wpdmdl=2663&ind=2664
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Mechoopda Indian Tribe of the Chico Rancheria, 2014-01-24
+    note: The list names the tribe as “Mechoopda Indian Tribe of the Chico Rancheria”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -304,6 +489,16 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Butte County
+  court: Superior Court for Butte County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Butte County holds 100% of the land of Mechoopda TDSA (Census GEOID 8450), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

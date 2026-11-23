@@ -156,6 +156,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Seneca-Cayuga Nation
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Seneca-Cayuga Nation".
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Seneca-Cayuga Tribe of Oklahoma" among organizations under constitutions approved
@@ -180,6 +188,192 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-Laws under Oklahoma Indian Welfare Act of 1936
+  quote: Oklahoma Indian Welfare Act of 1936, with a Constitution and By-Laws approved by the U.S. Secretary of the Interior
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: governing-body
+  value: Seneca-Cayuga General Council
+  quote: body of the Nation shall be the Seneca-Cayuga General Council.
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. IV, as quoted in Election Ordinance Art. VI(a)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: governing-body
+  value: Business Committee
+  quote: The Business Committee is empowered in Article VI of the Constitution and By-Laws to transact business
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: governing-body-size
+  value: Chief, 2nd Chief, Secretary-Treasurer, 4 Councilmen
+  quote: Chief, Secretary-Treasurer, and four (4) Councilmen who shall be elected by secret ballot.
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. V, as quoted in Election Ordinance Art. VI(b)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Chief, Secretary-Treasurer, and four (4) Councilmen who shall be elected by secret ballot.
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. V, as quoted in Election Ordinance Art. VI(b)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: All officers are elected for a four (4) year term of office and shall serve until the earlier of
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. VIII, as quoted in Election Ordinance Art. VI(e)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: general-council
+  value: All members 18 years of age and older
+  quote: shall be all members of the Seneca-Cayuga Nation eighteen (18) years of age and older.
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. IV, as quoted in Election Ordinance Art. VI(a)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: head-of-government
+  value: Chief
+  quote: be the duty of the chief to preside at all meetings and perform all duties appertaining to the office
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: By-Laws Art. I, Sec. 1, as quoted in Election Ordinance Art. VI(h)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Seneca-Cayuga Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: Chief, Secretary-Treasurer, and four (4) Councilmen who shall be elected by secret ballot.
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. V, as quoted in Election Ordinance Art. VI(b)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: All officers are elected for a four (4) year term of office and shall serve until the earlier of
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. VIII, as quoted in Election Ordinance Art. VI(e)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: other-officers
+  value: Second Chief, Secretary-Treasurer, Second Councilperson, Fourth Councilperson
+  quote: for staggered terms of office, the Second-Chief, Secretary-Treasurer, Second Councilperson, and Fourth
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. VIII, as quoted in Election Ordinance Art. VI(e)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: elections
+  value: First Saturday of June each year
+  quote: first Saturday of June of each year for the purpose of receiving reports and any other business which may
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. VIII, as quoted in Election Ordinance Art. VI(e)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: voting-age
+  value: '18'
+  quote: shall be all members of the Seneca-Cayuga Nation eighteen (18) years of age and older.
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. IV, as quoted in Election Ordinance Art. VI(a)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: election-authority
+  value: Election Committee
+  quote: Seneca-Cayuga Nation Election Committee is hereby established, to uphold and enforce the provisions of
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Election Ordinance Art. VII, Sec. 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: judiciary
+  value: None currently established
+  quote: No currently established judicial branch of our government
+  source: seneca-cayuga-nation-website-sites-default-files-townhall3presentationfeb32024-pdf
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: amendment
+  value: Majority vote in referendum
+  quote: shall be effective if approved by a majority vote.
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article XI
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by the Secretary of the Interior shall be
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article XI
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Council after a hearing
+  quote: Such council shall have power, by majority vote, after giving the accused a hearing, to remove him from
+  source: seneca-cayuga-nation-website-sites-default-files-2026-02-018-021726-20election-20ordinanc
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Constitution Art. X, as quoted in Election Ordinance Art. VI(g)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The Constitution and By-Laws text is not among the saved pages, so facts are quoted from the 2026 Election Ordinance (page 10); the proposed 2026 amendments (page 8) are not in effect.'
+- aspect: other
+  value: Grievance Committee investigates complaints against Business Committee
+  quote: The Grievance Committee shall investigate complaints of misconduct
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article X
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
 governing_documents:
 - kind: constitution
   title: Seneca-Cayuga Nation - Tribal Constitution
@@ -360,6 +554,164 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Seneca Cayuga Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+nearby_state_courts:
+- state: OK
+  county: Ottawa County
+  court: District Court for Ottawa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Ottawa County holds 70% of the land of Seneca-Cayuga OTSA (Census GEOID 5835), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Delaware County
+  court: District Court for Delaware County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Delaware County holds 30% of the land of Seneca-Cayuga OTSA (Census GEOID 5835), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Wyandot, etc., 1814
+  signed: '1814-07-22'
+  statutes_at_large: 7 Stat. 118
+  kappler:
+    volume: 2
+    page: 105
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1814-0105
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 105 (Treaty with the Wyandot, etc., 1814; Kappler header "July 22, 1814. | 7 Stat., 118. | Ratified, Dec. 13, 1814. | Proclaimed Dec. 21, 1814.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca of Sandusky/Ohio; Seneca-Cayuga Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Wyandot, etc., 1815
+  signed: '1815-09-08'
+  statutes_at_large: 7 Stat. 131
+  kappler:
+    volume: 2
+    page: 117
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1815-0117
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 117 (Treaty with the Wyandot, etc., 1815; Kappler header "Sept. 8, 1815. | 7 Stat., 131. | Ratified Dec. 26, 1815.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca of Sandusky/Ohio; Seneca-Cayuga Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Wyandot, etc., 1817
+  signed: '1817-09-29'
+  statutes_at_large: 7 Stat. 160
+  kappler:
+    volume: 2
+    page: 145
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1817-0145
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 145 (Treaty with the Wyandot, etc., 1817; Kappler header "Sept. 29, 1817. | 7 Stat., 160. | Proclamation, Jan. 4, 1819. | Supplementary treaty, post, p. 162.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca of Sandusky/Ohio; Seneca-Cayuga Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Wyandot, etc., 1818
+  signed: '1818-09-17'
+  statutes_at_large: 7 Stat. 178
+  kappler:
+    volume: 2
+    page: 162
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1818-0162
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 162 (Treaty with the Wyandot, etc., 1818; Kappler header "Sept. 17, 1818. | 7 Stat., 178. | Proclamation, Jan. 4, 1819.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca of Sandusky/Ohio; Seneca-Cayuga Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, 1831
+  signed: '1831-02-28'
+  statutes_at_large: 7 Stat. 348
+  kappler:
+    volume: 2
+    page: 325
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-1831-0325
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 325 (Treaty with the Seneca, 1831; Kappler header "Feb. 28, 1831. | 7 Stat., 348. | Proclamation, Mar 24, 1831.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca of Sandusky/Ohio; Seneca-Cayuga Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, etc., 1831
+  signed: '1831-07-20'
+  statutes_at_large: 7 Stat. 351
+  kappler:
+    volume: 2
+    page: 327
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-etc-1831-0327
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 327 (Treaty with the Seneca, etc., 1831; Kappler header "July 20, 1831. | 7 Stat., 351. | Proclamation, Apr. 6, 1832.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca of Sandusky/Ohio; Seneca-Cayuga Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca and Shawnee, 1832
+  signed: '1832-12-29'
+  statutes_at_large: 7 Stat. 411
+  kappler:
+    volume: 2
+    page: 383
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-and-shawnee-1832-0383
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 383 (Treaty with the Seneca and Shawnee, 1832; Kappler header "Dec. 29, 1832. | 7 Stat., 411. | Proclamation, Mar. 22, 1833.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca of Sandusky/Ohio; Seneca-Cayuga Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche, etc., 1835
+  signed: '1835-08-24'
+  statutes_at_large: 7 Stat. 474
+  kappler:
+    volume: 2
+    page: 435
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-etc-1835-0435
+  signatory: Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 435 (Treaty with the Comanche, etc., 1835; Kappler header "Aug. 24, 1835. | 7 Stat., 474. | Proclamation, May 19, 1836.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca of Sandusky/Ohio; Seneca-Cayuga Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Seneca, Mixed Seneca and Shawnee, Quapaw, etc., 1867
+  signed: '1867-02-23'
+  statutes_at_large: 15 Stat. 513
+  kappler:
+    volume: 2
+    page: 960
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seneca-mixed-seneca-and-shawnee-quapaw-etc-1867-0960
+  signatory: Seneka; Mixed Seneka
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 960 (Treaty with the Seneca, Mixed Seneca and Shawnee, Quapaw, etc., 1867; Kappler header "Feb. 23, 1867. | 15 Stats., 513. | Ratified June 18, 1868. | Proclaimed Oct. 14, 1868.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Seneca of Sandusky/Ohio; Seneca-Cayuga Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

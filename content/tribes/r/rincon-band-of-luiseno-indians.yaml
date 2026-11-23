@@ -182,6 +182,199 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Rincon Band of Luiseno Indians (previously listed as Rincon Band of Luiseno Mission Indians
     of Rincon Reservation, California)
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Rincon Band of Luiseno Mission Indians of Rincon Reservation, California".
+governance:
+- aspect: form
+  value: Articles of Association
+  quote: The Tribal Council is vested with executive, legislative, and judicial authority for the Tribe under the Articles of Association
+  source: rincon-band-of-luiseno-indians-website-government-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is vested with executive, legislative, and judicial authority for the Tribe under the Articles of Association
+  source: rincon-band-of-luiseno-indians-website-government-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: Rincon Tribal Council members, which include a Chair, Vice Chair, and three Council members, are elected by a majority vote of tribal members.
+  source: rincon-band-of-luiseno-indians-website-government-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by majority vote of tribal members
+  quote: Rincon Tribal Council members, which include a Chair, Vice Chair, and three Council members, are elected by a majority vote of tribal members.
+  source: rincon-band-of-luiseno-indians-website-government-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: shall serve for a .term of two (2) years.
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 3(a)
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
+- aspect: head-of-government
+  value: Chairman
+  quote: I am honored and humbled to be elected as the new Chairman,
+  source: rincon-band-of-luiseno-indians-website-government-council-steve-stallings
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Rincon Band of Luiseno Indians (previously listed as Rincon Band of Luiseno Mission Indians of Rincon Reservation, California)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: Committeemen who shall be elected by secret ballot
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 3(a)
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: shall serve for a .term of two (2) years.
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 3(a)
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
+- aspect: other-officers
+  value: Vice Chair
+  quote: which include a Chair, Vice Chair, and three Council members
+  source: rincon-band-of-luiseno-indians-website-government-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Each year on the 2nd Saturday of December
+  quote: elections shall be held each year on the 2nd Saturday of December
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 5(b)
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
+- aspect: voting-age
+  value: '21'
+  quote: All enrolled members of the Band twenty-one (21)
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 5(a)
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
+- aspect: judiciary
+  value: Tribal court
+  quote: economic development, and a tribal court.
+  source: rincon-band-of-luiseno-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote at an election called by the Business Committee Chairman
+  quote: This document may be amended by a majority vote of the qualified voters of the Band voting at an election called for that purpose
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 15
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
+- aspect: secretarial-approval
+  value: Required for membership ordinances
+  quote: subject to approval by a majority vote of the eligible voters of the Band voting at an election called for that purpose and the Secretary of the Interior
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 6(d), as amended by Amendment I
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Band after hearing
+  quote: by- majority vote after giving the accused a hearing to clear him of charges, or if the charges are sustained, to remove him from office
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 7(b)
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
+- aspect: recall-and-removal
+  value: Automatic forfeiture on felony conviction
+  quote: if a member of the Business Committee shall be convicted of a felony, his office shall be forfeited automatically
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 7(c)
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
+- aspect: other
+  value: Grievance Board of 3 members elected by the Band
+  quote: The Band shall elect a Grievance Board constating of three members who are not on the Business Committee.
+  source: constitution-rincon-band-of-luiseno-indians-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-10-12'
+  locator: Section 7(a)
+  document_version:
+    document: rincon-band-of-luiseno-indians-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Articles adopted February 14, 1960 and approved March 15, 1960; the 1968 Amendment I to Section 6(d) is included and its amended wording is used where it changes the text.'
 governing_documents:
 - kind: law-code
   title: Rincon Band of Luiseno Mission Indians
@@ -333,40 +526,28 @@ dispute_resolution:
     verification: title-only
     as_of: '2020'
     locator: Table of Contents, under 'Article VII. The Trial'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: June 2020); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read.
-      Places searched: research/search-logs/dispute-resolution/r/rincon-band-of-luiseno-indians.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: the only online copy sits on a site that refused automated requests; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 455.'
   - kind: arbitration
-    title: Section 4.02 Request for Enforcement of Arbitration Decision; Section 4.03 Authority of Special
-      Master to Enforce Arbitration Award
-    citation: Rincon San Luiseno Band of Mission Indians Tribal Arbitration Enforcement Ordinance, 4.02-4.03
+    title: Section 4.02 Request for Enforcement of Arbitration Decision; Section 4.03 Authority of Special Master to Enforce Arbitration Award
+    citation: Rincon San Luiseno Band of Mission Indians Tribal Arbitration Enforcement Ordinance, 3.01(a), 4.02-4.03
     link: https://rincon-nsn.gov/wp-content/uploads/2019/05/3_0500-Tribal-Arbitration-Enforcement-Ordinance.pdf
     source: rincon-luiseno-rincon-san-luiseno-band-of-mission-indians-tribal
     confidence: medium
     verification: read-in-full
     as_of: '2000-09-06'
-    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
-    summary: Lets a party to an arbitration decision that involves the Tribe ask the Business Committee
-      in writing to confirm and enforce it; a Special Master appointed within twenty days decides the
-      request, does not review or modify the decision, and may order it confirmed and enforced as the
-      arbitrator provided.
-    locator: 4.02-4.03
+    note: 'Read in full on 2026-11-23 from page images (Rincon San Luiseno Band of Mission Indians Arbitration Enforcement Ordinance (cover: Tribal Arbitration Enforcement Ordinance, # 2000-04 handwritten), effective September 6, 2000). Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 456.'
+    summary: Lets a party to an arbitration in which the Tribe was a party ask the Business Committee in writing to confirm and enforce the decision. The Business Committee appoints a Special Master within twenty days of the request (3.01(a)); the Special Master does not review or modify the decision, gives the respondent at least 30 days to respond, rules within 60 days, and confirms and enforces it strictly as the arbitrator provided; the ruling is final and nonappealable and binds the Business Committee (4.02-4.03).
+    locator: 3.01(a), 4.02-4.03
   - kind: other
-    title: 6.1.61 Dispute Resolution of Violation of the Ordinance and/or Department of Regulations or
-      Policy
-    citation: 6.1.61 Dispute Resolution of Violation of the Ordinance and/or Department of Regulations
-      or Policy
+    title: 6.1.61 Dispute Resolution of Violation of the Ordinance and/or Department of Regulations or Policy
+    citation: 6.1.61 Dispute Resolution of Violation of the Ordinance and/or Department of Regulations or Policy
     link: https://narf.org/nill/codes/rincon_luiseno/index.html
     source: national-indian-law-library-code-codes-rincon-luiseno
     confidence: medium
     verification: title-only
     as_of: '2020'
     locator: 'Table of Contents, under ''Chapter 14: Housing'''
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: June 2020); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read.
-      Places searched: research/search-logs/dispute-resolution/r/rincon-band-of-luiseno-indians.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 457.'
 gaming:
   compacts:
   - state: CA
@@ -534,6 +715,98 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+court_practice:
+- kind: court-rules
+  title: Code of Civil Procedure & Rules of Court
+  court: Rincon Civil Trial Court and Court of Appeals
+  link: https://rincontribalcourt.org/court-system/rincon-civil-trial-court/code-of-civil-procedure-and-rules-of-court/
+  detail: Civil Trial Court rules page.
+  source: rincon-band-of-luiseno-indians
+  confidence: high
+  verification: title-only
+  locator: Court system menu
+  note: Page not opened.
+- kind: court-rules
+  title: Appellate Court Rules & Procedures
+  court: Rincon Civil Trial Court and Court of Appeals
+  link: https://rincontribalcourt.org/court-system/rincon-court-of-appeals/appellate-rules-procedures/
+  detail: Court of Appeals rules page.
+  source: rincon-band-of-luiseno-indians
+  confidence: high
+  verification: title-only
+  locator: Court system menu
+  note: Page not opened.
+- kind: filing-fees
+  title: Appellate Court Forms & Fees
+  court: Rincon Civil Trial Court and Court of Appeals
+  link: https://rincontribalcourt.org/court-system/rincon-court-of-appeals/appellate-court-forms-fees/
+  detail: Court of Appeals forms and fees page.
+  source: rincon-band-of-luiseno-indians
+  confidence: high
+  verification: title-only
+  locator: Court system menu
+  note: Page not opened.
+- kind: forms
+  title: Court Forms
+  court: Rincon Civil Trial Court and Court of Appeals
+  link: https://rincontribalcourt.org/court-system/rincon-civil-trial-court/court-forms/
+  detail: Civil Trial Court forms page.
+  source: rincon-band-of-luiseno-indians
+  confidence: high
+  verification: title-only
+  locator: Court system menu
+  note: Page not opened.
+- kind: bar-admission
+  title: Bar of the Court of Appeals
+  court: Rincon Civil Trial Court and Court of Appeals
+  link: https://rincontribalcourt.org/court-system/rincon-court-of-appeals/bar-of-the-court-of-appeals/
+  detail: Bar page for the Court of Appeals.
+  source: rincon-band-of-luiseno-indians
+  confidence: high
+  verification: title-only
+  locator: Court system menu
+  note: Page not opened.
+- kind: filing-fees
+  title: Fee Schedule (Rincon Civil Trial Court)
+  court: Rincon Civil Trial Court
+  link: https://rincontribalcourt.org/court-system/rincon-civil-trial-court/fee-schedule/
+  detail: Page offers a downloadable Rincon Civil Trial Court fee schedule (2021 file) and payment by credit card, PayPal or check.
+  source: rincon-civil-trial-court-fees
+  confidence: medium
+  verification: title-only
+  locator: Fee Schedule
+  note: 'The source reads: “Download a copy of the”. Fee schedule PDF (2021) not opened.'
+- kind: bar-admission
+  title: Bar of the Civil Trial Court
+  court: Rincon Civil Trial Court
+  link: https://rincontribalcourt.org/court-system/rincon-civil-trial-court/bar-of-the-civil-trial-court/
+  detail: 'Admission requires familiarity with Rincon law, an oath of admission, good standing in a federal or state bar for attorney applicants (lay representatives meet the other requirements); fees: application $200.00, annual membership $200.00, late payment $50.00.'
+  source: rincon-civil-trial-court-bar-admission
+  confidence: high
+  verification: read-in-full
+  locator: Requirements for Admission
+  note: 'The source reads: “An admission fee of $200 is due upon the court’s approval of an application for admission.”.'
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of Rincon Reservation (Census GEOID 3165), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Potrero tract including Rincon, San Diego County, California
+  method: executive-order
+  instrument: Exec. Order of Dec. 27, 1875, 1 Kappler 820-821
+  date: '1875-12-27'
+  detail: First set aside
+  source: executive-order-1875-12-27-mission-indian-reservations
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 820-821
+  note: 'The instrument reads: “Portrero. — Including Rincon ... withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. The tract is headed "Portrero" (Potrero) and "Including Rincon, Gapich, and La Joya"; Rincon is named. "La Joya" is not matched here to La Jolla (see doubtful).'
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

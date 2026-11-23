@@ -24,6 +24,33 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+courtlistener:
+  cluster: 1975174
+  citation: "265 Wis. 2d 64"
+  case_name: "Teague v. BAD RIVER CHIPPEWA INDIANS"
+  link: https://www.courtlistener.com/opinion/1975174/teague-v-bad-river-chippewa-indians/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/1975174/teague-v-bad-river-chippewa-indians/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22265%20Wis.%202d%2064%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=265%20Wis.%202d%2064
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=265%20Wis.%202d%2064
 rights:
   status: no-permission-needed
   basis: government-edict

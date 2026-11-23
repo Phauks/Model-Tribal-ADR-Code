@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import { teamLevelLabels } from '#lib/nation-teams.ts';
 	import { decisionLabels, roleDescriptions, roleLabels, subjectKindLabels } from '#lib/permissions.ts';
 	import { requestKindLabels, requestStatusLabels } from '#lib/requests.ts';
 	import type { PageProps } from './$types';
@@ -35,6 +36,15 @@
 	</div>
 {/if}
 
+{#if data.reviewRequestsForYou > 0}
+	<div class="notice" role="note">
+		<p>
+			{data.reviewRequestsForYou === 1 ? 'One draft or section is' : `${data.reviewRequestsForYou} drafts or sections are`} waiting for your review.
+			<a href="/workspace/review-requests">See your review requests</a>
+		</p>
+	</div>
+{/if}
+
 {#if data.ownNation}
 	<section class="panel">
 		<h2>Your nation’s record</h2>
@@ -42,6 +52,21 @@
 			You review the record for <strong>{data.ownNation.title}</strong> on behalf of the nation.
 		</p>
 		<p><a class="button" href="/workspace/reviews/nation/{data.ownNation.identifier}">Review the record</a></p>
+	</section>
+{/if}
+
+{#if data.teams.length > 0}
+	<section class="panel">
+		<h2>Your nations’ teams</h2>
+		<ul>
+			{#each data.teams as team (team.nationIdentifier)}
+				<li>
+					<a href="/workspace/nation-teams/{team.nationIdentifier}">{team.title}</a>:
+					{teamLevelLabels[team.level].toLocaleLowerCase('en-US')}.
+					<a href="/workspace/nation-teams/{team.nationIdentifier}/edit">Edit the page</a>
+				</li>
+			{/each}
+		</ul>
 	</section>
 {/if}
 
@@ -66,6 +91,21 @@
 				{/if}
 			</li>
 		</ul>
+	</section>
+{/if}
+
+{#if data.nonprofit && data.nonprofit.items.length > 0}
+	<section class="panel">
+		<h2>Nonprofit</h2>
+		<ul>
+			{#each data.nonprofit.items as item (`${item.title}/${item.due}`)}
+				<li>
+					{#if item.state === 'overdue'}<strong>Overdue:</strong>{:else}Due soon:{/if}
+					{item.title}, {date(`${item.due}T12:00:00`)}.
+				</li>
+			{/each}
+		</ul>
+		<p><a href="/workspace/nonprofit">Open the nonprofit page</a></p>
 	</section>
 {/if}
 
@@ -117,6 +157,17 @@
 				</div>
 			{/if}
 		{/if}
+	</section>
+{/if}
+
+{#if data.nationChanges && data.nationChanges.waiting > 0}
+	<section>
+		<h2>Nations’ changes</h2>
+		<p>
+			{data.nationChanges.waiting} {data.nationChanges.waiting === 1 ? 'change' : 'changes'} that nations published on their own pages
+			{data.nationChanges.waiting === 1 ? 'waits' : 'wait'} for the project to read{#if data.nationChanges.overdue}; <strong>{data.nationChanges.overdue} past 7 days</strong>{/if}.
+			<a href="/workspace/nation-pages">Read them</a>
+		</p>
 	</section>
 {/if}
 

@@ -154,6 +154,171 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sycuan Band of the Kumeyaay Nation
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Sycuan Band of Kumeyaay Nation".
+governance:
+- aspect: form
+  value: Articles of Association
+  quote: Articles of Association to establish rules of procedure to govern our
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: Preamble
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: governing-body
+  value: Sycuan Tribal Council
+  quote: The Sycuan Tribal Council consists of seven democratically elected officials who determine and administer laws, conditions and regulations by which Tribal members are to comply.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Sycuan Tribal Council consists of seven democratically elected officials who determine and administer laws, conditions and regulations by which Tribal members are to comply.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Democratically elected
+  quote: The Sycuan Tribal Council consists of seven democratically elected officials who determine and administer laws, conditions and regulations by which Tribal members are to comply.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: Members serve a four-year term
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All members over 18
+  quote: The General Council consists of all members over the age of 18.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: The head of the Tribe is known as the Tribal Chairperson and also serves a four-year term.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sycuan Band of the Kumeyaay Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected from the General Council
+  quote: In addition there shall be elected from the General Council
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The head of the Tribe is known as the Tribal Chairperson and also serves a four-year term.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Spokesman, Secretary
+  quote: a Business Committee consisting of Spokesman, Secretary and three (3)
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: voting-age
+  value: '18'
+  quote: all Tribal members over the age of 18 are eligible to take part in the election process.
+  source: sycuan-band-of-the-kumeyaay-nation-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of General Council
+  quote: These Articles of Association may be amended by a
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 10. Amendment
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of General Council
+  quote: The General Council may, by majority vote
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 5. Vacancies and Recall
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: recall-and-removal
+  value: Recall election on petition of 30% of voters
+  quote: Upon receipt of a petition signed by at least 30 per cent of the
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 5. Vacancies and Recall
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
+- aspect: other
+  value: Business Committee has administrative powers
+  quote: The Business Committee shall have the administrative powers and
+  source: constitution-sycuan-band-of-the-kumeyaay-nation-1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-08-18'
+  locator: 3. Governing Body
+  document_version:
+    document: sycuan-band-of-the-kumeyaay-nation-constitution
+    version: 1972-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Section 8 (duties of officers, OCR reads 0) is badly garbled, so the Spokesman''s role rests on the Section 3 reference alone.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -331,6 +496,68 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: bar-admission
+  title: Southern California Tribal Bar Association admission application
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/attorneys
+  detail: Attorneys page offers Southern California Tribal Bar Association information, a membership directory, an admission application and a renewal application.
+  source: intertribal-court-of-southern-bar-admission
+  confidence: high
+  verification: read-in-full
+  locator: Southern California Tribal Bar Association Information
+  note: 'The source reads: “Southern California Tribal Bar Association Admission Application”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.'
+- kind: forms
+  title: Forms (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/forms
+  detail: Forms page includes an Application for Filing Fee Waiver or Deferral and a Document Assistance Form.
+  source: intertribal-court-of-southern-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms
+  note: 'The source reads: “Application for Filing Fee Waiver or Deferral”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.'
+- kind: court-rules
+  title: Code of Civil Procedure and Rules of Court
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Rules and Laws page links the Code of Civil Procedure and Rules of Court, a Fee Schedule and the Inter-Governmental Agreement.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: read-in-full
+  locator: Rules and Laws
+  note: The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.
+- kind: filing-fees
+  title: Fee Schedule (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Fee Schedule PDF linked on the Rules and Laws page.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: title-only
+  locator: Rules and Laws
+  note: 'The source reads: “Fee Schedule”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s. PDF not opened.'
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of Sycuan Reservation (Census GEOID 4090), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Sycuan Reservation, San Diego County, California
+  method: executive-order
+  instrument: Exec. Order of Dec. 27, 1875, 1 Kappler 820-821
+  date: '1875-12-27'
+  detail: First set aside
+  source: executive-order-1875-12-27-mission-indian-reservations
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 820-821
+  note: 'The instrument reads: “Sycuan. — Township 16 south, range 1 east ... withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. Section 13 only.'
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

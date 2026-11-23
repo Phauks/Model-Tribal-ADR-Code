@@ -43,6 +43,46 @@ supreme_court:
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep030/usrep030001/usrep030001.pdf
   note: "The report names Marshall (opinion of the Court), Johnson and Baldwin (concurring) and Thompson, joined by Story (dissenting). It says nothing of McLean or Duvall, so the total vote is not given."
   checked: '2026-11-22'
+courtlistener:
+  cluster: 85715
+  citation: "30 U.S. 1"
+  case_name: "Cherokee Nation v. State of Georgia"
+  link: https://www.courtlistener.com/opinion/85715/cherokee-nation-v-state-of-georgia/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep030001/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/85715/cherokee-nation-v-state-of-georgia/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/30/1/
+    unchecked: true
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2230%20U.S.%201%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=30%20U.S.%201
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=30%20U.S.%201
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Cherokee_Nation_v._Georgia
 rights:
   status: no-permission-needed
   basis: us-government-work

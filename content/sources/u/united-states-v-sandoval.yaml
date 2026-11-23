@@ -45,6 +45,46 @@ supreme_court:
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep231/usrep231028/usrep231028.pdf
   note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating."
   checked: '2026-11-22'
+courtlistener:
+  cluster: 97976
+  citation: "231 U.S. 28"
+  case_name: "United States v. Sandoval"
+  link: https://www.courtlistener.com/opinion/97976/united-states-v-sandoval/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep231028/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/97976/united-states-v-sandoval/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/231/28/
+    unchecked: true
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22231%20U.S.%2028%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=231%20U.S.%2028
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=231%20U.S.%2028
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/United_States_v._Sandoval
 rights:
   status: no-permission-needed
   basis: us-government-work

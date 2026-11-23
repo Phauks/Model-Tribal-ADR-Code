@@ -1,7 +1,7 @@
 profile: content/tribes/p/ponca-tribe-of-indians-of-oklahoma.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -28,5 +28,76 @@ searches:
   outcome: not-public
   reason: NILL notes the nation has not permitted full text online (or the nation has not put it online);
     not worked around.
-next_steps: The provisions this nation's profile lists by section title are still unread. A person could
-  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/ponca_oklahoma/index.html
+  query: mediation, arbitration, peacemaking, circles, elders, dispute resolution wording
+  outcome: found
+  reason: Table of contents of Domestic and Family Violence Code has a section about mediation, but it
+    prohibits court-ordered mediation.
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#ponca-tribe-of-indians-of-oklahoma-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://ponca-nsn.gov/tribal-district-court.html
+  query: mediation, arbitration, peacemaking, circles, elders, dispute resolution wording
+  outcome: not-found
+  reason: Court page describes civil, criminal, juvenile and child support sessions only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Ponca Tribe of Oklahoma tribal code OR court OR "dispute resolution" OR mediation
+    OR peacemaking'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
+    court lists, with no page showing dispute resolution wording for this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260202135857id_/https://narf.org/nill/codes/ponca_oklahoma/index.html
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: found
+  reason: The archived index lists Section 313 of the domestic and family violence code, which prohibits
+    court-ordered or referred mediation in domestic abuse cases; a bar on mediation, not a forum.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=narf.org/nill/codes/ponca_oklahoma/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=2000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 2 archived addresses for narf.org/nill/codes/ponca_oklahoma/*; those
+    whose address names a code, law, court or dispute resolution page were fetched in this retry or are
+    listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f34a61b392e5b97f80a7.txt
+  query: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic Abuse
+    Cases Prohibited.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/ponca-tribe-of-indians-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Ponca Section 313
+  query: Ponca Tribe of Oklahoma Domestic and Family Violence Code Section 313 mediation marriage counseling
+    prohibited
+  outcome: not-found
+  reason: Only NILL TOC and secondary sources.
+  records:
+  - content/tribes/p/ponca-tribe-of-indians-of-oklahoma.yaml#dispute_resolution.provisions
+next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
+  (Gate 1) before any record goes into the profile.

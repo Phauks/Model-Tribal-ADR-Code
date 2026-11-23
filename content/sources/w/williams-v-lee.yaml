@@ -44,6 +44,50 @@ supreme_court:
   - {name: "Charles E. Whittaker", vote: majority}
   source: https://api.oyez.org/cases/1958/39
   checked: '2026-11-22'
+courtlistener:
+  cluster: 105807
+  citation: "358 U.S. 217"
+  case_name: "Williams v. Lee"
+  link: https://www.courtlistener.com/opinion/105807/williams-v-lee/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep358217/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/105807/williams-v-lee/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/358/217/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/1958/39
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22358%20U.S.%20217%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=358%20U.S.%20217
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=358%20U.S.%20217
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Williams_v._Lee
 rights:
   status: no-permission-needed
   basis: us-government-work

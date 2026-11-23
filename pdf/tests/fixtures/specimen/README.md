@@ -1,13 +1,8 @@
 # Typesetting specimen
 
-Test content for the print build. Nothing here is a proposed provision or a
-statement about any nation's law: it is placeholder text that exercises every
-element the book prints, so the layout can be checked at every trim size
-before real chapters exist.
+Test content for the print build. Nothing here is a proposed provision or a statement about any nation's law: it is placeholder text that exercises every element the book prints, so the layout can be checked at every trim size before real chapters exist.
 
-`npm run build:specimen` builds these files together with everything in
-`content/`. `book-overrides.yaml` gives the specimen its subtitle and chapter
-title; the trim still comes only from `pdf/book.yaml`.
+`npm run build:specimen` builds these files together with everything in `content/`. `book-overrides.yaml` gives the specimen its subtitle and chapter title; the trim still comes only from `pdf/book.yaml`.
 
 | File | Exercises |
 | --- | --- |

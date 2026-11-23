@@ -76,6 +76,14 @@ federal_administration:
   locator: Capitan Grande Band of Diegueno Mission Indians of California (Barona Group of Capitan Grande
     Band of Mission Indians of the Barona Reservation, California; Viejas (Baron Long) Group of Capitan
     Grande Band of Mission Indians of the Viejas Reservation, California)
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Capitan Grande Band of Diegueno Mission Indians of California (Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation, California)".
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -125,6 +133,27 @@ jurisdiction:
     images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has
     no text layer for the table); verification level unchanged because the name was not matched word for
     word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of Capitan Grande Reservation (Census GEOID 0495), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Capitan Grande Reservation, San Diego County, California
+  method: executive-order
+  instrument: Exec. Order of Dec. 27, 1875, 1 Kappler 820-821
+  date: '1875-12-27'
+  detail: First set aside
+  source: executive-order-1875-12-27-mission-indian-reservations
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 820-821
+  note: 'The instrument reads: “Capitan Grande. — Township 14 south, range 2 east ... withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. The Barona and Viejas groups derive from this reservation (separate roster entries not recorded here).'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

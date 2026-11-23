@@ -128,6 +128,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Thlopthlocco Tribal Town".
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Thlopthlocco Tribal Town" among organizations under constitutions approved by
@@ -152,6 +160,143 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws
+  quote: carry out the provisions and purposes of the Constitution and By-laws of the Thlopthlocco Tribal Town
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
+- aspect: governing-body
+  value: Business Committee
+  quote: The governing body is known as the Business Committee, which consists of five elected officials and five appointed advisory councils.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
+- aspect: governing-body-size
+  value: 5 elected officials
+  quote: The five elected officials include Town King, two Warriors, a Secretary, and a Treasurer.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
+- aspect: governing-body-selection
+  value: Elected by the town membership
+  quote: These officials are elected by the town membership and hold the term for four years or until their successors are elected and installed.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: These officials are elected by the town membership and hold the term for four years or until their successors are elected and installed.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
+- aspect: head-of-government
+  value: Town King
+  quote: The Town King must preside over the meetings and carry out the orders of the Business Committee.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
+- aspect: head-of-government
+  value: Town King
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Thlopthlocco Tribal Town
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “*Town King (Subject to Tribal Leadership Dispute)”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the town membership
+  quote: These officials are elected by the town membership and hold the term for four years or until their successors are elected and installed.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: These officials are elected by the town membership and hold the term for four years or until their successors are elected and installed.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
+- aspect: other-officers
+  value: Two Warriors, Secretary, Treasurer
+  quote: The five elected officials include Town King, two Warriors, a Secretary, and a Treasurer.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
+- aspect: voting-age
+  value: '21'
+  quote: males and females 21 years of age and over
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article V, Section 5
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: amendment
+  value: Majority of Governing Body, or petition of 30% of adult members, then majority referendum
+  quote: Governing Body, or by a petition filed by thirty per
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article VIII
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by the
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article VIII
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: recall-and-removal
+  value: Removal of Business Committee member by majority of town membership after hearing
+  quote: power, by majority vote, after
+  source: constitution-thlopthlocco-tribal-town-1938-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-12-27'
+  locator: Article VI
+  document_version:
+    document: thlopthlocco-tribal-town-constitution
+    version: 1938-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification clause reads December 27, 1988, where the ratification date is 1938; the scan has OCR errors throughout.'
+- aspect: other
+  value: Advisory Council of 5 members appointed by elected officials
+  quote: The Advisory Council consists of five members of the town who are appointed by elected officials.
+  source: thlopthlocco-tribal-town-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution itself is not among the saved pages, and the officer names on the pages are omitted here.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -252,6 +397,57 @@ gaming:
     locator: table row 284, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 284 lists the nation
       as "Thlopthlocco Tribal Town".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-03-03
+    date: '2003-05-30'
+    link: https://www.nigc.gov?wpdmdl=8249&ind=8260
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-03-03
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-12-01
+    date: '2012-08-22'
+    link: https://www.nigc.gov?wpdmdl=7746&ind=7753
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-12-01
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-12-1 Mar-03-13
+    date: '2013-03-20'
+    link: https://www.nigc.gov?wpdmdl=7747&ind=7752
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-12-1 Mar-03-13
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-12-1 Jun-12-13
+    date: '2013-06-12'
+    link: https://www.nigc.gov?wpdmdl=7732&ind=7750
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-12-1 Jun-12-13
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-12-1 Sep-19-13
+    date: '2013-09-19'
+    link: https://www.nigc.gov?wpdmdl=7731&ind=7742
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-12-1 Sep-19-13
+    note: The list titles the action “Thlopthlocco Tribal Town” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -265,6 +461,15 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

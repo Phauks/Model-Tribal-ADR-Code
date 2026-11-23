@@ -1,7 +1,7 @@
 profile: content/tribes/p/petersburg-indian-association.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: none-found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -67,4 +67,50 @@ searches:
   reason: 'Second reading: confirm. Re-read every cached page for this nation with wider words (peace,
     circle, conflict, dispute, grievance, elders'' panel, Tribal court) and found no dispute resolution
     forum, program or provision of this nation.'
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://piatribal.org/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Petersburg Indian Association tribal court OR code OR peacemaking OR "dispute resolution"'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
+    court lists, with no page showing dispute resolution wording for this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=piatribal.org/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 220 archived addresses for piatribal.org/*; those whose address names
+    a code, law, court or dispute resolution page were fetched in this retry or are listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261107054836id_/https://piatribal.org/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2026-11-07) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'this nation''s entry: justice system, cases heard, diversion agreements'
+  outcome: not-found
+  reason: 'Entry (pp. 456-457): the directory''s makers could not reach the Tribe as of October 2021,
+    so the entry is blank.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261107054836/https://piatribal.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-11-07 ("Petersburg Indian Association"); it shows no codes,
+    court or dispute resolution forum.
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

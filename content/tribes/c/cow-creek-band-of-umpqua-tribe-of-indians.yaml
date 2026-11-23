@@ -212,6 +212,63 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cow Creek Band of Umpqua Tribe of Indians
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Cow Creek Band of Umpqua Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Cow Creek Band of Umpqua Tribe of Indians (2015)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: governing-body
+  value: Tribal Board of Directors
+  quote: is governed by an elected eleven-member council known as the Tribal Board of Directors.
+  source: cowcreek-nsn-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 11 members
+  quote: is governed by an elected eleven-member council known as the Tribal Board of Directors.
+  source: cowcreek-nsn-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: was elected Chairman of the Tribal Board of Directors by her fellow board members
+  source: cow-creek-band-of-umpqua-tribe-of-indians-website-government-our-chairman
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cow Creek Band of Umpqua Tribe of Indians
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by fellow board members
+  quote: was elected Chairman of the Tribal Board of Directors by her fellow board members
+  source: cow-creek-band-of-umpqua-tribe-of-indians-website-government-our-chairman
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court system
+  quote: Established by the Tribal Board, the Tribal Court system consists of a Chief Judge, Appellate Judges, Peacemakers, Tribal Court Administrator, and Tribal Court Clerk.
+  source: cowcreek-nsn-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Cow Creek Band of Umpqua Tribe of Indians - Tribal Code - Table of Contents
@@ -248,31 +305,25 @@ justice_institutions:
     service-070).
 dispute_resolution:
   training_programs:
-  - name: First Cow Creek Band of Umpqua Indians Peacemaking Training (Canyonville, Oregon, April 21-23,
-      2023)
+  - name: First Cow Creek Band of Umpqua Indians Peacemaking Training (Canyonville, Oregon, April 21-23, 2023)
     provider: Native American Rights Fund Indigenous Peacemaking Initiative, with a guest peacemaker trainer
     link: https://peacemaking.narf.org/2023/05/cow-creek-band-of-umpqua-indians-peacemaking-training/
     source: narf-ipi-news-cow-creek-training-2023
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '2023-05-03'
-    note: NARF says the group showed promise of implementing a peacemaking program under the authority
-      of the Tribal Court; no program is recorded here because none is documented as operating.
+    note: Read in full on 2026-11-23 (Cow Creek Band of Umpqua Indians Peacemaking Training, NARF Indigenous Peacemaking Initiative news post, 2023-05-03). NARF says the group showed promise of implementing a peacemaking program under the authority of the Tribal Court; no program is recorded here because none is documented as operating. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 99.
   provisions:
   - kind: arbitration
     title: Arbitration code -- 70-10.
-    citation: Arbitration code -- 70-10.; Agreements to arbitrate are enforceable.; Stay of proceedings
-      and order to proceed with arbitration.; Arbitration award not appealable.; Amendment or repeal of
-      arbitration code.
+    citation: Arbitration code -- 70-10.; Agreements to arbitrate are enforceable.; Stay of proceedings and order to proceed with arbitration.; Arbitration award not appealable.; Amendment or repeal of arbitration code.
     link: https://narf.org/nill/codes/cow_creek_umpqua/index.html
     source: national-indian-law-library-code-codes-cow-creek-umpqua
     confidence: medium
     verification: title-only
     as_of: '2026-11-21'
     locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents; the
-      provision itself was not read. The heading it falls under is taken from the page layout and may
-      be imprecise. Searched for the text on 2026-11-22 and not read. Places searched: research/search-logs/dispute-resolution/c/cow-creek-band-of-umpqua-tribe-of-indians.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 98.'
 gaming:
   compacts:
   - state: OR
@@ -480,6 +531,30 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+nearby_state_courts:
+- state: OR
+  county: Douglas County
+  court: Circuit Court for Douglas County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Douglas County holds 100% of the land of Cow Creek Reservation (Census GEOID 0815), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Umpqua-Cow Creek Band, 1853
+  signed: '1853-09-19'
+  statutes_at_large: 10 Stat. 1027
+  kappler:
+    volume: 2
+    page: 606
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-umpqua-cow-creek-band-1853-0606
+  signatory: Umpqua; Cow Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 606 (Treaty with the Umpqua-Cow Creek Band, 1853; Kappler header "Sept. 19, 1853. | 10 Stats., 1027. | Ratified Apr. 12, 1854. | Proclaimed Feb. 5, 1855.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty with the Umpqua-Cow Creek Band, 1853 The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

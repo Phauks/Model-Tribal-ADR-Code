@@ -189,6 +189,47 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Bishop Paiute Tribe".
+governance:
+- aspect: governing-body
+  value: Elected Governing Council
+  quote: The Bishop Paiute Tribe Elected Governing Council
+  source: bishoppaiute-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: A Sovereign Tribal Nation governed by an elected council.
+  source: bishoppaiute-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman
+  source: bishoppaiute-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Bishop Paiute Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -247,33 +288,25 @@ dispute_resolution:
   provisions:
   - kind: other
     title: Section XIV. Dispute Resolution
-    citation: Bishop Paiute Tribe Gaming Revenue Allocation Plan (approved Dec. 12, 2004; amended Apr.
-      26, 2006), XIV
+    citation: Bishop Paiute Tribe Gaming Revenue Allocation Plan (approved Dec. 12, 2004; amended Apr. 26, 2006), XIV
     link: https://bishoppaiute.net/wp-content/uploads/2022/01/GamingRevenueAllocationPlan.pdf
     source: bishop-paiute-bishop-paiute-tribe-gaming-revenue-allocation
     confidence: medium
     verification: read-in-full
     as_of: '2006-04-26'
-    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
-    summary: Sends disputes raised by a member or group of members about the allocation of net gaming
-      revenue and per capita payments to the Tribal Council, sitting with at least four members present,
-      and makes its decisions binding on the parties.
+    note: Read in full on 2026-11-23 from page images (Bishop Paiute Tribe Gaming Revenue Allocation Plan, Approved December 12, 2004, Amended April 26, 2006 (enacted by Tribal Council Apr. 26, 2006, vote 4-0)). Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 18.
+    summary: Sends disputes raised by a member or group of members about the allocation of net gaming revenue and per capita payments to the Tribal Council, sitting with at least four members present, and makes its decisions binding on the parties.
     locator: XIV
   - kind: other
     title: Section 9. DISPUTE RESOLUTION
-    citation: Bishop Paiute Tribal Workers' Compensation Ordinance for the Paiute Palace Casino, 9 (subsections
-      A to M)
+    citation: Bishop Paiute Tribal Workers' Compensation Ordinance for the Paiute Palace Casino, 9 (subsections A to M)
     link: https://bishoppaiute.net/wp-content/uploads/2022/01/WorkmansCompOrdPPC-compressed.pdf
     source: bishop-paiute-bishop-paiute-tribal-workers-compensation
     confidence: medium
     verification: read-in-full
     as_of: '2016-02-18'
-    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
-      is left for the lead author's review. Read from a scanned copy by OCR.
-    summary: Lets an employee or dependent who disagrees with the administrator's final written determination
-      on a work-injury claim ask for an administrative review within thirty days and then a hearing before
-      a three-member Appeals Board, whose decisions are final, with already approved benefits continuing
-      during the appeal.
+    note: Read in full on 2026-11-23 from page images (Bishop Paiute Tribal Workers' Compensation Ordinance for the Paiute Palace Casino; footer 'Work Comp Ordinance 2.18.16'). Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision is left for the lead author's review. Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 19.
+    summary: Lets an employee who disagrees with the administrator's final written determination on a work-injury claim ask for an administrative review within thirty days, and then lets the employee or a dependent request a hearing before a three-member Appeals Board, whose decisions are final, with benefits already approved in the administrator's written decision continuing during the appeal.
     locator: 9 (subsections A to M)
   - kind: arbitration
     title: 'Section 13: Binding dispute resolution mechanism'
@@ -299,11 +332,8 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2010-02-16'
     locator: Rule 38 (printed as 38.1-38.6)
-    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
-    summary: Sets up an optional program in which the Tribal Court clerk helps parties apply for and select
-      a mediator or arbitrator, lets the Court order litigants into mediation with costs split equally,
-      keeps mediation confidential, has the arbitrator file a notice of completion, and lets the Tribal
-      Court enforce an arbitration award by suit or review it on a petition.
+    note: Read in full on 2026-11-23 from page images (Bishop Paiute Tribe Tribal Court Rules; footer 'Revision Approved by Court 2.16.10' (appellate rules in the same file carry 5/14/04 and 04/2004 versions)). Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 21.
+    summary: Sets up an optional program in which the Tribal Court clerk helps parties apply for and select a mediator or arbitrator, lets the Court order litigants into mediation with costs split equally, keeps mediation confidential, has the arbitrator file a notice of completion, and lets the Tribal Court enforce an arbitration award by suit or review it on a petition.
 gaming:
   compacts:
   - state: CA
@@ -460,6 +490,47 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: court-rules
+  title: Tribal Court Rules (approved 8.19.26)
+  court: Bishop Paiute Tribal Court
+  link: https://bishoppaiute.net/wp-content/uploads/2026/09/Tribal-Court-Rules-Approved-8.19.26.pdf
+  detail: Rules & Policies section also lists a Tribal Courtroom Policy and Amended Tribal Court Ordinance No. 2003-03.
+  source: bishop-paiute-tribal-court-court-rules-forms
+  confidence: high
+  verification: title-only
+  locator: Rules & Policies
+  note: 'The source reads: “Tribal Court Rules”. PDF not opened.'
+- kind: forms
+  title: Court Forms (Bishop Paiute)
+  court: Bishop Paiute Tribal Court
+  link: https://bishoppaiute.net/tribal-court/#courtforms
+  detail: Forms include Civil Complaint with instructions and an Application for Filing Fee Waiver.
+  source: bishop-paiute-tribal-court-court-rules-forms
+  confidence: high
+  verification: read-in-full
+  locator: Court Forms
+  note: 'The source reads: “Court Forms”.'
+- kind: filing-fees
+  title: Tribal Court Fee Schedule (effective February 22, 2024)
+  court: Bishop Paiute Tribal Court
+  link: https://bishoppaiute.net/wp-content/uploads/2025/02/Tribal-Court-Fee-Schedule-2024.pdf
+  detail: Initial civil filing $30.00; answer or response $15.00; motion $15.00; appeal filing $100.00; temporary protection order application $0.00; attorney admission $100.00 per year; advocate $25.00 per year; fee waiver available on form BPT-FEE-100.
+  source: bishop-paiute-tribal-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Fee schedule
+  note: 'The source reads: “Attorney $100.00 Per Year”.'
+nearby_state_courts:
+- state: CA
+  county: Inyo County
+  court: Superior Court for Inyo County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Inyo County holds 100% of the land of Bishop Reservation (Census GEOID 0290), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -24,6 +24,33 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+courtlistener:
+  cluster: 2299943
+  citation: "95 Cal. App. 4th 1"
+  case_name: "Smith v. Hopland Band of Pomo Indians"
+  link: https://www.courtlistener.com/opinion/2299943/smith-v-hopland-band-of-pomo-indians/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/2299943/smith-v-hopland-band-of-pomo-indians/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2295%20Cal.%20App.%204th%201%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=95%20Cal.%20App.%204th%201
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=95%20Cal.%20App.%204th%201
 rights:
   status: no-permission-needed
   basis: government-edict

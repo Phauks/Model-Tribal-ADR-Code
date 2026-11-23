@@ -51,7 +51,7 @@
     },
     "excerpts": {
       "type": "array",
-      "description": "The story in the nation's or teller's own words, quoted exactly from a telling, with a pinpoint. The project does not retell or summarize stories. Without permission an excerpt is a short passage (50 words or fewer) and only where the telling's permitted_uses allow quotation; otherwise the exact words are kept privately and the record carries only the pinpoint and fingerprint. The whole story is reproduced in full_text instead, and only where no permission is needed or permission was given (decision record 0034).",
+      "description": "The story in the nation's or teller's own words, quoted exactly from a telling, with a pinpoint. The project does not retell or summarize stories. Without permission an excerpt is a short passage (50 words or fewer) and only where the telling's permitted_uses allow quotation; otherwise the exact words are kept privately and the record carries only the pinpoint and fingerprint. The whole story is reproduced in full_text instead (decision records 0034 and 0035).",
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -76,8 +76,8 @@
         "locator": { "type": "string", "description": "Where in the telling the text runs: pages, section, or the words it begins and ends with." },
         "basis": {
           "type": "string",
-          "enum": ["public-domain", "nation-law", "permission"],
-          "description": "public-domain: the telling's source record has rights basis public-domain (for example a book published in the United States before 1931, or a work of the United States government). nation-law: the telling is a nation's own law, served on the site under decision record 0031. permission: the telling's permitted_uses level is publish-in-full."
+          "enum": ["public-domain", "nation-law", "permission", "lead-author-decision"],
+          "description": "public-domain: the telling's source record has rights basis public-domain (for example a book published in the United States before 1931, or a work of the United States government). nation-law: the telling is a nation's own law, served on the site under decision record 0031. permission: the telling's permitted_uses level is publish-in-full. lead-author-decision: the lead author chose to show every story in full, with credit and a removal link, whatever its copyright (decision record 0035); restricted, embargoed and held tellings stay out."
         },
         "basis_note": { "type": "string", "description": "Why the full text may be shown, in a sentence." },
         "transcribed_from": { "type": "string", "description": "The copy the text was taken from and how it was checked against the printed page." },

@@ -209,6 +209,241 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Comanche Nation". Also listed under the same Area in: indian-health-service-direct-service-tribes. Page lists tribal names generically ("Delaware", "Apache", "Wichita"); matched to the roster nation of that name. Operator from Direct Service Tribes list.'
+- area: Oklahoma City
+  service_unit: Lawton Service Unit (Lawton Indian Hospital)
+  source: indian-health-service-oklahoma-city-lawton-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "25,000 members of the Caddo, Comanche, Delaware, Fort Sill Apache, Kiowa, Apache, and Wichita tribes are concentrated".'
+- area: Oklahoma City
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Comanche Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Constitution approved by Commissioner of Indian Affairs
+  quote: approve the foregoing Constitution of the Comanche Indian Tribe.
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Approval
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: governing-body
+  value: Comanche Tribal Council
+  quote: The supreme governing body of this organization shall be the Comanche Tribal
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. IV, Sec. 1
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: governing-body-size
+  value: 7 members (Business Committee)
+  quote: The Comanche Business Committee shall be composed of seven (7) members of
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. VI, Sec. 1
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: governing-body-selection
+  value: Elected by Tribal Council
+  quote: (c) To elect tribal officers and members of the business committee and to fill vacancies
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. V, Sec. 6(c)
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: all terms of office shall be for a period of three years or until
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1(b)
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: general-council
+  value: All enrolled members 18 or older
+  quote: enrolled members of the Comanche Nation who are eighteen (18) years of age or older. The
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. V, Sec. 1
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman exercises the authorities and powers as delegated to his office
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. XII, Sec. 1
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Comanche Nation, Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by Tribal Council
+  quote: (c) To elect tribal officers and members of the business committee and to fill vacancies
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. V, Sec. 6(c)
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: The term of office for each officer and committeeman shall be for a period of
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. VI, Sec. 8
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: The elected officers of the tribal council shall be a tribal chairman, a tribal vice-
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. IV, Sec. 3
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: elections
+  value: Annual election after the annual meeting
+  quote: will exercise its powers through the Annual Election following the Annual
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. V, Sec. 1
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: voting-age
+  value: '18'
+  quote: who are eighteen (18) years of age or older
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. V, Sec. 1
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: election-authority
+  value: Election Board
+  quote: There shall be an Election Board comprised of members of the Tribal Council.
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. VII, Sec. 2(a)
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: the Tribal Court (or other independent
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. VIII, Sec. 2(c)
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: amendment
+  value: Majority vote of ballots cast in an election
+  quote: ratified by a majority vote of those who cast ballots in an election.
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. XI, Sec. 1 (as amended)
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: recall-and-removal
+  value: Recall by two-thirds vote of Tribal Council meeting
+  quote: A two thirds (2/3) majority vote of those voting of the Tribal Council meeting shall be sufficient
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. VIII, Sec. 2(e) (as amended)
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
+- aspect: recall-and-removal
+  value: Forfeiture of office on felony or dishonesty conviction
+  quote: Any officer or committeeman who shall be found guilty by any State or Federal Court of a
+  source: constitution-comanche-nation-2026-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Art. VIII, Sec. 3 (as amended)
+  document_version:
+    document: comanche-nation-constitution
+    version: 2026-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved PDF is a consolidated 2026 text that also carries superseded and rejected amendment wording; facts use the text as amended.'
 governing_documents:
 - kind: law-code
   title: Comanche Nation, Oklahoma
@@ -553,6 +788,57 @@ gaming:
       Casino; Comanche Cache Casino; War Pony Casino; Comanche Nation Travel Plaza; Comanche Nation Casino;
       Comanche Red River Casino. Name extracted from the PDF by the page-fetch tool and matched to the
       roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-99-07
+    date: '1999-04-01'
+    link: https://www.nigc.gov?wpdmdl=1936&ind=1937
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-99-07
+    note: The list titles the action “Comanche Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-02-01
+    date: '2002-03-29'
+    link: https://www.nigc.gov?wpdmdl=8275&ind=8287
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-02-01
+    note: The list titles the action “Comanche Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-03-04
+    date: '2003-06-17'
+    link: https://www.nigc.gov?wpdmdl=8248&ind=8259
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-03-04
+    note: The list titles the action “Comanche Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-02
+    date: '2008-04-30'
+    link: https://www.nigc.gov?wpdmdl=8047&ind=8058
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-02
+    note: The list titles the action “Comanche Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-02
+    date: '2008-05-29'
+    link: https://www.nigc.gov?wpdmdl=8042&ind=8053
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-02
+    note: The list titles the action “Comanche Nation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -566,6 +852,206 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Comanche Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+nearby_state_courts:
+- state: OK
+  county: Comanche County
+  court: District Court for Comanche County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Comanche County holds 17% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Kiowa County
+  court: District Court for Kiowa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Kiowa County holds 16% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Tillman County
+  court: District Court for Tillman County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Tillman County holds 14% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Jackson County
+  court: District Court for Jackson County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Jackson County holds 13% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Greer County
+  court: District Court for Greer County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Greer County holds 10% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Cotton County
+  court: District Court for Cotton County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Cotton County holds 10% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Harmon County
+  court: District Court for Harmon County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Harmon County holds 8% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Caddo County
+  court: District Court for Caddo County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Caddo County holds 5% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Stephens County
+  court: District Court for Stephens County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Stephens County holds 3% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Jefferson County
+  court: District Court for Jefferson County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Jefferson County holds 2% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Grady County
+  court: District Court for Grady County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Grady County holds 2% of the land of Kiowa-Comanche-Apache-Fort Sill Apache OTSA (Census GEOID 5720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Comanche, etc., 1835
+  signed: '1835-08-24'
+  statutes_at_large: 7 Stat. 474
+  kappler:
+    volume: 2
+    page: 435
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-etc-1835-0435
+  signatory: Comanche
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 435 (Treaty with the Comanche, etc., 1835; Kappler header "Aug. 24, 1835. | 7 Stat., 474. | Proclamation, May 19, 1836.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., 1846
+  signed: '1846-05-15'
+  statutes_at_large: 9 Stat. 844
+  kappler:
+    volume: 2
+    page: 554
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-aionai-anadarko-caddo-etc-1846-0554
+  signatory: Comanche
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 554 (Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., 1846; Kappler header "May 15, 1846. | 9 Stat., 844. | Proclamation, Mar. 8, 1847.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche, Kiowa, and Apache, 1853
+  signed: '1853-07-27'
+  statutes_at_large: 10 Stat. 1013
+  kappler:
+    volume: 2
+    page: 600
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-kiowa-and-apache-1853-0600
+  signatory: Comanche
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 600 (Treaty with the Comanche, Kiowa, and Apache, 1853; Kappler header "July 27, 1853. | 10 Stats., 1013. | Ratified Apr. 12, 1854. | Proclaimed Feb. 12, 1855 [4].")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche and Kiowa, 1865
+  signed: '1865-10-18'
+  statutes_at_large: 14 Stat. 717
+  kappler:
+    volume: 2
+    page: 892
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892
+  signatory: Comanche
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 892 (Treaty with the Comanche and Kiowa, 1865; Kappler header "Oct. 18, 1865. | 14 Stat., 717. | Ratified May 22, 1866. | Proclaimed May 26, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kiowa and Comanche, 1867
+  signed: '1867-10-21'
+  statutes_at_large: 15 Stat. 581
+  kappler:
+    volume: 2
+    page: 977
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-and-comanche-1867-0977
+  signatory: Comanche
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 977 (Treaty with the Kiowa and Comanche, 1867; Kappler header "Oct. 21, 1867. | 15 Stats., 581. | Ratified, July 25, 1868. | Proclaimed, Aug. 25, 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kiowa, Comanche, and Apache, 1867
+  signed: '1867-10-21'
+  statutes_at_large: 15 Stat. 589
+  kappler:
+    volume: 2
+    page: 982
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-comanche-and-apache-1867-0982
+  signatory: Comanche
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 982 (Treaty with the Kiowa, Comanche, and Apache, 1867; Kappler header "Oct. 21, 1867. | 15 Stats., 589. | Ratified, July 25, 1868. | Proclaimed Aug. 25 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

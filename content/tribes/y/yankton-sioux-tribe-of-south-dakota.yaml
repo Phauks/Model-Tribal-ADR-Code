@@ -178,6 +178,251 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yankton Sioux Tribe of South Dakota
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: 'Listed as "Yankton Sioux Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Great Plains
+  service_unit: Yankton Service Unit
+  source: indian-health-service-great-plains-yankton-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Wagner is located on the Yankton Sioux Reservation".'
+- area: Great Plains
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Yankton Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Amended 1932 constitution, not subject to the Indian Reorganization Act
+  quote: is not SUbject to the provisions of the Howard-Wheeler Act of
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article I, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: governing-body
+  value: Yankton Sioux Tribal Business and Claims Committee
+  quote: Constitution shall be known as the Yankton Sioux Tribal Business
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article II, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: These shall be comprised of nine members consisting
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Voting shall be by secret ballot cast at a polling
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Amended By-Laws, Article II, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: two years on the first Thursday in September to hold office
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: of a Tribal Chairman, Vice-Chairman, Secretary, Treasurer and
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yankton Sioux Tribe of South Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: Section 2. The officers and Committee members shall be elected
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two years on the first Thursday in September to hold office
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: of a Tribal Chairman, Vice-Chairman, Secretary, Treasurer and
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: elections
+  value: Every 2 years on the first Thursday in September
+  quote: elections shall be held every two years on the first Thursday
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Amended By-Laws, Article II, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: voting-age
+  value: '18'
+  quote: eighte.en (18) years of age or older shall be eligible to vote
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Amended By-Laws, Article II, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: election-authority
+  value: Election board appointed by the Committee
+  quote: place to be designated by an election board to be appointed by
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Amended By-Laws, Article II, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: branches
+  value: Legislative and judicial
+  quote: action. The legislative branch shall be comprised of the nine
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 3
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: judiciary
+  value: Yankton Sioux Tribal Court
+  quote: Yankton Sioux Tribal Court
+  source: yankton-sioux-tribe-of-south-dakota-website-tribal-laws
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages are a service directory, a water notice and court petition lists; no government structure is stated beyond the court''s name.'
+- aspect: amendment
+  value: Proposed by majority at tribal meeting, adopted by election
+  quote: Section 1. An amendment to this Constitution may be proposed at
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article XI, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: amendment repeal or ratification subject to the approval of the
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article XI, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of members attending a tribal meeting
+  quote: good cause by a two-thirds vote of the members attending any
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: other
+  value: Judicial power remains with tribal membership, on request of five members
+  quote: cause shall be submitted at any regular Tribal meeting for
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 3
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
 governing_documents:
 - kind: law-code
   title: Yankton Sioux Tribal Code
@@ -425,6 +670,27 @@ gaming:
     locator: table row 314, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 314 lists the nation
       as "Yankton Sioux Tribe".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-22-01
+    date: '2022-03-30'
+    link: https://www.nigc.gov?wpdmdl=2987&ind=2988
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-22-01
+    note: The list titles the action “Yankton Sioux Tribe of South Dakota” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-22-01
+    date: '2022-07-06'
+    link: https://www.nigc.gov?wpdmdl=2985&ind=2986
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-22-01
+    note: The list titles the action “Yankton Sioux Tribe of South Dakota” and gives its type as CFA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -438,6 +704,147 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state-consent-not-given
+  detail: South Dakota's 1957 act (S.D. Codified Laws §§ 1-1-12 to 1-1-16) offered to assume civil and criminal jurisdiction if the affected tribes consented; the Eighth Circuit found consent was not given, so jurisdiction was never assumed under it. (Rosebud Sioux Tribe v. South Dakota, 900 F.2d 1164, 1166 (8th Cir. 1990).)
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166; S.D. Codified Laws §§ 1-1-12, 1-1-13 (SL 1957, ch. 319)
+  note: 'Section 1-1-13 says a tribe that took no action within one year of Oct. 1, 1957 is deemed to consent; the court nevertheless held consent was not given. The sections are still printed in the code. The related 1959 highway statute (§ 1-1-17) also never took effect because its condition (roads jointly maintained by State and United States) was never met (900 F.2d at 1166). Shakopee, Northern Cheyenne and Turtle Mountain have only trust-land presence in SD in the roster and are not mapped. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-13.'
+- topic: public-law-280
+  value: not-assumed
+  detail: South Dakota's 1961 act (S.D. Codified Laws §§ 1-1-18 to 1-1-21) declared a general assumption of jurisdiction in Indian country, but it takes effect only on a gubernatorial proclamation, which was never issued; the general assumption never occurred. (S.D. Codified Laws § 1-1-21; 900 F.2d at 1167.)
+  source: south-dakota-codified-laws-1-1-18
+  confidence: high
+  verification: read-in-full
+  locator: S.D. Codified Laws § 1-1-21 (SL 1961, ch. 464, § 4); 900 F.2d at 1167
+  note: 'Quote is from Rosebud. A 1963 attempt to assume full jurisdiction (1963 S.D. Laws ch. 467) was defeated 3 to 1 in a referendum (900 F.2d at 1167). Statute text in § 1-1-21: highways are excepted from the proclamation requirement. Also cites: south-dakota-codified-laws-1-1-21, rosebud-sioux-tribe-v-south-dakota-1990.'
+- topic: public-law-280
+  value: assumption-held-invalid
+  detail: 'South Dakota''s 1961 highway-only assumption was held invalid by the South Dakota Supreme Court in 1964 (In re Hankins) and, after that court revived it in State v. Onihan (1988), by the Eighth Circuit in 1990: without tribal consent the State has no civil or criminal jurisdiction over highways through Indian lands. (Rosebud, 900 F.2d at 1166-67, 1172.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166
+  note: 'Hankins: 80 S.D. 435, 442-43, 125 N.W.2d 839, 842-43 (state cannot assume jurisdiction over highways alone; the Eighth Circuit describes this at 900 F.2d at 1167). Rosebud''s further holding (at 1170-72): the highway-only scheme does not meet Public Law 280, and the 1968 consent requirement bars later nonconsensual assumption. Cert. history not checked. Parties: Rosebud, Cheyenne River, Oglala, Standing Rock; the holding is about "Indian lands in the state" generally. Also cites: in-re-hankins-petition-1964.'
+- topic: public-law-280
+  value: not-assumed
+  detail: 'Today South Dakota holds no Public Law 280 jurisdiction over any of its reservations: the 1957 act was never consented to, the 1961 general act never took effect, and the 1961 highway piece is invalid; the statutes stay in the code. (Rosebud, 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12 to 1-1-21.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: medium
+  verification: read-in-full
+  locator: 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12, 1-1-18
+  note: 'Quote is the 1957 assumption text, § 1-1-12, shown because it is still printed in the code. Conclusion that nothing is in force is mine, drawn from Rosebud (1990) plus the statutes; the research did not find any later tribal consent election or any post-1990 South Dakota assumption. Goldberg (2010) fn. 4 reaches the same view. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-18.'
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: South Dakota Department of Revenue
+  agreement: Limited tax collection agreement (use tax and contractor's excise tax at listed businesses)
+  state: SD
+  status: in-effect
+  source: south-dakota-department-of-revenue-sales-of-products-or-service-within-indian-country
+  confidence: high
+  verification: bulk-import
+  locator: Section "Limited Tax Collection Agreement"
+  note: 'The source reads: “The two Indian tribes with limited tax collection agreements are the Sisseton Wahpeton Oyate and the Yankton Sioux Tribe.”. Covers use tax and contractor''s excise tax, not sales tax, at specific listed businesses. The page gives no signing date.'
+court_practice:
+- kind: forms
+  title: Forms
+  court: Yankton Sioux Tribal Court
+  link: https://www.yanktonsiouxtribe.net/forms
+  detail: 'Forms page linked from the Tribal Court page (examples: CHINS, Protection Order).'
+  source: yankton-sioux-tribe-of-south-dakota-website-tribal-laws
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page
+  note: Forms page not opened.
+nearby_state_courts:
+- state: SD
+  county: Charles Mix County
+  court: Circuit Court for Charles Mix County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Charles Mix County holds 100% of the land of Yankton Reservation (Census GEOID 4700), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Yankton Sioux, 1815
+  signed: '1815-07-19'
+  statutes_at_large: 7 Stat. 128
+  kappler:
+    volume: 2
+    page: 115
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-yankton-sioux-1815-0115
+  signatory: Yankton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 115 (Treaty with the Yankton Sioux, 1815; Kappler header "July 19, 1815. | 7 Stat., 128. | Ratified Dec. 26, 1815.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Teton, etc., Sioux, 1825
+  signed: '1825-06-22'
+  statutes_at_large: 7 Stat. 250
+  kappler:
+    volume: 2
+    page: 227
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-teton-etc-sioux-1825-0227
+  signatory: Yankton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 227 (Treaty with the Teton, etc., Sioux, 1825; Kappler header "June 22, 1825. | 7 Stat., 250. | Proclamation, Feb. 6, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Oto, etc., 1836
+  signed: '1836-10-15'
+  statutes_at_large: 7 Stat. 524
+  kappler:
+    volume: 2
+    page: 479
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-oto-etc-1836-0479
+  signatory: Yankton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 479 (Treaty with the Oto, etc., 1836; Kappler header "Oct. 15, 1836. | 7 Stat., 524. | Proclamation, Feb. 15, 1837.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Yankton Sioux, 1837
+  signed: '1837-10-21'
+  statutes_at_large: 7 Stat. 542
+  kappler:
+    volume: 2
+    page: 496
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-yankton-sioux-1837-0496
+  signatory: Yankton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 496 (Treaty with the Yankton Sioux, 1837; Kappler header "Oct. 21, 1837. | 7 Stat., 542. | Proclamation, Feb. 21, 1838.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Yankton Sioux, 1858
+  signed: '1858-04-19'
+  statutes_at_large: 11 Stat. 743
+  kappler:
+    volume: 2
+    page: 776
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-yankton-sioux-1858-0776
+  signatory: Yankton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 776 (Treaty with the Yankton Sioux, 1858; Kappler header "Apr. 19, 1858. | 11 Stat., 743. | Ratified Feb. 16, 1859. | Proclaimed Feb. 26, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Yankton Reservation, Dakota Territory (400,000 acres)
+  method: treaty
+  instrument: Treaty with the Yankton Sioux, Apr. 19, 1858, art. I, 11 Stat. 743, 744
+  date: '1858-04-19'
+  detail: First set aside
+  source: treaty-with-the-yankton-sioux-1858
+  confidence: high
+  verification: read-in-full
+  locator: 11 Stat. 744
+  note: 'The instrument reads: “except four hundred ... thousand acres thereof, situated and described as follows”. Reserved tract on the Missouri River, mouth of the Choteau (Chouteau) Creek north.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

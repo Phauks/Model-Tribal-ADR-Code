@@ -136,6 +136,179 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sault Ste. Marie Tribe of Chippewa Indians, Michigan
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Sault Ste. Marie Tribe of Chippewa Indians of Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Sault Ste. Marie Tribe of Chippewa Indians (1995)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution adopted under Section 16 of the Indian Reorganization Act
+  quote: pursuant to Section 16 of the Indian Reorganization Act, 25 U.S.C. s. 476.
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-images-downloads-history-20and-20culture-story-20of-20our-20
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: History Note
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: governing-body
+  value: Board of Directors
+  quote: The governing body of the Sault Ste. Marie Tribe of Chippewa Indians is the Board of Directors.
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: governing-body-size
+  value: 12 members and one chairperson
+  quote: 12 board members and one chairperson
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-government-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: governing-body-selection
+  value: All elected into office
+  quote: who are all elected into office.
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-government-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Board terms are four years.
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-government-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The chairperson is elected at large and serves as a member of the board.
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-government-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sault Ste. Marie Tribe of Chippewa Indians, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large
+  quote: The chairperson is elected at large and serves as a member of the board.
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-government-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Board terms are four years.
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-government-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: other-officers
+  value: Vice chairperson, treasurer, secretary
+  quote: Following each election, the board of directors selects from within its membership a vice chairperson, a treasurer and a secretary.
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-government-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: elections
+  value: Every 2 years
+  quote: Elections are held every two years and half of the board seats are up for election during each cycle
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-government-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: voting-age
+  value: '18'
+  quote: Any person eighteen (18) years of age or over who is a member of the tribe shall be
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-images-downloads-history-20and-20culture-story-20of-20our-20
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article V, Section 4
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: election-authority
+  value: Board of directors, by ordinance
+  quote: The board of directors shall enact appropriate ordinances
+  source: constitution-sault-ste-marie-tribe-of-chippewa-indians-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975'
+  locator: Article V, Section 6
+  document_version:
+    document: sault-ste-marie-tribe-of-chippewa-indians-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan has some OCR noise, bylaws on board meetings are appended to the constitution, and the election schedule is not stated as a fixed interval so it is omitted.'
+- aspect: judiciary
+  value: Reservation court, established by board ordinance
+  quote: jurisdiction of the tribe, to establish a reservation court and define its duties and
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-images-downloads-history-20and-20culture-story-20of-20our-20
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VII, Section 1(g)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: amendment
+  value: Majority vote of eligible voters in an election called by the Secretary of the Interior
+  quote: This constitution and bylaws may be amended by a majority vote of the eligible voters of the
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-images-downloads-history-20and-20culture-story-20of-20our-20
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article X
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: amendment shall become effective until it shall have been approved by the Secretary of the
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-images-downloads-history-20and-20culture-story-20of-20our-20
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article X
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: recall-and-removal
+  value: Petition of 100 voters, then hearing board decision
+  quote: Removal of the tribal chairperson or any member of the board of directors may be
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-images-downloads-history-20and-20culture-story-20of-20our-20
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: recall-and-removal
+  value: Removal by board majority vote for three missed meetings
+  quote: Sec. 5. Any member of the board of directors who willfully fails to attend three (3)
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-images-downloads-history-20and-20culture-story-20of-20our-20
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 5
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
+- aspect: other
+  value: Popular referendum on board ordinances and resolutions
+  quote: Any enacted or proposed ordinance or resolution of the board of directors shall be submitted
+  source: sault-ste-marie-tribe-of-chippewa-indians-website-images-downloads-history-20and-20culture-story-20of-20our-20
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article IX
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: A November 2026 news item reports voters adopted an amended three-branch constitution that is not in effect until the Secretary of the Interior certifies it, so the facts here describe the current constitution.'
 governing_documents:
 - kind: law-code
   title: Tribal Code - Sault Ste. Marie Tribe of Chippewa Indians
@@ -242,27 +415,22 @@ dispute_resolution:
       name: Bekaadziiwiin
       language_tag: oj
       translation: Peaceful Life (as given in the section heading)
-    description: A peacemaking diversion under guidelines promulgated by the Tribal Court; the Tribal
-      Peacemaking Committee reviews cases presented by the Tribal Prosecutor and may decline action, refer
-      to Bekaadziiwiin for peacemaking, develop a case plan, or refer to the Juvenile Division.
+    description: Peacemaking under the Juvenile Code's Bekaadziiwiin (Peaceful Life) section. The Tribal Court promulgates the guidelines. The Tribal Prosecutor presents cases that meet the guidelines to the Tribal Peacemaking Committee, which may decide not to proceed, refer the matter to Bekaadziiwiin for peacemaking, develop a case plan for the juvenile, or refer the matter to the Juvenile Division. Peacemakers may hear juvenile offenses, juvenile status offenses, other cases referred by the Tribal Court, and cases from tribal members who ask to use peacemaking voluntarily.
     legal_basis: Sault Ste. Marie Tribal Code Chapter 36, § 36.405
     case_types:
     - juvenile
     - criminal-diversion
     - other
     participation: voluntary-or-court-referred
-    relationship_to_court: Peacemakers may hear juvenile offenses, juvenile status offenses, other cases
-      referred by the Tribal Court, and cases from tribal members who voluntarily request peacemaking;
-      the Committee may ask the prosecutor to file a formal petition if a case plan is not substantially
-      followed.
-    link: https://www.saulttribe.com/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: Peacemakers may hear juvenile offenses, juvenile status offenses, other cases referred by the Tribal Court, and cases from tribal members who voluntarily request peacemaking; the Committee may ask the prosecutor to file a formal petition if a case plan is not substantially followed.
+    link: https://www.saulttribe.com/images/downloads/government/tribal%20code/Chapter-036.pdf
+    source: sault-ste-marie-tribal-code-chapter-36-juvenile
     confidence: medium
-    verification: inferred
-    as_of: '2026'
-    locator: https://ncorj.org/tribal-law/bekaadziiwiin-peaceful-life-peacemaking-diversion/
-    note: The code spells the term both Bekaadziiwiin and Bekaadziiwin. Language tag oj (Ojibwe) assigned
-      from the Tribe's identity; the source does not name the language.
+    verification: read-in-full
+    as_of: '2020-05-05'
+    locator: Tribal Code Chapter 36 (Juvenile Code), Section 36.405(1)-(4), pp. 36-21 to 36-22
+    note: 'Read in full on 2026-11-23 (Sault Ste. Marie Tribe of Chippewa Indians Tribal Code, Chapter 36: Juvenile Code (Res. 2000-27; amended through Res. 2020-101, May 5, 2020)). Read in full from the Tribe''s Tribal Code Chapter 36 PDF, replacing the earlier NCORJ-based record. The code spells the term both Bekaadziiwiin and Bekaadziiwin. Language tag oj (Ojibwe) assigned from the Tribe''s identity; the code does not name the language. ''Diversion'' is the record''s label for the pre-petition options; the code does not use the word. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 479.'
+    enforcement: If the case plan has not been substantially followed, the Tribal Peacemaking Committee may ask the Tribal Prosecutor to file a formal juvenile petition (36.405(3)). The section does not say that peacemaking agreements are otherwise binding.
   provisions:
   - kind: arbitration
     title: 'CHAPTER 95: ARBITRATION ORDINANCE'
@@ -384,6 +552,47 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Sault Ste. Marie Tribe of Chippewa
       Indians of Michigan". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: St. Ignace Parcel, Mackinac County, MI
+    legal_theory: Contiguous to Reservation
+    accepted: false
+    date: '2006-02-14'
+    link: https://www.nigc.gov?wpdmdl=2584&ind=2585
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Sault Ste. Marie Tribe of Chippewa Indians, 2006-02-14
+    note: The list names the tribe as “Sault Ste. Marie Tribe of Chippewa Indians”.
+  - parcel: St. Ignace Parcel, Mackinac County, MI
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2006-07-31'
+    link: https://www.nigc.gov?wpdmdl=2586&ind=2587
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Sault Ste. Marie Tribe of Chippewa Indians, 2006-07-31
+    note: The list names the tribe as “Sault Ste. Marie Tribe of Chippewa Indians”.
+  - parcel: St. Ignace Parcel, Mackinac County, MI
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2006-09-01'
+    link: https://www.nigc.gov?wpdmdl=2588&ind=2589
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Sault Ste. Marie Tribe of Chippewa Indians, 2006-09-01
+    note: The list names the tribe as “Sault Ste. Marie Tribe of Chippewa Indians”.
+  - parcel: St. Ignace Parcel, Mackinac County, MI
+    legal_theory: Contiguous to Reservation
+    accepted: false
+    date: '2006-12-08'
+    link: https://www.nigc.gov?wpdmdl=2592&ind=2593
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Sault Ste. Marie Tribe of Chippewa Indians, 2006-12-08
+    note: The list names the tribe as “Sault Ste. Marie Tribe of Chippewa Indians”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -409,6 +618,188 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Sault Ste. Marie Tribe of Chippewa". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Michigan is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Michigan. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.54)
+  note: Listed as "SAULT STE MARIE TRIBE OF CHIPPEWA INDIANS" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Michigan Department of Human Services
+  agreement: Sault Ste. Marie Tribe of Chippewa Indians Title IV-E Agreement
+  state: MI
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for MI
+  note: 'The source reads: “Sault Ste. Marie Tribe of Chippewa Indians Title IV-E Agreement”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: tax-agreement
+  other_party: Michigan Department of Treasury
+  agreement: Tax agreement between the tribe and the State of Michigan (sales and use tax exemptions and related taxes)
+  state: MI
+  status: in-effect
+  source: michigan-department-of-treasury-sales-to-federally-recognized-indian-tribes
+  confidence: high
+  verification: bulk-import
+  locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
+  note: 'The source reads: “Sault Ste. Marie Tribe of Chippewa Indians”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page.'
+- kind: child-welfare-agreement
+  other_party: Michigan Department of Human Services
+  agreement: Title IV-E agreement
+  state: MI
+  date: '1997'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.E, Michigan
+  note: 'The source reads: “Sault Ste. Marie Tribe of Chippewa Indians, executed in 1997, and amended on October 1, 2008”. Date is the execution date as reported; most were amended 2008-10-01. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: court-rules
+  title: Adopted Court Rules 02-25-15
+  court: Sault Ste. Marie Tribal Court
+  link: https://www.saulttribe.com/government/tribal-court/32-government/tribal-court/2145-adopted-court-rules-02-25-15
+  detail: Court rules adopted 2015-02-25, linked from the Tribal Court page.
+  source: sault-ste-marie-tribe-of-chippewa-tribal-court-the-official
+  confidence: medium
+  verification: title-only
+  locator: Tribal Court page
+  note: Linked page itself not opened.
+nearby_state_courts:
+- state: MI
+  county: Chippewa County
+  court: Circuit Court for Chippewa County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Chippewa County holds 68% of the land of Sault Ste. Marie Reservation (Census GEOID 3635), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Mackinac County
+  court: Circuit Court for Mackinac County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Mackinac County holds 18% of the land of Sault Ste. Marie Reservation (Census GEOID 3635), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Schoolcraft County
+  court: Circuit Court for Schoolcraft County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Schoolcraft County holds 7% of the land of Sault Ste. Marie Reservation (Census GEOID 3635), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Alger County
+  court: Circuit Court for Alger County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Alger County holds 3% of the land of Sault Ste. Marie Reservation (Census GEOID 3635), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Delta County
+  court: Circuit Court for Delta County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Delta County holds 2% of the land of Sault Ste. Marie Reservation (Census GEOID 3635), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Luce County
+  court: Circuit Court for Luce County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Luce County holds 1% of the land of Sault Ste. Marie Reservation (Census GEOID 3635), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Chippewa, 1820
+  signed: '1820-06-16'
+  statutes_at_large: 7 Stat. 206
+  kappler:
+    volume: 2
+    page: 187
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1820-0187
+  signatory: Chippewa tribe (Sault de St. Marie)
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 187 (Treaty with the Chippewa, 1820; Kappler header "June 16, 1820. | 7 Stat., 206. | Proclamation, Mar. 2, 1821.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Treaty made at Sault Ste. Marie with the Chippewa of that place; Sault Ste. Marie Tribe of Chippewa Indians. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1826
+  signed: '1826-08-05'
+  statutes_at_large: 7 Stat. 290
+  kappler:
+    volume: 2
+    page: 268
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1826-0268
+  signatory: Sault Ste. Marie
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 268 (Treaty with the Chippewa, 1826; Kappler header "Aug. 5, 1826. | 7 Stat., 290. | Proclamation, Feb. 7, 1827.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ottawa, etc., 1836
+  signed: '1836-03-28'
+  statutes_at_large: 7 Stat. 491
+  kappler:
+    volume: 2
+    page: 450
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1836-0450
+  signatory: Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 450 (Treaty with the Ottawa, etc., 1836; Kappler header "Mar. 28, 1836. | 7 Stat., 491. | Proclamation, May 27, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Sault Ste. Marie Tribe: party to 1836/1855 Michigan treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Ottawa and Chippewa, 1855
+  signed: '1855-07-31'
+  statutes_at_large: 11 Stat. 621
+  kappler:
+    volume: 2
+    page: 725
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-and-chippewa-1855-0725
+  signatory: Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 725 (Treaty with the Ottawa and Chippewa, 1855; Kappler header "July 31, 1855. | 11 Stat., 621. | Ratified April 15, 1856. | Proclaimed Sept. 10, 1856.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Sault Ste. Marie Tribe: party to 1836/1855 Michigan treaties. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa of Sault Ste. Marie, 1855
+  signed: '1855-08-02'
+  statutes_at_large: 11 Stat. 631
+  kappler:
+    volume: 2
+    page: 732
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-sault-ste-marie-1855-0732
+  signatory: Sault Ste. Marie
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 732 (Treaty with the Chippewa of Sault Ste. Marie, 1855; Kappler header "Aug. 2, 1855. | 11 Stat. 631. | Ratified Apr. 15, 1856. | Proclaimed Apr. 24, 1856.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

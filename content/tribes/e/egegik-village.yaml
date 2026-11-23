@@ -160,6 +160,230 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Egegik Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: Listed as "Egegik Village". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Bristol Bay Service Area
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: 'The source''s words: "Egegik Village".'
+  operator: tribal
+governance:
+- aspect: governing-body
+  value: Egegik Village Council
+  quote: Egegik shall be Egegik Villa^ Council, here in after referred
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The council shall consist of seven resi-
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of eligible voters at annual membership meeting
+  quote: who shall be elected by a majority
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: of three years, with staggered terms.
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: head-of-government
+  value: President
+  quote: Section 3. Officers ; The Council shalll include a PRESIDENT, &
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Egegik Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Selected by the council from its members
+  quote: '& TREASURER MAY BE THE SAME PERSON. Officers shall be selected by'
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: a Vice- president, a secretary, & a treasurer. The secretary
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: elections
+  value: Regular elections held at the annual membership meeting
+  quote: 'Section 2. Elections : The regular election of officials & question'
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 2
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: voting-age
+  value: '18'
+  quote: of Egegik who has reached the age of 18 or older & who has resided
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: election-authority
+  value: Election committee appointed by the council
+  quote: 'Section 5. Election Committee : Prior to any village election'
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 5
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: judiciary
+  value: Village council, which may establish a tribal court by ordinance (Option One)
+  quote: 'Option One: The judicial power of the Native Village of Egegik'
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIII
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: judicial-selection
+  value: Interim trial court judges elected by eligible voters
+  quote: three judges elected by tjjie eligible voters
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIII, Section 2(a)
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: judicial-term
+  value: 1 year (interim trial court judges)
+  quote: shall continue to be elected for 1 year terms at subsequent annual
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIII, Section 2(a)
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: judicial-independence
+  value: Judiciary independent of council control (Option two)
+  quote: shall be an judiciary independent of council control consisting
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIII, Section 1
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: judicial-independence
+  value: Court decisions final, subject only to federal court jurisdiction
+  quote: where applicable, the appellate court are final, subject only to
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIII, Section 5
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: amendment
+  value: Majority vote of qualified voters in an election, 30% must vote
+  quote: This constitution may be amended by a majority vote of the quali-
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XV
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: recall-and-removal
+  value: Removal for gross misconduct or neglect by vote of at least 4 council members
+  quote: by a vote of at least 4 members of the council. Voting must be by
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of eligible voters
+  quote: The petition must be signed by at least 20% of the eligible voters
+  source: constitution-egegik-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: egegik-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; Article XIII gives two alternative judicial options (Option One and Option two) and the scan does not show which was adopted.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -194,6 +418,16 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+nearby_state_courts:
+- state: AK
+  county: Lake and Peninsula Borough
+  court: Superior Court for Lake and Peninsula Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Lake and Peninsula Borough holds 100% of the land of Egegik ANVSA (Census GEOID 6445), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bristol Bay Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

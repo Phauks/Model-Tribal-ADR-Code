@@ -176,6 +176,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Grand Ronde Community of Oregon
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Confederated Tribes of Grand Ronde". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of Grand Ronde (1995)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Confederated Tribes of the Grand Ronde Community, Oregon" among organizations
@@ -201,6 +209,191 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act
+  quote: the Indian Reorganization Act of June 18,1934, as amended June 15, 1935,
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Preamble
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Grand Ronde Tribal Council, established by the Tribal Constitution, serves as the Tribe's primary governing and legislative authority.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 9 members
+  quote: The Council is composed of nine members, each serving staggered three-year terms.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: shall be by secret ballot and they shall be held in accordance with rules
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article V, Section 4
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The Council is composed of nine members, each serving staggered three-year terms.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All members
+  quote: General Council Meetings are open to all members.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman of the business committee shall
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Grand Ronde Community of Oregon
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the committee from its members
+  quote: committee so organized shall elect from within its own number (1) a chairman,
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice chairman, Secretary, Treasurer
+  quote: (2) a vice chairman; and from within or without, (3) a secretary, and (4)
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually in September
+  quote: Elections for Tribal Council are held annually in September.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council-tribal-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '21'
+  quote: 21 years of age or over and who have maintained legal residence within
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article V, Section 2
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Tribal Court shall be empowered to exercise all judicial authority of the Tribe.
+  source: grand-ronde-tribal-court-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority of voters in election called by Secretary, on 4 committee votes
+  quote: of the qualified voters of the tribes voting thereon; and if at least 30
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article XI
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: submitted to the Secretary of the Interior and if approved by
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article XI
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by four committee votes
+  quote: committee may, by four affirmative votes, expel any member for neglect
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article VI, Section 2
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon a petition of at least one-third of the eligible
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-13'
+  locator: Article VI, Section 3
+  document_version:
+    document: confederated-tribes-of-the-grand-ronde-community-of-oregon-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Advisory committees and boards
+  quote: Tribal Committees and Boards act in an advisory capacity to the Tribal Council in recommending policies and procedures, identifying needs and developing priorities.
+  source: confederated-tribes-of-the-grand-ronde-community-of-oregon-website-government-tribal-council-committees
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Confederated Tribes of the Grand Ronde Community of Oregon - Ordinances
@@ -322,33 +515,26 @@ dispute_resolution:
     summary: Per NARF, provides purpose, authorization and qualifications for peacemaking.
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
-    verification: read-in-full
+    verification: bulk-import
     as_of: '2025-09-29'
-    note: NARF's linked PDF returned 404 on 2026-11-21; text not read.
+    note: 'Not confirmed from the nation''s own text on 2026-11-23: the known link is dead; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 83.'
   forums:
   - kind: peacemaking
     name: Peacemaking Panel and Peacemaker Program
-    description: A Peacemaking Panel that may mediate disputes at the parties' request before filing or
-      as assigned by the Chief Judge after suit; the Peacemaker Program provides a nonadversarial way
-      to resolve disputes, reflecting the Tribe's tradition of using respected community members to heal
-      conflicts.
-    legal_basis: Grand Ronde Tribal Code Chapter 302 (Tribal Court Ordinance), Sections (c)(2)(A) and
-      (l)
+    description: A Peacemaking Panel that may mediate disputes at the parties' request before filing or as assigned by the Chief Judge after suit; the Peacemaker Program provides a nonadversarial way to resolve disputes, reflecting the Tribe's tradition of using respected community members to heal conflicts.
+    legal_basis: Grand Ronde Tribal Code Chapter 302 (Tribal Court Ordinance), Sections (c)(2)(A) and (l)
     case_types:
     - civil
     - other
     participation: voluntary-or-court-referred
-    relationship_to_court: Parties are not precluded from filing or continuing a court claim if peacemaking
-      is unsuccessful. Peacemakers are tribal members at least 25 years old approved by Tribal Council
-      from the Chief Judge's list; they are volunteers.
+    relationship_to_court: Parties are not precluded from filing or continuing a court claim if peacemaking is unsuccessful. Peacemakers are tribal members at least 25 years old approved by Tribal Council from the Chief Judge's list; they are volunteers.
     link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=5&dbid=0&repo=Grand-Ronde
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
     verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/peacemaking-panel-for-dispute-resolution/
-    note: Combines NCORJ records for Chapter 302 sections (c)(2)(A) and (l). No party may be represented
-      by counsel; a spokesperson may assist only as needed to understand the proceedings.
+    note: 'Combines NCORJ records for Chapter 302 sections (c)(2)(A) and (l). No party may be represented by counsel; a spokesperson may assist only as needed to understand the proceedings. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 82.'
   database_listings:
   - title: Family Reunification Agreement (Diversion from Adjudication)
     citation: Grand Ronde Children and Families Ordinance Chapter 301, Part II(h)(6)
@@ -655,6 +841,158 @@ jurisdiction:
     images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has
     no text layer for the table); verification level unchanged because the name was not matched word for
     word in machine-read text.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Tribal Agreement [Confederated Tribes of Grand Ronde Community]
+  state: OR
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for OR
+  note: 'The source reads: “Tribal Agreement [Confederated Tribes of Grand Ronde Community]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Title IV-E agreement (administration, training and maintenance)
+  state: OR
+  date: 2010-09
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.M, Oregon
+  note: 'The source reads: “Confederated Tribes of the Grande Ronde Community of Oregon executed in”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: public-defender
+  title: Tribal Court (Indigent Defense Program)
+  court: Grand Ronde Tribal Court
+  link: https://www.grandronde.org/government/tribal-court/
+  detail: The Court has an Indigent Defense Program providing attorneys for parents and children in abuse and neglect cases; parents apply and must qualify as indigent.
+  source: grand-ronde-tribal-court-page
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Court page
+  note: 'The source reads: “The Court has an Indigent Defense Program that provides attorneys for parents and children”. Child welfare defense, not criminal.'
+- kind: forms
+  title: Forms
+  court: Grand Ronde Tribal Court
+  link: https://www.grandronde.org/forms/
+  detail: Forms page linked from the Tribal Court page; not opened.
+  source: grand-ronde-tribal-court-page
+  confidence: medium
+  verification: title-only
+  locator: Tribal Court page
+  note: Page not opened; may be general tribal forms.
+nearby_state_courts:
+- state: OR
+  county: Yamhill County
+  court: Circuit Court for Yamhill County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Yamhill County holds 90% of the land of Grand Ronde Community (Census GEOID 1365), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Polk County
+  court: Circuit Court for Polk County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Polk County holds 9% of the land of Grand Ronde Community (Census GEOID 1365), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Rogue River, 1853
+  signed: '1853-09-10'
+  statutes_at_large: 10 Stat. 1018
+  kappler:
+    volume: 2
+    page: 603
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-rogue-river-1853-0603
+  signatory: Rogue River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 603 (Treaty with the Rogue River, 1853; Kappler header "Sept. 10, 1853. | 10 Stats., 1018. Ratified Apr. 12, 1854. | Proclaimed Feb. 5, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Rogue River peoples removed to Grand Ronde and Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Rogue River, 1854
+  signed: '1854-11-15'
+  statutes_at_large: 10 Stat. 1119
+  kappler:
+    volume: 2
+    page: 654
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-rogue-river-1854-0654
+  signatory: Rogue River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 654 (Treaty with the Rogue River, 1854; Kappler header "Nov. 15, 1854. | 10 Stats., 1119. | Ratified Mar. 3, 1855. | Proclaimed Apr. 7, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Rogue River peoples removed to Grand Ronde and Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chasta, etc., 1854
+  signed: '1854-11-18'
+  statutes_at_large: 10 Stat. 1122
+  kappler:
+    volume: 2
+    page: 655
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chasta-etc-1854-0655
+  signatory: Umpqua; Shasta; Scoton; Grave Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 655 (Treaty with the Chasta, etc., 1854; Kappler header "Nov. 18, 1854. | 10 Stats., 1122. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umpqua peoples at Grand Ronde. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Umpqua and Kalapuya, 1854
+  signed: '1854-11-29'
+  statutes_at_large: 10 Stat. 1125
+  kappler:
+    volume: 2
+    page: 657
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-umpqua-and-kalapuya-1854-0657
+  signatory: Kalapuya; Umpqua
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 657 (Treaty with the Umpqua and Kalapuya, 1854; Kappler header "Nov. 29, 1854. | 10 stats., 1125. | Ratified Mar. 3, 1855. | Proclaimed Mar. 30, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Kalapuya, Molala and Clackamas peoples form the Confederated Tribes of Grand Ronde The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kalapuya, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 10 Stat. 1143
+  kappler:
+    volume: 2
+    page: 665
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kalapuya-etc-1855-0665
+  signatory: Molala; Kalapuya; Chapen; Clackamas; Willamette Tumwater; Santam
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 665 (Treaty with the Kalapuya, etc., 1855; Kappler header "Jan. 22, 1855. | 10 Stats., 1143. | Ratified, Mar. 3, 1855. | Proclaimed, Apr. 10, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Kalapuya, Molala and Clackamas peoples form the Confederated Tribes of Grand Ronde The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Molala, 1855
+  signed: '1855-12-21'
+  statutes_at_large: 12 Stat. 981
+  kappler:
+    volume: 2
+    page: 740
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-molala-1855-0740
+  signatory: Molala; Umpqua; Kalapuya
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 740 (Treaty with the Molala, 1855; Kappler header "Dec. 21, 1855. | 12 Stat., 981. | Ratified Mar. 8, 1859. | Proclaimed Apr. 27, 1859.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Kalapuya, Molala and Clackamas peoples form the Confederated Tribes of Grand Ronde The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Grande Ronde Reserve, Oregon
+  method: executive-order
+  instrument: Executive indorsement of President Buchanan, June 30, 1857, 1 Kappler 886
+  date: '1857-06-30'
+  detail: First set aside
+  source: executive-order-1857-06-30-grand-ronde-reservation
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 886
+  note: 'The instrument reads: “withdrawn from sale and entry and set apart as a reservation for Indian purposes till otherwise ordered”. The 1904 print''s OCR gives the year as 1867; the earlier print and the signer (James Buchanan) show 1857. The order does not itself name Grande Ronde; Kappler''s heading "Grande Ronde Reserve" and the Secretary''s letter ("Willamette tribes, parties to treaty of January, 1855") identify it. Grand Ronde descends from the Treaties of Jan. 22, 1855 (Molala etc.) and Dec. 21, 1855.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

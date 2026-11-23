@@ -153,6 +153,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Snoqualmie Indian Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: Listed as "Snoqualmie Tribe".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Snoqualmie Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Snoqualmie Indian Tribe
@@ -234,52 +251,41 @@ dispute_resolution:
   forums:
   - kind: peacemaking
     name: Peacemaker Court
-    description: Part of the judicial branch alongside the Tribal Court and Court of Appeals, with original
-      jurisdiction over disputes involving minor civil matters between Snoqualmie tribal members and the
-      application of tribal customs and traditions to tribal life.
-    legal_basis: Snoqualmie Judiciary Act (Tribal Council Act 3.1; Snoqualmie Tribal Code Title 3, Chapter
-      1), Sections 4.0, 5.0(c), 7.4; enacted Feb. 2, 2002, as amended through June 27, 2013
+    description: Part of the judicial branch alongside the Tribal Court and Court of Appeals; the Act gives it 'such original and subject matter jurisdiction' over disputes involving minor civil matters between Snoqualmie Tribal members and the application of Tribal customs and traditions to Tribal life. Section 7.4 (Peacemaker Court) is 'Reserved.' and no procedures are stated.
+    legal_basis: Snoqualmie Judiciary Act (Tribal Council Act 3.1; Snoqualmie Tribal Code Title 3, Chapter 1), Sections 4.0, 5.0(c), 7.4; enacted Feb. 2, 2002, as amended through June 27, 2013
     case_types:
     - civil
     - other
-    relationship_to_court: One of three components of the judicial branch; the section on the Peacemaker
-      Court's operation (7.4) is marked Reserved in the copy reviewed.
+    relationship_to_court: One of three components of the judicial branch; the section on the Peacemaker Court's operation (7.4) is marked Reserved in the copy reviewed.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Snoqualmie-act3-1.pdf
     source: snoqualmie-judiciary-act-3-1
     confidence: medium
     verification: read-in-full
     as_of: '2013-08-07'
     locator: Sections 4.0, 5.0(c), 7.4
-    note: Read from OCR. Codified as amended Aug. 7, 2013. Section 7.4 is 'Reserved' in this copy, although
-      NARF's index describes it as providing authorization and appointment requirements. Whether the Peacemaker
-      Court is operating was not verified.
+    note: Read in full on 2026-11-23 from page images (Tribal Council Act 3.1, Act Establishing the Judiciary (Snoqualmie Judiciary Act, Tribal Code Title 3, Ch. 1); enacted Feb. 2, 2002 (Act 2-02); amended Mar. 20, 2008, May 23, 2013 and June 27, 2013 (Res. 129-2013); codified as amended Aug. 7, 2013). Read from OCR. Codified as amended Aug. 7, 2013. Section 7.4 is 'Reserved' in this copy, although NARF's index describes it as providing authorization and appointment requirements. Whether the Peacemaker Court is operating was not verified. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 507.
   provisions:
   - kind: arbitration
     title: 'Chapter 3: Arbitration Act'
-    citation: 'Chapter 3: Arbitration Act; SECTION 5.0 - ENFORCEABILITY OF AGREEMENTS TO ARBITRATE; SECTION
-      7.0 - STAY OF PROCEEDINGS IN TRIBAL COURT AND ORDER TO PROCEED WITH ARBITRATION; SECTION 11.0 -
-      ARBITRATION AWARD NOT APPEALABLE'
+    citation: 'Chapter 3: Arbitration Act; SECTION 5.0 - ENFORCEABILITY OF AGREEMENTS TO ARBITRATE; SECTION 7.0 - STAY OF PROCEEDINGS IN TRIBAL COURT AND ORDER TO PROCEED WITH ARBITRATION; SECTION 11.0 - ARBITRATION AWARD NOT APPEALABLE'
     link: https://narf.org/nill/codes/snoqualmie/index.html
     source: national-indian-law-library-code-codes-snoqualmie
     confidence: medium
     verification: title-only
     as_of: '2017'
     locator: 'Table of Contents, under ''TITLE III: SNOQUALMIE JUDICIAL CODE'''
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: June 2017); the provision itself was not read. The heading it falls under is
-      taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read.
-      Places searched: research/search-logs/dispute-resolution/s/snoqualmie-indian-tribe.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: the only online copy sits on a site that refused automated requests; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 508.'
   - kind: peacemaking
-    title: Judiciary Act 3.1, Section 7.4 – Peacemaker Court
-    citation: Judiciary Act 3.1, Section 7.4 – Peacemaker Court
+    title: Judiciary Act 3.1, Sections 4.0, 5.0(c) and 7.4 - Peacemaker Court
+    citation: Snoqualmie Tribal Council Act 3.1 (Act Establishing the Judiciary), Sections 4.0, 5.0(c), 7.4 (reserved)
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Snoqualmie-act3-1.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: snoqualmie-judiciary-act-3-1
     confidence: medium
     verification: read-in-full
-    as_of: '2025-09-29'
-    locator: Snoqualmie Indian Tribe of Washington
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and appointment requirements.'
+    as_of: '2013-08-07'
+    locator: Sections 4.0, 5.0(c); Section 7.4 (reserved)
+    note: 'Read in full on 2026-11-23 from page images (Tribal Council Act 3.1, Act Establishing the Judiciary (Snoqualmie Judiciary Act, Title 3 Ch. 1); enacted Feb. 2, 2002 (Act 2-02), amended 2008 and 2013, codified as amended Aug. 7, 2013). Read from the page images of Tribal Council Act 3.1 (pp. 1-4 and 11). NARF''s description (authorization and appointment requirements) is not supported: Section 7.4 reads ''Reserved.'' Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 509.'
+    summary: Names the Peacemaker Court as one of three parts of the Tribe's judiciary (with the Tribal Court and Court of Appeals) and gives it original and subject-matter jurisdiction over minor civil matters between Snoqualmie members and the application of Tribal customs and traditions to Tribal life. The section on composition of the Peacemaker Court (7.4) is reserved, so the Act does not say who serves, how a case is brought or whether outcomes are binding.
 gaming:
   compacts:
   - state: WA
@@ -475,6 +481,30 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: WA
+  county: King County
+  court: Superior Court for King County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: King County holds 100% of the land of Snoqualmie Reservation (Census GEOID 3860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Snoqualmie
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

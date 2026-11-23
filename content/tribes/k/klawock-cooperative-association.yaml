@@ -158,6 +158,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Klawock Cooperative Association
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: Listed as "Klawock Cooperative Association". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Mt. Edgecumbe Service Area
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: 'The source''s words: "Klawock Cooperative Association".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Klawock Cooperative Association of Alaska" among organizations under constitutions
@@ -192,6 +209,207 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Act of Congress of June 18, 1934
+  quote: and By-laws in accordance with, and by authority of, the Act of Congress
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Preamble
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Council
+  quote: The managing body shall be a Council composed of nine members elected by
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 9 members
+  quote: The managing body shall be a Council composed of nine members elected by
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by the Association by secret ballot
+  quote: shall be elected by the Association on the annual election date by secret
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years
+  quote: period of two years.
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: Association membership, adult members in good standing
+  quote: Regular meetings of the Association shall
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article V, Section 1
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: The President of the Council shall preside
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Klawock Cooperative Association
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its members
+  quote: election date by electing from within its membership a President and a
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article III, Section 2(c)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: period of two years.
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: Vice-President, and from within or without, a Secretary, a Treasurer, and
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article III, Section 2(c)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annual, second Tuesday in April
+  quote: The annual election date shall be the second Tuesday in
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article III, Section 2(b)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: 21 years of age and over, shall have the right to vote.
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article V, Section 3
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of adult members at a Secretarial election
+  quote: by a majority vote of the adult members of the Association voting at an
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article VIII
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: it approved by the Secretary of the Interior, shall be
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article VIII
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Seat vacated after 3 months' absence from regular meetings
+  quote: meetings of the Council for a period of three months without cause or excuse,
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article VI, Section 1(b)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of Association members
+  quote: Upon a petition signed by one-third of the members of the Association
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-04'
+  locator: Article VI, Section 1(c)
+  document_version:
+    document: klawock-cooperative-association-constitution
+    version: 1938-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -276,6 +494,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Klawock Cooperative Association".
       Facilities as machine-extracted from the report text (verify): Klawock Casino. Name extracted from
       the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-04-05
+    date: '2004-08-24'
+    link: https://www.nigc.gov?wpdmdl=8203&ind=8225
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-04-05
+    note: The list titles the action “Klawock Cooperative Association” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -301,6 +530,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Prince of Wales-Hyder Census Area
+  court: Superior Court for Prince of Wales-Hyder Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Prince of Wales-Hyder Census Area holds 100% of the land of Klawock ANVSA (Census GEOID 6765), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

@@ -160,6 +160,308 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Osage Nation
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "The Osage Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Osage Nation (2016)); the list does not say which service unit or programs the compact covers.'
+- area: Oklahoma City
+  service_unit: Wah-Zha-Zhi Health Center
+  source: indian-health-service-oklahoma-city-wah-zha-zhi-health-center
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "tribally managed health care facility on the Osage Nation Campus".'
+  operator: tribal
+governance:
+- aspect: form
+  value: Constitution ratified by majority vote of qualified voters
+  quote: This Constitution, when ratified by a majority vote of the qualified voters
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XXIII
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: governing-body
+  value: Osage Nation Congress
+  quote: The Osage Nation Congress shall be composed of twelve (12)
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: governing-body-size
+  value: 12 representatives
+  quote: The Osage Nation Congress shall be composed of twelve (12)
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: governing-body-selection
+  value: Initially elected at large
+  quote: representatives to be initially elected at large, by qualified Osage voters,
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Nation Congress shall be elected to four (4) year terms with elections of
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VI, Section 3
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: head-of-government
+  value: Principal Chief
+  quote: Principal Chief, who shall be titled
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VII, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: head-of-government
+  value: Principal Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: The Osage Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by qualified Osage voters at a general election
+  quote: The Principal Chief shall be elected by qualified Osage voters at a general
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VII, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: election to a term of four (4) years and shall serve until a successor has
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VII, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: other-officers
+  value: Assistant Principal Chief
+  quote: There shall be an Assistant Principal Chief, whose Osage title shall be
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VII, Section 6
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: elections
+  value: First Monday in June of every even-numbered year
+  quote: General Elections shall be held on the first Monday in June commencing
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XIII, Section 4
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: voting-age
+  value: '18'
+  quote: age of eighteen 18 years and are registered to vote as provided by Osage
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XIII, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: election-authority
+  value: Election Board created by Congress law
+  quote: The Osage Nation Congress shall enact a law creating an Election Board
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XIII, Section 3
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: branches
+  value: Legislative, Executive and Judicial
+  quote: 'three (3) separate branches: the Legislative, the Executive, and the'
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article V, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: separate and distinct and no person or collection of persons, charged with
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article V, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judiciary
+  value: Supreme Court, Trial Court and inferior courts
+  quote: Supreme Court, in a lower Trial Court and in such inferior Courts as the
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judicial-selection
+  value: Appointed by Principal Chief with advice and consent of Congress
+  quote: Trial Court, by and with the advice and consent of the Osage Nation
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 7
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judicial-term
+  value: 4-year terms, then retention vote
+  quote: After serving one term of four (4) years, each will stand for
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 7
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judicial-independence
+  value: Pay changes not effective until after next general election or appointment
+  quote: No increase or decrease in compensation shall take effect
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 10
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judicial-independence
+  value: Judicial officers may not hold other office or position of profit
+  quote: Judicial officers shall not hold any other office or position of profit under
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 4
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: amendment
+  value: Five-sixths of Congress, then 65% of electors
+  quote: Proposed amendments agreed to by five-sixths (5/6) of the
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XX, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: recall-and-removal
+  value: Removal by five-sixths of Congress after two-thirds motion
+  quote: Concurrence of five-sixths (5/6) of the members of the
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XII, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 15% of electorate
+  quote: number to at least fifteen (15) percent of the electorate.
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XI, Section 8
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: other
+  value: 'Three recognized villages: Grayhorse, Pawhuska, Hominy'
+  quote: 'The recognized villages of the Osage Nation are: (a) the Grayhorse Indian'
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XIV, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
 governing_documents:
 - kind: law-code
   title: The Osage Nation
@@ -389,6 +691,17 @@ gaming:
     locator: table row 179, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 179 lists the nation
       as "Osage Tribe". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: North Tulsa, Bartlesville, Osage County, OK
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2005-07-28'
+    link: https://www.nigc.gov?wpdmdl=2576&ind=2577
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Osage Nation, 2005-07-28
+    note: The list names the tribe as “Osage Nation”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -402,6 +715,197 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by the Census Bureau's land areas.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Osage Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: court-rules
+  title: Court Rules (Osage Nation Judicial Branch)
+  court: Osage Nation Judicial Branch
+  link: https://www.osagenation-nsn.gov/who-we-are/judicial-branch/court-rules
+  detail: Page lists Rules of Court including Chapter 1 General Provisions, Chapter 5 Civil Matters, Chapter 7 Civil Appeals (2021-03-18), Rules for Criminal Appeals, and Supreme Court operations (files dated 2017 to 2021).
+  source: osage-nation-court-rules-osage-nation
+  confidence: high
+  verification: read-in-full
+  locator: Court Rules page, document list
+  note: 'The source reads: “Rule of Court Chapter 5 Civil Matters”.'
+- kind: bar-admission
+  title: Rule of Court Regarding Osage Nation Bar Association
+  court: Osage Nation Judicial Branch
+  link: https://cdn.osagenation-nsn.gov/gov-site/files/departments/judicial/2019-0925_Judicial_Court-Rule-Re-ON-Bar.pdf
+  detail: Rule of court on the Osage Nation Bar Association, file dated 2019-09-25.
+  source: osage-nation-court-rules-osage-nation
+  confidence: high
+  verification: read-in-full
+  locator: Court Rules page, document list
+- kind: bar-admission
+  title: Osage Nation Bar Association Oath of Admission
+  court: Osage Nation Judicial Branch
+  link: https://cdn.osagenation-nsn.gov/gov-site/files/departments/judicial/2019-0925_Judicial_ON-Bar-Oath-of-Admission.pdf
+  detail: Oath of admission form, file dated 2019-09-25; an Affidavit for Enrollment form is also listed.
+  source: osage-nation-court-rules-osage-nation
+  confidence: high
+  verification: read-in-full
+  locator: Court Rules page, document list
+nearby_state_courts:
+- state: OK
+  county: Osage County
+  court: District Court for Osage County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Osage County holds 100% of the land of Osage Reservation (Census GEOID 2595), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Osage, 1808
+  signed: '1808-11-10'
+  statutes_at_large: 7 Stat. 107
+  kappler:
+    volume: 2
+    page: 95
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-osage-1808-0095
+  signatory: Great Osage; Little Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 95 (Treaty with the Osage, 1808; Kappler header "Nov. 10, 1808. | 7 Stat., 107. | Ratified Apr. 28, 1810.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Osage, 1815
+  signed: '1815-09-12'
+  statutes_at_large: 7 Stat. 133
+  kappler:
+    volume: 2
+    page: 119
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-osage-1815-0119
+  signatory: Great Osage; Little Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 119 (Treaty with the Osage, 1815; Kappler header "Sept. 12, 1815. | 7 Stat., 133. | Ratified Dec. 26, 1815.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Osage, 1818
+  signed: '1818-09-25'
+  statutes_at_large: 7 Stat. 183
+  kappler:
+    volume: 2
+    page: 167
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-osage-1818-0167
+  signatory: Great Osage; Little Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 167 (Treaty with the Osage, 1818; Kappler header "Sept. 25, 1818. | 7 Stat., 183. | Proclamation, Jan. 7, 1819.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Osage, 1822
+  signed: '1822-08-31'
+  statutes_at_large: 7 Stat. 222
+  kappler:
+    volume: 2
+    page: 201
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-osage-1822-0201
+  signatory: Great Osage; Little Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 201 (Treaty with the Osage, 1822; Kappler header "Aug. 31, 1822. | 7 Stat., 222. | Proclamation, Feb. 13, 1823.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Osage, 1825
+  signed: '1825-06-02'
+  statutes_at_large: 7 Stat. 240
+  kappler:
+    volume: 2
+    page: 217
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-osage-1825-0217
+  signatory: Great Osage; Little Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 217 (Treaty with the Osage, 1825; Kappler header "June 2, 1825. | 7 Stat., 240. | Proclamation, Dec. 30, 1825.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Great and Little Osage, 1825
+  signed: '1825-08-10'
+  statutes_at_large: 7 Stat. 268
+  kappler:
+    volume: 2
+    page: 246
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-great-and-little-osage-1825-0246
+  signatory: Great Osage; Little Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 246 (Treaty with the Great and Little Osage, 1825; Kappler header "Aug. 10, 1825. | 7 Stat., 268. | Proclamation, May 3, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche, etc., 1835
+  signed: '1835-08-24'
+  statutes_at_large: 7 Stat. 474
+  kappler:
+    volume: 2
+    page: 435
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-etc-1835-0435
+  signatory: Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 435 (Treaty with the Comanche, etc., 1835; Kappler header "Aug. 24, 1835. | 7 Stat., 474. | Proclamation, May 19, 1836.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kiowa, etc., 1837
+  signed: '1837-05-26'
+  statutes_at_large: 7 Stat. 533
+  kappler:
+    volume: 2
+    page: 489
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-etc-1837-0489
+  signatory: Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 489 (Treaty with the Kiowa, etc., 1837; Kappler header "May 26, 1837. | 7 Stat., 533. | Proclamation, Feb. 21, 1838.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Osage, 1839
+  signed: '1839-01-11'
+  statutes_at_large: 7 Stat. 576
+  kappler:
+    volume: 2
+    page: 525
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-osage-1839-0525
+  signatory: Great Osage; Little Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 525 (Treaty with the Osage, 1839; Kappler header "Jan. 11, 1839. | 7 Stat., 576. | Proclamation, Mar. 2, 1839")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Osage, 1865
+  signed: '1865-09-29'
+  statutes_at_large: 14 Stat. 687
+  kappler:
+    volume: 2
+    page: 878
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-osage-1865-0878
+  signatory: Great Osage; Little Osage
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 878 (Treaty with the Osage, 1865; Kappler header "Sept. 29, 1865. | 14 Stat., 687. | Ratified June 26, 1866. | Proclaimed, Jan. 21, 1867.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

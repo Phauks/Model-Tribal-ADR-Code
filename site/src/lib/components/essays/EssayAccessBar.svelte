@@ -3,7 +3,7 @@
 	// the essay, and to nobody else (Trevor, 2026-11-22: review and edit in
 	// place; draft status only for people with access). It says where the
 	// draft stands and holds the two choices: what to show (Published only
-	// or With drafts) and what to do (Reading or Editing). The page's state
+	// or With drafts) and what to do (Reading Commenting or Editing). The page's state
 	// comes from src/lib/server/essay-page-state.ts.
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
 
@@ -14,7 +14,7 @@
 	}: {
 		state: EssayPageState;
 		view: 'published' | 'drafts';
-		mode: 'reading' | 'editing';
+		mode: 'reading' | 'commenting' | 'editing';
 	} = $props();
 
 	const draftSummary = $derived.by(() => {
@@ -44,18 +44,18 @@
 	<div class="controls">
 		{#if state.draft}
 			<label class="small" for="essay-view">Show</label>
-			<select id="essay-view" bind:value={view} disabled={mode === 'editing'}>
+			<select id="essay-view" bind:value={view} disabled={mode !== 'reading'}>
 				<option value="published">Published only</option>
 				<option value="drafts">With drafts</option>
 			</select>
 		{/if}
-		{#if state.canEdit}
-			<label class="small" for="essay-mode">Mode</label>
-			<select id="essay-mode" bind:value={mode}>
-				<option value="reading">Reading</option>
-				<option value="editing">Editing</option>
-			</select>
-		{/if}
+		<label class="small" for="essay-mode">Mode</label>
+		<select id="essay-mode" bind:value={mode}>
+			<option value="reading">Reading</option>
+			<!-- Commenting: select words in the draft and comment on them; the text stays as the authors wrote it. -->
+			<option value="commenting">Commenting</option>
+			{#if state.canEdit}<option value="editing">Editing</option>{/if}
+		</select>
 		<a class="small" href="/workspace/essays/{state.identifier}">History</a>
 		{#if state.canPublish && state.draft && mode === 'reading'}
 			<form method="post" action="/workspace/essays/{state.identifier}?/publish">

@@ -177,6 +177,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tonkawa Tribe of Indians of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Tonkawa Tribe of Indians of Oklahoma".
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Tonkawa Tribe of Indians of Oklahoma" among organizations under constitutions
@@ -201,6 +209,159 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Oklahoma Indian Welfare Act of June 26, 1936
+  quote: Indian Welfare Act of June 26, 1936 (49 Stat. 1967).
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article V (approval)
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tonkawa Tribal Council
+  quote: The supreme governing body of the Tribe shall be
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article III
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All tribal members 21 or older
+  quote: members of the Tonkawa Tribe, both males and females 21 years of age or
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article III
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside at all meetings
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tonkawa Tribe of Indians of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Council
+  quote: vote of the Council members present being necessary to elect. Nominations
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article VI, Section 2
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two years, except as provided in Section 2 of Article V.
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article IV
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-President, Secretary-Treasurer
+  quote: Vice-President and Secretary-Treasurer. The term of office shall be for
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article IV
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years on the first Monday in April
+  quote: Monday in April of each second year thereafter.
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article VI, Section 1
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of adult members in a referendum
+  quote: vote of the adult members of the Tribe, and shall be effective if
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article X
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if approved by the Secretary of the Interior, shall be submitted to a referendum
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article X
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Council after a hearing
+  quote: a hearing, to remove him or her from office and proceed to elect a successor.
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article VIII
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Tribal Committee of the officers may act on behalf of the Tribe
+  quote: to transact business and otherwise speak or act on behalf of the Tribe
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-04-21'
+  locator: Article V, Section 1
+  document_version:
+    document: tonkawa-tribe-of-indians-of-oklahoma-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Tonkawa Tribe of Indians of Oklahoma - Constitution and By-Laws
@@ -376,6 +537,68 @@ gaming:
     locator: table row 289, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 289 lists the nation
       as "Tonkawa Tribe of Indians of Oklahoma".
+  enforcement_actions:
+  - kinds:
+    - closure-order
+    tracking_number: CO 06-01
+    date: '2006-02-02'
+    link: https://www.nigc.gov?wpdmdl=8151&ind=8161
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO 06-01
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-06
+    date: '2006-02-02'
+    link: https://www.nigc.gov?wpdmdl=8152&ind=8162
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-06
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - pre-opening-agreement
+    - settlement-agreement
+    tracking_number: POA/SA-06-01
+    date: '2006-07-05'
+    link: https://www.nigc.gov?wpdmdl=8126&ind=8137
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA/SA-06-01
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as POA/SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-06
+    date: '2009-02-12'
+    link: https://www.nigc.gov?wpdmdl=7921&ind=7932
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-06
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-06A(replacing NOV-09-06)
+    date: '2009-02-18'
+    link: https://www.nigc.gov?wpdmdl=7920&ind=7931
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-06A(replacing NOV-09-06)
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-06
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7901&ind=7923
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-06
+    note: The list titles the action “Tonkawa Indian Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -389,6 +612,51 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Tonakawa Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+nearby_state_courts:
+- state: OK
+  county: Kay County
+  court: District Court for Kay County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Kay County holds 100% of the land of Tonkawa OTSA (Census GEOID 5860), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., 1846
+  signed: '1846-05-15'
+  statutes_at_large: 9 Stat. 844
+  kappler:
+    volume: 2
+    page: 554
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-aionai-anadarko-caddo-etc-1846-0554
+  signatory: Tonkawa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 554 (Treaty with the Comanche, Aionai, Anadarko, Caddo, etc., 1846; Kappler header "May 15, 1846. | 9 Stat., 844. | Proclamation, Mar. 8, 1847.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

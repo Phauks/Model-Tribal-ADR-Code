@@ -12,6 +12,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
+import type { ReadingLinks } from '../reading-links.ts';
 import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 import { parseCsv } from '../csv.ts';
@@ -83,11 +84,20 @@ export interface SourceRecord {
 		title?: string;
 		author?: CitationName[];
 		'container-title'?: string;
+		/** A case's court, and where it is reported. */
+		authority?: string;
+		volume?: string;
+		page?: string;
+		number?: string;
 		issued?: { 'date-parts'?: number[][] };
 		URL?: string;
 	};
 	original_link?: string;
+	/** The nations a source is about, by profile id. */
+	tribes?: string[];
 	archives?: { link?: string; url?: string; captured?: string }[];
+	/** Other places to read a case or law (src/lib/reading-links.ts). */
+	reading_links?: ReadingLinks;
 }
 
 let sourceCache: Map<string, SourceRecord> | undefined;
@@ -188,6 +198,10 @@ export interface NationRecord {
 		bureau_of_indian_affairs_region?: string;
 		bureau_of_indian_affairs_agency?: string;
 	};
+	indian_health_service?: (CitedFact & { area: string; service_unit?: string; operator?: string })[];
+	government_structure?: (CitedFact & { kind: string; detail?: string })[];
+	/** How the government is set up, one plain fact per item (decision record 0042). */
+	governance?: (CitedFact & { aspect: string; value: string; quote?: string })[];
 	governing_documents?: (CitedFact & { kind: string; title?: string; link?: string; year?: string | number })[];
 	justice_institutions?: (CitedFact & {
 		kind: string;
@@ -198,15 +212,44 @@ export interface NationRecord {
 	})[];
 	dispute_resolution_law?: string[];
 	jurisdiction?: (CitedFact & { topic: string; value?: string; detail?: string })[];
+	jurisdiction_agreements?: (CitedFact & {
+		kind: string;
+		other_party: string;
+		agreement?: string;
+		state?: string;
+		date?: string;
+		status?: string;
+		detail?: string;
+	})[];
+	/** What a person needs to use the nation's courts: admission, rules, fees, forms, defenders and legal aid. */
+	court_practice?: (CitedFact & { kind: string; title: string; court?: string; link?: string; detail?: string })[];
+	/** The state trial court for each county the nation's Census area lies in. */
+	nearby_state_courts?: (CitedFact & { state: string; county: string; court: string; link?: string })[];
+	treaties?: (CitedFact & {
+		title: string;
+		signed: string;
+		statutes_at_large?: string;
+		kappler?: { volume?: number; page?: number; link?: string };
+		signatory?: string;
+	})[];
+	land_establishment?: (CitedFact & {
+		land_area: string;
+		method: string;
+		instrument?: string;
+		date?: string;
+		detail?: string;
+	})[];
 	memberships?: (CitedFact & { organization: string })[];
 	dispute_resolution?: {
 		forums?: (CitedFact & { kind: string; name?: string; link?: string })[];
 		provisions?: (CitedFact & { kind: string; title?: string })[];
 	};
 	gaming?: {
-		compacts?: CitedFact[];
+		compacts?: (CitedFact & { state: string; status: string })[];
 		ordinances?: CitedFact[];
 		operates_gaming?: CitedFact & { value: boolean };
+		indian_lands_opinions?: (CitedFact & { parcel: string; legal_theory?: string; accepted?: boolean; date: string; link?: string })[];
+		enforcement_actions?: (CitedFact & { kinds: string[]; tracking_number: string; date: string; link?: string })[];
 	};
 	review: { status: string; last_verified?: string; note?: string };
 	sensitivity?: { restricted?: boolean; tribal_review_required?: boolean };
@@ -378,6 +421,17 @@ export function nationNamesAndKinds(): Map<string, { name: string; entityType: s
 		found.set(record.id, { name: record.names.official, entityType: record.entity_type });
 	}
 	return found;
+}
+
+/** Every name of every listed nation: official, self-designations and former names. */
+export function nationNameVariants(): string[] {
+	const names: string[] = [];
+	for (const file of yamlFilesUnder('content/tribes')) {
+		const record = readYaml<NationRecord>(file);
+		if (record.sensitivity?.restricted) continue;
+		names.push(record.names.official, ...(record.names.self_designation ?? []).map((entry) => entry.name), ...(record.names.former ?? []).map((entry) => entry.name));
+	}
+	return names;
 }
 
 /** Glossary records with the file each comes from. Used by vite.config.ts. */

@@ -161,6 +161,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Shoshone-Paiute Tribe of the Duck Valley Reservation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Duck Valley Shoshone-Paiute Tribes (1995)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada" among organizations
@@ -198,6 +206,207 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and bylaws under the Act of Congress of June 18, 1934
+  quote: accordance with, and by the authority of the act of Congress of June 18,
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Preamble
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Business Council
+  quote: Tribes shall consist of a council known as the business council.
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article III, Section 1
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: '7 members: a chairman and six councilmen'
+  quote: of a chairman and six councilmen duly elected to serve 3 years. A chairman
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article III, Section 2
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: SEC. 2. All elections shall be by secret ballot.
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article IV, Section 2
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: shall be elected every 3 years, and two councilmen shall be elected each
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article III, Section 2
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: of a chairman and six councilmen duly elected to serve 3 years. A chairman
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article III, Section 2
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected every 3 years
+  quote: shall be elected every 3 years,
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article III, Section 2
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: shall be elected every 3 years,
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article III, Section 2
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice chairman, Secretary, Treasurer
+  quote: (1) a vice chairman, and from within or without, (2) a
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article III, Section 3
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: 21 years of age or over who have maintained legal residence on the reservation
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election board appointed by the business council
+  quote: board appointed by the business council.
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article IV, Section 5
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Reservation court established by council ordinance
+  quote: and order and the administration of justice by establishing a reservation
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article VI, Section 1(k)
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: at an election called for that purpose by the Secretary of the Interior,
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article X, Section 1
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: have been approved by the Secretary of the Interior.
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article X, Section 1
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by four affirmative votes of the business council
+  quote: votes expel any member for neglect of duty or gross misconduct.
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article V, Section 2
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: a petition signed by one-third of the eligible voters of the Shoshone-Paiute
+  source: university-of-oklahoma-indian-reorganization-act-duckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-03'
+  locator: Article V, Section 3
+  document_version:
+    document: shoshone-paiute-tribes-of-the-duck-valley-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada - Law and Order Code
@@ -307,10 +516,7 @@ dispute_resolution:
     verification: title-only
     as_of: '2012'
     locator: Table of Contents, under 'WATER CODE (2012)'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Law
-      and Order Code Dated: 1970 Water Code Dated: 2012); the provision itself was not read. The heading
-      it falls under is taken from the page layout and may be imprecise. Searched for the text on 2026-11-22
-      and not read. Places searched: research/search-logs/dispute-resolution/s/shoshone-paiute-tribes-of-the-duck-valley-reservation.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 495.'
 gaming:
   compacts:
   - state: NV
@@ -380,6 +586,44 @@ jurisdiction:
     images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has
     no text layer for the table); verification level unchanged because the name was not matched word for
     word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: The 1975 retrocession notice lists only the areas over which Nevada had acquired jurisdiction; Fallon, Walker River, Duck Valley, Fort McDermitt, Moapa, Las Vegas, Summit Lake, Yerington, Fort Mojave and Timbisha lands are not on it, and the notice does not say why. (40 Fed. Reg. 27,501.)
+  source: federal-register-1975-nevada-retrocession
+  confidence: low
+  verification: inferred
+  locator: 40 Fed. Reg. at 27,501
+  note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+nearby_state_courts:
+- state: ID
+  county: Owyhee County
+  court: District Court for Owyhee County
+  link: https://isc.idaho.gov/district-courts
+  source: state-trial-court-directory-id
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Owyhee County holds 50% of the land of Duck Valley Reservation (Census GEOID 0965), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NV
+  county: Elko County
+  court: District Court for Elko County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Elko County holds 50% of the land of Duck Valley Reservation (Census GEOID 0965), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Duck Valley Reserve, Idaho and Nevada
+  method: executive-order
+  instrument: Exec. Order of Apr. 16, 1877, 1 Kappler 866
+  date: '1877-04-16'
+  detail: First set aside
+  source: executive-order-1877-04-16-duck-valley-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 866
+  note: 'The instrument reads: “And the above-named tract of land is hereby set apart as a reservation for the Western Shoshone Indians”. Order is printed under the Nevada heading "Duck Valley Reserve"; enlarged by Exec. Order of May 4, 1886 (adding lands for the Paddy Cap band of Pi-Utes).'
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

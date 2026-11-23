@@ -173,6 +173,203 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pauma Band of Luiseno Mission Indians of the Pauma & Yuima Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Pauma Band of Luiseno Mission Indians of the Pauma & Yuima Reservation, California".
+governance:
+- aspect: form
+  value: Articles of Association
+  quote: California, hereinafter referred to as the Band, do hereby adopt these
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Preamble
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: governing-body
+  value: General Council
+  quote: The governing body of tha Band shall be the
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 3
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: governing-body
+  value: Business Committee
+  quote: the General Council a Business Committee consisting of a Chairman, a
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 3
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: governing-body-size
+  value: 4 members
+  quote: Vice-Chairman, a Secretary -Treasurer, and one (1) adult member of the
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 3
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: All elections of officers shall be by secret ballot.
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 4
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: eerve a term of two (Z) years or until their successors are duly
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 3
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: general-council
+  value: All adult members 21 or older
+  quote: (21) years of age or older. In addition, there shall be elected from
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 3
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: head-of-government
+  value: Chairman
+  quote: He shall preside at all meetings of the General
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 8, Duties of Officers, A
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pauma Band of Luiseno Mission Indians of the Pauma & Yuima Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: eerve a term of two (Z) years or until their successors are duly
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 3
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer, one adult member
+  quote: Vice-Chairman, a Secretary -Treasurer, and one (1) adult member of the
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 3
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: voting-age
+  value: '21'
+  quote: Any enrolled member of the Band, twenty-one (21)
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 4
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: election-authority
+  value: Election committees established by ordinance
+  quote: shall be conducted in accordance with an ordinance or
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 4
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: amendment
+  value: Majority vote of General Council, then Commissioner approval
+  quote: majority vote of the General Council and such amendment ohall be in effect
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 10, Amendment
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the General Council
+  quote: The General Council may, by majority vote,
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 5, Vacancies and Recall
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of voters
+  quote: Upon receipt of a petition signed by at least 30 per cent of the
+  source: constitution-pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-1966-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1966-03-17'
+  locator: Article 5, Vacancies and Recall
+  document_version:
+    document: pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation-constitution
+    version: 1966-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan holds the 1966 Articles plus a later Commissioner approval letter and a Band resolution interpreting Articles 2, 3 and 4; the approval date of the Articles is not legible.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -373,6 +570,27 @@ gaming:
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Pauma Band of Luiseno Mission Indians
       of the Pauma - Yuima Reservation". Name extracted from the PDF by the page-fetch tool and matched
       to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-17
+    date: '2008-08-21'
+    link: https://www.nigc.gov?wpdmdl=8001&ind=8012
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-17
+    note: The list titles the action “Pauma Band of Mission Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-17
+    date: '2008-09-18'
+    link: https://www.nigc.gov?wpdmdl=7982&ind=7993
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-17
+    note: The list titles the action “Pauma Band of Mission Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -399,6 +617,57 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+court_practice:
+- kind: bar-admission
+  title: Southern California Tribal Bar Association admission application
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/attorneys
+  detail: Attorneys page offers Southern California Tribal Bar Association information, a membership directory, an admission application and a renewal application.
+  source: intertribal-court-of-southern-bar-admission
+  confidence: high
+  verification: read-in-full
+  locator: Southern California Tribal Bar Association Information
+  note: 'The source reads: “Southern California Tribal Bar Association Admission Application”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.'
+- kind: forms
+  title: Forms (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/forms
+  detail: Forms page includes an Application for Filing Fee Waiver or Deferral and a Document Assistance Form.
+  source: intertribal-court-of-southern-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms
+  note: 'The source reads: “Application for Filing Fee Waiver or Deferral”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.'
+- kind: court-rules
+  title: Code of Civil Procedure and Rules of Court
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Rules and Laws page links the Code of Civil Procedure and Rules of Court, a Fee Schedule and the Inter-Governmental Agreement.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: read-in-full
+  locator: Rules and Laws
+  note: The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s.
+- kind: filing-fees
+  title: Fee Schedule (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Fee Schedule PDF linked on the Rules and Laws page.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: title-only
+  locator: Rules and Laws
+  note: 'The source reads: “Fee Schedule”. The nation’s court is the Intertribal Court of Southern California; the page is the intertribal court’s own site, not the nation’s. PDF not opened.'
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of Pauma and Yuima Reservation (Census GEOID 2715), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

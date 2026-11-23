@@ -1,7 +1,7 @@
 profile: content/tribes/w/wampanoag-tribe-of-gay-head.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -26,3 +26,43 @@ searches:
   outcome: not-found
   reason: The peacemaking.narf.org list has no Gay Head entry (closest is Mashpee Wampanoag); NILL links
     no text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/94bd2a5bb3277e6040cd.txt
+  query: Goal of peacemaking towards a settlement.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/w/wampanoag-tribe-of-gay-head.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/wampanoag-tribe-of-gay-head/82f6e93b2d222bc2.txt
+  query: Goal of peacemaking towards a settlement.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/w/wampanoag-tribe-of-gay-head.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Wampanoag Gay Head 1-7-4 Goal of peacemaking
+  query: same
+  outcome: found
+  reason: NILL pages only.
+  records:
+  - content/tribes/w/wampanoag-tribe-of-gay-head.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/wampanoaggayhead/
+  query: toc
+  outcome: not-found
+  reason: No text; tribe withheld posting.
+  records:
+  - content/tribes/w/wampanoag-tribe-of-gay-head.yaml#dispute_resolution.provisions

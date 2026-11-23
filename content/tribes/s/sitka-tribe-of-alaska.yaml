@@ -186,6 +186,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sitka Tribe of Alaska
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: Listed as "Sitka Tribe of Alaska". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Mt. Edgecumbe Service Area
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: 'The source''s words: "Sitka Tribe of Alaska".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Sitka Community Association of Alaska" among organizations under constitutions
@@ -211,6 +228,207 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Indian Reorganization Act of June 18, 1934
+  quote: and by authority of, the Act of Congress of June 18, 1934 (48 Stat. 984),
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Preamble
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Council composed of the President and six other members
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: '7 members: President and six other members'
+  quote: There shall be a Council composed of the President and six other members
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Council shall be elected by secret ballot on the first Thursday after the
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years (President 1 year)
+  quote: shall be elected to serve for a term of two years.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 3(c)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: The Association, all adult members
+  quote: age of 21 years shall have the right to vote.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article V, Section 3
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: There shall be a Council composed of the President and six other members
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sitka Tribe of Alaska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected annually
+  quote: elected annually and shall serve for a term of one year.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: elected annually and shall serve for a term of one year.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice President, Secretary, Treasurer
+  quote: a Vice President, and from within or without, a Secretary , a Treasurer,
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 2(c)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually, first Thursday after the third Monday in April
+  quote: third Monday in April.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: age of 21 years shall have the right to vote.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article V, Section 3
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of adult members at an election called by the Secretary of the Interior
+  quote: by a majority vote of the adult members of the Association voting at an
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article VIII
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if approved by the Secretary of the Interior, shall be effective when ratified
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article VIII
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Seat declared vacant by the Council for three months of absence
+  quote: without cause of excuse, may have his seat declared vacant by the Council
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article VI, Section 1(b)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of adult members
+  quote: Upon a petition signed by one-third of
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article VI, Section 1(c)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Sitka Tribe of Alaska
@@ -308,9 +526,7 @@ dispute_resolution:
   forums:
   - kind: customary-dispute-resolution
     name: Traditional Tlingit law in children's cases
-    description: Tribal Court judges may apply traditional Tlingit law by referring to written or oral
-      accounts of traditional Tlingit life, interviewing Elders or Culture Bearers, or calling on the
-      Haa Dachxanx’i Yan Jeeis (For Our Grandchildren) Committee or the Tribe's Cultural Resources Committee.
+    description: Tribal Court judges may apply traditional Tlingit law by referring to written or oral accounts of traditional Tlingit life, interviewing Elders or Culture Bearers, or calling on the Haa Dachxanx’i Yan Jeeis (For Our Grandchildren) Committee or the Tribe's Cultural Resources Committee.
     own_term:
       name: Haa Dachxanx’i Yan Jeeis
       language_tag: tli
@@ -320,14 +536,14 @@ dispute_resolution:
     - child-welfare
     - family
     participation: court-referred
-    relationship_to_court: Traditional sources may give persuasive recommendations, but only the Presiding
-      Judge enters a final order or judgment.
+    relationship_to_court: Traditional sources may give persuasive recommendations, but only the Presiding Judge enters a final order or judgment.
     link: https://sitkatribe.org/our-government/governance-documents/
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
     verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/traditional-tlingit-law-in-childrens-cases/
+    note: 'Not confirmed from the nation''s own text on 2026-11-23: a copy was seen online only through a fetch-and-summarize tool, which does not count as reading; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 499.'
   provisions:
   - kind: other
     title: Problem Solving (alternative and traditional tools for dispute resolution)
@@ -365,6 +581,49 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Alaska Department of Health and Social Services
+  agreement: Title IV-E tribal provider agreement (administration and training costs, no maintenance funding)
+  state: AK
+  date: '2002-04-01'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.A, Alaska
+  note: 'The source reads: “Sitka Tribe of Alaska is a federally recognized tribe with an agreement executed on April”. Part of the eleven identical Alaska form agreements. The state agency is inferred. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: forms
+  title: Sitka Tribal Court forms (Tribal Court page)
+  court: Sitka Tribe of Alaska Tribal Court
+  link: https://sitkatribe.org/our-services/tribal-court/
+  detail: Page lists downloadable forms including Petition to use Tribal Court, Tribal Divorce Complaint, Tribal Youth Custody Petition, adoption petitions and consents, Petition for Adult Change of Name, Notice to the Court and Request to Modify Guardianship.
+  source: sitka-tribe-of-alaska-tribal-court-court-rules-forms
+  confidence: high
+  verification: title-only
+  locator: Adoption of a Tribal Youth and other form lists
+  note: 'The source reads: “Petition to use Tribal Court”. Form PDFs not opened.'
+- kind: court-rules
+  title: Code Governing Tribal Court Rules and Civil Procedure
+  court: Sitka Tribe of Alaska Tribal Court
+  link: https://sitkatribe.org/our-government/law-and-policy/
+  detail: Page says the Tribal Council approved a Code Governing Tribal Court Rules and Civil Procedure; the Tribal Law page is linked from the court page.
+  source: sitka-tribe-of-alaska-tribal-court-court-rules-forms
+  confidence: high
+  verification: title-only
+  locator: Tribal court history paragraph
+  note: Linked Tribal Law page not opened; the court page only mentions the code.
+nearby_state_courts:
+- state: AK
+  county: Sitka City and Borough
+  court: Superior Court for Sitka City and Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Sitka City and Borough holds 100% of the land of Sitka ANVSA (Census GEOID 7475), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

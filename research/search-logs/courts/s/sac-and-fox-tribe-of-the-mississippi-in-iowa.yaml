@@ -1,7 +1,7 @@
 profile: content/tribes/s/sac-and-fox-tribe-of-the-mississippi-in-iowa.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -218,3 +218,24 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: error
   reason: Connection reset by peer on fetch, so the court's site could not be read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: court-website
+  address: https://www.meskwakicourt.org/tribal-code-%26-court-rules
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The court site answered on 2026-11-23; its Tribal Code and Court Rules page links Title 5, Dispute
+    Resolution, which sets up a Community Panel that advises the court on the Tribe's customs and traditions
+    (Secs. 5-2501 to 5-2506) (filed as tribal-law/meskwaki-tribal-code-title-5-dispute-resolution.pdf).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261016222052/https://www.meskwaki.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-10-16 ("Meskwaki Nation | Sac &amp; Fox Tribe of the Mississippi
+    in Iowa") shows the nation's court.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.meskwakicourt.org/
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

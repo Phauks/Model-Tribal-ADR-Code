@@ -193,6 +193,287 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Choctaw Nation of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "The Choctaw Nation of Oklahoma". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Choctaw Nation (1995)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution, pursuant to inherent tribal sovereignty
+  quote: do hereby ordain and establish, pursuant to the inherent tribal sovereignty of the Choctaw Nation
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Preamble
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The legislative authority of the Choctaw Nation shall be vested in the Tribal Council.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VIII, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: governing-body-size
+  value: 12 members
+  quote: The Tribal Council shall consist of twelve (12) members, one (1) each to be elected from
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VIII, Section 2
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: governing-body-selection
+  value: Elected by district
+  quote: residents of the district from which they were elected during the tenure of their office.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VIII, Section 3
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Thereafter, terms of office for Council positions shall be for a term of four (4) years and
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VIII, Section 4
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: head-of-government
+  value: Chief
+  quote: The Chief shall perform all duties appertaining to the office of Chief Executive.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VII, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: The Choctaw Nation of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: The Chief shall be elected for a term of four (4) years which shall commence at twelve
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VI, Section 6
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Chief shall be elected for a term of four (4) years which shall commence at twelve
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article VI, Section 6
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: other-officers
+  value: Speaker, Secretary
+  quote: Officers to be elected are a Speaker, a Secretary and such other
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article IX, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: voting-age
+  value: '18'
+  quote: All members eighteen (18) years of age and over shall be deemed qualified electors
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article III, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: election-authority
+  value: Election board
+  quote: The Council shall create an election board whose members shall be appointed by the Chief with
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article IX, Section 5
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: branches
+  value: Executive, Legislative and Judicial
+  quote: 'distinct departments: Executive, Legislative and Judicial. No person or collection of persons,'
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article V, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: being one of those departments, shall exercise any power properly attached to either of the others;
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article V, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The judicial authority of the Choctaw Nation shall be vested in a Tribal Court which
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XII, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: judicial-selection
+  value: Appointed by the Chief with advice and consent of the Tribal Council
+  quote: shall consist of a three (3) member Court appointed by the Chief with the advice and consent of
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XII, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: judicial-term
+  value: 3 years
+  quote: Tribal Court members shall be appointed for a term of three (3) years; provided that
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XII, Section 3
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: judicial-independence
+  value: Judges not subject to removal except as provided in Article XV, Section 1
+  quote: Judges shall not be subject to removal except as provided in Article XV, Section 1.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XII, Section 4
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: amendment
+  value: Adoption by 51% of qualified voters voting in last Chief's election
+  quote: Adoption by not less than fifty-one percent (51%) of the total number of qualified voters
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XVIII, Section 2
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: Amendments shall be effective upon approval by the Secretary of the Interior.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XVIII, Section 2
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: recall-and-removal
+  value: Impeachment by 8 Tribal Council votes
+  quote: Eight (8) votes shall be required to impeach the official.
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XV, Section 1(g)
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: recall-and-removal
+  value: Recall election, 51% of district voters
+  quote: Recall from office shall require a supporting vote for at least fifty-one percent (51%)
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XV, Section 2(b)
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
+- aspect: other
+  value: Initiative by petition of 30% of registered voters
+  quote: signed by at least thirty percent (30%) of the registered voters. Each such petition shall contain
+  source: constitution-the-choctaw-nation-of-oklahoma-1983-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1983-07-09'
+  locator: Article XVI, Section 1
+  document_version:
+    document: the-choctaw-nation-of-oklahoma-constitution
+    version: 1983-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Historical Data note records 2019 amendments to Art. X Sec. 4 and Art. XIV Sec. 3; the extract otherwise reads as the 1983 text.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -356,23 +637,22 @@ dispute_resolution:
       as_of is the NARF posting year; enactment date not shown. Confidence high because the same file
       is published on the nation's own website (upload date used as as_of).
   training_programs:
-  - name: Advanced peacemaker training for community members, tribal officials and staff (September 19-20,
-      2017, Durant)
-    provider: Indigenous Peacemaking Initiative (Native American Rights Fund), with the Choctaw Nation
-      of Oklahoma
+  - name: Advanced peacemaker training for community members, tribal officials and staff (September 19-20, 2017, Durant)
+    provider: Indigenous Peacemaking Initiative (Native American Rights Fund), with the Choctaw Nation of Oklahoma
     link: https://peacemaking.narf.org/2017/08/training-choctaw-nation-of-oklahoma-september-2017/
     source: narf-ipi-news-choctaw-training-2017
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: 2017-09
-    note: Read from excerpts on NARF news listing pages.
+    note: Read in full on 2026-11-23 (NARF IPI news post, Training - Choctaw Nation of Oklahoma September 2017 (URL path 2017/08)). Confirmed from the full NARF news post, which is an advance announcement of the training; it covers the Nation's own Peacemaking Act and uses materials made for the Nation. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 559.
   - name: Peacemaking training for the Choctaw Nation Judicial Branch (October 3-4, 2022, Durant)
     provider: Indigenous Peacemaking Initiative (Native American Rights Fund)
     link: https://peacemaking.narf.org/2022/10/peacemaking-training-for-the-choctaw-nation/
     source: narf-ipi-news-choctaw-training-2022
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: 2022-10
+    note: Read in full on 2026-11-23 (NARF IPI news post, Peacemaking Training for the Choctaw Nation (URL path 2022/10)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 560.
   provisions:
   - kind: other
     title: Section 1-4-504. Alternative Dispute Resolution
@@ -407,14 +687,13 @@ dispute_resolution:
     title: Choctaw Nation Peacemaking Act
     citation: Choctaw Nation Peacemaking Act
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Choctaw-Nation-Peacemaking-Act.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: choctaw-nation-peacemaking-act
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Choctaw Nation of Oklahoma
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and purpose, qualifications for peacemakers, permits the use of tradition and customs, as well as
-      tribal customary law, procedures, and inadmissibility of statements in peacemaking.'
+    locator: Sections 1-18 (purpose s.2; qualifications s.3; jurisdiction and limits ss.4-5; customs s.7; request and referral ss.8-10; procedure s.11; enforcement s.13; inadmissibility s.14)
+    note: Read in full on 2026-11-23 (Choctaw Nation Peacemaking Act (7-page copy); no enactment date printed). Read from the Choctaw Nation Peacemaking Act (7-page copy, no enactment date printed), the nation's own text. Section 8 is headed 'Use of tribal traditions and customary law' but its text is the written-request procedure; customs and traditions are addressed in section 7. Statements made in peacemaking are treated as settlement negotiations and inadmissible in court (s.14). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 558.
+    summary: Authorizes the Choctaw Nation District Court to use peacemakers, a court division operating under Choctaw customs and traditions, for cases referred when all parties consent, on a party's request or the court's own motion. The peacemaker cannot force a settlement or adjudicate; a signed agreement is endorsed by the District Court as a final order enforceable like its other orders, and an unresolved case goes back to the court.
 gaming:
   compacts:
   - state: OK
@@ -554,6 +833,18 @@ gaming:
       Casino Too - McAlester Travel Plaza; Choctaw Casino - Idabel; Choctaw Casino - Pocola; Choctaw Casino
       - Wilburton Travel Plaza. Name extracted from the PDF by the page-fetch tool and matched to the
       roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    - closure-order
+    tracking_number: NOV/CO-99-04
+    date: '1999-07-08'
+    link: https://www.nigc.gov?wpdmdl=1953&ind=1954
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/CO-99-04
+    note: The list titles the action “Choctaw Nation of Oklahoma” and gives its type as NOV/CO.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -578,6 +869,361 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Choctaw Nation in Oklahoma". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Foster Care Agreement Between Choctaw and the Oklahoma Department of Human Services
+  state: OK
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for OK
+  note: 'The source reads: “Foster Care Agreement Between Choctaw and the Oklahoma Department of Human Services”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Choctaw Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: bar-admission
+  title: Choctaw Nation Legal Services | Choctaw Nation Bar Association
+  court: Choctaw Nation of Oklahoma Judicial Branch
+  link: https://www.choctawnationcourt.com/bar-association/
+  detail: Members of the Bar Association of the Choctaw Nation are licensed to practice before all courts of the Choctaw Nation. Page links Bar Association Rules, Code of Ethical Conduct and Judicial Cannon (PDF, 2019 upload), a Bar Association Application Form (PDF, 2022 upload), and a Contract for Court Appointed Attorney. No fee amount stated on the page.
+  source: choctaw-nation-of-oklahoma-judicial-branch-choctaw-nation-legal-servic
+  confidence: high
+  verification: read-in-full
+  locator: Requirements to Join the Choctaw Nation Bar Association
+  note: 'The source reads: “Members of the Bar Association of the Choctaw Nation of Oklahoma are licensed to practice law before all courts of the Choctaw Nation.”.'
+- kind: public-defender
+  title: Office of the Choctaw Nation Public Defender
+  court: Choctaw Nation of Oklahoma Judicial Branch
+  link: https://www.choctawnationcourt.com/public-defender-office/
+  detail: The Public Defender's Office represents people who financially qualify, in felony, misdemeanor and juvenile delinquency matters; applicants file an Application for Court Appointed Counsel with the Court Clerk at least 15 days before the first hearing.
+  source: choctaw-nation-of-oklahoma-judicial-branch-choctaw-nation-oklahoma-cou
+  confidence: high
+  verification: read-in-full
+  locator: Office of the Choctaw Nation Public Defender
+  note: 'The source reads: “The Choctaw Nation of Oklahoma Public Defender’s Office represents individuals that financially qualify”.'
+- kind: forms
+  title: Tribal Forms
+  court: Choctaw Nation of Oklahoma Judicial Branch
+  link: https://www.choctawnationcourt.com/tribal-forms/
+  detail: Downloadable forms include divorce, paternity, minor and adult guardianship, termination of guardianship, name change related packets, protective order, marriage license application, worker's injury claim packet, and the Choctaw bar application.
+  source: choctaw-nation-of-oklahoma-judicial-branch-tribal-forms-choctaw-nation
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Forms
+  note: 'The source reads: “Select a PDF”.'
+- kind: legal-aid
+  title: Tribal Forms (Court Advocate assistance)
+  court: Choctaw Nation of Oklahoma Judicial Branch
+  link: https://www.choctawnationcourt.com/tribal-forms/
+  detail: A Court Advocate gives legal assistance to enrolled Choctaw Nation members only, including forms for divorce, paternity, small claims, name change and guardianship cases; not criminal, juvenile or adoption cases.
+  source: choctaw-nation-of-oklahoma-judicial-branch-tribal-forms-choctaw-nation
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Forms, notice
+  note: 'The source reads: “Court Advocate can provide legal assistance to ENROLLED CHOCTAW NATION MEMBERS only”. Tribal court advocate office, not a Legal Services Corporation program.'
+nearby_state_courts:
+- state: OK
+  county: McCurtain County
+  court: District Court for McCurtain County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: McCurtain County holds 17% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Le Flore County
+  court: District Court for Le Flore County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Le Flore County holds 15% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Pushmataha County
+  court: District Court for Pushmataha County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pushmataha County holds 13% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Pittsburg County
+  court: District Court for Pittsburg County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pittsburg County holds 12% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Atoka County
+  court: District Court for Atoka County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Atoka County holds 9% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Choctaw County
+  court: District Court for Choctaw County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Choctaw County holds 7% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Latimer County
+  court: District Court for Latimer County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Latimer County holds 7% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Bryan County
+  court: District Court for Bryan County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Bryan County holds 6% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Haskell County
+  court: District Court for Haskell County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Haskell County holds 5% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Coal County
+  court: District Court for Coal County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Coal County holds 4% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Hughes County
+  court: District Court for Hughes County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Hughes County holds 3% of the land of Choctaw OTSA (Census GEOID 5590), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Choctaw, 1786
+  signed: '1786-01-03'
+  statutes_at_large: 7 Stat. 21
+  kappler:
+    volume: 2
+    page: 11
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1786-0011
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 11 (Treaty with the Choctaw, 1786; Kappler header "Jan. 3, 1786. | 7 Stat., 21.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw, 1801
+  signed: '1801-12-17'
+  statutes_at_large: 7 Stat. 66
+  kappler:
+    volume: 2
+    page: 56
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1801-0056
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 56 (Treaty with the Choctaw, 1801; Kappler header "Dec. 17, 1801. | 7 Stat. 66. | Ratified April 30, 1802. | Proclaimed May 4, 1802.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw, 1802
+  signed: '1802-10-17'
+  statutes_at_large: 7 Stat. 73
+  kappler:
+    volume: 2
+    page: 63
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1802-0063
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 63 (Treaty with the Choctaw, 1802; Kappler header "Oct. 17, 1802. | 7 Stat., 73. | Ratified June 20, 1803. | Proclaimed Jan. 20, 1803.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw, 1803
+  signed: '1803-08-31'
+  statutes_at_large: 7 Stat. 80
+  kappler:
+    volume: 2
+    page: 69
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1803-0069
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 69 (Treaty with the Choctaw, 1803; Kappler header "Aug. 31, 1803. | 7 Stat., 80. | Proclamation, Dec. 26, 1803.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw, 1805
+  signed: '1805-11-16'
+  statutes_at_large: 7 Stat. 98
+  kappler:
+    volume: 2
+    page: 87
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1805-0087
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 87 (Treaty with the Choctaw, 1805; Kappler header "Nov. 16, 1805. | 7 Stat., 98. | Proclamation, Feb. 25, 1808.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw, 1816
+  signed: '1816-10-24'
+  statutes_at_large: 7 Stat. 152
+  kappler:
+    volume: 2
+    page: 137
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1816-0137
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 137 (Treaty with the Choctaw, 1816; Kappler header "Oct. 24, 1816. | 7 Stat., 152. | Proclamation, Dec. 30, 1816.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw, 1820
+  signed: '1820-10-18'
+  statutes_at_large: 7 Stat. 210
+  kappler:
+    volume: 2
+    page: 191
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1820-0191
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 191 (Treaty with the Choctaw, 1820; Kappler header "Oct. 18, 1820. | 7 Stat., 210. | Proclamation, Jan. 8, 1821.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw, 1825
+  signed: '1825-01-20'
+  statutes_at_large: 7 Stat. 234
+  kappler:
+    volume: 2
+    page: 211
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1825-0211
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 211 (Treaty with the Choctaw, 1825; Kappler header "Jan. 20, 1825. | 7 Stat., 234. | Proclamation, Feb. 19, 1825.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw, 1830
+  signed: '1830-09-27'
+  statutes_at_large: 7 Stat. 333
+  kappler:
+    volume: 2
+    page: 310
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-1830-0310
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 310 (Treaty with the Choctaw, 1830; Kappler header "Sept. 27, 1830. | 7 Stat., 333. | Proclamation, Feb. 24, 1831.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche, etc., 1835
+  signed: '1835-08-24'
+  statutes_at_large: 7 Stat. 474
+  kappler:
+    volume: 2
+    page: 435
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-etc-1835-0435
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 435 (Treaty with the Comanche, etc., 1835; Kappler header "Aug. 24, 1835. | 7 Stat., 474. | Proclamation, May 19, 1836.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw and Chickasaw, 1837
+  signed: '1837-01-17'
+  statutes_at_large: 11 Stat. 573
+  kappler:
+    volume: 2
+    page: 486
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-and-chickasaw-1837-0486
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 486 (Treaty with the Choctaw and Chickasaw, 1837; Kappler header "Jan. 17, 1837. | 11 Stats., 573. | Proclamation Mar. 24, 1837.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw and Chickasaw, 1854
+  signed: '1854-11-04'
+  statutes_at_large: 10 Stat. 1116
+  kappler:
+    volume: 2
+    page: 652
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-and-chickasaw-1854-0652
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 652 (Treaty with the Choctaw and Chickasaw, 1854; Kappler header "Nov. 4, 1854. | 10 Stat., 1116. | Ratified Feb. 28, 1855. | Proclaimed Apr. 10, 1855.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw and Chickasaw, 1855
+  signed: '1855-06-22'
+  statutes_at_large: 11 Stat. 611
+  kappler:
+    volume: 2
+    page: 706
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-and-chickasaw-1855-0706
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 706 (Treaty with the Choctaw and Chickasaw, 1855; Kappler header "June 22, 1855. | 11 Stats., 611. | Ratified Feb. 21, 1856. | Proclaimed Mar. 4, 1856.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Choctaw and Chickasaw, 1866
+  signed: '1866-04-28'
+  statutes_at_large: 14 Stat. 769
+  kappler:
+    volume: 2
+    page: 918
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-choctaw-and-chickasaw-1866-0918
+  signatory: Choctaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 918 (Treaty with the Choctaw and Chickasaw, 1866; Kappler header "Apr. 28, 1866. | 14 Stats., 769. | Ratified June 28, 1866. | Proclaimed July 10, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Inter-Tribal Council of the Five Civilized Tribes
   source: inter-tribal-council-of-the-five-civilized-tribes-home

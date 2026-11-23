@@ -178,6 +178,111 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Nashville Area Tribes, Nations and Partners" list'
+  note: 'Listed as "Eastern Band of Cherokee Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Eastern Band of Cherokee Indians (2002)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: 'Tribal Council Seats: Big Cove, Birdtown, Painttown, Snowbird/Cherokee County, Wolftown/Big Y and Yellowhill'
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 6 seats, by community
+  quote: 'Tribal Council Seats: Big Cove, Birdtown, Painttown, Snowbird/Cherokee County, Wolftown/Big Y and Yellowhill'
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected in tribal election
+  quote: '2027 Tribal Election for:'
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Principal Chief
+  quote: was recently reelected as Principal Chief of the Eastern Band of Cherokee Indians
+  source: eastern-band-of-cherokee-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Principal Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Eastern Band of Cherokee Indians
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected in tribal election
+  quote: '2027 Tribal Election for:'
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice Chief
+  quote: has served The Eastern Band of Cherokee as Vice Chief since 2017.
+  source: eastern-band-of-cherokee-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Board of Elections
+  quote: The Eastern Band of Cherokee Indians Board of Elections is dedicated to honoring our Cherokee People and Communities, to oversee, facilitate and ensure free and fair Tribal elections for all Tribal registered voters
+  source: eastern-band-of-cherokee-indians-website-election-board
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Judicial and two others
+  quote: Codified by Cherokee Code Section 7, the Cherokee Courts make up the Judicial Branch of government, one of the three branches of government of the EBCI.
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Trial court and Supreme Court
+  quote: Consisting of a trial court and an appellate court (Supreme Court), the Courts resolve approximately 1,400 criminal and civil matters each year that arise on trust property.
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Nominated by Principal Chief, confirmed by Council
+  quote: all of whom have been nominated by the Principal Chief and confirmed by the Tribal Council
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: 2/3 Council vote to amend judicial ordinances
+  quote: The Court’s independence is specifically protected under the Code, which requires a 2/3 majority vote of Tribal Council to amend any judicial ordinance.
+  source: eastern-band-of-cherokee-indians-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Eastern Band of Cherokee Indians
@@ -267,25 +372,23 @@ justice_institutions:
   note: 'The page names the court: “Consisting of a trial court and an appellate court (Supreme Court)”. Page links ''Cherokee Supreme Court Appeal Procedures''. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, eastern-band-of-cherokee-indians#2).'
 dispute_resolution:
   training_programs:
-  - name: Two-part peacemaking facilitation training (October 23-25, 2017 and January 9-10, 2018) for
-      tribal officials, community members and staff
-    provider: Indigenous Peacemaking Initiative (Native American Rights Fund), with advisory committee
-      members
+  - name: Two-part peacemaking facilitation training (October 2017 and January 2018) for tribal officials, community members and staff
+    provider: Indigenous Peacemaking Initiative (Native American Rights Fund), with advisory committee members
     link: https://peacemaking.narf.org/2018/02/eastern-band-of-cherokee-indian-completes-peacemaking-training/
     source: narf-ipi-news-ebci-training-2018
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: 2018-02
+    note: Read in full on 2026-11-23 (NARF IPI news post, Eastern Band of Cherokee Indian Completes Peacemaking Training (URL path 2018/02)). Event and participants confirmed from the NARF news post (third-party); the specific day ranges previously recorded were not found on that page. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 111.
   published_materials:
   - kind: guide
-    title: Eastern Band of Cherokee Indians Peacemaking Training Materials (circles, circle process stages,
-      mediation and peacemaking comparison, active listening)
+    title: Eastern Band of Cherokee Indians Peacemaking Training Materials (October 2017 and January 2018)
     link: https://peacemaking.narf.org/wp-content/uploads/2018/02/EBCI-Oct.-2017-and-Jan.-2018-PM-Training-Materials-00187450x9D7F5.pdf
     source: narf-ipi-ebci-training-materials-2017-2018
     confidence: medium
     verification: title-only
     as_of: 2018-01
-    note: Developed by the Indigenous Peacemaking Initiative for the training; not a tribal law.
+    note: 'Developed by the Indigenous Peacemaking Initiative for the training; not a tribal law. Not confirmed from the nation''s own text on 2026-11-23: the text found does not settle the record; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 110.'
   provisions:
   - kind: arbitration
     title: Ch. 94 - Arbitration
@@ -295,10 +398,7 @@ dispute_resolution:
     confidence: medium
     verification: title-only
     as_of: '2026-11-21'
-    note: 'Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title. No date on the
-      index; as_of is the access date. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/e/eastern-band-of-cherokee-indians.yaml.'
+    note: 'Kind assigned from words in the title. No date on the index; as_of is the access date. Not confirmed from the nation''s own text on 2026-11-23: the only online copy sits on a site that refused automated requests; see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 109.'
   database_listings:
   - title: Dispositional Alternatives for Juveniles (undisciplines & delinquent)
     citation: Eastern Band of Cherokee Indians Code Sec. Sec. 7A-53A; and, Sec. Sec. 7A-54.
@@ -518,6 +618,257 @@ jurisdiction:
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Eastern Band of Cherokee Nation".
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: North Carolina is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in North Carolina. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in North Carolina by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.51)
+  note: Listed as "EASTERN BAND OF CHEROKEE INDIANS" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+nearby_state_courts:
+- state: NC
+  county: Swain County
+  court: Superior Court for Swain County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Swain County holds 47% of the land of Eastern Cherokee Reservation (Census GEOID 0990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NC
+  county: Jackson County
+  court: Superior Court for Jackson County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Jackson County holds 37% of the land of Eastern Cherokee Reservation (Census GEOID 0990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NC
+  county: Cherokee County
+  court: Superior Court for Cherokee County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Cherokee County holds 10% of the land of Eastern Cherokee Reservation (Census GEOID 0990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NC
+  county: Graham County
+  court: Superior Court for Graham County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Graham County holds 5% of the land of Eastern Cherokee Reservation (Census GEOID 0990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Cherokee, 1785
+  signed: '1785-11-28'
+  statutes_at_large: 7 Stat. 18
+  kappler:
+    volume: 2
+    page: 8
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1785-0008
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 8 (Treaty with the Cherokee, 1785; Kappler header "Nov. 28, 1785. | 7 Stat., 18.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1791
+  signed: '1791-07-02'
+  statutes_at_large: 7 Stat. 39
+  kappler:
+    volume: 2
+    page: 29
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1791-0029
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 29 (Treaty with the Cherokee, 1791; Kappler header "July 2, 1791. | 7 Stat., 39. | Proclamation, Feb. 7, 1792")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1794
+  signed: '1794-06-26'
+  statutes_at_large: 7 Stat. 43
+  kappler:
+    volume: 2
+    page: 33
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1794-0033
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 33 (Treaty with the Cherokee, 1794; Kappler header "June 26, 1794. | 7 Stat., 43. | Proclamation, Jan. 21, 1795. | Ante, p. 29.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1798
+  signed: '1798-10-02'
+  statutes_at_large: 7 Stat. 62
+  kappler:
+    volume: 2
+    page: 51
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1798-0051
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 51 (Treaty with the Cherokee, 1798; Kappler header "Oct. 2, 1798. | 7 Stat., 62. | Ratified April 30, 1802. | Proclaimed May 4, 1802.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1804
+  signed: '1804-10-24'
+  statutes_at_large: 7 Stat. 288
+  kappler:
+    volume: 2
+    page: 73
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1804-0073
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 73 (Treaty with the Cherokee, 1804; Kappler header "Oct. 24, 1804. | 7 Stat., 288. | Proclamation, May 17, 1824.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1805
+  signed: '1805-10-25'
+  statutes_at_large: 7 Stat. 93
+  kappler:
+    volume: 2
+    page: 82
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1805-0082
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 82 (Treaty with the Cherokee, 1805; Kappler header "Oct., 25, 1805. | 7 Stat., 93. | Proclamation, Apr. 24, 1806.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1805
+  signed: '1805-10-27'
+  statutes_at_large: 7 Stat. 95
+  kappler:
+    volume: 2
+    page: 84
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1805-0084
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 84 (Treaty with the Cherokee, 1805; Kappler header "Oct. 27, 1805. | 7 Stat., 95. | Proclamation, June 10, 1806.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1806
+  signed: '1806-01-07'
+  statutes_at_large: 7 Stat. 101
+  kappler:
+    volume: 2
+    page: 90
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1806-0090
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 90 (Treaty with the Cherokee, 1806; Kappler header "Jan. 7, 1806. | 7 Stat., 101. | Ratified May 22, 1807. | Proclaimed May 23, 1807.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1816
+  signed: '1816-03-22'
+  statutes_at_large: 7 Stat. 138
+  kappler:
+    volume: 2
+    page: 124
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0124
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 124 (Treaty with the Cherokee, 1816; Kappler header "Mar. 22, 1816. | 7 Stat., 138. | Ratified Apr. 8, 1816.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1816
+  signed: '1816-03-22'
+  statutes_at_large: 7 Stat. 139
+  kappler:
+    volume: 2
+    page: 125
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0125
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 125 (Treaty with the Cherokee, 1816; Kappler header "Mar. 22, 1816. | 7. Stat., 139. | Ratified Apr. 8, 1816.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1816
+  signed: '1816-09-14'
+  statutes_at_large: 7 Stat. 148
+  kappler:
+    volume: 2
+    page: 133
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0133
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 133 (Treaty with the Cherokee, 1816; Kappler header "Sept. 14, 1816. | 7 Stat., 148. | Proclamation, Dec. 30, 1816.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1817
+  signed: '1817-07-08'
+  statutes_at_large: 7 Stat. 156
+  kappler:
+    volume: 2
+    page: 140
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1817-0140
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 140 (Treaty with the Cherokee, 1817; Kappler header "July 8, 1817. | 7 Stat., 156. | Proclamation, Dec. 26, 1817.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1819
+  signed: '1819-02-27'
+  statutes_at_large: 7 Stat. 195
+  kappler:
+    volume: 2
+    page: 177
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1819-0177
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 177 (Treaty with the Cherokee, 1819; Kappler header "Feb. 27, 1819. | 7 Stat., 195. | Proclamation, Mar. 10, 1819.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Comanche, etc., 1835
+  signed: '1835-08-24'
+  statutes_at_large: 7 Stat. 474
+  kappler:
+    volume: 2
+    page: 435
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-etc-1835-0435
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 435 (Treaty with the Comanche, etc., 1835; Kappler header "Aug. 24, 1835. | 7 Stat., 474. | Proclamation, May 19, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Cherokee, 1835
+  signed: '1835-12-29'
+  statutes_at_large: 7 Stat. 478
+  kappler:
+    volume: 2
+    page: 439
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1835-0439
+  signatory: Cherokee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 439 (Treaty with the Cherokee, 1835; Kappler header "Dec. 29, 1835. | 7 Stat., 478. | Proclamation, May 23, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty reads "Under review", so no second source names the successor. Eastern Band descends from Cherokee who remained in North Carolina after the 1835-38 removal; treaties up to New Echota (1835) were made with the undivided Cherokee Nation. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

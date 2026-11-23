@@ -182,6 +182,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Saginaw Chippewa Indian Tribe of Michigan
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "Saginaw Chippewa Indian of Michigan".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Saginaw Chippewa Indian Tribe of Michigan" among organizations under constitutions
@@ -206,6 +214,231 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Amended constitution under Public Law 99-346
+  quote: Pursuant to Section 4 of Public Law 99-346, of June 30, 1986,
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Certification of Adoption
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Saginaw Chippewa Tribal Council
+  quote: The governing body of the Saginaw Chippewa Tribe of Michigan shall be known as the Saginaw Chippewa Tribal Council.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: '12 members: 10 Isabella, 1 Saganing, 1 At Large'
+  quote: composed of twelve Tribal members elected by popular vote by the respective resident Tribal members entitled to vote in each of three voting districts.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by popular vote in three districts
+  quote: elected by popular vote by the respective resident Tribal members entitled to vote in each of three voting districts
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: The Tribal Council shall be elected every two years in the month of November.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 8
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Tribal Chief
+  quote: shall elect from its number one Tribal Chief, one
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 5
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Saginaw Chippewa Indian Tribe of Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its members
+  quote: shall elect from its number one Tribal Chief, one
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 5
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The Tribal Council shall be elected every two years in the month of November.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 8
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Subchief, Tribal Secretary, Tribal Treasurer
+  quote: Subchief, one Tribal Secretary, and one Tribal Treasurer
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 5
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every 2 years in November
+  quote: The Tribal Council shall be elected every two years in the month of November.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 8
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: 18 years of age or over shall be entitled to vote at any election
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 11
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court system, independent of Tribal Council
+  quote: To establish a Tribal Court system for the administration of justice and the resolution of disputes within the jurisdiction of the Tribe.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article VI, Section 1(t)
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Courts independent of the Tribal Council
+  quote: Such courts shall be independent of the Tribal Council.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article VI, Section 1(t)
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote in each of three districts at an election called by the Secretary
+  quote: This Constitution and By-Laws may be amended by a majority vote of the qualified voters in each of the three voting districts at an election called for by the Secretary of the Interior
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article VII
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall be effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article VII
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of Tribal Council
+  quote: removed from office by the Tribal Council by a vote of two-thirds (2/3) of the members of the Tribal Council members voting
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 14(a)
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by election in district on petition of 30% of voters
+  quote: Upon receipt of a petition signed by at least thirty (30) percent of the eligible voters within the voting district concerned seeking removal
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 14(b)
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Referendum on petition of 30% in each district
+  quote: Upon petition of at least 30 percent of the eligible voters in each of the three (3) respective voting
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article V
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Saginaw Chippewa Indian Tribe of Michigan
@@ -400,6 +633,154 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Michigan is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Michigan. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: Michigan Department of Treasury
+  agreement: Tax agreement between the tribe and the State of Michigan (sales and use tax exemptions and related taxes)
+  state: MI
+  status: in-effect
+  source: michigan-department-of-treasury-sales-to-federally-recognized-indian-tribes
+  confidence: high
+  verification: bulk-import
+  locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
+  note: 'The source reads: “Saginaw Chippewa Indian Tribe of Michigan”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page.'
+nearby_state_courts:
+- state: MI
+  county: Isabella County
+  court: Circuit Court for Isabella County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Isabella County holds 99% of the land of Isabella Reservation (Census GEOID 1610), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Chippewa, 1819
+  signed: '1819-09-24'
+  statutes_at_large: 7 Stat. 203
+  kappler:
+    volume: 2
+    page: 185
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1819-0185
+  signatory: Chippewa nation (Saginaw district)
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 185 (Treaty with the Chippewa, 1819; Kappler header "Sept. 24, 1819. | 7 Stat., 203. | Proclamation, Mar. 25, 1820.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Treaty made at Saginaw with the Chippewa bands of the Saginaw district; Saginaw Chippewa Indian Tribe of Michigan. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1836
+  signed: '1836-05-09'
+  statutes_at_large: 7 Stat. 503
+  kappler:
+    volume: 2
+    page: 461
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1836-0461
+  signatory: Chippewa of Black River; Chippewa of Swan Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 461 (Treaty with the Chippewa, 1836; Kappler header "May 9, 1836. | 7 Stat., 503. | Proclamation, May 25, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1837
+  signed: '1837-01-14'
+  statutes_at_large: 7 Stat. 528
+  kappler:
+    volume: 2
+    page: 482
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1837-0482
+  signatory: Chippewa of Saginaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 482 (Treaty with the Chippewa, 1837; Kappler header "Jan. 14, 1837. | 7 Stat., 528. | Proclamation, July 2, 1838.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1837
+  signed: '1837-12-20'
+  statutes_at_large: 7 Stat. 547
+  kappler:
+    volume: 2
+    page: 501
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1837-0501
+  signatory: Chippewa of Saginaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 501 (Treaty with the Chippewa, 1837; Kappler header "Dec. 20, 1837, | 7 Stat., 547. | Proclamation, July 2, 1838.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, 1838
+  signed: '1838-01-23'
+  statutes_at_large: 7 Stat. 565
+  kappler:
+    volume: 2
+    page: 516
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1838-0516
+  signatory: Chippewa nation (Saginaw district)
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 516 (Treaty with the Chippewa, 1838; Kappler header "Jan. 23, 1838. | 7 Stat., 565. | Proclamation, July 2, 1838.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Treaty made at Saginaw with the Chippewa bands of the Saginaw district; Saginaw Chippewa Indian Tribe of Michigan. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1839
+  signed: '1839-02-07'
+  statutes_at_large: 7 Stat. 578
+  kappler:
+    volume: 2
+    page: 528
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1839-0528
+  signatory: Chippewa of Saginaw
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 528 (Treaty with the Chippewa, 1839; Kappler header "Feb. 7, 1839. | 7 Stat., 578. | Proclamation, Mar. 2, 1839.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa of Saginaw, etc., 1855
+  signed: '1855-08-02'
+  statutes_at_large: 11 Stat. 633
+  kappler:
+    volume: 2
+    page: 733
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-saginaw-etc-1855-0733
+  signatory: Chippewa of Saginaw; Chippewa of Swan Creek; Chippewa of Black River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 733 (Treaty with the Chippewa of Saginaw, etc., 1855; Kappler header "Aug. 2, 1855. | 11 Stat., 633. | Ratified Apr. 15, 1856. | Proclaimed June 21, 1856.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Chippewa, etc., 1859
+  signed: '1859-07-16'
+  statutes_at_large: 12 Stat. 1105
+  kappler:
+    volume: 2
+    page: 792
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1859-0792
+  signatory: Chippewa of Black River; Chippewa of Swan Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 792 (Treaty with the Chippewa, etc., 1859; Kappler header "July 16, 1859. | 12 Stat., 1105. | Ratified Apr. 19, 1860. | Proclaimed July 9, 1860.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa of Saginaw, Swan Creek, and Black River, 1864
+  signed: '1864-10-18'
+  statutes_at_large: 14 Stat. 637
+  kappler:
+    volume: 2
+    page: 868
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-saginaw-swan-creek-and-black-river-1864-0868
+  signatory: Chippewa of Saginaw; Chippewa of Black River; Chippewa of Swan Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 868 (Treaty with the Chippewa of Saginaw, Swan Creek, and Black River, 1864; Kappler header "Oct. 18, 1864. | 14 Stats., 637. | Ratified May 22, 1866. | Proclaimed Aug. 16, 1866.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Saginaw Chippewa Indian Tribe includes the Swan Creek and Black River bands (Isabella Reservation, 1855/1864 treaties) The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

@@ -1,7 +1,7 @@
 profile: content/tribes/j/jamul-indian-village-of-california.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: none-found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -69,4 +69,39 @@ searches:
   reason: The listed court is the Intertribal Court of Southern California, a court consortium whose site
     describes a forum to resolve disputes in general terms; no peacemaking, mediation or other dispute
     resolution program is described.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.jamulindianvillage.com/tribal-law/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Jamul Indian Village tribal court OR code mediation OR "dispute resolution"'
+  query: Jamul Indian Village tribal court OR code mediation OR "dispute resolution"
+  outcome: not-found
+  reason: Only NARF profile and other tribes' pages.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20180912101804id_/http://www.jamulindianvillage.com/tribal-law/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2018-09-12) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=jamulindianvillage.com/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: error
+  reason: The Wayback Machine capture index did not answer (connection refused) in any of the three rounds;
+    worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20180912101804/http://www.jamulindianvillage.com:80/tribal-law/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: 'The Wayback Machine copy of 2018-09-12 ("Tribal Law &#8211; Jamul Indian Village") shows codes or ordinances. A court or code page alone is a lead, not a dispute resolution method, and the data gap thread''s reading of this log on Nov. 23 found none, so this entry counts as not found.'
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

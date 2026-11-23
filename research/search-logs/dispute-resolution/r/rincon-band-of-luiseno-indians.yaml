@@ -1,7 +1,7 @@
 profile: content/tribes/r/rincon-band-of-luiseno-indians.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -147,3 +147,94 @@ searches:
   outcome: found
   reason: OCR of the ordinance shows 4.02 Request for Enforcement of Arbitration Decision and 4.03 Authority
     of Special Master to Enforce Arbitration Award, the two headings in this record.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/365e98c36d3f6dcdd24c.txt
+  query: 7.3.01. Alternative Dispute Resolution
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/3f7e7c29355eb2c16a52.txt
+  query: 7.3.01. Alternative Dispute Resolution
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/2a8ea9a3f02d3962c96b.txt
+  query: 7.3.01. Alternative Dispute Resolution
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://rincon-nsn.gov/government/office-of-the-attorney-general/laws-and-regulations/
+  query: Rincon laws
+  outcome: found
+  reason: lists 3.500 link, not 7.3.01
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://rincon-nsn.gov/wp-content/uploads/2019/05/3_0500-Tribal-Arbitration-Enforcement-Ordinance.pdf
+  query: '3.500'
+  outcome: blocked
+  reason: empty PDF text
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/r/rincon-luiseno-rincon-san-luiseno-band-of-mission-indians-tribal.pdf
+  query: Section 4.02 Request for Enforcement of Arbitration Decision; Section 4.03 Authority of Special
+    Master to Enforce Arbitr
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/365e98c36d3f6dcdd24c.txt
+  query: 6.1.61 Dispute Resolution of Violation of the Ordinance and/or Department of Regulations or Policy
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/3f7e7c29355eb2c16a52.txt
+  query: 6.1.61 Dispute Resolution of Violation of the Ordinance and/or Department of Regulations or Policy
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://rincon-nsn.gov/government/office-of-the-attorney-general/laws-and-regulations/
+  query: Rincon laws
+  outcome: not-found
+  reason: no 6.1.61
+  records:
+  - content/tribes/r/rincon-band-of-luiseno-indians.yaml#dispute_resolution.provisions

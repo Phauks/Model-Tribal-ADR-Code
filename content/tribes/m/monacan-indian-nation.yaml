@@ -169,6 +169,183 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Monacan Indian Nation
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-monacan-health-center
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: Listed as "Monacan Indian Nation". Listed under Federal Direct Care Service Facilities on the Nashville Area page.
+- area: Nashville
+  service_unit: Monacan Health Center
+  source: indian-health-service-nashville-monacan-health-center
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "serves the Monacan Indian Nation and other Federally Recognized American Indians".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Federal Direct Care Service Facilities". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Non-profit corporation
+  quote: The Monacan Indian Nation is organized as a non-profit Corporation and shall be
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 2, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: managed by a Tribal Council consisting of at least seven (7) members, but not more than (12)
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 7, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: governing-body-size
+  value: At least 7, no more than 12 members
+  quote: managed by a Tribal Council consisting of at least seven (7) members, but not more than (12)
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 7, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: governing-body-selection
+  value: Elected annually
+  quote: three (3) Tribal Council members shall be elected annually for a four (4) year term.
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 7, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: three (3) Tribal Council members shall be elected annually for a four (4) year term.
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 7, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: head-of-government
+  value: Chief
+  quote: The Chief shall be the Principle Executive Officer of the Nation and subject
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 4, Section 5
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Monacan Indian Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Nation
+  quote: The Chief will be elected by the Nation.
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 5, Section 1, D
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Chief and Assistant Chief will serve a four (4) year term and can be re-
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 5, Section 1, F
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: other-officers
+  value: Assistant Chief, Secretary, Treasurer
+  quote: Assistant Chief, Secretary, Treasurer, and other such officers as from time to time may need to
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 4, Section 1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: elections
+  value: Annually in June
+  quote: The election of Chief and Assistant Chief will be held on the day of the
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 5, Section 1, D
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: voting-age
+  value: '18'
+  quote: The voting age of all members will be eighteen (18) years or older.
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 3, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: election-authority
+  value: Election officials appointed by Tribal Council
+  quote: Annual Tribal meeting in June. The election officials will be appointed by
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 5, Section 1, D
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: amendment
+  value: 2/3 majority of members present at Tribal Meeting
+  quote: It must be passed by 2/3 majority vote of members present at a Tribal Meeting.
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 10, Section 2, A
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: recall-and-removal
+  value: Removal by the Nation for just cause
+  quote: Any officer elected by the Nation may be removed by the Nation
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 4, Section 3
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: recall-and-removal
+  value: Removal from Council for malfeasance or nonfeasance
+  quote: Council Member can be removed from the Council for malfeasance (wrong doing)
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 7, Section 3, D
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
+- aspect: other
+  value: Chief veto overridable by majority at Tribal meeting
+  quote: except that the Chief’s veto shall not prevail against the majority vote of
+  source: monacan-indian-nation-website-uploads-7-0-0-1-70010765-min-amended-bylaws-2023-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article 5, Section 1, J
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The government page refers to a constitution committee and a constitution that are not among the saved pages; facts are from the bylaws on page 5.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -193,6 +370,15 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Virginia is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Virginia. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Virginia by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

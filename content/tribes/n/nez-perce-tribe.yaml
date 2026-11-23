@@ -196,6 +196,214 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nez Perce Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Nez Perce Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Nez Perce Indian Tribe (2001)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Revised Constitution and Bylaws
+  quote: Revised Constitution and Bylaws of the Nez Perce
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: governing-body
+  value: Tribal Executive Committee (NPTEC)
+  quote: administered by a Tribal Executive Committee
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: (hereinafter referred to as NPTEC), consisting of nine
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: governing-body-selection
+  value: Elected by the Tribal General Council
+  quote: (9) members elected by the Tribal General Council.
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: the NPTEC shall be three years; the three year
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 2(A)
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: general-council
+  value: Enrolled members 18 or older
+  quote: Any enrolled member of the Nez Perce Tribe who is
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article V, Section 5
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman, as chief executive officer of the
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Nez Perce Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by NPTEC from its own membership
+  quote: purpose of electing from its own membership (a) a
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 4
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer, Assistant Secretary-Treasurer, Chaplain
+  quote: Treasurer, (e) an Assistant Secretary-Treasurer; and (f)
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 4
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: elections
+  value: Annually at the May meeting of the General Council
+  quote: Members of the NPTEC shall be elected at the
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 2(A)
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen or over shall be entitled to vote in General
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article V, Section 5
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: election-authority
+  value: Election Judges
+  quote: It shall be the duty of the Election Judges to
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article V, Section 4(D)
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: amendment
+  value: Two-thirds vote at an election called for that purpose
+  quote: two-thirds vote at an election called for that purpose,
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article IX, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: become effective until approved by the Secretary of
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article IX, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: recall-and-removal
+  value: Recall by 75% of votes cast (minimum 260 votes)
+  quote: at least seventy-five percent of the votes cast favor
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 6
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: recall-and-removal
+  value: Expulsion by majority vote of NPTEC
+  quote: NPTEC shall, by majority vote, expel any member of
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VII, Section 2
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
 governing_documents:
 - kind: law-code
   title: Nez Perce Tribal Code
@@ -404,15 +612,13 @@ dispute_resolution:
     title: Chapter 1-8 – Peacemaker Court
     citation: Chapter 1-8 – Peacemaker Court
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nez-Perce-2024-09-24-Title-1-VAWA-update.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: nez-perce-title-1-chapter-1-8-peacemaker-court
     confidence: medium
     verification: read-in-full
-    as_of: '2025-09-29'
-    locator: Nez Perce Tribe
-    note: 'Native American Rights Fund description (provision itself not read): Provides purpose, definitions,
-      peacemaker qualifications, procedures, peacemaker duties, the creation of a “Peacemaker Handbook,”
-      a list of matters which can be heard by the peacemaking court, and jurisdiction over matters not
-      within ordinary tribal court jurisdiction.'
+    as_of: '2019-06-25'
+    locator: Chapter 1-8, sections 1-8-1 to 1-8-11
+    note: 'Read in full on 2026-11-23 (Nez Perce Tribal Code, Title 1 General Provisions, Chapter 1-8 Peacemaker Court (Chapter adopted by NPTEC 06/25/19)). Read in full from Nez Perce Tribal Code Title 1, Chapter 1-8 (adopted by NPTEC 06/25/19), via the NARF-hosted copy of the Title 1 update dated 2024-09-24. Peacemakers must first adopt a Peacemaker Handbook (1-8-7). Date: 2019-06-25 (chapter adoption date as printed). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 323.'
+    summary: Establishes the Nez Perce Peacemaker Court as a division of the Tribal Court, a voluntary, non-adversarial forum using traditional Nez Perce methods that does not assign fault. A Tribal Court or specialty court judge may send it adult non-serious criminal matters, juvenile delinquency matters, and civil matters other than contract disputes, with the parties' agreement, and the case can be sent back if unresolved. It cannot compel anyone to attend. An agreement can be submitted as a Peacemaking Resolution and entered by the Tribal Court as a judgment enforced like any other; minor disputes outside the courts can also be heard on written request of all parties, but those agreements are not enforceable in Tribal Court.
 gaming:
   compacts:
   - state: ID
@@ -459,20 +665,17 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: ID
     status: deemed-approved
-    dispute_resolution_summary: After written notice the parties meet within 10 working days, and if the
-      dispute is not resolved within 60 days either party may pursue binding arbitration before a three-member
-      panel selected by the American Arbitration Association, with no judicial review of the decision
-      (disputes under Article 6 follow that article's own procedure).
-    dispute_resolution_locator: Article 21 (Dispute Resolution)
-    source: compact-id-coeur-dalene-tribe-1993
+    dispute_resolution_summary: Under Article 21 of the 1995 compact, a party alleging non-compliance serves written notice and the parties meet within 10 working days. If the dispute is not resolved within 60 days of the notice, either party may pursue binding arbitration before three arbitrators selected by the American Arbitration Association, who may declare rights and grant relief permitted by law; decision is due within 120 days of their selection, there is no judicial review, and the decision has the effect of part of the compact. Once arbitration is noticed the matter cannot be litigated in court. The parties may agree to other methods such as mediation. The 2003 addendum and 2008 lottery compact have no dispute-resolution article.
+    dispute_resolution_locator: Article 21 (Dispute Resolution), sections 21.1-21.3
+    source: compact-id-nez-perce-tribe-1995-11-14
     confidence: medium
-    verification: inferred
-    as_of: '1993-02-12'
-    locator: Article 21 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 1993 Coeur d'Alene Tribe
-      compact; later Idaho compacts and amendments (2003, 2008) were not checked. Status copied from this
-      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
-      list (2008-10-07).
+    verification: read-in-full
+    as_of: '1995-08-22'
+    locator: Article 21 (Dispute Resolution), sections 21.1-21.3
+    note: Read in full on 2026-11-23 (1995 Class III Gaming Compact between the Nez Perce Tribe and the State of Idaho, dated August 22, 1995; approved by the Department of the Interior October 1995). Read from the Nez Perce Tribe's own 1995 compact, Article 21 (source should be the 1995 Nez Perce compact, not the Coeur d'Alene 1993 compact). Article 21 says 'except as provided in Article 6' but Article 6 sets no dispute procedure. Status (deemed-approved 2008) is copied from the Office of Indian Gaming list; the 2008 compact in project files has no dispute article. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 324.
+    document_version:
+      document: nez-perce-tribe-idaho-gaming-compact
+      version: 1995-original
   ordinances:
   - approved: '1995-02-16'
     link: https://www.nigc.gov?wpdmdl=10401&ind=10416
@@ -572,6 +775,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Nez Perce Tribe". Name extracted
       from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-28
+    date: '2008-12-12'
+    link: https://www.nigc.gov?wpdmdl=7957&ind=7968
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-28
+    note: The list titles the action “Nez Perce Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-28
+    date: '2009-01-15'
+    link: https://www.nigc.gov?wpdmdl=7940&ind=7951
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-28
+    note: The list titles the action “Nez Perce Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -598,6 +822,136 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Listed by the Tribal Law and Policy Institute among the Tribes that have implemented special Tribal criminal jurisdiction under the Violence Against Women Act Reauthorization Act of 2022 (25 U.S.C. § 1304).
+  source: tribal-law-and-policy-institute-special-tribal-criminal-jurisdiction-chart
+  confidence: medium
+  verification: inferred
+  as_of: '2026-08-11'
+  locator: Chart row 33, "Implemented VAWA STCJ" column
+  note: Listed as "Nez Perce Tribe". The chart is undated (file last modified Aug. 11, 2026) and comes from a Justice Department technical-assistance provider, not the Department itself.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.53)
+  note: Listed as "NEZ PERCE TRIBE" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+court_practice:
+- kind: public-defender
+  title: Law and Justice (Public Defender's Office)
+  court: Nez Perce Tribe Law and Justice
+  link: https://nezperce.org/government/law-and-justice/
+  detail: The Public Defender represents all persons, juvenile and adult, accused of criminal matters in the Nez Perce Tribal Court.
+  source: nez-perce-tribe-law-and-justice-nez-perce-tribenez-perce-tribe
+  confidence: high
+  verification: read-in-full
+  locator: Public Defender's Office
+  note: 'The source reads: “The Public Defender represents all persons, juvenile and adult, accused of criminal matters”.'
+nearby_state_courts:
+- state: ID
+  county: Nez Perce County
+  court: District Court for Nez Perce County
+  link: https://isc.idaho.gov/district-courts
+  source: state-trial-court-directory-id
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Nez Perce County holds 34% of the land of Nez Perce Reservation (Census GEOID 2445), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ID
+  county: Lewis County
+  court: District Court for Lewis County
+  link: https://isc.idaho.gov/district-courts
+  source: state-trial-court-directory-id
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Lewis County holds 33% of the land of Nez Perce Reservation (Census GEOID 2445), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ID
+  county: Idaho County
+  court: District Court for Idaho County
+  link: https://isc.idaho.gov/district-courts
+  source: state-trial-court-directory-id
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Idaho County holds 24% of the land of Nez Perce Reservation (Census GEOID 2445), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ID
+  county: Clearwater County
+  court: District Court for Clearwater County
+  link: https://isc.idaho.gov/district-courts
+  source: state-trial-court-directory-id
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Clearwater County holds 9% of the land of Nez Perce Reservation (Census GEOID 2445), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Nez Perces, 1855
+  signed: '1855-06-11'
+  statutes_at_large: 12 Stat. 957
+  kappler:
+    volume: 2
+    page: 702
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nez-perces-1855-0702
+  signatory: Nez Percé
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 702 (Treaty with the Nez Perces, 1855; Kappler header "June 11, 1855. | 12 Stats., 957. | Ratified Mar. 8. 1859. | Proclaimed Apr. 29, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Blackfeet, 1855
+  signed: '1855-10-17'
+  statutes_at_large: 11 Stat. 657
+  kappler:
+    volume: 2
+    page: 736
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-blackfeet-1855-0736
+  signatory: Nez Percé
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 736 (Treaty with the Blackfeet, 1855; Kappler header "Oct. 17, 1855. | 11 Stat., 657. | Ratified Apr. 15, 1856. | Proclaimed Apr. 25, 1856.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Nez Perces, 1863
+  signed: '1863-06-09'
+  statutes_at_large: 14 Stat. 647
+  kappler:
+    volume: 2
+    page: 843
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nez-perces-1863-0843
+  signatory: Nez Percé
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 843 (Treaty with the Nez Perces, 1863; Kappler header "June 9, 1863. | 14 Stats., 647. | Ratified Apr. 17, 1867. | Proclaimed Apr. 20, 1867.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Nez Perces, 1868
+  signed: '1868-08-13'
+  statutes_at_large: 15 Stat. 693
+  kappler:
+    volume: 2
+    page: 1024
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nez-perces-1868-1024
+  signatory: Nez Percé
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 1024 (Treaty with the Nez Perces, 1868; Kappler header "Aug. 13, 1868. | 15 Stats., 693. | Ratified Feb. 16, 1869. | Proclaimed Feb. 24, 1869.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Nez Perce Reservation, Idaho/Washington/Oregon
+  method: treaty
+  instrument: Treaty with the Nez Perces, June 11, 1855, art. II, 12 Stat. 957
+  date: '1855-06-11'
+  detail: First set aside
+  source: treaty-with-the-nez-perces-1855
+  confidence: high
+  verification: read-in-full
+  locator: 12 Stat. 957
+  note: 'The instrument reads: “There is, however, reserved from the lands above ceded ... for the use and occupation of the said tribe, and as a general reservation”. Reduced by the treaty of June 9, 1863, 14 Stat. 647 (the 1863 article again sets apart a reservation in the Clearwater country) and later acts.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

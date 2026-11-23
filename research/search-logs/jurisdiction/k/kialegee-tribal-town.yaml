@@ -1,0 +1,23 @@
+profile: content/tribes/k/kialegee-tribal-town.yaml
+topic: jurisdiction
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: federal-list
+  address: https://www.bia.gov/faqs/what-public-law-280-and-where-does-it-apply
+  query: 'scripts/jurisdiction/public_law_280_gaps.py: the nation''s states against the mandatory and optional Public Law 280 states'
+  outcome: found
+  reason: Public Law 280 status recorded for Oklahoma.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-list
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: 'Cross-deputization, tax and child welfare agreements with states, counties and cities: state agency lists, the Justice Department''s sample agreement library, Title IV-E surveys'
+  outcome: found
+  reason: 2 agreement(s) recorded.
+  records:
+  - research/raw/2026-11-23/jurisdiction-agreements.json#kialegee-tribal-town

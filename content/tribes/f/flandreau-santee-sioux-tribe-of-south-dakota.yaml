@@ -168,6 +168,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Flandreau Santee Sioux Tribe of South Dakota
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: Listed as "Flandreau Santee Sioux Tribe".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Flandreau Santee Sioux Tribe, South Dakota" among organizations under constitutions
@@ -192,6 +200,279 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Revised Constitution and By-Laws approved by Secretary of the Interior
+  quote: This revised Constitution and By-Laws, when adopted by majority
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article II
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: governing-body
+  value: Executive Committee
+  quote: Tribe shall be the Executive Committee.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: governing-body-size
+  value: 8 members, Treasurer non-voting
+  quote: (to be appointed and is a non-voting position), Trustee I, Trustee
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: governing-body-selection
+  value: Elected by the qualified voters
+  quote: term of office will expire shall be subject to re-election by the
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article V, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: members shall be four (4) years.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 4
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside at all
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: By-Laws, Article I, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Flandreau Santee Sioux Tribe of South Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the qualified voters
+  quote: term of office will expire shall be subject to re-election by the
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article V, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: members shall be four (4) years.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 4
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer, Trustees I-IV
+  quote: shall consist of a President, Vice-President, Secretary, Treasurer
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: elections
+  value: Each election year, general election at August General Council meeting
+  quote: The general election shall be held in conjunction with the August
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article V, Section 2
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or over and a resident of Moody
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 2
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: election-authority
+  value: Election Board
+  quote: Elections shall be conducted by an Election Board in accordance
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article V, Section 2
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: branches
+  value: Tribal governing body and tribal judiciary
+  quote: separation of power between the
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 3
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: separation of power between the
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 3
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: judiciary
+  value: Tribal Court and Appellate Court
+  quote: shall be composed of a court of general jurisdiction which
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: judicial-selection
+  value: Appointed by the Executive Committee
+  quote: by the Executive Committee for a four year term.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 4
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: judicial-term
+  value: 4 years
+  quote: by the Executive Committee for a four year term.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 4
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: judicial-independence
+  value: Tribal court decisions not reviewable by Executive Committee
+  quote: shall not be subject to review by the Executive Committee.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 3
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: amendment
+  value: Majority vote of enrolled members 18+ at Secretary-called election, 30% turnout
+  quote: may be amended by a majority vote of
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article X
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall become effective until it shall have been approved
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article X
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: recall-and-removal
+  value: Removal by Executive Committee on felony conviction
+  quote: An elected official shall be removed from office by
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article VI, Section 2
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: recall-and-removal
+  value: Removal by petition of no confidence signed by 65% of voters
+  quote: least sixty-five (65) percent of the qualified voters of the Tribe
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article VI, Section 3
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
 governing_documents:
 - kind: law-code
   title: Flandreau Santee Sioux Tribe of South Dakota
@@ -505,6 +786,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Flandreau Santee Sioux Tribe".
       Facilities as machine-extracted from the report text (verify): First American Mart; Royal River
       Casino and Hotel. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-11-01
+    date: '2011-05-14'
+    link: https://www.nigc.gov?wpdmdl=7757&ind=7769
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-11-01
+    note: The list titles the action “Flandreau Santee Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-11-01
+    date: '2011-07-20'
+    link: https://www.nigc.gov?wpdmdl=7749&ind=7755
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-11-01
+    note: The list titles the action “Flandreau Santee Sioux Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -519,6 +821,123 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: public-law-280
+  value: optional-state-consent-not-given
+  detail: South Dakota's 1957 act (S.D. Codified Laws §§ 1-1-12 to 1-1-16) offered to assume civil and criminal jurisdiction if the affected tribes consented; the Eighth Circuit found consent was not given, so jurisdiction was never assumed under it. (Rosebud Sioux Tribe v. South Dakota, 900 F.2d 1164, 1166 (8th Cir. 1990).)
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166; S.D. Codified Laws §§ 1-1-12, 1-1-13 (SL 1957, ch. 319)
+  note: 'Section 1-1-13 says a tribe that took no action within one year of Oct. 1, 1957 is deemed to consent; the court nevertheless held consent was not given. The sections are still printed in the code. The related 1959 highway statute (§ 1-1-17) also never took effect because its condition (roads jointly maintained by State and United States) was never met (900 F.2d at 1166). Shakopee, Northern Cheyenne and Turtle Mountain have only trust-land presence in SD in the roster and are not mapped. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-13.'
+- topic: public-law-280
+  value: not-assumed
+  detail: South Dakota's 1961 act (S.D. Codified Laws §§ 1-1-18 to 1-1-21) declared a general assumption of jurisdiction in Indian country, but it takes effect only on a gubernatorial proclamation, which was never issued; the general assumption never occurred. (S.D. Codified Laws § 1-1-21; 900 F.2d at 1167.)
+  source: south-dakota-codified-laws-1-1-18
+  confidence: high
+  verification: read-in-full
+  locator: S.D. Codified Laws § 1-1-21 (SL 1961, ch. 464, § 4); 900 F.2d at 1167
+  note: 'Quote is from Rosebud. A 1963 attempt to assume full jurisdiction (1963 S.D. Laws ch. 467) was defeated 3 to 1 in a referendum (900 F.2d at 1167). Statute text in § 1-1-21: highways are excepted from the proclamation requirement. Also cites: south-dakota-codified-laws-1-1-21, rosebud-sioux-tribe-v-south-dakota-1990.'
+- topic: public-law-280
+  value: assumption-held-invalid
+  detail: 'South Dakota''s 1961 highway-only assumption was held invalid by the South Dakota Supreme Court in 1964 (In re Hankins) and, after that court revived it in State v. Onihan (1988), by the Eighth Circuit in 1990: without tribal consent the State has no civil or criminal jurisdiction over highways through Indian lands. (Rosebud, 900 F.2d at 1166-67, 1172.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166
+  note: 'Hankins: 80 S.D. 435, 442-43, 125 N.W.2d 839, 842-43 (state cannot assume jurisdiction over highways alone; the Eighth Circuit describes this at 900 F.2d at 1167). Rosebud''s further holding (at 1170-72): the highway-only scheme does not meet Public Law 280, and the 1968 consent requirement bars later nonconsensual assumption. Cert. history not checked. Parties: Rosebud, Cheyenne River, Oglala, Standing Rock; the holding is about "Indian lands in the state" generally. Also cites: in-re-hankins-petition-1964.'
+- topic: public-law-280
+  value: not-assumed
+  detail: 'Today South Dakota holds no Public Law 280 jurisdiction over any of its reservations: the 1957 act was never consented to, the 1961 general act never took effect, and the 1961 highway piece is invalid; the statutes stay in the code. (Rosebud, 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12 to 1-1-21.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: medium
+  verification: read-in-full
+  locator: 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12, 1-1-18
+  note: 'Quote is the 1957 assumption text, § 1-1-12, shown because it is still printed in the code. Conclusion that nothing is in force is mine, drawn from Rosebud (1990) plus the statutes; the research did not find any later tribal consent election or any post-1990 South Dakota assumption. Goldberg (2010) fn. 4 reaches the same view. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-18.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: South Dakota Department of Social Services
+  agreement: Purchase of Services Agreement Between Flandreau Santee Sioux Tribe and the State of South Dakota Department of Social Services (2014)
+  state: SD
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for SD
+  note: 'The source reads: “Purchase of Services Agreement Between Flandreau Santee Sioux Tribe and the State of South Dakota Department of Social Services (2014)”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: South Dakota Department of Social Services, Division of Child Protection
+  agreement: Title IV-E agreement (purchase of services)
+  state: SD
+  date: '2013'
+  status: expired
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.N, South Dakota
+  note: 'The source reads: “the Flandreau Santee Sioux Tribe”. The report says "All agreements expired on May 31, 2013"; later agreements are not shown in this source. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: SD
+  county: Moody County
+  court: Circuit Court for Moody County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Moody County holds 100% of the land of Flandreau Reservation (Census GEOID 1100), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Sauk and Foxes, etc., 1830
+  signed: '1830-07-15'
+  statutes_at_large: 7 Stat. 328
+  kappler:
+    volume: 2
+    page: 305
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305
+  signatory: Wahpekuta; Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Wahpekute among Flandreau ancestors. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, 1836
+  signed: '1836-11-30'
+  statutes_at_large: 7 Stat. 527
+  kappler:
+    volume: 2
+    page: 481
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1836-0481
+  signatory: Wahpekuta; Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 481 (Treaty with the Sioux, 1836; Kappler header "Nov. 30, 1836. | 7 Stat., 527. | Proclamation, Feb 18, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Wahpekute among Flandreau ancestors. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Mdewakanton and Wahpakoota Bands, 1851
+  signed: '1851-08-05'
+  statutes_at_large: 10 Stat. 954
+  kappler:
+    volume: 2
+    page: 591
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-mdewakanton-and-wahpakoota-bands-1851-0591
+  signatory: Mdewakanton; Wahpekuta
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 591 (Treaty with the Sioux-Mdewakanton and Wahpakoota Bands, 1851; Kappler header "Aug. 5. 1851. | 10 Stats., 954. | Proclamation Feb. 24, 1853.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Flandreau Santee includes Mdewakanton descendants. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, 1858
+  signed: '1858-06-19'
+  statutes_at_large: 12 Stat. 1031
+  kappler:
+    volume: 2
+    page: 781
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1858-0781
+  signatory: Wahpekute; Mdewakanton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 781 (Treaty with the Sioux, 1858; Kappler header "June 19, 1858. | 12 Stats., 1031. | Ratified Mar. 9, 1859. | Proclaimed Mar. 31, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Wahpekute among Flandreau ancestors. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

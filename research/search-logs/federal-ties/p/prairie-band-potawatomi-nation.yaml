@@ -1,0 +1,41 @@
+profile: content/tribes/p/prairie-band-potawatomi-nation.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/sites/careeropps/themes/responsive2017/display_objects/documents/18IHS-OHR604_BRO_OKCity_Word_508C_M.pdf
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Oklahoma City Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#prairie-band-potawatomi-nation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 43 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#prairie-band-potawatomi-nation
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-compilation
+  address: https://archive.org/details/bp_996062
+  query: How the nation's reservation was set aside
+  outcome: not-found
+  reason: 'Candidate: Kansas/Nebraska reservations: treaties of 1854 (10 Stat. 1043 Omaha entered), 1861 (12 Stat. 1171, 1191), 1862 (13 Stat. 623). Not entered: The 1861 and 1862 treaties reduce and allot existing reserves created by earlier treaties of the 1830s-1850s; the first instrument was not read for Prairie Band, Kickapoo or Iowa.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: not-found
+  reason: Neither list names the nation.

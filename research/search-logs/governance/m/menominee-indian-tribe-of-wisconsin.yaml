@@ -1,0 +1,34 @@
+profile: content/tribes/m/menominee-indian-tribe-of-wisconsin.yaml
+topic: governance
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/captures/constitutions/menominee-indian-tribe-of-wisconsin/45fd2cfc3a8e7d38.txt
+  query: 'Governance: governing body, head of government, elections, branches, courts, amendment (scripts/governance/reader-brief.md)'
+  outcome: found
+  reason: Read the 1991 constitution and bylaws (constitution-menominee-indian-tribe-of-wisconsin-1991-text); kept 24 facts whose quoted words were found in the text.
+  records:
+  - constitution-menominee-indian-tribe-of-wisconsin-1991-text
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: found
+  reason: The directory lists the title of the leader's office.
+  records:
+  - bia-tribal-leaders-directory-2026
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://www.menominee-nsn.gov/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: blocked
+  reason: 'The website could not be read: only a short home page (a bot check or an empty page).'
+next_steps: The nation's website refused an automated reader; read its government pages by hand.

@@ -8,25 +8,42 @@ import type { Handle } from '@sveltejs/kit/hooks';
 import { sealNewEntries } from '#lib/server/activity-seals.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { eventStatement, refusedAction } from '#lib/server/events.ts';
-import { sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
+import { endSession, pastWorkspaceLimits, sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
+import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
-import { permissionsOf } from '#lib/permissions.ts';
+import { needsTwoStep, permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
 
 /** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests', '/following'];
+const privatePrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/sign-out', '/requests', '/following', '/uploads', '/book/orders', '/book/files', '/events', '/sponsorship'];
 
 /** Pages that need to know who is signed in. */
-const signedInPrefixes = ['/workspace', '/profile', '/sign-in', '/following'];
+const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/following', '/uploads', '/files', '/events', '/sponsorship/invite'];
+
+/**
+ * Pieces of files people send (src/lib/server/uploads.ts). A large file is
+ * hundreds of pieces, so they have their own limit (uploadLimit, on starting
+ * each file) instead of the limit on workspace changes.
+ */
+const piecePrefix = '/uploads/pieces/';
+/**
+ * Where the inbox saves a person's draft a moment after they stop typing
+ * (src/routes/workspace/inbox/Composer.svelte). A draft is the writer's own
+ * and changes nothing anyone else sees, so saving it does not count against
+ * the limit on workspace changes.
+ */
+const draftSavePath = '/workspace/inbox/drafts/save';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.person = undefined;
 	event.locals.account = undefined;
 	event.locals.refused = undefined;
 	event.locals.session = undefined;
+	event.locals.waitingSession = undefined;
+	event.locals.twoStepNeeded = false;
 	const path = event.url.pathname;
 	const changing = changesSomething(event.request.method);
 
@@ -51,10 +68,27 @@ export const handle: Handle = async ({ event, resolve }) => {
 					return undefined;
 				}
 			);
-			if (session) {
-				event.locals.session = session;
-				event.locals.account = { subject: session.account.identifier, email: session.account.email, name: null };
-				event.locals.person = await activePersonBySubject(environment.database, session.account.identifier);
+			if (session?.secondStep === 'waiting') {
+				// Half signed in: only the second-step page may use it.
+				event.locals.waitingSession = session;
+			} else if (session) {
+				const person = await activePersonBySubject(environment.database, session.account.identifier);
+				if (person && session.lasting && pastWorkspaceLimits(session)) {
+					// A "Keep me signed in" session from before the person was given
+					// workspace access ends at the workspace's limits.
+					await endSession(environment.database, event.cookies.get(sessionCookie));
+					clearSessionCookie(event.cookies);
+				} else {
+					event.locals.session = session;
+					event.locals.account = { subject: session.account.identifier, email: session.account.email, name: null };
+					if (person && needsTwoStep(person.role) && session.secondStep !== 'done') {
+						// The role needs two-step sign-in and it is not set up yet:
+						// signed in, but without workspace access until it is.
+						event.locals.twoStepNeeded = true;
+					} else {
+						event.locals.person = person;
+					}
+				}
 			} else {
 				clearSessionCookie(event.cookies);
 			}
@@ -69,7 +103,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		// Each person may make a limited number of changes a minute, so a
 		// stolen session or a runaway script cannot rewrite much before
 		// someone notices (wrangler.jsonc, workspaceChangeLimit).
-		if (changing && event.locals.person && environment.workspaceChangeLimit) {
+		if (changing && event.locals.person && environment.workspaceChangeLimit && !path.startsWith(piecePrefix) && path !== draftSavePath) {
 			const { success } = await environment.workspaceChangeLimit.limit({
 				key: event.locals.person.identifier
 			});
@@ -82,6 +116,11 @@ export const handle: Handle = async ({ event, resolve }) => {
 		}
 	}
 
+	// A live editing connection goes to the essay's room before SvelteKit
+	// routes it: its answer is a WebSocket, which takes no added headers
+	// (src/lib/server/live-editing.ts).
+	if (!building && isLiveEditingRequest(event.request, event.url)) return openLiveEditing(event);
+
 	const response = await resolve(event);
 
 	if (!building && event.locals.person && path.startsWith('/workspace')) {
@@ -90,7 +129,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	if (privatePrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
 		response.headers.set('cache-control', 'no-store');
-		response.headers.set('x-frame-options', 'DENY');
+		// A message's HTML is shown in a sandboxed frame on the conversation page (src/routes/workspace/inbox/messages).
+		response.headers.set('x-frame-options', /^\/workspace\/inbox\/messages\/[^/]+\/html$/.test(path) ? 'SAMEORIGIN' : 'DENY');
 		response.headers.set('referrer-policy', 'same-origin');
 		response.headers.set('x-content-type-options', 'nosniff');
 	}

@@ -1,7 +1,7 @@
 profile: content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -172,3 +172,110 @@ searches:
   query: arbitration
   outcome: not-found
   reason: Home page has no link to the ordinance text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/nhbp-ecode360-29877357-labor-relations.html
+  query: Sec.13.01. Arbitration
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/0c21ae7b1ed3afc9ed7b.txt
+  query: Sec.13.01. Arbitration
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/nhbp-ecode360-29877357-labor-relations.html
+  query: Sec.14.02. Mediation
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/0c21ae7b1ed3afc9ed7b.txt
+  query: Sec.14.02. Mediation
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/0c21ae7b1ed3afc9ed7b.txt
+  query: 'Chapter 03: Title VIII-03 Arbitration Ordinance'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/3997f8869bbea44a556c.txt
+  query: 'Chapter 03: Title VIII-03 Arbitration Ordinance'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Nottawaseppi Arbitration Ordinance
+  query: Nottawaseppi Huron Band Potawatomi Arbitration Ordinance Title VIII-03
+  outcome: found
+  reason: ecode360 page returned.
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://ecode360.com/29878541
+  query: fetch
+  outcome: found
+  reason: Loaded; summary only.
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/michigan/508_compliant_1999.02.18_nottawaseppi_huron_band_of_potawatomi_tribal_state_gaming_compact.txt
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#gaming.compacts
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/michigan/508_compliant_2009.10.08_nottawaseppi_huron_band_of_potawatomi_tribal_state_gaming_compact.txt
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#gaming.compacts
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/michigan/508
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/nottawaseppi-huron-band-of-the-potawatomi.yaml#gaming.compacts

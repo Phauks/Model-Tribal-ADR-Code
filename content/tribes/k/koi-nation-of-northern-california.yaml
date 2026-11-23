@@ -92,6 +92,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Koi Nation of Northern California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Koi Nation of Northern California".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Koi Nation of Northern California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 gaming:
   ordinances:
   - approved: '2024-08-20'
@@ -103,6 +120,17 @@ gaming:
     locator: table row 125, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 125 lists the nation
       as "Koi Nation of Northern California".
+  indian_lands_opinions:
+  - parcel: Purvis Tract, Lake County, CA
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2008-10-07'
+    link: https://www.nigc.gov?wpdmdl=2622&ind=2623
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Lower Lake Rancheria Koi Nation, 2008-10-07
+    note: The list names the tribe as “Lower Lake Rancheria Koi Nation”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

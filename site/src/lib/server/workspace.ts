@@ -19,13 +19,34 @@ interface WorkspaceEvent {
 /**
  * The signed-in person, or a redirect to sign in and come back. Someone who
  * is signed in but has no workspace access goes to their contributor
- * profile instead.
+ * profile instead, and someone whose role needs two-step sign-in goes to set
+ * it up first.
  */
 export function requirePerson(event: WorkspaceEvent): SignedInPerson {
+	if (event.locals.twoStepNeeded) {
+		const returnTo = `${event.url.pathname}${event.url.search}`;
+		redirect(303, `/account/security/two-step?required=1&returnTo=${encodeURIComponent(returnTo)}`);
+	}
 	if (!event.locals.person) {
 		if (event.locals.account) redirect(303, '/profile');
 		const returnTo = `${event.url.pathname}${event.url.search}`;
 		redirect(303, `/sign-in?returnTo=${encodeURIComponent(returnTo)}`);
+	}
+	return event.locals.person;
+}
+
+/**
+ * The signed-in person, for an address the editor reads or writes with
+ * fetch. A redirect there would be followed quietly and answered with the
+ * sign-in page, which the editor could take for a save, so a signed-out
+ * request gets "401 Unauthorized" with a message instead.
+ */
+export function requirePersonForData(event: WorkspaceEvent): SignedInPerson {
+	if (event.locals.twoStepNeeded) {
+		error(403, 'Your role needs two-step sign-in. Set it up on Sign-in and security, then try again.');
+	}
+	if (!event.locals.person) {
+		error(401, event.locals.account ? 'This account has no workspace access.' : 'You are signed out. Sign in again in another tab, then try once more.');
 	}
 	return event.locals.person;
 }

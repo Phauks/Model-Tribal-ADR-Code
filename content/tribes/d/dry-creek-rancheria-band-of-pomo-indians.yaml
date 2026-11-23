@@ -158,6 +158,170 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Dry Creek Rancheria Band of Pomo Indians, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Dry Creek Rancheria Band of Pomo Indians, California".
+governance:
+- aspect: form
+  value: Articles of Association
+  quote: ARTICLES OF ASSOCIATION
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Dry Creek Rancheria Band of Pomo Indians is governed by the Tribal Council through an elected Board of Directors.
+  source: dry-creek-rancheria-band-of-pomo-indians-website-board-of-directors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages are mostly business and culture pages; the only governing text is the Tribal Judicial Code, and the Board of Directors page gives no seat count or term.'
+- aspect: general-council
+  value: All members 18 or over (Tribal Council)
+  quote: all members eighteen (18) years of age or over.
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: Article IV
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: head-of-government
+  value: Chairman of the Board of Directors
+  quote: The Chairman of the Board of Directors shall preside at ail
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: Article XI, A
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Dry Creek Rancheria Band of Pomo Indians, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its membership
+  quote: The Tribal Council shall elect from its membership a
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: Article IV
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer, two delegates
+  quote: Secretary -Treasurer, and two delegates, and such other temporary,
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: Article IV
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: elections
+  value: Nominations every 2 years, in September
+  quote: two years at the Tribal Council meeting in September, The date for
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: Article VI
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the Tribal 'Council, eighteen (IS) years or older shall
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: Article VI
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: judiciary
+  value: Trial Court and Appellate Court
+  quote: Tribal Court shall consist of both a Trial Court and Appellate Court.
+  source: dry-creek-rancheria-band-of-pomo-indians-website-wp-content-uploads-2023-05-1-dcr-judicial-code-certification
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Title 1, Section 4
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: The saved pages are mostly business and culture pages; the only governing text is the Tribal Judicial Code, and the Board of Directors page gives no seat count or term.'
+- aspect: amendment
+  value: Majority vote of eligible voters in referendum, 30% must participate
+  quote: The Articles of Association may be amended by a majority vote of
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: Article XIII
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: secretarial-approval
+  value: Not required
+  quote: for Dry Creek Rancheria, that no other approval authority is
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: recall-and-removal
+  value: Recall of Board member by majority vote of Tribal Council
+  quote: In the event of recall of a member of the Board of Directors for
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: Article VII, A
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
+- aspect: other
+  value: Board of Directors holds office 2 years
+  quote: Directors shall hold office for two years, or until their successors are
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: Article VII
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan bundles 1977 and 1979 amendment letters and resolutions with a retyped Articles text (certified 1988); facts are drawn from the retyped Articles.'
 governing_documents:
 - kind: law-code
   title: Dry Creek Rancheria Band of Pomo Indians, California
@@ -342,6 +506,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Dry Creek Rancheria Band of
       Pomo Indians, California". Facilities as machine-extracted from the report text (verify): River
       Rock Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: River Rock Casino Site, Sonoma County, CA
+    legal_theory: Within Reservaton Boundaries
+    accepted: true
+    date: '2003-04-09'
+    link: https://www.nigc.gov?wpdmdl=2550&ind=2551
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Dry Creek Rancheria Band of Pomo, 2003-04-09
+    note: The list names the tribe as “Dry Creek Rancheria Band of Pomo”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -368,6 +543,37 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+court_practice:
+- kind: court-rules
+  title: Rules of Court (Certified copy)
+  court: Dry Creek Rancheria Tribal Court
+  link: https://drycreekrancheria.com/wp-content/uploads/2023/05/Rules-of-Court-Certified-copy.pdf
+  detail: Court page also lists Title 2 Civil Procedure, Title 1 Judicial Code and Title 4 Criminal Code (certified copies).
+  source: dry-creek-rancheria-tribal-court-court-rules-forms
+  confidence: high
+  verification: title-only
+  locator: Tribal laws list
+  note: 'The source reads: “Rules of Court”. PDFs not opened.'
+- kind: forms
+  title: Civil and criminal code forms (Dry Creek Rancheria)
+  court: Dry Creek Rancheria Tribal Court
+  link: https://drycreekrancheria.com/wp-content/uploads/2023/05/CIV-001-2013-CIV-PRO-Civil-Complaint-Form.doc
+  detail: Court page lists numbered forms such as CIV-001-2013 Civil Complaint Form, CRIM-001-2013 Petition for Protective Order and CC-001-2013 Children Code summons.
+  source: dry-creek-rancheria-tribal-court-court-rules-forms
+  confidence: medium
+  verification: title-only
+  locator: Tribal laws list
+  note: 'The source reads: “CIV-001-2013 CIV PRO Civil Complaint Form”. Forms dated 2013; files not opened.'
+nearby_state_courts:
+- state: CA
+  county: Sonoma County
+  court: Superior Court for Sonoma County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Sonoma County holds 100% of the land of Dry Creek Rancheria (Census GEOID 0955), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -1,3 +1,4 @@
+import { deviceLabel } from '#lib/device-label.ts';
 import { fail, redirect } from '@sveltejs/kit';
 import { linkStillWorks, useLink, verifiedAccount } from '#lib/server/accounts.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
@@ -36,13 +37,19 @@ export const actions: Actions = {
 			redirect(303, '/sign-in/refused');
 		}
 		const account = await verifiedAccount(environment.database, result.email);
-		const finished = await finishSignIn(environment.database, cookies, account, 'link', returnTo, environment.LEAD_AUTHOR_EMAIL);
+		const finished = await finishSignIn(environment.database, cookies, account, 'link', returnTo, environment.LEAD_AUTHOR_EMAIL, {
+			device: deviceLabel(request.headers.get('user-agent'))
+		});
 		if (finished.outcome === 'refused') {
 			cookies.set(refusalCookie, finished.reason, { path: '/sign-in', maxAge: 300, httpOnly: true, sameSite: 'lax' });
 			redirect(303, '/sign-in/refused');
 		}
-		// Someone signing in with a link the lead author made, who has no
-		// password yet, is offered one, so they need not ask for a link again.
-		redirect(303, result.origin === 'email' || account.hasPassword ? finished.destination : '/profile/password?welcome=1');
+		// Someone signing in with a link the lead author made is offered a
+		// password, so they need not ask for a link again. Someone who already
+		// has one may have forgotten it (that is often why the lead author
+		// made the link), and can choose a new one without the old one
+		// (src/lib/server/accounts.ts, provedRecently).
+		if (result.origin === 'email' || finished.destination.startsWith('/sign-in/two-step')) redirect(303, finished.destination);
+		redirect(303, '/profile/password?welcome=1');
 	}
 };

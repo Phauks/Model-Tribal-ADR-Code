@@ -1,6 +1,6 @@
 # Working outline: model code, book and website
 
-**Version 0.5, Nov. 22, 2026.** This is the project's framework: the parts, divisions and website sections, and what each one is for. It is a working draft that will change. Nothing here is provision text, which waits for Gate 1 and Gate 2 under the [roadmap](roadmap.md). A readable copy for review and comments is kept as a Claude Doc ([working outline](https://claude.ai/artifact/CMngzviK5V9QX2htVpgpT7)); this file is the record.
+**Version 0.6, Nov. 23, 2026.** This is the project's framework: the parts, divisions and website sections, and what each one is for. It is a working draft that will change. Nothing here is provision text, which waits for Gate 1 and Gate 2 under the [roadmap](roadmap.md). A readable copy for review and comments is kept as a Claude Doc ([working outline](https://claude.ai/artifact/CMngzviK5V9QX2htVpgpT7)); this file is the record.
 
 The project is built for the website first; the book's order, title and print form are settled later, at export time (lead author, Nov. 22, 2026).
 
@@ -95,7 +95,7 @@ Each essay explains and defends one design choice, so a nation can weigh the rea
 
 | Item | Purpose | Status |
 | --- | --- | --- |
-| Model forms | Fill-in forms with placeholders, such as an agreement to take part | Decided |
+| Model forms | Fill-in forms with placeholders: court forms for people filing in a Tribal court (nine drafted, decision record [0049](decisions/0049-draft-model-court-forms-before-gate-2.md)), and later forms for the code's divisions, such as an agreement to take part | Exists (court forms); decided (division forms) |
 | Nations cited | A short directory of nations whose law the book cites; full profiles live on the website | Scope question 11; Gate 1 |
 | Glossary | Plain explanations of words used in the essays and other prose, with sources; points to the code's own definition where one exists (scope question 12) | Exists |
 | Table of authorities and bibliography | Every case, statute, Tribal law and reading cited | Exists in part |
@@ -159,7 +159,7 @@ The lead author answered most questions on Nov. 22, 2026. Still open: 4 (deferre
 | 7 | How much evidence law? | *Decided Nov. 22, 2026:* the code carries its own confidentiality and privilege rules (including whether a neutral or peacemaker can be a witness) in the general division, not a general evidence code; one model rule or lettered alternatives is chosen during drafting | 85 confidentiality provisions from 38 nations differ in ways a drafter must choose among ([evidence spike](../research/analyses/2026-11-21-tribal-rules-of-evidence.md#recommendation)) |
 | 8 | Where do Canada and Mexico go? | *Decided Nov. 22, 2026:* an essay in Part IV, plus short boxes in the commentary where a border-divided nation matters; no provisions | Each country sets status by its own law ([Canada note](../research/analyses/2026-11-21-canada-dispute-resolution.md); [Mexico note](../research/analyses/2026-11-21-mexico-indigenous-dispute-resolution.md)) |
 | 9 | When do stories appear? | *Decided Nov. 22, 2026:* put the stories on the website as soon as possible, within decision record 0019's access and excerpt rules; full stories only with permission | Every shortlisted story needs a nation's or teller's permission ([stories catalog, section 4](../research/analyses/2026-11-21-peacemaking-stories.md#4-anthology-shortlist-and-whose-permission-each-needs)) |
-| 10 | Include model forms? | *Decided Nov. 22, 2026:* yes, a small set tied to the general division first | Forms are already planned as CC0 files with placeholders ([repository-layout.md](repository-layout.md)) |
+| 10 | Include model forms? | *Decided Nov. 22, 2026:* yes, a small set tied to the general division first. *Nov. 23, 2026:* court forms for people filing in Tribal courts drafted ahead of Gate 2 (decision record [0049](decisions/0049-draft-model-court-forms-before-gate-2.md)) | Forms are already planned as CC0 files with placeholders ([repository-layout.md](repository-layout.md)) |
 | 11 | Nation profiles in print? | *Deferred to book form.* Leaning: a short directory of nations cited; full profiles stay on the website | There are about 950 profiles, too many for a printed book (project count of `content/tribes/`) |
 | 12 | Where do the code's definitions go? | *Decided Nov. 22, 2026:* defined terms that are enacted belong in the code itself, in the general division; the glossary is the reference for words used in the essays and other prose, and where a word is defined in the code the glossary points to that definition so the two match | Lead author's note, Nov. 22, 2026; readers meet the substance first (project judgment) |
 | 13 | Where does commentary go? | *Decided Nov. 22, 2026:* its own part after the code, keyed to section numbers; on the website, also under each section | Lead author's shape for the book; the website can show both without cost |
@@ -198,6 +198,7 @@ The 1st Edition covers Native nations in the United States, as the [charter's pu
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.6 | Nov. 23, 2026 | Model court forms for people filing in Tribal courts drafted ahead of Gate 2 (decision record 0049); division forms still wait for the general division |
 | 0.5 | Nov. 22, 2026 | Methods catalog unblocked: all 33 method records adopted (Gate 1 item 6) |
 | 0.4 | Nov. 22, 2026 | Lead author's answers to scope questions 2, 3, 5, 7, 8, 9, 10, 12 and 14 recorded; definitions move into the general division; question 4 deferred to Gate 2 and question 6 kept open |
 | 0.3 | Nov. 22, 2026 | Website first, book form later; five parts (Foundations, Model Code, Commentary, Essays, Methods and Manners); one model code in divisions with peacemaking as a division (decision record 0026); essays explain design choices; scope questions 15 and 16 added |

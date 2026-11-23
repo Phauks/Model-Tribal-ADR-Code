@@ -199,6 +199,239 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Muscogee (Creek) Nation
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "The Muscogee (Creek) Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
+governance:
+- aspect: form
+  value: Organized under Section 3 of the Act of June 26, 1936
+  quote: is hereby organized under Section 3 of the Act of June 26, 1936 (48 Stat. 1967).
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article I, Section 1
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: governing-body
+  value: Muscogee (Creek) National Council
+  quote: All legislative power herein shall be vested in the Muscogee (Creek) National Council, which shall consist of one (1) House with two (2) representatives from each district elected.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: governing-body-size
+  value: Maximum of 16 members, two per district
+  quote: the number of National Council Representatives will be set at a maximum of sixteen (16) members
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: governing-body-selection
+  value: Elected by all eligible voters of the Nation
+  quote: by a vote of all the eligible voters of the Nation and shall hold office
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VI, Section 2(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: for four (4) years. Beginning with the first election after this
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VI, Section 2(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: head-of-government
+  value: Principal Chief
+  quote: shall be known as the Office of the Principal Chief of the
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: head-of-government
+  value: Principal Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority of votes cast
+  quote: upon election by majority of the votes cast.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: term of four (4) years upon election by majority of the votes cast.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: other-officers
+  value: Second Chief
+  quote: shall be the Second Chief who shall be elected in the
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article V, Section 1(c)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: elections
+  value: Election dates no more than 4 years apart
+  quote: Election dates for offices of the Muscogee (Creek) Nation shall be no more than four (4) years apart.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article IV, Section 6
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: voting-age
+  value: '18'
+  quote: they are at least eighteen (18) years of age at the
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article IV, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: election-authority
+  value: Election Board
+  quote: an Election Board comprised of five (5) citizens who shall be charged
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article IV, Section 1
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: judiciary
+  value: Supreme Court and inferior courts
+  quote: shall be vested in one Supreme Court limited to matters
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VII, Section 1
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: judicial-selection
+  value: Appointed by Principal Chief, subject to majority approval of National Council
+  quote: appointed by the Principal Chief, subject to majority
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VII, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: judicial-term
+  value: 6 years
+  quote: terms shall be for six (6) years beginning July 1.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VII, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: amendment
+  value: Two-thirds vote of National Council, or two-thirds of voters at special election
+  quote: A two-thirds (2/3) affirmative vote
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article IX, Section 1(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: recall-and-removal
+  value: Removal by three-fourths vote of National Council after petition of 20% of voters
+  quote: three-fourth (3/4) vote of the National Council shall be required for
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VIII, Section 3
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: recall-and-removal
+  value: Recall by voters on petition of 15% of electorate
+  quote: fifteen (15) percent of the electorate.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article XII, Section 8
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
 governing_documents:
 - kind: law-code
   title: The Muscogee (Creek) Nation
@@ -563,6 +796,78 @@ gaming:
     locator: table row 162, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
       as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Holdenville Site, Hughes County, OK
+    legal_theory: Jurisdiction
+    accepted: true
+    date: '2008-04-23'
+    link: https://www.nigc.gov?wpdmdl=2610&ind=2611
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2008-04-23
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: Kellyville Parcel, Creek City, OK
+    legal_theory: Indian Lands Oklahoma
+    accepted: true
+    date: '2009-01-06'
+    link: https://www.nigc.gov?wpdmdl=2629&ind=2630
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2009-01-06
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: Twin Hills Parcel, Okmulgee County, OK
+    legal_theory: Indian lands Oklahoma
+    accepted: true
+    date: '2009-01-06'
+    link: https://www.nigc.gov?wpdmdl=2627&ind=2628
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2009-01-06
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: Okmulgee County, OK
+    legal_theory: Within Boundaries of Reservation / Indian Lands Oklahoma
+    accepted: true
+    date: '2019-05-14'
+    link: https://www.nigc.gov?wpdmdl=2682&ind=2683
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2019-05-14
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: River Spirit Triangle, Tulsa County, OK
+    legal_theory: Within Boundaries of the Reservation
+    accepted: true
+    date: '2019-05-14'
+    link: https://www.nigc.gov?wpdmdl=2684&ind=2685
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2019-05-14
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-08
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7899&ind=7910
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-08
+    note: The list titles the action “Muscogee Creek Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-08
+    date: '2009-03-23'
+    link: https://www.nigc.gov?wpdmdl=7893&ind=7904
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-08
+    note: The list titles the action “Muscogee Creek Nation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -597,6 +902,426 @@ jurisdiction:
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Muscogee (Creek) Nation of Oklahoma".
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.52)
+  note: Listed as "MUSCOGEE CREEK NATION" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Muscogee Creek Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: cross-deputization
+  other_party: City of Tulsa (joining the Muscogee (Creek) Nation deputation agreement with the State of Oklahoma)
+  agreement: Deputation agreement for law enforcement, city addendum
+  state: OK
+  date: '2020-08-25'
+  status: in-effect
+  source: muscogee-nation-deputation-agreement-city-of-tulsa-addendum-2020
+  confidence: medium
+  verification: read-in-full
+  locator: City Addendum, page 1
+  note: 'The source reads: “DEPUTATION AGREEMENT FOR LAW ENFORCEMENT IN THE Muscogee Creek Nation”. Date is the Oklahoma Secretary of State filing stamp (August 25, 2020). The addendum adds the City of Tulsa to the nation''s deputation agreement; the main agreement is not in this file. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: court-rules
+  title: Rules of the Muscogee District Court
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/court-rules/
+  detail: Court rules page; rule 1 says new members of the Muscogee (Creek) Nation Bar Association receive a copy of the rules on payment of admission fees. A Word file of the rules is linked (Rules-of-the-MCN-District-Court.docx, uploaded 2024-05).
+  source: muscogee-creek-nation-district-court-court-rules
+  confidence: high
+  verification: read-in-full
+  locator: Court Rules page, Rule 1
+- kind: bar-admission
+  title: Rules of the Muscogee District Court (Rule 1, Bar Association references)
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/court-rules/
+  detail: The rules mention a Muscogee (Creek) Nation Bar Association and admission fees, but this page does not set out an application process or fee amount.
+  source: muscogee-creek-nation-district-court-court-rules
+  confidence: low
+  verification: inferred
+  locator: Rule 1. Official Court Rules
+  note: 'The source reads: “New members of the Muscogee (Creek) Nation Bar Association will be presented a copy of the Rules upon payment of admission fees.”. Only an indirect reference; no admission procedure page found. Confidence set low because it gives no process.'
+- kind: filing-fees
+  title: Fee Schedule
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/fees/
+  detail: Fee schedule listing civil filing fee $84.00, appeal fee $175.00, jury fee $100.00, criminal complaint $84.00, copy fee $1.00 and other fees.
+  source: muscogee-creek-nation-district-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Fees page
+  note: 'The source reads: “FEE SCHEDULE”.'
+- kind: forms
+  title: District Court Forms
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/forms/
+  detail: Forms page lists request and application for court appointed counsel, plea agreement, guardianship, small claims, garnishment, foreign judgment, attorney entry of appearance, and protection order forms.
+  source: muscogee-creek-nation-district-court-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms page
+  note: 'The source reads: “DISTRICT COURT FORMS”.'
+nearby_state_courts:
+- state: OK
+  county: Creek County
+  court: District Court for Creek County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Creek County holds 21% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Okmulgee County
+  court: District Court for Okmulgee County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Okmulgee County holds 15% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Okfuskee County
+  court: District Court for Okfuskee County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Okfuskee County holds 13% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Hughes County
+  court: District Court for Hughes County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Hughes County holds 12% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: McIntosh County
+  court: District Court for McIntosh County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: McIntosh County holds 11% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Wagoner County
+  court: District Court for Wagoner County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Wagoner County holds 10% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Tulsa County
+  court: District Court for Tulsa County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Tulsa County holds 8% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Muskogee County
+  court: District Court for Muskogee County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Muskogee County holds 8% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Rogers County
+  court: District Court for Rogers County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Rogers County holds 1% of the land of Creek OTSA (Census GEOID 5620), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Seminole County
+  court: District Court for Seminole County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Seminole County holds 100% of the land of Creek/Seminole joint-use OTSA (Census GEOID 5915), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Creeks, 1790
+  signed: '1790-08-07'
+  statutes_at_large: 7 Stat. 35
+  kappler:
+    volume: 2
+    page: 25
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1790-0025
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 25 (Treaty with the Creeks, 1790; Kappler header "Aug. 7, 1790 | 7 Stat., 35. | Proclamation, Aug. 13, 1790.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1796
+  signed: '1796-06-29'
+  statutes_at_large: 7 Stat. 56
+  kappler:
+    volume: 2
+    page: 46
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1796-0046
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 46 (Treaty with the Creeks, 1796; Kappler header "June 29, 1796. | 7 Stat., 56. | Proclamation, Mar. 18, 1797.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1802
+  signed: '1802-06-16'
+  statutes_at_large: 7 Stat. 68
+  kappler:
+    volume: 2
+    page: 58
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1802-0058
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 58 (Treaty with the Creeks, 1802; Kappler header "June 16, 1802. | 7 Stat., 68. | Proclamation, Jan. 11, 1803.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1805
+  signed: '1805-11-14'
+  statutes_at_large: 7 Stat. 96
+  kappler:
+    volume: 2
+    page: 85
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1805-0085
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 85 (Treaty with the Creeks, 1805; Kappler header "Nov. 14. 1805. | 7 Stat., 96. | Proclamation, June 2, 1806.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1814
+  signed: '1814-08-09'
+  statutes_at_large: 7 Stat. 120
+  kappler:
+    volume: 2
+    page: 107
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1814-0107
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 107 (Treaty with the Creeks, 1814; Kappler header "Aug. 9, 1814. | 7 Stat., 120. | Proclamation, Feb. 16, 1815.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1818
+  signed: '1818-01-22'
+  statutes_at_large: 7 Stat. 171
+  kappler:
+    volume: 2
+    page: 155
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1818-0155
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 155 (Treaty with the Creeks, 1818; Kappler header "Jan. 22, 1818. | 7 Stat., 171. | Proclamation, Mar. 28, 1818.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1821
+  signed: '1821-01-08'
+  statutes_at_large: 7 Stat. 215
+  kappler:
+    volume: 2
+    page: 195
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1821-0195
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 195 (Treaty with the Creeks, 1821; Kappler header "Jan. 8, 1821. | 7 Stat., 215. | Proclamation, Mar. 2, 1821.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1821
+  signed: '1821-01-08'
+  statutes_at_large: 7 Stat. 217
+  kappler:
+    volume: 2
+    page: 197
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1821-0197
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 197 (Treaty with the Creeks, 1821; Kappler header "Jan. 8, 1821 | 7 Stat., 217. | Proclamation, Mar. 2, 1821.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1825
+  signed: '1825-02-12'
+  statutes_at_large: 7 Stat. 237
+  kappler:
+    volume: 2
+    page: 214
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1825-0214
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 214 (Treaty with the Creeks, 1825; Kappler header "Feb. 12, 1825. | 7 Stat., 237. | Proclamation, Mar. 7, 1825.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1826
+  signed: '1826-01-24'
+  statutes_at_large: 7 Stat. 286
+  kappler:
+    volume: 2
+    page: 264
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1826-0264
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 264 (Treaty with the Creeks, 1826; Kappler header "Jan. 24, 1826. | 7 Stat., 286. | Proclamation, Apr. 22, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1827
+  signed: '1827-11-15'
+  statutes_at_large: 7 Stat. 307
+  kappler:
+    volume: 2
+    page: 284
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1827-0284
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 284 (Treaty with the Creeks, 1827; Kappler header "Nov. 15, 1827. | 7 Stat., 307. | Proclamation, Mar. 4, 1828.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1832
+  signed: '1832-03-24'
+  statutes_at_large: 7 Stat. 366
+  kappler:
+    volume: 2
+    page: 341
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1832-0341
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 341 (Treaty with the Creeks, 1832; Kappler header "Mar., 24, 1832. | 7 Stat., 366. | Proclamation, Apr. 4, 1832.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1833
+  signed: '1833-02-14'
+  statutes_at_large: 7 Stat. 417
+  kappler:
+    volume: 2
+    page: 388
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1833-0388
+  signatory: Creek; Muscogee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 388 (Treaty with the Creeks, 1833; Kappler header "Feb. 14, 1833. | 7 Stat., 417. | Proclamation, Apr. 12, 1834.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kiowa, etc., 1837
+  signed: '1837-05-26'
+  statutes_at_large: 7 Stat. 533
+  kappler:
+    volume: 2
+    page: 489
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-etc-1837-0489
+  signatory: Muscogee
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 489 (Treaty with the Kiowa, etc., 1837; Kappler header "May 26, 1837. | 7 Stat., 533. | Proclamation, Feb. 21, 1838.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1838
+  signed: '1838-11-23'
+  statutes_at_large: 7 Stat. 574
+  kappler:
+    volume: 2
+    page: 524
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1838-0524
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 524 (Treaty with the Creeks, 1838; Kappler header "Nov. 23, 1838. | 7 Stat., 574. | Proclamation, Mar. 2, 1839.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks and Seminole, 1845
+  signed: '1845-01-04'
+  statutes_at_large: 9 Stat. 821
+  kappler:
+    volume: 2
+    page: 550
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-and-seminole-1845-0550
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 550 (Treaty with the Creeks and Seminole, 1845; Kappler header "Jan. 4, 1845. | 9 Stat., 821. | Proclamation, July 18, 1845.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1854
+  signed: '1854-06-13'
+  statutes_at_large: 11 Stat. 599
+  kappler:
+    volume: 2
+    page: 647
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1854-0647
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 647 (Treaty with the Creeks, 1854; Kappler header "June 13, 1854. | 11 Stats., 599. | Ratified July 21, 1854.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, etc., 1856
+  signed: '1856-08-07'
+  statutes_at_large: 11 Stat. 699
+  kappler:
+    volume: 2
+    page: 756
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-etc-1856-0756
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 756 (Treaty with the Creeks, etc., 1856; Kappler header "Aug. 7, 1856. | 11 Stats., 699. | Ratified Aug. 16, 1856. | Proclaimed Aug. 28, 1856.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Creeks, 1866
+  signed: '1866-06-14'
+  statutes_at_large: 14 Stat. 785
+  kappler:
+    volume: 2
+    page: 931
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-creeks-1866-0931
+  signatory: Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 931 (Treaty with the Creeks, 1866; Kappler header "June 14, 1866. | 14 Stats., 785. | Ratified July 19, 1866. | Proclaimed Aug. 11, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Muscogee (Creek) Nation The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Inter-Tribal Council of the Five Civilized Tribes
   source: inter-tribal-council-of-the-five-civilized-tribes-home

@@ -1,0 +1,37 @@
+profile: content/tribes/e/ely-shoshone-tribe-of-nevada.yaml
+topic: governance
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/captures/constitutions/ely-shoshone-tribe-of-nevada/a536fb661d339aee.txt
+  query: 'Governance: governing body, head of government, elections, branches, courts, amendment (scripts/governance/reader-brief.md)'
+  outcome: found
+  reason: Read the 2002 constitution, as amended (national-indian-law-library-constitution-constitutions-ely-shoshone); kept 15 facts whose quoted words were found in the text.
+  records:
+  - national-indian-law-library-constitution-constitutions-ely-shoshone
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: found
+  reason: The directory lists the title of the leader's office.
+  records:
+  - bia-tribal-leaders-directory-2026
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://www.elyshoshonetribe.com/
+  query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
+  outcome: found
+  reason: Read 2 pages (home, government, council, election, court and constitution pages); kept 4 facts whose quoted words were found on the page.
+  records:
+  - elyshoshonetribe-about
+  - elyshoshonetribe-home-page
+next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

@@ -44,6 +44,42 @@ supreme_court:
   - {name: "Amy Coney Barrett", vote: majority}
   source: https://api.oyez.org/cases/2020/19-1414
   checked: '2026-11-22'
+courtlistener:
+  cluster: 4887958
+  citation: "593 U.S. 345"
+  case_name: "United States v. Cooley"
+  link: https://www.courtlistener.com/opinion/4887958/united-states-v-cooley/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/4887958/united-states-v-cooley/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/593/345/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/2020/19-1414
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22593%20U.S.%20345%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=593%20U.S.%20345
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=593%20U.S.%20345
 rights:
   status: no-permission-needed
   basis: us-government-work

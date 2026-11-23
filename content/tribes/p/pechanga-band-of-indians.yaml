@@ -143,14 +143,28 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of
     the Pechanga Reservation, California)
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Pechanga Band of Indians".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of the Pechanga Reservation, California)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 dispute_resolution:
   forums:
   - kind: peacemaking
     name: Pechanga peacemaking court
-    description: Peacemaking court with general jurisdiction whose cases typically involve child welfare
-      and family issues; two peacemaker judges, without robes, sit in a circle with the parties, family,
-      community members and support services, passing a basket to speak and seeking a consensus that often
-      includes restitution.
+    description: Peacemaking court with general jurisdiction whose cases typically involve child welfare and family issues; two peacemaker judges, without robes, sit in a circle with the parties, family, community members and support services, passing a basket to speak and seeking a consensus that often includes restitution.
     case_types:
     - child-welfare
     - family
@@ -159,9 +173,7 @@ dispute_resolution:
     confidence: medium
     verification: inferred
     as_of: '2016-11-20'
-    note: Secondary source; the article says the court was created about two years earlier and had heard
-      about a dozen cases. Participation, relationship to other Pechanga courts and enforcement are not
-      described, so they are left out.
+    note: 'Secondary source; the article says the court was created about two years earlier and had heard about a dozen cases. Participation, relationship to other Pechanga courts and enforcement are not described, so they are left out. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 388.'
 gaming:
   compacts:
   - state: CA
@@ -248,6 +260,27 @@ gaming:
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Pechanga Band of Luiseno Mission
       Indians of the Pechanga Reservation". Name extracted from the PDF by the page-fetch tool and matched
       to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-14
+    date: '2006-07-19'
+    link: https://www.nigc.gov?wpdmdl=8124&ind=8135
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-14
+    note: The list titles the action “Pechanga Band of Luiseno Mission Indians of the Pechanga Reservation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-14
+    date: '2006-08-17'
+    link: https://www.nigc.gov?wpdmdl=8108&ind=8119
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-14
+    note: The list titles the action “Pechanga Band of Luiseno Mission Indians of the Pechanga Reservation” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -273,6 +306,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Riverside County
+  court: Superior Court for Riverside County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Riverside County holds 100% of the land of Pechanga Reservation (Census GEOID 2745), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

@@ -190,6 +190,190 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ninilchik Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Ninilchik Village". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Ninilchik Village".'
+governance:
+- aspect: governing-body
+  value: NTC Council, Board of Directors
+  quote: Our NTC Council, or Board of Directors, serves as the governing body responsible for making strategic decisions and overseeing the affairs of the Ninilchik Village Tribe.
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The NTC shall consist of five (5) tribal members elected pursuant to this
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 2
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: governing-body-selection
+  value: Elected by tribal members
+  quote: Voted in by our tribal members, these yearly elections ensure diverse voices and perspectives are represented in decision-making
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Council seats have three-year terms staggered over three cycles, guaranteeing that at least one seat is up for election annually.
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  quote: The President of the NTC shall preside over all meetings of the NTC and all
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ninilchik Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the NTC at first meeting after installation
+  quote: the NTC shall elect its President, Vice-President
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 5
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: other-officers
+  value: Vice-President, Secretary/Treasurer
+  quote: Secretary/Treasurer and such other officers as it deems necessary.
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 5
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: elections
+  value: Annually, one seat up each year
+  quote: Council seats have three-year terms staggered over three cycles, guaranteeing that at least one seat is up for election annually.
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: who are eighteen years of age or
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article VII, Section 1
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: election-authority
+  value: Election Committee
+  quote: The election committee shall determine the validity of the petition and conduct the recall
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article IX, Section 1
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: branches
+  value: Governing board; executive branch
+  quote: Our NTC Executive Director leads the executive branch of all NTC departments and services
+  source: ninilchik-village-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority of registered voters, with 30% turnout
+  quote: majority of the registered voters in an election in which at least thirty (30%) percent of the
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of registered voters
+  quote: a recall petition signed by at least thirty percent (30%) of the registered voters. A recall
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article IX, Section 1
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: recall-and-removal
+  value: Removal by other NTC members for listed causes
+  quote: Any member of the NTC shall be subject to removal by the other members of
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 7(a)
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: other
+  value: Powers not in constitution reserved to general membership
+  quote: are reserved to the general membership and
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Section 2 - General
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
 governing_documents:
 - kind: law-code
   title: Ninilchik Village
@@ -269,6 +453,16 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+nearby_state_courts:
+- state: AK
+  county: Kenai Peninsula Borough
+  court: Superior Court for Kenai Peninsula Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Kenai Peninsula Borough holds 100% of the land of Ninilchik ANVSA (Census GEOID 7080), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Cook Inlet Region Inc.
   relation: alaska-native-claims-settlement-act-regional-corporation

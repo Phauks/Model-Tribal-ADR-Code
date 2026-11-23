@@ -12,7 +12,7 @@ import type { RequestHandler } from './$types';
 export const prerender = false;
 
 export const GET: RequestHandler = async (event) => {
-	const { identifier, database, bucket, level } = await essayAccess(event, 'comment');
+	const { identifier, database, bucket, level } = await essayAccess(event, 'comment', { forData: true });
 	const outcome = (await syncEssaysFromGitOnce(database, bucket)).find((candidate) => candidate.identifier === identifier);
 	const state = await essayPageState(database, bucket, identifier, level, outcome?.state === 'conflict' ? outcome.conflicts : 0);
 	if (!state) error(404, 'No essay has this address yet.');

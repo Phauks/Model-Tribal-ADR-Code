@@ -178,6 +178,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Koyuk
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: Listed as "Native Village of Koyuk". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Norton Sound Service Area
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: 'The source''s words: "Native Village of Koyuk".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution (Native Village of Koyuk) (approved 1946) states it was adopted under Act of June
@@ -191,6 +208,75 @@ government_structure:
   as_of: '1946'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body-selection
+  value: Chosen as the Village decides
+  quote: how members and officers of the governing body shall be chosen and
+  source: constitution-native-village-of-koyuk-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-08-16'
+  locator: Article 3, Section 2
+  document_version:
+    document: native-village-of-koyuk-constitution
+    version: 1946-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text also reproduces the 1946 corporate charter; no facts taken from the charter.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Koyuk
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: All members of the Village 21 years of
+  source: constitution-native-village-of-koyuk-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-08-16'
+  locator: Article 5, Section 1
+  document_version:
+    document: native-village-of-koyuk-constitution
+    version: 1946-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text also reproduces the 1946 corporate charter; no facts taken from the charter.'
+- aspect: amendment
+  value: Majority vote of Village members in election called by Secretary of the Interior
+  quote: majority vote of the Village members voting in an election called by
+  source: constitution-native-village-of-koyuk-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-08-16'
+  locator: Article 6
+  document_version:
+    document: native-village-of-koyuk-constitution
+    version: 1946-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text also reproduces the 1946 corporate charter; no facts taken from the charter.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior and by the
+  source: constitution-native-village-of-koyuk-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-08-16'
+  locator: Article 6
+  document_version:
+    document: native-village-of-koyuk-constitution
+    version: 1946-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text also reproduces the 1946 corporate charter; no facts taken from the charter.'
+- aspect: other
+  value: Membership decides kind of governing body at general meeting
+  quote: shall decide what kind of governing body it wishes to set up to speak
+  source: constitution-native-village-of-koyuk-1946-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1946-08-16'
+  locator: Article 3, Section 1
+  document_version:
+    document: native-village-of-koyuk-constitution
+    version: 1946-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text also reproduces the 1946 corporate charter; no facts taken from the charter.'
 governing_documents:
 - kind: law-code
   title: Native Village of Koyuk - Selected Ordinances Table of Contents
@@ -282,6 +368,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Nome Census Area
+  court: Superior Court for Nome Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Nome Census Area holds 100% of the land of Koyuk ANVSA (Census GEOID 6825), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bering Straits Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

@@ -24,6 +24,33 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+courtlistener:
+  cluster: 249340
+  citation: "272 F.2d 131"
+  case_name: "Native American Church Of North America v. Navajo Tribal Council"
+  link: https://www.courtlistener.com/opinion/249340/native-american-church-of-north-america-v-navajo-tribal-council/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/249340/native-american-church-of-north-america-v-navajo-tribal-council/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22272%20F.2d%20131%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=272%20F.2d%20131
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=272%20F.2d%20131
 rights:
   status: no-permission-needed
   basis: us-government-work

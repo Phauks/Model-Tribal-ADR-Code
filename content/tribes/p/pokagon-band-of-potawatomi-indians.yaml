@@ -216,6 +216,323 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "Pokagon Band of Potawatomi Indians, Michigan and Indiana".
+governance:
+- aspect: form
+  value: Approved by BIA under Act to Restore Federal Services and IRA Section 16
+  quote: pursuant to Section 5 of the Act to Restore Federal Services
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: History of Adoption, Approval, and Amendments
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council shall be the governing body of the Pokagon Band.
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article IX
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: governing-body-size
+  value: 11 members
+  quote: There shall be eleven (11) seats on the Pokagon Band Tribal Council.
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: governing-body-selection
+  value: Elected by Band members under Article XIII
+  quote: All Tribal Council members shall be elected in accordance with Article
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1(b)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: each position on the Tribal Council shall have a three (3) year term of
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 4(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: 'Chairperson. The Tribal Council Chairperson shall:'
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 5(c)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by Band voters
+  quote: All Tribal Council members shall be elected in accordance with Article
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1(b)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: each position on the Tribal Council shall have a three (3) year term of
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 4(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: These seats shall include a Chairperson, Vice-Chairperson, Secretary,
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: elections
+  value: Annual, second Saturday in July
+  quote: Election to be conducted on the second Saturday in July each year to
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XIII, Section 4(b)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: voting-age
+  value: '18'
+  quote: provided he/she is at least eighteen (18) years of age on the date of that
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XIII, Section 4(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: election-authority
+  value: Election Board
+  quote: The Election Board shall conduct and certify the results of all elections of
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XIII, Section 3(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: branches
+  value: Legislative, executive and judicial
+  quote: the legislative and executive functions of the tribal government.
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 2
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: powers of the executive or legislative branches of the government shall exercise powers
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 2
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judiciary
+  value: Tribal Court and Court of Appeals
+  quote: A court of general jurisdiction (hereinafter the
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 5(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judicial-selection
+  value: Appointed by at least 8 Tribal Council members
+  quote: affirmative vote of at least eight (8) Tribal Council members,
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 5(a)(i)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judicial-term
+  value: 4 years
+  quote: Terms of office for all Judges of the Tribal Judiciary shall be for four (4)
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 6(b)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judicial-independence
+  value: Judiciary independent of legislative and executive functions
+  quote: The Tribal Judiciary shall be independent from
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 2
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: decrease in compensation due each individual judge shall take effect during his/her
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XII, Section 11
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: amendment
+  value: Two-thirds vote of voters in an election called for that purpose
+  quote: An amendment to this Constitution shall be effective upon the two-thirds (2/3)
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XXII
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: recall-and-removal
+  value: Recall by voters through initiative process
+  quote: year, may be recalled by the membership through the initiative process in
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XV, Section 1(a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: recall-and-removal
+  value: Removal by 8 Council votes after hearing
+  quote: after the hearing and by vote of at least eight (8) members
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article XV, Section 2(h)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: other
+  value: Elders Council advisory to the Band and Tribal Council
+  quote: An Elders Council shall serve in an advisory capacity to the Band and to
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article VI, (f)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: other
+  value: Elders Council may reserve one Councilperson seat
+  quote: not a member of the Elders Council, shall be elected by the Band
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 3
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
+- aspect: other
+  value: Membership may make binding decisions for the Band
+  quote: Membership may take official action and make binding decisions for the
+  source: constitution-pokagon-band-of-potawatomi-indians-2010-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article VI, (a)
+  document_version:
+    document: pokagon-band-of-potawatomi-indians-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the November 1, 2005 constitution as amended September 18, 2010 (Article V, Section 2), so the 2010 label refers to the amendment.'
 governing_documents:
 - kind: law-code
   title: Pokagon Band of Potawatomi Indians - Code Table of Contents
@@ -302,31 +619,27 @@ dispute_resolution:
   forums:
   - kind: peacemaking
     name: Native Justice Community Conflict and Dispute Resolution Forum
-    description: 'Native Justice, which the Band says is commonly referred to as peacemaking, uses talking
-      circles and circle keepers to bring people in a dispute to common ground; circle keepers facilitate
-      but do not decide, and participants set their own solution and consequences. The program has three
-      strands: Native Justice for Court, the Community Conflict and Dispute Resolution Forum, and Community
-      Education and Awareness.'
+    description: 'Native Justice, which the Band says is commonly referred to as peacemaking, uses talking circles and circle keepers to bring people in a dispute to common ground; circle keepers facilitate but do not decide, and participants set their own solution and consequences. The program has three strands: Native Justice for Court, the Community Conflict and Dispute Resolution Forum, and Community Education and Awareness.'
     case_types:
     - civil
     participation: voluntary
-    relationship_to_court: Citizens may use the forum for civil disputes before coming to court; the court
-      continues to handle criminal cases and encourages use of the forum for civil disputes.
-    enforcement: Participants design the consequences if standards they set are not met.
+    relationship_to_court: Citizens may use the forum for civil disputes before coming to court; the court continues to handle criminal cases but encourages use of the forum for civil disputes. The page describes it as a way to resolve disputes between citizens without using the Tribal Courts, and lists a separate strand, Native Justice for Court.
+    enforcement: Participants each set standards they are expected to keep and design the consequences if they do not. The page does not say the outcome is binding or enforced by the court.
     link: https://www.pokagonband-nsn.gov/government/tribal-courts/native-justice/
     source: pokagon-native-justice-page
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2026-11-21'
-    note: The page says the process uses ceremonial traditions; no further detail is recorded.
+    note: Read in full on 2026-11-23 (Pokagon Band of Potawatomi Indians, Native Justice (tribal courts page), captured 2026-11-23). Based on the Band's own Native Justice page. The page does not say how a dispute is brought to the forum, who administers it, or whether it is voluntary or binding; 'voluntary' is inferred from 'citizens can use' and the court 'encourages' it. It says the process uses ceremonial traditions; no further detail. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 398.
   published_materials:
   - kind: guide
     title: Native Justice Resources (list of resources)
     link: https://www.pokagonband-nsn.gov/wp-content/uploads/2023/04/Native-Justice-Resources.pdf
-    source: pokagon-native-justice-page
+    source: pokagon-native-justice-resources
     confidence: high
-    verification: title-only
+    verification: read-in-full
     as_of: 2023-04
+    note: Read in full on 2026-11-23 (Native Justice Resources (Pokagon Band of Potawatomi, PDF uploaded 2023-04 per URL; no date printed)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 400.
   training_programs:
   - name: Peacemaking training at the Pokagon Band (Dowagiac, Michigan, June 2019)
     provider: Indigenous Peacemaking Initiative (Native American Rights Fund)
@@ -335,23 +648,18 @@ dispute_resolution:
     confidence: medium
     verification: inferred
     as_of: 2019-06
-    note: NARF news listing also describes a June 2018 joint Pokagon Band and NARF workshop combining
-      basket weaving and peacemaking principles.
+    note: 'NARF news listing also describes a June 2018 joint Pokagon Band and NARF workshop combining basket weaving and peacemaking principles. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 401.'
   provisions:
   - kind: arbitration
     title: Arbitration Ordinance -- 1.
-    citation: Arbitration Ordinance -- 1.; Agreements to arbitrate are enforceable.; Stay of proceedings
-      and order to proceed with arbitration.; Arbitration award not appealable.
+    citation: Arbitration Ordinance -- 1.; Agreements to arbitrate are enforceable.; Stay of proceedings and order to proceed with arbitration.; Arbitration award not appealable.
     link: https://narf.org/nill/codes/pokagon_potawatomi/index.html
     source: national-indian-law-library-code-codes-pokagon-potawatomi
     confidence: medium
     verification: title-only
     as_of: '2012'
     locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
-      July 2012); the provision itself was not read. The heading it falls under is taken from the page
-      layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/p/pokagon-band-of-potawatomi-indians.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 399.'
 gaming:
   compacts:
   - state: IN
@@ -485,6 +793,38 @@ gaming:
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Pokagon Band of Potawatomi Indians
       of Michigan and Indiana". Name extracted from the PDF by the page-fetch tool and matched to the
       roster.
+  indian_lands_opinions:
+  - parcel: Unspecified Parcels, Michigan and Indiana
+    legal_theory: Restored Lands
+    accepted: true
+    date: '1997-09-19'
+    link: https://www.nigc.gov?wpdmdl=2479&ind=2480
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Pokagon Band of Potawatomi Indians, 1997-09-19
+    note: The list names the tribe as “Pokagon Band of Potawatomi Indians”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-04
+    date: '2009-01-28'
+    link: https://www.nigc.gov?wpdmdl=7936&ind=7947
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-04
+    note: The list titles the action “Pokagon Band of Potawatomi Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-04
+    date: '2009-02-25'
+    link: https://www.nigc.gov?wpdmdl=7916&ind=7927
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-04
+    note: The list titles the action “Pokagon Band of Potawatomi Indians” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -499,6 +839,670 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Indiana is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Indiana. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Indiana by the Census Bureau's land areas.
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Michigan is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Michigan. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: Michigan Department of Treasury
+  agreement: Tax agreement between the tribe and the State of Michigan (sales and use tax exemptions and related taxes)
+  state: MI
+  status: in-effect
+  source: michigan-department-of-treasury-sales-to-federally-recognized-indian-tribes
+  confidence: high
+  verification: bulk-import
+  locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
+  note: 'The source reads: “Pokagon Band of Potawatomi Indians”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page.'
+court_practice:
+- kind: filing-fees
+  title: Schedule of Court Fees (revised 8/14/14)
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/wp-content/uploads/2022/09/pbtc-fees-revised-08-14-2014-1484.pdf
+  detail: Schedule of court fees revised 2014-08-14.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: medium
+  verification: read-in-full
+  locator: Tribal Courts page
+  note: Older than five years.
+- kind: bar-admission
+  title: Tribal Courts (Requirements for Practicing Before Tribal Court)
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/government/tribal-courts/
+  detail: Attorneys admitted in any state and in good standing may practice before the Tribal Court; each applicant completes an application.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: high
+  verification: read-in-full
+  locator: Requirements for Practicing Before Tribal Court
+  note: 'The source reads: “The Tribal Court allow attorneys, who are admitted to practice in any state and who are in good standing, to practice before the Tribal Court.”.'
+- kind: court-rules
+  title: Court Rules
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/government/tribal-courts/court-rules/
+  detail: Court Rules page linked from Tribal Courts page; not opened.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: high
+  verification: title-only
+  locator: Tribal Courts page
+  note: Page not opened.
+- kind: forms
+  title: Tribal Court Forms
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/government/tribal-courts/court-court-forms/
+  detail: Tribal Court Forms page linked from Tribal Courts page; not opened.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: high
+  verification: title-only
+  locator: Tribal Courts page
+  note: Page not opened.
+- kind: bar-admission
+  title: ATY-001 Application for Admission to Practice (Revised 04-02-2025)
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/wp-content/uploads/ATY-001-Application-for-Admission-to-Practice-Revised-04-02-2025.pdf
+  detail: Application for Admission to Practice, revised 2025-04-02; an Oath of Admission is also linked; admission to the Tribal Court is deemed admission to the Appellate Court.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: high
+  verification: read-in-full
+  locator: Requirements for Practicing Before Tribal Court
+  note: 'The source reads: “Admission to practice before the Tribal Court is deemed admission to practice before the Appellate Court.”.'
+nearby_state_courts:
+- state: MI
+  county: Cass County
+  court: Circuit Court for Cass County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Cass County holds 53% of the land of Pokagon Reservation (Census GEOID 2890), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Van Buren County
+  court: Circuit Court for Van Buren County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Van Buren County holds 22% of the land of Pokagon Reservation (Census GEOID 2890), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MI
+  county: Berrien County
+  court: Circuit Court for Berrien County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Berrien County holds 20% of the land of Pokagon Reservation (Census GEOID 2890), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: IN
+  county: St. Joseph County
+  court: Circuit Court for St. Joseph County
+  link: https://www.in.gov/courts/local/
+  source: state-trial-court-directory-in
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: St. Joseph County holds 5% of the land of Pokagon Reservation (Census GEOID 2890), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Wyandot, etc., 1789
+  signed: '1789-01-09'
+  statutes_at_large: 7 Stat. 28
+  kappler:
+    volume: 2
+    page: 18
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1789-0018
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 18 (Treaty with the Wyandot, etc., 1789; Kappler header "Jan. 9, 1789. | 7 Stat., 28. | Proclamation, Sept. 27, 1789.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1795
+  signed: '1795-08-03'
+  statutes_at_large: 7 Stat. 49
+  kappler:
+    volume: 2
+    page: 39
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1795-0039
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 39 (Treaty with the Wyandot, etc., 1795; Kappler header "Aug. 3, 1795. | 7 Stat., 49. | Proclamation, Dec. 2, 1795.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Delawares, etc., 1803
+  signed: '1803-06-07'
+  statutes_at_large: 7 Stat. 74
+  kappler:
+    volume: 2
+    page: 64
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1803-0064
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 64 (Treaty with the Delawares, etc., 1803; Kappler header "June 7, 1803. | 7 Stat., 74. | Proclamation Dec. 26, 1803.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1805
+  signed: '1805-07-04'
+  statutes_at_large: 7 Stat. 87
+  kappler:
+    volume: 2
+    page: 77
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1805-0077
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 77 (Treaty with the Wyandot, etc., 1805; Kappler header "July 4, 1805. | 7 Stat., 87. | Proclamation, Apr. 24, 1806.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Delawares, etc., 1805
+  signed: '1805-08-21'
+  statutes_at_large: 7 Stat. 91
+  kappler:
+    volume: 2
+    page: 80
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1805-0080
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 80 (Treaty with the Delawares, etc., 1805; Kappler header "Aug. 21, 1805. | 7 Stat., 91. | Proclamation, Apr. 24. 1806.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Ottawa, etc., 1807
+  signed: '1807-11-17'
+  statutes_at_large: 7 Stat. 105
+  kappler:
+    volume: 2
+    page: 92
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1807-0092
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 92 (Treaty with the Ottawa, etc., 1807; Kappler header "Nov. 17, 1807. | 7 Stat., 105 | Proclamation, Jan. 27, 1808.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, etc., 1808
+  signed: '1808-11-25'
+  statutes_at_large: 7 Stat. 112
+  kappler:
+    volume: 2
+    page: 99
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1808-0099
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 99 (Treaty with the Chippewa, etc., 1808; Kappler header "Nov. 25, 1808. | 7 Stat., 112. | Ratified Mar. 1, 1809. | Proclaimed Mar. 3, 1809.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Delawares, etc., 1809
+  signed: '1809-09-30'
+  statutes_at_large: 7 Stat. 113
+  kappler:
+    volume: 2
+    page: 101
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1809-0101
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 101 (Treaty with the Delawares, etc., 1809; Kappler header "Sept. 30, 1809. | 7 Stat., 113. | Proclamation, Jan. 16, 1810.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1814
+  signed: '1814-07-22'
+  statutes_at_large: 7 Stat. 118
+  kappler:
+    volume: 2
+    page: 105
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1814-0105
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 105 (Treaty with the Wyandot, etc., 1814; Kappler header "July 22, 1814. | 7 Stat., 118. | Ratified, Dec. 13, 1814. | Proclaimed Dec. 21, 1814.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1815
+  signed: '1815-07-18'
+  statutes_at_large: 7 Stat. 123
+  kappler:
+    volume: 2
+    page: 110
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1815-0110
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 110 (Treaty with the Potawatomi, 1815; Kappler header "July 18, 1815. | 7 Stat., 123. | Ratified, Dec. 26, 1815.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1815
+  signed: '1815-09-08'
+  statutes_at_large: 7 Stat. 131
+  kappler:
+    volume: 2
+    page: 117
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1815-0117
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 117 (Treaty with the Wyandot, etc., 1815; Kappler header "Sept. 8, 1815. | 7 Stat., 131. | Ratified Dec. 26, 1815.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Ottawa, etc., 1816
+  signed: '1816-08-24'
+  statutes_at_large: 7 Stat. 146
+  kappler:
+    volume: 2
+    page: 132
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1816-0132
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 132 (Treaty with the Ottawa, etc., 1816; Kappler header "Aug. 24. 1816. | 7 Stat., 146. | Proclamation, Dec. 30, 1816.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1817
+  signed: '1817-09-29'
+  statutes_at_large: 7 Stat. 160
+  kappler:
+    volume: 2
+    page: 145
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1817-0145
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 145 (Treaty with the Wyandot, etc., 1817; Kappler header "Sept. 29, 1817. | 7 Stat., 160. | Proclamation, Jan. 4, 1819. | Supplementary treaty, post, p. 162.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1818
+  signed: '1818-10-02'
+  statutes_at_large: 7 Stat. 185
+  kappler:
+    volume: 2
+    page: 168
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1818-0168
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 168 (Treaty with the Potawatomi, 1818; Kappler header "Oct. 2, 1818. | 7 Stat., 185. | Proclamation, Jan, 15, 1819.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Ottawa, etc., 1821
+  signed: '1821-08-29'
+  statutes_at_large: 7 Stat. 218
+  kappler:
+    volume: 2
+    page: 198
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1821-0198
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 198 (Treaty with the Ottawa, etc., 1821; Kappler header "Aug. 29, 1821. | 7 Stat., 218. | Proclamation, Mar. 25, 1822.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, etc., 1825
+  signed: '1825-08-19'
+  statutes_at_large: 7 Stat. 272
+  kappler:
+    volume: 2
+    page: 250
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-etc-1825-0250
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 250 (Treaty with the Sioux, etc., 1825; Kappler header "Aug. 19, 1825. | 7 Stat., 272. | Proclamation. Feb. 6, 1826.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1826
+  signed: '1826-10-16'
+  statutes_at_large: 7 Stat. 295
+  kappler:
+    volume: 2
+    page: 273
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1826-0273
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 273 (Treaty with the Potawatomi, 1826; Kappler header "Oct. 16, 1826. | 7 Stat., 295. | Proclamation, Feb. | 7, 1827.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1827
+  signed: '1827-09-19'
+  statutes_at_large: 7 Stat. 305
+  kappler:
+    volume: 2
+    page: 283
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1827-0283
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 283 (Treaty with the Potawatomi, 1827; Kappler header "Sept. 19, 1827. | 7 Stat., 305. | Proclamation, Feb. 23, 1829.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Winnebago, etc., 1828
+  signed: '1828-08-25'
+  statutes_at_large: 7 Stat. 315
+  kappler:
+    volume: 2
+    page: 292
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-winnebago-etc-1828-0292
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 292 (Treaty with the Winnebago, etc., 1828; Kappler header "Aug. 25, 1828. | 7 Stat., 315. | Proclamation, Jan. 7, 1829.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1828
+  signed: '1828-09-20'
+  statutes_at_large: 7 Stat. 317
+  kappler:
+    volume: 2
+    page: 294
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1828-0294
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 294 (Treaty with the Potawatomi, 1828; Kappler header "Sept, 20, 1828. | 7 Stat., 317. | Proclamation, Jan. 7, 1829.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, etc., 1829
+  signed: '1829-07-29'
+  statutes_at_large: 7 Stat. 320
+  kappler:
+    volume: 2
+    page: 297
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1829-0297
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 297 (Treaty with the Chippewa, etc., 1829; Kappler header "July 29, 1829. | 7 Stat., 320. | Proclamation, Jan. 2, 1830.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1832
+  signed: '1832-10-20'
+  statutes_at_large: 7 Stat. 378
+  kappler:
+    volume: 2
+    page: 353
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0353
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 353 (Treaty with the Potawatomi, 1832; Kappler header "Oct. 20, 1832. | 7 Stat., 378. | Proclamation. Jan. | 21, 1833.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1832
+  signed: '1832-10-26'
+  statutes_at_large: 7 Stat. 394
+  kappler:
+    volume: 2
+    page: 367
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0367
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 367 (Treaty with the Potawatomi, 1832; Kappler header "Oct. 26, 1832. | 7 Stat., 394. | Proclamation, Jan. 21, 1833.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1832
+  signed: '1832-10-27'
+  statutes_at_large: 7 Stat. 399
+  kappler:
+    volume: 2
+    page: 372
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1832-0372
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 372 (Treaty with the Potawatomi, 1832; Kappler header "Oct. 27, 1832. | 7 Stat., 399. | Proclamation, Jan. 21, 1833.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, etc., 1833
+  signed: '1833-09-26'
+  statutes_at_large: 7 Stat. 431
+  kappler:
+    volume: 2
+    page: 402
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-etc-1833-0402
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 402 (Treaty with the Chippewa, etc., 1833; Kappler header "Sept. 26, 1833. | 7 Stat., 431. | Proclamation, Feb. 21, 1835.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1834
+  signed: '1834-12-04'
+  statutes_at_large: 7 Stat. 467
+  kappler:
+    volume: 2
+    page: 428
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0428
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 428 (Treaty with the Potawatomi, 1834; Kappler header "Dec. 4, 1834. | 7 Stat., 467. | Proclamation, Mar. 16, 1835.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1834
+  signed: '1834-12-10'
+  statutes_at_large: 7 Stat. 467
+  kappler:
+    volume: 2
+    page: 429
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0429
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: 'p. 429 (Treaty with the Potawatomi, 1834; Kappler header "Dec. 10, 1834 | 7 Stat., 467: | Proclamation, Mar. 16, 1835.")'
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1834
+  signed: '1834-12-16'
+  statutes_at_large: 7 Stat. 468
+  kappler:
+    volume: 2
+    page: 430
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0430
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 430 (Treaty with the Potawatomi, 1834; Kappler header "Dec. 16, 1834. | 7 Stat., 468. | Proclamation, Mar. 16, 1835.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1834
+  signed: '1834-12-17'
+  statutes_at_large: 7 Stat. 469
+  kappler:
+    volume: 2
+    page: 431
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1834-0431
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 431 (Treaty with the Potawatomi, 1834; Kappler header "Dec. 17, 1834. | 7 Stat., 469. | Proclamation, Mar. 16, 1835.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1836
+  signed: '1836-03-26'
+  statutes_at_large: 7 Stat. 490
+  kappler:
+    volume: 2
+    page: 450
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0450
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 450 (Treaty with the Potawatomi, 1836; Kappler header "Mar. 26, 1836. | 7 Stat., 490. | Proclamation, June 4, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1836
+  signed: '1836-03-29'
+  statutes_at_large: 7 Stat. 498
+  kappler:
+    volume: 2
+    page: 457
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0457
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 457 (Treaty with the Potawatomi, 1836; Kappler header "Mar. 29, 1836. | 7 Stat., 498. | Proclamation, June 4, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1836
+  signed: '1836-04-11'
+  statutes_at_large: 7 Stat. 499
+  kappler:
+    volume: 2
+    page: 457
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0457a
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 457 (Treaty with the Potawatomi, 1836; Kappler header "Apr. 11, 1836 | 7 Stat., 499. | Proclamation, May 25, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1836
+  signed: '1836-04-22'
+  statutes_at_large: 7 Stat. 500
+  kappler:
+    volume: 2
+    page: 458
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0458
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 458 (Treaty with the Potawatomi, 1836; Kappler header "Apr. 22, 1836. | 7 Stat., 500. | Proclamation, May 25, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1836
+  signed: '1836-04-22'
+  statutes_at_large: 7 Stat. 501
+  kappler:
+    volume: 2
+    page: 459
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0459
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 459 (Treaty with the Potawatomi, 1836; Kappler header "Apr. 22, 1836. | 7 Stat., 501. | Proclamation, May 25, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1836
+  signed: '1836-08-05'
+  statutes_at_large: 7 Stat. 505
+  kappler:
+    volume: 2
+    page: 462
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0462
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 462 (Treaty with the Potawatomi, 1836; Kappler header "Aug. 5, 1836. | 7 Stat., 505. | Proclamation, Feb. 18, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1836
+  signed: '1836-09-20'
+  statutes_at_large: 7 Stat. 513
+  kappler:
+    volume: 2
+    page: 470
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0470
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 470 (Treaty with the Potawatomi, 1836; Kappler header "Sept. 20, 1836. | 7 Stat., 513. | Proclamation, Feb. 18, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1836
+  signed: '1836-09-22'
+  statutes_at_large: 7 Stat. 514
+  kappler:
+    volume: 2
+    page: 471
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0471
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 471 (Treaty with the Potawatomi, 1836; Kappler header "Sept. 22, 1836. | 7 Stat., 514. | Proclamation, Feb. 16, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1836
+  signed: '1836-09-23'
+  statutes_at_large: 7 Stat. 515
+  kappler:
+    volume: 2
+    page: 471
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1836-0471a
+  signatory: Potawatomi Indians of the Wabash
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 471 (Treaty with the Potawatomi, 1836; Kappler header "Sept. 23, 1836. | 7 Stat., 515. | Proclamation, Feb. 18, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1837
+  signed: '1837-02-11'
+  statutes_at_large: 7 Stat. 532
+  kappler:
+    volume: 2
+    page: 488
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1837-0488
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 488 (Treaty with the Potawatomi, 1837; Kappler header "Feb. 11, 1837. | 7 Stat., 532. | Proclamation, Feb. 18, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1861
+  signed: '1861-11-15'
+  statutes_at_large: 12 Stat. 1191
+  kappler:
+    volume: 2
+    page: 824
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1861-0824
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 824 (Treaty with the Potawatomi, 1861; Kappler header "Nov. 15, 1861. | 12 Stats., 1191. | Ratified Apr. 15, 1862. | Proclaimed Apr. 19, 1862.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1866
+  signed: '1866-03-29'
+  statutes_at_large: 14 Stat. 763
+  kappler:
+    volume: 2
+    page: 916
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1866-0916
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 916 (Treaty with the Potawatomi, 1866; Kappler header "Mar. 29, 1866. | 14 Stats., 763. | Ratified Apr. 26, 1866. | Proclaimed May 5, 1866.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Potawatomi, 1867
+  signed: '1867-02-27'
+  statutes_at_large: 15 Stat. 531
+  kappler:
+    volume: 2
+    page: 970
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-potawatomi-1867-0970
+  signatory: Potawatomi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 970 (Treaty with the Potawatomi, 1867; Kappler header "Feb. 27, 1867. | 15 Stats., 531. | Ratified July 25, 1868. | Proclaimed, Aug. 7, 1868.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umbrella Potawatomi treaty; each modern Potawatomi nation descends in part from the Potawatomi parties; band-level attribution not determined. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

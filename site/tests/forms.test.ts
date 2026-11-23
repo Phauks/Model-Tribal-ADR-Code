@@ -1,10 +1,11 @@
-import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { mkdirSync, mkdtempSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { filledMarkdown, formHtml, readAnswers, requestKindOfForm, type FormTemplate } from '#lib/forms.ts';
-import { buildFormCatalog, templateMarkdown } from '#lib/server/form-catalog.ts';
+import { buildFormCatalog, downloadFolder, downloadList, templateMarkdown } from '#lib/server/form-catalog.ts';
 import {
 	formSubmissionsFor,
 	nextFilingIdentifier,
@@ -117,6 +118,71 @@ describe('form catalog', () => {
 		expect(forms[0]).toMatchObject({ slug: 'petition', group: 'model', summary: 'Ask for a peacemaking session.' });
 		writeFileSync(path.join(root, 'docs/contributor-forms/petition.md'), '# Other\n\nForm `other`, version 1.0.0.\n');
 		expect(() => buildFormCatalog(root)).toThrow(/Two forms are named petition\.md/);
+	});
+
+	it('offers a Word and a PDF copy of every model form, built from its current text', () => {
+		const root = path.resolve(import.meta.dirname, '../..');
+		const list = downloadList(root);
+		expect(list, 'run python3 scripts/forms/build_forms.py').toBeDefined();
+		const variables = readdirSync(path.join(root, 'content/variables'))
+			.filter((file) => file.endsWith('.yaml'))
+			.sort()
+			.map((file) => readFileSync(path.join(root, 'content/variables', file)));
+		const stale = 'A form or content/variables changed: run python3 scripts/forms/build_forms.py';
+		expect(list!.variables, stale).toBe(createHash('sha256').update(Buffer.concat(variables)).digest('hex'));
+		for (const form of catalog.filter((template) => template.group === 'model')) {
+			expect(form.downloads?.map((download) => download.href)).toEqual([
+				`/help/forms/${form.slug}.docx`,
+				`/help/forms/${form.slug}.pdf`
+			]);
+			expect(list!.sources[form.slug], stale).toBe(
+				createHash('sha256').update(readFileSync(path.join(root, form.file))).digest('hex')
+			);
+			for (const download of form.downloads!) {
+				const file = readFileSync(path.join(root, downloadFolder, path.basename(download.href)));
+				expect(createHash('sha256').update(file).digest('hex')).toBe(download.sha256);
+			}
+		}
+	});
+
+	it('builds every model form on the blank court form', () => {
+		const parts = [
+			'## Before you start',
+			'Court staff can explain the steps but cannot give legal advice.',
+			'## Case information',
+			'I swear or affirm',
+			'Notary or clerk, if the court requires it:',
+			'## Notes for courts adapting this form',
+			'These notes are not part of the form.'
+		];
+		const root = path.resolve(import.meta.dirname, '../..');
+		const model = catalog.filter((template) => template.group === 'model');
+		expect(model.map((form) => form.slug)).toContain('blank-court-form');
+		for (const form of model) {
+			const text = readFileSync(path.join(root, form.file), 'utf8');
+			expect(text, form.file).toContain(`Form \`${form.slug}\`, version ${form.version}. A court may adopt or change this form`);
+			for (const part of parts) expect(text, `${form.file} lacks "${part}"`).toContain(part);
+		}
+	});
+
+	it("leaves a model form's front matter off the page, lists its summary and shows the court's settings as model text", () => {
+		const root = mkdtempSync(path.join(tmpdir(), 'forms-'));
+		mkdirSync(path.join(root, 'content/forms'), { recursive: true });
+		mkdirSync(path.join(root, 'content/variables'), { recursive: true });
+		writeFileSync(
+			path.join(root, 'content/forms/answer.md'),
+			'---\nid: answer\nsummary: Respond to a case filed against you.\nbased_on:\n  - nation: lummi\n---\n\n# Answer\n\nForm `answer`, version 0.1.0.\n\n{{court.name}}. You have {{court.answer_days}} days.\n'
+		);
+		writeFileSync(
+			path.join(root, 'content/variables/court.yaml'),
+			'group: court\nvariables:\n  name:\n    description: Court.\n    model: "[Name of Tribal Court]"\n  answer_days:\n    description: Days.\n    model: "[number]"\n'
+		);
+		const [form] = buildFormCatalog(root);
+		expect(form).toMatchObject({ slug: 'answer', title: 'Answer', version: '0.1.0', summary: 'Respond to a case filed against you.' });
+		expect(form.html).not.toContain('based_on');
+		// The court sets the days when it adopts the form; the person writes in the court's name.
+		expect(form.fields.map((field) => field.label)).toEqual(['Court']);
+		expect(form.html).toContain('You have [number] days.');
 	});
 });
 

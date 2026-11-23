@@ -1,9 +1,8 @@
 <script lang="ts">
 	// The reader's Following page (site/DESIGN.md, section 6, "Follow").
-	import Bell from '@lucide/svelte/icons/bell';
 	import BellOff from '@lucide/svelte/icons/bell-off';
 	import History from '@lucide/svelte/icons/history';
-	import { emailChoiceLabels, emailChoices, followKindLabels } from '#lib/following.ts';
+	import { followKindLabels } from '#lib/following.ts';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { PageProps } from './$types';
 
@@ -91,34 +90,9 @@
 	{/if}
 
 	<h2>Email</h2>
-	{#if !data.emailReady}
-		<div class="notice" role="note">
-			<p>
-				The site cannot send email yet. Your choice is saved, and emails start once it can. Until then,
-				updates show on this page and as a number on your account button.
-			</p>
-		</div>
-	{/if}
-	<form method="post" action="?/email">
-		<fieldset class="email-choices">
-			<legend>Email me a summary, sent to {data.email}</legend>
-			{#each emailChoices as choice (choice)}
-				<div class="choice">
-					<input type="radio" id="email-{choice}" name="email" value={choice} checked={data.emailChoice === choice} />
-					<label for="email-{choice}">{emailChoiceLabels[choice]}</label>
-				</div>
-			{/each}
-		</fieldset>
-		<p>
-			<button class="button" type="submit">
-				<Bell size={20} strokeWidth={1.75} />
-				Save email setting
-			</button>
-		</p>
-	</form>
-	<p class="small muted">
-		An email lists the pages that changed and links to them. It never says what changed. Every email has a
-		link that stops them.
+	<p>
+		{data.emailLine}
+		<a href="/account/email">Change how often you get email</a>, in your account.
 	</p>
 </div>
 
@@ -173,29 +147,5 @@
 		gap: var(--space-2);
 	}
 
-	.email-choices {
-		margin: 0 0 var(--space-4);
-		padding: 0;
-		border: 0;
-	}
 
-	.email-choices legend {
-		font-weight: var(--font-weight-semibold);
-		margin-bottom: var(--space-2);
-	}
-
-	.choice {
-		display: flex;
-		gap: var(--space-3);
-		align-items: flex-start;
-		margin: var(--space-2) 0;
-	}
-
-	.choice input {
-		margin-top: 0.3em;
-		width: 1.25rem;
-		height: 1.25rem;
-		flex: none;
-		accent-color: var(--color-action);
-	}
 </style>

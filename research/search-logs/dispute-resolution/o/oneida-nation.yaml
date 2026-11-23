@@ -1,7 +1,7 @@
 profile: content/tribes/o/oneida-nation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -147,3 +147,23 @@ searches:
     order (own page, then directory entry): own-page, https://oneida-nsn.gov/judiciary/peacemaking/.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-276
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/d8a0dd2d3235152eba22.txt
+  query: Child Custody, Placement and Visitation – Peacemaking and Mediation
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/o/oneida-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/5b873ac1c0334ab31275.txt
+  query: Title 8. Judicial System, Chapter 801 – Judiciary, Rule 1.10 – Peacemaking and Mediation
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/o/oneida-nation.yaml#dispute_resolution.provisions

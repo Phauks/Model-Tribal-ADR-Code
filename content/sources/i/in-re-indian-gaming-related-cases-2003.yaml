@@ -25,6 +25,33 @@ archives: []
 history:
   status: live
   last_checked: '2026-11-21'
+courtlistener:
+  cluster: 782259
+  citation: "331 F.3d 1094"
+  case_name: "In Re Indian Gaming Related Cases. Chemehuevi Indian Tribe Elk Valley Rancheria Hoopa Valley Indian Tribe Hopland Band of Pomo Indians Redding Rancheria Smith River Rancheria, and Coyote Valley Band of Pomo Indians v. The State of California"
+  link: https://www.courtlistener.com/opinion/782259/in-re-indian-gaming-related-cases-chemehuevi-indian-tribe-elk-valley/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/782259/in-re-indian-gaming-related-cases-chemehuevi-indian-tribe-elk-valley/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22331%20F.3d%201094%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=331%20F.3d%201094
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=331%20F.3d%201094
 rights:
   status: no-permission-needed
   basis: fact-only

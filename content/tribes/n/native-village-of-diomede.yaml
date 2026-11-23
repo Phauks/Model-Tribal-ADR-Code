@@ -158,6 +158,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Diomede (aka Inalik)
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: Listed as "Native Village of Diomede, (aka Inalik)". Name on Indian Health Service profile differs from roster name; matched by name tokens. Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Norton Sound Service Area
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: 'The source''s words: "Native Village of Diomede, (aka Inalik)".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Diomede" among organizations under constitutions approved by
@@ -185,6 +202,99 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the act of June 18, 1934
+  quote: By-laws, by authority of the act of Congress of June 18, 1934, as
+  source: constitution-native-village-of-diomede-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-31'
+  locator: Preamble
+  document_version:
+    document: native-village-of-diomede-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Governing body chosen by Village membership
+  quote: shall decide what kind of governing body it wishes to set up to speak
+  source: constitution-native-village-of-diomede-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-31'
+  locator: Article III, Section 1
+  document_version:
+    document: native-village-of-diomede-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: The Village shall then choose the mem-
+  source: constitution-native-village-of-diomede-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-31'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-diomede-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Diomede (aka Inalik)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: Village 21 years
+  source: constitution-native-village-of-diomede-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-31'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-diomede-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Secretary of the Interior
+  quote: for the purpose by the Secretary of the Interior, provided that at least
+  source: constitution-native-village-of-diomede-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-31'
+  locator: Article II
+  document_version:
+    document: native-village-of-diomede-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of Village members, approved by Secretary of the Interior
+  quote: approved by the Secretary of the Interior
+  source: constitution-native-village-of-diomede-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-31'
+  locator: Article VI
+  document_version:
+    document: native-village-of-diomede-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior
+  source: constitution-native-village-of-diomede-1940-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-01-31'
+  locator: Article VI
+  document_version:
+    document: native-village-of-diomede-constitution
+    version: 1940-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Native Village of Diomede - Tribal Ordinances
@@ -266,6 +376,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Nome Census Area
+  court: Superior Court for Nome Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Nome Census Area holds 100% of the land of Inalik ANVSA (Census GEOID 6630), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bering Straits Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

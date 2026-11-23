@@ -1,0 +1,65 @@
+profile: content/tribes/s/sitka-tribe-of-alaska.yaml
+topic: dispute-resolution
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/2a8aa16c9413adbe7db7.txt
+  query: Traditional Tlingit law in children's cases
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/sitka-tribe-of-alaska.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/6c73226736b332cb5709.txt
+  query: Traditional Tlingit law in children's cases
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/sitka-tribe-of-alaska.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/6c73226736b332cb5709.html
+  query: Traditional Tlingit law in children's cases
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/sitka-tribe-of-alaska.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://sitkatribe.org/our-government/governance-documents/
+  query: governance documents
+  outcome: dead-link
+  reason: Fetch failed (client error).
+  records:
+  - content/tribes/s/sitka-tribe-of-alaska.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://sitkatribe.org/our-government/law-and-policy/
+  query: law and policy
+  outcome: found
+  reason: Lists Children's Code PDF.
+  records:
+  - content/tribes/s/sitka-tribe-of-alaska.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://sitkatribe.org/wp-content/uploads/2024/03/Childrens_Code.pdf
+  query: Children's Code ch. VII
+  outcome: found
+  reason: Summary of s. 7.01 matches record.
+  records:
+  - content/tribes/s/sitka-tribe-of-alaska.yaml#dispute_resolution.forums

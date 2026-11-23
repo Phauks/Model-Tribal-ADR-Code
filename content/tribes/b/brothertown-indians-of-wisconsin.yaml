@@ -82,6 +82,87 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: form
+  value: Constitutional government
+  quote: Constitutional government
+  source: brothertownindians-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
+- aspect: governing-body
+  value: Council
+  quote: The four officers and five members of the Council are now elected by the membership at large.
+  source: brothertown-indians-of-wisconsin-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
+- aspect: governing-body-size
+  value: 4 officers and 5 members
+  quote: There are four officers (chair, vice-chair, secretary and treasurer) and five general Council members.
+  source: brothertownindians-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
+- aspect: governing-body-selection
+  value: Elected by membership at large
+  quote: The four officers and five members of the Council are now elected by the membership at large.
+  source: brothertown-indians-of-wisconsin-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: (Three-year Term) – two open positions
+  source: brothertown-indians-of-wisconsin-website-elections-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
+- aspect: head-of-government
+  value: Chair
+  quote: There are four officers (chair, vice-chair, secretary and treasurer)
+  source: brothertownindians-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
+- aspect: other-officers
+  value: Vice-chair, Secretary, Treasurer
+  quote: There are four officers (chair, vice-chair, secretary and treasurer)
+  source: brothertownindians-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
+- aspect: voting-age
+  value: '18'
+  quote: will be mailed out to all eligible voting members, age 18 or older.
+  source: brothertown-indians-of-wisconsin-website-elections-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
+- aspect: election-authority
+  value: Election Committee
+  quote: 'The 2026 Election committee is made up of the following members:'
+  source: brothertown-indians-of-wisconsin-website-elections-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
+- aspect: judiciary
+  value: Judicial system, 5 Peacemakers
+  quote: as well as a judicial system, consisting of five
+  source: brothertownindians-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages, so the facts come from the government, council and election pages and the home page.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

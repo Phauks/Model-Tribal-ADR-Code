@@ -44,6 +44,50 @@ supreme_court:
   - {name: "Ketanji Brown Jackson", vote: majority}
   source: https://www.supremecourt.gov/opinions/23pdf/602us1r30_g3bi.pdf
   checked: '2026-11-22'
+courtlistener:
+  cluster: 9511766
+  citation: "602 U.S. 222"
+  case_name: "Becerra v. San Carlos Apache Tribe"
+  link: https://www.courtlistener.com/opinion/9511766/becerra-v-san-carlos-apache-tribe/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: supremecourt
+    label: "supremecourt.gov"
+    access: official
+    link: https://www.supremecourt.gov/opinions/23pdf/602us1r30_g3bi.pdf
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/9511766/becerra-v-san-carlos-apache-tribe/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/602/222/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/2023/23-250
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22602%20U.S.%20222%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=602%20U.S.%20222
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=602%20U.S.%20222
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Becerra_v._San_Carlos_Apache_Tribe
 rights:
   status: no-permission-needed
   basis: us-government-work

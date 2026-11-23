@@ -150,6 +150,39 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Big Sandy Rancheria of Western Mono Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Big Sandy Rancheria of Western Mono Indians of California".
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: All Tribal Council meetings are held on the last Wednesday of each month.
+  source: big-sandy-rancheria-of-western-mono-indians-of-california-website-governance-administration-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: Chairperson
+  source: big-sandy-rancheria-of-western-mono-indians-of-california-website-governance-administration-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Big Sandy Rancheria of Western Mono Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 gaming:
   compacts:
   - state: CA
@@ -306,6 +339,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Big Sandy Band of Western
       Mono Indians". Facilities as machine-extracted from the report text (verify): Mono Wind Casino.
       Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: McCabe Allotment, Fresno County, CA
+    legal_theory: Indian Lands
+    accepted: true
+    date: '2006-09-06'
+    link: https://www.nigc.gov?wpdmdl=2590&ind=2591
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Big Sandy Rancheria, 2006-09-06
+    note: The list names the tribe as “Big Sandy Rancheria”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -332,6 +376,16 @@ jurisdiction:
     images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has
     no text layer for the table); verification level unchanged because the name was not matched word for
     word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Fresno County
+  court: Superior Court for Fresno County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Fresno County holds 100% of the land of Big Sandy Rancheria (Census GEOID 0265), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

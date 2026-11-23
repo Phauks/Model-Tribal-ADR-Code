@@ -1,13 +1,8 @@
 # Decision records
 
-Short, numbered records of why key choices were made, in the style Michael
-Nygard described as "architecture decision records"
-([Cognitect, 2011](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions)).
-They are called decision records here because "ADR" in this project means
-alternative dispute resolution.
+Short, numbered records of why key choices were made, in the style Michael Nygard described as "architecture decision records" ([Cognitect, 2011](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions)). They are called decision records here because "ADR" in this project means alternative dispute resolution.
 
-A record is never rewritten after it is accepted. A later record supersedes it
-and says so.
+A record is never rewritten after it is accepted. A later record supersedes it and says so.
 
 | No. | Decision | Status |
 | --- | --- | --- |
@@ -42,10 +37,27 @@ and says so.
 | [0028](0028-map-adds-census-land-areas.md) | Add a land areas view to the map, from the Census Bureau's boundaries | Accepted |
 | [0029](0029-show-stories-while-nations-review-them.md) | Show story records on the website while their nations review them | Accepted |
 | [0030](0030-keep-research-captures-in-the-private-bucket.md) | Keep research captures in the private bucket, with an index in git | Accepted |
-| [0031](0031-serve-copies-of-documents-from-the-private-bucket.md) | Serve the project's copies of cited documents, including nations' constitutions and laws | Accepted |
+| [0031](0031-serve-copies-of-documents-from-the-private-bucket.md) | Serve the project's copies of cited documents, including nations' constitutions and laws | Accepted; amended by 0042 |
 | [0032](0032-starred-pages-and-shared-collections-on-the-reader-s-device.md) | Starred pages, private notes and shared collections, kept on the reader's device | Accepted |
 | [0033](0033-nation-page-map-has-the-big-maps-views.md) | Give the map on each nation's page the big map's views | Accepted |
-| [0034](0034-show-stories-in-full-where-rights-allow.md) | Show the whole story on its page where the rights allow | Accepted |
+| [0034](0034-show-stories-in-full-where-rights-allow.md) | Show the whole story on its page where the rights allow | Accepted; amended by 0036 |
 | [0035](0035-follow-pages-with-notices-that-never-quote.md) | Following pages, with notices that never say what changed | Accepted |
+| [0036](0036-show-every-story-in-full.md) | Show every story in full on the website | Accepted |
+| [0037](0037-keep-a-copy-of-every-directly-cited-page.md) | Keep our own copy of every page a record directly cites | Accepted |
+| [0038](0038-files-people-send-stored-in-the-bucket-with-youtube-links.md) | Files people send are stored in the private bucket, and a video can be a YouTube link | Accepted |
+| [0039](0039-website-map-uses-maplibre-and-our-own-tiles.md) | Draw the website's map with MapLibre and the project's own map tiles | Accepted |
+| [0040](0040-project-inbox-on-cloudflare.md) | Keep the project's email in the website, with outreach through a separate mailbox | Accepted |
+| [0041](0041-nation-teams-keep-their-own-pages.md) | Let each nation choose a team that keeps its own page, with delegation inside that nation only | Accepted |
+| [0042](0042-governance-facts-from-governing-documents.md) | Record how each nation's government is set up, as plain facts from its own documents | Accepted |
+| [0042](0042-link-to-the-national-indian-law-library-for-its-copies.md) | Link to the National Indian Law Library for copies taken from it | Accepted |
+| [0043](0043-link-to-the-national-indian-law-library-for-its-copies.md) | Link to the National Indian Law Library for copies taken from it | Accepted |
+| [0044](0044-order-printed-copies-through-the-lulu-print-api.md) | Order printed copies on the website through the Lulu Print API | Proposed |
+| [0045](0045-separate-settings-from-account-settings.md) | Keep display settings on the device and account settings on Account pages | Accepted |
+| [0046](0046-scan-files-with-clamav-in-a-cloudflare-container.md) | Scan files for malware with ClamAV in a Cloudflare Container, and hold them until clean | Accepted |
+| [0047](0047-show-tribal-court-opinions-from-the-caselaw-access-project.md) | Show tribal court opinions from the Caselaw Access Project on the website | Accepted |
+| [0048](0048-events-and-registration.md) | List events on the website and take registrations, with continuing legal education later | Accepted |
+| [0049](0049-draft-model-court-forms-before-gate-2.md) | Draft model court forms for people using Tribal courts before Gate 2 | Accepted |
+| [0050](0050-sponsor-accounts-on-the-account-pages.md) | Give sponsors an account page, with billing on Stripe's own pages | Proposed |
+| [0051](0051-search-the-source-documents-through-a-private-full-text-library.md) | Search the source documents through a private full-text library | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

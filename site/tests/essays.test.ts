@@ -9,6 +9,7 @@ import {
 	identifierFromPath,
 	listEssays,
 	partOf,
+	startableEssayParts,
 	publishVersion,
 	saveVersion,
 	setPublicationListed,
@@ -119,6 +120,14 @@ describe('essays in the bucket', () => {
 		expect(partOf('cases-by-topic', 'title: "Cases by Topic"\npart: back-matter')).toBe('back-matter');
 		expect(essayPath('cases-by-topic', 'back-matter')).toBe('/back-matter/cases-by-topic');
 		expect(identifierFromPath('back-matter', 'cases-by-topic')).toBe('cases-by-topic');
+	});
+
+	it('keeps pages about the site at their own addresses', () => {
+		expect(partOf('about', 'title: "About"\npart: about')).toBe('about');
+		expect(essayPath('about', 'about')).toBe('/about');
+		expect(essayPath('sponsor', 'about')).toBe('/sponsor');
+		expect(identifierFromPath('about', 'sponsor')).toBe('sponsor');
+		expect(startableEssayParts).not.toContain('about');
 	});
 
 	it('finds the page that holds each case and law box', () => {

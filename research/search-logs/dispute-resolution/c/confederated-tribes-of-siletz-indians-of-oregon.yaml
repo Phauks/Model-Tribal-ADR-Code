@@ -1,7 +1,7 @@
 profile: content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -178,3 +178,45 @@ searches:
   query: Siletz Tribal Court Rules and Procedures court personnel judicial officers tribal bar
   outcome: not-found
   reason: No search result was the Tribal Court Rules and Procedures text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/siletz-tribal-court-rules-and-procedures-2015-04-17.pdf
+  query: '2 COURT PERSONNEL: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators;
+    Removal of Judges; Court'
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/6c5d77e152d8b0d2ed57.txt
+  query: '2 COURT PERSONNEL: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators;
+    Removal of Judges; Court'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/2617696ac8c02fdd40c6.pdf
+  query: Siletz Tribal Code Sec. 3.300
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/6c5d77e152d8b0d2ed57.txt
+  query: Siletz Tribal Code Sec. 3.300
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-siletz-indians-of-oregon.yaml#dispute_resolution.provisions

@@ -1,11 +1,12 @@
 /**
  * Splits the copies this site serves (src/lib/public-copies.ts) into short
  * lists, so no page has to hold thousands of rows: federal statutes, Federal
- * Register documents, other federal documents, and nations' documents by the
- * first letter of the nation's name.
+ * Register documents, other federal documents, tribal court opinions by
+ * nation, and nations' documents by the first letter of the nation's name.
  */
 import { displayName } from '../nation-labels.ts';
 import { copyPath, fileSize, mediaLabel, removalRequestPath, type PublicCopy } from '../public-copies.ts';
+import type { DocumentFile, DocumentSetList, DocumentSetSummary } from '../offline-documents.ts';
 import { formatCaptureDate } from './markdown.ts';
 import { nations, publicCopies } from './content.ts';
 
@@ -50,7 +51,14 @@ function namesOf(copy: PublicCopy, names: Map<string, string>): string[] {
 	});
 }
 
+/** Topics whose copies belong to a nation's set for saving and downloading, not the United States set. */
+const nationTopics = new Set(['constitutions', 'tribal-law', 'caselaw-access-project']);
+
+/** Tribal court opinions (decision record 0047) are listed one nation at a time. */
+const opinionPrefix = 'opinions-';
+
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
+	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
 		const letter = first?.normalize('NFD').charAt(0).toLowerCase() ?? '';
@@ -63,8 +71,12 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	return 'other-federal';
 }
 
-function groupTitle(slug: string): string {
+function groupTitle(slug: string, names = nationNames()): string {
 	if (federalGroups[slug]) return federalGroups[slug];
+	if (slug.startsWith(opinionPrefix)) {
+		const name = names.get(slug.slice(opinionPrefix.length));
+		return name ? `Tribal court opinions: ${name}` : 'Tribal court opinions';
+	}
 	if (slug === 'other-nations') return 'Nations’ documents, other names';
 	return `Nations’ documents: ${slug.toUpperCase()}`;
 }
@@ -94,10 +106,11 @@ export function copyGroups(): CopyGroup[] {
 		const slug = groupOf(copy, names);
 		counts.set(slug, (counts.get(slug) ?? 0) + 1);
 	}
-	const order = (slug: string) => (federalGroups[slug] ? Object.keys(federalGroups).indexOf(slug) : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0));
+	const order = (slug: string) =>
+		federalGroups[slug] ? Object.keys(federalGroups).indexOf(slug) : slug.startsWith(opinionPrefix) ? 5 : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0);
 	return [...counts]
-		.sort(([first], [second]) => order(first) - order(second))
-		.map(([slug, count]) => ({ slug, title: groupTitle(slug), count }));
+		.map(([slug, count]) => ({ slug, title: groupTitle(slug, names), count }))
+		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title));
 }
 
 /** The rows of one list. */
@@ -115,3 +128,57 @@ export function allCopyRows(): CopyRow[] {
 }
 
 export { groupTitle };
+
+/**
+ * The copies a reader can save for offline reading, by set (src/lib/offline-documents.ts): the
+ * United States documents as one set, and each nation's constitutions and laws as its own. A
+ * document that belongs to several nations is in each of their sets.
+ */
+let offlineSetCache: { federal: DocumentSetList; nations: Map<string, DocumentSetList> } | undefined;
+
+export function offlineSets(): { federal: DocumentSetList; nations: Map<string, DocumentSetList> } {
+	offlineSetCache ??= buildOfflineSets();
+	return offlineSetCache;
+}
+
+function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, DocumentSetList> } {
+	const names = nationNames();
+	const federal: DocumentFile[] = [];
+	const byNation = new Map<string, DocumentFile[]>();
+	for (const copy of publicCopies()) {
+		const file: DocumentFile = [
+			copyPath(copy),
+			copy.bytes,
+			copy.sha256,
+			copy.title,
+			copy.links.at(-1) ?? copy.links[0] ?? ''
+		];
+		// A nation's set holds its constitutions, its laws and its courts' opinions (decision record
+		// 0047); everything else the site holds is a United States document.
+		if (!nationTopics.has(copy.topic)) {
+			federal.push(file);
+			continue;
+		}
+		const ids = copy.nations.length > 0 ? copy.nations : copy.topic === 'constitutions' ? [copy.key.split('/')[1]] : [];
+		for (const id of ids) {
+			if (!id || !names.has(id)) continue;
+			byNation.set(id, [...(byNation.get(id) ?? []), file]);
+		}
+	}
+	const nationLists = new Map(
+		[...byNation].sort(([first], [second]) => first.localeCompare(second)).map(([id, files]) => [id, { title: names.get(id) ?? id, files }])
+	);
+	return { federal: { title: 'United States laws and government documents', files: federal }, nations: nationLists };
+}
+
+/** The short list of every set, for the Data section in Settings. */
+export function offlineSetSummary(): DocumentSetSummary {
+	const { federal, nations: nationLists } = offlineSets();
+	const sum = (files: DocumentFile[]) => files.reduce((total, [, bytes]) => total + bytes, 0);
+	return {
+		federal: { title: federal.title, count: federal.files.length, bytes: sum(federal.files) },
+		nations: Object.fromEntries(
+			[...nationLists].map(([id, list]) => [id, { title: list.title, count: list.files.length, bytes: sum(list.files) }])
+		)
+	};
+}

@@ -255,6 +255,26 @@ export class ChapterWriter {
           .join("");
         return `#analysis-block(${title ? `[${separateCalls(shown)}]` : "none"})[${this.blocks(node.children)}]`;
       }
+      case "container_figure": {
+        // The book cannot play a video or a recording, and pictures wait on a
+        // print copy of each file, so a figure prints as a box with its
+        // caption, description, credit and transcript, and where to find it.
+        const [, kind, address = ""] = token.info.trim().split(/\s+/);
+        // A chart prints as its table, the same numbers the website draws as bars.
+        if (kind === "chart") return `#figure-block("Chart", none)[${this.blocks(node.children)}]`;
+        const label = { picture: "Picture", video: "Video", sound: "Sound recording" }[kind];
+        const youtube = /(?:youtu\.be\/|[?&]v=|\/(?:embed|shorts|live)\/)([A-Za-z0-9_-]{11})/.exec(address);
+        const where = youtube
+          ? `Watch it at #link(${typstString(`https://www.youtube.com/watch?v=${youtube[1]}`)})`
+          : `It appears with this essay on the website.`;
+        return `#figure-block(${typstString(label)}, [${where}])[${this.blocks(node.children)}]`;
+      }
+      case "container_description":
+        return `#case-part("Description")[${this.blocks(node.children)}]`;
+      case "container_credit":
+        return `#figure-credit[${this.blocks(node.children)}]`;
+      case "container_transcript":
+        return `#case-part("Transcript")[${this.blocks(node.children)}]`;
       case "container_alternative": {
         const letter = token.info.trim().split(/\s+/)[1];
         const alternative = (this.document.data.alternatives || []).find((entry) => entry.id === letter);

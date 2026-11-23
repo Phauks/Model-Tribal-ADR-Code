@@ -167,6 +167,112 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Ysleta del Sur Pueblo". Also listed under the same Area in: indian-health-service-self-governance-tribes. The Self-Governance list shows the Pueblo entered a compact in 2023, so the current operator may now be the Pueblo. Also on the Indian Health Service Self-Governance Tribes list (Ysleta del Sur Pueblo (2023)); the list does not say which service unit or programs the compact covers.'
+- area: Albuquerque
+  service_unit: Ysleta del Sur Service Unit
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Ysleta De Sur (YDS) – IHS".'
+  operator: indian-health-service
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Ysleta del Sur Pueblo Tribal Council is the duly constituted traditional governing body of the Pueblo
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 4 Council members plus Governor, Lieutenant Governor, Alguacil
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: Annual terms
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  quote: The Governors also provide administrative oversight of tribal government operations and enterprises.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ysleta del Sur Pueblo
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: Annual terms
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Lieutenant Governor, Alguacil, Cacique, War Captain
+  quote: Elected tribal officials—such as the Governor, Lieutenant Governor, Alguacil (Traditional Sheriff), and four Council members—serve annual terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Pueblo is governed by oral tradition and the Tribal Code of Laws, enforced by Tribal Police and upheld by the Tribal Court.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Cacique and War Captain appointed for lifelong terms
+  quote: Additional Council seats include a Cacique and a War Captain, both appointed to lifelong terms.
+  source: ysleta-del-sur-pueblo-website-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Ysleta del Sur Pueblo Code of Laws
@@ -240,6 +346,27 @@ gaming:
     locator: table row 319, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 319 lists the nation
       as "Ysleta del Sur Pueblo of Texas".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV 24-02
+    date: '2024-09-05'
+    link: https://www.nigc.gov?wpdmdl=2968&ind=2971
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV 24-02
+    note: The list titles the action “Ysleta del Sur Pueblo” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-24-02
+    date: '2025-07-01'
+    link: https://www.nigc.gov?wpdmdl=12373&ind=12375
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-24-02
+    note: The list titles the action “Ysleta del Sur Pueblo” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -253,6 +380,33 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Texas is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Texas. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Texas by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: Texas exercises civil and criminal jurisdiction within the Ysleta del Sur Pueblo reservation as if it had assumed that jurisdiction with the tribe's consent under 25 U.S.C. §§ 1321 and 1322. (Pub. L. No. 100-89, § 105(f), 101 Stat. 666, 668.)
+  source: public-law-100-89
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 100-89 § 105(f), 101 Stat. at 668
+  note: 25 U.S.C. § 1300g-4 is "omitted" from the Code. Gaming provisions (§ 107) and Ysleta del Sur Pueblo v. Texas, 596 U.S. 685 (2022), were not analyzed.
+nearby_state_courts:
+- state: TX
+  county: El Paso County
+  court: District Court for El Paso County
+  link: https://www.txcourts.gov/about-texas-courts/trial-courts/
+  source: state-trial-court-directory-tx
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: El Paso County holds 100% of the land of Ysleta del Sur Pueblo (Census GEOID 4755), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

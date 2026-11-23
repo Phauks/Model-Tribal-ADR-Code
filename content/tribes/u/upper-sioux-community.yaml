@@ -186,6 +186,199 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Upper Sioux Community, Minnesota
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "Upper Sioux Community, Minnesota".
+governance:
+- aspect: form
+  value: Constitution of the Upper Sioux Community
+  quote: the governing document is now called the Constitution of the Upper Sioux Community.
+  source: upper-sioux-community-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
+- aspect: governing-body
+  value: Board of Trustees
+  quote: is governed by a five-member Board of Trustees, elected to serve staggered four-year- terms.
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: a five-member Board of Trustees
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: is governed by a five-member Board of Trustees, elected to serve staggered four-year- terms.
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: elected to serve staggered four-year- terms.
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: upper-sioux-community-website-board-of-trustees
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Upper Sioux Community, Minnesota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the voters from the 1977 election
+  quote: Beginning with the 1977 election the voters shall elect a Chairman, a
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 4(A)
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: each to serve a four (4) year term.
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 4(A)
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: 'select their officers, tumefy: Chairman, Vice-Chairman, Secretary, and'
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 4(A)
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+- aspect: elections
+  value: Second Saturday of May
+  quote: Elections shall be held on the second Saturday of May, beginning in
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 4(B)
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+- aspect: voting-age
+  value: '18'
+  quote: Any members of the Upper Sioux Community eighteen (18) years of age
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 5(C)
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+- aspect: election-authority
+  value: Board of Trustees, through an Election Board
+  quote: Nominations and Elections shall be controlled by the Board of Trustees
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 5
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+- aspect: judiciary
+  value: Upper Sioux Tribal Court
+  quote: The Upper Sioux Court System is committed to upholding justice
+  source: upper-sioux-community-website-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution is named on the History page but its text is not among the saved pages; facts come from the Board of Trustees and Tribal Court pages.'
+- aspect: amendment
+  value: 51% of approved voting list members present
+  quote: This constitution may be amended by fifty-one (51%) of the approved voting list
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 12
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+- aspect: recall-and-removal
+  value: Removal by three Trustees' vote after charges
+  quote: three (3) members of the Board of Trustees shall be required to remove the
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 7(B)
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+- aspect: recall-and-removal
+  value: Removal by petition of 51% of eligible voters
+  quote: petition bearing the signatures of at least fifty-one (5 1%) of the eligible voting
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 7
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
+- aspect: other
+  value: Two-thirds of community members can overturn Board action
+  quote: A vote of two-thirds (2/3) of the members of the Community shall overturn the
+  source: constitution-upper-sioux-community-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-09-29'
+  locator: Provision No. 11
+  document_version:
+    document: upper-sioux-community-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Read from a 1996 fax-header scan with heavy OCR errors (for example ''foe'' for ''the''); quotes copied as read; status unknown.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -358,6 +551,104 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: Minnesota Department of Revenue
+  agreement: Tribal government tax agreement (collection assistance and audits for sales and use, cigarette and tobacco, liquor and motor fuel excise taxes)
+  state: MN
+  status: in-effect
+  source: minnesota-department-of-revenue-tribal-government-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table of tribal governments with tax agreements
+  note: 'The source reads: “Upper Sioux Granite Falls”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Upper Sioux", matched to the roster by name and state.'
+court_practice:
+- kind: forms
+  title: Tribal Court (civil forms and protocols)
+  court: Upper Sioux Tribal Court
+  link: https://www.uppersiouxcommunity-nsn.gov/page/tribal-court
+  detail: Page links Civil Action Complaint, Custody Protocol, Divorce general information, child support and parenting time petition instructions and name change protocols.
+  source: upper-sioux-tribal-court-forms
+  confidence: medium
+  verification: title-only
+  locator: document links
+  note: 'The source reads: “Name Change for Adult Protocol”. Files are hosted on a separate domain; not opened.'
+nearby_state_courts:
+- state: MN
+  county: Yellow Medicine County
+  court: District Court for Yellow Medicine County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Yellow Medicine County holds 100% of the land of Upper Sioux Community (Census GEOID 4445), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Sauk and Foxes, etc., 1830
+  signed: '1830-07-15'
+  statutes_at_large: 7 Stat. 328
+  kappler:
+    volume: 2
+    page: 305
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305
+  signatory: Sisseton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton remaining in Minnesota to Upper Sioux Community. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, 1836
+  signed: '1836-11-30'
+  statutes_at_large: 7 Stat. 527
+  kappler:
+    volume: 2
+    page: 481
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1836-0481
+  signatory: Sisseton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 481 (Treaty with the Sioux, 1836; Kappler header "Nov. 30, 1836. | 7 Stat., 527. | Proclamation, Feb 18, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton remaining in Minnesota to Upper Sioux Community. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Sisseton and Wahpeton Bands, 1851
+  signed: '1851-07-23'
+  statutes_at_large: 10 Stat. 949
+  kappler:
+    volume: 2
+    page: 588
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-sisseton-and-wahpeton-bands-1851-0588
+  signatory: Sisseton; Wahpeton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 588 (Treaty with the Sioux-Sisseton and Wahpeton Bands, 1851; Kappler header "July 23, 1851. | 10 Stats., 949. | Proclamation, Feb. 24. 1853.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton remaining in Minnesota to Upper Sioux Community. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, 1858
+  signed: '1858-06-19'
+  statutes_at_large: 12 Stat. 1037
+  kappler:
+    volume: 2
+    page: 785
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-1858-0785
+  signatory: Sisseton; Wahpeton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 785 (Treaty with the Sioux, 1858; Kappler header "June 19, 1858. | 12 Stats., p. 1037, | Ratified Mar. 9, 1859. | Proclaimed Mar. 31, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton remaining in Minnesota to Upper Sioux Community. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux-Sisseton and Wahpeton Bands, 1867
+  signed: '1867-02-19'
+  statutes_at_large: 15 Stat. 505
+  kappler:
+    volume: 2
+    page: 956
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-sisseton-and-wahpeton-bands-1867-0956
+  signatory: Sisseton; Wahpeton
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 956 (Treaty with the Sioux-Sisseton and Wahpeton Bands, 1867; Kappler header "Feb. 19, 1867. | 15 Stat., 505. | Ratified April 15, | 1867. | Proclaimed May 2, | 1867.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Sisseton/Wahpeton remaining in Minnesota to Upper Sioux Community. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

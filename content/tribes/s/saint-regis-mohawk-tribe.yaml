@@ -155,6 +155,239 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Saint Regis Mohawk Tribe
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "St. Regis Mohawk Tribe". Also listed under the same Area in: indian-health-service-nashville-careers-brochure, indian-health-service-self-governance-tribes.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "St. Regis Mohawk Tribe".
+governance:
+- aspect: governing-body
+  value: Saint Regis Mohawk Tribal Council
+  quote: governed by the duly elected Saint Regis Mohawk Tribal Council
+  source: saint-regis-mohawk-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 6 members
+  quote: The Tribal Council is comprised of three Chiefs and three Sub-Chiefs.
+  source: saint-regis-mohawk-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: governed by the duly elected Saint Regis Mohawk Tribal Council
+  source: saint-regis-mohawk-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years
+  quote: joins the Saint Regis Mohawk Tribal Council for the first time as an elected chief for a 3-year term.
+  source: saint-regis-mohawk-tribe-website-tribal-council-tribal-chief-donald-thompson-jr
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Tribal Chiefs
+  quote: The Saint Regis Mohawk Tribal Council Chiefs are responsible for setting policy and making major decisions on behalf of the tribe.
+  source: saint-regis-mohawk-tribe-website-about-history-of-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chiefs (3)
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Saint Regis Mohawk Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by voters
+  quote: Tribal Council, a Tribal Chief, a Tribal Vice-Chief.
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article V, Section 6
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Chief and Vice Chief shall be elected for a term of four years.
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article VII, Section 1
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: other-officers
+  value: Ethics Officer, Tribal Clerk
+  quote: Independent Officials of the Saint Regis Mohawk Tribe include our Ethics Officer, Tribal Clerk and Tribal Courts.
+  source: saint-regis-mohawk-tribe-website-independent-officials-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually
+  quote: formalized elections are now scheduled each year and definite terms of office were established.
+  source: saint-regis-mohawk-tribe-website-about-history-of-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: members of the Saint Regis Mohawk Tribe and be at least eighteen (18) years of age.
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article V, Section 6
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: election-authority
+  value: Independent Election Board
+  quote: Election and voting procedures shall be managed by an independent Election Board
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article V, Section 1
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: branches
+  value: Legislative, Executive and Judicial
+  quote: branches of government consisting of the Legislative, Executive and Judicial
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article VI, Section 1
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: belonging to one of these departments shall exercise any of the powers properly belonging
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article VI, Section 1
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: judiciary
+  value: Traffic and Civil Court
+  quote: The Saint Regis Mohawk Tribal Court currently consists of a Traffic and Civil Court.
+  source: saint-regis-mohawk-tribe-website-independent-officials-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Elected by the eligible voters
+  quote: Tribal Court shall consist of a Chief Judge and two Associate Judges elected by the
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article X, Section 4
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: judicial-term
+  value: 7 years
+  quote: eligible voters of the Mohawk Community for a term of seven (7) years.
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article X, Section 4
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: amendment
+  value: Majority vote of eligible voters in an election, 30% turnout required
+  quote: majority vote of the eligible voters of the Saint Regis Mohawk Tribe voting in a duly
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article XVI
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: recall-and-removal
+  value: Recall by majority vote of eligible voters, 30% turnout
+  quote: No elected official may be recalled from office unless a majority of the eligible
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article XIII, Section 3
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Tribal Council
+  quote: 'majority vote of the Tribal Council for any of the following offenses:'
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article XII, Section 1
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
+- aspect: other
+  value: Initiative and referendum reserved to voters
+  quote: reserve the authority to independently propose laws, ordinances
+  source: constitution-saint-regis-mohawk-tribe-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-03'
+  locator: Article XIII, Section 2
+  document_version:
+    document: saint-regis-mohawk-tribe-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Front matter includes 1996-1999 Election Board advisory and court decision notes; facts are taken from the constitution articles, and OCR reads 2096 and 306 for the Article XIII petition percentages, which are not quoted.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -420,6 +653,160 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New York is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New York. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New York by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-jurisdiction
+  detail: New York has jurisdiction over offenses committed by or against Indians on Indian reservations in the State, to the same extent as elsewhere in the State; treaty hunting and fishing rights are preserved. (25 U.S.C. § 232.)
+  source: us-code-title-25-section-232
+  confidence: high
+  verification: read-in-full
+  locator: 25 U.S.C. § 232; Act of July 2, 1948, ch. 809, 62 Stat. 1224
+  note: 'Applies to "Indian reservations within the State of New York." Whether particular parcels (for example Oneida, Cayuga or Shinnecock lands) are "reservations" is a separate question the research did not research. Also cites: statutes-at-large-62-1224.'
+- topic: state-jurisdiction-statute
+  value: state-civil-jurisdiction
+  detail: 'New York courts have jurisdiction over civil actions between Indians or between Indians and others, as in other civil actions, with limits: no state taxation of reservation lands, no state licence for treaty hunting and fishing, and no alienation of tribal land. (25 U.S.C. § 233.)'
+  source: us-code-title-25-section-233
+  confidence: high
+  verification: read-in-full
+  locator: 25 U.S.C. § 233; Act of Sept. 13, 1950, ch. 947, 64 Stat. 845
+  note: Section 233 also excludes civil actions involving Indian lands or claims about events before Sept. 13, 1952; tribes could preserve their own laws and customs by enactment before Sept. 13, 1952.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: New York State Office of Children and Family Services
+  agreement: Child Welfare Services Agreement [St. Regis Mohawk Tribe]
+  state: NY
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for NY
+  note: 'The source reads: “Child Welfare Services Agreement [St. Regis Mohawk Tribe]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: New York State Office of Children and Family Services
+  agreement: Title IV-E agreement
+  state: NY
+  date: '1994-04-01'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.J, New York
+  note: 'The source reads: “The agreement was first effective on April 1, 1994, and amended on April 22, 2005.”. Covers reimbursement of administrative and maintenance costs. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: forms
+  title: Court Publications and Forms
+  court: Saint Regis Mohawk Tribal Courts
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts/forms
+  detail: Forms page linked from the Tribal Courts page.
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: high
+  verification: title-only
+  locator: Tribal Courts page
+  note: Forms page not opened.
+- kind: court-rules
+  title: Saint Regis Mohawk Tribe Rules of Appellate Procedure (linked from Tribal Courts page)
+  court: Saint Regis Mohawk Tribal Courts
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts
+  detail: Page directs people who wish to appeal to the Saint Regis Mohawk Tribe Rules of Appellate Procedure and links a Digital Law Library and JOC Rules and Procedures (2001).
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: high
+  verification: read-in-full
+  locator: Tribal Courts page
+  note: 'The source reads: “please consult the Saint Regis Mohawk Tribe Rules of Appellate Procedure”.'
+- kind: filing-fees
+  title: Tribal Court Fines & Fees
+  court: Saint Regis Mohawk Tribal Courts
+  link: https://www.srmt-nsn.gov/independent-officials/tribal-courts/tribal-court-fines-fees
+  detail: Pages are fines and fees notices (first, second, third notice), not a filing fee schedule.
+  source: saint-regis-mohawk-tribe-tribal-courts-srmt-nsn
+  confidence: low
+  verification: inferred
+  locator: Tribal Courts page
+  note: Collection notices, not a filing fee schedule.
+nearby_state_courts:
+- state: NY
+  county: Franklin County
+  court: Supreme Court for Franklin County
+  link: https://www.nycourts.gov/court-locator
+  source: state-trial-court-directory-ny
+  confidence: medium
+  verification: title-only
+  locator: Supreme Courts by county or district
+  note: Franklin County holds 100% of the land of St. Regis Mohawk Reservation (Census GEOID 3320), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Six Nations, 1784
+  signed: '1784-10-22'
+  statutes_at_large: 7 Stat. 15
+  kappler:
+    volume: 2
+    page: 5
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1784-0005
+  signatory: Mohawk
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 5 (Treaty with the Six Nations, 1784; Kappler header "Oct. 22, 1784. | 7 Stat., 15.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Saint Regis Mohawk Tribe is the only federally recognized Mohawk nation in the US; treaty signed by Mohawk of the Six Nations. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Six Nations, 1789
+  signed: '1789-01-09'
+  statutes_at_large: 7 Stat. 33
+  kappler:
+    volume: 2
+    page: 23
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1789-0023
+  signatory: Mohawk
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 23 (Treaty with the Six Nations, 1789; Kappler header "Jan. 9. 1789. | 7 Stat., 33.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Saint Regis Mohawk Tribe is the only federally recognized Mohawk nation in the US; treaty signed by Mohawk of the Six Nations. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Six Nations, 1794
+  signed: '1794-11-11'
+  statutes_at_large: 7 Stat. 44
+  kappler:
+    volume: 2
+    page: 34
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-six-nations-1794-0034
+  signatory: Mohawk
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 34 (Treaty with the Six Nations, 1794; Kappler header "Nov. 11, 1794. | 7 Stat., 44. | Proclamation, Jan. 21, 1795.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Saint Regis Mohawk Tribe is the only federally recognized Mohawk nation in the US; treaty signed by Mohawk of the Six Nations. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Seven Nations of Canada, 1796
+  signed: '1796-05-31'
+  statutes_at_large: 7 Stat. 55
+  kappler:
+    volume: 2
+    page: 45
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-seven-nations-of-canada-1796-0045
+  signatory: Seven Nations of Canada
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 45 (Treaty with the Seven Nations of Canada, 1796; Kappler header "May 31, 1796. | 7 Stat., 55. | Proclamation, Jan. 31, 1797.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. 1796 treaty with the Seven Nations of Canada; St. Regis (Akwesasne) was one of the seven. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the New York Indians, 1838
+  signed: '1838-01-15'
+  statutes_at_large: 7 Stat. 550
+  kappler:
+    volume: 2
+    page: 502
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-new-york-indians-1838-0502
+  signatory: St. Regis Indians
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 502 (Treaty with the New York Indians, 1838; Kappler header "Jan. 15, 1838. | 7 Stat., 550. | Proclamation, Apr. 4, 1840.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

@@ -302,6 +302,21 @@
       },
       "unevaluatedProperties": false
     },
+    "indian_health_service": {
+      "type": "array",
+      "description": "The Indian Health Service Area that serves the nation and, where the Indian Health Service names them, its service units or health programs and who runs them. Each fact comes from one source; the Area is repeated in each so that a fact stands on its own.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["area"],
+        "properties": {
+          "area": { "type": "string", "description": "Indian Health Service Area, such as Billings or Navajo." },
+          "service_unit": { "type": "string", "description": "Service unit, service area or health program as the source names it." },
+          "operator": { "type": "string", "enum": ["indian-health-service", "tribal"], "description": "Who runs the nation's health services as the source states it: the Indian Health Service itself (Direct Service Tribes list), or the nation or a Tribal organization under the Indian Self-Determination and Education Assistance Act." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "government_structure": {
       "type": "array",
       "description": "The legal form of the government, only where a source states it.",
@@ -316,6 +331,58 @@
             "description": "indian-reorganization-act: constitution adopted under 25 U.S.C. § 5123. oklahoma-indian-welfare-act: under 25 U.S.C. § 5203. alaska-indian-reorganization-act: under the 1936 Alaska amendment, 25 U.S.C. § 5119. written-constitution-other: a written constitution adopted outside those Acts. traditional: a traditional form of government."
           },
           "detail": { "type": "string" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "governance": {
+      "type": "array",
+      "description": "How the nation's government is set up, one plain fact per item, as the nation's constitution or other governing document, its own website or an official directory states it: its governing body, head of government, elections, branches, courts and how its governing document is changed. Never a summary of a document; an aspect the sources do not state is left out, and the search for it is logged under research/search-logs/governance/ (decision record 0042).",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["aspect", "value"],
+        "properties": {
+          "aspect": {
+            "type": "string",
+            "enum": [
+              "form",
+              "governing-body",
+              "governing-body-size",
+              "governing-body-selection",
+              "governing-body-term",
+              "general-council",
+              "head-of-government",
+              "head-of-government-selection",
+              "head-of-government-term",
+              "other-officers",
+              "elections",
+              "voting-age",
+              "election-authority",
+              "branches",
+              "separation-of-powers",
+              "judiciary",
+              "judicial-selection",
+              "judicial-term",
+              "judicial-independence",
+              "amendment",
+              "secretarial-approval",
+              "recall-and-removal",
+              "other"
+            ],
+            "description": "Which part of the government the fact describes. form: the form of government or the authority the document is adopted under, in the source's words. governing-body: the name of the body holding lawmaking or governing power; -size, -selection and -term: its number of members, how they are chosen and their term. general-council: a body of all voting citizens and who sits in it. head-of-government: the title of the office that leads the government or presides over the governing body; -selection and -term likewise. other-officers: the titles of the other officers. elections: when regular elections are held. voting-age: the minimum age to vote. election-authority: the body that runs elections. branches: the branches the source names. separation-of-powers: the source states that the branches' powers are separate (value \"Stated\"). judiciary: the courts the source sets up or the power to set them up; judicial-selection and judicial-term: how judges are chosen and their term; judicial-independence: one protection the source gives judges or courts. amendment: how the governing document is changed. secretarial-approval: whether amendments or laws need the Secretary of the Interior's approval. recall-and-removal: how officials are removed or recalled."
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The fact in a few plain words, with bodies and offices named as the source names them (\"Business Committee\", \"Chairman\") and numbers as digits (\"7 members\", \"4 years\")."
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400,
+            "description": "The words of the source that state the fact, copied exactly, reading errors of a scanned text included. Required when the fact comes from a document's text; scripts/governance/apply_answers.py checks that the quote is in the text before the fact is kept."
+          }
         },
         "unevaluatedProperties": false
       }
@@ -522,6 +589,43 @@
       "additionalProperties": false,
       "description": "Gaming under the Indian Gaming Regulatory Act (25 U.S.C. §§ 2701-2721).",
       "properties": {
+        "indian_lands_opinions": {
+          "type": "array",
+          "description": "Opinions of the National Indian Gaming Commission or the Interior Department's Solicitor on whether the nation may game on a parcel under 25 U.S.C. §§ 2703 and 2719, one fact per opinion.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["parcel", "date"],
+            "properties": {
+              "parcel": { "type": "string", "description": "The parcel as the Commission's list names it." },
+              "legal_theory": { "type": "string", "description": "The ground claimed, such as restored lands or within the reservation." },
+              "accepted": { "type": "boolean", "description": "Whether the opinion accepted that ground." },
+              "date": { "$ref": "common.schema.json#/$defs/partialDate" },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "enforcement_actions": {
+          "type": "array",
+          "description": "Enforcement actions of the Chair of the National Indian Gaming Commission against the nation or its gaming regulator (25 C.F.R. part 573), and settlement and pre-opening agreements in their place, one fact per action.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["kinds", "tracking_number", "date"],
+            "properties": {
+              "kinds": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "string", "enum": ["notice-of-violation", "settlement-agreement", "civil-fine-assessment", "closure-order", "temporary-closure-order", "pre-opening-agreement", "other-order"] }
+              },
+              "tracking_number": { "type": "string" },
+              "date": { "$ref": "common.schema.json#/$defs/partialDate" },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
         "operates_gaming": {
           "type": "object",
           "$ref": "#/$defs/citedFact",
@@ -587,13 +691,104 @@
             "type": "string",
             "enum": [
               "public-law-280",
+              "state-jurisdiction-statute",
               "violence-against-women-act-special-tribal-criminal-jurisdiction",
               "tribal-law-and-order-act-enhanced-sentencing",
               "indian-child-welfare-act",
               "other"
             ]
           },
-          "value": { "type": "string", "description": "Short value as defined for the topic in docs/data-model.md, for example mandatory-state, optional-state, excepted, retroceded, exercising, implementing or designated-agent-listed." },
+          "value": { "type": "string", "description": "Short value as defined for the topic in docs/data-model.md, for example mandatory-state, optional-state, not-a-public-law-280-state, excepted, retroceded, state-criminal-jurisdiction, exercising, implementing or designated-agent-listed." },
+          "detail": { "type": "string" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "jurisdiction_agreements": {
+      "type": "array",
+      "description": "Agreements between the nation and a state, county, city or federal agency that share or allocate jurisdiction: cross-deputization and law-enforcement agreements, tax agreements and compacts other than gaming compacts, and child welfare agreements. One fact per agreement per source.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind", "other_party"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["cross-deputization", "tax-agreement", "child-welfare-agreement", "other"] },
+          "other_party": { "type": "string", "description": "The state agency, county, city or federal agency that is party to the agreement, as the source names it." },
+          "agreement": { "type": "string", "description": "The agreement's title, or a short description when it has none." },
+          "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "date": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Signed or effective date." },
+          "status": { "type": "string", "enum": ["in-effect", "expired", "unknown"] },
+          "detail": { "type": "string" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "court_practice": {
+      "type": "array",
+      "description": "What a person needs to use the nation's courts: admission to practice before them, court rules, filing fees, court forms, a public defender and legal aid. One fact per item per source, read from the court's or the nation's own pages.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind", "title"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["bar-admission", "court-rules", "filing-fees", "forms", "public-defender", "legal-aid"] },
+          "title": { "type": "string", "description": "The page or document, as the source names it." },
+          "court": { "type": "string", "description": "The court the item belongs to, as the source names it." },
+          "link": { "type": "string", "format": "uri" },
+          "detail": { "type": "string", "description": "What the page or document says, in a sentence or two, such as the fee amounts or how to apply." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "nearby_state_courts": {
+      "type": "array",
+      "description": "The state trial court of general jurisdiction for each county (or parish, borough or census area) that the nation's Census land or statistical area lies in, so a reader can see which state court sits alongside the tribal court. One fact per county; the county comes from the Census Bureau's area-to-county relationship file, named in the note.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["state", "county", "court"],
+        "properties": {
+          "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "county": { "type": "string" },
+          "court": { "type": "string", "description": "The state's trial court of general jurisdiction, named for the county." },
+          "link": { "type": "string", "format": "uri", "description": "The state judiciary's directory of those courts." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "treaties": {
+      "type": "array",
+      "description": "Ratified United States treaties signed by the nation or by the tribes and bands it descends from, each linked to its text in Kappler's Indian Affairs: Laws and Treaties. A link to a historic signatory is a matched fact with its own confidence.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["title", "signed"],
+        "properties": {
+          "title": { "type": "string", "description": "The treaty's title as Kappler gives it." },
+          "signed": { "$ref": "common.schema.json#/$defs/partialDate" },
+          "statutes_at_large": { "type": "string", "description": "Statutes at Large citation, such as 15 Stat. 667." },
+          "kappler": {
+            "type": "object",
+            "properties": { "volume": { "type": "integer" }, "page": { "type": "integer" }, "link": { "type": "string", "format": "uri" } },
+            "additionalProperties": false
+          },
+          "signatory": { "type": "string", "description": "How the treaty names the party the nation descends from." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "land_establishment": {
+      "type": "array",
+      "description": "How the nation's reservation or other land base was set aside (treaty, executive order, statute, agreement, purchase or proclamation), with the instrument cited.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["land_area", "method"],
+        "properties": {
+          "land_area": { "type": "string", "description": "The reservation, rancheria, colony or other area as the source names it." },
+          "method": { "type": "string", "enum": ["treaty", "executive-order", "statute", "agreement", "secretarial-proclamation", "purchase", "court-decree", "state-action", "other"] },
+          "instrument": { "type": "string", "description": "The treaty, order or act, in short citation form." },
+          "date": { "$ref": "common.schema.json#/$defs/partialDate" },
           "detail": { "type": "string" }
         },
         "unevaluatedProperties": false

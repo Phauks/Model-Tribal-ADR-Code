@@ -1,7 +1,7 @@
 profile: content/tribes/p/paiute-indian-tribe-of-utah.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -57,5 +57,83 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.utahpaiutes.org/about/government/documents.aspx;
-  https://pitu.gov/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/constitutions/paiute_utah/index.html
+  query: mediation, arbitration, peacemaking, circles, elders, dispute resolution wording
+  outcome: not-found
+  reason: Constitution table of contents only (Judicial Branch article, suits against the Tribe); no dispute
+    resolution wording visible; full text is a linked PDF not read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Paiute Indian Tribe of Utah tribal code OR court OR "dispute resolution" OR mediation'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
+    court lists, with no page showing dispute resolution wording for this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=pitu.gov/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: error
+  reason: The Wayback Machine capture index did not answer (TLS handshake timed out) in any of the three
+    rounds; worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=utahpaiutes.org/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 3266 archived addresses for utahpaiutes.org/*; those whose address names
+    a code, law, court or dispute resolution page were fetched in this retry or are listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261021014954id_/https://pitu.gov/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2026-10-21) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20181023092913id_/http://www.utahpaiutes.org/about/government/documents.aspx
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2018-10-23) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/http://www.utahpaiutes.org/about/government/docs/Paiute%20Tribe%20Constitution.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: error
+  reason: The archived copy could not be fetched in any round (connection refused); worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261021014954/https://pitu.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-10-21 ("Paiute Indian Tribe of Utah | pitu.gov") shows codes
+    or ordinances.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20181023092913/http://www.utahpaiutes.org:80/about/government/documents.aspx
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2018-10-23 ("Paiute Indian Tribe of Utah") shows codes or ordinances.

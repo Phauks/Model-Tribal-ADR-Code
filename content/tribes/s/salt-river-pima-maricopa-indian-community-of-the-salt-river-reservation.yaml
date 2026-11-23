@@ -239,6 +239,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Salt River Pima-Maricopa Indian Community". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Salt River Pima-Maricopa Indian Community (2017)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Salt River Pima-Maricopa Community of the Salt River Reservation, Arizona" among
@@ -264,6 +272,207 @@ government_structure:
   as_of: '1940'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted by election under Section 16 of the Indian Reorganization Act
+  quote: ballots in accordance with Section 16 of the Indian Reorganization Act of June 18, 1934 (48
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article XVI
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: governing-body
+  value: Salt River Pima-Maricopa Indian Community Council
+  quote: River Pima-Maricopa Indian Community Council
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article IV, Section 1
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: governing-body-size
+  value: President, Vice President and 7 council members
+  quote: and seven (7) council members to be chosen as
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article IV, Section 1
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: governing-body-selection
+  value: Elected by popular vote, by district
+  quote: Five (5) council members. By popular vote of
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article IV, Section 1
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: of the council shall be elected for terms of four (4)
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article IV, Section 4
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: head-of-government
+  value: President
+  quote: The president shall be the chief executive
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article III, Section 1
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by popular vote of the community
+  quote: President. By popular vote of the voters of the
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article IV, Section 1
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: of the council shall be elected for terms of four (4)
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article IV, Section 4
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: other-officers
+  value: Vice President
+  quote: The vice president shall preside over the
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article III, Section 2
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: elections
+  value: Every 2 years on the third Tuesday in November
+  quote: the third Tuesday in November in each even
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article VI, Section 2(a)
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: voting-age
+  value: '18'
+  quote: Indian Community who is at least eighteen (18)
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article VI, Section 4
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: election-authority
+  value: Election boards appointed under ordinance
+  quote: to provide for the appointment of election boards
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article VI, Section 1
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: judiciary
+  value: Community court system established by Council
+  quote: To establish a community court
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article VII, Section 1(c)(2)
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: amendment
+  value: Majority vote of voters in an election
+  quote: This constitution may be amended by a major-
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article XIII
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: secretarial-approval
+  value: Requirement removed
+  quote: March 16, 2018 removed the requirement for the
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article XIV, note
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
+- aspect: other
+  value: Initiative by petition of voters
+  quote: Upon receipt of a petition in writing signed by
+  source: constitution-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024-03-26'
+  locator: Article VIII, Section 1
+  document_version:
+    document: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan with text from both columns on some lines, and the text carries amendment history from 1996, 2005, 2018 and 2024; removal and recall passages were not reliably readable, so those facts are omitted.'
 governing_documents:
 - kind: law-code
   title: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
@@ -373,23 +582,20 @@ dispute_resolution:
   forums:
   - kind: family-group-conference
     name: Family group conferencing / extended family hearing (juvenile)
-    description: Uses the extended families of the Community to help the juvenile court resolve juvenile
-      offender, incorrigibility and dependency problems by applying the customs and traditions of the
-      Pima and Maricopa peoples; the court may appoint a Community member qualified to act as a tribal
-      elder to conduct the hearing.
-    legal_basis: Salt River Pima-Maricopa Indian Community Code, § 11-31
+    description: Alternative juvenile court procedure that uses the extended families of the Community, and the customs and traditions of the Pima and Maricopa peoples, to resolve juvenile offender, incorrigibility and dependency problems. Before a hearing on the merits the court, on its own motion or on motion of a parent, guardian or the Community, may order the case heard this way after inquiring into whether it is applicable and suitable. The court may appoint a Community member qualified to act as a tribal elder to conduct the informal hearing, and may order extended family members to attend.
+    legal_basis: Salt River Pima-Maricopa Indian Community Code of Ordinances, Chapter 11 (Minors), § 11-31
     case_types:
     - juvenile
     - child-welfare
     participation: court-referred
-    relationship_to_court: The appointed elder makes written disposition recommendations to the court,
-      which seeks to incorporate the extended family in its order.
-    link: https://srpmic-nsn.gov/government/ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: The appointed elder makes written recommendations of disposition to the court. The court enters judgment (stating that this procedure was used), tries to shape its order to include the extended family and may require family members to perform specific acts or services for the juvenile; appeals go under section 11-29.
+    link: https://srpmic-nsn.gov/wp-content/uploads/2023/10/Chapter11.pdf
+    source: srpmic-code-chapter-11-minors
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2026'
-    locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
+    locator: Ch. 11, Sec. 11-31 (a)-(f), pp. CD11:12-13
+    note: Read in full on 2026-11-23 (Salt River Pima-Maricopa Indian Community Code of Ordinances, Chapter 11 Minors, Sec. 11-31 (Ord. SRO-210-96; SRO-402-2012)). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 467.
   provisions:
   - kind: other
     title: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
@@ -620,6 +826,101 @@ jurisdiction:
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Salt River Pima Maricopa Indian Community".
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.53)
+  note: Listed as "SALT RIVER PIMA-MARICOPA INDIAN COMMUNITY" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+court_practice:
+- kind: filing-fees
+  title: Court (Filing Fees)
+  court: Salt River Community Court
+  link: https://srpmic-nsn.gov/government/court/
+  detail: 'Filing fees: $10 civil complaint, probate, forcible detainer, guardianship petitions; $40 divorce, separate maintenance, annulment petitions; $50 appeal petition. A Court Fees page is also linked.'
+  source: salt-river-pima-maricopa-indian-community-court
+  confidence: high
+  verification: read-in-full
+  locator: Filing Fees
+  note: 'The source reads: “Filing Fees”.'
+- kind: bar-admission
+  title: Advocate, Attorney, Judicial Court Admissions
+  court: Salt River Community Court
+  link: https://srpmic-nsn.gov/government/court/advocate-attorney-judicial-court-admissions/
+  detail: Applicants (attorney, legal advocate or judicial admission) submit an application by appointment with the Court Administrator's Office and take an in-person admissions examination of 30 multiple choice and 6 short answer questions.
+  source: salt-river-pima-maricopa-indian-community-advocate-attorney-judicial-c
+  confidence: high
+  verification: read-in-full
+  locator: Admission Roadmap
+  note: 'The source reads: “Admission Roadmap”.'
+- kind: court-rules
+  title: Court Rules
+  court: Salt River Community Court
+  link: https://www.srpmic-nsn.gov/government/court/courtrules/
+  detail: Court Rules page linked from the Court page; not opened.
+  source: salt-river-pima-maricopa-indian-community-court
+  confidence: high
+  verification: title-only
+  locator: Court menu
+  note: Page not opened.
+- kind: forms
+  title: Court Forms
+  court: Salt River Community Court
+  link: https://www.srpmic-nsn.gov/government/court/courtforms/
+  detail: Court Forms page linked from the Court page; not opened.
+  source: salt-river-pima-maricopa-indian-community-court
+  confidence: high
+  verification: title-only
+  locator: Court menu
+  note: Page not opened.
+nearby_state_courts:
+- state: AZ
+  county: Maricopa County
+  court: Superior Court for Maricopa County
+  link: https://www.azcourts.gov/AZ-Courts
+  source: state-trial-court-directory-az
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Maricopa County holds 100% of the land of Salt River Reservation (Census GEOID 3340), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Salt River lands (Pima and Maricopa Reserve), Arizona
+  method: executive-order
+  instrument: Exec. Order of June 14, 1879, 1 Kappler 806
+  date: '1879-06-14'
+  detail: First set aside
+  source: executive-order-1879-06-14-pima-maricopa-salt-river
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 806
+  note: 'The instrument reads: “it is hereby ordered that there be withdrawn from sale and settlement and set apart for the use of said Pima and Maricopa Indians, as an addition to the reservation set apart for said Indians by act of Congress”. Kappler cross-references the Salt River Reserve to this order ("See Pima and Maricopa or Gila River Res., Ex. order June 14 1879", 1 Kappler 808). The order is framed as an addition to the Gila River reservation and replaced an order of Jan. 10, 1879; the tract lies north of the Gila around the Salt River.'
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

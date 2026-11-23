@@ -125,6 +125,14 @@ official_images:
   confidence: high
   as_of: '2026-11-22'
   verification: read-in-full
+languages:
+- name: Iñupiaq
+  source: inupiat-community-arctic-slope-education
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Education
+  note: 'The source reads: “education based on the Iñupiaq language and culture”.'
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Fairbanks Agency
@@ -133,6 +141,72 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Inupiat Community of the Arctic Slope
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-barrow-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Barrow Service Area profile'
+  note: Listed as "Inupiat Community of the Arctic Slope". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Barrow Service Area
+  source: indian-health-service-alaska-area-profile-barrow-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Barrow Service Area profile'
+  note: 'The source''s words: "Inupiat Community of the Arctic Slope".'
+  operator: tribal
+governance:
+- aspect: form
+  value: Indian Reorganization Act of 1934 and ICAS Constitution as amended
+  quote: governed by the Indian Reorganization Act of 1934 and the ICAS Constitution as amended
+  source: inupiat-community-of-the-arctic-slope-website-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats are listed by title with names omitted; the ICAS Constitution text is not on the saved pages.'
+- aspect: governing-body
+  value: Council
+  quote: a council whose members are selected by the Iñupiat people of the Arctic Slope region
+  source: inupiat-community-of-the-arctic-slope-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats are listed by title with names omitted; the ICAS Constitution text is not on the saved pages.'
+- aspect: governing-body-selection
+  value: Selected by Iñupiat people
+  quote: a council whose members are selected by the Iñupiat people of the Arctic Slope region
+  source: inupiat-community-of-the-arctic-slope-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats are listed by title with names omitted; the ICAS Constitution text is not on the saved pages.'
+- aspect: head-of-government
+  value: President
+  quote: President – Barrow Member
+  source: inupiat-community-of-the-arctic-slope-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats are listed by title with names omitted; the ICAS Constitution text is not on the saved pages.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Inupiat Community of the Arctic Slope
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President, Secretary, Sgt. At Arms, Treasurer
+  quote: Vice President – Barrow Member
+  source: inupiat-community-of-the-arctic-slope-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats are listed by title with names omitted; the ICAS Constitution text is not on the saved pages.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

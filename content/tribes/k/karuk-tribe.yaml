@@ -195,6 +195,203 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: 'Listed as "Karuk Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Karuk Tribe of California (1998)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Karuk Tribe shall be the Tribal Council, which shall consist of nine (9) member selected at large from the Tribe
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: governing-body-size
+  value: '9 members: 6 council members and 3 officers'
+  quote: which shall consist of nine (9) member selected at large from the Tribe
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: governing-body-selection
+  value: Council members elected by district; officers elected at large
+  quote: consisting of two (2)representatives elected from each of the three (3) Council Districts
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: All terms of office shall be for four (4) years.
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall preside at all meetings of the Tribal Council.
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VIII, Section 2
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Karuk Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large, within 100 road miles of territory
+  quote: three(3) officers (the Chairperson, Vice-Chairperson and Secretary/Treasurer),elected from anywhere within 100 road miles
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: All terms of office shall be for four (4) years.
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary/Treasurer
+  quote: (the Chairperson, Vice-Chairperson and Secretary/Treasurer)
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article V
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: elections
+  value: Every year on the first Tuesday in November
+  quote: Annual elections shall be held on the first Tuesday in November.
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VII, Section 5
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the Tribe who are eighteen years of age and older
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VII, Section 1
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: election-authority
+  value: Election Committee
+  quote: It shall be the duty of the Election Committee to post the names of all qualified candidates
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VII, Section 3
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: judiciary
+  value: Council may establish Tribal courts and administrative bodies
+  quote: To establish Tribal courts and administrative bodies
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article VI
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: amendment
+  value: Majority vote of voters in special election; 50% of registered voters must vote
+  quote: The amendment(s) shall take effect if adopted by the majority of those voting in the election held for that purpose
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article XII
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: recall-and-removal
+  value: Recall by petition of two-thirds of registered voters
+  quote: Upon a petition of at least two thirds (2/3)of the registered voters of the Tribe
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article IX, Section 4
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
+- aspect: recall-and-removal
+  value: Expulsion or suspension by two-thirds Council vote
+  quote: The Council may by an affirmative vote of two-thirds (at least six Council Members) expel
+  source: constitution-karuk-tribe-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008-07-19'
+  locator: Article IX, Section 3
+  document_version:
+    document: karuk-tribe-constitution
+    version: 2008-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Web-page copy of the 2008 constitution with site navigation text at the top; certification dated July 30, 2008.'
 governing_documents:
 - kind: law-code
   title: Karuk Tribe
@@ -315,24 +512,20 @@ dispute_resolution:
   forums:
   - kind: mediation
     name: Peacemaker Mediation Forum
-    description: A nonadversarial forum within the Tribal Court structure for resolving disputes between
-      Tribal members and others within the Tribe's jurisdiction; guidelines are to reflect the Tribe's
-      historical traditions and modern methods of dispute resolution.
+    description: A nonadversarial forum within the Tribal Court structure for resolving disputes between Tribal members and others within the Tribe's jurisdiction; guidelines are to reflect the Tribe's historical traditions and modern methods of dispute resolution.
     legal_basis: Karuk Tribal Code, Section 3.05.100 (Res. 10-R-111 § 10.9)
     case_types:
     - civil
     - other
     participation: required
-    relationship_to_court: When a petition is filed with the Clerk, the forum is used before proceeding
-      to a formal court hearing; parties may continue in court if mediation fails.
+    relationship_to_court: When a petition is filed with the Clerk, the forum is used before proceeding to a formal court hearing; parties may continue in court if mediation fails.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
     source: karuk-tribal-code-chapter-3-05
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2024-09-26'
     locator: Sections 3.05.010(E), 3.05.100
-    note: Participation recorded as 'required' because the code says the forum shall be used before a
-      formal hearing once a petition is filed.
+    note: Read in full on 2026-11-23 (Karuk Tribal Code Ch. 3.05 Tribal Court (Res. 10-R-111, 9/30/2010; current through Res. 24-R-151, 9/26/2024)). Participation recorded as 'required' because the code says the forum shall be used before a formal hearing once a petition is filed. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 192.
   provisions:
   - kind: peacemaking
     title: Peacemaker Mediation Forum
@@ -362,33 +555,27 @@ dispute_resolution:
       free to continue in court if the mediation fails.
     locator: 3.05.100 (bracket cites Res. 10-R-111 § 10.9)
   - kind: peacemaking
-    title: 'Section 11: Peacemaker Mediation Forum/Family Unity'
-    citation: 'Section 11: Peacemaker Mediation Forum/Family Unity'
-    link: https://narf.org/nill/codes/karuk/index.html
-    source: national-indian-law-library-code-codes-karuk
+    title: 10.10.270 Peacemaker Mediation Forum
+    citation: Karuk Tribal Code § 10.10.270 (Title 10, Ch. 10.10, Art. XI), codifying Title I § 11(A) of the 2009 Children and Family Code (Res. 09-R-062, Apr. 30, 2009), as amended by Res. 22-R-037 (Feb. 24, 2022)
+    link: https://karuk.tribal.codes/KTC/10.10.270
+    source: karuk-tribal-code-10-10-270
     confidence: medium
-    verification: title-only
-    as_of: '2026-11-21'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents; the
-      provision itself was not read. The heading it falls under is taken from the page layout and may
-      be imprecise. Searched for the text on 2026-11-22 and not read. A copy was located at https://karuk.tribal.codes/KTC/10.10.270,
-      but only an automated summary of it could be seen, so the section is not recorded as read. Places
-      searched: research/search-logs/dispute-resolution/k/karuk-tribe.yaml.'
+    verification: read-in-full
+    as_of: '2022-02-24'
+    locator: 10.10.270(A)-(D)
+    note: 'Read in full on 2026-11-23 (Karuk Tribal Code § 10.10.270, Peacemaker Mediation Forum (Wayback Machine copy of Aug. 10, 2024; code current through Res. 22-R-198, Nov. 17, 2022); history: Res. 09-R-062 Title 1 § (11)(A), 4/30/2009, and Res. 22-R-037, 2/24/2022). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 195.'
+    summary: In a children-and-youth-in-need-of-care case the Tribal Court judge may, at any stage, order the parties into the Tribe's confidential Peacemaker Mediation Forum, run under the Forum's written guidelines, or order the family into family unity with Karuk Child Welfare Services; the plan the family reaches goes back to the judge, who may approve, modify or disapprove it, send the family back for more work or set a hearing, and an approved plan becomes a Tribal Court order.
   - kind: peacemaking
-    title: Dispute Resolution-Mediation/Peacemaking
-    citation: Dispute Resolution-Mediation/Peacemaking
-    link: https://narf.org/nill/codes/karuk/index.html
-    source: national-indian-law-library-code-codes-karuk
+    title: 10.05.040 Dispute resolution – Mediation/peacemaking
+    citation: Karuk Tribal Code § 10.05.040 (Title 10, Ch. 10.05, Family Relations), codifying Title II § 1(D) of the 2009 Children and Family Code (Res. 09-R-062, Apr. 30, 2009)
+    link: https://karuk.tribal.codes/KTC/10.05.040
+    source: karuk-tribal-code-10-05-040
     confidence: medium
-    verification: title-only
-    as_of: '2026-11-21'
-    locator: Table of Contents, under 'SECTION 1. POLICY, PURPOSE AND SCOPE'
-    note: 'Identified from section headings in the National Indian Law Library table of contents; the
-      provision itself was not read. The heading it falls under is taken from the page layout and may
-      be imprecise. Searched for the text on 2026-11-22 and not read. A copy was located at https://karuk.tribal.codes/KTC/10.05.040,
-      but only an automated summary of it could be seen, so the section is not recorded as read. Places
-      searched: research/search-logs/dispute-resolution/k/karuk-tribe.yaml.'
+    verification: read-in-full
+    as_of: '2009-04-30'
+    locator: 10.05.040
+    note: 'Read in full on 2026-11-23 (Karuk Tribal Code § 10.05.040, Dispute resolution – Mediation/peacemaking (Wayback Machine copy of June 22, 2024; code current through Res. 22-R-198, Nov. 17, 2022); history: Res. 09-R-062 Title 2 § (1)(D), 4/30/2009). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 196.'
+    summary: In family relations proceedings the dispute resolution process of KTC 10.10.270 (the Peacemaker Mediation Forum) must be arranged at or before the time the matter is set for hearing; its stated purpose is cooperation, less bitterness and an agreement that meets the needs and best interests of all parties, and if the parties stipulate the court applies Karuk customs and traditions under Chapter 3.05.
   database_listings:
   - title: Conference/Peacemaker Mediation to Preserve Marriage
     citation: KTC 10.05.070
@@ -545,6 +732,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Karuk Tribe". Facilities as
       machine-extracted from the report text (verify): Rain Rock Casino. Name extracted from the PDF by
       the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Yreka Parcel, Siskiyou County, CA
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2004-10-12'
+    link: https://www.nigc.gov?wpdmdl=2565&ind=2566
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Karuk Tribe of California, 2004-10-12
+    note: The list names the tribe as “Karuk Tribe of California”.
+  - parcel: Yreka Parcel, Siskiyou County, CA
+    legal_theory: Restored lands
+    accepted: true
+    date: '2012-04-09'
+    link: https://www.nigc.gov?wpdmdl=2647&ind=2648
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Karuk Tribe of California, 2012-04-09
+    note: The list names the tribe as “Karuk Tribe of California”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -570,6 +778,47 @@ jurisdiction:
     table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: California Department of Social Services
+  agreement: Title IV-E Intergovernmental Agreement between the California Department of Social Services and the Karuk Tribe of California
+  state: CA
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for CA
+  note: 'The source reads: “Title IV-E Intergovernmental Agreement between the California Department of Social Services and the Karuk Tribe of California”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: California Department of Social Services
+  agreement: Title IV-E intergovernmental agreement
+  state: CA
+  date: '2007-05-14'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.C, California
+  note: 'The source reads: “The California Department of Social Services entered into two agreements, one with the Karuk Tribe on May 14, 2007”. The report says neither the Karuk nor the Yurok agreement was "currently effective" because no tribal plan had been developed. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: CA
+  county: Siskiyou County
+  court: Superior Court for Siskiyou County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Siskiyou County holds 96% of the land of Karuk Reservation (Census GEOID 1750), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: CA
+  county: Humboldt County
+  court: Superior Court for Humboldt County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Humboldt County holds 4% of the land of Karuk Reservation (Census GEOID 1750), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

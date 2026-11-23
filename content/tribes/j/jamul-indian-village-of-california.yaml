@@ -150,6 +150,227 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Jamul Indian Village of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Jamul Indian Village of California".
+governance:
+- aspect: form
+  value: Constitution adopted April 1, 2017
+  quote: The Jamul Indian Village of California is organized pursuant to the Constitution of the Jamul Indian Village of California, adopted on April 1, 2017
+  source: jamul-indian-village-of-california-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
+- aspect: governing-body
+  value: General Council
+  quote: The General Council, as the governing body of our Tribe, exercises the governmental authority of our Tribe
+  source: jamul-indian-village-of-california-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The General Council exercises full authority over all laws, programs, and initiatives undertaken by our Tribe and delegates select authority to the Tribal Council
+  source: jamulindianvillage-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
+- aspect: governing-body-size
+  value: 5 members (Executive Committee)
+  quote: a chairman, vice-chairman, and three (3) committee members
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: governing-body-selection
+  value: Elected officials
+  quote: our elected officials, known as the Tribal Council.
+  source: jamulindianvillage-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: two (2) years or until their successors are duly elected and
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: general-council
+  value: All qualified voters 18 and older
+  quote: Our Tribe is governed by the General Council, composed of all qualified voters aged 18 and older.
+  source: jamul-indian-village-of-california-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman shall preside at all meetings of the general council and of the
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article XII, Section 1
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Jamul Indian Village of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the General Council by secret ballot
+  quote: elect from its members, by secret ballot, an executive
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two (2) years or until their successors are duly elected and
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: other-officers
+  value: Vice-chairman, Secretary-Treasurer
+  quote: committee shall select a secretary-treasurer to asist them in
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article IV, Section 2
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: elections
+  value: Every 2 years
+  quote: every two years. Regular elections of officers shall be
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article V, Section 1
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: voting-age
+  value: '18'
+  quote: All enrolled members of Uamul Village who are eighteen (IS) years of age or
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article V, Section 3
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: election-authority
+  value: Executive Committee drafts the election ordinance
+  quote: shall be developed by the executive committee and
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article V
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: judiciary
+  value: Tribal Court planned, Intertribal Court agreement
+  quote: The Tribe is working towards establishing its own Tribal Court, which it plans to debut in 2025. Currently, the Tribe has an Agreement with the
+  source: jamul-indian-village-of-california-website-government-departments-law-enforcement
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Tribal Council members and the Chairwoman are named on the government page and are left out; the Constitution itself is not among the saved pages.'
+- aspect: amendment
+  value: Majority vote of qualified voters in a Secretary-called election (51% turnout)
+  quote: This constitution may be amended by a majority vote of the qualified voters
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article XVI, Section 1
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: become effective until approved by the Secretary of the Interior or his duly authorized
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article XVI, Section 1
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: recall-and-removal
+  value: Removal by general council vote after a 30% petition
+  quote: percent (30%) of the qualified voters requesting the removal from office of an elected
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters
+  quote: Upon receipt of a petition signed by at least thirty percent (30%) of the
+  source: constitution-jamul-indian-village-of-california-1981-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1981-07-07'
+  locator: Article VI, Section 2
+  document_version:
+    document: jamul-indian-village-of-california-constitution
+    version: 1981-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan is heavily garbled (Article VIII, parts of Article XII and the certificate are partly unreadable), so only legible passages are used.'
 governing_documents:
 - kind: constitution
   title: Jamul Indian Village of California - Tribal Constitution
@@ -322,6 +543,57 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: bar-admission
+  title: Southern California Tribal Bar Association admission application
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/attorneys
+  detail: Attorneys page offers Southern California Tribal Bar Association information, a membership directory, an admission application and a renewal application.
+  source: intertribal-court-of-southern-bar-admission
+  confidence: high
+  verification: read-in-full
+  locator: Southern California Tribal Bar Association Information
+  note: 'The source reads: “Southern California Tribal Bar Association Admission Application”. Jamul Indian Village appears on the intertribal court’s list of tribes with a memorandum of agreement, not as a member. The page is the intertribal court’s own site.'
+- kind: forms
+  title: Forms (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/forms
+  detail: Forms page includes an Application for Filing Fee Waiver or Deferral and a Document Assistance Form.
+  source: intertribal-court-of-southern-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms
+  note: 'The source reads: “Application for Filing Fee Waiver or Deferral”. Jamul Indian Village appears on the intertribal court’s list of tribes with a memorandum of agreement, not as a member. The page is the intertribal court’s own site.'
+- kind: court-rules
+  title: Code of Civil Procedure and Rules of Court
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Rules and Laws page links the Code of Civil Procedure and Rules of Court, a Fee Schedule and the Inter-Governmental Agreement.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: read-in-full
+  locator: Rules and Laws
+  note: Jamul Indian Village appears on the intertribal court’s list of tribes with a memorandum of agreement, not as a member. The page is the intertribal court’s own site.
+- kind: filing-fees
+  title: Fee Schedule (Intertribal Court of Southern California)
+  court: Intertribal Court of Southern California
+  link: https://www.intertribalcourt.org/rules-and-laws
+  detail: Fee Schedule PDF linked on the Rules and Laws page.
+  source: intertribal-court-of-southern-court-rules-fees
+  confidence: high
+  verification: title-only
+  locator: Rules and Laws
+  note: 'The source reads: “Fee Schedule”. Jamul Indian Village appears on the intertribal court’s list of tribes with a memorandum of agreement, not as a member. The page is the intertribal court’s own site. PDF not opened.'
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of Jamul Indian Village (Census GEOID 1670), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

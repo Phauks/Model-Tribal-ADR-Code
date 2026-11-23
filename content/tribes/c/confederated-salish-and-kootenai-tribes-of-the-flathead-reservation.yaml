@@ -263,6 +263,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+indian_health_service:
+- area: Billings
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Self-Governance Tribes list by Area
+  note: 'Listed as "Confederated Salish and Kootenai Tribes of the Flathead Nation". Also listed under the same Area in: indian-health-service-billings-careers-brochure. Also on the Indian Health Service Self-Governance Tribes list (Confederated Salish and Kootenai Tribes of the Flathead Nation (1993)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Confederated Salish and Kootenai Tribes of the Flathead Reservation, Montana"
@@ -300,6 +308,79 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of 1934
+  quote: It was originally adopted under the Indian Reorganization Act of 1934 and has been amended over time.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Confederated Salish and Kootenai Tribes are governed by a Tribal Council consisting of ten elected members representing different districts.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body-size
+  value: 10 members, elected from districts
+  quote: The Confederated Salish and Kootenai Tribes are governed by a Tribal Council consisting of ten elected members representing different districts.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body-selection
+  value: Elected by enrolled members residing in districts
+  quote: Tribal Council members are elected by enrolled tribal members residing within the Reservation’s districts.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: governing-body-term
+  value: Staggered terms
+  quote: Elections are held periodically, and members serve staggered terms to ensure continuity in governance.
+  source: cskt-our-story
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Tribal Court and Tribal Appellate Court
+  quote: Tribal law places the judicial power of CSKT in the Tribal Court and Tribal Appellate Court.
+  source: confederated-salish-and-kootenai-tribes-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: judicial-selection
+  value: Appointed
+  quote: The Chief Justice is appointed to serve a four-year term, and the Associate Justices are appointed to serve a three-year term.
+  source: confederated-salish-and-kootenai-tribes-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
+- aspect: judicial-term
+  value: Chief Justice 4 years; associate justices 3 years
+  quote: The Chief Justice is appointed to serve a four-year term, and the Associate Justices are appointed to serve a three-year term.
+  source: confederated-salish-and-kootenai-tribes-tribal-court-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No constitution saved; facts come from web pages that describe the constitution and the courts.'
 governing_documents:
 - kind: law-code
   title: Confederated Salish and Kootenai Tribes of the Flathead Reservation
@@ -634,6 +715,27 @@ gaming:
       Tribes of the Flathead Reservation". Facilities as machine-extracted from the report text (verify):
       Gray Wolf Peak Casino; Big Arm Marina Casino; KwaTaqNuk Resort. Name extracted from the PDF by the
       page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-11
+    date: '2008-07-11'
+    link: https://www.nigc.gov?wpdmdl=8024&ind=8035
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-11
+    note: The list titles the action “Confederated Salish and Kootenai Tribes” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-11
+    date: '2008-08-04'
+    link: https://www.nigc.gov?wpdmdl=8018&ind=8029
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-11
+    note: The list titles the action “Confederated Salish and Kootenai Tribes” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -666,6 +768,112 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Montana Department of Public Health and Human Services
+  agreement: Title IV-E tribal-state agreement (2011 template, terms no longer than seven years)
+  state: MT
+  date: '2011'
+  status: expired
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.G, Montana
+  note: 'The source reads: “Confederated Salish & Kootenai Tribes of the Flathead Reservation,”. Template agreement negotiated in 2011. The report says this tribe was later approved for direct federal funding, superseding the state agreement. Report date is March 2014, so current status needs confirming.'
+- kind: child-welfare-agreement
+  other_party: United States Department of Health and Human Services, Administration for Children and Families
+  agreement: Federal Title IV-E plan (direct tribal funding)
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: low
+  verification: inferred
+  locator: Section I.G, Montana
+  note: 'The source reads: “The Salish & Kootenai were recently approved for direct federal funding”. federal Title IV-E plan. Approval date is not given. Reported in March 2014 and not checked against the current Administration for Children and Families list, which could not be fetched.'
+- kind: tax-agreement
+  other_party: Montana Department of Revenue
+  agreement: Alcoholic beverages tax agreement
+  state: MT
+  status: in-effect
+  source: montana-department-of-revenue-state-and-tribal-tax-agreements
+  confidence: high
+  verification: bulk-import
+  locator: Table "State and Tribal Tax Agreements"
+  note: 'The source reads: “Confederated Salish and Kootenai Tribes Alcoholic Beverages Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+nearby_state_courts:
+- state: MT
+  county: Lake County
+  court: District Court for Lake County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Lake County holds 52% of the land of Flathead Reservation (Census GEOID 1110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Sanders County
+  court: District Court for Sanders County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Sanders County holds 37% of the land of Flathead Reservation (Census GEOID 1110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Missoula County
+  court: District Court for Missoula County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Missoula County holds 8% of the land of Flathead Reservation (Census GEOID 1110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Flathead County
+  court: District Court for Flathead County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Flathead County holds 2% of the land of Flathead Reservation (Census GEOID 1110), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Flatheads, etc., 1855
+  signed: '1855-07-16'
+  statutes_at_large: 12 Stat. 975
+  kappler:
+    volume: 2
+    page: 722
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-flatheads-etc-1855-0722
+  signatory: Flathead; Kootenai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 722 (Treaty with the Flatheads, etc., 1855; Kappler header "July 16, 1855. | 12 Stats., 975. | Ratified Mar. 8, 1859. | Proclaimed Apr. 18, 1859.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Confederated Salish and Kootenai Tribes (Flathead, Pend d'Oreille, Kootenai) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Blackfeet, 1855
+  signed: '1855-10-17'
+  statutes_at_large: 11 Stat. 657
+  kappler:
+    volume: 2
+    page: 736
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-blackfeet-1855-0736
+  signatory: Flathead; Upper Pend d’Oreilles; Kootenai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 736 (Treaty with the Blackfeet, 1855; Kappler header "Oct. 17, 1855. | 11 Stat., 657. | Ratified Apr. 15, 1856. | Proclaimed Apr. 25, 1856.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Confederated Salish and Kootenai Tribes (Flathead, Pend d'Oreille, Kootenai) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Flathead (Jocko) Reservation, Montana
+  method: treaty
+  instrument: Treaty of Hell Gate, July 16, 1855, art. II, 12 Stat. 975
+  date: '1855-07-16'
+  detail: First set aside
+  source: treaty-with-the-flatheads-etc-1855
+  confidence: high
+  verification: read-in-full
+  locator: 12 Stat. 975
+  note: 'The instrument reads: “There is, however, reserved from the lands above ceded, ... for the use and occupation of the said confederated tribes, and as a general Indian reservation”. Kappler lists the Jocko Reserve (Flathead Agency) as "established by treaty July 16, 1855" (1 Kappler 859).'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

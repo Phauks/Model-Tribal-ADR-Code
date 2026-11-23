@@ -29,6 +29,14 @@
 			"database_name": "model-tribal-adr-code",
 			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
 			"migrations_dir": "migrations"
+		},
+		{
+			// The source library (src/lib/server/source-library.ts): the text of
+			// every document in the bucket, loaded from scripts/library/ and kept
+			// up to date by the hourly run at minute 29.
+			"binding": "sourceLibrary",
+			"database_name": "model-tribal-adr-code-library",
+			"database_id": "5ee18668-8141-400f-8f90-113f631a1734"
 		}
 	],
 	// Private bucket for copies of source documents. Not public: nothing in
@@ -40,6 +48,19 @@
 			"bucket_name": "model-tribal-adr-code-sources"
 		}
 	],
+	// Live editing rooms, one per essay. They run in their own Worker,
+	// model-tribal-adr-code-live (live/wrangler.jsonc), so that this site's
+	// deploys do not close people's live connections (COLLABORATION.md,
+	// "Essays").
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "essayRooms",
+				"class_name": "EssayRoom",
+				"script_name": "model-tribal-adr-code-live"
+			}
+		]
+	},
 	// Limits how often one address can send the request form: five a minute
 	// is plenty for a person and slows down automated spam, without asking
 	// anyone to make an account or solve a puzzle (docs/requests.md).
@@ -76,6 +97,14 @@
 			"name": "signInNetworkLimit",
 			"namespace_id": "1004",
 			"simple": { "limit": 30, "period": 60 }
+		},
+		// Limits how many files one account can start sending, or YouTube
+		// links it can add, in a minute (docs/uploads.md). The pieces of a
+		// file are not counted; the daily allowance limits the rest.
+		{
+			"name": "uploadLimit",
+			"namespace_id": "1005",
+			"simple": { "limit": 30, "period": 60 }
 		}
 	],
 	// Cloudflare Email Service, for sign-in codes. It sends only from a domain
@@ -89,25 +118,61 @@
 	// while it is empty, nothing is sent and readers see notices on the site
 	// only. Set it once the domain is onboarded (docs/domain-to-do.md;
 	// COLLABORATION.md, "Following pages"). SITE_ADDRESS is the site's public
-	// address, for the links in those emails; change it when the site moves
-	// to the domain.
-	"send_email": [{ "name": "signInEmail" }, { "name": "updateEmail" }],
+	// address, for the links in those emails and in the project inbox's
+	// unsubscribe links; change it when the site moves to the domain.
+	//
+	// The third, projectEmail, sends replies from the project inbox
+	// (site/MAIL.md). It sends only mail people started: replies, and the
+	// inbox's own "new mail" notice. Outreach goes through a separate
+	// mailbox's SMTP server (the OUTREACH_ settings), because Cloudflare's
+	// terms do not allow unsolicited mail.
+	"send_email": [{ "name": "signInEmail" }, { "name": "updateEmail" }, { "name": "projectEmail" }],
 	"vars": {
 		"SIGN_IN_EMAIL_FROM": "",
 		"UPDATE_EMAIL_FROM": "",
-		"SITE_ADDRESS": "https://model-tribal-adr-code.trevordgoldsmith.workers.dev"
+		"SITE_ADDRESS": "https://model-tribal-adr-code.trevordgoldsmith.workers.dev",
+		// The project inbox (site/MAIL.md, "Switching email on"). While
+		// MAIL_DOMAIN is empty, the inbox pages open but no mail is received
+		// or sent. MAIL_SIGNING_KEY and OUTREACH_SMTP_PASSWORD are Secrets set
+		// in the dashboard, never here.
+		"MAIL_DOMAIN": "",
+		"MAIL_ADDRESSES": "contact",
+		"MAIL_NOTICE_ADDRESS": "",
+		"MAIL_SENDER_NAME": "Model Tribal ADR Code",
+		"OUTREACH_CARRIER": "",
+		"OUTREACH_FROM": "",
+		"OUTREACH_REPLY_TO": "",
+		"OUTREACH_SMTP_HOST": "",
+		"OUTREACH_SMTP_PORT": "465",
+		"OUTREACH_SMTP_USERNAME": ""
 	},
 	// Every hour, at 17 minutes past: find updates to followed pages and send
-	// the summary emails that are due. tools/add-scheduled-run.mjs adds the
+	// the summary emails that are due. Mondays at 09:41 UTC: check the private
+	// address book against the federal and Alaska directories and the nation
+	// pages (COLLABORATION.md, "Address book"). Every 15 minutes: move event
+	// waitlists along and send event confirmations and reminders
+	// (COLLABORATION.md, "Events"). tools/add-scheduled-run.mjs adds the
 	// Worker's scheduled handler after the build, since the SvelteKit adapter
 	// makes only a fetch handler.
+	//
+	// Every five minutes: the project inbox's run (scheduled messages, snoozed
+	// conversations, outreach pacing, emptying Deleted after 30 days). It
+	// does nothing while MAIL_DOMAIN is empty. tools/add-mail-handlers.mjs
+	// runs last in the build, takes this cron, and passes every other one to
+	// the scheduled handler above.
 	"triggers": {
-		"crons": ["17 * * * *"]
+		"crons": ["17 * * * *", "41 9 * * 1", "4,19,34,49 * * * *", "*/5 * * * *"]
 	}
-	// One setting is made in the Cloudflare dashboard (Worker > Settings >
-	// Variables and Secrets) rather than here, because this file is public:
-	// LEAD_AUTHOR_EMAIL, the first lead author's address, added as the Secret
-	// type so that deploys keep it (plain-text dashboard variables are
-	// replaced by this file on each deploy). No secret keys are needed. See
-	// COLLABORATION.md, "Setting up sign-in".
+	// The queue consumer for delivery events from Cloudflare Email Service is
+	// added when email is switched on, because a deploy fails while the
+	// queue does not exist yet (site/MAIL.md, "Delivery reports").
+	//
+	// Some settings are made in the Cloudflare dashboard (Worker > Settings >
+	// Variables and Secrets) rather than here, because this file is public,
+	// each added as the Secret type so that deploys keep it (plain-text
+	// dashboard variables are replaced by this file on each deploy):
+	// LEAD_AUTHOR_EMAIL, the first lead author's address (COLLABORATION.md,
+	// "Setting up sign-in"); MAIL_SIGNING_KEY, which signs unsubscribe links;
+	// and OUTREACH_SMTP_PASSWORD, the outreach mailbox's app password
+	// (MAIL.md, "Switching email on").
 }

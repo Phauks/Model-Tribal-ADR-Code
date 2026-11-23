@@ -206,6 +206,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Unalakleet
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: Listed as "Native Village of Unalakleet". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Norton Sound Service Area
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: 'The source''s words: "Native Village of Unalakleet".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Unalakeet" among organizations under constitutions approved
@@ -233,6 +250,95 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: NVU Constitution
+  quote: pursuant to Article III, Section 1 of the NVU Constitution
+  source: native-village-of-unalakleet-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The NVU Constitution itself is not among the saved pages.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is the governing body of the Native Village of Unalakleet, as designated by the community pursuant to Article III, Section 1 of the NVU Constitution.
+  source: native-village-of-unalakleet-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The NVU Constitution itself is not among the saved pages.'
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: shall be chosen and how long they shall serve. The Village shall then choose
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Article 3, Section 2
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: Terms 2023–2026 and 2025–2028
+  quote: 'Term: 2023–2026'
+  source: native-village-of-unalakleet-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The NVU Constitution itself is not among the saved pages.'
+- aspect: head-of-government
+  value: President
+  quote: President
+  source: native-village-of-unalakleet-website-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The NVU Constitution itself is not among the saved pages.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Unalakleet
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: Village 21 years of age or over shall have the right to vote in Village
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Article 5, Section 1
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Secretary approval and majority vote of Village members in election called by the Secretary
+  quote: if the changes are approved by the Secretary of the Interior and by a majority
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Article 6
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if the changes are approved by the Secretary of the Interior and by a majority
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-30'
+  locator: Article 6
+  document_version:
+    document: native-village-of-unalakleet-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Climate change resolution
@@ -261,11 +367,10 @@ governing_documents:
   link: https://www.loc.gov/item/40029067/
   source: national-indian-law-library-native-unalakleet
   confidence: medium
-  verification: title-only
+  verification: read-in-full
   as_of: '2026-11-21'
   locator: Tribal Constitution section
-  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
-    of Congress website .".'
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library of Congress website .". Document opened on 2026-11-22 (the copy the constitution catalog work saved, native-village-of-unalakleet:7ab9ff9acd46f9ed); the full link review''s error on this link was its own fetch timing out. See research/reviews/2026-11-22-governing-documents-full.md, section on the other document searches.'
 - kind: corporate-charter
   title: Corporate charter (Native Village of Unalakleet, Alaska)
   year: '1939'
@@ -314,6 +419,16 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Nome Census Area
+  court: Superior Court for Nome Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Nome Census Area holds 100% of the land of Unalakleet ANVSA (Census GEOID 7690), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bering Straits Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

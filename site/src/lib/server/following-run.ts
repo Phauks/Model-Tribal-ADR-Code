@@ -16,6 +16,7 @@ import {
 	type PageDirectory
 } from './following.ts';
 import { updateEmailDelivery } from './following-email.ts';
+import { recordNow } from './page-history-run.ts';
 
 export { followableBuild };
 
@@ -50,17 +51,20 @@ export async function checkNow(database: D1Database): Promise<CheckResult | unde
 
 export interface ScheduledRunResult {
 	check: CheckResult | undefined;
+	/** Changes this build brought, for Recent changes (src/lib/server/page-history.ts). */
+	history: Awaited<ReturnType<typeof recordNow>>;
 	email: 'off' | 'on';
 	sent: number;
 	failed: number;
 }
 
-/** The hourly run: check for updates, then send the summary emails that are due. */
+/** The hourly run: check for updates, record the changes for Recent changes, then send the summary emails that are due. */
 export async function scheduledRun(environment: WorkerEnvironment, at = new Date()): Promise<ScheduledRunResult> {
 	const database = environment.database;
 	const check = await checkNow(database);
+	const history = await recordNow(database, environment.sourceDocuments);
 	const delivery = updateEmailDelivery(environment);
-	if (delivery.kind === 'off') return { check, email: 'off', sent: 0, failed: 0 };
+	if (delivery.kind === 'off') return { check, history, email: 'off', sent: 0, failed: 0 };
 	const directory = await currentDirectory(database);
 	let sent = 0;
 	let failed = 0;
@@ -77,5 +81,5 @@ export async function scheduledRun(environment: WorkerEnvironment, at = new Date
 			console.error('Could not send a summary of followed pages', problem);
 		}
 	}
-	return { check, email: 'on', sent, failed };
+	return { check, history, email: 'on', sent, failed };
 }

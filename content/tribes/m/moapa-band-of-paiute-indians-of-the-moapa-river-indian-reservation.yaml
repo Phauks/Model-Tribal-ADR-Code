@@ -169,6 +169,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Moapa Band of Paiute Indians".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Moapa Band of Paiute Indians" among organizations under constitutions approved
@@ -193,6 +201,215 @@ government_structure:
   as_of: '1942'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and bylaws established 1941
+  quote: In 1941, a Constitution and bylaws were established, creating the Business Council as the tribe's governing.
+  source: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats and officers appear only in a name list, and the pages call the governing body Tribal Council on one page and Business Council on another.'
+- aspect: governing-body
+  value: Business Council
+  quote: In 1941, a Constitution and bylaws were established, creating the Business Council as the tribe's governing.
+  source: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats and officers appear only in a name list, and the pages call the governing body Tribal Council on one page and Business Council on another.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: The Business Council shall consist of six
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 2
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: All elections shall be by secret ballot and
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 5
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, two elected each year
+  quote: members duly elected to serve three years, two members being elected each
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 2
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: The elected leader of the Moapa Band of Paiutes, responsible for representing the tribe, overseeing government operations, and ensuring the well-being of the community.
+  source: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-website-tribal-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats and officers appear only in a name list, and the pages call the governing body Tribal Council on one page and Business Council on another.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Business Council from its members
+  quote: from within its own number, (1) a chairman, (2) a vice-chairman; and from
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 3
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: members duly elected to serve three years, two members being elected each
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 2
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: within or without, (3) a secretary, and (4) a treasurer; and may appoint
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 3
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually on the second Tuesday of December
+  quote: Council shall be held on the second Tuesday of December.
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 4
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: twenty-one (21) years of age or over, who has resided
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article VI, Section 1
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Business Council or its election board
+  quote: Business Council or by an election board appointed by the Business Council.
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 5
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Moapa Tribal Court
+  quote: Moapa Tribal Court
+  source: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-website-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council seats and officers appear only in a name list, and the pages call the governing body Tribal Council on one page and Business Council on another.'
+- aspect: amendment
+  value: Majority vote at Secretary-called election (30% turnout), then Secretary approval
+  quote: voting at an election called for that purpose by the Secretary of the Interior;
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article VIII
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: have been approved by the Secretary of the Interior.
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article VIII
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of Business Council
+  quote: The Business Council may, by two-thirds vote,
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall election on petition of one-third of eligible voters
+  quote: of the eligible voters of the reservation calling for the recall of any
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article IV, Section 3
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Superintendent approves enactments subject to Secretary review
+  quote: in charge of the Reservation, who shall, within ten days thereafter, approve
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article V, Section 4
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: corporate-charter
   title: Corporate charter (Moapa Band of Paiute Indians of the Moapa River Reservation, Nevada)
@@ -310,6 +527,37 @@ gaming:
     locator: table row 156, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 156 lists the nation
       as "Moapa Band of Paiute Indians". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-18-01
+    date: '2018-01-18'
+    link: https://www.nigc.gov?wpdmdl=7704&ind=7715
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-18-01
+    note: The list titles the action “Moapa Band of Paiutes” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-18-01
+    date: '2018-02-15'
+    link: https://www.nigc.gov?wpdmdl=7703&ind=7714
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-18-01
+    note: The list titles the action “Moapa Band of Paiutes” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-18-01
+    date: '2018-05-10'
+    link: https://www.nigc.gov?wpdmdl=7691&ind=7712
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-18-01
+    note: The list titles the action “Moapa Band of Paiutes Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -324,6 +572,35 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: The 1975 retrocession notice lists only the areas over which Nevada had acquired jurisdiction; Fallon, Walker River, Duck Valley, Fort McDermitt, Moapa, Las Vegas, Summit Lake, Yerington, Fort Mojave and Timbisha lands are not on it, and the notice does not say why. (40 Fed. Reg. 27,501.)
+  source: federal-register-1975-nevada-retrocession
+  confidence: low
+  verification: inferred
+  locator: 40 Fed. Reg. at 27,501
+  note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+nearby_state_courts:
+- state: NV
+  county: Clark County
+  court: District Court for Clark County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Clark County holds 100% of the land of Moapa River Indian Reservation (Census GEOID 2315), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Moapa River (Muddy Valley) Reserve, Nevada
+  method: executive-order
+  instrument: Exec. Order of Mar. 12, 1873, 1 Kappler 866
+  date: '1873-03-12'
+  detail: First set aside
+  source: executive-order-1873-03-12-moapa-river-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 866
+  note: 'The instrument reads: “the following-described lands in the southeastern part of Nevada are hereby set apart for the use of the Indians in that locality”. Cancelled and replaced by the Exec. Order of Feb. 12, 1874 (1 Kappler 867); Kappler also cites act of Mar. 13, 1875 (18 Stat. 445).'
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

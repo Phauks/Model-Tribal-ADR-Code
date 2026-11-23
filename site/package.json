@@ -14,7 +14,7 @@
 	},
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/add-scheduled-run.mjs",
+		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/write-checksums.mjs && node tools/add-scheduled-run.mjs && node tools/add-nation-page-changes.mjs && node tools/add-mail-handlers.mjs",
 		"preview": "npm run build && wrangler dev",
 		"deploy": "npm run build && wrangler deploy",
 		"prepare": "svelte-kit sync || echo ''",
@@ -26,9 +26,11 @@
 		"check:accessibility": "node tools/check-accessibility.mjs",
 		"database:migrate:local": "wrangler d1 migrations apply database --local",
 		"database:migrate:remote": "wrangler d1 migrations apply database --remote",
+		"database:new-migration": "node tools/new-migration.mjs",
 		"sign-in-link": "node tools/make-sign-in-link.mjs"
 	},
 	"devDependencies": {
+		"@cloudflare/containers": "^0.3.7",
 		"@cloudflare/workers-types": "^5.20261121.1",
 		"@fontsource/atkinson-hyperlegible-next": "^5.3.0",
 		"@fontsource/noto-sans": "^5.3.0",
@@ -38,6 +40,7 @@
 		"@fontsource/noto-serif": "^5.3.0",
 		"@fontsource/opendyslexic": "^5.3.0",
 		"@lucide/svelte": "1.77.0",
+		"@protomaps/basemaps": "^5.7.2",
 		"@sveltejs/adapter-cloudflare": "^9.0.0",
 		"@sveltejs/kit": "^3.4.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
@@ -49,11 +52,13 @@
 		"@types/topojson-client": "^3.1.5",
 		"@types/topojson-simplify": "^3.0.3",
 		"@types/topojson-specification": "^1.0.5",
+		"aws4fetch": "^1.0.20",
 		"axe-core": "^4.14.1",
 		"citeproc": "2.4.63",
 		"d3-geo": "^3.1.2",
 		"fflate": "^0.8.2",
 		"lib0": "^0.2.120",
+		"maplibre-gl": "^5.24.1",
 		"markdown-it": "^14.3.3",
 		"markdown-it-container": "^4.0.0",
 		"markdown-it-ins": "^4.0.0",
@@ -61,6 +66,9 @@
 		"marked-footnote": "^1.4.0",
 		"marked-gfm-heading-id": "^4.1.4",
 		"playwright": "1.63.0",
+		"pmtiles": "^4.5.0",
+		"polylabel": "^2.1.0",
+		"postal-mime": "^2.7.6",
 		"prosemirror-commands": "^1.7.2",
 		"prosemirror-history": "^1.5.2",
 		"prosemirror-inputrules": "^1.7.0",
@@ -86,5 +94,11 @@
 		"y-websocket": "^3.1.0",
 		"yaml": "^2.9.1",
 		"yjs": "^13.6.33"
+	},
+	"dependencies": {
+		"@cloudflare/realtimekit": "2.0.4",
+		"@cloudflare/realtimekit-ui": "2.0.3",
+		"harper.js": "^3.2.0",
+		"uqr": "^0.1.3"
 	}
 }

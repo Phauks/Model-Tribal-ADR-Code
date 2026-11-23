@@ -176,6 +176,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Mescalero Apache". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Albuquerque
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Albuquerque Area
+  note: Listed as "Mescalero Apache Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Apache Tribe of the Mescalero Reservation, New Mexico" among organizations under
@@ -201,6 +217,279 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under Section 16 of the Indian Reorganization Act of June 18, 1934
+  quote: under the provisions of Section 16 of the Act of June 18, 1934
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XXVIII, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Mescalero Apache Tribal Council
+  quote: shall rest in the Mescalero Apache Tribal Council, hereinafter
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article VIII, Part I, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 8 members
+  quote: The tribal council shall consist of eight (8)
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article VIII, Section 2
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: members, elected at large from the membership of the Mescalero
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article VIII, Section 2
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years, one-half elected each year
+  quote: elected to serve for a term of two (2) years,
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article IX, Section 11
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  quote: (a) The president shall serve as the Chairman of the
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XXII, Section 1(a)
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: Mescalero Apache Tribe shall be elected. The remaining officers
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XIX, Section 2
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: shall be elected for a term of two (2) years.
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XX, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: Apache Tribal Government shall consist of a president, a vice president,
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XIX, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually on the first Tuesday after the first Monday in November
+  quote: shall be held annually on the first Tuesday after the first Monday in
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article IX, Section 8
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: Is at least eighteen (18) years of age at the time of such
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article IX, Section 2(a)
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election board appointed by the president
+  quote: An election board, appointed by the president
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article IX, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Legislative, Executive and Judicial
+  quote: Legislative, the Executive and the Judicial, and no person or group
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article VII, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: separation-of-powers
+  value: Stated
+  quote: to one of these departments, shall exercise any powers properly
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article VII, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Courts, including a Trial and Appellate Court
+  quote: Tribe shall be vested in the Tribal Courts, including a Trial and
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XXV, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Appointed by the President with three-fourths Council concurrence
+  quote: two associate judges, appointed by the President of the Mescalero
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XXVI, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: Set by tribal council ordinance
+  quote: established by ordinance of the tribal council.
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XXVI, Section 3
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote at Interior-called election, then Secretary approval
+  quote: by majority vote of the qualified voters of the tribe voting therein,
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XV, Section 2
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: submitted to the Secretary of Interior and, if approved by him, it
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XV, Section 2
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of eligible voters
+  quote: twenty-five percent (25%) of the eligible voters demanding recall
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article X, Section 2
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by majority vote of tribal council for misconduct
+  quote: from office by majority vote of the tribal council.
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article X, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: President veto overridable by two-thirds of Council present
+  quote: by two-thirds of the members present, providing that those present
+  source: constitution-mescalero-apache-tribe-of-the-mescalero-reservation-1988-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1988-10-18'
+  locator: Article XII, Section 1
+  document_version:
+    document: mescalero-apache-tribe-of-the-mescalero-reservation-constitution
+    version: 1988-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
@@ -424,6 +713,27 @@ gaming:
     locator: table row 149, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 149 lists the nation
       as "Mescalero Apache Tribe". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-05
+    date: '2006-01-31'
+    link: https://www.nigc.gov?wpdmdl=8153&ind=8163
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-05
+    note: The list titles the action “Mescalero Apache Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-05
+    date: '2006-05-09'
+    link: https://www.nigc.gov?wpdmdl=8129&ind=8140
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-05
+    note: The list titles the action “Mescalero Apache Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -438,6 +748,57 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+court_practice:
+- kind: filing-fees
+  title: Mescalero Tribal Court (Filing Fees)
+  court: Mescalero Tribal Court
+  link: https://mescaleroapachetribe.com/mtc/
+  detail: 'Filing fees: civil $35.00, appeal $25.00, divorce $50.00, drop fee $35.00.'
+  source: mescalero-apache-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Filing Fees
+  note: 'The source reads: “Filing Fees”.'
+- kind: bar-admission
+  title: Mescalero Tribal Court (Legal Advice, Lay Advocates)
+  court: Mescalero Tribal Court
+  link: https://mescaleroapachetribe.com/mtc/
+  detail: A list of Lay Advocates approved to practice in the Mescalero Tribal Court is available at the front reception; staff and judges cannot give legal advice.
+  source: mescalero-apache-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Legal Advice
+  note: 'The source reads: “A list of Lay Advocates who are approved to practice in the Mescalero Tribal Court is available at the front reception.”. No admission procedure given.'
+nearby_state_courts:
+- state: NM
+  county: Otero County
+  court: District Court for Otero County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Otero County holds 100% of the land of Mescalero Reservation (Census GEOID 2205), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Fort Stanton Indian Reserve (Mescalero Apache), New Mexico
+  method: executive-order
+  instrument: Exec. Order of May 29, 1873, 1 Kappler 871
+  date: '1873-05-29'
+  detail: First set aside
+  source: executive-order-1873-05-29-mescalero-apache-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 871
+  note: 'The instrument reads: “be set apart as a reservation for the Mescalero Apache Indians, as recommended by the Secretary of the Interior and Commissioner of Indian Affairs”. Cancelled and replaced by the Exec. Order of Feb. 2, 1874 (same page range), which set apart different lands "for the use of said Mescalero Apaches and such other Indians as the Department may see fit to locate thereon."'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -23,6 +23,21 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: govinfo
+    label: "GovInfo"
+    access: official
+    link: https://www.govinfo.gov/link/statute/72/619
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=72%20Stat.%20619
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=72%20Stat.%20619
 rights:
   status: no-permission-needed
   basis: fact-only

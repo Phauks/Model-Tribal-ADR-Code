@@ -183,6 +183,299 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopland Band of Pomo Indians, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Hopland Band of Pomo Indians, California".
+governance:
+- aspect: form
+  value: Constitution under Indian Reorganization Act of June 18, 1934
+  quote: Reorganization Act of June 18, 1934 (48 Stat. 984) as amended.
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Preamble
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: governing-body
+  value: Tribal council
+  quote: The governing body of the Hopland Band of Porno Indians shall be the
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The tribal council shall consist of seven (7) members elected from the
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: governing-body-selection
+  value: Elected by the qualified voters
+  quote: each elected by the qualified voters in an election held in accordance with
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Thereafter, all terms of office shall be for four (4)
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article V, Section 5
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: general-council
+  value: All members 18 or older who are registered to vote
+  quote: Hopland Band of Pomo Indians who are eighteen (18) years of age or older and are
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article IV, Section 2
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The chairperson shall preside at all meetings of the tribal council.
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article XII, Section 2(a)
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Hopland Band of Pomo Indians, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Determined by the tribal council
+  quote: determined by the tribal council.
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Thereafter, all terms of office shall be for four (4)
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article V, Section 5
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: other-officers
+  value: Vice-chairperson, secretary, treasurer
+  quote: consist of a chairperson, vice-chairperson, secretary and a treasurer and three (3)
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: elections
+  value: As necessary under the election ordinance
+  quote: elections shall be held as necessary in accordance with the tribal election
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article V, Section 5
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: voting-age
+  value: '18'
+  quote: Indians who are eighteen (18) years of age or older and are duly registered
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article V, Section 1
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: election-authority
+  value: Election committee
+  quote: An election committee, appointed by the chairperson and confirmed by the
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article V, Section 4
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: judiciary
+  value: One supreme court; inferior courts the council may establish
+  quote: The judicial power of the Band shall be vested in one (1) supreme court and
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article XIII, Section 1
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: judiciary
+  value: Tribal council sits as court of appeals
+  quote: The tribal council shall sit as a court of appeals whenever necessary and
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article XIII, Section 6
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: judicial-selection
+  value: Appointed by chairperson, confirmed by 3/4 council vote
+  quote: council and confirmed by not less than a three-fourths (3/4) majority vote of the tribal
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article XIII, Section 2
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: judicial-term
+  value: Set by council ordinance
+  quote: The tenure and salary of tribal judges shall be established by ordinance of
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article XIII, Section 4
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: amendment
+  value: Majority vote of qualified voters in election, 30% turnout
+  quote: This Constitution may be amended by a majority vote of the qualified voters
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article XIV, Section 1
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: secretarial-approval
+  value: Requirement removed by Amendment No. 5
+  quote: Amendment No. 5 proposed to delete this section;
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Resolution No. 09-08-25
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: recall-and-removal
+  value: Removal by 4 council votes for misconduct or neglect
+  quote: shall be removed from office if at least four (4)
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article VI, Section 1
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of registered voters
+  quote: Upon receipt of a valid petition signed by at least thirty percent
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article VI, Section 2
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: recall-and-removal
+  value: Forfeiture on felony conviction in office
+  quote: Has been convicted while in office of a felony or crime of moral turpitude.
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article VI, Section 3(b)
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
+- aspect: other
+  value: Powers not listed reserved to general council
+  quote: shall be reserved to and exercised by the general council.
+  source: constitution-hopland-band-of-pomo-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009-08-22'
+  locator: Article IX, Section 2
+  document_version:
+    document: hopland-band-of-pomo-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 2009 amended text followed by the 2009 election resolution with strike-outs, and facts follow the amended text; the Article VIII, Section 5 change is recorded only as a deletion and the amended passages are partly garbled.'
 governing_documents:
 - kind: law-code
   title: Hopland Band of Pomo Indians, California
@@ -359,16 +652,16 @@ dispute_resolution:
     as_of: '2025'
     locator: Sections 12-3.10 to 12-3.160
   - kind: peacemaking
-    title: Title 12, Chapter 12-1 – Tribal Court Ordinance
-    citation: Title 12, Chapter 12-1 – Tribal Court Ordinance
+    title: Title 12, Chapter 12-1, Sections 12-1.20.020 and 12-1.100 - Peace Making Roster (Tribal Court Ordinance)
+    citation: Hopland Band of Pomo Indians Tribal Code, Title 12, Chapter 12-1 Tribal Court Ordinance, Sections 12-1.20.020 and 12-1.100
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: hopland-title-12-tribal-court
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Hopland Band of Pomo Indians, California
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      procedures, qualifications, and authority to lead community-related peace activities.'
+    locator: Chapter 12-1, Sections 12-1.10(c), 12-1.20.020 and 12-1.100.010-12-1.100.070 (Peace Making Roster)
+    note: Read in full on 2026-11-23 (Hopland Band of Pomo Indians Tribal Code Title 12 Tribal Court, Chapter 12-1 Tribal Court Ordinance (no enactment date printed; history Ord. No. 10-12-14 per first reader)). Provisions read in the Title 12 Tribal Court Ordinance text. NARF's phrase 'authority to lead community-related peace activities' is looser than the code, which limits peacemakers to mediating disputes by consent. No enactment date is printed on the chapter. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 165.
+    summary: The Tribal Council, advised by the Chief Judge and Culture Committee, keeps a roster of Peacemakers (tribal members at least 50 years old, known and respected, with no conviction in the past five years) to mediate disputes in an optional, non-adversarial process that needs every party's consent and can be used before any lawsuit is filed. A party files a request with the Court Clerk; if no one objects the Judge refers it to a Peacemaker within ten days, and any party may object to the Peacemaker or decline once the rules are explained. Lawyers may not represent parties. A settlement is written and signed by the parties and the Peacemaker and is an enforceable agreement, treated as the final judgment if a lawsuit is pending; discussions are confidential, and parties may still go to Tribal Court if peacemaking fails.
 gaming:
   compacts:
   - state: CA
@@ -460,6 +753,27 @@ gaming:
     locator: table row 100, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 100 lists the nation
       as "Hopland Band of Pomo Indians".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-03
+    date: '2005-02-17'
+    link: https://www.nigc.gov?wpdmdl=8196&ind=8218
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-03
+    note: The list titles the action “Hopland Band of Pomo Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-03
+    date: '2005-05-11'
+    link: https://www.nigc.gov?wpdmdl=8172&ind=8183
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-03
+    note: The list titles the action “Hopland Band of Pomo Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -486,6 +800,46 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+court_practice:
+- kind: filing-fees
+  title: Fee Schedules
+  court: Northern California Intertribal Court System
+  link: https://www.tribalcourt.org/fee-schedules
+  detail: Fee Schedules page linked from the court system home page.
+  source: northern-california-intertribal-fees
+  confidence: medium
+  verification: title-only
+  locator: menu
+  note: Page opened; it links a fee schedule PDF that was not opened. Site belongs to the intertribal court system serving member tribes.
+- kind: forms
+  title: FORMS & FILING
+  court: Northern California Intertribal Court System
+  link: https://www.tribalcourt.org/forms-filing
+  detail: Forms and filing page with links to forms and current court fees; domestic violence and court forms pages are also linked from the home page.
+  source: northern-california-intertribal-forms
+  confidence: medium
+  verification: title-only
+  locator: FORMS & FILING INFORMATION
+  note: 'The source reads: “FORMS & FILING INFORMATION”. Linked form documents not opened.'
+nearby_state_courts:
+- state: CA
+  county: Mendocino County
+  court: Superior Court for Mendocino County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Mendocino County holds 81% of the land of Hopland Rancheria (Census GEOID 1515), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: CA
+  county: Lake County
+  court: Superior Court for Lake County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Lake County holds 19% of the land of Hopland Rancheria (Census GEOID 1515), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -180,6 +180,247 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: Listed as "Stillaguamish Tribe of Indians".
+governance:
+- aspect: form
+  value: Constitution
+  quote: The Tribe's constitution, approved by the Tribal Council on January 31, 1953,
+  source: stillaguamish-tribe-of-indians-of-washington-website-departmentprogramservice-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is composed of a Chairman, Vice Chairman, Treasurer, Secretary, and two Members.
+  source: stillaguamish-tribe-of-indians-of-washington-website-departmentprogramservice-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 6 members
+  quote: popularly elected six-member Stillaguamish Tribal Council
+  source: stillaguamish-tribe-of-indians-of-washington-website-departmentprogramservice-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Popularly elected
+  quote: popularly elected six-member Stillaguamish Tribal Council
+  source: stillaguamish-tribe-of-indians-of-washington-website-departmentprogramservice-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: tnree (3) years in length on a staggered basis.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article V, Section 1
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All qualified voters who attend a properly called meeting
+  quote: qual if iea voters o? the Sti 1 1 aguami sh Tribe who attend a General Council
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article VIII, Section 1
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: The Tribal Council is composed of a Chairman, Vice Chairman, Treasurer, Secretary, and two Members.
+  source: stillaguamish-tribe-of-indians-of-washington-website-departmentprogramservice-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Board from its members
+  quote: shall elect annually from its membership a Chairman,
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article IV
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice Chairman, Treasurer, Secretary
+  quote: The Tribal Council is composed of a Chairman, Vice Chairman, Treasurer, Secretary, and two Members.
+  source: stillaguamish-tribe-of-indians-of-washington-website-departmentprogramservice-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually in August, with annual General Council meeting
+  quote: meeting held during the month of August.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article V, Section 4
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: will be eighteen (18) years of age or over by the
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article V, Section 6
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election Committee
+  quote: on-going, impartial E lection Committee composed of three (3) qualified tribal
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article V, Section 5
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Stillaguamish Tribal Court is a necessary function of government as required by the Tribe’s constitution
+  source: stillaguamish-tribe-courts-and-justice
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Appointed by the Board of Directors, then elected
+  quote: will be maintained, the Board of Directors shall appoint three (3) qualified
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XI, Section 5
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: 3 years, staggered
+  quote: and all terms shall be three (3) years in length.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XI, Section 5
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Judges unseated only by recall procedure
+  quote: from office only in the manner set forth in Section 2 of Article VI.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XI, Section 6
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters in Secretarial election
+  quote: This Constitution may be amended by a majority vote of the qualified voters
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XVI
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: effective when approved by the Secretary of the Interior.
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article XVI
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by 4 Board votes after hearing
+  quote: remaining members of the Board must vote in favor of removal to
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article VI, Section 1(b)
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by 60% of ballots cast, on petition of 30 voters
+  quote: Sixty percent (60%) of those who cast ballots at such election must
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article VI, Section 2
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Board resolution of 4 votes triggers General Council referendum
+  quote: Upon receipt of a resolution adopted by an affirmative vote of at least four
+  source: constitution-stillaguamish-tribe-of-indians-of-washington-1986-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1986-08-28'
+  locator: Article X
+  document_version:
+    document: stillaguamish-tribe-of-indians-of-washington-constitution
+    version: 1986-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -331,19 +572,14 @@ gaming:
   - state: WA
     status: approved
     approved: '2021-09-01'
-    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
-      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
-      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
-    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    dispute_resolution_summary: Disputes about implementing or complying with the compact start with written notice and a meet-and-confer within 20 business days; if unresolved, the parties may by agreement use formal mediation, and a party dissatisfied with mediation may seek judicial resolution. After failed mediation the parties may by mutual agreement choose arbitration before an arbitrator they select, who can impose fines and equitable relief; the decision is final for the non-judicial phase but open to judicial review, and the Tribe and State give a limited waiver of sovereign immunity for these suits.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsections A-D (B(1) meet and confer, B(2) mediation, B(3) arbitration, C waiver of immunity)
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2021-09-01'
-    locator: Section XIV (Dispute Resolution), subsection B
-    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
-      five years; later amendments may have changed the clause. Read from the 2021 Stillaguamish Tribe
-      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
-      replacement compacts in 2021, but their text was not checked.
+    locator: Section XIV (Dispute Resolution), subsections A-D, compact pages 37-39
+    note: Read in full on 2026-11-23 (Stillaguamish Tribe of Indians - State of Washington Gaming Compact (Third and Fourth Amendments, amended and restated); Interior approval letter dated AUG 2_ 2021 (day illegible), approving amendments effective on Federal Register publication). Dispute-resolution clause read from this nation's own compact document. Document is older than five years; later amendments may have changed the clause. Read from the 2021 Stillaguamish Tribe compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full replacement compacts in 2021, but their text was not checked. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 532.
   ordinances:
   - approved: '2001-01-08'
     link: https://www.nigc.gov?wpdmdl=11257&ind=11278
@@ -399,6 +635,27 @@ gaming:
     locator: table row 275, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
       as "Stillaguamish Tribe of Indians".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-09
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7900&ind=7911
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-09
+    note: The list titles the action “Stillaguamish Tribe of Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-09
+    date: '2009-05-11'
+    link: https://www.nigc.gov?wpdmdl=7847&ind=7866
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-09
+    note: The list titles the action “Stillaguamish Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -426,6 +683,72 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+jurisdiction_agreements:
+- kind: cross-deputization
+  other_party: Snohomish County Sheriff, Washington
+  agreement: Cooperative law enforcement agreement (sheriff commissions of tribal deputies)
+  state: WA
+  status: unknown
+  source: stillaguamish-tribe-snohomish-county-cooperative-law-enforcement-agreement
+  confidence: high
+  verification: read-in-full
+  locator: Section on commissions
+  note: 'The source reads: “suspend or revoke the Tribal Commission of any”. The copy is undated. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: filing-fees
+  title: Filing Fees (Courts and Justice)
+  court: Stillaguamish Tribal Court
+  link: https://www.stillaguamish.com/departmentprogramservice/courts-and-justice/
+  detail: 'Filing fees listed: protection order (domestic violence) no fee; dissolution of marriage $120; guardianship $110; probate $110; adoption $120; civil case $110; judicial reviews $110; paternity $120; emancipation $50; writ $20.'
+  source: stillaguamish-tribe-courts-and-justice
+  confidence: high
+  verification: read-in-full
+  locator: Filing Fees
+  note: 'The source reads: “Petition for Dissolution of Marriage: $120”.'
+- kind: forms
+  title: Petition for Order for Protection and other petitions
+  court: Stillaguamish Tribal Court
+  link: https://www.stillaguamish.com/wp-content/uploads/2022/01/Stillaguamish-Tribal-Court-Petition-for-Dissolution-of-Marriage.doc
+  detail: Page links protection order petitions and instructions, petition for dissolution of marriage, petition for custody and child support guidelines.
+  source: stillaguamish-tribe-courts-and-justice
+  confidence: high
+  verification: title-only
+  locator: document links
+  note: 'The source reads: “Petition for Dissolution of Marriage”. Files not opened.'
+- kind: court-rules
+  title: Revised Law & Order Code of the Stillaguamish Tribe (4-30-2026)
+  court: Stillaguamish Tribal Court
+  link: https://www.stillaguamish.com/wp-content/uploads/2026/05/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-30-2026.pdf
+  detail: Page also links a Rules of Evidence Code.
+  source: stillaguamish-tribe-courts-and-justice
+  confidence: medium
+  verification: title-only
+  locator: document links
+  note: 'The source reads: “Revised Law & Order Code”. PDF not opened; whether it holds procedure rules was not checked.'
+nearby_state_courts:
+- state: WA
+  county: Snohomish County
+  court: Superior Court for Snohomish County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Snohomish County holds 100% of the land of Stillaguamish Reservation (Census GEOID 4000), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Stoluck-wha-mish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Stoluck-wha-mish named in preamble = Stillaguamish. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

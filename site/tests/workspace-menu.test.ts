@@ -10,16 +10,28 @@ import {
 const names = (pages: { name: string }[]) => pages.map((item) => item.name);
 
 describe('the workspace pages in the left sidebar', () => {
-	it('lists all nine pages for the lead author', () => {
+	it('lists every page for the lead author', () => {
 		expect(names(workspacePagesFor(permissionsOf('lead-author')))).toEqual([
 			'overview',
 			'essays',
+			'review-requests',
 			'requests',
+			'inbox',
+			'outreach',
+			'uploads',
 			'reviews',
+			'library',
 			'contributors',
+			'events',
 			'people',
+			'nation-teams',
+			'nation-pages',
 			'access',
 			'address-book',
+			'changes',
+			'nonprofit',
+			'service-checks',
+			'sponsors',
 			'activity'
 		]);
 	});
@@ -28,11 +40,17 @@ describe('the workspace pages in the left sidebar', () => {
 		expect(names(workspacePagesFor(permissionsOf('editor')))).toEqual([
 			'overview',
 			'essays',
+			'review-requests',
 			'requests',
+			'uploads',
 			'reviews',
-			'contributors'
+			'library',
+			'contributors',
+			'events',
+			'nation-pages'
 		]);
-		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'essays', 'reviews']);
+		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'essays', 'review-requests', 'reviews', 'library']);
+		expect(names(workspacePagesFor(permissionsOf('nation-reviewer')))).toEqual(['overview', 'essays', 'nation-uploads', 'reviews']);
 	});
 
 	it('marks the overview only on its own page, and other pages on the pages within them', () => {

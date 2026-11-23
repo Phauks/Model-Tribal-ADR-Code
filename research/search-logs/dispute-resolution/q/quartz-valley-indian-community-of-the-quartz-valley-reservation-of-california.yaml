@@ -1,7 +1,7 @@
 profile: content/tribes/q/quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: none-found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -48,4 +48,42 @@ searches:
   outcome: not-found
   reason: No passage on any page read mentioned a dispute resolution term, and the project's own captures
     held no lead.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://qvir.com/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Quartz Valley Indian Community tribal court OR code OR "dispute resolution" OR
+    mediation OR peacemaking'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
+    court lists, with no page showing dispute resolution wording for this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=qvir.com/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 2383 archived addresses for qvir.com/*; those whose address names a
+    code, law, court or dispute resolution page were fetched in this retry or are listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260624190310id_/https://qvir.com/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2026-06-24) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260624190310/https://qvir.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-06-24 ("QVIR &#8211; Quartz Valley Indian Reservation");
+    it shows no codes, court or dispute resolution forum.
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

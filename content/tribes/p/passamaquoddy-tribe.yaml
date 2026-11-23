@@ -157,6 +157,187 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Passamaquoddy Tribe
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Passamaquoddy Tribe Indian Township". Also listed under the same Area in: indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Passamaquoddy Tribe Indian Township".
+governance:
+- aspect: form
+  value: Democratic form of tribal government at Pleasant Point
+  quote: adopt this Constitution in order to establish a democratic form of tribal
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Preamble
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council, representing the tribal community, is the governing body for the Passamaquoddy Tribe at Indian Township.
+  source: passamaquoddy-tribe-website-page-id-9
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution page offers only a download and its text is not in the saved pages, so facts come from the Government, Tribal Council and Chief pages.'
+- aspect: governing-body-size
+  value: 8 members (Governor, Lt. Governor and six Council members)
+  quote: of the Governor, Lt. Governor and six Council members.
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 4(a)
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: governing-body-selection
+  value: Elected at General Election
+  quote: shall be elected to 4 year terms, with those of the Council members
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: shall be elected to 4 year terms, with those of the Council members
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: head-of-government
+  value: Sakom (Tribal Governor)
+  quote: The “Sakom”, or Tribal Governor, is the Chief executive and official spokesperson for the Tribe.
+  source: passamaquoddy-tribe-website-page-id-9
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution page offers only a download and its text is not in the saved pages, so facts come from the Government, Tribal Council and Chief pages.'
+- aspect: head-of-government-selection
+  value: Elected at General Election
+  quote: shall be elected to 4 year terms, with those of the Council members
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Tribal Chief- Passamaquoddy Tribe of Indian Township (4-year Term)
+  source: passamaquoddy-tribe-website-page-id-270
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution page offers only a download and its text is not in the saved pages, so facts come from the Government, Tribal Council and Chief pages.'
+- aspect: other-officers
+  value: Lieutenant Governor (Leptanet)
+  quote: The Lieutenant Governor, or “Leptanet”, shall perform the duties and exercise the powers that may be delegated to him by the Chief.
+  source: passamaquoddy-tribe-website-page-id-9
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution page offers only a download and its text is not in the saved pages, so facts come from the Government, Tribal Council and Chief pages.'
+- aspect: elections
+  value: First Tuesday after Labor Day in September of each even-numbered year
+  quote: General Elections shall be held on the
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: voting-age
+  value: '18'
+  quote: member of the Passamaquoddy Tribe who is at least eighteen years of
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: election-authority
+  value: Governor and Council, under an Election Ordinance
+  quote: and Council shall adopt and may subsequently amend an Election Ordinance
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 3
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: judiciary
+  value: Passamaquoddy Tribal Court, with any appellate branch
+  quote: Tribal Court, including any appellate branch, shall exercise the powers
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIII, Section 1
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: amendment
+  value: 75% Governor and Council resolution, then 75% voter approval
+  quote: adopted by an affirmative vote or seventy-five
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: recall-and-removal
+  value: Recall by majority vote of eligible voters in a special election
+  quote: member of the Pleasant Point Governor and Council shall be recalled
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 3(a)
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
+- aspect: other
+  value: Initiative by petition of 25% of last gubernatorial voters
+  quote: equal to at least twenty-five percent of the number voting at the last
+  source: constitution-passamaquoddy-tribe-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1
+  document_version:
+    document: passamaquoddy-tribe-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Sipayik (Pleasant Point) constitution, copyright 2003 and undated, governing the Pleasant Point Reservation within the Passamaquoddy Tribe; some headings are garbled (for example ''XIII (i.e. XII?)'').'
 governing_documents:
 - kind: law-code
   title: Fish and Game Ordinances; Tribal Ordinances
@@ -268,6 +449,69 @@ jurisdiction:
   note: 'Listed as: Passamaquoddy Tribe - Indian Township; Passamaquoddy Tribe - Pleasant Point. Row re-read
     on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Maine is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Maine. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Maine by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: The Maine Indian Claims Settlement Act subjects the Passamaquoddy Tribe and Penobscot Nation, their members and lands to Maine's jurisdiction as provided in the Maine Implementing Act, which applies state law and state court jurisdiction to them "except as otherwise provided." (Pub. L. No. 96-420, § 6(b)(1), 94 Stat. at 1794; Me. Rev. Stat. Ann. tit. 30, § 6204.)
+  source: public-law-96-420
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 96-420 § 6(b)(1), 94 Stat. at 1793-94
+  note: 'The Implementing Act also gives these two nations separate tribal jurisdiction in listed areas (30 M.R.S. §§ 6206, 6209-A, 6209-B; § 6(f) of the federal Act); the research read the federal grant and § 6204 only. § 6(c) removes federal criminal jurisdiction under 18 U.S.C. §§ 1152-1153 etc. Maine''s 2022-2023 tribal-state legislation was not analyzed. 25 U.S.C. § 1725 is "omitted" from the Code and is cited here as the Statutes at Large section. Also cites: maine-revised-statutes-title-30-section-6204.'
+nearby_state_courts:
+- state: ME
+  county: Washington County
+  court: Superior Court for Washington County
+  link: https://www.courts.maine.gov/courts/superior/index.html
+  source: state-trial-court-directory-me
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Washington County holds 100% of the land of Indian Township Reservation (Census GEOID 1575), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ME
+  county: Somerset County
+  court: Superior Court for Somerset County
+  link: https://www.courts.maine.gov/courts/superior/index.html
+  source: state-trial-court-directory-me
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Somerset County holds 26% of the land of Passamaquoddy Trust Land (Census GEOID 2695), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ME
+  county: Franklin County
+  court: Superior Court for Franklin County
+  link: https://www.courts.maine.gov/courts/superior/index.html
+  source: state-trial-court-directory-me
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Franklin County holds 26% of the land of Passamaquoddy Trust Land (Census GEOID 2695), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ME
+  county: Hancock County
+  court: Superior Court for Hancock County
+  link: https://www.courts.maine.gov/courts/superior/index.html
+  source: state-trial-court-directory-me
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Hancock County holds 23% of the land of Passamaquoddy Trust Land (Census GEOID 2695), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ME
+  county: Penobscot County
+  court: Superior Court for Penobscot County
+  link: https://www.courts.maine.gov/courts/superior/index.html
+  source: state-trial-court-directory-me
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Penobscot County holds 10% of the land of Passamaquoddy Trust Land (Census GEOID 2695), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

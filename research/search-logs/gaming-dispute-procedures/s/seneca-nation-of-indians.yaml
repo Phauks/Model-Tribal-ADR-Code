@@ -1,7 +1,7 @@
 profile: content/tribes/s/seneca-nation-of-indians.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -87,9 +87,46 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2021-03-01 has no text layer on most pages (29 of 30 pages have no text
     layer (only the approval letter has text); no OCR available).
-next_steps: Read the scanned amendment listed 1995-06-21 (https://www.nigc.gov/wp-content/uploads/2025/03/senecanationny-senecanyamend062195.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2002-11-26 (https://www.nigc.gov/wp-content/uploads/2025/03/senecanationny-senecanyamend112602.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2004-05-20 (https://www.nigc.gov/wp-content/uploads/2025/03/senecanationny-senecanyamend052004.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2007-07-02 (https://www.nigc.gov/wp-content/uploads/2025/03/senecanationny-senecanation070207df.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2021-03-01 (https://www.nigc.gov/wp-content/uploads/2025/03/SenecaNationOrdAmend03012021.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/SenecaNationOrdAmend03012021.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-30 of 30 of this amendment listed 2021-03-01 as page
+    images (it has no text layer) and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#seneca-nation-of-new-york-amendment-2021-03-01#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#seneca-nation-of-new-york-amendment-2021-03-01#p2
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/senecanationny-senecanation070207df.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-29 of 29 of this amendment listed 2007-07-02 as page
+    images (it has no text layer) and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#seneca-nation-of-new-york-amendment-2007-07-02#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#seneca-nation-of-new-york-amendment-2007-07-02#p2
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/senecanationny-senecanyamend052004.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-24 of 24 of this amendment listed 2004-05-20 as page
+    images (it has no text layer) and recorded 2 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#seneca-nation-of-new-york-amendment-2004-05-20#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#seneca-nation-of-new-york-amendment-2004-05-20#p2
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Older scanned documents were not
+  read, because the newer documents read replace them: amendment listed 2002-11-26 (https://www.nigc.gov/wp-content/uploads/2025/03/senecanationny-senecanyamend112602.pdf);
+  amendment listed 1995-06-21 (https://www.nigc.gov/wp-content/uploads/2025/03/senecanationny-senecanyamend062195.pdf).'

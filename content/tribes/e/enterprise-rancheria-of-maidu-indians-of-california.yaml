@@ -167,6 +167,314 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Enterprise Rancheria of Maidu Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Enterprise Rancheria of Maidu Indians of California".
+governance:
+- aspect: form
+  value: Revised Tribal Constitution
+  quote: Revised Tribal Constitution
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council
+  source: enterprise-rancheria-of-maidu-indians-of-california-website-our-tribe
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The council and officers are listed with names; only titles are given.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: consist of seven (7) members, which shall be comprised of a Chairperson, Vice-Chairperson, Treasurer,
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VI, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of enrolled members
+  quote: be elected by the majority vote of the membership of the
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VI, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: shall hold office for a period of four (4) years
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VI, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: general-council
+  value: Enrolled lineal members 18 or older
+  quote: comprised of duly enrolled lineal members of the Rancheria who have attained the
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article IV, Section 3
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: Tribal Chairperson
+  source: enterprise-rancheria-of-maidu-indians-of-california-website-our-tribe
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The council and officers are listed with names; only titles are given.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Enterprise Rancheria of Maidu Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of enrolled members
+  quote: be elected by the majority vote of the membership of the
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VI, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: shall hold office for a period of four (4) years
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VI, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: other-officers
+  value: Vice-Chairperson, Treasurer, Secretary
+  quote: comprised of a Chairperson, Vice-Chairperson, Treasurer,
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VI, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: elections
+  value: Every 2 years in January, staggered terms
+  quote: General Elections shall be held every two (2) years in staggered terms
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article IX, Section 1
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: voting-age
+  value: '18'
+  quote: who have reached the age of eighteen years of age shall be entitled to vote in any legally sanctioned
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article IX, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: election-authority
+  value: Election Board
+  quote: be supervised and conducted by an Election Board.
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article IX, Section 6
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: branches
+  value: General Council, Tribal Council, Enterprise Rancheria Judiciary
+  quote: shall be comprised of the General Council, Tribal Council, and the Enterprise Rancheria
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article IV, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: judiciary
+  value: Appellate Court and Trial Court
+  quote: There shall be created when necessary an Appellate Court of the
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VIII, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: judicial-selection
+  value: Appellate justices selected by General Council
+  quote: The General Council retains the power to select any and all justices of the Enterprise
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article V, Section 2(g)
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: judicial-term
+  value: 2 years
+  quote: shall serve a term of two (2) years; however, there shall exist no term
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VIII, Section 11
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: judicial-independence
+  value: Appellate decisions may not be overruled by Tribal or General Council
+  quote: Rancheria shall be final and may not be over ruled or reversed by the Tribal Council or General
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VIII, Section 7(c)
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: judicial-independence
+  value: No increase or decrease in judicial pay during term
+  quote: However, no increase or decrease in compensation shall be
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article VIII, Section 9
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: amendment
+  value: Majority vote of eligible General Council members in an election
+  quote: members of the General Council voting in an election duly called for that purpose
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article XVII, Section 3
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: secretarial-approval
+  value: Not required (ordinances)
+  quote: There shall be no review authority by the United States Secretary of the Interior
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article XIII, Section 3
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: recall-and-removal
+  value: Removal of Tribal Council members by 3/4 vote of Tribal Council
+  quote: declare the position vacant by a three quarters (3/4) majority vote of the members of the
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article X, Section 2
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: Upon receipt of a petition signed by at least thirty percent
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article X, Section 3
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: recall-and-removal
+  value: Removal of trial judges by Tribal Council for good cause
+  quote: Chief Judge of the Trial Court or any Associate Judge for good cause
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article X, Section 4
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
+- aspect: recall-and-removal
+  value: Removal of appellate justices by General Council for good cause
+  quote: the Chief Justice or any other Associate Justices of the Appellate Court for good cause
+  source: constitution-enterprise-rancheria-of-maidu-indians-of-california-2003-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2003-10-29'
+  locator: Article X, Section 5
+  document_version:
+    document: enterprise-rancheria-of-maidu-indians-of-california-constitution
+    version: 2003-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough (OCR errors such as ''Estom Ifumeka'', ''Enterprine''); facts read from the Revised Tribal Constitution ratified October 29, 2003.'
 gaming:
   compacts:
   - state: CA
@@ -259,6 +567,25 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Butte County
+  court: Superior Court for Butte County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Butte County holds 50% of the land of Enterprise Rancheria (Census GEOID 1055), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: CA
+  county: Yuba County
+  court: Superior Court for Yuba County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Yuba County holds 50% of the land of Enterprise Rancheria (Census GEOID 1055), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -1,0 +1,41 @@
+profile: content/tribes/s/seminole-tribe-of-florida.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/nashville/healthcarefacilities/
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Nashville Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#seminole-tribe-of-florida
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 3 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#seminole-tribe-of-florida
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-compilation
+  address: https://archive.org/details/bp_996062
+  query: How the nation's reservation was set aside
+  outcome: not-found
+  reason: 'Candidate: Exec. Order No. 1379 (June 28, 1911) and later Florida reservations. Not entered: The 1911 order covers Everglades land that was not clearly the present Seminole reservation lands; the modern reservations rest on later statutes and purchases not read.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 7 enforcement actions.

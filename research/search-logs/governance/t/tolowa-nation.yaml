@@ -1,0 +1,30 @@
+profile: content/tribes/t/tolowa-nation.yaml
+topic: governance
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: project-capture
+  address: research/constitutions/coverage.csv
+  query: A captured text of the nation's constitution or other governing document
+  outcome: not-found
+  reason: The project's constitution catalog has no text of this nation's constitution or other governing document; the catalog covers federally recognized nations only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: database-listing
+  address: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  query: jobtitle of the nation's row
+  outcome: not-found
+  reason: The directory lists federally recognized nations only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: research/search-logs/contacts/t/tolowa-nation.yaml
+  query: A website of the nation's own, to read its government pages
+  outcome: no-site
+  reason: The profile lists no website of the nation's own; the contacts search (its log is the address) found none.
+next_steps: Ask the nation's government office for its constitution or a description of its government; a state commission on Indian affairs may also list it.

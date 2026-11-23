@@ -25,6 +25,33 @@ archives: []
 history:
   status: live
   last_checked: '2026-11-21'
+courtlistener:
+  cluster: 547606
+  citation: "913 F.2d 1024"
+  case_name: "Mashantucket Pequot Tribe v. State of Connecticut and William A. O'neill, Governor of the State of Connecticut"
+  link: https://www.courtlistener.com/opinion/547606/mashantucket-pequot-tribe-v-state-of-connecticut-and-william-a-oneill/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/547606/mashantucket-pequot-tribe-v-state-of-connecticut-and-william-a-oneill/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22913%20F.2d%201024%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=913%20F.2d%201024
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=913%20F.2d%201024
 rights:
   status: no-permission-needed
   basis: fact-only

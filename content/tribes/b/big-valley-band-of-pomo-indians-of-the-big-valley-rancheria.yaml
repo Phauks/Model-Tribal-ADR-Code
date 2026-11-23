@@ -142,6 +142,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Big Valley Band of Pomo Indians of the Big Valley Rancheria".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Bib Valley Band of Pomo Indians of the Big Valley Racheria, California" among
@@ -167,6 +175,183 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: 1936 Constitution
+  quote: re-forming our government through the guidance of our 1936 Constitution
+  source: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-website-copy-of-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 1936 Constitution is mentioned on the About Us page, but its text is not among the saved pages.'
+- aspect: governing-body
+  value: Business Committee
+  quote: Business Committee
+  source: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 1936 Constitution is mentioned on the About Us page, but its text is not among the saved pages.'
+- aspect: governing-body-size
+  value: 4 members
+  quote: Tribal Secretary
+  source: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 1936 Constitution is mentioned on the About Us page, but its text is not among the saved pages.'
+- aspect: governing-body-selection
+  value: Officers elected by secret ballot from council members
+  quote: from its own members by secret ballot (a) a chairman, (b) vice chairman,
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: general-council
+  value: All enrolled members 21 or older with one year residence
+  quote: of Pomo Indians who are 21 years of age or over, and who have maintained
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 2
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: Tribal Chairman
+  source: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 1936 Constitution is mentioned on the About Us page, but its text is not among the saved pages.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot of the council
+  quote: from its own members by secret ballot (a) a chairman, (b) vice chairman,
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: head-of-government-term
+  value: Until successor chosen at the November meeting
+  quote: Thereafter, officials shall be chosen at the November meeting.
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Amendment I, item 4
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: other-officers
+  value: Tribal Vice-Chairman, Tribal Treasurer, Tribal Secretary
+  quote: Tribal Treasurer
+  source: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 1936 Constitution is mentioned on the About Us page, but its text is not among the saved pages.'
+- aspect: elections
+  value: Officers chosen at the November meeting
+  quote: Thereafter, officials shall be chosen at the November meeting.
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Amendment I, item 4
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: voting-age
+  value: '21'
+  quote: of Pomo Indians who are 21 years of age or over, and who have maintained
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 2
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: judiciary
+  value: Power to set up a judiciary
+  quote: We have the powers to write and enforce ordinances, regulate commerce, tax, set up a judiciary and police enforcement system
+  source: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-website-copy-of-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The 1936 Constitution is mentioned on the About Us page, but its text is not among the saved pages.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: by a majority vote of the qualified voters of the band voting at an election
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article V, Section 1
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article V, Section 1
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: recall-and-removal
+  value: Expulsion of officers by majority vote of eligible voters
+  quote: The Community Council may, by a majority
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Amendment II, Section 3
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: other
+  value: Business committee of chairman, secretary and treasurer
+  quote: the chairman, secretary, and treasurer of the general community council,
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 7
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -369,6 +554,16 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Lake County
+  court: Superior Court for Lake County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Lake County holds 100% of the land of Big Valley Rancheria (Census GEOID 0275), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

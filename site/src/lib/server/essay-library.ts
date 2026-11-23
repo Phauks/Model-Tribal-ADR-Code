@@ -11,7 +11,8 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import CSL from 'citeproc';
 import { escapeHtml, savedCopyLink } from './markdown.ts';
-import { glossary, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
+import { readingLinksHtml } from '../reading-links.ts';
+import { glossary, nationNameVariants, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
 import { sectionWithSymbol } from './citations.ts';
 import { caseItem } from './case-citations.ts';
 import { caseFacts, lawFacts, type CaseRecord, type FactLine } from './case-facts.ts';
@@ -75,7 +76,7 @@ export function everyFullCitation(records: SourceRecord[] = [...sources().values
 			const address = new URL(link);
 			html = `${html} <a href="${escapeHtml(address.href)}">${escapeHtml(address.hostname)}</a>`;
 		}
-		citations[record.key] = html + savedCopyLink(record);
+		citations[record.key] = html + savedCopyLink(record) + readingLinksHtml(record.reading_links);
 	}
 	return citations;
 }
@@ -94,13 +95,14 @@ export function glossaryTerms(): Record<string, string> {
 }
 
 /**
- * The essays in content/essays/, and the back matter pages in
- * content/back-matter/ (such as the index of cases by topic), as git holds
+ * The essays in content/essays/, the back matter pages in
+ * content/back-matter/ (such as the index of cases by topic) and the pages
+ * about the site in content/about/ (such as the About page), as git holds
  * them, by file name without ".md".
  */
 export function essaysInGit(): Record<string, string> {
 	const files: [string, string][] = [];
-	for (const folderName of ['essays', 'back-matter']) {
+	for (const folderName of ['essays', 'back-matter', 'about']) {
 		const folder = path.join(repositoryRoot, 'content', folderName);
 		if (!existsSync(folder)) continue;
 		for (const name of readdirSync(folder).filter((name) => name.endsWith('.md') && name !== 'README.md')) {
@@ -122,6 +124,24 @@ export function caseNames(records: SourceRecord[] = [...sources().values()]): Re
 		names[record.key] = { title: citation.title, date: citation.issued?.['date-parts']?.[0] ?? [] };
 	}
 	return names;
+}
+
+/**
+ * Words the spelling check should know although a general dictionary does
+ * not (src/lib/essays/checks.ts): every word with a capital letter or a
+ * letter outside A to Z in the names of nations, glossary terms and court
+ * cases, such as "Mashantucket" or "Diné".
+ */
+export function spellingWords(records: SourceRecord[] = [...sources().values()]): string[] {
+	const names = [...nationNameVariants(), ...Object.values(glossaryTerms()), ...Object.values(caseNames(records)).map((name) => name.title)];
+	const words = new Set<string>();
+	for (const name of names) {
+		for (const word of name.normalize('NFC').split(/[^\p{L}\p{M}'’]+/u)) {
+			const trimmed = word.replace(/^['’]+|['’]+$/g, '').replace(/['’]s$/, '');
+			if (trimmed.length > 1 && /[\p{Lu}]|[^\p{ASCII}]/u.test(trimmed)) words.add(trimmed);
+		}
+	}
+	return [...words].sort((first, second) => first.localeCompare(second, 'en-US'));
 }
 
 /** Source types a law box can name: statutes, codes, regulations, treaties and bills. */

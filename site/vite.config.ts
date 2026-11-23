@@ -8,13 +8,15 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
-import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms } from './src/lib/server/essay-library.ts';
+import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { followableBuild } from './src/lib/server/followable-build.ts';
+import { historyBuild } from './src/lib/server/page-history-build.ts';
 import {
 	essaysForReview,
 	glossary,
 	glossaryForReview,
+	nations,
 	nationsForReview,
 	publicCopies,
 	servableImages,
@@ -22,6 +24,7 @@ import {
 	storyRecords
 } from './src/lib/server/content.ts';
 import { isoDate, storyIsShown, storySourceKeys } from './src/lib/story-visibility.ts';
+import { directoryNameOf, sourceKindOf } from './src/lib/address-book-sync.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
 const designTokensModule = 'virtual:design-tokens.css';
@@ -51,6 +54,7 @@ const regionsPath = fileURLToPath(
 	new URL('./geography/bureau-of-indian-affairs-regions.json', import.meta.url)
 );
 const landAreasPath = fileURLToPath(new URL('./geography/census-land-areas-2020.json', import.meta.url));
+const officesPath = fileURLToPath(new URL('./geography/nation-office-points.json', import.meta.url));
 const mapGeometryModule = 'virtual:map-geometry';
 const resolvedMapGeometryModule = `\0${mapGeometryModule}`;
 
@@ -69,7 +73,8 @@ function mapGeometry(): Plugin {
 			if (identifier !== resolvedMapGeometryModule) return undefined;
 			this.addWatchFile(regionsPath);
 			this.addWatchFile(landAreasPath);
-			return `export default ${JSON.stringify(await buildMapGeometry(regionsPath, landAreasPath))};`;
+			this.addWatchFile(officesPath);
+			return `export default ${JSON.stringify(await buildMapGeometry(regionsPath, landAreasPath, officesPath))};`;
 		}
 	};
 }
@@ -117,6 +122,86 @@ function reviewSubjects(): Plugin {
 				}))
 			];
 			return `export const reviewSubjects = ${JSON.stringify(subjects)};`;
+		}
+	};
+}
+
+const publicContactsModule = 'virtual:public-contacts';
+const resolvedPublicContactsModule = `\0${publicContactsModule}`;
+
+/**
+ * Lists the office emails and phones each published nation page shows, with
+ * their sources, as a small module bundled into the Worker, so the private
+ * address book can compare itself with the pages (src/lib/address-book-sync.ts).
+ * Everything listed is already public on the nation pages.
+ */
+function publicContactsList(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:public-contacts',
+		resolveId(identifier) {
+			return identifier === publicContactsModule ? resolvedPublicContactsModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedPublicContactsModule) return undefined;
+			const records = sources();
+			const list = nations()
+				.filter((record) => !record.example)
+				.map((record) => {
+					const sites = (record.contacts ?? [])
+						.filter((fact) => fact.kind === 'website' || fact.kind === 'contact-page')
+						.map((fact) => String(fact.value));
+					return {
+						identifier: record.id,
+						name: record.names.official,
+						contacts: (record.contacts ?? [])
+							.filter((fact) => fact.kind === 'email-general' || fact.kind === 'phone')
+							.map((fact) => {
+								const source = fact.source ? records.get(fact.source) : undefined;
+								const sourceLink = source?.original_link ?? source?.citation.URL ?? null;
+								const sourceKind = sourceKindOf(fact.source ?? '', sourceLink, sites);
+								return {
+									method: fact.kind === 'email-general' ? 'email' : 'phone',
+									value: String(fact.value),
+									source: fact.source ?? '',
+									sourceTitle: source?.citation.title ?? fact.source ?? '',
+									sourceLink,
+									asOf: fact.as_of ? String(fact.as_of).slice(0, 10) : null,
+									directoryName: directoryNameOf(sourceKind, fact.locator),
+									sourceKind
+								};
+							})
+					};
+				});
+			return `export const publicNationContacts = ${JSON.stringify(list)};`;
+		}
+	};
+}
+
+const mailNationsModule = 'virtual:mail-nations';
+const resolvedMailNationsModule = `\0${mailNationsModule}`;
+
+/**
+ * The nations outreach can write to, with the states each is in, so the
+ * outreach pages can fill in a nation's name and send in the nation's own
+ * time zone (src/lib/server/mail/outreach.ts). Restricted records are left
+ * out, as in the review list.
+ */
+function mailNations(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:mail-nations',
+		resolveId(identifier) {
+			return identifier === mailNationsModule ? resolvedMailNationsModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedMailNationsModule) return undefined;
+			const states = new Map(nations().map((record) => [record.id, [...new Set((record.states ?? []).map((fact) => fact.state))]]));
+			const list = nationsForReview().map((record) => ({
+				identifier: record.id,
+				name: record.name,
+				states: states.get(record.id) ?? [],
+				page: record.published ? `/nations/${record.id}` : null
+			}));
+			return `export const mailNations = ${JSON.stringify(list)};`;
 		}
 	};
 }
@@ -230,7 +315,8 @@ function essayLibrary(): Plugin {
 				`export const essayTerms = ${JSON.stringify(glossaryTerms())};`,
 				`export const essayBoxFacts = ${JSON.stringify(everyBoxFact())};`,
 				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`,
-				`export const essayCaseNames = ${JSON.stringify(caseNames())};`
+				`export const essayCaseNames = ${JSON.stringify(caseNames())};`,
+				`export const essaySpellingWords = ${JSON.stringify(spellingWords())};`
 			].join('\n');
 		}
 	};
@@ -305,6 +391,28 @@ function followablePages(): Plugin {
 	};
 }
 
+const pageHistoryModule = 'virtual:page-history';
+const resolvedPageHistoryModule = `\0${pageHistoryModule}`;
+
+/**
+ * Lists the pages built with the site for Recent changes, with a fingerprint
+ * of each and, for pages whose earlier wording may be shown, their text. The
+ * Worker compares the list with the last build's and records each change
+ * (src/lib/server/page-history.ts).
+ */
+function pageHistory(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:page-history',
+		resolveId(identifier) {
+			return identifier === pageHistoryModule ? resolvedPageHistoryModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedPageHistoryModule) return undefined;
+			return `export const historyBuild = ${JSON.stringify(historyBuild())};`;
+		}
+	};
+}
+
 function buildInformation(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:build',
@@ -327,6 +435,8 @@ export default defineConfig({
 		designTokens(),
 		mapGeometry(),
 		reviewSubjects(),
+		publicContactsList(),
+		mailNations(),
 		nationImages(),
 		publicCopiesList(),
 		sourceCitations(),
@@ -334,6 +444,7 @@ export default defineConfig({
 		formCatalog(),
 		buildInformation(),
 		followablePages(),
+		pageHistory(),
 		sveltekit({
 			compilerOptions: {
 				// Runes mode for the project's own components. Can be removed in Svelte 6.
@@ -343,7 +454,12 @@ export default defineConfig({
 			adapter: adapter(),
 			prerender: {
 				// Every page is built ahead of time from the files in content/.
-				handleHttpError: 'fail',
+				// The lists of checksums are written after the build (tools/write-checksums.mjs), so a
+				// link to one is not followed.
+				handleHttpError: ({ path, message }) => {
+					if (path === '/checksums.txt' || path === '/checksums.json') return;
+					throw new Error(message);
+				},
 				handleMissingId: 'fail'
 			},
 			version: {

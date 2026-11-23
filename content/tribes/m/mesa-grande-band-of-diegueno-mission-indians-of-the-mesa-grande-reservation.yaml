@@ -166,6 +166,214 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation, California".
+governance:
+- aspect: form
+  value: Articles of Association
+  quote: Articles of Association
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: governing-body
+  value: General Council
+  quote: The governing body of the Band shall be the General Council which shall consist of all
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article III, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: the General Council a Tribal Council consisting of a Chairman, a Vice Chairman, and
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article III, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: the General Council a Tribal Council consisting of a Chairman, a Vice Chairman, and
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article III, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: three (3) Committeemen who shall be elected by secret ballot and who, except as
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article III, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: shall serve for a term of four (4) years.
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article III, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: general-council
+  value: All adult members 18 years or older
+  quote: adult members eighteen (18) years of age or older. In addition, there shall be elected from
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article III, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: head-of-government
+  value: Chairman
+  quote: It shall be the duty of the Chairman to preside at all meetings of the General Council and Tribal
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article VIII
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot as a Tribal Council member
+  quote: three (3) Committeemen who shall be elected by secret ballot and who, except as
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article III, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: shall serve for a term of four (4) years.
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article III, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: other-officers
+  value: Vice Chairman, Secretary-Treasurer
+  quote: shall select from within or from without the membership of the Band a Secretary-
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article III, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled member of the Band, eighteen (18) years of age or older, shall have the
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article IV, A
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: amendment
+  value: Majority vote of the General Council at a regular meeting
+  quote: These Articles of Association may be amended by a majority vote of the General Council at a
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article XI
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: recall-and-removal
+  value: Majority vote of present General Council after grievance hearing
+  quote: The General Council will then render a final decision that shall be determined by a
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article V, F
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: recall-and-removal
+  value: Forfeiture on felony conviction or two missed meetings
+  quote: be convicted of a felony, his office shall be forfeited automatically and a special election
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article VI, Section 1
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
+- aspect: other
+  value: Grievance Board hears complaints against Tribal Council members
+  quote: The Board shall consider written complaints alleging misconduct
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023-12-10'
+  locator: Article V, B
+  document_version:
+    document: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is headed 2025 Edition and records amendments through 12/10/2023; the version label says 2023.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -225,6 +433,27 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+court_practice:
+- kind: court-rules
+  title: Tribal Court Rules
+  court: Mesa Grande Tribal Court
+  link: https://www.mesagrandeband-nsn.gov/wp-content/uploads/Mesa-Grande-Tribal-Court-Rules9194276.2.pdf
+  detail: Court page links the Tribal Court Rules and the Judicial Ordinance.
+  source: mesa-grande-tribal-court-court-rules
+  confidence: high
+  verification: title-only
+  locator: document links
+  note: PDF not opened.
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of Mesa Grande Reservation (Census GEOID 2190), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

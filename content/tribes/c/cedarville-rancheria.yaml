@@ -128,6 +128,166 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cedarville Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Cedarville Rancheria, California".
+governance:
+- aspect: form
+  value: Constitution and bylaws under the Indian Reorganization Act of June 18, 1934
+  quote: the privileges and powers provided for by the Indian Reorganization
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Preamble
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: governing-body
+  value: Community council
+  quote: shall be the community council composed of all qualified voters of the
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: general-council
+  value: All qualified voters of the Rancheria who are 18 or older
+  quote: eighteen (18) years of age or older.
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman shall preside at all meetings
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cedarville Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the community council from its members by secret ballot
+  quote: members, by secret ballot, an executive committee of a chairman, a secretary
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: who shall hold office for three years
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: other-officers
+  value: Secretary, Treasurer
+  quote: and a treasurer, who shall hold office for three years or until their
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: elections
+  value: Every 3 years at the January meeting of the community council
+  quote: meetings of the community council each third (3) year in accordance
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older shall be entitled to vote in tribal
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 4
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: amendment
+  value: Majority vote of the community council at an election
+  quote: amended by a majority vote of the community council at an election authorized
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, Section 1
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: in an election called by the Secretary of the Interior and approved
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article X, Section 2
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters
+  quote: (30) percent of the qualified voters requesting the recall of an officer,
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 2
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
+- aspect: other
+  value: Executive committee may not commit tribe without council authorization
+  quote: powers, but shall not commit the Cedarville Rancheria to any contract,
+  source: constitution-cedarville-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIII, Section 2
+  document_version:
+    document: cedarville-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated text; the page carries only a ''Received: 2003'' note.'
 governing_documents:
 - kind: law-code
   title: Cedarville Rancheria Ordinances
@@ -175,6 +335,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Modoc County
+  court: Superior Court for Modoc County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Modoc County holds 100% of the land of Cedarville Rancheria (Census GEOID 0555), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

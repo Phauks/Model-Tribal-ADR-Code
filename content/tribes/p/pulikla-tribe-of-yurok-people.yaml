@@ -170,6 +170,87 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pulikla Tribe of Yurok People (previously listed as Resighini Rancheria, California)
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Pulikla Tribe of Yurok People".
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pulikla Tribe of Yurok People (previously listed as Resighini Rancheria, California)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 4 years, staggered
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer, Councilperson
+  quote: The Pulikla Tribe of Yurok People is governed by a Tribal Council consisting of five Tribal Citizens elected to staggered four-year terms of Chairperson, Vice-Chairperson, Secretary, Treasurer, and Councilperson.
+  source: pulikla-tribe-of-yurok-people-website-who-we-are-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -317,6 +398,16 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Del Norte County
+  court: Superior Court for Del Norte County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Del Norte County holds 100% of the land of Resighini Rancheria (Census GEOID 3145), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

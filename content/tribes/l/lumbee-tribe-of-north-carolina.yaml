@@ -205,6 +205,103 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lumbee Tribe of North Carolina
+governance:
+- aspect: form
+  value: Constitution adopted by the Tribe
+  quote: the Tribe adopts this Constitution for the purposes of establishing a tribal government structure
+  source: lumbee-tribe-of-north-carolina-lumbeetribe-government-nc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Lumbee Tribal Council
+  quote: The Lumbee Tribal Council is comprised of 21 members elected from 21 districts.
+  source: lumbee-tribe-of-north-carolina-lumbeetribe-government-nc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 21 members
+  quote: The Lumbee Tribal Council is comprised of 21 members elected from 21 districts.
+  source: lumbee-tribe-of-north-carolina-lumbeetribe-government-nc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected from 21 districts
+  quote: The Lumbee Tribal Council is comprised of 21 members elected from 21 districts.
+  source: lumbee-tribe-of-north-carolina-lumbeetribe-government-nc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years
+  quote: Members of the Tribal Council shall serve three year terms.
+  source: lumbee-tribe-of-north-carolina-lumbeetribe-government-nc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: All executive powers, including implementation of and compliance with annual budgets, of the Lumbee Tribe of North Carolina shall reside in a Tribal Chairperson, who shall cause all laws of the Tribe to be faithfully executed.
+  source: lumbee-tribe-of-north-carolina-lumbeetribe-government-nc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Tribal Administrator
+  quote: The Tribal Chair shall nominate a Tribal Administrator, subject to confirmation by the Tribal Council or its designee(s).
+  source: lumbee-tribe-of-north-carolina-lumbeetribe-government-nc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Lumbee Tribe Elections Board
+  quote: The Order directs the Lumbee Tribe Elections Board, a party to the case, to conduct the referendum under that process.
+  source: lumbee-tribe-of-north-carolina-website-single-post-for-immediate-release-celebrating-the-25th-anniv
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Supreme Court
+  quote: Article IX places that power in the Supreme Court of the Lumbee Tribe of North Carolina and gives the Court jurisdiction over all cases and controversies arising under our Constitution.
+  source: lumbee-tribe-of-north-carolina-website-single-post-for-immediate-release-celebrating-the-25th-anniv
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Nominated by Chairman, appointed by Council
+  quote: There are five (5) sitting judges whom are nominated by the Tribal Chairman and appointed by the Tribal Council.
+  source: lumbee-tribe-of-north-carolina-lumbeetribe-government-nc
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: 30% participation needed for valid rescission
+  quote: 'Article VI, Section 7 of our Constitution adds one requirement: a rescission is valid only if at least 30% of eligible Tribal voters participate in the referendum.'
+  source: lumbee-tribe-of-north-carolina-website-single-post-for-immediate-release-celebrating-the-25th-anniv
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -285,6 +382,52 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: North Carolina is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in North Carolina. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in North Carolina by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+nearby_state_courts:
+- state: NC
+  county: Robeson County
+  court: Superior Court for Robeson County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Robeson County holds 46% of the land of Lumbee SDTSA (Census GEOID 9815), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NC
+  county: Cumberland County
+  court: Superior Court for Cumberland County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Cumberland County holds 26% of the land of Lumbee SDTSA (Census GEOID 9815), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NC
+  county: Scotland County
+  court: Superior Court for Scotland County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Scotland County holds 16% of the land of Lumbee SDTSA (Census GEOID 9815), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NC
+  county: Hoke County
+  court: Superior Court for Hoke County
+  link: https://www.nccourts.gov/locations
+  source: state-trial-court-directory-nc
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Hoke County holds 12% of the land of Lumbee SDTSA (Census GEOID 9815), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

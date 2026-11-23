@@ -8,12 +8,25 @@ import type { Permission } from './permissions.ts';
 export type WorkspacePageName =
 	| 'overview'
 	| 'essays'
+	| 'review-requests'
 	| 'requests'
+	| 'inbox'
+	| 'outreach'
+	| 'uploads'
+	| 'nation-uploads'
 	| 'reviews'
+	| 'library'
 	| 'contributors'
+	| 'events'
 	| 'people'
+	| 'nation-teams'
+	| 'nation-pages'
 	| 'access'
 	| 'address-book'
+	| 'changes'
+	| 'nonprofit'
+	| 'service-checks'
+	| 'sponsors'
 	| 'activity';
 
 export interface WorkspacePage {
@@ -28,13 +41,29 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'overview', label: 'Overview', link: '/workspace' },
 	// Everyone sees the essays they can open, by role or by grant.
 	{ name: 'essays', label: 'Essays', link: '/workspace/essays' },
+	// Drafts and sections people asked this person to review (src/lib/server/essay-review-requests.ts).
+	{ name: 'review-requests', label: 'Review requests', link: '/workspace/review-requests', needs: 'comment' },
 	{ name: 'requests', label: 'Requests', link: '/workspace/requests', needs: 'read-requests' },
+	{ name: 'inbox', label: 'Inbox', link: '/workspace/inbox', needs: 'read-mail' },
+	{ name: 'outreach', label: 'Outreach', link: '/workspace/outreach', needs: 'send-outreach' },
+	{ name: 'uploads', label: 'Uploads', link: '/workspace/uploads', needs: 'review-uploads' },
+	// A nation reviewer reads and comments on files sent about their nation.
+	{ name: 'nation-uploads', label: 'Files about your nation', link: '/workspace/nation-uploads', needs: 'comment-on-nation-uploads' },
 	// Everyone sees the documents they can open, by role or by grant.
 	{ name: 'reviews', label: 'Reviews', link: '/workspace/reviews' },
+	{ name: 'library', label: 'Source library', link: '/workspace/library', needs: 'search-source-library' },
 	{ name: 'contributors', label: 'Contributors', link: '/workspace/contributors', needs: 'read-contributors' },
+	{ name: 'events', label: 'Events', link: '/workspace/events', needs: 'manage-events' },
 	{ name: 'people', label: 'People', link: '/workspace/people', needs: 'manage-people' },
+	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', needs: 'manage-people' },
+	// What nations published on their own pages, for the project to read afterwards.
+	{ name: 'nation-pages', label: 'Nations’ changes', link: '/workspace/nation-pages', needs: 'review-nation-pages' },
 	{ name: 'access', label: 'Access', link: '/workspace/access', needs: 'manage-people' },
 	{ name: 'address-book', label: 'Address book', link: '/workspace/address-book', needs: 'manage-address-book' },
+	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', needs: 'hide-changes' },
+	{ name: 'nonprofit', label: 'Nonprofit', link: '/workspace/nonprofit', needs: 'manage-nonprofit' },
+	{ name: 'service-checks', label: 'Service checks', link: '/workspace/service-checks', needs: 'check-services' },
+	{ name: 'sponsors', label: 'Sponsors', link: '/workspace/sponsors', needs: 'manage-sponsors' },
 	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', needs: 'manage-people' }
 ];
 

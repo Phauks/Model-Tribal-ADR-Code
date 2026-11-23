@@ -159,6 +159,63 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Blue Lake Rancheria, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Blue Lake Rancheria, California".
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Sets of Tribal Laws, called Ordinances, are drafted and approved by the Tribal Council.
+  source: blue-lake-rancheria-website-departments-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: is an elected member of the Blue Lake Rancheria’s Tribal business council
+  source: blue-lake-rancheria-website-about-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Blue Lake Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Blue Lake Rancheria (BLR) Tribal Court is an independent judiciary, organized subject to U.S. Code of Federal Regulations (vol. 25).
+  source: blue-lake-rancheria-website-departments-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: Judges are hired and appointed by the BLR Tribal Council
+  source: blue-lake-rancheria-website-departments-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
+- aspect: judicial-independence
+  value: Independent of Tribal interest
+  quote: the Court is mandated to operate impartially based on applicable law, and remain independent of any Tribal interest
+  source: blue-lake-rancheria-website-departments-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Pages use both ''Tribal Council'' and ''Tribal Business Council'' for the governing body, and no constitution text is among the saved pages.'
 governing_documents:
 - kind: law-code
   title: BLR Ordinances
@@ -246,22 +303,16 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: 'BLUE LAKE HOUSING AUTHORITY DISPUTE RESOLUTION ORDINANCE (NILL heading: ''BLHA Dispute Resolution
-      Ordinance'')'
-    citation: Blue Lake Housing Authority Dispute Resolution Ordinance (Ordinance No. 04-02), Sections
-      1-9 (Section 6 Dispute Resolution, with subsection B Arbitration)
+    title: 'BLUE LAKE HOUSING AUTHORITY DISPUTE RESOLUTION ORDINANCE (NILL heading: ''BLHA Dispute Resolution Ordinance'')'
+    citation: Blue Lake Housing Authority Dispute Resolution Ordinance (Ordinance No. 04-02), Sections 1-9 (Section 6 Dispute Resolution, with subsection B Arbitration)
     link: https://www.bluelakerancheria-nsn.gov/wp-content/uploads/2024/09/04-02.pdf
     source: blue-lake-blue-lake-housing-authority-dispute-resolution
     confidence: medium
     verification: read-in-full
     as_of: '2004-04-02'
     locator: Sections 1-9 (Section 6 Dispute Resolution, with subsection B Arbitration)
-    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
-    summary: Lets the Blue Lake Housing Authority consent to suit or arbitration only by resolution of
-      its governing body, limits any immunity waiver to enforcing money awards, arbitral determinations
-      (including specific performance or injunctions) and actions to compel arbitration after written
-      notice of the claim within 360 days, makes agreements to arbitrate enforceable with tribal court
-      confirmation of awards and no further appeal, and keeps the Tribe's own immunity intact.
+    note: Read in full on 2026-11-23 from page images (Blue Lake Rancheria, Blue Lake Housing Authority Dispute Resolution Ordinance, Ordinance No. 04-02, adopted by the Business Council April 2, 2004 (5 for, 0 against)). Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 24.
+    summary: Lets the Blue Lake Housing Authority consent to suit or arbitration only by resolution of its governing body, limits any immunity waiver to enforcing money awards, arbitral determinations (including specific performance or injunctions) and actions to compel arbitration after written notice of the claim within 360 days, makes agreements to arbitrate enforceable with tribal court confirmation of awards and no further appeal, and keeps the Tribe's own immunity intact.
 gaming:
   compacts:
   - state: CA
@@ -351,6 +402,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Blue Lake Rancheria". Facilities
       as machine-extracted from the report text (verify): Blue Lake Fuel and Fun; Blue Lake Casino. Name
       extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-14
+    date: '2009-03-20'
+    link: https://www.nigc.gov?wpdmdl=7894&ind=7905
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-14
+    note: The list titles the action “Blue Lake Rancheria Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-14
+    date: '2009-05-19'
+    link: https://www.nigc.gov?wpdmdl=7826&ind=7837
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-14
+    note: The list titles the action “Blue Lake Rancheria Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -376,6 +448,16 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Humboldt County
+  court: Superior Court for Humboldt County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Humboldt County holds 100% of the land of Blue Lake Rancheria (Census GEOID 0325), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

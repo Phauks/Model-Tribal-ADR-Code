@@ -10,10 +10,27 @@
  *
  * Works in the browser, in the Worker and in Node (for tests).
  */
-import { Fragment, Schema, type Node as EditorNode } from 'prosemirror-model';
+import { Fragment, Schema, type DOMOutputSpec, type Node as EditorNode } from 'prosemirror-model';
 import { MarkdownParser, MarkdownSerializer, defaultMarkdownSerializer, type MarkdownSerializerState } from 'prosemirror-markdown';
 import type Token from 'markdown-it/lib/token.mjs';
 import { boxParts, essayBlocks, essayMarkdown, type BoxPart } from './syntax.ts';
+import { figureInfo, figureKindLabels, figureParts, figureSource, readFigureInfo, type FigureKind, type FigurePart } from './figures.ts';
+import { youtubePosterAddress } from '../video-links.ts';
+
+/**
+ * What the editor shows of a figure's file: the picture, a player, or a
+ * YouTube still frame. It is not part of the text, so it cannot be typed in.
+ */
+function figurePreview(kind: FigureKind, address: string): DOMOutputSpec {
+	if (kind === 'chart') {
+		return ['p', { class: 'essay-figure-note' }, 'A bar chart: in the table below, the first column names each bar and the second gives its number.'];
+	}
+	const source = figureSource(kind, address);
+	if (!source) return ['p', { class: 'essay-figure-missing' }, 'The site cannot show a file from this address.'];
+	if (source.kind === 'youtube') return ['img', { src: youtubePosterAddress(source.identifier), alt: '', loading: 'lazy' }];
+	if (kind === 'picture') return ['img', { src: source.address, alt: '', loading: 'lazy' }];
+	return [kind === 'video' ? 'video' : 'audio', { src: source.address, controls: '', preload: 'metadata' }];
+}
 
 export const essaySchema = new Schema({
 	nodes: {
@@ -154,6 +171,38 @@ export const essaySchema = new Schema({
 				['div', 0]
 			]
 		},
+		// A picture, video or sound recording (figures.ts). Its paragraphs are
+		// the caption; its parts hold the description, credit and transcript.
+		figure_block: {
+			content: '(block | figure_part)+',
+			group: 'block',
+			defining: true,
+			isolating: true,
+			attrs: { kind: { default: 'picture' }, address: { default: '' } },
+			toDOM: (node) => [
+				'figure',
+				{ class: `essay-figure essay-figure-${node.attrs.kind}`, 'data-address': node.attrs.address },
+				[
+					'div',
+					{ class: 'essay-block-label', contenteditable: 'false' },
+					figureKindLabels[node.attrs.kind as FigureKind] ?? 'Figure'
+				],
+				['div', { class: 'essay-figure-preview', contenteditable: 'false' }, figurePreview(node.attrs.kind, node.attrs.address)],
+				['div', 0]
+			]
+		},
+		// A labeled part of a figure (figureParts in figures.ts).
+		figure_part: {
+			content: 'block+',
+			defining: true,
+			attrs: { kind: { default: 'credit' } },
+			toDOM: (node) => [
+				'div',
+				{ class: `essay-figure-part essay-figure-part-${node.attrs.kind}` },
+				['div', { class: 'essay-block-label', contenteditable: 'false' }, figureParts[node.attrs.kind as FigurePart] ?? 'Credit'],
+				['div', 0]
+			]
+		},
 		text: { group: 'inline' },
 		hard_break: {
 			inline: true,
@@ -254,6 +303,13 @@ const parser = new MarkdownParser(essaySchema, reader, {
 		block: 'analysis_block',
 		getAttrs: (token) => ({ title: essayBlocks.analysis.exec(token.info.trim())?.[1]?.trim() ?? '' })
 	},
+	container_figure: {
+		block: 'figure_block',
+		getAttrs: (token) => readFigureInfo(token.info)
+	},
+	...Object.fromEntries(
+		Object.keys(figureParts).map((kind) => [`container_${kind}`, { block: 'figure_part', getAttrs: () => ({ kind }) }])
+	),
 	hardbreak: { node: 'hard_break' },
 	em: { mark: 'em' },
 	strong: { mark: 'strong' },
@@ -267,7 +323,7 @@ const parser = new MarkdownParser(essaySchema, reader, {
 	term_link: { node: 'term_link', noCloseToken: true, getAttrs: (token) => token.meta }
 });
 
-const containerNodes = new Set(['case_block', 'law_block', 'case_part', 'quote_block', 'analysis_block']);
+const containerNodes = new Set(['case_block', 'law_block', 'case_part', 'quote_block', 'analysis_block', 'figure_block', 'figure_part']);
 
 /**
  * How many colons a block's fences need: three, plus one for each level of
@@ -336,6 +392,12 @@ const serializer = new MarkdownSerializer(
 		},
 		analysis_block(state, node) {
 			writeContainer(state, node, `analysis ${node.attrs.title ?? ''}`.trim());
+		},
+		figure_block(state, node) {
+			writeContainer(state, node, figureInfo(node.attrs.kind, node.attrs.address));
+		},
+		figure_part(state, node) {
+			writeContainer(state, node, node.attrs.kind in figureParts ? node.attrs.kind : 'credit');
 		},
 		citation(state, node) {
 			state.write(`[${node.attrs.text}]`);

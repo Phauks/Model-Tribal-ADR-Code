@@ -136,6 +136,211 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Robinson Rancheria
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Robinson Rancheria".
+governance:
+- aspect: form
+  value: Constitution adopted pursuant to the Indian Reorganization Act
+  quote: do hereby establish this organization and adopt this constitution pursuant to that act.
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Preamble
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: governing-body
+  value: Robinson Rancheria Citizens Business Council
+  quote: The Robinson Rancheria Pomo Indians of California are governed by the Robinson Rancheria Citizens Business Council (RRCBC), composed of six elected tribal members.
+  source: robinson-rancheria-website-departments
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 shows proposed constitutional amendments approved by the Constitution Committee in February 2026 and not yet adopted, so no facts were taken from them; the adopted constitution text is not on the saved pages.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: composed of six elected tribal members
+  source: robinson-rancheria-website-departments
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 shows proposed constitutional amendments approved by the Constitution Committee in February 2026 and not yet adopted, so no facts were taken from them; the adopted constitution text is not on the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: composed of six elected tribal members
+  source: robinson-rancheria-website-departments
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 shows proposed constitutional amendments approved by the Constitution Committee in February 2026 and not yet adopted, so no facts were taken from them; the adopted constitution text is not on the saved pages.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Thereafter, all terms of office shall be for two (2) years
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article V, Sec. U
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: general-council
+  value: Tribal Council of all enrolled members, 18 years of age or older
+  quote: The tribal council shall consist of ail enrolled members of the rancheria, eighteen (18) years of age or older.
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article IV, Section 2
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The chairperson shall preside at all meetings of the citizens business
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article XIV, Section 2
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Robinson Rancheria
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by a majority of qualified voters
+  quote: each elected by a majority of the qualified voters in such an election
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Thereafter, all terms of office shall be for two (2) years
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article V, Sec. U
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: other-officers
+  value: Vice-chairperson, secretary-treasurer
+  quote: The citizens business council shall be composed of a chairperson, vice-chairperson, secretary- treasurer and three (3) members
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article IV, Section 1
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: elections
+  value: Annually on the second Saturday in June
+  quote: elections shall be held annually on the second Saturday in June.
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article V, Sec. U
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: voting-age
+  value: '18'
+  quote: who are eighteen (18) years of age or older, regardless of residence, are qualified
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article V, Section 1
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Robinson Rancheria Tribal Court was created by Tribal Ordinance No. 2009-06-03,
+  source: robinson-rancheria-website-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 shows proposed constitutional amendments approved by the Constitution Committee in February 2026 and not yet adopted, so no facts were taken from them; the adopted constitution text is not on the saved pages.'
+- aspect: amendment
+  value: Majority vote in an election called by the Secretary of the Interior
+  quote: This constitution may be amended by a majority vote of the qualified voters of the Robinson Rancheria voting in an election called for that purpose by the Secretary of the Interior
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article XVI, Section 1
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until approved by the Secretary of the Interior
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article XVI, Section 1
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of qualified voters
+  quote: Upon receipt of a petition signed by at least fifty-one percent (51%) of the qualified voters of the raneheria
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article VI, Section 2
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
+- aspect: recall-and-removal
+  value: Removal by vote of at least four council members
+  quote: if at least four (4) members of the citizens business council vote in favor of such removal
+  source: constitution-robinson-rancheria-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-22'
+  locator: Article VI, Section 1
+  document_version:
+    document: robinson-rancheria-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1980 constitution with the 1995 Amendment No. I to Article V, Section 2 appended, so the 1995 label refers to the amendment; OCR errors are present.'
 gaming:
   compacts:
   - state: CA
@@ -249,6 +454,16 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Lake County
+  court: Superior Court for Lake County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Lake County holds 100% of the land of Robinson Rancheria (Census GEOID 3195), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -170,6 +170,95 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quinault Indian Nation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Quinault Indian Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Quinault Indian Nation (1995)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Quinault Indian Nation Constitution
+  quote: The Quinault people adopted the Quinault Indian Nation Constitution on March 22, 1975, which has also been amended over time.
+  source: quinault-indian-nation-website-255-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: governing-body
+  value: Business Committee
+  quote: The Quinault Business Committee, which consists of four executive officers and seven council membersen, is the elected governing body the QIN, entrusted with the executive, business and legislative affairs of the QIN throughout the year.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: governing-body-size
+  value: 4 executive officers and 7 council members
+  quote: The Quinault Business Committee, which consists of four executive officers and seven council membersen, is the elected governing body the QIN, entrusted with the executive, business and legislative affairs of the QIN throughout the year.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Quinault Business Committee, which consists of four executive officers and seven council membersen, is the elected governing body the QIN, entrusted with the executive, business and legislative affairs of the QIN throughout the year.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: head-of-government
+  value: President
+  quote: Under these Bylaws, the voting members of the Quinault Indian Nation established an elective government ruled by the Tribal Council constituting the Business Committee, made up of a President, Vice President, Secretary, Treasurer and seven council members.
+  source: quinault-indian-nation-website-255-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Quinault Indian Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President, Secretary, Treasurer
+  quote: Under these Bylaws, the voting members of the Quinault Indian Nation established an elective government ruled by the Tribal Council constituting the Business Committee, made up of a President, Vice President, Secretary, Treasurer and seven council members.
+  source: quinault-indian-nation-website-255-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: elections
+  value: Annually, last Saturday in March (General Council)
+  quote: Our General Council meets annually the last Saturday in March to hold elections, accept new tribal members, allocate fishing grounds, and discuss other issues relevant to tribal operations.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: As the first Tribal Court in the region, the Quinault Tribal Court has a long history of serving the Quinault Nation and Community
+  source: quinault-indian-nation-website-157-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
+- aspect: other
+  value: General Council meets annually
+  quote: Our General Council meets annually the last Saturday in March to hold elections, accept new tribal members, allocate fishing grounds, and discuss other issues relevant to tribal operations.
+  source: quinault-indian-nation-website-171-about-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the site''s history and about-us pages; the Constitution and Bylaws are not among the saved pages.'
 governing_documents:
 - kind: law-code
   title: Quinault Indian Nation
@@ -387,6 +476,27 @@ gaming:
     locator: table row 222, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 222 lists the nation
       as "Quinault Tribe of the Quinault Reservation". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-34
+    date: '2009-06-26'
+    link: https://www.nigc.gov?wpdmdl=7783&ind=7815
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-34
+    note: The list titles the action “Quinault Indian Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-34
+    date: '2009-08-27'
+    link: https://www.nigc.gov?wpdmdl=7780&ind=7796
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-34
+    note: The list titles the action “Quinault Indian Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -443,6 +553,93 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Quinault Nation". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Washington Department of Social and Health Services
+  agreement: 'Indian Nation Program Agreement: Operational Agreement to Provide Foster Care and Adoption Services under Title IV-E Funding Program [Quinalt Indian Nation]'
+  state: WA
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for WA
+  note: 'The source reads: “Indian Nation Program Agreement: Operational Agreement to Provide Foster Care and Adoption Services under Title IV-E Funding Program [Quinalt Indian Nation]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Washington Department of Social and Health Services, Children's Administration
+  agreement: Title IV-E agreement (program and operational agreements)
+  state: WA
+  date: 2009-07
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.P, Washington
+  note: 'The source reads: “Quinault Indian Nation”. The report says the agreements, entered into in July 2009, "remain in effect until terminated". Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: forms
+  title: Forms & Filings
+  court: Quinault Tribal Court
+  link: https://wa-quinaultindiannation.civicplus.com/258/Forms-Filings
+  detail: Forms include protection order petition and proof of service, custody and visitation petitions and parenting plan, dissolution, annulment and separation petitions, adoption, change of name, guardianship, civil complaint, unlawful detainer, small estate and notice of appeal.
+  source: quinault-tribal-court-forms
+  confidence: high
+  verification: title-only
+  locator: Forms & Filings
+  note: 'The source reads: “Petition for Protection Order”. Form PDFs not opened.'
+- kind: legal-aid
+  title: Legal Aid for Domestic Violence Survivors
+  court: Quinault Tribal Court
+  link: https://wa-quinaultindiannation.civicplus.com/157/Tribal-Courts
+  detail: Tribal Courts page lists legal aid for domestic violence survivors among court programs.
+  source: quinault-indian-nation-tribal-court-wa
+  confidence: medium
+  verification: read-in-full
+  locator: programs list
+  note: Provider and eligibility not stated on the page.
+nearby_state_courts:
+- state: WA
+  county: Grays Harbor County
+  court: Superior Court for Grays Harbor County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Grays Harbor County holds 97% of the land of Quinault Reservation (Census GEOID 3040), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WA
+  county: Jefferson County
+  court: Superior Court for Jefferson County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Jefferson County holds 3% of the land of Quinault Reservation (Census GEOID 3040), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Quinaielt, etc., 1855
+  signed: '1855-07-01'
+  statutes_at_large: 12 Stat. 971
+  kappler:
+    volume: 2
+    page: 719
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-quinaielt-etc-1855-0719
+  signatory: Quinault
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 719 (Treaty with the Quinaielt, etc., 1855; Kappler header "July 1, 1855. Jan. 25, 1856. | 12 Stats., 971. | Ratified Mar. 8, 1859. | Proclaimed, Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Quinaielt (Quinault) Reserve, Washington Territory
+  method: executive-order
+  instrument: Exec. Order of Nov. 4, 1873, 1 Kappler 923
+  date: '1873-11-04'
+  detail: First set aside
+  source: executive-order-1873-11-04-quinaielt-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 923
+  note: 'The instrument reads: “be withdrawn from sale and set apart for the use of the Quinaielt, Quillehute, Hoh, Quit, and other tribes of fish-eating Indians on the Pacific coast”. Issued under the Treaty of Olympia (July 1, 1855 and Jan. 25, 1856, 12 Stat. 971), which provided for a reservation to be selected by the President but did not itself describe the tract.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

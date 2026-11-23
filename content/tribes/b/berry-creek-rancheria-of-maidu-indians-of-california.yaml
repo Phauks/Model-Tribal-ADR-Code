@@ -154,6 +154,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Berry Creek Rancheria of Maidu Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Berry Creek Rancheria of Maidu Indians of California".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Berry Creek Rancheria of Maidu Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: articles-of-association
   title: Berry Creek Rancheria of Maidu Indians - Articles of Association and Bylaws
@@ -270,6 +287,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Berry Creek Rancheria of Maidu
       Indians of California". Facilities as machine-extracted from the report text (verify): Gold Country
       Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-20
+    date: '2009-04-09'
+    link: https://www.nigc.gov?wpdmdl=7874&ind=7886
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-20
+    note: The list titles the action “Berry Creek Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-20
+    date: '2009-05-14'
+    link: https://www.nigc.gov?wpdmdl=7834&ind=7857
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-20
+    note: The list titles the action “Berry Creek Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -296,6 +334,16 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Butte County
+  court: Superior Court for Butte County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Butte County holds 100% of the land of Berry Creek Rancheria (Census GEOID 0200), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

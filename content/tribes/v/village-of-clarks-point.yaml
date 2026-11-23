@@ -192,6 +192,193 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Village of Clarks Point
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: 'Listed as "Village of Clark’s Point". Name on Indian Health Service profile differs from roster name (roster: "Village of Clarks Point"); matched manually. Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.'
+- area: Alaska
+  service_unit: Bristol Bay Service Area
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: 'The source''s words: "Village of Clark’s Point".'
+  operator: tribal
+governance:
+- aspect: form
+  value: Constitution of the Village of Clarks Point
+  quote: Constitution of the Village of
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council | Clarks Point Village Council
+  source: village-of-clarks-point-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council members appear only with names, so no seat count or seat titles are quoted.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Council shall consist of five members who shall be elected by
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: governing-body-selection
+  value: Elected by members present at the annual meeting
+  quote: who are physically present at the annual membership meeting.
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Council members shall serve tar a term of three years, with staggered terms.
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 5
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: head-of-government
+  value: President (Chief)
+  quote: The Council shall include a Presictanjt (Chief)
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Village of Clarks Point
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Selected by the Council from its members
+  quote: shall be Selected by the Council from its members immediately following the
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: other-officers
+  value: Vice President, Secretary/Treasurer, two members
+  quote: Secretary^ reasurer (3 ta Chief), and two members
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: elections
+  value: Annual, at the annual election meeting
+  quote: be held at the annual election meeting.
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: voting-age
+  value: '18'
+  quote: of eighteen years or older and has resided in the village for at least one year
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: election-authority
+  value: Persons appointed by the Council
+  quote: Prior to any Village election, theCoun®! shall appoint responsible persons to
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 5
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: judiciary
+  value: Tribal court (may be established by ordinance)
+  quote: A tribal court sjjpem may be established by ordinance if
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIII, Section 1
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: amendment
+  value: Majority vote of eligible voters at a membership meeting, 30% turnout
+  quote: This Constitution may be amended byj e majority vote of the eligible voters in a
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XVI
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: recall-and-removal
+  value: Removal by at least 3 Council votes for misconduct or neglect
+  quote: may fee removed from office by a vote of at least three
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Removal from Office, Section 1
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of eligible voters
+  quote: Signed by at least 20 % of the eligible vote
+  source: constitution-village-of-clarks-point-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Removal from Office, Section 2
+  document_version:
+    document: village-of-clarks-point-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the scan is heavily damaged, the certification date is illegible, and some article labels and the forfeiture and initiative passages are unclear.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -226,6 +413,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Dillingham Census Area
+  court: Superior Court for Dillingham Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Dillingham Census Area holds 100% of the land of Clarks Point ANVSA (Census GEOID 6360), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bristol Bay Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

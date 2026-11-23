@@ -1,7 +1,7 @@
 profile: content/tribes/c/confederated-tribes-of-the-chehalis-reservation.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -40,5 +40,89 @@ searches:
   address: https://www.narf.org/nill/codes/
   outcome: not-found
   reason: Second search (NCORJ, peacemaking.narf.org, other hosts) found no non-eCode360 copy of the text.
-next_steps: The provisions this nation's profile lists by section title are still unread. A person could
-  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.chehalistribe.org/wp-content/uploads/2023/09/Complete_with_DocuSign_Mediation__Eviction_p.pdf
+  query: dispute resolution wording
+  outcome: found
+  reason: Housing Authority Mediation and Eviction Policy has mediation wording.
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#confederated-tribes-of-the-chehalis-reservation-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-code-site
+  address: https://codepublishing.com/WA/ChehalisTribe/html/ChehalisTribe03/ChehalisTribe0305.html
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Establishes the Tribal Court; no ADR wording.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-code-site
+  address: https://codepublishing.com/WA/ChehalisTribe/html/ChehalisTribe16/ChehalisTribe1605.html
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Debt collection chapter; a dispute committee reviews evidence but no mediation or arbitration.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Confederated Tribes of the Chehalis Reservation tribal code mediation OR peacemaking
+    OR "dispute resolution"'
+  query: Confederated Tribes of the Chehalis Reservation tribal code mediation OR peacemaking OR "dispute
+    resolution"
+  outcome: not-found
+  reason: Found codepublishing chapters and a Chehalis Tribal Housing Authority mediation policy.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261009115109id_/https://ecode360.com/CH4710
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2026-10-09) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20110304085741id_/https://ecode360.com/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2011-03-04) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/7268a810a0c01c6c561f.txt
+  query: 15.01.210 Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-the-chehalis-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/c55c97280b7618b3fdae.txt
+  query: 15.01.210 Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-the-chehalis-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Chehalis Tribe 15.01.210 Dispute resolution
+  outcome: found
+  reason: codepublishing.com chapter 15.01
+  records:
+  - content/tribes/c/confederated-tribes-of-the-chehalis-reservation.yaml#dispute_resolution.provisions
+next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
+  (Gate 1) before any record goes into the profile.

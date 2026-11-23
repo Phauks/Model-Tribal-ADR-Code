@@ -179,6 +179,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tulalip Tribes of Washington
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Tulalip Tribes". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Tulalip Tribes of Washington (2002)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Tulalip Tribes, Washington" among organizations under constitutions approved
@@ -203,6 +211,191 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Board of Directors
+  quote: The reservation is governed by a board of seven directors elected by tribal members to serve a three-year term
+  source: tulalip-tribes-of-washington-website-government-boardofdirectors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages describe the Board of Directors and staff; no governing document text was saved.'
+- aspect: governing-body-size
+  value: 7 directors
+  quote: The reservation is governed by a board of seven directors elected by tribal members to serve a three-year term
+  source: tulalip-tribes-of-washington-website-government-boardofdirectors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages describe the Board of Directors and staff; no governing document text was saved.'
+- aspect: governing-body-selection
+  value: Elected by tribal members
+  quote: The reservation is governed by a board of seven directors elected by tribal members to serve a three-year term
+  source: tulalip-tribes-of-washington-website-government-boardofdirectors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages describe the Board of Directors and staff; no governing document text was saved.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: The reservation is governed by a board of seven directors elected by tribal members to serve a three-year term
+  source: tulalip-tribes-of-washington-website-government-boardofdirectors
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages describe the Board of Directors and staff; no governing document text was saved.'
+- aspect: general-council
+  value: Voters meeting annually on election day
+  quote: of directors shall call a general council annually on election day
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article VI
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: head-of-government
+  value: Chairman
+  quote: 'the members of the board: (l) a chairman, (2) a vice chairman, (3) a secretary,'
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 3
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tulalip Tribes of Washington
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Selected by the General Council from board members
+  quote: The General Council shall after each regular election select from
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 3
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: other-officers
+  value: Vice chairman, Secretary, Treasurer
+  quote: 'the members of the board: (l) a chairman, (2) a vice chairman, (3) a secretary,'
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 3
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: elections
+  value: Called not more than 60 days before terms expire
+  quote: board of directors shall be called not- more than sixty (60) days prior to,
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article III, Section 4
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: voting-age
+  value: '21'
+  quote: wenty^ono (21) years
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: election-authority
+  value: Board of directors
+  quote: The time and places of voting shall be designated, by the board of
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article IV, Section 2
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: judiciary
+  value: Reservation court, established by ordinance
+  quote: of justice by establishing a reservation court and defining its duties and
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article VI, Section 1(k)
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: amendment
+  value: Approval by five board members, then majority vote of qualified voters
+  quote: amendment shall be duly approved by five or more members
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article IX
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by him, shall thereupon take effect.
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article IX
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the board for neglect of duty or gross misconduct
+  quote: member for neglect of duty or gross misconduct.
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article V, Section 2
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+- aspect: other
+  value: General council may direct the board by resolution or ordinance
+  quote: expressed by resolution or ordinance which shall govern tie future action of th
+  source: constitution-tulalip-tribes-of-washington-1968-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1968-06-19'
+  locator: Article VI
+  document_version:
+    document: tulalip-tribes-of-washington-constitution
+    version: 1968-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
 governing_documents:
 - kind: law-code
   title: Tulalip Tribes of Washington Tribal Codes
@@ -362,73 +555,56 @@ dispute_resolution:
   forums:
   - kind: mediation
     name: Mediation Services (Tulalip Tribal Court)
-    description: An out-of-court mediation process, conducted by Volunteers of America at the Tulalip
-      Tribal Courthouse, in which a mediator helps disputants air the dispute and agree on a satisfactory
-      solution.
+    description: An out-of-court mediation process, conducted by Volunteers of America at the Tulalip Tribal Courthouse, in which a mediator helps disputants air the dispute and agree on a satisfactory solution.
     case_types:
     - civil
-    participation: court-referred
-    relationship_to_court: Arranged through the Tribal Court main line; the page states a $400 fine for
-      failing to appear without 48 hours' notice of cancellation.
+    participation: other
+    relationship_to_court: The page says mediation is an out-of-court process run by Volunteers of America at the Tribal Courthouse; appointments are set up through the Tribal Court main line, and the page states a $400 fine for failing to appear without 48 hours' notice of cancellation. It does not say who refers cases, who imposes the fine or whether agreements are enforced.
     link: https://www.tulaliptribalcourt-nsn.gov/GeneralCourtInfo/MediationServices
     source: tulalip-tribal-court-mediation-services
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2026-11-21'
-    note: Participation recorded as court-referred because the page describes a no-show fine imposed through
-      the court; the page does not state the legal basis. Case types not enumerated on the page; 'civil'
-      reflects the description of disputants avoiding court.
+    note: Read in full on 2026-11-23 (Mediation Services, Tulalip Tribal Court web page (copyright 2016-2026; no page date)). Participation is recorded as 'other' because the page does not say whether cases are court-referred or self-requested (it only says to contact the Tribal Court main line to set up an appointment). Case types are not stated on the page; 'civil' is inferred from the page's reference to disputants avoiding court. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 578.
   - kind: elders-council
     name: Tribal Court Elders Panel
-    description: A culturally based program in which tribal elders volunteer on a panel that meets at
-      the court every two weeks with young (18 to 25), first-time, non-violent offenders charged with
-      minor offenses, favoring reparative over punitive justice.
+    description: A culturally based program in which tribal elders volunteer on a panel that meets at the court every two weeks with young (18 to 25), first-time, non-violent offenders charged with minor offenses, favoring reparative over punitive justice.
     case_types:
     - criminal-diversion
     participation: voluntary
-    relationship_to_court: Offenders volunteer; on completing one year of panel-imposed requirements their
-      charges are dismissed in court.
-    enforcement: Requirements may include regular appearances, apology letters, community service, treatment,
-      curfews, testing, family history research, spiritual activity, classes and evaluations; completion
-      leads to dismissal.
+    relationship_to_court: Offenders volunteer; the court's Chief Judge has referred young people to the panel (more than 65 in nine years, per the page), and on completing one year of panel-imposed requirements their charges are dismissed in court.
+    enforcement: Requirements may include regular appearances, apology letters, community service, treatment, curfews, testing, family history research, spiritual activity, classes and evaluations; completion leads to dismissal.
     link: https://www.tulaliptribalcourt-nsn.gov/ProgramsAndServices/TribalCourtEldersPanel
     source: tulalip-tribal-court-elders-panel
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2026-11-21'
+    note: Read in full on 2026-11-23 (Tribal Court Elders Panel, Tulalip Tribal Court web page (members list headed 2024; no page date)). Source is the Tribal Court's own web page; it cites no code provision as legal basis. Entry route (judge referral) is stated only in the sentence about Chief Judge Bass referring more than 65 young people. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 579.
   - kind: restorative-justice
     name: Community Accountability Board (Juvenile Diversion Panel)
-    description: A volunteer community panel, operating since July 2010, that meets monthly with tribal
-      member youths under 18 arrested for minor offenses to hold them accountable and increase awareness
-      of their behavior.
+    description: A volunteer community panel, operating since July 2010, that meets monthly with tribal member youths under 18 arrested for minor offenses to hold them accountable and increase awareness of their behavior.
     case_types:
     - juvenile
     - criminal-diversion
-    participation: voluntary
-    relationship_to_court: A juvenile diversion program of the Tribal Court; meets at the Tribal Court.
+    participation: other
+    relationship_to_court: A juvenile diversion program of the Tribal Court; the board meets monthly at the Tribal Court, and a judge (Ron Whitener) is listed among its volunteer members. The page does not say how youths are referred or what follows completion or non-completion.
     link: https://www.tulaliptribalcourt-nsn.gov/ProgramsAndServices/JuvenileDiversion
     source: tulalip-tribal-court-juvenile-diversion
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2026-11-21'
-    note: Participation as 'voluntary' is not stated explicitly; the page says eligible youth participate.
-      Individual volunteer names on the page are not recorded.
+    note: Read in full on 2026-11-23 (Juvenile Diversion, Community Accountability Board (CAB) for Juveniles, Tulalip Tribal Court web page (no page date)). The page says eligible youths participate but does not say participation is voluntary or how cases are referred, so participation is recorded as 'other'. Individual volunteer names on the page are not recorded. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 580.
   provisions:
   - kind: other
-    title: Amendment to Tulalip Tribal Code 2.25, adding 2.25.200 enacting an Alternative Court Code (Resolution
-      2024-473)
+    title: Amendment to Tulalip Tribal Code 2.25, adding 2.25.200 enacting an Alternative Court Code (Resolution 2024-473)
     citation: Tulalip Tribal Code 2.25.200 (Resolution 2024-473)
     link: https://tulaliptribes-nsn.gov/Base/File/Reso-2024-473-Amendment-to-Tulalip-Tribal-Code-2-25-Adding-200-Enacting-Alternative-Court-Code-BIA-APPROVA-20241030
     source: tulalip-resolution-2024-473-alternative-court-code
-    confidence: low
+    confidence: medium
     verification: read-in-full
     as_of: '2024-10-04'
-    summary: Adds TTC 2.25.200 (Alternative Courts), establishing the Tulalip Healing to Wellness Court,
-      the Mental Wellness Alternatives (MAP) Program and an Alternative Courts Steering Committee. Defendants
-      enter through a plea agreement offered by the Prosecutor, the court may defer entry of the plea,
-      and rules of evidence are relaxed.
-    note: Read through a fetch-and-summarize tool only; direct download returned 404 on Nov. 21, 2026.
-      The file's amendment tracker shows '2024-768'. These are problem-solving courts, not peacemaking.
+    summary: Adds TTC 2.25.200 (Alternative Courts), establishing the Tulalip Healing to Wellness Court, the Mental Wellness Alternatives (MAP) Program and an Alternative Courts Steering Committee. Defendants enter through a plea agreement offered by the Prosecutor, the court may defer entry of the plea, and rules of evidence are relaxed.
+    note: Read in full on 2026-11-23 (Tulalip Tribes Resolution 2024-473, Amendment to Tulalip Tribal Code 2.25 Adding 2.25.200 Enacting Alternative Court Code; adopted October 4, 2024; accepted by Puget Sound Agency Superintendent October 15, 2024). The second reader judged this not a dispute resolution provision; kept for the lead author under the grab-now rule. The file's amendment tracker shows '2024-768'. These are problem-solving courts, not peacemaking. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 581.
   database_listings:
   - title: Elders Panel Diversion Program
     citation: 'TTC Title 2: Tribal Justice System - Criminal Procedures (Referenced in external documentation)'
@@ -768,6 +944,27 @@ gaming:
     locator: table row 292, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
       as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-10
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7913&ind=7924
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-10
+    note: The list titles the action “Tulalip Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-10
+    date: '2009-04-28'
+    link: https://www.nigc.gov?wpdmdl=7853&ind=7860
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-10
+    note: The list titles the action “Tulalip Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -852,6 +1049,72 @@ jurisdiction:
   verification: read-in-full
   as_of: '2013'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: One of the 14 Tribes that received the Justice Department's first Special Tribal Criminal Jurisdiction reimbursement awards (May 2024), which repay the costs of exercising the jurisdiction.
+  source: office-on-violence-against-women-2024-update-tribal-consultation-recommendations
+  confidence: high
+  verification: read-in-full
+  as_of: 2024-11
+  locator: p. 14 and Appendix D, (PDF p.54)
+  note: Listed as "TULALIP TRIBES OF WASHINGTON" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+jurisdiction_agreements:
+- kind: cross-deputization
+  other_party: Snohomish County Sheriff, Washington
+  agreement: Cooperative law enforcement agreement (sheriff commissions of approved tribal deputies)
+  state: WA
+  status: unknown
+  source: tulalip-tribes-snohomish-county-cooperative-law-enforcement-agreement
+  confidence: high
+  verification: read-in-full
+  locator: Section on commissions
+  note: 'The source reads: “suspend or revoke the Sheriff’s commission of any Approved Tribal”. The copy is undated and mentions Tulalip partial retrocession effective November 21, 2001. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: forms
+  title: Forms and Publications
+  court: Tulalip Tribal Court
+  link: https://www.tulaliptribes-nsn.gov/Residents/FormsAndPublications
+  detail: Page linked from the Tribal Court page; not opened.
+  source: tulalip-tribes-tribal-court
+  confidence: medium
+  verification: title-only
+  locator: Tribal Court page
+  note: Page not opened; may be general tribal forms.
+nearby_state_courts:
+- state: WA
+  county: Snohomish County
+  court: Superior Court for Snohomish County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Snohomish County holds 100% of the land of Tulalip Reservation (Census GEOID 4290), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Sk-tahlmish; Skopeáhmish; Sktahlejum; Shohomish; Sha-ho-mish / Snohomish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Sk-tahlmish: Point Elliott bands; Tulalip Tribes include Snohomish, Skykomish, Snoqualmie descendants. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+land_establishment:
+- land_area: Tulalip (Snohomish) tract on Port Gardner/Tulalip Bay, Washington
+  method: treaty
+  instrument: Treaty of Point Elliott, Jan. 22, 1855, art. II, 12 Stat. 927, 928
+  date: '1855-01-22'
+  detail: First set aside
+  source: treaty-with-the-dwamish-suquamish-etc-1855
+  confidence: medium
+  verification: read-in-full
+  locator: 12 Stat. 928
+  note: 'The instrument reads: “on the north side Hwhomish Bay and the creek emptying into the same called Kwilt-seh-da”. The Dec. 23, 1873 Exec. Order (1 Kappler 925) refers to "the Snohomish or Tulalip Indian Reservation ... provided for in the third article of the treaty ... Point Elliott" [sic]. Place-name identification (Kwilt-seh-da = Tulalip Bay) is from the treaty text as reproduced; confidence medium.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

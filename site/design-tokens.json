@@ -83,6 +83,14 @@
         "$value": "#E6F3F4",
         "$description": "Status notices."
       },
+      "added-background": {
+        "$value": "#DCEFDF",
+        "$description": "Words added, on Recent changes and when comparing versions. Ink is 13.5:1 on it."
+      },
+      "removed-background": {
+        "$value": "#FBE1DC",
+        "$description": "Words taken out, on Recent changes and when comparing versions. Ink is 13.1:1 on it."
+      },
       "art-reserved": {
         "$value": "#F1E6DC",
         "$description": "Empty space reserved for commissioned art."
@@ -114,6 +122,14 @@
       "scrollbar-track": {
         "$value": "#F6EEE6",
         "$description": "Scrollbar track, the strip the thumb moves along. Same as surface, like the side rails."
+      },
+      "scan-code-dark": {
+        "$value": "#22201E",
+        "$description": "Dark squares of a QR code, the same in both themes so phone cameras can read it. 20:1 on scan-code-light."
+      },
+      "scan-code-light": {
+        "$value": "#FFFFFF",
+        "$description": "Light squares and quiet zone of a QR code, the same in both themes."
       }
     },
     "dark": {
@@ -197,6 +213,14 @@
         "$value": "#173B40",
         "$description": "Status notices."
       },
+      "added-background": {
+        "$value": "#1F3A25",
+        "$description": "Words added, on Recent changes and when comparing versions. Ink is 10.9:1 on it."
+      },
+      "removed-background": {
+        "$value": "#3F231C",
+        "$description": "Words taken out, on Recent changes and when comparing versions. Ink is 12.5:1 on it."
+      },
       "art-reserved": {
         "$value": "#1A2F33",
         "$description": "Empty space reserved for commissioned art."
@@ -228,6 +252,14 @@
       "scrollbar-track": {
         "$value": "#16292D",
         "$description": "Scrollbar track, the strip the thumb moves along. Same as surface, like the side rails."
+      },
+      "scan-code-dark": {
+        "$value": "#22201E",
+        "$description": "Dark squares of a QR code, the same in both themes so phone cameras can read it. 20:1 on scan-code-light."
+      },
+      "scan-code-light": {
+        "$value": "#FFFFFF",
+        "$description": "Light squares and quiet zone of a QR code, the same in both themes."
       }
     }
   },

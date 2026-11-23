@@ -128,6 +128,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of Siletz Indians of Oregon
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Confederated Tribes of Siletz Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Siletz Indians of Oregon (1994)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of Siletz Indians of Oregon
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Confederated Tribes of Siletz Indians of Oregon
@@ -276,30 +293,27 @@ dispute_resolution:
       gaps, while the Administrator may require mediation that binds only on a written agreement.
     locator: 5.561-5.572
   - kind: mediation
-    title: '2 COURT PERSONNEL: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators;
-      Removal of Judges; Court Clerk; Legal Interns; Court Interpreters; Tribal Bar.'
-    citation: '2 COURT PERSONNEL: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators;
-      Removal of Judges; Court Clerk; Legal Interns; Court Interpreters; Tribal Bar.'
-    link: https://www.narf.org/nill/codes/confederated_siletz/index.html
-    source: national-indian-law-library-code-codes-confederated-siletz
+    title: Part II Court Personnel, including Sec. 3.017 Mediators (Siletz Tribal Court Rules and Procedures, Siletz Tribal Code Sec. 3.001)
+    citation: Siletz Tribal Code Secs. 3.010, 3.017 (Sec. 3.017 amended 4-17-15, Res. 2015-118)
+    link: https://ctsi.nsn.us/wp-content/uploads/2020/12/Tribal-Court-Rules-of-Procedure-04-17-2015.pdf
+    source: siletz-tribal-court-rules-and-procedures-2015
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: 2015-03
-    note: 'Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title. Searched for the
-      text on 2026-11-22 and not read. Places searched: research/search-logs/dispute-resolution/c/confederated-tribes-of-siletz-indians-of-oregon.yaml.'
+    note: Read in full on 2026-11-23 (Siletz Tribal Court Rules and Procedures, Siletz Tribal Code Sec. 3.001 et seq., Sec. 3.017 amended 4-17-15 (Res. 2015-118)). Read from the Siletz Tribal Court Rules and Procedures (Siletz Tribal Code Sec. 3.001 et seq.), Part II, Secs. 3.010 and 3.017 (amended 4/17/15, Res. 2015-118), with cross-references to Secs. 3.004(b) and 3.005(b). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 66.
+    locator: Part II, Secs. 3.010, 3.017
+    summary: The Chief Judge appoints a panel of mediators (who may not be Associate Judges) for the Siletz District Court and Community Law Court and assigns them to cases. An assigned mediator meets with the parties and tries to reach an agreed resolution, which must be in writing and approved by the Chief Judge or a delegated Associate Judge. Other sections of the same rules require the Chief Judge to set up a mandatory mediation program for Community Law Court disputes (Sec. 3.004(b)) and a District Court mediation program that may require mediation of some categories (Sec. 3.005(b)).
   - kind: peacemaking
-    title: Siletz Tribal Code Sec. 3.300
-    citation: Siletz Tribal Code Sec. 3.300
+    title: Siletz Community Law Court rules (Siletz Tribal Code Sec. 3.300 et seq.)
+    citation: Siletz Tribal Code Secs. 3.300-3.333 (Ordinance 3.300, amended Res. 2005-361, Sept. 16, 2005)
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Siletz-Comm-Law-Court-09-16-2005.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: siletz-tribal-code-3-300-community-law-court-2005
     confidence: medium
     verification: read-in-full
     as_of: '2025-09-29'
-    locator: Confederated Tribes of Siletz Indians of Oregon
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and civil process authority, referral standards and standards of conduct, and authority to use traditional
-      ways and lecture on tribal teachings.'
+    locator: Secs. 3.300-3.333
+    note: Read in full on 2026-11-23 (Siletz Community Law Court, Siletz Tribal Code Sec. 3.300, Ordinance 3.300 (adopted 9/21/01, Res. 2001-296), amended by Resolution 2005-361, Sept. 16, 2005). Read from the Siletz Community Law Court ordinance (Siletz Tribal Code Sec. 3.300 et seq.), Secs. 3.300-3.333, as amended 9/16/05. Replaces the earlier note based on NARF's description. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 67.
+    summary: Establishes the Siletz Community Law Court, where court-appointed peacemakers (Gwe-shvt-naga) mediate family, neighbor, alcohol-related and small business disputes using traditional ways. A case gets there by written request or by transfer from Tribal Court, which needs the written consent of all parties; peacemakers can compel participants to meet and obtain subpoenas but cannot decide a dispute unless all parties agree in writing. An agreement or agreed decision can be entered as a Community Law Court judgment that is enforced like any Tribal Court judgment and cannot be appealed.
   - kind: peacemaking
     title: CHAPTER 2 GWE-SHVT-NAGA/PEACEMAKERS
     citation: Siletz Community Law Court (Siletz Tribal Code 3.300), 3.303-3.307
@@ -579,6 +593,47 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of Siletz
       Indians of Oregon". Facilities as machine-extracted from the report text (verify): Chinook Winds
       Casino Resort. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-00-09
+    date: '2000-06-15'
+    link: https://www.nigc.gov?wpdmdl=2032&ind=2033
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-00-09
+    note: The list titles the action “Siletz Indians of Oregon” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-00-09
+    date: '2000-08-09'
+    link: https://www.nigc.gov?wpdmdl=2034&ind=2035
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-00-09
+    note: The list titles the action “Siletz Indians of Oregon” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-00-09
+    date: '2001-05-30'
+    link: https://www.nigc.gov?wpdmdl=8276&ind=8288
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-00-09
+    note: The list titles the action “Siletz Indians of Oregon” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-00-09-2
+    date: '2007-05-30'
+    link: https://www.nigc.gov?wpdmdl=8085&ind=8096
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-00-09-2
+    note: The list titles the action “Confederated Indians of the Siletz Tribe of Oregon” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -605,6 +660,115 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Tribal Agreement [Confederated Tribes of Siletz Indians]
+  state: OR
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for OR
+  note: 'The source reads: “Tribal Agreement [Confederated Tribes of Siletz Indians]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Title IV-E agreement (administration, training and maintenance)
+  state: OR
+  date: 2010-06
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.M, Oregon
+  note: 'The source reads: “Confederated Tribes of Siletz Indians executed in June 2010”. The agreement terms expire on June 30, 2020 unless extended, per the report. The Siletz tribe was reported to be planning a move to direct federal funding. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: OR
+  county: Lincoln County
+  court: Circuit Court for Lincoln County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Lincoln County holds 100% of the land of Siletz Reservation (Census GEOID 3795), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Rogue River, 1853
+  signed: '1853-09-10'
+  statutes_at_large: 10 Stat. 1018
+  kappler:
+    volume: 2
+    page: 603
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-rogue-river-1853-0603
+  signatory: Rogue River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 603 (Treaty with the Rogue River, 1853; Kappler header "Sept. 10, 1853. | 10 Stats., 1018. Ratified Apr. 12, 1854. | Proclaimed Feb. 5, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Rogue River peoples removed to Grand Ronde and Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Rogue River, 1854
+  signed: '1854-11-15'
+  statutes_at_large: 10 Stat. 1119
+  kappler:
+    volume: 2
+    page: 654
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-rogue-river-1854-0654
+  signatory: Rogue River
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 654 (Treaty with the Rogue River, 1854; Kappler header "Nov. 15, 1854. | 10 Stats., 1119. | Ratified Mar. 3, 1855. | Proclaimed Apr. 7, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Rogue River peoples removed to Grand Ronde and Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chasta, etc., 1854
+  signed: '1854-11-18'
+  statutes_at_large: 10 Stat. 1122
+  kappler:
+    volume: 2
+    page: 655
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chasta-etc-1854-0655
+  signatory: Umpqua; Shasta; Scoton; Grave Creek
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 655 (Treaty with the Chasta, etc., 1854; Kappler header "Nov. 18, 1854. | 10 Stats., 1122. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umpqua peoples also at Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Umpqua and Kalapuya, 1854
+  signed: '1854-11-29'
+  statutes_at_large: 10 Stat. 1125
+  kappler:
+    volume: 2
+    page: 657
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-umpqua-and-kalapuya-1854-0657
+  signatory: Umpqua
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 657 (Treaty with the Umpqua and Kalapuya, 1854; Kappler header "Nov. 29, 1854. | 10 stats., 1125. | Ratified Mar. 3, 1855. | Proclaimed Mar. 30, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umpqua peoples also at Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Molala, 1855
+  signed: '1855-12-21'
+  statutes_at_large: 12 Stat. 981
+  kappler:
+    volume: 2
+    page: 740
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-molala-1855-0740
+  signatory: Umpqua
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 740 (Treaty with the Molala, 1855; Kappler header "Dec. 21, 1855. | 12 Stat., 981. | Ratified Mar. 8, 1859. | Proclaimed Apr. 27, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Umpqua peoples also at Siletz. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+land_establishment:
+- land_area: Coast (Siletz) Reservation, Oregon (original large tract)
+  method: executive-order
+  instrument: Exec. Order of Nov. 9, 1855, 1 Kappler 891
+  date: '1855-11-09'
+  detail: First set aside
+  source: executive-order-1855-11-09-coast-reservation
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 891
+  note: 'The instrument reads: “The reservation of the land within denoted by blue-shaded lines is hereby made”. Kappler gives the order under "Siletz (originally known as Coast) Reserve." Conditional reservation for the Coast tribes; curtailed by Exec. Order of Dec. 1866 and Act of Mar. 3, 1875 (18 Stat. 446). The Siletz Reservation was terminated in 1956 and restored in 1977; the current Census area is trust land.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

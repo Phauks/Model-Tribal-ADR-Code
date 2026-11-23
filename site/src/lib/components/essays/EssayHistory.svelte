@@ -34,4 +34,5 @@
 			</li>
 		{/each}
 	</ol>
+	<p><a href="/changes?page={encodeURIComponent(path)}">Compare versions, and see who changed what</a></p>
 </div>

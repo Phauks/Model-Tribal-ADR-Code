@@ -1,6 +1,6 @@
 profile: content/tribes/c/chippewa-cree-indians-of-the-rocky-boys-reservation.yaml
 topic: dispute-resolution
-status: none-found
+status: found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
@@ -94,6 +94,36 @@ searches:
     the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-046
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/0c633afa5dbaecc776b1.txt
+  query: Traditional Circle sessions (child support and paternity)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/chippewa-cree-indians-of-the-rocky-boys-reservation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/34a78356097cc8357c0b.txt
+  query: Traditional Circle sessions (child support and paternity)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/chippewa-cree-indians-of-the-rocky-boys-reservation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Chippewa Cree Domestic Relations Code Chapter 6 Traditional Circle
+  outcome: found
+  reason: NCORJ page and Montana indianlaw archive
+  records:
+  - content/tribes/c/chippewa-cree-indians-of-the-rocky-boys-reservation.yaml#dispute_resolution.forums
 next_steps: No page or official directory entry was found on 2026-11-22 for “Traditional Circle sessions
   (child support and paternity)” (research/reviews/2026-11-22-service-links.json). The second search of
   2026-11-23 (web searches and state court lists) found no page or official directory entry for “Traditional

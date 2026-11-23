@@ -177,6 +177,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Port Gamble S'Klallam Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Port Gamble S’Klallam Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Port Gamble Band of S’Klallam Indians (1994)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Port Gamble Indian Community, Washington" among organizations under constitutions
@@ -201,6 +209,135 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Indian Reorganization Act
+  quote: certain privileges and powers offered to us by the Indian Reorganization
+  source: university-of-oklahoma-indian-reorganization-act-pgcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-06'
+  locator: Preamble
+  document_version:
+    document: port-gamble-sklallam-tribe-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Port Gamble S’Klallam Tribe is overseen by a six-member Tribal Council that has delegated legislative authority.
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: The Port Gamble S’Klallam Tribe is overseen by a six-member Tribal Council that has delegated legislative authority.
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: Each Council member serves a two-year term with seats up for election on alternating years.
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: Each Council member serves a two-year term with seats up for election on alternating years.
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
+- aspect: head-of-government
+  value: Chairwoman
+  quote: Chairwoman
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Port Gamble S'Klallam Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its own members by secret ballot
+  quote: The Community Council shall elect from its
+  source: university-of-oklahoma-indian-reorganization-act-pgcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-06'
+  locator: Article III, Section 2
+  document_version:
+    document: port-gamble-sklallam-tribe-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
+- aspect: other-officers
+  value: Vice Chairman
+  quote: Vice Chairman
+  source: port-gamble-sklallam-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Constitution page holds only the site menu, not the document text, so facts come from the Tribal Council and Government pages.'
+- aspect: elections
+  value: Annually at the July meeting
+  quote: successors shall be chosen. Thereafter, officials shall be chosen at the
+  source: university-of-oklahoma-indian-reorganization-act-pgcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-06'
+  locator: Article III, Section 4
+  document_version:
+    document: port-gamble-sklallam-tribe-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
+- aspect: voting-age
+  value: '21'
+  quote: Gamble Band of Clallam Indians over the age of twenty-one (21) years shall
+  source: university-of-oklahoma-indian-reorganization-act-pgcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-06'
+  locator: Article V, Section 1
+  document_version:
+    document: port-gamble-sklallam-tribe-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
+- aspect: amendment
+  value: Majority vote of qualified voters in election called by Secretary of the Interior
+  quote: by a majority vote of the qualified voters of the Community, voting at
+  source: university-of-oklahoma-indian-reorganization-act-pgcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-06'
+  locator: Article VI, Section 1
+  document_version:
+    document: port-gamble-sklallam-tribe-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: election, but no amendment shall become effective until it shall have been
+  source: university-of-oklahoma-indian-reorganization-act-pgcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-06'
+  locator: Article VI, Section 1
+  document_version:
+    document: port-gamble-sklallam-tribe-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1939 constitution and by-laws with the 1947 Amendment I attached, not a separate 1947 document.'
 governing_documents:
 - kind: law-code
   title: Port Gamble S'Klallam - Law and Order Code
@@ -516,6 +653,47 @@ gaming:
     locator: table row 198, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 198 lists the nation
       as "Port Gamble S’Klallam Tribe".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-23
+    date: '2008-10-28'
+    link: https://www.nigc.gov?wpdmdl=7963&ind=7974
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-23
+    note: The list titles the action “Port Gamble S’Klallam Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-23
+    date: '2008-11-07'
+    link: https://www.nigc.gov?wpdmdl=7960&ind=7971
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-23
+    note: The list titles the action “Port Gamble S’Klallam Indian Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-17
+    date: '2009-04-01'
+    link: https://www.nigc.gov?wpdmdl=7878&ind=7890
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-17
+    note: The list titles the action “Port Gamble S’Klallam Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-17
+    date: '2009-04-21'
+    link: https://www.nigc.gov?wpdmdl=7855&ind=7858
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-17
+    note: The list titles the action “Port Gamble S’Klallam Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -553,6 +731,62 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Port Gamble S’Klallam Tribe". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Washington Department of Social and Health Services
+  agreement: Indian Nation Program Agreement for Tribal Participation Title IV-E Program - Federal Payments for Foster Care and Adoption Assistance [Port Gamble S'Klallam Tribe]
+  state: WA
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for WA
+  note: 'The source reads: “Indian Nation Program Agreement for Tribal Participation Title IV-E Program - Federal Payments for Foster Care and Adoption Assistance [Port Gamble S''Klallam Tribe]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Washington Department of Social and Health Services, Children's Administration
+  agreement: Title IV-E agreement
+  state: WA
+  date: '2005-09-30'
+  status: expired
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.P, Washington
+  note: 'The source reads: “The State of Washington previously had an agreement with the Port Gamble S’Klallam Tribe dated September 30, 2005.”. The report says the agreement is no longer in force because the tribe obtained direct federal funding on April 1, 2012. Report date is March 2014, so current status needs confirming.'
+- kind: child-welfare-agreement
+  other_party: United States Department of Health and Human Services, Administration for Children and Families
+  agreement: Federal Title IV-E plan (direct tribal funding)
+  date: '2012-04-01'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: low
+  verification: inferred
+  locator: Section I.P, Washington
+  note: 'The source reads: “Port Gamble was the first tribe to obtain direct federal funding, on April 1, 2012”. federal Title IV-E plan. The first tribe to obtain direct funding, per the report. Reported in March 2014 and not checked against the current Administration for Children and Families list, which could not be fetched.'
+nearby_state_courts:
+- state: WA
+  county: Kitsap County
+  court: Superior Court for Kitsap County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Kitsap County holds 100% of the land of Port Gamble Reservation (Census GEOID 2910), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the S'klallam, 1855
+  signed: '1855-01-26'
+  statutes_at_large: 12 Stat. 933
+  kappler:
+    volume: 2
+    page: 674
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sklallam-1855-0674
+  signatory: S'klallam
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 674 (Treaty with the S'klallam, 1855; Kappler header "Jan. 26, 1855. | 12 Stats., 933. | Ratified Mar. 8, 1859. | Proclaimed Apr. 29, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Point No Point treaty (1855) with the S''Klallam villages; Jamestown, Port Gamble and Lower Elwha are the S''Klallam nations. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

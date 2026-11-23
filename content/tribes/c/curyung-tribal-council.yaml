@@ -160,6 +160,57 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Curyung Tribal Council
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: Listed as "Curyung Tribal Council (aka Native Village of Dillingham)". Name on Indian Health Service profile differs from roster name; matched by name tokens. Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Bristol Bay Service Area
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: 'The source''s words: "Curyung Tribal Council (aka Native Village of Dillingham)".'
+  operator: tribal
+governance:
+- aspect: governing-body
+  value: Curyung Tribal Council
+  quote: shall be referred to as the Curyung Tribal Council.
+  source: curyung-tribal-council-website-images-tribal-court-codes-2017-pdf
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Title I, Chapter 1, Section 2
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Only the 2017 judicial code (Titles I and II, page 4) and the council and court pages were read; the Curyung Tribal Constitution itself is not among the pages.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: filling 3-year terms through 2029.
+  source: curyung-tribal-council-website-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only the 2017 judicial code (Titles I and II, page 4) and the council and court pages were read; the Curyung Tribal Constitution itself is not among the pages.'
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Curyung Tribal Council
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Curyung Tribal Court
+  quote: If you have questions regarding the Curyung Tribal Court, please call 907-842-2384
+  source: curyung-tribal-council-website-tribalcourt-html
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Only the 2017 judicial code (Titles I and II, page 4) and the council and court pages were read; the Curyung Tribal Constitution itself is not among the pages.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -243,6 +294,27 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: court-rules
+  title: Curyung Tribal Court Code
+  court: Curyung Tribal Court
+  link: http://www.curyungtribe.com/images/Tribal_Court_Codes_2017.pdf
+  detail: Court page links the 2017 Tribal Court Code.
+  source: curyung-tribal-council-website-tribalcourt-html
+  confidence: medium
+  verification: title-only
+  locator: document link
+  note: PDF not opened; file name shows 2017.
+nearby_state_courts:
+- state: AK
+  county: Dillingham Census Area
+  court: Superior Court for Dillingham Census Area
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Dillingham Census Area holds 100% of the land of Dillingham ANVSA (Census GEOID 6405), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bristol Bay Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

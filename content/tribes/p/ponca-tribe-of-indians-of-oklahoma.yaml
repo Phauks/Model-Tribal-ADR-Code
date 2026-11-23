@@ -182,6 +182,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: Listed as "Ponca Tribe of Indians of Oklahoma". Also on the Indian Health Service Self-Governance Tribes list (Ponca Tribe of Oklahoma (2000)); the list does not say which service unit or programs the compact covers.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Constitution (Ponca Tribe of Indians Oklahoma) (approved 1950) states it was adopted under Act
@@ -195,6 +203,207 @@ government_structure:
   as_of: '1950'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution pursuant to Oklahoma Indian Welfare Act of June 26, 1936
+  quote: offered by the Oklahoma Indian Welfare Act of June 26, 1936 (49 Stat. 1967), do establish this
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Preamble
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Business Committee
+  quote: The governing body of the Ponca Tribe of Indians shall be a Business
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: Committee consisting of seven members elected by a vote of the tribal membership.
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by vote of the tribal membership
+  quote: consisting of seven members elected by a vote of the tribal membership.
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: each committee member shall be four (4) years from the date of installation of office.
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: membership (1) a chairman, (2) a vice-chairman
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ponca Tribe of Indians of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Business Committee from its own membership
+  quote: The Business Committee so organized shall elect from within its own
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: membership (1) a chairman, (2) a vice-chairman, and from within or without, (3) a secretary-
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Third Saturday in March, from 2024
+  quote: Election Board on the third Saturday in March beginning in 2024 for those terms expiring in
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article IV, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: All members of the Ponca Tribe of Indians eighteen years of age or over
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article IV, Section 6
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: A five (5) member Election Board shall be created by electing tribal
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article IV, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Business Committee holds executive, legislative and judicial powers
+  quote: executive, legislative, and judicial powers of the Tribe including such powers as may in the
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article VIII, Section 2A
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal judicial system (optional, set up by Business Committee)
+  quote: Ponca Business Committee may, if it deems appropriate, establish a Tribal judicial system
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article VIII, Section 2A
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Referendum of adult members by majority vote
+  quote: and shall be effective if approved by a majority vote.
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article IX
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Suspension by four affirmative votes of Business Committee
+  quote: The Business Committee by four (4) affirmative votes may suspend any
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article V, Section 2
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 65% of last election's voters
+  quote: Upon receipt of a valid petition signed by at least sixty-five percent (65%)
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article V, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Ponca Tribe of Indians of Oklahoma
@@ -275,20 +484,15 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: mediation
-    title: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic Abuse
-      Cases Prohibited.
-    citation: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic
-      Abuse Cases Prohibited.
+    title: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic Abuse Cases Prohibited.
+    citation: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic Abuse Cases Prohibited.
     link: https://narf.org/nill/codes/ponca_oklahoma/index.html
     source: national-indian-law-library-code-codes-ponca-oklahoma
     confidence: medium
     verification: title-only
     as_of: '2013'
     locator: Table of Contents, under 'Tab C. Domestic and Family Violence Code'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
-      April 2013); the provision itself was not read. The heading it falls under is taken from the page
-      layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/p/ponca-tribe-of-indians-of-oklahoma.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 404.'
 gaming:
   compacts:
   - state: OK
@@ -373,6 +577,48 @@ gaming:
     locator: table row 196, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 196 lists the nation
       as "Ponca Tribe of Indians of Oklahoma".
+  indian_lands_opinions:
+  - parcel: Noble County, Oklahoma
+    legal_theory: Settlement of Land Claim
+    accepted: true
+    date: '2017-01-25'
+    link: https://www.nigc.gov?wpdmdl=2669&ind=2670
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ponca Tribe of Oklahoma, 2017-01-25
+    note: The list names the tribe as “Ponca Tribe of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV/CO-02-03
+    date: '2002-05-01'
+    link: https://www.nigc.gov?wpdmdl=8273&ind=8285
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/CO-02-03
+    note: The list titles the action “Ponca Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - closure-order
+    tracking_number: CO-02-03
+    date: '2002-05-08'
+    link: https://www.nigc.gov?wpdmdl=8272&ind=8284
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-02-03
+    note: The list titles the action “Ponca Tribe of Oklahoma” and gives its type as CO.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-PTO
+    date: '2013-05-13'
+    link: https://www.nigc.gov?wpdmdl=7744&ind=7751
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-PTO
+    note: The list titles the action “Ponca Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -386,6 +632,140 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: low
+  verification: inferred
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Ponca Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: filing-fees
+  title: Tribal District Court (Fees)
+  court: Ponca Tribal District Court
+  link: https://www.ponca-nsn.gov/tribal-district-court.html
+  detail: 'Filing fees: petition $100, motion $50, appeal $150, marriage license $50; service fees include certified mail $25.'
+  source: ponca-tribe-of-indians-of-oklahoma-tribal-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Fees
+  note: 'The source reads: “FILING FEES”.'
+- kind: forms
+  title: Forms
+  court: Ponca Tribal District Court
+  link: https://www.ponca-nsn.gov/forms.html
+  detail: Forms page linked from the Tribal District Court page; the court page says forms may be retrieved from the Court.
+  source: ponca-tribe-of-indians-of-oklahoma-tribal-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Tribal District Court page
+  note: 'The source reads: “Forms may be retrieved from the Court.”.'
+- kind: public-defender
+  title: Tribal District Court (Public Defender and Conflict Defender)
+  court: Ponca Tribal District Court
+  link: https://www.ponca-nsn.gov/tribal-district-court.html
+  detail: Page lists a Public Defender and a Conflict Defender (names omitted here); no eligibility information.
+  source: ponca-tribe-of-indians-of-oklahoma-tribal-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Tribal District Court page
+  note: 'The source reads: “Public Defender”.'
+- kind: bar-admission
+  title: Tribal District Court (Bar Association)
+  court: Ponca Tribal District Court
+  link: https://www.ponca-nsn.gov/tribal-district-court.html
+  detail: Page has a Bar Association heading; admission procedure not read in this pass.
+  source: ponca-tribe-of-indians-of-oklahoma-tribal-district-court
+  confidence: low
+  verification: inferred
+  locator: Tribal District Court page
+  note: 'The source reads: “BAR ASSOCIATION”. Heading only seen; details not confirmed.'
+nearby_state_courts:
+- state: OK
+  county: Noble County
+  court: District Court for Noble County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Noble County holds 60% of the land of Ponca OTSA (Census GEOID 5800), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OK
+  county: Kay County
+  court: District Court for Kay County
+  link: https://www.oscn.net/applications/oscn/start.asp?viewType=COURTS
+  source: state-trial-court-directory-ok
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Kay County holds 40% of the land of Ponca OTSA (Census GEOID 5800), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Ponca, 1817
+  signed: '1817-06-25'
+  statutes_at_large: 7 Stat. 155
+  kappler:
+    volume: 2
+    page: 140
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1817-0140
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 140 (Treaty with the Ponca, 1817; Kappler header "June 25, 1817 | 7 Stat., 155. | Proclamation, Dec. 26,1877.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ponca, 1825
+  signed: '1825-06-09'
+  statutes_at_large: 7 Stat. 247
+  kappler:
+    volume: 2
+    page: 225
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1825-0225
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 225 (Treaty with the Ponca, 1825; Kappler header "June 9, 1825. | 7 Stat., 247. | Proclamation, Feb 6, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ponca, 1858
+  signed: '1858-03-12'
+  statutes_at_large: 12 Stat. 997
+  kappler:
+    volume: 2
+    page: 772
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1858-0772
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 772 (Treaty with the Ponca, 1858; Kappler header "Mar. 12, 1858. | 12 Stats., 997. | Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ponca, 1865
+  signed: '1865-03-10'
+  statutes_at_large: 14 Stat. 675
+  kappler:
+    volume: 2
+    page: 875
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1865-0875
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 875 (Treaty with the Ponca, 1865; Kappler header "Mar. 10, 1865. | 14 Stat., 675. | Ratified Mar. 2, 1867. | Proclaimed Mar. 28, 1867.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

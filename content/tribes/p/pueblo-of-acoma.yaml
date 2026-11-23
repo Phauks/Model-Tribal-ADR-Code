@@ -145,6 +145,48 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Acoma, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: Listed as "Acoma Pueblo". Service unit named for Acoma, Canoncito and Laguna; no page found that lists the nations by full name. Operator from the "– Indian Health Service" tag in the Albuquerque Area PRC program list.
+- area: Albuquerque
+  service_unit: Acoma-Canoncito-Laguna Service Unit
+  source: indian-health-service-albuquerque-contract-health-service-programs
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Acoma-Canoncito-Laguna SU – IHS".'
+  operator: indian-health-service
+governance:
+- aspect: governing-body
+  value: Acoma Tribal Council
+  quote: Acoma Tribal Council 2025
+  source: pueblo-of-acoma-website-departments-administration-acoma-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council and court pages list members and staff by name, so only the existence of the council and court is given as facts.'
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pueblo of Acoma, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: judiciary
+  value: Acoma Tribal Court
+  quote: Acoma Tribal Court
+  source: pueblo-of-acoma-website-departments-acoma-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council and court pages list members and staff by name, so only the existence of the council and court is given as facts.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -299,6 +341,75 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Listed by the Tribal Law and Policy Institute among the Tribes that have implemented special Tribal criminal jurisdiction under the Violence Against Women Act Reauthorization Act of 2022 (25 U.S.C. § 1304).
+  source: tribal-law-and-policy-institute-special-tribal-criminal-jurisdiction-chart
+  confidence: medium
+  verification: inferred
+  as_of: '2026-08-11'
+  locator: Chart row 34, "Implemented VAWA STCJ" column
+  note: Listed as "Pueblo of Acoma". The chart is undated (file last modified Aug. 11, 2026) and comes from a Justice Department technical-assistance provider, not the Department itself.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: New Mexico Children, Youth and Families Department
+  agreement: Title IV-E agreement (maintenance costs only)
+  state: NM
+  date: '1997'
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.I, New Mexico
+  note: 'The source reads: “Acoma Pueblo”. The report says the eleven agreements "were entered into in 1997 and are still in effect" and that a new agreement was being vetted. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: NM
+  county: Cibola County
+  court: District Court for Cibola County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Cibola County holds 85% of the land of Acoma Pueblo (Census GEOID 0010), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Socorro County
+  court: District Court for Socorro County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Socorro County holds 12% of the land of Acoma Pueblo (Census GEOID 0010), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NM
+  county: Catron County
+  court: District Court for Catron County
+  link: https://nmcourts.gov/courts-by-county/
+  source: state-trial-court-directory-nm
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Catron County holds 3% of the land of Acoma Pueblo (Census GEOID 0010), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Pueblo of Acoma land grant, New Mexico
+  method: statute
+  instrument: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  date: '1858-12-22'
+  detail: First set aside
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  locator: 11 Stat. 374
+  note: 'The instrument reads: “the Pueblo land claims in the Territory of New Mexico designated in the corrected lists as ... B, Pueblo of Acoma in the county of Valencia ... be, and they are hereby, confirmed”. Congress confirmed the Pueblo''s land claim (Spanish-era grant) as reported by the New Mexico surveyor general and directed the Commissioner of the General Land Office to survey and issue a patent. The act confirms an existing Spanish/Mexican grant rather than setting land aside de novo; the underlying Spanish grant dates are not given in the act. Later patents (1864 onward) and additions by executive order/statute are not covered here.'
 memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations

@@ -41,6 +41,23 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: The nation's own website, found by web search and opened to confirm it is the nation's.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribal Council
+  source: san-fernando-band-of-mission-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page lists officers by title with names; the Elders Council page is under construction, and no selection rules, terms or powers are stated.'
+- aspect: head-of-government
+  value: Chairwoman
+  quote: Chairwoman
+  source: san-fernando-band-of-mission-indians-website-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Government page lists officers by title with names; the Elders Council page is under construction, and no selection rules, terms or powers are stated.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -166,6 +166,15 @@ tribal_insignia_database_entries:
   as_of: '2026-11-21'
   verification: bulk-import
   locator: Serial number 89001897
+languages:
+- name: Cupeño
+  language_tag: cup
+  source: pala-band-language-revitalization
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Language Revitalization
+  note: 'The source reads: “Online Cupeño Language Classes”.'
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency
@@ -174,6 +183,167 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pala Band of Mission Indians
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Pala Band of Mission Indians".
+governance:
+- aspect: form
+  value: Constitution (adopted November 1994)
+  quote: The Tribe is governed by a constitution adopted in November 1994 and certified by the BIA Pacific Region in 1997 retroactive to 1994.
+  source: pala-band-of-mission-indians-website-government-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The facts come from the Executive Committee page; the constitution and ordinances are listed by title only.'
+- aspect: governing-body
+  value: Executive Committee
+  quote: is governed by a six-member Executive Committee
+  source: pala-band-of-mission-indians-website-government-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The facts come from the Executive Committee page; the constitution and ordinances are listed by title only.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: is governed by a six-member Executive Committee
+  source: pala-band-of-mission-indians-website-government-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The facts come from the Executive Committee page; the constitution and ordinances are listed by title only.'
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: Committee members are elected by the General Council
+  source: pala-band-of-mission-indians-website-government-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The facts come from the Executive Committee page; the constitution and ordinances are listed by title only.'
+- aspect: governing-body-term
+  value: 1 year (Secretary 2 years)
+  quote: All officers shall be elected for a term of one year, or until
+  source: constitution-pala-band-of-mission-indians-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-11-27'
+  locator: Article 4, Elections (as amended by Amendment No. 2)
+  document_version:
+    document: pala-band-of-mission-indians-constitution
+    version: 1973-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1959 Articles of Association (approved 1960) with Amendment No. 2 (approved 27 November 1973) and its vote tables; facts follow the amended text where they differ, and the scan is heavily garbled.'
+- aspect: general-council
+  value: All qualified voters 18 and older
+  quote: General Council, which includes all qualified voters 18 years of age and older
+  source: pala-band-of-mission-indians-website-government-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The facts come from the Executive Committee page; the constitution and ordinances are listed by title only.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman
+  source: pala-band-of-mission-indians-website-government-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The facts come from the Executive Committee page; the constitution and ordinances are listed by title only.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pala Band of Mission Indians
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: All officers shall be elected for a term of one year, or until
+  source: constitution-pala-band-of-mission-indians-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-11-27'
+  locator: Article 4, Elections (as amended by Amendment No. 2)
+  document_version:
+    document: pala-band-of-mission-indians-constitution
+    version: 1973-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1959 Articles of Association (approved 1960) with Amendment No. 2 (approved 27 November 1973) and its vote tables; facts follow the amended text where they differ, and the scan is heavily garbled.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer, two adult members of the Band
+  quote: a Secretary and a Treasurer, and two adult members of the Bond
+  source: constitution-pala-band-of-mission-indians-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-11-27'
+  locator: Article 3, Governing Body (as amended by Amendment No. 2)
+  document_version:
+    document: pala-band-of-mission-indians-constitution
+    version: 1973-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1959 Articles of Association (approved 1960) with Amendment No. 2 (approved 27 November 1973) and its vote tables; facts follow the amended text where they differ, and the scan is heavily garbled.'
+- aspect: elections
+  value: Every 2 years in November
+  quote: Elections are held every two years in November.
+  source: pala-band-of-mission-indians-website-government-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The facts come from the Executive Committee page; the constitution and ordinances are listed by title only.'
+- aspect: voting-age
+  value: '18'
+  quote: which includes all qualified voters 18 years of age and older
+  source: pala-band-of-mission-indians-website-government-executive-committee
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The facts come from the Executive Committee page; the constitution and ordinances are listed by title only.'
+- aspect: judiciary
+  value: Pala Tribal Court
+  quote: Pala Tribal Court
+  source: pala-band-of-mission-indians-website-public-safety-pala-tribal-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The facts come from the Executive Committee page; the constitution and ordinances are listed by title only.'
+- aspect: amendment
+  value: Majority vote of General Council, effective on Commissioner approval
+  quote: These Articles of Association may be amended by a majority
+  source: constitution-pala-band-of-mission-indians-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-11-27'
+  locator: Article 10 (renumbered Article 11 by Amendment No. 2)
+  document_version:
+    document: pala-band-of-mission-indians-constitution
+    version: 1973-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1959 Articles of Association (approved 1960) with Amendment No. 2 (approved 27 November 1973) and its vote tables; facts follow the amended text where they differ, and the scan is heavily garbled.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20 percent of voters
+  quote: Upon receipt of a petition signed by 20 per cent of the
+  source: constitution-pala-band-of-mission-indians-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-11-27'
+  locator: Article 4, Elections and Recall
+  document_version:
+    document: pala-band-of-mission-indians-constitution
+    version: 1973-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1959 Articles of Association (approved 1960) with Amendment No. 2 (approved 27 November 1973) and its vote tables; facts follow the amended text where they differ, and the scan is heavily garbled.'
+- aspect: other
+  value: Executive Committee with administrative powers (Chairman, Vice-Chairman, Secretary, Treasurer, two members)
+  quote: Executive Committee consisting of a Chairman, a Vice-Chairman
+  source: constitution-pala-band-of-mission-indians-1973-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1973-11-27'
+  locator: Article 3, Governing Body (as amended by Amendment No. 2)
+  document_version:
+    document: pala-band-of-mission-indians-constitution
+    version: 1973-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1959 Articles of Association (approved 1960) with Amendment No. 2 (approved 27 November 1973) and its vote tables; facts follow the amended text where they differ, and the scan is heavily garbled.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -340,6 +510,48 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+court_practice:
+- kind: filing-fees
+  title: Fees & Costs (Pala Tribal Court)
+  court: Pala Tribal Court
+  link: https://www.palatribe.com/public-safety/pala-tribal-court/
+  detail: 'Fee table: guardianship $75 to $100 (parents agree) or $100 to $250; adoption $100 to $250 or $200 to $350 (includes termination of parental rights); child support $50 to $75 or $100 to $250; termination of parental rights $100 to $250; civil violation payment plan request $40; electronic filing $50 in addition to the filing fee; copies $0.25 to $0.75 per page; additional certified copies $10.'
+  source: pala-band-of-mission-indians-website-public-safety-pala-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Fees & Costs
+  note: 'The source reads: “Type of Case or Filing, Fee or Cost”.'
+- kind: court-rules
+  title: PBMI Policy 11 Pala Court and Civil Procedure Rules (amended 04/03/2024)
+  court: Pala Tribal Court
+  link: https://www.palatribe.com/wp-content/uploads/2025/11/PBMI-Policy-11-Pala-Court-and-Civil-Procedure-Rules-Amended-04032024.pdf
+  detail: Linked from the court page with the Pala ordinances.
+  source: pala-band-of-mission-indians-website-public-safety-pala-tribal-court
+  confidence: high
+  verification: title-only
+  locator: ordinance list
+  note: 'The source reads: “Pala Court and Civil Procedure Rules”. PDF not opened.'
+nearby_state_courts:
+- state: CA
+  county: San Diego County
+  court: Superior Court for San Diego County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: San Diego County holds 100% of the land of Pala Reservation (Census GEOID 2635), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Pala Reservation, San Diego County, California
+  method: executive-order
+  instrument: Exec. Order of Dec. 27, 1875, 1 Kappler 820-821
+  date: '1875-12-27'
+  detail: First set aside
+  source: executive-order-1875-12-27-mission-indian-reservations
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 820-821
+  note: 'The instrument reads: “Pala. — Township 9 south, range 2 west ... withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. An earlier Jan. 31, 1870 order set apart the "San Pasqual and Pala Valleys" but was revoked Feb. 17, 1871; the 1875 order is the first surviving one. The 1875 tract was reduced later.'
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

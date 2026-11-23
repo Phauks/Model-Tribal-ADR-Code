@@ -196,6 +196,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: Listed as "Klamath Tribes".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Klamath Tribes
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Klamath Tribes
@@ -280,29 +297,22 @@ dispute_resolution:
   forums:
   - kind: peacemaking
     name: Klamath Tribes Peacemaker Court
-    description: Part of the Tribal Court system providing a non-adversarial alternative using culturally
-      appropriate mediation to reach conciliatory results rather than court-imposed sanctions, and giving
-      formal support, structure and enforcement to traditional Tribal methods of resolving disputes.
-    legal_basis: Klamath Tribal Code, Title 2, Chapter 18 (Klamath Peacemaker Ordinance), 18.01-18.15;
-      Tribal Court Ordinance, Title 2, Chapter 11
+    description: Part of the Tribal Court system providing a non-adversarial alternative using culturally appropriate mediation to reach conciliatory results rather than court-imposed sanctions, and giving formal support, structure and enforcement to traditional Tribal methods of resolving disputes.
+    legal_basis: Klamath Tribal Code, Title 2, Chapter 18 (Klamath Peacemaker Ordinance), 18.01-18.15; Tribal Court Ordinance, Title 2, Chapter 11
     case_types:
     - civil
     - juvenile
     - other
     participation: voluntary
-    relationship_to_court: Persons with a dispute, parties to any Tribal Court case, and juveniles in
-      Tribal or state court Juvenile Matters are eligible; all parties must consent before transfer, and
-      participation is entirely voluntary.
-    enforcement: A written Resolution signed by the parties and peacemaker becomes an order and judgment
-      of the Tribal Court when the parties so intend and the Chief Judge signs it.
+    relationship_to_court: Persons with a dispute, parties to any Tribal Court case, and juveniles in Tribal or state court Juvenile Matters are eligible; all parties must consent before transfer, and participation is entirely voluntary.
+    enforcement: A written Resolution signed by the parties and peacemaker becomes an order and judgment of the Tribal Court when the parties so intend and the Chief Judge signs it.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Klamath-Title_2_Chapter_18_-_The_Klamath_Peacemaker_Ordinance.pdf
     source: klamath-title-2-chapter-18-peacemaker-ordinance
     confidence: medium
     verification: read-in-full
     as_of: '2008-11-15'
     locator: 18.01-18.06, 18.12
-    note: Read from OCR. The court keeps a roster of at least three contracted peacemakers. Additional
-      procedures for juvenile matters are in 18.12.
+    note: Read in full on 2026-11-23 from page images (The Klamath Peacemaker Ordinance, Klamath Tribal Code Title 2 Chapter 18; Date adopted 11/15/08). Read from OCR. The court keeps a roster of at least three contracted peacemakers. Additional procedures for juvenile matters are in 18.12. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 213.
   provisions:
   - kind: peacemaking
     title: The Klamath Peacemaker Ordinance
@@ -323,12 +333,8 @@ dispute_resolution:
     verification: read-in-full
     as_of: '1996-08-15'
     locator: '36.11'
-    note: Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision
-      is left for the lead author's review. Read from a scanned copy by OCR.
-    summary: When authorizing a specific bond issue, the General Council or Executive Committee may provide
-      a dispute resolution system for that issue, including waiving the need to go first to tribal bodies
-      or courts, broader waivers of sovereign immunity, arbitrator powers differing from American Arbitration
-      Association rules, and federal and state court jurisdiction.
+    note: Read in full on 2026-11-23 from page images (Bond Ordinance, Klamath Tribal Code Title 5 Chapter 36; Date Adopted 8/15/96 (Executive Committee Aug 15, 1996, ratified by General Council Aug 17, 1996)). Read in full on 2026-11-22 (review queue item 2). Whether this is a dispute resolution provision is left for the lead author's review. Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 215.
+    summary: When authorizing a specific bond issue, the General Council or Executive Committee may provide a dispute resolution system for that issue, including waiving the need to go first to tribal bodies or courts, broader waivers of sovereign immunity, arbitrator powers differing from American Arbitration Association rules, and federal and state court jurisdiction.
   - kind: other
     title: 45.63 Dispute Resolution Between Management Contractor or Tribes and Customers.
     citation: Klamath Tribal Code Title 7 Chapter 45, Gaming Ordinance, 45.63
@@ -338,12 +344,8 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2006-03-23'
     locator: '45.63'
-    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
-    summary: Customer complaints about bingo and other Class II games are first handled on site by the
-      employee manager or management contractor (or an alternate), then, if unresolved, may be referred
-      at the customer's request to the Tribal Gaming Corporation's personnel office by written request,
-      and a person aggrieved by that decision may petition the Gaming Regulatory Commission within thirty
-      business days, which may decline a hearing but whose decision after a hearing is final.
+    note: Read in full on 2026-11-23 from page images (Gaming Ordinance, Klamath Tribal Code Title 7 Chapter 45; Date Adopted 5/14/94; Most Recent Amendment 3/23/06). Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 216.
+    summary: Customer complaints about bingo and other Class II games are first handled on site by the employee manager or management contractor (or an alternate), then, if unresolved, may be referred at the customer's request to the Tribal Gaming Corporation's personnel office by written request, and a person aggrieved by that decision may petition the Gaming Regulatory Commission within thirty business days, which may decline a hearing but whose decision after a hearing is final.
   - kind: peacemaking
     title: 11.13 Klamath Peacemaker Court.
     citation: Klamath Tribal Code Title 2 Chapter 11, Tribal Court Ordinance, 11.13 (with 11.15(c))
@@ -353,10 +355,8 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2003-11-22'
     locator: 11.13 (with 11.15(c))
-    note: Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR.
-    summary: Establishes the Klamath Peacemaker Court with limited jurisdiction over matters arising under
-      and authorized by the Klamath Peacemaker Ordinance, and the composition section places it under
-      the Chief Judge's oversight as a court of one or more peacemakers.
+    note: Read in full on 2026-11-23 from page images (Tribal Court Ordinance, Klamath Tribal Code Title 2 Chapter 11; Date Adopted 11/25/00; Most Recent Amendment 11/22/03). Read in full on 2026-11-22 (review queue item 2). Read from a scanned copy by OCR. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 217.
+    summary: Establishes the Klamath Peacemaker Court with limited jurisdiction over matters arising under and authorized by the Klamath Peacemaker Ordinance, and the composition section places it under the Chief Judge's oversight as a court of one or more peacemakers.
   database_listings:
   - title: Informal Conference for Juvenile Justice
     citation: Klamath Tribal Code. Title 2 Tribal Court/Law and Order Code. Chapter 15 Juvenile Ordinance.
@@ -624,6 +624,52 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Tribal Agreement [Klamath Tribe]
+  state: OR
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for OR
+  note: 'The source reads: “Tribal Agreement [Klamath Tribe]”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: Oregon Department of Human Services
+  agreement: Title IV-E agreement (administration, training and maintenance)
+  state: OR
+  date: 2010-05
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.M, Oregon
+  note: 'The source reads: “The Klamath Tribe; executed in May 2010”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: OR
+  county: Klamath County
+  court: Circuit Court for Klamath County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Klamath County holds 100% of the land of Klamath Reservation (Census GEOID 1785), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Klamath, etc., 1864
+  signed: '1864-10-14'
+  statutes_at_large: 16 Stat. 707
+  kappler:
+    volume: 2
+    page: 865
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-klamath-etc-1864-0865
+  signatory: Klamath; Modoc; Yahooskin
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 865 (Treaty with the Klamath, etc., 1864; Kappler header "Oct. 14, 1864. | 16 Stats., 707. | Ratified, July 2, 1866. | Proclaimed Feb. 17, 1870.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

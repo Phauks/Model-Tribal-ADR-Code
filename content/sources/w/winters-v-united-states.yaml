@@ -45,6 +45,46 @@ supreme_court:
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep207/usrep207564/usrep207564.pdf
   note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating."
   checked: '2026-11-22'
+courtlistener:
+  cluster: 96748
+  citation: "207 U.S. 564"
+  case_name: "Winters v. United States"
+  link: https://www.courtlistener.com/opinion/96748/winters-v-united-states/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep207564/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/96748/winters-v-united-states/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/207/564/
+    unchecked: true
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22207%20U.S.%20564%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=207%20U.S.%20564
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=207%20U.S.%20564
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Winters_v._United_States
 rights:
   status: no-permission-needed
   basis: us-government-work

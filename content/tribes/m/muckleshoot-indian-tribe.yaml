@@ -162,6 +162,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Muckleshoot Indian Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Muckleshoot Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Muckleshoot Tribe (2003)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Muckleshoot Indian Tribe, Washington" among organizations under constitutions
@@ -186,6 +194,171 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution approved under the Indian Reorganization Act
+  quote: In 1936, the Tribe formally reorganized its government and adopted a constitution approved by the Secretary of the Interior under the Indian Reorganization Act.
+  source: muckleshoot-indian-tribe-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council has full authority over the sale, lease, and dispensation of Tribal land, manages all the Tribe’s economic and business affairs, and regulates its domestic affairs.
+  source: muckleshoot-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 9 members
+  quote: The Muckleshoot Indian Tribe is governed by nine elected members of the
+  source: muckleshoot-indian-tribe-website-tribal-govt
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected
+  quote: The Muckleshoot Indian Tribe is governed by nine elected members of the
+  source: muckleshoot-indian-tribe-website-tribal-govt
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: duly elected to serve 3 years, three being elected each year.
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 2
+  document_version:
+    document: muckleshoot-indian-tribe-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: General council of voters, called annually
+  quote: of the tribal council shall call a general council annually on election
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Bylaws, Article VI, Section 2
+  document_version:
+    document: muckleshoot-indian-tribe-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chair
+  quote: Tribal Council Chair
+  source: muckleshoot-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Muckleshoot Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the council from its members
+  quote: from within its own number, (1) a chairman, (2) a vice chairman, and from
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 3
+  document_version:
+    document: muckleshoot-indian-tribe-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice chairman, secretary, treasurer
+  quote: within or without, (3) a secretary, (4) a treasurer, and may appoint
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 3
+  document_version:
+    document: muckleshoot-indian-tribe-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: Tribe who are 21 years of age or over, and who have maintained legal residence
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article IV, Section 1
+  document_version:
+    document: muckleshoot-indian-tribe-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: The tribal council
+  quote: with the rules and regulations laid down by the tribal council.
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article IV, Section 5
+  document_version:
+    document: muckleshoot-indian-tribe-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Muckleshoot Tribal Court administers the law pursuant to the Muckleshoot Code of Laws and subsequent Ordinances
+  source: muckleshoot-indian-tribe-website-tribal-govt
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority of voters in an election, then Secretary approval
+  quote: and if a majority of those voting shall approve the amendment submitted,
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article IX
+  document_version:
+    document: muckleshoot-indian-tribe-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: it shall be referred to the Secretary of the Interior, and if approved,
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article IX
+  document_version:
+    document: muckleshoot-indian-tribe-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of the council
+  quote: The tribal council may by a two-thirds vote
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article V, Section 2
+  document_version:
+    document: muckleshoot-indian-tribe-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Muckleshoot Indian Tribe
@@ -298,10 +471,7 @@ dispute_resolution:
     verification: title-only
     as_of: '2012'
     locator: Table of Contents, under 'Chapter 12.06 Voluntary Safety Plans and Agreements'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
-      July 2012); the provision itself was not read. The heading it falls under is taken from the page
-      layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/m/muckleshoot-indian-tribe.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 304.'
   database_listings:
   - title: Dismissal for Alternative Processes in Juvenile Justice
     citation: Muckleshoot Tribal Code. Title 7 Juvenile Delinquency Code. 7.09.040 Discretionary Dismissal.
@@ -620,6 +790,50 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: WA
+  county: King County
+  court: Superior Court for King County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: King County holds 94% of the land of Muckleshoot Reservation (Census GEOID 2375), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WA
+  county: Pierce County
+  court: Superior Court for Pierce County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Pierce County holds 6% of the land of Muckleshoot Reservation (Census GEOID 2375), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Dwamish; Sammamish; Smalhkamish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Dwamish (Duwamish) people; Muckleshoot Tribe includes Duwamish descendants (Duwamish Tribe itself is not federally recognized). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+land_establishment:
+- land_area: Muckleshoot Indian Reservation, Washington Territory
+  method: executive-order
+  instrument: Exec. Order of Apr. 9, 1874, 1 Kappler 918
+  date: '1874-04-09'
+  detail: First set aside
+  source: executive-order-1874-04-09-muckleshoot-reservation
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 919
+  note: 'The instrument reads: “withdrawn from sale or other disposition, and set apart as the Muckleshoot Indian Reservation, for the exclusive use of the Indians in that locality”. The order says it is "supplemental to the action of the Department approved by the President January 20, 1857" (Medicine Creek treaty lands); that 1857 action was not located, so it is possible the 1857 action was the true first set-aside.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

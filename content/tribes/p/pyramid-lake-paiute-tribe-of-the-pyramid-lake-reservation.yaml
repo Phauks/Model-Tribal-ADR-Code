@@ -182,6 +182,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Pyramid Lake Paiute Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes. Page (sic "Pauite") says Indian Health Service provides IT, purchased/referred care and administration to the listed tribes while the tribes administer direct healthcare operations.'
+- area: Phoenix
+  service_unit: Schurz Service Unit
+  source: indian-health-service-phoenix-schurz-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Pyramid Lake Pauite Tribe".'
+  operator: tribal
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Pyramid Lake Paiute Tribe, Nevada" among organizations under constitutions approved
@@ -206,6 +223,171 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution approved under section 16 of the Indian Reorganization Act
+  quote: in nrcordnnce wit 1 section 16 of the Indin.n Reorg.n.nization
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Certification of Adoption
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: governing-body
+  value: Pyramid Lake Paiute Tribal Council
+  quote: shall consist of 1t council known as the Pyramid Lnkc Pn.iute Tribu.1
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article III, Section 1
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: governing-body-size
+  value: 10 members
+  quote: composed of ten councilmen
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article III, Section 2
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: elected bv secret ballot.
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article III, Section 2
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: hold office for n tenn of two years
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article III, Section 4
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: head-of-government
+  value: Council chairman
+  quote: conncil chairman
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article III, Section 3
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the council from its own members
+  quote: elect from its own
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article III, Section 3
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: other-officers
+  value: Vice-chairman, secretary, treasurer
+  quote: vice chairmant and from within
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article III, Section 3
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: elections
+  value: Every 2 years
+  quote: elections shall bli held every two yen1·s
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article IV, Section 1
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: voting-age
+  value: '21'
+  quote: 21 years of 11ge. or over
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article IV, Section 4
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: judiciary
+  value: Tribal court established by council ordinance
+  quote: of a ti·ibu.l court upon the reservation.
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election
+  quote: may be amendecl by a majority vot.e
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article IX
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of the council
+  quote: two-1 hit·ds vote of tho council members
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-01-15'
+  locator: Article V, Section 2
+  document_version:
+    document: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Scanned 1936 text with heavy reading errors; several quotes are copied as garbled in the extract.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -512,6 +694,17 @@ gaming:
     locator: table row 217, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 217 lists the nation
       as "Pyramid Lake Paiute Tribe". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Crosby Lodge, Washoe County, NV
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2005-09-27'
+    link: https://www.nigc.gov?wpdmdl=2578&ind=2579
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Pyramid Lake Paiute Tribe, 2005-09-27
+    note: The list names the tribe as “Pyramid Lake Paiute Tribe”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -526,6 +719,76 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: 'The Pyramid Lake Reservation was never under Nevada jurisdiction under the 1955 act: Washoe County petitioned and the Governor excluded it by proclamation of June 27, 1955, and the exclusion was never withdrawn. (Davis v. Warden, 88 Nev. 443, 446, 498 P.2d 1346 (1972).)'
+  source: davis-v-warden-1972
+  confidence: high
+  verification: read-in-full
+  locator: 88 Nev. at 446
+  note: The court held state courts lacked jurisdiction over Pyramid Lake members' crimes on the reservation and vacated the convictions. Nevada Supreme Court, 1972.
+court_practice:
+- kind: forms
+  title: Applications & Forms (Tribal Court page forms)
+  court: Pyramid Lake Paiute Tribal Court
+  link: https://plpt.nsn.us/tribal-court/
+  detail: Court page lists petitions including Petition for Waiver of Fees, Petition for Uncontested Divorce, Petition for Contested Divorce, Petition for Name Change, guardianship petitions and a Combined Petition to Establish Custody, Support and or Visitation.
+  source: pyramid-lake-paiute-tribal-court-bar-admission-forms
+  confidence: high
+  verification: title-only
+  locator: forms list
+  note: 'The source reads: “Petition for Uncontested Divorce”. Form PDFs not opened.'
+- kind: bar-admission
+  title: 2025 Advocate & Attorney List
+  court: Pyramid Lake Paiute Tribal Court
+  link: https://plpt.nsn.us/wp-content/uploads/2025/05/2025-Advocate-Attorney-List.pdf
+  detail: Court page links a 2025 list of admitted advocates and attorneys.
+  source: pyramid-lake-paiute-tribal-court-bar-admission-forms
+  confidence: high
+  verification: title-only
+  locator: document list
+  note: PDF not opened.
+- kind: public-defender
+  title: Pyramid Lake Tribal Court Staff (Defense Advocate)
+  court: Pyramid Lake Paiute Tribal Court
+  link: https://plpt.nsn.us/tribal-court/
+  detail: Court staff list names a Defense Advocate position alongside the Prosecutor.
+  source: pyramid-lake-paiute-tribal-court-bar-admission-forms
+  confidence: medium
+  verification: read-in-full
+  locator: Pyramid Lake Tribal Court Staff
+  note: 'The source reads: “Defense Advocate”. Position listed on staff roster; no separate defender page. Individual name omitted.'
+nearby_state_courts:
+- state: NV
+  county: Washoe County
+  court: District Court for Washoe County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Washoe County holds 100% of the land of Pyramid Lake Paiute Reservation (Census GEOID 3010), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+land_establishment:
+- land_area: Pyramid Lake (Truckee) Reserve, Nevada
+  method: other
+  instrument: Letter of Comm'r of Indian Affairs, Nov. 29, 1859, 1 Kappler 868
+  date: '1859-11-29'
+  detail: First set aside
+  source: letter-1859-11-29-pyramid-lake-walker-lake-reservations
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 868
+  note: 'The instrument reads: “reserving from sale and settlement, for Indian use, a tract of land in the northern portion of the valley of the Truckee River, including Pyramid Lake”. Administrative reservation requested of the General Land Office ("to respect said reservations upon the plats of survey"); not an executive order, but Kappler prints it as the first act in the reserve''s history, and the Exec. Order of Mar. 23, 1874 later confirmed the surveyed reservation. It is recorded as the original set-aside, though its legal form is a Commissioner''s reservation.'
+- land_area: Pyramid Lake Indian Reservation, Nevada
+  method: executive-order
+  instrument: Exec. Order of Mar. 23, 1874, 1 Kappler 869
+  date: '1874-03-23'
+  detail: Later change
+  source: executive-order-1874-03-23-pyramid-lake-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 869
+  note: 'The instrument reads: “the tract of country known and occupied as the Pyramid Lake Indian Reservation in Nevada, as surveyed by Eugene Monroe, in January, 1865”. Confirms and sets apart by order the surveyed reservation (withdrawn from sale and set apart for the Pah-Ute and other Indians residing thereon).'
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

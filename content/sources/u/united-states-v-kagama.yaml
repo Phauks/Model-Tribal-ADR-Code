@@ -47,6 +47,50 @@ supreme_court:
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep118/usrep118375/usrep118375.pdf
   note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating."
   checked: '2026-11-22'
+courtlistener:
+  cluster: 91705
+  citation: "118 U.S. 375"
+  case_name: "United States v. Kagama"
+  link: https://www.courtlistener.com/opinion/91705/united-states-v-kagama/
+  release: '2026-09-30'
+  checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep118375/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/91705/united-states-v-kagama/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/118/375/
+    unchecked: true
+  - site: cornell
+    label: "Cornell LII"
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/118/375
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22118%20U.S.%20375%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=118%20U.S.%20375
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=118%20U.S.%20375
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/United_States_v._Kagama
 rights:
   status: no-permission-needed
   basis: us-government-work

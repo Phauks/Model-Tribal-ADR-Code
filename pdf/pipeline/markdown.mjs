@@ -66,7 +66,15 @@ export function createMarkdown({ sourceKeys, glossaryIds }) {
     .use(container, "treatment", { validate: (info) => info.trim() === "treatment" })
     .use(container, "topics", { validate: (info) => info.trim() === "topics" })
     .use(container, "quote", { validate: (info) => info.trim() === "quote" })
-    .use(container, "analysis", { validate: (info) => /^analysis(?:\s+.+)?$/.test(info.trim()) });
+    .use(container, "analysis", { validate: (info) => /^analysis(?:\s+.+)?$/.test(info.trim()) })
+    // A picture, video or sound recording (site/src/lib/essays/figures.ts):
+    // ":::: figure KIND ADDRESS", or ":::: figure chart" with a table of the
+    // chart's numbers, caption paragraphs, then "::: description",
+    // "::: credit" and "::: transcript" parts, closed by "::::".
+    .use(container, "figure", { validate: (info) => /^figure\s+(?:(picture|video|sound)\s+\S+|chart)$/.test(info.trim()) })
+    .use(container, "description", { validate: (info) => info.trim() === "description" })
+    .use(container, "credit", { validate: (info) => info.trim() === "credit" })
+    .use(container, "transcript", { validate: (info) => info.trim() === "transcript" });
   markdown.disable("replacements");
   markdown.inline.ruler.before("link", "term_link", termLinkRule(glossaryIds));
   markdown.inline.ruler.before("link", "citation", citationRule(sourceKeys));

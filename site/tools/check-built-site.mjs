@@ -13,6 +13,8 @@
 //   0007" or "requests.md" (same section; Trevor, Nov. 22, 2026).
 // - The offline fingerprints belong to this build and list every page, so an
 //   update downloads only what changed (section 10, "Updates").
+// - The tiled map's data gives every land area in the table a dot inside the
+//   area's box that leads to its row (section 11).
 
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
@@ -94,6 +96,42 @@ for (const file of pages) {
 		const before = html.slice(Math.max(0, link.index - 160), link.index).replace(/<[^>]+>/g, ' ');
 		if (!/github/i.test(words) && !/github/i.test(before)) {
 			problem(`${name}: a link to GitHub does not say it goes to GitHub: ${link[0].slice(0, 160)}`);
+		}
+	}
+}
+
+const tileMapPath = path.join(output, 'nations/map/tile-map.json');
+const landAreasPath = path.join(output, 'nations/map/land-areas.json');
+if (!existsSync(tileMapPath) || !existsSync(landAreasPath)) {
+	problem('nations/map/tile-map.json or land-areas.json is missing from the build');
+} else {
+	const tileMap = JSON.parse(readFileSync(tileMapPath, 'utf8'));
+	const rows = new Set(JSON.parse(readFileSync(landAreasPath, 'utf8')).rows.map((row) => row.anchor));
+	if (tileMap.areas.length !== rows.size) problem(`tile-map.json has ${tileMap.areas.length} land areas; the table has ${rows.size}`);
+	for (const area of tileMap.areas) {
+		if (!rows.has(area.anchor)) problem(`tile-map.json: land area ${area.code} has no row in the table`);
+		if (!area.label?.trim()) problem(`tile-map.json: land area ${area.code} has no label`);
+		const [west, south, east, north] = area.bounds;
+		const [longitude, latitude] = area.point;
+		// An area across the 180th meridian has west greater than east.
+		const inside = latitude >= south && latitude <= north && (west > east || (longitude >= west && longitude <= east));
+		if (!inside) problem(`tile-map.json: land area ${area.code}'s dot is outside its box`);
+	}
+	// Each shaded view (src/lib/shaded-map-views.ts): every shaded area on the tiled map goes to a row its table has.
+	for (const [view, shading] of Object.entries(tileMap.shading ?? {})) {
+		const viewPath = path.join(output, `nations/map/views/${view}.json`);
+		if (!existsSync(viewPath)) {
+			problem(`nations/map/views/${view}.json is missing from the build`);
+			continue;
+		}
+		const body = JSON.parse(readFileSync(viewPath, 'utf8'));
+		const viewRows = new Set([...body.nationRows, ...body.areaRows].map((row) => row.anchor));
+		if (!body.drawing?.startsWith('<svg')) problem(`views/${view}.json has no drawing`);
+		for (const [code, area] of Object.entries(shading.areas)) {
+			if (!viewRows.has(area.anchor)) problem(`tile-map.json: ${view} sends land area ${code} to ${area.anchor}, which is not a row of its table`);
+		}
+		for (const [nation, office] of Object.entries(shading.offices ?? {})) {
+			if (!viewRows.has(office.anchor)) problem(`tile-map.json: ${view} sends the office of ${nation} to ${office.anchor}, which is not a row of its table`);
 		}
 	}
 }

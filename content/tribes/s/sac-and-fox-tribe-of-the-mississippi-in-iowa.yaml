@@ -155,6 +155,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Tribe of the Mississippi in Iowa
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: Listed as "Sac and Fox Tribe of the Mississippi".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Sac and Fox Tribe of the Mississippi in Iowa" among organizations under constitutions
@@ -178,6 +186,183 @@ government_structure:
   note: The text also cites the Act of June 26, 1936 (49 Stat. 1967); because the nation is outside Oklahoma
     and the ratification clause cites section 16 of the Indian Reorganization Act, it is recorded as the
     Indian Reorganization Act. Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and bylaws adopted under Section 16 of the Indian Reorganization Act
+  quote: in accordance with Section 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984)
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Certification of Adoption
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Sac and Fox Tribal Council
+  quote: The name of the governing body of this organization shall be the Sac and Fox Tribal Council.
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article III, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Tribal Council shall consist of seven members elected at large
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article IV, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: The Tribal Council shall consist of seven members elected at large
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article IV, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: the term of office of Tribal Council members, chosen at each general election, shall be four years
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VI, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief of the Council
+  quote: The officers of the Tribe shall consist of a Chief of the Council, an Assistant Chief of the Council
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VIII, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sac & Fox Tribe of the Mississippi in Iowa
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chair”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of the Tribal Council from its own members
+  quote: all of whom shall be elected by a majority vote of the Tribal Council from its own members
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VIII, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Assistant Chief, Secretary, Treasurer
+  quote: The officers of the Tribe shall consist of a Chief of the Council, an Assistant Chief of the Council
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VIII, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Third Tuesday of October in odd-numbered years
+  quote: The general election of the Tribal Council by the Tribe shall be held on the third Tuesday of October of each odd-numbered year beginning 1939
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article V, Section 2
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '21'
+  quote: Every member of the Tribe who is twenty-one years of age or over and who has been residing on the reservation for at least six months preceding any election
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Bylaws, Article IV, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of adult members at an election called by the Secretary
+  quote: This Constitution and Bylaws may be amended by a majority vote of the adult members of the Sac and Fox Tribe in Iowa voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article V
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article V
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by majority vote of Tribal Council for absences
+  quote: Any member of the Tribal Council who willfully fails to attend four consecutive meetings of the Tribal Council may be removed from office by a majority vote of the Tribal Council
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VIII, Section 2
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: Upon a petition signed by not less than thirty percent of the eligible voters of the Tribe
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article XII, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Sac & Fox Tribe of the Mississippi in Iowa - Code Table of Contents
@@ -404,6 +589,37 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Sac & Fox Tribe of the Mississippi
       in Iowa". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-03-02
+    date: '2003-04-30'
+    link: https://www.nigc.gov?wpdmdl=8251&ind=8262
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-03-02
+    note: The list titles the action “Sac & Fox Tribe of the Mississippi in Iowa” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: CO-03-02
+    date: '2003-05-12'
+    link: https://www.nigc.gov?wpdmdl=8250&ind=8261
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-03-02
+    note: The list titles the action “Sac & Fox Tribe of the Mississippi in Iowa” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-03-02 – OGPR
+    date: '2003-12-19'
+    link: https://www.nigc.gov?wpdmdl=8234&ind=8245
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-03-02 – OGPR
+    note: The list titles the action “Sac & Fox Tribe of the Mississippi in Iowa” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: optional-state
@@ -428,6 +644,245 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: state-jurisdiction-statute
+  value: repealed
+  detail: The 1948 act that gave Iowa criminal jurisdiction over offenses by or against Indians on the Sac and Fox (Meskwaki) Reservation was repealed on Dec. 11, 2018. (Pub. L. No. 115-301, 132 Stat. 4395.)
+  source: public-law-115-301
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 115-301, § 1, 132 Stat. 4395
+  note: 'Original grant: Act of June 30, 1948, ch. 759, 62 Stat. 1161, "jurisdiction is hereby conferred on the State of Iowa over offenses committed by or against Indians on the Sac and Fox Indian Reservation in that State" (marginal headnotes interleave in the scan text layer). Iowa civil jurisdiction (Iowa Code § 1.12) was already recorded and is separate. Also cites: statutes-at-large-62-1161.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Iowa Department of Human Services
+  agreement: Title IV-E agreement (administration, training and maintenance)
+  state: IA
+  date: '2006-07-16'
+  status: in-effect
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.D, Iowa
+  note: 'The source reads: “The Sac and Fox Tribe of Mississippi in Iowa and the Iowa Department of Human Services entered into a IV-E agreement”. The agreement continues indefinitely unless terminated with 90 days written notice, per the report. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: IA
+  county: Tama County
+  court: District Court for Tama County
+  link: https://www.iowacourts.gov/iowa-courts/district-court
+  source: state-trial-court-directory-ia
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Tama County holds 100% of the land of Sac and Fox/Meskwaki Settlement (Census GEOID 3280), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Wyandot, etc., 1789
+  signed: '1789-01-09'
+  statutes_at_large: 7 Stat. 28
+  kappler:
+    volume: 2
+    page: 18
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1789-0018
+  signatory: Sac
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 18 (Treaty with the Wyandot, etc., 1789; Kappler header "Jan. 9, 1789. | 7 Stat., 28. | Proclamation, Sept. 27, 1789.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, 1804
+  signed: '1804-11-03'
+  statutes_at_large: 7 Stat. 84
+  kappler:
+    volume: 2
+    page: 74
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1804-0074
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 74 (Treaty with the Sauk and Foxes, 1804; Kappler header "Nov. 3, 1804. | 7 Stat., 84. | Ratified Jan. 25, 1805. | Proclaimed Feb. 21, 1805.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Foxes, 1815
+  signed: '1815-09-14'
+  statutes_at_large: 7 Stat. 135
+  kappler:
+    volume: 2
+    page: 121
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-foxes-1815-0121
+  signatory: Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 121 (Treaty with the Foxes, 1815; Kappler header "Sept. 14, 1815. | 7 Stat., 135. | Ratified Dec. 26, 1815.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk, 1816
+  signed: '1816-05-13'
+  statutes_at_large: 7 Stat. 141
+  kappler:
+    volume: 2
+    page: 126
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-1816-0126
+  signatory: Sac
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 126 (Treaty with the Sauk, 1816; Kappler header "May 13, 1816. | 7 Stat., 141. | Proclamation, Dec. 30, 1816.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, 1822
+  signed: '1822-09-03'
+  statutes_at_large: 7 Stat. 223
+  kappler:
+    volume: 2
+    page: 202
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1822-0202
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 202 (Treaty with the Sauk and Foxes, 1822; Kappler header "Sept. 3, 1822. | 7 Stat., 223. | Proclamation, Feb. 13, 1823.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, 1824
+  signed: '1824-08-04'
+  statutes_at_large: 7 Stat. 229
+  kappler:
+    volume: 2
+    page: 207
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1824-0207
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 207 (Treaty with the Sauk and Foxes, 1824; Kappler header "Aug. 4, 1824. | 7 Stat., 229. | Proclamation, Jan. 18, 1825.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sioux, etc., 1825
+  signed: '1825-08-19'
+  statutes_at_large: 7 Stat. 272
+  kappler:
+    volume: 2
+    page: 250
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-etc-1825-0250
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 250 (Treaty with the Sioux, etc., 1825; Kappler header "Aug. 19, 1825. | 7 Stat., 272. | Proclamation. Feb. 6, 1826.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, etc., 1830
+  signed: '1830-07-15'
+  statutes_at_large: 7 Stat. 328
+  kappler:
+    volume: 2
+    page: 305
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305
+  signatory: Sac; Fox; Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, 1832
+  signed: '1832-09-21'
+  statutes_at_large: 7 Stat. 374
+  kappler:
+    volume: 2
+    page: 349
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1832-0349
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 349 (Treaty with the Sauk and Foxes, 1832; Kappler header "Sept. 21, 1832. | 7 Stat., 374. | Proclamation, Feb. 13, 1833.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Fox Tribe, 1836
+  signed: '1836-09-27'
+  statutes_at_large: 7 Stat. 516
+  kappler:
+    volume: 2
+    page: 473
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-fox-tribe-1836-0473
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 473 (Treaty with the Sauk and Fox Tribe, 1836; Kappler header "Sept. 27, 1836. | 7 Stat., 516. | Proclamation, Feb. 15, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, 1836
+  signed: '1836-09-28'
+  statutes_at_large: 7 Stat. 517
+  kappler:
+    volume: 2
+    page: 474
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1836-0474
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 474 (Treaty with the Sauk and Foxes, 1836; Kappler header "Sept. 28, 1836. | 7 Stat., 517. | Proclamation, Feb. 27, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, 1836
+  signed: '1836-09-28'
+  statutes_at_large: 7 Stat. 520
+  kappler:
+    volume: 2
+    page: 476
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1836-0476
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 476 (Treaty with the Sauk and Foxes, 1836; Kappler header "Sept. 28, 1836. | 7 Stat., 520. | Proclamation, Dec. 13, 1837.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, 1837
+  signed: '1837-10-21'
+  statutes_at_large: 7 Stat. 540
+  kappler:
+    volume: 2
+    page: 495
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1837-0495
+  signatory: Sac; Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 495 (Treaty with the Sauk and Foxes, 1837; Kappler header "Oct. 21, 1837. | 7 Stat., 540. | Proclamation, Feb. 21, 1838.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, 1842
+  signed: '1842-10-11'
+  statutes_at_large: 7 Stat. 596
+  kappler:
+    volume: 2
+    page: 546
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1842-0546
+  signatory: Sac; Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 546 (Treaty with the Sauk and Foxes, 1842; Kappler header "Oct.11, 1842. | 7 Stat., 596. | Proclamation, Mar. 23, 1843.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, 1859
+  signed: '1859-10-01'
+  statutes_at_large: 15 Stat. 467
+  kappler:
+    volume: 2
+    page: 796
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1859-0796
+  signatory: Sac and Fox of Mississippi
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 796 (Treaty with the Sauk and Foxes, 1859; Kappler header "Oct. 1, 1859. | 15 Stats., 467. | Ratified, June 27, 1860. | Proclaimed, July 9, 1860.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sauk and Foxes, 1867
+  signed: '1867-02-18'
+  statutes_at_large: 15 Stat. 495
+  kappler:
+    volume: 2
+    page: 951
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-1867-0951
+  signatory: Sauk and Fox
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 951 (Treaty with the Sauk and Foxes, 1867; Kappler header "Feb. 18, 1867. | 15 Stat., 495. | Ratified July 25, 1868. | Proclaimed Oct. 14, 1868.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Meskwaki Settlement, Iowa; Sauk and Fox of the Mississippi. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

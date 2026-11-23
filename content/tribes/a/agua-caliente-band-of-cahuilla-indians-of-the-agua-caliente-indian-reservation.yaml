@@ -185,6 +185,202 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California".
+governance:
+- aspect: form
+  value: Constitution and By-Laws
+  quote: CONSTITUTION AND BY-LAWS OF THE AGUA CALIENTE
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: shall be known as the Tribal Council.
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (a)
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: compromised of five members consisting of
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (a)
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Elections shall be by secret ballot and absentee
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (b), 3
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years for officers, 1 year for other members
+  quote: Officers shall be elected for a term of two years
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (b), 1-2
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Tribal Council shall preside over all meetings
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (f), 1
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: Elections shall be by secret ballot and absentee
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (b), 3
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Officers shall be elected for a term of two years
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (b), 1
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary
+  quote: three officers, namely; the Chairman, Vice-Chairman, Secretary and two
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (a)
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Each year on March 15
+  quote: Elections shall take place on March 15, at which time the Secretary
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (b), 3
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: who are 21 years of age and over are qualified voters at all elections
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (b), 4
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Tribal Council (selects election officers and tellers)
+  quote: The Council shall select election officers and tellers who shall
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (b), 5
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of duly qualified members at an election
+  quote: adopted by a majority vote of the duly qualified members
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article VIII
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by four-fifths vote of the Council
+  quote: require a four-fifths vote in order to be effective.
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (j)
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-half of eligible voters, then 3/5 majority
+  quote: Upon receipt of a petition signed by one-half of the eligible voters
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1957-04-18'
+  locator: Article IV, (k)
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -403,6 +599,16 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Riverside County
+  court: Superior Court for Riverside County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Riverside County holds 100% of the land of Agua Caliente Indian Reservation (Census GEOID 0020), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

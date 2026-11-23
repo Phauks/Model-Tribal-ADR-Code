@@ -152,6 +152,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Bay Mills Indian Community, Michigan
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "Bay Mills Indian Community, Michigan".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Bay Mills Indian Community, Michigan" among organizations under constitutions
@@ -176,6 +184,207 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of June 18, 1934
+  quote: in accordance with section 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984) as amended by the Act of June 15, 1935 (49 Stat. 378).
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Certification of Adoption
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: General Tribal Council
+  quote: The governing body of the Community shall be the General Tribal Council which shall be composed of all qualified voters of the Community.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Executive Council
+  quote: The five so elected shall constitute the Executive Council, which shall exercise the powers and duties delegated to it
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The five so elected shall constitute the Executive Council
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by secret ballot from General Tribal Council members
+  quote: The General Tribal Council shall elect from its own members who are twenty-one (21) years of age or over, by secret ballot
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: Members of the Executive Council shall hold office for a term of two (2) years.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All qualified voters of the Community
+  quote: The governing body of the Community shall be the General Tribal Council which shall be composed of all qualified voters of the Community.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  quote: a President, a Vice-President, a Secretary, a Treasurer, and one Councilman.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Bay Mills Indian Community, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Tribal Council from its members
+  quote: The General Tribal Council shall elect from its own members who are twenty-one (21) years of age or over, by secret ballot
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Members of the Executive Council shall hold office for a term of two (2) years.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer, Councilman
+  quote: a President, a Vice-President, a Secretary, a Treasurer, and one Councilman.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the Bay Mills Indian Community who is eighteen (18) years of age or over shall be entitled to vote
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Amendment V
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Executive Council
+  quote: and thereafter the Executive Council shall make such provisions for all elections.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 4
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This Constitution and By-laws may be amended by a majority vote of the qualified voters of the Community voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article VIII
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: no amendment shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article VIII
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of General Tribal Council
+  quote: The General Tribal Council may by a two-thirds affirmative vote expel any member of the Executive Council
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article V, Section 2
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -562,6 +771,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bay Mills Indian Community".
       Facilities as machine-extracted from the report text (verify): Bay Mills Resort & Casino. Name extracted
       from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Vanderbilt Site, Otsego, MI
+    legal_theory: Michigan Indian Lands Claims Settlement
+    accepted: false
+    date: '2010-12-21'
+    link: https://www.nigc.gov?wpdmdl=2641&ind=2642
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Bay Mills Indian Community, 2010-12-21
+    note: The list names the tribe as “Bay Mills Indian Community”.
+  - parcel: Vanderbilt Site, Otsego, MI
+    legal_theory: Indian Lands
+    accepted: false
+    date: '2010-12-21'
+    link: https://www.nigc.gov?wpdmdl=2639&ind=2640
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Bay Mills Indian Community, 2010-12-21
+    note: The list names the tribe as “Bay Mills Indian Community”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -575,6 +805,128 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Michigan is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Michigan. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Michigan Department of Human Services
+  agreement: Bay Mills Indian Community Title IV-E Agreement
+  state: MI
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for MI
+  note: 'The source reads: “Bay Mills Indian Community Title IV-E Agreement”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: tax-agreement
+  other_party: Michigan Department of Treasury
+  agreement: Tax agreement between the tribe and the State of Michigan (sales and use tax exemptions and related taxes)
+  state: MI
+  status: in-effect
+  source: michigan-department-of-treasury-sales-to-federally-recognized-indian-tribes
+  confidence: high
+  verification: bulk-import
+  locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
+  note: 'The source reads: “Bay Mills Indian Community”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page.'
+- kind: child-welfare-agreement
+  other_party: Michigan Department of Human Services
+  agreement: Title IV-E agreement
+  state: MI
+  date: 1999-07
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.E, Michigan
+  note: 'The source reads: “Bay Mills Indian Community, executed in July 1999 and amended on October 1, 2008”. Date is the execution date as reported; most were amended 2008-10-01. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: filing-fees
+  title: Fees (Bay Mills Tribal Court)
+  court: Bay Mills Tribal Court
+  link: https://baymillstribalcourt.org/fees/
+  detail: Page lists $40 per case, claim, affidavit or registration of a foreign judgment, and $15 for an appeal.
+  source: bay-mills-tribal-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Fees
+  note: 'The source reads: “$40 per case, claim, affidavit or registration of a foreign judgment”.'
+- kind: forms
+  title: Court Forms and Resources
+  court: Bay Mills Tribal Court
+  link: https://baymillstribalcourt.org/court-forms-resources/
+  detail: Documents include Petition for Change of Name, Petition for Emancipation, Motions in Civil Proceedings, Registration of Foreign Judgement, court rules on foreign judgments and electronic signatures, and a Memorandum Regarding Court Fees.
+  source: bay-mills-tribal-court-forms-public-defender
+  confidence: high
+  verification: title-only
+  locator: document list
+  note: 'The source reads: “Petition for Change of Name”. Documents not opened.'
+- kind: public-defender
+  title: Court Appointed Attorneys and Advocates
+  court: Bay Mills Tribal Court
+  link: https://baymillstribalcourt.org/wp-content/uploads/2018/11/Court-Appointed-Attorneys.pdf
+  detail: Forms and resources page lists a Court Appointed Attorneys and Advocates document (file uploaded 2018).
+  source: bay-mills-tribal-court-forms-public-defender
+  confidence: medium
+  verification: title-only
+  locator: document list
+  note: PDF not opened; not confirmed to be a public defender office.
+nearby_state_courts:
+- state: MI
+  county: Chippewa County
+  court: Circuit Court for Chippewa County
+  link: https://www.courts.michigan.gov/courts/trial-courts/
+  source: state-trial-court-directory-mi
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Chippewa County holds 100% of the land of Bay Mills Reservation (Census GEOID 0170), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+treaties:
+- title: Treaty with the Ottawa, etc., 1836
+  signed: '1836-03-28'
+  statutes_at_large: 7 Stat. 491
+  kappler:
+    volume: 2
+    page: 450
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-etc-1836-0450
+  signatory: Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 450 (Treaty with the Ottawa, etc., 1836; Kappler header "Mar. 28, 1836. | 7 Stat., 491. | Proclamation, May 27, 1836.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Bay Mills Indian Community: Sault/Bay Mills band is a Treaty of 1836 and 1855 party. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Ottawa and Chippewa, 1855
+  signed: '1855-07-31'
+  statutes_at_large: 11 Stat. 621
+  kappler:
+    volume: 2
+    page: 725
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ottawa-and-chippewa-1855-0725
+  signatory: Chippewa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 725 (Treaty with the Ottawa and Chippewa, 1855; Kappler header "July 31, 1855. | 11 Stat., 621. | Ratified April 15, 1856. | Proclaimed Sept. 10, 1856.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Bay Mills Indian Community: Sault/Bay Mills band is a Treaty of 1836 and 1855 party. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa of Sault Ste. Marie, 1855
+  signed: '1855-08-02'
+  statutes_at_large: 11 Stat. 631
+  kappler:
+    volume: 2
+    page: 732
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-sault-ste-marie-1855-0732
+  signatory: Chippewa of Sault Ste. Marie
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 732 (Treaty with the Chippewa of Sault Ste. Marie, 1855; Kappler header "Aug. 2, 1855. | 11 Stat. 631. | Ratified Apr. 15, 1856. | Proclaimed Apr. 24, 1856.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Bay Mills band was part of the Sault Ste. Marie Chippewa in 1855. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

@@ -207,6 +207,169 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Eklutna Native Village
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Eklutna Native Village". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Eklutna Native Village".'
+governance:
+- aspect: form
+  value: Traditional Tribal Government
+  quote: We have a Traditional Tribal Government, as in not formed under the IRA.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The people have entrusted their governing powers to the Tribal Council.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: Seven (7) Council Members serve three (3) year staggered terms.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by majority of qualified members
+  quote: by a majority of qualified members.
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section II
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Seven (7) Council Members serve three (3) year staggered terms.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  quote: Tribal Council President, Vice President, Secretary, and Treasurer have duties outlined in our Constitutions.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Eklutna Native Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice President, Secretary, Treasurer
+  quote: Tribal Council President, Vice President, Secretary, and Treasurer have duties outlined in our Constitutions.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually, in winter
+  quote: Annual elections occur in the winter.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older shall be
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section II
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: election-authority
+  value: Election committee appointed by the council
+  quote: committee appointed by the council whose duties shall be to
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section V
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: judiciary
+  value: Rule Keepers (Tribal Judges)
+  quote: Five (5) traditional Rule Keepers, (i.e. Tribal Judges) chosen by each prominent clan family.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Chosen by each clan family
+  quote: Five (5) traditional Rule Keepers, (i.e. Tribal Judges) chosen by each prominent clan family.
+  source: eklutna-native-village-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority of qualified voters in an election, 15% must vote
+  quote: This constitution may be amended by a
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIV, Section I
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: recall-and-removal
+  value: Removal by vote of at least 4 council members
+  quote: at least four (4) members of the council vote in favor of such
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section I
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: at least thirty percent (30%) of the eligible voters, and
+  source: constitution-eklutna-native-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section II
+  document_version:
+    document: eklutna-native-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated constitution with OCR damage and marginal notes; facts copied as printed.'
 justice_institutions:
 - kind: tribal-court
   name: Eklutna Tribal Court
@@ -260,6 +423,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Anchorage Municipality
+  court: Superior Court for Anchorage Municipality
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Anchorage Municipality holds 100% of the land of Eklutna ANVSA (Census GEOID 6450), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Cook Inlet Region Inc.
   relation: alaska-native-claims-settlement-act-regional-corporation

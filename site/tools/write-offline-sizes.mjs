@@ -25,7 +25,7 @@ const staticFolder = 'static';
 const skipped = new Set(['/manifest.webmanifest', '/icon.svg', '/edition.json', '/offline-sizes.json', '/offline-fingerprints.json', '/service-worker.js', '/_headers', '/_redirects', '/_routes.json']);
 /** Files the service worker never saves at all. */
 const neverSaved = new Set(['/edition.json', '/offline-sizes.json', '/offline-fingerprints.json', '/service-worker.js', '/_headers', '/_redirects', '/_routes.json']);
-const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/copies'];
+const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/copies', '/map-tiles', '/zip'];
 
 /**
  * The page a file belongs to: "/nations/x/__data.json" belongs to "/nations/x".
@@ -47,11 +47,12 @@ function under(address, section) {
 /**
  * Which collection a page or one of its data files belongs to.
  * @param {string} address
- * @returns {'nations' | 'glossary' | 'other'}
+ * @returns {'nations' | 'stories' | 'glossary' | 'other'}
  */
 export function collectionOf(address) {
 	const page = pageOf(address);
 	if (under(page, '/nations')) return 'nations';
+	if (under(page, '/stories')) return 'stories';
 	if (under(page, '/glossary')) return 'glossary';
 	return 'other';
 }
@@ -136,7 +137,7 @@ function main() {
 		console.error('Could not read the build version or start-up name from the built site.');
 		process.exit(1);
 	}
-	const bytes = { nations: 0, glossary: 0, other: 0 };
+	const bytes = { nations: 0, stories: 0, glossary: 0, other: 0 };
 	/** @type {Record<string, string>} */
 	const fingerprintedFiles = {};
 	/** @type {Record<string, string>} */
@@ -146,6 +147,8 @@ function main() {
 		const address = addressOf(file);
 		if (neverSaved.has(address) || /\/nations\/[^/]+\/image$/.test(address)) continue;
 		if (neverCached.some((prefix) => under(address, prefix))) continue;
+		// Files made to be downloaded into other programs, which the service worker never saves (downloadOnly there).
+		if (/\.(ris|bib|vcf|geojson)$/.test(address)) continue;
 		const content = readFileSync(path.join(output, file));
 		if (file.endsWith('.html')) {
 			const blanked = withoutBuild(content.toString('utf8'), version);
