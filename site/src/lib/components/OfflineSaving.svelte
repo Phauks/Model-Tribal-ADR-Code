@@ -329,7 +329,6 @@
 							{/each}
 						</ul>
 					{/if}
-					<p class="hint">When a nation asks us to remove a document, it is also removed from this device the next time you are online.</p>
 				</div>
 			</li>
 		</ul>

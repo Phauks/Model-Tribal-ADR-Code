@@ -1695,20 +1695,55 @@ sup.citation {
 	color: var(--color-ink-muted);
 }
 
-/* "Claimed by the nation", in place of the build's "Unclaimed" line (Trevor, Nov. 23, 2026). */
-.nation-claim {
+/*
+ * The status line on a page about a nation: "Unclaimed" or "Claimed by the
+ * nation" on its page, "Unreviewed" or "Reviewed by the nation" on a story
+ * (src/lib/review-status.ts; Trevor, Nov. 23, 2026).
+ */
+.review-status {
 	margin: var(--space-3) 0 var(--space-5);
 }
 
-.nation-claim-badge {
+.review-status a + a {
+	margin-left: var(--space-2);
+}
+
+.review-badge {
 	display: inline-flex;
 	align-items: center;
 	gap: var(--space-1);
 	margin-right: var(--space-2);
 	padding: 0 var(--space-2);
-	border: 1px solid var(--color-link);
+	border: 1px solid var(--color-control-border);
 	border-radius: 999px;
 	background: var(--color-surface);
-	color: var(--color-link);
 	font-weight: var(--font-weight-semibold);
+}
+
+.review-badge-verified {
+	border-color: var(--color-link);
+	color: var(--color-link);
+}
+
+/* Topics, methods and other short tags as badges (src/lib/components/TopicBadges.svelte; Trevor, Nov. 23, 2026). */
+.topic-badges,
+.summary-list dd > ul.topic-badges {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: var(--space-1);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	vertical-align: baseline;
+}
+
+.topic-badge {
+	display: inline-block;
+	padding: 0 var(--space-2);
+	border: 1px solid var(--color-line);
+	border-radius: 999px;
+	background: var(--color-surface);
+	font-size: 0.875em;
+	line-height: 1.6;
+	overflow-wrap: normal;
 }

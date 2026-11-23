@@ -22,9 +22,6 @@
 	<p>
 		Tribal court opinions come from the Caselaw Access Project at Harvard Law School Library, which released them without restriction in 2024. Each opinion is shown as its own page made from the project’s copy, with the publisher’s headnotes removed, and links to that copy.
 	</p>
-	<p>
-		A nation that wants one of its documents taken down, or a part of it redacted, can ask with the link beside it. The copy is taken down within seven days, before the request is decided (the same rule as any request to remove material).
-	</p>
 
 	{#if data.total === 0}
 		<p>No copies are listed yet.</p>
