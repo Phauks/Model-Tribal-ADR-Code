@@ -20,6 +20,8 @@
 		type PrintChoice,
 		type ShippingLevel
 	} from '#lib/book-order.ts';
+	import type { GiftChoice } from '#lib/checkout-gift.ts';
+	import CheckoutGift from '#lib/components/CheckoutGift.svelte';
 
 	/** Until the first edition exists, estimates use this page count. */
 	const estimatePages = 300;
@@ -29,7 +31,16 @@
 	let address = $state({ name: '', street1: '', street2: '', city: '', stateCode: '', postcode: '', countryCode: 'US', phone: '' });
 	let email = $state('');
 
-	let quote = $state<{ priceCents: number; pages: number; mode: string } | undefined>();
+	interface Speed {
+		level: ShippingLevel;
+		priceCents: number;
+		parts: { label: string; cents: number }[];
+	}
+	let quote = $state<{ pages: number; mode: string; speeds: Speed[]; giftReceiver: string | null } | undefined>();
+	const chosenSpeed = $derived(quote?.speeds.find((speed) => speed.level === shippingLevel));
+	// An optional gift to the project, added only if the reader picks one (docs/book-orders.md, "Adding a gift").
+	let gift = $state<GiftChoice>({ kind: 'none' });
+	let giftCents = $state<number | null>(0);
 	let problem = $state('');
 	let closedReason = $state('');
 	let busy = $state(false);
@@ -37,14 +48,15 @@
 	const estimate = $derived(estimatedPrintCost(choice, estimatePages));
 	const bookstore = $derived(soldInBookstores(choice));
 
-	// A price is for one set of choices and one address; any change asks again.
+	// Prices are for one book and one postal code; changing either asks again.
+	// Choosing another speed, or filling in the street, keeps them.
 	$effect(() => {
-		JSON.stringify([choice, shippingLevel, address]);
+		JSON.stringify([choice, address.countryCode, address.stateCode, address.postcode]);
 		quote = undefined;
 	});
 
 	function payload() {
-		return JSON.stringify({ choice, shippingLevel, address, email });
+		return JSON.stringify({ choice, shippingLevel, address, email, gift });
 	}
 
 	async function getPrice() {
@@ -55,7 +67,10 @@
 			const answer = await response.json();
 			if (response.status === 503) closedReason = answer.reason;
 			else if (!answer.available) problem = answer.reason;
-			else quote = answer;
+			else {
+				quote = answer;
+				if (!answer.speeds.some((speed: Speed) => speed.level === shippingLevel)) shippingLevel = answer.speeds[0].level;
+			}
 		} catch {
 			problem = 'The price could not be fetched. Check your connection and try again.';
 		} finally {
@@ -169,39 +184,70 @@
 		</div>
 
 		<fieldset>
+			<legend>Price and shipping</legend>
+			<p class="muted">Lulu prices each copy for where it goes. The postal code is enough to see every shipping speed.</p>
+			<div class="field"><label for="ship-country">Country (two letters)</label><input id="ship-country" class="short" type="text" autocomplete="country" maxlength="2" bind:value={address.countryCode} /></div>
+			<div class="field"><label for="ship-state">State or province</label><input id="ship-state" class="short" type="text" autocomplete="address-level1" bind:value={address.stateCode} /></div>
+			<div class="field"><label for="ship-postcode">Postal code</label><input id="ship-postcode" class="short" type="text" autocomplete="postal-code" bind:value={address.postcode} /></div>
+			<p><button class="button button-quiet" type="button" onclick={getPrice} disabled={busy}>See prices and shipping speeds</button></p>
+
+			{#if quote}
+				<fieldset class="speeds">
+					<legend>Shipping speed</legend>
+					{#each quote.speeds as speed (speed.level)}
+						{@const option = shippingChoices.find((item) => item.value === speed.level)}
+						<label class="choice speed">
+							<input type="radio" name="shipping" value={speed.level} bind:group={shippingLevel} />
+							<span>{option?.label ?? speed.level}{#if option?.hint}<span class="muted">{` · ${option.hint}`}</span>{/if}</span>
+							<span class="amount">{formatDollars(speed.priceCents / 100)}</span>
+						</label>
+					{/each}
+				</fieldset>
+				{#if chosenSpeed}
+					<table class="parts">
+						<caption>One {quote.pages}-page copy, {shippingChoices.find((item) => item.value === chosenSpeed.level)?.label.toLowerCase()}</caption>
+						<tbody>
+							{#each chosenSpeed.parts as part (part.label)}
+								<tr><th scope="row">{part.label}</th><td>{formatDollars(part.cents / 100)}</td></tr>
+							{/each}
+							<tr class="total"><th scope="row">Price of the copy</th><td>{formatDollars(chosenSpeed.priceCents / 100)}</td></tr>
+						</tbody>
+					</table>
+				{/if}
+				{#if quote.mode === 'test'}<p class="muted">Test mode: no card is charged and nothing is printed.</p>{/if}
+			{/if}
+		</fieldset>
+
+		<fieldset>
 			<legend>Where it goes</legend>
 			<div class="field"><label for="ship-name">Name</label><input id="ship-name" type="text" autocomplete="name" bind:value={address.name} /></div>
 			<div class="field"><label for="ship-street1">Street address</label><input id="ship-street1" type="text" autocomplete="address-line1" bind:value={address.street1} /></div>
 			<div class="field"><label for="ship-street2">Apartment, suite or building (optional)</label><input id="ship-street2" type="text" autocomplete="address-line2" bind:value={address.street2} /></div>
 			<div class="field"><label for="ship-city">City</label><input id="ship-city" type="text" autocomplete="address-level2" bind:value={address.city} /></div>
-			<div class="field"><label for="ship-state">State or province</label><input id="ship-state" class="short" type="text" autocomplete="address-level1" bind:value={address.stateCode} /></div>
-			<div class="field"><label for="ship-postcode">Postal code</label><input id="ship-postcode" class="short" type="text" autocomplete="postal-code" bind:value={address.postcode} /></div>
-			<div class="field"><label for="ship-country">Country (two letters)</label><input id="ship-country" class="short" type="text" autocomplete="country" maxlength="2" bind:value={address.countryCode} /></div>
 			<div class="field"><label for="ship-phone">Telephone, for the carrier</label><input id="ship-phone" type="text" autocomplete="tel" inputmode="tel" bind:value={address.phone} /></div>
 			<div class="field"><label for="ship-email">Email, for the receipt and tracking</label><input id="ship-email" type="email" autocomplete="email" bind:value={email} /></div>
-			<div class="field">
-				<label for="ship-level">Shipping</label>
-				<select id="ship-level" bind:value={shippingLevel}>
-					{#each shippingChoices as option (option.value)}<option value={option.value}>{option.label}{option.hint ? `: ${option.hint}` : ''}</option>{/each}
-				</select>
-			</div>
 			<p class="muted">
-				Your address goes to Lulu to print and mail the copy. This site deletes it 90 days after the copy ships.
+				Your address goes to Lulu to print and mail the copy. This site deletes it 90 days after the copy ships. Lulu
+				prices the copy again for the full address when you order; it is almost always the same.
 			</p>
 		</fieldset>
 
-		{#if problem}<div class="notice notice-problem" role="alert"><p>{problem}</p></div>{/if}
-
-		{#if quote}
-			<div class="panel" role="status">
-				<p><strong>{formatDollars(quote.priceCents / 100)}</strong> for one {quote.pages}-page copy, printed, shipped and taxed.</p>
-				{#if quote.mode === 'test'}<p class="muted">Test mode: no card is charged and nothing is printed.</p>{/if}
-			</div>
+		{#if quote?.giftReceiver && chosenSpeed}
+			<CheckoutGift
+				priceCents={chosenSpeed.priceCents}
+				priceLabel="Printed copy, shipping and tax"
+				receiver={quote.giftReceiver}
+				bind:choice={gift}
+				bind:cents={giftCents}
+			/>
 		{/if}
 
+		{#if problem}<div class="notice notice-problem" role="alert"><p>{problem}</p></div>{/if}
+
 		<p>
-			<button class="button button-quiet" type="button" onclick={getPrice} disabled={busy}>Get the price for this address</button>
-			<button class="button" type="submit" disabled={busy || !!closedReason || !quote}>Order and pay</button>
+			<button class="button" type="submit" disabled={busy || !!closedReason || !chosenSpeed || giftCents === null}
+				>Order and pay{chosenSpeed ? ` ${formatDollars((chosenSpeed.priceCents + (giftCents ?? 0)) / 100)}` : ''}</button
+			>
 		</p>
 		<p class="muted">Payment is taken by Stripe on its own page; this site never sees your card.</p>
 	</form>
@@ -222,5 +268,45 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-3, 0.75rem);
+	}
+	.speeds {
+		border: 0;
+		padding: 0;
+		margin: var(--space-3, 0.75rem) 0;
+	}
+	.speed {
+		min-height: 44px;
+		border-bottom: 1px solid var(--color-line);
+	}
+	.speed .amount {
+		margin-left: auto;
+		font-variant-numeric: tabular-nums;
+		font-weight: var(--font-weight-semibold);
+	}
+	.parts {
+		width: 100%;
+		border-collapse: collapse;
+		margin: var(--space-3, 0.75rem) 0;
+	}
+	.parts caption {
+		text-align: left;
+		font-weight: var(--font-weight-semibold);
+		margin-bottom: var(--space-1, 0.25rem);
+	}
+	.parts th,
+	.parts td {
+		padding: var(--space-1, 0.25rem) 0;
+		border-bottom: 1px solid var(--color-line);
+		font-weight: var(--font-weight-regular);
+		text-align: left;
+	}
+	.parts td {
+		text-align: right;
+		font-variant-numeric: tabular-nums;
+	}
+	.parts .total th,
+	.parts .total td {
+		font-weight: var(--font-weight-bold);
+		border-bottom: 0;
 	}
 </style>

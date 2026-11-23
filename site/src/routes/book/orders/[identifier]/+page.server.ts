@@ -23,6 +23,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 			status: order.status,
 			pages: order.page_count,
 			priceCents: order.price_cents,
+			giftCents: order.gift_cents ?? 0,
 			trackingLink: order.tracking_link,
 			placedAt: order.created_at
 		}
