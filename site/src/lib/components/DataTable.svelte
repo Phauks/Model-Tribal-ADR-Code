@@ -100,6 +100,8 @@
 		leftOut?: string[];
 		/** Gives each row a button to leave it out; only a chart's own table turns it on (Trevor, Nov. 23, 2026: leaving data out stays on charts only). */
 		leaveOut?: boolean;
+		/** How many rows there are in all, when the page passes only the first of them (with its own "Show all"), so the count reads "Showing 50 of 52". */
+		total?: number;
 	}
 
 	let {
@@ -119,7 +121,8 @@
 		count: showCount = true,
 		tools = true,
 		leftOut = $bindable([]),
-		leaveOut = false
+		leaveOut = false,
+		total
 	}: Props = $props();
 
 	let interactive = $state(false);
@@ -144,9 +147,10 @@
 	const rowHeader = $derived(columns.find((column) => column.isRowHeader) ?? columns[0]);
 	/** A row's name, for its leave-out button and its chip: its row header's text. */
 	const rowLabel = (row: TableRow) => row.cells[rowHeader?.key ?? '']?.text || row.key;
+	const allRows = $derived(Math.max(total ?? 0, rows.length));
 	const count = $derived(
-		`Showing ${shownRows.length.toLocaleString('en-US')} of ${rows.length.toLocaleString('en-US')} ${
-			rows.length === 1 ? rowName[0] : rowName[1]
+		`Showing ${shownRows.length.toLocaleString('en-US')} of ${allRows.toLocaleString('en-US')} ${
+			allRows === 1 ? rowName[0] : rowName[1]
 		}`
 	);
 
