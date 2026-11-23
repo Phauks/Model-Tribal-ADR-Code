@@ -16,7 +16,10 @@
 	// an outline (sidebar/SidebarTree.svelte), the caret
 	// (sidebar/FoldButton.svelte) and the groups under the sections
 	// (sidebar/SidebarGroups.svelte). For someone signed in with workspace
-	// access, a Workspace group lists the workspace pages their role opens.
+	// access, a Workspace group lists the workspace pages their role opens;
+	// for anyone signed in, a Your account group lists the account pages and
+	// Following, which the profile button in the masthead no longer holds
+	// (Trevor, Nov. 23, 2026).
 	// Workspace pages know this when the Worker renders them; the pages built
 	// ahead of time read it from the signed-in hint (src/lib/signed-in-hint.ts).
 	import { tick, untrack } from 'svelte';
@@ -70,8 +73,11 @@
 	// The workspace pages to list: from the page itself in the workspace,
 	// otherwise from the signed-in hint, read in the browser.
 	let hintedPageNames = $state<string[]>([]);
+	let hintedSignedIn = $state(false);
 	$effect(() => {
-		hintedPageNames = readSignedInHint(document.cookie).workspacePageNames;
+		const hint = readSignedInHint(document.cookie);
+		hintedPageNames = hint.workspacePageNames;
+		hintedSignedIn = hint.signedIn;
 	});
 	const permissions = $derived(page.data.permissions as Permission[] | undefined);
 	const workspaceMenu = $derived<WorkspacePage[]>(
@@ -79,7 +85,10 @@
 	);
 	const currentWorkspacePage = $derived(workspaceMenu.find((item) => isCurrentWorkspacePage(item.link, path)));
 
-	// On the Account pages, a "Your account" group lists them (src/lib/account-menu.ts).
+	// For someone signed in, a "Your account" group lists the Account pages
+	// (src/lib/account-menu.ts). The pages the Worker renders know at once who
+	// is signed in; the others wait for the hint.
+	const signedIn = $derived(hintedSignedIn || page.data.person !== undefined || page.data.email !== undefined);
 	const onAccountPage = $derived(isAccountPath(path));
 	const currentAccount = $derived(onAccountPage ? currentAccountPage(path) : undefined);
 
@@ -321,7 +330,7 @@
 		{idSuffix}
 		{path}
 		{sidebar}
-		accountPages={onAccountPage ? [...accountPages] : []}
+		accountPages={signedIn || onAccountPage ? [...accountPages] : []}
 		{currentAccount}
 		{workspaceMenu}
 		{currentWorkspacePage}
