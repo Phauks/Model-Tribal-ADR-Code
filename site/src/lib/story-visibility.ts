@@ -149,6 +149,15 @@ export function storyIsShown(record: StoryRecord, today: string): boolean {
 	return shownTellings(record, today).length > 0;
 }
 
+/**
+ * The stories a nation's page lists: those the website shows that name the
+ * nation among their nations, in the order given. A restricted, withdrawn or
+ * not-yet-released story is left out here as it is everywhere else.
+ */
+export function storiesOfNation<T extends StoryRecord>(records: T[], nationId: string, today: string): T[] {
+	return records.filter((record) => record.nations.includes(nationId) && storyIsShown(record, today));
+}
+
 /** Whether the nation has yet to review the story, so the page says so. */
 export function awaitsNationReview(record: StoryRecord): boolean {
 	if (record.review_status === 'reviewed-by-nation' || record.review_status === 'approved-by-nation') {

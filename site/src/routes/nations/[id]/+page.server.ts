@@ -25,6 +25,7 @@ import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
 import { offlineSets } from '#lib/server/copy-lists.ts';
+import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -993,6 +994,7 @@ export const load: PageServerLoad = ({ params }) => {
 			documents: [],
 			jurisdiction: [],
 			ties: [],
+			stories: [],
 			empty: {} as EmptySections,
 			neighbors: [],
 			map: undefined,
@@ -1109,6 +1111,9 @@ export const load: PageServerLoad = ({ params }) => {
 	const jurisdiction = jurisdictionFacts(record, sources);
 	sources.part('Treaties and federal ties');
 	const ties = federalTies(record, sources);
+	// The nation's stories, each linked to its own page, which carries the
+	// story's citations; a restricted or withdrawn story is never listed.
+	const stories = nationStorySummaries(record.id);
 	// The legal sections always show, and say plainly when nothing was found,
 	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
 	const empty: EmptySections = {
@@ -1154,6 +1159,7 @@ export const load: PageServerLoad = ({ params }) => {
 		documents,
 		jurisdiction,
 		ties,
+		stories,
 		empty,
 		neighbors: sameStates(record),
 		sources: sources.list
@@ -1174,6 +1180,7 @@ export const load: PageServerLoad = ({ params }) => {
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
 	if (ties.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {
 		items.push({ label: 'Other nations in the same states', link: '#neighbors-heading' });
 	}
