@@ -7,7 +7,7 @@
  */
 import { json } from '@sveltejs/kit';
 import { essayCitations, essaySpellingWords, essayTerms } from 'virtual:essay-library';
-import { requirePerson } from '#lib/server/workspace.ts';
+import { requirePersonForData } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = false;
@@ -29,7 +29,7 @@ function plain(html: string): string {
 let cached: { sources: [string, string][]; terms: [string, string][]; words: string[] } | undefined;
 
 export const GET: RequestHandler = (event) => {
-	requirePerson(event);
+	requirePersonForData(event);
 	cached ??= {
 		sources: Object.entries(essayCitations).map(([key, html]) => [key, plain(html)]),
 		terms: Object.entries(essayTerms).sort((first, second) => first[1].localeCompare(second[1], 'en-US')),

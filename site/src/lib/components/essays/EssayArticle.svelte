@@ -63,7 +63,15 @@
 			redirect: 'manual'
 		}).catch(() => null);
 		if (!response?.ok || !response.headers.get('Content-Type')?.includes('application/json')) return;
-		access = (await response.json()) as EssayPageState;
+		const answer = (await response.json()) as EssayPageState;
+		// Two loads can cross; never step back to an older version.
+		if (access && answer.latest.number < access.latest.number) return;
+		access = answer;
+	}
+
+	// The editor's last save lands after it closes: show that text, and open the editor on it next time.
+	function saved(): void {
+		if (mode === 'reading') void loadAccess();
 	}
 
 	onMount(() => {
@@ -123,7 +131,7 @@
 		{#await import('#lib/components/essays/EssayEditor.svelte')}
 			<p class="small muted">Opening the editor…</p>
 		{:then { default: EssayEditor }}
-			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave />
+			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave onsaved={saved} />
 		{:catch}
 			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
 		{/await}
