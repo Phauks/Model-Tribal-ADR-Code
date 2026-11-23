@@ -75,6 +75,11 @@ declare module 'virtual:build' {
 	export const recentChanges: import('#lib/recent-changes.ts').Change[];
 }
 
+declare module 'virtual:sponsorship-counts' {
+	/** Counts the Sponsorship page shows, taken when the site is built (src/lib/server/sponsorship-goals.ts). */
+	export const sponsorshipCounts: import('#lib/server/sponsorship-goals.ts').SponsorshipCounts;
+}
+
 declare module 'cloudflare:workers' {
 	/** The Worker's bindings and secrets (src/app.d.ts). */
 	export const env: WorkerEnvironment;

@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { costedEarmarks, earmarkCostQuestions, earmarkCostUnits } from '#lib/sponsorship.ts';
 	import type { PageProps } from './$types';
 
-	let { data }: PageProps = $props();
+	let { data, form }: PageProps = $props();
 </script>
 
 <svelte:head>
@@ -46,6 +47,29 @@
 	<p class="small muted">The public pages count {data.publicMode} gifts.</p>
 </section>
 
+<section class="panel" aria-labelledby="costs-heading">
+	<h2 id="costs-heading">Costs on the Sponsorship page</h2>
+	<p>
+		The <a href="/sponsor">Sponsorship page</a> shows a cost, and how much of it gifts have paid, only once it is set here. Leave
+		a box blank until the price is known.
+	</p>
+	{#if form && 'problem' in form}
+		<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
+	{:else if form && 'done' in form}
+		<div class="notice" role="status"><p>{form.done}</p></div>
+	{/if}
+	<form method="post" action="?/costs">
+		{#each costedEarmarks as earmark (earmark)}
+			<div class="field">
+				<label for="cost-{earmark}">{earmarkCostQuestions[earmark]}</label>
+				<p class="hint">US dollars a {earmarkCostUnits[earmark]}.</p>
+				<input id="cost-{earmark}" name={earmark} type="text" inputmode="decimal" value={data.costs[earmark]} class="amount" />
+			</div>
+		{/each}
+		<button class="button" type="submit">Save costs</button>
+	</form>
+</section>
+
 <h2>Every sponsor</h2>
 {#if data.sponsors.length === 0}
 	<p>No one has started a sponsorship yet. To see the page a new sponsor sees, open <a href="/account/sponsorship">your own Sponsorship page</a>.</p>
@@ -79,3 +103,9 @@
 		</table>
 	</div>
 {/if}
+
+<style>
+	.amount {
+		max-width: 12rem;
+	}
+</style>

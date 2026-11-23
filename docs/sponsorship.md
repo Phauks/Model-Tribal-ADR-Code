@@ -9,11 +9,22 @@ Organizations, and people, can sponsor the project: give once or every month, ch
 | `/account/sponsorship` | Anyone signed in | Starts a sponsorship; for its managers, gives, opens Stripe's billing page, sets the listing, logo and where the gift goes, and adds or removes managers |
 | `/account/sponsorship?sponsor=<identifier>` | The sponsorship's managers, and the lead author | One sponsorship, when an account manages more than one; for the lead author, any sponsor's page as its managers see it, read only |
 | `/sponsorship/invite/<link>` | Anyone signed in | Accepts an invitation to manage a sponsorship |
-| `/sponsor` | Everyone | The Sponsorship page's own text (edited on the website), then every sponsor shown in public; a link to give only while gifts are open |
+| `/sponsor` | Everyone | The Sponsorship page's own text (edited on the website), the goal of a copy for every nation, what else a gift can fund, then every sponsor shown in public; a link to give only while gifts are open |
 | `/sponsors/<name>` | Everyone | One sponsor listed by name, once they have given |
 | `/workspace/sponsors` | The lead author | Whether gifts work, setting by setting, and every sponsor |
 | `/workspace/sponsors/<identifier>` | The lead author | One sponsor's details, managers, gifts with amounts and history; take off or put back on the public pages; ask Stripe about them |
 | `/sponsorship/payment-webhook` | Stripe | Records paid gifts |
+
+## The Sponsorship page
+
+The page leads with one goal: a printed copy for every federally recognized nation (Trevor chose this layout on Nov. 23, 2026). Below the page's own text, edited on the website like the essays, it shows:
+
+- the goal, in a band: how many nations it counts and, once the cost of a copy is set, how many copies gifts have paid for, with a Sponsor button while gifts are open;
+- three counts taken when the site is built: nations with their own page, sources recorded, and what reading costs ($0);
+- the other things a gift can fund: the website, the large-format edition, and wherever it is needed most, each with its cost once set;
+- the sponsors shown in public.
+
+No cost is fixed in the code, because printing and hosting prices are not settled (Trevor, Nov. 23, 2026). The lead author sets each one under "Costs on the Sponsorship page" on the workspace Sponsors page: a paperback printed and mailed to one nation, a large-format copy the same way, and the website for a year. A blank box keeps that cost off the page. Progress counts gifts in the mode the public pages use. Copies paid for are the gifts toward copies for every nation divided by the cost of a copy, never more than the nations. The website's share is its gifts in the last 365 days over a year's cost, and the large-format edition's is its gifts over the cost of a copy for every nation. A new sponsorship's gifts go wherever they are needed most until its managers choose otherwise, so not every gift goes to the goal.
 
 ## Managers
 
