@@ -1,0 +1,26 @@
+key: census-geocoder
+kind: dataset
+citation:
+  type: dataset
+  title: Census Geocoder, Address Search (Public_AR_Current benchmark)
+  author:
+    - literal: U.S. Census Bureau
+  medium: Web service
+  URL: https://geocoding.geo.census.gov/geocoder/
+  accessed:
+    date-parts: [[2026, 11, 23]]
+original_link: https://geocoding.geo.census.gov/geocoder/
+retrieved: 2026-11-23
+history:
+  status: live
+  last_checked: 2026-11-23
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: >-
+    A service of the U.S. Census Bureau, a federal agency; its results are not protected by copyright in the United States (17 U.S.C. § 105). The website credits the Census Bureau in the map page's Sources section.
+  redistribution: true
+found_in:
+  - 2026-11-23-map-office-points
+notes: >-
+  Matches a street address to a point from the Census Bureau's address ranges. Used by scripts/maps/geocode_nation_offices.py to place the offices of nations with no Census land area on the website's map (site/geography/nation-office-points.json). It does not match post office boxes.
