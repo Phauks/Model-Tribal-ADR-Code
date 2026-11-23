@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { copiesByLink, copyPath, linkForMatching, type PublicCopy } from '../src/lib/public-copies.ts';
+import { copiesByLink, copyDetailsShard, copyPagePath, copyPath, linkForMatching, type PublicCopy } from '../src/lib/public-copies.ts';
+import { copyDetailShardNames, copyDetails } from '../src/lib/server/copy-lists.ts';
+import { publicCopies } from '../src/lib/server/content.ts';
+import { sectionOf } from '../src/lib/site-sections.ts';
 import {
 	fetchOriginal,
 	hexDigest,
@@ -70,6 +73,35 @@ describe('matching a page link to a copy', () => {
 
 	it('gives each copy an address on this site', () => {
 		expect(copyPath(copy)).toBe('/copies/govinfo/STATUTE-108/STATUTE-108-Pg4791.pdf');
+	});
+
+	it('gives each copy a page inside the site, in the Library section, apart from its file', () => {
+		const page = copyPagePath({ key: 'constitutions/a b/law.pdf' });
+		expect(page).toBe('/copies/view/constitutions/a%20b/law.pdf');
+		expect(sectionOf(page)?.label).toBe('Library');
+	});
+});
+
+describe('the details a copy’s page shows', () => {
+	it('lists every copy once, in the file named by its SHA-256', () => {
+		const copies = publicCopies();
+		if (copies.length === 0) return;
+		const shards = copyDetailShardNames();
+		expect(shards.every((shard) => /^[0-9a-f]{2}$/.test(shard))).toBe(true);
+		const listed = shards.reduce((total, shard) => total + Object.keys(copyDetails(shard) ?? {}).length, 0);
+		expect(listed).toBe(new Set(copies.map((each) => each.key)).size);
+		const first = copies[0];
+		const details = copyDetails(copyDetailsShard(first))?.[first.key];
+		expect(details?.title).toBe(first.title);
+		expect(details?.list.slug).toBeTruthy();
+	});
+
+	it('gives a tribal court opinion its citation', () => {
+		const opinion = publicCopies().find((each) => each.topic === 'caselaw-access-project');
+		if (!opinion) return;
+		const details = copyDetails(copyDetailsShard(opinion))?.[opinion.key];
+		expect(details?.opinion?.citation).toBeTruthy();
+		expect(details?.list.slug.startsWith('opinions-')).toBe(true);
 	});
 });
 

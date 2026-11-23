@@ -18,7 +18,7 @@ import { parseCsv } from '../csv.ts';
 import { displayName, recognitionLabel, stateName } from '../nation-labels.ts';
 import { recognitionFacetValues, type RecourseRow } from '../recourse.ts';
 import { methods, nations, publicCopyFor, publicCopyWithDigest, repositoryRoot } from './content.ts';
-import { copyPath } from '../public-copies.ts';
+import { copyPagePath } from '../public-copies.ts';
 
 /** The second reader's verdicts that mean a person or second reader confirmed the row, or corrected it. */
 const checkedVerdicts = new Set(['confirm', 'change']);
@@ -64,7 +64,7 @@ export function recourseRows(): RecourseRow[] {
 				[provision.document, provision.locator].filter(Boolean).join(', ') ||
 				'Section not identified in the published text',
 			summary: provision.summary,
-			link: copy ? copyPath(copy) : provision.url || undefined,
+			link: copy ? copyPagePath(copy) : provision.url || undefined,
 			original: provision.url || undefined,
 			checked: checkedVerdicts.has(provision.second_pass_verdict)
 		});

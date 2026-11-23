@@ -10,7 +10,7 @@
  */
 import { humanize } from '../nation-labels.ts';
 import { readableDate } from '../readable-date.ts';
-import { copyPath } from '../public-copies.ts';
+import { copyPagePath } from '../public-copies.ts';
 import {
 	documentHistories,
 	publicCopyFor,
@@ -159,11 +159,11 @@ function inEffectPhrase(versions: DocumentVersion[]): string | undefined {
  */
 function textLink(version: DocumentVersion): string | undefined {
 	const capture = publicCopyWithDigest(version.capture?.sha256);
-	if (capture) return copyPath(capture);
+	if (capture) return copyPagePath(capture);
 	if (!version.source) return undefined;
 	const record = sourceRecords().get(version.source);
 	const saved = publicCopyFor(record?.original_link);
-	if (saved) return copyPath(saved);
+	if (saved) return copyPagePath(saved);
 	if (record?.original_link) return record.original_link;
 	const archived = record?.archives?.find((copy) => copy.link ?? copy.url);
 	return archived?.link ?? archived?.url;

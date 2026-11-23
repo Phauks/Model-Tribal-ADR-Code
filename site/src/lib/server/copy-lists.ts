@@ -5,10 +5,20 @@
  * nation, and nations' documents by the first letter of the nation's name.
  */
 import { displayName } from '../nation-labels.ts';
-import { copyPath, fileSize, mediaLabel, removalRequestPath, type PublicCopy } from '../public-copies.ts';
+import {
+	copyDetailsShard,
+	copyPagePath,
+	copyPath,
+	fileSize,
+	mediaLabel,
+	removalRequestPath,
+	type CopyDetails,
+	type PublicCopy
+} from '../public-copies.ts';
 import type { DocumentFile, DocumentSetList, DocumentSetSummary } from '../offline-documents.ts';
 import { formatCaptureDate } from './markdown.ts';
 import { nations, publicCopies } from './content.ts';
+import { tribalCourtOpinions } from './tribal-court-opinions.ts';
 
 export interface CopyGroup {
 	/** The list's address below /copies/list/. */
@@ -22,7 +32,10 @@ export interface CopyRow {
 	title: string;
 	kind: string;
 	nations: string[];
+	/** The file itself, for downloading and checking. */
 	path: string;
+	/** The copy's page on this site, for reading. */
+	page: string;
 	original: string;
 	captured: string;
 	capturedText: string;
@@ -88,6 +101,7 @@ function row(copy: PublicCopy, names: Map<string, string>): CopyRow {
 		kind: mediaLabel(copy.mediaType),
 		nations: namesOf(copy, names),
 		path: copyPath(copy),
+		page: copyPagePath(copy),
 		original: copy.links.at(-1) ?? copy.links[0],
 		captured: copy.captured,
 		capturedText: copy.captured ? formatCaptureDate(copy.captured) : '',
@@ -128,6 +142,54 @@ export function allCopyRows(): CopyRow[] {
 }
 
 export { groupTitle };
+
+let detailCache: Map<string, Record<string, CopyDetails>> | undefined;
+
+/**
+ * Each copy's details for its page (src/routes/copies/view/[...key]), split
+ * into small files by the first two characters of the copy's SHA-256
+ * (copyDetailsShard), keyed by the copy's key.
+ */
+function detailShards(): Map<string, Record<string, CopyDetails>> {
+	if (detailCache) return detailCache;
+	const names = nationNames();
+	const opinions = new Map(tribalCourtOpinions().map((opinion) => [opinion.key, opinion]));
+	const shards = new Map<string, Record<string, CopyDetails>>();
+	for (const copy of publicCopies()) {
+		const ids = copy.nations.length > 0 ? copy.nations : copy.topic === 'constitutions' ? [copy.key.split('/')[1]] : [];
+		const slug = groupOf(copy, names);
+		const opinion = opinions.get(copy.key);
+		const details: CopyDetails = {
+			title: copy.title,
+			kind: mediaLabel(copy.mediaType),
+			captured: copy.captured,
+			nations: ids.flatMap((id) => {
+				const name = names.get(id);
+				return name ? [{ id, name }] : [];
+			}),
+			list: { slug, title: groupTitle(slug, names) },
+			...(opinion
+				? { opinion: { name: opinion.name, citation: opinion.citation, court: opinion.court, decided: opinion.decided, docket: opinion.docket } }
+				: {})
+		};
+		const shard = copyDetailsShard(copy);
+		const entries = shards.get(shard) ?? {};
+		entries[copy.key] = details;
+		shards.set(shard, entries);
+	}
+	detailCache = shards;
+	return shards;
+}
+
+/** The names of the detail files, such as "0f". */
+export function copyDetailShardNames(): string[] {
+	return [...detailShards().keys()].sort();
+}
+
+/** One detail file's contents, or undefined when no copy's SHA-256 starts that way. */
+export function copyDetails(shard: string): Record<string, CopyDetails> | undefined {
+	return detailShards().get(shard);
+}
 
 /**
  * The copies a reader can save for offline reading, by set (src/lib/offline-documents.ts): the

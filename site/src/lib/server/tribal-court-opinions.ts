@@ -13,7 +13,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { parseCsv } from '../csv.ts';
-import { copyPath, removalRequestPath } from '../public-copies.ts';
+import { copyPagePath, removalRequestPath } from '../public-copies.ts';
 import { publicCopies, repositoryRoot } from './content.ts';
 
 /** The key of the dataset's source record (content/sources/c/). */
@@ -54,6 +54,9 @@ export interface TribalCourtOpinion {
 	/** Topic tags, as words: they mean the words appear in the opinion, not what it decides. */
 	topics: string[];
 	mentionsDisputeResolution: boolean;
+	/** The opinion's key in the bucket (src/lib/public-copies.ts). */
+	key: string;
+	/** Its page on this site, with the site's masthead and sidebar around it. */
 	path: string;
 	removal: string;
 }
@@ -80,7 +83,8 @@ export function tribalCourtOpinions(): TribalCourtOpinion[] {
 					nations: row.nations.split(';').map((nation) => nation.trim()).filter(Boolean),
 					topics: tags.map((tag) => topicLabels[tag] ?? tag.replaceAll('-', ' ')),
 					mentionsDisputeResolution: tags.some((tag) => disputeResolutionTopics.has(tag)),
-					path: copyPath({ key: row.copy_key }),
+					key: row.copy_key,
+					path: copyPagePath({ key: row.copy_key }),
 					removal: removalRequestPath({ key: row.copy_key })
 				};
 			})

@@ -40,7 +40,7 @@ export function documentHeading(document: { title: string; citation: string | nu
 	return `${document.title}, ${document.citation}${court ? ` (${court})` : ''}`;
 }
 
-/** The address of a copy the website serves. */
+/** The page of a copy the website serves, with the site's masthead and sidebar around it (src/lib/public-copies.ts, copyPagePath). */
 export function copyAddress(key: string): string {
-	return `/copies/${key.split('/').map(encodeURIComponent).join('/')}`;
+	return `/copies/view/${key.split('/').map(encodeURIComponent).join('/')}`;
 }

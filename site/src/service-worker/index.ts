@@ -34,6 +34,7 @@
 import { version } from '$app/env';
 import { assets, immutable, prerendered } from '$app/manifest';
 import { self } from '$app/service-worker';
+import { copyPagePrefix } from '#lib/public-copies.ts';
 import {
 	collectionOf,
 	collections,
@@ -775,6 +776,23 @@ async function copyResponse(request: Request): Promise<Response> {
 	return request.mode === 'navigate' ? networkOnly(request) : fetch(request);
 }
 
+/**
+ * A copy's page: from the network, or offline the copy's file when the reader
+ * saved it, so a saved document still opens from a link on a saved page.
+ */
+async function copyPageResponse(request: Request): Promise<Response> {
+	try {
+		return await fetch(request);
+	} catch {
+		const file = `/copies/${new URL(request.url).pathname.slice(copyPagePrefix.length)}`;
+		if (await caches.has(documentsCacheName)) {
+			const saved = await (await caches.open(documentsCacheName)).match(file);
+			if (saved) return saved;
+		}
+		return networkOnly(request);
+	}
+}
+
 function failure(error: unknown): WorkerReply {
 	const message = error instanceof Error ? error.message : String(error);
 	return { type: 'failed', message };
@@ -853,8 +871,18 @@ async function networkOnly(request: Request): Promise<Response> {
 self.addEventListener('fetch', (event) => {
 	const url = new URL(event.request.url);
 	if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
+	// A copy's page (/copies/view/<key>) is made by the Worker on request; offline, the saved file itself answers.
+	if (url.pathname.startsWith(copyPagePrefix)) {
+		if (event.request.mode === 'navigate') event.respondWith(copyPageResponse(event.request));
+		return;
+	}
 	// A saved copy of a document answers offline; any other copy comes from the network.
-	if (url.pathname.startsWith('/copies/') && !url.pathname.startsWith('/copies/list') && !url.pathname.startsWith('/copies/offline')) {
+	if (
+		url.pathname.startsWith('/copies/') &&
+		!url.pathname.startsWith('/copies/list') &&
+		!url.pathname.startsWith('/copies/offline') &&
+		!url.pathname.startsWith('/copies/details/')
+	) {
 		event.respondWith(copyResponse(event.request));
 		return;
 	}
