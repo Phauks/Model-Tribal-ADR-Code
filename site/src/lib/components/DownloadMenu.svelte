@@ -204,7 +204,6 @@
 						{/each}
 					</span>
 					</span>
-					<span class="choice-hint">PDF to print or share, Word or ODT to edit, Markdown as plain text</span>
 				</span>
 			</li>
 			{#if offers.citable}
