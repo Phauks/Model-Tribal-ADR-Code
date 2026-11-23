@@ -342,9 +342,10 @@
 		border-left: 1px solid var(--color-control-border);
 	}
 
+	/* The link teal, which stays clear of the panel in dark mode too. */
 	.segmented input:checked + label {
-		background: var(--color-band);
-		color: var(--color-band-text);
+		background: var(--color-link);
+		color: var(--color-paper);
 	}
 
 	.segmented :global(svg) {
