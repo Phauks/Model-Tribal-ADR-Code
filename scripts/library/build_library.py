@@ -492,20 +492,38 @@ def seed_from_library(work: Path) -> int:
     if database is None:
         print("No published library to seed from.")
         return 0
+    return seed_cache_from(work, database)
+
+
+def seed_cache_from(work: Path, database: Path, replace: bool = False) -> int:
+    """Write a cache file for each document in a library. The library keeps
+    passages, not whole pages, so each page's passages are kept as they are
+    (with the page count and character count the library recorded): the
+    next build then gives the document the same passages, the same text
+    digest and the same numbers, and the website's copy sees no change.
+    (Before this, the passages were seeded as if each were a page, which
+    renumbered every document with more than one passage on a page.)"""
     connection = sqlite3.connect(database)
     seeded = 0
-    for document_id, sha256, extraction in connection.execute(
-            "SELECT document_id, sha256, extraction FROM documents"):
+    for document_id, sha256, extraction, page_count, characters in connection.execute(
+            "SELECT document_id, sha256, extraction, page_count, characters FROM documents"):
         cache = extract_cache_path(work, sha256)
-        if cache.exists():
+        if cache.exists() and not replace:
             continue
         result = json.loads(extraction)
-        result["pages"] = [
-            {"page": page, "label": label, "method": method, "text": text}
-            for page, label, method, text in connection.execute(
-                "SELECT page, label, method, text FROM pages WHERE document_id = ? ORDER BY sequence",
-                (document_id,))
-        ]
+        result["page_count"] = page_count
+        result["characters"] = characters
+        pages: list[dict] = []
+        for page, label, part, method, text in connection.execute(
+                "SELECT page, label, part, method, text FROM pages WHERE document_id = ? ORDER BY sequence",
+                (document_id,)):
+            if pages and part > 1 and pages[-1]["page"] == page:
+                pages[-1]["passages"].append(text)
+            else:
+                pages.append({"page": page, "label": label, "method": method, "passages": [text]})
+        for page in pages:
+            page["text"] = "\n\n".join(page["passages"])
+        result["pages"] = pages
         cache.parent.mkdir(parents=True, exist_ok=True)
         with gzip.open(cache, "wt", encoding="utf-8") as handle:
             json.dump(result, handle, ensure_ascii=False)
@@ -749,7 +767,11 @@ def command_index(arguments) -> None:
         title = (opinion.get("name") or row.get("title") or catalog_titles.get(sha256) or result.get("html_title")
                  or result.get("pdf_title") or title_from_link(row.get("link")) or key.rsplit("/", 1)[-1])
         page_list = result["pages"]
-        characters = sum(len(page["text"]) for page in page_list)
+        # A page seeded from an earlier library carries its passages and the
+        # character count that library recorded (seed_cache_from).
+        characters = result.get("characters")
+        if characters is None:
+            characters = sum(len(page["text"]) for page in page_list)
         empty = result.get("empty_pages", 0)
         page_count = result.get("page_count") or len(page_list)
         if characters < EMPTY_PAGE_CHARACTERS:
@@ -771,7 +793,8 @@ def command_index(arguments) -> None:
             label = page.get("label")
             if label == "first":
                 label = first_page
-            for part, text in enumerate(split_passages(page["text"]), 1):
+            texts = page["passages"] if "passages" in page else split_passages(page["text"])
+            for part, text in enumerate(texts, 1):
                 passages.append((page.get("page"), label, part, page.get("method"), text))
         text_digest = hashlib.sha256(json.dumps(passages, ensure_ascii=False).encode()).hexdigest()[:32]
 

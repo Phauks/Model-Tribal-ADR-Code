@@ -397,6 +397,32 @@ export interface LibraryRunSummary {
 }
 
 /**
+ * Split a change file into its statements. D1's exec() takes one statement
+ * per line, and a change file's statements run over several lines (the
+ * table definitions, and page text with line breaks in it), so each part is
+ * split here and run as one batch instead. The build writes only
+ * single-quoted text (a quote inside is doubled), so a semicolon ends a
+ * statement unless it is inside quotes.
+ */
+export function changeStatements(sql: string): string[] {
+	const statements: string[] = [];
+	let quoted = false;
+	let start = 0;
+	for (let index = 0; index < sql.length; index += 1) {
+		const character = sql[index];
+		if (character === "'") quoted = !quoted;
+		else if (character === ';' && !quoted) {
+			const statement = sql.slice(start, index + 1).trim();
+			if (statement !== ';') statements.push(statement);
+			start = index + 1;
+		}
+	}
+	const rest = sql.slice(start).trim();
+	if (rest) statements.push(rest);
+	return statements;
+}
+
+/**
  * The hourly run: apply the next change files from the bucket, in order,
  * until the copy is current or the time is used up. Progress is kept in the
  * meta table (applying = "<build>:<parts done>"), so a run that stops part way
@@ -438,7 +464,9 @@ export async function applyLibraryChanges(
 			}
 			const part = await bucket.get(next.parts[done]);
 			if (!part) throw new Error(`The library change file ${next.parts[done]} is missing.`);
-			await database.exec(await part.text());
+			// One batch is one transaction, so a part goes in whole or not at all.
+			const statements = changeStatements(await part.text());
+			await database.batch(statements.map((statement) => database.prepare(statement)));
 			partsApplied += 1;
 			await database.prepare("INSERT OR REPLACE INTO meta VALUES ('applying', ?)").bind(`${next.to}:${done + 1}`).run();
 		}
