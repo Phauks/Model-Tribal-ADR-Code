@@ -1,4 +1,4 @@
-# 0039. Keep the project's email in the website, with outreach through a separate mailbox
+# 0040. Keep the project's email in the website, with outreach through a separate mailbox
 
 - **Status:** Accepted (lead author, Nov. 23, 2026)
 - **Date:** 2026-11-23
@@ -15,7 +15,7 @@ Tracking pictures, the usual "read receipt", report opens that never happened (A
 
 The lead author chose, on a decision card in the project, "Website inbox + Zoho for outreach",[^choice] and asked that the outreach service be swappable.[^modular]
 
-- **An inbox in the workspace.** Mail to the project's addresses arrives through Email Routing, is kept whole in the private bucket under `mail/`, and is listed, threaded and searched from the database. The lead author reads, answers, assigns, labels, snoozes, archives and deletes conversations there, adds notes only the team sees, sets reminders for when no reply comes, and schedules messages to send later.
+- **An inbox in the workspace.** Mail to the project's addresses arrives through Email Routing, is kept whole in the private bucket under `mail/`, and is listed, threaded and searched from the database. The lead author reads, answers, assigns, tags, files in folders, snoozes, archives and deletes conversations there, adds notes only the team sees, sets reminders for when no reply comes, and schedules messages to send later. Auto-sort rules file, tag, assign or mark read mail as it arrives.[^organize]
 - **Replies through Cloudflare Email Service.** Only mail people started: replies, and the inbox's own "new mail" notice, which never quotes the message.
 - **Outreach through a separate mailbox,** on a subdomain, sent by the Worker over SMTP with replies directed to the project inbox. Zoho Mail Lite is the first choice. The service is chosen by settings, and any SMTP mailbox fits without a code change.
 - **Outreach is slow and easy to stop.** Templates are versioned; batches take recipients from the private address book, send a few at a time in working hours in each nation's own time zone, and carry an unsubscribe link, an unsubscribe address and one-click headers. A do-not-email list, filled by unsubscribes, confirmed "stop" replies, hard bounces and spam reports, is checked when a recipient is added and again before each send. Nothing takes an address off it automatically.
@@ -36,6 +36,7 @@ The lead author chose, on a decision card in the project, "Website inbox + Zoho 
 [^ask-more]: Lead author, messages in the project, Nov. 23, 2026: "Email should be able to be schedule sent, read receipts, ping for response. Etc"; "We should have internal contacts, so that csv becomes the basis of our address book" (project records).
 [^choice]: Lead author, decision card in the project's email thread, Nov. 23, 2026 (project records).
 [^modular]: Lead author, message in the project's email thread, Nov. 23, 2026: "Build zoho modular so we can shift to other service though if necessary" (project records).
+[^organize]: Lead author, messages in the project's email thread, Nov. 23, 2026: "Add tagging and putting items in folders. Create functionality for auto-sort rules?" and "The inbox and message creation looks archaic. Can we make it look better" (project records).
 [^routing]: Cloudflare, "Email Routing," <https://developers.cloudflare.com/email-routing/>.
 [^send]: Cloudflare, "Send emails," Email Service documentation, <https://developers.cloudflare.com/email-service/get-started/send-emails/>.
 [^terms]: Cloudflare, "Service-Specific Terms: Developer Platform," <https://www.cloudflare.com/service-specific-terms-developer-platform/>.

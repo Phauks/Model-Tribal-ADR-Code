@@ -1,5 +1,5 @@
 import { error, fail, redirect } from '@sveltejs/kit';
-import { folders, parseAddressList, quoteForReply, replySubject, type Folder } from '#lib/mail.ts';
+import { parseAddressList, quoteForReply, replySubject } from '#lib/mail.ts';
 import { can } from '#lib/permissions.ts';
 import { cancelScheduled, CompositionError, queueMessage, sendAgain, sendMessage } from '#lib/server/mail/outbound.ts';
 import { mailCarriers, mailContext } from '#lib/server/mail/runtime.ts';
@@ -9,11 +9,11 @@ import {
 	assignablePeople,
 	clearStopRequest,
 	getThread,
-	listLabels,
+	isBuiltInFolder,
 	markRead,
 	moveToFolder,
 	setFollowUp,
-	setLabel,
+	setTag,
 	snooze
 } from '#lib/server/mail/store.ts';
 import { suppress } from '#lib/server/mail/suppressions.ts';
@@ -37,7 +37,6 @@ export const load: PageServerLoad = async (event) => {
 	const replyTo = lastInbound ? (lastInbound.replyTo ?? lastInbound.from.email) : (thread.counterpartAddress ?? '');
 	return {
 		thread,
-		labels: await listLabels(context),
 		people: await assignablePeople(context, assignableRoles),
 		addresses: context.settings.addresses,
 		reply: {
@@ -46,7 +45,6 @@ export const load: PageServerLoad = async (event) => {
 			subject: replySubject(thread.subject),
 			quote: lastInbound ? quoteForReply(lastInbound.text, lastInbound.from.name ?? lastInbound.from.email, lastInbound.receivedAt ?? lastInbound.createdAt) : ''
 		},
-		emailOn: context.settings.domain !== null,
 		canManage: can(person, 'manage-mail')
 	};
 };
@@ -99,11 +97,10 @@ export const actions: Actions = {
 	move: async (event) => {
 		const person = requirePermission(event, 'read-mail');
 		const form = await event.request.formData();
-		const folder = formText(form, 'folder', 20) as Folder | null;
-		if (!folder || !folders.includes(folder)) return fail(400, { problem: 'Choose a folder.' });
-		await moveToFolder(mailContext(), person.identifier, threadOf(event), folder);
-		if (folder !== 'inbox') redirect(303, '/workspace/inbox');
-		return { done: 'Moved to the inbox.' };
+		const folder = formText(form, 'folder', 100);
+		if (!folder || !(await moveToFolder(mailContext(), person.identifier, threadOf(event), folder))) return fail(400, { problem: 'Choose a folder.' });
+		if (folder === 'archive' || folder === 'trash' || folder === 'spam') redirect(303, '/workspace/inbox');
+		return { done: isBuiltInFolder(folder) ? 'Moved to the inbox.' : 'Moved.' };
 	},
 	assign: async (event) => {
 		const person = requirePermission(event, 'read-mail');
@@ -116,13 +113,13 @@ export const actions: Actions = {
 		await assign(context, person.identifier, threadOf(event), chosen?.identifier ?? null, chosen?.name ?? null);
 		return { done: chosen ? `Assigned to ${chosen.name}.` : 'Unassigned.' };
 	},
-	label: async (event) => {
+	tag: async (event) => {
 		const person = requirePermission(event, 'read-mail');
 		const form = await event.request.formData();
-		const label = formText(form, 'label', 100);
-		if (!label) return fail(400, { problem: 'Choose a label.' });
-		await setLabel(mailContext(), person.identifier, threadOf(event), label, form.get('on') === 'yes');
-		return { done: 'Labels changed.' };
+		const tag = formText(form, 'tag', 100);
+		if (!tag) return fail(400, { problem: 'Choose a tag.' });
+		await setTag(mailContext(), person.identifier, threadOf(event), tag, form.get('on') === 'yes');
+		return { done: form.get('on') === 'yes' ? 'Tagged.' : 'Tag taken off.' };
 	},
 	snooze: async (event) => {
 		const person = requirePermission(event, 'read-mail');

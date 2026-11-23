@@ -1,0 +1,271 @@
+<script lang="ts">
+	// The inbox's left column (site/MAIL.md): Write, the views, the folders the
+	// lead author made, the tags, and the rules. On a narrow screen it folds
+	// into "Mailboxes" above the page.
+	import { onMount } from 'svelte';
+	import { page } from '$app/state';
+	import Archive from '@lucide/svelte/icons/archive';
+	import BellRing from '@lucide/svelte/icons/bell-ring';
+	import CalendarClock from '@lucide/svelte/icons/calendar-clock';
+	import Clock from '@lucide/svelte/icons/clock';
+	import FolderIcon from '@lucide/svelte/icons/folder';
+	import FolderCog from '@lucide/svelte/icons/folder-cog';
+	import InboxIcon from '@lucide/svelte/icons/inbox';
+	import ListFilter from '@lucide/svelte/icons/list-filter';
+	import OctagonAlert from '@lucide/svelte/icons/octagon-alert';
+	import Plus from '@lucide/svelte/icons/plus';
+	import Send from '@lucide/svelte/icons/send';
+	import SquarePen from '@lucide/svelte/icons/square-pen';
+	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import UserCheck from '@lucide/svelte/icons/user-check';
+	import type { Component } from 'svelte';
+	import type { LayoutProps } from './$types';
+
+	let { data, children }: LayoutProps = $props();
+
+	const icons: Record<string, Component> = {
+		inbox: InboxIcon,
+		mine: UserCheck,
+		'follow-up': BellRing,
+		snoozed: Clock,
+		scheduled: CalendarClock,
+		sent: Send,
+		archive: Archive,
+		spam: OctagonAlert,
+		trash: Trash2
+	};
+
+	const base = '/workspace/inbox';
+	const onList = $derived(page.url.pathname === base);
+	const currentView = $derived(onList && !page.url.searchParams.get('folder') && !page.url.searchParams.get('tag') ? (page.url.searchParams.get('view') ?? 'inbox') : null);
+	const currentFolder = $derived(onList ? page.url.searchParams.get('folder') : null);
+	const currentTag = $derived(onList ? page.url.searchParams.get('tag') : null);
+
+	let open = $state(true);
+	onMount(() => {
+		// Folded on a phone, so the mail comes first.
+		if (window.matchMedia('(max-width: 49.99rem)').matches) open = false;
+	});
+</script>
+
+<div class="mail">
+	<details class="mail-nav" bind:open>
+		<summary>Mailboxes</summary>
+		<nav aria-label="Mailboxes">
+			<a class="button compose" href="{base}/new"><SquarePen size={18} aria-hidden="true" /> Write a message</a>
+			<ul class="nav-list">
+				{#each data.views as view (view.key)}
+					{@const Icon = icons[view.key]}
+					<li>
+						<a href={view.key === 'inbox' ? base : `${base}?view=${view.key}`} aria-current={currentView === view.key ? 'page' : undefined}>
+							<Icon size={18} aria-hidden="true" />
+							<span class="name">{view.label}</span>
+							{#if data.counts[view.key]}<span class="count" aria-label="{data.counts[view.key]} unread">{data.counts[view.key]}</span>{/if}
+						</a>
+					</li>
+				{/each}
+			</ul>
+
+			<div class="section-head">
+				<h2>Folders</h2>
+				{#if data.canManage}
+					<a class="icon-button small-icon" href="{base}/organize#new-folder" aria-label="Make a folder" title="Make a folder"><Plus size={16} aria-hidden="true" /></a>
+				{/if}
+			</div>
+			{#if data.mailFolders.length}
+				<ul class="nav-list">
+					{#each data.mailFolders as folder (folder.identifier)}
+						<li>
+							<a
+								href="{base}?folder={folder.identifier}"
+								aria-current={currentFolder === folder.identifier ? 'page' : undefined}
+								style="padding-left: calc(var(--space-2) + {folder.depth} * var(--space-4))"
+								title={folder.path}
+							>
+								<FolderIcon size={18} aria-hidden="true" />
+								<span class="name">{folder.name}</span>
+								{#if folder.unread}<span class="count" aria-label="{folder.unread} unread">{folder.unread}</span>{/if}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			{:else}
+				<p class="empty small muted">No folders yet.</p>
+			{/if}
+
+			<div class="section-head">
+				<h2>Tags</h2>
+				{#if data.canManage}
+					<a class="icon-button small-icon" href="{base}/organize#new-tag" aria-label="Make a tag" title="Make a tag"><Plus size={16} aria-hidden="true" /></a>
+				{/if}
+			</div>
+			{#if data.tags.length}
+				<ul class="nav-list">
+					{#each data.tags as tag (tag.identifier)}
+						<li>
+							<a href="{base}?tag={tag.identifier}" aria-current={currentTag === tag.identifier ? 'page' : undefined}>
+								<span class="dot dot-{tag.color}" aria-hidden="true"></span>
+								<span class="name">{tag.name}</span>
+							</a>
+						</li>
+					{/each}
+				</ul>
+			{:else}
+				<p class="empty small muted">No tags yet.</p>
+			{/if}
+
+			{#if data.canManage}
+				<ul class="nav-list tools">
+					<li>
+						<a href="{base}/rules" aria-current={page.url.pathname.startsWith(`${base}/rules`) ? 'page' : undefined}>
+							<ListFilter size={18} aria-hidden="true" /><span class="name">Auto-sort rules</span>
+						</a>
+					</li>
+					<li>
+						<a href="{base}/organize" aria-current={page.url.pathname === `${base}/organize` ? 'page' : undefined}>
+							<FolderCog size={18} aria-hidden="true" /><span class="name">Folders and tags</span>
+						</a>
+					</li>
+				</ul>
+			{/if}
+		</nav>
+	</details>
+
+	<div class="mail-main">
+		{#if !data.emailOn}
+			<div class="notice" role="status">
+				<p>Email is not switched on yet, so nothing arrives or goes out. The steps are in site/MAIL.md, “Switching email on”.</p>
+			</div>
+		{/if}
+		{@render children()}
+	</div>
+</div>
+
+<style>
+	.mail {
+		display: grid;
+		gap: var(--space-5);
+		align-items: start;
+	}
+	@media (min-width: 50rem) {
+		.mail {
+			grid-template-columns: 15rem minmax(0, 1fr);
+		}
+		.mail-nav > summary {
+			display: none;
+		}
+		.mail-nav {
+			position: sticky;
+			top: var(--space-4);
+		}
+	}
+	.mail-nav > summary {
+		font-weight: var(--font-weight-semibold);
+		min-height: var(--layout-target-minimum);
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+	.compose {
+		width: 100%;
+		justify-content: center;
+		gap: var(--space-2);
+		margin-bottom: var(--space-4);
+		border-radius: 999px;
+		box-shadow: 0 1px 3px color-mix(in srgb, var(--color-ink) 20%, transparent);
+	}
+	.nav-list {
+		list-style: none;
+		margin: 0 0 var(--space-3);
+		padding: 0;
+	}
+	.nav-list a {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		min-height: 2.5rem;
+		padding: 0 var(--space-3) 0 var(--space-2);
+		border-radius: 0 999px 999px 0;
+		color: var(--color-ink);
+		text-decoration: none;
+	}
+	.nav-list a:hover {
+		background: var(--color-surface);
+	}
+	.nav-list a[aria-current='page'] {
+		background: color-mix(in srgb, var(--color-link) 16%, transparent);
+		font-weight: var(--font-weight-semibold);
+		box-shadow: inset 3px 0 0 var(--color-link);
+	}
+	.nav-list :global(svg) {
+		flex: none;
+		color: var(--color-ink-muted);
+	}
+	.nav-list a[aria-current='page'] :global(svg) {
+		color: var(--color-link);
+	}
+	.name {
+		flex: 1;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.count {
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-bold);
+	}
+	.section-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: var(--space-4) 0 var(--space-1);
+		padding-left: var(--space-2);
+	}
+	.section-head h2 {
+		margin: 0;
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-ink-muted);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+	.empty {
+		padding-left: var(--space-2);
+		margin: 0 0 var(--space-3);
+	}
+	.tools {
+		border-top: 1px solid var(--color-line);
+		padding-top: var(--space-3);
+		margin-top: var(--space-4);
+	}
+	.dot {
+		flex: none;
+		width: 0.7rem;
+		height: 0.7rem;
+		margin-inline: 0.2rem;
+		border-radius: 50%;
+		background: var(--color-link);
+	}
+	.dot-orange {
+		background: var(--color-action);
+	}
+	.dot-gray {
+		background: var(--color-ink-muted);
+	}
+	.dot-gold {
+		background: var(--color-placeholder-rule);
+	}
+	.dot-green {
+		background: var(--color-map-class-2);
+	}
+	.dot-purple {
+		background: var(--color-band);
+	}
+	.mail-main {
+		min-width: 0;
+	}
+	.mail-main > :global(.notice:first-child) {
+		margin-top: 0;
+	}
+</style>

@@ -1,17 +1,37 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Archive from '@lucide/svelte/icons/archive';
+	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
+	import BellRing from '@lucide/svelte/icons/bell-ring';
+	import Clock from '@lucide/svelte/icons/clock';
+	import FolderInput from '@lucide/svelte/icons/folder-input';
+	import InboxIcon from '@lucide/svelte/icons/inbox';
+	import ListFilter from '@lucide/svelte/icons/list-filter';
+	import Mail from '@lucide/svelte/icons/mail';
+	import OctagonAlert from '@lucide/svelte/icons/octagon-alert';
+	import Paperclip from '@lucide/svelte/icons/paperclip';
+	import Plus from '@lucide/svelte/icons/plus';
+	import StickyNote from '@lucide/svelte/icons/sticky-note';
+	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import X from '@lucide/svelte/icons/x';
 	import { deliveryLabels, formatAddress, messageStatusLabels } from '#lib/mail.ts';
-	import LabelChip from '../LabelChip.svelte';
-	import { fullDate, localInputValue } from '../dates.ts';
+	import Avatar from '../Avatar.svelte';
+	import Composer from '../Composer.svelte';
+	import TagChip from '../TagChip.svelte';
+	import { fullDate, listDate, localInputValue } from '../dates.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 
 	const thread = $derived(data.thread);
-	const labelled = $derived(new Set(thread.labels.map((label) => label.identifier)));
+	const tagged = $derived(new Set(thread.tags.map((tag) => tag.identifier)));
+	const untagged = $derived(data.tags.filter((tag) => !tagged.has(tag.identifier)));
+	const home = $derived(thread.folder === 'folder' ? data.mailFolders.find((item) => item.identifier === thread.folderIdentifier) : undefined);
+	const placeName = $derived(
+		home ? home.path : ({ inbox: 'Inbox', archive: 'Archive', spam: 'Spam', trash: 'Deleted', folder: 'A folder' } as const)[thread.folder]
+	);
 	// The browser's time zone, so times typed in the forms mean the reader's own time.
 	let zone = $state('America/Denver');
-	let quoted = $state(true);
 	onMount(() => {
 		zone = Intl.DateTimeFormat().resolvedOptions().timeZone || zone;
 	});
@@ -19,19 +39,82 @@
 	function size(bytes: number): string {
 		return bytes > 1024 * 1024 ? `${(bytes / 1024 / 1024).toFixed(1)} MB` : `${Math.max(1, Math.ceil(bytes / 1024))} KB`;
 	}
+	function firstLine(text: string): string {
+		const flat = text.replace(/\s+/g, ' ').trim();
+		return flat.length > 120 ? `${flat.slice(0, 119)}…` : flat;
+	}
 </script>
 
 <svelte:head>
 	<title>{thread.subject} · Inbox · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/inbox">Inbox</a></p>
-<h1>{thread.subject}</h1>
-<p class="muted">
-	With {thread.counterpartName ? `${thread.counterpartName} <${thread.counterpartAddress}>` : thread.counterpartAddress}
-	{#if thread.nationIdentifier}· <a href="/nations/{thread.nationIdentifier}">The nation’s page</a>{/if}
-	{#if thread.outreach}· From the outreach batch <a href="/workspace/outreach/{thread.outreach.batchIdentifier}">{thread.outreach.batchName}</a>{/if}
-</p>
+<div class="topbar" role="toolbar" aria-label="Conversation">
+	<a class="icon-button" href="/workspace/inbox" aria-label="Back to the inbox" title="Back to the inbox"><ArrowLeft size={20} aria-hidden="true" /></a>
+	<form method="post" action="?/move" class="tools">
+		{#if thread.folder === 'inbox'}
+			<button class="tool" type="submit" name="folder" value="archive"><Archive size={18} aria-hidden="true" /><span>Archive</span></button>
+		{:else}
+			<button class="tool" type="submit" name="folder" value="inbox"><InboxIcon size={18} aria-hidden="true" /><span>To inbox</span></button>
+		{/if}
+		{#if thread.folder !== 'spam'}<button class="tool" type="submit" name="folder" value="spam"><OctagonAlert size={18} aria-hidden="true" /><span>Spam</span></button>{/if}
+		{#if thread.folder !== 'trash'}<button class="tool" type="submit" name="folder" value="trash"><Trash2 size={18} aria-hidden="true" /><span>Delete</span></button>{/if}
+	</form>
+	<form method="post" action="?/read" class="tools">
+		<button class="tool" type="submit" name="read" value="no"><Mail size={18} aria-hidden="true" /><span>Mark unread</span></button>
+	</form>
+	{#if data.mailFolders.length}
+		<form method="post" action="?/move" class="tools move">
+			<label for="move-folder" class="visually-hidden">Move to a folder</label>
+			<select id="move-folder" name="folder" required>
+				<option value="">Move to…</option>
+				{#each data.mailFolders as folder (folder.identifier)}
+					<option value={folder.identifier} disabled={folder.identifier === thread.folderIdentifier}>{' '.repeat(folder.depth)}{folder.name}</option>
+				{/each}
+			</select>
+			<button class="tool" type="submit"><FolderInput size={18} aria-hidden="true" /><span>Move</span></button>
+		</form>
+	{/if}
+</div>
+
+<header class="thread-head">
+	<h1>{thread.subject}</h1>
+	<div class="tag-row">
+		<span class="place small"><FolderInput size={14} aria-hidden="true" />{placeName}</span>
+		{#each thread.tags as tag (tag.identifier)}
+			<form method="post" action="?/tag" class="tag-form">
+				<input type="hidden" name="tag" value={tag.identifier} />
+				<TagChip {tag} />
+				<button class="chip-x" type="submit" name="on" value="no" aria-label="Take off the tag {tag.name}" title="Take off the tag"><X size={14} aria-hidden="true" /></button>
+			</form>
+		{/each}
+		{#if untagged.length}
+			<details class="menu">
+				<summary class="add-tag small"><Plus size={14} aria-hidden="true" />Tag</summary>
+				<div class="popover">
+					<ul>
+						{#each untagged as tag (tag.identifier)}
+							<li>
+								<form method="post" action="?/tag">
+									<input type="hidden" name="tag" value={tag.identifier} />
+									<button type="submit" name="on" value="yes" class="menu-item"><TagChip {tag} /></button>
+								</form>
+							</li>
+						{/each}
+					</ul>
+				</div>
+			</details>
+		{/if}
+	</div>
+	<p class="muted small with">
+		With {thread.counterpartName ? `${thread.counterpartName} <${thread.counterpartAddress}>` : thread.counterpartAddress}
+		{#if thread.nationIdentifier}· <a href="/nations/{thread.nationIdentifier}">The nation’s page</a>{/if}
+		{#if thread.outreach}· From the outreach batch <a href="/workspace/outreach/{thread.outreach.batchIdentifier}">{thread.outreach.batchName}</a>{/if}
+		{#if data.canManage && thread.counterpartAddress}
+			· <a href="/workspace/inbox/rules/new?from={encodeURIComponent(thread.counterpartAddress)}" class="rule-link"><ListFilter size={14} aria-hidden="true" />Make a rule for mail from this sender</a>
+		{/if}
+	</p>
+</header>
 
 {#if form && 'problem' in form}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
@@ -56,210 +139,159 @@
 
 <div class="conversation">
 	<div class="messages">
-		{#each thread.messages as message (message.identifier)}
-			<article class="message" class:outgoing={message.direction === 'out'} aria-label="Message from {message.from.name ?? message.from.email}">
-				<header>
-					<p>
+		{#each thread.messages as message, index (message.identifier)}
+			{@const latest = index >= thread.messages.length - 2}
+			<details class="message" class:outgoing={message.direction === 'out'} open={latest || message.status !== 'sent' && message.status !== 'received'}>
+				<summary>
+					<Avatar name={message.from.name ?? message.from.email} />
+					<span class="sender">
 						<strong>{message.from.name ?? message.from.email}</strong>
-						<span class="muted small">&lt;{message.from.email}&gt;</span>
-					</p>
-					<p class="small muted">
-						To {message.to.map(formatAddress).join(', ')}
-						{#if message.cc.length}· Cc {message.cc.map(formatAddress).join(', ')}{/if}
-						{#if message.bcc.length}· Bcc {message.bcc.map(formatAddress).join(', ')}{/if}
-					</p>
-					<p class="small">
-						{#if message.direction === 'in'}
-							Received {fullDate(message.receivedAt ?? message.createdAt)}
-						{:else if message.status === 'sent'}
-							Sent {fullDate(message.sentAt)}{#if message.sentByName} by {message.sentByName}{/if}
-							{#if message.carrier === 'smtp'}through the outreach mailbox{/if}
-						{:else if message.status === 'scheduled'}
-							Scheduled for {fullDate(message.scheduledFor)}
-						{:else}
-							{messageStatusLabels[message.status] ?? message.status}
-						{/if}
-						{#if message.automatic}· Automatic reply{/if}
-					</p>
+						{#if message.from.name}<span class="muted small address">&lt;{message.from.email}&gt;</span>{/if}
+						<span class="preview muted small">{firstLine(message.text)}</span>
+						<span class="recipients muted small">
+							to {message.to.map(formatAddress).join(', ')}{#if message.cc.length}, cc {message.cc.map(formatAddress).join(', ')}{/if}{#if message.bcc.length}, bcc {message.bcc.map(formatAddress).join(', ')}{/if}
+						</span>
+					</span>
+					<span class="stamp small muted" title={fullDate(message.sentAt ?? message.receivedAt ?? message.scheduledFor ?? message.createdAt)}>
+						{#if message.attachments.some((item) => !item.inline)}<Paperclip size={14} aria-label="Has attachments" />{/if}
+						{#if message.direction === 'in'}{listDate(message.receivedAt ?? message.createdAt)}
+						{:else if message.status === 'sent'}{listDate(message.sentAt ?? message.createdAt)}
+						{:else if message.status === 'scheduled'}<span class="status">Goes {listDate(message.scheduledFor ?? message.createdAt)}</span>
+						{:else}<span class="status">{messageStatusLabels[message.status] ?? message.status}</span>{/if}
+					</span>
+				</summary>
+				<div class="message-body">
 					{#if message.direction === 'out' && message.status === 'sent'}
-						<p class="small">
-							{message.deliveryStatus ? deliveryLabels[message.deliveryStatus] : 'Sent; no delivery report yet'}{#if message.deliveryDetail}: {message.deliveryDetail}{/if}
-							{#if message.acknowledgedAt}· They said they got it on {fullDate(message.acknowledgedAt)}{/if}
+						<p class="small status-line">
+							Sent {fullDate(message.sentAt)}{#if message.sentByName} by {message.sentByName}{/if}{#if message.carrier === 'smtp'} through the outreach mailbox{/if}.
+							{message.deliveryStatus ? deliveryLabels[message.deliveryStatus] : 'No delivery report yet'}{#if message.deliveryDetail}: {message.deliveryDetail}{/if}.
+							{#if message.acknowledgedAt}They said they got it on {fullDate(message.acknowledgedAt)}.{/if}
 						</p>
 					{/if}
+					{#if message.automatic}<p class="small status-line">Automatic reply</p>{/if}
 					{#if message.spamReason}<p class="small warning">In Spam because: {message.spamReason}</p>{/if}
 					{#if message.error}<p class="small warning">Not sent: {message.error}</p>{/if}
-				</header>
-				<div class="text">{message.text}</div>
-				{#if message.hasHtml}
-					<details>
-						<summary class="small">Show the formatted version</summary>
-						<p class="small muted">Pictures from the web are not loaded, so the sender cannot tell the message was opened.</p>
-						<iframe
-							title="Formatted version of the message"
-							src="/workspace/inbox/messages/{message.identifier}/html"
-							sandbox=""
-							loading="lazy"
-							referrerpolicy="no-referrer"
-						></iframe>
-					</details>
-				{/if}
-				{#if message.attachments.some((item) => !item.inline)}
-					<ul class="attachments">
-						{#each message.attachments.filter((item) => !item.inline) as attachment (attachment.identifier)}
-							<li><a href="/workspace/inbox/attachments/{attachment.identifier}" download>{attachment.filename}</a> <span class="small muted">{size(attachment.size)}</span></li>
-						{/each}
-					</ul>
-				{/if}
-				{#if message.status === 'scheduled' || message.status === 'failed'}
-					<form method="post" class="actions">
-						<input type="hidden" name="message" value={message.identifier} />
-						{#if message.carrier !== 'smtp'}
-							<button class="button-quiet" type="submit" formaction="?/again">{message.status === 'failed' ? 'Send again' : 'Send now'}</button>
-						{/if}
-						<button class="button-quiet" type="submit" formaction="?/cancel">Cancel this message</button>
-					</form>
-				{/if}
-			</article>
+					<div class="text">{message.text}</div>
+					{#if message.hasHtml}
+						<details class="formatted">
+							<summary class="small">Show the formatted version</summary>
+							<p class="small muted">Pictures from the web are not loaded, so the sender cannot tell the message was opened.</p>
+							<iframe
+								title="Formatted version of the message"
+								src="/workspace/inbox/messages/{message.identifier}/html"
+								sandbox=""
+								loading="lazy"
+								referrerpolicy="no-referrer"
+							></iframe>
+						</details>
+					{/if}
+					{#if message.attachments.some((item) => !item.inline)}
+						<ul class="attachments">
+							{#each message.attachments.filter((item) => !item.inline) as attachment (attachment.identifier)}
+								<li>
+									<a href="/workspace/inbox/attachments/{attachment.identifier}" download>
+										<Paperclip size={16} aria-hidden="true" />
+										<span class="file">{attachment.filename}</span>
+										<span class="small muted">{size(attachment.size)}</span>
+									</a>
+								</li>
+							{/each}
+						</ul>
+					{/if}
+					{#if message.status === 'scheduled' || message.status === 'failed'}
+						<form method="post" class="actions">
+							<input type="hidden" name="message" value={message.identifier} />
+							{#if message.carrier !== 'smtp'}
+								<button class="button-quiet" type="submit" formaction="?/again">{message.status === 'failed' ? 'Send again' : 'Send now'}</button>
+							{/if}
+							<button class="button-quiet" type="submit" formaction="?/cancel">Cancel this message</button>
+						</form>
+					{/if}
+				</div>
+			</details>
 		{/each}
 
 		{#each thread.notes as note (note.identifier)}
-			<aside class="note panel" aria-label="Note">
-				<p class="small"><strong>Note</strong> from {note.personName ?? 'someone'}, {fullDate(note.createdAt)}. Only the project team sees notes.</p>
+			<aside class="note" aria-label="Note for the team">
+				<p class="small note-head"><StickyNote size={16} aria-hidden="true" /><strong>{note.personName ?? 'Someone'}</strong> · {fullDate(note.createdAt)} · only the team sees this</p>
 				<p class="text">{note.body}</p>
 			</aside>
 		{/each}
 
-		<section class="panel" aria-labelledby="reply-heading">
-			<h2 id="reply-heading">Reply</h2>
-			{#if !data.emailOn}<p class="small muted">Email is not switched on yet, so a reply would be kept but not sent.</p>{/if}
-			<form method="post" action="?/reply" enctype="multipart/form-data">
-				<input type="hidden" name="zone" value={zone} />
-				<div class="field">
-					<label for="reply-from">From</label>
-					<select id="reply-from" name="from">
-						{#each data.addresses as address (address)}<option value={address} selected={address === data.reply.from}>{address}</option>{/each}
-					</select>
-				</div>
-				<div class="field">
-					<label for="reply-to">To</label>
-					<input type="text" id="reply-to" name="to" value={data.reply.to} required />
-				</div>
-				<details>
-					<summary class="small">Cc and Bcc</summary>
-					<div class="field"><label for="reply-cc">Cc</label><input type="text" id="reply-cc" name="cc" /></div>
-					<div class="field"><label for="reply-bcc">Bcc</label><input type="text" id="reply-bcc" name="bcc" /></div>
-				</details>
-				<div class="field">
-					<label for="reply-subject">Subject</label>
-					<input type="text" id="reply-subject" name="subject" value={data.reply.subject} required />
-				</div>
-				<div class="field">
-					<label for="reply-text">Message</label>
-					<textarea id="reply-text" name="text" rows="10" required>{quoted ? data.reply.quote : ''}</textarea>
-				</div>
-				{#if data.reply.quote}
-					<p class="small"><label><input type="checkbox" bind:checked={quoted} /> Quote the last message</label></p>
-				{/if}
-				<div class="field">
-					<label for="reply-files">Attachments</label>
-					<input id="reply-files" type="file" name="attachments" multiple />
-				</div>
-				<div class="field">
-					<label for="reply-later">Send later <span class="small muted">(optional, your time)</span></label>
-					<input id="reply-later" type="datetime-local" name="sendAt" />
-				</div>
-				<div class="field">
-					<label for="reply-follow">Remind me if no reply by <span class="small muted">(optional)</span></label>
-					<input id="reply-follow" type="datetime-local" name="followUpAt" />
-				</div>
-				<button class="button" type="submit">Send</button>
-			</form>
-		</section>
-
-		<section class="panel" aria-labelledby="note-heading">
-			<h2 id="note-heading">Add a note</h2>
-			<form method="post" action="?/note">
-				<div class="field">
-					<label for="note-body">Note <span class="small muted">(only the project team sees it)</span></label>
-					<textarea id="note-body" name="body" rows="3" required></textarea>
-				</div>
-				<button class="button-quiet" type="submit">Add the note</button>
-			</form>
+		<section class="reply" aria-labelledby="reply-heading">
+			<h2 id="reply-heading" class="visually-hidden">Reply</h2>
+			<Composer
+				action="?/reply"
+				idPrefix="reply"
+				addresses={data.addresses}
+				from={data.reply.from}
+				to={data.reply.to}
+				subject={data.reply.subject}
+				quote={data.reply.quote}
+			/>
 		</section>
 	</div>
 
-	<aside class="side" aria-label="Conversation actions">
-		<form method="post" action="?/move" class="actions">
-			{#if thread.folder === 'inbox'}
-				<button class="button-quiet" type="submit" name="folder" value="archive">Archive</button>
+	<aside class="side" aria-label="About this conversation">
+		<section class="card">
+			<h2>Assigned to</h2>
+			<form method="post" action="?/assign" class="inline-form">
+				<label for="assignee" class="visually-hidden">Assigned to</label>
+				<select id="assignee" name="assignee">
+					<option value="">Nobody</option>
+					{#each data.people as person (person.identifier)}
+						<option value={person.identifier} selected={person.identifier === thread.assigneeIdentifier}>{person.name}</option>
+					{/each}
+				</select>
+				<button class="button-quiet small" type="submit">Save</button>
+			</form>
+		</section>
+
+		<section class="card">
+			<h2><Clock size={16} aria-hidden="true" />Snooze</h2>
+			{#if thread.snoozedUntil}
+				<p class="small">Hidden until {fullDate(thread.snoozedUntil)}.</p>
+				<form method="post" action="?/snooze"><button class="button-quiet small" type="submit" name="clear" value="yes">Bring it back now</button></form>
 			{:else}
-				<button class="button-quiet" type="submit" name="folder" value="inbox">Move to the inbox</button>
+				<form method="post" action="?/snooze" class="stack">
+					<input type="hidden" name="zone" value={zone} />
+					<label for="snooze-until" class="small">Hide from the inbox until</label>
+					<input id="snooze-until" type="datetime-local" name="until" value={localInputValue(24)} />
+					<button class="button-quiet small" type="submit">Snooze</button>
+				</form>
 			{/if}
-			{#if thread.folder !== 'spam'}<button class="button-quiet" type="submit" name="folder" value="spam">Spam</button>{/if}
-			{#if thread.folder !== 'trash'}<button class="button-quiet" type="submit" name="folder" value="trash">Delete</button>{/if}
-		</form>
-		<form method="post" action="?/read" class="actions">
-			<button class="button-quiet" type="submit" name="read" value="no">Mark unread</button>
-		</form>
+		</section>
+
+		<section class="card">
+			<h2><BellRing size={16} aria-hidden="true" />Reminder if no reply</h2>
+			{#if thread.followUpAt}
+				<p class="small">On {fullDate(thread.followUpAt)}, unless they reply first.</p>
+				<form method="post" action="?/followUp"><button class="button-quiet small" type="submit" name="clear" value="yes">Clear the reminder</button></form>
+			{:else}
+				<form method="post" action="?/followUp" class="stack">
+					<input type="hidden" name="zone" value={zone} />
+					<label for="follow-at" class="small">Remind me on</label>
+					<input id="follow-at" type="datetime-local" name="at" value={localInputValue(24 * 7)} />
+					<button class="button-quiet small" type="submit">Set the reminder</button>
+				</form>
+			{/if}
+		</section>
+
+		<section class="card">
+			<h2><StickyNote size={16} aria-hidden="true" />Note for the team</h2>
+			<form method="post" action="?/note" class="stack">
+				<label for="note-body" class="visually-hidden">Note (only the project team sees it)</label>
+				<textarea id="note-body" name="body" rows="3" required placeholder="Only the team sees notes"></textarea>
+				<button class="button-quiet small" type="submit">Add the note</button>
+			</form>
+		</section>
+
 		{#if thread.folder === 'trash'}<p class="small muted">Deleted conversations are removed for good after 30 days.</p>{/if}
 
-		<h2 class="small">Assigned to</h2>
-		<form method="post" action="?/assign" class="actions">
-			<label for="assignee" class="visually-hidden">Assigned to</label>
-			<select id="assignee" name="assignee">
-				<option value="">Nobody</option>
-				{#each data.people as person (person.identifier)}
-					<option value={person.identifier} selected={person.identifier === thread.assigneeIdentifier}>{person.name}</option>
-				{/each}
-			</select>
-			<button class="button-quiet" type="submit">Assign</button>
-		</form>
-
-		<h2 class="small">Labels</h2>
-		<ul class="plain">
-			{#each data.labels as label (label.identifier)}
-				<li>
-					<form method="post" action="?/label">
-						<input type="hidden" name="label" value={label.identifier} />
-						<button class="button-quiet small" type="submit" name="on" value={labelled.has(label.identifier) ? 'no' : 'yes'} aria-pressed={labelled.has(label.identifier)}>
-							<LabelChip {label} />
-						</button>
-					</form>
-				</li>
-			{/each}
-		</ul>
-
-		<h2 class="small">Snooze</h2>
-		{#if thread.snoozedUntil}
-			<p class="small">Snoozed until {fullDate(thread.snoozedUntil)}.</p>
-			<form method="post" action="?/snooze"><button class="button-quiet" type="submit" name="clear" value="yes">End the snooze</button></form>
-		{:else}
-			<form method="post" action="?/snooze">
-				<input type="hidden" name="zone" value={zone} />
-				<label for="snooze-until" class="small">Hide until</label>
-				<input id="snooze-until" type="datetime-local" name="until" value={localInputValue(24)} />
-				<button class="button-quiet" type="submit">Snooze</button>
-			</form>
-		{/if}
-
-		<h2 class="small">Reminder if no reply</h2>
-		{#if thread.followUpAt}
-			<p class="small">Reminder on {fullDate(thread.followUpAt)}, unless they reply first.</p>
-			<form method="post" action="?/followUp"><button class="button-quiet" type="submit" name="clear" value="yes">Clear the reminder</button></form>
-		{:else}
-			<form method="post" action="?/followUp">
-				<input type="hidden" name="zone" value={zone} />
-				<label for="follow-at" class="small">Remind me on</label>
-				<input id="follow-at" type="datetime-local" name="at" value={localInputValue(24 * 7)} />
-				<button class="button-quiet" type="submit">Set the reminder</button>
-			</form>
-		{/if}
-
 		{#if thread.actions.length}
-			<details>
+			<details class="card history">
 				<summary class="small">History</summary>
-				<ul class="plain small">
+				<ul class="small">
 					{#each thread.actions as action, index (index)}
 						<li>{fullDate(action.createdAt)}: {action.action}{#if action.personName} by {action.personName}{/if}{#if action.note} ({action.note}){/if}</li>
 					{/each}
@@ -270,65 +302,338 @@
 </div>
 
 <style>
+	.topbar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-1) var(--space-2);
+		padding-bottom: var(--space-2);
+		border-bottom: 1px solid var(--color-line);
+	}
+	.tools {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-1);
+	}
+	.move select {
+		min-height: 2.25rem;
+	}
+	.tool {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		min-height: var(--layout-target-minimum);
+		padding: 0 var(--space-2);
+		border: 0;
+		border-radius: var(--radius-control);
+		background: transparent;
+		color: var(--color-ink);
+		font: inherit;
+		font-size: var(--font-size-small);
+		cursor: pointer;
+	}
+	.tool:hover {
+		background: var(--color-surface);
+	}
+	.thread-head {
+		margin-block: var(--space-4);
+	}
+	.thread-head h1 {
+		margin: 0 0 var(--space-2);
+		overflow-wrap: anywhere;
+	}
+	.tag-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+	}
+	.place {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3em;
+		padding: 0.1em 0.6em;
+		border-radius: 999px;
+		border: 1px solid var(--color-line);
+		color: var(--color-ink-muted);
+	}
+	.tag-form {
+		display: inline-flex;
+		align-items: center;
+	}
+	.chip-x {
+		display: inline-grid;
+		place-items: center;
+		width: 1.75rem;
+		height: 1.75rem;
+		margin-left: -0.25rem;
+		border: 0;
+		border-radius: 50%;
+		background: transparent;
+		color: var(--color-ink-muted);
+		cursor: pointer;
+	}
+	.chip-x:hover {
+		background: var(--color-surface);
+		color: var(--color-ink);
+	}
+	.menu {
+		position: relative;
+	}
+	.add-tag {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3em;
+		min-height: 2rem;
+		padding: 0 0.7em;
+		border: 1px dashed var(--color-control-border);
+		border-radius: 999px;
+		cursor: pointer;
+		list-style: none;
+	}
+	.add-tag::-webkit-details-marker {
+		display: none;
+	}
+	.popover {
+		position: absolute;
+		top: calc(100% + var(--space-1));
+		left: 0;
+		z-index: 5;
+		min-width: 14rem;
+		padding: var(--space-2);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		background: var(--color-surface-raised);
+		box-shadow: 0 6px 24px color-mix(in srgb, var(--color-ink) 18%, transparent);
+	}
+	.popover ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.menu-item {
+		display: flex;
+		width: 100%;
+		min-height: 2.5rem;
+		align-items: center;
+		padding: 0 var(--space-2);
+		border: 0;
+		border-radius: var(--radius-control);
+		background: transparent;
+		cursor: pointer;
+	}
+	.menu-item:hover {
+		background: var(--color-surface);
+	}
+	.with {
+		margin: var(--space-2) 0 0;
+	}
+	.rule-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3em;
+	}
 	.conversation {
 		display: grid;
 		gap: var(--space-5);
+		align-items: start;
 	}
-	@media (min-width: 60rem) {
+	@media (min-width: 70rem) {
 		.conversation {
 			grid-template-columns: minmax(0, 1fr) 16rem;
 		}
 	}
+	.messages {
+		display: grid;
+		gap: var(--space-3);
+	}
 	.message {
-		border-top: 1px solid var(--color-line);
-		padding-block: var(--space-3);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		background: var(--color-surface-raised);
 	}
-	.message header p {
-		margin: 0;
+	.message.outgoing {
+		background: color-mix(in srgb, var(--color-link) 5%, var(--color-surface-raised));
 	}
-	.outgoing {
-		padding-left: var(--space-3);
-		border-left: 3px solid var(--color-link);
+	.message > summary {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-3);
+		padding: var(--space-3) var(--space-4);
+		cursor: pointer;
+		list-style: none;
+	}
+	.message > summary::-webkit-details-marker {
+		display: none;
+	}
+	.sender {
+		flex: 1;
+		min-width: 0;
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: var(--space-2);
+		align-items: baseline;
+	}
+	.address {
+		overflow-wrap: anywhere;
+	}
+	.preview {
+		flex-basis: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.recipients {
+		flex-basis: 100%;
+		display: none;
+		overflow-wrap: anywhere;
+	}
+	.message[open] .preview {
+		display: none;
+	}
+	.message[open] .recipients {
+		display: block;
+	}
+	.stamp {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		white-space: nowrap;
+	}
+	.status {
+		color: var(--color-link);
+		font-weight: var(--font-weight-semibold);
+	}
+	.message-body {
+		padding: 0 var(--space-4) var(--space-4) calc(var(--space-4) + 2.25rem + var(--space-3));
+	}
+	.status-line {
+		color: var(--color-ink-muted);
+		margin: 0 0 var(--space-2);
 	}
 	.text {
 		white-space: pre-wrap;
 		overflow-wrap: anywhere;
-		margin-block: var(--space-3);
+		line-height: var(--font-line-height-reading);
+		margin: 0;
 	}
 	.warning {
 		color: var(--color-danger);
 	}
+	.formatted {
+		margin-top: var(--space-3);
+	}
 	iframe {
 		width: 100%;
 		min-height: 24rem;
-		border: 1px solid var(--color-control-border);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
 		background: var(--color-surface-raised);
 	}
 	.attachments {
-		margin: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin: var(--space-3) 0 0;
+		padding: 0;
+	}
+	.attachments a {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		min-height: var(--layout-target-minimum);
+		padding: 0 var(--space-3);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
+		background: var(--color-paper);
+		text-decoration: none;
+	}
+	.attachments a:hover .file {
+		text-decoration: underline;
 	}
 	.actions {
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-2);
-		margin-block: var(--space-2);
+		margin-top: var(--space-3);
 	}
 	.note {
-		margin-block: var(--space-3);
+		padding: var(--space-3) var(--space-4);
+		border-radius: var(--radius-panel);
+		background: var(--color-placeholder-background);
+		border-left: 4px solid var(--color-placeholder-rule);
 	}
-	.plain {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 var(--space-3);
+	.note-head {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+		margin: 0 0 var(--space-1);
 	}
-	.side h2 {
-		margin-top: var(--space-4);
+	.reply {
+		margin-top: var(--space-3);
 	}
-	.side input[type='datetime-local'] {
-		display: block;
-		margin-block: var(--space-1);
+	.side {
+		display: grid;
+		gap: var(--space-3);
 	}
-	button[aria-pressed='true'] {
-		font-weight: var(--font-weight-bold);
+	.card {
+		padding: var(--space-3) var(--space-4);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		background: var(--color-surface-raised);
+	}
+	.card h2 {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+		margin: 0 0 var(--space-2);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+	}
+	.inline-form {
+		display: flex;
+		gap: var(--space-2);
+	}
+	.inline-form select {
+		flex: 1;
+		min-width: 0;
+	}
+	.stack {
+		display: grid;
+		gap: var(--space-2);
+		justify-items: start;
+	}
+	.stack input[type='datetime-local'] {
+		font: inherit;
+		font-size: var(--font-size-small);
+		min-height: var(--layout-target-minimum);
+		width: 100%;
+		border: 2px solid var(--color-control-border);
+		border-radius: var(--radius-control);
+		background: var(--color-paper);
+		color: var(--color-ink);
+		padding: 0 var(--space-2);
+	}
+	.stack textarea {
+		font-size: var(--font-size-small);
+	}
+	.history ul {
+		margin: var(--space-2) 0 0;
+		padding-left: var(--space-4);
+	}
+	@media (max-width: 40rem) {
+		.tool span {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+		.message-body {
+			padding-left: var(--space-4);
+		}
 	}
 </style>

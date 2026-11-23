@@ -14,9 +14,10 @@
  * - Mail that fails the sender's own DMARC policy goes to Spam.
  */
 import PostalMime, { type Email } from 'postal-mime';
-import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type MailAddress } from '#lib/mail.ts';
+import { cleanAddress, formatAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type MailAddress } from '#lib/mail.ts';
 import { actionStatement, bucketKeys, currentTime, type MailContext } from './context.ts';
 import { isProjectAddress } from './settings.ts';
+import { factsFor, runRules } from './rules.ts';
 import { suppress } from './suppressions.ts';
 import { readToken, unsubscribeAddressToken } from './tokens.ts';
 
@@ -32,7 +33,16 @@ export interface ArrivingMail {
 }
 
 export type ArrivalResult =
-	| { outcome: 'filed'; threadIdentifier: string; messageIdentifier: string; spam: boolean; automatic: boolean; notify: boolean }
+	| {
+			outcome: 'filed';
+			threadIdentifier: string;
+			messageIdentifier: string;
+			spam: boolean;
+			automatic: boolean;
+			notify: boolean;
+			/** The names of the auto-sort rules that matched, in the order they ran. */
+			sortedBy: string[];
+	  }
 	| { outcome: 'unsubscribed'; email: string }
 	| { outcome: 'rejected'; reason: string };
 
@@ -368,16 +378,16 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 		)
 	);
 	if (!automatic) {
-		// A reply to outreach: mark the recipient as replied and label the conversation.
+		// A reply to outreach: mark the recipient as replied and tag the conversation.
 		statements.push(
 			database
 				.prepare(`UPDATE outreach_recipients SET status = 'replied', replied_at = ? WHERE thread_identifier = ? AND status = 'sent'`)
 				.bind(stamp, threadIdentifier),
 			database
 				.prepare(
-					`INSERT OR IGNORE INTO mail_thread_labels (thread_identifier, label_identifier)
-					 SELECT ?1, 'label-outreach-reply' WHERE EXISTS (SELECT 1 FROM outreach_recipients WHERE thread_identifier = ?1)
-					 AND EXISTS (SELECT 1 FROM mail_labels WHERE identifier = 'label-outreach-reply')`
+					`INSERT OR IGNORE INTO mail_thread_tags (thread_identifier, tag_identifier)
+					 SELECT ?1, 'tag-outreach-reply' WHERE EXISTS (SELECT 1 FROM outreach_recipients WHERE thread_identifier = ?1)
+					 AND EXISTS (SELECT 1 FROM mail_tags WHERE identifier = 'tag-outreach-reply')`
 				)
 				.bind(threadIdentifier)
 		);
@@ -386,8 +396,34 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 
 	if (report) await applyDeliveryReport(context, report, identifier);
 
-	const notify = !spam && !automatic && (await noticeDue(context, at));
-	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify };
+	// Auto-sort rules (src/lib/server/mail/rules.ts), for mail a person wrote or a machine sent, not for Spam or delivery reports.
+	const sortedBy =
+		spam || report
+			? []
+			: await runRules(
+					context,
+					threadIdentifier,
+					factsFor({
+						fromAddress: from.email,
+						fromName: from.name ?? null,
+						to: [...to, ...cc].map(formatAddress).concat(projectAddress ? [projectAddress] : []),
+						subject,
+						body: text,
+						attachment: attachmentRows.some((row) => row.inline === 0),
+						nation: nation !== null,
+						automatic
+					})
+				);
+
+	// A rule that marked the mail read or filed it away also means no "new mail" notice for it.
+	const quietened =
+		sortedBy.length > 0 &&
+		(await context.database
+			.prepare(`SELECT 1 AS found FROM mail_threads WHERE identifier = ? AND (unread = 0 OR folder IN ('archive', 'trash', 'spam'))`)
+			.bind(threadIdentifier)
+			.first()) !== null;
+	const notify = !spam && !automatic && !quietened && (await noticeDue(context, at));
+	return { outcome: 'filed', threadIdentifier, messageIdentifier: identifier, spam: spam !== null, automatic, notify, sortedBy };
 }
 
 /** Marks the message a delivery report is about, and puts a permanently failed address on the do-not-email list. */

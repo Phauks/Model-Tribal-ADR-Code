@@ -3,8 +3,13 @@
  * the server and the workspace pages (site/MAIL.md).
  */
 
+/** The four folders every inbox has. Folders the lead author makes are stored as 'folder' plus the folder's identifier. */
 export const folders = ['inbox', 'archive', 'spam', 'trash'] as const;
 export type Folder = (typeof folders)[number];
+export type ThreadFolder = Folder | 'folder';
+
+/** Folders can sit inside folders, this many deep. */
+export const folderDepthLimit = 3;
 
 /** The views the inbox's left column offers. Folders, then views over their columns. */
 export const inboxViews = [
@@ -24,9 +29,120 @@ export function isInboxView(value: string | null): value is InboxView {
 	return inboxViews.some((view) => view.key === value);
 }
 
-/** Label colors map to design tokens in the pages' styles, never to raw colors. */
-export const labelColors = ['teal', 'orange', 'gray', 'gold', 'green', 'purple'] as const;
-export type LabelColor = (typeof labelColors)[number];
+/** Tag colors map to design tokens in the pages' styles, never to raw colors. */
+export const tagColors = ['teal', 'orange', 'gray', 'gold', 'green', 'purple'] as const;
+export type TagColor = (typeof tagColors)[number];
+
+// ---------------------------------------------------------------------------
+// Auto-sort rules (src/lib/server/mail/rules.ts runs them)
+// ---------------------------------------------------------------------------
+
+/** What a rule can look at in an arriving message. "kind" says whether it takes words or a yes or no. */
+export const ruleFields = [
+	{ key: 'from', label: 'Sender', kind: 'text' },
+	{ key: 'to', label: 'Sent to (To or Cc)', kind: 'text' },
+	{ key: 'subject', label: 'Subject', kind: 'text' },
+	{ key: 'body', label: 'Message text', kind: 'text' },
+	{ key: 'anywhere', label: 'Subject or text', kind: 'text' },
+	{ key: 'attachment', label: 'Has an attachment', kind: 'yes-no' },
+	{ key: 'nation', label: 'Sender is in the address book with a nation', kind: 'yes-no' },
+	{ key: 'automatic', label: 'Is an automatic reply, such as out of office', kind: 'yes-no' }
+] as const;
+export type RuleField = (typeof ruleFields)[number]['key'];
+
+export const ruleOperators = [
+	{ key: 'contains', label: 'contains' },
+	{ key: 'not-contains', label: 'does not contain' },
+	{ key: 'is', label: 'is exactly' },
+	{ key: 'starts-with', label: 'starts with' },
+	{ key: 'ends-with', label: 'ends with' }
+] as const;
+export type RuleOperator = (typeof ruleOperators)[number]['key'];
+
+export const ruleActionKinds = [
+	{ key: 'move', label: 'Move to' },
+	{ key: 'tag', label: 'Add the tag' },
+	{ key: 'assign', label: 'Assign to' },
+	{ key: 'read', label: 'Mark as read' }
+] as const;
+export type RuleActionKind = (typeof ruleActionKinds)[number]['key'];
+
+export interface RuleCondition {
+	field: RuleField;
+	operator: RuleOperator;
+	/** The words to look for; "yes" or "no" for a yes-or-no field. */
+	value: string;
+}
+
+export interface RuleAction {
+	action: RuleActionKind;
+	/** A folder ('archive', 'trash' or a made folder's identifier), a tag, or a person; empty for "read". */
+	value: string;
+}
+
+/** What a rule is checked against: one arriving message, flattened. */
+export interface RuleFacts {
+	from: string;
+	to: string[];
+	subject: string;
+	body: string;
+	attachment: boolean;
+	nation: boolean;
+	automatic: boolean;
+}
+
+function textMatches(haystack: string, operator: RuleOperator, needle: string): boolean {
+	const text = haystack.toLowerCase();
+	const word = needle.trim().toLowerCase();
+	switch (operator) {
+		case 'contains':
+			return text.includes(word);
+		case 'not-contains':
+			return !text.includes(word);
+		case 'is':
+			return text.trim() === word;
+		case 'starts-with':
+			return text.trimStart().startsWith(word);
+		case 'ends-with':
+			return text.trimEnd().endsWith(word);
+	}
+}
+
+/** Whether one condition holds for a message. Words are matched without regard to capital letters. */
+export function conditionHolds(condition: RuleCondition, facts: RuleFacts): boolean {
+	switch (condition.field) {
+		case 'attachment':
+		case 'nation':
+		case 'automatic':
+			return facts[condition.field] === (condition.value === 'yes');
+		case 'to':
+			// "does not contain" must hold for every address; the others for any one.
+			return condition.operator === 'not-contains'
+				? facts.to.every((address) => textMatches(address, condition.operator, condition.value))
+				: facts.to.some((address) => textMatches(address, condition.operator, condition.value));
+		case 'anywhere':
+			return condition.operator === 'not-contains'
+				? textMatches(facts.subject, condition.operator, condition.value) && textMatches(facts.body, condition.operator, condition.value)
+				: textMatches(facts.subject, condition.operator, condition.value) || textMatches(facts.body, condition.operator, condition.value);
+		default:
+			return textMatches(facts[condition.field], condition.operator, condition.value);
+	}
+}
+
+/** Whether a rule's conditions hold: all of them, or any one. A rule with no conditions never matches. */
+export function ruleMatches(rule: { matchAll: boolean; conditions: RuleCondition[] }, facts: RuleFacts): boolean {
+	if (rule.conditions.length === 0) return false;
+	return rule.matchAll ? rule.conditions.every((item) => conditionHolds(item, facts)) : rule.conditions.some((item) => conditionHolds(item, facts));
+}
+
+/** A condition in words, for the rules list: "Sender ends with “@navajo-nsn.gov”". */
+export function describeCondition(condition: RuleCondition): string {
+	const field = ruleFields.find((item) => item.key === condition.field);
+	if (!field) return '';
+	if (field.kind === 'yes-no') return condition.value === 'yes' ? field.label : `${field.label}: no`;
+	const operator = ruleOperators.find((item) => item.key === condition.operator)?.label ?? condition.operator;
+	return `${field.label} ${operator} “${condition.value}”`;
+}
 
 export const deliveryLabels: Record<string, string> = {
 	delivered: 'Delivered to their mail server',

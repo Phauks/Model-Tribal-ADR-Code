@@ -1,6 +1,6 @@
 # The project inbox
 
-The website has its own email: a shared inbox in the workspace where the lead author reads, answers, assigns, labels, snoozes and archives the project's mail, and an Outreach page that writes to nations from the private address book. Nothing needs Google Workspace or another hosted mailbox for everyday mail. Mail is kept in the project's own storage: each message whole in the private bucket (R2), and what the pages list and search in the database (D1). The design and its reasons are in [decision record 0039](../docs/decisions/0039-project-inbox-on-cloudflare.md).
+The website has its own email: a shared inbox in the workspace where the lead author reads, answers, assigns, tags, files, snoozes and archives the project's mail, and an Outreach page that writes to nations from the private address book. Nothing needs Google Workspace or another hosted mailbox for everyday mail. Mail is kept in the project's own storage: each message whole in the private bucket (R2), and what the pages list and search in the database (D1). The design and its reasons are in [decision record 0040](../docs/decisions/0040-project-inbox-on-cloudflare.md).
 
 Email is off until the project has a domain. While `MAIL_DOMAIN` is empty, the Inbox and Outreach pages open, but nothing is received or sent.
 
@@ -16,6 +16,8 @@ Cloudflare Email Routing receives mail for the domain and hands each message to 
 - A reply whose own first line asks to stop ("stop", "unsubscribe", "remove me", "do not email us") is flagged in red. A person confirms it before the address goes on the do-not-email list; the inbox never decides alone.
 - Mail to `unsubscribe+<token>@` the domain puts the address on the do-not-email list and is not filed.
 - The sender's nation is found from the address book when the address is in it.
+
+Auto-sort rules then run on the message (see "Folders, tags and rules" below), except on Spam and delivery reports.
 
 If a notice address is set, one short "new mail" message goes there at most every 30 minutes. It never quotes the mail, so the message stays in the project's storage. Filing that fails makes Email Routing refuse the message for now, so the sender's server tries again later; nothing is lost silently.
 
@@ -40,6 +42,15 @@ Cloudflare reports delivery through a Queues event subscription.[^events] Settin
 
 A message's text is shown as text. Its HTML version opens in a sandboxed frame: scripts, forms and plug-ins never run, and nothing outside the message loads, so pictures from the web stay hidden and no sender learns the message was opened. Attachments always download; they never open in the browser.
 
+## Folders, tags and rules
+
+The lead author asked for tags, folders and auto-sort rules on Nov. 23, 2026.
+
+- **Folders.** Besides the four built-in ones (Inbox, Archive, Spam, Deleted), the lead author can make folders, three deep at most, such as "Nations / Southwest / Navajo Nation", on the Folders and tags page (`/workspace/inbox/organize`). A conversation sits in one folder at a time. A new reply to a conversation in a made folder stays in that folder, shown as unread there. Deleting a folder sends its conversations, and those of the folders inside it, back to the inbox, never to Deleted.
+- **Tags.** A conversation can have any number of tags, whatever folder it is in. A tag's page lists its conversations in every folder except Spam and Deleted. Tag colors come from the site's tokens, and the name always shows, so the color is never the only way to tell tags apart.
+- **Ticking several.** In any list, conversations can be ticked and then archived, deleted, marked as spam, read or unread, moved to a folder, or tagged and untagged together.
+- **Auto-sort rules** (`/workspace/inbox/rules`, `src/lib/server/mail/rules.ts`). Each rule has conditions (sender, To or Cc, subject, text, has an attachment, sender known in the address book with a nation, automatic reply) joined by "all" or "any", and actions (move to a folder or to Archive, Spam or Deleted; add tags; assign; mark as read). Words match without regard to capital letters. Rules run in order on each message that arrives, except Spam and delivery reports, and a rule can stop the ones after it. "Test on the inbox" shows what a rule would catch now without changing anything; "Run on inbox" or the box under the editor applies it to the conversations already in the inbox. A rule that names a folder, tag or person that has since been deleted skips that action. A conversation a rule marks read or files away sends no "new mail" notice. A conversation's page links to "Make a rule for mail from this sender".
+
 ## Outreach
 
 Cloudflare Email Service may not be used for unsolicited mail,[^terms] and a first letter to a nation is unsolicited. So outreach goes through a separate mailbox on a subdomain, such as `outreach@outreach.<domain>`, with replies sent to an address in the project inbox. The recommended mailbox is Zoho Mail Lite (US$1 a user a month, billed yearly, as of Nov. 2026),[^zoho-price] which accepts mail from the Worker on `smtppro.zoho.com`, port 465.[^zoho-smtp]
@@ -51,7 +62,7 @@ The Outreach page (`src/routes/workspace/outreach`) has:
 - **Unsubscribe.** Every letter ends with how to stop further mail: a link, an address, and replying "stop". The message also carries `List-Unsubscribe` and `List-Unsubscribe-Post` headers, so mail programs can offer their own one-click button (RFC 8058).[^rfc8058] The link only shows a button, because mail scanners open links by themselves. Tokens are signed with `MAIL_SIGNING_KEY`.
 - **The do-not-email list.** Addresses here get no outreach and no new messages from the inbox. Nothing takes an address off by itself; the lead author can.
 
-A reply to an outreach letter lands in the inbox, in the same conversation, labeled "Outreach reply", and the batch marks the recipient as replied.
+A reply to an outreach letter lands in the inbox, in the same conversation, tagged "Outreach reply", and the batch marks the recipient as replied.
 
 ### Swapping the outreach service
 
@@ -107,8 +118,8 @@ Start outreach slowly. A new mailbox is trusted gradually, so begin at 20 to 40 
 ## Files
 
 - `migrations/0013_mail.sql`: the tables.
-- `src/lib/mail.ts`: names, labels and small functions the pages share.
-- `src/lib/server/mail/`: settings, message building (`mime.ts`), SMTP (`smtp.ts`), carriers, signed tokens, receiving (`inbound.ts`), sending (`outbound.ts`), conversations (`store.ts`), outreach (`outreach.ts`) and the do-not-email list (`suppressions.ts`). Only `runtime.ts` and `socket-opener.ts` need the Worker; the rest is tested in Node (`tests/mail.test.ts`, `tests/mail-flow.test.ts`).
+- `src/lib/mail.ts`: names, labels and small functions the pages share, including how a rule's conditions are matched.
+- `src/lib/server/mail/`: settings, message building (`mime.ts`), SMTP (`smtp.ts`), carriers, signed tokens, receiving (`inbound.ts`), sending (`outbound.ts`), conversations, folders and tags (`store.ts`), auto-sort rules (`rules.ts`), outreach (`outreach.ts`) and the do-not-email list (`suppressions.ts`). Only `runtime.ts` and `socket-opener.ts` need the Worker; the rest is tested in Node (`tests/mail.test.ts`, `tests/mail-flow.test.ts`, `tests/mail-organize.test.ts`).
 - `tools/add-mail-handlers.mjs`: adds the email, queue and scheduled handlers after the build. It wraps whatever entry the build made, so it runs last in `npm run build`.
 - `src/routes/workspace/inbox/`, `src/routes/workspace/outreach/`: the pages. `src/routes/mail/`: the unsubscribe and acknowledgment pages, and the internal routes the handlers call.
 

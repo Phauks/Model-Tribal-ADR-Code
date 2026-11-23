@@ -1,4 +1,4 @@
--- The project inbox (docs/decisions/0036-project-inbox-on-cloudflare.md,
+-- The project inbox (docs/decisions/0040-project-inbox-on-cloudflare.md,
 -- site/MAIL.md). Mail to the project's addresses arrives through Cloudflare
 -- Email Routing; the raw message and its attachments are kept in the
 -- private bucket under mail/, and these tables hold what the workspace
@@ -9,15 +9,29 @@
 -- Numbered 0013 because open work holds 0008 to 0012 (0012 is the private
 -- address book, whose contacts and contact_methods tables outreach reads).
 
--- One conversation. A thread lives in one folder; "assigned to me",
--- "snoozed", "follow up due" and "scheduled" are views over these columns.
+-- Folders the lead author makes, such as "Nations / Navajo Nation". A
+-- folder can sit inside another, at most three deep. Deleting a folder
+-- moves its conversations back to the inbox (src/lib/server/mail/store.ts).
+CREATE TABLE mail_folders (
+	identifier TEXT PRIMARY KEY,
+	name TEXT NOT NULL,
+	parent_identifier TEXT REFERENCES mail_folders (identifier) ON DELETE CASCADE,
+	created_at TEXT NOT NULL
+);
+CREATE UNIQUE INDEX mail_folders_by_name ON mail_folders (COALESCE(parent_identifier, ''), name);
+
+-- One conversation. A thread lives in one place: one of the four built-in
+-- folders, or ('folder') one the lead author made, named by
+-- folder_identifier. "Assigned to me", "snoozed", "follow up due" and
+-- "scheduled" are views over these columns.
 CREATE TABLE mail_threads (
 	identifier TEXT PRIMARY KEY,
 	subject TEXT NOT NULL,
 	-- The subject without "Re:" and "Fwd:", lower case, for threading replies
 	-- that lost their In-Reply-To header.
 	normalized_subject TEXT NOT NULL,
-	folder TEXT NOT NULL DEFAULT 'inbox' CHECK (folder IN ('inbox', 'archive', 'spam', 'trash')),
+	folder TEXT NOT NULL DEFAULT 'inbox' CHECK (folder IN ('inbox', 'archive', 'spam', 'trash', 'folder')),
+	folder_identifier TEXT REFERENCES mail_folders (identifier) ON DELETE SET NULL,
 	unread INTEGER NOT NULL DEFAULT 1 CHECK (unread IN (0, 1)),
 	-- The project address the conversation is with, such as contact@example.org.
 	project_address TEXT,
@@ -43,6 +57,7 @@ CREATE TABLE mail_threads (
 	updated_at TEXT NOT NULL
 );
 CREATE INDEX mail_threads_by_folder ON mail_threads (folder, last_message_at);
+CREATE INDEX mail_threads_by_own_folder ON mail_threads (folder_identifier, last_message_at);
 CREATE INDEX mail_threads_by_subject ON mail_threads (normalized_subject, counterpart_address);
 CREATE INDEX mail_threads_by_assignee ON mail_threads (assignee_identifier, last_message_at);
 CREATE INDEX mail_threads_by_nation ON mail_threads (nation_identifier, last_message_at);
@@ -120,19 +135,44 @@ CREATE TABLE mail_attachments (
 );
 CREATE INDEX mail_attachments_by_message ON mail_attachments (message_identifier);
 
-CREATE TABLE mail_labels (
+-- Tags: a conversation can have any number of them, whatever folder it is in.
+CREATE TABLE mail_tags (
 	identifier TEXT PRIMARY KEY,
 	name TEXT NOT NULL UNIQUE,
-	-- One of the site's label colors (src/lib/mail.ts), never a raw color.
+	-- One of the site's tag colors (src/lib/mail.ts), never a raw color.
 	color TEXT NOT NULL DEFAULT 'teal' CHECK (color IN ('teal', 'orange', 'gray', 'gold', 'green', 'purple')),
 	created_at TEXT NOT NULL
 );
 
-CREATE TABLE mail_thread_labels (
+CREATE TABLE mail_thread_tags (
 	thread_identifier TEXT NOT NULL REFERENCES mail_threads (identifier) ON DELETE CASCADE,
-	label_identifier TEXT NOT NULL REFERENCES mail_labels (identifier) ON DELETE CASCADE,
-	PRIMARY KEY (thread_identifier, label_identifier)
+	tag_identifier TEXT NOT NULL REFERENCES mail_tags (identifier) ON DELETE CASCADE,
+	PRIMARY KEY (thread_identifier, tag_identifier)
 );
+CREATE INDEX mail_thread_tags_by_tag ON mail_thread_tags (tag_identifier);
+
+-- Auto-sort rules, run in order on each message that arrives (not on Spam
+-- or delivery reports). conditions is a JSON array of { "field",
+-- "operator", "value" }; actions is a JSON array of { "action", "value" }
+-- (src/lib/server/mail/rules.ts lists both).
+CREATE TABLE mail_rules (
+	identifier TEXT PRIMARY KEY,
+	name TEXT NOT NULL,
+	position INTEGER NOT NULL,
+	enabled INTEGER NOT NULL DEFAULT 1 CHECK (enabled IN (0, 1)),
+	-- 1: every condition must hold; 0: any one is enough.
+	match_all INTEGER NOT NULL DEFAULT 1 CHECK (match_all IN (0, 1)),
+	conditions TEXT NOT NULL DEFAULT '[]',
+	actions TEXT NOT NULL DEFAULT '[]',
+	-- Later rules are not run on a message this rule matched.
+	stop_after INTEGER NOT NULL DEFAULT 0 CHECK (stop_after IN (0, 1)),
+	match_count INTEGER NOT NULL DEFAULT 0,
+	last_matched_at TEXT,
+	created_by TEXT REFERENCES people (identifier) ON DELETE SET NULL,
+	created_at TEXT NOT NULL,
+	updated_at TEXT NOT NULL
+);
+CREATE INDEX mail_rules_by_position ON mail_rules (position);
 
 -- Notes on a conversation that only the project team sees.
 CREATE TABLE mail_notes (
@@ -237,7 +277,7 @@ CREATE TABLE mail_delivery_events (
 );
 CREATE INDEX mail_delivery_events_by_message ON mail_delivery_events (message_identifier);
 
--- Who did what in the inbox (read, replied, assigned, labeled, archived,
+-- Who did what in the inbox (read, replied, assigned, tagged, filed, archived,
 -- deleted, started a batch). Kept apart from the activity log's events
 -- table so the inbox needs no rebuild of that table.
 CREATE TABLE mail_actions (
@@ -269,9 +309,9 @@ CREATE VIRTUAL TABLE mail_search USING fts5 (
 	tokenize = 'unicode61 remove_diacritics 2'
 );
 
--- Labels most projects start with; the lead author can rename or remove them.
-INSERT INTO mail_labels (identifier, name, color, created_at) VALUES
-	('label-correction', 'Correction or removal', 'orange', '2026-11-23T00:00:00Z'),
-	('label-outreach-reply', 'Outreach reply', 'teal', '2026-11-23T00:00:00Z'),
-	('label-advisors', 'Advisors', 'gray', '2026-11-23T00:00:00Z'),
-	('label-permissions', 'Permissions', 'gold', '2026-11-23T00:00:00Z');
+-- Tags most projects start with; the lead author can rename or remove them.
+INSERT INTO mail_tags (identifier, name, color, created_at) VALUES
+	('tag-correction', 'Correction or removal', 'orange', '2026-11-23T00:00:00Z'),
+	('tag-outreach-reply', 'Outreach reply', 'teal', '2026-11-23T00:00:00Z'),
+	('tag-advisors', 'Advisors', 'gray', '2026-11-23T00:00:00Z'),
+	('tag-permissions', 'Permissions', 'gold', '2026-11-23T00:00:00Z');

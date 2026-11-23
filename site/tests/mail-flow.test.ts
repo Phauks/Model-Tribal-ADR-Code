@@ -371,7 +371,7 @@ describe('outreach', () => {
 		expect(reply).toMatchObject({ outcome: 'filed', threadIdentifier: row!.thread });
 		const thread = await getThread(context, row!.thread, 'lead');
 		expect(thread!.folder).toBe('inbox');
-		expect(thread!.labels.map((label) => label.name)).toContain('Outreach reply');
+		expect(thread!.tags.map((tag) => tag.name)).toContain('Outreach reply');
 		expect(thread!.outreach).toMatchObject({ status: 'replied' });
 		expect(thread!.followUpAt).toBeNull();
 

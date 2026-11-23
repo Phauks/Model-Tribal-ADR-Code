@@ -1,16 +1,18 @@
 /**
  * Reading and changing conversations in the project inbox: the lists in the
  * left column, one conversation with its messages and notes, and the
- * actions on it (read, archive, delete, assign, label, snooze, follow up).
- * Every change is recorded in mail_actions.
+ * actions on it (read, archive, delete, file in a folder, assign, tag,
+ * snooze, follow up). Every change is recorded in mail_actions.
  */
-import type { Folder, InboxView, LabelColor, MailAddress } from '#lib/mail.ts';
+import { folderDepthLimit, folders, type Folder, type InboxView, type MailAddress, type TagColor, type ThreadFolder } from '#lib/mail.ts';
 import { actionStatement, currentTime, type MailContext } from './context.ts';
 
 export interface ThreadSummary {
 	identifier: string;
 	subject: string;
-	folder: Folder;
+	folder: ThreadFolder;
+	/** The made folder the conversation is in, when folder is 'folder'. */
+	folderIdentifier: string | null;
 	unread: boolean;
 	counterpartAddress: string | null;
 	counterpartName: string | null;
@@ -25,13 +27,25 @@ export interface ThreadSummary {
 	snippet: string;
 	hasAttachments: boolean;
 	scheduledFor: string | null;
-	labels: { identifier: string; name: string; color: LabelColor }[];
+	tags: MailTag[];
 }
 
-export interface MailLabel {
+export interface MailTag {
 	identifier: string;
 	name: string;
-	color: LabelColor;
+	color: TagColor;
+}
+
+/** A folder the lead author made, with where it sits and how many unread conversations it holds. */
+export interface MailFolder {
+	identifier: string;
+	name: string;
+	parentIdentifier: string | null;
+	/** 0 for a top-level folder, 1 inside one, and so on. */
+	depth: number;
+	/** The names from the top, joined: "Nations / Navajo Nation". */
+	path: string;
+	unread: number;
 }
 
 const pageSize = 50;
@@ -74,7 +88,8 @@ function viewCondition(view: InboxView, person: string, at: string): { sql: stri
 interface ThreadRow {
 	identifier: string;
 	subject: string;
-	folder: Folder;
+	folder: ThreadFolder;
+	folder_identifier: string | null;
 	unread: number;
 	counterpart_address: string | null;
 	counterpart_name: string | null;
@@ -91,29 +106,46 @@ interface ThreadRow {
 	scheduled_for: string | null;
 }
 
-/** One page of a view, newest first, optionally narrowed by a label or search words. */
+/**
+ * One page of conversations, newest first: a made folder's, a tag's (in any
+ * folder but Spam and Deleted), or else a view's, optionally narrowed by
+ * search words.
+ */
 export async function listThreads(
 	context: MailContext,
-	options: { view: InboxView; personIdentifier: string; label?: string | null; search?: string | null; page?: number }
+	options: {
+		view: InboxView;
+		personIdentifier: string;
+		folder?: string | null;
+		tag?: string | null;
+		search?: string | null;
+		page?: number;
+	}
 ): Promise<{ threads: ThreadSummary[]; more: boolean }> {
 	const at = currentTime(context).toISOString();
-	const view = viewCondition(options.view, options.personIdentifier, at);
-	const conditions = [view.sql];
-	const values: (string | number)[] = [...view.values];
-	if (options.label) {
-		values.push(options.label);
-		conditions.push(`EXISTS (SELECT 1 FROM mail_thread_labels l WHERE l.thread_identifier = t.identifier AND l.label_identifier = ?)`);
+	const conditions: string[] = [];
+	const values: (string | number)[] = [];
+	if (options.folder) {
+		conditions.push(`t.folder = 'folder' AND t.folder_identifier = ?`);
+		values.push(options.folder);
+	} else if (options.tag) {
+		conditions.push(`t.folder NOT IN ('spam', 'trash') AND EXISTS (SELECT 1 FROM mail_thread_tags g WHERE g.thread_identifier = t.identifier AND g.tag_identifier = ?)`);
+		values.push(options.tag);
+	} else {
+		const view = viewCondition(options.view, options.personIdentifier, at);
+		conditions.push(view.sql);
+		values.push(...view.values);
 	}
 	const query = options.search ? searchQuery(options.search) : null;
 	if (query) {
 		values.push(query);
 		conditions.push(`t.identifier IN (SELECT thread_identifier FROM mail_search WHERE mail_search MATCH ?)`);
 	}
-	const order = options.view === 'sent' ? 't.last_outbound_at' : 't.last_message_at';
+	const order = options.view === 'sent' && !options.folder && !options.tag ? 't.last_outbound_at' : 't.last_message_at';
 	const page = Math.max(0, options.page ?? 0);
 	const { results } = await context.database
 		.prepare(
-			`SELECT t.identifier, t.subject, t.folder, t.unread, t.counterpart_address, t.counterpart_name, t.nation_identifier,
+			`SELECT t.identifier, t.subject, t.folder, t.folder_identifier, t.unread, t.counterpart_address, t.counterpart_name, t.nation_identifier,
 			 t.assignee_identifier, p.display_name AS assignee_name, t.message_count, t.last_message_at, t.snoozed_until,
 			 t.follow_up_at, t.stop_requested,
 			 (SELECT m.snippet FROM mail_messages m WHERE m.thread_identifier = t.identifier AND m.status NOT IN ('draft', 'cancelled')
@@ -128,7 +160,7 @@ export async function listThreads(
 		.bind(...values)
 		.all<ThreadRow>();
 	const rows = results.slice(0, pageSize);
-	const labels = await labelsFor(
+	const tags = await tagsFor(
 		context,
 		rows.map((row) => row.identifier)
 	);
@@ -137,6 +169,7 @@ export async function listThreads(
 			identifier: row.identifier,
 			subject: row.subject,
 			folder: row.folder,
+			folderIdentifier: row.folder_identifier,
 			unread: row.unread === 1,
 			counterpartAddress: row.counterpart_address,
 			counterpartName: row.counterpart_name,
@@ -151,23 +184,23 @@ export async function listThreads(
 			snippet: row.snippet ?? '',
 			hasAttachments: row.has_attachments === 1,
 			scheduledFor: row.scheduled_for,
-			labels: labels.get(row.identifier) ?? []
+			tags: tags.get(row.identifier) ?? []
 		})),
 		more: results.length > pageSize
 	};
 }
 
-async function labelsFor(context: MailContext, threads: string[]): Promise<Map<string, MailLabel[]>> {
-	const found = new Map<string, MailLabel[]>();
+async function tagsFor(context: MailContext, threads: string[]): Promise<Map<string, MailTag[]>> {
+	const found = new Map<string, MailTag[]>();
 	if (threads.length === 0) return found;
 	const { results } = await context.database
 		.prepare(
-			`SELECT tl.thread_identifier AS thread, l.identifier, l.name, l.color FROM mail_thread_labels tl
-			 JOIN mail_labels l ON l.identifier = tl.label_identifier
-			 WHERE tl.thread_identifier IN (${threads.map(() => '?').join(', ')}) ORDER BY l.name`
+			`SELECT tt.thread_identifier AS thread, g.identifier, g.name, g.color FROM mail_thread_tags tt
+			 JOIN mail_tags g ON g.identifier = tt.tag_identifier
+			 WHERE tt.thread_identifier IN (${threads.map(() => '?').join(', ')}) ORDER BY g.name`
 		)
 		.bind(...threads)
-		.all<MailLabel & { thread: string }>();
+		.all<MailTag & { thread: string }>();
 	for (const row of results) {
 		const list = found.get(row.thread) ?? [];
 		list.push({ identifier: row.identifier, name: row.name, color: row.color });
@@ -204,9 +237,37 @@ export async function viewCounts(context: MailContext, personIdentifier: string)
 	};
 }
 
-export async function listLabels(context: MailContext): Promise<MailLabel[]> {
-	const { results } = await context.database.prepare('SELECT identifier, name, color FROM mail_labels ORDER BY name').all<MailLabel>();
+export async function listTags(context: MailContext): Promise<MailTag[]> {
+	const { results } = await context.database.prepare('SELECT identifier, name, color FROM mail_tags ORDER BY name').all<MailTag>();
 	return results;
+}
+
+/** The made folders as a tree, in the order the left column shows them, with unread counts. */
+export async function listFolders(context: MailContext): Promise<MailFolder[]> {
+	const { results } = await context.database
+		.prepare(
+			`SELECT f.identifier, f.name, f.parent_identifier AS parentIdentifier,
+			 (SELECT COUNT(*) FROM mail_threads t WHERE t.folder = 'folder' AND t.folder_identifier = f.identifier AND t.unread = 1) AS unread
+			 FROM mail_folders f`
+		)
+		.all<{ identifier: string; name: string; parentIdentifier: string | null; unread: number }>();
+	const children = new Map<string | null, typeof results>();
+	for (const row of results) {
+		const list = children.get(row.parentIdentifier) ?? [];
+		list.push(row);
+		children.set(row.parentIdentifier, list);
+	}
+	const ordered: MailFolder[] = [];
+	const visit = (parent: string | null, depth: number, path: string) => {
+		const list = (children.get(parent) ?? []).sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+		for (const row of list) {
+			const own = path ? `${path} / ${row.name}` : row.name;
+			ordered.push({ identifier: row.identifier, name: row.name, parentIdentifier: row.parentIdentifier, depth, path: own, unread: row.unread });
+			visit(row.identifier, depth + 1, own);
+		}
+	};
+	visit(null, 0, '');
+	return ordered;
 }
 
 export interface MessageDetail {
@@ -300,8 +361,8 @@ export async function getThread(context: MailContext, identifier: string, person
 		)
 		.bind(identifier)
 		.first<{ batchIdentifier: string; batchName: string; status: string }>();
-	const labels = await labelsFor(context, [identifier]);
-	const summary = (await listThreadSummary(thread, labels.get(identifier) ?? []));
+	const tags = await tagsFor(context, [identifier]);
+	const summary = listThreadSummary(thread, tags.get(identifier) ?? []);
 	void personIdentifier;
 	return {
 		...summary,
@@ -342,11 +403,12 @@ export async function getThread(context: MailContext, identifier: string, person
 	};
 }
 
-async function listThreadSummary(row: ThreadRow, labels: MailLabel[]): Promise<ThreadSummary> {
+function listThreadSummary(row: ThreadRow, tags: MailTag[]): ThreadSummary {
 	return {
 		identifier: row.identifier,
 		subject: row.subject,
 		folder: row.folder,
+		folderIdentifier: row.folder_identifier,
 		unread: row.unread === 1,
 		counterpartAddress: row.counterpart_address,
 		counterpartName: row.counterpart_name,
@@ -361,7 +423,7 @@ async function listThreadSummary(row: ThreadRow, labels: MailLabel[]): Promise<T
 		snippet: '',
 		hasAttachments: false,
 		scheduledFor: null,
-		labels
+		tags
 	};
 }
 
@@ -389,9 +451,26 @@ export async function markRead(context: MailContext, personIdentifier: string, t
 	await change(context, personIdentifier, threadIdentifier, 'unread = ?', [read ? 0 : 1], read ? 'Read' : 'Marked unread');
 }
 
-export async function moveToFolder(context: MailContext, personIdentifier: string, threadIdentifier: string, folder: Folder): Promise<void> {
-	const names: Record<Folder, string> = { inbox: 'Moved to the inbox', archive: 'Archived', spam: 'Marked as spam', trash: 'Deleted' };
-	await change(context, personIdentifier, threadIdentifier, 'folder = ?, snoozed_until = NULL', [folder], names[folder]);
+const folderActions: Record<Folder, string> = { inbox: 'Moved to the inbox', archive: 'Archived', spam: 'Marked as spam', trash: 'Deleted' };
+
+/** Whether a value names one of the four built-in folders. */
+export function isBuiltInFolder(value: string | null | undefined): value is Folder {
+	return folders.includes(value as Folder);
+}
+
+/**
+ * Moves a conversation to a built-in folder or a made one (by its
+ * identifier). Returns false when the made folder does not exist.
+ */
+export async function moveToFolder(context: MailContext, personIdentifier: string, threadIdentifier: string, place: string): Promise<boolean> {
+	if (isBuiltInFolder(place)) {
+		await change(context, personIdentifier, threadIdentifier, 'folder = ?, folder_identifier = NULL, snoozed_until = NULL', [place], folderActions[place]);
+		return true;
+	}
+	const folder = await context.database.prepare('SELECT name FROM mail_folders WHERE identifier = ?').bind(place).first<{ name: string }>();
+	if (!folder) return false;
+	await change(context, personIdentifier, threadIdentifier, `folder = 'folder', folder_identifier = ?, snoozed_until = NULL`, [place], 'Filed', folder.name);
+	return true;
 }
 
 export async function assign(
@@ -404,25 +483,50 @@ export async function assign(
 	await change(context, personIdentifier, threadIdentifier, 'assignee_identifier = ?', [assignee], assignee ? 'Assigned' : 'Unassigned', assigneeName);
 }
 
-export async function setLabel(
+export async function setTag(
 	context: MailContext,
-	personIdentifier: string,
+	personIdentifier: string | null,
 	threadIdentifier: string,
-	labelIdentifier: string,
+	tagIdentifier: string,
 	on: boolean
 ): Promise<void> {
-	const label = await context.database.prepare('SELECT name FROM mail_labels WHERE identifier = ?').bind(labelIdentifier).first<{ name: string }>();
-	if (!label) return;
+	const tag = await context.database.prepare('SELECT name FROM mail_tags WHERE identifier = ?').bind(tagIdentifier).first<{ name: string }>();
+	if (!tag) return;
 	await context.database.batch([
 		on
 			? context.database
-					.prepare('INSERT OR IGNORE INTO mail_thread_labels (thread_identifier, label_identifier) VALUES (?, ?)')
-					.bind(threadIdentifier, labelIdentifier)
+					.prepare('INSERT OR IGNORE INTO mail_thread_tags (thread_identifier, tag_identifier) VALUES (?, ?)')
+					.bind(threadIdentifier, tagIdentifier)
 			: context.database
-					.prepare('DELETE FROM mail_thread_labels WHERE thread_identifier = ? AND label_identifier = ?')
-					.bind(threadIdentifier, labelIdentifier),
-		actionStatement(context, { personIdentifier, action: on ? 'Labeled' : 'Label removed', threadIdentifier, note: label.name })
+					.prepare('DELETE FROM mail_thread_tags WHERE thread_identifier = ? AND tag_identifier = ?')
+					.bind(threadIdentifier, tagIdentifier),
+		actionStatement(context, { personIdentifier, action: on ? 'Tagged' : 'Tag removed', threadIdentifier, note: tag.name })
 	]);
+}
+
+/** What the list's checkboxes can do to several conversations at once. */
+export type BulkOperation =
+	| { kind: 'move'; place: string }
+	| { kind: 'read'; read: boolean }
+	| { kind: 'tag'; tag: string; on: boolean };
+
+/** Applies one operation to each chosen conversation (at most a page of them). Returns how many changed. */
+export async function changeMany(context: MailContext, personIdentifier: string, threads: string[], operation: BulkOperation): Promise<number> {
+	const chosen = [...new Set(threads)].slice(0, 100);
+	let changed = 0;
+	for (const thread of chosen) {
+		const exists = await context.database.prepare('SELECT 1 AS found FROM mail_threads WHERE identifier = ?').bind(thread).first();
+		if (!exists) continue;
+		if (operation.kind === 'move') {
+			if (!(await moveToFolder(context, personIdentifier, thread, operation.place))) return changed;
+		} else if (operation.kind === 'read') {
+			await markRead(context, personIdentifier, thread, operation.read);
+		} else {
+			await setTag(context, personIdentifier, thread, operation.tag, operation.on);
+		}
+		changed += 1;
+	}
+	return changed;
 }
 
 export async function snooze(context: MailContext, personIdentifier: string, threadIdentifier: string, until: string | null): Promise<void> {
@@ -430,7 +534,7 @@ export async function snooze(context: MailContext, personIdentifier: string, thr
 		context,
 		personIdentifier,
 		threadIdentifier,
-		`snoozed_until = ?, folder = 'inbox'`,
+		`snoozed_until = ?, folder = 'inbox', folder_identifier = NULL`,
 		[until],
 		until ? 'Snoozed' : 'Snooze ended',
 		until
@@ -472,20 +576,137 @@ export async function clearStopRequest(context: MailContext, personIdentifier: s
 	);
 }
 
-export async function createLabel(context: MailContext, personIdentifier: string, name: string, color: LabelColor): Promise<void> {
+// ---------------------------------------------------------------------------
+// Tags and folders
+// ---------------------------------------------------------------------------
+
+export class OrganizeError extends Error {}
+
+/** Makes a tag. Throws OrganizeError when one already has the name. */
+export async function createTag(context: MailContext, personIdentifier: string, name: string, color: TagColor): Promise<string> {
+	const clash = await context.database.prepare('SELECT 1 AS found FROM mail_tags WHERE lower(name) = lower(?)').bind(name).first();
+	if (clash) throw new OrganizeError(`There is already a tag called “${name}”.`);
+	const identifier = crypto.randomUUID();
 	await context.database.batch([
 		context.database
-			.prepare('INSERT INTO mail_labels (identifier, name, color, created_at) VALUES (?, ?, ?, ?) ON CONFLICT (name) DO NOTHING')
-			.bind(crypto.randomUUID(), name, color, currentTime(context).toISOString()),
-		actionStatement(context, { personIdentifier, action: 'Made a label', note: name })
+			.prepare('INSERT INTO mail_tags (identifier, name, color, created_at) VALUES (?, ?, ?, ?)')
+			.bind(identifier, name, color, currentTime(context).toISOString()),
+		actionStatement(context, { personIdentifier, action: 'Made a tag', note: name })
+	]);
+	return identifier;
+}
+
+export async function updateTag(context: MailContext, personIdentifier: string, tagIdentifier: string, name: string, color: TagColor): Promise<void> {
+	const clash = await context.database
+		.prepare('SELECT 1 AS found FROM mail_tags WHERE lower(name) = lower(?) AND identifier <> ?')
+		.bind(name, tagIdentifier)
+		.first();
+	if (clash) throw new OrganizeError(`There is already a tag called “${name}”.`);
+	await context.database.batch([
+		context.database.prepare('UPDATE mail_tags SET name = ?, color = ? WHERE identifier = ?').bind(name, color, tagIdentifier),
+		actionStatement(context, { personIdentifier, action: 'Changed a tag', note: name })
 	]);
 }
 
-export async function deleteLabel(context: MailContext, personIdentifier: string, labelIdentifier: string): Promise<void> {
+/** Removes a tag from every conversation and deletes it. Rules that added it simply stop adding it. */
+export async function deleteTag(context: MailContext, personIdentifier: string, tagIdentifier: string): Promise<void> {
+	const tag = await context.database.prepare('SELECT name FROM mail_tags WHERE identifier = ?').bind(tagIdentifier).first<{ name: string }>();
+	if (!tag) return;
 	await context.database.batch([
-		context.database.prepare('DELETE FROM mail_labels WHERE identifier = ?').bind(labelIdentifier),
-		actionStatement(context, { personIdentifier, action: 'Removed a label', note: labelIdentifier })
+		context.database.prepare('DELETE FROM mail_tags WHERE identifier = ?').bind(tagIdentifier),
+		actionStatement(context, { personIdentifier, action: 'Deleted a tag', note: tag.name })
 	]);
+}
+
+async function folderDepth(context: MailContext, identifier: string | null): Promise<number> {
+	let depth = 0;
+	let current = identifier;
+	while (current && depth <= folderDepthLimit) {
+		const row = await context.database
+			.prepare('SELECT parent_identifier AS parent FROM mail_folders WHERE identifier = ?')
+			.bind(current)
+			.first<{ parent: string | null }>();
+		if (!row) break;
+		depth += 1;
+		current = row.parent;
+	}
+	return depth;
+}
+
+/** Makes a folder, at the top or inside another. Throws OrganizeError for a clash or a folder too deep. */
+export async function createFolder(context: MailContext, personIdentifier: string, name: string, parentIdentifier: string | null): Promise<string> {
+	if (parentIdentifier) {
+		const parent = await context.database.prepare('SELECT 1 AS found FROM mail_folders WHERE identifier = ?').bind(parentIdentifier).first();
+		if (!parent) throw new OrganizeError('The folder to put it in is gone.');
+		if ((await folderDepth(context, parentIdentifier)) >= folderDepthLimit) {
+			throw new OrganizeError(`Folders can sit at most ${folderDepthLimit} deep.`);
+		}
+	}
+	const clash = await context.database
+		.prepare(`SELECT 1 AS found FROM mail_folders WHERE COALESCE(parent_identifier, '') = ? AND lower(name) = lower(?)`)
+		.bind(parentIdentifier ?? '', name)
+		.first();
+	if (clash) throw new OrganizeError(`There is already a folder called “${name}” there.`);
+	const identifier = crypto.randomUUID();
+	await context.database.batch([
+		context.database
+			.prepare('INSERT INTO mail_folders (identifier, name, parent_identifier, created_at) VALUES (?, ?, ?, ?)')
+			.bind(identifier, name, parentIdentifier, currentTime(context).toISOString()),
+		actionStatement(context, { personIdentifier, action: 'Made a folder', note: name })
+	]);
+	return identifier;
+}
+
+export async function renameFolder(context: MailContext, personIdentifier: string, folderIdentifier: string, name: string): Promise<void> {
+	const folder = await context.database
+		.prepare('SELECT parent_identifier AS parent FROM mail_folders WHERE identifier = ?')
+		.bind(folderIdentifier)
+		.first<{ parent: string | null }>();
+	if (!folder) throw new OrganizeError('That folder is gone.');
+	const clash = await context.database
+		.prepare(`SELECT 1 AS found FROM mail_folders WHERE COALESCE(parent_identifier, '') = ? AND lower(name) = lower(?) AND identifier <> ?`)
+		.bind(folder.parent ?? '', name, folderIdentifier)
+		.first();
+	if (clash) throw new OrganizeError(`There is already a folder called “${name}” there.`);
+	await context.database.batch([
+		context.database.prepare('UPDATE mail_folders SET name = ? WHERE identifier = ?').bind(name, folderIdentifier),
+		actionStatement(context, { personIdentifier, action: 'Renamed a folder', note: name })
+	]);
+}
+
+/** The folder and every folder inside it, deepest last. */
+async function folderAndInside(context: MailContext, folderIdentifier: string): Promise<string[]> {
+	const found = [folderIdentifier];
+	for (let index = 0; index < found.length && found.length < 500; index += 1) {
+		const { results } = await context.database
+			.prepare('SELECT identifier FROM mail_folders WHERE parent_identifier = ?')
+			.bind(found[index])
+			.all<{ identifier: string }>();
+		found.push(...results.map((row) => row.identifier));
+	}
+	return found;
+}
+
+/**
+ * Deletes a folder and the folders inside it. Their conversations go back
+ * to the inbox, never to Deleted, and rules that filed mail there stop
+ * moving it (src/lib/server/mail/rules.ts skips a missing folder).
+ */
+export async function deleteFolder(context: MailContext, personIdentifier: string, folderIdentifier: string): Promise<number> {
+	const folder = await context.database.prepare('SELECT name FROM mail_folders WHERE identifier = ?').bind(folderIdentifier).first<{ name: string }>();
+	if (!folder) return 0;
+	const all = await folderAndInside(context, folderIdentifier);
+	const at = currentTime(context).toISOString();
+	const marks = all.map(() => '?').join(', ');
+	const moved = await context.database
+		.prepare(`UPDATE mail_threads SET folder = 'inbox', folder_identifier = NULL, updated_at = ? WHERE folder = 'folder' AND folder_identifier IN (${marks})`)
+		.bind(at, ...all)
+		.run();
+	await context.database.batch([
+		context.database.prepare('DELETE FROM mail_folders WHERE identifier = ?').bind(folderIdentifier),
+		actionStatement(context, { personIdentifier, action: 'Deleted a folder', note: `${folder.name}; its conversations went back to the inbox` })
+	]);
+	return moved.meta.changes ?? 0;
 }
 
 /** Shows snoozed conversations again once their time comes, as unread. Run by the mail tick. */

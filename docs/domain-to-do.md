@@ -58,7 +58,7 @@ name the pull request.
 - [ ] **Contributor notices.** Email the lead author when a registration
   arrives, and contributors before each edition goes to print
   (`docs/contributor-profiles.md`, "Not built yet"). Not built.
-- [ ] **The project inbox and outreach.** Built, waiting for the domain: Email Routing to the Worker, the settings, the outreach mailbox on a subdomain, and the delivery-report queue. The steps are in `site/MAIL.md`, "Switching email on" (decision record 0039). Nations asking for a correction or removal can then write to the project's own address.
+- [ ] **The project inbox and outreach.** Built, waiting for the domain: Email Routing to the Worker, the settings, the outreach mailbox on a subdomain, and the delivery-report queue. The steps are in `site/MAIL.md`, "Switching email on" (decision record 0040). Nations asking for a correction or removal can then write to the project's own address.
 
 ## 4. Print and ebook
 
