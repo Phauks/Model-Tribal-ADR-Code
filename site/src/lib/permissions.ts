@@ -64,6 +64,13 @@ export type Permission =
 	| 'comment-on-nation-uploads'
 	// The private address book (migrations/0012_address_book.sql): the lead author only.
 	| 'manage-address-book'
+	// The project inbox (site/MAIL.md): reading and answering mail, sending
+	// outreach batches, and changing tags, folders, rules and the
+	// do-not-email list. Only the lead author for now (Trevor, Nov. 23,
+	// 2026: an admin-only inbox).
+	| 'read-mail'
+	| 'send-outreach'
+	| 'manage-mail'
 	// Hiding parts of a change in Recent changes (migrations/0017_page_changes.sql): the lead author only.
 	| 'hide-changes'
 	// Reading what nations publish on their own pages, undoing it or pausing it (migrations/0022_nation_page_review.sql).
@@ -81,6 +88,9 @@ const grants: Record<Role, readonly Permission[]> = {
 		'comment',
 		'sign-off',
 		'manage-address-book',
+		'read-mail',
+		'send-outreach',
+		'manage-mail',
 		'hide-changes',
 		'review-nation-pages'
 	],

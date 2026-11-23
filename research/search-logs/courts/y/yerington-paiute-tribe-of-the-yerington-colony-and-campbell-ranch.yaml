@@ -1,6 +1,6 @@
 profile: content/tribes/y/yerington-paiute-tribe-of-the-yerington-colony-and-campbell-ranch.yaml
 topic: courts
-status: partly-searched
+status: found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
@@ -278,13 +278,32 @@ searches:
     stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-428
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-324,
-  cannot-tell); Yerington Paiute Tribal Court (court-325, cannot-tell). A person could open in a browser
-  the pages that refused the project''s link checker: http://yeringtonpaiute.us/, http://yeringtonpaiute.us/index.php/tribal-court,
-  https://yeringtonpaiute.us/. No website of the nation''s own could be read; the Tribe''s office could
-  be asked whether it runs a court. No page or official directory entry was found on 2026-11-22 for “Tribal
-  Court” (research/reviews/2026-11-22-service-links.json). A person could open in a browser the pages
-  that refused the project''s link checker: http://yeringtonpaiute.us/, http://yeringtonpaiute.us/index.php/tribal-court,
-  https://yeringtonpaiute.us/. The second search of 2026-11-23 (web searches and state court lists) found
-  no page or official directory entry for “Tribal Court”; a call to the nation''s office could say whether
-  the court has a page.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://yeringtonpaiute.us/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: blocked
+  reason: 'Still not readable on 2026-11-23 (direct request: HTTP 403), and the Wayback Machine answered
+    202 (copy not ready).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20200214035448/http://yeringtonpaiute.us:80/index.php/tribal-court
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2020-02-14 ("Tribal Court") shows the nation's court and links to
+    its code.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: http://yeringtonpaiute.us/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: error
+  reason: 'Still not readable on 2026-11-23 (direct request: HTTP 202), and the Wayback Machine answered
+    202 (copy not ready).'
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://yeringtonpaiute.us/, https://yeringtonpaiute.us/,
+  https://ypt-nsn.gov/ (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

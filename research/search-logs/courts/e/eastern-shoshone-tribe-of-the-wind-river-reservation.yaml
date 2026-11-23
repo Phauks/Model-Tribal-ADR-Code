@@ -1,7 +1,7 @@
 profile: content/tribes/e/eastern-shoshone-tribe-of-the-wind-river-reservation.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -234,3 +234,24 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Search surfaced the Wyoming courts page, a Federal Register notice on Courts of Indian Offenses, and the Wind River court site, which was then fetched.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20180906102933/http://shoshone-arapaho-tribal-court.org:80/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2018-09-06 is an empty page or an error page (Error. Page cannot
+    be displayed. Please contact your service).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20180906102933/http://shoshone-arapaho-tribal-court.org:80/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2018-09-06 is an empty page or an error page (Error. Page cannot
+    be displayed. Please contact your service).
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://shoshone-arapaho-tribal-court.org,
+  http://shoshone-arapaho-tribal-court.org/, https://www.wyocourts.gov/legal-help-by-topic/wind-river-tribal-court/
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

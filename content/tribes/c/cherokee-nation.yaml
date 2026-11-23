@@ -856,6 +856,39 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.51)
   note: Listed as "CHEROKEE NATION" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Foster Care Agreement Between the Cherokee Nation and the Oklahoma Department of Human Services
+  state: OK
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for OK
+  note: 'The source reads: “Foster Care Agreement Between the Cherokee Nation and the Oklahoma Department of Human Services”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: cross-deputization
+  other_party: State of Oklahoma and its political subdivisions, boards of county commissioners, and various law enforcement agencies; United States Department of the Interior
+  agreement: Law Enforcement Agreement (cooperative law enforcement and cross-deputization)
+  state: OK
+  date: '1992'
+  status: unknown
+  source: oklahoma-cherokee-nation-law-enforcement-agreement
+  confidence: medium
+  verification: read-in-full
+  locator: Title and recitals, p. 1
+  note: 'The source reads: “A LAW ENFORCEMENT AGREEMENT BETWEEN AND AMONG THE CHEROKEE NATION, THE UNITED STATES OF AMERICA, THE STATE OF OKLAHOMA AND ITS POLITICAL SUBDIVISIONS”. The footnote shows revisions in 1991 and 1992; the posted copy is unsigned, so the signed date and current status are not confirmed here. Recitals cite authority for cross-deputization under Cherokee Nation Resolution No. 25-91 and the Indian Law Enforcement Reform Act.'
+- kind: child-welfare-agreement
+  other_party: Oklahoma Department of Human Services
+  agreement: Title IV-E tribal-state foster care agreement
+  state: OK
+  date: '2013'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.L, Oklahoma (two-column list of 34 tribes)
+  note: 'The source reads: “Cherokee Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
 treaties:
 - title: Treaty with the Cherokee, 1785
   signed: '1785-11-28'

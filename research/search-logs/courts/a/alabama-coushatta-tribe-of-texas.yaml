@@ -1,6 +1,6 @@
 profile: content/tribes/a/alabama-coushatta-tribe-of-texas.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
@@ -277,10 +277,14 @@ searches:
     the link stays empty and the service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-008
-next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Courts
-  (court-008, not-found-after-search); Alabama-Coushatta Tribe of Texas Tribal Judicial System (court-009,
-  not-found-after-search). No page or official directory entry was found on 2026-11-22 for “Tribal Courts”;
-  “Alabama-Coushatta Tribe of Texas Tribal Judicial System” (research/reviews/2026-11-22-service-links.json).
-  The second search of 2026-11-23 (web searches and state court lists) found no page or official directory
-  entry for “Tribal Courts”; “Alabama-Coushatta Tribe of Texas Tribal Judicial System”; a call to the
-  nation''s office could say whether the court has a page.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20230616131329/https://www.alabama-coushatta.com/tribal-courts/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2023-06-16 ("Tribal Courts | Alabama-Coushatta Tribe of Texas")
+    shows the nation's court.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://www.alabama-coushatta.com/
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

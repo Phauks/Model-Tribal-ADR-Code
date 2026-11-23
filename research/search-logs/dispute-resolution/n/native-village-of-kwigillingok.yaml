@@ -96,5 +96,14 @@ searches:
     Kipnuk courts.'
   records:
   - research/reviews/2026-11-23-dispute-resolution-retry.json#native-village-of-kwigillingok-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261014001238/http://kwigtribe.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-10-14 ("Native Village of Kwigillingok"); it shows no
+    codes, court or dispute resolution forum.
 next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
   (Gate 1) before any record goes into the profile.

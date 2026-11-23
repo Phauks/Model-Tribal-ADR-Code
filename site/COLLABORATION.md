@@ -370,5 +370,5 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) are the exception for their own nation's page.
 - Emails to a nation's office when someone joins or leaves its team, and the weekly summary of changes (waits on a domain).
-- Using the virus scan for files people send and email attachments. The scanner is built (SCANNING.md); the uploads and inbox pages start using it in their own changes.
+- Using the virus scan for email attachments. The scanner is built (SCANNING.md); the inbox starts using it in its own change. Files people send already use it (docs/uploads.md, "The virus check").
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

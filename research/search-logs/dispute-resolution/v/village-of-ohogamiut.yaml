@@ -90,5 +90,14 @@ searches:
   outcome: not-found
   reason: 'Entry (pp. 206-207): active court "Not currently", with interest in one; interested in youth
     diversion.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20161005134815/http://ohogtc.org/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: blocked
+  reason: The Wayback Machine copy of 2016-10-05 is a page that requires JavaScript and cookies (a bot
+    check), not the site's content.
 next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
   dispute resolution program, and check law library holdings of its code.

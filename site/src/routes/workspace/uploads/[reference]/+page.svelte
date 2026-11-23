@@ -31,6 +31,8 @@
 	const fileAddress = $derived(`/workspace/uploads/${upload.reference}/file`);
 	const reviewable = $derived(['waiting-for-review', 'in-review', 'needs-answer', 'waiting-for-nation'].includes(upload.status));
 	const decided = $derived(decidedStatuses.includes(upload.status));
+	// Nothing is shown or downloaded until the virus check allows every stored copy.
+	const servable = $derived(data.scans.length > 0 && data.scans.every((scan) => scan.status === 'clean' || scan.status === 'released-by-hand'));
 	const nationLinks = $derived(data.links.filter((link) => link.target_kind === 'nation'));
 	const filingErrors = $derived<Record<string, string>>((form && 'filingErrors' in form ? form.filingErrors : undefined) ?? {});
 
@@ -108,6 +110,8 @@
 				<p class="small"><a href={youtubeWatchAddress(upload.youtube_identifier)} rel="noreferrer">Open on YouTube</a></p>
 			{:else if upload.status === 'sending'}
 				<p class="notice">Still arriving.</p>
+			{:else if upload.source === 'file' && !servable}
+				<p class="notice">Held until the virus check passes. See Checks below.</p>
 			{:else if upload.kind === 'picture'}
 				<img class="preview" src="{fileAddress}?show" alt="As sent: {upload.description ?? name}" />
 			{:else if upload.kind === 'video'}
@@ -119,7 +123,7 @@
 			{:else if upload.kind === 'document'}
 				<p>Documents are not opened in the browser. Download it and open it on your computer.</p>
 			{/if}
-			{#if upload.source === 'file' && upload.original_key && !upload.deleted_at && upload.status !== 'sending'}
+			{#if upload.source === 'file' && upload.original_key && !upload.deleted_at && upload.status !== 'sending' && servable}
 				<p class="small downloads">
 					<a href="{fileAddress}?original" download><Download size={14} aria-hidden="true" /> Download the file as sent</a>
 					{#if upload.preview_key}
@@ -156,8 +160,26 @@
 							also sent as {#each data.sameFile as same, index (same.reference)}{index > 0 ? ', ' : ''}<a href="/workspace/uploads/{same.reference}">{same.reference}</a>{/each}{:else}, not seen before{/if}.
 					</li>
 				{/if}
-				<li class="muted-item">A virus scan is not yet in place. Open files you download with care.</li>
+				{#each data.scans as scan, index (index)}
+					<li class={scan.status === 'clean' ? 'ok' : 'warn'}>
+						{#if scan.status === 'clean'}<ShieldCheck size={18} aria-hidden="true" />{:else}<ShieldAlert size={18} aria-hidden="true" />{/if}
+						<span>{data.scans.length > 1 ? (index === 0 ? 'File as sent: ' : 'Copy without location: ') : ''}{scan.label}. {scan.explanation}</span>
+					</li>
+				{/each}
 			</ul>
+			{#if upload.status === 'checking' && data.scans.some((scan) => scan.status === 'cannot-scan' || scan.status === 'failed')}
+				<form method="post" action="?/release" class="field">
+					<label for="release-note">Release it without a virus check</label>
+					<p class="hint">Only for a file you trust, such as one you know the source of. Say why; it goes in the history. A file where something was found can never be released.</p>
+					<textarea id="release-note" name="note" rows="2"></textarea>
+					<p><button class="button button-quiet" type="submit">Release it</button></p>
+				</form>
+			{/if}
+			{#if upload.status === 'checking' && data.scans.some((scan) => scan.status === 'failed' || scan.status === 'cannot-scan')}
+				<form method="post" action="?/check-again">
+					<button class="button button-quiet" type="submit">Check it again</button>
+				</form>
+			{/if}
 
 			<h2>What the sender said</h2>
 			<dl class="summary-list">
@@ -406,10 +428,6 @@
 	.warn {
 		color: var(--color-action);
 		font-weight: var(--font-weight-semibold);
-	}
-	.muted-item {
-		color: var(--color-ink-muted);
-		font-size: var(--font-size-small);
 	}
 	.message {
 		border-left: 4px solid var(--color-line);

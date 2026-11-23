@@ -15,6 +15,8 @@ describe('the workspace pages in the left sidebar', () => {
 			'overview',
 			'essays',
 			'requests',
+			'inbox',
+			'outreach',
 			'uploads',
 			'reviews',
 			'contributors',
