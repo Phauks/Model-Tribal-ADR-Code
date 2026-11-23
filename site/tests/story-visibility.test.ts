@@ -177,4 +177,11 @@ describe('full text (decision record 0034)', () => {
 		const record = story({ full_text: permitted, tellings: [telling({ permitted_uses: { level: 'publish-in-full' } })] });
 		expect(shownFullText(record, today)).toEqual(permitted);
 	});
+
+	it('shows a full text resting on the lead author\'s decision, but never for a restricted telling (decision record 0035)', () => {
+		const decided = { ...fullText, basis: 'lead-author-decision' as const };
+		expect(shownFullText(story({ full_text: decided }), today)).toEqual(decided);
+		const restricted = story({ full_text: decided, tellings: [telling({ access: { level: 'restricted' } })] });
+		expect(shownFullText(restricted, today)).toBeUndefined();
+	});
 });
