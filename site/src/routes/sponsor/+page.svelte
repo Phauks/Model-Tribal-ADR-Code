@@ -22,7 +22,7 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	const { sponsors, giftsOpen, receiver, counts, goals, ...article } = $derived(data);
+	const { sponsors, giftsOpen, receiver, counts, goals, monthly, ...article } = $derived(data);
 
 	const cardText = {
 		site: { title: 'The site for a year', text: 'Hosting and the web address.', icon: Server },
@@ -122,6 +122,12 @@
 			<div><dt>Native nations with their own page</dt><dd>{number(counts.nationPages)}</dd></div>
 			<div><dt>sources recorded and cited</dt><dd>{number(counts.sources)}</dd></div>
 			<div><dt>to read, download or print</dt><dd>$0</dd></div>
+			{#if giftsOpen || monthly.sponsors > 0}
+				<div>
+					<dt>a month from {number(monthly.sponsors)} monthly {monthly.sponsors === 1 ? 'sponsor' : 'sponsors'}</dt>
+					<dd>{wholeDollars(monthly.cents)}</dd>
+				</div>
+			{/if}
 		</dl>
 	{/if}
 
@@ -455,14 +461,17 @@
 
 	.stats {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-auto-columns: minmax(0, 1fr);
+		grid-auto-flow: column;
 		margin: 0;
 		border-block: 1px solid var(--color-line);
 	}
 
+	/* The figure first, then its label, with figures level when a label wraps. */
 	.stats div {
-		display: flex;
-		flex-direction: column-reverse;
+		display: grid;
+		grid-template-rows: auto 1fr;
+		align-content: start;
 		padding: var(--space-4) var(--space-5);
 	}
 
@@ -471,6 +480,7 @@
 	}
 
 	.stats dd {
+		grid-row: 1;
 		margin: 0;
 		font-size: 2.5rem;
 		font-weight: var(--font-weight-bold);
@@ -479,6 +489,7 @@
 	}
 
 	.stats dt {
+		grid-row: 2;
 		color: var(--color-ink-muted);
 	}
 
@@ -623,7 +634,10 @@
 			gap: var(--space-5);
 		}
 
-		.stats,
+		.stats {
+			grid-auto-flow: row;
+		}
+
 		.cards {
 			grid-template-columns: 1fr;
 		}

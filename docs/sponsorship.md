@@ -20,7 +20,7 @@ Organizations, and people, can sponsor the project: give once or every month, ch
 The page is built to match mockup A, which Trevor approved on Nov. 23, 2026, with his two changes: no amounts for one state's nations (two sponsors could pay for the same nations), and no cost fixed in the code, because printing and hosting prices are not settled. It shows:
 
 - a band with the page's own text (edited on the website like the essays), the goal of a paperback for every federally recognized nation, and the gift form;
-- three counts taken when the site is built: nations with their own page, sources recorded and cited, and what reading costs ($0);
+- three counts taken when the site is built: nations with their own page, sources recorded and cited, and what reading costs ($0). While gifts are open, a fourth shows what monthly gifts bring in each month and how many sponsors give them. Each sponsor counts once, at their latest monthly invoice in the last 35 days, so a gift that ends drops out a month after its last invoice;
 - "More you can fund": the site for a year, hardcovers for every nation, and wherever it is needed most, each with a heart button to sponsor it;
 - the sponsors shown in public, a card inviting a new one, and the line "Sponsors have no say in what the code says."
 
