@@ -278,6 +278,27 @@
 			);
 		}
 
+		// Nations with no Census land area, marked at their offices with a dark ring, on every view of the big map.
+		if (!oneNation) {
+			const officeShade = ['match', ['get', 'shade'], 1, colors.classes[1], 2, colors.classes[2], 3, colors.classes[3], 4, colors.classes[4], colors.classes[0]] as unknown as ExpressionSpecification;
+			tops.push(
+				{
+					id: 'office-dots',
+					type: 'circle',
+					source: 'offices',
+					paint: { 'circle-color': hovered(officeShade), 'circle-radius': 5.5, 'circle-stroke-color': colors.ink, 'circle-stroke-width': 2 }
+				},
+				{
+					id: 'office-names',
+					type: 'symbol',
+					source: 'offices',
+					minzoom: 6,
+					layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-max-width': 9, 'text-variable-anchor': ['top', 'bottom', 'left', 'right'], 'text-radial-offset': 0.9 },
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 2 }
+				}
+			);
+		}
+
 		const origin = location.origin;
 		return {
 			version: 8,
@@ -298,6 +319,21 @@
 					attribution: 'U.S. Census Bureau'
 				},
 				regions: { type: 'geojson', data: data.regions, promoteId: 'name', attribution: 'Bureau of Indian Affairs' },
+				offices: {
+					type: 'geojson',
+					data: {
+						type: 'FeatureCollection',
+						features: (data.offices ?? []).map((office, index) => {
+							const shaded = view === 'states' || view === 'regions' || view === 'lands' ? undefined : data.shading?.[view]?.offices[office.nation];
+							return {
+								type: 'Feature',
+								id: index,
+								properties: { name: office.name, shade: shaded?.shade ?? 0, anchor: shaded ? shaded.anchor : office.anchor },
+								geometry: { type: 'Point', coordinates: office.point }
+							};
+						})
+					}
+				},
 				'shaded-labels': {
 					type: 'geojson',
 					data: {
@@ -354,7 +390,10 @@
 
 	/** Goes to a place's row in the table; the page opens the row and its view (src/routes/nations/map/+page.svelte). */
 	function openRow(anchor: string | undefined): void {
-		if (anchor) location.hash = anchor;
+		if (!anchor) return;
+		// An office on a view whose table has no row for it goes to the nation's own page.
+		if (anchor.startsWith('/')) location.assign(anchor);
+		else location.hash = anchor;
 	}
 
 	function showPlace(bounds: [number, number, number, number]): void {
@@ -437,6 +476,7 @@
 					{ layer: 'states', source: 'places', sourceLayer: 'states', anchor: (properties) => data.states[String(properties.code)]?.anchor },
 					{ layer: 'regions', source: 'regions', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'area-dots', source: 'area-points', anchor: (properties) => String(properties.anchor) },
+					{ layer: 'office-dots', source: 'offices', anchor: (properties) => String(properties.anchor ?? '') },
 					{
 						layer: 'land-areas',
 						source: 'places',

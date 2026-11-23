@@ -2,20 +2,27 @@ import type { Cookies } from '@sveltejs/kit';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
 	checkPassword,
+	failuresBeforeOff,
+	failuresBeforePause,
 	issueCode,
 	linkStillWorks,
 	maximumWrongAttempts,
+	provedRecently,
 	removePassword,
 	sessionAccount,
+	sessionCookie,
 	setPassword,
 	startSession,
+	tryPassword,
+	usablePasswordKey,
 	useCode,
 	useLink,
 	verifiedAccount
 } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
 import { emailDelivery, signInMessage } from '#lib/server/sign-in-email.ts';
-import { passwordProblem, randomCode, sha256 } from '#lib/server/sign-in-secrets.ts';
+import { newPasswordProblem, timesBreached } from '#lib/server/password-checks.ts';
+import { passwordHash, randomCode, sha256 } from '#lib/server/sign-in-secrets.ts';
 import { finishSignIn, safeReturnPath } from '#lib/server/sign-in.ts';
 import { testDatabase } from './database.ts';
 
@@ -36,10 +43,52 @@ describe('codes and passwords', () => {
 		for (let index = 0; index < 50; index += 1) expect(randomCode()).toMatch(/^\d{6}$/);
 	});
 
-	it('asks for long passwords and refuses the email address', () => {
-		expect(passwordProblem('short', 'a@example.org')).toMatch(/at least 12/);
-		expect(passwordProblem('a@example.org', 'A@example.org ')).toBeDefined();
-		expect(passwordProblem('three unrelated words here', 'a@example.org')).toBeUndefined();
+	/** A stand-in for the Pwned Passwords range service that knows one breached password. */
+	function pwnedService(breached: string, status = 200) {
+		return vi.fn(async (address: string | URL | Request, init?: RequestInit) => {
+			expect(new Headers(init?.headers).get('add-padding')).toBe('true');
+			const prefix = String(address).split('/').pop()!;
+			const digest = await crypto.subtle.digest('SHA-1', new TextEncoder().encode(breached));
+			const hash = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('').toUpperCase();
+			// Only the first five characters of the hash are ever sent.
+			expect(prefix).toHaveLength(5);
+			const lines = ['0018A45C4D1DEF81644B54AB7F969B88D65:0', '00D4F6E8FA6EECAD2A3AA415EEC418D38EC:2'];
+			if (hash.startsWith(prefix)) lines.push(`${hash.slice(5)}:3861`);
+			return new Response(lines.join('\r\n'), { status });
+		}) as unknown as typeof fetch;
+	}
+
+	it('asks for 15 characters, counting each character once', async () => {
+		const service = pwnedService('nothing here');
+		expect(await newPasswordProblem('fourteen chars', 'a@example.org', service)).toMatch(/at least 15 .*has 14/);
+		expect(await newPasswordProblem('ñandú ñandú ñandú', 'a@example.org', service)).toBeUndefined();
+		expect(await newPasswordProblem('kettle river paper moon', 'a@example.org', service)).toBeUndefined();
+	});
+
+	it('refuses the whole email address, its name part and the site name, but not words inside a password', async () => {
+		const service = pwnedService('nothing here');
+		expect(await newPasswordProblem('Long.Person@Example.org', 'long.person@example.org', service)).toMatch(/email address/);
+		expect(await newPasswordProblem('longperson-name-here', 'longperson.name.here@example.org', service)).toMatch(/email address/);
+		expect(await newPasswordProblem('Model Tribal ADR Code', 'a@example.org', service)).toMatch(/name of this site/);
+		expect(await newPasswordProblem('my model tribal adr code notes', 'a@example.org', service)).toBeUndefined();
+		expect(await newPasswordProblem('aaaaaaaaaaaaaaabbbb', 'a@example.org', service)).toMatch(/over and over/);
+	});
+
+	it('refuses a password seen in breaches, sending only the start of its hash', async () => {
+		const service = pwnedService('ilovemyfamily2024');
+		expect(await timesBreached('ilovemyfamily2024', service)).toBe(3861);
+		expect(await timesBreached('a different long password', service)).toBe(0);
+		expect(await newPasswordProblem('ilovemyfamily2024', 'a@example.org', service)).toMatch(/data breaches/);
+	});
+
+	it('allows the password when the breach service cannot be reached', async () => {
+		const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+		expect(await timesBreached('kettle river paper moon', pwnedService('x', 503))).toBeUndefined();
+		const broken = vi.fn(async () => {
+			throw new TypeError('network down');
+		}) as unknown as typeof fetch;
+		expect(await newPasswordProblem('kettle river paper moon', 'a@example.org', broken)).toBeUndefined();
+		warn.mockRestore();
 	});
 
 	it('puts the code and link in the email', () => {
@@ -206,7 +255,7 @@ describe('finishing a sign-in', () => {
 			outcome: 'signed-in',
 			destination: '/workspace/people'
 		});
-		const session = await sessionAccount(database, leadCookies.values.get('session'));
+		const session = await sessionAccount(database, leadCookies.values.get(sessionCookie));
 		expect(session?.account.identifier).toBe(lead.identifier);
 		expect((await activePersonBySubject(database, lead.identifier))?.role).toBe('lead-author');
 
@@ -238,6 +287,110 @@ describe('finishing a sign-in', () => {
 			outcome: 'refused',
 			reason: 'removed'
 		});
-		expect(cookies.values.has('session')).toBe(false);
+		expect(cookies.values.has(sessionCookie)).toBe(false);
+	});
+});
+
+describe('password storage and wrong passwords', () => {
+	let database: ReturnType<typeof testDatabase>;
+	beforeEach(() => {
+		database = testDatabase();
+	});
+
+	const key = 'a-test-password-key-of-at-least-32-characters';
+
+	async function stored(email: string) {
+		return database
+			.prepare('SELECT password_hash AS hash, password_iterations AS iterations, password_keyed AS keyed FROM accounts WHERE email = ?')
+			.bind(email)
+			.first<{ hash: string; iterations: number; keyed: number }>();
+	}
+
+	it('makes a 100,000-round hash exactly as before, so older passwords still work', async () => {
+		const enc = new TextEncoder();
+		const raw = await crypto.subtle.importKey('raw', enc.encode('correct horse battery staple'), 'PBKDF2', false, ['deriveBits']);
+		const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt: enc.encode('salt'), iterations: 100_000 }, raw, 256);
+		const before = Array.from(new Uint8Array(bits), (byte) => byte.toString(16).padStart(2, '0')).join('');
+		expect(await passwordHash('correct horse battery staple', 'salt', 100_000)).toBe(before);
+		expect(await passwordHash('correct horse battery staple', 'salt', 600_000)).not.toBe(before);
+		expect(await passwordHash('correct horse battery staple', 'salt', 600_000, key)).not.toBe(
+			await passwordHash('correct horse battery staple', 'salt', 600_000)
+		);
+	});
+
+	it('upgrades an older password to 600,000 rounds and the key at the next sign-in', async () => {
+		const account = await verifiedAccount(database, 'old@example.org');
+		const oldHash = await passwordHash('an older password here', 'old-salt', 100_000);
+		await database
+			.prepare("UPDATE accounts SET password_hash = ?, password_salt = 'old-salt', password_iterations = 100000 WHERE identifier = ?")
+			.bind(oldHash, account.identifier)
+			.run();
+		expect((await checkPassword(database, 'old@example.org', 'an older password here', key))?.identifier).toBe(account.identifier);
+		expect(await stored('old@example.org')).toMatchObject({ iterations: 600_000, keyed: 1 });
+		expect(await checkPassword(database, 'old@example.org', 'an older password here', key)).toBeDefined();
+		// A keyed hash cannot be checked without the key.
+		vi.spyOn(console, 'error').mockImplementation(() => {});
+		expect(await checkPassword(database, 'old@example.org', 'an older password here')).toBeUndefined();
+	});
+
+	it('ignores a password key that is too short to be safe', () => {
+		expect(usablePasswordKey(undefined)).toBeUndefined();
+		expect(usablePasswordKey('short')).toBeUndefined();
+		expect(usablePasswordKey(` ${key} `)).toBe(key);
+	});
+
+	it('pauses password sign-in after 10 wrong passwords, for an address with or without an account', async () => {
+		const account = await verifiedAccount(database, 'person@example.org');
+		await setPassword(database, account.identifier, 'kettle river paper moon', undefined);
+		for (const address of ['person@example.org', 'nobody@example.org']) {
+			for (let count = 1; count < failuresBeforePause; count += 1) {
+				expect((await tryPassword(database, address, 'wrong guess number')).outcome).toBe('wrong');
+			}
+			expect((await tryPassword(database, address, 'wrong guess number')).outcome).toBe('paused');
+		}
+		// While paused, even the right password is not checked.
+		expect((await tryPassword(database, 'Person@example.org', 'kettle river paper moon')).outcome).toBe('paused');
+
+		await database.prepare("UPDATE password_failures SET paused_until = '2000-01-01T00:00:00.000Z'").run();
+		expect((await tryPassword(database, 'person@example.org', 'kettle river paper moon')).outcome).toBe('accepted');
+		const left = await database.prepare('SELECT COUNT(*) AS count FROM password_failures WHERE email = ?').bind('person@example.org').first<{ count: number }>();
+		expect(left?.count).toBe(0);
+	});
+
+	it('doubles each pause', async () => {
+		await database
+			.prepare("INSERT INTO password_failures (email, consecutive, last_failed_at) VALUES ('p@example.org', 19, '2026-01-01')")
+			.run();
+		const before = Date.now();
+		const result = await tryPassword(database, 'p@example.org', 'wrong guess number');
+		expect(result.outcome).toBe('paused');
+		const minutes = (Date.parse((result as { until: string }).until) - before) / 60_000;
+		expect(minutes).toBeGreaterThan(29);
+		expect(minutes).toBeLessThan(31);
+	});
+
+	it('switches password sign-in off after 100 wrong passwords until a new one is chosen', async () => {
+		const account = await verifiedAccount(database, 'person@example.org');
+		await setPassword(database, account.identifier, 'kettle river paper moon', undefined);
+		await database
+			.prepare("INSERT INTO password_failures (email, consecutive, last_failed_at) VALUES ('person@example.org', ?, '2026-01-01')")
+			.bind(failuresBeforeOff - 1)
+			.run();
+		expect((await tryPassword(database, 'person@example.org', 'wrong guess number')).outcome).toBe('off');
+		expect((await tryPassword(database, 'person@example.org', 'kettle river paper moon')).outcome).toBe('off');
+		await setPassword(database, account.identifier, 'a brand new long password', undefined);
+		expect((await tryPassword(database, 'person@example.org', 'a brand new long password')).outcome).toBe('accepted');
+	});
+
+	it('lets a recent code or link sign-in replace a forgotten password', async () => {
+		const account = await verifiedAccount(database, 'person@example.org');
+		const byCode = await startSession(database, account.identifier, 'code');
+		const byPassword = await startSession(database, account.identifier, 'password');
+		const codeSession = await sessionAccount(database, byCode.token);
+		expect(codeSession?.method).toBe('code');
+		expect(provedRecently(codeSession)).toBe(true);
+		expect(provedRecently(codeSession, Date.now() + 11 * 60 * 1000)).toBe(false);
+		expect(provedRecently(await sessionAccount(database, byPassword.token))).toBe(false);
+		expect(provedRecently(undefined)).toBe(false);
 	});
 });

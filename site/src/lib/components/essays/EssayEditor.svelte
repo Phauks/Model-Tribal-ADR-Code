@@ -35,8 +35,8 @@
 	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
 	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
 	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
-	import { figurePartOrder, figureParts, type FigurePart, type NewFigure } from '#lib/essays/figures.ts';
-	import { figurePlayers } from '#lib/essays/figure-players.ts';
+	import { figurePartOrder, figureParts, figurePartsFor, type FigureKind, type FigurePart, type NewFigure } from '#lib/essays/figures.ts';
+	import { figurePlayers, watchFigureFiles } from '#lib/essays/figure-players.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
 
 	let {
@@ -92,6 +92,7 @@
 		boxParts: Set<string>;
 		analysisTitle: string | null;
 		figureParts: Set<string>;
+		figureKind: FigureKind | null;
 	}>({
 		marks: new Set(),
 		block: 'paragraph',
@@ -100,7 +101,8 @@
 		boxSource: null,
 		boxParts: new Set(),
 		analysisTitle: null,
-		figureParts: new Set()
+		figureParts: new Set(),
+		figureKind: null
 	});
 	/** The parts the box around the cursor can take and does not have yet. */
 	const missingParts = $derived(
@@ -108,11 +110,18 @@
 	);
 
 	/** The parts the figure around the cursor does not have yet. */
-	const missingFigureParts = $derived(active.inside.has('figure_block') ? figurePartOrder.filter((kind) => !active.figureParts.has(kind)) : []);
+	const missingFigureParts = $derived(
+		active.figureKind ? figurePartsFor[active.figureKind].filter((kind) => !active.figureParts.has(kind)) : []
+	);
 
 	/* Dialogs --------------------------------------------------------------- */
 
 	let figureDialog: ReturnType<typeof EssayFigureDialog> | undefined = $state();
+	/**
+	 * Set when a figure's file in the editor did not load. The editor's own
+	 * text is not changed for it: ProseMirror would redraw the figure.
+	 */
+	let figureFileNotice = $state('');
 
 	type Picker = 'citation' | 'case' | 'law' | 'term' | 'link' | 'analysis-title';
 	let picker = $state<Picker | null>(null);
@@ -312,18 +321,71 @@
 			...(figure.transcript ? [newFigurePart('transcript', figure.transcript)] : [])
 		];
 		const node = schema.node('figure_block', { kind: figure.kind, address: figure.address }, parts.length ? parts : [schema.node('paragraph')]);
-		run((state, dispatch) => {
+		run(insertAfterBlock(node, false));
+	}
+
+	/**
+	 * Inserts a block after the top-level block the cursor is in. With
+	 * `selectFirst`, the first words of the new block are selected, so typing
+	 * replaces the placeholder.
+	 */
+	function insertAfterBlock(node: EditorNode, selectFirst: boolean): Command {
+		return (state, dispatch) => {
 			const start = state.selection.$from;
 			const at = start.depth > 0 ? start.after(1) : state.selection.from;
 			if (dispatch) {
 				const transaction = state.tr.insert(at, node);
 				const inside = TextSelection.findFrom(transaction.doc.resolve(at + 1), 1, true);
-				if (inside) transaction.setSelection(inside);
+				if (inside) {
+					transaction.setSelection(selectFirst ? TextSelection.create(transaction.doc, inside.from, inside.$from.end()) : inside);
+				}
 				dispatch(transaction.scrollIntoView());
 			}
 			return true;
-		});
+		};
 	}
+
+	function tableRow(cells: string[], header = false): EditorNode {
+		const type = schema.nodes[header ? 'table_header' : 'table_cell'];
+		return schema.node(
+			'table_row',
+			null,
+			cells.map((text, index) => type.create({ align: index === 1 ? 'right' : null }, text ? schema.text(text) : undefined))
+		);
+	}
+
+	/** A chart to fill in: its caption, a table of names and numbers, and a source line. */
+	function newChart(): EditorNode {
+		return schema.node('figure_block', { kind: 'chart', address: '' }, [
+			schema.node('paragraph', null, schema.text('What the chart shows.')),
+			schema.node('table', null, [tableRow(['Name', 'Number'], true), tableRow(['First', '1']), tableRow(['Second', '2'])]),
+			newFigurePart('credit', 'Source: ')
+		]);
+	}
+
+	/** Adds an empty row under the row the cursor is in. */
+	const addTableRow: Command = (state, dispatch) => {
+		const found = enclosing(state, 'table_row');
+		if (!found) return false;
+		if (dispatch) {
+			const cells: EditorNode[] = [];
+			found.node.forEach((cell) => cells.push(schema.nodes.table_cell.create({ align: cell.attrs.align })));
+			const at = found.position + found.node.nodeSize;
+			const transaction = state.tr.insert(at, schema.node('table_row', null, cells));
+			transaction.setSelection(TextSelection.near(transaction.doc.resolve(at + 2)));
+			dispatch(transaction.scrollIntoView());
+		}
+		return true;
+	};
+
+	/** Removes the row the cursor is in, keeping the header row and at least one other. */
+	const removeTableRow: Command = (state, dispatch) => {
+		const row = enclosing(state, 'table_row');
+		const table = enclosing(state, 'table');
+		if (!row || !table || table.node.childCount <= 2 || table.node.firstChild === row.node) return false;
+		if (dispatch) dispatch(state.tr.delete(row.position, row.position + row.node.nodeSize).scrollIntoView());
+		return true;
+	};
 
 	/** Adds a part to the figure around the cursor, in its place in the order of parts. */
 	function addFigurePart(kind: FigurePart): Command {
@@ -453,7 +515,8 @@
 			boxSource: boxFound?.node.attrs.source ?? null,
 			boxParts: partsOf(boxFound?.node),
 			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null,
-			figureParts: partsOf(enclosing(state, 'figure_block')?.node, 'figure_part')
+			figureParts: partsOf(enclosing(state, 'figure_block')?.node, 'figure_part'),
+			figureKind: (enclosing(state, 'figure_block')?.node.attrs.kind as FigureKind | undefined) ?? null
 		};
 	}
 
@@ -987,6 +1050,11 @@
 			</div>
 			<div role="group" aria-label="Figures">
 				<button type="button" class="tool" onclick={() => figureDialog?.show()} title="A picture, video or sound recording, added after this paragraph">Picture, video or recording</button>
+				<button type="button" class="tool" onclick={() => run(insertAfterBlock(newChart(), true))} title="A bar chart drawn from a small table, added after this paragraph">Chart</button>
+				{#if active.inside.has('table')}
+					<button type="button" class="tool" onclick={() => run(addTableRow)}>Add row</button>
+					<button type="button" class="tool" onclick={() => run(removeTableRow)}>Remove row</button>
+				{/if}
 				{#each missingFigureParts as kind (kind)}
 					<button type="button" class="tool" onclick={() => run(addFigurePart(kind))}>Add {figureParts[kind]}</button>
 				{/each}
@@ -1039,7 +1107,19 @@
 			</p>
 		</div>
 	{/if}
-	<div class="editor-area" hidden={mode !== 'rich'} bind:this={host}></div>
+	{#if figureFileNotice && mode === 'rich'}
+		<div class="notice" role="note"><p>{figureFileNotice}</p></div>
+	{/if}
+	<div
+		class="editor-area"
+		hidden={mode !== 'rich'}
+		bind:this={host}
+		use:watchFigureFiles={(_media, problem) =>
+			(figureFileNotice =
+				problem === 'checking'
+					? 'A picture, video or recording here is still being checked for viruses. It shows once the check passes, usually within a few minutes.'
+					: 'A picture, video or recording here could not be loaded.')}
+	></div>
 
 	{#if mode === 'markdown'}
 		<label class="visually-hidden" for="markdown-text">Essay text as Markdown</label>

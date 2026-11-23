@@ -306,3 +306,14 @@ describe('essays in Recent changes', () => {
 		expect(list.changes[0].change).toBe('new');
 	});
 });
+
+describe('pages about the site in Recent changes', () => {
+	it('lists a publication of the About page at its own address', async () => {
+		const text = '---\ntitle: "About"\npart: about\n---\n\n# About\n\nWho we are.\n';
+		await saveVersion(database, bucket, { identifier: 'about', text, basedOn: null, personIdentifier: 'lead', origin: 'editor', note: 'First' });
+		await publishVersion(database, 'about', 1, 'lead');
+		const list = await listChanges(database, all, directoryOf(build('2026-11-23T00:00:00Z', [])));
+		expect(list.changes.map((change) => [change.address, change.kind, change.change])).toEqual([[essayPath('about', 'about'), 'about', 'new']]);
+		expect(list.changes[0].address).toBe('/about');
+	});
+});
