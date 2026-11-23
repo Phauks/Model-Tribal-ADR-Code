@@ -1,15 +1,16 @@
 <script lang="ts">
 	// The bar an essay page shows above the text to a person with access to
 	// the essay, and to nobody else (Trevor, 2026-11-22: review and edit in
-	// place; draft status only for people with access). It says where the
-	// draft stands and holds the two choices: what to show (Published only
-	// or With drafts) and what to do (Reading Commenting or Editing). The page's state
-	// comes from src/lib/server/essay-page-state.ts.
-	// An Edit button sits beside the Mode choice so editing is easy to find
-	// (Trevor, Nov. 23, 2026: "cannot figure out how to access it"), and Done
-	// goes back to reading.
+	// place; draft status only for people with access). It is the same slim
+	// bar as the editor's (essay-editor-mockups/3 and v2-1): the mode, what
+	// to show (Published only or With drafts), then Edit, History and
+	// Publish. Where the draft stands shows as labels under the title
+	// (EssayStatusPills.svelte). The page's state comes from
+	// src/lib/server/essay-page-state.ts.
+	import History from '@lucide/svelte/icons/history';
 	import Pencil from '@lucide/svelte/icons/pencil';
-	import Check from '@lucide/svelte/icons/check';
+	import Send from '@lucide/svelte/icons/send';
+	import EssayModePicker from './EssayModePicker.svelte';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
 
 	let {
@@ -21,56 +22,26 @@
 		view: 'published' | 'drafts';
 		mode: 'reading' | 'commenting' | 'editing';
 	} = $props();
-
-	const draftSummary = $derived.by(() => {
-		const draft = state.draft;
-		if (!draft) return null;
-		const parts = [];
-		if (draft.changed) parts.push(`${draft.changed} changed ${draft.changed === 1 ? 'block' : 'blocks'}`);
-		if (draft.added) parts.push(`${draft.added} new ${draft.added === 1 ? 'block' : 'blocks'}`);
-		return parts.join(', ');
-	});
 </script>
 
 <div class="access-bar no-print" role="region" aria-label="Draft and editing">
-	<p class="status small">
-		{#if state.publishedVersion === null}
-			<span class="dot dot-draft" aria-hidden="true"></span> Not published yet. Draft: version {state.latest.number}, saved {state.latest.savedAtText} by {state.latest.by}.
-		{:else if state.draft}
-			<span class="dot dot-draft" aria-hidden="true"></span> Draft: version {state.latest.number}, saved {state.latest.savedAtText} by {state.latest.by}{draftSummary ? ` (${draftSummary})` : ''}. Readers see version {state.publishedVersion}.
-		{:else}
-			<span class="dot dot-published" aria-hidden="true"></span> Readers see the newest version ({state.publishedVersion}).
-		{/if}
-		{#if state.gitConflicts > 0}
-			<strong>Git changed {state.gitConflicts === 1 ? 'a paragraph' : `${state.gitConflicts} paragraphs`} also edited here.</strong>
-			<a href="/workspace/essays">Settle it</a>.
-		{/if}
-	</p>
-	<div class="controls">
-		{#if state.canEdit && mode === 'reading'}
-			<button class="button" type="button" onclick={() => (mode = 'editing')}><Pencil size={16} aria-hidden="true" /> Edit</button>
-		{:else if mode !== 'reading'}
-			<button class="button" type="button" onclick={() => (mode = 'reading')}><Check size={16} aria-hidden="true" /> Done</button>
-		{/if}
-		{#if state.draft && state.publishedVersion !== null}
-			<label class="small" for="essay-view">Show</label>
-			<select id="essay-view" bind:value={view} disabled={mode !== 'reading'}>
-				<option value="published">Published only</option>
-				<option value="drafts">With drafts</option>
-			</select>
-		{/if}
-		<label class="small" for="essay-mode">Mode</label>
-		<select id="essay-mode" bind:value={mode}>
-			<option value="reading">Reading</option>
-			<!-- Commenting: select words in the draft and comment on them; the text stays as the authors wrote it. -->
-			<option value="commenting">Commenting</option>
-			{#if state.canEdit}<option value="editing">Editing</option>{/if}
+	<EssayModePicker bind:mode canEdit={state.canEdit} />
+	{#if state.draft && state.publishedVersion !== null}
+		<label class="visually-hidden" for="essay-view">Show</label>
+		<select id="essay-view" bind:value={view}>
+			<option value="published">Published only</option>
+			<option value="drafts">With drafts</option>
 		</select>
-		<a class="small" href="/workspace/essays/{state.identifier}">History</a>
-		{#if state.canPublish && state.draft && mode === 'reading'}
+	{/if}
+	<div class="end">
+		{#if state.canEdit}
+			<button class="button" type="button" onclick={() => (mode = 'editing')}><Pencil size={16} aria-hidden="true" /> Edit</button>
+		{/if}
+		<a class="icon-link" href="/workspace/essays/{state.identifier}" title="History: every saved version" aria-label="History"><History size={18} aria-hidden="true" /></a>
+		{#if state.canPublish && state.draft}
 			<form method="post" action="/workspace/essays/{state.identifier}?/publish">
 				<input type="hidden" name="version" value={state.latest.number} />
-				<button class="button" type="submit">Publish version {state.latest.number}</button>
+				<button class="button" type="submit" title="Publish version {state.latest.number} for readers"><Send size={16} aria-hidden="true" /> Publish</button>
 			</form>
 		{/if}
 	</div>
@@ -78,55 +49,51 @@
 
 <style>
 	.access-bar {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--space-2) var(--space-4);
-		margin: 0 0 var(--space-4);
-		padding: var(--space-2) var(--space-3);
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-control);
-		background: var(--color-surface);
-	}
-
-	.status {
-		margin: 0;
-		flex: 1 1 20rem;
-	}
-
-	.controls {
+		position: sticky;
+		top: 0;
+		z-index: 3;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--space-2);
+		margin: 0 0 var(--space-3);
+		padding: var(--space-1) 0;
+		border-bottom: 1px solid var(--color-line);
+		background: var(--color-paper);
 	}
 
-	.controls .button {
+	.end {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		margin-left: auto;
+	}
+
+	.end form {
+		display: inline;
+		margin: 0;
+	}
+
+	.button {
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-1);
 	}
 
-	.controls form {
-		display: inline;
-		margin: 0;
+	.icon-link {
+		display: inline-grid;
+		place-items: center;
+		min-width: var(--layout-target-minimum);
+		min-height: var(--layout-target-minimum);
+		border-radius: var(--radius-control);
+		color: var(--color-ink);
 	}
 
-	.dot {
-		display: inline-block;
-		width: 0.6em;
-		height: 0.6em;
-		border-radius: 50%;
-		margin-right: var(--space-1);
-		vertical-align: 0.05em;
+	.icon-link:hover {
+		background: var(--color-surface);
 	}
 
-	.dot-draft {
-		background: var(--color-action);
-	}
-
-	.dot-published {
-		background: var(--color-link);
+	#essay-view {
+		min-height: var(--layout-target-minimum);
 	}
 </style>
