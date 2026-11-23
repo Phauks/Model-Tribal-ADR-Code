@@ -28,7 +28,7 @@ This page lists everything that waits on the domain, so that it can all be done 
 - [ ] **Event emails.** Built and waiting on the same switch as summaries: once `UPDATE_EMAIL_FROM` and `SITE_ADDRESS` are set, people registered for events get confirmations, waitlist offers, reminders and word of changes or cancellations from the next 15-minute run. Steps: `site/COLLABORATION.md`, "Events".
 - [ ] **Request notices.** Email the maintainer a link to each new request, never its contents (`docs/requests.md`, "How it is built"). Not built.
 - [ ] **Contributor notices.** Email the lead author when a registration arrives, and contributors before each edition goes to print (`docs/contributor-profiles.md`, "Not built yet"). Not built.
-- [ ] **A contact address that receives mail.** Email Routing can forward an address on the domain, such as `contact@`, to the lead author's own inbox without a mail server.[^email-routing] Nations asking for a correction or removal could then write to the project's address rather than a personal one. This is a suggestion, not yet decided.
+- [ ] **The project inbox and outreach.** Built, waiting for the domain: Email Routing to the Worker, the settings, the outreach mailbox on a subdomain, and the delivery-report queue. The steps are in `site/MAIL.md`, "Switching email on" (decision record 0040). Nations asking for a correction or removal can then write to the project's own address.
 
 ## 4. Print and ebook
 
@@ -46,6 +46,3 @@ This page lists everything that waits on the domain, so that it can all be done 
 
 [^custom-domain]: Cloudflare, "Custom Domains," Workers documentation,
     <https://developers.cloudflare.com/workers/configuration/routing/custom-domains/>.
-
-[^email-routing]: Cloudflare, "Email Routing," documentation,
-    <https://developers.cloudflare.com/email-routing/>.

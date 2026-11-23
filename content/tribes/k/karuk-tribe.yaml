@@ -767,6 +767,28 @@ jurisdiction:
     table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: California Department of Social Services
+  agreement: Title IV-E Intergovernmental Agreement between the California Department of Social Services and the Karuk Tribe of California
+  state: CA
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for CA
+  note: 'The source reads: “Title IV-E Intergovernmental Agreement between the California Department of Social Services and the Karuk Tribe of California”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: California Department of Social Services
+  agreement: Title IV-E intergovernmental agreement
+  state: CA
+  date: '2007-05-14'
+  status: unknown
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.C, California
+  note: 'The source reads: “The California Department of Social Services entered into two agreements, one with the Karuk Tribe on May 14, 2007”. The report says neither the Karuk nor the Yurok agreement was "currently effective" because no tribal plan had been developed. Report date is March 2014, so current status needs confirming.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

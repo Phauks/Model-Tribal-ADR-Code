@@ -73,7 +73,7 @@
 	{#if upload.source === 'file'}
 		<p class="small downloads">
 			<a href={fileAddress} download><Download size={14} aria-hidden="true" /> Download the file</a>
-			· Files are checked for hidden programs, but not yet scanned for viruses. Open downloads with care.
+			· Files are checked for viruses and hidden programs before they are shown. Open downloads with care all the same.
 		</p>
 	{/if}
 

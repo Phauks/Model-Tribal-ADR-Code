@@ -21,3 +21,21 @@ searches:
   reason: Listed by the Tribal Law and Policy Institute among the Tribes that have implemented special Tribal criminal jurisdiction under the Violence Against Women Act Reauthorization Act of 2022 (25 U.
   records:
   - research/raw/2026-11-23/violence-against-women-act-jurisdiction.json#pueblo-of-santa-ana
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-list
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: 'Cross-deputization, tax and child welfare agreements with states, counties and cities: state agency lists, the Justice Department''s sample agreement library, Title IV-E surveys'
+  outcome: found
+  reason: 2 agreement(s) recorded.
+  records:
+  - research/raw/2026-11-23/jurisdiction-agreements.json#pueblo-of-santa-ana
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: statute
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: Tax agreements with the state
+  outcome: not-found
+  reason: 'A state source names the nation as one the state may make a tax agreement with, but does not say an agreement was signed: Gross receipts tax cooperative (tax sharing) agreement under Section 9-11-12.1 NMSA 1978 (new-mexico-taxation-and-revenue-department-tax-sharing-agreements).'

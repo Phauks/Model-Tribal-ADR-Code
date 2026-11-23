@@ -11,3 +11,11 @@ searches:
   query: 'scripts/jurisdiction/public_law_280_gaps.py: the nation''s states against the mandatory and optional Public Law 280 states'
   outcome: found
   reason: Public Law 280 status recorded for New Mexico.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: statute
+  address: research/raw/2026-11-23/jurisdiction-agreements.json
+  query: Tax agreements with the state
+  outcome: not-found
+  reason: 'A state source names the nation as one the state may make a tax agreement with, but does not say an agreement was signed: Gross receipts tax cooperative (tax sharing) agreement under Section 9-11-12.1 NMSA 1978 (new-mexico-taxation-and-revenue-department-tax-sharing-agreements).'

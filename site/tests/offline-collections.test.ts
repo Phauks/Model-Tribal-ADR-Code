@@ -6,6 +6,8 @@ describe('offline collections', () => {
 		expect(collectionOf('/nations')).toBe('nations');
 		expect(collectionOf('/nations/map')).toBe('nations');
 		expect(collectionOf('/nations/navajo-nation/__data.json')).toBe('nations');
+		expect(collectionOf('/stories')).toBe('stories');
+		expect(collectionOf('/stories/lummi-salmon-woman/__data.json')).toBe('stories');
 		expect(collectionOf('/glossary')).toBe('glossary');
 		expect(collectionOf('/glossary/adr')).toBe('glossary');
 		expect(collectionOf('/glossary/terms.json')).toBe('glossary');
@@ -29,5 +31,6 @@ describe('offline collections', () => {
 		expect(formatBytes(1)).toBe('1 KB');
 		expect(formatBytes(45_300)).toBe('45 KB');
 		expect(formatBytes(3_140_000)).toBe('3.1 MB');
+		expect(formatBytes(3_186_082_179)).toBe('3.2 GB');
 	});
 });

@@ -92,5 +92,14 @@ searches:
   outcome: not-found
   reason: The 2022 Alaska Tribal Court Directory has no entry under this nation's name or its village
     (searched for "False Pass" and "Isanotski").
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20250916173749/https://www.apiai.org/tribes/false-pass/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2025-09-16 ("False Pass |   Aleutian Pribilof Islands Association");
+    it shows no codes, court or dispute resolution forum.
 next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
   dispute resolution program, and check law library holdings of its code.

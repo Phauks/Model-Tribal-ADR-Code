@@ -26,6 +26,12 @@ describe('permissions', () => {
 		}
 	});
 
+	it('lets only the lead author read the project inbox and send outreach', () => {
+		for (const permission of ['read-mail', 'send-outreach', 'manage-mail'] as const) {
+			expect(roles.filter((role) => can(person(role, role === 'nation-reviewer' ? 'a' : null), permission))).toEqual(['lead-author']);
+		}
+	});
+
 	it('lets only the lead author and editors read and handle requests', () => {
 		const allowed = roles.filter((role) => can(person(role), 'handle-requests'));
 		expect(allowed).toEqual(['lead-author', 'editor']);

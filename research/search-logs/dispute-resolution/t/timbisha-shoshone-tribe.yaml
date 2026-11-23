@@ -1,6 +1,6 @@
 profile: content/tribes/t/timbisha-shoshone-tribe.yaml
 topic: dispute-resolution
-status: partly-searched
+status: none-found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
@@ -123,6 +123,21 @@ searches:
     peacemaking, circles, elders' courts and restorative justice
   outcome: scanned-unreadable
   reason: Archived copy is a PDF with no text layer; it was not read from page images in this retry.
-next_steps: 'Try again later, or open by hand in a browser: https://web.archive.org/web/20260202024211id_/http://www.timbisha.com/images/Documents/election%20ordinance.pdf;
-  https://web.archive.org/web/20260202024214id_/http://www.timbisha.com/images/Documents/enrollment%20ordinance.pdf;
-  https://web.archive.org/web/2026id_/https://timbisha.com/newsite/wp-content/uploads/2020/10/Constitution-of-the-Timbisha-Shoshone-Tribe.pdf.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260202024211/https://www.timbisha.com/images/Documents/election%20ordinance.pdf
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of the election ordinance (the project already holds this file,
+    tribal-law/documents/332117010cec22be0720.pdf); it names no dispute resolution forum.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-code-site
+  address: http://www.timbisha.com/images/Documents/enrollment%20ordinance.pdf
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The link answered on 2026-11-23; the project already holds this enrollment ordinance (tribal-law/documents/f0bd46385fe6ba879b3b.pdf),
+    which names no dispute resolution forum beyond its enrollment procedures.

@@ -1,7 +1,7 @@
 profile: content/tribes/p/potter-valley-tribe.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -50,4 +50,12 @@ searches:
   reason: 1 candidate(s) kept for the lead author's review (Gate 1); none is in the profile yet.
   records:
   - research/reviews/2026-11-22-dispute-resolution-coverage.json#potter-valley-tribe-1
-next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261105104141/https://pottervalleytribe.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-11-05 ("Potter Valley Tribe &#8211; Providing for the
+    health, safety, and welfare of our"); it shows no codes, court or dispute resolution forum.

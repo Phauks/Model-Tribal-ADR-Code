@@ -9,6 +9,8 @@ export type WorkspacePageName =
 	| 'overview'
 	| 'essays'
 	| 'requests'
+	| 'inbox'
+	| 'outreach'
 	| 'uploads'
 	| 'nation-uploads'
 	| 'reviews'
@@ -34,6 +36,8 @@ export const workspacePages: readonly WorkspacePage[] = [
 	// Everyone sees the essays they can open, by role or by grant.
 	{ name: 'essays', label: 'Essays', link: '/workspace/essays' },
 	{ name: 'requests', label: 'Requests', link: '/workspace/requests', needs: 'read-requests' },
+	{ name: 'inbox', label: 'Inbox', link: '/workspace/inbox', needs: 'read-mail' },
+	{ name: 'outreach', label: 'Outreach', link: '/workspace/outreach', needs: 'send-outreach' },
 	{ name: 'uploads', label: 'Uploads', link: '/workspace/uploads', needs: 'review-uploads' },
 	// A nation reviewer reads and comments on files sent about their nation.
 	{ name: 'nation-uploads', label: 'Files about your nation', link: '/workspace/nation-uploads', needs: 'comment-on-nation-uploads' },

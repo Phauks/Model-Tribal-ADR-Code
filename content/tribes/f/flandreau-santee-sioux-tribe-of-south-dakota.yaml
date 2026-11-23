@@ -832,6 +832,28 @@ jurisdiction:
   verification: read-in-full
   locator: 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12, 1-1-18
   note: 'Quote is the 1957 assumption text, § 1-1-12, shown because it is still printed in the code. Conclusion that nothing is in force is mine, drawn from Rosebud (1990) plus the statutes; the research did not find any later tribal consent election or any post-1990 South Dakota assumption. Goldberg (2010) fn. 4 reaches the same view. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-18.'
+jurisdiction_agreements:
+- kind: child-welfare-agreement
+  other_party: South Dakota Department of Social Services
+  agreement: Purchase of Services Agreement Between Flandreau Santee Sioux Tribe and the State of South Dakota Department of Social Services (2014)
+  state: SD
+  status: unknown
+  source: native-american-rights-fund-title-iv-e-tribal-state-agreement-examples
+  confidence: medium
+  verification: bulk-import
+  locator: Examples of Tribal-State Agreements, under the heading for SD
+  note: 'The source reads: “Purchase of Services Agreement Between Flandreau Santee Sioux Tribe and the State of South Dakota Department of Social Services (2014)”. Agreement collected in 2013 by the National Indian Law Library; the page says it may or may not still be in force. Other-party agency is as named in the listing title or inferred from its state heading.'
+- kind: child-welfare-agreement
+  other_party: South Dakota Department of Social Services, Division of Child Protection
+  agreement: Title IV-E agreement (purchase of services)
+  state: SD
+  date: '2013'
+  status: expired
+  source: association-on-american-indian-affairs-survey-and-analysis-of-title-iv-e-tribal-state-agreements-2014
+  confidence: medium
+  verification: read-in-full
+  locator: Section I.N, South Dakota
+  note: 'The source reads: “the Flandreau Santee Sioux Tribe”. The report says "All agreements expired on May 31, 2013"; later agreements are not shown in this source. Report date is March 2014, so current status needs confirming.'
 treaties:
 - title: Treaty with the Sauk and Foxes, etc., 1830
   signed: '1830-07-15'

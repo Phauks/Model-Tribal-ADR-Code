@@ -196,6 +196,15 @@ searches:
     service stays listed.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-017
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://sites.google.com/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The site has no sitemap at this address (404 on 2026-11-23); the sitemap was only a way to find
+    pages, so nothing on the topic is missing because of it.
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Old Harbor Tribal
   Court (court-018, not-found-after-search). No page or official directory entry was found on 2026-11-22
   for “Old Harbor Tribal Court” (research/reviews/2026-11-22-service-links.json). The second search of
