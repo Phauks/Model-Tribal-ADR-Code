@@ -14,7 +14,7 @@
 	},
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && node tools/write-offline-sizes.mjs",
+		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/add-scheduled-run.mjs",
 		"preview": "npm run build && wrangler dev",
 		"deploy": "npm run build && wrangler deploy",
 		"prepare": "svelte-kit sync || echo ''",
