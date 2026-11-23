@@ -351,8 +351,8 @@ function governmentAtAGlance(record: NationRecord, sources: SourceUses): FactGro
 	const bodyLabel = 'Governing body';
 	const headLabel = 'Head of government';
 	return [
-		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value, link: '#government-heading' })] : []),
-		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value, link: '#government-heading' })] : [])
+		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value })] : []),
+		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value })] : [])
 	];
 }
 
