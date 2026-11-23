@@ -1,0 +1,28 @@
+key: protomaps-basemap-openstreetmap
+kind: dataset
+citation:
+  type: dataset
+  title: Protomaps Basemap, daily build of OpenStreetMap data in PMTiles format
+  author:
+    - literal: Protomaps
+    - literal: OpenStreetMap contributors
+  medium: PMTiles file of vector tiles
+  URL: https://docs.protomaps.com/basemaps/downloads
+  accessed:
+    date-parts: [[2026, 11, 23]]
+original_link: https://docs.protomaps.com/basemaps/downloads
+retrieved: 2026-11-23
+history:
+  status: live
+  last_checked: 2026-11-23
+rights:
+  status: no-permission-needed
+  basis: open-license
+  basis_note: >-
+    The basemap is "an Open Database License Produced Work (OpenStreetMap attribution required)" (Protomaps, Basemap Downloads page, read Nov. 23, 2026). The website shows "© OpenStreetMap contributors" on the map and in its Sources section. The Protomaps software and styles are open source under permissive licenses (Protomaps FAQ, https://protomaps.com/faq).
+  license: ODbL-1.0
+  redistribution: true
+found_in:
+  - 2026-11-23-map-engine-maplibre
+notes: >-
+  The website's map draws towns, roads, water and borders from this basemap, cut to the United States and its territories up to zoom 12 (site/geography/map-tile-region.json; the build used is named in site/geography/map-tiles.json). The full world build is about 120 GB; the cut is about 2.2 GB.
