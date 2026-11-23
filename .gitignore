@@ -7,6 +7,7 @@ build/
 .wrangler/
 *.pdf
 !content/sources/**/*.pdf
+!site/static/help/forms/*.pdf
 
 # Local secrets and environment files (secrets live only in Cloudflare)
 .env
