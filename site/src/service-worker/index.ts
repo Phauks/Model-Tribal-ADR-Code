@@ -90,6 +90,8 @@ const nationImage = /^\/nations\/[^/]+\/image$/;
 
 function isNeverCached(path: string): boolean {
 	return (
+		// The spelling checker's WebAssembly is large and for editors only; the browser's own cache keeps it.
+		path.endsWith('.wasm') ||
 		nationImage.test(path) ||
 		neverCached.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))
 	);

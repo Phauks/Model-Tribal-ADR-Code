@@ -102,6 +102,17 @@ Review and editing happen on the essay's own page, not in a separate place (lead
 - **With drafts** shows the newest version with each changed block marked "Draft" (a solid bar in the margin) and each new block marked "New" (a dashed bar). The marks come from a line comparison of the published and newest bodies (`lineChanges` in `site/src/lib/essays/merge.ts`); a removed paragraph is not marked yet.
 - **Editing** opens the editor in place of the text, loaded only then. It saves by itself a few seconds after typing stops, at least every half minute while typing goes on, and when the tab is hidden or the editor closes. Those versions carry the note "Auto-saved", and the History page folds a run of them under the newest. "Name this version" saves the text as it stands as a version with a note of its own, even when nothing changed since the last save, because a saved version never changes.
 
+### Checks and Go to
+
+The editor's **Checks** button (contribute access and above) opens a panel of what may need a look. Each item is underlined in the text, wavy for spelling and grammar and dotted for definitions (lead author, Nov. 22, 2026: "spell-check ... as well as grammer-check functionality, try and find good libraries"). Choosing an item selects its words; the panel offers the fix, **Ignore**, and for spelling **Add to dictionary**. The choice to show Checks is remembered in the browser.
+
+- **Spelling and grammar** come from Harper (`harper.js`, Apache-2.0, by Automattic), which runs in the browser, so no text is sent anywhere (Harper, "harper.js" documentation). Its dictionary and rules are one WebAssembly file of about 20 MB, fetched only when someone turns Checks on, kept by the browser after that, and left out of the offline copy of the site. The text is checked one block at a time, and each block's result is kept until it changes. A long essay takes about six to ten seconds the first time, then only the edited block is checked again (measured on the timeline essay, about 47,000 characters, Nov. 23, 2026). Citations are left out of the text checked.
+- **What it is told to skip.** The dictionary also gets the names of nations (official, self-designation and former names), glossary terms and court case titles, about 1,500 words, and the words a person adds, which stay in that browser. Three Harper rules are off because the style guide decides otherwise: dashes, the en dash in number ranges, and the single ellipsis character. Spelling items for abbreviations ("v.", "U.S.C.", "Civ. Proc."), single letters and words joined by an apostrophe or ʻokina are dropped.
+- **Has a glossary entry** marks the first unlinked use of each glossary term. **Link to the glossary** turns it into a glossary link. **May need a definition** lists two-to-four-word phrases used four or more times that have no glossary entry (`site/src/lib/essays/checks.ts`).
+- **Citations and quotations** lists what the publishing checks would report: a citation key with no source record, a quotation with no citation, and the like.
+
+**Go to** (Ctrl+G) shows the essay's counts of components, words and characters, which are not shown otherwise (lead author, Nov. 22, 2026: "instead of lines, use components, words, characters. This doesn't always need to be seen right away"), and moves to a component (a heading, paragraph or box), a word number or a character number.
+
 ## Where published essays live
 
 The first version of this design kept drafts in Cloudflare and sent each finished essay to git by pull request. The lead author asked why the text should go to GitHub at all, and on Nov. 22, 2026 chose the bucket as the home for essays with an automatic copy in git. Three ways were compared (project analysis):
@@ -141,7 +152,7 @@ Any two saved versions can be compared, paragraph by paragraph and word by word 
 
 ## Built so far and still to build
 
-Built (pull request "Edit essays on the website"): the editor with its Markdown view and preview, saved versions in the bucket, conflict protection, compare, restore, publish, hold back, the public essay pages and their version lists, the public copy, the hourly git copy, and bringing in the git text. Then (pull request "Edit essays in place"): the essay page's bar, the With drafts view, and editing in place with saving by itself.
+Built (pull request "Edit essays on the website"): the editor with its Markdown view and preview, saved versions in the bucket, conflict protection, compare, restore, publish, hold back, the public essay pages and their version lists, the public copy, the hourly git copy, and bringing in the git text. Then (pull request "Edit essays in place"): the essay page's bar, the With drafts view, and editing in place with saving by itself. Then (pull request "Check spelling, grammar and definitions in the editor"): Checks and Go to.
 
 Next, in this order:
 
@@ -170,6 +181,7 @@ A round-trip test (Nov. 21, 2026) read the three essays in `content/essays/` int
 - Cloudflare, "Pricing" and "Limits," *Durable Objects* (last updated Nov. 13, 2026), [developers.cloudflare.com/durable-objects/platform/pricing/](https://developers.cloudflare.com/durable-objects/platform/pricing/), [developers.cloudflare.com/durable-objects/platform/limits/](https://developers.cloudflare.com/durable-objects/platform/limits/).
 - Cloudflare, "Use WebSockets," *Durable Objects*, [developers.cloudflare.com/durable-objects/best-practices/websockets/](https://developers.cloudflare.com/durable-objects/best-practices/websockets/); PartyKit repository and `y-partyserver` README, [github.com/cloudflare/partykit](https://github.com/cloudflare/partykit).
 - GitHub Docs, "Triggering a workflow" (on workflows started by the `GITHUB_TOKEN`), [docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow) (seen as a search result on Nov. 22, 2026; not read in full).
+- Automattic, Harper and `harper.js` (Apache-2.0), [writewithharper.com/docs/harperjs/introduction](https://writewithharper.com/docs/harperjs/introduction), and the `harper.js` 3.2.0 package's type definitions (read Nov. 23, 2026).
 - ProseMirror, `prosemirror-markdown`, [github.com/ProseMirror/prosemirror-markdown](https://github.com/ProseMirror/prosemirror-markdown); markdown-it, `markdown-it-container` and `markdown-it-ins`, [github.com/markdown-it](https://github.com/markdown-it).
 - Tiptap, "Pricing," [tiptap.dev/pricing](https://tiptap.dev/pricing).
 - The lead author's requests: project threads "Plan collaborative editing for the website" (Nov. 21 and 22, 2026), "Build the Foundations part with strong sources" and "Edit essays on the website" (Nov. 22, 2026).

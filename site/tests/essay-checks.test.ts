@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { parseEssay } from '#lib/essays/document.ts';
-import { characterPosition, components, counts, definitionIssues, joinBlocks, repeatedPhrases, textBlocks, wordPosition } from '#lib/essays/checks.ts';
+import { at, characterPosition, components, counts, definitionIssues, repeatedPhrases, textBlocks, wordPosition } from '#lib/essays/checks.ts';
 
 const body = [
 	'## How disputes are settled',
@@ -15,13 +15,13 @@ describe('checks', () => {
 	const doc = parseEssay(body);
 	const blocks = textBlocks(doc);
 
-	it('maps each character of the text back to its place in the document', () => {
-		const joined = joinBlocks(blocks);
-		const index = joined.text.indexOf('many');
-		const position = joined.position(index);
+	it('reads blocks as a reader would, each character keeping its place in the document', () => {
+		const block = blocks.find((candidate) => candidate.text.includes('many'))!;
+		expect(block.text).toBe('Peacemaking is used by many nations. A Tribal court may refer a case.');
+		const position = at(block, block.text.indexOf('many'));
 		expect(doc.textBetween(position, position + 4)).toBe('many');
-		const later = joined.text.indexOf('monthly');
-		expect(doc.textBetween(joined.position(later), joined.position(later) + 7)).toBe('monthly');
+		const after = at(block, block.text.indexOf('may refer'));
+		expect(doc.textBetween(after, after + 9)).toBe('may refer');
 	});
 
 	it('finds a glossary term used but not linked, once', () => {

@@ -10,57 +10,59 @@
  */
 import type { Node as EditorNode } from 'prosemirror-model';
 
-/** One text block (a paragraph, heading, list item's paragraph, cell, ...) and where its text starts in the document. */
+/** One text block (a paragraph, heading, list item's paragraph, cell, ...) as words, and where each character sits in the document. */
 export interface TextBlock {
 	text: string;
 	/** Document position of the block's first character. */
 	from: number;
+	/** The document position of each character of `text`, and one more for its end. */
+	positions: number[];
 	/** The block's node type, such as "paragraph" or "heading". */
 	type: string;
 }
 
+/** The document position of a place in a block's text. */
+export function at(block: TextBlock, index: number): number {
+	return block.positions[Math.max(0, Math.min(index, block.positions.length - 1))];
+}
+
 /**
- * The text of every text block. Each character of `text` is one document
- * position: a citation, glossary link or line break counts as one character,
- * shown as a space, so positions map back without a table.
+ * The text of every text block, as a reader sees it: a glossary link by its
+ * shown words, a line break as a space, and a citation left out (with the
+ * space before it, so "case [@key]." reads "case."). Each character keeps its
+ * document position, so what a check finds maps back to the text.
  */
 export function textBlocks(doc: EditorNode): TextBlock[] {
 	const blocks: TextBlock[] = [];
 	doc.descendants((node, position) => {
 		if (!node.isTextblock) return true;
 		let text = '';
-		node.forEach((child) => {
-			text += child.isText ? (child.text ?? '') : ' '.repeat(child.nodeSize);
+		const positions: number[] = [];
+		node.forEach((child, offset) => {
+			const start = position + 1 + offset;
+			if (child.isText) {
+				const childText = child.text ?? '';
+				for (let index = 0; index < childText.length; index += 1) positions.push(start + index);
+				text += childText;
+			} else if (child.type.name === 'term_link') {
+				const shown = String(child.attrs.text ?? child.attrs.id ?? '');
+				for (let index = 0; index < shown.length; index += 1) positions.push(start);
+				text += shown;
+			} else if (child.type.name === 'citation') {
+				if (text.endsWith(' ')) {
+					text = text.slice(0, -1);
+					positions.pop();
+				}
+			} else {
+				positions.push(start);
+				text += ' ';
+			}
 		});
-		blocks.push({ text, from: position + 1, type: node.type.name });
+		positions.push(position + node.nodeSize - 1);
+		blocks.push({ text, from: position + 1, positions, type: node.type.name });
 		return false;
 	});
 	return blocks;
-}
-
-/** The blocks joined by blank lines, as one text, and a way back from a place in it to the document. */
-export function joinBlocks(blocks: TextBlock[]): { text: string; position: (index: number) => number } {
-	const starts: number[] = [];
-	let text = '';
-	for (const block of blocks) {
-		if (text) text += '\n\n';
-		starts.push(text.length);
-		text += block.text;
-	}
-	return {
-		text,
-		position(index: number): number {
-			let low = 0;
-			let high = starts.length - 1;
-			while (low < high) {
-				const middle = (low + high + 1) >> 1;
-				if (starts[middle] <= index) low = middle;
-				else high = middle - 1;
-			}
-			const block = blocks[low];
-			return block ? block.from + Math.min(index - starts[low], block.text.length) : 0;
-		}
-	};
 }
 
 export type CheckKind = 'spelling' | 'grammar' | 'definition' | 'repeated';
@@ -107,8 +109,8 @@ export function definitionIssues(blocks: TextBlock[], terms: [string, string][],
 			issues.push({
 				id: `definition:${id}`,
 				kind: 'definition',
-				from: block.from + match.index,
-				to: block.from + match.index + match[0].length,
+				from: at(block, match.index),
+				to: at(block, match.index + match[0].length),
 				problem: match[0],
 				message: `“${term}” has a glossary entry. Link the first use so readers can open the definition.`,
 				suggestions: [],
@@ -154,7 +156,7 @@ export function repeatedPhrases(blocks: TextBlock[], terms: [string, string][], 
 				const key = span.map((word) => word[0].toLowerCase()).join(' ');
 				const found = counts.get(key);
 				if (found) found.count += 1;
-				else counts.set(key, { count: 1, from: block.from + span[0].index!, to: block.from + span[0].index! + between.length, text: between });
+				else counts.set(key, { count: 1, from: at(block, span[0].index!), to: at(block, span[0].index! + between.length), text: between });
 			}
 		}
 	}
@@ -247,7 +249,7 @@ export function wordPosition(blocks: TextBlock[], wanted: number): number | null
 	for (const block of blocks) {
 		for (const match of block.text.matchAll(/[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}'’-]*/gu)) {
 			seen += 1;
-			if (seen === wanted) return block.from + match.index!;
+			if (seen === wanted) return at(block, match.index!);
 		}
 	}
 	return null;
@@ -257,7 +259,7 @@ export function wordPosition(blocks: TextBlock[], wanted: number): number | null
 export function characterPosition(blocks: TextBlock[], wanted: number): number | null {
 	let seen = 0;
 	for (const block of blocks) {
-		if (seen + block.text.length >= wanted) return block.from + Math.max(0, wanted - seen - 1);
+		if (seen + block.text.length >= wanted) return at(block, Math.max(0, wanted - seen - 1));
 		seen += block.text.length;
 	}
 	return null;

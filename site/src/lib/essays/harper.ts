@@ -1,11 +1,16 @@
 /**
  * Spelling and grammar from Harper (harper.js, Apache-2.0, by Automattic),
- * which runs in the browser in a web worker, so no text leaves the page
+ * which runs in the browser, so no text leaves the page
  * (Trevor, 2026-11-22: "spell-check ... as well as grammer-check
  * functionality, try and find good libraries"). Its dictionary and rules
  * come as one WebAssembly file of about 20 MB, loaded only when someone
  * turns the checks on in the editor and kept by the browser after that; the
  * offline copy of the site leaves it out (src/service-worker/index.ts).
+ *
+ * It runs on the page itself, one block at a time (EssayChecks.svelte keeps
+ * each block's result until its text changes), rather than in Harper's web
+ * worker, which loads the 20 MB file twice. A long essay takes about ten
+ * seconds the first time; after that only the edited block is checked.
  *
  * The dictionary also gets the names of nations, glossary terms and court
  * cases (essaySpellingWords), and the words a person adds, kept in this
@@ -40,10 +45,13 @@ let linter: Promise<Linter> | undefined;
 /** Loads Harper once per page, with the project's words. */
 export function harper(projectWords: string[]): Promise<Linter> {
 	linter ??= (async () => {
-		const [{ WorkerLinter, Dialect }, { binary }] = await Promise.all([import('harper.js'), import('harper.js/binary')]);
-		const loaded = new WorkerLinter({ binary, dialect: Dialect.American });
+		const [{ LocalLinter, Dialect }, { binary }] = await Promise.all([import('harper.js'), import('harper.js/binary')]);
+		const loaded = new LocalLinter({ binary, dialect: Dialect.American });
 		await loaded.setup();
 		await loaded.importWords([...projectWords, ...addedWords()]);
+		// Rules that disagree with the style guide (docs/style-guide.md): it never uses
+		// the em dash, writes ranges with "to", and keeps "..." in quotations as typed.
+		await loaded.setLintConfig({ ...(await loaded.getLintConfig()), Dashes: false, NumericRangeEnDash: false, UseEllipsisCharacter: false });
 		return loaded;
 	})();
 	linter.catch(() => (linter = undefined));

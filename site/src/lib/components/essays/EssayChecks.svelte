@@ -11,9 +11,9 @@
 	import type { EditorView } from 'prosemirror-view';
 	import type { Linter } from 'harper.js';
 	import { essaySchema as schema } from '#lib/essays/document.ts';
-	import { definitionIssues, joinBlocks, repeatedPhrases, textBlocks, type CheckIssue } from '#lib/essays/checks.ts';
+	import { at, definitionIssues, repeatedPhrases, textBlocks, type CheckIssue, type TextBlock } from '#lib/essays/checks.ts';
 	import { checkMarksKey, showCheckMarks } from '#lib/essays/check-marks.ts';
-	import { addWord, checkText, harper } from '#lib/essays/harper.ts';
+	import { addWord, checkText, harper, type HarperIssue } from '#lib/essays/harper.ts';
 
 	let {
 		view,
@@ -53,6 +53,68 @@
 		{ title: 'May need a definition', items: shown.filter((issue) => issue.kind === 'repeated') }
 	]);
 
+	/**
+	 * Spellings a legal essay uses on purpose that a general dictionary does
+	 * not know: "v." and other abbreviations with periods (U.S.C., F.3d,
+	 * initials), and Hawaiian and other words written with an ʻokina or
+	 * apostrophe inside them, which Harper splits ("Hawaiʻi").
+	 */
+	function legalSpelling(text: string, issue: HarperIssue): boolean {
+		const before = text[issue.start - 1] ?? '';
+		const after = text[issue.end] ?? '';
+		// Abbreviations in citations ("v.", "U.S.C.", "Civ. Proc."), list letters such as "(i)", and initials.
+		if (/^(?:[\p{L}\d]{1,5}\.)+$/u.test(issue.problem) || /^\p{L}$/u.test(issue.problem)) return true;
+		if (/^\p{Lu}[\p{L}]{0,4}$/u.test(issue.problem) && after === '.') return true;
+		return /['‘’ʻ]/.test(before) || /['‘’ʻ]/.test(after);
+	}
+
+	/** Harper's findings for each block's text, so only changed blocks are checked again. */
+	const checked = new Map<string, HarperIssue[]>();
+	let progress = $state('');
+	let run = 0;
+
+	/** Spelling and grammar, block by block, letting the page breathe between blocks. Null when a newer run took over. */
+	async function spellingAndGrammar(loaded: Linter, blocks: TextBlock[], thisRun: number): Promise<CheckIssue[] | null> {
+		const found: CheckIssue[] = [];
+		const waiting = blocks.filter((block) => block.text.trim() && !checked.has(block.text)).length;
+		let done = 0;
+		let sliceStarted = performance.now();
+		for (const block of blocks) {
+			if (!block.text.trim()) continue;
+			let issues = checked.get(block.text);
+			if (!issues) {
+				issues = await checkText(loaded, block.text);
+				if (checked.size > 20_000) checked.clear();
+				checked.set(block.text, issues);
+				done += 1;
+				if (performance.now() - sliceStarted > 40) {
+					if (waiting > 20) progress = `Checking spelling and grammar: ${Math.round((done / waiting) * 100)}%`;
+					await new Promise((resolve) => setTimeout(resolve, 0));
+					sliceStarted = performance.now();
+					if (thisRun !== run) return null;
+				}
+			}
+			for (const issue of issues) {
+				if (issue.spelling && legalSpelling(block.text, issue)) continue;
+				// Extra spaces left where a citation or other inline piece was taken out of the text checked.
+				if (!issue.problem.trim()) continue;
+				const kind = issue.spelling ? 'spelling' : 'grammar';
+				const from = at(block, issue.start);
+				found.push({
+					id: `${kind}:${from}:${issue.problem}`,
+					kind,
+					from,
+					to: at(block, issue.end),
+					problem: issue.problem,
+					message: issue.message,
+					suggestions: issue.suggestions
+				});
+			}
+		}
+		progress = '';
+		return found;
+	}
+
 	async function runChecks(): Promise<void> {
 		const editor = view();
 		if (!editor || !library) return;
@@ -64,21 +126,12 @@
 			if (node.type.name === 'term_link') linked.add(String(node.attrs.id));
 		});
 		const found: CheckIssue[] = [...definitionIssues(blocks, library.terms, linked), ...repeatedPhrases(blocks, library.terms)];
+		const thisRun = (run += 1);
 		if (linter) {
-			const joined = joinBlocks(blocks);
 			try {
-				for (const issue of await checkText(linter, joined.text)) {
-					const from = joined.position(issue.start);
-					found.push({
-						id: `${issue.spelling ? 'spelling' : 'grammar'}:${from}:${issue.problem}`,
-						kind: issue.spelling ? 'spelling' : 'grammar',
-						from,
-						to: joined.position(issue.end),
-						problem: issue.problem,
-						message: issue.message,
-						suggestions: issue.suggestions
-					});
-				}
+				const spelling = await spellingAndGrammar(linter, blocks, thisRun);
+				if (spelling === null) return;
+				found.push(...spelling);
 			} catch {
 				loading = 'Spelling and grammar stopped working. Close and open Checks to try again.';
 			}
@@ -197,6 +250,7 @@
 
 	async function addToDictionary(issue: CheckIssue): Promise<void> {
 		await addWord(issue.problem);
+		for (const [text, found] of checked) if (found.some((other) => other.problem === issue.problem)) checked.delete(text);
 		issues = issues.filter((other) => !(other.kind === 'spelling' && other.problem === issue.problem));
 		const editor = view();
 		if (editor) showCheckMarks(editor, shown, editor.state.doc);
@@ -211,7 +265,7 @@
 
 <section class="checks" aria-label="Checks">
 	<p class="small muted status" role="status" aria-live="polite">
-		{#if loading}{loading}{:else if running}Checking…{:else}{shown.length === 0 ? 'Nothing found.' : `${shown.length} to look at.`}{/if}
+		{#if loading}{loading}{:else if progress}{progress}{:else if running}Checking…{:else}{shown.length === 0 ? 'Nothing found.' : `${shown.length} to look at.`}{/if}
 	</p>
 	{#if publishing && publishing.problems.length + publishing.warnings.length > 0}
 		<details open>
@@ -230,7 +284,7 @@
 					{#each group.items as issue (issue.id)}
 						<li id="check-{issue.id}" class:chosen={selected === issue.id}>
 							<button type="button" class="issue" onclick={() => choose(issue)}>
-								<strong>{issue.problem}</strong>
+								<strong>{issue.problem.length > 80 ? `${issue.problem.slice(0, 80)}…` : issue.problem}</strong>
 								<span class="small">{issue.message}</span>
 							</button>
 							{#if canEdit}

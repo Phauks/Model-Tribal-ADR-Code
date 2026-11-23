@@ -12,7 +12,7 @@
 	import { onMount } from 'svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
-	import { signedInHintCookie } from '#lib/signed-in-hint.ts';
+	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
 
@@ -68,7 +68,7 @@
 
 	onMount(() => {
 		if (!isNewest) return;
-		if (!document.cookie.split(';').some((entry) => entry.trim() === `${signedInHintCookie}=1`)) return;
+		if (!readSignedInHint(document.cookie).signedIn) return;
 		try {
 			if (localStorage.getItem(viewKey) === 'published') view = 'published';
 		} catch {
