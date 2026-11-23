@@ -125,6 +125,8 @@ export interface GlossaryRecord {
 	usage: 'preferred' | 'acceptable' | 'context-only' | 'avoid';
 	definition: string;
 	other_senses?: { label?: string; definition: string }[];
+	/** Short quotations from law dictionary entries, each with the entry's source record. */
+	law_dictionary?: { source: string; quote: string }[];
 	/** The id of the model code provision that enacts a definition of the term, such as 01-102. */
 	code_definition?: string;
 	usage_note?: string;

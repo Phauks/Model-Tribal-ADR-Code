@@ -244,6 +244,7 @@ def check_documents(documents: list, sources: set, tribe_ids: set, sessions: set
 
 ACCESS_ORDER = ["public", "nation-review-first", "embargoed", "restricted"]
 STORY_EXCERPT_WORDS = 50  # a short passage, quoted without permission (decision record 0019)
+LAW_DICTIONARY_WORDS = 20  # a short phrase from a copyrighted law dictionary entry, cited, never the full entry
 
 
 def check_stories(stories: list, sources: set, tribe_ids: set, sessions: set, methods: dict,
@@ -490,6 +491,11 @@ def main() -> int:
         for key in record.get("sources", []):
             if key not in sources:
                 errors.append(f"{path}: sources names a missing source record '{key}'")
+        for quotation in record.get("law_dictionary", []):
+            if quotation["source"] not in sources:
+                errors.append(f"{path}: law_dictionary names a missing source record '{quotation['source']}'")
+            if len(quotation["quote"].split()) > LAW_DICTIONARY_WORDS:
+                errors.append(f"{path}: a law_dictionary quote is longer than {LAW_DICTIONARY_WORDS} words; quote a short phrase only")
 
     for path, record in records.get("tribe.schema.json", []):
         if record.get("id") != path.stem:
