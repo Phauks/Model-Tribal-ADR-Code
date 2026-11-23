@@ -16,7 +16,6 @@ For each item:
 4. If `differs`, write `proposed_summary`: one sentence in the same plain style as `current_summary`, stating only what the quoted clause says. No legal opinion.
 5. `confidence`: high (the clause is fully in the excerpts and the comparison is clear), medium, or low.
 
-Output: write a JSON array to the output path you are given, one object per item, in item_id order:
-{"item_id": 7, "profile": "...", "governing_document": {"title": "...", "date": "...", "link": "..."} or null, "locator": "..." or null, "quote": "..." or null, "verdict": "same|differs|cannot-tell", "proposed_summary": "..." or null, "differences": "one sentence on what differs, or null", "confidence": "high|medium|low", "note": "anything the reviewer should know, e.g. why an older compact governs, or that the newest document is secretarial procedures"}
+Output: write a JSON array to the output path you are given, one object per item, in item_id order: {"item_id": 7, "profile": "...", "governing_document": {"title": "...", "date": "...", "link": "..."} or null, "locator": "..." or null, "quote": "..." or null, "verdict": "same|differs|cannot-tell", "proposed_summary": "..." or null, "differences": "one sentence on what differs, or null", "confidence": "high|medium|low", "note": "anything the reviewer should know, e.g. why an older compact governs, or that the newest document is secretarial procedures"}
 
 Rules: use only the item files. Do not browse. Quote exactly; do not fix typos in quotes. Write valid JSON only. When done, reply with the counts of each verdict and nothing else.

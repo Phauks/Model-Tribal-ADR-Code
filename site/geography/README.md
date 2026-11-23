@@ -1,8 +1,6 @@
 # Map shapes
 
-Boundary files the website's map reads when the site is built
-(`src/lib/map-geometry.ts`). Nothing here is served to readers as a file; the
-build turns it into SVG paths.
+Boundary files the website's map reads when the site is built (`src/lib/map-geometry.ts`). Nothing here is served to readers as a file; the build turns it into SVG paths.
 
 | File | What it is | Source |
 | --- | --- | --- |
@@ -13,10 +11,7 @@ build turns it into SVG paths.
 | `withdrawn-land-areas.json` | Census codes of land areas a nation has asked to leave off every map (charter commitment 6) | Project file; read by the drawn map and the tile build |
 | `census-land-areas-2020.json` | 629 American Indian and Alaska Native areas (reservations, trust lands and the Census Bureau's statistical areas), as TopoJSON, simplified to about 3 percent of the points, for the map's "Land areas" view; Hawaiian home lands are left out | U.S. Census Bureau, 2020 cartographic boundary file of American Indian/Alaska Native/Native Hawaiian areas, 1:500,000 (source record [`census-cartographic-boundary-aiannh-2020`](../../content/sources/c/census-cartographic-boundary-aiannh-2020.yaml)) |
 
-State and territory outlines come from the `us-atlas` package (the Census
-Bureau's 2017 cartographic boundary files; source record
-[`census-cartographic-boundary-states-2017`](../../content/sources/c/census-cartographic-boundary-states-2017.yaml)),
-so they are not copied here.
+State and territory outlines come from the `us-atlas` package (the Census Bureau's 2017 cartographic boundary files; source record [`census-cartographic-boundary-states-2017`](../../content/sources/c/census-cartographic-boundary-states-2017.yaml)), so they are not copied here.
 
 The regions are the Bureau's administrative areas, not the lands of any nation. The Navajo Region's outline follows the Navajo Nation's land, as the Bureau draws it; Trevor chose on 2026-11-21 to draw the official outlines anyway, with a note on the map saying so.
 
@@ -30,11 +25,7 @@ From `site/`:
 node tools/fetch-bureau-of-indian-affairs-regions.mjs
 ```
 
-The script downloads the regions, turns the outer rings clockwise (the
-service writes them counterclockwise, as GeoJSON does, and d3-geo would read
-that as "the whole globe except this region"), simplifies them and records
-the date retrieved in the file's `metadata`. Update the source record's
-`retrieved` and `history` dates when you run it.
+The script downloads the regions, turns the outer rings clockwise (the service writes them counterclockwise, as GeoJSON does, and d3-geo would read that as "the whole globe except this region"), simplifies them and records the date retrieved in the file's `metadata`. Update the source record's `retrieved` and `history` dates when you run it.
 
 ## Refreshing the land areas
 

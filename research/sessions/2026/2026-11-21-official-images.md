@@ -335,68 +335,32 @@ limits: 403 profiles list no official website and were not searched. 62 listed w
 
 ## What was done
 
-The crawler found candidate images on 472 of the 545 websites read. Each candidate was looked at on a
-contact sheet, and one image was chosen per nation when it was clearly the nation's own seal, emblem,
-flag or logo: 360 nations (294 logos, 61 seals, 3 flags, 2 emblems). The rest had only a casino, vendor,
-consortium or social media image, or nothing usable. Nineteen of the chosen images were found only by
-rendering the page in a browser.
+The crawler found candidate images on 472 of the 545 websites read. Each candidate was looked at on a contact sheet, and one image was chosen per nation when it was clearly the nation's own seal, emblem, flag or logo: 360 nations (294 logos, 61 seals, 3 flags, 2 emblems). The rest had only a casino, vendor, consortium or social media image, or nothing usable. Nineteen of the chosen images were found only by rendering the page in a browser.
 
-Every chosen image is recorded in the nation's profile under `official_images`, with the page it came
-from, its SHA-256 and the path of the private copy (`nation-images/<id>/`). The files are kept in the
-project's private research captures, never in this repository.
+Every chosen image is recorded in the nation's profile under `official_images`, with the page it came from, its SHA-256 and the path of the private copy (`nation-images/<id>/`). The files are kept in the project's private research captures, never in this repository.
 
 ## Reuse signals
 
 How each signal is detected and what it does is set out in docs/official-images.md. In this pass:
 
-- Terms of use, trademark notices and permission notes: 94 terms-of-use sentences, 54 trademark notices
-  and 5 permission notes were saved by the crawler and read by hand. Most were privacy or cookie text.
-  Twenty-eight nations' notices limit reuse of logos or site images, or ask to be contacted first.
-- Trademark symbols: a registered trademark symbol is printed on two chosen images (Muckleshoot Indian
-  Tribe; Mississippi Band of Choctaw Indians).
-- USPTO Native American Tribal Insignia database: 184 of the 185 entries were matched to 93 profiles.
-  89000952 (Fond du Lac Band of Lake Superior Chippewa) was added once the band got its own profile (see
-  "Minnesota Chippewa Tribe bands" below). The other five Minnesota Chippewa Tribe bands
-  (Bois Forte, Grand Portage, Leech Lake, Mille Lacs, White Earth) have no entries of their own; the
-  tribe's own filing, 89001051, stays on its profile. 89003098 (a Gabrieleno San Gabriel Band filing)
-  still has no profile. For the 74 nations with both a chosen image and entries, each entry was compared by eye: 60
-  show the same design, 10 a similar design and 17 a different one.
-- Tribal laws: five laws were read and are cited (Jamestown S'Klallam Title 41; Little River Band
-  Ordinance 96-0107-01; Little Traverse Bay Bands WOS 2016-004; Coquille ch. 196; Mississippi Band of
-  Choctaw Title 36, ch. 3). The Stockbridge-Munsee Community's flag ordinance (GOV.04.01) was found but
-  governs the flag, not the seal chosen here.
+- Terms of use, trademark notices and permission notes: 94 terms-of-use sentences, 54 trademark notices and 5 permission notes were saved by the crawler and read by hand. Most were privacy or cookie text. Twenty-eight nations' notices limit reuse of logos or site images, or ask to be contacted first.
+- Trademark symbols: a registered trademark symbol is printed on two chosen images (Muckleshoot Indian Tribe; Mississippi Band of Choctaw Indians).
+- USPTO Native American Tribal Insignia database: 184 of the 185 entries were matched to 93 profiles. 89000952 (Fond du Lac Band of Lake Superior Chippewa) was added once the band got its own profile (see "Minnesota Chippewa Tribe bands" below). The other five Minnesota Chippewa Tribe bands (Bois Forte, Grand Portage, Leech Lake, Mille Lacs, White Earth) have no entries of their own; the tribe's own filing, 89001051, stays on its profile. 89003098 (a Gabrieleno San Gabriel Band filing) still has no profile. For the 74 nations with both a chosen image and entries, each entry was compared by eye: 60 show the same design, 10 a similar design and 17 a different one.
+- Tribal laws: five laws were read and are cited (Jamestown S'Klallam Title 41; Little River Band Ordinance 96-0107-01; Little Traverse Bay Bands WOS 2016-004; Coquille ch. 196; Mississippi Band of Choctaw Title 36, ch. 3). The Stockbridge-Munsee Community's flag ordinance (GOV.04.01) was found but governs the flag, not the seal chosen here.
 
-Result: 270 images show no restriction, 1 may be shown on conditions (the Little Traverse Bay Bands
-Emblem), 1 needs checking (Oneida Nation logo) and 88 are restricted, 57 of them only because the nation
-filed the same or a similar design in the USPTO database.
+Result: 270 images show no restriction, 1 may be shown on conditions (the Little Traverse Bay Bands Emblem), 1 needs checking (Oneida Nation logo) and 88 are restricted, 57 of them only because the nation filed the same or a similar design in the USPTO database.
 
 ## Minnesota Chippewa Tribe bands
 
-The six component bands of the Minnesota Chippewa Tribe got their own profiles after the first
-collection. Each profile now lists the band's website (the home page already cited for its own name),
-and the same crawler and signal rules were run on those six sites alone.
+The six component bands of the Minnesota Chippewa Tribe got their own profiles after the first collection. Each profile now lists the band's website (the home page already cited for its own name), and the same crawler and signal rules were run on those six sites alone.
 
-- Bois Forte, Grand Portage, Mille Lacs, White Earth and Fond du Lac: one logo each was chosen. The
-  Mille Lacs image is the band's emblem drawn on a pennant that the site uses as page decoration; the
-  site names the file mlbo-flag.svg, but nothing on the site says it is the band's flag, so it is
-  recorded as a logo.
-- Leech Lake: the band's seal appears only inside the site's header artwork, not as an image of its
-  own, and the only standalone image is a 16-pixel site icon. No image was chosen.
-- Signals: Bois Forte and White Earth show a general copyright line, which does not block reuse. No
-  site has terms that limit reuse of images; the Leech Lake legal page lists the legal department's
-  staff, and the Mille Lacs media protocol is guidance for employees. The Fond du Lac logo is the same
-  design as USPTO entry 89000952, so it is restricted under the database rule.
+- Bois Forte, Grand Portage, Mille Lacs, White Earth and Fond du Lac: one logo each was chosen. The Mille Lacs image is the band's emblem drawn on a pennant that the site uses as page decoration; the site names the file mlbo-flag.svg, but nothing on the site says it is the band's flag, so it is recorded as a logo.
+- Leech Lake: the band's seal appears only inside the site's header artwork, not as an image of its own, and the only standalone image is a 16-pixel site icon. No image was chosen.
+- Signals: Bois Forte and White Earth show a general copyright line, which does not block reuse. No site has terms that limit reuse of images; the Leech Lake legal page lists the legal department's staff, and the Mille Lacs media protocol is guidance for employees. The Fond du Lac logo is the same design as USPTO entry 89000952, so it is restricted under the database rule.
 
-Result for the six bands: 4 images show no restriction, 1 is restricted (Fond du Lac) and 1 band has
-no image (Leech Lake). Across the collection: 365 nations, 274 with no restriction found, 1 on
-conditions, 1 needing checking and 89 restricted, 58 of them only because of a USPTO database entry.
+Result for the six bands: 4 images show no restriction, 1 is restricted (Fond du Lac) and 1 band has no image (Leech Lake). Across the collection: 365 nations, 274 with no restriction found, 1 on conditions, 1 needing checking and 89 restricted, 58 of them only because of a USPTO database entry.
 
 ## Other findings
 
-- Two listed websites now show gambling spam and look like lapsed domains: oglalalakotanation.net
-  (Oglala Sioux Tribe) and inupiatgov.com (a second website of the Inupiat Community of the Arctic
-  Slope). Nothing was taken from them.
-- The Prairie Island Indian Community's website terms (last updated January 10, 2023) contain "a
-  mandatory individual arbitration and class action/jury trial waiver provision" for disputes with
-  users of the site, which may interest the dispute resolution research:
-  https://prairieisland.org/terms-and-conditions.
+- Two listed websites now show gambling spam and look like lapsed domains: oglalalakotanation.net (Oglala Sioux Tribe) and inupiatgov.com (a second website of the Inupiat Community of the Arctic Slope). Nothing was taken from them.
+- The Prairie Island Indian Community's website terms (last updated January 10, 2023) contain "a mandatory individual arbitration and class action/jury trial waiver provision" for disputes with users of the site, which may interest the dispute resolution research: https://prairieisland.org/terms-and-conditions.
