@@ -21,9 +21,9 @@
 			<li><a href="/charter">Charter</a></li>
 			<li><a href="/acknowledgments">Acknowledgments</a></li>
 			<li><a href="/changelog">Changelog</a></li>
-			<li><a href="/downloads">Downloads</a></li>
+			<li><a href="/downloads">Data sets</a></li>
 			<li><a href="/downloads#checking">Verify a file</a></li>
-			<li><a href="/copies">Copies of documents</a></li>
+			<li><a href="/copies">Source documents</a></li>
 			<li><a href="/licenses">Licenses by material</a></li>
 			<li><a href="{repositoryLink}"><GithubMark /><span>GitHub</span></a></li>
 			<li><a href="/join">Help with this work</a></li>
