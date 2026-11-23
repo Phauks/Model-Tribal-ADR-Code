@@ -8,7 +8,7 @@ The Civil Law Self-Help Center is a walk-in center and website for people withou
 
 Three things are worth taking (project analysis):
 
-1. **Its page patterns.** Numbered step guides with jump links, TIP, CAUTION and FYI boxes, a flowchart PDF for each process, and form lists that say which version (fillable PDF, printable PDF, Word, or a packet with instructions) each form comes in (section 3).
+1. **Its page patterns.** Numbered step guides with jump links, TIP, CAUTION and FYI boxes, and a flowchart PDF for each process. Form lists say which version each form comes in: fillable PDF, printable PDF, Word, or a packet with instructions (section 3).
 2. **Two new model forms and one model code question.** A confidential information sheet, which our protection order petition already refers to but does not supply, and later a request to enter a mediated or peacemaking agreement as a court order. Its small claims mediation rules are a ready local example for Gate 2 (section 4).
 3. **A local partnership.** The free class program it promotes is taught by Boyd students under Legal Aid Center and Nevada Legal Services supervision, and its court finder lists no Tribal court. Both are openings for Trevor (section 5).
 
@@ -31,7 +31,7 @@ Three things are worth taking (project analysis):
 
 ## 3. How the site is organized
 
-The top menu has seven doors: Self-Help (by topic), Courts and Case Lookup, Forms (by court and topic), Rules and Laws, Classes and Programs, Community Resources, and References and Links [2]. The home page shows each topic as a card with its three most-used guides, a "Get Started Here" column (court basics, lawyers and legal help, representing yourself, researching the law, resolving disputes out of court, using AI), a court finder by address and radius, and a dismissable banner for the most urgent task (tenants answering an eviction notice online) [2].
+The top menu has seven doors: Self-Help (by topic), Courts and Case Lookup, Forms (by court and topic), Rules and Laws, Classes and Programs, Community Resources, and References and Links [2]. The home page shows each topic as a card with its three most-used guides. Beside them are a "Get Started Here" column (court basics, lawyers and legal help, representing yourself, researching the law, resolving disputes out of court, using AI) and a court finder by address and radius. A dismissable banner carries the most urgent task, tenants answering an eviction notice online [2].
 
 Topic guides follow one pattern [12] [23]:
 
@@ -65,9 +65,9 @@ What not to copy: the center's site collects visitor data with Google Analytics 
 
 ## 5. Partnership and outreach
 
-The outreach list has Nevada Legal Services' Indian Law Project, Boyd's Native American Law Student Association and the Saltman Center, but not Legal Aid Center of Southern Nevada, the Civil Law Self-Help Center or the Neighborhood Justice Center (research/outreach, checked Nov. 23, 2026).
+The outreach list has Nevada Legal Services' Indian Law Project, Boyd's Native American Law Student Association and the Saltman Center (research/outreach, checked Nov. 23, 2026). It does not have Legal Aid Center of Southern Nevada, the Civil Law Self-Help Center or the Neighborhood Justice Center.
 
-1. **A "Tribal courts" class in the free class program.** The classes are presented by Boyd students and supervised by Legal Aid Center and Nevada Legal Services attorneys [13]. The Indian Law Project is Nevada Legal Services' tribal law program, "the only legal aid program in Nevada that specializes in tribal law"; it reports child custody, minor guardianships, evictions, child dependency, Indian wills, probate and criminal defense as its most common requests, and says many Tribal court litigants represent themselves [26]. A Boyd-taught class on Tribal courts and peacemaking, co-supervised by the Indian Law Project, would fit that program and could run on the project's events pages (project analysis).
+1. **A "Tribal courts" class in the free class program.** The classes are presented by Boyd students and supervised by Legal Aid Center and Nevada Legal Services attorneys [13]. The Indian Law Project is Nevada Legal Services' program for tribal law, "the only legal aid program in Nevada that specializes in tribal law" [26]. Its most common requests are child custody, minor guardianships, evictions, child dependency, Indian wills, probate and criminal defense, and it says many Tribal court litigants represent themselves [26]. A Boyd-taught class on Tribal courts and peacemaking, co-supervised by the Indian Law Project, would fit that program and could run on the project's events pages (project analysis).
 2. **Ask the center to list Tribal courts.** Its Find My Court page lists only the eleven Justice Courts and the district court [27]. Two Native nations have land in Clark County: the Las Vegas Paiute Tribe, whose court lists civil, juvenile, criminal and traffic divisions and has forms, rules and legal resources pages [28], and the Moapa Band of Paiutes. A short entry pointing to those courts and the Indian Law Project would close a gap for local tribal members; the project could offer the text (project analysis).
 3. **A conversation with the Neighborhood Justice Center.** It is a state-created community mediation program with victim offender mediation [18]. The project already cites the national Neighborhood Justice Center field test of 1978; the Clark County program is a living local comparison for the essays on community-based dispute resolution (project analysis).
 4. **Collect the Las Vegas Paiute court's forms.** The court's page has a Forms tab [28], but no Nevada Tribal court forms are in the project's form captures yet (research/tribal-court-forms, checked Nov. 23, 2026). This belongs to the court forms collection the self-help note ranks first.
