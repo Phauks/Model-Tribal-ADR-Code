@@ -653,6 +653,47 @@ gaming:
     locator: table row 198, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 198 lists the nation
       as "Port Gamble S’Klallam Tribe".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-23
+    date: '2008-10-28'
+    link: https://www.nigc.gov?wpdmdl=7963&ind=7974
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-23
+    note: The list titles the action “Port Gamble S’Klallam Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-23
+    date: '2008-11-07'
+    link: https://www.nigc.gov?wpdmdl=7960&ind=7971
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-23
+    note: The list titles the action “Port Gamble S’Klallam Indian Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-17
+    date: '2009-04-01'
+    link: https://www.nigc.gov?wpdmdl=7878&ind=7890
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-17
+    note: The list titles the action “Port Gamble S’Klallam Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-17
+    date: '2009-04-21'
+    link: https://www.nigc.gov?wpdmdl=7855&ind=7858
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-17
+    note: The list titles the action “Port Gamble S’Klallam Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

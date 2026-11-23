@@ -272,18 +272,16 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: 7.3 Dispute Resolution.
-    citation: 7.3 Dispute Resolution.
-    link: https://narf.org/nill/codes/sauk/index.html
-    source: national-indian-law-library-code-codes-sauk
+    title: 7.3 Dispute Resolution
+    citation: Sauk-Suiattle Indian Tribe Gaming Ordinance (Resolution 11/29/99, Nov. 19, 1999) § 7.3
+    link: https://www.sauk-suiattle.com/Documents/SSIT%20Gaming%20OrdinanceRes_11_29n_99.pdf
+    source: sauk-suiattle-gaming-ordinance-1999
     confidence: medium
-    verification: title-only
-    as_of: '2016'
-    locator: Table of Contents, under 'Gaming Ordinance (November 19, 1999)'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: January 2016); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not
-      read. Places searched: research/search-logs/dispute-resolution/s/sauk-suiattle-indian-tribe.yaml.'
+    verification: read-in-full
+    as_of: '1999-11-19'
+    locator: § 7.3
+    note: Read in full on 2026-11-23 from page images (Sauk-Suiattle Indian Tribe Gaming Ordinance, adopted by Resolution 11/29/99 (Nov. 19, 1999), Wayback Machine copy filed Nov. 23, 2026). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 477.
+    summary: A gaming patron's sole remedy for a complaint against the gaming establishment, a management contractor or its employees is a written petition to the Gaming Commission, filed within 30 days; the Commission may let the petitioner present evidence, and its decision is final; recovery is limited to $10,000 per occurrence and $20,000 per patron in any twelve months.
 gaming:
   compacts:
   - state: WA

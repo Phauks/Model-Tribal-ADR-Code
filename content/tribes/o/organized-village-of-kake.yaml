@@ -528,14 +528,8 @@ dispute_resolution:
       name: Keex’ Kwaan
       language_tag: tli
       translation: Kake (the code uses it as the Tribe's own name for Kake, Alaska)
-    description: 'The Tribe''s court, in which its judicial powers are vested, organized as peacemaking:
-      a standing pool of at least twelve peacemakers (Council members and resident citizens) sitting in
-      panels of three, Peacemaking Circles led by a Keeper of the Circle recognized by the Council, a
-      Court of Appeals, and other courts the Council may create. The code applies written tribal laws
-      and Keex’ Kwaan cultural values and traditions, and states that the ancestors formed the clan of
-      Guwakaan, the Deer People, as the process of peacemaking, which no moiety claims.'
-    legal_basis: Keex’ Kwaan Judicial Peacemaking Code, Chapter 1, Sections 1-12 (under Article V of the
-      OVK Constitution)
+    description: The Tribe's court, in which its judicial powers are vested, organized as peacemaking. Under the July 2024 code the system has a Standing Peacemaking Court (a pool of at least 7 and no more than 12 peacemakers, of whom 7 may be OVK Council members and the rest resident citizens, sitting in panels of three), a Circle Court led by a Keeper of the Circle, a Community Court of at least two judges, a Court of Appeals, and other courts the Council may create. The code applies written tribal laws and Keex' Kwaan cultural values and traditions, and says the ancestors formed the clan of Guwakaan, the Deer People, as the process of peacemaking, which no moiety claims. The earlier scanned copy said a pool of at least 12.
+    legal_basis: Keex' Kwaan Peacemaking Code (adopted July 2024), Ch. 1 (1.01.010-1.03.150), Ch. 2 (Court Procedures) and Ch. 3 (Court of Appeals), under Article V of the OVK Constitution
     case_types:
     - family
     - civil
@@ -543,63 +537,52 @@ dispute_resolution:
     - juvenile
     - other
     participation: voluntary-or-court-referred
-    relationship_to_court: The peacemaking court is the Tribe's judiciary; a review team of peacemakers
-      decides whether to take a petition and whether to use a circle or a panel.
-    enforcement: Panels decide by consensus when possible and otherwise by majority vote; circles decide
-      by consensus written as Consensus Agreements of the court, with set follow-up; if a circle cannot
-      reach consensus the case goes to a panel.
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
-    source: kake-keex-kwaan-judicial-peacemaking-code
+    relationship_to_court: The peacemaking court is the Tribe's judiciary. A case generally starts with a Petition to Use the Tribal Court filed with the Court Clerk, or by referral or transfer from another court; the Clerk calls a Review Meeting of at least two peacemakers, who decide whether to take the case and whether to use a circle or a three-peacemaker panel.
+    enforcement: Panels decide by consensus when possible and otherwise by majority vote. Circles decide by consensus, written as Orders (Consensus Agreements) of the Tribal Court, and a circle that cannot agree sends the case back to a hearing panel. Orders must be carried out within 30 days unless the order says otherwise, with proof of compliance filed with the Clerk, who reports failures to the Court. Failure to comply with an Order or Consensus Agreement is contempt of court, and the Tribal Court may seize the person's personal property and, after 30 days' notice, sell it. A person may petition the Court of Appeals within 30 days of an Order; the Court of Appeals decides whether to take the case and may uphold, order a rehearing or dismiss.
+    link: https://kake-nsn.gov/wp-content/uploads/2026/03/Judicial-Peacemaking-Code.pdf
+    source: kake-keex-kwaan-peacemaking-code-2024
     confidence: medium
-    verification: inferred
-    as_of: '2025'
-    locator: Chapter 1, Sections 1, 2, 3, 7, 8, 9
-    note: Read from OCR of a scanned copy. Peacemakers may consult Elders and Council members (Section
-      9). NARF notes the code includes a Peacemaker Appellate Court and a Circle Peacemaking flow chart.
-      as_of is NARF posting year.
+    verification: read-in-full
+    as_of: 2024-07
+    locator: Ch. 1 (1.01.010, 1.02.010); Ch. 2 Secs. 14, 17, 19-22; Ch. 3 (2024 text); scanned copy Ch. 1 Secs. 1-3, 7-9
+    note: Read in full on 2026-11-23 from page images (Keex' Kwaan Peacemaking Code, Organized Village of Kake, Adopted July 2024 (earlier scanned copy undated)). Read from the Nation's July 2024 PDF (kake-nsn.gov, capture tribal-law/documents/3945418fdca4620b4680.pdf; Chapters 2-4 are page images) and the older NARF scanned copy (capture 311bf19ac3c6b4928f9c, page images; earlier OCR note wrong). Peacemakers may consult Elders and Council members. The text does not say whether participation is voluntary. Chapter 2 Secs. 3-13 and 15-16 not read. Source link should now be the Nation's 2024 PDF. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 371.
   - kind: restorative-justice
     name: Kake Youth Circle Peacemaking (Kake Youth Community Restorative Peacemaking)
-    description: Part of the OVK Tribal Court system, encouraging responsible choices among youth, involving
-      them in decisions about peers' problems, and producing Consensus Agreements designed to help and
-      heal victims, wrongdoers and the Village; options include community service, restitution, apologies,
-      essays, events, counseling by professionals, Elders or peers, talking circles and traditional activities.
+    description: Part of the OVK Tribal Court system, for youth aged 8 to 18 in health, safety and welfare matters (alcohol and drugs, vandalism, trespass, theft, bullying, harassment, disorderly conduct, tardiness, truancy, curfew). It encourages responsible choices, involves youth in decisions about peers' problems, and produces Consensus Agreements designed to help and heal victims, wrongdoers and the Village. Options include community service, restitution, apologies, essays and presentations, events or fundraisers, counseling by professionals, Elders or peers, substance abuse sessions, talking circles and traditional activities. The Kake District Court of Alaska may take or take over a case at any time.
     legal_basis: Keex’ Kwaan Judicial Peacemaking Code, Chapter 4, Sections 1-13
     case_types:
     - juvenile
     participation: court-referred
-    relationship_to_court: Established by the OVK Council as part of the Tribal Court system, with a youth
-      coordinator, youth panel and mentors.
-    enforcement: Consensus agreements with proof-of-compliance provisions and consequences for failure
-      to comply (Section 12); appeals under Section 13.
+    relationship_to_court: Established by the OVK Council as part of the Tribal Court system, with a youth coordinator, youth panel and mentors. A case begins by petition from anyone to the Youth Coordinator, or by referral from a state court judge, a law enforcement officer or another tribal court; the Youth Coordinator with two youth reviews it and decides whether to hold a Circle.
+    enforcement: Mentors oversee the Consensus Agreement. The party files a Proof of Compliance within 7 days of completing it. On failure the Youth Coordinator may schedule another Circle or report the failure to the regular Kake Youth Circle Peacemaking court and schedule a Contempt of Court hearing; a non-complying person may also be referred to the Kake District Court (Section 8J). A youth may appeal within 10 days to a panel of three Peacemakers (Section 13).
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
     source: kake-keex-kwaan-judicial-peacemaking-code
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '2025'
-    locator: Chapter 4, Sections 1, 2, 11, 12
-    note: Participation recorded as court-referred because the chapter is part of the court system; voluntariness
-      was not confirmed in the pages read.
+    locator: Chapter 4, Sections 1-13
+    note: Read in full on 2026-11-23 from page images (Keex' Kwaan Judicial Peacemaking Code, Ch. 4 (NARF scanned copy; same chapter in the Nation's July 2024 PDF)). Chapter 4 read in the scanned NARF copy. Participation recorded as court-referred because cases start by petition or referral and a served wrongdoer who does not appear may be fetched by a designated adult; the text never says participation is voluntary. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 372.
   published_materials:
   - kind: guide
-    title: Kake Peacemaking Handbook (2005)
+    title: Kake Circle Peacemaking Manual (2005)
     link: https://peacemaking.narf.org/wp-content/uploads/2016/09/2005kake_peacemaking_handbook.pdf
-    source: narf-ipi-other-tribal-materials
-    confidence: medium
-    verification: title-only
-    as_of: '2005'
-  provisions:
-  - kind: peacemaking
-    title: Keex’ Kwaan Judicial Peacemaking Code
-    citation: Keex’ Kwaan Judicial Peacemaking Code
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: kake-circle-peacemaking-manual-2005
     confidence: medium
     verification: read-in-full
-    as_of: '2025-09-29'
-    locator: Organized Village of Kake, Alaska
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and place in the clan system, referral standards, procedures, juvenile matters, and a Peacemaker
-      Appellate Court. See also the Circle Peacemaking powerpoint and Kake Circle Peacemaking Flow Chart.'
+    as_of: '2005'
+    note: Read in full on 2026-11-23 (Kake Circle Peacemaking Manual, 2005 (Organized Village of Kake Peacekeepers and Alaska Native Justice Center)). Program manual created with the Organized Village of Kake Peacekeepers and the Alaska Native Justice Center (BJA-funded); chapters cover history, organization, the referral process, the circle, sentencing and restitution, and forms. Not a tribal law. The NARF filename calls it a handbook. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 374.
+  provisions:
+  - kind: peacemaking
+    title: Keex' Kwaan Peacemaking Code (Organized Village of Kake)
+    citation: Keex' Kwaan Peacemaking Code, Organized Village of Kake (adopted July 2024), Chs. 1-4
+    link: https://kake-nsn.gov/wp-content/uploads/2026/03/Judicial-Peacemaking-Code.pdf
+    source: kake-keex-kwaan-peacemaking-code-2024
+    confidence: medium
+    verification: read-in-full
+    as_of: 2024-07
+    locator: Ch. 1 Court Structure (1.01.010-1.03.150); Ch. 2 Court Procedures (Secs. 14, 17, 19-22); Ch. 3 Court of Appeals; Ch. 4 Kake Youth Circle Peacemaking
+    note: Read in full on 2026-11-23 from page images (Keex' Kwaan Peacemaking Code, Organized Village of Kake, Adopted July 2024). Read from the Nation's July 2024 PDF (Chapter 1 text layer; Chapters 2-4 page images) with Chapter 4 also read in the older NARF scan. Appellate body is the Keex' Kwaan Court of Appeals (Appellate Court in 1.02.010(G)), not a 'Peacemaker Appellate Court'. Chapter 2 Sections 3-13 and 15-16 not read. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 373.
+    summary: 'Establishes the Tribe''s court as a peacemaking court system under Article V of the OVK Constitution: a standing pool of 7 to 12 peacemakers sitting in panels of three, a Circle Court led by a Keeper, a Community Court, a Court of Appeals and a youth circle for ages 8 to 18. Cases generally start by a petition to the Court Clerk, or by referral or transfer from another court; at least two peacemakers decide whether to take a case and whether to use a panel or a circle. Panels decide by consensus or majority vote and circles by consensus, written as Orders of the Tribal Court. Orders must be complied with within 30 days unless set otherwise; failure to comply is contempt, and property can be seized and sold after notice. A party may petition the Court of Appeals within 30 days; it decides whether to take the case and may uphold, order a rehearing or dismiss.'
   database_listings:
   - title: Appealing the Kake Youth Circle Peacemaking
     citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 13
@@ -700,6 +683,27 @@ gaming:
     locator: table row 178, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 178 lists the nation
       as "Organized Village of Kake".
+  indian_lands_opinions:
+  - parcel: Harris Deed Parcel, Petersburg, AK
+    legal_theory: Indian lands
+    accepted: true
+    date: '1998-07-02'
+    link: https://www.nigc.gov?wpdmdl=2493&ind=2494
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Organized Village of Kake, 1998-07-02
+    note: The list names the tribe as “Organized Village of Kake”.
+  - parcel: Harris Deed Parcel, Petersburg, AK
+    legal_theory: Indian Lands
+    accepted: true
+    date: '2000-04-18'
+    link: https://www.nigc.gov?wpdmdl=2519&ind=2520
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Organized Village of Kake, 2000-04-18
+    note: The list names the tribe as “Organized Village of Kake”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

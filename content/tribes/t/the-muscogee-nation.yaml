@@ -796,6 +796,78 @@ gaming:
     locator: table row 162, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 162 lists the nation
       as "Muscogee (Creek) Nation". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Holdenville Site, Hughes County, OK
+    legal_theory: Jurisdiction
+    accepted: true
+    date: '2008-04-23'
+    link: https://www.nigc.gov?wpdmdl=2610&ind=2611
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2008-04-23
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: Kellyville Parcel, Creek City, OK
+    legal_theory: Indian Lands Oklahoma
+    accepted: true
+    date: '2009-01-06'
+    link: https://www.nigc.gov?wpdmdl=2629&ind=2630
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2009-01-06
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: Twin Hills Parcel, Okmulgee County, OK
+    legal_theory: Indian lands Oklahoma
+    accepted: true
+    date: '2009-01-06'
+    link: https://www.nigc.gov?wpdmdl=2627&ind=2628
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2009-01-06
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: Okmulgee County, OK
+    legal_theory: Within Boundaries of Reservation / Indian Lands Oklahoma
+    accepted: true
+    date: '2019-05-14'
+    link: https://www.nigc.gov?wpdmdl=2682&ind=2683
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2019-05-14
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  - parcel: River Spirit Triangle, Tulsa County, OK
+    legal_theory: Within Boundaries of the Reservation
+    accepted: true
+    date: '2019-05-14'
+    link: https://www.nigc.gov?wpdmdl=2684&ind=2685
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Muscogee (Creek) Nation, 2019-05-14
+    note: The list names the tribe as “Muscogee (Creek) Nation”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-08
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7899&ind=7910
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-08
+    note: The list titles the action “Muscogee Creek Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-08
+    date: '2009-03-23'
+    link: https://www.nigc.gov?wpdmdl=7893&ind=7904
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-08
+    note: The list titles the action “Muscogee Creek Nation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

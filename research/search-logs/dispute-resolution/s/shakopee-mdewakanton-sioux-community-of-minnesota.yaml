@@ -1,7 +1,7 @@
 profile: content/tribes/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -45,3 +45,61 @@ searches:
   outcome: not-public
   reason: NILL notes the nation has not permitted full text online (or the nation has not put it online);
     not worked around.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/3032f7cd79e6c038a042.txt
+  query: Mediation.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/shakopee-mdewakanton-sioux-community-of-minnesota/b04dabe5908a68ad.txt
+  query: Mediation.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/shakopee-mdewakanton-sioux-community-of-minnesota/cbeb7bca04c75714.txt
+  query: Mediation.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/ordinances/shakopee-mdewakanton-sioux-community/shakopeemdewakanton-shakopeeord110293.txt
+  query: Mediation.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/minnesota/508_compliant_1990.04.02_shakopee_mdewakanton_sioux_community_tribal_state_gaming_compact.txt
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml#gaming.compacts
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/compacts/minnesota/508_compliant_1990.04.02_prairie_island_sopix_community_tribal_state_gaming_compact.txt
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/s/shakopee-mdewakanton-sioux-community-of-minnesota.yaml#gaming.compacts

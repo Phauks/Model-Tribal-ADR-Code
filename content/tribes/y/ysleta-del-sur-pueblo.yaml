@@ -346,6 +346,27 @@ gaming:
     locator: table row 319, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 319 lists the nation
       as "Ysleta del Sur Pueblo of Texas".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV 24-02
+    date: '2024-09-05'
+    link: https://www.nigc.gov?wpdmdl=2968&ind=2971
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV 24-02
+    note: The list titles the action “Ysleta del Sur Pueblo” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-24-02
+    date: '2025-07-01'
+    link: https://www.nigc.gov?wpdmdl=12373&ind=12375
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-24-02
+    note: The list titles the action “Ysleta del Sur Pueblo” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

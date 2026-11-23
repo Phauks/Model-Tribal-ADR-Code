@@ -140,6 +140,12 @@ The facts are medium confidence: the court for a county is inferred from the sta
 
 Thirty-two courts gave nothing: the Navajo court site is a frame shell whose frames did not load, and the Blackfeet, Sac and Fox, Puyallup, Red Lake, Shoshone-Bannock, Southern Ute, Confederated Salish and Kootenai, Kenaitze, Agua Caliente, Orutsararmiut, Poarch Creek and Wyandotte sites were blocked or dead. Each is in the court-practice search log. Legal aid is thin: no Legal Services Corporation list ties its Native American grantees to nations, so the legal aid facts come only from nations' own pages. Many facts are links seen in a court's menu or document list whose target was not opened; those are marked title-only. The Wind River Tribal Court serves both the Eastern Shoshone and Northern Arapaho, so its facts are on both profiles.
 
+## Gaming Commission records
+
+`scripts/jurisdiction/build_gaming_commission_records.py` recorded the National Indian Gaming Commission's Indian lands opinions (102 rows) and enforcement actions (321 rows) for 149 nations, from the two list pages read on Nov. 23, 2026 (`research/raw/2026-11-23/gaming-commission-records.json`). Names in the lists were matched to profiles by a name comparison, with 26 matches set by hand (for example "Delaware Tribe of Western Oklahoma" is the Delaware Nation, and "Lower Lake Rancheria Koi Nation" is the Koi Nation of Northern California). Thirty-nine enforcement rows were left out: actions against smoke shops, other businesses, management contractors and people, and one row naming only "Santa Clara". People's names are not recorded. Every other federally recognized nation got a search-log entry saying neither list names it. The Commission's management contract list is not a table on its page and was not read. `scripts/jurisdiction/apply.py` can now append to a list inside a top-level mapping (`gaming.enforcement_actions`) without rewriting the rest of the block.
+
+Population and Census areas were already on every federally recognized nation's page from the Nov. 21 population session, and the Commission's gaming tribe report from the Nov. 21 gaming session, so this session did not redo them.
+
 ## Output
 
 Batches in `research/jurisdiction/`; the Violence Against Women Act research is in `research/raw/2026-11-23/violence-against-women-act-jurisdiction.json`.

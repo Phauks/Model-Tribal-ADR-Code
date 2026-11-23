@@ -612,15 +612,13 @@ dispute_resolution:
     title: Chapter 1-8 – Peacemaker Court
     citation: Chapter 1-8 – Peacemaker Court
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nez-Perce-2024-09-24-Title-1-VAWA-update.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: nez-perce-title-1-chapter-1-8-peacemaker-court
     confidence: medium
     verification: read-in-full
-    as_of: '2025-09-29'
-    locator: Nez Perce Tribe
-    note: 'Native American Rights Fund description (provision itself not read): Provides purpose, definitions,
-      peacemaker qualifications, procedures, peacemaker duties, the creation of a “Peacemaker Handbook,”
-      a list of matters which can be heard by the peacemaking court, and jurisdiction over matters not
-      within ordinary tribal court jurisdiction.'
+    as_of: '2019-06-25'
+    locator: Chapter 1-8, sections 1-8-1 to 1-8-11
+    note: 'Read in full on 2026-11-23 (Nez Perce Tribal Code, Title 1 General Provisions, Chapter 1-8 Peacemaker Court (Chapter adopted by NPTEC 06/25/19)). Read in full from Nez Perce Tribal Code Title 1, Chapter 1-8 (adopted by NPTEC 06/25/19), via the NARF-hosted copy of the Title 1 update dated 2024-09-24. Peacemakers must first adopt a Peacemaker Handbook (1-8-7). Date: 2019-06-25 (chapter adoption date as printed). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 323.'
+    summary: Establishes the Nez Perce Peacemaker Court as a division of the Tribal Court, a voluntary, non-adversarial forum using traditional Nez Perce methods that does not assign fault. A Tribal Court or specialty court judge may send it adult non-serious criminal matters, juvenile delinquency matters, and civil matters other than contract disputes, with the parties' agreement, and the case can be sent back if unresolved. It cannot compel anyone to attend. An agreement can be submitted as a Peacemaking Resolution and entered by the Tribal Court as a judgment enforced like any other; minor disputes outside the courts can also be heard on written request of all parties, but those agreements are not enforceable in Tribal Court.
 gaming:
   compacts:
   - state: ID
@@ -667,20 +665,17 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: ID
     status: deemed-approved
-    dispute_resolution_summary: After written notice the parties meet within 10 working days, and if the
-      dispute is not resolved within 60 days either party may pursue binding arbitration before a three-member
-      panel selected by the American Arbitration Association, with no judicial review of the decision
-      (disputes under Article 6 follow that article's own procedure).
-    dispute_resolution_locator: Article 21 (Dispute Resolution)
-    source: compact-id-coeur-dalene-tribe-1993
+    dispute_resolution_summary: Under Article 21 of the 1995 compact, a party alleging non-compliance serves written notice and the parties meet within 10 working days. If the dispute is not resolved within 60 days of the notice, either party may pursue binding arbitration before three arbitrators selected by the American Arbitration Association, who may declare rights and grant relief permitted by law; decision is due within 120 days of their selection, there is no judicial review, and the decision has the effect of part of the compact. Once arbitration is noticed the matter cannot be litigated in court. The parties may agree to other methods such as mediation. The 2003 addendum and 2008 lottery compact have no dispute-resolution article.
+    dispute_resolution_locator: Article 21 (Dispute Resolution), sections 21.1-21.3
+    source: compact-id-nez-perce-tribe-1995-11-14
     confidence: medium
-    verification: inferred
-    as_of: '1993-02-12'
-    locator: Article 21 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 1993 Coeur d'Alene Tribe
-      compact; later Idaho compacts and amendments (2003, 2008) were not checked. Status copied from this
-      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
-      list (2008-10-07).
+    verification: read-in-full
+    as_of: '1995-08-22'
+    locator: Article 21 (Dispute Resolution), sections 21.1-21.3
+    note: Read in full on 2026-11-23 (1995 Class III Gaming Compact between the Nez Perce Tribe and the State of Idaho, dated August 22, 1995; approved by the Department of the Interior October 1995). Read from the Nez Perce Tribe's own 1995 compact, Article 21 (source should be the 1995 Nez Perce compact, not the Coeur d'Alene 1993 compact). Article 21 says 'except as provided in Article 6' but Article 6 sets no dispute procedure. Status (deemed-approved 2008) is copied from the Office of Indian Gaming list; the 2008 compact in project files has no dispute article. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 324.
+    document_version:
+      document: nez-perce-tribe-idaho-gaming-compact
+      version: 1995-original
   ordinances:
   - approved: '1995-02-16'
     link: https://www.nigc.gov?wpdmdl=10401&ind=10416
@@ -780,6 +775,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Nez Perce Tribe". Name extracted
       from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-28
+    date: '2008-12-12'
+    link: https://www.nigc.gov?wpdmdl=7957&ind=7968
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-28
+    note: The list titles the action “Nez Perce Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-28
+    date: '2009-01-15'
+    link: https://www.nigc.gov?wpdmdl=7940&ind=7951
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-28
+    note: The list titles the action “Nez Perce Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

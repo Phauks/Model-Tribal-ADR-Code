@@ -552,22 +552,17 @@ justice_institutions:
   note: 'The page names the court: “Fort Berthold District Court”. The nation''s home page names the court and links to fbdcourt.com, which could not be reached (proxy error, twice). The page gives no location. Unclear whether it is the same as the existing ''Tribal Court'' entries. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, three-affiliated-tribes-of-the-fort-berthold-reservation#1).'
 dispute_resolution:
   provisions:
-  - kind: arbitration
-    title: Dispute resolution.
-    citation: Dispute resolution.; Controversies to be arbitrated - arbitrators - how named.; Condition
-      precedent to contractor demand for arbitration - claims for extra compensation.; Arbitration demand
-      - Tribal Court may appoint arbitrators if parties fail - arbitration pool.; Procedure for arbitration
-      [Missing].; ...
-    link: https://narf.org/nill/codes/threeaffiliated/index.html
-    source: national-indian-law-library-code-codes-threeaffiliated
+  - kind: other
+    title: Dispute resolution (Gaming Ordinance, Section 19; Section 20 in the 2026 amendments)
+    citation: Gaming Ordinance, Resolution 94-084-JJR, Section 19 (Dispute resolution); renumbered Section 20 in the 2026 amendments
+    link: https://www.nigc.gov/wp-content/uploads/2025/03/threeaffiliatedtribes-threeord111794.pdf
+    source: three-affiliated-tribes-gaming-ordinance-1994
     confidence: medium
-    verification: title-only
-    as_of: '2004'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
-      2004 (no longer current)); the provision itself was not read. The heading it falls under is taken
-      from the page layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places
-      searched: research/search-logs/dispute-resolution/t/three-affiliated-tribes-of-the-fort-berthold-reservation.yaml.'
+    verification: read-in-full
+    as_of: '1994'
+    locator: Gaming Ordinance Section 19.1 (1994 text); Section 20 (2026 amended text)
+    note: 'Read in full on 2026-11-23 (Resolution # 94-084-JJR, Three Affiliated Tribes of the Fort Berthold Reservation, with gaming ordinance (1994); 2026 amendments deemed approved June 26, 2026). Date: 1994 (Resolution 94-084-JJR); renumbered in 2026 amendments. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 568.'
+    summary: A member of the public with a dispute against a tribal gaming enterprise must first submit it in writing to the enterprise Manager, who decides in writing with reasons; if still unsatisfied, the person may submit a written statement to the Gaming Commission, which may ask for more information and decides in writing. The text does not say the decision can be appealed.
   database_listings:
   - title: Restitution and Reparation (Victim Compensation)
     citation: TAT Criminal Code §§ 3-9-4.1(e), 3-9-8.1, 3-9-8.2
@@ -718,6 +713,27 @@ gaming:
     locator: table row 285, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 285 lists the nation
       as "Three Affiliated Tribes of the Fort Berthold Reservation".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-02
+    date: '2005-02-17'
+    link: https://www.nigc.gov?wpdmdl=8199&ind=8221
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-02
+    note: The list titles the action “Three Affiliated Tribes of the Fort Berthold Reservation” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-05-02
+    date: '2005-04-29'
+    link: https://www.nigc.gov?wpdmdl=8186&ind=8207
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-05-02
+    note: The list titles the action “Three Affiliated Tribes of the Fort Berthold Reservation” and gives its type as CFA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

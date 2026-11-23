@@ -1,7 +1,7 @@
 profile: content/tribes/b/bishop-paiute-tribe.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -152,3 +152,33 @@ searches:
   reason: 'Searched the whole page for ''dispute'': only Section XIV, Section9, Section 13 (binding dispute
     resolution mechanism), Section 328 (Patron Disputes) and Rule 38 headings occur; no stand-alone ''Dispute
     Resolution''.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/b/bishop-paiute-bishop-paiute-tribe-gaming-revenue-allocation.pdf
+  query: Section XIV. Dispute Resolution
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/b/bishop-paiute-bishop-paiute-tribal-workers-compensation.pdf
+  query: Section 9. DISPUTE RESOLUTION
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/b/bishop-paiute-bishop-paiute-tribal-court-rules.pdf
+  query: Rule 38 - Mediation and Arbitration
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/b/bishop-paiute-tribe.yaml#dispute_resolution.provisions

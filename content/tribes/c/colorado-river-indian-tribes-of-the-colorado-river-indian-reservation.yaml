@@ -633,6 +633,17 @@ gaming:
       of the Colorado River Indian Reservation, AZ and CA". Facilities as machine-extracted from the report
       text (verify): Blue Water Casino. Name extracted from the PDF by the page-fetch tool and matched
       to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV 01-01 – MDO
+    date: '2002-05-30'
+    link: https://www.nigc.gov?wpdmdl=8269&ind=8281
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV 01-01 – MDO
+    note: The list titles the action “Colorado River Indian Tribe” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

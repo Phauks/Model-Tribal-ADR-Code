@@ -442,6 +442,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Mechoopda Indian Tribe of Chico
       Rancheria". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Chico Parcels, Butte County, CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2003-03-14'
+    link: https://www.nigc.gov?wpdmdl=2548&ind=2549
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Mechoopda Indian Tribe of the Chico Rancheria, 2003-03-14
+    note: The list names the tribe as “Mechoopda Indian Tribe of the Chico Rancheria”.
+  - parcel: Chico Parcels, Butte County, CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2014-01-24'
+    link: https://www.nigc.gov?wpdmdl=2663&ind=2664
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Mechoopda Indian Tribe of the Chico Rancheria, 2014-01-24
+    note: The list names the tribe as “Mechoopda Indian Tribe of the Chico Rancheria”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -1,7 +1,7 @@
 profile: content/tribes/p/pokagon-band-of-potawatomi-indians.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -59,3 +59,93 @@ searches:
   outcome: not-found
   reason: Second search for the Arbitration Ordinance wording found only NILL and other tribes' copies
     of the model ordinance.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/p/pokagon-native-justice-page.html
+  query: Native Justice Community Conflict and Dispute Resolution Forum
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/p/pokagon-band-of-potawatomi-indians.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/2379fd6166611f62438c.txt
+  query: Arbitration Ordinance -- 1.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pokagon-band-of-potawatomi-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/1d7f5bf40e886b30b5cb.txt
+  query: Arbitration Ordinance -- 1.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pokagon-band-of-potawatomi-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/234935d1a72097b917b2.txt
+  query: Arbitration Ordinance -- 1.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pokagon-band-of-potawatomi-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Pokagon Arbitration Ordinance
+  query: Pokagon Band Arbitration Ordinance Agreements to arbitrate are enforceable
+  outcome: not-found
+  reason: Only NILL TOC.
+  records:
+  - content/tribes/p/pokagon-band-of-potawatomi-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/pokagon_potawatomi/index.html
+  query: toc
+  outcome: found
+  reason: Headings only.
+  records:
+  - content/tribes/p/pokagon-band-of-potawatomi-indians.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/p/pokagon-native-justice-page.html
+  query: Native Justice Resources (list of resources)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pokagon-band-of-potawatomi-indians.yaml#dispute_resolution.published_materials
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://www.pokagonband-nsn.gov/wp-content/uploads/2023/04/Native-Justice-Resources.pdf
+  query: fetch
+  outcome: found
+  reason: Title confirmed.
+  records:
+  - content/tribes/p/pokagon-band-of-potawatomi-indians.yaml#dispute_resolution.published_materials
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/n/narf-ipi-news-pokagon-training-2019.html
+  query: Peacemaking training at the Pokagon Band (Dowagiac, Michigan, June 2019)
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pokagon-band-of-potawatomi-indians.yaml#dispute_resolution.training_programs

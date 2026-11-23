@@ -668,6 +668,47 @@ gaming:
     locator: table row 271, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 271 lists the nation
       as "Squaxin Island Tribe". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-07
+    date: '2006-02-06'
+    link: https://www.nigc.gov?wpdmdl=8150&ind=8160
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-07
+    note: The list titles the action “Squaxin Island Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-07
+    date: '2006-03-08'
+    link: https://www.nigc.gov?wpdmdl=8149&ind=8159
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-07
+    note: The list titles the action “Squaxin Island Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-07-03
+    date: '2007-07-03'
+    link: https://www.nigc.gov?wpdmdl=8082&ind=8093
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-07-03
+    note: The list titles the action “Squaxin Island Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-07-03
+    date: '2007-07-24'
+    link: https://www.nigc.gov?wpdmdl=8081&ind=8092
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-07-03
+    note: The list titles the action “Squaxin Island Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

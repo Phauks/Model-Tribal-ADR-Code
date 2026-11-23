@@ -547,6 +547,17 @@ gaming:
     locator: table row 181, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 181 lists the nation
       as "Ottawa Tribe of Oklahoma".
+  indian_lands_opinions:
+  - parcel: Ottawa County, Oklahoma
+    legal_theory: Former Within Reservation Boundaries
+    accepted: true
+    date: '2012-08-09'
+    link: https://www.nigc.gov?wpdmdl=2653&ind=2654
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ottawa Tribe of Oklahoma, 2012-08-09
+    note: The list names the tribe as “Ottawa Tribe of Oklahoma”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

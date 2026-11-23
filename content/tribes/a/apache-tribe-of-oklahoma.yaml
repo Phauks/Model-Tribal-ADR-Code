@@ -517,6 +517,47 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Apache Tribe of Oklahoma".
       Facilities as machine-extracted from the report text (verify): Golden Eagle Casino; Apache Lonestar
       Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV/CO-99-01
+    date: '1999-01-06'
+    link: https://www.nigc.gov?wpdmdl=1929&ind=1931
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/CO-99-01
+    note: The list titles the action “Apache Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - pre-opening-agreement
+    tracking_number: POA-99-01
+    date: '2006-01-05'
+    link: https://www.nigc.gov?wpdmdl=8167&ind=8178
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA-99-01
+    note: The list titles the action “Apache Tribe of Oklahoma” and gives its type as POA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-23-02
+    date: '2023-04-24'
+    link: https://www.nigc.gov?wpdmdl=2974&ind=2975
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-23-02
+    note: The list titles the action “Apache Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-23-03
+    date: '2023-10-31'
+    link: https://www.nigc.gov?wpdmdl=2969&ind=2970
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-23-03
+    note: The list titles the action “Apache Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -608,59 +608,44 @@ dispute_resolution:
       name: Odenaang Enjinoojimoying
       language_tag: otw
       translation: A Place of Healing Many Hearts (title of the Peacemaking Guidelines)
-    description: Peacemaking created in the Juvenile Code to provide a traditional conflict resolution
-      process to children, youth and families, with a vision of resolution and healing.
-    legal_basis: 'Little River Band Juvenile Code (Ordinance #99-900-02), Sections 4.01(b), 4.02, 6, 7.01,
-      8'
+    description: Peacemaking created in the Juvenile Code to provide a traditional conflict resolution process to children, youth and families, with a vision of resolution and healing.
+    legal_basis: 'Little River Band Juvenile Code (Ordinance #99-900-02), Sections 4.01(b), 4.02, 6, 7.01, 8'
     case_types:
     - juvenile
     - family
-    participation: court-referred
-    relationship_to_court: A juvenile's first status offense before the Children's Court is referred to
-      the Peacemakers immediately; other cases come through the Case Intake Team (which includes a Peacemaker)
-      or by Tribal Court referral, and cases go to court for adjudication if rejected or after nine months.
+    participation: voluntary-or-court-referred
+    relationship_to_court: A juvenile's first status offense before the Children's Court is referred to the Peacemakers immediately; other cases come through the Case Intake Team (which includes a Peacemaker) or by Tribal Court referral, including at the preliminary hearing, and people may also ask to use Peacemaking voluntarily (Section 8.02). Cases go to court for adjudication if the Case Intake Team rejects them or after nine months; Peacemakers may refuse a case after written denial by two Peacemaking groups.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Title-900-02-Juvenile-Code-2011.pdf
     source: little-river-900-02-juvenile-code-2011
     confidence: medium
-    verification: inferred
+    verification: read-in-full
     as_of: '2011-07-27'
-    locator: Sections 4.01(b), 4.02(a)-(f), 6.01, 7.01, 8.01-8.02
-    note: Language tag otw assigned because the Band is Odawa (Ottawa); the code does not name the language.
-      Participation recorded as court-referred because first status offenses are referred automatically
-      by the code.
+    locator: Sections 4.01(b), 4.02(a)-(f), 6.01, 7.01, 8.01-8.03
+    note: 'Read in full on 2026-11-23 (Juvenile Code, Ordinance # 99-900-02, Adopted - July 27, 2011 (Little River Band of Ottawa Indians)). Language tag otw assigned because the Band is Odawa (Ottawa); the code does not name the language. Participation: first status offenses are referred automatically (Section 4.02(b)), but Section 8.02(d) also lets persons voluntarily request Peacemaking. The Juvenile Code does not say how agreements are enforced; procedures are in the Odenaang Enjinoojimoying Peacemaking Guidelines. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 231.'
   - kind: peacemaking
     name: Peacemaking program of the Tribal Court (guidelines)
     own_term:
       name: Odenaang Enjinoojimoying
       language_tag: otw
       translation: A Place of Healing Many Hearts
-    description: Tribal Court peacemaking program for children, youth, adult tribal members and tribal
-      employees; peacemakers guide the process, and participants develop and sign an agreement. A request
-      may be made in the traditional way, by offering tobacco or another of the medicines named in the
-      guidelines, or formally by court order or personal request.
-    legal_basis: Peacemaking Guidelines (rules and procedures of Odenaang Enjinoojimoying), adopted by
-      the signatures of the Chief Judge and Associate Judge (Certification of Adoption, effective May
-      29, 2008)
+    description: Tribal Court peacemaking program for children, youth, adult tribal members and tribal employees; peacemakers guide the process, and participants develop and sign an agreement. A request may be made in the traditional way, by offering tobacco or another of the medicines named in the guidelines, or formally by court order or personal request.
+    legal_basis: Peacemaking Guidelines (rules and procedures of Odenaang Enjinoojimoying), adopted by the signatures of the Chief Judge and Associate Judge (Certification of Adoption, effective May 29, 2008)
     case_types:
     - juvenile
     - family
     - civil
     - employment
+    - criminal
     participation: voluntary-or-court-referred
-    relationship_to_court: Cases may be referred by tribal courts, state courts, other federally recognized
-      or historic tribes, or agencies, or come by personal request; cases the program declines go back
-      to the Case Intake Team.
-    enforcement: The agreement is described as a binding contract; if participants do not follow it, the
-      Tribal Court enforces it by court order.
+    relationship_to_court: Cases may be referred by tribal courts, state courts, other federally recognized or historic tribes, or agencies, or come by personal request; cases the program declines go back to the Case Intake Team.
+    enforcement: The agreement is described as a binding contract; if participants do not follow it, the Tribal Court enforces it by court order.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
     source: little-river-peacemaking-guidelines-2008
     confidence: medium
     verification: read-in-full
     as_of: '2008-05-29'
     locator: Certification of Adoption; Sections 1.01, 4, 6.01-6.10, 8.01(c)(2g), 8.05
-    note: Read from OCR of a scanned document. 'employment' reflects the guidelines' eligibility of tribal
-      employees; 'civil' reflects adult civil cases pending before the court. Language tag otw assigned
-      because the Band is Odawa; the guidelines do not name the language.
+    note: Read in full on 2026-11-23 from page images (Little River Band of Ottawa Indians Peacemaking Guidelines (Odenaang Enjinoojimoying); Certification of Adoption, effective May 29, 2008, signed Chief Judge Daniel Bailey and Associate Judge Angela Sherigan). Read from OCR of a scanned document. 'employment' reflects the guidelines' eligibility of tribal employees; 'civil' reflects adult civil cases pending before the court. Language tag otw assigned because the Band is Odawa; the guidelines do not name the language. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 232.
   provisions:
   - kind: peacemaking
     title: Juvenile Code – Peacemaking
@@ -687,49 +672,45 @@ dispute_resolution:
       appeal from its orders enforcing an agreement or award.
     locator: Sections 1-10 (ordinance)
   - kind: peacemaking
-    title: Appendix 1 – Peacemaking Guidelines
-    citation: Appendix 1 – Peacemaking Guidelines
+    title: Odenaang Enjinoojimoying (A Place of Healing Many Hearts) Peacemaking Guidelines
+    citation: Little River Band of Ottawa Indians Peacemaking Guidelines (Odenaang Enjinoojimoying), Certification of Adoption, effective May 29, 2008
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: little-river-peacemaking-guidelines-2008
     confidence: medium
     verification: read-in-full
-    as_of: '2025-09-29'
-    locator: Little River Band of Ottawa Indians, Michigan
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      philosophical background, referral standards (including option for traditional request), procedure,
-      qualifications, standards of conduct, and forms.'
+    as_of: '2008-05-29'
+    locator: Guidelines Sections 1-12 (printed pp. 2-9); Sections 13-15 and appended forms not read
+    note: 'Read in full on 2026-11-23 from page images (Odenaang Enjinoojimoying, Little River Band of Ottawa Indians Peacemaking Guidelines; Certification of Adoption signed by Chief Judge Daniel Bailey and Associate Judge Angela Sherigan, effective May 29, 2008 (handwritten)). Read in the nation''s own Peacemaking Guidelines (scanned): Certification of Adoption, table of contents and Sections 1-12. Sections 13-15 and the forms were not read. ''Appendix 1'' in the earlier citation comes from NARF''s list and is not printed on the pages read. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 235.'
+    summary: The Tribal Court's Peacemaking program (Odenaang Enjinoojimoying) works alongside the court system for minors and adults. Cases may come from the Tribal Court, other tribal or state courts, agencies or a person's own request, in juvenile status and non-status matters and adult civil disputes; a request may be made by offering tobacco or another medicine, or by court order or personal request, and Peacemakers may deny a case in writing. Sessions are voluntary, led by two Peacemakers (one man, one woman) who direct the process but not the content, and are confidential except for child-abuse reporting. The signed agreement is a legally binding contract, and the Tribal Court enforces it by court order if participants do not follow it. Peacemakers must be at least 21, volunteers, and tribal members or tribal employees, and are certified after training.
   - kind: peacemaking
-    title: Chapter 900 – Family, Title 2 – Juvenile Code
-    citation: Chapter 900 – Family, Title 2 – Juvenile Code
+    title: 'Juvenile Code (Ordinance #99-900-02), Peacemaking provisions'
+    citation: 'Little River Band Juvenile Code, Ordinance #99-900-02 (adopted July 27, 2011), Sections 4.01(b), 4.02, 6.01, 8.01-8.03'
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Title-900-02-Juvenile-Code-2011.pdf
-    source: narf-ipi-youth-family-peacemaking-laws
+    source: little-river-900-02-juvenile-code-2011
     confidence: medium
     verification: read-in-full
-    as_of: '2025-08-25'
+    as_of: '2011-07-27'
     locator: Little River Band of Ottawa Indians, Michigan
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
-      philosophical background, procedures, and referral standards.'
+    note: 'Read in full on 2026-11-23 (Juvenile Code, Ordinance # 99-900-02, Adopted - July 27, 2011 (Little River Band of Ottawa Indians)). Peacemaking provisions read in the Juvenile Code text: Sec. 4.01(b) (creation and vision), 4.02 (referral), 6.01 (Case Intake Team), 8.01-8.03 (guidelines, authority, case denial). Procedures are in the Odenaang Enjinoojimoying Peacemaking Guidelines. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 236.'
+    summary: The Juvenile Code creates Peacemaking as a traditional conflict resolution process for children, youth and families. A juvenile's first status offense in the Children's Court is referred to the Peacemakers at once; other cases go through the Case Intake Team, which includes a Peacemaker and may refer to Peacemaking, and the Tribal Court may refer a case at the preliminary hearing. Peacemakers also hear cases brought by people who ask to use Peacemaking voluntarily, and may refuse a case after written denial by two Peacemaking groups. A case goes to court for adjudication if the Case Intake Team rejects it or after nine months. The code leaves procedure to the Tribal Judiciary's Peacemaking Guidelines and does not say how agreements are enforced.
   published_materials:
   - kind: guide
     title: Appendix 1 – Peacemaking Guidelines (Odenaang Enjinoojimoying), 2008
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
-    source: narf-ipi-tribal-peacemaking-laws
+    source: little-river-peacemaking-guidelines-2008
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2008'
-    note: NARF says the guidelines provide authorization, philosophical background, referral standards
-      (including an option for traditional request), procedure, qualifications, standards of conduct,
-      and forms.
+    note: Read in full on 2026-11-23 from page images (Little River Band of Ottawa Indians Peacemaking Guidelines, Odenaang Enjinoojimoying; effective May 29, 2008). Read from the Tribe's own adopted guidelines (certification signed by the Chief Judge and Associate Judge, effective May 29, 2008); the NARF listing describes the same document. Sections 8, 9-14 not read closely; sections 1-7 and 15 read. Peacemaking guidelines adopted by the Tribal Court judges (effective May 29, 2008) for Odenaang Enjinoojimoying, the Tribe's peacemaking program used alongside the court for minors, adults and tribal employees. Cases come by referral from tribal or state courts or agencies, by court order, or by a person's own request (including a traditional request by offering tobacco or other medicines); the supervisor accepts or denies in writing within set times, two peacemakers (one man, one woman) run sessions, and the guidelines also set peacemaker qualifications, ethics and dismissal rules. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 239.
   - kind: forms
-    title: 'Odenaang Enjinoojimoying forms: intake (adult and youth), notice, peacemaking agreement, compliance,
-      confidentiality agreement, follow-up questionnaire, community service log, contact log (appendices
-      to the 2008 Guidelines)'
+    title: 'Odenaang Enjinoojimoying forms: intake (adult and youth), notice of peacemaking session, peacemaking agreement, program compliance, confidentiality agreement, follow-up questionnaire, contact log (appended to the 2008 Guidelines; the table of contents also lists a community service log that is not in the captured copy)'
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
     source: little-river-peacemaking-guidelines-2008
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: '2008'
-    locator: Table of contents, appendices
+    locator: Table of contents (PDF p.2) and forms following Section 15 (PDF pp.14-29)
+    note: Read in full on 2026-11-23 from page images (Odenaang Enjinoojimoying Peacemaking Guidelines forms; forms approved 10/01/03, revised 1/25/08 and 3/10/08). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 240.
   training_programs:
   - name: Peacemaker certification (program operation, introduction to Anishinaabe culture, dispute resolution
       techniques; observation and a training session)
@@ -942,6 +923,17 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little River Band of Ottawa Indians".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Manistee Orchard, Manistee County, MI
+    legal_theory: Restored Lands
+    accepted: true
+    date: '1998-03-16'
+    link: https://www.nigc.gov?wpdmdl=2491&ind=2492
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Little River Band of Ottawa Indians, 1998-03-16
+    note: The list names the tribe as “Little River Band of Ottawa Indians”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

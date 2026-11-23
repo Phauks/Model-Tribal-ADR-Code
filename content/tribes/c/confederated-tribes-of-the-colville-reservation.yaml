@@ -492,36 +492,30 @@ dispute_resolution:
   forums:
   - kind: peacemaking
     name: Peacemaking Circle (juvenile)
-    link: https://www.cct-pmc.com/peacemaker-circle
-    description: Per NARF, the Colville juvenile code provides for mandatory peacemaking referrals in
-      both juvenile offender and child-in-need-of-care cases, with notice requirements, confidentiality
-      and enforcement of disposition.
-    legal_basis: Colville Tribal Code, Title 5 Domestic Relations, Chapter 5-2 Juveniles, Sections 5-2-192
-      to 5-2-195 (Peacemaking Circle)
+    link: https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5824abab46c3c490442cb43d/1478798271978/5-2.pdf
+    description: Under the Colville juvenile code the probation officer must refer all cases involving a minor under Chapter 5-2 to the Colville Tribal Peacemaking Circle, with notice of the date, time and place to the minor, parent or guardian and counsel; the Juvenile Court must also refer a case on receiving a petition if it has not already gone to the Circle. At the Circle the peacemakers may refer the family to a community agency, order supervision terms, accept voluntary restitution, ask the Court to enforce any agreement, recommend a petition, or order any other remedy including a traditional one. Statements made in the Circle cannot be used as evidence against the minor, and the probation officer reviews progress every 30 days and may have the Circle reconvene.
+    legal_basis: Colville Tribal Code, Title 5 Domestic Relations, Chapter 5-2 Juveniles, Sections 5-2-191 to 5-2-197 (Peacemaking Circle)
     case_types:
     - juvenile
     - child-welfare
     participation: required
-    relationship_to_court: Referral from juvenile proceedings is mandatory per NARF's summary.
-    source: narf-ipi-youth-family-peacemaking-laws
-    confidence: medium
-    verification: inferred
-    as_of: '2025-08-25'
-    note: 'NARF''s linked PDF (Colville-Juvenile-Peacemaking-Circle-Code.pdf) returned 404 on 2026-11-21,
-      so the code text was not read. Link added 2026-11-22: the Peacemaker Circle program''s own site,
-      linked as “Peacemaker Circle” from the Colville Tribes'' website; the page does not say whether
-      it covers the juvenile circle named in the code (fetched with status 200 on 2026-11-22).'
-  provisions:
-  - kind: peacemaking
-    title: Juveniles – Peacemaking Circle
-    citation: Colville Tribal Code, Title 5, Chapter 5-2, §§ 5-2-192 to 5-2-195
-    summary: Per NARF, provides mandatory peacemaking referral for juvenile offender and child-in-need-of-care
-      cases, notice, confidentiality and enforcement of disposition.
-    source: narf-ipi-youth-family-peacemaking-laws
+    relationship_to_court: Referral from juvenile proceedings is mandatory (probation officer under 5-2-191/192, Juvenile Court under 5-2-197); the peacemakers may ask the Court to enforce agreements, and the Court may continue the adjudicatory hearing on the Circle's written recommendation.
+    source: colville-tribal-code-chapter-5-2-juveniles
     confidence: medium
     verification: read-in-full
     as_of: '2025-08-25'
-    note: Summary from NARF's description; code text not read (link returned 404).
+    note: Read in full on 2026-11-23 from page images (Colville Tribal Code Chapter 5-2 Juveniles (September 2010 version), Secs. 5-2-191 to 5-2-197 amended 12/16/04 (Res. 2004-799) and 2/17/05 (Res. 2005-108)). Code text read from the captured Chapter 5-2 (September 2010 version), PDF pp. 8-9, Secs. 5-2-191 to 5-2-197 (scanned, read as page images). NARF's PDF link returned 404; the captured copy is the code text. The chapter also covers minor-in-need-of-care cases; the referral wording ('all cases ... under this Chapter') reaches them, but the steps are written for the juvenile-offender track. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 74.
+  provisions:
+  - kind: peacemaking
+    title: Juveniles – Peacemaking Circle
+    citation: Colville Tribal Code, Title 5, Chapter 5-2, §§ 5-2-191 to 5-2-197
+    summary: After a custody hearing the probation officer investigates and must refer all cases involving a minor under the juvenile chapter to the Colville Tribal Peacemaking Circle, with notice of the hearing to the minor, parent or guardian and counsel; the Juvenile Court must also refer a case on receiving a petition if it has not already gone to the Circle. Peacemakers may refer the family to an agency, order supervision terms, accept restitution, ask the Court to enforce agreements, recommend a petition or order any other remedy including a traditional one. Statements made in the Circle are not admissible against the minor, and the probation officer reviews progress every 30 days and may ask the Circle to reconvene.
+    source: colville-tribal-code-chapter-5-2-juveniles
+    confidence: medium
+    verification: read-in-full
+    as_of: '2025-08-25'
+    note: Read in full on 2026-11-23 from page images (Colville Tribal Code Chapter 5-2 Juveniles (September 2010 version), Secs. 5-2-191 to 5-2-197 amended 12/16/04 (Res. 2004-799) and 2/17/05 (Res. 2005-108)). Checked against the captured Chapter 5-2 (September 2010 version), PDF pp. 8-9, Secs. 5-2-191 to 5-2-197 (scanned, read as page images). NARF's PDF link returned 404; the captured copy is the code text. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 75.
+    link: https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5824abab46c3c490442cb43d/1478798271978/5-2.pdf
   database_listings:
   - title: Defintion of Peacemaking
     citation: Colville Tribal Law and Order Code. Title 5 Domestic Relations. 5-2 Juveniles. Section 5-2-30

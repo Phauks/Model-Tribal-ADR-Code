@@ -415,18 +415,14 @@ dispute_resolution:
   provisions:
   - kind: peacemaking
     title: Goal of peacemaking towards a settlement.
-    citation: Goal of peacemaking towards a settlement.; Qualifications, selection, tenure, and removal
-      of Chief's Council Peacemakers and Court of Appeals Judges.; Appointment of special Peacemakers
-      / Judge(s.; General role of Peacemakers and Judges.; Powers of Peacemakers and Judges.; ...
+    citation: Goal of peacemaking towards a settlement.; Qualifications, selection, tenure, and removal of Chief's Council Peacemakers and Court of Appeals Judges.; Appointment of special Peacemakers / Judge(s.; General role of Peacemakers and Judges.; Powers of Peacemakers and Judges.; ...
     link: https://narf.org/nill/codes/wampanoaggayhead/index.html
     source: national-indian-law-library-code-codes-wampanoaggayhead
     confidence: medium
     verification: title-only
     as_of: '2000'
     locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
-      2000); the provision itself was not read. The heading it falls under is taken from the page layout
-      and may be imprecise. Searched for the text on 2026-11-22 and not read. Places searched: research/search-logs/dispute-resolution/w/wampanoag-tribe-of-gay-head.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 597.'
 gaming:
   ordinances:
   - approved: '2012-02-21'
@@ -456,6 +452,27 @@ gaming:
     locator: table row 305, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 305 lists the nation
       as "Wampanoag Tribe of Gay Head".
+  indian_lands_opinions:
+  - parcel: Cranberry Lands, Face of the Cliff and Herring Creek Parcels, Dukes County, MA
+    legal_theory: Settlement of a Land Claim
+    accepted: true
+    date: '2013-08-23'
+    link: https://www.nigc.gov?wpdmdl=2657&ind=2658
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wampanoag Tribe of Gay Head, 2013-08-23
+    note: The list names the tribe as “Wampanoag Tribe of Gay Head”.
+  - parcel: Cranberry Lands, Face of the Cliff and Herring Creek Parcels, Dukes County, MA
+    legal_theory: Settlement of a Land Claim
+    accepted: true
+    date: '2013-10-25'
+    link: https://www.nigc.gov?wpdmdl=2659&ind=2660
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Wampanoag Tribe of Gay Head, 2013-10-25
+    note: The list names the tribe as “Wampanoag Tribe of Gay Head”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

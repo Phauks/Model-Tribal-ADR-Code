@@ -416,6 +416,17 @@ gaming:
     locator: table row 74, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 74 lists the nation
       as "Elem Indian Colony of Pomo Indians". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-95-03
+    date: '2009-02-24'
+    link: https://www.nigc.gov?wpdmdl=7917&ind=7928
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-95-03
+    note: The list titles the action “Elem Indian Colony of Pomo Indians of the Sulphur Bank Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

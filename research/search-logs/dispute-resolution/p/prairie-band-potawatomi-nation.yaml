@@ -1,7 +1,7 @@
 profile: content/tribes/p/prairie-band-potawatomi-nation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -127,3 +127,124 @@ searches:
   query: ARTICLE VI DISPUTE RESOLUTION SYSTEM
   outcome: found
   reason: Re-read Article VI in the raw captured text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/prairie-band-potawatomi-nation/6301fea703872e03.txt
+  query: Peacemakers Circle
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/prairie-band-potawatomi-nation/6301fea703872e03.txt
+  query: Employment Disputes Tribunal
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.forums
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/807a441e109da1a70d03.txt
+  query: 3-3 MEDIATION
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/8cb84eda450ff2a23cb7.txt
+  query: 3-3 MEDIATION
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/de2aa206ff43999034ce.txt
+  query: 3-3 MEDIATION
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f1a6a5fc0fb05a86951b.txt
+  query: 3-3 MEDIATION
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Prairie Band 3-3
+  query: Prairie Band Potawatomi Nation Law and Order Code 2-5 Peacemakers Circle 3-3 Mediation Grievance
+    Committee
+  outcome: found
+  reason: Code Publishing pages returned.
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://codepublishing.com/KS/Potawatomi/html/Potawatomi03/Potawatomi0303.html
+  query: fetch
+  outcome: found
+  reason: Summary of 3-3.
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/807a441e109da1a70d03.txt
+  query: 2-2 JUDICIAL COUNCIL AND PEACEMAKERS CIRCLE GENERALLY.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/prairie-band-potawatomi-nation/6301fea703872e03.txt
+  query: 2-2 JUDICIAL COUNCIL AND PEACEMAKERS CIRCLE GENERALLY.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: Prairie Band 2-5
+  query: Prairie Band Potawatomi Nation Law and Order Code 2-5 Peacemakers Circle
+  outcome: found
+  reason: Code Publishing hits.
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: https://codepublishing.com/KS/Potawatomi/html/Potawatomi02/Potawatomi0205.html
+  query: fetch
+  outcome: found
+  reason: Summary of 2-5-1.
+  records:
+  - content/tribes/p/prairie-band-potawatomi-nation.yaml#dispute_resolution.provisions

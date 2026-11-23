@@ -692,6 +692,37 @@ gaming:
       Lucky Star Travel Center Casino - Hammon; Lucky Star Travel Center Casino - Concho; Lucky Star Casino
       - Concho; Lucky Star Casino - Canton; Lucky Star Casino Clinton; Lucky Star Casino - Watonga. Name
       extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-06
+    date: '2008-05-22'
+    link: https://www.nigc.gov?wpdmdl=8044&ind=8055
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-06
+    note: The list titles the action “Cheyenne & Arapaho Tribes of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-06
+    date: '2008-08-11'
+    link: https://www.nigc.gov?wpdmdl=8004&ind=8015
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-06
+    note: The list titles the action “Cheyenne & Arapaho Tribes of Oklahoma” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-17-01
+    date: '2017-04-11'
+    link: https://www.nigc.gov?wpdmdl=7710&ind=7721
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-17-01
+    note: The list titles the action “Cheyenne & Arapaho Tribes of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -700,6 +700,57 @@ gaming:
     locator: table row 197, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 197 lists the nation
       as "Ponca Tribe of Nebraska".
+  indian_lands_opinions:
+  - parcel: Crofton, Knox County, NE
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2002-11-22'
+    link: https://www.nigc.gov?wpdmdl=2546&ind=2547
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ponca Tribe of Nebraska, 2002-11-22
+    note: The list names the tribe as “Ponca Tribe of Nebraska”.
+  - parcel: Carter Lake, Pottawattamie County, Iowa
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2007-10-22'
+    link: https://www.nigc.gov?wpdmdl=2600&ind=2601
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ponca Tribe of Nebraska, 2007-10-22
+    note: The list names the tribe as “Ponca Tribe of Nebraska”.
+  - parcel: Carter Lake, Pottawattamie County, Iowa
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2007-12-31'
+    link: https://www.nigc.gov?wpdmdl=2608&ind=2609
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ponca Tribe of Nebraska, 2007-12-31
+    note: The list names the tribe as “Ponca Tribe of Nebraska”.
+  - parcel: Carter Lake, Pottawattamie County, Iowa
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2017-11-13'
+    link: https://www.nigc.gov?wpdmdl=2675&ind=2677
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ponca Tribe of Nebraska, 2017-11-13
+    note: The list names the tribe as “Ponca Tribe of Nebraska”.
+  - parcel: Carter Lake, Pottawattamie County, Iowa
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2019-04-30'
+    link: https://www.nigc.gov?wpdmdl=2680&ind=2681
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ponca Tribe of Nebraska, 2019-04-30
+    note: The list names the tribe as “Ponca Tribe of Nebraska”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

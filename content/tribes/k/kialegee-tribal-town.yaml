@@ -448,6 +448,47 @@ gaming:
     locator: table row 118, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 118 lists the nation
       as "Kialegee Tribal Town".
+  indian_lands_opinions:
+  - parcel: Broken Arrow, Oklahoma
+    legal_theory: Jurisdiction
+    accepted: false
+    date: '2012-05-25'
+    link: https://www.nigc.gov?wpdmdl=2649&ind=2650
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Kialegee Tribal Town, 2012-05-25
+    note: The list names the tribe as “Kialegee Tribal Town”.
+  - parcel: Broken Arrow, Oklahoma
+    legal_theory: Jurisdiction
+    accepted: false
+    date: '2012-06-08'
+    link: https://www.nigc.gov?wpdmdl=2651&ind=2652
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Kialegee Tribal Town, 2012-06-08
+    note: The list names the tribe as “Kialegee Tribal Town”.
+  - parcel: Neal Freeman parcel
+    legal_theory: Jurisdiction
+    accepted: false
+    date: '2013-07-18'
+    link: https://www.nigc.gov?wpdmdl=2655&ind=2656
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Kialegee Tribal Town, 2013-07-18
+    note: The list names the tribe as “Kialegee Tribal Town”.
+  - parcel: Broken Arrow, Oklahoma
+    legal_theory: Jurisdiction
+    accepted: false
+    date: '2017-06-21'
+    link: https://www.nigc.gov?wpdmdl=2671&ind=2672
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Kialegee Tribal Town, 2017-06-21
+    note: The list names the tribe as “Kialegee Tribal Town”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

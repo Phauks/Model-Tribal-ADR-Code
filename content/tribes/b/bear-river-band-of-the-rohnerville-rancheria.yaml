@@ -362,6 +362,38 @@ gaming:
       Rancheria". Facilities as machine-extracted from the report text (verify): Bear River Casino Resort;
       Bear River Pump and Play. Name extracted from the PDF by the page-fetch tool and matched to the
       roster.'
+  indian_lands_opinions:
+  - parcel: Humboldt County, CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2002-08-05'
+    link: https://www.nigc.gov?wpdmdl=2540&ind=2541
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Bear River Band Rohnerville Rancheria, 2002-08-05
+    note: The list names the tribe as “Bear River Band Rohnerville Rancheria”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-19
+    date: '2009-04-09'
+    link: https://www.nigc.gov?wpdmdl=7873&ind=7885
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-19
+    note: The list titles the action “Bear River Band of the Rohnerville Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-19
+    date: '2009-05-14'
+    link: https://www.nigc.gov?wpdmdl=7833&ind=7844
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-19
+    note: The list titles the action “Bear River Band of the Rohnerville Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

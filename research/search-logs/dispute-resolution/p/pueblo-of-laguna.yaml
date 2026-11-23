@@ -1,7 +1,7 @@
 profile: content/tribes/p/pueblo-of-laguna.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -60,3 +60,93 @@ searches:
   address: https://library.municode.com/
   outcome: blocked
   reason: 'Retry not attempted: Municode refuses scripted access and the brief says not to retry it.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f21cbc7b513c7b7bf6fb.txt
+  query: Section 11-2-9. – Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pueblo-of-laguna.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/a13638eb28b79b37f148.txt
+  query: Section 11-2-9. – Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pueblo-of-laguna.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Pueblo of Laguna code 11-2-9 dispute resolution water quality standards
+  outcome: not-found
+  reason: only EPA and Laguna program PDFs
+  records:
+  - content/tribes/p/pueblo-of-laguna.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/ordinances/pueblo-of-laguna/20130709OrdAmendApprvl.txt
+  query: Section 14-1-9. – Dispute resolution.
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/p/pueblo-of-laguna.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f21cbc7b513c7b7bf6fb.txt
+  query: Section 14-1-9. – Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pueblo-of-laguna.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/ordinances/pueblo-of-laguna/pueblolaguna-lagunaord062995.txt
+  query: Section 14-1-9. – Dispute resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pueblo-of-laguna.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/f21cbc7b513c7b7bf6fb.txt
+  query: Section 15. - Dispute Resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pueblo-of-laguna.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/ordinances/pueblo-of-laguna/20130709OrdAmendApprvl.txt
+  query: Section 15. - Dispute Resolution.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/p/pueblo-of-laguna.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Pueblo of Laguna code 11-2-9 dispute resolution water quality standards
+  outcome: not-found
+  reason: no Laguna code text surfaced
+  records:
+  - content/tribes/p/pueblo-of-laguna.yaml#dispute_resolution.provisions

@@ -584,6 +584,27 @@ gaming:
     locator: table row 300, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 300 lists the nation
       as "United Keetoowah Band of Cherokee Indians". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Keetoowah Cherokee Casino Site
+    legal_theory: Jurisdiction
+    accepted: false
+    date: '2000-09-29'
+    link: https://www.nigc.gov?wpdmdl=2523&ind=2524
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for United Keetoowah Band of Cherokee Indians, 2000-09-29
+    note: The list names the tribe as “United Keetoowah Band of Cherokee Indians”.
+  - parcel: Tahleqhah, Oklahoma site
+    legal_theory: Within Reservation Boundaries
+    accepted: false
+    date: '2011-07-18'
+    link: https://www.nigc.gov?wpdmdl=2644&ind=2646
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for United Keetoowah Band of Cherokee Indians, 2011-07-18
+    note: The list names the tribe as “United Keetoowah Band of Cherokee Indians”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

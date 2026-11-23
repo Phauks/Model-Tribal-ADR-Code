@@ -502,6 +502,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Elk Valley Rancheria". Facilities
       as machine-extracted from the report text (verify): Elk Valley Casino. Name extracted from the PDF
       by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Betty Green Trust Land, Del Norte County, CA
+    legal_theory: Indian Lands / Restored Lands
+    accepted: true
+    date: '2000-03-02'
+    link: https://www.nigc.gov?wpdmdl=2515&ind=2516
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Elk Valley Rancheria, 2000-03-02
+    note: The list names the tribe as “Elk Valley Rancheria”.
+  - parcel: Martin’s Ranch, Del Norte County, CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2007-07-13'
+    link: https://www.nigc.gov?wpdmdl=2598&ind=2599
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Elk Valley Rancheria, 2007-07-13
+    note: The list names the tribe as “Elk Valley Rancheria”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

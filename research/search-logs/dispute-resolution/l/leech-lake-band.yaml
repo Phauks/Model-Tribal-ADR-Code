@@ -1,7 +1,7 @@
 profile: content/tribes/l/leech-lake-band.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -123,3 +123,13 @@ searches:
     against the lead author''s order (own page, then directory entry): own-page, https://www.llojibwe.org/court/bamenim.html.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-129
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/591c3e70167edef52afd.pdf
+  query: Peacemaker Tribunal (Leech Lake Band of Ojibwe Tribal Court)
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/l/leech-lake-band.yaml#dispute_resolution.forums

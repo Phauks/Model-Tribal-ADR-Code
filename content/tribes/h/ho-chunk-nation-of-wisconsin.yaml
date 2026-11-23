@@ -593,41 +593,34 @@ dispute_resolution:
   forums:
   - kind: elders-council
     name: Traditional Court
-    description: A court of Ho-Chunk elders for traditional dispute resolution within the Judiciary; per
-      the Judiciary's page it provides knowledge of custom, traditions and Ho-Chunk core values to members
-      referred by court processes, through social services programming, or by self-referral.
+    description: A court of Ho-Chunk elders for traditional dispute resolution within the Judiciary; per the Judiciary's page it provides knowledge of custom, traditions and Ho-Chunk core values to members referred by court processes, through social services programming, or by self-referral.
     legal_basis: 1 HCC § 1 (Judiciary Establishment and Organization Act), Sections 3(c) and 13
     case_types:
     - other
     participation: voluntary-or-court-referred
-    relationship_to_court: Part of the Ho-Chunk Judiciary, established to assist the Judiciary whenever
-      possible with cases or controversies involving Tribal members; a Traditional Court representative
-      also sits on the Healing to Wellness Court and Family Wellness Court treatment teams.
+    relationship_to_court: Part of the Ho-Chunk Judiciary, established to assist the Judiciary whenever possible with cases or controversies involving Tribal members; a Traditional Court representative also sits on the Healing to Wellness Court and Family Wellness Court treatment teams.
     link: https://ho-chunknation.com/government/judicial-branch/courts/traditional-court-2/
     source: ho-chunk-1-hcc-1-judiciary-act
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2017-06-05'
     locator: 1 HCC § 1, Sections 3(c), 3(d)-(e), 13
-    note: Case types are not enumerated in the sources reviewed. Referral routes are from the Judiciary's
-      Traditional Court web page (accessed 2026-11-21).
+    note: Read in full on 2026-11-23 (Ho-Chunk Nation Judiciary Establishment and Organization Act, 1 HCC Sec. 1, enacted April 6, 2005, last amended and restated June 5, 2017). Case types are not enumerated in the sources reviewed. Referral routes are from the Judiciary's Traditional Court web page (accessed 2026-11-21). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 142.
   - kind: peacemaking
     name: Peacemaking Circle (custody and placement)
-    description: The court may refer a custody and placement case to the Peacemaking Circle when it believes
-      the parties would benefit; the circle is completely voluntary and both parties must agree before
-      transfer.
+    description: The court may refer a custody and placement case to the Peacemaking Circle when it believes the parties would benefit; the circle is completely voluntary and both parties must agree before transfer.
     legal_basis: 4 HCC § 18 (Custody and Placement Ordinance), Section 9
     case_types:
     - family
     participation: voluntary-or-court-referred
-    relationship_to_court: The court must consider domestic abuse issues when deciding whether referral
-      is appropriate.
+    relationship_to_court: The court must consider domestic abuse issues when deciding whether referral is appropriate.
     link: https://ho-chunknation.com/wp-content/uploads/2024/01/01.23.24-4-HCC-18-Custody-and-Placement-Ordinance-1.23.24-1.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    source: ho-chunk-4-hcc-18-custody-placement-2024
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2026'
-    locator: https://ncorj.org/tribal-law/peacemaking-circles-for-child-welfare/
+    locator: 4 HCC § 18 (Custody and Placement Ordinance), Section 9 (Peacemaking Circle)
+    note: Read in full on 2026-11-23 (Ho-Chunk Nation Code Title 4, Sec. 18, Custody and Placement Ordinance, 4 HCC Sec. 18, enacted by Legislature January 23, 2024). Read from the Nation's own Custody and Placement Ordinance (4 HCC § 18, enacted Jan. 23, 2024), Section 9. The section does not describe the Circle's process or whether agreements are enforced. Originally listed in the National Center on Restorative Justice database. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 143.
   provisions:
   - kind: traditional-dispute-resolution
     title: Traditional Dispute Resolution
@@ -835,6 +828,27 @@ gaming:
       Gaming - Wittenberg; Ho-Chunk Gaming - Tomah; Ho-Chunk Gaming - Nekoosa; Ho-Chunk Gaming - Black
       River Falls; Ho-Chunk Gaming - Wisconsin Dells. Name extracted from the PDF by the page-fetch tool
       and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-03
+    date: '2009-01-28'
+    link: https://www.nigc.gov?wpdmdl=7935&ind=7946
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-03
+    note: The list titles the action “Ho-Chunk Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-03
+    date: '2009-03-09'
+    link: https://www.nigc.gov?wpdmdl=7897&ind=7908
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-03
+    note: The list titles the action “Ho-Chunk Nation” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

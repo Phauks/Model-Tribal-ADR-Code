@@ -694,6 +694,17 @@ gaming:
     locator: table row 217, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 217 lists the nation
       as "Pyramid Lake Paiute Tribe". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: Crosby Lodge, Washoe County, NV
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2005-09-27'
+    link: https://www.nigc.gov?wpdmdl=2578&ind=2579
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Pyramid Lake Paiute Tribe, 2005-09-27
+    note: The list names the tribe as “Pyramid Lake Paiute Tribe”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

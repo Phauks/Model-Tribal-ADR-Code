@@ -499,6 +499,17 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Table Mountain Rancheria". Name
       extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: 60 acre parcels, Fresno county, CA
+    legal_theory: Contiguous to reservation
+    accepted: true
+    date: '2014-01-10'
+    link: https://www.nigc.gov?wpdmdl=2661&ind=2662
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Table Mountain Rancheria, 2014-01-10
+    note: The list names the tribe as “Table Mountain Rancheria”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

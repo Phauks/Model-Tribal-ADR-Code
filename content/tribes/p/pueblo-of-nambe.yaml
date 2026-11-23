@@ -370,6 +370,17 @@ gaming:
     locator: table row 205, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 205 lists the nation
       as "Pueblo of Nambe".
+  indian_lands_opinions:
+  - parcel: Tract 1 – Cuyamungue Grant, Santa Fe County, NM
+    legal_theory: Contiguous to Reservation
+    accepted: true
+    date: '2008-09-19'
+    link: https://www.nigc.gov?wpdmdl=2620&ind=2621
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Pueblo of Nambe, 2008-09-19
+    note: The list names the tribe as “Pueblo of Nambe”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

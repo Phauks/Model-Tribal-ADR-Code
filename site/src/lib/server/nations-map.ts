@@ -7,7 +7,7 @@ import landAreaPoints from '../../../geography/census-land-area-points-2020.json
 import tileManifest from '../../../geography/map-tiles.json';
 import officeList from '../../../geography/nation-office-points.json';
 import withdrawnList from '../../../geography/withdrawn-land-areas.json';
-import { nations } from '#lib/server/content.ts';
+import { documentHistories, nations } from '#lib/server/content.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { displayName, regionAnchor, stateName } from '#lib/nation-labels.ts';
 import { healthServiceAreaShades, shadedMapViews, shadedRowAnchor, shadedViewDefinitions, type ShadeCategory, type ShadedMapView } from '#lib/shaded-map-views.ts';
@@ -358,6 +358,28 @@ function courtsOf(record: NationRecord) {
 	return { peacemaking, wellness, federal, tribal, count: institutions.length + forums.length };
 }
 
+/** The compact statuses the gaming view counts as a compact: approved or let take effect, even if since expired or replaced. */
+const compactCounts = new Set(['in-effect', 'approved', 'deemed-approved', 'expired']);
+
+let gamingHistoryCache: Map<string, Set<string>> | undefined;
+
+/** The kinds of gaming document history (compact or Secretarial Procedures) that name each nation, counting only those with a version that was not disapproved. */
+function gamingHistoryKinds(): Map<string, Set<string>> {
+	if (!gamingHistoryCache) {
+		gamingHistoryCache = new Map();
+		for (const history of documentHistories()) {
+			if (history.kind !== 'gaming-compact' && history.kind !== 'secretarial-procedures') continue;
+			if (!history.versions.some((version) => version.status !== 'disapproved')) continue;
+			for (const nation of history.nations ?? []) {
+				const kinds = gamingHistoryCache.get(nation) ?? new Set<string>();
+				kinds.add(history.kind);
+				gamingHistoryCache.set(nation, kinds);
+			}
+		}
+	}
+	return gamingHistoryCache;
+}
+
 const healthServiceArea = (record: NationRecord): string | undefined => record.indian_health_service?.find((fact) => fact.area)?.area;
 
 /**
@@ -375,6 +397,13 @@ interface ShadedViewRule {
 }
 
 const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
+	recognition: {
+		has: (record) => {
+			const types = new Set((record.recognition ?? []).map((fact) => fact.type));
+			return { federal: types.has('federal'), state: types.has('state'), petitioning: types.has('petitioning'), other: types.has('territorial-law') || types.has('congressional-special-relationship') };
+		},
+		facts: (record) => (record.recognition ?? []).filter((fact) => fact.type !== 'unrecognized')
+	},
 	'courts-and-peacemaking': {
 		has: (record) => {
 			const courts = courtsOf(record);
@@ -406,6 +435,17 @@ const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
 			return Object.fromEntries((shadedViewDefinitions['agreements-with-states'].categories ?? []).map((category) => [category.key, kinds.has(category.key)]));
 		},
 		facts: (record) => record.jurisdiction_agreements ?? []
+	},
+	gaming: {
+		has: (record) => {
+			const gaming = record.gaming ?? {};
+			const histories = gamingHistoryKinds().get(record.id) ?? new Set<string>();
+			const compact = (gaming.compacts ?? []).some((fact) => compactCounts.has(fact.status)) || histories.has('gaming-compact');
+			const procedures = (gaming.compacts ?? []).some((fact) => fact.status === 'secretarial-procedures') || histories.has('secretarial-procedures');
+			const ordinance = (gaming.ordinances ?? []).length > 0;
+			return { compact, procedures, ordinance, operates: gaming.operates_gaming?.value === true };
+		},
+		facts: (record) => [...(record.gaming?.compacts ?? []), ...(record.gaming?.ordinances ?? []), ...(record.gaming?.operates_gaming ? [record.gaming.operates_gaming] : [])]
 	},
 	'indian-health-service': {
 		categoryOf: healthServiceArea,

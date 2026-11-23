@@ -31,3 +31,11 @@ searches:
   query: How the nation's reservation was set aside
   outcome: not-found
   reason: 'Candidate: Minnesota Chippewa reservations (treaties of 1855, 1863, 1864, 1867; later executive orders and the Nelson Act of 1889). Not entered: Instruments fetched (11 Stat. 633, 13 Stat. 667) but Red Lake rests on retained lands (1863-64 treaties) and Leech Lake, Mille Lacs and Fond du Lac on 1855 treaty reserves and later orders; not verified to a pinpoint quote.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 2 enforcement actions.

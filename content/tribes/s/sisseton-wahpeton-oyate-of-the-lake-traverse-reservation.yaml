@@ -836,6 +836,27 @@ gaming:
     locator: table row 263, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 263 lists the nation
       as "Sisseton-Wahpeton Oyate". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-04
+    date: '2005-02-17'
+    link: https://www.nigc.gov?wpdmdl=8197&ind=8219
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-04
+    note: The list titles the action “Sisseton-Wahpeton Oyate of the Lake Traverse Reservation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-04
+    date: '2005-03-30'
+    link: https://www.nigc.gov?wpdmdl=8190&ind=8211
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-04
+    note: The list titles the action “Sisseton-Wahpeton Oyate of the Lake Traverse Reservation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

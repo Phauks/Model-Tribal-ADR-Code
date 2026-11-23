@@ -31,3 +31,11 @@ searches:
   query: How the nation's reservation was set aside
   outcome: not-found
   reason: 'Candidate: Treaty of Fort Bridger, July 3, 1868, 15 Stat. 673. Not entered: The treaty sets the reservation apart for the Shoshone; the Northern Arapaho were placed there later (1878 arrangement), and no instrument naming the Arapaho on this land was read.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 1 enforcement actions.

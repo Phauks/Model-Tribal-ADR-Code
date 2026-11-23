@@ -512,24 +512,20 @@ dispute_resolution:
   forums:
   - kind: mediation
     name: Peacemaker Mediation Forum
-    description: A nonadversarial forum within the Tribal Court structure for resolving disputes between
-      Tribal members and others within the Tribe's jurisdiction; guidelines are to reflect the Tribe's
-      historical traditions and modern methods of dispute resolution.
+    description: A nonadversarial forum within the Tribal Court structure for resolving disputes between Tribal members and others within the Tribe's jurisdiction; guidelines are to reflect the Tribe's historical traditions and modern methods of dispute resolution.
     legal_basis: Karuk Tribal Code, Section 3.05.100 (Res. 10-R-111 § 10.9)
     case_types:
     - civil
     - other
     participation: required
-    relationship_to_court: When a petition is filed with the Clerk, the forum is used before proceeding
-      to a formal court hearing; parties may continue in court if mediation fails.
+    relationship_to_court: When a petition is filed with the Clerk, the forum is used before proceeding to a formal court hearing; parties may continue in court if mediation fails.
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
     source: karuk-tribal-code-chapter-3-05
     confidence: high
-    verification: inferred
+    verification: read-in-full
     as_of: '2024-09-26'
     locator: Sections 3.05.010(E), 3.05.100
-    note: Participation recorded as 'required' because the code says the forum shall be used before a
-      formal hearing once a petition is filed.
+    note: Read in full on 2026-11-23 (Karuk Tribal Code Ch. 3.05 Tribal Court (Res. 10-R-111, 9/30/2010; current through Res. 24-R-151, 9/26/2024)). Participation recorded as 'required' because the code says the forum shall be used before a formal hearing once a petition is filed. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 192.
   provisions:
   - kind: peacemaking
     title: Peacemaker Mediation Forum
@@ -559,33 +555,27 @@ dispute_resolution:
       free to continue in court if the mediation fails.
     locator: 3.05.100 (bracket cites Res. 10-R-111 § 10.9)
   - kind: peacemaking
-    title: 'Section 11: Peacemaker Mediation Forum/Family Unity'
-    citation: 'Section 11: Peacemaker Mediation Forum/Family Unity'
-    link: https://narf.org/nill/codes/karuk/index.html
-    source: national-indian-law-library-code-codes-karuk
+    title: 10.10.270 Peacemaker Mediation Forum
+    citation: Karuk Tribal Code § 10.10.270 (Title 10, Ch. 10.10, Art. XI), codifying Title I § 11(A) of the 2009 Children and Family Code (Res. 09-R-062, Apr. 30, 2009), as amended by Res. 22-R-037 (Feb. 24, 2022)
+    link: https://karuk.tribal.codes/KTC/10.10.270
+    source: karuk-tribal-code-10-10-270
     confidence: medium
-    verification: title-only
-    as_of: '2026-11-21'
-    locator: Table of Contents
-    note: 'Identified from section headings in the National Indian Law Library table of contents; the
-      provision itself was not read. The heading it falls under is taken from the page layout and may
-      be imprecise. Searched for the text on 2026-11-22 and not read. A copy was located at https://karuk.tribal.codes/KTC/10.10.270,
-      but only an automated summary of it could be seen, so the section is not recorded as read. Places
-      searched: research/search-logs/dispute-resolution/k/karuk-tribe.yaml.'
+    verification: read-in-full
+    as_of: '2022-02-24'
+    locator: 10.10.270(A)-(D)
+    note: 'Read in full on 2026-11-23 (Karuk Tribal Code § 10.10.270, Peacemaker Mediation Forum (Wayback Machine copy of Aug. 10, 2024; code current through Res. 22-R-198, Nov. 17, 2022); history: Res. 09-R-062 Title 1 § (11)(A), 4/30/2009, and Res. 22-R-037, 2/24/2022). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 195.'
+    summary: In a children-and-youth-in-need-of-care case the Tribal Court judge may, at any stage, order the parties into the Tribe's confidential Peacemaker Mediation Forum, run under the Forum's written guidelines, or order the family into family unity with Karuk Child Welfare Services; the plan the family reaches goes back to the judge, who may approve, modify or disapprove it, send the family back for more work or set a hearing, and an approved plan becomes a Tribal Court order.
   - kind: peacemaking
-    title: Dispute Resolution-Mediation/Peacemaking
-    citation: Dispute Resolution-Mediation/Peacemaking
-    link: https://narf.org/nill/codes/karuk/index.html
-    source: national-indian-law-library-code-codes-karuk
+    title: 10.05.040 Dispute resolution – Mediation/peacemaking
+    citation: Karuk Tribal Code § 10.05.040 (Title 10, Ch. 10.05, Family Relations), codifying Title II § 1(D) of the 2009 Children and Family Code (Res. 09-R-062, Apr. 30, 2009)
+    link: https://karuk.tribal.codes/KTC/10.05.040
+    source: karuk-tribal-code-10-05-040
     confidence: medium
-    verification: title-only
-    as_of: '2026-11-21'
-    locator: Table of Contents, under 'SECTION 1. POLICY, PURPOSE AND SCOPE'
-    note: 'Identified from section headings in the National Indian Law Library table of contents; the
-      provision itself was not read. The heading it falls under is taken from the page layout and may
-      be imprecise. Searched for the text on 2026-11-22 and not read. A copy was located at https://karuk.tribal.codes/KTC/10.05.040,
-      but only an automated summary of it could be seen, so the section is not recorded as read. Places
-      searched: research/search-logs/dispute-resolution/k/karuk-tribe.yaml.'
+    verification: read-in-full
+    as_of: '2009-04-30'
+    locator: 10.05.040
+    note: 'Read in full on 2026-11-23 (Karuk Tribal Code § 10.05.040, Dispute resolution – Mediation/peacemaking (Wayback Machine copy of June 22, 2024; code current through Res. 22-R-198, Nov. 17, 2022); history: Res. 09-R-062 Title 2 § (1)(D), 4/30/2009). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 196.'
+    summary: In family relations proceedings the dispute resolution process of KTC 10.10.270 (the Peacemaker Mediation Forum) must be arranged at or before the time the matter is set for hearing; its stated purpose is cooperation, less bitterness and an agreement that meets the needs and best interests of all parties, and if the parties stipulate the court applies Karuk customs and traditions under Chapter 3.05.
   database_listings:
   - title: Conference/Peacemaker Mediation to Preserve Marriage
     citation: KTC 10.05.070
@@ -742,6 +732,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Karuk Tribe". Facilities as
       machine-extracted from the report text (verify): Rain Rock Casino. Name extracted from the PDF by
       the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Yreka Parcel, Siskiyou County, CA
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2004-10-12'
+    link: https://www.nigc.gov?wpdmdl=2565&ind=2566
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Karuk Tribe of California, 2004-10-12
+    note: The list names the tribe as “Karuk Tribe of California”.
+  - parcel: Yreka Parcel, Siskiyou County, CA
+    legal_theory: Restored lands
+    accepted: true
+    date: '2012-04-09'
+    link: https://www.nigc.gov?wpdmdl=2647&ind=2648
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Karuk Tribe of California, 2012-04-09
+    note: The list names the tribe as “Karuk Tribe of California”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

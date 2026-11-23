@@ -586,6 +586,78 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort Sill Apache Tribe of
       Oklahoma". Facilities as machine-extracted from the report text (verify): Warm Springs Casino; Apache
       Casino Hotel. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Original Comanche allotment in Former Kiowa Comanche, Apache Reservation
+    legal_theory: Settlement Agreement
+    accepted: true
+    date: '2007-03-08'
+    link: https://www.nigc.gov?wpdmdl=2594&ind=2595
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Fort Sill Apache Tribe of Oklahoma, 2007-03-08
+    note: The list names the tribe as “Fort Sill Apache Tribe of Oklahoma”.
+  - parcel: Akela Flats, Luna County, NM
+    legal_theory: Last Recognized Reservation
+    accepted: false
+    date: '2008-05-19'
+    link: https://www.nigc.gov?wpdmdl=2612&ind=2613
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Fort Sill Apache Tribe of Oklahoma, 2008-05-19
+    note: The list names the tribe as “Fort Sill Apache Tribe of Oklahoma”.
+  - parcel: Akela Flats, Luna County, NM
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2008-05-19'
+    link: https://www.nigc.gov?wpdmdl=2614&ind=2613
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Fort Sill Apache Tribe of Oklahoma, 2008-05-19
+    note: The list names the tribe as “Fort Sill Apache Tribe of Oklahoma”.
+  - parcel: Akela Flats, Luna County, NM
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2009-04-30'
+    link: https://www.nigc.gov?wpdmdl=2633&ind=2634
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Fort Sill Apache Tribe of Oklahoma, 2009-04-30
+    note: The list names the tribe as “Fort Sill Apache Tribe of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-06
+    date: '2005-03-16'
+    link: https://www.nigc.gov?wpdmdl=8194&ind=8216
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-06
+    note: The list titles the action “Fort Sill Apache Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-05-06
+    date: '2005-04-29'
+    link: https://www.nigc.gov?wpdmdl=8173&ind=8205
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-05-06
+    note: The list titles the action “Fort Sill Apache Tribe of Oklahoma” and gives its type as CFA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-35
+    date: '2009-07-21'
+    link: https://www.nigc.gov?wpdmdl=7782&ind=7798
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-35
+    note: The list titles the action “Fort Sill Apache Tribe of Oklahoma” and gives its type as NOV.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

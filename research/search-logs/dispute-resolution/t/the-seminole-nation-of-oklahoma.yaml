@@ -54,5 +54,35 @@ searches:
   outcome: not-found
   reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
     court lists, with no page showing dispute resolution wording for this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/323bb1796716368c54aa.txt
+  query: Section 809. Internal Dispute Resolution Policy
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/the-seminole-nation-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/seminole_nation_ok/
+  query: s. 809 link
+  outcome: found
+  reason: Linked to Title 11 PDF.
+  records:
+  - content/tribes/t/the-seminole-nation-of-oklahoma.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nation-website
+  address: sno-nsn.gov Title 11 PDF
+  query: s. 809
+  outcome: found
+  reason: Read via summary at offset 100000.
+  records:
+  - content/tribes/t/the-seminole-nation-of-oklahoma.yaml#dispute_resolution.provisions
 next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
   (Gate 1) before any record goes into the profile.

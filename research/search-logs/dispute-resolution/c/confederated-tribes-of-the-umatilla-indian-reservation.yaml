@@ -1,7 +1,7 @@
 profile: content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -230,3 +230,63 @@ searches:
   query: Umatilla "Claimant Attorney's Fees and Other Related Arbitration Costs"
   outcome: not-found
   reason: The results were unrelated.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/ctuir-family-law-code-thru-res-24-017-2024-03-04.pdf
+  query: Section 4.03. Mediation
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/9f73e9a4f1b0a0bf1c56.txt
+  query: Section 4.03. Mediation
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/ctuir-family-law-code-thru-res-24-017-2024-03-04.pdf
+  query: Section 7.06. Dispute Resolution Included in Plan
+  outcome: found
+  reason: Read the text in the project's private copy.
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/9f73e9a4f1b0a0bf1c56.txt
+  query: Section 7.06. Dispute Resolution Included in Plan
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/ctuir-tort-claims-code-thru-res-21-066-2021-07-19.pdf
+  query: Section 9.03. Claimant Attorney's Fees and Other Related Arbitration Costs
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Umatilla Section 9.03 Claimant Attorney's Fees
+  outcome: found
+  reason: CTUIR workers benefit code PDF
+  records:
+  - content/tribes/c/confederated-tribes-of-the-umatilla-indian-reservation.yaml#dispute_resolution.provisions

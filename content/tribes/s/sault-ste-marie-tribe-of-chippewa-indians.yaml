@@ -415,27 +415,22 @@ dispute_resolution:
       name: Bekaadziiwiin
       language_tag: oj
       translation: Peaceful Life (as given in the section heading)
-    description: A peacemaking diversion under guidelines promulgated by the Tribal Court; the Tribal
-      Peacemaking Committee reviews cases presented by the Tribal Prosecutor and may decline action, refer
-      to Bekaadziiwiin for peacemaking, develop a case plan, or refer to the Juvenile Division.
+    description: Peacemaking under the Juvenile Code's Bekaadziiwiin (Peaceful Life) section. The Tribal Court promulgates the guidelines. The Tribal Prosecutor presents cases that meet the guidelines to the Tribal Peacemaking Committee, which may decide not to proceed, refer the matter to Bekaadziiwiin for peacemaking, develop a case plan for the juvenile, or refer the matter to the Juvenile Division. Peacemakers may hear juvenile offenses, juvenile status offenses, other cases referred by the Tribal Court, and cases from tribal members who ask to use peacemaking voluntarily.
     legal_basis: Sault Ste. Marie Tribal Code Chapter 36, § 36.405
     case_types:
     - juvenile
     - criminal-diversion
     - other
     participation: voluntary-or-court-referred
-    relationship_to_court: Peacemakers may hear juvenile offenses, juvenile status offenses, other cases
-      referred by the Tribal Court, and cases from tribal members who voluntarily request peacemaking;
-      the Committee may ask the prosecutor to file a formal petition if a case plan is not substantially
-      followed.
-    link: https://www.saulttribe.com/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: Peacemakers may hear juvenile offenses, juvenile status offenses, other cases referred by the Tribal Court, and cases from tribal members who voluntarily request peacemaking; the Committee may ask the prosecutor to file a formal petition if a case plan is not substantially followed.
+    link: https://www.saulttribe.com/images/downloads/government/tribal%20code/Chapter-036.pdf
+    source: sault-ste-marie-tribal-code-chapter-36-juvenile
     confidence: medium
-    verification: inferred
-    as_of: '2026'
-    locator: https://ncorj.org/tribal-law/bekaadziiwiin-peaceful-life-peacemaking-diversion/
-    note: The code spells the term both Bekaadziiwiin and Bekaadziiwin. Language tag oj (Ojibwe) assigned
-      from the Tribe's identity; the source does not name the language.
+    verification: read-in-full
+    as_of: '2020-05-05'
+    locator: Tribal Code Chapter 36 (Juvenile Code), Section 36.405(1)-(4), pp. 36-21 to 36-22
+    note: 'Read in full on 2026-11-23 (Sault Ste. Marie Tribe of Chippewa Indians Tribal Code, Chapter 36: Juvenile Code (Res. 2000-27; amended through Res. 2020-101, May 5, 2020)). Read in full from the Tribe''s Tribal Code Chapter 36 PDF, replacing the earlier NCORJ-based record. The code spells the term both Bekaadziiwiin and Bekaadziiwin. Language tag oj (Ojibwe) assigned from the Tribe''s identity; the code does not name the language. ''Diversion'' is the record''s label for the pre-petition options; the code does not use the word. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 479.'
+    enforcement: If the case plan has not been substantially followed, the Tribal Peacemaking Committee may ask the Tribal Prosecutor to file a formal juvenile petition (36.405(3)). The section does not say that peacemaking agreements are otherwise binding.
   provisions:
   - kind: arbitration
     title: 'CHAPTER 95: ARBITRATION ORDINANCE'
@@ -557,6 +552,47 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Sault Ste. Marie Tribe of Chippewa
       Indians of Michigan". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: St. Ignace Parcel, Mackinac County, MI
+    legal_theory: Contiguous to Reservation
+    accepted: false
+    date: '2006-02-14'
+    link: https://www.nigc.gov?wpdmdl=2584&ind=2585
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Sault Ste. Marie Tribe of Chippewa Indians, 2006-02-14
+    note: The list names the tribe as “Sault Ste. Marie Tribe of Chippewa Indians”.
+  - parcel: St. Ignace Parcel, Mackinac County, MI
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2006-07-31'
+    link: https://www.nigc.gov?wpdmdl=2586&ind=2587
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Sault Ste. Marie Tribe of Chippewa Indians, 2006-07-31
+    note: The list names the tribe as “Sault Ste. Marie Tribe of Chippewa Indians”.
+  - parcel: St. Ignace Parcel, Mackinac County, MI
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2006-09-01'
+    link: https://www.nigc.gov?wpdmdl=2588&ind=2589
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Sault Ste. Marie Tribe of Chippewa Indians, 2006-09-01
+    note: The list names the tribe as “Sault Ste. Marie Tribe of Chippewa Indians”.
+  - parcel: St. Ignace Parcel, Mackinac County, MI
+    legal_theory: Contiguous to Reservation
+    accepted: false
+    date: '2006-12-08'
+    link: https://www.nigc.gov?wpdmdl=2592&ind=2593
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Sault Ste. Marie Tribe of Chippewa Indians, 2006-12-08
+    note: The list names the tribe as “Sault Ste. Marie Tribe of Chippewa Indians”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

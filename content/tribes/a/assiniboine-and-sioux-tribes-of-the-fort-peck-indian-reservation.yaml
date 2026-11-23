@@ -550,6 +550,57 @@ gaming:
       of the Fort Peck Reservation". Facilities as machine-extracted from the report text (verify): Fred''s
       Grill and Casino fka B & S Laundry; Tavern Casino; Tribal Express Casino; T.J.''s Quick Stop; Silver
       Wolf Casino; Git-N-Go. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-08
+    date: '2005-03-16'
+    link: https://www.nigc.gov?wpdmdl=8192&ind=8213
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-08
+    note: The list titles the action “Fort Peck Reservation” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-08
+    date: '2005-03-16'
+    link: https://www.nigc.gov?wpdmdl=8193&ind=8214
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-08
+    note: The list titles the action “Fort Peck Reservation” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-12
+    date: '2006-07-19'
+    link: https://www.nigc.gov?wpdmdl=8112&ind=8134
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-12
+    note: The list titles the action “Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-10
+    date: '2008-06-27'
+    link: https://www.nigc.gov?wpdmdl=8026&ind=8037
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-10
+    note: The list titles the action “Assiniboine and Sioux Tribes of Fort Peck” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-10
+    date: '2008-08-21'
+    link: https://www.nigc.gov?wpdmdl=7999&ind=8010
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-10
+    note: The list titles the action “Assiniboine and Sioux Tribes of the Fort Peck Reservation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

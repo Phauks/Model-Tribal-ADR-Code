@@ -526,22 +526,21 @@ dispute_resolution:
   forums:
   - kind: peacemaking
     name: Peacemakers of the District Court (Kiowa Tribe Peacemaking Act)
-    description: The Act authorizes the District Court of the Kiowa Tribe to use peacemakers and provides
-      for use of Kiowa Tribe traditions and customs, referral of existing actions, agreements and proposed
-      orders, and enforcement of orders.
+    description: The Act authorizes the District Court of the Kiowa Tribe to use peacemakers, as a court division operating under Kiowa customs and traditions, to resolve disputes in a fair, informal and inexpensive way. Parties may request peacemaking in writing or move to refer a pending case, and the court may refer on its own motion only if all parties consent. A peacemaker cannot force a resolution; a peacemaker may decide a referred matter only if all parties agree to be bound.
     legal_basis: Kiowa Tribe Peacemaking Act, Sections 1-18
     case_types:
     - civil
     - other
     participation: voluntary-or-court-referred
     link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    source: kiowa-tribe-court-codes
     confidence: medium
-    verification: title-only
+    verification: read-in-full
     as_of: '2026'
-    locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
-    note: Details from the Act's table of contents and opening section as quoted by NCORJ; the structure
-      parallels the Choctaw Nation and Chickasaw Nation acts.
+    locator: Kiowa Tribe Peacemaking Act, Sections 2-16 (Kiowa Tribe Court Codes pp. 1-7)
+    note: 'Read in full on 2026-11-23 from page images (Kiowa Tribe Peacemaking Act, in Kiowa Tribe Court Codes (approval date per first reader: Resolution KL-CY-2020-0007, Aug. 8, 2020; not re-checked)). Read from the Kiowa Tribe Court Codes (scanned PDF): Sections 2-16 read from page images; Sections 1 (title only), 17 and 18 not read. Section 4 lets a peacemaker decide a referred matter only if all parties agree to be bound. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 210.'
+    relationship_to_court: Peacemaking is a division of the District Court, which assigns, supervises and certifies peacemakers. The court refers cases by order on a party's request or motion (it must grant a joint motion) or on its own motion with all parties' consent; unresolved matters go back to the court.
+    enforcement: The parties' signed written agreement and proposed order are reviewed by the District Court and, if sufficient, entered as a final, non-appealable order, enforceable like any other order of the District Court (Section 13). Statements made in peacemaking are not admissible in court proceedings.
   provisions:
   - kind: peacemaking
     title: Kiowa Tribe Peacemaking Act
@@ -672,6 +671,58 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kiowa Tribe of Oklahoma".
       Facilities as machine-extracted from the report text (verify): Kiowa Casino Carnegie; Kiowa Casino
       Red River. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Cotton County, OK
+    legal_theory: Indian Lands Oklahoma
+    accepted: true
+    date: '2005-11-15'
+    link: https://www.nigc.gov?wpdmdl=2580&ind=2581
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Kiowa Tribe of Oklahoma, 2005-11-15
+    note: The list names the tribe as “Kiowa Tribe of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-99-06
+    date: '1999-04-01'
+    link: https://www.nigc.gov?wpdmdl=1941&ind=1942
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-99-06
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - closure-order
+    tracking_number: CO-99-06
+    date: '1999-04-01'
+    link: https://www.nigc.gov?wpdmdl=1943&ind=1944
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-99-06
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-00-03
+    date: '2000-01-19'
+    link: https://www.nigc.gov?wpdmdl=2022&ind=2023
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-00-03
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - pre-opening-agreement
+    tracking_number: POA-00-08
+    date: '2005-08-31'
+    link: https://www.nigc.gov?wpdmdl=8169&ind=8180
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA-00-08
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as POA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

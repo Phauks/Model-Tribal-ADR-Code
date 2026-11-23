@@ -826,6 +826,47 @@ gaming:
     locator: table row 274, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 274 lists the nation
       as "Standing Rock Sioux Tribe". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-04-03
+    date: '2004-07-06'
+    link: https://www.nigc.gov?wpdmdl=8229&ind=8240
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-04-03
+    note: The list titles the action “Standing Rock Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-04-03
+    date: '2004-08-17'
+    link: https://www.nigc.gov?wpdmdl=8204&ind=8237
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-04-03
+    note: The list titles the action “Standing Rock Sioux Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-11
+    date: '2005-02-17'
+    link: https://www.nigc.gov?wpdmdl=8198&ind=8220
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-11
+    note: The list titles the action “Standing Rock Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-11
+    date: '2005-09-21'
+    link: https://www.nigc.gov?wpdmdl=8168&ind=8179
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-11
+    note: The list titles the action “Standing Rock Sioux Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

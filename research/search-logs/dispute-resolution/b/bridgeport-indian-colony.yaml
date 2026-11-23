@@ -1,7 +1,7 @@
 profile: content/tribes/b/bridgeport-indian-colony.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -36,3 +36,33 @@ searches:
   address: https://narf.org/nill/codes/bridgeport/index.html
   outcome: not-found
   reason: Retry found no text of the arbitration ordinance.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/459dcb0f41958a53cb58.txt
+  query: Amended arbitration ordinance, 94-4 -- Certification.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/b/bridgeport-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/bridgeport-indian-colony/163bd68816441800.pdf
+  query: Amended arbitration ordinance, 94-4 -- Certification.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/b/bridgeport-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Bridgeport Paiute Indian Colony amended arbitration ordinance 94-4
+  outcome: not-found
+  reason: Only NILL index and unrelated gaming ordinances returned
+  records:
+  - content/tribes/b/bridgeport-indian-colony.yaml#dispute_resolution.provisions

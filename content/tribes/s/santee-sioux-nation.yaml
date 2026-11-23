@@ -339,21 +339,18 @@ dispute_resolution:
   forums:
   - kind: elders-council
     name: Forum for Traditional Dispute Resolution
-    description: The Court Administrator is directed to seek the assistance of Santee Sioux Nation elders
-      to establish a traditional forum to provide guidance and assist the Judiciary with cases involving
-      members.
-    legal_basis: Santee Sioux Nation Code, Title I, Chapter 1, Section 19
+    description: The Court Administrator is directed to seek the assistance of Santee Sioux Nation elders to establish a traditional forum to provide guidance and assist the Judiciary with cases involving members.
+    legal_basis: Santee Sioux Nation Judiciary Act of 2000, Title I, Chapter 1, Section 19
     case_types:
     - other
-    relationship_to_court: Assists the Judiciary whenever possible; a written report on its formation
-      was due to the Tribal Council within twelve months of the Act.
-    link: https://www.narf.org/nill/codes/santee_sioux_nation/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    relationship_to_court: Assists the Judiciary whenever possible; a written report on its formation was due to the Tribal Council within twelve months of the Act.
+    link: https://nill.narf.org/codes/santee_sioux_nation/title1.PDF
+    source: santee-sioux-judiciary-act-2000
     confidence: medium
-    verification: bulk-import
+    verification: read-in-full
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/forum-for-traditional-dispute-resolution-with-elders/
-    note: The provision directs establishment of the forum; whether it is operating was not verified.
+    note: Read in full on 2026-11-23 (Santee Sioux Nation Judiciary Act of 2000, Title I, Chapter 1 (Santee Sioux Nation Tribal Court)). The provision directs establishment of the forum; whether it is operating was not verified. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 476.
   database_listings:
   - title: Forum for Traditional Dispute Resolution with Elders
     citation: Title I, Chapter 1, Section 19
@@ -410,6 +407,37 @@ gaming:
     locator: table row 246, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 246 lists the nation
       as "Santee Sioux Nation".
+  enforcement_actions:
+  - kinds:
+    - closure-order
+    tracking_number: CO-96-01
+    date: '1996-04-25'
+    link: https://www.nigc.gov?wpdmdl=1863&ind=1864
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-96-01
+    note: The list titles the action “Santee Sioux – Dissolution of Closure Order” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-33
+    date: '2009-06-16'
+    link: https://www.nigc.gov?wpdmdl=7805&ind=7816
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-33
+    note: The list titles the action “Santee Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-33
+    date: '2009-07-15'
+    link: https://www.nigc.gov?wpdmdl=7784&ind=7799
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-33
+    note: The list titles the action “Santee Sioux Nation” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: retroceded

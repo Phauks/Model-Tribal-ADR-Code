@@ -733,12 +733,13 @@ dispute_resolution:
       to end the joint custody decree if a party refuses mediation.
   published_materials:
   - kind: guide
-    title: 'Peacemaking: A Way of Life (presentation with Peacemaking Court forms, rules and procedures)'
+    title: 'Peacemaking: A Way of Life (Chickasaw Nation presentation, October 23, 2007, with Peacemaking Court forms, process outline, and Peacemaking Court Act rules and procedures)'
     link: https://peacemaking.narf.org/wp-content/uploads/2018/09/peacemaking-way-life.pdf
-    source: narf-ipi-other-tribal-materials
+    source: chickasaw-peacemaking-a-way-of-life-2007
     confidence: medium
-    verification: title-only
-    as_of: '2025-10-15'
+    verification: read-in-full
+    as_of: '2007-10-23'
+    note: 'Read in full on 2026-11-23 from page images (Peacemaking: A Way of Life, presented by Justice Barbara Smith and Jason Burwell, the Chickasaw Nation, October 23, 2007). Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 553.'
   database_listings:
   - title: Peacemaker for Pretrial Conferences
     citation: '"5. COURTS AND PROCEDURES"'
@@ -876,6 +877,27 @@ gaming:
       Washita Casino; Border Casino; Treasure Valley Casino; Texoma Casino; Chickasaw Travel Stop - Thackerville
       Gaming; Salt Creek Casino; Gold Mountain Casino - Ardmore; Riverwind Casino. Name extracted from
       the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - other-order
+    tracking_number: NOV-02-05
+    date: '2002-06-17'
+    link: https://www.nigc.gov?wpdmdl=8256&ind=8267
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-02-05
+    note: The list titles the action “Chickasaw Nation” and gives its type as ORD.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-02-01
+    date: '2002-06-17'
+    link: https://www.nigc.gov?wpdmdl=8257&ind=8280
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-02-01
+    note: The list titles the action “Chickasaw Nation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

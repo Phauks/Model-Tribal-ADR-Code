@@ -589,6 +589,43 @@
       "additionalProperties": false,
       "description": "Gaming under the Indian Gaming Regulatory Act (25 U.S.C. §§ 2701-2721).",
       "properties": {
+        "indian_lands_opinions": {
+          "type": "array",
+          "description": "Opinions of the National Indian Gaming Commission or the Interior Department's Solicitor on whether the nation may game on a parcel under 25 U.S.C. §§ 2703 and 2719, one fact per opinion.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["parcel", "date"],
+            "properties": {
+              "parcel": { "type": "string", "description": "The parcel as the Commission's list names it." },
+              "legal_theory": { "type": "string", "description": "The ground claimed, such as restored lands or within the reservation." },
+              "accepted": { "type": "boolean", "description": "Whether the opinion accepted that ground." },
+              "date": { "$ref": "common.schema.json#/$defs/partialDate" },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "enforcement_actions": {
+          "type": "array",
+          "description": "Enforcement actions of the Chair of the National Indian Gaming Commission against the nation or its gaming regulator (25 C.F.R. part 573), and settlement and pre-opening agreements in their place, one fact per action.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["kinds", "tracking_number", "date"],
+            "properties": {
+              "kinds": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "string", "enum": ["notice-of-violation", "settlement-agreement", "civil-fine-assessment", "closure-order", "temporary-closure-order", "pre-opening-agreement", "other-order"] }
+              },
+              "tracking_number": { "type": "string" },
+              "date": { "$ref": "common.schema.json#/$defs/partialDate" },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
         "operates_gaming": {
           "type": "object",
           "$ref": "#/$defs/citedFact",

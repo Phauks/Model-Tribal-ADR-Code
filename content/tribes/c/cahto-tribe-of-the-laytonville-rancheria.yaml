@@ -411,6 +411,27 @@ gaming:
     locator: table row 29, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 29 lists the nation
       as "Cahto Indian Tribe of the Laytonville Rancheria". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-05
+    date: '2009-02-03'
+    link: https://www.nigc.gov?wpdmdl=7922&ind=7944
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-05
+    note: The list titles the action “Cahto Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-05
+    date: '2009-03-02'
+    link: https://www.nigc.gov?wpdmdl=7914&ind=7925
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-05
+    note: The list titles the action “Cahto Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

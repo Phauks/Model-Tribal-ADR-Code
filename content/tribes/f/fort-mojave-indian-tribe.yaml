@@ -559,6 +559,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort Mojave Indian Tribe".
       Facilities as machine-extracted from the report text (verify): Avi Casino; Spirit Mountain Casino.
       Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-23
+    date: '2009-04-17'
+    link: https://www.nigc.gov?wpdmdl=7870&ind=7882
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-23
+    note: The list titles the action “Fort Mojave Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-23
+    date: '2009-05-15'
+    link: https://www.nigc.gov?wpdmdl=7831&ind=7842
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-23
+    note: The list titles the action “Fort Mojave Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

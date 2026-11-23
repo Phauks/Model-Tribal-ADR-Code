@@ -513,6 +513,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Catawba Indian Nation". Facilities
       as machine-extracted from the report text (verify): Catawba Two Kings Casino. Name extracted from
       the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV 22-03
+    date: '2022-12-06'
+    link: https://www.nigc.gov?wpdmdl=2980&ind=2981
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV 22-03
+    note: The list titles the action “Catawba Indian Nation” and gives its type as NOV.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

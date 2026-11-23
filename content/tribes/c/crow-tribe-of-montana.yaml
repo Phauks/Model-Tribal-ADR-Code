@@ -800,6 +800,147 @@ gaming:
     locator: table row 67, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 67 lists the nation
       as "Crow Tribe of Montana".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-04-02
+    date: '2004-06-10'
+    link: https://www.nigc.gov?wpdmdl=8231&ind=8242
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-04-02
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-04-02
+    date: '2004-07-21'
+    link: https://www.nigc.gov?wpdmdl=8228&ind=8239
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-04-02
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-10
+    date: '2006-04-26'
+    link: https://www.nigc.gov?wpdmdl=8130&ind=8141
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-10
+    note: The list titles the action “Crow Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-10
+    date: '2006-08-22'
+    link: https://www.nigc.gov?wpdmdl=8106&ind=8117
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-10
+    note: The list titles the action “Crow Indian Tribe” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-07-CTI
+    date: '2007-10-12'
+    link: https://www.nigc.gov?wpdmdl=8065&ind=8076
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-07-CTI
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: ASA1-07-CTI
+    date: '2009-04-20'
+    link: https://www.nigc.gov?wpdmdl=7869&ind=7881
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row ASA1-07-CTI
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-29
+    date: '2009-05-18'
+    link: https://www.nigc.gov?wpdmdl=7828&ind=7839
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-29
+    note: The list titles the action “Crow Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: ASA2-07-CTI
+    date: '2009-06-06'
+    link: https://www.nigc.gov?wpdmdl=7807&ind=7818
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row ASA2-07-CTI
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-29
+    date: '2009-07-07'
+    link: https://www.nigc.gov?wpdmdl=7787&ind=7814
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-29
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: ASA3-07-CTI
+    date: '2009-09-16'
+    link: https://www.nigc.gov?wpdmdl=7778&ind=7794
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row ASA3-07-CTI
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: ASA4-07-CTI
+    date: '2010-10-25'
+    link: https://www.nigc.gov?wpdmdl=7759&ind=7771
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row ASA4-07-CTI
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-17-03
+    date: '2017-08-03'
+    link: https://www.nigc.gov?wpdmdl=7708&ind=7719
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-17-03
+    note: The list titles the action “Crow Tribe” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-17-03
+    date: '2017-11-27'
+    link: https://www.nigc.gov?wpdmdl=7706&ind=7717
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-17-03
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-17-03
+    date: '2017-12-28'
+    link: https://www.nigc.gov?wpdmdl=7705&ind=7716
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-17-03
+    note: The list titles the action “Crow Tribe of Montana” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

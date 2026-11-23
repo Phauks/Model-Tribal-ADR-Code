@@ -347,6 +347,27 @@ gaming:
     locator: table row 215, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 215 lists the nation
       as "Pueblo of Tesuque".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-16
+    date: '2008-08-21'
+    link: https://www.nigc.gov?wpdmdl=8002&ind=8013
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-16
+    note: The list titles the action “Pueblo of Tesuque” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-16
+    date: '2008-09-25'
+    link: https://www.nigc.gov?wpdmdl=7979&ind=7990
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-16
+    note: The list titles the action “Pueblo of Tesuque” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

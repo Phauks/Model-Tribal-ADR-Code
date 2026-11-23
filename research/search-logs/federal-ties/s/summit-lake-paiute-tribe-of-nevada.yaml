@@ -29,3 +29,11 @@ searches:
   query: How the nation's reservation was set aside
   outcome: not-found
   reason: 'Candidate: Exec. Order No. 1681 (Jan. 14, 1913). Not entered: Order sets aside land in T. 42 N., R. 26 E. for "Paiute and Shoshoni Indians" without naming Summit Lake. Not linked.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: not-found
+  reason: Neither list names the nation.

@@ -100,5 +100,65 @@ searches:
   query: 'this nation''s entry: justice system, cases heard, diversion agreements'
   outcome: not-found
   reason: 'Entry (pp. 96-97): active court "Not currently", with interest in one; no cases listed.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/02fd2725390aa99354da.txt
+  query: Article 5. Court of Elders
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/native-village-of-white-mountain.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/native-village-of-white-mountain/10c5bb54252d64e8.txt,
+  query: Article 5. Court of Elders
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/native-village-of-white-mountain.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/native_white_mountain/
+  query: Art. 5 Court of Elders
+  outcome: not-found
+  reason: Contents only.
+  records:
+  - content/tribes/n/native-village-of-white-mountain.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/02fd2725390aa99354da.txt
+  query: 'Ordinance No. 87-03: Ordinance Establishing a Court of Elders'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/native-village-of-white-mountain.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: constitutions/native-village-of-white-mountain/*
+  query: 'Ordinance No. 87-03: Ordinance Establishing a Court of Elders'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/n/native-village-of-white-mountain.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/native_white_mountain/
+  query: Ordinance 87-03
+  outcome: not-found
+  reason: Contents only.
+  records:
+  - content/tribes/n/native-village-of-white-mountain.yaml#dispute_resolution.provisions
 next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
   (Gate 1) before any record goes into the profile.

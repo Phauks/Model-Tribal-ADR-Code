@@ -1,7 +1,7 @@
 profile: content/tribes/r/reno-sparks-indian-colony.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -103,3 +103,93 @@ searches:
   outcome: not-found
   reason: Search returned only NILL and unrelated tribal-law summaries; no copy of the Colony's Title
     6 text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/240599592d4594d07853.txt
+  query: Part 9. Informal Conference, Mediation or Conflict Resolution Gathering
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/reno-sparks-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/56416b2e0bd30e0181ee.txt
+  query: Part 9. Informal Conference, Mediation or Conflict Resolution Gathering
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/reno-sparks-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/adcdd232ff9832ba60f4.txt
+  query: Part 9. Informal Conference, Mediation or Conflict Resolution Gathering
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/reno-sparks-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: gaming/ordinances/reno-sparks-indian-colony/renosparksindiancolony-renosparksord110893.txt
+  query: Part 9. Informal Conference, Mediation or Conflict Resolution Gathering
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/reno-sparks-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: Reno-Sparks Tribal Code 6-1-901 informal conference mediation conflict resolution gathering
+  outcome: not-found
+  reason: only NILL TOC and other nations' texts
+  records:
+  - content/tribes/r/reno-sparks-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/reno-sparks/
+  query: table of contents
+  outcome: found
+  reason: TOC only; no full text linked
+  records:
+  - content/tribes/r/reno-sparks-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/240599592d4594d07853.txt
+  query: Arbitration.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/reno-sparks-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/56416b2e0bd30e0181ee.txt
+  query: Arbitration.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/reno-sparks-indian-colony.yaml#dispute_resolution.provisions
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: tribal-law/documents/adcdd232ff9832ba60f4.txt
+  query: Arbitration.
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/r/reno-sparks-indian-colony.yaml#dispute_resolution.provisions

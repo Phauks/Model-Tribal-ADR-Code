@@ -616,6 +616,68 @@ gaming:
     locator: table row 168, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 168 lists the nation
       as "Nooksack Indian Tribe".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-12
+    date: '2008-07-25'
+    link: https://www.nigc.gov?wpdmdl=8021&ind=8032
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-12
+    note: The list titles the action “Nooksack Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-12
+    date: '2008-08-22'
+    link: https://www.nigc.gov?wpdmdl=7998&ind=8009
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-12
+    note: The list titles the action “Nooksack Indian Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-38
+    date: '2009-09-30'
+    link: https://www.nigc.gov?wpdmdl=7766&ind=7792
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-38
+    note: The list titles the action “Nooksack Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-38
+    date: '2009-10-23'
+    link: https://www.nigc.gov?wpdmdl=7764&ind=7775
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-38
+    note: The list titles the action “Nooksack Indian Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    - temporary-closure-order
+    tracking_number: NOV/TCO-17-02
+    date: '2017-06-15'
+    link: https://www.nigc.gov?wpdmdl=7709&ind=7720
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/TCO-17-02
+    note: The list titles the action “Nooksack Indian Tribe” and gives its type as NOV/TCO.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-17-02
+    date: '2017-09-08'
+    link: https://www.nigc.gov?wpdmdl=7707&ind=7718
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-17-02
+    note: The list titles the action “Nooksack Indian Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

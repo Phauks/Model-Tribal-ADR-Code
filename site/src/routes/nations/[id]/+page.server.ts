@@ -575,8 +575,41 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 				})
 			)
 		),
-		...group('indian_health_service', 'Indian Health Service', healthItems(record, sources, section))
+		...group('indian_health_service', 'Indian Health Service', healthItems(record, sources, section)),
+		...group(
+			'indian-lands-opinions',
+			'Indian lands opinions on gaming',
+			[...(record.gaming?.indian_lands_opinions ?? [])]
+				.sort((first, second) => first.date.localeCompare(second.date))
+				.map((fact) =>
+					cited(sources, section, fact, {
+						text: fact.parcel,
+						link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+						detail: [readableDate(fact.date), fact.legal_theory, fact.accepted === undefined ? undefined : fact.accepted ? 'accepted' : 'not accepted']
+							.filter(Boolean)
+							.join(', ')
+					})
+				)
+		),
+		...group(
+			'gaming-enforcement-actions',
+			'Gaming Commission enforcement actions',
+			[...(record.gaming?.enforcement_actions ?? [])]
+				.sort((first, second) => first.date.localeCompare(second.date))
+				.map((fact) =>
+					cited(sources, section, fact, {
+						text: sentenceCase(fact.kinds.map(humanize).join(' and ')),
+						link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+						detail: `${fact.tracking_number}, ${readableDate(fact.date)}`
+					})
+				)
+		)
 	];
+}
+
+/** The first letter in capitals, the rest as given. */
+function sentenceCase(text: string): string {
+	return text.charAt(0).toLocaleUpperCase('en-US') + text.slice(1).toLocaleLowerCase('en-US');
 }
 
 /**

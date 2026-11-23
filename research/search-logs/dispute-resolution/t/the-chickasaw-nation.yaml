@@ -1,7 +1,7 @@
 profile: content/tribes/t/the-chickasaw-nation.yaml
 topic: dispute-resolution
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -133,3 +133,33 @@ searches:
     order (own page, then directory entry): own-page, https://judicial.chickasaw.net/Courts/Peacemaking-Court.aspx.'
   records:
   - research/reviews/2026-11-22-service-links.json#service-369
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: cited-pages/c/chickasaw-peacemaking-court-page.html
+  query: 'Peacemaking: A Way of Life (presentation with Peacemaking Court forms, rules and procedures)'
+  outcome: not-found
+  reason: The project's copy does not hold the text (an index, table of contents or other document).
+  records:
+  - content/tribes/t/the-chickasaw-nation.yaml#dispute_resolution.published_materials
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: 'Chickasaw Nation Peacemaking: A Way of Life presentation'
+  query: Chickasaw Peacemaking A Way of Life
+  outcome: found
+  reason: NARF materials page and Chickasaw court page returned.
+  records:
+  - content/tribes/t/the-chickasaw-nation.yaml#dispute_resolution.published_materials
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://peacemaking.narf.org/wp-content/uploads/2018/09/peacemaking-way-life.pdf
+  query: pdf
+  outcome: found
+  reason: Fetched, summary only.
+  records:
+  - content/tribes/t/the-chickasaw-nation.yaml#dispute_resolution.published_materials

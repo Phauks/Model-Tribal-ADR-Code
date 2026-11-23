@@ -635,6 +635,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "San Carlos Apache Tribe of the
       San Carlos Reservation". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-08
+    date: '2008-05-30'
+    link: https://www.nigc.gov?wpdmdl=8041&ind=8052
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-08
+    note: The list titles the action “San Carlos Apache Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-08
+    date: '2008-08-01'
+    link: https://www.nigc.gov?wpdmdl=8019&ind=8030
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-08
+    note: The list titles the action “San Carlos Apache Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

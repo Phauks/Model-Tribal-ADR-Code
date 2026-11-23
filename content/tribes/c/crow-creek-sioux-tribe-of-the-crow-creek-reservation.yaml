@@ -608,6 +608,77 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Crow Creek Sioux Tribe of
       the Crow Creek Reservation". Facilities as machine-extracted from the report text (verify): Lode
       Star Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-05
+    date: '2008-05-21'
+    link: https://www.nigc.gov?wpdmdl=8046&ind=8057
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-05
+    note: The list titles the action “Crow Creek Tribe” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-08-05
+    date: '2008-06-27'
+    link: https://www.nigc.gov?wpdmdl=8027&ind=8049
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-08-05
+    note: The list titles the action “Crow Creek Tribe” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-05
+    date: '2008-07-14'
+    link: https://www.nigc.gov?wpdmdl=8023&ind=8034
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-05
+    note: The list titles the action “Crow Creek Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-16
+    date: '2009-04-01'
+    link: https://www.nigc.gov?wpdmdl=7877&ind=7889
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-16
+    note: The list titles the action “Crow Creek Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-16
+    date: '2009-04-29'
+    link: https://www.nigc.gov?wpdmdl=7851&ind=7862
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-16
+    note: The list titles the action “Crow Creek Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-30
+    date: '2009-06-04'
+    link: https://www.nigc.gov?wpdmdl=7809&ind=7820
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-30
+    note: The list titles the action “Crow Creek Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-30
+    date: '2009-07-13'
+    link: https://www.nigc.gov?wpdmdl=7786&ind=7801
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-30
+    note: The list titles the action “Crow Creek Sioux Tribe of the Crow Reservation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

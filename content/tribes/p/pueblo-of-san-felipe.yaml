@@ -472,6 +472,17 @@ gaming:
     locator: table row 208, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 208 lists the nation
       as "Pueblo of San Felipe".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-04-04
+    date: '2004-08-11'
+    link: https://www.nigc.gov?wpdmdl=8227&ind=8238
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-04-04
+    note: The list titles the action “San Felipe Pueblo” and gives its type as NOV.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -484,20 +484,15 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: mediation
-    title: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic Abuse
-      Cases Prohibited.
-    citation: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic
-      Abuse Cases Prohibited.
+    title: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic Abuse Cases Prohibited.
+    citation: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic Abuse Cases Prohibited.
     link: https://narf.org/nill/codes/ponca_oklahoma/index.html
     source: national-indian-law-library-code-codes-ponca-oklahoma
     confidence: medium
     verification: title-only
     as_of: '2013'
     locator: Table of Contents, under 'Tab C. Domestic and Family Violence Code'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
-      April 2013); the provision itself was not read. The heading it falls under is taken from the page
-      layout and may be imprecise. Searched for the text on 2026-11-22 and not read. Places searched:
-      research/search-logs/dispute-resolution/p/ponca-tribe-of-indians-of-oklahoma.yaml.'
+    note: 'The heading it falls under is taken from the page layout and may be imprecise. Not confirmed from the nation''s own text on 2026-11-23: no copy of the text was found online (the National Indian Law Library often notes that the nation has not allowed full text online); see the pull list and the nation''s search log. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 404.'
 gaming:
   compacts:
   - state: OK
@@ -582,6 +577,48 @@ gaming:
     locator: table row 196, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 196 lists the nation
       as "Ponca Tribe of Indians of Oklahoma".
+  indian_lands_opinions:
+  - parcel: Noble County, Oklahoma
+    legal_theory: Settlement of Land Claim
+    accepted: true
+    date: '2017-01-25'
+    link: https://www.nigc.gov?wpdmdl=2669&ind=2670
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Ponca Tribe of Oklahoma, 2017-01-25
+    note: The list names the tribe as “Ponca Tribe of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV/CO-02-03
+    date: '2002-05-01'
+    link: https://www.nigc.gov?wpdmdl=8273&ind=8285
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/CO-02-03
+    note: The list titles the action “Ponca Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - closure-order
+    tracking_number: CO-02-03
+    date: '2002-05-08'
+    link: https://www.nigc.gov?wpdmdl=8272&ind=8284
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-02-03
+    note: The list titles the action “Ponca Tribe of Oklahoma” and gives its type as CO.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-PTO
+    date: '2013-05-13'
+    link: https://www.nigc.gov?wpdmdl=7744&ind=7751
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-PTO
+    note: The list titles the action “Ponca Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

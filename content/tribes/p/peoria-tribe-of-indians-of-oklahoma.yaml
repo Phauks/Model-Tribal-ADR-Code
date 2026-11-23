@@ -610,6 +610,47 @@ gaming:
     locator: table row 190, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 190 lists the nation
       as "Peoria Tribe of Indians of Oklahoma".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-21
+    date: '2008-09-26'
+    link: https://www.nigc.gov?wpdmdl=7978&ind=7989
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-21
+    note: The list titles the action “Peoria Tribe of Indians of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-21
+    date: '2008-10-15'
+    link: https://www.nigc.gov?wpdmdl=7976&ind=7987
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-21
+    note: The list titles the action “Peoria Tribe of Indians of Oklahoma” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-19-03
+    date: '2019-05-10'
+    link: https://www.nigc.gov?wpdmdl=3000&ind=3001
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-19-03
+    note: The list titles the action “Peoria Tribe of Indians of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-19-03
+    date: '2020-10-19'
+    link: https://www.nigc.gov?wpdmdl=2992&ind=2993
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-19-03
+    note: The list titles the action “Peoria Tribe of Indians of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

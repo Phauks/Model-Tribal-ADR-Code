@@ -632,6 +632,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kaw Nation, Oklahoma". Facilities
       as machine-extracted from the report text (verify): Rock and Brews Casino; Kanza Casino. Name extracted
       from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-17
+    date: '2007-01-05'
+    link: https://www.nigc.gov?wpdmdl=8090&ind=8113
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-17
+    note: The list titles the action “Kaw Nation of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-17
+    date: '2007-02-27'
+    link: https://www.nigc.gov?wpdmdl=8088&ind=8099
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-17
+    note: The list titles the action “Kaw Nation Settlement Agreement” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
