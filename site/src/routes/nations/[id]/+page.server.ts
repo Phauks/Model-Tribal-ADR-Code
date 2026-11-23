@@ -626,6 +626,43 @@ function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): 
 	);
 }
 
+/** The names the page gives each kind of court practice item, in the order the page shows them. */
+const practiceKinds: Record<string, string> = {
+	'bar-admission': 'Admission to practice',
+	'court-rules': 'Court rules',
+	'filing-fees': 'Filing fees',
+	forms: 'Court forms',
+	'public-defender': 'Public defender',
+	'legal-aid': 'Legal aid'
+};
+
+/**
+ * What a person needs to use the nation's courts, one group per kind: each
+ * page or document linked, with the court it belongs to and what it says,
+ * such as the fee amounts or how to apply.
+ */
+function courtPractice(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const section = 'Courts and dispute resolution';
+	const order = Object.keys(practiceKinds);
+	const rank = (kind: string) => (order.includes(kind) ? order.indexOf(kind) : order.length);
+	const facts = [...(record.court_practice ?? [])].sort((first, second) => rank(first.kind) - rank(second.kind));
+	const byKind = new Map<string, FactItem[]>();
+	for (const fact of facts) {
+		const label = practiceKinds[fact.kind] ?? humanize(fact.kind);
+		const list = byKind.get(label) ?? [];
+		list.push(
+			cited(sources, section, fact, {
+				text: fact.title,
+				link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+				detail: fact.court,
+				note: fact.detail
+			})
+		);
+		byKind.set(label, list);
+	}
+	return [...byKind.entries()].map(([label, items]) => ({ field: `court-practice-${label}`, label, items }));
+}
+
 /** The section that joins the nation's published law and its documents' histories. */
 const lawHeading = 'Laws and agreements';
 
@@ -917,6 +954,7 @@ export const load: PageServerLoad = ({ params }) => {
 			contacts: { websites: [], offices: [] },
 			government: [],
 			courts: [],
+			practice: [],
 			opinions: undefined,
 			law: [],
 			documents: [],
@@ -1023,6 +1061,7 @@ export const load: PageServerLoad = ({ params }) => {
 	);
 	sources.part('Courts and dispute resolution');
 	const courts = courtsAndDisputeResolution(record, sources);
+	const practice = courtPractice(record, sources);
 	sources.part(opinionsHeading);
 	const opinions = courtOpinions(record.id, sources);
 	// Within Laws and agreements, each document's sources go under its heading.
@@ -1049,7 +1088,7 @@ export const load: PageServerLoad = ({ params }) => {
 						searchSummary('governance', record.id)
 					),
 		courts:
-			courts.length > 0
+			courts.length > 0 || practice.length > 0
 				? undefined
 				: emptySectionNote(
 						'a court or other forum',
@@ -1076,6 +1115,7 @@ export const load: PageServerLoad = ({ params }) => {
 		map,
 		government,
 		courts,
+		practice,
 		opinions,
 		law,
 		documents,

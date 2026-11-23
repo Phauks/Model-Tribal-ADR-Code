@@ -944,6 +944,27 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.N, South Dakota
   note: 'The source reads: “the Sisseton-”. The report says "All agreements expired on May 31, 2013"; later agreements are not shown in this source. The roster name is split across a line break in the report ("Sisseton-Wahpeton Oyate of the Lake Traverse Reservation"). Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: public-defender
+  title: Public Defender
+  court: Sisseton Wahpeton Oyate Tribal Court
+  link: https://swo-nsn.gov/departments/justice-department/public-defender/
+  detail: Public Defender page linked from the Tribal Court page; not opened.
+  source: sisseton-wahpeton-oyate-swo-nsn-gov-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page links
+  note: Page not opened.
+- kind: forms
+  title: 'Tribal Court (Forms: Court of Appeals Form, Fee Waiver, adoption petition information)'
+  court: Sisseton Wahpeton Oyate Tribal Court
+  link: https://swo-nsn.gov/departments/justice-department/tribal-court/
+  detail: Forms list includes Court of Appeals Form, Fee Waiver and adoption petition information.
+  source: sisseton-wahpeton-oyate-swo-nsn-gov-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Forms
+  note: 'The source reads: “Fee Waiver”.'
 nearby_state_courts:
 - state: SD
   county: Roberts County

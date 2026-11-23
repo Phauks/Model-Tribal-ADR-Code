@@ -795,6 +795,47 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table "State and Tribal Tax Agreements"
   note: 'The source reads: “Northern Cheyenne Tribe Tobacco Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+court_practice:
+- kind: bar-admission
+  title: Court Bar Exam Information
+  court: Northern Cheyenne Tribal Court
+  link: https://www.cheyennenation.com/nct/judicial/Court Bar Exam.pdf
+  detail: Court bar exam information PDF linked from the Judicial page; also an "NC Trial Court Bar" list (as of 2025-06-13).
+  source: northern-cheyenne-tribe-northern-cheyenne-judicial
+  confidence: high
+  verification: title-only
+  locator: Judicial page documents
+  note: Document not opened.
+- kind: filing-fees
+  title: Filing Fee Schedule
+  court: Northern Cheyenne Tribal Court
+  link: https://www.cheyennenation.com/nct/judicial/18/FILING FEE SCHEDULE.pdf
+  detail: Filing fee schedule PDF linked from the Judicial page.
+  source: northern-cheyenne-tribe-northern-cheyenne-judicial
+  confidence: high
+  verification: title-only
+  locator: Judicial page documents
+  note: Document not opened.
+- kind: forms
+  title: Judicial page forms (Civil Complaint, Adult Name Change, Minor Name Change, Request for Documents)
+  court: Northern Cheyenne Tribal Court
+  link: https://www.cheyennenation.com/judicial.html
+  detail: Forms linked include Civil Complaint, Adult Name Change, Minor Name Change and Request for Documents.
+  source: northern-cheyenne-tribe-northern-cheyenne-judicial
+  confidence: high
+  verification: read-in-full
+  locator: Judicial page documents
+  note: 'The source reads: “Civil Complaint”.'
+- kind: court-rules
+  title: Revised Law and Order Code (adopted 6-2-2025)
+  court: Northern Cheyenne Tribal Court
+  link: https://www.cheyennenation.com/nct/judicial/Revised Law and Order Code adopted 6-2-2025.NEWLOC.pdf
+  detail: Revised Law and Order Code adopted 2025-06-02 per file name.
+  source: northern-cheyenne-tribe-northern-cheyenne-judicial
+  confidence: high
+  verification: read-in-full
+  locator: Judicial page documents
+  note: 'The source reads: “Revised Law and Order Code”. A code, not a stand-alone rules of procedure.'
 nearby_state_courts:
 - state: MT
   county: Rosebud County

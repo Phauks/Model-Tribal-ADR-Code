@@ -716,6 +716,37 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+court_practice:
+- kind: court-rules
+  title: Procedural Rules
+  court: Colville Tribal Court
+  link: https://www.cct-crt.com/procedural-rules
+  detail: Page linked from the home page; not opened.
+  source: confederated-tribes-of-the-colville-reservation-cct-crt
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
+- kind: forms
+  title: Forms
+  court: Colville Tribal Court
+  link: https://www.cct-crt.com/forms
+  detail: Page linked from the home page; not opened.
+  source: confederated-tribes-of-the-colville-reservation-cct-crt
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
+- kind: bar-admission
+  title: Tribal Bar Members
+  court: Colville Tribal Court
+  link: https://www.cct-crt.com/tribal-bar-members
+  detail: Page linked from the home page; not opened.
+  source: confederated-tribes-of-the-colville-reservation-cct-crt
+  confidence: medium
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
 nearby_state_courts:
 - state: WA
   county: Ferry County

@@ -551,6 +551,17 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image, and the name was found word for word in the notice''s
     machine-read (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+court_practice:
+- kind: public-defender
+  title: Justice Department (Public Defender's Office)
+  court: Coeur d'Alene Tribal Court
+  link: https://www.cdatribe-nsn.gov/justice/
+  detail: Justice Department page lists a Public Defender's Office with public defense attorney and legal assistant contacts (names omitted).
+  source: coeur-dalene-tribe-website-justice
+  confidence: high
+  verification: read-in-full
+  locator: Justice Department page
+  note: 'The source reads: “Public Defender’s Office”.'
 nearby_state_courts:
 - state: ID
   county: Benewah County

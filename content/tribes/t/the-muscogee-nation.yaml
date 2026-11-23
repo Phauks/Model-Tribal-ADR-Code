@@ -871,6 +871,46 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: City Addendum, page 1
   note: 'The source reads: “DEPUTATION AGREEMENT FOR LAW ENFORCEMENT IN THE Muscogee Creek Nation”. Date is the Oklahoma Secretary of State filing stamp (August 25, 2020). The addendum adds the City of Tulsa to the nation''s deputation agreement; the main agreement is not in this file. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: court-rules
+  title: Rules of the Muscogee District Court
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/court-rules/
+  detail: Court rules page; rule 1 says new members of the Muscogee (Creek) Nation Bar Association receive a copy of the rules on payment of admission fees. A Word file of the rules is linked (Rules-of-the-MCN-District-Court.docx, uploaded 2024-05).
+  source: muscogee-creek-nation-district-court-court-rules
+  confidence: high
+  verification: read-in-full
+  locator: Court Rules page, Rule 1
+- kind: bar-admission
+  title: Rules of the Muscogee District Court (Rule 1, Bar Association references)
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/court-rules/
+  detail: The rules mention a Muscogee (Creek) Nation Bar Association and admission fees, but this page does not set out an application process or fee amount.
+  source: muscogee-creek-nation-district-court-court-rules
+  confidence: low
+  verification: inferred
+  locator: Rule 1. Official Court Rules
+  note: 'The source reads: “New members of the Muscogee (Creek) Nation Bar Association will be presented a copy of the Rules upon payment of admission fees.”. Only an indirect reference; no admission procedure page found. Confidence set low because it gives no process.'
+- kind: filing-fees
+  title: Fee Schedule
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/fees/
+  detail: Fee schedule listing civil filing fee $84.00, appeal fee $175.00, jury fee $100.00, criminal complaint $84.00, copy fee $1.00 and other fees.
+  source: muscogee-creek-nation-district-court-fees
+  confidence: high
+  verification: read-in-full
+  locator: Fees page
+  note: 'The source reads: “FEE SCHEDULE”.'
+- kind: forms
+  title: District Court Forms
+  court: Muscogee (Creek) Nation District Court
+  link: https://creekdistrictcourt.com/forms/
+  detail: Forms page lists request and application for court appointed counsel, plea agreement, guardianship, small claims, garnishment, foreign judgment, attorney entry of appearance, and protection order forms.
+  source: muscogee-creek-nation-district-court-forms
+  confidence: high
+  verification: read-in-full
+  locator: Forms page
+  note: 'The source reads: “DISTRICT COURT FORMS”.'
 nearby_state_courts:
 - state: OK
   county: Creek County
