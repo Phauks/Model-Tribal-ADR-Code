@@ -142,7 +142,7 @@
 							<br />
 							<span class="small"
 								>SHA-256: <code class="form-hash">{download.sha256}</code> ·
-								<a href={verifyLink(download.sha256, download.href.split('/').pop())}>Check this file</a></span
+								<a href={verifyLink(download.sha256, download.href.split('/').pop())}>Verify File</a></span
 							>
 						</li>
 					{/each}
