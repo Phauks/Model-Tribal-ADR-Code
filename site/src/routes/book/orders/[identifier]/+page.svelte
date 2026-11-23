@@ -40,6 +40,9 @@
 	{/if}
 	<div class="panel">
 		<p><strong>{data.order.title}</strong>, {data.order.pages} pages, {money(data.order.priceCents)}</p>
+		{#if data.order.giftCents > 0}
+			<p>And a gift to the project of {money(data.order.giftCents)}. Thank you.</p>
+		{/if}
 		<p class="small muted">Ordered {day(data.order.placedAt)}</p>
 		<p>{orderStatusText[data.order.status] ?? data.order.status}</p>
 		{#if data.order.refundedCents > 0}

@@ -106,7 +106,8 @@
 								{#if order.openProblems > 0}<br /><strong class="small">{order.openProblems} open {order.openProblems === 1 ? 'problem' : 'problems'}</strong>{/if}
 							</td>
 							<td>
-								{money(order.priceCents)}
+								{money(order.priceCents + order.giftCents)}
+								{#if order.giftCents > 0}<br /><span class="small">Gift {money(order.giftCents)}</span>{/if}
 								{#if order.paymentSession}<br /><a class="small" href={stripeLink(order.mode, order.paymentSession)} rel="noreferrer">In Stripe</a>{/if}
 							</td>
 							<td>

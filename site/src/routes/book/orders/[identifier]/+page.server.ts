@@ -32,6 +32,7 @@ export const load: PageServerLoad = async ({ params, url, locals }) => {
 			status: order.status,
 			pages: order.page_count,
 			priceCents: order.price_cents,
+			giftCents: order.gift_cents ?? 0,
 			refundedCents: order.refunded_cents,
 			refundedAt: order.refunded_at,
 			trackingLink: order.tracking_link,

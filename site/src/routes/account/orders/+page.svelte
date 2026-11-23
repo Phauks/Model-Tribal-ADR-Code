@@ -43,7 +43,8 @@
 						<td><a href="/book/orders/{order.identifier}">{day(order.placedAt)}</a></td>
 						<td>{order.title}, {order.pages} pages{order.mode === 'test' ? ' (test)' : ''}</td>
 						<td>
-							{money(order.priceCents)}
+							{money(order.priceCents + order.giftCents)}
+							{#if order.giftCents > 0}<br /><span class="small">With a gift of {money(order.giftCents)}</span>{/if}
 							{#if order.refundedCents > 0}<br /><span class="small">Refunded {money(order.refundedCents)}</span>{/if}
 						</td>
 						<td>

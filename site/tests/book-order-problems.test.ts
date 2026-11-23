@@ -38,6 +38,7 @@ async function placeOrder(identifier: string, account: string | null, paid: bool
 			email: 'reader@example.org',
 			printerCostCents: 1689,
 			priceCents: 2341,
+			giftCents: 500,
 			accountIdentifier: account
 		},
 		'2026-11-23T00:00:00Z'
@@ -119,11 +120,11 @@ describe('problems with an order', () => {
 });
 
 describe('refunds', () => {
-	it('records the total refunded, up to what the buyer paid', async () => {
+	it('records the total refunded, up to what the buyer paid with the gift', async () => {
 		await placeOrder(first, 'account-reader', true);
-		expect(await recordRefund(database, first, 2342, '2026-11-26T00:00:00Z')).toBe(false);
-		expect(await recordRefund(database, first, 2341, '2026-11-26T00:00:00Z')).toBe(true);
-		expect((await ordersOfAccount(database, 'account-reader'))[0]).toMatchObject({ refundedCents: 2341, refundedAt: '2026-11-26T00:00:00Z' });
+		expect(await recordRefund(database, first, 2842, '2026-11-26T00:00:00Z')).toBe(false);
+		expect(await recordRefund(database, first, 2841, '2026-11-26T00:00:00Z')).toBe(true);
+		expect((await ordersOfAccount(database, 'account-reader'))[0]).toMatchObject({ giftCents: 500, refundedCents: 2841, refundedAt: '2026-11-26T00:00:00Z' });
 		// Setting it back to 0 clears the date.
 		expect(await recordRefund(database, first, 0, '2026-11-27T00:00:00Z')).toBe(true);
 		expect((await ordersOfAccount(database, 'account-reader'))[0]).toMatchObject({ refundedCents: 0, refundedAt: null });

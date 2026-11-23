@@ -18,6 +18,8 @@ export interface OrderSummary {
 	title: string;
 	pages: number;
 	priceCents: number;
+	/** The gift added at checkout, apart from the price (docs/book-orders.md, "Adding a gift"). */
+	giftCents: number;
 	refundedCents: number;
 	refundedAt: string | null;
 	trackingLink: string | null;
@@ -32,6 +34,7 @@ interface SummaryRow {
 	title: string;
 	page_count: number;
 	price_cents: number;
+	gift_cents: number;
 	refunded_cents: number;
 	refunded_at: string | null;
 	tracking_link: string | null;
@@ -47,6 +50,7 @@ function summaryFromRow(row: SummaryRow): OrderSummary {
 		title: row.title,
 		pages: row.page_count,
 		priceCents: row.price_cents,
+		giftCents: row.gift_cents,
 		refundedCents: row.refunded_cents,
 		refundedAt: row.refunded_at,
 		trackingLink: row.tracking_link,
@@ -55,7 +59,7 @@ function summaryFromRow(row: SummaryRow): OrderSummary {
 	};
 }
 
-const summaryColumns = `o.identifier, o.mode, o.status, o.title, o.page_count, o.price_cents, o.refunded_cents, o.refunded_at,
+const summaryColumns = `o.identifier, o.mode, o.status, o.title, o.page_count, o.price_cents, o.gift_cents, o.refunded_cents, o.refunded_at,
 	o.tracking_link, o.created_at,
 	(SELECT count(*) FROM book_order_problems p WHERE p.order_identifier = o.identifier AND p.status = 'open') AS open_problems`;
 
@@ -266,13 +270,14 @@ export async function openProblemPhoto(
 
 /**
  * Records a refund made in Stripe's dashboard, so the order's page says so.
- * The amount is the total refunded so far, up to what the buyer paid.
+ * The amount is the total refunded so far, up to what the buyer paid,
+ * the gift included.
  */
 export async function recordRefund(database: D1Database, order: string, refundedCents: number, now: string): Promise<boolean> {
 	const result = await database
 		.prepare(
 			`UPDATE book_orders SET refunded_cents = ?, refunded_at = CASE WHEN ? > 0 THEN ? ELSE NULL END, updated_at = ?
-			WHERE identifier = ? AND ? BETWEEN 0 AND price_cents`
+			WHERE identifier = ? AND ? BETWEEN 0 AND price_cents + gift_cents`
 		)
 		.bind(refundedCents, refundedCents, now, now, order, refundedCents)
 		.run();

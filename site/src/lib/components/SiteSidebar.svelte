@@ -33,10 +33,14 @@
 		type WorkspacePage
 	} from '#lib/workspace-menu.ts';
 
-	const outline = $derived(page.data.outline as PageOutline | undefined);
 	const path = $derived(page.url.pathname);
 
 	const currentSection = $derived(sectionOf(path));
+	// A page's own outline, or else the pages its section gathers (the Library's, src/lib/library-pages.ts).
+	const outline = $derived(
+		(page.data.outline as PageOutline | undefined) ??
+			(currentSection?.gathers ? { items: currentSection.gathers } : undefined)
+	);
 
 	// The workspace pages to list: from the page itself in the workspace,
 	// otherwise from the signed-in hint, read in the browser.

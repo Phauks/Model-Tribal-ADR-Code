@@ -52,7 +52,7 @@ export const actions: Actions = {
 		const cents = centsOf(formText(form, 'amount') ?? '');
 		if (!Number.isInteger(cents)) return fail(400, { order, refundError: 'Give the amount refunded in dollars, such as 23.41.' });
 		const saved = await recordRefund(storage(event).database, order, cents, now());
-		if (!saved) return fail(400, { order, refundError: 'The refund cannot be more than the buyer paid.' });
+		if (!saved) return fail(400, { order, refundError: 'The refund cannot be more than the buyer paid, gift included.' });
 		return { refunded: order };
 	}
 };

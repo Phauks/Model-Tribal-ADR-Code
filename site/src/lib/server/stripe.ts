@@ -34,6 +34,8 @@ export interface CheckoutRequest {
 	description: string;
 	/** In cents: print, shipping, Lulu's fee and Lulu's tax, plus any margin. */
 	amountInCents: number;
+	/** An optional gift to the project, shown as its own line (docs/book-orders.md, "Adding a gift"). */
+	gift?: { amountInCents: number; description: string };
 	email?: string;
 	successAddress: string;
 	cancelAddress: string;
@@ -64,6 +66,15 @@ export async function createCheckout(
 		'line_items[0][price_data][currency]': 'usd',
 		'line_items[0][price_data][unit_amount]': order.amountInCents,
 		'line_items[0][price_data][product_data][name]': order.description,
+		...(order.gift && order.gift.amountInCents > 0
+			? {
+					'metadata[gift_cents]': order.gift.amountInCents,
+					'line_items[1][quantity]': 1,
+					'line_items[1][price_data][currency]': 'usd',
+					'line_items[1][price_data][unit_amount]': order.gift.amountInCents,
+					'line_items[1][price_data][product_data][name]': order.gift.description
+				}
+			: {}),
 		// The page expires if left open, so an old price cannot be paid much later.
 		expires_at: Math.floor(Date.now() / 1000) + 60 * 60
 	});
