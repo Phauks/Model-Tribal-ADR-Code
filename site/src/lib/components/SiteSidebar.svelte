@@ -16,6 +16,7 @@
 	// signed-in hint (src/lib/signed-in-hint.ts) once the script runs.
 	import { page } from '$app/state';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
+	import FileClock from '@lucide/svelte/icons/file-clock';
 	import History from '@lucide/svelte/icons/history';
 	import Menu from '@lucide/svelte/icons/menu';
 	import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
@@ -25,6 +26,7 @@
 	import type { Permission } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { isUnfolded } from '#lib/outline-folding.ts';
+	import { followedPageAddress } from '#lib/page-history.ts';
 	import { sectionOf, siteSections, type OutlineItem, type PageOutline } from '#lib/site-sections.ts';
 	import {
 		isCurrentWorkspacePage,
@@ -34,6 +36,8 @@
 	} from '#lib/workspace-menu.ts';
 
 	const path = $derived(page.url.pathname);
+	// The page the reader is on, when the site records its changes ("Changes to this page").
+	const followedPage = $derived(page.error ? undefined : followedPageAddress(path));
 
 	const currentSection = $derived(sectionOf(path));
 	// A page's own outline, or else the pages its section gathers (the Library's, src/lib/library-pages.ts).
@@ -318,6 +322,15 @@
 				Recent changes
 			</a>
 		</li>
+		{#if followedPage}
+			<!-- Opens the history of the page the reader is on, not every page's (Trevor, Nov. 23, 2026). -->
+			<li>
+				<a href="/changes?page={encodeURIComponent(followedPage)}">
+					<FileClock size={18} aria-hidden="true" />
+					Changes to this page
+				</a>
+			</li>
+		{/if}
 		<li class="needs-scripts">
 			<a href="/starred" aria-current={path === '/starred' ? 'page' : undefined}>
 				<Star size={18} aria-hidden="true" />

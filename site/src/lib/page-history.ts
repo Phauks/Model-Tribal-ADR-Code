@@ -273,6 +273,23 @@ export function byPage<Item extends { address: string }>(items: Item[]): PageGro
 }
 
 /** The page a file in the repository is built into, for files named after the page. */
+/** Pages under /nations/ that list nations rather than being one nation's page. */
+const nationListings = new Set(['data', 'map', 'recourse']);
+
+/**
+ * The address whose history "Changes to this page" opens, for a page whose
+ * changes the site records (src/lib/server/page-history-build.ts and the
+ * essays); undefined for listings, the workspace and other pages it does not.
+ */
+export function followedPageAddress(path: string): string | undefined {
+	const address = cleanAddress(path);
+	if (!address) return undefined;
+	const nation = /^\/nations\/([a-z0-9-]+)$/.exec(address);
+	if (nation) return nationListings.has(nation[1]) ? undefined : address;
+	if (/^\/(stories|glossary|essays|foundations|back-matter|licenses)\/[a-z0-9][a-z0-9-]*$/.test(address)) return address;
+	return ['/acknowledgments', '/charter', '/licenses', '/about', '/sponsor'].includes(address) ? address : undefined;
+}
+
 export function pageAddressOfFile(file: string): string | undefined {
 	const nation = /^content\/tribes\/[a-z0-9]\/([a-z0-9-]+)\.yaml$/.exec(file);
 	if (nation) return `/nations/${nation[1]}`;
