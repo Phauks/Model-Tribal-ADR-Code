@@ -39,6 +39,7 @@ export function testDatabase(): D1Database {
 	const database = new DatabaseSync(':memory:');
 	database.exec('PRAGMA foreign_keys = ON');
 	const folder = path.resolve(import.meta.dirname, '../migrations');
+	// Sorting the names as text gives Wrangler's order for both numbered and timestamped names (migrations/README.md, "Order").
 	for (const file of readdirSync(folder).filter((name) => name.endsWith('.sql')).sort()) {
 		// D1 runs each migration as one transaction.
 		database.exec('BEGIN');

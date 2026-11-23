@@ -323,6 +323,7 @@ const everyChange = `
 			CASE e.part
 				WHEN 'foundations' THEN '/foundations/' || CASE WHEN p.essay_identifier GLOB 'i-*' THEN substr(p.essay_identifier, 3) ELSE p.essay_identifier END
 				WHEN 'back-matter' THEN '/back-matter/' || p.essay_identifier
+				WHEN 'about' THEN CASE p.essay_identifier WHEN 'about' THEN '/about' WHEN 'sponsor' THEN '/sponsor' ELSE '/' || p.essay_identifier END
 				ELSE '/essays/' || p.essay_identifier
 			END,
 			e.part, v.title,

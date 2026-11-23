@@ -54,6 +54,7 @@ const regionsPath = fileURLToPath(
 	new URL('./geography/bureau-of-indian-affairs-regions.json', import.meta.url)
 );
 const landAreasPath = fileURLToPath(new URL('./geography/census-land-areas-2020.json', import.meta.url));
+const officesPath = fileURLToPath(new URL('./geography/nation-office-points.json', import.meta.url));
 const mapGeometryModule = 'virtual:map-geometry';
 const resolvedMapGeometryModule = `\0${mapGeometryModule}`;
 
@@ -72,7 +73,8 @@ function mapGeometry(): Plugin {
 			if (identifier !== resolvedMapGeometryModule) return undefined;
 			this.addWatchFile(regionsPath);
 			this.addWatchFile(landAreasPath);
-			return `export default ${JSON.stringify(await buildMapGeometry(regionsPath, landAreasPath))};`;
+			this.addWatchFile(officesPath);
+			return `export default ${JSON.stringify(await buildMapGeometry(regionsPath, landAreasPath, officesPath))};`;
 		}
 	};
 }

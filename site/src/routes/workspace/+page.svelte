@@ -85,6 +85,21 @@
 	</section>
 {/if}
 
+{#if data.nonprofit && data.nonprofit.items.length > 0}
+	<section class="panel">
+		<h2>Nonprofit</h2>
+		<ul>
+			{#each data.nonprofit.items as item (`${item.title}/${item.due}`)}
+				<li>
+					{#if item.state === 'overdue'}<strong>Overdue:</strong>{:else}Due soon:{/if}
+					{item.title}, {date(`${item.due}T12:00:00`)}.
+				</li>
+			{/each}
+		</ul>
+		<p><a href="/workspace/nonprofit">Open the nonprofit page</a></p>
+	</section>
+{/if}
+
 {#if data.granted.length > 0}
 	<section>
 		<h2>Documents opened to you</h2>

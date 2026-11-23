@@ -83,10 +83,17 @@ export interface SourceRecord {
 		title?: string;
 		author?: CitationName[];
 		'container-title'?: string;
+		/** A case's court, and where it is reported. */
+		authority?: string;
+		volume?: string;
+		page?: string;
+		number?: string;
 		issued?: { 'date-parts'?: number[][] };
 		URL?: string;
 	};
 	original_link?: string;
+	/** The nations a source is about, by profile id. */
+	tribes?: string[];
 	archives?: { link?: string; url?: string; captured?: string }[];
 }
 

@@ -15,6 +15,7 @@ export const GET: RequestHandler = ({ params }) => {
 	if (!isShadedMapView(params.view)) error(404, 'No such map view');
 	const data = shadedView(params.view);
 	const title = mapViews.find((entry) => entry.key === params.view)?.description ?? params.view;
-	const { drawn, labels, ...rest } = data;
-	return json({ ...rest, drawing: drawShadedLandAreasMap(geometry, { key: params.view, title, areas: drawn, labels }) });
+	const { drawn, labels, offices, ...rest } = data;
+	const drawnOffices = offices.map((office) => ({ ...office, href: office.anchor ? `#${office.anchor}` : undefined }));
+	return json({ ...rest, drawing: drawShadedLandAreasMap(geometry, { key: params.view, title, areas: drawn, offices: drawnOffices, labels }) });
 };

@@ -26,6 +26,7 @@
 		"check:accessibility": "node tools/check-accessibility.mjs",
 		"database:migrate:local": "wrangler d1 migrations apply database --local",
 		"database:migrate:remote": "wrangler d1 migrations apply database --remote",
+		"database:new-migration": "node tools/new-migration.mjs",
 		"sign-in-link": "node tools/make-sign-in-link.mjs"
 	},
 	"devDependencies": {

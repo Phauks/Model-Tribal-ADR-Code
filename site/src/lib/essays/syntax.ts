@@ -33,6 +33,7 @@
  *                                (figures.ts): kind is picture, video or
  *                                sound; the address is /files/<reference>/
  *                                <name>, or a YouTube link for a video
+ *   :::: figure chart            a bar chart drawn from the table inside it
  *   caption paragraphs           what the figure shows
  *   ::: description ... :::      what a picture or video shows, read aloud
  *                                in its place
@@ -107,7 +108,7 @@ export const essayBlocks = {
 	topics: /^topics$/,
 	quote: /^quote$/,
 	analysis: /^analysis(?:\s+(.+))?$/,
-	figure: /^figure\s+(picture|video|sound)\s+(\S+)$/,
+	figure: /^figure\s+(?:(picture|video|sound)\s+(\S+)|(chart))$/,
 	description: /^description$/,
 	credit: /^credit$/,
 	transcript: /^transcript$/
