@@ -99,7 +99,11 @@ function inputs(): ChartInputs {
 
 /** The charts, each with the address of its published CSV file. */
 export function dataCharts(): BarChartData[] {
-	return chartDefinitions().map((chart) => ({ ...chart, csvHref: dataChartTableLink(chart.identifier, 'csv') }));
+	return chartDefinitions().map((chart) => ({
+		...chart,
+		sourceHref: chart.identifier.startsWith('provisions-') ? '/nations/recourse' : chartSourcesPath(chart.identifier),
+		csvHref: dataChartTableLink(chart.identifier, 'csv'), xlsxHref: dataChartTableLink(chart.identifier, 'xlsx')
+	}));
 }
 
 function chartDefinitions(): BarChartData[] {
@@ -253,13 +257,12 @@ export function chartRecordEntries(): { chart: string; bar: string }[] {
 }
 
 /** The records one bar counts, or nothing when the chart or bar is unknown. */
-export function chartRecords(chartKey: string, barKey: string): ChartRecords | undefined {
+export function chartRecords(chartKey: string, barKey: string, uses = new SourceUses()): ChartRecords | undefined {
 	const chart = dataCharts().find((candidate) => candidate.identifier === chartKey);
 	const bar = chart?.bars.find((candidate) => candidate.href === chartRecordsPath(chartKey, barKey));
 	if (!chart || !bar) return undefined;
 	const base = { chart: { identifier: chart.identifier, title: chart.title }, bar: { slug: barKey, label: bar.label, value: bar.value } };
 	const { records, byId, constitutionRows, compacts } = inputs();
-	const uses = new SourceUses();
 	const items: ChartRecords['items'] = {};
 
 	if (chartKey === 'forums-by-kind') {
@@ -382,4 +385,51 @@ export function chartRecords(chartKey: string, barKey: string): ChartRecords | u
 	}
 
 	return undefined;
+}
+
+/** The page that shows where a chart's numbers come from, for a chart whose bars open record pages. */
+export function chartSourcesPath(chartKey: string): string {
+	return `/nations/data/${chartKey}/sources`;
+}
+
+/** Where one chart's numbers come from: the source statement, the documents read, and every source its records cite. */
+export interface ChartSources {
+	chart: { identifier: string; title: string };
+	source: string;
+	/** The bars, each opening the records it counts. */
+	bars: { label: string; value: number; href?: string }[];
+	/** The documents the numbers were read from, when they are the source themselves, as the gaming compacts are. */
+	documents: { text: string; href?: string; detail?: string }[];
+	sources: SourceEntry[];
+}
+
+/** Every chart that has a sources page, for prerendering. */
+export function chartSourcesEntries(): { chart: string }[] {
+	return dataCharts()
+		.filter((chart) => chart.sourceHref === chartSourcesPath(chart.identifier))
+		.map((chart) => ({ chart: chart.identifier }));
+}
+
+/** The sources behind a chart, gathered from the records of each of its bars, or nothing when it has no sources page. */
+export function chartSources(chartKey: string): ChartSources | undefined {
+	const chart = dataCharts().find((candidate) => candidate.identifier === chartKey);
+	if (!chart || chart.sourceHref !== chartSourcesPath(chartKey)) return undefined;
+	const uses = new SourceUses();
+	const documents: ChartSources['documents'] = [];
+	for (const bar of chart.bars) {
+		const barKey = bar.href?.split('/').at(-1);
+		const records = barKey ? chartRecords(chartKey, barKey, uses) : undefined;
+		if (chartKey === 'compacts-by-arbitration' && records) {
+			for (const row of records.rows) documents.push({ text: row.cells.compact.text, href: row.cells.compact.href, detail: row.cells.date?.text ? `Listed ${row.cells.date.text}` : undefined });
+		}
+	}
+	documents.sort((first, second) => first.text.localeCompare(second.text, 'en', { sensitivity: 'base' }));
+	return {
+		chart: { identifier: chart.identifier, title: chart.title },
+		source: chart.source,
+		bars: chart.bars.map((bar) => ({ label: bar.label, value: bar.value, href: bar.href })),
+		documents,
+		// This page shows no markers to link back to: each source's facts are listed under it instead.
+		sources: uses.list.map((entry) => ({ ...entry, backlinks: [] }))
+	};
 }

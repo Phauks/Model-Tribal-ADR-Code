@@ -176,10 +176,11 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 			citable: false,
 			files: dataChartList.map((chart) => ({
 				label: chart.title,
-				description: 'This chart’s table: CSV for a spreadsheet, JSON for programs',
+				description: 'This chart’s table: CSV or Excel for a spreadsheet, JSON for programs',
 				kind: 'table' as const,
 				links: [
 					{ format: 'CSV', link: dataChartTableLink(chart.identifier, 'csv') },
+					{ format: 'Excel', link: dataChartTableLink(chart.identifier, 'xlsx') },
 					{ format: 'JSON', link: dataChartTableLink(chart.identifier, 'json') }
 				]
 			}))

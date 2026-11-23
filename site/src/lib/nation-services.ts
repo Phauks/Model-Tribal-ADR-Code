@@ -93,6 +93,8 @@ const categories: Record<string, { id: string; heading: string }> = {
 	courts: { id: 'courts', heading: 'Courts' },
 	peacemaking: { id: 'peacemaking', heading: 'Peacemaking' },
 	'healing-to-wellness-court': { id: 'healing-to-wellness-courts', heading: 'Healing to wellness courts' },
+	// Problem-solving courts other than healing to wellness courts, such as a veterans', mental health or DWI court.
+	'treatment-court': { id: 'treatment-courts', heading: 'Treatment courts' },
 	'traditional-forum': { id: 'traditional-forums', heading: 'Traditional forums' },
 	'customary-dispute-resolution': {
 		id: 'customary-dispute-resolution',
@@ -141,6 +143,7 @@ const order = [
 	'courts',
 	'peacemaking',
 	'healing-to-wellness-courts',
+	'treatment-courts',
 	'traditional-forums',
 	'customary-dispute-resolution',
 	'elders-councils',

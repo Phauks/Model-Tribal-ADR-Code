@@ -276,7 +276,7 @@ justice_institutions:
   verification: read-in-full
   as_of: '2026-11-22'
   note: 'The page names the court: “a traditional Tribal Court, in which the Governor of the Pueblo acts as its Chief Judge”. The page describes the Governor as Chief Judge of this traditional court; no address is given. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#2).'
-- kind: other
+- kind: civil-court
   name: Civil Court
   link: https://sfpueblo.com/tribal-programs/tribal-court/
   part_of: Pueblo of San Felipe Tribal Court
@@ -287,8 +287,8 @@ justice_institutions:
   confidence: high
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court; the page names the divisions as a list, so the ''Civil Court'' name is the list item with ''Court'' added. Kind ''other'' because no listed kind fits a civil division. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#3).'
-- kind: other
+  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court; the page names the divisions as a list, so the ''Civil Court'' name is the list item with ''Court'' added. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#3). Kind changed from other on 2026-11-23: The page lists Civil among the divisions of the Contemporary Tribal Court.'
+- kind: criminal-court
   name: Criminal Court
   link: https://sfpueblo.com/tribal-programs/tribal-court/
   part_of: Pueblo of San Felipe Tribal Court
@@ -299,8 +299,8 @@ justice_institutions:
   confidence: high
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court; name built from the page''s list. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#4).'
-- kind: other
+  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court; name built from the page''s list. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#4). Kind changed from other on 2026-11-23: The page lists Criminal among the divisions of the Contemporary Tribal Court.'
+- kind: traffic-court
   name: Traffic Court
   link: https://sfpueblo.com/tribal-programs/tribal-court/
   part_of: Pueblo of San Felipe Tribal Court
@@ -311,7 +311,7 @@ justice_institutions:
   confidence: high
   verification: read-in-full
   as_of: '2026-11-22'
-  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court; name built from the page''s list. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#5).'
+  note: 'The page names the court: “The Contemporary Tribal Court consists of Civil, Criminal, Traffic, Children’s and Treatment Courts.”. Division of the Contemporary Tribal Court; name built from the page''s list. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, pueblo-of-san-felipe#5). Kind changed from other on 2026-11-23: The page lists Traffic among the divisions of the Contemporary Tribal Court.'
 - kind: juvenile-court
   name: Children's Court
   link: https://sfpueblo.com/tribal-programs/tribal-court/
