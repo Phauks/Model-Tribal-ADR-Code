@@ -1,7 +1,7 @@
 profile: content/tribes/p/pueblo-of-san-ildefonso.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -201,7 +201,69 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: New Mexico tribal-state directory lists the pueblo with a 02 Tunyo Po address but no court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Pueblo de San Ildefonso tribal court
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were copies of the Pueblo''s code (including law.sanipueblo.org, the Pueblo''s code site)
+    and a community resource directory; no court page of the nation''s own came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/?p=478
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: blocked
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The New Mexico courts'' Tribal-State Judicial Consortium address from the results answered with a
+    challenge page ("One moment, please..."); not worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://tribalstate.nmcourts.gov/contact/
+  query: 'scripts/review/service_links.py second: Sandia; San Ildefonso'
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    New Mexico Tribal-State Judicial Consortium, Contact page (status 200): under "Tribal Courts" it lists
+    "Pueblo of Sandia – Tribal Court" (address, telephone, court handbook, website) and "Pueblo of San
+    Ildefonso – San Ildefonso" (address, telephone and the court handbook).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): directory, https://tribalstate.nmcourts.gov/contact/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-313
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Pueblo of San Ildefonso Tribal Court”: Claude weighed what the second search
+    found against the lead author''s order (own page, then directory entry): directory, https://tribalstate.nmcourts.gov/contact/.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-314
 next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-241,
   not-found-after-search); Pueblo of San Ildefonso Tribal Court (court-242, not-found-after-search). No
   page or official directory entry was found on 2026-11-22 for “Tribal Court”; “Pueblo of San Ildefonso
-  Tribal Court” (research/reviews/2026-11-22-service-links.json).'
+  Tribal Court” (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23 linked
+  “Tribal Court”; “Pueblo of San Ildefonso Tribal Court” (research/reviews/2026-11-22-service-links.json).'

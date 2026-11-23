@@ -54,8 +54,9 @@ export type FinishedSignIn =
 /**
  * Starts a session for someone who has just proved who they are, and works
  * out where they go next. Someone with workspace access goes where they were
- * heading. Someone without it goes to their contributor profile, where they
- * can register to help (docs/contributor-profiles.md). Someone whose access
+ * heading. Someone without it goes there too, unless it was the workspace:
+ * then they go to their contributor profile, where they can register to help
+ * (docs/contributor-profiles.md). Someone whose access
  * was removed is not signed in.
  */
 export async function finishSignIn(
@@ -79,5 +80,9 @@ export async function finishSignIn(
 	setSessionCookie(cookies, token, expiresAt);
 	markSignedIn(cookies);
 	if (match.outcome === 'signed-in') return { outcome: 'signed-in', destination: returnTo };
-	return { outcome: 'signed-in', destination: returnTo.startsWith('/profile') ? returnTo : '/profile' };
+	// The workspace is closed to them, so it sends them to their profile; any
+	// other page they came from, such as a nation's page they wanted to
+	// follow, takes them back there.
+	const toWorkspace = returnTo === '/workspace' || returnTo.startsWith('/workspace/') || returnTo.startsWith('/workspace?');
+	return { outcome: 'signed-in', destination: toWorkspace ? '/profile' : returnTo };
 }

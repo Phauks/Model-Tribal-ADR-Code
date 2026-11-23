@@ -24,6 +24,7 @@ This page lists everything that waits on the domain, so that it can all be done 
 ## 3. Turn on email
 
 - [ ] **Sign-in codes.** Onboard the domain in Email Service (Compute > Email Service > Email Sending > Onboard Domain), which adds the SPF, DKIM and DMARC records,[^email-send] then set `SIGN_IN_EMAIL_FROM` in `site/wrangler.jsonc` to an address such as `sign-in@` the domain. Steps: `site/COLLABORATION.md`, "Setting up sign-in". Until then people sign in with a password or a link from the lead author.
+- [ ] **Summaries of followed pages.** Built and waiting: set `UPDATE_EMAIL_FROM` in `site/wrangler.jsonc` to an address such as `updates@` the domain, and `SITE_ADDRESS` to the site's address on the domain. Readers' daily or weekly summaries then start at the next hourly run. Steps: `site/COLLABORATION.md`, "Turning on the emails".
 - [ ] **Request notices.** Email the maintainer a link to each new request, never its contents (`docs/requests.md`, "How it is built"). Not built.
 - [ ] **Contributor notices.** Email the lead author when a registration arrives, and contributors before each edition goes to print (`docs/contributor-profiles.md`, "Not built yet"). Not built.
 - [ ] **A contact address that receives mail.** Email Routing can forward an address on the domain, such as `contact@`, to the lead author's own inbox without a mail server.[^email-routing] Nations asking for a correction or removal could then write to the project's address rather than a personal one. This is a suggestion, not yet decided.

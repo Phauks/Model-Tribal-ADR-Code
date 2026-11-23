@@ -16,6 +16,8 @@ Decision record 0013 said nobody can sign in until the lead author adds their em
 - Credits use the five forms in `schemas/common.schema.json` `credit` (decision record 0020's contributor statement), so a profile and a filing describe credit in the same words.
 - Registration is for adults. Nation affiliation is optional, self-described and never verified.
 
+**Amended 2026-11-22 by the lead author:** signing up is for people 13 or older, and everyone who confirms a profile is signed up with no waiting step; the lead author can still remove anyone. Workspace access is unchanged.
+
 ## Consequences
 
 - The sentence "There is no open sign-up" in site/COLLABORATION.md becomes "There is no open access to the workspace."

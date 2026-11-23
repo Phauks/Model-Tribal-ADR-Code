@@ -329,20 +329,26 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court:-
+  link: https://www.ndcourts.gov/other-courts/tribal
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: Link is the entry in the North Dakota Court System's Tribal Courts list; no page of the court's
+    own was found in a second search (2026-11-23; research/reviews/2026-11-22-service-links.json, service-372).
 - kind: tribal-court
   name: Three Affiliated Tribes of the Fort Berthold Tribal Court
+  link: https://www.ndcourts.gov/other-courts/tribal
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: 'North Dakota section, entry ''Three Affiliated Tribes: Mandan, Hidatsa & Arikara Nation'''
   note: 'Link check 2026-11-21: the link the source gives (http://www.mhanation.com/main2/departments/fort-berthold-district-court/fort-berthold-district-court.html)
-    returned HTTP 404, so it is not recorded.'
+    returned HTTP 404, so it is not recorded. Link is the entry in the North Dakota Court System''s Tribal
+    Courts list; no page of the court''s own was found in a second search (2026-11-23; research/reviews/2026-11-22-service-links.json,
+    service-373).'
 - kind: district-court
   name: Fort Berthold District Court
   link: https://www.mhanation.com/

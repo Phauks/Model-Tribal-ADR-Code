@@ -19,14 +19,13 @@ export interface BookCredit {
 
 /** Headings as printed. "Thanks" avoids repeating the Acknowledgments page title. */
 export const printedSectionHeadings: Record<CreditSection, string> = {
-	advisors: 'Advisors',
 	contributors: 'Contributors',
 	reviewers: 'Reviewers',
 	acknowledgments: 'Thanks'
 };
 
 /** The order sections print in. */
-export const printedSectionOrder: readonly CreditSection[] = ['advisors', 'contributors', 'reviewers', 'acknowledgments'];
+export const printedSectionOrder: readonly CreditSection[] = ['contributors', 'reviewers', 'acknowledgments'];
 
 /**
  * Text as Markdown that prints exactly as written: Markdown punctuation is
