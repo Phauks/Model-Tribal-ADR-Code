@@ -194,6 +194,231 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-Laws under the Act of June 18, 1934
+  quote: as provided in the Act of June 18,1934, as amended
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article VII
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Business Committee
+  quote: shall be a business committee known as the Uintah
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 1
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 6 members
+  quote: The Tribal Business Committee shall consist or six members,
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 2
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected, two from each of three bands
+  quote: two (2) members duly elected from each or the three (3) bands
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 2
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: elected for a term of four(4) years
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 3
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: Annual meeting open to all members
+  quote: be an annual meeting open to all members
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article VI, Section 2
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: from within its own number (1) a chairman, (2) a vice chairman; and
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 4
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Committee from its members
+  quote: The Tribal Business Committee, so organized, shall elect
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 4
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice Chairman, Secretary, Treasurer
+  quote: from within or without. (3) a secretary, and (4) a treasurer, and such
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 4
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years, one from each band
+  quote: thereafter, every two (2) years a Tribal Business Committeeman
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article III, Section 5
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: twenty-one (21) years of age or over, who has maintained
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election board appointed by the Tribal Business Committee
+  quote: or by an election board appointed by the Tribal Business
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article IV, Section 3
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Reservation Indian Court
+  quote: administration of justice by establishing a Reservation Indian Court
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article VI, Section 1(k)
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Four or more Committee votes, then majority of voters at an election with 30% turnout
+  quote: Business Committee shall, by an affirmative vote, of four or more members,
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article X
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: to the Secretary of the Interior and if approved by him, shall thereupon
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article X
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of voters in the band
+  quote: Upon receipt of a petition signed by one-third of the
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article V, Section 3
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by 4 Committee votes
+  quote: affirmative votes, expel any member for neglect of duty or gross
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article V, Section 2
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Referendum on petition of one-third of eligible voters
+  quote: Upon a petition of at least one-third (1/3) of the eligible voters of
+  source: constitution-ute-indian-tribe-of-the-uintah-and-ouray-reservation-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-01-19'
+  locator: Article IX
+  document_version:
+    document: ute-indian-tribe-of-the-uintah-and-ouray-reservation-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: The Law and Order Code of the Ute Indian Tribe of the Uintah and Ouray Reservation Utah

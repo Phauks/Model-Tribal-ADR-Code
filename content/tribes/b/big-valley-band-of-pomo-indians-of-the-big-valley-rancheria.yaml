@@ -167,6 +167,195 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws under the Indian Reorganization Act
+  quote: and secure certain privileges and powers offered to us by the Indian Reorganization
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Preamble
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: governing-body
+  value: General community council
+  quote: Band of Pomo Indians shall be the general community council, which shall
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 1
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: governing-body-size
+  value: All qualified voters of the band
+  quote: be composed of all the qualified voters of the band.
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 1
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: governing-body-selection
+  value: Officers elected by secret ballot from council members
+  quote: from its own members by secret ballot (a) a chairman, (b) vice chairman,
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: general-council
+  value: All enrolled members 21 or older with one year residence
+  quote: of Pomo Indians who are 21 years of age or over, and who have maintained
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 2
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: head-of-government
+  value: Chairman
+  quote: from its own members by secret ballot (a) a chairman, (b) vice chairman,
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot of the council
+  quote: from its own members by secret ballot (a) a chairman, (b) vice chairman,
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: head-of-government-term
+  value: Until successor chosen at the November meeting
+  quote: Thereafter, officials shall be chosen at the November meeting.
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Amendment I, item 4
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: other-officers
+  value: Vice chairman, secretary, treasurer
+  quote: (e) secretary, (d) treasurer, (e) and such other officers and Committees
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: elections
+  value: Officers chosen at the November meeting
+  quote: Thereafter, officials shall be chosen at the November meeting.
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Amendment I, item 4
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: voting-age
+  value: '21'
+  quote: of Pomo Indians who are 21 years of age or over, and who have maintained
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 2
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: by a majority vote of the qualified voters of the band voting at an election
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article V, Section 1
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article V, Section 1
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: recall-and-removal
+  value: Expulsion of officers by majority vote of eligible voters
+  quote: The Community Council may, by a majority
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Amendment II, Section 3
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
+- aspect: other
+  value: Business committee of chairman, secretary and treasurer
+  quote: the chairman, secretary, and treasurer of the general community council,
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-13'
+  locator: Article III, Section 7
+  document_version:
+    document: big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-constitution
+    version: 1940-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract is the 1936 constitution with the 1940 amendments appended; facts are read from the original text as amended.'
 governing_documents:
 - kind: law-code
   title: Tribal code

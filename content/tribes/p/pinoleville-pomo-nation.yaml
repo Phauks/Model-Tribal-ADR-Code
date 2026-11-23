@@ -143,6 +143,157 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pinoleville Pomo Nation, California
+governance:
+- aspect: form
+  value: Constitution adopted under PL 108-204 Title I, Section 103 process
+  quote: certifies that the Constitution far Ihe Pinoleville Indian tribe, will be adopted
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of this Tribe shall be the Tribal Council.
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 1
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: shall consist of seven (7) members elected from the general citizenship of this
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 1
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: governing-body-selection
+  value: Elected from the general citizenship of the Tribe
+  quote: shall consist of seven (7) members elected from the general citizenship of this
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 1
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: shall be staggered, in a manner prescribed in the Election Code.
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: The Chairperson shall have the power to represent the Tribe in all matters
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 3(A)
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pinoleville Pomo Nation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice Chairperson, Secretary, Treasurer
+  quote: 'including four (4) officers: Chairperson, Vice Chairperson, Secretary,'
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 1
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: elections
+  value: Annual, first Tuesday of September
+  quote: The General Elections for the Tribal Council shall be held on the first Tuesday of
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: voting-age
+  value: '18'
+  quote: Citizens of the Tribe who are eighteen years or older shall be eligible to register to
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 5
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: election-authority
+  value: Election Board
+  quote: There shall be an Election Board to regulate and conduct all elections in
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 3
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: judiciary
+  value: Tribal Council may establish General Courts, Appeals Courts, Supreme Court
+  quote: The Tribal Council may establish General Courts, Appeals Courts, Supreme
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: judicial-selection
+  value: Means of appointment set by Tribal Council under Judicial Code
+  quote: Pursuant to the Judicial Code, the Tribal Council shall establish the means of
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 2
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
+- aspect: amendment
+  value: Majority vote of registered voters, 51% turnout
+  quote: The Constitution may be amended by a majority vote of the registered voters who
+  source: constitution-pinoleville-pomo-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XI, Section 1
+  document_version:
+    document: pinoleville-pomo-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Version is undated, but the text''s own certification is dated June 26, 2005, so it appears to be the 2005 adopted constitution.'
 gaming:
   compacts:
   - state: CA

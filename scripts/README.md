@@ -153,3 +153,12 @@ Run by hand, never in continuous integration. It reads the public catalogs that 
 | Script | Does | Needs |
 | --- | --- | --- |
 | `review/journal_oai_harvest.py` | Harvests the OAI-PMH catalog of each named repository collection (for example the American Indian Law Review at the University of Oklahoma) into one JSON list of titles, authors, dates, keywords, abstracts and landing pages; downloads no articles | Python standard library only |
+
+## Governance
+
+Run by hand, in this order, never in continuous integration. They write the `governance` facts in the profiles and the logs in `research/search-logs/governance/` ([decision record 0042](../docs/decisions/0042-governance-facts-from-governing-documents.md); [readings](../research/governance/README.md)). The constitution texts are the private captures' text extracts.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `governance/prepare_batches.py` | Picks each nation's constitution version to read and splits the texts into batches for AI readers, who follow `governance/reader-brief.md` | `scripts/requirements.txt` |
+| `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |

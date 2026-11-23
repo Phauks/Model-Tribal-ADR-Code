@@ -310,12 +310,12 @@ def check_stories(stories: list, sources: set, tribe_ids: set, sessions: set, me
 
 
 # A nation's own law may be shown in full under decision record 0031.
-NATION_LAW_SOURCE_KINDS = {"tribal-code", "tribal-constitution", "tribal-court-rule"}
+NATION_LAW_SOURCE_KINDS = {"tribal-code", "tribal-constitution", "tribal-court-rule", "tribal-case"}
 
 
 def check_story_full_text(path, record: dict, full_text: dict, levels: dict, source_records: dict,
                           errors: list[str]) -> None:
-    """A story's full text: who may be reproduced in full, and its count and fingerprint (decision record 0034)."""
+    """A story's full text: who may be reproduced in full, and its count and fingerprint (decision records 0034 and 0035)."""
     name = f"{path}: full_text"
     telling_id = full_text.get("telling")
     telling = next((t for t in record.get("tellings", []) if t.get("id") == telling_id), None)

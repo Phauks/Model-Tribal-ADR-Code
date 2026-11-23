@@ -158,6 +158,171 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Napaimute
+governance:
+- aspect: governing-body
+  value: Napaimute Tradition Council
+  quote: Hie governing body of ihe Native Village of Napaimutc shall be the Napaimutc Tradition
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Council shall consist of five (S i members who shall be elected by the majority vote
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article V, Section 2
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of qualified members
+  quote: of the qualified members of the village.
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article V, Section 2
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside at all meetings and exercise general supervision over
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article V, Section 4, a
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Napaimute
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Acting President”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by vote of all qualified members
+  quote: Elected officials will be elected by a vote of all the qualified members of the
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article VI, a
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: other-officers
+  value: Vice-President, Secretary/Treasurer, two members
+  quote: The Council shall include a President, Vice-President, See re Lin /Treasurer, and two (2)
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article V, Section 3
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: elections
+  value: Annual election
+  quote: Elected officials will be decied by a majority vote in an annual election wherein
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article VI
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older and meet the
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article VI, a
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: judiciary
+  value: Council may establish Tribal Courts
+  quote: To administer justice and establish Tribal Courts;
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article VII, Section 3, h
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: amendment
+  value: Majority of 25% of qualified voters
+  quote: This Constitution may be amended by a majority of twenty- five percent (25%) of the
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article XII
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: recall-and-removal
+  value: Recall by valid petition
+  quote: Members shall have the power in recall any member of the Council
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article VIII, Section 3
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: recall-and-removal
+  value: Expulsion by 25% vote of general members
+  quote: fourth vote (25%) of the general members for neglect of duly or gross misconduct
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article VIII
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
+- aspect: other
+  value: Honorary Chief elected for life, advisor to Council
+  quote: There shall be one Honorary Chief who shall be elected by the majority vote
+  source: constitution-native-village-of-napaimute-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-04-06'
+  locator: Article XI, Section 1
+  document_version:
+    document: native-village-of-napaimute-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover reads Est. 1987, Updated 2002; the certificate is dated April 6, 2002; OCR errors appear in names and section numbers.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

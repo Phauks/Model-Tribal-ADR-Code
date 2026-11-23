@@ -141,6 +141,171 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashantucket Pequot Indian Tribe
+governance:
+- aspect: form
+  value: Constitution and By-Laws
+  quote: ourselves and our descendants, do ordain and establish this Constitution and By-
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Preamble
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Section 1. The governing body of the Mashantucket (Western) Pequot Tribe shall
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article VI, Section 1
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The five (5) persons receiving the highest number of votes shall be members of the
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article VI, Section 2
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: governing-body-selection
+  value: Elected at the annual meeting by the Tribe
+  quote: Section 2. Election of the Tribal Council shall be at the annual meeting of the Tribe.
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article VI, Section 2
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Section 5. All Council members shall serve for a term of three (3) years with the
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article VI, Section 5
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Section 1. Chairman - The Chairman shall preside at all meetings of the Mashantucket (Western) Pequot Tribe and of the Tribal Council.
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: By-Laws, Article I, Section 1
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mashantucket Pequot Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected directly by the membership
+  quote: office of Chairman of the Tribal Council shall be elected directly by the majority
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article VI, Section 2
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: '(1) a Vice-Chairman; and, from within or without: (2) a Secretary; and, (3) a'
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article VI, Section 3
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: elections
+  value: Annual meeting, first Sunday of November
+  quote: be held on the first Sunday of November, at the Mashantucket (Western) Pequot
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article IX, Section 1
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: voting-age
+  value: '18'
+  quote: years of age or older shall be voting members of the Mashantucket (Western)
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article V
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: amendment
+  value: Two-thirds vote of eligible voters present at annual or special meeting
+  quote: Proposed amendments shall be adopted by a vote of two- thirds (2/3) of the
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article XI
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: recall-and-removal
+  value: Expulsion of Council member by three-fifths vote of the Tribal Council
+  quote: Section 2. The Tribal Council may by a three-fifths (3/5) vote expel any Tribal
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article VII, Section 2
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
+- aspect: recall-and-removal
+  value: Recall by special election after petition of one-third of eligible voters
+  quote: Section 3. Upon a petition of at least one-third (1/3) of the eligible voters of the
+  source: constitution-mashantucket-pequot-indian-tribe-1988-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1988'
+  locator: Article VII, Section 3
+  document_version:
+    document: mashantucket-pequot-indian-tribe-constitution
+    version: 1988-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text carries a 1989 BIA transmittal letter and a 1988 secretary certificate, consistent with the 1988 version.'
 governing_documents:
 - kind: law-code
   title: Mashantucket Pequot Tribal Code

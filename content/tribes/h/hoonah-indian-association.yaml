@@ -213,6 +213,195 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under Acts of Congress of June 18, 1934 and May 1, 1936
+  quote: the Acts of Congress of June 18, 1934 (48 Stat. 984), and
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Preamble
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: governing-body
+  value: Board of Directors
+  quote: shall be a Board
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article III, Sec. 1
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: posed of seven members
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article III, Sec. 1
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: governing-body-selection
+  value: Elected by the membership
+  quote: elected by the membership of the
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article III, Sec. 1
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: for a period of two years
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article III, Sec. 3
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: head-of-government
+  value: President
+  quote: shall be chairman of the Board
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: By-laws, Article I, Sec. 1
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Hoonah Indian Association
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Board from its members
+  quote: by electing from within its membership a Pres-
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article III, Sec. 5
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: other-officers
+  value: Vice-president
+  quote: The Board shall elect a Vice-president who shall act as presi-
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: By-laws, Article I, Sec. 2
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: other-officers
+  value: Secretary
+  quote: The Secretary of the Board shall conduct all correspondence
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: By-laws, Article I, Sec. 3
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: other-officers
+  value: Treasurer
+  quote: of the Board shall accept, receive, receipt for,
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: By-laws, Article I, Sec. 4
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: elections
+  value: Second Tuesday of December each year
+  quote: date shall be the second Tuesday
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: voting-age
+  value: '21'
+  quote: Any adult member of this Association shall have the
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article IV, Sec. 2
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: amendment
+  value: Majority vote of qualified voters in election called by Secretary of the Interior
+  quote: may be amended by a majority vote
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article IX
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall have been approved by the Secretary of the Interior.
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article IX
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
+- aspect: recall-and-removal
+  value: Forfeit office on felony or dishonesty offense
+  quote: of a felony or any offense involving dishonesty shall forfeit
+  source: constitution-hoonah-indian-association-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-23'
+  locator: Article VII, Section 1(a)
+  document_version:
+    document: hoonah-indian-association-constitution
+    version: 1939-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled OCR throughout, with partly unreadable section labels; facts come from the legible passages.'
 governing_documents:
 - kind: constitution
   title: Constitution

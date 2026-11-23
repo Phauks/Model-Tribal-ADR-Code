@@ -152,11 +152,22 @@ let syncedOnce: Promise<GitSyncOutcome[]> | undefined;
  */
 export function syncEssaysFromGitOnce(database: D1Database, bucket: R2Bucket, again = false): Promise<GitSyncOutcome[]> {
 	if (!syncedOnce || again) {
-		syncedOnce = syncEssaysFromGit(database, bucket).catch((problem) => {
-			console.error('Could not compare essays with git', problem);
-			syncedOnce = undefined;
-			return [];
-		});
+		syncedOnce = syncEssaysFromGit(database, bucket)
+			.then(async (outcomes) => {
+				// People editing live see git's text without waiting for the room's next save.
+				// Loaded here, in the Worker only, so the tests can run the sync without the Worker's modules.
+				const changed = outcomes.filter((outcome) => outcome.state === 'saved' || outcome.state === 'merged');
+				if (changed.length > 0) {
+					const { notifyLiveRoom } = await import('./live-editing.ts');
+					await Promise.all(changed.map((outcome) => notifyLiveRoom(outcome.identifier)));
+				}
+				return outcomes;
+			})
+			.catch((problem) => {
+				console.error('Could not compare essays with git', problem);
+				syncedOnce = undefined;
+				return [];
+			});
 	}
 	return syncedOnce;
 }

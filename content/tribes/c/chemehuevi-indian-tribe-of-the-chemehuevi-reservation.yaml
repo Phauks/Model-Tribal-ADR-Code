@@ -136,6 +136,231 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Chemehuevi Indian Tribe of the Chemehuevi Reservation, California
+governance:
+- aspect: form
+  value: Constitution under the Act of June 18, 1934, as amended
+  quote: Act of June 18, 1934 (48 Stat. SS4) , as amended, which shall revoke
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Preamble
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: governing-body
+  value: Chemehuevi Tribal Council
+  quote: known as the Chemehuevi Tribal Council.
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: governing-body-size
+  value: 9 voting members
+  quote: The Tribal Council shall consist] of nine (9i) voting
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article IV, Section 3
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: members, the term of office shall be three (3) years.
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article V, Section 4
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: general-council
+  value: All voting members of the Tribe at the annual general membership meeting
+  quote: Each voting member of the general membership has
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article X, Section 2(c)
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: head-of-government
+  value: Chairman
+  quote: all meetings of the Council, shall perform all duties of the Chairman and
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article XI, Section 1
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Chemehuevi Indian Tribe of the Chemehuevi Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its members
+  quote: shall elect from its members a Chairman
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article V, Section 5
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: The officers shall serve for three (3) years
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article V, Section 5
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: the Chairman, Vice-Chairman and Secretary-Treasurer.
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article VI, Section 4
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: elections
+  value: Held on the same day as the annual general membership meeting
+  quote: held on the same day as the annual general
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article V, Section 1
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: voting-age
+  value: '18'
+  quote: Tribe who has reached the age of eighteen (18) years shall be entitled to
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article IV, Section 5
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: election-authority
+  value: Election Board
+  quote: and conducted by the Election Board
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article V, Section 2
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: judiciary
+  value: Council to establish a tribal judicial system
+  quote: (k) Judicial System . To establish a tribal judicial system.
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article VI, Section 2(k)
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: amendment
+  value: Majority of those voting in a Secretarial election
+  quote: This Constitution may be amended by a majority vote of those voting
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article XII
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: An amendment shall become effective only upon approval of the
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article XII
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the Tribal Council
+  quote: Tribal Council vote to remove the accused council member
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article VIII, Section 1(c)
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: If one-third (1/3) of the eligible voters of the Chemehuevi Tribe
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article VIII, Section 2(a)
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
+- aspect: other
+  value: Election Board of 5 members elected by the general membership
+  quote: The Election Board shall be composed of
+  source: constitution-chemehuevi-indian-tribe-of-the-chemehuevi-reservation-1993-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1993-01-19'
+  locator: Article V, Section 2(a)
+  document_version:
+    document: chemehuevi-indian-tribe-of-the-chemehuevi-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan also carries a 2000 BIA letter and tribal resolution after the constitution, and the OCR is poor in places.'
 governing_documents:
 - kind: constitution
   title: Chemehuevi Indian Tribe of the Chemehuevi Reservation - Constitution

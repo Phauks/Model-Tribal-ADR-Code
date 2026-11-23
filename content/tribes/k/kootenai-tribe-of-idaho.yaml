@@ -196,6 +196,159 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kootenai Tribe of Idaho
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Tribe shall be a tribal council
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article III, Section 1
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: governing-body-size
+  value: 6 members plus the Chairperson
+  quote: consisting of six members and the Chairperson.
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article III, Section 1
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: governing-body-selection
+  value: Elected by popular vote of adult members of each district
+  quote: Council members and alternates shall be elected by popular
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article III, Section 2
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Council members shall serve a term of four years starting
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article III, Section 2
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman shall preside over meetings of tribal council
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kootenai Tribe of Idaho
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its members
+  quote: elect from their membership a Chairperson, Vice-Chairperson, Secretary and
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article III, Section 3
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: elect from their membership a Chairperson, Vice-Chairperson, Secretary and
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article III, Section 3
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: elections
+  value: Each election year, on or before September 30
+  quote: at an election to be held on or before
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article III, Section 2
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: judiciary
+  value: Council may establish a tribal court
+  quote: To establish a tribal court and adopt a code of law;
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article IV, Section 1(d)
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: amendment
+  value: 70% vote of adult members at an election
+  quote: may be amended by a vote of 70% of the adult
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article V
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: recall-and-removal
+  value: Removal only upon felony or fraud conviction
+  quote: upon the conviction of a felony or other crime of fraud, embezzlement or theft.
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article III, Section 6
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
+- aspect: other
+  value: Vacancies filled by district alternate
+  quote: Any other vacancies occurring in the Council shall be filled for
+  source: constitution-kootenai-tribe-of-idaho-1947-text-3
+  confidence: high
+  verification: read-in-full
+  as_of: '1947-06-16'
+  locator: Article III, Section 5
+  document_version:
+    document: kootenai-tribe-of-idaho-constitution
+    version: 1947-text-3
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Website copy; the text notes the 1947 original was most recently amended in 1996, and the Article III wording reflects that amendment.'
 governing_documents:
 - kind: law-code
   title: Tribal code

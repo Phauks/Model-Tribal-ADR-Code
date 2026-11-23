@@ -150,6 +150,219 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Upper Skagit Indian Tribe
+governance:
+- aspect: form
+  value: Constitution and Bylaws under the Indian Reorganization Act of June 18, 1934
+  quote: Indian Reorganization Act of June 18, 1934 (48 Stat. 984)
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Preamble
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: governing-body
+  value: Upper Skagit Tribal Council
+  quote: The governing body of the Upper Skagit Indij
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article III, Section 1
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The tribal council shall consist of seven (7)
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article III, Section 2
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: elected to serve three (3) year terms
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article III, Section 2
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: above staggered basis for three (3) year terms
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article IV, Section 5
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: general-council
+  value: Annual general council of the tribe
+  quote: There shall be an annual general council
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article VI, Section 1
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman of the tribal council shall preside
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Upper Skagit Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected annually by the general council
+  quote: The general council shall, elect annual
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Amendment II, Article III, Section 3
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: and (4) a treasurer, and may appoint such other officials
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article III, Section 3
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: elections
+  value: Every year at the annual membership meeting
+  quote: the annual membership meeting
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article IV, Section 2
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: voting-age
+  value: '18'
+  quote: 18 years of age or older shall be eligible to vote
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article IV, Section 1
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: election-authority
+  value: Election board
+  quote: shall prescribe the duties of the election board
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article IV, Section 4
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: amendment
+  value: Majority vote of qualified voters in a Secretary-called election, 30% turnout
+  quote: This constitution and bylaws may be amended by a maje
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article X
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: effective when approved by the Secretary of the Interim
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article X
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon a petition of at least one-third of the eligible voters
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article V, Section 3
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: recall-and-removal
+  value: Expulsion by 4 Council votes
+  quote: The tribal council may expel any member for neglect of
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article V, Section 2
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
+- aspect: other
+  value: Referendum by general council on petition of one-third of voters
+  quote: Within thirty (30) days of the receipt of a petition of onej-third or more of the
+  source: constitution-upper-skagit-indian-tribe-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-03-26'
+  locator: Article VIII
+  document_version:
+    document: upper-skagit-indian-tribe-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly damaged; the 1977 amendments are partly illegible. The amended Article III (Amendment II) says the general council elects the chairman, which replaces the original rule that the council elects its officers.'
 governing_documents:
 - kind: law-code
   title: Upper Skagit Indian Tribe of Washington

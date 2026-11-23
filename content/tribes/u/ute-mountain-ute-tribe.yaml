@@ -222,6 +222,195 @@ government_structure:
   as_of: '1940'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-Laws under the Indian Reorganization Act of June 18, 1934
+  quote: by the Act of June 18, 1934 (48 Stat. 984). as amended, do hereby
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Certification of Adoption
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: governing-body
+  value: Ute Mountain Tribal Council
+  quote: The governing body of the Ute Mountain Tribe of the
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article III, Section 1
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Council shall be composed of seven members, one of
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article III, Section 2
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: governing-body-selection
+  value: Elected by community
+  quote: one of whom shall be elected annually by the members of the Allen Canyon
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article III, Section 2
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: two years; and two members for three years; thereafter, two mem-
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article III, Section 6
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: general-council
+  value: All voters of the tribe
+  quote: The General Council, consisting of all the voters of the ITte Moun-
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article VI
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Council shall preside over all meet-
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: By-laws, Article II, Section 1
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ute Mountain Ute Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its membership
+  quote: shall choose from its membership ; a chairman, a secretary-
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article III, Section 2
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: other-officers
+  value: Secretary-Custodian, Treasurer
+  quote: custodian, a treasurer, and such other officers and committees as may be
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article III, Section 2
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: elections
+  value: Every year, second Friday in October
+  quote: the annual election shall be held on the second Friday in
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article III, Section 5
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: voting-age
+  value: '21'
+  quote: Any resident member, male or female,. 21 years of age
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: Council, and its Court, shall extend to the lands now included within
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article I
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: amendment
+  value: Majority vote of the Tribal Council, then ratification and approval
+  quote: Amendments to this Constitution may he proposed by a majority vote
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article IX
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the Council
+  quote: may be removed from office by a two-thirds vote of the
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article III, Section 7
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
+- aspect: other
+  value: Referendum by Council majority or 25% petition
+  quote: By a ma jority vote of the Council, or upon a petition signed by at least.
+  source: constitution-ute-mountain-ute-tribe-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-01-03'
+  locator: Article VIII
+  document_version:
+    document: ute-mountain-ute-tribe-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1940 constitution and by-laws with its 1950 Amendment I, not a 1950 constitution; the scan is also partly garbled.'
 governing_documents:
 - kind: law-code
   title: Ute Mountain Tribe of the Ute Mountain Reservation, Colorado, New Mexico & Utah

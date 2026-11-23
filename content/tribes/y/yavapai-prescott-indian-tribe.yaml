@@ -167,6 +167,207 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Prescott Indian Tribe
+governance:
+- aspect: form
+  value: Articles of Association
+  quote: do hereby adopt these Articles
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Preamble
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: governing-body
+  value: Yavapai Board of Directors
+  quote: The governing board of the Yavapai -Prescott Community Associ-
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IV
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: ation shall be the Yavapai Board of Directors of five (5 ) members
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IV
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: governing-body-selection
+  value: Elected by the membership by secret ballot
+  quote: shall elect from its own membership, at a meeting called for
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IV
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: term of two (2) years.
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IV
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the Board of Directors shall preside over
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article X, Section 1
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yavapai-Prescott Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the membership
+  quote: a President, Vice-President,
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IV
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: term of two (2) years.
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IV
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: other-officers
+  value: Vice-President, Secretary-Treasurer
+  quote: President, Vice-President, Secretary-
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IV
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: elections
+  value: Every even year, second Saturday in July
+  quote: shall be held every even year on the second Saturday in
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article V, Section 1 (Amendment V)
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: voting-age
+  value: '18'
+  quote: have reached the age of eighteen (18) years shall be
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IV, Section 4 (Amendment IV)
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: election-authority
+  value: Board of Directors (prescribes election rules)
+  quote: Directors shall prescribe rules for the casting and canvas-
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article V, Section 4
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: amendment
+  value: Majority vote of qualified voters in an election called by the Secretary
+  quote: may be amended by a majority
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IX, Section 1
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IX, Section 1
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Board of Directors
+  quote: by a majority vote of the board
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article VIII, Section 3 (Amendment VII)
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
+- aspect: other
+  value: Hereditary chieftess as alternate board member for quorum
+  quote: shall serve as an alternate member of the Board of
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: Article IV, Section 5 (Amendment II)
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 Articles of Association with Amendments I to VIII (1970 to 1975) and their ballot certificates; several passages are badly scanned.'
 governing_documents:
 - kind: law-code
   title: Yavapai-Prescott Tribe of the Yavapai Reservation, Arizona

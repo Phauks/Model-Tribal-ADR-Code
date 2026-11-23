@@ -5,7 +5,7 @@
  * to keep it.
  *
  * What goes: the account, its sessions and unused sign-in codes, and the
- * contributor profile with every confirmed version. What stays: a workspace
+ * contributor profile with every confirmed version and the profile picture. What stays: a workspace
  * member's row in `people` (reviews, drafts and the sealed activity log point
  * to it), with the email address and sign-in removed and the name kept or
  * replaced; and signed forms, which are records of consent and are changed or
@@ -110,5 +110,6 @@ export async function deleteAccount(
 	// Before the account row goes, because uploads point to it.
 	if (bucket) await forgetAccountUploads(database, bucket, account.subject);
 	await database.batch(statements);
+	if (bucket && profile?.pictureKey) await bucket.delete(profile.pictureKey);
 	return { outcome: 'deleted' };
 }

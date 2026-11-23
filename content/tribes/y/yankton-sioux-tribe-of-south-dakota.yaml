@@ -178,6 +178,231 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yankton Sioux Tribe of South Dakota
+governance:
+- aspect: form
+  value: Amended 1932 constitution, not subject to the Indian Reorganization Act
+  quote: is not SUbject to the provisions of the Howard-Wheeler Act of
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article I, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: governing-body
+  value: Yankton Sioux Tribal Business and Claims Committee
+  quote: Constitution shall be known as the Yankton Sioux Tribal Business
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article II, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: These shall be comprised of nine members consisting
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Voting shall be by secret ballot cast at a polling
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Amended By-Laws, Article II, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: two years on the first Thursday in September to hold office
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: head-of-government
+  value: Tribal Chairman
+  quote: of a Tribal Chairman, Vice-Chairman, Secretary, Treasurer and
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yankton Sioux Tribe of South Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected
+  quote: Section 2. The officers and Committee members shall be elected
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two years on the first Thursday in September to hold office
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: of a Tribal Chairman, Vice-Chairman, Secretary, Treasurer and
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: elections
+  value: Every 2 years on the first Thursday in September
+  quote: elections shall be held every two years on the first Thursday
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Amended By-Laws, Article II, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: voting-age
+  value: '18'
+  quote: eighte.en (18) years of age or older shall be eligible to vote
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Amended By-Laws, Article II, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: election-authority
+  value: Election board appointed by the Committee
+  quote: place to be designated by an election board to be appointed by
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Amended By-Laws, Article II, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: branches
+  value: Legislative and judicial
+  quote: action. The legislative branch shall be comprised of the nine
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 3
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: judiciary
+  value: Reservation court
+  quote: by the establishment of a reservation court and defining its duties
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article XII, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: amendment
+  value: Proposed by majority at tribal meeting, adopted by election
+  quote: Section 1. An amendment to this Constitution may be proposed at
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article XI, Section 1
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: amendment repeal or ratification subject to the approval of the
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article XI, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of members attending a tribal meeting
+  quote: good cause by a two-thirds vote of the members attending any
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 2
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
+- aspect: other
+  value: Judicial power remains with tribal membership, on request of five members
+  quote: cause shall be submitted at any regular Tribal meeting for
+  source: constitution-yankton-sioux-tribe-of-south-dakota-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-12-15'
+  locator: Article V, Section 3
+  document_version:
+    document: yankton-sioux-tribe-of-south-dakota-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1962 amended constitution and bylaws with 1975 amendments and 1990 amendments approved in 1998, not a 1998 document; the governing body is the Business and Claims Committee and some passages are garbled by OCR.'
 governing_documents:
 - kind: law-code
   title: Yankton Sioux Tribal Code
