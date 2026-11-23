@@ -11,7 +11,11 @@ from three places, in this order of preference (decision record 0042):
    words that state it. This script keeps a fact only when those words are
    found in the text (spacing aside), so every kept fact can be checked
    against the document.
-2. The nation's own website (a later pass; see research/governance/README.md).
+2. The nation's own website: its government, council, election and court
+   pages and any governing document it posts, saved by crawl_websites.py and
+   read by AI readers under scripts/governance/website-brief.md. A fact from
+   the website replaces a fact of the same aspect read from an older library
+   copy of the constitution, since the website is the nation's newer word.
 3. The Bureau of Indian Affairs Tribal Leaders Directory: the title of the
    office of the nation's leader, never the person's name.
 
@@ -22,6 +26,13 @@ Subcommands:
                            prepare_batches.py) and write
                            research/governance/readings.json: every fact with
                            whether its quote was found.
+  websites BATCH_FOLDER    Check the website readers' answers
+                           (batch-NNN.answers.json beside each batch written by
+                           prepare_website_batches.py) against the saved page
+                           texts and write research/governance/website-readings.json.
+  sources                  Write a source record for each website page that a
+                           kept fact cites (content/sources/), from
+                           website-readings.json.
   directory DIRECTORY.json Turn a saved query of the directory's feature
                            service (fields tribefullname, tribalcomponent,
                            jobtitle) into research/governance/directory-titles.json.
@@ -31,6 +42,8 @@ Subcommands:
                            research/search-logs/governance/.
 
   python3 scripts/governance/apply.py readings /path/to/batches
+  python3 scripts/governance/apply.py websites /path/to/website-batches
+  python3 scripts/governance/apply.py sources
   python3 scripts/governance/apply.py directory /path/to/directory.json
   python3 scripts/governance/apply.py write
 """
@@ -224,6 +237,268 @@ def iterate_facts(value):
             yield from iterate_facts(child)
 
 
+# ---------------------------------------------------------------- websites
+
+WEBSITE_NOTE = (
+    "Read from the nation's own website by an AI reader ({reader}); the quoted words were found in the "
+    "saved page by scripts/governance/apply.py. Not yet checked by the lead author."
+)
+SESSION = "2026-11-23-governance"
+
+
+def slug(text, limit):
+    words = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+    return words[:limit].rstrip("-") or "home"
+
+
+def page_key(nation, link):
+    """A source key for one page of a nation's website: the nation and the page's path."""
+    from urllib.parse import urlparse
+    parsed = urlparse(link)
+    path = slug(parsed.path + ("-" + parsed.query if parsed.query else ""), 60)
+    return f"{slug(nation, 70)}-website-{path}"
+
+
+def websites(folder):
+    folder = Path(folder)
+    rows = {}
+    for batch_path in sorted(folder.glob("batch-[0-9][0-9][0-9].json")):
+        answers_path = batch_path.with_name(batch_path.stem + ".answers.json")
+        batch = json.loads(batch_path.read_text(encoding="utf-8"))
+        answers = json.loads(answers_path.read_text(encoding="utf-8")) if answers_path.exists() else []
+        by_nation = {answer.get("nation"): answer for answer in answers if isinstance(answer, dict)}
+        for row in batch:
+            pages_folder = Path(row["folder"])
+            manifest = json.loads((pages_folder / row.get("manifest", "reading.json")).read_text(encoding="utf-8"))
+            pages = {page["number"]: page for page in manifest["pages"]}
+            texts = {number: spaced((pages_folder / page["text"]).read_text(encoding="utf-8", errors="replace"))
+                     for number, page in pages.items()}
+            answer = by_nation.get(row["nation"])
+            facts = []
+            for fact in (answer or {}).get("facts") or []:
+                quote = spaced(str(fact.get("quote") or ""))
+                try:
+                    number = int(fact.get("page"))
+                except (TypeError, ValueError):
+                    number = None
+                # A quote found on another saved page than the one given still counts, on the page it is on.
+                if number not in texts or quote not in texts[number]:
+                    number = next((candidate for candidate, text in texts.items() if quote and quote in text), number)
+                aspect = fact.get("aspect") if fact.get("aspect") in ASPECTS else "other"
+                facts.append({
+                    "aspect": aspect,
+                    "value": spaced(str(fact.get("value") or "")),
+                    "quote": quote,
+                    "page": number,
+                    "locator": spaced(str(fact.get("locator") or "")),
+                    "quote_found": bool(quote) and number in texts and quote in texts[number] and len(quote) <= 400,
+                })
+            documents = []
+            for document in (answer or {}).get("documents") or []:
+                page = pages.get(document.get("page")) if isinstance(document.get("page"), int) else None
+                if page:
+                    documents.append({**{key: document.get(key) for key in ("page", "kind", "title", "year", "stated_current", "nation_matches")},
+                                      "link": page["final_link"], "sha256": page["sha256"]})
+            rows[row["nation"]] = {
+                "nation": row["nation"],
+                "sites": manifest["sites"],
+                "fetched": manifest["fetched"],
+                "answered": answer is not None,
+                "reader": "Claude Haiku",
+                "official": bool(answer and answer.get("official")),
+                "problem": spaced(str((answer or {}).get("problem") or "")),
+                "pages": [{key: page[key] for key in ("number", "link", "final_link", "title", "media_type", "sha256", "raw")}
+                          | {"folder": str(pages_folder)} for page in manifest["pages"]],
+                "documents": documents,
+                "facts": facts,
+            }
+    skipped_path = folder / "skipped.json"
+    for entry in json.loads(skipped_path.read_text(encoding="utf-8")) if skipped_path.exists() else []:
+        rows.setdefault(entry["nation"], {"nation": entry["nation"], "answered": False, "official": False,
+                                          "problem": entry["reason"], "pages": [], "documents": [], "facts": [],
+                                          "sites": [], "fetched": DATE, "reader": None})
+    previous = OUT / "website-readings.json"
+    if previous.exists():
+        for row in json.loads(previous.read_text(encoding="utf-8")):
+            rows.setdefault(row["nation"], row)
+    ordered = [rows[key] for key in sorted(rows)]
+    previous.write_text(json.dumps(ordered, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    facts = [fact for row in ordered for fact in row["facts"]]
+    print(f"{len(ordered)} nations, {sum(row['answered'] for row in ordered)} answered, "
+          f"{sum(row['official'] for row in ordered)} official sites; {len(facts)} facts, "
+          f"{sum(fact['quote_found'] for fact in facts)} with the quote found")
+
+
+def website_page(row, number):
+    return next((page for page in row["pages"] if page["number"] == number), None)
+
+
+def website_documents(row):
+    """Pages the reader marked as a governing document of this nation, by page number."""
+    return {document["page"]: document for document in row["documents"]
+            if document.get("nation_matches") is not False and document.get("kind") in ("constitution", "bylaws", "articles", "other")}
+
+
+_CATALOGED = None
+
+
+def cataloged():
+    """Governing-document texts the catalog already holds, by SHA-256: (source key, document version, status)."""
+    global _CATALOGED
+    if _CATALOGED is None:
+        _CATALOGED = {}
+        for path in sorted(glob.glob(str(ROOT / "content" / "documents" / "*" / "*.yaml"))):
+            history = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+            for version in history.get("versions") or []:
+                sha = (version.get("capture") or {}).get("sha256")
+                if sha and version.get("source"):
+                    _CATALOGED[sha] = (version["source"], {"document": history["id"], "version": version["id"]}, version.get("status"))
+    return _CATALOGED
+
+
+_EXISTING = None
+
+
+def existing_sources():
+    """Source records from other work, by link, so a page already cited elsewhere keeps its record."""
+    global _EXISTING
+    if _EXISTING is None:
+        _EXISTING = {}
+        for path in sorted(glob.glob(str(ROOT / "content" / "sources" / "*" / "*.yaml"))):
+            record = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+            if SESSION in (record.get("found_in") or []) and "-website-" in record["key"]:
+                continue
+            for link in {record.get("original_link"), (record.get("citation") or {}).get("URL")} - {None}:
+                _EXISTING.setdefault(same_link(link), record["key"])
+    return _EXISTING
+
+
+def same_link(link):
+    """A link without its scheme, a leading www. or a closing slash, for matching records."""
+    return re.sub(r"^https?://(www\.)?", "", link.strip()).rstrip("/").lower()
+
+
+def page_source(row, page):
+    """The source key for a saved page: the catalog's version, a record from other work with the same link, or the page's own."""
+    known = cataloged().get(page["sha256"])
+    if known:
+        return known[0]
+    for link in (page["final_link"], page["link"]):
+        if same_link(link) in existing_sources():
+            return existing_sources()[same_link(link)]
+    return page_key(row["nation"], page["final_link"])
+
+
+def website_facts(row):
+    if not row or not row["official"]:
+        return []
+    documents = website_documents(row)
+    facts, seen = [], set()
+    for fact in row["facts"]:
+        if not fact["quote_found"] or not fact["value"]:
+            continue
+        key = (fact["aspect"], fact["value"].lower())
+        if key in seen:
+            continue
+        seen.add(key)
+        page = website_page(row, fact["page"])
+        document = documents.get(fact["page"])
+        current = not document or document.get("stated_current")
+        known = cataloged().get(page["sha256"])
+        if known:
+            # The page is a governing document the constitution catalog already holds: cite that version.
+            current = current or known[2] == "in-effect"
+        entry = {"aspect": fact["aspect"], "value": fact["value"], "quote": fact["quote"],
+                 "source": page_source(row, page),
+                 "confidence": "high" if current else "medium", "verification": "read-in-full",
+                 "as_of": row["fetched"]}
+        if fact["locator"]:
+            entry["locator"] = fact["locator"]
+        if known:
+            entry["document_version"] = dict(known[1])
+        note = WEBSITE_NOTE.format(reader=row.get("reader") or "Claude Haiku")
+        if document and not current:
+            note += " The governing document as the nation's website posts it; the page does not say whether it is the version now in effect."
+        if row["problem"]:
+            note += f" Reader's note on the pages: {row['problem'].rstrip('.')}."
+        entry["note"] = note
+        facts.append(entry)
+    return facts
+
+
+def sources():
+    """Write a source record for each website page a kept fact cites."""
+    rows = json.loads((OUT / "website-readings.json").read_text(encoding="utf-8"))
+    names = official_names()
+    written = 0
+    earlier = {path for path in (ROOT / "content" / "sources").glob("*/*-website-*.yaml")
+               if SESSION in (yaml.safe_load(path.read_text(encoding="utf-8")).get("found_in") or [])}
+    kept_paths = set()
+    for row in rows:
+        identifier = row["nation"]
+        facts = website_facts(row)
+        documents = website_documents(row)
+        for number in sorted({page["number"] for page in row["pages"]
+                              if page_key(identifier, page["final_link"]) in {fact["source"] for fact in facts}}):
+            page = website_page(row, number)
+            key = page_key(identifier, page["final_link"])
+            document = documents.get(number)
+            author = names.get(identifier, [identifier])[0]
+            year, month, day = (int(part) for part in row["fetched"].split("-"))
+            if document:
+                citation = {"type": "legislation", "title": document.get("title") or page["title"] or "Constitution",
+                            "author": [{"literal": author}], "URL": page["final_link"]}
+                if document.get("year"):
+                    citation["issued"] = {"date-parts": [[int(document["year"])]]}
+            else:
+                citation = {"type": "webpage", "title": page["title"] or page["final_link"],
+                            "author": [{"literal": author}], "URL": page["final_link"]}
+            citation["accessed"] = {"date-parts": [[year, month, day]]}
+            record = {
+                "key": key,
+                "kind": "tribal-constitution" if document and document.get("kind") == "constitution" else "web-page",
+                "citation": citation,
+                "original_link": page["final_link"],
+                "retrieved": row["fetched"],
+                "history": {"status": "live", "last_checked": row["fetched"]},
+                "rights": {"status": "no-permission-needed", "basis": "fair-use",
+                           "basis_note": ("Facts about how the nation's government is set up, each with the few words of the page "
+                                          "(at most 300 characters) that state it, so a reader can check it (decision record 0042)."),
+                           "redistribution": False},
+                "tribes": [identifier],
+                "found_in": [SESSION],
+                "notes": (f"The nation's own website, read on {row['fetched']} for its governance facts "
+                          f"(research/governance/website-readings.json). Saved page SHA-256 {page['sha256'][:16]}..."),
+            }
+            path = ROOT / "content" / "sources" / letter(key) / f"{key}.yaml"
+            if path.exists():
+                existing = yaml.safe_load(path.read_text(encoding="utf-8"))
+                if SESSION not in existing.get("found_in", []):
+                    raise SystemExit(f"{path}: a source record of this key exists from other work; rename the key")
+                if existing.get("archives"):
+                    record["archives"] = existing["archives"]
+                    record = {key_: record[key_] for key_ in ["key", "kind", "citation", "original_link", "retrieved", "archives",
+                                                              "history", "rights", "tribes", "found_in", "notes"]}
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(dump(record), encoding="utf-8")
+            kept_paths.add(path)
+            written += 1
+    # A page record an earlier run wrote that no fact cites now (for example a page cited elsewhere under another key) goes.
+    for path in earlier - kept_paths:
+        path.unlink()
+    print(f"{written} source records written; {len(earlier - kept_paths)} no longer cited removed")
+
+
+def official_names():
+    """The nation's own names, for the author of each page's citation."""
+    names = {}
+    for identifier, path in profiles().items():
+        record = yaml.safe_load(path.read_text(encoding="utf-8"))
+        own = record.get("names") or {}
+        names[identifier] = [name for name in (own.get("official"), own.get("common")) if name]
+    return names
+
+
 # ---------------------------------------------------------------- write
 
 def reading_facts(row):
@@ -299,13 +574,22 @@ def write():
         titles.setdefault(entry["nation"], []).append(entry)
     coverage = {row["nation"]: row for row in json.loads((ROOT / "research/constitutions/coverage.json").read_text(encoding="utf-8"))} \
         if (ROOT / "research/constitutions/coverage.json").exists() else {}
-    counts = {"profiles": 0, "with facts": 0, "facts": 0}
+    website_path = OUT / "website-readings.json"
+    website_rows = {row["nation"]: row for row in json.loads(website_path.read_text(encoding="utf-8"))} if website_path.exists() else {}
+    counts = {"profiles": 0, "with facts": 0, "facts": 0, "from websites": 0}
     for identifier, path in profiles().items():
         counts["profiles"] += 1
         text = path.read_text(encoding="utf-8")
         record = yaml.safe_load(text)
         row = readings_rows.get(identifier)
-        facts = order((reading_facts(row) if row else []) + directory_facts(titles.get(identifier, [])))
+        from_site = website_facts(website_rows.get(identifier))
+        site_aspects = {fact["aspect"] for fact in from_site}
+        # The website is the nation's newer word: its fact replaces one of the same aspect read from an
+        # older library copy, but not one read from a text the nation's own site marks as in effect.
+        from_text = [fact for fact in (reading_facts(row) if row else [])
+                     if fact["confidence"] == "high" or fact["aspect"] not in site_aspects]
+        facts = order(from_text + from_site + directory_facts(titles.get(identifier, [])))
+        counts["from websites"] += len(from_site)
         block = ("governance:\n" + dump(facts)) if facts else ""
         new_text = replace_block(text, "governance", block)
         expected = dict(record)
@@ -319,7 +603,8 @@ def write():
         if facts:
             counts["with facts"] += 1
             counts["facts"] += len(facts)
-        write_log(identifier, path, record, row, titles.get(identifier, []), coverage.get(identifier), facts)
+        write_log(identifier, path, record, row, titles.get(identifier, []), coverage.get(identifier), facts,
+                  website_rows.get(identifier))
     # A log whose profile is gone (for example merged into another record) goes too.
     known = set(profiles())
     for stale in LOGS.glob("*/*.yaml"):
@@ -328,7 +613,22 @@ def write():
     print(counts)
 
 
-def write_log(identifier, path, record, row, titles, coverage, facts):
+def next_steps(site, record):
+    if site and site["pages"] and site["official"]:
+        return ("A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; "
+                "the government office can say which version is in effect.")
+    if site and site["pages"]:
+        return "Find the nation's own government website; the address listed leads elsewhere."
+    if site:
+        return "The nation's website refused an automated reader; read its government pages by hand."
+    if any(contact.get("kind") == "website" for contact in record.get("contacts") or []):
+        return ("The nation's own website: a government, council or constitution page. "
+                "Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs.")
+    return ("Ask the nation's government office for its constitution or a description of its government; "
+            "a state commission on Indian affairs may also list it.")
+
+
+def write_log(identifier, path, record, row, titles, coverage, facts, site=None):
     searches = []
     if row:
         found = [fact for fact in facts if fact.get("document_version")]
@@ -371,6 +671,33 @@ def write_log(identifier, path, record, row, titles, coverage, facts):
         "address": DIRECTORY_LINK, "query": "jobtitle of the nation's row", "outcome": outcome, "reason": reason,
         **({"records": [DIRECTORY_SOURCE]} if outcome == "found" else {}),
     })
+    if site:
+        site_sources = {page_source(site, page) for page in site["pages"]}
+        kept = [fact for fact in facts if fact["source"] in site_sources and fact.get("as_of") == site["fetched"]]
+        if not site["pages"]:
+            outcome, reason = "blocked", f"The website could not be read: {site['problem'] or 'no page could be fetched'}."
+        elif not site["official"]:
+            outcome, reason = "not-found", f"The pages saved are not the nation's own government site: {site['problem'] or 'another site'}."
+        elif kept:
+            outcome, reason = "found", f"Read {len(site['pages'])} pages (home, government, council, election, court and constitution pages); kept {len(kept)} facts whose quoted words were found on the page."
+        else:
+            outcome, reason = "not-found", f"Read {len(site['pages'])} pages (home, government, council, election, court and constitution pages); none states how the government is set up in words that could be quoted."
+        searches.append({
+            "date": site["fetched"], "searched_by": "Claude (AI assistant)", "method": "ai-review", "place_kind": "nation-website",
+            "address": (site["sites"] or [contact["value"] for contact in record.get("contacts") or [] if contact.get("kind") == "website"] or ["content/tribes"])[0],
+            "query": "Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)",
+            "outcome": outcome, "reason": reason,
+            "records": sorted({fact["source"] for fact in kept}),
+        })
+    elif not any(contact.get("kind") == "website" for contact in record.get("contacts") or []):
+        contacts_log = ROOT / "research" / "search-logs" / "contacts" / letter(identifier) / f"{identifier}.yaml"
+        searches.append({
+            "date": DATE, "searched_by": "Claude (AI assistant)", "method": "script", "place_kind": "nation-website",
+            "address": str(contacts_log.relative_to(ROOT)) if contacts_log.exists() else "content/tribes",
+            "query": "A website of the nation's own, to read its government pages",
+            "outcome": "no-site",
+            "reason": "The profile lists no website of the nation's own; the contacts search (its log is the address) found none.",
+        })
     for entry in searches:
         if not entry.get("records"):
             entry.pop("records", None)
@@ -380,8 +707,7 @@ def write_log(identifier, path, record, row, titles, coverage, facts):
         "status": "found" if facts else "partly-searched",
         "last_searched": DATE,
         "searches": searches,
-        "next_steps": ("The nation's own website: a government, council or constitution page. "
-                       "Then a newer constitution text from the nation, a law library or the Bureau of Indian Affairs."),
+        "next_steps": next_steps(site, record),
     }
     target = LOGS / letter(identifier) / f"{identifier}.yaml"
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -392,6 +718,10 @@ if __name__ == "__main__":
     command = sys.argv[1] if len(sys.argv) > 1 else ""
     if command == "readings":
         readings(sys.argv[2])
+    elif command == "websites":
+        websites(sys.argv[2])
+    elif command == "sources":
+        sources()
     elif command == "directory":
         directory(sys.argv[2])
     elif command == "write":

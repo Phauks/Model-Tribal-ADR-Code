@@ -66,6 +66,16 @@ export interface FormTemplate {
 	/** The form's Markdown with the same tokens, for the copy kept with a filing. */
 	markdown: string;
 	fields: FormField[];
+	/** Word and PDF copies of a model form, with their SHA-256 hashes (scripts/forms/build_forms.py). */
+	downloads?: FormDownload[];
+}
+
+export interface FormDownload {
+	kind: 'Word' | 'PDF';
+	/** Where the site serves the file, such as /help/forms/proof-of-service.pdf. */
+	href: string;
+	sha256: string;
+	bytes: number;
 }
 
 /** Where each field's token sits in the template's HTML and Markdown. */

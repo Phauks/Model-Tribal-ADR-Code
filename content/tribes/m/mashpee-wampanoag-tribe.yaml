@@ -232,6 +232,14 @@ governance:
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: judiciary
+  value: Supreme, District and Peacemaker courts
+  quote: There are three types of courts, Supreme Court, District Court, and Peacemaker Court.
+  source: mashpee-wampanoag-tribe-website-about-the-court
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Mashpee Wampanoag Indian Tribal Council, Inc. - Corporate Documents and Selected Ordinances
@@ -494,6 +502,25 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Massachusetts by the Census Bureau's land areas.
+nearby_state_courts:
+- state: MA
+  county: Barnstable County
+  court: Superior Court for Barnstable County
+  link: https://www.mass.gov/orgs/superior-court
+  source: state-trial-court-directory-ma
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Barnstable County holds 55% of the land of Mashpee Wampanoag Trust Land (Census GEOID 2147), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MA
+  county: Bristol County
+  court: Superior Court for Bristol County
+  link: https://www.mass.gov/orgs/superior-court
+  source: state-trial-court-directory-ma
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Bristol County holds 45% of the land of Mashpee Wampanoag Trust Land (Census GEOID 2147), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

@@ -247,6 +247,46 @@ indian_health_service:
   locator: Direct Service Tribes by IHS Area > Nashville Area
   note: Listed as "Pamunkey Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 governance:
+- aspect: governing-body
+  value: Pamunkey Indian Tribal Government
+  quote: The Pamunkey Indian Tribal Government administers the affairs of the Pamunkey Indian Tribe.
+  source: pamunkey-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 1 Chief and 7 council members
+  quote: The Pamunkey Indian Tribal Government is comprised of one Chief and seven council members
+  source: pamunkey-indian-tribe-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the voting citizens
+  quote: all of whom are elected by the voting citizens of the Tribe
+  source: pamunkey-indian-tribe-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Council members are elected to staggered four-year terms
+  source: pamunkey-indian-tribe-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  quote: The role of Chief is a 4-year term, elected during the same year as the U.S. Presidential election.
+  source: pamunkey-indian-tribe-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chief
   source: bia-tribal-leaders-directory-2026
@@ -255,6 +295,38 @@ governance:
   as_of: '2026-11-20'
   locator: Pamunkey Indian Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the voting citizens
+  quote: all of whom are elected by the voting citizens of the Tribe
+  source: pamunkey-indian-tribe-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The role of Chief is a 4-year term, elected during the same year as the U.S. Presidential election.
+  source: pamunkey-indian-tribe-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Assistant Chief
+  quote: The Assistant Chief is selected by the elected council members.
+  source: pamunkey-indian-tribe-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Council every other year
+  quote: with council elections taking place every other year
+  source: pamunkey-indian-tribe-website-tribal-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
@@ -277,6 +349,16 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Virginia by the Census Bureau's land areas.
+nearby_state_courts:
+- state: VA
+  county: King William County
+  court: Circuit Court for King William County
+  link: https://www.vacourts.gov/courts/circuit/home
+  source: state-trial-court-directory-va
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: King William County holds 100% of the land of Pamunkey Reservation (Census GEOID 9260), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

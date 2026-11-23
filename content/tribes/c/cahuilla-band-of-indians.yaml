@@ -176,6 +176,46 @@ indian_health_service:
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Cahuilla Band of Indians".
 governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The five-member elected Tribal Council serve four-year staggered terms
+  source: cahuilla-band-of-indians-website-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages; the council facts come from the Tribal Council page and the chairwoman''s title appears only beside a name.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The five-member elected Tribal Council serve four-year staggered terms
+  source: cahuilla-band-of-indians-website-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages; the council facts come from the Tribal Council page and the chairwoman''s title appears only beside a name.'
+- aspect: governing-body-selection
+  value: Elected
+  quote: The five-member elected Tribal Council
+  source: cahuilla-band-of-indians-website-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages; the council facts come from the Tribal Council page and the chairwoman''s title appears only beside a name.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: The five-member elected Tribal Council serve four-year staggered terms
+  source: cahuilla-band-of-indians-website-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages; the council facts come from the Tribal Council page and the chairwoman''s title appears only beside a name.'
+- aspect: general-council
+  value: Recognized tribal members 21 and older
+  quote: The Tribal Government’s primary decision-making authority is the General Council which is comprised of recognized tribal members 21-years of age and older.
+  source: cahuilla-band-of-indians-website-tribal-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages; the council facts come from the Tribal Council page and the chairwoman''s title appears only beside a name.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -184,6 +224,14 @@ governance:
   as_of: '2026-11-20'
   locator: Cahuilla Band of Indians
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: election-authority
+  value: Election Committee
+  quote: The Election Committee for Cahuilla is comproised of five members and one alternate who are responsible for overseeing the electoral process for tribal elections.
+  source: cahuilla-band-of-indians-website-tribal-government-committees-tribal-government-committee-ele
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document is among the saved pages; the council facts come from the Tribal Council page and the chairwoman''s title appears only beside a name.'
 gaming:
   compacts:
   - state: CA
@@ -313,6 +361,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Riverside County
+  court: Superior Court for Riverside County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Riverside County holds 100% of the land of Cahuilla Reservation (Census GEOID 0435), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Cahuilla Reservation, San Diego County (now Riverside County), California
   method: executive-order

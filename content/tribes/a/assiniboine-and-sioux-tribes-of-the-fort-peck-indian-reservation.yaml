@@ -671,6 +671,43 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Title and recitals
   note: 'The source reads: “COOPERATIVE AGREEMENT PROVIDING FOR CROSS-DEPUTIZATION OF LAW ENFORCEMENT OFFICERS OF THE ASSINIBOINE AND SIOUX TRIBES OF THE FORT PECK RESERVATION”. The copy is undated; it cites a 1997 Bureau of Indian Affairs manual. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: MT
+  county: Roosevelt County
+  court: District Court for Roosevelt County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Roosevelt County holds 53% of the land of Fort Peck Indian Reservation (Census GEOID 1250), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Valley County
+  court: District Court for Valley County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Valley County holds 34% of the land of Fort Peck Indian Reservation (Census GEOID 1250), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Daniels County
+  court: District Court for Daniels County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Daniels County holds 7% of the land of Fort Peck Indian Reservation (Census GEOID 1250), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MT
+  county: Sheridan County
+  court: District Court for Sheridan County
+  link: https://courts.mt.gov/courts/dcourt
+  source: state-trial-court-directory-mt
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Sheridan County holds 6% of the land of Fort Peck Indian Reservation (Census GEOID 1250), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Teton, etc., Sioux, 1825
   signed: '1825-06-22'

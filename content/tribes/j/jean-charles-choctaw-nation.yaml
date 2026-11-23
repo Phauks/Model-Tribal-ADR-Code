@@ -83,6 +83,39 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+governance:
+- aspect: governing-body
+  value: Tribal Government
+  quote: The governing body of the Tribe consists of a traditional chief, two deputy chiefs, four council people, a tribal secretary, a council of elders, and tribal advisors.
+  source: jean-charles-choctaw-nation-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the tribal government page; the member list gives names only and was left out.'
+- aspect: governing-body-size
+  value: 4 council people
+  quote: four council people
+  source: jean-charles-choctaw-nation-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the tribal government page; the member list gives names only and was left out.'
+- aspect: head-of-government
+  value: Chief of the Island
+  quote: Traditionally, the Chief of the Island has many responsibilities
+  source: jean-charles-choctaw-nation-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the tribal government page; the member list gives names only and was left out.'
+- aspect: other-officers
+  value: Deputy Chiefs, Tribal Secretary, Council of Elders, Tribal Advisors
+  quote: two deputy chiefs, four council people, a tribal secretary, a council of elders, and tribal advisors
+  source: jean-charles-choctaw-nation-website-tribal-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Facts come from the tribal government page; the member list gives names only and was left out.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

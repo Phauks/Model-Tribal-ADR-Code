@@ -199,15 +199,12 @@ indian_health_service:
 governance:
 - aspect: governing-body
   value: Naknek Native Village Council
-  quote: of the Naknek Native Village Council enumerated in this Constitution.
-  source: constitution-naknek-native-village-undated-text
-  confidence: medium
+  quote: The Naknek Native Village Council (NNVC) is the federally recognized governing body of the Naknek Tribe, located in Naknek, Alaska.
+  source: nnvctribe-home-page
+  confidence: high
   verification: read-in-full
-  locator: Section 2
-  document_version:
-    document: naknek-native-village-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is heavily garbled (Articles III, IV and XIII largely unreadable); facts use only legible lines, and Section 3 gives 2-year terms after the first term while listing 1- and 2-year terms.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Council officers and seats appear on the pages only with personal names, so those facts are left out.'
 - aspect: governing-body-selection
   value: Elected by the council's adult members
   quote: President and four members elected i/> the acult members of the Naknek
@@ -329,6 +326,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+nearby_state_courts:
+- state: AK
+  county: Bristol Bay Borough
+  court: Superior Court for Bristol Bay Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Bristol Bay Borough holds 100% of the land of Naknek ANVSA (Census GEOID 6990), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Bristol Bay Native Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

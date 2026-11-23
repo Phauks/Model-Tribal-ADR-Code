@@ -241,53 +241,37 @@ governance:
     version: 1997-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
 - aspect: governing-body
-  value: Kenaitze Tribal Council
-  quote: The governing body of the Kenaitze Indian Tribe shall be the Kenaitze
-  source: constitution-kenaitze-indian-tribe-1997-text
-  confidence: medium
+  value: Tribal Council
+  quote: the Kenaitze Indian Tribe is governed by a seven-member Tribal Council.
+  source: kenaitze-indian-tribe-website-tribal-government-executive-council
+  confidence: high
   verification: read-in-full
-  as_of: '1997-07-16'
-  locator: Article V, Section 1
-  document_version:
-    document: kenaitze-indian-tribe-constitution
-    version: 1997-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
 - aspect: governing-body-size
   value: 7 members
-  quote: The Council shall be composed of seven (7) members who
-  source: constitution-kenaitze-indian-tribe-1997-text
-  confidence: medium
+  quote: the Kenaitze Indian Tribe is governed by a seven-member Tribal Council.
+  source: kenaitze-indian-tribe-website-tribal-government-executive-council
+  confidence: high
   verification: read-in-full
-  as_of: '1997-07-16'
-  locator: Article V, Section 2
-  document_version:
-    document: kenaitze-indian-tribe-constitution
-    version: 1997-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
 - aspect: governing-body-selection
-  value: Elected by plurality vote at the annual election
-  quote: shall be elected by a plurality vote of the qualified members of the Tribe at the annual
-  source: constitution-kenaitze-indian-tribe-1997-text
-  confidence: medium
+  value: Elected by voting Tribal Members at annual meeting
+  quote: Council Members are elected by voting Tribal Members at an annual meeting every October, and serve staggered two-year terms.
+  source: kenaitze-indian-tribe-website-tribal-government-executive-council
+  confidence: high
   verification: read-in-full
-  as_of: '1997-07-16'
-  locator: Article V, Section 2
-  document_version:
-    document: kenaitze-indian-tribe-constitution
-    version: 1997-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
 - aspect: governing-body-term
   value: 2 years, staggered
-  quote: members shall serve two (2) year terms.
-  source: constitution-kenaitze-indian-tribe-1997-text
-  confidence: medium
+  quote: Council Members are elected by voting Tribal Members at an annual meeting every October, and serve staggered two-year terms.
+  source: kenaitze-indian-tribe-website-tribal-government-executive-council
+  confidence: high
   verification: read-in-full
-  as_of: '1997-07-16'
-  locator: Article V, Section 4
-  document_version:
-    document: kenaitze-indian-tribe-constitution
-    version: 1997-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
 - aspect: general-council
   value: General membership of qualified voters
   quote: shall be 10 percent (10%) of the number of qualified voters
@@ -345,29 +329,21 @@ governance:
     version: 1997-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
 - aspect: other-officers
-  value: Vice-Chairperson, Secretary, Treasurer
-  quote: Secretary, and Treasurer who shall be elected annually by the members of the Council
-  source: constitution-kenaitze-indian-tribe-1997-text
-  confidence: medium
+  value: Executive Director of Tribal Administration, Chief Judge
+  quote: The Council hires an Executive Director of Tribal Administration to manage the Tribe’s day-to-day operations and a Chief Judge to oversee Tribal Court and uphold Tribal laws.
+  source: kenaitze-indian-tribe-website-tribal-government-executive-council
+  confidence: high
   verification: read-in-full
-  as_of: '1997-07-16'
-  locator: Article V, Section 3
-  document_version:
-    document: kenaitze-indian-tribe-constitution
-    version: 1997-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
 - aspect: elections
-  value: Annually, first Saturday in October
-  quote: held at least once annually, on the first Saturday in October
-  source: constitution-kenaitze-indian-tribe-1997-text
-  confidence: medium
+  value: Annual, first Saturday in October
+  quote: At our Annual General Membership Meeting on the first Saturday in October, we elect members to the Tribal Council to serve staggered terms.
+  source: kenaitze-indian-tribe-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '1997-07-16'
-  locator: Article VI, Section 1
-  document_version:
-    document: kenaitze-indian-tribe-constitution
-    version: 1997-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
 - aspect: voting-age
   value: '18'
   quote: eighteen (18) years of age or older who resides in Alaska, shall be entitled
@@ -382,28 +358,28 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
 - aspect: election-authority
   value: Election Board
-  quote: There shall be an election board consisting of at least three
-  source: constitution-kenaitze-indian-tribe-1997-text
-  confidence: medium
+  quote: members of the Election Board and the Coghill Group count ballots for Tribal Council seats
+  source: kenaitze-indian-tribe-website-about
+  confidence: high
   verification: read-in-full
-  as_of: '1997-07-16'
-  locator: Article VI, Section 8
-  document_version:
-    document: kenaitze-indian-tribe-constitution
-    version: 1997-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
 - aspect: judiciary
-  value: Council may create tribal courts by ordinance
-  quote: To exercise its judicial powers through the creation of tribal courts
-  source: constitution-kenaitze-indian-tribe-1997-text
-  confidence: medium
+  value: Tribal Court
+  quote: Tribal Court, established in 1986, ensures the efficient and fair administration of justice while honoring the customs, history and traditions of our people.
+  source: kenaitze-indian-tribe-tribal-court
+  confidence: high
   verification: read-in-full
-  as_of: '1997-07-16'
-  locator: Article X, Section 3(p)
-  document_version:
-    document: kenaitze-indian-tribe-constitution
-    version: 1997-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
+- aspect: judicial-selection
+  value: Chief Judge appointed by the Council
+  quote: The Council appoints a Chief Judge to oversee Qiz’unch’ Tribal Court and uphold Tribal laws.
+  source: kenaitze-indian-tribe-website-about
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
 - aspect: amendment
   value: Majority vote in Secretarial election, 30% turnout
   quote: This Constitution may amended by a majority vote of the qualified voting
@@ -453,17 +429,13 @@ governance:
     version: 1997-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
 - aspect: other
-  value: 'Initiative and referendum: petition of 30% of qualified voters'
-  quote: Upon receipt of a valid petition signed by at least
-  source: constitution-kenaitze-indian-tribe-1997-text
-  confidence: medium
+  value: Council decisions embodied in ordinances
+  quote: All final decisions of the Tribal Council on matters of general or permanent interest to members of the Tribe shall be embodied in ordinances.
+  source: kenaitze-indian-tribe-website-tribal-government-ordinances
+  confidence: high
   verification: read-in-full
-  as_of: '1997-07-16'
-  locator: Article XI, Section 1
-  document_version:
-    document: kenaitze-indian-tribe-constitution
-    version: 1997-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certification of results is partly illegible; the rest matches the 1997 constitution.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Page 2 is the Constitution landing page without the document text, so no governing document was read and facts come from ordinary web pages.'
 governing_documents:
 - kind: law-code
   title: Kenaitze Indian Tribe
@@ -657,6 +629,16 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image, and the name was found word for word in the notice''s
     machine-read (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+nearby_state_courts:
+- state: AK
+  county: Kenai Peninsula Borough
+  court: Superior Court for Kenai Peninsula Borough
+  link: https://courts.alaska.gov/courtdir/index.htm
+  source: state-trial-court-directory-ak
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Kenai Peninsula Borough holds 100% of the land of Kenaitze ANVSA (Census GEOID 6720), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 related_entities:
 - name: Cook Inlet Region Inc.
   relation: alaska-native-claims-settlement-act-regional-corporation

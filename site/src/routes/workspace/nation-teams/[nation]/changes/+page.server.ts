@@ -2,6 +2,8 @@ import { fail } from '@sveltejs/kit';
 import { changeProblem, describeChange, type ChangeContent } from '#lib/nation-page-changes.ts';
 import { readableDate } from '#lib/readable-date.ts';
 import { changeByIdentifier, historyOf, liveChanges, publishChange } from '#lib/server/nation-page-changes.ts';
+import { pauseProblem } from '#lib/nation-page-review.ts';
+import { currentPause, undoneChanges } from '#lib/server/nation-page-review.ts';
 import { nationAndGranter } from '#lib/server/nation-team-access.ts';
 import { formText } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
@@ -18,11 +20,16 @@ export const load: PageServerLoad = async (event) => {
 	const live = await liveChanges(database, nation.identifier, time);
 	const liveIdentifiers = new Set(Object.values(live).map((change) => change.identifier));
 	const history = await historyOf(database, nation.identifier);
+	const undone = await undoneChanges(database, nation.identifier);
+	const paused = Boolean(await currentPause(database, nation.identifier));
 	return {
 		nation: { identifier: nation.identifier, title: nation.title, page: nation.page },
+		paused,
 		versions: history.map((change) => {
-			const state: 'live' | 'waiting' | 'replaced' | 'cancelled' =
-				change.status === 'discarded'
+			const state: 'live' | 'waiting' | 'replaced' | 'cancelled' | 'undone' =
+				undone.has(change.identifier)
+					? 'undone'
+					: change.status === 'discarded'
 					? 'cancelled'
 					: liveIdentifiers.has(change.identifier)
 						? 'live'
@@ -42,7 +49,8 @@ export const load: PageServerLoad = async (event) => {
 				publishedAt: change.publishedAt,
 				liveAt: change.liveAt,
 				restoredFrom: change.restoredFrom,
-				canRestore: state === 'replaced' && !changeProblem(granter, change.kind, 'publish')
+				projectNote: undone.get(change.identifier) ?? null,
+				canRestore: state === 'replaced' && !changeProblem(granter, change.kind, 'publish') && !pauseProblem(paused, change.kind)
 			};
 		})
 	};
@@ -61,6 +69,8 @@ export const actions: Actions = {
 			event.locals.refused = `nation page restore refused on nation ${nation.identifier}: ${problem}`;
 			return fail(403, { problem });
 		}
+		const paused = pauseProblem(Boolean(await currentPause(database, nation.identifier)), change.kind);
+		if (paused) return fail(409, { problem: paused });
 		const result = await publishChange(
 			database,
 			{ nationIdentifier: nation.identifier, kind: change.kind, content: change.content, credit: change.credit, restoredFrom: change.identifier },

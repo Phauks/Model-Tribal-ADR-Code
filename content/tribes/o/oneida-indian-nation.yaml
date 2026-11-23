@@ -486,6 +486,25 @@ jurisdiction:
   verification: read-in-full
   locator: 25 U.S.C. § 233; Act of Sept. 13, 1950, ch. 947, 64 Stat. 845
   note: Section 233 also excludes civil actions involving Indian lands or claims about events before Sept. 13, 1952; tribes could preserve their own laws and customs by enactment before Sept. 13, 1952.
+nearby_state_courts:
+- state: NY
+  county: Madison County
+  court: Supreme Court for Madison County
+  link: https://www.nycourts.gov/court-locator
+  source: state-trial-court-directory-ny
+  confidence: medium
+  verification: title-only
+  locator: Supreme Courts by county or district
+  note: Madison County holds 62% of the land of Oneida Nation Reservation (Census GEOID 2555), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NY
+  county: Oneida County
+  court: Supreme Court for Oneida County
+  link: https://www.nycourts.gov/court-locator
+  source: state-trial-court-directory-ny
+  confidence: medium
+  verification: title-only
+  locator: Supreme Courts by county or district
+  note: Oneida County holds 38% of the land of Oneida Nation Reservation (Census GEOID 2555), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Six Nations, 1784
   signed: '1784-10-22'

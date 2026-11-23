@@ -228,28 +228,21 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
 - aspect: governing-body
   value: Tribal Business Council
-  quote: as the Tribal Business Council.
-  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  quote: “Tribal Business Council” refers to the governing body of the Three Affiliated
+  source: three-affiliated-tribes-of-the-fort-berthold-reservation-website-wp-content-uploads-2026-05-election-ordinance-approved-by-tb
   confidence: medium
   verification: read-in-full
-  as_of: '1975-12-12'
-  locator: Article III, Section 1
-  document_version:
-    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
-    version: 1975-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+  as_of: '2026-11-23'
+  locator: Section 12-1-4, definition 24
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Website names the body Tribal Council while the 2026 Election Ordinance (page 6) defines the Tribal Business Council as the governing body, so the governing-body fact follows the ordinance; page 6 is an election ordinance, not the constitution, and other-officers quotes only the Vice-Chairman although page 2 also names a Treasurer and an Executive Secretary.'
 - aspect: governing-body-size
-  value: 11 members (Chairman plus 10)
-  quote: of a Chairman elected at large and ten (10) members elected
-  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
-  confidence: medium
+  value: 6 Segment Representatives plus Tribal Chairman
+  quote: The MHA Nation Tribal Business Council is comprised of six Segment Representatives and the Tribal Chairman.
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: high
   verification: read-in-full
-  as_of: '1975-12-12'
-  locator: Article III, Section 2(a)
-  document_version:
-    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
-    version: 1975-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Website names the body Tribal Council while the 2026 Election Ordinance (page 6) defines the Tribal Business Council as the governing body, so the governing-body fact follows the ordinance; page 6 is an election ordinance, not the constitution, and other-officers quotes only the Vice-Chairman although page 2 also names a Treasurer and an Executive Secretary.'
 - aspect: governing-body-selection
   value: Elected at large by reservation-wide vote; members qualify by segment
   quote: subject to an election open to all qualified voters on a
@@ -276,16 +269,12 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
 - aspect: head-of-government
   value: Chairman
-  quote: of a Chairman elected at large and ten (10) members elected
-  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
-  confidence: medium
+  quote: a Chairman elected by MHA Nation Tribal Members
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: high
   verification: read-in-full
-  as_of: '1975-12-12'
-  locator: Article III, Section 2(a)
-  document_version:
-    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
-    version: 1975-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Website names the body Tribal Council while the 2026 Election Ordinance (page 6) defines the Tribal Business Council as the governing body, so the governing-body fact follows the ordinance; page 6 is an election ordinance, not the constitution, and other-officers quotes only the Vice-Chairman although page 2 also names a Treasurer and an Executive Secretary.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -295,17 +284,13 @@ governance:
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 - aspect: head-of-government-selection
-  value: Elected at large by majority of votes cast
-  quote: shall be elected at large by a majority of all votes cast
-  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
-  confidence: medium
+  value: Elected by MHA Nation Tribal Members
+  quote: a Chairman elected by MHA Nation Tribal Members
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: high
   verification: read-in-full
-  as_of: '1975-12-12'
-  locator: Article III, Section 2(c)
-  document_version:
-    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
-    version: 1975-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Website names the body Tribal Council while the 2026 Election Ordinance (page 6) defines the Tribal Business Council as the governing body, so the governing-body fact follows the ordinance; page 6 is an election ordinance, not the constitution, and other-officers quotes only the Vice-Chairman although page 2 also names a Treasurer and an Executive Secretary.'
 - aspect: head-of-government-term
   value: 4 years
   quote: in 1978 and every four (4) years thereafter.
@@ -319,53 +304,40 @@ governance:
     version: 1975-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
 - aspect: other-officers
-  value: Vice-chairman, secretary, treasurer
-  quote: vice-chairman, a secretary, and a treasurer from its own
-  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
-  confidence: medium
+  value: Vice-Chairman
+  quote: MHA Nation Vice-Chairman
+  source: three-affiliated-tribes-of-the-fort-berthold-reservation-website-tribal-council
+  confidence: high
   verification: read-in-full
-  as_of: '1975-12-12'
-  locator: Article III, Section 5
-  document_version:
-    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
-    version: 1975-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Website names the body Tribal Council while the 2026 Election Ordinance (page 6) defines the Tribal Business Council as the governing body, so the governing-body fact follows the ordinance; page 6 is an election ordinance, not the constitution, and other-officers quotes only the Vice-Chairman although page 2 also names a Treasurer and an Executive Secretary.'
 - aspect: elections
-  value: Third Tuesday of September in even-numbered years
-  quote: shall be held on the third
-  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  value: Even-numbered years, Tuesday after first Monday in November
+  quote: The General Election shall be held on the Tuesday next after the first Monday in November
+  source: three-affiliated-tribes-of-the-fort-berthold-reservation-website-wp-content-uploads-2026-05-election-ordinance-approved-by-tb
   confidence: medium
   verification: read-in-full
-  as_of: '1975-12-12'
-  locator: Article IV, Section 3(a)
-  document_version:
-    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
-    version: 1975-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+  as_of: '2026-11-23'
+  locator: Section 12-3-4, B
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Website names the body Tribal Council while the 2026 Election Ordinance (page 6) defines the Tribal Business Council as the governing body, so the governing-body fact follows the ordinance; page 6 is an election ordinance, not the constitution, and other-officers quotes only the Vice-Chairman although page 2 also names a Treasurer and an Executive Secretary.'
 - aspect: voting-age
   value: '18'
-  quote: who is eighteen (18) years
-  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  quote: who is eighteen (18) years of age
+  source: three-affiliated-tribes-of-the-fort-berthold-reservation-website-wp-content-uploads-2026-05-election-ordinance-approved-by-tb
   confidence: medium
   verification: read-in-full
-  as_of: '1975-12-12'
-  locator: Article IV, Section 2(a)
-  document_version:
-    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
-    version: 1975-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+  as_of: '2026-11-23'
+  locator: Section 12-1-4, definition 7
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Website names the body Tribal Council while the 2026 Election Ordinance (page 6) defines the Tribal Business Council as the governing body, so the governing-body fact follows the ordinance; page 6 is an election ordinance, not the constitution, and other-officers quotes only the Vice-Chairman although page 2 also names a Treasurer and an Executive Secretary.'
 - aspect: election-authority
-  value: Tribal Business Council or an election board it appoints
-  quote: an election board appointed
-  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  value: Tribal Election Board
+  quote: There is hereby established a Tribal Election Board
+  source: three-affiliated-tribes-of-the-fort-berthold-reservation-website-wp-content-uploads-2026-05-election-ordinance-approved-by-tb
   confidence: medium
   verification: read-in-full
-  as_of: '1975-12-12'
-  locator: Article IV, Section 5
-  document_version:
-    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
-    version: 1975-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+  as_of: '2026-11-23'
+  locator: Section 12-2-1
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Website names the body Tribal Council while the 2026 Election Ordinance (page 6) defines the Tribal Business Council as the governing body, so the governing-body fact follows the ordinance; page 6 is an election ordinance, not the constitution, and other-officers quotes only the Vice-Chairman although page 2 also names a Treasurer and an Executive Secretary.'
 - aspect: judiciary
   value: Tribal courts set up by Tribal Business Council ordinance
   quote: to set up courts for the trial and
@@ -807,6 +779,61 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.K, North Dakota
   note: 'The source reads: “Three Affiliated Tribes (Mandan, Hidatsa and Arikara Nation) original agreement dated September 29, 1983”. Original 1983 agreement with later addenda; a 2022 state presentation (not used as a source here) says an enhanced agreement was signed in September 2019. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: ND
+  county: McLean County
+  court: District Court for McLean County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: McLean County holds 28% of the land of Fort Berthold Reservation (Census GEOID 1160), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: Mountrail County
+  court: District Court for Mountrail County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Mountrail County holds 27% of the land of Fort Berthold Reservation (Census GEOID 1160), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: Dunn County
+  court: District Court for Dunn County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Dunn County holds 27% of the land of Fort Berthold Reservation (Census GEOID 1160), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: McKenzie County
+  court: District Court for McKenzie County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: McKenzie County holds 11% of the land of Fort Berthold Reservation (Census GEOID 1160), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: Mercer County
+  court: District Court for Mercer County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Mercer County holds 4% of the land of Fort Berthold Reservation (Census GEOID 1160), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ND
+  county: Ward County
+  court: District Court for Ward County
+  link: https://www.ndcourts.gov/court-locations
+  source: state-trial-court-directory-nd
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Ward County holds 2% of the land of Fort Berthold Reservation (Census GEOID 1160), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Arikara Tribe, 1825
   signed: '1825-07-18'

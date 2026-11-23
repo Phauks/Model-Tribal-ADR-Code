@@ -193,29 +193,21 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and By-laws under the Indian Reorganization Act
-  quote: of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984),
-  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
-  confidence: medium
+  value: Constitution and By-laws
+  quote: in accordance with its Constitution and By-laws.
+  source: yomba-shoshone-tribe-of-the-yomba-reservation-website-yst-council
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-22'
-  locator: Certification of Adoption
-  document_version:
-    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The profile page describes a dispute over which council is seated; no facts were drawn from it.'
 - aspect: governing-body
-  value: Yomba Tribal Council
-  quote: shall be a council known as the Yomba
-  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
-  confidence: medium
+  value: Tribal Council
+  quote: Yomba Shoshone Tribal Council
+  source: yomba-shoshone-tribe-of-the-yomba-reservation-website-yst-council
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-22'
-  locator: Article III, Section 1
-  document_version:
-    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The profile page describes a dispute over which council is seated; no facts were drawn from it.'
 - aspect: governing-body-size
   value: 6 members
   quote: shall consist of six councilmen
@@ -254,28 +246,20 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
 - aspect: head-of-government
   value: Chairman
-  quote: shall elect from among
-  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
-  confidence: medium
+  quote: A Regular Election for the seat of Chairman will be held on Saturday, December 12, 2026
+  source: yomba-shoshone-tribe-of-the-yomba-reservation-website-elections
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-22'
-  locator: Article III, Section 5
-  document_version:
-    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The profile page describes a dispute over which council is seated; no facts were drawn from it.'
 - aspect: head-of-government-selection
-  value: Elected by the Council from its own members
-  quote: shall elect from among
-  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
-  confidence: medium
+  value: Elected at regular election
+  quote: A Regular Election for the seat of Chairman will be held on Saturday, December 12, 2026
+  source: yomba-shoshone-tribe-of-the-yomba-reservation-website-elections
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-22'
-  locator: Article III, Section 5
-  document_version:
-    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The profile page describes a dispute over which council is seated; no facts were drawn from it.'
 - aspect: other-officers
   value: Vice-Chairman, Secretary, Treasurer
   quote: (3) a secretary, and (4) a
@@ -289,17 +273,13 @@ governance:
     version: 1939-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
 - aspect: elections
-  value: Every year
-  quote: every year and shall be called
-  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
-  confidence: medium
+  value: Regular election, December 12, 2026
+  quote: A Regular Election for the seat of Chairman will be held on Saturday, December 12, 2026
+  source: yomba-shoshone-tribe-of-the-yomba-reservation-website-elections
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-22'
-  locator: Article IV, Section 1
-  document_version:
-    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The profile page describes a dispute over which council is seated; no facts were drawn from it.'
 - aspect: voting-age
   value: '21'
   quote: 21 years
@@ -313,17 +293,13 @@ governance:
     version: 1939-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
 - aspect: election-authority
-  value: Tribal Council or election board
-  quote: Council or the election
-  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-1939-text-2
-  confidence: medium
+  value: Tribal Election Board
+  quote: Tribal Election Board
+  source: yombatribe-home-page
+  confidence: high
   verification: read-in-full
-  as_of: '1939-12-22'
-  locator: Article IV, Section 5
-  document_version:
-    document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
-    version: 1939-text-2
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The profile page describes a dispute over which council is seated; no facts were drawn from it.'
 - aspect: amendment
   value: Majority vote of qualified voters at an election called by the Secretary
   quote: may be amended by
@@ -372,6 +348,14 @@ governance:
     document: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
     version: 1939-text-2
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several articles are badly scanned; quotes are taken from the clearer passages.'
+- aspect: other
+  value: Election Ordinance No. YST2014-02
+  quote: Yomba Shoshone Election Ordinance No. YST2014-02
+  source: yomba-shoshone-tribe-of-the-yomba-reservation-website-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The profile page describes a dispute over which council is seated; no facts were drawn from it.'
 governing_documents:
 - kind: law-code
   title: Yomba Shoshone Tribe Law and Order Code
@@ -514,6 +498,16 @@ jurisdiction:
   verification: read-in-full
   locator: 1973 Nev. Stat. ch. 601, § 1, subsec. 4, at 1052; NRS 41.430(4)
   note: 'Sections 1-5 took effect July 1, 1974 (§ 16). The current NRS text still carries this language. Goldberg (2010) says no tribe asked to continue; the 1976 AIPRC report says Ely Colony alone chose to keep state jurisdiction. Goldberg''s date for the assumption (1967) conflicts with the Statutes (1955). Also cites: nevada-revised-statutes-41-430.'
+nearby_state_courts:
+- state: NV
+  county: Nye County
+  court: District Court for Nye County
+  link: https://nvcourts.gov/find_a_court/district_courts
+  source: state-trial-court-directory-nv
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Nye County holds 100% of the land of Yomba Reservation (Census GEOID 4740), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Western Shoshoni, 1863
   signed: '1863-10-01'

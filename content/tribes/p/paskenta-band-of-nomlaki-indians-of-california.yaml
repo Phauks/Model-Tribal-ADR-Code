@@ -194,53 +194,45 @@ indian_health_service:
   note: Listed as "Paskenta Band of Nomlaki Indians of California".
 governance:
 - aspect: form
-  value: Approved under the Indian Reorganization Act of June 18, 1934
-  quote: by the Act of June 18, 1934 (48 Stat. 984), as amended and delegated
-  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
-  confidence: medium
+  value: Tribal Constitution
+  quote: We abide by a Tribal Constitution, the law of our land that was adopted on April 18, 1998.
+  source: paskenta-band-of-nomlaki-indians-of-california-website-about-the-nation-our-government
+  confidence: high
   verification: read-in-full
-  as_of: '1998-05-15'
-  locator: Certificate of Approval
-  document_version:
-    document: paskenta-band-of-nomlaki-indians-of-california-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution is named but its text is not among the saved pages, so facts come from the Our Government page.'
+- aspect: governing-body
+  value: General Council
+  quote: The General Council is the ultimate authority on legislation and policy, and it elects the five members of the Tribal Council.
+  source: paskenta-band-of-nomlaki-indians-of-california-website-about-the-nation-our-government
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution is named but its text is not among the saved pages, so facts come from the Our Government page.'
 - aspect: governing-body
   value: Tribal Council
-  quote: The governing body of the Band shall be the Tribal Council, which shall
-  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
-  confidence: medium
+  quote: The Tribal Council consists of a Tribal Chairperson, Vice Chairperson, Treasurer, Secretary, and a Member-at-Large.
+  source: paskenta-band-of-nomlaki-indians-of-california-website-about-the-nation-our-government
+  confidence: high
   verification: read-in-full
-  as_of: '1998-05-15'
-  locator: Article III, Section 1
-  document_version:
-    document: paskenta-band-of-nomlaki-indians-of-california-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution is named but its text is not among the saved pages, so facts come from the Our Government page.'
 - aspect: governing-body-size
   value: 5 members
-  quote: consist of five (5) Tribal members elected from the General Council.
-  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
-  confidence: medium
+  quote: The General Council is the ultimate authority on legislation and policy, and it elects the five members of the Tribal Council.
+  source: paskenta-band-of-nomlaki-indians-of-california-website-about-the-nation-our-government
+  confidence: high
   verification: read-in-full
-  as_of: '1998-05-15'
-  locator: Article III, Section 1
-  document_version:
-    document: paskenta-band-of-nomlaki-indians-of-california-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution is named but its text is not among the saved pages, so facts come from the Our Government page.'
 - aspect: governing-body-selection
-  value: Elected from the General Council
-  quote: consist of five (5) Tribal members elected from the General Council.
-  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
-  confidence: medium
+  value: Elected by the General Council
+  quote: The General Council is the ultimate authority on legislation and policy, and it elects the five members of the Tribal Council.
+  source: paskenta-band-of-nomlaki-indians-of-california-website-about-the-nation-our-government
+  confidence: high
   verification: read-in-full
-  as_of: '1998-05-15'
-  locator: Article III, Section 1
-  document_version:
-    document: paskenta-band-of-nomlaki-indians-of-california-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution is named but its text is not among the saved pages, so facts come from the Our Government page.'
 - aspect: governing-body-term
   value: 2 years
   quote: Thereafter, all terms of office shall be for two (2) years and elections shall be
@@ -266,17 +258,13 @@ governance:
     version: 1998-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
 - aspect: head-of-government
-  value: Chairperson
-  quote: The Chairperson of the Tribal Council shall preside at all meetings of said
-  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
-  confidence: medium
+  value: Tribal Chairperson
+  quote: The Tribal Council consists of a Tribal Chairperson, Vice Chairperson, Treasurer, Secretary, and a Member-at-Large.
+  source: paskenta-band-of-nomlaki-indians-of-california-website-about-the-nation-our-government
+  confidence: high
   verification: read-in-full
-  as_of: '1998-05-15'
-  locator: Article VIII, Section 1
-  document_version:
-    document: paskenta-band-of-nomlaki-indians-of-california-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution is named but its text is not among the saved pages, so facts come from the Our Government page.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -310,17 +298,13 @@ governance:
     version: 1998-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
 - aspect: other-officers
-  value: Vice-Chairperson, Secretary, Treasurer, and one other member
-  quote: Council shall consist of a Chairperson, Vice-Chairperson, Secretary, Treasurer, and
-  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
-  confidence: medium
+  value: Vice Chairperson, Treasurer, Secretary, Member-at-Large
+  quote: The Tribal Council consists of a Tribal Chairperson, Vice Chairperson, Treasurer, Secretary, and a Member-at-Large.
+  source: paskenta-band-of-nomlaki-indians-of-california-website-about-the-nation-our-government
+  confidence: high
   verification: read-in-full
-  as_of: '1998-05-15'
-  locator: Article III, Section 1
-  document_version:
-    document: paskenta-band-of-nomlaki-indians-of-california-constitution
-    version: 1998-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The Tribal Constitution is named but its text is not among the saved pages, so facts come from the Our Government page.'
 - aspect: elections
   value: Annually
   quote: held annually consistent with the constitution.
@@ -542,6 +526,16 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: CA
+  county: Tehama County
+  court: Superior Court for Tehama County
+  link: https://www.courts.ca.gov/find-my-court.htm
+  source: state-trial-court-directory-ca
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Tehama County holds 100% of the land of Paskenta Rancheria (Census GEOID 2685), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

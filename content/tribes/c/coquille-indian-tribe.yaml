@@ -193,82 +193,85 @@ indian_health_service:
   note: 'Listed as "Coquille Indian Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Coquille Indian Tribe (1998)); the list does not say which service unit or programs the compact covers.'
 governance:
 - aspect: form
-  value: Constitution adopted under the Coquille Indian Restoration Act of June 28, 1989
+  value: Constitution under the Coquille Indian Restoration Act
   quote: pursuant to the Coquille Indian Restoration Act of June 28, 1989, 103
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Preamble
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: governing-body
   value: Tribal Council
-  quote: There shall be a Tribal Council which shall have the power to
-  source: constitution-coquille-indian-tribe-undated-text
-  confidence: medium
+  quote: The Tribal Council is the governing body of the Coquille Indian Tribe.
+  source: coquille-indian-tribe-website-tribal-council
+  confidence: high
   verification: read-in-full
-  locator: Article VI, Section 1
-  document_version:
-    document: coquille-indian-tribe-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: governing-body-size
   value: 7 members
   quote: The Tribal Council shall consist of seven (7) duly elected
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article VI, Section 3(b)(3)
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: governing-body-selection
   value: Elected by the General Council
   quote: including Tribal Officers, shall be elected by vote of the
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article VI, Section 3(b)(4)
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: governing-body-term
   value: 3 years, staggered
-  quote: Council members shall be elected to three (3) year terms.
+  quote: elected to three (3) year terms.
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article VI, Section 3(b)(5)
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: general-council
-  value: All duly enrolled members 18 or older
+  value: All enrolled members
   quote: There shall be a General Council, comprised of all duly enrolled
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article III, Section 1
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: head-of-government
   value: Chairperson
   quote: The duties of the Chairperson shall include presiding over
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article VI, Section 3(b)(6)
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -289,148 +292,150 @@ governance:
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
 - aspect: other-officers
-  value: Vice Chairperson, Chief, Secretary/Treasurer
-  quote: The Vice Chairperson shall assist the Chairperson
-  source: constitution-coquille-indian-tribe-undated-text
-  confidence: medium
+  value: Vice Chair, Secretary-Treasurer, Chief
+  quote: 'There are seven positions on the council: Chairperson, Vice Chair, Secretary-Treasurer, Chief, and three Representatives.'
+  source: coquille-indian-tribe-website-tribal-council
+  confidence: high
   verification: read-in-full
-  locator: Article VI, Section 3(b)(6)
-  document_version:
-    document: coquille-indian-tribe-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: elections
-  value: Annually, third week of October
+  value: Third week of October each year
   quote: Elections for the Tribal Council shall be held the third week of
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article V, Section 2
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: voting-age
   value: '18'
   quote: All enrolled members of the Coquille Indian Tribe who are eighteen
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article V, Section 1
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: election-authority
   value: Election Board
   quote: The Tribal Council shall appoint an Election Board which shall be
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article V, Section 5
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
+- aspect: branches
+  value: Legislative, judicial and executive
+  quote: The Tribal Council ensures that all legislative, judicial, and executive functions of the Tribe are carried out
+  source: coquille-indian-tribe-website-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: judiciary
   value: Tribal Court
   quote: There shall be a Tribal Court.
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article VII, Section 1
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: judicial-selection
   value: Appointed by the Tribal Council
   quote: The Tribal Council shall appoint the first Chief Judge within
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article VII, Section 2
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: judicial-term
-  value: 3 years (Chief Judge)
+  value: 3 years, Chief Judge
   quote: of office for Chief Judge shall be three years.
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article VII, Section 2
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: judicial-independence
   value: Chief Judge removable only for conviction
   quote: The Chief Judge may only be removed for conviction of a felony or
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article VII, Section 2
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: amendment
-  value: Two-thirds vote of qualified voters in an election
+  value: 2/3 majority vote in Secretarial election
   quote: This constitution may be amended by a 2/3 majority vote of the
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article IX
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: secretarial-approval
   value: Required for amendments
   quote: No amendment shall be effective until it is approved
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article IX
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
-- aspect: recall-and-removal
-  value: Removal by majority vote of the Tribal Council
-  quote: integrity of the tribal government shall be removed from office by
-  source: constitution-coquille-indian-tribe-undated-text
-  confidence: medium
-  verification: read-in-full
-  locator: Article VI, Section 6(b)
-  document_version:
-    document: coquille-indian-tribe-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: recall-and-removal
   value: Recall by General Council election
   quote: The General Council shall exercise the power of recall of elected
   source: constitution-coquille-indian-tribe-undated-text
   confidence: medium
   verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article IV, Section 3
   document_version:
     document: coquille-indian-tribe-constitution
     version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 - aspect: other
-  value: Chief is primary cultural and spiritual representative
-  quote: The Chief shall be the primary cultural and
-  source: constitution-coquille-indian-tribe-undated-text
+  value: Chief as cultural and spiritual representative
+  quote: The Chief is the primary cultural and spiritual representative of the Tribe.
+  source: coquille-indian-tribe-website-wp-content-uploads-2025-05-citc-chapter-140-tribal-council-r
   confidence: medium
   verification: read-in-full
-  locator: Article VI, Section 3(b)(6)
-  document_version:
-    document: coquille-indian-tribe-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated extract with page headers inside the text; no adoption or amendment date appears, though the text refers to an October 199- election.'
+  as_of: '2026-11-23'
+  locator: 140.040(3)(a)
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. The governing document as the nation''s website posts it; the page does not say whether it is the version now in effect. Reader''s note on the pages: Selection wording on the Tribal Council web page (page 3, tribal members 18 and older) differs from the constitution (page 6, elected by the General Council); the constitution''s fact is given.'
 governing_documents:
 - kind: law-code
   title: Coquille Indian Tribe
@@ -830,6 +835,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.M, Oregon
   note: 'The source reads: “The Coquille Indian Tribe executed in June 2010”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: OR
+  county: Coos County
+  court: Circuit Court for Coos County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Coos County holds 100% of the land of Coquille Reservation (Census GEOID 0775), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

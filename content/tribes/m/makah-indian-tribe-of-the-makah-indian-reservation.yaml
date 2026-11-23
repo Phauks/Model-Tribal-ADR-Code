@@ -190,65 +190,45 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: form
-  value: Constitution and bylaws under Section 16 of the Indian Reorganization Act
-  quote: in accordance with section 16 of the Indian Reorgani-
-  source: constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text
-  confidence: medium
+  value: Constitution and Bylaws dated May 16, 1936
+  quote: The Makah Council operates under the Constitution and Bylaws of the Makah Indian Tribe dated May 16, 1936.
+  source: makah-indian-tribe-of-the-makah-indian-reservation-website-makah-tribal-info-governance
+  confidence: high
   verification: read-in-full
-  as_of: '1936-05-16'
-  locator: Certification of Adoption
-  document_version:
-    document: makah-indian-tribe-of-the-makah-indian-reservation-constitution
-    version: 1936-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Superseded 1936 Library of Congress scan; OCR is badly garbled in Articles III to VI, so some values rest on fragments.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body
-  value: Makah Indian tribal council
-  quote: The governing body of the Makah Indian
-  source: constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text
-  confidence: medium
+  value: Makah Tribal Council
+  quote: The Makah Tribal Council is the elected governing body of the Makah Tribe on the Makah Reservation in Neah Bay, Washington.
+  source: makah-indian-tribe-of-the-makah-indian-reservation-website-makah-tribal-info-governance
+  confidence: high
   verification: read-in-full
-  as_of: '1936-05-16'
-  locator: Article III, Section 1
-  document_version:
-    document: makah-indian-tribe-of-the-makah-indian-reservation-constitution
-    version: 1936-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Superseded 1936 Library of Congress scan; OCR is badly garbled in Articles III to VI, so some values rest on fragments.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-size
   value: 5 members
-  quote: Sec. 2. This council shall consist of five members, duly elected
-  source: constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text
-  confidence: medium
+  quote: Serving the five member Council of the Makah Tribe is the Makah Tribal Administration.
+  source: makah-indian-tribe-of-the-makah-indian-reservation-website-makah-tribal-info-governance
+  confidence: high
   verification: read-in-full
-  as_of: '1936-05-16'
-  locator: Article III, Section 2
-  document_version:
-    document: makah-indian-tribe-of-the-makah-indian-reservation-constitution
-    version: 1936-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Superseded 1936 Library of Congress scan; OCR is badly garbled in Articles III to VI, so some values rest on fragments.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-selection
-  value: Elected by secret ballot
-  quote: All elections shall be by secret ballot
-  source: constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text
-  confidence: medium
+  value: Elected
+  quote: Elections for Tribal Council are held annually and each elected council member serves a staggered three year term.
+  source: makah-indian-tribe-of-the-makah-indian-reservation-website-makah-tribal-info-governance
+  confidence: high
   verification: read-in-full
-  as_of: '1936-05-16'
-  locator: Article IV, Section 3
-  document_version:
-    document: makah-indian-tribe-of-the-makah-indian-reservation-constitution
-    version: 1936-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Superseded 1936 Library of Congress scan; OCR is badly garbled in Articles III to VI, so some values rest on fragments.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: governing-body-term
   value: 3 years, staggered
-  quote: serve 3 years, except as provided in section 4
-  source: constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text
-  confidence: medium
+  quote: Elections for Tribal Council are held annually and each elected council member serves a staggered three year term.
+  source: makah-indian-tribe-of-the-makah-indian-reservation-website-makah-tribal-info-governance
+  confidence: high
   verification: read-in-full
-  as_of: '1936-05-16'
-  locator: Article III, Section 2
-  document_version:
-    document: makah-indian-tribe-of-the-makah-indian-reservation-constitution
-    version: 1936-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Superseded 1936 Library of Congress scan; OCR is badly garbled in Articles III to VI, so some values rest on fragments.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: head-of-government
   value: Chairman
   quote: duties of the chairman, and exercise any authority delegated to him
@@ -282,17 +262,13 @@ governance:
     version: 1936-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Superseded 1936 Library of Congress scan; OCR is badly garbled in Articles III to VI, so some values rest on fragments.'
 - aspect: elections
-  value: Yearly, on the last Monday in December
-  quote: be held on the last Monday in December.
-  source: constitution-makah-indian-tribe-of-the-makah-indian-reservation-1936-text
-  confidence: medium
+  value: Annually
+  quote: Elections for Tribal Council are held annually
+  source: makah-indian-tribe-of-the-makah-indian-reservation-website-makah-tribal-info-governance
+  confidence: high
   verification: read-in-full
-  as_of: '1936-05-16'
-  locator: Article III, Section 4
-  document_version:
-    document: makah-indian-tribe-of-the-makah-indian-reservation-constitution
-    version: 1936-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Superseded 1936 Library of Congress scan; OCR is badly garbled in Articles III to VI, so some values rest on fragments.'
+  as_of: '2026-11-23'
+  note: Read from the nation's own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author.
 - aspect: voting-age
   value: '21'
   quote: 21 years of age or over
@@ -609,6 +585,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.P, Washington
   note: 'The source reads: “Makah Nation”. The report says the agreements, entered into in July 2009, "remain in effect until terminated". Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: WA
+  county: Clallam County
+  court: Superior Court for Clallam County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Clallam County holds 100% of the land of Makah Indian Reservation (Census GEOID 2085), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Makah, 1855
   signed: '1855-01-31'

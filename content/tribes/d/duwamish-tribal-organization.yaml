@@ -103,6 +103,39 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-22'
   note: Main office contact as shown on the nation's website.
+governance:
+- aspect: form
+  value: 1925 constitution
+  quote: The Duwamish Tribal Council operates under our 1925 constitution.
+  source: duwamish-tribal-organization-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Site is run alongside Duwamish Tribal Services, a nonprofit; the facts are taken from the Tribal Council pages and the history page.'
+- aspect: governing-body
+  value: Duwamish Tribal Council
+  quote: The Duwamish Tribal Council operates under our 1925 constitution.
+  source: duwamish-tribal-organization-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Site is run alongside Duwamish Tribal Services, a nonprofit; the facts are taken from the Tribal Council pages and the history page.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: The nine-member tribal council
+  source: duwamish-tribal-organization-website-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Site is run alongside Duwamish Tribal Services, a nonprofit; the facts are taken from the Tribal Council pages and the history page.'
+- aspect: head-of-government
+  value: Tribal Council Chair
+  quote: Tribal Council Chair, 1975 - present
+  source: duwamish-tribal-organization-website-leadership
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: Site is run alongside Duwamish Tribal Services, a nonprofit; the facts are taken from the Tribal Council pages and the history page.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

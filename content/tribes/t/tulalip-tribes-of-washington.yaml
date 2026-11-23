@@ -213,53 +213,37 @@ government_structure:
   note: Historical constitution; a later constitution may have replaced it.
 governance:
 - aspect: governing-body
-  value: Tulalip Board of Directors
-  quote: as the Tulalip Board of J)i rectors.
-  source: constitution-tulalip-tribes-of-washington-1968-text
-  confidence: medium
+  value: Board of Directors
+  quote: The reservation is governed by a board of seven directors elected by tribal members to serve a three-year term
+  source: tulalip-tribes-of-washington-website-government-boardofdirectors
+  confidence: high
   verification: read-in-full
-  as_of: '1968-06-19'
-  locator: Article III, Section 1
-  document_version:
-    document: tulalip-tribes-of-washington-constitution
-    version: 1968-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages describe the Board of Directors and staff; no governing document text was saved.'
 - aspect: governing-body-size
-  value: 7 members
-  quote: consist of seven (?) members duly elected to serve
-  source: constitution-tulalip-tribes-of-washington-1968-text
-  confidence: medium
+  value: 7 directors
+  quote: The reservation is governed by a board of seven directors elected by tribal members to serve a three-year term
+  source: tulalip-tribes-of-washington-website-government-boardofdirectors
+  confidence: high
   verification: read-in-full
-  as_of: '1968-06-19'
-  locator: Article III, Section 2
-  document_version:
-    document: tulalip-tribes-of-washington-constitution
-    version: 1968-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages describe the Board of Directors and staff; no governing document text was saved.'
 - aspect: governing-body-selection
-  value: Elected in board elections
-  quote: arc duly elected and qualified# After the first election, elections for the
-  source: constitution-tulalip-tribes-of-washington-1968-text
-  confidence: medium
+  value: Elected by tribal members
+  quote: The reservation is governed by a board of seven directors elected by tribal members to serve a three-year term
+  source: tulalip-tribes-of-washington-website-government-boardofdirectors
+  confidence: high
   verification: read-in-full
-  as_of: '1968-06-19'
-  locator: Article III, Section 4
-  document_version:
-    document: tulalip-tribes-of-washington-constitution
-    version: 1968-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages describe the Board of Directors and staff; no governing document text was saved.'
 - aspect: governing-body-term
-  value: 3 years, staggered
-  quote: three (3) board members who shall hold office for three (3) yeai-s
-  source: constitution-tulalip-tribes-of-washington-1968-text
-  confidence: medium
+  value: 3 years
+  quote: The reservation is governed by a board of seven directors elected by tribal members to serve a three-year term
+  source: tulalip-tribes-of-washington-website-government-boardofdirectors
+  confidence: high
   verification: read-in-full
-  as_of: '1968-06-19'
-  locator: Article III, Section 4
-  document_version:
-    document: tulalip-tribes-of-washington-constitution
-    version: 1968-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: OCR is heavily garbled throughout; board size, term and selection facts are read through damaged text, and the scan carries 1951, 1959 and 1968 adoption notes.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The saved pages describe the Board of Directors and staff; no governing document text was saved.'
 - aspect: general-council
   value: Voters meeting annually on election day
   quote: of directors shall call a general council annually on election day
@@ -1081,6 +1065,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section on commissions
   note: 'The source reads: “suspend or revoke the Sheriff’s commission of any Approved Tribal”. The copy is undated and mentions Tulalip partial retrocession effective November 21, 2001. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: WA
+  county: Snohomish County
+  court: Superior Court for Snohomish County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Snohomish County holds 100% of the land of Tulalip Reservation (Census GEOID 4290), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Dwamish, Suquamish, etc., 1855
   signed: '1855-01-22'

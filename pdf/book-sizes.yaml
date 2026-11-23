@@ -48,26 +48,29 @@ spine:
   text_minimum_pages: 100
 
 # The cover: one single-page spread, back cover, spine and front cover, with
-# every font embedded (Book Creation Guide, p. 25). Sources for the hardcover
-# values: Lulu, "Casewrap Books: The Basics" (help article 64000308572, read
-# Nov. 23, 2026), cited "Casewrap article".
+# every font embedded (Book Creation Guide, p. 25). The hardcover values are
+# read from the cover templates Lulu's pricing calculator gives for a case
+# wrap book (US Trade at 177 pages, Pocket Book at 309 and US Letter at 500,
+# downloaded Nov. 23, 2026), cited "cover template"; the build's sizes match
+# those templates exactly.
 cover:
-  # Nothing important within 0.5 in of the trim edge of either cover
-  # (Book Creation Guide, pp. 19 and 25).
+  # Paperback: nothing important within 0.5 in of the trim edge, on the
+  # spine side too (Book Creation Guide, pp. 19 and 25; cover template).
   safety_margin: 0.5
   # Spine text keeps 0.125 in clear of both spine edges (Book Creation Guide,
   # p. 18).
   spine_safety: 0.125
   hardcover:
-    # Printed artwork runs 0.75 in past each edge of the board and is glued
-    # inside the cover (Casewrap article).
-    wrap: 0.75
-    # The board overhangs the pages by 0.125 in at the top, bottom and fore
-    # edge (Casewrap article).
-    overhang: 0.125
-    # The cover folds about 0.25 in from the spine on both covers
-    # (Casewrap article); front and back text stays clear of it.
-    hinge: 0.25
+    # Each board is 0.25 in wider and 0.5 in taller than the pages (a US
+    # Trade board is 6.25 x 9.5 in), and the printed artwork wraps 0.625 in
+    # around every edge of the board (cover template).
+    board_extra_width: 0.25
+    board_extra_height: 0.5
+    wrap: 0.625
+    # Text stays 0.625 in inside the board's edges and the spine (cover
+    # template), which also clears the hinge, the fold about 0.25 in from
+    # the spine (Lulu, "Casewrap Books: The Basics").
+    safety_margin: 0.625
     minimum_pages: 24
     # Spine width by page count (Book Creation Guide, p. 15). Each row is the
     # most pages it covers and the spine width in inches.

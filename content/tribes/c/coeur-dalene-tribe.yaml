@@ -199,64 +199,44 @@ governance:
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 - aspect: governing-body
   value: Tribal Council
-  quote: Tribe shall be a Tribal Council consisting of seven members duly elected
-  source: university-of-oklahoma-indian-reorganization-act-coeurcons
-  confidence: medium
+  quote: Tribal Council is made up of seven elected Council Members including Chairman, Vice-Chairman, and Secretary/Treasurer.
+  source: coeur-dalene-tribe-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-05'
-  locator: Article III, Section 1
-  document_version:
-    document: coeur-dalene-tribe-constitution
-    version: 1947-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 - aspect: governing-body-size
   value: 7 members
-  quote: Tribe shall be a Tribal Council consisting of seven members duly elected
-  source: university-of-oklahoma-indian-reorganization-act-coeurcons
-  confidence: medium
+  quote: The tribal council has seven members
+  source: cdatribe-nsn-our-tribe-history
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-05'
-  locator: Article III, Section 1
-  document_version:
-    document: coeur-dalene-tribe-constitution
-    version: 1947-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 - aspect: governing-body-selection
-  value: Elected by popular vote at tribal meeting
-  quote: elected by popular vote at a meeting of the tribe on the
-  source: university-of-oklahoma-indian-reorganization-act-coeurcons
-  confidence: medium
+  value: Elected by tribal vote
+  quote: members elected by tribal vote and the chairman elected by vote on the council
+  source: cdatribe-nsn-our-tribe-history
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-05'
-  locator: Article IV, Section 1
-  document_version:
-    document: coeur-dalene-tribe-constitution
-    version: 1947-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 - aspect: governing-body-term
-  value: 3 years, staggered
-  quote: to serve three years.
-  source: university-of-oklahoma-indian-reorganization-act-coeurcons
-  confidence: medium
+  value: 2 years
+  quote: Each year members are elected to open positions for a two year term.
+  source: coeur-dalene-tribe-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-05'
-  locator: Article III, Section 1
-  document_version:
-    document: coeur-dalene-tribe-constitution
-    version: 1947-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 - aspect: head-of-government
   value: Chairman
-  quote: Council shall preside over all meetings of the Council and of the Tribe.
-  source: university-of-oklahoma-indian-reorganization-act-coeurcons
-  confidence: medium
+  quote: Tribal Council is made up of seven elected Council Members including Chairman, Vice-Chairman, and Secretary/Treasurer.
+  source: coeur-dalene-tribe-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-05'
-  locator: By-laws Article I, Section 1
-  document_version:
-    document: coeur-dalene-tribe-constitution
-    version: 1947-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 - aspect: head-of-government
   value: Chairperson
   source: bia-tribal-leaders-directory-2026
@@ -266,41 +246,29 @@ governance:
   locator: Coeur D'Alene Tribe
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 - aspect: head-of-government-selection
-  value: Elected by Tribal Council from its membership
-  quote: The Tribal Council shall elect from its membership
-  source: university-of-oklahoma-indian-reorganization-act-coeurcons
-  confidence: medium
+  value: Elected by council vote
+  quote: the chairman elected by vote on the council
+  source: cdatribe-nsn-our-tribe-history
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-05'
-  locator: Article III, Section 2
-  document_version:
-    document: coeur-dalene-tribe-constitution
-    version: 1947-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 - aspect: other-officers
-  value: Vice-chairman, Secretary-Treasurer
-  quote: (2) a vice-chairman, (3) a secretary-treasurer, and may
-  source: university-of-oklahoma-indian-reorganization-act-coeurcons
-  confidence: medium
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: Tribal Council is made up of seven elected Council Members including Chairman, Vice-Chairman, and Secretary/Treasurer.
+  source: coeur-dalene-tribe-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-05'
-  locator: Article III, Section 2
-  document_version:
-    document: coeur-dalene-tribe-constitution
-    version: 1947-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 - aspect: elections
-  value: Annually, first Saturday in May
-  quote: first Saturday in May of each year.
-  source: university-of-oklahoma-indian-reorganization-act-coeurcons
-  confidence: medium
+  value: Each year, for open seats
+  quote: Each year members are elected to open positions for a two year term.
+  source: coeur-dalene-tribe-website-council
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-05'
-  locator: Article IV, Section 1
-  document_version:
-    document: coeur-dalene-tribe-constitution
-    version: 1947-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 - aspect: voting-age
   value: '21'
   quote: Tribe who is twenty-one (21) years of age or over shall be entitled to
@@ -313,18 +281,22 @@ governance:
     document: coeur-dalene-tribe-constitution
     version: 1947-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
-- aspect: judiciary
-  value: Council may establish a reservation court
-  quote: court and to adopt a suitable code for the maintenance of law and order
-  source: university-of-oklahoma-indian-reorganization-act-coeurcons
-  confidence: medium
+- aspect: branches
+  value: Executive, legislative and judicial
+  quote: The Tribe, like all tribes in America, has a government based on executive, legislative and judicial branches.
+  source: cdatribe-nsn-our-tribe-history
+  confidence: high
   verification: read-in-full
-  as_of: '1947-06-05'
-  locator: Article VII, Section 1(d)
-  document_version:
-    document: coeur-dalene-tribe-constitution
-    version: 1947-text
-  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: The Coeur d’Alene Tribal Court is a court of general jurisdiction.
+  source: coeur-dalene-tribe-website-justice
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 - aspect: amendment
   value: Majority vote in election called by Commissioner of Indian Affairs
   quote: majority vote of the qualified members of the Tribe who vote at an election
@@ -361,6 +333,14 @@ governance:
     document: coeur-dalene-tribe-constitution
     version: 1947-text
   note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Chairman has one vote, no veto
+  quote: the chairman has one vote on the council and does not have veto power.
+  source: cdatribe-nsn-our-tribe-history
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the government and history pages.'
 governing_documents:
 - kind: law-code
   title: Coeur D'Alene Tribe - Tribal Code - Table of Contents
@@ -571,6 +551,25 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image, and the name was found word for word in the notice''s
     machine-read (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+nearby_state_courts:
+- state: ID
+  county: Benewah County
+  court: District Court for Benewah County
+  link: https://isc.idaho.gov/district-courts
+  source: state-trial-court-directory-id
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Benewah County holds 70% of the land of Coeur d'Alene Reservation (Census GEOID 0705), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: ID
+  county: Kootenai County
+  court: District Court for Kootenai County
+  link: https://isc.idaho.gov/district-courts
+  source: state-trial-court-directory-id
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Kootenai County holds 30% of the land of Coeur d'Alene Reservation (Census GEOID 0705), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Northern Idaho reservation for the Coeur d'Alenes and other tribes
   method: executive-order

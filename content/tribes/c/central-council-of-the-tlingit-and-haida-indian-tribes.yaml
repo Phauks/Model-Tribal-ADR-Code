@@ -204,65 +204,65 @@ indian_health_service:
   operator: tribal
 governance:
 - aspect: form
-  value: Federally recognized tribal government under the Act of June 19, 1935
-  quote: recognized tribal government pursuant to Section 8 of the Act of June 19, 1935 (49 Stat. 388), as
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  value: Single regional tribal government
+  quote: In order to form a single regional tribal government, we establish the Central Council
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
+  as_of: '2026-11-23'
+  locator: Preamble
+  document_version:
+    document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
+- aspect: governing-body
+  value: Tribal Assembly, Executive Council
+  quote: The governing body of Tlingit & Haida shall be comprised of the Tribal Assembly,
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
   locator: Article II
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
-- aspect: governing-body
-  value: Tribal Assembly of delegates and Executive Council
-  quote: The governing body of the Central Council shall be comprised of the Tribal
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
-  verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article VII, Section 1
-  document_version:
-    document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: governing-body-size
-  value: Delegates from the Communities in the Rules of Election
-  quote: The Tribal Assembly of the Central Council shall be composed of delegates from the
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  value: 7 members (Executive Council)
+  quote: 'following executive officers: President, First Vice President, and five Vice Presidents,'
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article IV, Section 1
+  as_of: '2026-11-23'
+  locator: Article VI, Section 2
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: governing-body-selection
-  value: Elected by each Community under the Rules of Election
-  quote: Community entitled to elect delegates to the Tribal Assembly shall prescribe its method of
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  value: Elected in accordance with Rules of Election
+  quote: elected in accordance with the Rules of Election and Article III of this
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article V, Section 2
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1(a)
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: head-of-government
   value: President
-  quote: The President of the Central Council shall be its chief executive officer.
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  quote: The President of Tlingit & Haida shall be its chief executive officer.
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article IX, Section 1
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1(b)(2)(i)
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: head-of-government
   value: President
   source: bia-tribal-leaders-directory-2026
@@ -272,41 +272,53 @@ governance:
   locator: Central Council of the Tlingit & Haida Indian Tribes
   note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 - aspect: head-of-government-selection
-  value: Elected by the Tribal Assembly from among the regular delegates
-  quote: 'shall elect from among the regular delegates the following executive officers: President, First'
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  value: Elected by the Tribal Assembly from among delegates
+  quote: numbered year the Tribal Assembly shall elect from among the delegates the
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article VIII, Section 1
+  as_of: '2026-11-23'
+  locator: Article IV, Section 1(b)
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: the Tribal Assembly shall elect its President, who shall serve a term of two
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Article VI, Section 2(a)
+  document_version:
+    document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: other-officers
-  value: First through Sixth Vice Presidents
-  quote: Second Vice President, Third Vice President
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  value: First Vice President, Vice Presidents
+  quote: 'following executive officers: President, First Vice President, and five Vice Presidents,'
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article VIII, Section 1
+  as_of: '2026-11-23'
+  locator: Article VI, Section 2
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: elections
-  value: Every 2 years on the third Thursday in March
-  quote: held every even-numbered year on the third Thursday in March.
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  value: Every even-numbered year, third Thursday in March
+  quote: of Tlingit & Haida shall be held every even-numbered year on the third Thursday in March.
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article V, Section 1
+  as_of: '2026-11-23'
+  locator: Article VI, Section 1
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: election-authority
   value: Central Council, by statute
   quote: The Central Council shall enact a statute which, in conformity with this Constitution,
@@ -320,41 +332,41 @@ governance:
     version: 2013-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
 - aspect: judiciary
-  value: Tribal Supreme or Appellate Court and a Trial Court
-  quote: The Tribal Courts shall consist of a Tribal Supreme or Appellate Court and a Trial
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  value: Supreme Court and Trial Court
+  quote: The Tribal Courts shall consist of a Supreme Court and a Trial Court and
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article XI, Section 3
+  as_of: '2026-11-23'
+  locator: Article VII, Section 3
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: judicial-selection
   value: Elected at the annual Tribal Assembly
-  quote: The Chief Justice and each Trial Court Judge shall be elected at a duly convened
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  quote: The Chief Justice and two Associate Justices shall be elected at the annual Tribal
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article XI, Section 6
+  as_of: '2026-11-23'
+  locator: Article VII, Section 4
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: judicial-term
-  value: Not less than 4 years (Chief Justice), 2 years (Trial Court judges)
-  quote: terms of not less than four (4) years and two (2) years respectfully.
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  value: 4 years (Chief Justice), 2 years (Associate Justices)
+  quote: shall serve for terms of not fewer than four years and two years
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article XI, Section 6
+  as_of: '2026-11-23'
+  locator: Article VII, Section 4
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: judicial-independence
   value: Judges removable only for stated causes
   quote: and then only for conviction of a felony while holding office
@@ -369,28 +381,28 @@ governance:
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
 - aspect: amendment
   value: Two-thirds vote of delegates present at an assembly
-  quote: vote of two-thirds of the delegates present at any assembly of the Central Council
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  quote: amended by vote of two-thirds of the delegates present at any assembly of Tlingit &
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
+  as_of: '2026-11-23'
   locator: Article XIII
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: recall-and-removal
-  value: Removal of executive officer by two-thirds vote of delegates
-  quote: misconduct may be removed from office by an affirmative vote of a two-thirds (2/3) majority of
-  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2013-text
-  confidence: medium
+  value: Removal of delegate by two-thirds vote of Tribal Assembly delegates
+  quote: Removal from such office by affirmative, majority vote of two-thirds of
+  source: constitution-central-council-of-the-tlingit-and-haida-indian-tribes-2025-text
+  confidence: high
   verification: read-in-full
-  as_of: '2013-04-20'
-  locator: Article VIII, Section 4
+  as_of: '2026-11-23'
+  locator: Article VI, Section 3(a)(2)
   document_version:
     document: central-council-of-the-tlingit-and-haida-indian-tribes-constitution
-    version: 2013-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text ends with a list of Tribal Assembly changes dated 2004 to 2013, which follows the adoption block.'
+    version: 2025-text
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: The constitution on page 8 is the April 18, 2025 revision; the Executive Council Guidelines are dated 2024 and the web pages agree with the constitution.'
 - aspect: other
   value: Executive Council holds Central Council powers between assemblies
   quote: shall possess all of the powers of the Central Council and shall be able

@@ -100,13 +100,24 @@ A team edits its nation's page at `/workspace/nation-teams/<nation>/edit` (decis
 2. `/nations/<id>/changes.json` returns the HTML for each place (`src/lib/server/nation-page-overlay.ts`), with everything the nation typed escaped and links limited to https.
 3. `tools/add-nation-page-changes.mjs`, the last step of `npm run build`, wraps the built Worker with `tools/nation-page-changes-worker.js` and sets `assets.run_worker_first` to `/nations/*`. For a nation's page it reads `changes.json` and fills the places with `HTMLRewriter` as the page streams out, with an ETag that changes when a different version goes live. Pages of nations with no changes pass through untouched.
 4. After a move within the site the page comes from the build, so it fills the places itself from `changes.json` (`src/lib/nation-page-slots.ts`).
-5. Hiding works by a style in the top place, so a hidden part disappears at once; the project removes it from the site's files when it follows up. The offline copy and the print edition show the cited record until the nightly copy into git (stage 3).
+5. Hiding works by a style in the top place, so a hidden part disappears at once; the project removes it from the site's files when it follows up. A reader's device always asks for a nation's page, its `changes.json` and its pictures again when it is online, and never saves a nation's pictures (`src/service-worker/index.ts`), so a hidden part or an undone change is gone the next time the page is opened; the saved copy answers only offline. Nations' changes stay in the database and are never copied into git, whose history is public and permanent, so a nation can always take its words back (the lead author, Nov. 23, 2026). The print edition shows the cited records only.
 
 **Claimed or unclaimed, like a map listing** (the lead author, Nov. 23, 2026). A nation's page says "Unclaimed" until someone the project confirmed with the nation's office has a current place on its team (`claimOf` in `src/lib/server/nation-teams.ts`); then it says "Claimed by the nation" and when. The build always writes the "Unclaimed" line (marked `data-build-status`) with a "Claim this page" link to `/profile/nation-team?nation=<id>`; for a claimed page the top place hides it and shows the claimed line instead.
 
 **Problem reports go to the team too.** A report about a claimed page that asks for a correction, asks a question or offers material appears for the nation's team on its edit page, with where and what was reported but never who sent it; requests to restrict or remove material stay with the project. An editor answers "Fixed on the page" or "No change needed", with an optional note, which goes into the report's own history (table `nation_team_report_answers`). The project still sees every report, and its Requests list shows the team's part: with the team, the team's answer, or no answer in 7 days, when the project steps in (`src/lib/nation-team-reports.ts`). The report form tells the sender this.
 
-Still to build (stage 3): the project's review queue (mark read, undo, pause, suspend), emails to a nation's office about changes, notices to people following the page, and the nightly copy into `content/tribes` with source records. Teams open to nations once the project domain can send email.
+**The project's review** (stage 3). A nation's changes go live without waiting for the project, so the project reads each one afterwards on `/workspace/nation-pages` ("Nations' changes"; permission `review-nation-pages`, held by the lead author and editors), oldest first, within 7 days. The workspace overview counts what waits and what is past 7 days. For each change the reviewer can:
+
+- **Mark read**, leaving it as it is.
+- **Undo** it, with a note. The change is set aside and the page goes back to the version before it; the team's history shows it as "Undone by the project" with the note, and the team cannot put it back by restoring.
+- **Pause and ask.** Publishing for the nation stops until the project resumes it, and the team sees the question at the top of its edit page and answers there. Drafts, cancelling a waiting change and hiding keep working, so a nation can always take something off its page.
+- **Suspend** the person who published it, with everyone they added (the lead author only, as on the team page). Their changes stay until undone.
+
+Reviews and pauses are in `nation_page_reviews` and `nation_page_pauses` (migration 20261123T0438_add_nation_page_review.sql); the rules are in `src/lib/nation-page-review.ts` and the storage in `src/lib/server/nation-page-review.ts`. Every step goes into the sealed activity log under `nation-page/<nation>`.
+
+**In Recent changes.** Each change a nation's team published is listed at `/changes` once it is live, under the nation's page, with the part of the page it changed and the name the team gave on the page, never the words, like every nation page change. The project's undo takes it off the list. The "Who" filter has "Nations' teams" once there is one.
+
+Still to build: emails to a nation's office about changes, and notices to people following the page. Teams open to nations once the project domain can send email.
 
 ## Essays
 
@@ -277,7 +288,7 @@ The tables are created by the files in `migrations/`. Workers Builds does not ru
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`.
+Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
 
 ### First sign-in
 
@@ -299,7 +310,7 @@ The tables are created by the files in `migrations/`. Workers Builds does not ru
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`.
+Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
 
 ### First sign-in
 
@@ -341,6 +352,19 @@ Anyone signed in can follow a nation's page, the model code or one of its sectio
 
 Once the domain is onboarded in Email Service (see "Setting up sign-in"), set `UPDATE_EMAIL_FROM` in `site/wrangler.jsonc` to an address on it, such as `updates@` the domain, and `SITE_ADDRESS` to the site's address on the domain, and merge the change. Nothing else changes: summaries go out at the next hourly run to everyone whose choice is daily or weekly. Readers who followed pages before then were told on the Following page that emails would start once the site could send them.
 
+## Events
+
+The project lists talks, panels, workshops and gatherings at `/events`, and people sign in to register (decision record 0048; Trevor chose this first phase on 2026-11-23). Continuing legal education credit, paid tickets and the project's own video room come later. The rules shared by the pages and the emails are in `src/lib/event-calendar.ts`; the database side is `src/lib/server/event-calendar.ts`, and the tables are in `migrations/20261123T0450_add_event_calendar.sql` (named `calendar_*`, because `events` is the activity log).
+
+- **Running events.** The lead author and editors hold the `manage-events` permission and see Events in the workspace (`/workspace/events`). A new event is a draft that only they can see, at its own address as a preview. On the event's workspace page they add kinds of seat (such as "In person" with a limit of 40 and "Online" with no limit), add speakers, publish, and see who is coming, with a CSV download for the list at the door. An event with no kinds of seat takes no registration, and its online link is shown to everyone. An event someone registered for can only be cancelled, not deleted or turned back into a draft, so the people registered are told. Each change in the workspace is in the activity log like any other.
+- **Times.** An event is held in one time zone, chosen from every zone in the United States, and its times are shown in that zone, such as "9:00 AM to 12:15 PM Pacific time". The form takes the date and clock time where the event is held; the database keeps UTC.
+- **Registering.** A signed-in reader picks a kind of seat, gives the name for the list, may say what they need to take part, and chooses whether to get reminders. The seat count and the new row are one database statement, so two people cannot take the last seat. When the seats are taken, people join that seat's waitlist. A freed seat (someone cancels, or the limit is raised) is offered to the person waiting longest and held for 48 hours, or until the event starts if sooner; a newcomer cannot take it while the offer stands. An offer that runs out lapses and passes to the next person.
+- **The online link** is shown on the event page only to people registered for an online seat, and is never in the calendar files, which anyone can download.
+- **Calendar files.** `/events/<address>/calendar.ics` holds one event and `/events/calendar.ics` every event from the last 90 days on, for calendar programs to subscribe to. A change of time or place raises the event's sequence number, so calendars replace their copy, and a cancelled event stays in the feed marked cancelled.
+- **Emails.** A confirmation or waitlist notice, an offer when a seat opens, a reminder a day before (for people who registered at least a day ahead) and one about two hours before, and word of a change of time or place or a cancellation. They use the same switch as summaries of followed pages: nothing is sent while `UPDATE_EMAIL_FROM` is empty, and the event page always shows where each person stands. Each email is recorded in `calendar_messages` before it is sent and the record removed if sending fails, so it goes once. Confirmations are sent only for registrations from the last two days, so turning email on later does not send old ones (`src/lib/server/event-calendar-email.ts`).
+- **The 15-minute run.** Every 15 minutes (`triggers` in `wrangler.jsonc`), the run at `/events/scheduled` lets lapsed offers go, offers free seats, sends what is due and empties access needs 30 days after each event. It is passed inside the Worker the same way as the hourly following run.
+- **Privacy.** Access needs are seen only by the lead author and editors and are emptied 30 days after the event. A person's registrations are in their "Download my data" file and are deleted with their account.
+
 ## Account pages
 
 Account settings are separate from display settings (decision record 0045; site/DESIGN.md, section 6, "Settings and Account"). Settings, under the cog, change how the site looks on one screen and are kept on the device. The Account pages hold who someone is to the project and what it keeps about them, on the server, for signed-in people only. The account menu links to them as "Account settings", and the left sidebar lists them under "Your account" while one is open (`src/lib/account-menu.ts`). The server side is `src/lib/server/account-pages.ts`.
@@ -363,7 +387,34 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - **Where changes come from.** Essays: every publication in `essay_publications`, read as it is, with the version's note as its summary and the person who published it. Pages built with the site (nation pages, stories, glossary entries, the acknowledgments, the charter and the licenses, and the model code once it is drafted): `src/lib/server/page-history-build.ts` lists each with a fingerprint of what it shows readers, and the merged pull requests that last touched its files (from `git log`), and bundles the list into the Worker as `virtual:page-history`. `recordBuildChanges` compares it with `page_states` and adds a row to `page_changes` for each page that is new, changed or gone, with the merged pull requests' titles as the summary and "Site release" as who made it. It runs every hour from the scheduled run and the first time a copy of the Worker opens Recent changes. The first comparison only records the pages; changes are listed from then on. A newer build is claimed with a random token, as for Following pages.
 - **What is kept.** For pages whose earlier wording may be shown, each version's text is written once to the private bucket as `page-versions/<address>/<fingerprint>.txt`, so any two versions can be compared. Nation pages and stories keep no text: their rows name the parts of the page that changed (such as "Contacts" or "Courts"), worked out from a hash of each part, and no title, which is looked up from the live site when the change is shown. A nation can ask for something to be taken off its page, and an older version would put it back in view.
 - **Filters.** Page (`?page=` shows one page's history), kind of page, who, dates, size of change in bytes, kinds of change (edits, new pages, published versions, removed pages), whether changes are grouped by page, and how many to show. A change that came with an update to more than 25 pages at once is a bulk update, hidden unless the reader asks for it, the way a wiki hides bots. The same filters give an Atom feed at `/changes/feed.xml`.
+- **Nations' own changes.** What a nation's team publishes on its page comes from `nation_page_changes`, listed as "nation-<identifier>" with the part changed and the name the team gave ("Editing the nation's page", above).
 - **Hiding.** The lead author can hide the text, the summary or the name on any change from `/workspace/changes/<change>`, with a reason readers see, the way a wiki hides a revision (MediaWiki, "Help:RevisionDelete", https://www.mediawiki.org/wiki/Help:RevisionDelete). The change stays listed with a line through what is hidden. Hidden text cannot be read or compared, including as the earlier side of the next change, and its size is not shown or filtered on. An essay publication held back in the workspace is hidden the same way. Each hiding and showing again is recorded in the activity log. Hidden changes are listed at `/workspace/changes`.
+
+## Nonprofit
+
+`/workspace/nonprofit` (lead author only, permission `manage-nonprofit`) keeps the facts, filings and to-dos of the project's Nevada nonprofit corporation, which the lead author chose to form and take to the IRS with Form 1023-EZ (Nov. 23, 2026). It is a planning aid, not legal or tax advice, and says so on the page.
+
+- **Tables** (`migrations/20261123T0440_add_nonprofit_records.sql`): `nonprofit_facts` holds one row per fact, such as the date of incorporation or the fiscal year's last month. `nonprofit_completions` records a filing or setup step marked done, with the day, a confirmation number and who recorded it. `nonprofit_tasks` holds the lead author's own to-dos, once or every year.
+- **Due dates are worked out, not stored** (`src/lib/nonprofit.ts`), from the facts and today's date in Nevada. They cover the annual list and the charitable registration filed with it, due the last day of the month the articles were filed in each year (Nev. Rev. Stat. §§ 82.193, 78.150, 82A.100); Form 990-N, due the 15th day of the fifth month after the fiscal year ends (26 U.S.C. § 6033(i); Treas. Reg. § 1.6033-2(e)); Form 1023-EZ, due 27 months after the end of the month of incorporation for exemption back to that date, and done once its filing date is entered as a fact; and the directors' yearly conflict-of-interest statements. Each shows its fee and its source. A missed filing stays on the list as overdue next to the next one, and anything due within 60 days is due soon.
+- **Setting up** lists the one-time steps in the order of the brief on becoming a 501(c)(3); the articles and the application are marked done by the facts.
+- **To-dos.** Marking a yearly to-do done records it and moves its due date on a year.
+- **Calendar.** `/workspace/nonprofit/calendar.ics` is a calendar file (RFC 5545) with each open due date as an all-day event and reminders 30 and 7 days before. It is downloaded, not subscribed to, so it is downloaded again after the dates change.
+- **Overview.** The workspace overview shows the lead author anything overdue or due soon. Until the migration is applied to the live database, the overview leaves this out and the Nonprofit page says how to apply it: `npx wrangler d1 migrations apply database --remote` from the site folder.
+
+## Service checks
+
+`/workspace/service-checks` (lead author only, permission `check-services`) checks each service the site depends on whenever the page is opened (`src/lib/server/service-checks.ts`). For each it says whether it is working, needs a look, has a problem, or is not set up yet, and what to do about it. The checks only read and sign in: nothing is sent, charged, ordered or changed. Each check stops after ten seconds, and one that fails shows as a problem without stopping the others. Passwords and keys are never shown.
+
+- **Database:** answers, and every migration file in this build is in `d1_migrations`; the missing ones are named.
+- **File storage:** the private bucket can be listed.
+- **Live editing, rate limits, site address and lead author:** the binding or setting is there; a workers.dev address is flagged, since email waits on the project domain.
+- **Sign-in email and update emails:** the sender is set and the email binding is there.
+- **Project inbox:** the mail domain, the sending binding and the signing key are set.
+- **Outreach mailbox (Zoho):** signs in to the SMTP server with the saved password (EHLO, STARTTLS on port 587, AUTH, QUIT) and leaves without sending anything.
+- **Book ordering, Lulu and Stripe:** ordering's settings must agree, so a test-mode site with a live Stripe key is a problem. The Lulu check signs in with the client key and looks for the print status webhook. The Stripe check reads the balance to prove the key and looks for the payment webhook with both checkout events.
+- **Virus scanner:** files waiting more than 30 minutes are a problem and failed scans need a look.
+
+A new service gets a check here when it is added: a function in `serviceChecks` that returns its state, a summary and the details.
 
 ## Testing
 
@@ -394,5 +445,6 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) are the exception for their own nation's page.
 - Emails to a nation's office when someone joins or leaves its team, and the weekly summary of changes (waits on a domain).
+- For events (decision record 0048): continuing legal education (credit applications, attendance codes, certificates), paid tickets, and the project's own video room with recording. Until then an event's online link is a Zoom or YouTube link the organizer pastes in.
 - Using the virus scan for email attachments. The scanner is built (SCANNING.md); the inbox starts using it in its own change. Files people send already use it (docs/uploads.md, "The virus check").
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

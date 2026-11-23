@@ -910,6 +910,34 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.M, Oregon
   note: 'The source reads: “Confederated Tribes of the Warm Springs Reservation, executed in May 2010”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: OR
+  county: Wasco County
+  court: Circuit Court for Wasco County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Wasco County holds 57% of the land of Warm Springs Reservation (Census GEOID 4545), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Jefferson County
+  court: Circuit Court for Jefferson County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Jefferson County holds 39% of the land of Warm Springs Reservation (Census GEOID 4545), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Clackamas County
+  court: Circuit Court for Clackamas County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Clackamas County holds 2% of the land of Warm Springs Reservation (Census GEOID 4545), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Tribes of Middle Oregon, 1855
   signed: '1855-06-25'

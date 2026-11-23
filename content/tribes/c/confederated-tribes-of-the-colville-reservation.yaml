@@ -179,15 +179,12 @@ indian_health_service:
 governance:
 - aspect: governing-body
   value: Colville Business Council
-  quote: Reservation shall be a council known as the Colville Business Council.
-  source: constitution-confederated-tribes-of-the-colville-reservation-undated-text
-  confidence: medium
+  quote: The mission of the Colville Business Council, governing body of the Confederated Tribes of the Colville Reservation
+  source: confederated-tribes-of-the-colville-reservation-website-get-to-know-your-council
+  confidence: high
   verification: read-in-full
-  locator: Article II, Section 1
-  document_version:
-    document: confederated-tribes-of-the-colville-reservation-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1938 constitution with amendments through X (1990); Amendment VII (21-year voting age) supersedes the 18 in Article III, Section 5, and Amendment VI gives a 60-day notice period where the body text says 15 days.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the tribes'' web pages.'
 - aspect: governing-body-size
   value: 14 members
   quote: The Business Council shall consist of fourteen (14) Councilmen to be
@@ -274,27 +271,29 @@ governance:
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1938 constitution with amendments through X (1990); Amendment VII (21-year voting age) supersedes the 18 in Article III, Section 5, and Amendment VI gives a 60-day notice period where the body text says 15 days.'
 - aspect: voting-age
-  value: '21'
-  quote: Any enrolled member of the Confederated Tribes of the Colville reservation who is twenty-one
-  source: constitution-confederated-tribes-of-the-colville-reservation-undated-text
-  confidence: medium
+  value: '18'
+  quote: Enrolled members are automatically eligible to vote at age 18
+  source: confederated-tribes-of-the-colville-reservation-website-elections
+  confidence: high
   verification: read-in-full
-  locator: Amendment VII, Section 5
-  document_version:
-    document: confederated-tribes-of-the-colville-reservation-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1938 constitution with amendments through X (1990); Amendment VII (21-year voting age) supersedes the 18 in Article III, Section 5, and Amendment VI gives a 60-day notice period where the body text says 15 days.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the tribes'' web pages.'
+- aspect: election-authority
+  value: Elections Department
+  quote: The Elections Department administers Tribal elections
+  source: confederated-tribes-of-the-colville-reservation-website-elections
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the tribes'' web pages.'
 - aspect: judiciary
-  value: Colville Tribal Court of Appeals and Colville Tribal Court
-  quote: Tribal Court of Appeals, the Colville Tribal Court, and such additional Courts as the Business Council may
-  source: constitution-confederated-tribes-of-the-colville-reservation-undated-text
-  confidence: medium
+  value: Tribal Court and Court of Appeals
+  quote: The Tribal Court consists of a trial court and the Colville Tribal Court of appeals.
+  source: colville-tribal-court-page
+  confidence: high
   verification: read-in-full
-  locator: Article VIII, Section 1
-  document_version:
-    document: confederated-tribes-of-the-colville-reservation-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1938 constitution with amendments through X (1990); Amendment VII (21-year voting age) supersedes the 18 in Article III, Section 5, and Amendment VI gives a 60-day notice period where the body text says 15 days.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the tribes'' web pages.'
 - aspect: judicial-selection
   value: Justices appointed by the Business Council
   quote: Justices appointed by the Business Council, with the recommendation of the Chief Judge, to terms of six
@@ -340,27 +339,13 @@ governance:
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1938 constitution with amendments through X (1990); Amendment VII (21-year voting age) supersedes the 18 in Article III, Section 5, and Amendment VI gives a 60-day notice period where the body text says 15 days.'
 - aspect: judicial-independence
-  value: Judges removable for good cause
-  quote: A Judge may be removed from office prior to the expiration of a term for good cause
-  source: constitution-confederated-tribes-of-the-colville-reservation-undated-text
-  confidence: medium
+  value: Independent branch of tribal government
+  quote: is an independent branch of the Tribal government
+  source: colville-tribal-court-page
+  confidence: high
   verification: read-in-full
-  locator: Article VIII, Section 5(b)
-  document_version:
-    document: confederated-tribes-of-the-colville-reservation-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1938 constitution with amendments through X (1990); Amendment VII (21-year voting age) supersedes the 18 in Article III, Section 5, and Amendment VI gives a 60-day notice period where the body text says 15 days.'
-- aspect: judicial-independence
-  value: Pay may not be diminished during term
-  quote: such compensation shall not be diminished during the respective terms of the Justices and Judges
-  source: constitution-confederated-tribes-of-the-colville-reservation-undated-text
-  confidence: medium
-  verification: read-in-full
-  locator: Article VIII, Section 4
-  document_version:
-    document: confederated-tribes-of-the-colville-reservation-constitution
-    version: undated-text
-  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1938 constitution with amendments through X (1990); Amendment VII (21-year voting age) supersedes the 18 in Article III, Section 5, and Amendment VI gives a 60-day notice period where the body text says 15 days.'
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the tribes'' web pages.'
 - aspect: amendment
   value: Majority of qualified voters at election called for that purpose
   quote: amended by a majority of the qualified voters of the Confederated Tribes voting at an election called for
@@ -394,6 +379,14 @@ governance:
     document: confederated-tribes-of-the-colville-reservation-constitution
     version: undated-text
   note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1938 constitution with amendments through X (1990); Amendment VII (21-year voting age) supersedes the 18 in Article III, Section 5, and Amendment VI gives a 60-day notice period where the body text says 15 days.'
+- aspect: other
+  value: 4 legislative districts
+  quote: 'The Colville Reservation government is broken up into four legislative districts: Omak District, Nespelem District, Keller District, and Inchelium District.'
+  source: confederated-tribes-of-the-colville-reservation-website-get-to-know-your-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: 'Read from the nation''s own website by an AI reader (Claude Haiku); the quoted words were found in the saved page by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the pages: No governing document text was saved; facts come from the tribes'' web pages.'
 governing_documents:
 - kind: law-code
   title: Colville Tribal Law and Order Code
@@ -723,6 +716,25 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+nearby_state_courts:
+- state: WA
+  county: Ferry County
+  court: Superior Court for Ferry County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Ferry County holds 51% of the land of Colville Reservation (Census GEOID 0760), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: WA
+  county: Okanogan County
+  court: Superior Court for Okanogan County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Okanogan County holds 49% of the land of Colville Reservation (Census GEOID 0760), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 land_establishment:
 - land_area: Colville Reserve (first tract), Washington Territory
   method: executive-order

@@ -14,7 +14,8 @@ import { snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/
 import { buildRawMessage, newMessageId, type OutgoingAttachment, type OutgoingMail } from './mime.ts';
 import { actionStatement, bucketKeys, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { noticeHeader } from './inbound.ts';
-import { mayHandOut } from './scans.ts';
+import { openScannedFile, stillScanning, storeSentFile } from '#lib/server/file-scans.ts';
+import { heldForVirusCheck } from '#lib/mail.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
 
 /** Cloudflare Email Service takes at most 50 recipients and 25 MiB a message ("Limits"). */
@@ -23,7 +24,8 @@ export const recipientLimit = 50;
 export const attachmentLimitBytes = 18 * 1024 * 1024;
 
 export interface Composition {
-	personIdentifier: string;
+	/** Who wrote it; null for the away message, which the inbox sends by itself. */
+	personIdentifier: string | null;
 	/** The conversation this replies in, or null for a new one. */
 	threadIdentifier: string | null;
 	/** One of the project's addresses. */
@@ -46,6 +48,14 @@ export interface Composition {
 	forward?: { message: string; attachments: string[] } | null;
 	/** "Remind me": the conversation comes back to the inbox at this time unless a reply comes first. */
 	remindAt?: string | null;
+	/**
+	 * The pause before a message sent now goes, in seconds, so it can be
+	 * pulled back (undo send, src/lib/server/mail/writing.ts). The message
+	 * waits as scheduled, marked held_for_undo, and goes when the pause ends.
+	 */
+	holdForUndo?: number;
+	/** The away message: recorded as an automatic reply. */
+	automatic?: boolean;
 }
 
 export class CompositionError extends Error {}
@@ -55,7 +65,7 @@ export class CompositionError extends Error {}
  * when it is not a reply. A new message (not a reply) is refused when a
  * recipient is on the do-not-email list.
  */
-export async function queueMessage(context: MailContext, composition: Composition): Promise<{ messageIdentifier: string; threadIdentifier: string; scheduled: boolean }> {
+export async function queueMessage(context: MailContext, composition: Composition): Promise<{ messageIdentifier: string; threadIdentifier: string; scheduled: boolean; pause: number }> {
 	const database = context.database;
 	const at = currentTime(context);
 	const stamp = at.toISOString();
@@ -90,7 +100,9 @@ export async function queueMessage(context: MailContext, composition: Compositio
 		}
 	}
 
-	const sendAt = composition.sendAt && new Date(composition.sendAt).getTime() > at.getTime() + 30_000 ? new Date(composition.sendAt).toISOString() : null;
+	const later = composition.sendAt && new Date(composition.sendAt).getTime() > at.getTime() + 30_000 ? new Date(composition.sendAt).toISOString() : null;
+	const pause = !later && composition.holdForUndo && composition.holdForUndo > 0 ? Math.min(composition.holdForUndo, 30) : 0;
+	const sendAt = later ?? (pause ? new Date(at.getTime() + pause * 1000).toISOString() : null);
 	const messageIdentifier = crypto.randomUUID();
 	const statements = [];
 	if (!threadIdentifier) {
@@ -110,8 +122,8 @@ export async function queueMessage(context: MailContext, composition: Compositio
 		database
 			.prepare(
 				`INSERT INTO mail_messages (identifier, thread_identifier, direction, status, in_reply_to, reference_ids, from_address,
-				 to_list, cc_list, bcc_list, subject, text_body, snippet, sent_by, scheduled_for, carrier, created_at)
-				 VALUES (?, ?, 'out', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'cloudflare', ?)`
+				 to_list, cc_list, bcc_list, subject, text_body, snippet, sent_by, scheduled_for, held_for_undo, automatic, carrier, created_at)
+				 VALUES (?, ?, 'out', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'cloudflare', ?)`
 			)
 			.bind(
 				messageIdentifier,
@@ -128,13 +140,21 @@ export async function queueMessage(context: MailContext, composition: Compositio
 				snippetOf(composition.text),
 				composition.personIdentifier,
 				sendAt,
+				pause ? 1 : 0,
+				composition.automatic ? 1 : 0,
 				stamp
 			)
 	);
 	for (const attachment of attachments) {
 		const id = crypto.randomUUID();
 		const key = bucketKeys.attachment(messageIdentifier, id);
-		await context.bucket.put(key, attachment.content, { httpMetadata: { contentType: attachment.mediaType } });
+		// Held until the virus check passes; sendMessage waits for it (site/SCANNING.md).
+		await storeSentFile(
+			context.database,
+			context.bucket,
+			{ objectKey: key, purpose: 'mail-outgoing', subject: messageIdentifier, bytes: attachment.content, httpMetadata: { contentType: attachment.mediaType } },
+			at
+		);
 		statements.push(
 			database
 				.prepare(
@@ -153,13 +173,21 @@ export async function queueMessage(context: MailContext, composition: Compositio
 	statements.push(
 		actionStatement(context, {
 			personIdentifier: composition.personIdentifier,
-			action: sendAt ? 'Scheduled a message' : forward ? 'Forwarded' : composition.threadIdentifier ? 'Replied' : 'Wrote a new message',
+			action: composition.automatic
+				? 'Sent the away message'
+				: later
+					? 'Scheduled a message'
+					: forward
+						? 'Forwarded'
+						: composition.threadIdentifier
+							? 'Replied'
+							: 'Wrote a new message',
 			threadIdentifier,
-			note: sendAt
+			note: later
 		})
 	);
 	await database.batch(statements);
-	return { messageIdentifier, threadIdentifier, scheduled: sendAt !== null };
+	return { messageIdentifier, threadIdentifier, scheduled: later !== null, pause };
 }
 
 /** The chosen attachments of a message in this conversation, read back from the bucket to forward. */
@@ -179,12 +207,13 @@ async function forwardedAttachments(
 		.all<{ filename: string; media_type: string; bucket_key: string; direction: string }>();
 	const found = [];
 	for (const row of results) {
-		const object = await context.bucket.get(row.bucket_key);
-		if (!object) throw new CompositionError(`The attachment ${row.filename} is no longer stored, so it cannot be forwarded.`);
-		// A received file goes on only once the virus check has passed (src/lib/server/mail/scans.ts).
-		if (!(await mayHandOut(context, { key: row.bucket_key, received: row.direction === 'in' }, object))) {
+		// A file goes on only once the virus check has passed (site/SCANNING.md).
+		const opened = await openScannedFile(context.database, context.bucket, row.bucket_key);
+		if (opened.state === 'missing') throw new CompositionError(`The attachment ${row.filename} is no longer stored, so it cannot be forwarded.`);
+		if (opened.state === 'held') {
 			throw new CompositionError(`The attachment ${row.filename} is held until the virus check passes, so it cannot be forwarded yet. Untick it to forward the message without it.`);
 		}
+		const object = opened.object;
 		found.push({ filename: row.filename, mediaType: row.media_type, content: new Uint8Array(await object.arrayBuffer()) });
 	}
 	return found;
@@ -225,14 +254,16 @@ export async function sendMessage(
 	carriers: MailCarriers,
 	messageIdentifier: string,
 	options: SendOptions = {}
-): Promise<{ sent: boolean; error?: string }> {
+): Promise<{ sent: boolean; held?: boolean; error?: string }> {
 	const database = context.database;
 	const at = currentTime(context);
+	// A message another run started sending is left to it, unless that run stopped partway (ten minutes on).
 	const claim = await database
 		.prepare(
-			`UPDATE mail_messages SET status = 'sending', error = NULL WHERE identifier = ? AND (status = 'scheduled' OR (status = 'sending' AND sent_at IS NULL))`
+			`UPDATE mail_messages SET status = 'sending', error = NULL, claimed_at = ?1 WHERE identifier = ?2
+			 AND (status = 'scheduled' OR (status = 'sending' AND sent_at IS NULL AND (claimed_at IS NULL OR claimed_at < ?3)))`
 		)
-		.bind(messageIdentifier)
+		.bind(at.toISOString(), messageIdentifier, new Date(at.getTime() - 10 * 60_000).toISOString())
 		.run();
 	if ((claim.meta.changes ?? 0) === 0) return { sent: false, error: 'The message was already sent or cancelled.' };
 	const row = await database.prepare('SELECT * FROM mail_messages WHERE identifier = ?').bind(messageIdentifier).first<MessageRow>();
@@ -254,10 +285,29 @@ export async function sendMessage(
 		.prepare('SELECT filename, media_type, content_id, bucket_key FROM mail_attachments WHERE message_identifier = ?')
 		.bind(messageIdentifier)
 		.all<{ filename: string; media_type: string; content_id: string | null; bucket_key: string }>();
+	// Nothing goes out until every attachment has passed the virus check
+	// (site/SCANNING.md). While a check is still running, the message waits as
+	// scheduled and the five-minute run tries it again.
 	const attachments: OutgoingAttachment[] = [];
 	for (const item of attachmentRows) {
-		const object = await context.bucket.get(item.bucket_key);
-		if (!object) return fail(`The attachment ${item.filename} is missing from storage.`);
+		const opened = await openScannedFile(database, context.bucket, item.bucket_key);
+		if (opened.state === 'missing') return fail(`The attachment ${item.filename} is missing from storage.`);
+		if (opened.state === 'held') {
+			const scan = opened.scan;
+			if (stillScanning(scan)) {
+				await database
+					.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, held_for_undo = 0, error = ? WHERE identifier = ?`)
+					.bind(new Date(at.getTime() + 60_000).toISOString(), heldForVirusCheck, messageIdentifier)
+					.run();
+				return { sent: false, held: true, error: heldForVirusCheck };
+			}
+			return fail(
+				scan?.status === 'flagged'
+					? `The virus check found ${scan.reason ? `“${scan.reason}”` : 'something harmful'} in the attachment ${item.filename}, so the message was not sent. Remove it and send again.`
+					: `The attachment ${item.filename} could not be checked for viruses, so the message was not sent. Remove it and send again.`
+			);
+		}
+		const object = opened.object;
 		attachments.push({
 			filename: item.filename,
 			mediaType: item.media_type,
@@ -315,6 +365,21 @@ export async function sendMessage(
 	return { sent: true };
 }
 
+/**
+ * Sends a message when the pause before it goes has ended, unless it was
+ * pulled back or sent at once meanwhile. Run after the page has answered
+ * (src/lib/server/environment.ts, afterResponse); the mail tick sends it if
+ * this never runs.
+ */
+export async function sendWhenPauseEnds(context: MailContext, carriers: MailCarriers, messageIdentifier: string, seconds: number): Promise<void> {
+	await new Promise((resolve) => setTimeout(resolve, seconds * 1000 + 200));
+	const row = await context.database
+		.prepare(`SELECT 1 AS waiting FROM mail_messages WHERE identifier = ? AND status = 'scheduled' AND held_for_undo = 1`)
+		.bind(messageIdentifier)
+		.first();
+	if (row) await sendMessage(context, carriers, messageIdentifier);
+}
+
 /** Sends scheduled messages whose time has come (not outreach, which paces itself). Run by the mail tick. */
 export async function sendDueMessages(context: MailContext, carriers: MailCarriers, limit = 20): Promise<number> {
 	const { results } = await context.database
@@ -346,7 +411,7 @@ export async function cancelScheduled(context: MailContext, personIdentifier: st
 export async function sendAgain(context: MailContext, personIdentifier: string, messageIdentifier: string): Promise<boolean> {
 	const at = currentTime(context).toISOString();
 	const result = await context.database
-		.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, error = NULL WHERE identifier = ? AND status IN ('scheduled', 'failed')
+		.prepare(`UPDATE mail_messages SET status = 'scheduled', scheduled_for = ?, held_for_undo = 0, error = NULL WHERE identifier = ? AND status IN ('scheduled', 'failed')
 			 AND outreach_recipient_identifier IS NULL`)
 		.bind(at, messageIdentifier)
 		.run();
