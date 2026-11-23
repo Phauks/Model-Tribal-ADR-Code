@@ -265,9 +265,19 @@
 					<label for="share-link">Link to share</label>
 					<input id="share-link" type="text" readonly value={shareLink} bind:this={linkField} />
 					<p class="item-actions">
-						<button class="button button-quiet" type="button" onclick={copyLink}>
-							{#if copied}<Check size={20} strokeWidth={1.75} />{:else}<Copy size={20} strokeWidth={1.75} />{/if}
-							{copied ? 'Copied' : 'Copy the link'}
+						<!-- Icon only (Trevor, Nov. 23, 2026); the icon turns to a check once copied. -->
+						<button
+							class="icon-button"
+							type="button"
+							onclick={copyLink}
+							aria-label={copied ? 'Link copied' : 'Copy the link'}
+							title={copied ? 'Copied' : 'Copy the link'}
+						>
+							{#if copied}<Check size={20} strokeWidth={1.75} aria-hidden="true" />{:else}<Copy
+									size={20}
+									strokeWidth={1.75}
+									aria-hidden="true"
+								/>{/if}
 						</button>
 						<a class="button button-quiet" href={shareLink} target="_blank" rel="noopener">
 							See what others will see<span class="visually-hidden"> (opens in a new tab)</span>

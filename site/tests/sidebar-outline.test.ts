@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { composeSectionOutline, currentLinkIn, parseSectionChoices } from '../src/lib/sidebar-outline.ts';
+import { composeSectionContents, currentLinkIn, filterEntries, letterGroups, parseSectionChoices } from '../src/lib/sidebar-outline.ts';
 
 const nations = [
 	{ label: 'Directory', link: '/nations' },
@@ -11,32 +11,61 @@ const headings = [
 	{ label: 'Sources', link: '#sources-heading' }
 ];
 
-describe('what the sidebar lists inside the section being read', () => {
-	it('keeps the section’s pages and nests a page that is not listed under the entry that holds it', () => {
-		const items = composeSectionOutline(nations, { title: 'Navajo Nation', items: headings }, '/nations/navajo-nation');
-		expect(items.map((item) => item.link)).toEqual(['/nations', '/nations/map', '/nations/recourse']);
-		expect(items[0].children).toEqual([{ label: 'Navajo Nation', link: '/nations/navajo-nation', current: true, children: headings }]);
+describe('what the second column lists for the section being read', () => {
+	it('nests a page that is in no list under the entry that holds it', () => {
+		const { pages } = composeSectionContents({ pages: nations }, { title: 'Navajo Nation', items: headings }, '/nations/navajo-nation');
+		expect(pages.map((item) => item.link)).toEqual(['/nations', '/nations/map', '/nations/recourse']);
+		expect(pages[0].children).toEqual([{ label: 'Navajo Nation', link: '/nations/navajo-nation', current: true, children: headings }]);
 	});
 
-	it('puts a listed page’s headings under its own entry', () => {
+	it('puts the page’s headings under its own entry, in the pages or in the long list', () => {
+		const contents = {
+			pages: nations,
+			entries: { noun: 'nations', items: [{ label: 'Hopi Tribe', link: '/nations/hopi' }, { label: 'Navajo Nation', link: '/nations/navajo-nation' }] }
+		};
+		const composed = composeSectionContents(contents, { items: headings }, '/nations/navajo-nation');
+		expect(composed.pages).toEqual(nations);
+		expect(composed.entries?.items[1]).toEqual({ label: 'Navajo Nation', link: '/nations/navajo-nation', children: headings });
 		const essays = [
 			{ label: 'First essay', link: '/essays/first' },
 			{ label: 'Second essay', link: '/essays/second' }
 		];
-		const items = composeSectionOutline(essays, { items: headings }, '/essays/second');
-		expect(items[0].children).toBeUndefined();
-		expect(items[1]).toEqual({ label: 'Second essay', link: '/essays/second', children: headings });
+		expect(composeSectionContents({ pages: essays }, { items: headings }, '/essays/second').pages[1].children).toBe(headings);
 	});
 
-	it('shows the section’s pages alone when the page has no outline, and the page’s outline alone outside a list', () => {
-		expect(composeSectionOutline(nations, undefined, '/nations/map')).toBe(nations);
-		expect(composeSectionOutline(undefined, { items: headings }, '/sponsor')).toBe(headings);
-		expect(composeSectionOutline(undefined, undefined, '/sponsor')).toEqual([]);
+	it('shows the section’s contents alone when the page has no outline, and the page’s outline alone without contents', () => {
+		const contents = { pages: nations };
+		expect(composeSectionContents(contents, undefined, '/nations/map')).toBe(contents);
+		expect(composeSectionContents(undefined, { items: headings }, '/code')).toEqual({ pages: headings });
+		expect(composeSectionContents(undefined, undefined, '/sponsor')).toEqual({ pages: [] });
 	});
 
-	it('adds a page held by no entry at the end, named by its outline or title', () => {
-		const items = composeSectionOutline([{ label: 'About the project', link: '/about' }], { items: headings }, '/charter', 'Charter');
-		expect(items.at(-1)).toEqual({ label: 'Charter', link: '/charter', current: true, children: headings });
+	it('adds a page held by no entry at the end of the pages, named by its outline or title', () => {
+		const { pages } = composeSectionContents({ pages: [{ label: 'About the project', link: '/about' }] }, { items: headings }, '/charter', 'Charter');
+		expect(pages.at(-1)).toEqual({ label: 'Charter', link: '/charter', current: true, children: headings });
+	});
+});
+
+describe('the long list in the second column', () => {
+	const items = [
+		{ label: 'Absentee-Shawnee Tribe', link: '/nations/a' },
+		{ label: 'Pueblo of Zuñi', link: '/nations/z' },
+		{ label: '[Account of a peace]', link: '/stories/b' },
+		{ label: 'Navajo Nation', link: '/nations/n' }
+	];
+
+	it('filters by every word typed, ignoring case and accents', () => {
+		expect(filterEntries(items, 'zuni').map((item) => item.link)).toEqual(['/nations/z']);
+		expect(filterEntries(items, 'NATION navajo').map((item) => item.link)).toEqual(['/nations/n']);
+		expect(filterEntries(items, '  ')).toBe(items);
+	});
+
+	it('groups by first letter, ignoring leading marks', () => {
+		expect(letterGroups(items).map((group) => [group.letter, group.items.length])).toEqual([
+			['A', 2],
+			['N', 1],
+			['P', 1]
+		]);
 	});
 });
 

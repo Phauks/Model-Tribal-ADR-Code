@@ -8,6 +8,8 @@
 		problem: boolean;
 		done: boolean;
 		filedAs: string | null;
+		/** Where it stands with the virus check; null when it never reached it. */
+		scan?: 'checking' | 'clean' | 'flagged' | null;
 	}
 </script>
 
@@ -32,9 +34,13 @@
 	import Play from '@lucide/svelte/icons/play';
 	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
 	import Search from '@lucide/svelte/icons/search';
+	import ShieldCheck from '@lucide/svelte/icons/shield-check';
+	import ShieldEllipsis from '@lucide/svelte/icons/shield-ellipsis';
+	import ShieldX from '@lucide/svelte/icons/shield-x';
 	import Trash from '@lucide/svelte/icons/trash';
 	import Upload from '@lucide/svelte/icons/upload';
 	import X from '@lucide/svelte/icons/x';
+	import { isZipName, unzipFiles, ZipProblem } from '#lib/unzip-files.ts';
 	import { readableSize } from '#lib/uploads.ts';
 	import { youtubeVideoIdentifier } from '#lib/video-links.ts';
 
@@ -70,6 +76,8 @@
 		earlier?: EarlierFile[];
 		/** Show the "Filed as" column. */
 		filedColumn?: boolean;
+		/** Reads the earlier files again. Given, the table refreshes itself while a sent file waits for its virus check. */
+		refresh?: () => Promise<unknown>;
 		sendLabel?: (count: number) => string;
 		/** Shown beside the table, such as the questions on Send files. */
 		aside?: Snippet<[{ sending: boolean }]>;
@@ -84,11 +92,25 @@
 		folders = true,
 		earlier = [],
 		filedColumn = false,
+		refresh,
 		sendLabel = (count) => `Send ${count}`,
 		aside
 	}: Props = $props();
 
-	const parallel = 3;
+	/**
+	 * Files sent at once. A small file spends most of its time waiting on the
+	 * server, so more at once is faster, until the connection is full. The
+	 * batch starts at six and adds one more each time the last round was
+	 * faster, up to ten; a refusal for going too fast, or a request that hears
+	 * nothing back, takes two away.
+	 */
+	const firstAtOnce = 6;
+	const mostAtOnce = 10;
+	const fewestAtOnce = 2;
+	let strained = false;
+	/** A request that hears nothing back in this time is given up, so a stuck file frees its place. */
+	const requestTimeout = 60_000;
+	const pieceTimeout = 180_000;
 	let rows = $state<Row[]>([]);
 	let nextKey = 0;
 	let tab = $state<'all' | 'ready' | 'sending' | 'sent' | 'problem'>('all');
@@ -135,6 +157,18 @@
 			return tab === 'all' || (tab === 'sent' && !file.problem);
 		})
 	);
+	// What the server says about a file sent from this page, once it has read the list again.
+	const earlierByReference = $derived(new Map(earlier.map((file) => [file.reference, file])));
+	/** Files still waiting for the virus check, or sent but not yet in the server's list. */
+	const stillChecking = $derived(
+		earlier.some((file) => file.scan === 'checking') ||
+			rows.some((row) => row.state === 'sent' && !row.link && row.reference !== null && !earlierByReference.has(row.reference))
+	);
+	$effect(() => {
+		if (!refresh || !stillChecking) return;
+		const timer = setInterval(() => void refresh(), 4000);
+		return () => clearInterval(timer);
+	});
 	function earlierHere(): EarlierFile[] {
 		const references = new Set(rows.map((row) => row.reference));
 		return earlier.filter((file) => !references.has(file.reference));
@@ -156,9 +190,43 @@
 		return `about ${minutes} minute${minutes === 1 ? '' : 's'} left`;
 	}
 
-	function add(files: Iterable<File>) {
-		const added: Row[] = [];
-		for (const file of files) {
+	/** Adds files to the table. A ZIP is opened here and each file inside gets its own row. */
+	async function add(files: Iterable<File>) {
+		const picked = [...files];
+		if (fileInput) fileInput.value = '';
+		if (folderInput) folderInput.value = '';
+		const unpacked: File[] = [];
+		const refusedZips: Row[] = [];
+		for (const file of picked) {
+			if (!isZipName(file.name)) {
+				unpacked.push(file);
+				continue;
+			}
+			const where = file.webkitRelativePath || file.name;
+			try {
+				for (const inside of unzipFiles(new Uint8Array(await file.arrayBuffer()))) {
+					const opened = new File([inside.bytes as Uint8Array<ArrayBuffer>], inside.path.split('/').at(-1) ?? inside.path);
+					Object.defineProperty(opened, 'webkitRelativePath', { value: `${where}/${inside.path}` });
+					unpacked.push(opened);
+				}
+			} catch (problem) {
+				refusedZips.push({
+					key: nextKey++,
+					file,
+					link: null,
+					name: where,
+					size: file.size,
+					state: 'problem',
+					progress: 0,
+					message: problem instanceof ZipProblem ? problem.message : 'This ZIP could not be opened.',
+					retryable: false,
+					chosen: false,
+					reference: null
+				});
+			}
+		}
+		const added: Row[] = [...refusedZips];
+		for (const file of unpacked) {
 			// Folders bring their hidden files with them (.DS_Store, desktop.ini); leave those out.
 			if (file.name.startsWith('.') || file.name === 'desktop.ini' || file.name === 'Thumbs.db') continue;
 			added.push({
@@ -177,8 +245,6 @@
 		}
 		rows = [...rows, ...added];
 		problem = '';
-		if (fileInput) fileInput.value = '';
-		if (folderInput) folderInput.value = '';
 	}
 
 	function addLink() {
@@ -250,7 +316,7 @@
 			if (!hasFiles(event) || !event.dataTransfer) return;
 			event.preventDefault();
 			dragDepth = 0;
-			add(await droppedFiles(event.dataTransfer));
+			await add(await droppedFiles(event.dataTransfer));
 		};
 		window.addEventListener('dragenter', enter);
 		window.addEventListener('dragover', over);
@@ -285,10 +351,12 @@
 			const response = await fetch(address, {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
-				body: JSON.stringify(body)
+				body: JSON.stringify(body),
+				signal: AbortSignal.timeout(requestTimeout)
 			});
 			// The per-minute guard against runaway scripts: wait and carry on.
 			if (response.status === 429 && attempt < 20) {
+				strained = true;
 				await pause(5000);
 				continue;
 			}
@@ -297,11 +365,15 @@
 		}
 	}
 
-	/** Sends one piece, trying again twice if the connection drops. */
+	/** Sends one piece, trying again twice if the connection drops or nothing comes back. */
 	async function sendPiece(reference: string, number: number, piece: Blob): Promise<Response> {
 		for (let attempt = 1; ; attempt++) {
 			try {
-				return await fetch(`/uploads/pieces/${reference}/${number}`, { method: 'PUT', body: piece });
+				return await fetch(`/uploads/pieces/${reference}/${number}`, {
+					method: 'PUT',
+					body: piece,
+					signal: AbortSignal.timeout(pieceTimeout)
+				});
 			} catch (problem) {
 				if (attempt >= 3) throw problem;
 				await pause(2000 * attempt);
@@ -405,18 +477,62 @@
 		bytesAtStart = sentBytes;
 		let stopped = false;
 		const next = () => (stopped ? undefined : rows.find((row) => row.state === 'ready'));
+		let atOnce = firstAtOnce;
+		let active = 0;
+		let roundStart = Date.now();
+		let roundBytes = sentBytes;
+		let roundFiles = 0;
+		let lastRate = 0;
+		strained = false;
+		let allDone: () => void = () => {};
+		const done = new Promise<void>((resolve) => (allDone = resolve));
+
+		/** After each file: a full round at this many files sets the next round's number. */
+		function adjust() {
+			if (strained) {
+				strained = false;
+				atOnce = Math.max(fewestAtOnce, atOnce - 2);
+				roundFiles = 0;
+				roundStart = Date.now();
+				roundBytes = sentBytes;
+				return;
+			}
+			roundFiles += 1;
+			if (roundFiles < atOnce) return;
+			const seconds = Math.max((Date.now() - roundStart) / 1000, 0.001);
+			// Files and bytes both count, so a round of small files and a round of large ones are each judged fairly.
+			const rate = roundFiles / seconds + (sentBytes - roundBytes) / (1024 * 1024) / seconds;
+			if (rate >= lastRate && atOnce < mostAtOnce) atOnce += 1;
+			lastRate = rate;
+			roundFiles = 0;
+			roundStart = Date.now();
+			roundBytes = sentBytes;
+			while (active < atOnce && next()) start();
+		}
+
 		async function worker() {
-			for (let row = next(); row; row = next()) {
+			for (let row = next(); row; row = active > atOnce ? undefined : next()) {
 				try {
 					const carryOn = row.link ? await sendLink(row) : await sendFile(row);
 					if (!carryOn) stopped = true;
 				} catch {
+					strained = true;
 					stop(row, 'Something went wrong. Check your connection.');
 				}
+				adjust();
 			}
 		}
+		function start() {
+			active += 1;
+			void worker().finally(() => {
+				active -= 1;
+				if (active === 0) allDone();
+			});
+		}
 		try {
-			await Promise.all(Array.from({ length: parallel }, worker));
+			for (let count = 0; count < atOnce && next(); count++) start();
+			if (active === 0) allDone();
+			await done;
 		} finally {
 			running = false;
 		}
@@ -456,7 +572,7 @@
 			<span class="strip-text"><strong>Drop files{folders ? ' or folders' : ''} anywhere on this page</strong></span>
 			<label class="button button-quiet pick">
 				<Upload size={18} aria-hidden="true" /> Files
-				<input bind:this={fileInput} class="visually-hidden" type="file" multiple onchange={(event) => add(event.currentTarget.files ?? [])} />
+				<input bind:this={fileInput} class="visually-hidden" type="file" multiple onchange={(event) => void add(event.currentTarget.files ?? [])} />
 			</label>
 			{#if folders}
 				<label class="button button-quiet pick">
@@ -466,7 +582,7 @@
 						class="visually-hidden"
 						type="file"
 						webkitdirectory
-						onchange={(event) => add(event.currentTarget.files ?? [])}
+						onchange={(event) => void add(event.currentTarget.files ?? [])}
 					/>
 				</label>
 			{/if}
@@ -553,6 +669,7 @@
 							<th>Name</th>
 							<th class="number">Size</th>
 							<th>Status</th>
+							<th>Virus check</th>
 							{#if filedColumn}<th>Filed as</th>{/if}
 							<th><span class="visually-hidden">Actions</span></th>
 						</tr>
@@ -573,14 +690,30 @@
 									{:else if row.state === 'paused'}
 										<span class="small">Paused at {Math.floor(row.progress * 100)}%</span>
 									{:else if row.state === 'sent'}
-										<span class="state done"><CircleCheck size={16} aria-hidden="true" /> Sent</span>
+										{@const after = row.reference ? earlierByReference.get(row.reference) : undefined}
+										{#if after}
+											<span class="state" class:done={after.done} class:bad={after.problem} class:muted={!after.done && !after.problem}>
+												{#if after.done}<CircleCheck size={16} aria-hidden="true" />{:else if after.problem}<CircleAlert
+														size={16}
+														aria-hidden="true"
+													/>{:else}<Clock size={16} aria-hidden="true" />{/if}
+												{after.statusText}
+											</span>
+										{:else}
+											<span class="state done"><CircleCheck size={16} aria-hidden="true" /> Sent</span>
+										{/if}
 									{:else if row.state === 'problem'}
 										<span class="state bad"><CircleAlert size={16} aria-hidden="true" /> {row.message}</span>
 									{:else}
 										<span class="state muted">Ready</span>
 									{/if}
 								</td>
-								{#if filedColumn}<td class="small muted">{row.state === 'sent' ? 'Waiting to be filed' : ''}</td>{/if}
+								<td class="scan">
+									{#if row.state === 'sent' && !row.link}{@render scanBadge(
+											row.reference && earlierByReference.has(row.reference) ? earlierByReference.get(row.reference)?.scan : 'checking'
+										)}{/if}
+								</td>
+								{#if filedColumn}<td class="small filed">{row.reference ? (earlierByReference.get(row.reference)?.filedAs ?? '') : ''}</td>{/if}
 								<td class="actions">
 									{#if row.state === 'sending' && row.file}
 										<button class="icon-button" type="button" aria-label="Pause {row.name}" title="Pause" onclick={() => (row.state = 'paused')}>
@@ -641,6 +774,7 @@
 										{file.statusText}
 									</span>
 								</td>
+								<td class="scan">{@render scanBadge(file.scan)}</td>
 								{#if filedColumn}<td class="small filed">{file.filedAs ?? ''}</td>{/if}
 								<td class="actions"></td>
 							</tr>
@@ -688,6 +822,16 @@
 		</aside>
 	{/if}
 </div>
+
+{#snippet scanBadge(scan: EarlierFile['scan'])}
+	{#if scan === 'clean'}
+		<span class="badge clean"><ShieldCheck size={14} aria-hidden="true" /> Clean</span>
+	{:else if scan === 'flagged'}
+		<span class="badge flagged"><ShieldX size={14} aria-hidden="true" /> Flagged</span>
+	{:else if scan === 'checking'}
+		<span class="badge checking"><ShieldEllipsis size={14} aria-hidden="true" /> Checking</span>
+	{/if}
+{/snippet}
 
 {#if dragDepth > 0}
 	<div class="drop-over" aria-hidden="true">
@@ -841,6 +985,28 @@
 	.filed {
 		overflow-wrap: anywhere;
 	}
+	.scan {
+		white-space: nowrap;
+	}
+	.badge {
+		display: inline-flex;
+		gap: 4px;
+		align-items: center;
+		border-radius: 999px;
+		padding: 1px var(--space-2);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		border: 1px solid currentColor;
+	}
+	.badge.clean {
+		color: var(--color-link);
+	}
+	.badge.flagged {
+		color: var(--color-danger);
+	}
+	.badge.checking {
+		color: var(--color-ink-muted);
+	}
 	tr.chosen {
 		background: color-mix(in srgb, var(--color-link) 10%, transparent);
 	}
@@ -937,17 +1103,18 @@
 			padding: 2px 0;
 		}
 		td.choose {
-			grid-row: span 3;
+			grid-row: span 4;
 		}
 		td.name {
 			grid-column: 2;
 		}
 		td.actions {
 			grid-column: 3;
-			grid-row: 1 / span 3;
+			grid-row: 1 / span 4;
 		}
 		td.number,
 		td.status,
+		td.scan,
 		td.filed {
 			grid-column: 2;
 			text-align: left;

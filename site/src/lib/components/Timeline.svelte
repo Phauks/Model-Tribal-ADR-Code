@@ -134,7 +134,7 @@
 	onMount(() => {
 		interactive = true;
 		// The era headings link to the legal history essay once it is published.
-		fetch('/sidebar/foundations.json')
+		fetch('/foundations/published.json')
 			.then((response) => (response.ok ? response.json() : []))
 			.then((items: { link?: string }[]) => {
 				historyPublished = Array.isArray(items) && items.some((item) => item.link === historyEssayPath);

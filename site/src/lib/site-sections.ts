@@ -1,6 +1,6 @@
 // The site's sections, in the order of the working outline's main menu
-// (docs/outline.md, "The website"). The sidebar lists them on every page and
-// opens the current one into the outline of the page being read.
+// (docs/outline.md, "The website"). The sidebar lists them on every page, and
+// its second column lists the pages of the one being read.
 
 import { libraryOutline } from '#lib/library-pages.ts';
 
@@ -34,8 +34,8 @@ export type PageOutline = {
  * section counts as current, and when the page gives no outline of its own the
  * sidebar lists the gathered pages instead.
  *
- * `opens` marks a section the sidebar can open from any page, to list the pages
- * inside it (src/lib/server/section-contents.ts, /sidebar/[section].json).
+ * `opens` marks a section with pages of its own to list in the sidebar's
+ * second column (src/lib/server/section-contents.ts).
  */
 export type SiteSection = { label: string; link: string; built: boolean; gathers?: OutlineItem[]; opens?: boolean };
 

@@ -24,10 +24,13 @@ const privatePrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/sig
 const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/following', '/uploads', '/files', '/events', '/rooms', '/sponsorship/invite'];
 
 /**
- * Pieces of files people send (src/lib/server/uploads.ts). A large file is
- * hundreds of pieces, so they have their own limit (uploadLimit, on starting
- * each file) instead of the limit on workspace changes.
+ * Files people send (src/lib/server/uploads.ts): starting a file at
+ * /uploads/pieces, then its pieces and its finish under /uploads/pieces/. A
+ * batch can be hundreds of files and a large file hundreds of pieces, so they
+ * have their own limit (uploadLimit, on starting each file) instead of the
+ * limit on workspace changes.
  */
+const startPath = '/uploads/pieces';
 const piecePrefix = '/uploads/pieces/';
 /**
  * Where the inbox saves a person's draft a moment after they stop typing
@@ -103,7 +106,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		// Each person may make a limited number of changes a minute, so a
 		// stolen session or a runaway script cannot rewrite much before
 		// someone notices (wrangler.jsonc, workspaceChangeLimit).
-		if (changing && event.locals.person && environment.workspaceChangeLimit && !path.startsWith(piecePrefix) && path !== draftSavePath) {
+		if (changing && event.locals.person && environment.workspaceChangeLimit && path !== startPath && !path.startsWith(piecePrefix) && path !== draftSavePath) {
 			const { success } = await environment.workspaceChangeLimit.limit({
 				key: event.locals.person.identifier
 			});

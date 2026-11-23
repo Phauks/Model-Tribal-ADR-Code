@@ -12,7 +12,6 @@
 	// a reader can find what governs now (Trevor, Nov. 23, 2026).
 	import type { DocumentHistoryView } from '#lib/server/document-history.ts';
 	import CitationMarks from './CitationMarks.svelte';
-	import DocumentTimeline from './DocumentTimeline.svelte';
 
 	let { documents }: { documents: (DocumentHistoryView & { heading?: string })[] } = $props();
 </script>
@@ -42,7 +41,6 @@
 				{/each}
 			</p>
 		{/if}
-		<DocumentTimeline versions={document.versions} />
 		<ol class="version-list">
 			{#each document.versions as version (version.id)}
 				<li>

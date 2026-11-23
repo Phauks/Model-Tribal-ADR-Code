@@ -1,27 +1,39 @@
 /**
- * What the sidebar shows inside a section (SiteSidebar.svelte), worked out
- * without the browser so it can be tested.
+ * What the sidebar's second column lists for the section being read
+ * (SiteSidebar.svelte), worked out without the browser so it can be tested.
  *
- * Trevor asked on Nov. 23, 2026 that being inside a section never hide its
- * other pages: the section always lists its pages, and the page being read
- * opens under its own entry into its headings. A page that is not in the
- * list, such as a nation's page, is added under the entry whose address
- * holds it (the nation under Directory).
+ * Trevor chose on Nov. 23, 2026 to keep the first column to the site's
+ * sections and to list a section's pages in a second column beside it: the
+ * section's own pages, then its long list (the nations, the stories, the
+ * glossary's terms) with a filter. The page being read opens under its own
+ * entry into its headings. A page in neither list joins the entry whose
+ * address holds it, or the end of the pages.
  */
 import type { OutlineItem, PageOutline } from './site-sections.ts';
 
-/** The section's pages with the page being read, and its own outline, nested in place. */
-export function composeSectionOutline(
-	sectionPages: OutlineItem[] | undefined,
+/** A section's contents: its own pages, and its long list, if it has one. */
+export type SectionContents = {
+	pages: OutlineItem[];
+	/**
+	 * A long list, such as the nations, with the word for its entries
+	 * ("nations"). A list named by `list` comes from a shared module instead of
+	 * the page's data (src/lib/section-lists.ts).
+	 */
+	entries?: { noun: string; items: OutlineItem[]; list?: 'nations' };
+};
+
+/** The section's contents with the page being read, and its own outline, nested in place. */
+export function composeSectionContents(
+	contents: SectionContents | undefined,
 	pageOutline: PageOutline | undefined,
 	path: string,
 	pageTitle?: string
-): OutlineItem[] {
+): SectionContents {
 	const own = pageOutline?.items ?? [];
-	if (!sectionPages?.length) return own;
-	if (own.length === 0) return sectionPages;
+	if (!contents) return { pages: own };
+	if (own.length === 0) return contents;
 
-	// The page is in the list: its outline goes under its entry.
+	// The page is in a list: its outline goes under its entry.
 	let placed = false;
 	const withOwn = (items: OutlineItem[]): OutlineItem[] =>
 		items.map((item) => {
@@ -31,13 +43,14 @@ export function composeSectionOutline(
 			}
 			return item.children ? { ...item, children: withOwn(item.children) } : item;
 		});
-	const listed = withOwn(sectionPages);
-	if (placed) return listed;
+	const pages = withOwn(contents.pages);
+	const entries = contents.entries && { ...contents.entries, items: withOwn(contents.entries.items) };
+	if (placed) return { pages, entries };
 
-	// Otherwise the page joins the entry whose address holds it, or the end of the list.
+	// Otherwise the page joins the entry whose address holds it, or the end of the pages.
 	const entry: OutlineItem = { label: pageOutline?.title ?? pageTitle ?? 'This page', link: path, current: true, children: own };
-	const parent = deepestHolder(sectionPages, path);
-	if (!parent) return [...sectionPages, entry];
+	const parent = deepestHolder(contents.pages, path);
+	if (!parent) return { pages: [...contents.pages, entry], entries: contents.entries };
 	const addUnder = (items: OutlineItem[]): OutlineItem[] =>
 		items.map((item) =>
 			item === parent
@@ -46,7 +59,34 @@ export function composeSectionOutline(
 					? { ...item, children: addUnder(item.children) }
 					: item
 		);
-	return addUnder(sectionPages);
+	return { pages: addUnder(contents.pages), entries: contents.entries };
+}
+
+/** The entries whose names hold every word of the filter, ignoring case and accents. */
+export function filterEntries(items: OutlineItem[], filter: string): OutlineItem[] {
+	const words = fold(filter).split(/\s+/).filter(Boolean);
+	if (words.length === 0) return items;
+	return items.filter((item) => {
+		const name = fold(item.label);
+		return words.every((word) => name.includes(word));
+	});
+}
+
+function fold(text: string): string {
+	return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('en-US');
+}
+
+/** A long list in groups by first letter, A to Z, with names that start otherwise first under "#". */
+export function letterGroups(items: OutlineItem[]): { letter: string; items: OutlineItem[] }[] {
+	const groups: { letter: string; items: OutlineItem[] }[] = [];
+	for (const item of items) {
+		const first = fold(item.label.replace(/^[^\p{L}\p{N}]+/u, '')).charAt(0).toUpperCase();
+		const letter = /[A-Z]/.test(first) ? first : '#';
+		const group = groups.find((candidate) => candidate.letter === letter);
+		if (group) group.items.push(item);
+		else groups.push({ letter, items: [item] });
+	}
+	return groups.sort((first, second) => (first.letter === '#' ? -1 : second.letter === '#' ? 1 : first.letter.localeCompare(second.letter)));
 }
 
 /** The entry with the longest address that holds `path` (`/nations` holds `/nations/navajo-nation`). */
@@ -77,7 +117,7 @@ export function currentLinkIn(items: OutlineItem[], path: string, search: string
 	return has(items) ? withQuery : path;
 }
 
-/** The storage key for the sections and groups the reader opened or shut, kept from page to page. */
+/** The storage key for the groups the reader opened or shut, such as the Workspace, kept from page to page. */
 export const sectionChoicesKey = 'sidebar-open-sections';
 
 /**

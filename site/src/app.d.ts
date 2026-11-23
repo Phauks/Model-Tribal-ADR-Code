@@ -60,6 +60,8 @@ declare global {
 		uploadLimit?: RateLimit;
 		/** The live editing rooms, one per essay, in the model-tribal-adr-code-live Worker (src/lib/server/live-editing.ts). */
 		essayRooms?: DurableObjectNamespace;
+		/** The virus scanner's desk, in model-tribal-adr-code-scanner (src/lib/server/scanner-wake.ts). */
+		scanDesks?: DurableObjectNamespace;
 		/** Cloudflare Email Service, for sign-in codes (src/lib/server/sign-in-email.ts). */
 		signInEmail?: SignInEmailBinding;
 		/** The address sign-in codes come from, on a domain onboarded in Email Service. */

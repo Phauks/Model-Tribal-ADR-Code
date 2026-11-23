@@ -5,6 +5,8 @@
 	and with a message. Lists the open requests, which their asker can close.
 -->
 <script lang="ts">
+	import Check from '@lucide/svelte/icons/check';
+	import Link from '@lucide/svelte/icons/link';
 	import { tick } from 'svelte';
 	import { accessLevelLabels, roleLabels, type AccessLevel, type Role } from '#lib/permissions.ts';
 	import { inReviewText, isOpen, type ReviewRequest } from '#lib/essays/review-requests.ts';
@@ -51,6 +53,7 @@
 	let message = $state('');
 	let problem = $state('');
 	let notice = $state('');
+	let linkCopied = $state(false);
 	let sending = $state(false);
 
 	const open = $derived(requests.filter(isOpen));
@@ -160,6 +163,7 @@
 		try {
 			await navigator.clipboard.writeText(link);
 			notice = 'Link copied. People who can open the essay see the draft there; readers see only what is published.';
+			linkCopied = true;
 		} catch {
 			notice = `The link is ${link}`;
 		}
@@ -267,7 +271,20 @@
 	{#if notice}<p class="small" role="status">{notice}</p>{/if}
 	<p class="row footer">
 		<span class="small muted">Readers see only what is published.</span>
-		<button class="button button-quiet" type="button" onclick={copyLink}>Copy link</button>
+		<!-- Icon only (Trevor, Nov. 23, 2026); the icon turns to a check once copied. -->
+		<button
+			class="icon-button"
+			type="button"
+			onclick={copyLink}
+			aria-label={linkCopied ? 'Link copied' : 'Copy link'}
+			title={linkCopied ? 'Link copied' : 'Copy link'}
+		>
+			{#if linkCopied}<Check size={20} strokeWidth={1.75} aria-hidden="true" />{:else}<Link
+					size={20}
+					strokeWidth={1.75}
+					aria-hidden="true"
+				/>{/if}
+		</button>
 		<button class="button button-quiet" type="button" onclick={() => dialog?.close()}>Close</button>
 	</p>
 </dialog>
