@@ -20,6 +20,7 @@ import type { SourceEntry } from '../server/source-uses.ts';
 import { chartFromRows, figureKindLabels, figureRemovalLink, figureSource, readFigureInfo, type FigureKind } from './figures.ts';
 import { scaleTop } from '../bar-chart.ts';
 import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
+import { attributionSource } from '../quote-context.ts';
 import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 
 export interface EssayLibrary {
@@ -136,17 +137,26 @@ const label = (text: string) => `<p class="essay-block-label">${text}</p>\n`;
 function markAttributions(tokens: Token[]): void {
 	const attributionAt = (index: number) =>
 		tokens[index]?.type === 'paragraph_open' && isAttribution(tokens[index + 1]?.content ?? '');
+	// An attribution that cites one source names it, so the page can offer the
+	// quotation in its paragraph (src/lib/essays/quote-context-view.ts).
+	const mark = (open: Token, content: string) => {
+		open.attrJoin('class', 'essay-attribution');
+		const cited = attributionSource(content);
+		if (!cited) return;
+		open.attrSet('data-quote-source', cited.source);
+		if (cited.pinpoint) open.attrSet('data-quote-pinpoint', cited.pinpoint);
+	};
 	for (let index = 0; index < tokens.length; index += 1) {
 		const token = tokens[index];
 		if (token.type === 'blockquote_close' && attributionAt(index + 1)) {
-			tokens[index + 1].attrJoin('class', 'essay-attribution');
+			mark(tokens[index + 1], tokens[index + 2]?.content ?? '');
 		}
 		if (token.type === 'container_quote_close') {
 			// The paragraph that ends just before the closing fence.
 			if (tokens[index - 1]?.type !== 'paragraph_close') continue;
 			let open = index - 1;
 			while (open > 0 && !(tokens[open].type === 'paragraph_open' && tokens[open].level === token.level + 1)) open -= 1;
-			if (open > 0 && attributionAt(open)) tokens[open].attrJoin('class', 'essay-attribution');
+			if (open > 0 && attributionAt(open)) mark(tokens[open], tokens[open + 1]?.content ?? '');
 		}
 	}
 }

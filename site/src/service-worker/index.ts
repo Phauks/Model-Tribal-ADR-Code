@@ -89,7 +89,9 @@ const neverCached = [
 	'/copies',
 	'/map-tiles',
 	// ZIP downloads (/zip/) are files to keep, not pages to read offline.
-	'/zip'
+	'/zip',
+	// A quotation's paragraph depends on the words asked about, which saved pages match without (ignoreSearch).
+	'/quote-context'
 ];
 /** Not a real address: the list of collections the reader keeps, stored in the cache. */
 const keptCollectionsKey = '/__kept-collections';

@@ -8,7 +8,11 @@
 	//   /glossary/terms.json;
 	// - a link to a nation's page inside the page's text: the nation's name,
 	//   its seal where the page shows one, its recognition status, its states
-	//   and the page's review status, from /nations/previews.json.
+	//   and the page's review status, from /nations/previews.json;
+	// - a case a court cites inside a quoted paragraph (a.case-link, from
+	//   src/lib/essays/quote-context-view.ts): the case's name, citation,
+	//   court, date and, when an essay has a box for it, the holding, from
+	//   /cases/previews.json (Trevor, Nov. 23, 2026).
 	//
 	// As WCAG 2.2, 1.4.13 asks, the preview can be dismissed with Escape,
 	// stays open while the pointer is over it, and stays until the pointer or
@@ -38,7 +42,18 @@
 		image?: string;
 	}
 
-	type Preview = Term | Nation;
+	interface Case {
+		kind: 'case';
+		id: string;
+		name: string;
+		citation: string;
+		court: string;
+		decided: string;
+		holding?: string;
+		opens: 'box' | 'copy' | 'original';
+	}
+
+	type Preview = Term | Nation | Case;
 
 	const cardId = 'link-preview';
 	const showDelay = 400;
@@ -51,6 +66,7 @@
 
 	let terms: Promise<Map<string, Term>> | undefined;
 	let nations: Promise<Map<string, Nation>> | undefined;
+	let cases: Promise<Map<string, Case>> | undefined;
 	let shown = $state<Preview | undefined>();
 	let imageFailed = $state(false);
 	let position = $state({ top: 0, left: 0 });
@@ -92,6 +108,17 @@
 		return nations;
 	}
 
+	function loadCases(): Promise<Map<string, Case>> {
+		cases ??= load<Case>('/cases/previews.json', 'cases', 'case', () => (cases = undefined));
+		return cases;
+	}
+
+	const opensText: Record<Case['opens'], string> = {
+		box: 'Opens the case in the essay that discusses it.',
+		copy: 'Opens the copy of the opinion on this site.',
+		original: 'Opens the opinion where it was published.'
+	};
+
 	function enabled(): boolean {
 		return document.documentElement.dataset.glossaryCards !== 'off';
 	}
@@ -116,6 +143,10 @@
 		if (link.classList.contains('term-link')) {
 			const id = termIdOf(link);
 			return id ? (await loadTerms()).get(id) : undefined;
+		}
+		if (link.classList.contains('case-link')) {
+			const id = link.dataset.case;
+			return id ? (await loadCases()).get(id) : undefined;
 		}
 		const id = nationIdOf(link);
 		return id ? (await loadNations()).get(id) : undefined;
@@ -171,7 +202,7 @@
 	function previewLinkFrom(target: EventTarget | null): HTMLAnchorElement | undefined {
 		const link = (target as Element | null)?.closest?.('a[href]');
 		if (!(link instanceof HTMLAnchorElement)) return undefined;
-		if (link.classList.contains('term-link')) return link;
+		if (link.classList.contains('term-link') || link.classList.contains('case-link')) return link;
 		if (!link.closest('main') || link.closest(noPreview)) return undefined;
 		return nationIdOf(link) ? link : undefined;
 	}
@@ -235,6 +266,11 @@
 				<strong>{shown.term}</strong>{#if shown.expansion}{' '}({shown.expansion}){/if}
 			</p>
 			{#if shown.summary}<p>{shown.summary}</p>{/if}
+		{:else if shown.kind === 'case'}
+			<p class="link-preview-title"><strong><cite>{shown.name}</cite></strong>{#if shown.citation}, {shown.citation}{/if}</p>
+			{#if shown.court || shown.decided}<p class="muted">{[shown.court, shown.decided && `decided ${shown.decided}`].filter(Boolean).join(', ')}</p>{/if}
+			{#if shown.holding}<p><span class="case-preview-label">Held:</span> {shown.holding}</p>{/if}
+			<p class="muted">{opensText[shown.opens]}</p>
 		{:else}
 			<div class="nation-preview">
 				{#if shown.image && !imageFailed}
@@ -270,6 +306,14 @@
 
 	.link-preview p:last-child {
 		margin-bottom: 0;
+	}
+
+	.link-preview cite {
+		font-style: italic;
+	}
+
+	.case-preview-label {
+		font-weight: var(--font-weight-semibold);
 	}
 
 	.nation-preview {

@@ -1,7 +1,8 @@
 <script lang="ts">
 	// An essay as readers see it (src/lib/server/essay-pages.ts): the text with
 	// its case, quotation and analysis boxes, numbered citation markers that
-	// open their source in place (CitationPopup.svelte), the Sources list,
+	// open their source in place (CitationPopup.svelte), a button under each
+	// quotation that opens it in its paragraph (quote-context-view.ts), the Sources list,
 	// and when this version was published.
 	//
 	// The page is the same for every reader. When the browser holds the
@@ -14,6 +15,7 @@
 	// has no section, and shows the text from git until it is first published.
 	import { onMount } from 'svelte';
 	import { figurePlayers } from '#lib/essays/figure-players.ts';
+	import { quoteContext } from '#lib/essays/quote-context-view.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
@@ -158,7 +160,7 @@
 			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
 		{/await}
 	{:else}
-		<div class="essay-text" use:figurePlayers>
+		<div class="essay-text" use:figurePlayers use:quoteContext={shown.html}>
 			{@html shown.html}
 		</div>
 		<SourceList sources={shown.sources} />
