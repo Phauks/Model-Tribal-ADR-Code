@@ -11,7 +11,7 @@
 	}
 
 	/**
-	 * Places the map can go to by name. The states and territories are where they really are on the map, so each has a button rather than a box drawn at its own scale (Trevor, 2026-11-22: every territory shown and named on its own). Bounds are west, south, east, north in degrees.
+	 * Places the map can go to by name. The states and territories are where they really are on the map, so the map page's Go to menu names each rather than drawing a box at its own scale (Trevor, 2026-11-22: every territory shown and named on its own). Bounds are west, south, east, north in degrees.
 	 */
 	export const tileMapPlaces: { name: string; bounds: [number, number, number, number] }[] = [
 		{ name: 'The 48 contiguous states', bounds: [-125, 24.4, -66.9, 49.4] },
@@ -56,7 +56,7 @@
 		shape?: 'flat' | 'globe';
 		/** What the map shows, for screen readers, such as "Nations by State". */
 		label: string;
-		/** One nation's land areas, for its page: the map shows only those, fitted to them, with no place buttons or table to go to. Without it the map shows every nation and fetches its data from /nations/map/tile-map.json. */
+		/** One nation's land areas, for its page: the map shows only those, fitted to them, with no table to go to. Without it the map shows every nation and fetches its data from /nations/map/tile-map.json. */
 		data?: TileMapData;
 		camera?: TileMapCamera;
 		onready?: () => void;
@@ -445,9 +445,11 @@
 		else location.hash = anchor;
 	}
 
-	function showPlace(bounds: [number, number, number, number]): void {
+	/** Moves the map to one of the places in tileMapPlaces, by name; the map page's Go to menu calls it. */
+	export function showPlace(name: string): void {
+		const place = tileMapPlaces.find((entry) => entry.name === name);
 		// The move takes its time from the motion tokens, so Reduce motion makes it a jump (src/lib/motion.ts).
-		map?.fitBounds(bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+		if (place) map?.fitBounds(place.bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
 	}
 
 	/** The box around a nation's areas. An area across the 180th meridian (west greater than east) is boxed by its dot alone. */
@@ -622,13 +624,6 @@
 </script>
 
 <div class="tile-map" class:ready bind:this={container} role="region" aria-label="Map: {label}"></div>
-{#if ready && !oneNation}
-	<nav class="places" aria-label="Go to a part of the map">
-		{#each tileMapPlaces as place (place.name)}
-			<button type="button" onclick={() => showPlace(place.bounds)}>{place.name}</button>
-		{/each}
-	</nav>
-{/if}
 
 <style>
 	.tile-map {
@@ -707,32 +702,8 @@
 		}
 	}
 
-	.places {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-1);
-		margin-top: var(--space-2);
-	}
-
-	.places button {
-		min-height: var(--layout-target-minimum);
-		padding: var(--space-1) var(--space-3);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-		color: var(--color-ink);
-		font: inherit;
-		font-size: var(--font-size-small);
-		cursor: pointer;
-	}
-
-	.places button:hover {
-		text-decoration: underline;
-	}
-
 	@media print {
-		.tile-map,
-		.places {
+		.tile-map {
 			display: none;
 		}
 	}
