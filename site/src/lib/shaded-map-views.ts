@@ -207,6 +207,8 @@ export interface ShadedViewDefinition {
 	section: string;
 	/** Whether each category's name is written on the map, at the middle of its land areas. */
 	labels?: boolean;
+	/** False for a view with no use for a map by state: one with too many categories, such as languages, or whose categories are already groups of states, such as the Indian Health Service's Areas. Views about land areas, rather than nations, never have one. */
+	byState?: false;
 	/** How the page's list of sources says the view uses each source. Left out when the sources are too many to list, and the table goes to each nation's own section instead. */
 	sources?: { section: string; text: string };
 }
@@ -329,6 +331,7 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 		rows: 'categories',
 		categoryHeader: 'Language',
 		legendLabel: 'A heritage language recorded',
+		byState: false,
 		section: 'glance-heading',
 		labels: true,
 		drawnLabels: false,
@@ -340,6 +343,8 @@ export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> 
 		caption: 'Nations each Indian Health Service Area serves, as each nation’s entry records it',
 		rows: 'categories',
 		categoryHeader: 'Area',
+		// Its Areas are themselves groups of states, so a map by state would only redraw them.
+		byState: false,
 		section: 'ties-heading',
 		labels: true,
 		sources: { section: 'Indian Health Service Areas', text: 'the Area that serves each nation' }

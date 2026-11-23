@@ -125,7 +125,7 @@ if (!existsSync(tileMapPath) || !existsSync(landAreasPath)) {
 			continue;
 		}
 		const body = JSON.parse(readFileSync(viewPath, 'utf8'));
-		const anchors = [...body.nationRows, ...body.areaRows].map((row) => row.anchor);
+		const anchors = [...body.nationRows, ...body.areaRows, ...(body.stateRows ?? [])].map((row) => row.anchor);
 		const viewRows = new Set(anchors);
 		// Two rows with one id would break the links to them and the table itself.
 		if (viewRows.size !== anchors.length) problem(`views/${view}.json has ${anchors.length - viewRows.size} rows with an id another row has`);
@@ -136,6 +136,11 @@ if (!existsSync(tileMapPath) || !existsSync(landAreasPath)) {
 		for (const [nation, office] of Object.entries(shading.offices ?? {})) {
 			if (!viewRows.has(office.anchor)) problem(`tile-map.json: ${view} sends the office of ${nation} to ${office.anchor}, which is not a row of its table`);
 		}
+		// The by-state map: every state it shades goes to a row of the by-state table, and the drawn copy is there for it.
+		for (const [state, shaded] of Object.entries(shading.states ?? {})) {
+			if (!viewRows.has(shaded.anchor)) problem(`tile-map.json: ${view} sends the state ${state} to ${shaded.anchor}, which is not a row of its by-state table`);
+		}
+		if ((body.stateRows ?? []).length > 0 && !body.stateDrawing?.startsWith('<svg')) problem(`views/${view}.json has a by-state table but no by-state drawing`);
 	}
 }
 

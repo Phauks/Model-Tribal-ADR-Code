@@ -453,6 +453,8 @@ interface ShadedViewRule {
 	areaCategoryOf?: (code: string) => string | undefined;
 	/** For a table of land areas: the number its second column gives for each area. */
 	areaValue?: (code: string) => number | undefined;
+	/** For the by-state map: the states a nation's category applies in, where its facts name one, such as the state of an agreement or a compact. Left out, or undefined for a category, it applies in every state the nation's entry places it in. */
+	statesFor?: (record: NationRecord, category: string) => string[] | undefined;
 }
 
 const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
@@ -461,7 +463,9 @@ const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
 			const types = new Set((record.recognition ?? []).map((fact) => fact.type));
 			return { federal: types.has('federal'), state: types.has('state'), petitioning: types.has('petitioning'), other: types.has('territorial-law') || types.has('congressional-special-relationship') };
 		},
-		facts: (record) => (record.recognition ?? []).filter((fact) => fact.type !== 'unrecognized')
+		facts: (record) => (record.recognition ?? []).filter((fact) => fact.type !== 'unrecognized'),
+		// State recognition applies in the state that gives it.
+		statesFor: (record, category) => (category === 'state' ? (record.recognition ?? []).flatMap((fact) => (fact.type === 'state' && fact.state ? [fact.state] : [])) : undefined)
 	},
 	'courts-and-peacemaking': {
 		has: (record) => {
@@ -493,7 +497,13 @@ const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
 			const kinds = new Set((record.jurisdiction_agreements ?? []).map((agreement) => agreement.kind));
 			return Object.fromEntries((shadedViewDefinitions['agreements-with-states'].categories ?? []).map((category) => [category.key, kinds.has(category.key)]));
 		},
-		facts: (record) => record.jurisdiction_agreements ?? []
+		facts: (record) => record.jurisdiction_agreements ?? [],
+		// An agreement that names its state counts only there.
+		statesFor: (record, category) => {
+			const named = (record.jurisdiction_agreements ?? []).filter((agreement) => (category === 'other' ? !['cross-deputization', 'child-welfare-agreement', 'tax-agreement'].includes(agreement.kind) : agreement.kind === category));
+			const states = named.flatMap((agreement) => (agreement.state ? [agreement.state] : []));
+			return states.length === named.length && states.length > 0 ? [...new Set(states)] : undefined;
+		}
 	},
 	gaming: {
 		has: (record) => {
@@ -504,7 +514,12 @@ const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
 			const ordinance = (gaming.ordinances ?? []).length > 0;
 			return { compact, procedures, ordinance, operates: gaming.operates_gaming?.value === true };
 		},
-		facts: (record) => [...(record.gaming?.compacts ?? []), ...(record.gaming?.ordinances ?? []), ...(record.gaming?.operates_gaming ? [record.gaming.operates_gaming] : [])]
+		facts: (record) => [...(record.gaming?.compacts ?? []), ...(record.gaming?.ordinances ?? []), ...(record.gaming?.operates_gaming ? [record.gaming.operates_gaming] : [])],
+		// A compact, or Secretarial Procedures, is with one state.
+		statesFor: (record, category) => {
+			const compacts = (record.gaming?.compacts ?? []).filter((fact) => (category === 'compact' ? compactCounts.has(fact.status) : category === 'procedures' ? fact.status === 'secretarial-procedures' : false));
+			return compacts.length > 0 ? [...new Set(compacts.map((fact) => fact.state))] : undefined;
+		}
 	},
 	treaties: {
 		categoryOf: (record) => {
@@ -621,7 +636,77 @@ function buildShadedView(view: ShadedMapView) {
 		return [{ nation: office.nation, name: office.name, shade: category?.shade ?? 0, anchor: category && key ? rowOf(record, key) : undefined, category: category?.key }];
 	});
 
-	return { definition, rule, categories, categoryOf, areas, offices, records, byArea };
+	// By state: how many of each state's nations have each category. A nation in several states counts in each, except where its facts name the state a category applies in.
+	const statePresence = (record: NationRecord) => [...new Set((record.states ?? []).map((fact) => fact.state))];
+	const kindsOf = (record: NationRecord): string[] => {
+		if (rule.has) {
+			const has = rule.has(record);
+			return categories.filter((category) => has[category.key]).map((category) => category.key);
+		}
+		const key = categoryOf(record);
+		return key === undefined ? [] : [key];
+	};
+	// The key a nation with no kind recorded in a state counts under, as the legend's last entry is keyed.
+	const unrecordedKey = 'unrecorded';
+	// For each state, the kinds each of its nations has there. A fact that names its own state counts only in that state.
+	const kindsByState = new Map<string, Map<string, Set<string>>>();
+	const placeIn = (state: string, record: NationRecord) => {
+		const nations = kindsByState.get(state) ?? new Map<string, Set<string>>();
+		kindsByState.set(state, nations);
+		const kinds = nations.get(record.id) ?? new Set<string>();
+		nations.set(record.id, kinds);
+		return kinds;
+	};
+	if (!areaCategoryOf && definition.byState !== false) {
+		for (const record of records) {
+			for (const state of statePresence(record)) placeIn(state, record);
+			for (const key of kindsOf(record)) {
+				for (const state of new Set(rule.statesFor?.(record, key) ?? statePresence(record))) placeIn(state, record).add(key);
+			}
+		}
+	}
+	// The table counts every kind a nation has in the state. The map counts each nation once, under the first of its kinds in the legend's order (as the by-nation map shades it), or as unrecorded when it has none there; the state takes whichever most of its nations fall under, and a tie goes to the one listed first in the key.
+	const states: ShadedState[] = geometry.states.map((shape) => {
+		const nations = kindsByState.get(shape.code) ?? new Map<string, Set<string>>();
+		const counts = new Map<string, number>();
+		const shading = new Map<string, number>();
+		for (const kinds of nations.values()) {
+			for (const key of kinds) counts.set(key, (counts.get(key) ?? 0) + 1);
+			const first = [...kinds].sort((one, other) => rank(one) - rank(other))[0] ?? unrecordedKey;
+			shading.set(first, (shading.get(first) ?? 0) + 1);
+		}
+		const total = nations.size;
+		const unrecordedCount = shading.get(unrecordedKey) ?? 0;
+		if (unrecordedCount > 0) counts.set(unrecordedKey, unrecordedCount);
+		const keyOrder = [...order, unrecordedKey];
+		const top = keyOrder.filter((key) => (shading.get(key) ?? 0) > 0).sort((one, other) => (shading.get(other) ?? 0) - (shading.get(one) ?? 0) || keyOrder.indexOf(one) - keyOrder.indexOf(other))[0];
+		const category = top === unrecordedKey ? undefined : top;
+		return {
+			code: shape.code,
+			total,
+			counts: Object.fromEntries(counts),
+			category,
+			shaded: top ? (shading.get(top) ?? 0) : 0,
+			shade: category ? (categories[rank(category)]?.shade ?? 0) : 0,
+			anchor: total > 0 ? shadedRowAnchor(view, `state-${shape.code}`) : undefined
+		};
+	});
+
+	return { definition, rule, categories, categoryOf, areas, offices, records, byArea, states };
+}
+
+/** A state or territory on a view's by-state map: how many of its nations have each category, and the one most of them have. */
+interface ShadedState {
+	code: string;
+	total: number;
+	/** How many of the state's nations have each kind, and under "unrecorded" how many have none there. */
+	counts: Record<string, number>;
+	/** The category most of its nations fall under, left out when most have none recorded. */
+	category?: string;
+	/** How many nations fall under the state's category, or under unrecorded when it has none. */
+	shaded: number;
+	shade: number;
+	anchor?: string;
 }
 
 /** A nation with no Census land area, marked at its office, as a shaded view draws it. */
@@ -670,11 +755,17 @@ function tileMapShading() {
 			const built = buildShadedView(view);
 			const areas = Object.fromEntries(built.areas.filter((area) => area.anchor).map((area) => [area.code, { shade: area.shade, anchor: area.anchor as string }]));
 			const offices = Object.fromEntries(built.offices.filter((office) => office.anchor).map((office) => [office.nation, { shade: office.shade, anchor: office.anchor as string }]));
-			return [view, { areas, offices, labels: built.definition.labels ? categoryLabelPoints(built.areas) : [] }];
+			const states = Object.fromEntries(built.states.filter((state) => state.anchor).map((state) => [state.code, { shade: state.shade, anchor: state.anchor as string }]));
+			return [view, { areas, offices, states, labels: built.definition.labels ? categoryLabelPoints(built.areas) : [] }];
 		})
 	) as Record<
 		ShadedMapView,
-		{ areas: Record<string, { shade: number; anchor: string }>; offices: Record<string, { shade: number; anchor: string }>; labels: { name: string; point: [number, number] }[] }
+		{
+			areas: Record<string, { shade: number; anchor: string }>;
+			offices: Record<string, { shade: number; anchor: string }>;
+			states: Record<string, { shade: number; anchor: string }>;
+			labels: { name: string; point: [number, number] }[];
+		}
 	>;
 }
 
@@ -711,6 +802,24 @@ export function shadedView(view: ShadedMapView) {
 	const labels = built.definition.labels && built.definition.drawnLabels !== false ? built.categories.map((category) => ({ name: category.key, identifiers: built.areas.filter((area) => area.category === category.key).map((area) => area.code) })) : [];
 	const section = built.definition.section;
 
+	// The by-state map and table, for views about nations (not about land areas).
+	const byState = !built.rule.areaCategoryOf && built.definition.byState !== false;
+	const stateColumns = byState ? [...built.categories.map((category) => ({ key: category.key, header: category.label })), { key: 'unrecorded', header: unrecorded }] : [];
+	const stateRows = (byState ? built.states : [])
+		.filter((state) => state.anchor)
+		.map((state) => ({ anchor: state.anchor as string, code: state.code, name: stateName(state.code), total: state.total, counts: state.counts }))
+		.sort((first, second) => first.name.localeCompare(second.name, 'en'));
+	const drawnStates = byState
+		? built.states.map((state) => {
+				const name = stateName(state.code);
+				const top = state.category ? labelOf.get(state.category) : undefined;
+				const nations = (count: number) => `${count} of ${state.total} ${state.total === 1 ? 'nation' : 'nations'}`;
+				const description = state.total === 0 ? `${name}: no nations recorded` : `${name}: most often ${top ?? unrecorded.toLocaleLowerCase('en-US')} (${nations(state.shaded)})`;
+				return { code: state.code, shade: state.shade, anchor: state.anchor, description };
+			})
+		: [];
+	const byStateData = { stateColumns, stateRows, drawnStates };
+
 	const sortedStates = (members: NationRecord[]) => [...new Set(members.flatMap(statesOf))].sort((first, second) => first.localeCompare(second, 'en'));
 
 	// A table of land areas: each with its value, opening to the nations whose entries name it.
@@ -721,7 +830,7 @@ export function shadedView(view: ShadedMapView) {
 				const members = built.byArea.get(area.code) ?? [];
 				return { anchor: shadedRowAnchor(view, area.code), name: names.get(area.code) ?? area.code, value: built.rule.areaValue?.(area.code), nations: members.map(listed).sort(byName), states: sortedStates(members) };
 			});
-		return { view, legend, drawn, offices, labels, nationRows: [], areaRows, kindColumns: [], section };
+		return { view, legend, drawn, offices, labels, nationRows: [], areaRows, kindColumns: [], section, ...byStateData };
 	}
 
 	// A table of categories: each opens to the nations in it, or with kinds, the nations that have it.
@@ -731,7 +840,7 @@ export function shadedView(view: ShadedMapView) {
 			const members = built.records.filter((record) => (has ? has(record)[category.key] : built.categoryOf(record) === category.key));
 			return { anchor: shadedRowAnchor(view, category.key), name: category.label, value: undefined as number | undefined, nations: members.map(listed).sort(byName), states: sortedStates(members) };
 		});
-		return { view, legend, drawn, offices, labels, nationRows: [], areaRows, kindColumns: [], section };
+		return { view, legend, drawn, offices, labels, nationRows: [], areaRows, kindColumns: [], section, ...byStateData };
 	}
 
 	const has = built.rule.has;
@@ -750,7 +859,7 @@ export function shadedView(view: ShadedMapView) {
 	// A table of kinds has one Yes column per kind, in the map's order.
 	const kindHeaders = built.definition.kindHeaders;
 	const kindColumns = has && kindHeaders ? built.categories.map((category) => ({ key: category.key, header: kindHeaders[category.key] ?? category.label })) : [];
-	return { view, legend, drawn, offices, labels, nationRows, areaRows: [], kindColumns, section };
+	return { view, legend, drawn, offices, labels, nationRows, areaRows: [], kindColumns, section, ...byStateData };
 }
 
 export type ShadedViewData = ReturnType<typeof shadedView>;

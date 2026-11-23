@@ -315,6 +315,51 @@ function middleOf(path: string): { x: number; y: number } | undefined {
 
 const median = (values: number[]) => [...values].sort((first, second) => first - second)[Math.floor(values.length / 2)];
 
+/** A state or territory on a shaded view's by-state map: its map-class shade, its tooltip, and its row in the view's table if it has one. */
+export interface ShadedState {
+	code: string;
+	shade: number;
+	anchor?: string;
+	description: string;
+}
+
+/**
+ * A shaded view by state (src/lib/shaded-map-views.ts): each state and territory takes the shade of the category most of its nations have, drawn as the Nations by State view draws its states.
+ */
+export function drawShadedStatesMap(geometry: MapGeometry, view: { key: string; title: string; states: ShadedState[] }): string {
+	const byCode = new Map(view.states.map((state) => [state.code, state]));
+	const shapes: string[] = [];
+	const markers: string[] = [];
+	for (const shape of geometry.states) {
+		const state = byCode.get(shape.code) ?? { code: shape.code, shade: 0, description: shape.code };
+		const description = shape.marker ? `${shape.code}, ${state.description}` : state.description;
+		const fill = `state count-${state.shade}`;
+		const outline = titled('path', `class="${fill}${shape.island ? ' island' : ''}" d="${shape.path}"`, description);
+		const marker = shape.marker;
+		if (!marker) {
+			shapes.push(linkOrPlace(state.anchor ?? '', description, outline, Boolean(state.anchor)));
+			continue;
+		}
+		const hitArea = shape.island ? titled('path', `class="hit-area" aria-hidden="true" d="${shape.path}"`, description) : '';
+		const line = `<line class="marker-line" x1="${marker.fromX}" y1="${marker.fromY}" x2="${marker.x}" y2="${marker.y}"/>`;
+		const dot = titled('circle', `class="${fill}" cx="${marker.x}" cy="${marker.y}" r="9"`, description);
+		const onLeft = marker.labelSide === 'left';
+		const code = `<text class="map-label marker-label${onLeft ? ' label-on-left' : ''}" x="${marker.x + (onLeft ? -12 : 12)}" y="${marker.y + 5}">${escape(shape.code)}</text>`;
+		markers.push(linkOrPlace(state.anchor ?? '', description, hitArea + outline + line + dot + code, Boolean(state.anchor)));
+	}
+	const titleId = `${view.key}-by-state-title`;
+	return (
+		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="${titleId}">` +
+		`<title id="${titleId}">${escape(view.title)}, by state</title>` +
+		drawFrames(geometry) +
+		`<g class="states">${shapes.join('')}</g>` +
+		`<path class="state-borders" d="${geometry.stateBorders}"/>` +
+		`<g class="markers">${markers.join('')}</g>` +
+		drawFrameLabels(geometry) +
+		`</svg>`
+	);
+}
+
 /**
  * A view that shades each land area by a fact about its nations, such as Public Law 280 (src/lib/shaded-map-views.ts). Areas with no fact are drawn in the lightest shade and go nowhere; the rest go to their row in the view's table. Labels, if given, are written at the middle of their areas, as the Indian Health Service view names its Areas.
  */
