@@ -1,7 +1,7 @@
 profile: content/tribes/s/santa-rosa-indian-community-of-the-santa-rosa-rancheria.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -46,6 +46,34 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#santa-rosa-indian-community-amendment-2020-03-19#i1
-next_steps: Read the scanned ordinance listed 1994-06-27 (https://www.nigc.gov/wp-content/uploads/2025/03/santarosaband-santarosaord062794.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2006-02-01 (https://www.nigc.gov/wp-content/uploads/2025/03/santarosaband-santarosaamend020106.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/santarosaband-santarosaamend020106.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-40 of 51 of this amendment listed 2006-02-01 as page
+    images (it has no text layer) and recorded 2 procedure(s): other. Not read: pages 41-51 (40-page budget
+    for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#santa-rosa-indian-community-amendment-2006-02-01#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#santa-rosa-indian-community-amendment-2006-02-01#p2
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/santarosaband-santarosaord062794.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-13 of 13 of this ordinance listed 1994-06-27 as page
+    images (it has no text layer) and found no dispute procedure (The only dispute-related text is the
+    NIGC approval letter (PDF 1-2), which is not the ordinance; the ordinance has no patron dispute, employee
+    grievance or other dispute procedure (the sanction appeal to the Tribal Council is enforcement, and
+    licence suspension and revocation hearings have no dispute framing)).
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 41-51 of the amendment
+  listed 2006-02-01 (https://www.nigc.gov/wp-content/uploads/2025/03/santarosaband-santarosaamend020106.pdf),
+  left by the 40-page budget for long documents.'

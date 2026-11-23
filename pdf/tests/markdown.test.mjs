@@ -115,6 +115,16 @@ test("the author's analysis is boxed, with an optional title", () => {
   assert.ok(plain(essay("::: analysis Why it matters\nA reading.\n:::")).startsWith("#analysis-block([Why it matters])["));
 });
 
+test("a figure prints as a box with its caption, parts and where to find it", () => {
+  const picture = plain(essay(":::: figure picture /files/U-20261123-7KQ2MD/a.jpg\nThe council house.\n\n::: description\nA wooden building.\n:::\n\n::: credit\nPhoto by the archives.\n:::\n::::"));
+  assert.equal(
+    picture,
+    '#figure-block("Picture", [It appears with this essay on the website.])[The council house.\n\n#case-part("Description")[A wooden building.]\n\n#figure-credit[Photo by the archives.]]',
+  );
+  const video = plain(essay(":::: figure video https://youtu.be/dQw4w9WgXcQ\nA hearing.\n::::"));
+  assert.ok(video.startsWith('#figure-block("Video", [Watch it at #link("https://www.youtube.com/watch?v=dQw4w9WgXcQ")])[A hearing.]'), video);
+});
+
 test("with endnotes, a citation prints a numbered mark and the chapter's notes print at its end", () => {
   const chapter = writer({ notes: "endnotes" });
   const typst = essay("A rule [@act, § 4]. Another [@act, § 5].", chapter);

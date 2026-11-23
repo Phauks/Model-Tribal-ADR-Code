@@ -11,6 +11,7 @@ dispute review.
     python3 scripts/review/ordinance_scans.py pages       --work WORK
     python3 scripts/review/ordinance_scans.py batches     --work WORK [--force]
     python3 scripts/review/ordinance_scans.py merge-scans --work WORK
+    python3 scripts/review/ordinance_scans.py second-tier --from WORK --work WORK2
 
 WORK is the work folder of `ordinance_disputes.py` (it reads
 WORK/documents-checked.json and WORK/nations.json); everything this script
@@ -47,6 +48,13 @@ batches      Writes reviewer batches (about 8 documents or 150 planned pages)
              the verdicts are numbered by batch. Reviewers follow
              research/reviews/briefs/2026-11-23-ordinance-scans.md and write
              WORK/scans/verdicts/scan-batch-NNN.json.
+second-tier  Sets up a second work folder WORK2 for the second tier: links
+             WORK's documents-checked.json and nations.json and writes
+             WORK2/scans/first-tier.json from WORK/scans/second-tier.json,
+             marked `"tier": "second"`, so download, pages, batches and
+             merge-scans run on it unchanged. The second tier's items join the
+             same review; merge-scans then replaces only the documents it
+             read, so the two tiers do not overwrite each other.
 merge-scans  Adds the reviewers' items to
              research/reviews/2026-11-22-ordinance-disputes.{json,csv} with
              ids ending `#p<n>`, in the review's item format: quote check
@@ -472,8 +480,12 @@ def merge_scans(args):
             verdicts[verdict["document"]] = verdict
     review = ROOT / base.REVIEW_BASE
     payload = load_json(review.with_suffix(".json"))
-    items = [i for i in payload["items"] if i.get("first_reader") != FIRST_READER]
-    without = [w for w in payload["documents_without_items"] if w.get("first_reader") != FIRST_READER]
+    tier = first.get("tier", "first")
+    mine = set(verdicts)
+    items = [i for i in payload["items"] if not (i.get("first_reader") == FIRST_READER and i["document"] in mine)]
+    without = [w for w in payload["documents_without_items"]
+               if not (w.get("first_reader") == FIRST_READER and w["document"] in mine)]
+    same_file = wrong_files(work, checked, out)
     private = []
     added, added_without, readings = [], [], {}
     order = [i for i in first["documents"] if i in verdicts] + sorted(set(verdicts) - set(first["documents"]))
@@ -491,6 +503,10 @@ def merge_scans(args):
             "source": base.CATALOG_SOURCE, "batch": verdict["batch"],
         }
         pages_read = compress(info["read"], longest=100_000)
+        if document_id in same_file:
+            verdict = {**verdict, "items": [], "none_found_reason": same_file[document_id]}
+            verdicts[document_id] = verdict
+            document_flags.append("wrong-file: " + same_file[document_id])
         if not verdict["items"]:
             added_without.append({**common, "none_found_reason": verdict.get("none_found_reason") or "not given",
                                   "skipped": verdict.get("skipped", []), "flags": document_flags,
@@ -541,12 +557,43 @@ def merge_scans(args):
     base.write_csv(review, payload["items"])
     try:
         earlier = load_json(base.PRIVATE_COPY) if base.PRIVATE_COPY.exists() else []
-        kept = [p for p in earlier if p["id"] not in {a["id"] for a in added} and not re.search(r"#p\d+$", p["id"])]
+        kept = [p for p in earlier if p["id"] not in {a["id"] for a in added}
+                and not (re.search(r"#p\d+$", p["id"]) and p["id"].split("#")[0] in mine)]
         write_json(base.PRIVATE_COPY, kept + private)
     except OSError as error:
         print(f"private copy not written: {error}", file=sys.stderr)
     moved = update_search_logs(yaml, checked, nations, verdicts, readings, added, first)
-    write_counts(out, first, verdicts, readings, added, added_without, moved)
+    write_counts(out, first, verdicts, readings, added, added_without, moved, tier)
+
+
+def wrong_files(work, checked, out):
+    """Documents whose downloaded PDF is byte for byte another nation's listed document.
+
+    Of two entries sharing one file, only the one whose link's file name names the other nation (and not its
+    own) is flagged, since the file belongs to the nation its name gives.
+    """
+    log = out / "download-log.tsv"
+    if not log.exists():
+        return {}
+    by_hash = collections.defaultdict(list)
+    for record in checked.values():
+        if record.get("sha256"):
+            by_hash[record["sha256"]].append(record)
+    found = {}
+    for row in csv.DictReader(log.open(encoding="utf-8"), delimiter="\t"):
+        record = checked.get(row["document"])
+        if not record or not row.get("sha256"):
+            continue
+        name = (record["final_link"] or record["link"]).rsplit("/", 1)[-1].lower()
+        own = {n.split("-")[0] for n in record["nations"]}
+        others = [r for r in by_hash.get(row["sha256"], [])
+                  if r["id"] != record["id"] and not set(r["nations"]) & set(record["nations"])
+                  and any(n.split("-")[0] in name for n in r["nations"]) and not any(o in name for o in own)]
+        if others:
+            found[record["id"]] = (f"the Commission's link for this entry serves the same file (same sha256) as "
+                                   f"{others[0]['id']}, so its text is not this nation's; nothing was recorded "
+                                   "from it")
+    return found
 
 
 def label_of(record):
@@ -644,15 +691,19 @@ def update_search_logs(yaml, checked, nations, verdicts, readings, added, first)
     return moved
 
 
-def write_counts(out, first, verdicts, readings, added, added_without, moved):
+def write_counts(out, first, verdicts, readings, added, added_without, moved, tier="first"):
     import yaml
     counts_path = ROOT / (base.REVIEW_BASE + "-counts.json")
     counts = load_json(counts_path)
     second_tier = load_json(out / "second-tier.json")["counts"] if (out / "second-tier.json").exists() else {}
+    if tier == "second":
+        second_tier = {"not_selected": sorted(r["document"] for n in first["nations"]
+                                              for r in n["scanned_documents"] if not r["selected"])}
     statuses = collections.Counter(yaml.safe_load(p.read_text(encoding="utf-8"))["status"]
                                    for p in LOG_ROOT.glob("*/*.yaml"))
     kept = [i for i in added if i["current_kind"] != "not-a-dispute-procedure"]
-    counts["scans_2026_11_23"] = {
+    key = "scans_2026_11_23" if tier == "first" else "scans_2026_11_23_second_tier"
+    counts[key] = {
         "first_tier_nations": len(first["partly_searched_nations"]),
         "nations_with_a_document_read": len({n for d in verdicts.values() for n in d["nations"]}),
         "documents_read": len(verdicts),
@@ -676,11 +727,29 @@ def write_counts(out, first, verdicts, readings, added, added_without, moved):
         "second_look": dict(collections.Counter(i["second_look"]["verdict"] for i in added)),
         "search_logs_changed": dict(moved),
         "search_logs_after": dict(statuses),
-        "items_after": counts.get("grab_2026_11_23", {}).get("items_after", 0) + len(added),
+        "items_after": len(load_json(ROOT / (base.REVIEW_BASE + ".json"))["items"]),
         "second_tier_not_read": second_tier,
     }
     write_json(counts_path, counts)
-    print(json.dumps(counts["scans_2026_11_23"], indent=1))
+    print(json.dumps(counts[key], indent=1))
+
+
+def second_tier(args):
+    source = pathlib.Path(getattr(args, "from"))
+    work = pathlib.Path(args.work)
+    out = scans_dir(work)
+    out.mkdir(parents=True, exist_ok=True)
+    for name in ("documents-checked.json", "nations.json"):
+        target = work / name
+        if not target.exists():
+            target.symlink_to((source / name).resolve())
+    tier = load_json(scans_dir(source) / "second-tier.json")
+    nations = [n for n in tier["nations"] if n["selected"]]
+    write_json(out / "first-tier.json", {
+        "tier": "second", "note": "Second tier, laid out like the first so the other commands run on it unchanged.",
+        "partly_searched_nations": [n["profile"] for n in nations], "nations": tier["nations"],
+        "documents": list(dict.fromkeys(i for n in nations for i in n["selected"]))})
+    print(json.dumps({"nations": len(nations), "documents": sum(len(n["selected"]) for n in nations)}))
 
 
 def spot_check_sample(work, required, size=10):
@@ -709,6 +778,9 @@ def main():
     command.add_argument("--force", action="store_true")
     command = sub.add_parser("merge-scans")
     command.add_argument("--work", required=True)
+    command = sub.add_parser("second-tier")
+    command.add_argument("--from", required=True)
+    command.add_argument("--work", required=True)
     command = sub.add_parser("spot-check")
     command.add_argument("--work", required=True)
     command.add_argument("--require", nargs="*", default=[])
@@ -717,7 +789,7 @@ def main():
         print("\n".join(spot_check_sample(args.work, args.require)))
         return
     {"select": select, "download": download, "pages": pages, "batches": batches,
-     "merge-scans": merge_scans}[args.command](args)
+     "merge-scans": merge_scans, "second-tier": second_tier}[args.command](args)
 
 
 if __name__ == "__main__":

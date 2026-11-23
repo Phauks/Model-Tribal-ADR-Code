@@ -24,9 +24,15 @@ import {
 	uploadQueue,
 	uploadsOfAccount,
 	withdrawUpload,
+	addNationComment,
+	nationUpload,
+	nationUploads,
+	nationSpokenFor,
+	uploadDetail,
 	type Filing,
 	type SenderAnswers
 } from '#lib/server/uploads.ts';
+import { setGrant } from '#lib/server/access.ts';
 import { testDatabase } from './database.ts';
 
 /** A stand-in for the R2 bucket binding, with multipart uploads. */
@@ -337,6 +343,62 @@ describe('when the sender deletes their account', () => {
 		expect(await database.prepare('SELECT 1 FROM accounts WHERE identifier = ?').bind(sender).first()).toBeNull();
 		expect(await uploadByReference(database, waiting.reference)).toBeNull();
 		expect(await uploadByReference(database, filedOne.reference)).toMatchObject({ status: 'filed', account_identifier: null });
+	});
+});
+
+describe('comments from the nation', () => {
+	async function nationReviewer(identifier: string, nation: string): Promise<SignedInPerson> {
+		await database
+			.prepare(
+				`INSERT INTO people (identifier, email, display_name, role, nation_identifier, status, added_at)
+				 VALUES (?, ?, ?, 'nation-reviewer', ?, 'active', '2026-11-23T00:00:00Z')`
+			)
+			.bind(identifier, `${identifier}@example.org`, `Reviewer for ${nation}`, nation)
+			.run();
+		return { identifier, displayName: `Reviewer for ${nation}`, email: `${identifier}@example.org`, role: 'nation-reviewer', nationIdentifier: nation };
+	}
+
+	it('shows a nation reviewer the files about their nation only, without the sender', async () => {
+		const navajo = await nationReviewer('navajo-reviewer', 'navajo-nation');
+		const hopi = await nationReviewer('hopi-reviewer', 'hopi-tribe');
+		const { reference } = await sendWhole(png(), 'court.png');
+		expect((await nationUploads(database, navajo)).map((item) => item.reference)).toEqual([reference]);
+		expect(await nationUploads(database, hopi)).toEqual([]);
+		expect(await nationUpload(database, hopi, reference)).toBeNull();
+		const found = (await nationUpload(database, navajo, reference))!;
+		expect(found.nation).toBe('navajo-nation');
+		expect(Object.keys(found)).not.toContain('senderEmail');
+	});
+
+	it('lets the nation comment, which reviewers see and the sender does not', async () => {
+		const navajo = await nationReviewer('navajo-reviewer', 'navajo-nation');
+		const hopi = await nationReviewer('hopi-reviewer', 'hopi-tribe');
+		const { reference } = await sendWhole(png(), 'court.png');
+		const upload = (await uploadByReference(database, reference))!;
+		await addNationComment(database, navajo, upload, 'The nation agrees this may be shown, with credit to the court.');
+		await expect(addNationComment(database, hopi, upload, 'Not ours')).rejects.toThrow(/only on files about your nation/);
+		expect((await nationUpload(database, navajo, reference))!.comments).toMatchObject([
+			{ kind: 'nation-comment', person_name: 'Reviewer for navajo-nation' }
+		]);
+		expect((await uploadDetail(database, reference))!.messages).toMatchObject([{ kind: 'nation-comment' }]);
+		expect((await uploadsOfAccount(database, sender))[0]?.messages).toEqual([]);
+		expect((await nationUploads(database, navajo))[0]?.comments).toBe(1);
+		expect((await eventsFor(database, 'upload', upload.identifier)).map((entry) => entry.action)).toContain('Comment from the nation');
+	});
+
+	it('hides withdrawn files, and pauses when the lead author lowers the access', async () => {
+		const navajo = await nationReviewer('navajo-reviewer', 'navajo-nation');
+		const kept = await sendWhole(png(), 'kept.png');
+		const taken = await sendWhole(png(), 'taken.png');
+		await withdrawUpload(database, fake.bucket, (await uploadByReference(database, taken.reference))!);
+		expect((await nationUploads(database, navajo)).map((item) => item.reference)).toEqual([kept.reference]);
+		await setGrant(
+			database,
+			{ personIdentifier: navajo.identifier, subjectKind: 'nation', subjectIdentifier: 'navajo-nation', level: 'no-access', note: null, expiresAt: null },
+			reviewer
+		);
+		expect(await nationSpokenFor(database, navajo)).toBeNull();
+		expect(await nationUploads(database, navajo)).toEqual([]);
 	});
 });
 

@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Stephen G. Breyer", vote: majority}
   source: https://api.oyez.org/cases/2000/99-1994
   checked: '2026-11-22'
+courtlistener:
+  cluster: 118454
+  citation: "533 U.S. 353"
+  case_name: "Nevada v. Hicks"
+  link: https://www.courtlistener.com/opinion/118454/nevada-v-hicks/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

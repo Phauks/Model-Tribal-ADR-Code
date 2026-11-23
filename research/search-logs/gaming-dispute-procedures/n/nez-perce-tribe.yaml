@@ -1,7 +1,7 @@
 profile: content/tribes/n/nez-perce-tribe.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -108,9 +108,42 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2024-02-21 has no text layer on most pages (28 of 29 pages have no text
     layer (only the approval letter has text); no OCR available).
-next_steps: Read the scanned amendment listed 1996-08-23 (https://www.nigc.gov/wp-content/uploads/2025/03/nezperce-nezpercetribe082396.pdf)
-  with OCR or by hand. Read the scanned amendment listed 1999-10-22 (https://www.nigc.gov/wp-content/uploads/2025/03/nezperce-nezpercetribe101299.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2009-09-23 (https://www.nigc.gov/wp-content/uploads/2025/03/nezperce-20090923NezPerceOrdAmdmt.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2010-02-22 (https://www.nigc.gov/wp-content/uploads/2025/03/nezperce-AmendAppr02222010.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2024-02-21 (https://www.nigc.gov/wp-content/uploads/2025/03/20240221_Nez_Perce_Tribe_Amend_Gam_Ord.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/nezperce-20090923NezPerceOrdAmdmt.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-29 of 29 of this amendment listed 2009-09-23 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#nez-perce-tribe-amendment-2009-09-23#p1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/nezperce-AmendAppr02222010.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-3 of 3 of this amendment listed 2010-02-22 as page images
+    (it has no text layer) and found no dispute procedure (the only passages are the Commission approval
+    letter and a resolution and notice on gaming participation; no dispute or grievance procedure).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/20240221_Nez_Perce_Tribe_Amend_Gam_Ord.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-29 of 29 of this amendment listed 2024-02-21 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#nez-perce-tribe-amendment-2024-02-21#p1
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Older scanned documents were not
+  read, because the newer documents read replace them: amendment listed 1999-10-22 (https://www.nigc.gov/wp-content/uploads/2025/03/nezperce-nezpercetribe101299.pdf);
+  amendment listed 1996-08-23 (https://www.nigc.gov/wp-content/uploads/2025/03/nezperce-nezpercetribe082396.pdf).'

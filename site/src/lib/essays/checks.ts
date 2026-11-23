@@ -9,6 +9,7 @@
  * Pure functions over a ProseMirror document, so they run in tests too.
  */
 import type { Node as EditorNode } from 'prosemirror-model';
+import { figureKindLabels, type FigureKind } from './figures.ts';
 
 /** One text block (a paragraph, heading, list item's paragraph, cell, ...) as words, and where each character sits in the document. */
 export interface TextBlock {
@@ -223,6 +224,11 @@ export function components(doc: EditorNode): Component[] {
 		} else if (node.type.name === 'paragraph') {
 			paragraph += 1;
 			found.push({ label: `Paragraph ${paragraph}: ${preview(wordsOf(node))}`, position, depth: 1 });
+		} else if (node.type.name === 'figure_block') {
+			// A figure by its kind and the start of its caption, its first paragraph.
+			const label = figureKindLabels[node.attrs.kind as FigureKind] ?? 'Figure';
+			const caption = node.firstChild?.type.name === 'paragraph' ? preview(wordsOf(node.firstChild), 6) : '';
+			found.push({ label: caption ? `${label}: ${caption}` : label, position, depth: 1 });
 		} else {
 			const label = componentLabels[node.type.name] ?? 'Block';
 			const detail = node.attrs.source || node.attrs.title || preview(wordsOf(node), 6);

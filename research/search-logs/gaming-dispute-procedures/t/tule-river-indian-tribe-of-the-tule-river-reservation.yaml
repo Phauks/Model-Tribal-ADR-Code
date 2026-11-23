@@ -1,7 +1,7 @@
 profile: content/tribes/t/tule-river-indian-tribe-of-the-tule-river-reservation.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -67,6 +67,29 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2025-09-17 has no text layer on most pages (31 of 32 pages have no text
     layer (only the approval letter has text); no OCR available).
-next_steps: Read the scanned amendment listed 1999-12-01 (https://www.nigc.gov/wp-content/uploads/2025/03/tulerivertribe-tuleamend120199.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2025-09-17 (https://www.nigc.gov/wp-content/uploads/2025/09/2025.09.17-Tule-River-Indian-Tribe-ORD-Amend-Apprv.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/09/2025.09.17-Tule-River-Indian-Tribe-ORD-Amend-Apprv.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-32 of 32 of this amendment listed 2025-09-17 as page
+    images (it has no text layer) and recorded 2 procedure(s): employee-grievance, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#tule-river-indian-tribe-of-the-tule-river-reservation-amendment-2025-09-17#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#tule-river-indian-tribe-of-the-tule-river-reservation-amendment-2025-09-17#p2
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/tulerivertribe-tuleamend120199.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-13 of 13 of this amendment listed 1999-12-01 as page
+    images (it has no text layer) and found no dispute procedure (the passages cover licensing, license
+    suspension, Commission membership and an enforcement sanction appeal, with no dispute framing).
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

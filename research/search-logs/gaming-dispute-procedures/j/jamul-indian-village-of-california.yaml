@@ -1,7 +1,7 @@
 profile: content/tribes/j/jamul-indian-village-of-california.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -68,5 +68,22 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#jamul-indian-village-of-california-amendment-2025-08-05#i1
-next_steps: Read the scanned amendment listed 2019-05-08 (https://www.nigc.gov/wp-content/uploads/2025/03/3515_Jamul_Ord_Amend_Approval.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/3515_Jamul_Ord_Amend_Approval.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-8, 18-25, 31-34, 37-43 of 43 of this amendment listed
+    2019-05-08 as page images (it has no text layer) and recorded 3 procedure(s): licensing-hearing, other,
+    patron-dispute. Not read: pages 9-17, 26-30, 35-36 (40-page budget for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#jamul-indian-village-of-california-amendment-2019-05-08#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#jamul-indian-village-of-california-amendment-2019-05-08#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#jamul-indian-village-of-california-amendment-2019-05-08#p3
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 9-17, 26-30, 35-36
+  of the amendment listed 2019-05-08 (https://www.nigc.gov/wp-content/uploads/2025/03/3515_Jamul_Ord_Amend_Approval.pdf),
+  left by the 40-page budget for long documents.'

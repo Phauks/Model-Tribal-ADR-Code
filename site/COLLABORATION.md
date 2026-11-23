@@ -22,7 +22,7 @@ Two layers decide it ([decision record 0023](../docs/decisions/0023-permission-l
 | Advisor | Signs off on content or asks for changes, as a project advisor; comments. Does not see requests. | Comment |
 | Co-author | Comments. Does not see requests. | Comment |
 | Contributor | Works only on what the lead author grants, for example writing one assigned essay. Cannot sign off or publish. | No access |
-| Nation reviewer | Reviews one nation's record, for that nation: approves it, asks for changes, or comments. | No access, except comment and approve on their own nation's record |
+| Nation reviewer | Reviews one nation's record, for that nation: approves it, asks for changes, or comments. Comments on files people sent about that nation. | No access, except comment and approve on their own nation's record |
 
 ### Access to each document
 
@@ -158,7 +158,7 @@ On the request's page in the workspace, editors see each form, open the filled f
 
 ## Files people send
 
-Anyone signed in can send files on `/uploads/send` and follow them on `/uploads` (Your uploads, also in the account menu). The lead author and editors review them on `/workspace/uploads` (permission `review-uploads`). Files arrive in 10 MB pieces into the private bucket under `uploads/<identifier>/`, are checked by type and for hidden content as they arrive, and wait for a reviewer, who files them, keeps them for reference, or says why they were not used. A YouTube link can stand in for a video. Filed files are served at `/files/<reference>/<name>`. The code is in `src/lib/uploads.ts`, `src/lib/server/uploads.ts`, `src/lib/server/upload-checks.ts` and `src/lib/server/upload-serving.ts`; the design is docs/uploads.md and decision record 0038.
+Anyone signed in can send files on `/uploads/send` and follow them on `/uploads` (Your uploads, also in the account menu). The lead author and editors review them on `/workspace/uploads` (permission `review-uploads`). Files arrive in 10 MB pieces into the private bucket under `uploads/<identifier>/`, are checked by type and for hidden content as they arrive, and wait for a reviewer, who files them, keeps them for reference, or says why they were not used. A YouTube link can stand in for a video. Filed files are served at `/files/<reference>/<name>`. The code is in `src/lib/uploads.ts`, `src/lib/server/uploads.ts`, `src/lib/server/upload-checks.ts` and `src/lib/server/upload-serving.ts`; the design is docs/uploads.md and decision record 0038. A nation reviewer reads and comments on the files that name their nation on `/workspace/nation-uploads` (permission `comment-on-nation-uploads`); they never see who sent a file.
 
 ## How sign-in works
 
@@ -311,5 +311,5 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) will edit their nation's page from the website in the next stage.
 - Emails to a nation's office when someone joins or leaves its team, and the weekly summary of changes (waits on a domain).
-- A virus scan for files people send, and comments on them from nation reviewers (docs/uploads.md, "Not built yet").
+- A virus scan for files people send (docs/uploads.md, "Not built yet").
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").

@@ -92,6 +92,15 @@ export const reviewerStatusLabels: Record<UploadStatus, string> = {
 	'needs-answer': 'Waiting for the sender'
 };
 
+/** The label a nation reviewer sees, on Files about your nation. */
+export const nationStatusLabels: Record<UploadStatus, string> = {
+	...reviewerStatusLabels,
+	'waiting-for-review': 'Not reviewed yet',
+	'in-review': 'Being reviewed',
+	'waiting-for-nation': 'Waiting for your nation',
+	'kept-for-reference': 'Kept for reference, never shown'
+};
+
 /** Statuses in which the sender can still take a file back. */
 export const withdrawableStatuses: readonly UploadStatus[] = [
 	'sending',
