@@ -128,6 +128,16 @@ Run by hand, never in continuous integration. They build [`research/tribal-law/`
 | `law/collect_law_texts.py` | `targets` lists every law code, court rules and dispute resolution link the profiles cite; `fetch` downloads each one and the chapters its index page links to, pacing each site; `scan` cuts the passages around dispute resolution terms into batches for reviewers; `merge` checks their quotations against the text and writes the provision files | `scripts/requirements.txt`, `curl`, `pdftotext`, `pandoc` |
 | `law/second_pass.py` | `prepare` writes review batches of the hard cases and a fixed random sample; `apply` writes the second reader's verdicts beside the provisions | Python 3 standard library |
 
+## Free case law sources
+
+Run by hand, never in continuous integration. Both use free public data with no account or key, find the newest data on their own, and can be re-run whenever new data or new case records arrive ([sources note](../research/analyses/2026-11-23-free-legal-information-sources.md)).
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `caselaw/check_case_citations.py` | Looks up every case source record's citations in CourtListener's newest quarterly bulk files and compares the case name and year; writes `research/reviews/<date>-case-citations-courtlistener.csv`, and with `--apply` (or later `--apply-report`) a `courtlistener` block (cluster number and link) in each record that matches. About 2.6 GB of downloads, cached for re-runs | `scripts/requirements.txt`, `curl` |
+| `caselaw/tribal_court_opinions.py` | Indexes the tribal court opinions in the Caselaw Access Project reporters named in `research/tribal-court-opinions/sources.yaml`: nations, topics and the case records each opinion cites; with `--file-captures` files each volume as a private capture in the bucket ([README](../research/tribal-court-opinions/README.md)) | `scripts/requirements.txt`, `curl`; R2 keys for `--file-captures` |
+| `caselaw/caselaw_sources.py` | Shared helpers for both: downloads, the newest CourtListener release, citation parsing and case name comparison | |
+
 ## Constitutions
 
 Run by hand, in this order, never in continuous integration. They build the catalog in [`research/constitutions/`](../research/constitutions/README.md) and the constitution version histories in `content/documents/`. The documents they download stay private, outside the repository; the work files (JSON between steps) go in a scratch folder.

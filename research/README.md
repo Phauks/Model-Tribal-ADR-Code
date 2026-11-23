@@ -35,6 +35,10 @@ Reviews of the project's own data, done to help the lead author's review, are ke
 
 [`search-logs/`](search-logs/README.md) holds one record per nation and topic saying where the project looked for that nation's information and what each search found or why it failed, so gaps can be told apart from places no one has looked ([decision record 0025](../docs/decisions/0025-search-logs.md)).
 
+## Tribal court opinions
+
+[`tribal-court-opinions/`](tribal-court-opinions/README.md) indexes the 2,368 tribal court opinions in the Caselaw Access Project's free files (1969 to 2017), with each court's nation, topic tags and the case records each opinion cites. The opinions' text stays private until the lead author decides whether the website shows it.
+
 ## Tribal law texts
 
 [`tribal-law/`](tribal-law/README.md) lists the dispute resolution provisions found in Native nations' own law codes, court rules and ordinances, read by machine and awaiting the lead author's review. Quotations and fetched copies stay private.

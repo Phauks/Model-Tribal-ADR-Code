@@ -44,6 +44,13 @@ supreme_court:
   - {name: "John Paul Stevens", vote: majority}
   source: https://api.oyez.org/cases/1977/76-1629
   checked: '2026-11-22'
+courtlistener:
+  cluster: 109818
+  citation: "435 U.S. 313"
+  case_name: "United States v. Wheeler"
+  link: https://www.courtlistener.com/opinion/109818/united-states-v-wheeler/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

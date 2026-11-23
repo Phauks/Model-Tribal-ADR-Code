@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Ketanji Brown Jackson", vote: majority}
   source: https://api.oyez.org/cases/2022/21-376
   checked: '2026-11-22'
+courtlistener:
+  cluster: 9406660
+  citation: "599 U.S. 255"
+  case_name: "Haaland v. Brackeen"
+  link: https://www.courtlistener.com/opinion/9406660/haaland-v-brackeen/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

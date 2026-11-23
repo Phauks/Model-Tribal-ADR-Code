@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Amy Coney Barrett", vote: majority}
   source: https://api.oyez.org/cases/2020/19-1414
   checked: '2026-11-22'
+courtlistener:
+  cluster: 4887958
+  citation: "593 U.S. 345"
+  case_name: "United States v. Cooley"
+  link: https://www.courtlistener.com/opinion/4887958/united-states-v-cooley/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work
