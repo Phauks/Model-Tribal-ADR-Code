@@ -554,18 +554,26 @@ sup.citation {
 /*
  * The Sources list numbers its entries itself, so each number can link back
  * to the place in the text that cites the source; a source cited in several
- * places adds a letter for each, a, b, c.
+ * places adds a letter for each, a, b, c, on a "Cited 3 times" line under
+ * the citation. Each source is one row between thin lines, so a long list
+ * stays easy to scan (Trevor, Nov. 23, 2026).
  */
 .notes ol.source-list {
 	list-style: none;
 	padding-left: 0;
+	margin: 0;
 }
 
 .source-list > li {
 	position: relative;
-	padding-left: 2.5em;
+	padding: var(--space-2) 0 var(--space-2) 2.5em;
+	border-top: 1px solid var(--color-line);
 	/* Each source's number is a link back to the text; a full line height keeps it a 24 pixel target (WCAG 2.2, 2.5.8) beside small text. */
 	min-height: 1.5rem;
+}
+
+.source-list > li:first-child {
+	border-top: 0;
 }
 
 .source-list .source-number {
@@ -574,15 +582,23 @@ sup.citation {
 	width: 2em;
 	min-height: 1.5rem;
 	text-align: right;
+	font-weight: var(--font-weight-semibold);
+	font-variant-numeric: tabular-nums;
+}
+
+.source-cited {
+	display: block;
+	margin-top: var(--space-1);
+	color: var(--color-ink-muted);
 }
 
 .source-letter {
+	display: inline-block;
+	min-width: 1.5rem;
+	min-height: 1.5rem;
+	text-align: center;
 	font-style: italic;
 	font-weight: var(--font-weight-semibold);
-}
-
-.source-backlinks:has(.source-letter) {
-	margin-right: 0.25em;
 }
 
 /* Long web addresses in citations break anywhere rather than widen the page. */
@@ -596,9 +612,21 @@ sup.citation {
 }
 
 .source-uses {
-	margin: var(--space-1) 0 var(--space-3);
+	margin: var(--space-1) 0 0;
 	padding-left: var(--space-4);
 	list-style: none;
+	border-left: 2px solid var(--color-line);
+}
+
+/*
+ * The facts each source supports wait behind "Show what each source
+ * supports" (SourceList.svelte). Without scripts that button cannot work, so
+ * the facts show; on paper they always print.
+ */
+@media screen {
+	:root[data-scripts='on'] .notes:not(.showing-facts) .source-uses {
+		display: none;
+	}
 }
 
 .source-use-section {

@@ -9,7 +9,7 @@
  *   (src/lib/components/PrintOptions.svelte) adds just before the page prints.
  *
  * A copy is the citation alone: without the list of facts the source
- * supports, without the links back to the text, and without ids, so the page
+ * supports, without the number and the links back to the text, and without ids, so the page
  * never has two elements with one id.
  */
 
@@ -30,7 +30,7 @@ export function noteEntry(marker: HTMLAnchorElement): Element | null {
  */
 export function citationHtml(entry: Element, { newTab = false } = {}): string {
 	const note = entry.cloneNode(true) as Element;
-	for (const extra of note.querySelectorAll('.source-uses, .source-backlinks')) extra.remove();
+	for (const extra of note.querySelectorAll('.source-uses, .source-backlinks, .source-cited')) extra.remove();
 	for (const element of note.querySelectorAll('[id]')) element.removeAttribute('id');
 	if (newTab) {
 		for (const link of note.querySelectorAll<HTMLAnchorElement>('a[href]')) {
