@@ -21,7 +21,7 @@ Trevor chose the first layout ("Gear for screen, Account pages").
 
 ## Consequences
 
-- New pages: `/account`, `/account/security` (password, and where you are signed in, with sign-out for other devices), `/account/email` (the email choice moved from `/following`), `/account/data` (download my data, a link to delete the account) and `/account/settings` (the copy of settings, used only by the site's script). Migration `0018_account_settings.sql` adds `account_settings` and a `device` column on `sessions` holding only words such as "Firefox on Windows".
+- New pages: `/account`, `/account/security` (password, and where you are signed in, with sign-out for other devices), `/account/email` (the email choice moved from `/following`), `/account/data` (download my data, a link to delete the account) and `/account/settings` (the copy of settings, used only by the site's script). Migration `0019_account_settings.sql` adds `account_settings` and a `device` column on `sessions` holding only words such as "Firefox on Windows".
 - Two settings join Settings: "Groups in long Sources lists" (Folded or Open) under Citations, and "Other people's cursors" (with names, without names, or hidden) under Editing.
 - Two-step sign-in, nation teams and the inbox's settings are not built here. Their places are set: Sign-in and security, a Nation team page in the Your account group, and Workspace, Inbox.
 - Your own cursor color is left for the essay editor's thread to add to Profile and credit; the editor still picks a color at random.
