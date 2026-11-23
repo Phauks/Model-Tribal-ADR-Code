@@ -378,9 +378,11 @@
 		font-size: var(--font-size-body);
 	}
 
+	/* As many columns as fit, so the list spreads out under At a glance. */
 	.neighbors {
-		columns: 2 14rem;
+		columns: 14rem;
 		column-gap: var(--space-5);
+		max-width: none;
 	}
 
 	.neighbors li {
